@@ -20,8 +20,8 @@
             <nav>
                 <ul id="menu">
                     <li><%: Html.ActionLink("Principal", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("Sobre", "Ajuda", "Home")%></li>
-                    <li><%: Html.ActionLink("Ajuda", "About", "Home")%></li>
+                    <li><%: Html.ActionLink("Sobre", "About", "Home")%></li>
+                    <li><%: Html.ActionLink("Ajuda", "Ajuda", "Home")%></li>
                 </ul>
             </nav>
         </header>
