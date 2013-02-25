@@ -12,7 +12,7 @@
     <p>
         New passwords are required to be a minimum of <%: Membership.MinRequiredPasswordLength %> characters in length.
     </p>
-
+     
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 

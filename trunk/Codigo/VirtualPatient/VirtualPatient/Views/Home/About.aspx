@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<VirtualPatient.Models.DiscenteModel>" %>
 
 <asp:Content ID="aboutTitle" ContentPlaceHolderID="TitleContent" runat="server">
     About Us
@@ -9,4 +9,13 @@
     <p>
         Put content here.
     </p>
+
+    <div>
+        <%: // Destinado a retornar os valores do Model DiscenteModel
+    Html.DisplayForModel()%>
+    </div>
+
+
+
+
 </asp:Content>
