@@ -28,6 +28,11 @@ namespace VirtualPatient.Controllers
             return View();
         }
 
+        public ActionResult CadastroCasoClinico()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Index(DiscenteModel discente)
         {

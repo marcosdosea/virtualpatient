@@ -23,5 +23,8 @@ namespace VirtualPatient.Models
         [Required(ErrorMessage = "Insirá um email")]
         [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Insira um e-mail valido")]
         public string Email { get; set; }//Email
+
+       [DataType(DataType.Password)]
+        public String passWord { get; set; }
     }
 }
