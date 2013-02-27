@@ -1,0 +1,23 @@
+modelar para ser aluno / profissional
+
+fixos
+======
+dados demograficos e antropometricos
+experiêcia com medicamentos
+histórias
+
+variaveis (gravar data e hora do preenchimento de dados variáveis)
+=========
+medicamentos anteriores (até que mês/ano)
+razao do encontro
+estilo de vida
+parâmetros clínicos
+medicamentos prescritos
+medicamenntos nao prescritos
+exames fisicos
+lembretes para próxima consulta
+revisao de sistema
+avaliação de queixa e intervenção (para cada problema de saúde)
+
+quando há intervenção do médico então ele deve preencher 1 ou mais cartas para médicos
+na carta pode ter mais de uma alternativa que será enviada ao médico

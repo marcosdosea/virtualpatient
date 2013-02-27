@@ -1,0 +1,64 @@
+@charset "UTF-8";
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background:#F0F8FF;
+	margin: 0; 
+	padding: 0;
+	text-align: center; 
+	color: #000000;
+}
+
+.container {
+	width: 46em;  
+	background: #FFFFFF;
+	margin: 2% auto; 
+	border: 1px solid #000000;
+	text-align: left; 
+}
+.cabecalho { 
+	background: #3B5998; 
+	color: #fff;
+	padding: 0;  
+} 
+.cabecalho h1 {
+	margin: 0; 
+	padding: 10px 0; 
+}
+.corpo {
+	padding: 0 20px; 
+	height: 450px;
+	background: url(background_login2.PNG) #FFFFFF no-repeat center;
+}
+.rodape { 
+	padding: 0 10px; 
+	font-size: 80%;
+	background: #3B5998; 
+	color: #fff;;
+} 
+.rodape p {
+	margin: 0; 
+	padding: 10px 0; 
+	text-align: center;
+}
+
+.login {
+	padding: 0 0 0 47%;
+	margin: 0;
+	height: 200px;
+	width: 350px;
+}
+.idioma {
+	padding: 10% 0 0 50%;
+	margin: 0;
+	height: 200px;
+	width: 350px;
+}
+ 
+.inputLogin {
+	width: 300px;
+}
+
+.linksLogin {
+	font-size: 70%;
+	color: #181545;
+}
