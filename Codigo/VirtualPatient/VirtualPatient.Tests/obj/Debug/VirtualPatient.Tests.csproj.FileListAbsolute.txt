@@ -6,3 +6,11 @@ C:\Users\Marcos Dosea\Desktop\virtualpatient\VirtualPatient\VirtualPatient.Tests
 C:\Users\Marcos Dosea\Desktop\virtualpatient\VirtualPatient\VirtualPatient.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Marcos Dosea\Desktop\virtualpatient\VirtualPatient\VirtualPatient.Tests\obj\Debug\VirtualPatient.Tests.dll
 C:\Users\Marcos Dosea\Desktop\virtualpatient\VirtualPatient\VirtualPatient.Tests\obj\Debug\VirtualPatient.Tests.pdb
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\Paciente Virtual\Codigo\VirtualPatient\VirtualPatient.Tests\bin\Debug\VirtualPatient.Tests.dll.config
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\Paciente Virtual\Codigo\VirtualPatient\VirtualPatient.Tests\bin\Debug\VirtualPatient.Tests.dll
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\Paciente Virtual\Codigo\VirtualPatient\VirtualPatient.Tests\bin\Debug\VirtualPatient.Tests.pdb
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\Paciente Virtual\Codigo\VirtualPatient\VirtualPatient.Tests\bin\Debug\VirtualPatient.dll
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\Paciente Virtual\Codigo\VirtualPatient\VirtualPatient.Tests\bin\Debug\VirtualPatient.pdb
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\Paciente Virtual\Codigo\VirtualPatient\VirtualPatient.Tests\obj\Debug\VirtualPatient.Tests.csprojResolveAssemblyReference.cache
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\Paciente Virtual\Codigo\VirtualPatient\VirtualPatient.Tests\obj\Debug\VirtualPatient.Tests.dll
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\Paciente Virtual\Codigo\VirtualPatient\VirtualPatient.Tests\obj\Debug\VirtualPatient.Tests.pdb
