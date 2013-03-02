@@ -1,0 +1,2685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PacienteVirtualModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="PacienteVirtualModelStoreContainer">
+          <EntitySet Name="aluno" EntityType="PacienteVirtualModel.Store.aluno" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="casoclinico" EntityType="PacienteVirtualModel.Store.casoclinico" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="consulta" EntityType="PacienteVirtualModel.Store.consulta" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="intervencao" EntityType="PacienteVirtualModel.Store.intervencao" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="intervencaorespostaquarta" EntityType="PacienteVirtualModel.Store.intervencaorespostaquarta" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="intervencaorespostasegunda" EntityType="PacienteVirtualModel.Store.intervencaorespostasegunda" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="medicamentonaoprescrito" EntityType="PacienteVirtualModel.Store.medicamentonaoprescrito" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="medicamentoprescrito" EntityType="PacienteVirtualModel.Store.medicamentoprescrito" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="medicamentoqueixa" EntityType="PacienteVirtualModel.Store.medicamentoqueixa" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="medicamentoqueixaquarta" EntityType="PacienteVirtualModel.Store.medicamentoqueixaquarta" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="medicamentoqueixasegunda" EntityType="PacienteVirtualModel.Store.medicamentoqueixasegunda" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="parametroclinico" EntityType="PacienteVirtualModel.Store.parametroclinico" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="queixa" EntityType="PacienteVirtualModel.Store.queixa" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="queixarespostaprimeira" EntityType="PacienteVirtualModel.Store.queixarespostaprimeira" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="queixarespostaquarta" EntityType="PacienteVirtualModel.Store.queixarespostaquarta" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="queixarespostasegunda" EntityType="PacienteVirtualModel.Store.queixarespostasegunda" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="queixarespostaterceira" EntityType="PacienteVirtualModel.Store.queixarespostaterceira" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="respostaprimeira" EntityType="PacienteVirtualModel.Store.respostaprimeira" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="respostaquarta" EntityType="PacienteVirtualModel.Store.respostaquarta" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="respostasegunda" EntityType="PacienteVirtualModel.Store.respostasegunda" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="respostaterceira" EntityType="PacienteVirtualModel.Store.respostaterceira" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="turma" EntityType="PacienteVirtualModel.Store.turma" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="tutor" EntityType="PacienteVirtualModel.Store.tutor" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="usuario" EntityType="PacienteVirtualModel.Store.usuario" store:Type="Tables" Schema="pv1" />
+          <AssociationSet Name="FK_aluno_2" Association="PacienteVirtualModel.Store.FK_aluno_2">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="aluno" EntitySet="aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aluno_3" Association="PacienteVirtualModel.Store.FK_aluno_3">
+            <End Role="turma" EntitySet="turma" />
+            <End Role="aluno" EntitySet="aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_1" Association="PacienteVirtualModel.Store.FK_Consulta_1">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_consulta_2" Association="PacienteVirtualModel.Store.FK_consulta_2">
+            <End Role="aluno" EntitySet="aluno" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_intervencaorespostaquarta_1" Association="PacienteVirtualModel.Store.FK_intervencaorespostaquarta_1">
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+            <End Role="intervencaorespostaquarta" EntitySet="intervencaorespostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_intervencaorespostasegunda_1" Association="PacienteVirtualModel.Store.FK_intervencaorespostasegunda_1">
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+            <End Role="intervencaorespostasegunda" EntitySet="intervencaorespostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_medicamentoqueixa_1" Association="PacienteVirtualModel.Store.FK_medicamentoqueixa_1">
+            <End Role="queixa" EntitySet="queixa" />
+            <End Role="medicamentoqueixa" EntitySet="medicamentoqueixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_medicamentoqueixaquarta_1" Association="PacienteVirtualModel.Store.FK_medicamentoqueixaquarta_1">
+            <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
+            <End Role="medicamentoqueixaquarta" EntitySet="medicamentoqueixaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_medicamentoqueixasegunda_1" Association="PacienteVirtualModel.Store.FK_medicamentoqueixasegunda_1">
+            <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+            <End Role="medicamentoqueixasegunda" EntitySet="medicamentoqueixasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_queixarespostaprimeira_1" Association="PacienteVirtualModel.Store.FK_queixarespostaprimeira_1">
+            <End Role="respostaprimeira" EntitySet="respostaprimeira" />
+            <End Role="queixarespostaprimeira" EntitySet="queixarespostaprimeira" />
+          </AssociationSet>
+          <AssociationSet Name="FK_queixarespostaquarta_1" Association="PacienteVirtualModel.Store.FK_queixarespostaquarta_1">
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+            <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_queixarespostaterceira_1" Association="PacienteVirtualModel.Store.FK_queixarespostaterceira_1">
+            <End Role="respostaterceira" EntitySet="respostaterceira" />
+            <End Role="queixarespostaterceira" EntitySet="queixarespostaterceira" />
+          </AssociationSet>
+          <AssociationSet Name="FK_respostaalunoterceira_1" Association="PacienteVirtualModel.Store.FK_respostaalunoterceira_1">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaterceira" EntitySet="respostaterceira" />
+          </AssociationSet>
+          <AssociationSet Name="FK_respostaprimeira_1" Association="PacienteVirtualModel.Store.FK_respostaprimeira_1">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaprimeira" EntitySet="respostaprimeira" />
+          </AssociationSet>
+          <AssociationSet Name="FK_respostaquarta_1" Association="PacienteVirtualModel.Store.FK_respostaquarta_1">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_respostasegunda_1" Association="PacienteVirtualModel.Store.FK_respostasegunda_1">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK1CE59807871504B2" Association="PacienteVirtualModel.Store.FK1CE59807871504B2">
+            <End Role="respostaterceira" EntitySet="respostaterceira" />
+            <End Role="queixarespostaterceira" EntitySet="queixarespostaterceira" />
+          </AssociationSet>
+          <AssociationSet Name="FK1E43344B8872A0F6" Association="PacienteVirtualModel.Store.FK1E43344B8872A0F6">
+            <End Role="respostaprimeira" EntitySet="respostaprimeira" />
+            <End Role="queixarespostaprimeira" EntitySet="queixarespostaprimeira" />
+          </AssociationSet>
+          <AssociationSet Name="FK589C4EBDD526F1E" Association="PacienteVirtualModel.Store.FK589C4EBDD526F1E">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="aluno" EntitySet="aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK5BA98DD4D2B646E7" Association="PacienteVirtualModel.Store.FK5BA98DD4D2B646E7">
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+            <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK685CED99A4FE1140" Association="PacienteVirtualModel.Store.FK685CED99A4FE1140">
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+            <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK6998F652B972831" Association="PacienteVirtualModel.Store.FK6998F652B972831">
+            <End Role="tutor" EntitySet="tutor" />
+            <End Role="turma" EntitySet="turma" />
+          </AssociationSet>
+          <AssociationSet Name="FK78D999E947C18322" Association="PacienteVirtualModel.Store.FK78D999E947C18322">
+            <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
+            <End Role="medicamentoqueixaquarta" EntitySet="medicamentoqueixaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK800BA011D2B646E7" Association="PacienteVirtualModel.Store.FK800BA011D2B646E7">
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+            <End Role="intervencaorespostaquarta" EntitySet="intervencaorespostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK8099C4A73D02FC3D" Association="PacienteVirtualModel.Store.FK8099C4A73D02FC3D">
+            <End Role="queixa" EntitySet="queixa" />
+            <End Role="medicamentoqueixa" EntitySet="medicamentoqueixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK877B3B565097F805" Association="PacienteVirtualModel.Store.FK877B3B565097F805">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaterceira" EntitySet="respostaterceira" />
+          </AssociationSet>
+          <AssociationSet Name="FK88D8D79A5097F805" Association="PacienteVirtualModel.Store.FK88D8D79A5097F805">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaprimeira" EntitySet="respostaprimeira" />
+          </AssociationSet>
+          <AssociationSet Name="FK91D9EFAE8A1319FF" Association="PacienteVirtualModel.Store.FK91D9EFAE8A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="intervencao" EntitySet="intervencao" />
+          </AssociationSet>
+          <AssociationSet Name="FKAA358BEF8A1319FF" Association="PacienteVirtualModel.Store.FKAA358BEF8A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="medicamentoprescrito" EntitySet="medicamentoprescrito" />
+          </AssociationSet>
+          <AssociationSet Name="FKAAEE312E8A1319FF" Association="PacienteVirtualModel.Store.FKAAEE312E8A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="parametroclinico" EntitySet="parametroclinico" />
+          </AssociationSet>
+          <AssociationSet Name="FKB29DB8E35097F805" Association="PacienteVirtualModel.Store.FKB29DB8E35097F805">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FKBF69A97F8A1319FF" Association="PacienteVirtualModel.Store.FKBF69A97F8A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="medicamentonaoprescrito" EntitySet="medicamentonaoprescrito" />
+          </AssociationSet>
+          <AssociationSet Name="FKC773DEB18A1319FF" Association="PacienteVirtualModel.Store.FKC773DEB18A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="queixa" EntitySet="queixa" />
+          </AssociationSet>
+          <AssociationSet Name="FKD03D22FCA4FE1140" Association="PacienteVirtualModel.Store.FKD03D22FCA4FE1140">
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+            <End Role="intervencaorespostasegunda" EntitySet="intervencaorespostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FKDE2881F52977839B" Association="PacienteVirtualModel.Store.FKDE2881F52977839B">
+            <End Role="aluno" EntitySet="aluno" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FKDE2881F58A1319FF" Association="PacienteVirtualModel.Store.FKDE2881F58A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FKEFEE246A5097F805" Association="PacienteVirtualModel.Store.FKEFEE246A5097F805">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FKF12E64244E1862F8" Association="PacienteVirtualModel.Store.FKF12E64244E1862F8">
+            <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+            <End Role="medicamentoqueixasegunda" EntitySet="medicamentoqueixasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FKFCF4D80D2B972831" Association="PacienteVirtualModel.Store.FKFCF4D80D2B972831">
+            <End Role="tutor" EntitySet="tutor" />
+            <End Role="casoclinico" EntitySet="casoclinico" />
+          </AssociationSet>
+          <AssociationSet Name="FKFD098D39A4FE1140" Association="PacienteVirtualModel.Store.FKFD098D39A4FE1140">
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+            <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aluno">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="anoInicioCurso" Type="int" Nullable="false" />
+          <Property Name="flCursouAssistenciaFarmaceutica" Type="varchar" MaxLength="1" />
+          <Property Name="flCursouAtencaoFarmaceutica" Type="varchar" MaxLength="1" />
+          <Property Name="flCursouDispencaoFarmaceutica" Type="varchar" MaxLength="1" />
+          <Property Name="flCursouFarmaciaClinica" Type="varchar" MaxLength="1" />
+          <Property Name="flCursouIntroducaoFarmacia" Type="varchar" MaxLength="1" />
+          <Property Name="flCursouSemiologiaFarmaceutica" Type="varchar" MaxLength="1" />
+          <Property Name="flCursouTopicosFarmaciaClinica" Type="varchar" MaxLength="1" />
+          <Property Name="genero" Type="varchar" MaxLength="1" />
+          <Property Name="idade" Type="int" Nullable="false" />
+          <Property Name="matricula" Type="varchar" MaxLength="8" />
+          <Property Name="fkTurma" Type="int" />
+          <Property Name="nome" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="liberado" Type="char" MaxLength="1" />
+          <Property Name="fkConsultaAtual" Type="int" />
+          <Property Name="nrConsulta" Type="int" Nullable="false" />
+          <Property Name="nrTentativa" Type="int" Nullable="false" />
+          <Property Name="flAcessoCasa" Type="varchar" MaxLength="1" />
+          <Property Name="flAcessoCasaAmigo" Type="varchar" MaxLength="1" />
+          <Property Name="flAcessoOutro" Type="varchar" MaxLength="1" />
+          <Property Name="flAcessoUniversidade" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="casoclinico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="alergias" Type="varchar" MaxLength="255" />
+          <Property Name="altura" Type="float" Nullable="false" />
+          <Property Name="dataNascimento" Type="datetime" />
+          <Property Name="disponibilidade" Type="varchar" MaxLength="255" />
+          <Property Name="escolaridade" Type="varchar" MaxLength="255" />
+          <Property Name="flBebeAlcool" Type="varchar" MaxLength="255" />
+          <Property Name="flBebeCafe" Type="varchar" MaxLength="255" />
+          <Property Name="flFuma" Type="varchar" MaxLength="255" />
+          <Property Name="genero" Type="varchar" MaxLength="255" />
+          <Property Name="medicosQueAtendem" Type="varchar" MaxLength="255" />
+          <Property Name="moradiaFamilia" Type="varchar" MaxLength="255" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+          <Property Name="ocupacao" Type="varchar" MaxLength="255" />
+          <Property Name="peso" Type="float" Nullable="false" />
+          <Property Name="planoDeSaude" Type="varchar" MaxLength="255" />
+          <Property Name="pressaoDiastolica" Type="int" Nullable="false" />
+          <Property Name="pressaoSistolica" Type="int" Nullable="false" />
+          <Property Name="relatoDeCasoPrimeiraConsulta" Type="longtext" />
+          <Property Name="relatoDeCasoTerceiraConsulta" Type="longtext" />
+          <Property Name="temperatura" Type="float" Nullable="false" />
+          <Property Name="fkTutor" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="historiaAlcoolAnterior" Type="varchar" MaxLength="255" />
+          <Property Name="historiaAlcoolAtual" Type="varchar" MaxLength="255" />
+          <Property Name="historiaCafeAnterior" Type="varchar" MaxLength="255" />
+          <Property Name="historiaCafeAtual" Type="varchar" MaxLength="255" />
+          <Property Name="historiaTabacoAnterior" Type="varchar" MaxLength="255" />
+          <Property Name="historiaTabacoAtual" Type="varchar" MaxLength="255" />
+          <Property Name="peso2" Type="float" />
+          <Property Name="pressaoDiastolica2" Type="int" />
+          <Property Name="pressaoSistolica2" Type="int" />
+          <Property Name="temperatura2" Type="float" />
+          <Property Name="tipoBebidaAlcoolica" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="consulta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fkCasoClinico" Type="int" Nullable="false" />
+          <Property Name="fkAluno" Type="varchar" Nullable="false" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="intervencao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="255" />
+          <Property Name="numeroEtapa" Type="int" Nullable="false" />
+          <Property Name="numeroIntervencao" Type="int" Nullable="false" />
+          <Property Name="fkCasoClinico" Type="int" />
+        </EntityType>
+        <EntityType Name="intervencaorespostaquarta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="255" />
+          <Property Name="justificativa" Type="longtext" />
+          <Property Name="numeroIntervencao" Type="int" Nullable="false" />
+          <Property Name="fkResposta4" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="intervencaorespostasegunda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="255" />
+          <Property Name="justificativa" Type="longtext" />
+          <Property Name="numeroIntervencao" Type="int" />
+          <Property Name="fkResposta2" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="medicamentonaoprescrito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="255" />
+          <Property Name="dosagem" Type="varchar" MaxLength="255" />
+          <Property Name="posologia" Type="varchar" MaxLength="255" />
+          <Property Name="fkCasoClinico" Type="int" />
+          <Property Name="flItalico" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="medicamentoprescrito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="255" />
+          <Property Name="dosagem" Type="varchar" MaxLength="255" />
+          <Property Name="especialidadeMedico" Type="varchar" MaxLength="255" />
+          <Property Name="nmMedico" Type="varchar" MaxLength="255" />
+          <Property Name="posologia" Type="varchar" MaxLength="255" />
+          <Property Name="fkCasoClinico" Type="int" />
+          <Property Name="flItalico" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="medicamentoqueixa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="150" />
+          <Property Name="dose" Type="varchar" MaxLength="80" />
+          <Property Name="efetivo" Type="varchar" MaxLength="1" />
+          <Property Name="necessario" Type="varchar" MaxLength="1" />
+          <Property Name="periodo" Type="varchar" MaxLength="80" />
+          <Property Name="seguro" Type="varchar" MaxLength="1" />
+          <Property Name="cumprimento" Type="varchar" MaxLength="1" />
+          <Property Name="fkQueixa" Type="int" Nullable="false" />
+          <Property Name="conheceCumpre" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="medicamentoqueixaquarta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="150" />
+          <Property Name="dose" Type="varchar" MaxLength="80" />
+          <Property Name="efetivo" Type="varchar" MaxLength="1" />
+          <Property Name="necessario" Type="varchar" MaxLength="1" />
+          <Property Name="periodo" Type="varchar" MaxLength="80" />
+          <Property Name="seguro" Type="varchar" MaxLength="1" />
+          <Property Name="cumprimento" Type="varchar" MaxLength="1" />
+          <Property Name="fkQueixaQuarta" Type="int" Nullable="false" />
+          <Property Name="conheceCumpre" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="medicamentoqueixasegunda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="150" />
+          <Property Name="dose" Type="varchar" MaxLength="80" />
+          <Property Name="efetivo" Type="varchar" MaxLength="1" />
+          <Property Name="necessario" Type="varchar" MaxLength="1" />
+          <Property Name="periodo" Type="varchar" MaxLength="80" />
+          <Property Name="seguro" Type="varchar" MaxLength="1" />
+          <Property Name="cumprimento" Type="varchar" MaxLength="1" />
+          <Property Name="fkQueixaSegunda" Type="int" Nullable="false" />
+          <Property Name="conheceCumpre" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="parametroclinico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="255" />
+          <Property Name="unidade" Type="varchar" MaxLength="255" />
+          <Property Name="valor" Type="float" Nullable="false" />
+          <Property Name="valorDeReferencia" Type="varchar" MaxLength="255" />
+          <Property Name="fkCasoClinico" Type="int" />
+        </EntityType>
+        <EntityType Name="queixa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" MaxLength="255" />
+          <Property Name="numeroEtapa" Type="int" Nullable="false" />
+          <Property Name="numeroPRM" Type="int" Nullable="false" />
+          <Property Name="fkCasoClinico" Type="int" />
+          <Property Name="conheceOuPreocupa" Type="varchar" MaxLength="255" />
+          <Property Name="periodoSurgimento" Type="varchar" MaxLength="255" />
+          <Property Name="prioridade" Type="int" />
+        </EntityType>
+        <EntityType Name="queixarespostaprimeira">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="fkResposta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="queixarespostaquarta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="numeroPRM" Type="int" Nullable="false" />
+          <Property Name="fkResposta4" Type="int" Nullable="false" />
+          <Property Name="periodoSurgimento" Type="varchar" MaxLength="45" />
+          <Property Name="flConheceOuPreocupa" Type="varchar" MaxLength="1" />
+          <Property Name="prioridade" Type="uint" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="125" />
+        </EntityType>
+        <EntityType Name="queixarespostasegunda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="numeroPRM" Type="int" Nullable="false" />
+          <Property Name="fkResposta2" Type="int" Nullable="false" />
+          <Property Name="flConheceOuPreocupa" Type="varchar" MaxLength="1" />
+          <Property Name="prioridade" Type="uint" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="125" />
+          <Property Name="periodoSurgimento" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="queixarespostaterceira">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="fkResposta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="respostaprimeira">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="alergias" Type="varchar" MaxLength="255" />
+          <Property Name="altura" Type="float" Nullable="false" />
+          <Property Name="dataDeRealizacao" Type="date" />
+          <Property Name="dataNascimento" Type="date" />
+          <Property Name="escolaridade" Type="varchar" MaxLength="255" />
+          <Property Name="flAlturaCerta" Type="varchar" MaxLength="255" />
+          <Property Name="flBebeAlcool" Type="varchar" MaxLength="255" />
+          <Property Name="flBebeAlcoolCerto" Type="varchar" MaxLength="255" />
+          <Property Name="flBebeCafe" Type="varchar" MaxLength="255" />
+          <Property Name="flBebeCafeCerto" Type="varchar" MaxLength="255" />
+          <Property Name="flDataNascimentoCerta" Type="varchar" MaxLength="255" />
+          <Property Name="flEscolaridadeCerta" Type="varchar" MaxLength="255" />
+          <Property Name="flFuma" Type="varchar" MaxLength="255" />
+          <Property Name="flFumaCerto" Type="varchar" MaxLength="255" />
+          <Property Name="flGeneroCerto" Type="varchar" MaxLength="255" />
+          <Property Name="flIMCCerto" Type="varchar" MaxLength="255" />
+          <Property Name="flNomeCerto" Type="varchar" MaxLength="255" />
+          <Property Name="flOcupacaoCerta" Type="varchar" MaxLength="255" />
+          <Property Name="flPesoCerto" Type="varchar" MaxLength="255" />
+          <Property Name="flPressaoDiastolicaCerta" Type="varchar" MaxLength="255" />
+          <Property Name="flPressaoSistolicaCerta" Type="varchar" MaxLength="255" />
+          <Property Name="flTemperaturaCerta" Type="varchar" MaxLength="255" />
+          <Property Name="genero" Type="varchar" MaxLength="255" />
+          <Property Name="IMC" Type="float" />
+          <Property Name="medicosQueAtendem" Type="varchar" MaxLength="255" />
+          <Property Name="moradiaFamilia" Type="varchar" MaxLength="255" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+          <Property Name="ocupacao" Type="varchar" MaxLength="255" />
+          <Property Name="peso" Type="float" Nullable="false" />
+          <Property Name="pressaoDiastolica" Type="int" Nullable="false" />
+          <Property Name="pressaoSistolica" Type="int" Nullable="false" />
+          <Property Name="temperatura" Type="float" Nullable="false" />
+          <Property Name="planoDeSaude" Type="varchar" MaxLength="255" />
+          <Property Name="numeroTentativa" Type="uint" Nullable="false" />
+          <Property Name="fkConsulta" Type="int" Nullable="false" />
+          <Property Name="flCorreto" Type="varchar" MaxLength="1" />
+          <Property Name="comentario" Type="text" />
+          <Property Name="comentarioAluno" Type="text" />
+          <Property Name="nota" Type="float" Nullable="false" />
+          <Property Name="historiaAlcoolAnterior" Type="varchar" MaxLength="255" />
+          <Property Name="historiaAlcoolAtual" Type="varchar" MaxLength="255" />
+          <Property Name="historiaCafeAnterior" Type="varchar" MaxLength="255" />
+          <Property Name="historiaCafeAtual" Type="varchar" MaxLength="255" />
+          <Property Name="historiaTabacoAnterior" Type="varchar" MaxLength="255" />
+          <Property Name="historiaTabacoAtual" Type="varchar" MaxLength="255" />
+          <Property Name="tipoBebidaAlcoolica" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="respostaquarta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dataRealizacao" Type="date" Nullable="false" />
+          <Property Name="fkConsulta" Type="int" Nullable="false" />
+          <Property Name="numeroTentativa" Type="int" Nullable="false" />
+          <Property Name="flCorreto" Type="varchar" MaxLength="1" />
+          <Property Name="comentario" Type="text" />
+          <Property Name="comentarioAluno" Type="text" />
+          <Property Name="nota" Type="float" />
+          <Property Name="carta" Type="tinytext" />
+        </EntityType>
+        <EntityType Name="respostasegunda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dataRealizacao" Type="date" Nullable="false" />
+          <Property Name="fkConsulta" Type="int" Nullable="false" />
+          <Property Name="numeroTentativa" Type="int" Nullable="false" />
+          <Property Name="flCorreto" Type="varchar" MaxLength="1" />
+          <Property Name="comentario" Type="text" />
+          <Property Name="comentarioAluno" Type="text" />
+          <Property Name="nota" Type="float" />
+          <Property Name="carta" Type="tinytext" />
+        </EntityType>
+        <EntityType Name="respostaterceira">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="temperatura" Type="float" />
+          <Property Name="pressaosistolica" Type="uint" />
+          <Property Name="pressaodiastolica" Type="uint" />
+          <Property Name="peso" Type="float" />
+          <Property Name="fkConsulta" Type="int" Nullable="false" />
+          <Property Name="dataRealizacao" Type="date" Nullable="false" />
+          <Property Name="flCorreto" Type="varchar" MaxLength="1" />
+          <Property Name="comentario" Type="text" />
+          <Property Name="comentarioAluno" Type="text" />
+          <Property Name="nota" Type="float" />
+          <Property Name="imc" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="turma">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="varchar" MaxLength="2" />
+          <Property Name="periodo" Type="varchar" MaxLength="6" />
+          <Property Name="fktutor" Type="varchar" MaxLength="40" />
+          <Property Name="nmDisciplina" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tutor">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="senha" Type="varchar" MaxLength="255" />
+          <Property Name="tpUsuario" Type="varchar" MaxLength="255" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_aluno_2">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="0..1" />
+          <End Role="aluno" Type="PacienteVirtualModel.Store.aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="aluno">
+              <PropertyRef Name="fkConsultaAtual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aluno_3">
+          <End Role="turma" Type="PacienteVirtualModel.Store.turma" Multiplicity="0..1" />
+          <End Role="aluno" Type="PacienteVirtualModel.Store.aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="turma">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="aluno">
+              <PropertyRef Name="fkTurma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_1">
+          <End Role="casoclinico" Type="PacienteVirtualModel.Store.casoclinico" Multiplicity="1" />
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_consulta_2">
+          <End Role="aluno" Type="PacienteVirtualModel.Store.aluno" Multiplicity="1" />
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aluno">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="fkAluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_intervencaorespostaquarta_1">
+          <End Role="respostaquarta" Type="PacienteVirtualModel.Store.respostaquarta" Multiplicity="1" />
+          <End Role="intervencaorespostaquarta" Type="PacienteVirtualModel.Store.intervencaorespostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencaorespostaquarta">
+              <PropertyRef Name="fkResposta4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_intervencaorespostasegunda_1">
+          <End Role="respostasegunda" Type="PacienteVirtualModel.Store.respostasegunda" Multiplicity="1" />
+          <End Role="intervencaorespostasegunda" Type="PacienteVirtualModel.Store.intervencaorespostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencaorespostasegunda">
+              <PropertyRef Name="fkResposta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_medicamentoqueixa_1">
+          <End Role="queixa" Type="PacienteVirtualModel.Store.queixa" Multiplicity="1" />
+          <End Role="medicamentoqueixa" Type="PacienteVirtualModel.Store.medicamentoqueixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixa">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixa">
+              <PropertyRef Name="fkQueixa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_medicamentoqueixaquarta_1">
+          <End Role="queixarespostaquarta" Type="PacienteVirtualModel.Store.queixarespostaquarta" Multiplicity="1" />
+          <End Role="medicamentoqueixaquarta" Type="PacienteVirtualModel.Store.medicamentoqueixaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixarespostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixaquarta">
+              <PropertyRef Name="fkQueixaQuarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_medicamentoqueixasegunda_1">
+          <End Role="queixarespostasegunda" Type="PacienteVirtualModel.Store.queixarespostasegunda" Multiplicity="1" />
+          <End Role="medicamentoqueixasegunda" Type="PacienteVirtualModel.Store.medicamentoqueixasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixarespostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixasegunda">
+              <PropertyRef Name="fkQueixaSegunda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_queixarespostaprimeira_1">
+          <End Role="respostaprimeira" Type="PacienteVirtualModel.Store.respostaprimeira" Multiplicity="1" />
+          <End Role="queixarespostaprimeira" Type="PacienteVirtualModel.Store.queixarespostaprimeira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaprimeira">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaprimeira">
+              <PropertyRef Name="fkResposta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_queixarespostaquarta_1">
+          <End Role="respostaquarta" Type="PacienteVirtualModel.Store.respostaquarta" Multiplicity="1" />
+          <End Role="queixarespostaquarta" Type="PacienteVirtualModel.Store.queixarespostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaquarta">
+              <PropertyRef Name="fkResposta4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_queixarespostaterceira_1">
+          <End Role="respostaterceira" Type="PacienteVirtualModel.Store.respostaterceira" Multiplicity="1" />
+          <End Role="queixarespostaterceira" Type="PacienteVirtualModel.Store.queixarespostaterceira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaterceira">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaterceira">
+              <PropertyRef Name="fkResposta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_respostaalunoterceira_1">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="1" />
+          <End Role="respostaterceira" Type="PacienteVirtualModel.Store.respostaterceira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaterceira">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_respostaprimeira_1">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="1" />
+          <End Role="respostaprimeira" Type="PacienteVirtualModel.Store.respostaprimeira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaprimeira">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_respostaquarta_1">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="1" />
+          <End Role="respostaquarta" Type="PacienteVirtualModel.Store.respostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaquarta">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_respostasegunda_1">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="1" />
+          <End Role="respostasegunda" Type="PacienteVirtualModel.Store.respostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostasegunda">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK1CE59807871504B2">
+          <End Role="respostaterceira" Type="PacienteVirtualModel.Store.respostaterceira" Multiplicity="1" />
+          <End Role="queixarespostaterceira" Type="PacienteVirtualModel.Store.queixarespostaterceira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaterceira">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaterceira">
+              <PropertyRef Name="fkResposta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK1E43344B8872A0F6">
+          <End Role="respostaprimeira" Type="PacienteVirtualModel.Store.respostaprimeira" Multiplicity="1" />
+          <End Role="queixarespostaprimeira" Type="PacienteVirtualModel.Store.queixarespostaprimeira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaprimeira">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaprimeira">
+              <PropertyRef Name="fkResposta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK589C4EBDD526F1E">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="0..1" />
+          <End Role="aluno" Type="PacienteVirtualModel.Store.aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="aluno">
+              <PropertyRef Name="fkConsultaAtual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK5BA98DD4D2B646E7">
+          <End Role="respostaquarta" Type="PacienteVirtualModel.Store.respostaquarta" Multiplicity="1" />
+          <End Role="queixarespostaquarta" Type="PacienteVirtualModel.Store.queixarespostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaquarta">
+              <PropertyRef Name="fkResposta4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK685CED99A4FE1140">
+          <End Role="respostasegunda" Type="PacienteVirtualModel.Store.respostasegunda" Multiplicity="1" />
+          <End Role="queixarespostasegunda" Type="PacienteVirtualModel.Store.queixarespostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostasegunda">
+              <PropertyRef Name="fkResposta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK6998F652B972831">
+          <End Role="tutor" Type="PacienteVirtualModel.Store.tutor" Multiplicity="0..1" />
+          <End Role="turma" Type="PacienteVirtualModel.Store.turma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tutor">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="turma">
+              <PropertyRef Name="fktutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK78D999E947C18322">
+          <End Role="queixarespostaquarta" Type="PacienteVirtualModel.Store.queixarespostaquarta" Multiplicity="1" />
+          <End Role="medicamentoqueixaquarta" Type="PacienteVirtualModel.Store.medicamentoqueixaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixarespostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixaquarta">
+              <PropertyRef Name="fkQueixaQuarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK800BA011D2B646E7">
+          <End Role="respostaquarta" Type="PacienteVirtualModel.Store.respostaquarta" Multiplicity="1" />
+          <End Role="intervencaorespostaquarta" Type="PacienteVirtualModel.Store.intervencaorespostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencaorespostaquarta">
+              <PropertyRef Name="fkResposta4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK8099C4A73D02FC3D">
+          <End Role="queixa" Type="PacienteVirtualModel.Store.queixa" Multiplicity="1" />
+          <End Role="medicamentoqueixa" Type="PacienteVirtualModel.Store.medicamentoqueixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixa">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixa">
+              <PropertyRef Name="fkQueixa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK877B3B565097F805">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="1" />
+          <End Role="respostaterceira" Type="PacienteVirtualModel.Store.respostaterceira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaterceira">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK88D8D79A5097F805">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="1" />
+          <End Role="respostaprimeira" Type="PacienteVirtualModel.Store.respostaprimeira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaprimeira">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK91D9EFAE8A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.Store.casoclinico" Multiplicity="0..1" />
+          <End Role="intervencao" Type="PacienteVirtualModel.Store.intervencao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencao">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKAA358BEF8A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.Store.casoclinico" Multiplicity="0..1" />
+          <End Role="medicamentoprescrito" Type="PacienteVirtualModel.Store.medicamentoprescrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoprescrito">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKAAEE312E8A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.Store.casoclinico" Multiplicity="0..1" />
+          <End Role="parametroclinico" Type="PacienteVirtualModel.Store.parametroclinico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="parametroclinico">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKB29DB8E35097F805">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="1" />
+          <End Role="respostaquarta" Type="PacienteVirtualModel.Store.respostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaquarta">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBF69A97F8A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.Store.casoclinico" Multiplicity="0..1" />
+          <End Role="medicamentonaoprescrito" Type="PacienteVirtualModel.Store.medicamentonaoprescrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentonaoprescrito">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKC773DEB18A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.Store.casoclinico" Multiplicity="0..1" />
+          <End Role="queixa" Type="PacienteVirtualModel.Store.queixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixa">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKD03D22FCA4FE1140">
+          <End Role="respostasegunda" Type="PacienteVirtualModel.Store.respostasegunda" Multiplicity="1" />
+          <End Role="intervencaorespostasegunda" Type="PacienteVirtualModel.Store.intervencaorespostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencaorespostasegunda">
+              <PropertyRef Name="fkResposta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKDE2881F52977839B">
+          <End Role="aluno" Type="PacienteVirtualModel.Store.aluno" Multiplicity="1" />
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aluno">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="fkAluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKDE2881F58A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.Store.casoclinico" Multiplicity="1" />
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEFEE246A5097F805">
+          <End Role="consulta" Type="PacienteVirtualModel.Store.consulta" Multiplicity="1" />
+          <End Role="respostasegunda" Type="PacienteVirtualModel.Store.respostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostasegunda">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKF12E64244E1862F8">
+          <End Role="queixarespostasegunda" Type="PacienteVirtualModel.Store.queixarespostasegunda" Multiplicity="1" />
+          <End Role="medicamentoqueixasegunda" Type="PacienteVirtualModel.Store.medicamentoqueixasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixarespostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixasegunda">
+              <PropertyRef Name="fkQueixaSegunda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKFCF4D80D2B972831">
+          <End Role="tutor" Type="PacienteVirtualModel.Store.tutor" Multiplicity="1" />
+          <End Role="casoclinico" Type="PacienteVirtualModel.Store.casoclinico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tutor">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="casoclinico">
+              <PropertyRef Name="fkTutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKFD098D39A4FE1140">
+          <End Role="respostasegunda" Type="PacienteVirtualModel.Store.respostasegunda" Multiplicity="1" />
+          <End Role="queixarespostasegunda" Type="PacienteVirtualModel.Store.queixarespostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostasegunda">
+              <PropertyRef Name="fkResposta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PacienteVirtualModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="pvEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aluno" EntityType="PacienteVirtualModel.aluno" />
+          <EntitySet Name="casoclinico" EntityType="PacienteVirtualModel.casoclinico" />
+          <EntitySet Name="consulta" EntityType="PacienteVirtualModel.consulta" />
+          <EntitySet Name="intervencao" EntityType="PacienteVirtualModel.intervencao" />
+          <EntitySet Name="intervencaorespostaquarta" EntityType="PacienteVirtualModel.intervencaorespostaquarta" />
+          <EntitySet Name="intervencaorespostasegunda" EntityType="PacienteVirtualModel.intervencaorespostasegunda" />
+          <EntitySet Name="medicamentonaoprescrito" EntityType="PacienteVirtualModel.medicamentonaoprescrito" />
+          <EntitySet Name="medicamentoprescrito" EntityType="PacienteVirtualModel.medicamentoprescrito" />
+          <EntitySet Name="medicamentoqueixa" EntityType="PacienteVirtualModel.medicamentoqueixa" />
+          <EntitySet Name="medicamentoqueixaquarta" EntityType="PacienteVirtualModel.medicamentoqueixaquarta" />
+          <EntitySet Name="medicamentoqueixasegunda" EntityType="PacienteVirtualModel.medicamentoqueixasegunda" />
+          <EntitySet Name="parametroclinico" EntityType="PacienteVirtualModel.parametroclinico" />
+          <EntitySet Name="queixa" EntityType="PacienteVirtualModel.queixa" />
+          <EntitySet Name="queixarespostaprimeira" EntityType="PacienteVirtualModel.queixarespostaprimeira" />
+          <EntitySet Name="queixarespostaquarta" EntityType="PacienteVirtualModel.queixarespostaquarta" />
+          <EntitySet Name="queixarespostasegunda" EntityType="PacienteVirtualModel.queixarespostasegunda" />
+          <EntitySet Name="queixarespostaterceira" EntityType="PacienteVirtualModel.queixarespostaterceira" />
+          <EntitySet Name="respostaprimeira" EntityType="PacienteVirtualModel.respostaprimeira" />
+          <EntitySet Name="respostaquarta" EntityType="PacienteVirtualModel.respostaquarta" />
+          <EntitySet Name="respostasegunda" EntityType="PacienteVirtualModel.respostasegunda" />
+          <EntitySet Name="respostaterceira" EntityType="PacienteVirtualModel.respostaterceira" />
+          <EntitySet Name="TurmaSet" EntityType="PacienteVirtualModel.TurmaE" />
+          <EntitySet Name="tutor" EntityType="PacienteVirtualModel.tutor" />
+          <EntitySet Name="usuario" EntityType="PacienteVirtualModel.usuario" />
+          <AssociationSet Name="FK_aluno_2" Association="PacienteVirtualModel.FK_aluno_2">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="aluno" EntitySet="aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aluno_3" Association="PacienteVirtualModel.FK_aluno_3">
+            <End Role="turma" EntitySet="TurmaSet" />
+            <End Role="aluno" EntitySet="aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_consulta_2" Association="PacienteVirtualModel.FK_consulta_2">
+            <End Role="aluno" EntitySet="aluno" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK589C4EBDD526F1E" Association="PacienteVirtualModel.FK589C4EBDD526F1E">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="aluno" EntitySet="aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FKDE2881F52977839B" Association="PacienteVirtualModel.FKDE2881F52977839B">
+            <End Role="aluno" EntitySet="aluno" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_1" Association="PacienteVirtualModel.FK_Consulta_1">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK91D9EFAE8A1319FF" Association="PacienteVirtualModel.FK91D9EFAE8A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="intervencao" EntitySet="intervencao" />
+          </AssociationSet>
+          <AssociationSet Name="FKAA358BEF8A1319FF" Association="PacienteVirtualModel.FKAA358BEF8A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="medicamentoprescrito" EntitySet="medicamentoprescrito" />
+          </AssociationSet>
+          <AssociationSet Name="FKAAEE312E8A1319FF" Association="PacienteVirtualModel.FKAAEE312E8A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="parametroclinico" EntitySet="parametroclinico" />
+          </AssociationSet>
+          <AssociationSet Name="FKBF69A97F8A1319FF" Association="PacienteVirtualModel.FKBF69A97F8A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="medicamentonaoprescrito" EntitySet="medicamentonaoprescrito" />
+          </AssociationSet>
+          <AssociationSet Name="FKC773DEB18A1319FF" Association="PacienteVirtualModel.FKC773DEB18A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="queixa" EntitySet="queixa" />
+          </AssociationSet>
+          <AssociationSet Name="FKDE2881F58A1319FF" Association="PacienteVirtualModel.FKDE2881F58A1319FF">
+            <End Role="casoclinico" EntitySet="casoclinico" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FKFCF4D80D2B972831" Association="PacienteVirtualModel.FKFCF4D80D2B972831">
+            <End Role="tutor" EntitySet="tutor" />
+            <End Role="casoclinico" EntitySet="casoclinico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_respostaalunoterceira_1" Association="PacienteVirtualModel.FK_respostaalunoterceira_1">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaterceira" EntitySet="respostaterceira" />
+          </AssociationSet>
+          <AssociationSet Name="FK_respostaprimeira_1" Association="PacienteVirtualModel.FK_respostaprimeira_1">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaprimeira" EntitySet="respostaprimeira" />
+          </AssociationSet>
+          <AssociationSet Name="FK_respostaquarta_1" Association="PacienteVirtualModel.FK_respostaquarta_1">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_respostasegunda_1" Association="PacienteVirtualModel.FK_respostasegunda_1">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK877B3B565097F805" Association="PacienteVirtualModel.FK877B3B565097F805">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaterceira" EntitySet="respostaterceira" />
+          </AssociationSet>
+          <AssociationSet Name="FK88D8D79A5097F805" Association="PacienteVirtualModel.FK88D8D79A5097F805">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaprimeira" EntitySet="respostaprimeira" />
+          </AssociationSet>
+          <AssociationSet Name="FKB29DB8E35097F805" Association="PacienteVirtualModel.FKB29DB8E35097F805">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FKEFEE246A5097F805" Association="PacienteVirtualModel.FKEFEE246A5097F805">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_intervencaorespostaquarta_1" Association="PacienteVirtualModel.FK_intervencaorespostaquarta_1">
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+            <End Role="intervencaorespostaquarta" EntitySet="intervencaorespostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK800BA011D2B646E7" Association="PacienteVirtualModel.FK800BA011D2B646E7">
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+            <End Role="intervencaorespostaquarta" EntitySet="intervencaorespostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_intervencaorespostasegunda_1" Association="PacienteVirtualModel.FK_intervencaorespostasegunda_1">
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+            <End Role="intervencaorespostasegunda" EntitySet="intervencaorespostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FKD03D22FCA4FE1140" Association="PacienteVirtualModel.FKD03D22FCA4FE1140">
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+            <End Role="intervencaorespostasegunda" EntitySet="intervencaorespostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_medicamentoqueixa_1" Association="PacienteVirtualModel.FK_medicamentoqueixa_1">
+            <End Role="queixa" EntitySet="queixa" />
+            <End Role="medicamentoqueixa" EntitySet="medicamentoqueixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK8099C4A73D02FC3D" Association="PacienteVirtualModel.FK8099C4A73D02FC3D">
+            <End Role="queixa" EntitySet="queixa" />
+            <End Role="medicamentoqueixa" EntitySet="medicamentoqueixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_medicamentoqueixaquarta_1" Association="PacienteVirtualModel.FK_medicamentoqueixaquarta_1">
+            <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
+            <End Role="medicamentoqueixaquarta" EntitySet="medicamentoqueixaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK78D999E947C18322" Association="PacienteVirtualModel.FK78D999E947C18322">
+            <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
+            <End Role="medicamentoqueixaquarta" EntitySet="medicamentoqueixaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_medicamentoqueixasegunda_1" Association="PacienteVirtualModel.FK_medicamentoqueixasegunda_1">
+            <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+            <End Role="medicamentoqueixasegunda" EntitySet="medicamentoqueixasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FKF12E64244E1862F8" Association="PacienteVirtualModel.FKF12E64244E1862F8">
+            <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+            <End Role="medicamentoqueixasegunda" EntitySet="medicamentoqueixasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_queixarespostaprimeira_1" Association="PacienteVirtualModel.FK_queixarespostaprimeira_1">
+            <End Role="respostaprimeira" EntitySet="respostaprimeira" />
+            <End Role="queixarespostaprimeira" EntitySet="queixarespostaprimeira" />
+          </AssociationSet>
+          <AssociationSet Name="FK1E43344B8872A0F6" Association="PacienteVirtualModel.FK1E43344B8872A0F6">
+            <End Role="respostaprimeira" EntitySet="respostaprimeira" />
+            <End Role="queixarespostaprimeira" EntitySet="queixarespostaprimeira" />
+          </AssociationSet>
+          <AssociationSet Name="FK_queixarespostaquarta_1" Association="PacienteVirtualModel.FK_queixarespostaquarta_1">
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+            <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK5BA98DD4D2B646E7" Association="PacienteVirtualModel.FK5BA98DD4D2B646E7">
+            <End Role="respostaquarta" EntitySet="respostaquarta" />
+            <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
+          </AssociationSet>
+          <AssociationSet Name="FK685CED99A4FE1140" Association="PacienteVirtualModel.FK685CED99A4FE1140">
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+            <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FKFD098D39A4FE1140" Association="PacienteVirtualModel.FKFD098D39A4FE1140">
+            <End Role="respostasegunda" EntitySet="respostasegunda" />
+            <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_queixarespostaterceira_1" Association="PacienteVirtualModel.FK_queixarespostaterceira_1">
+            <End Role="respostaterceira" EntitySet="respostaterceira" />
+            <End Role="queixarespostaterceira" EntitySet="queixarespostaterceira" />
+          </AssociationSet>
+          <AssociationSet Name="FK1CE59807871504B2" Association="PacienteVirtualModel.FK1CE59807871504B2">
+            <End Role="respostaterceira" EntitySet="respostaterceira" />
+            <End Role="queixarespostaterceira" EntitySet="queixarespostaterceira" />
+          </AssociationSet>
+          <AssociationSet Name="FK6998F652B972831" Association="PacienteVirtualModel.FK6998F652B972831">
+            <End Role="tutor" EntitySet="tutor" />
+            <End Role="turma" EntitySet="TurmaSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aluno">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="anoInicioCurso" Type="Int32" Nullable="false" />
+          <Property Name="flCursouAssistenciaFarmaceutica" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flCursouAtencaoFarmaceutica" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flCursouDispencaoFarmaceutica" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flCursouFarmaciaClinica" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flCursouIntroducaoFarmacia" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flCursouSemiologiaFarmaceutica" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flCursouTopicosFarmaciaClinica" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="genero" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="idade" Type="Int32" Nullable="false" />
+          <Property Name="matricula" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="fkTurma" Type="Int32" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="liberado" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="fkConsultaAtual" Type="Int32" />
+          <Property Name="nrConsulta" Type="Int32" Nullable="false" />
+          <Property Name="nrTentativa" Type="Int32" Nullable="false" />
+          <Property Name="flAcessoCasa" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flAcessoCasaAmigo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flAcessoOutro" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="flAcessoUniversidade" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="consulta" Relationship="PacienteVirtualModel.FK_aluno_2" FromRole="aluno" ToRole="consulta" />
+          <NavigationProperty Name="turma" Relationship="PacienteVirtualModel.FK_aluno_3" FromRole="aluno" ToRole="turma" />
+          <NavigationProperty Name="consulta1" Relationship="PacienteVirtualModel.FK_consulta_2" FromRole="aluno" ToRole="consulta" />
+          <NavigationProperty Name="consulta2" Relationship="PacienteVirtualModel.FK589C4EBDD526F1E" FromRole="aluno" ToRole="consulta" />
+          <NavigationProperty Name="consulta3" Relationship="PacienteVirtualModel.FKDE2881F52977839B" FromRole="aluno" ToRole="consulta" />
+        </EntityType>
+        <EntityType Name="casoclinico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="alergias" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="altura" Type="Single" Nullable="false" />
+          <Property Name="dataNascimento" Type="DateTime" />
+          <Property Name="disponibilidade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="escolaridade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flBebeAlcool" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flBebeCafe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flFuma" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="genero" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="medicosQueAtendem" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="moradiaFamilia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="nome" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ocupacao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="peso" Type="Single" Nullable="false" />
+          <Property Name="planoDeSaude" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="pressaoDiastolica" Type="Int32" Nullable="false" />
+          <Property Name="pressaoSistolica" Type="Int32" Nullable="false" />
+          <Property Name="relatoDeCasoPrimeiraConsulta" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="relatoDeCasoTerceiraConsulta" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="temperatura" Type="Single" Nullable="false" />
+          <Property Name="fkTutor" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaAlcoolAnterior" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaAlcoolAtual" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaCafeAnterior" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaCafeAtual" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaTabacoAnterior" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaTabacoAtual" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="peso2" Type="Single" />
+          <Property Name="pressaoDiastolica2" Type="Int32" />
+          <Property Name="pressaoSistolica2" Type="Int32" />
+          <Property Name="temperatura2" Type="Single" />
+          <Property Name="tipoBebidaAlcoolica" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="consulta" Relationship="PacienteVirtualModel.FK_Consulta_1" FromRole="casoclinico" ToRole="consulta" />
+          <NavigationProperty Name="intervencao" Relationship="PacienteVirtualModel.FK91D9EFAE8A1319FF" FromRole="casoclinico" ToRole="intervencao" />
+          <NavigationProperty Name="medicamentoprescrito" Relationship="PacienteVirtualModel.FKAA358BEF8A1319FF" FromRole="casoclinico" ToRole="medicamentoprescrito" />
+          <NavigationProperty Name="parametroclinico" Relationship="PacienteVirtualModel.FKAAEE312E8A1319FF" FromRole="casoclinico" ToRole="parametroclinico" />
+          <NavigationProperty Name="medicamentonaoprescrito" Relationship="PacienteVirtualModel.FKBF69A97F8A1319FF" FromRole="casoclinico" ToRole="medicamentonaoprescrito" />
+          <NavigationProperty Name="queixa" Relationship="PacienteVirtualModel.FKC773DEB18A1319FF" FromRole="casoclinico" ToRole="queixa" />
+          <NavigationProperty Name="consulta1" Relationship="PacienteVirtualModel.FKDE2881F58A1319FF" FromRole="casoclinico" ToRole="consulta" />
+          <NavigationProperty Name="tutor" Relationship="PacienteVirtualModel.FKFCF4D80D2B972831" FromRole="casoclinico" ToRole="tutor" />
+        </EntityType>
+        <EntityType Name="consulta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fkCasoClinico" Type="Int32" Nullable="false" />
+          <Property Name="fkAluno" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="aluno" Relationship="PacienteVirtualModel.FK_aluno_2" FromRole="consulta" ToRole="aluno" />
+          <NavigationProperty Name="aluno1" Relationship="PacienteVirtualModel.FK_consulta_2" FromRole="consulta" ToRole="aluno" />
+          <NavigationProperty Name="aluno2" Relationship="PacienteVirtualModel.FK589C4EBDD526F1E" FromRole="consulta" ToRole="aluno" />
+          <NavigationProperty Name="aluno3" Relationship="PacienteVirtualModel.FKDE2881F52977839B" FromRole="consulta" ToRole="aluno" />
+          <NavigationProperty Name="casoclinico" Relationship="PacienteVirtualModel.FK_Consulta_1" FromRole="consulta" ToRole="casoclinico" />
+          <NavigationProperty Name="casoclinico1" Relationship="PacienteVirtualModel.FKDE2881F58A1319FF" FromRole="consulta" ToRole="casoclinico" />
+          <NavigationProperty Name="respostaterceira" Relationship="PacienteVirtualModel.FK_respostaalunoterceira_1" FromRole="consulta" ToRole="respostaterceira" />
+          <NavigationProperty Name="respostaprimeira" Relationship="PacienteVirtualModel.FK_respostaprimeira_1" FromRole="consulta" ToRole="respostaprimeira" />
+          <NavigationProperty Name="respostaquarta" Relationship="PacienteVirtualModel.FK_respostaquarta_1" FromRole="consulta" ToRole="respostaquarta" />
+          <NavigationProperty Name="respostasegunda" Relationship="PacienteVirtualModel.FK_respostasegunda_1" FromRole="consulta" ToRole="respostasegunda" />
+          <NavigationProperty Name="respostaterceira1" Relationship="PacienteVirtualModel.FK877B3B565097F805" FromRole="consulta" ToRole="respostaterceira" />
+          <NavigationProperty Name="respostaprimeira1" Relationship="PacienteVirtualModel.FK88D8D79A5097F805" FromRole="consulta" ToRole="respostaprimeira" />
+          <NavigationProperty Name="respostaquarta1" Relationship="PacienteVirtualModel.FKB29DB8E35097F805" FromRole="consulta" ToRole="respostaquarta" />
+          <NavigationProperty Name="respostasegunda1" Relationship="PacienteVirtualModel.FKEFEE246A5097F805" FromRole="consulta" ToRole="respostasegunda" />
+        </EntityType>
+        <EntityType Name="intervencao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="numeroEtapa" Type="Int32" Nullable="false" />
+          <Property Name="numeroIntervencao" Type="Int32" Nullable="false" />
+          <Property Name="fkCasoClinico" Type="Int32" />
+          <NavigationProperty Name="casoclinico" Relationship="PacienteVirtualModel.FK91D9EFAE8A1319FF" FromRole="intervencao" ToRole="casoclinico" />
+        </EntityType>
+        <EntityType Name="intervencaorespostaquarta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="justificativa" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="numeroIntervencao" Type="Int32" Nullable="false" />
+          <Property Name="fkResposta4" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="respostaquarta" Relationship="PacienteVirtualModel.FK_intervencaorespostaquarta_1" FromRole="intervencaorespostaquarta" ToRole="respostaquarta" />
+          <NavigationProperty Name="respostaquarta1" Relationship="PacienteVirtualModel.FK800BA011D2B646E7" FromRole="intervencaorespostaquarta" ToRole="respostaquarta" />
+        </EntityType>
+        <EntityType Name="intervencaorespostasegunda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="justificativa" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="numeroIntervencao" Type="Int32" />
+          <Property Name="fkResposta2" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="respostasegunda" Relationship="PacienteVirtualModel.FK_intervencaorespostasegunda_1" FromRole="intervencaorespostasegunda" ToRole="respostasegunda" />
+          <NavigationProperty Name="respostasegunda1" Relationship="PacienteVirtualModel.FKD03D22FCA4FE1140" FromRole="intervencaorespostasegunda" ToRole="respostasegunda" />
+        </EntityType>
+        <EntityType Name="medicamentonaoprescrito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="dosagem" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="posologia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="fkCasoClinico" Type="Int32" />
+          <Property Name="flItalico" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="casoclinico" Relationship="PacienteVirtualModel.FKBF69A97F8A1319FF" FromRole="medicamentonaoprescrito" ToRole="casoclinico" />
+        </EntityType>
+        <EntityType Name="medicamentoprescrito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="dosagem" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="especialidadeMedico" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="nmMedico" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="posologia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="fkCasoClinico" Type="Int32" />
+          <Property Name="flItalico" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="casoclinico" Relationship="PacienteVirtualModel.FKAA358BEF8A1319FF" FromRole="medicamentoprescrito" ToRole="casoclinico" />
+        </EntityType>
+        <EntityType Name="medicamentoqueixa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="dose" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="efetivo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="necessario" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="periodo" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="seguro" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="cumprimento" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="fkQueixa" Type="Int32" Nullable="false" />
+          <Property Name="conheceCumpre" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="queixa" Relationship="PacienteVirtualModel.FK_medicamentoqueixa_1" FromRole="medicamentoqueixa" ToRole="queixa" />
+          <NavigationProperty Name="queixa1" Relationship="PacienteVirtualModel.FK8099C4A73D02FC3D" FromRole="medicamentoqueixa" ToRole="queixa" />
+        </EntityType>
+        <EntityType Name="medicamentoqueixaquarta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="dose" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="efetivo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="necessario" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="periodo" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="seguro" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="cumprimento" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="fkQueixaQuarta" Type="Int32" Nullable="false" />
+          <Property Name="conheceCumpre" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="queixarespostaquarta" Relationship="PacienteVirtualModel.FK_medicamentoqueixaquarta_1" FromRole="medicamentoqueixaquarta" ToRole="queixarespostaquarta" />
+          <NavigationProperty Name="queixarespostaquarta1" Relationship="PacienteVirtualModel.FK78D999E947C18322" FromRole="medicamentoqueixaquarta" ToRole="queixarespostaquarta" />
+        </EntityType>
+        <EntityType Name="medicamentoqueixasegunda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="dose" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="efetivo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="necessario" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="periodo" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="seguro" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="cumprimento" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="fkQueixaSegunda" Type="Int32" Nullable="false" />
+          <Property Name="conheceCumpre" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="queixarespostasegunda" Relationship="PacienteVirtualModel.FK_medicamentoqueixasegunda_1" FromRole="medicamentoqueixasegunda" ToRole="queixarespostasegunda" />
+          <NavigationProperty Name="queixarespostasegunda1" Relationship="PacienteVirtualModel.FKF12E64244E1862F8" FromRole="medicamentoqueixasegunda" ToRole="queixarespostasegunda" />
+        </EntityType>
+        <EntityType Name="parametroclinico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="unidade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="valor" Type="Single" Nullable="false" />
+          <Property Name="valorDeReferencia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="fkCasoClinico" Type="Int32" />
+          <NavigationProperty Name="casoclinico" Relationship="PacienteVirtualModel.FKAAEE312E8A1319FF" FromRole="parametroclinico" ToRole="casoclinico" />
+        </EntityType>
+        <EntityType Name="queixa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="numeroEtapa" Type="Int32" Nullable="false" />
+          <Property Name="numeroPRM" Type="Int32" Nullable="false" />
+          <Property Name="fkCasoClinico" Type="Int32" />
+          <Property Name="conheceOuPreocupa" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="periodoSurgimento" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="prioridade" Type="Int32" />
+          <NavigationProperty Name="casoclinico" Relationship="PacienteVirtualModel.FKC773DEB18A1319FF" FromRole="queixa" ToRole="casoclinico" />
+          <NavigationProperty Name="medicamentoqueixa" Relationship="PacienteVirtualModel.FK_medicamentoqueixa_1" FromRole="queixa" ToRole="medicamentoqueixa" />
+          <NavigationProperty Name="medicamentoqueixa1" Relationship="PacienteVirtualModel.FK8099C4A73D02FC3D" FromRole="queixa" ToRole="medicamentoqueixa" />
+        </EntityType>
+        <EntityType Name="queixarespostaprimeira">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="fkResposta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="respostaprimeira" Relationship="PacienteVirtualModel.FK_queixarespostaprimeira_1" FromRole="queixarespostaprimeira" ToRole="respostaprimeira" />
+          <NavigationProperty Name="respostaprimeira1" Relationship="PacienteVirtualModel.FK1E43344B8872A0F6" FromRole="queixarespostaprimeira" ToRole="respostaprimeira" />
+        </EntityType>
+        <EntityType Name="queixarespostaquarta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numeroPRM" Type="Int32" Nullable="false" />
+          <Property Name="fkResposta4" Type="Int32" Nullable="false" />
+          <Property Name="periodoSurgimento" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="flConheceOuPreocupa" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="prioridade" Type="Int64" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="125" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="medicamentoqueixaquarta" Relationship="PacienteVirtualModel.FK_medicamentoqueixaquarta_1" FromRole="queixarespostaquarta" ToRole="medicamentoqueixaquarta" />
+          <NavigationProperty Name="medicamentoqueixaquarta1" Relationship="PacienteVirtualModel.FK78D999E947C18322" FromRole="queixarespostaquarta" ToRole="medicamentoqueixaquarta" />
+          <NavigationProperty Name="respostaquarta" Relationship="PacienteVirtualModel.FK_queixarespostaquarta_1" FromRole="queixarespostaquarta" ToRole="respostaquarta" />
+          <NavigationProperty Name="respostaquarta1" Relationship="PacienteVirtualModel.FK5BA98DD4D2B646E7" FromRole="queixarespostaquarta" ToRole="respostaquarta" />
+        </EntityType>
+        <EntityType Name="queixarespostasegunda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numeroPRM" Type="Int32" Nullable="false" />
+          <Property Name="fkResposta2" Type="Int32" Nullable="false" />
+          <Property Name="flConheceOuPreocupa" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="prioridade" Type="Int64" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="125" Unicode="false" FixedLength="false" />
+          <Property Name="periodoSurgimento" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="medicamentoqueixasegunda" Relationship="PacienteVirtualModel.FK_medicamentoqueixasegunda_1" FromRole="queixarespostasegunda" ToRole="medicamentoqueixasegunda" />
+          <NavigationProperty Name="medicamentoqueixasegunda1" Relationship="PacienteVirtualModel.FKF12E64244E1862F8" FromRole="queixarespostasegunda" ToRole="medicamentoqueixasegunda" />
+          <NavigationProperty Name="respostasegunda" Relationship="PacienteVirtualModel.FK685CED99A4FE1140" FromRole="queixarespostasegunda" ToRole="respostasegunda" />
+          <NavigationProperty Name="respostasegunda1" Relationship="PacienteVirtualModel.FKFD098D39A4FE1140" FromRole="queixarespostasegunda" ToRole="respostasegunda" />
+        </EntityType>
+        <EntityType Name="queixarespostaterceira">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="fkResposta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="respostaterceira" Relationship="PacienteVirtualModel.FK_queixarespostaterceira_1" FromRole="queixarespostaterceira" ToRole="respostaterceira" />
+          <NavigationProperty Name="respostaterceira1" Relationship="PacienteVirtualModel.FK1CE59807871504B2" FromRole="queixarespostaterceira" ToRole="respostaterceira" />
+        </EntityType>
+        <EntityType Name="respostaprimeira">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="alergias" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="altura" Type="Single" Nullable="false" />
+          <Property Name="dataDeRealizacao" Type="DateTime" />
+          <Property Name="dataNascimento" Type="DateTime" />
+          <Property Name="escolaridade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flAlturaCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flBebeAlcool" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flBebeAlcoolCerto" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flBebeCafe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flBebeCafeCerto" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flDataNascimentoCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flEscolaridadeCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flFuma" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flFumaCerto" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flGeneroCerto" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flIMCCerto" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flNomeCerto" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flOcupacaoCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flPesoCerto" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flPressaoDiastolicaCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flPressaoSistolicaCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="flTemperaturaCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="genero" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="IMC" Type="Single" />
+          <Property Name="medicosQueAtendem" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="moradiaFamilia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="nome" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ocupacao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="peso" Type="Single" Nullable="false" />
+          <Property Name="pressaoDiastolica" Type="Int32" Nullable="false" />
+          <Property Name="pressaoSistolica" Type="Int32" Nullable="false" />
+          <Property Name="temperatura" Type="Single" Nullable="false" />
+          <Property Name="planoDeSaude" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="numeroTentativa" Type="Int64" Nullable="false" />
+          <Property Name="fkConsulta" Type="Int32" Nullable="false" />
+          <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="comentario" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="comentarioAluno" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="nota" Type="Single" Nullable="false" />
+          <Property Name="historiaAlcoolAnterior" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaAlcoolAtual" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaCafeAnterior" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaCafeAtual" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaTabacoAnterior" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="historiaTabacoAtual" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="tipoBebidaAlcoolica" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="consulta" Relationship="PacienteVirtualModel.FK_respostaprimeira_1" FromRole="respostaprimeira" ToRole="consulta" />
+          <NavigationProperty Name="consulta1" Relationship="PacienteVirtualModel.FK88D8D79A5097F805" FromRole="respostaprimeira" ToRole="consulta" />
+          <NavigationProperty Name="queixarespostaprimeira" Relationship="PacienteVirtualModel.FK_queixarespostaprimeira_1" FromRole="respostaprimeira" ToRole="queixarespostaprimeira" />
+          <NavigationProperty Name="queixarespostaprimeira1" Relationship="PacienteVirtualModel.FK1E43344B8872A0F6" FromRole="respostaprimeira" ToRole="queixarespostaprimeira" />
+        </EntityType>
+        <EntityType Name="respostaquarta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" />
+          <Property Name="fkConsulta" Type="Int32" Nullable="false" />
+          <Property Name="numeroTentativa" Type="Int32" Nullable="false" />
+          <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="comentario" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="comentarioAluno" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="nota" Type="Single" />
+          <Property Name="carta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="consulta" Relationship="PacienteVirtualModel.FK_respostaquarta_1" FromRole="respostaquarta" ToRole="consulta" />
+          <NavigationProperty Name="consulta1" Relationship="PacienteVirtualModel.FKB29DB8E35097F805" FromRole="respostaquarta" ToRole="consulta" />
+          <NavigationProperty Name="intervencaorespostaquarta" Relationship="PacienteVirtualModel.FK_intervencaorespostaquarta_1" FromRole="respostaquarta" ToRole="intervencaorespostaquarta" />
+          <NavigationProperty Name="intervencaorespostaquarta1" Relationship="PacienteVirtualModel.FK800BA011D2B646E7" FromRole="respostaquarta" ToRole="intervencaorespostaquarta" />
+          <NavigationProperty Name="queixarespostaquarta" Relationship="PacienteVirtualModel.FK_queixarespostaquarta_1" FromRole="respostaquarta" ToRole="queixarespostaquarta" />
+          <NavigationProperty Name="queixarespostaquarta1" Relationship="PacienteVirtualModel.FK5BA98DD4D2B646E7" FromRole="respostaquarta" ToRole="queixarespostaquarta" />
+        </EntityType>
+        <EntityType Name="respostasegunda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" />
+          <Property Name="fkConsulta" Type="Int32" Nullable="false" />
+          <Property Name="numeroTentativa" Type="Int32" Nullable="false" />
+          <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="comentario" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="comentarioAluno" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="nota" Type="Single" />
+          <Property Name="carta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="consulta" Relationship="PacienteVirtualModel.FK_respostasegunda_1" FromRole="respostasegunda" ToRole="consulta" />
+          <NavigationProperty Name="consulta1" Relationship="PacienteVirtualModel.FKEFEE246A5097F805" FromRole="respostasegunda" ToRole="consulta" />
+          <NavigationProperty Name="intervencaorespostasegunda" Relationship="PacienteVirtualModel.FK_intervencaorespostasegunda_1" FromRole="respostasegunda" ToRole="intervencaorespostasegunda" />
+          <NavigationProperty Name="intervencaorespostasegunda1" Relationship="PacienteVirtualModel.FKD03D22FCA4FE1140" FromRole="respostasegunda" ToRole="intervencaorespostasegunda" />
+          <NavigationProperty Name="queixarespostasegunda" Relationship="PacienteVirtualModel.FK685CED99A4FE1140" FromRole="respostasegunda" ToRole="queixarespostasegunda" />
+          <NavigationProperty Name="queixarespostasegunda1" Relationship="PacienteVirtualModel.FKFD098D39A4FE1140" FromRole="respostasegunda" ToRole="queixarespostasegunda" />
+        </EntityType>
+        <EntityType Name="respostaterceira">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="temperatura" Type="Single" />
+          <Property Name="pressaosistolica" Type="Int64" />
+          <Property Name="pressaodiastolica" Type="Int64" />
+          <Property Name="peso" Type="Single" />
+          <Property Name="fkConsulta" Type="Int32" Nullable="false" />
+          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" />
+          <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="comentario" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="comentarioAluno" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="nota" Type="Single" />
+          <Property Name="imc" Type="Single" Nullable="false" />
+          <NavigationProperty Name="consulta" Relationship="PacienteVirtualModel.FK_respostaalunoterceira_1" FromRole="respostaterceira" ToRole="consulta" />
+          <NavigationProperty Name="consulta1" Relationship="PacienteVirtualModel.FK877B3B565097F805" FromRole="respostaterceira" ToRole="consulta" />
+          <NavigationProperty Name="queixarespostaterceira" Relationship="PacienteVirtualModel.FK_queixarespostaterceira_1" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
+          <NavigationProperty Name="queixarespostaterceira1" Relationship="PacienteVirtualModel.FK1CE59807871504B2" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
+        </EntityType>
+        <EntityType Name="TurmaE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="periodo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="fktutor" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="nmDisciplina" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="aluno" Relationship="PacienteVirtualModel.FK_aluno_3" FromRole="turma" ToRole="aluno" />
+          <NavigationProperty Name="tutor" Relationship="PacienteVirtualModel.FK6998F652B972831" FromRole="turma" ToRole="tutor" />
+        </EntityType>
+        <EntityType Name="tutor">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="nome" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="casoclinico" Relationship="PacienteVirtualModel.FKFCF4D80D2B972831" FromRole="tutor" ToRole="casoclinico" />
+          <NavigationProperty Name="turma" Relationship="PacienteVirtualModel.FK6998F652B972831" FromRole="tutor" ToRole="turma" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="senha" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="tpUsuario" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="nome" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_aluno_2">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="0..1" />
+          <End Role="aluno" Type="PacienteVirtualModel.aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="aluno">
+              <PropertyRef Name="fkConsultaAtual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aluno_3">
+          <End Role="turma" Type="PacienteVirtualModel.TurmaE" Multiplicity="0..1" />
+          <End Role="aluno" Type="PacienteVirtualModel.aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="turma">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="aluno">
+              <PropertyRef Name="fkTurma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_consulta_2">
+          <End Role="aluno" Type="PacienteVirtualModel.aluno" Multiplicity="1" />
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aluno">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="fkAluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK589C4EBDD526F1E">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="0..1" />
+          <End Role="aluno" Type="PacienteVirtualModel.aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="aluno">
+              <PropertyRef Name="fkConsultaAtual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKDE2881F52977839B">
+          <End Role="aluno" Type="PacienteVirtualModel.aluno" Multiplicity="1" />
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aluno">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="fkAluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_1">
+          <End Role="casoclinico" Type="PacienteVirtualModel.casoclinico" Multiplicity="1" />
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK91D9EFAE8A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.casoclinico" Multiplicity="0..1" />
+          <End Role="intervencao" Type="PacienteVirtualModel.intervencao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencao">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKAA358BEF8A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.casoclinico" Multiplicity="0..1" />
+          <End Role="medicamentoprescrito" Type="PacienteVirtualModel.medicamentoprescrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoprescrito">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKAAEE312E8A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.casoclinico" Multiplicity="0..1" />
+          <End Role="parametroclinico" Type="PacienteVirtualModel.parametroclinico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="parametroclinico">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBF69A97F8A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.casoclinico" Multiplicity="0..1" />
+          <End Role="medicamentonaoprescrito" Type="PacienteVirtualModel.medicamentonaoprescrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentonaoprescrito">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKC773DEB18A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.casoclinico" Multiplicity="0..1" />
+          <End Role="queixa" Type="PacienteVirtualModel.queixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixa">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKDE2881F58A1319FF">
+          <End Role="casoclinico" Type="PacienteVirtualModel.casoclinico" Multiplicity="1" />
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casoclinico">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="fkCasoClinico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKFCF4D80D2B972831">
+          <End Role="tutor" Type="PacienteVirtualModel.tutor" Multiplicity="1" />
+          <End Role="casoclinico" Type="PacienteVirtualModel.casoclinico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tutor">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="casoclinico">
+              <PropertyRef Name="fkTutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_respostaalunoterceira_1">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="1" />
+          <End Role="respostaterceira" Type="PacienteVirtualModel.respostaterceira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaterceira">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_respostaprimeira_1">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="1" />
+          <End Role="respostaprimeira" Type="PacienteVirtualModel.respostaprimeira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaprimeira">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_respostaquarta_1">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="1" />
+          <End Role="respostaquarta" Type="PacienteVirtualModel.respostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaquarta">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_respostasegunda_1">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="1" />
+          <End Role="respostasegunda" Type="PacienteVirtualModel.respostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostasegunda">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK877B3B565097F805">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="1" />
+          <End Role="respostaterceira" Type="PacienteVirtualModel.respostaterceira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaterceira">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK88D8D79A5097F805">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="1" />
+          <End Role="respostaprimeira" Type="PacienteVirtualModel.respostaprimeira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaprimeira">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKB29DB8E35097F805">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="1" />
+          <End Role="respostaquarta" Type="PacienteVirtualModel.respostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostaquarta">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEFEE246A5097F805">
+          <End Role="consulta" Type="PacienteVirtualModel.consulta" Multiplicity="1" />
+          <End Role="respostasegunda" Type="PacienteVirtualModel.respostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="respostasegunda">
+              <PropertyRef Name="fkConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_intervencaorespostaquarta_1">
+          <End Role="respostaquarta" Type="PacienteVirtualModel.respostaquarta" Multiplicity="1" />
+          <End Role="intervencaorespostaquarta" Type="PacienteVirtualModel.intervencaorespostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencaorespostaquarta">
+              <PropertyRef Name="fkResposta4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK800BA011D2B646E7">
+          <End Role="respostaquarta" Type="PacienteVirtualModel.respostaquarta" Multiplicity="1" />
+          <End Role="intervencaorespostaquarta" Type="PacienteVirtualModel.intervencaorespostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencaorespostaquarta">
+              <PropertyRef Name="fkResposta4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_intervencaorespostasegunda_1">
+          <End Role="respostasegunda" Type="PacienteVirtualModel.respostasegunda" Multiplicity="1" />
+          <End Role="intervencaorespostasegunda" Type="PacienteVirtualModel.intervencaorespostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencaorespostasegunda">
+              <PropertyRef Name="fkResposta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKD03D22FCA4FE1140">
+          <End Role="respostasegunda" Type="PacienteVirtualModel.respostasegunda" Multiplicity="1" />
+          <End Role="intervencaorespostasegunda" Type="PacienteVirtualModel.intervencaorespostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="intervencaorespostasegunda">
+              <PropertyRef Name="fkResposta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_medicamentoqueixa_1">
+          <End Role="queixa" Type="PacienteVirtualModel.queixa" Multiplicity="1" />
+          <End Role="medicamentoqueixa" Type="PacienteVirtualModel.medicamentoqueixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixa">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixa">
+              <PropertyRef Name="fkQueixa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK8099C4A73D02FC3D">
+          <End Role="queixa" Type="PacienteVirtualModel.queixa" Multiplicity="1" />
+          <End Role="medicamentoqueixa" Type="PacienteVirtualModel.medicamentoqueixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixa">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixa">
+              <PropertyRef Name="fkQueixa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_medicamentoqueixaquarta_1">
+          <End Role="queixarespostaquarta" Type="PacienteVirtualModel.queixarespostaquarta" Multiplicity="1" />
+          <End Role="medicamentoqueixaquarta" Type="PacienteVirtualModel.medicamentoqueixaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixarespostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixaquarta">
+              <PropertyRef Name="fkQueixaQuarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK78D999E947C18322">
+          <End Role="queixarespostaquarta" Type="PacienteVirtualModel.queixarespostaquarta" Multiplicity="1" />
+          <End Role="medicamentoqueixaquarta" Type="PacienteVirtualModel.medicamentoqueixaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixarespostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixaquarta">
+              <PropertyRef Name="fkQueixaQuarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_medicamentoqueixasegunda_1">
+          <End Role="queixarespostasegunda" Type="PacienteVirtualModel.queixarespostasegunda" Multiplicity="1" />
+          <End Role="medicamentoqueixasegunda" Type="PacienteVirtualModel.medicamentoqueixasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixarespostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixasegunda">
+              <PropertyRef Name="fkQueixaSegunda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKF12E64244E1862F8">
+          <End Role="queixarespostasegunda" Type="PacienteVirtualModel.queixarespostasegunda" Multiplicity="1" />
+          <End Role="medicamentoqueixasegunda" Type="PacienteVirtualModel.medicamentoqueixasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="queixarespostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="medicamentoqueixasegunda">
+              <PropertyRef Name="fkQueixaSegunda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_queixarespostaprimeira_1">
+          <End Role="respostaprimeira" Type="PacienteVirtualModel.respostaprimeira" Multiplicity="1" />
+          <End Role="queixarespostaprimeira" Type="PacienteVirtualModel.queixarespostaprimeira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaprimeira">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaprimeira">
+              <PropertyRef Name="fkResposta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK1E43344B8872A0F6">
+          <End Role="respostaprimeira" Type="PacienteVirtualModel.respostaprimeira" Multiplicity="1" />
+          <End Role="queixarespostaprimeira" Type="PacienteVirtualModel.queixarespostaprimeira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaprimeira">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaprimeira">
+              <PropertyRef Name="fkResposta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_queixarespostaquarta_1">
+          <End Role="respostaquarta" Type="PacienteVirtualModel.respostaquarta" Multiplicity="1" />
+          <End Role="queixarespostaquarta" Type="PacienteVirtualModel.queixarespostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaquarta">
+              <PropertyRef Name="fkResposta4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK5BA98DD4D2B646E7">
+          <End Role="respostaquarta" Type="PacienteVirtualModel.respostaquarta" Multiplicity="1" />
+          <End Role="queixarespostaquarta" Type="PacienteVirtualModel.queixarespostaquarta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaquarta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaquarta">
+              <PropertyRef Name="fkResposta4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK685CED99A4FE1140">
+          <End Role="respostasegunda" Type="PacienteVirtualModel.respostasegunda" Multiplicity="1" />
+          <End Role="queixarespostasegunda" Type="PacienteVirtualModel.queixarespostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostasegunda">
+              <PropertyRef Name="fkResposta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKFD098D39A4FE1140">
+          <End Role="respostasegunda" Type="PacienteVirtualModel.respostasegunda" Multiplicity="1" />
+          <End Role="queixarespostasegunda" Type="PacienteVirtualModel.queixarespostasegunda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostasegunda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostasegunda">
+              <PropertyRef Name="fkResposta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_queixarespostaterceira_1">
+          <End Role="respostaterceira" Type="PacienteVirtualModel.respostaterceira" Multiplicity="1" />
+          <End Role="queixarespostaterceira" Type="PacienteVirtualModel.queixarespostaterceira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaterceira">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaterceira">
+              <PropertyRef Name="fkResposta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK1CE59807871504B2">
+          <End Role="respostaterceira" Type="PacienteVirtualModel.respostaterceira" Multiplicity="1" />
+          <End Role="queixarespostaterceira" Type="PacienteVirtualModel.queixarespostaterceira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="respostaterceira">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="queixarespostaterceira">
+              <PropertyRef Name="fkResposta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK6998F652B972831">
+          <End Role="tutor" Type="PacienteVirtualModel.tutor" Multiplicity="0..1" />
+          <End Role="turma" Type="PacienteVirtualModel.TurmaE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tutor">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="turma">
+              <PropertyRef Name="fktutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PacienteVirtualModelStoreContainer" CdmEntityContainer="pvEntities">
+          <EntitySetMapping Name="aluno"><EntityTypeMapping TypeName="PacienteVirtualModel.aluno"><MappingFragment StoreEntitySet="aluno">
+            <ScalarProperty Name="login" ColumnName="login" />
+            <ScalarProperty Name="anoInicioCurso" ColumnName="anoInicioCurso" />
+            <ScalarProperty Name="flCursouAssistenciaFarmaceutica" ColumnName="flCursouAssistenciaFarmaceutica" />
+            <ScalarProperty Name="flCursouAtencaoFarmaceutica" ColumnName="flCursouAtencaoFarmaceutica" />
+            <ScalarProperty Name="flCursouDispencaoFarmaceutica" ColumnName="flCursouDispencaoFarmaceutica" />
+            <ScalarProperty Name="flCursouFarmaciaClinica" ColumnName="flCursouFarmaciaClinica" />
+            <ScalarProperty Name="flCursouIntroducaoFarmacia" ColumnName="flCursouIntroducaoFarmacia" />
+            <ScalarProperty Name="flCursouSemiologiaFarmaceutica" ColumnName="flCursouSemiologiaFarmaceutica" />
+            <ScalarProperty Name="flCursouTopicosFarmaciaClinica" ColumnName="flCursouTopicosFarmaciaClinica" />
+            <ScalarProperty Name="genero" ColumnName="genero" />
+            <ScalarProperty Name="idade" ColumnName="idade" />
+            <ScalarProperty Name="matricula" ColumnName="matricula" />
+            <ScalarProperty Name="fkTurma" ColumnName="fkTurma" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+            <ScalarProperty Name="liberado" ColumnName="liberado" />
+            <ScalarProperty Name="fkConsultaAtual" ColumnName="fkConsultaAtual" />
+            <ScalarProperty Name="nrConsulta" ColumnName="nrConsulta" />
+            <ScalarProperty Name="nrTentativa" ColumnName="nrTentativa" />
+            <ScalarProperty Name="flAcessoCasa" ColumnName="flAcessoCasa" />
+            <ScalarProperty Name="flAcessoCasaAmigo" ColumnName="flAcessoCasaAmigo" />
+            <ScalarProperty Name="flAcessoOutro" ColumnName="flAcessoOutro" />
+            <ScalarProperty Name="flAcessoUniversidade" ColumnName="flAcessoUniversidade" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="casoclinico"><EntityTypeMapping TypeName="PacienteVirtualModel.casoclinico"><MappingFragment StoreEntitySet="casoclinico">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="alergias" ColumnName="alergias" />
+            <ScalarProperty Name="altura" ColumnName="altura" />
+            <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+            <ScalarProperty Name="disponibilidade" ColumnName="disponibilidade" />
+            <ScalarProperty Name="escolaridade" ColumnName="escolaridade" />
+            <ScalarProperty Name="flBebeAlcool" ColumnName="flBebeAlcool" />
+            <ScalarProperty Name="flBebeCafe" ColumnName="flBebeCafe" />
+            <ScalarProperty Name="flFuma" ColumnName="flFuma" />
+            <ScalarProperty Name="genero" ColumnName="genero" />
+            <ScalarProperty Name="medicosQueAtendem" ColumnName="medicosQueAtendem" />
+            <ScalarProperty Name="moradiaFamilia" ColumnName="moradiaFamilia" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+            <ScalarProperty Name="ocupacao" ColumnName="ocupacao" />
+            <ScalarProperty Name="peso" ColumnName="peso" />
+            <ScalarProperty Name="planoDeSaude" ColumnName="planoDeSaude" />
+            <ScalarProperty Name="pressaoDiastolica" ColumnName="pressaoDiastolica" />
+            <ScalarProperty Name="pressaoSistolica" ColumnName="pressaoSistolica" />
+            <ScalarProperty Name="relatoDeCasoPrimeiraConsulta" ColumnName="relatoDeCasoPrimeiraConsulta" />
+            <ScalarProperty Name="relatoDeCasoTerceiraConsulta" ColumnName="relatoDeCasoTerceiraConsulta" />
+            <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+            <ScalarProperty Name="fkTutor" ColumnName="fkTutor" />
+            <ScalarProperty Name="historiaAlcoolAnterior" ColumnName="historiaAlcoolAnterior" />
+            <ScalarProperty Name="historiaAlcoolAtual" ColumnName="historiaAlcoolAtual" />
+            <ScalarProperty Name="historiaCafeAnterior" ColumnName="historiaCafeAnterior" />
+            <ScalarProperty Name="historiaCafeAtual" ColumnName="historiaCafeAtual" />
+            <ScalarProperty Name="historiaTabacoAnterior" ColumnName="historiaTabacoAnterior" />
+            <ScalarProperty Name="historiaTabacoAtual" ColumnName="historiaTabacoAtual" />
+            <ScalarProperty Name="peso2" ColumnName="peso2" />
+            <ScalarProperty Name="pressaoDiastolica2" ColumnName="pressaoDiastolica2" />
+            <ScalarProperty Name="pressaoSistolica2" ColumnName="pressaoSistolica2" />
+            <ScalarProperty Name="temperatura2" ColumnName="temperatura2" />
+            <ScalarProperty Name="tipoBebidaAlcoolica" ColumnName="tipoBebidaAlcoolica" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="consulta"><EntityTypeMapping TypeName="PacienteVirtualModel.consulta"><MappingFragment StoreEntitySet="consulta">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+            <ScalarProperty Name="fkAluno" ColumnName="fkAluno" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="intervencao"><EntityTypeMapping TypeName="PacienteVirtualModel.intervencao"><MappingFragment StoreEntitySet="intervencao">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="numeroEtapa" ColumnName="numeroEtapa" />
+            <ScalarProperty Name="numeroIntervencao" ColumnName="numeroIntervencao" />
+            <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="intervencaorespostaquarta"><EntityTypeMapping TypeName="PacienteVirtualModel.intervencaorespostaquarta"><MappingFragment StoreEntitySet="intervencaorespostaquarta">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="justificativa" ColumnName="justificativa" />
+            <ScalarProperty Name="numeroIntervencao" ColumnName="numeroIntervencao" />
+            <ScalarProperty Name="fkResposta4" ColumnName="fkResposta4" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="intervencaorespostasegunda"><EntityTypeMapping TypeName="PacienteVirtualModel.intervencaorespostasegunda"><MappingFragment StoreEntitySet="intervencaorespostasegunda">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="justificativa" ColumnName="justificativa" />
+            <ScalarProperty Name="numeroIntervencao" ColumnName="numeroIntervencao" />
+            <ScalarProperty Name="fkResposta2" ColumnName="fkResposta2" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="medicamentonaoprescrito"><EntityTypeMapping TypeName="PacienteVirtualModel.medicamentonaoprescrito"><MappingFragment StoreEntitySet="medicamentonaoprescrito">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="dosagem" ColumnName="dosagem" />
+            <ScalarProperty Name="posologia" ColumnName="posologia" />
+            <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+            <ScalarProperty Name="flItalico" ColumnName="flItalico" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="medicamentoprescrito"><EntityTypeMapping TypeName="PacienteVirtualModel.medicamentoprescrito"><MappingFragment StoreEntitySet="medicamentoprescrito">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="dosagem" ColumnName="dosagem" />
+            <ScalarProperty Name="especialidadeMedico" ColumnName="especialidadeMedico" />
+            <ScalarProperty Name="nmMedico" ColumnName="nmMedico" />
+            <ScalarProperty Name="posologia" ColumnName="posologia" />
+            <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+            <ScalarProperty Name="flItalico" ColumnName="flItalico" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="medicamentoqueixa"><EntityTypeMapping TypeName="PacienteVirtualModel.medicamentoqueixa"><MappingFragment StoreEntitySet="medicamentoqueixa">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="dose" ColumnName="dose" />
+            <ScalarProperty Name="efetivo" ColumnName="efetivo" />
+            <ScalarProperty Name="necessario" ColumnName="necessario" />
+            <ScalarProperty Name="periodo" ColumnName="periodo" />
+            <ScalarProperty Name="seguro" ColumnName="seguro" />
+            <ScalarProperty Name="cumprimento" ColumnName="cumprimento" />
+            <ScalarProperty Name="fkQueixa" ColumnName="fkQueixa" />
+            <ScalarProperty Name="conheceCumpre" ColumnName="conheceCumpre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="medicamentoqueixaquarta"><EntityTypeMapping TypeName="PacienteVirtualModel.medicamentoqueixaquarta"><MappingFragment StoreEntitySet="medicamentoqueixaquarta">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="dose" ColumnName="dose" />
+            <ScalarProperty Name="efetivo" ColumnName="efetivo" />
+            <ScalarProperty Name="necessario" ColumnName="necessario" />
+            <ScalarProperty Name="periodo" ColumnName="periodo" />
+            <ScalarProperty Name="seguro" ColumnName="seguro" />
+            <ScalarProperty Name="cumprimento" ColumnName="cumprimento" />
+            <ScalarProperty Name="fkQueixaQuarta" ColumnName="fkQueixaQuarta" />
+            <ScalarProperty Name="conheceCumpre" ColumnName="conheceCumpre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="medicamentoqueixasegunda"><EntityTypeMapping TypeName="PacienteVirtualModel.medicamentoqueixasegunda"><MappingFragment StoreEntitySet="medicamentoqueixasegunda">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="dose" ColumnName="dose" />
+            <ScalarProperty Name="efetivo" ColumnName="efetivo" />
+            <ScalarProperty Name="necessario" ColumnName="necessario" />
+            <ScalarProperty Name="periodo" ColumnName="periodo" />
+            <ScalarProperty Name="seguro" ColumnName="seguro" />
+            <ScalarProperty Name="cumprimento" ColumnName="cumprimento" />
+            <ScalarProperty Name="fkQueixaSegunda" ColumnName="fkQueixaSegunda" />
+            <ScalarProperty Name="conheceCumpre" ColumnName="conheceCumpre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="parametroclinico"><EntityTypeMapping TypeName="PacienteVirtualModel.parametroclinico"><MappingFragment StoreEntitySet="parametroclinico">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="unidade" ColumnName="unidade" />
+            <ScalarProperty Name="valor" ColumnName="valor" />
+            <ScalarProperty Name="valorDeReferencia" ColumnName="valorDeReferencia" />
+            <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="queixa"><EntityTypeMapping TypeName="PacienteVirtualModel.queixa"><MappingFragment StoreEntitySet="queixa">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="numeroEtapa" ColumnName="numeroEtapa" />
+            <ScalarProperty Name="numeroPRM" ColumnName="numeroPRM" />
+            <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+            <ScalarProperty Name="conheceOuPreocupa" ColumnName="conheceOuPreocupa" />
+            <ScalarProperty Name="periodoSurgimento" ColumnName="periodoSurgimento" />
+            <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="queixarespostaprimeira"><EntityTypeMapping TypeName="PacienteVirtualModel.queixarespostaprimeira"><MappingFragment StoreEntitySet="queixarespostaprimeira">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="fkResposta" ColumnName="fkResposta" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="queixarespostaquarta"><EntityTypeMapping TypeName="PacienteVirtualModel.queixarespostaquarta"><MappingFragment StoreEntitySet="queixarespostaquarta">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="numeroPRM" ColumnName="numeroPRM" />
+            <ScalarProperty Name="fkResposta4" ColumnName="fkResposta4" />
+            <ScalarProperty Name="periodoSurgimento" ColumnName="periodoSurgimento" />
+            <ScalarProperty Name="flConheceOuPreocupa" ColumnName="flConheceOuPreocupa" />
+            <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="queixarespostasegunda"><EntityTypeMapping TypeName="PacienteVirtualModel.queixarespostasegunda"><MappingFragment StoreEntitySet="queixarespostasegunda">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="numeroPRM" ColumnName="numeroPRM" />
+            <ScalarProperty Name="fkResposta2" ColumnName="fkResposta2" />
+            <ScalarProperty Name="flConheceOuPreocupa" ColumnName="flConheceOuPreocupa" />
+            <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="periodoSurgimento" ColumnName="periodoSurgimento" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="queixarespostaterceira"><EntityTypeMapping TypeName="PacienteVirtualModel.queixarespostaterceira"><MappingFragment StoreEntitySet="queixarespostaterceira">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="descricao" ColumnName="descricao" />
+            <ScalarProperty Name="fkResposta" ColumnName="fkResposta" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="respostaprimeira"><EntityTypeMapping TypeName="PacienteVirtualModel.respostaprimeira"><MappingFragment StoreEntitySet="respostaprimeira">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="alergias" ColumnName="alergias" />
+            <ScalarProperty Name="altura" ColumnName="altura" />
+            <ScalarProperty Name="dataDeRealizacao" ColumnName="dataDeRealizacao" />
+            <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+            <ScalarProperty Name="escolaridade" ColumnName="escolaridade" />
+            <ScalarProperty Name="flAlturaCerta" ColumnName="flAlturaCerta" />
+            <ScalarProperty Name="flBebeAlcool" ColumnName="flBebeAlcool" />
+            <ScalarProperty Name="flBebeAlcoolCerto" ColumnName="flBebeAlcoolCerto" />
+            <ScalarProperty Name="flBebeCafe" ColumnName="flBebeCafe" />
+            <ScalarProperty Name="flBebeCafeCerto" ColumnName="flBebeCafeCerto" />
+            <ScalarProperty Name="flDataNascimentoCerta" ColumnName="flDataNascimentoCerta" />
+            <ScalarProperty Name="flEscolaridadeCerta" ColumnName="flEscolaridadeCerta" />
+            <ScalarProperty Name="flFuma" ColumnName="flFuma" />
+            <ScalarProperty Name="flFumaCerto" ColumnName="flFumaCerto" />
+            <ScalarProperty Name="flGeneroCerto" ColumnName="flGeneroCerto" />
+            <ScalarProperty Name="flIMCCerto" ColumnName="flIMCCerto" />
+            <ScalarProperty Name="flNomeCerto" ColumnName="flNomeCerto" />
+            <ScalarProperty Name="flOcupacaoCerta" ColumnName="flOcupacaoCerta" />
+            <ScalarProperty Name="flPesoCerto" ColumnName="flPesoCerto" />
+            <ScalarProperty Name="flPressaoDiastolicaCerta" ColumnName="flPressaoDiastolicaCerta" />
+            <ScalarProperty Name="flPressaoSistolicaCerta" ColumnName="flPressaoSistolicaCerta" />
+            <ScalarProperty Name="flTemperaturaCerta" ColumnName="flTemperaturaCerta" />
+            <ScalarProperty Name="genero" ColumnName="genero" />
+            <ScalarProperty Name="IMC" ColumnName="IMC" />
+            <ScalarProperty Name="medicosQueAtendem" ColumnName="medicosQueAtendem" />
+            <ScalarProperty Name="moradiaFamilia" ColumnName="moradiaFamilia" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+            <ScalarProperty Name="ocupacao" ColumnName="ocupacao" />
+            <ScalarProperty Name="peso" ColumnName="peso" />
+            <ScalarProperty Name="pressaoDiastolica" ColumnName="pressaoDiastolica" />
+            <ScalarProperty Name="pressaoSistolica" ColumnName="pressaoSistolica" />
+            <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+            <ScalarProperty Name="planoDeSaude" ColumnName="planoDeSaude" />
+            <ScalarProperty Name="numeroTentativa" ColumnName="numeroTentativa" />
+            <ScalarProperty Name="fkConsulta" ColumnName="fkConsulta" />
+            <ScalarProperty Name="flCorreto" ColumnName="flCorreto" />
+            <ScalarProperty Name="comentario" ColumnName="comentario" />
+            <ScalarProperty Name="comentarioAluno" ColumnName="comentarioAluno" />
+            <ScalarProperty Name="nota" ColumnName="nota" />
+            <ScalarProperty Name="historiaAlcoolAnterior" ColumnName="historiaAlcoolAnterior" />
+            <ScalarProperty Name="historiaAlcoolAtual" ColumnName="historiaAlcoolAtual" />
+            <ScalarProperty Name="historiaCafeAnterior" ColumnName="historiaCafeAnterior" />
+            <ScalarProperty Name="historiaCafeAtual" ColumnName="historiaCafeAtual" />
+            <ScalarProperty Name="historiaTabacoAnterior" ColumnName="historiaTabacoAnterior" />
+            <ScalarProperty Name="historiaTabacoAtual" ColumnName="historiaTabacoAtual" />
+            <ScalarProperty Name="tipoBebidaAlcoolica" ColumnName="tipoBebidaAlcoolica" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="respostaquarta"><EntityTypeMapping TypeName="PacienteVirtualModel.respostaquarta"><MappingFragment StoreEntitySet="respostaquarta">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="dataRealizacao" ColumnName="dataRealizacao" />
+            <ScalarProperty Name="fkConsulta" ColumnName="fkConsulta" />
+            <ScalarProperty Name="numeroTentativa" ColumnName="numeroTentativa" />
+            <ScalarProperty Name="flCorreto" ColumnName="flCorreto" />
+            <ScalarProperty Name="comentario" ColumnName="comentario" />
+            <ScalarProperty Name="comentarioAluno" ColumnName="comentarioAluno" />
+            <ScalarProperty Name="nota" ColumnName="nota" />
+            <ScalarProperty Name="carta" ColumnName="carta" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="respostasegunda"><EntityTypeMapping TypeName="PacienteVirtualModel.respostasegunda"><MappingFragment StoreEntitySet="respostasegunda">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="dataRealizacao" ColumnName="dataRealizacao" />
+            <ScalarProperty Name="fkConsulta" ColumnName="fkConsulta" />
+            <ScalarProperty Name="numeroTentativa" ColumnName="numeroTentativa" />
+            <ScalarProperty Name="flCorreto" ColumnName="flCorreto" />
+            <ScalarProperty Name="comentario" ColumnName="comentario" />
+            <ScalarProperty Name="comentarioAluno" ColumnName="comentarioAluno" />
+            <ScalarProperty Name="nota" ColumnName="nota" />
+            <ScalarProperty Name="carta" ColumnName="carta" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="respostaterceira"><EntityTypeMapping TypeName="PacienteVirtualModel.respostaterceira"><MappingFragment StoreEntitySet="respostaterceira">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+            <ScalarProperty Name="pressaosistolica" ColumnName="pressaosistolica" />
+            <ScalarProperty Name="pressaodiastolica" ColumnName="pressaodiastolica" />
+            <ScalarProperty Name="peso" ColumnName="peso" />
+            <ScalarProperty Name="fkConsulta" ColumnName="fkConsulta" />
+            <ScalarProperty Name="dataRealizacao" ColumnName="dataRealizacao" />
+            <ScalarProperty Name="flCorreto" ColumnName="flCorreto" />
+            <ScalarProperty Name="comentario" ColumnName="comentario" />
+            <ScalarProperty Name="comentarioAluno" ColumnName="comentarioAluno" />
+            <ScalarProperty Name="nota" ColumnName="nota" />
+            <ScalarProperty Name="imc" ColumnName="imc" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TurmaSet"><EntityTypeMapping TypeName="PacienteVirtualModel.TurmaE"><MappingFragment StoreEntitySet="turma">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="codigo" ColumnName="codigo" />
+            <ScalarProperty Name="periodo" ColumnName="periodo" />
+            <ScalarProperty Name="fktutor" ColumnName="fktutor" />
+            <ScalarProperty Name="nmDisciplina" ColumnName="nmDisciplina" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tutor"><EntityTypeMapping TypeName="PacienteVirtualModel.tutor"><MappingFragment StoreEntitySet="tutor">
+            <ScalarProperty Name="login" ColumnName="login" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="usuario"><EntityTypeMapping TypeName="PacienteVirtualModel.usuario"><MappingFragment StoreEntitySet="usuario">
+            <ScalarProperty Name="login" ColumnName="login" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="senha" ColumnName="senha" />
+            <ScalarProperty Name="tpUsuario" ColumnName="tpUsuario" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PacienteVirtualModel">
+        <EntityTypeShape EntityType="PacienteVirtualModel.aluno" Width="1.5" PointX="12.5" PointY="36.875" Height="6.210917968749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.casoclinico" Width="1.5" PointX="3" PointY="26.125" Height="8.9031380208333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.consulta" Width="1.5" PointX="5.25" PointY="28.375" Height="4.2879036458333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.intervencao" Width="1.5" PointX="5.25" PointY="53.375" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.intervencaorespostaquarta" Width="1.5" PointX="9.75" PointY="22.5" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.intervencaorespostasegunda" Width="1.5" PointX="9.75" PointY="29.625" Height="2.3648893229166639" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.medicamentonaoprescrito" Width="1.5" PointX="5.25" PointY="56.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.medicamentoprescrito" Width="1.5" PointX="5.25" PointY="59.375" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.medicamentoqueixa" Width="1.5" PointX="7.5" PointY="66" Height="3.3263964843750102" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.medicamentoqueixaquarta" Width="1.5" PointX="12" PointY="25.625" Height="3.326396484374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.medicamentoqueixasegunda" Width="1.5" PointX="12" PointY="32.75" Height="3.3263964843750102" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.parametroclinico" Width="1.5" PointX="5.25" PointY="62.875" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.queixa" Width="1.5" PointX="5.25" PointY="66.125" Height="3.1340950520833246" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.queixarespostaprimeira" Width="1.5" PointX="9.75" PointY="41.25" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.queixarespostaquarta" Width="1.5" PointX="9.75" PointY="25.625" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.queixarespostasegunda" Width="1.5" PointX="9.75" PointY="32.875" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.queixarespostaterceira" Width="1.5" PointX="9.75" PointY="49.5" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.respostaprimeira" Width="1.5" PointX="7.5" PointY="36.875" Height="10.826152343749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.respostaquarta" Width="1.5" PointX="7.5" PointY="23.75" Height="3.9033007812500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.respostasegunda" Width="1.5" PointX="7.5" PointY="30.875" Height="3.9033007812500067" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.respostaterceira" Width="1.5" PointX="7.5" PointY="48.375" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.TurmaE" Width="1.5" PointX="3" PointY="39.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.tutor" Width="1.5" PointX="0.75" PointY="31.25" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="PacienteVirtualModel.usuario" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333246" IsExpanded="true" />
+        <AssociationConnector Association="PacienteVirtualModel.FK_aluno_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="29.288198242187498" />
+          <ConnectorPoint PointX="13.78125" PointY="29.288198242187498" />
+          <ConnectorPoint PointX="13.78125" PointY="36.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_aluno_3" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5000000000000018" PointY="39.25" />
+          <ConnectorPoint PointX="4.875" PointY="38.875" />
+          <ConnectorPoint PointX="4.875" PointY="36.5" />
+          <ConnectorPoint PointX="4.885416666666667" PointY="36.5" />
+          <ConnectorPoint PointX="5.270833333333333" PointY="36.5" />
+          <ConnectorPoint PointX="5.5104141666666671" PointY="36.5" />
+          <ConnectorPoint PointX="5.6770808333333331" PointY="36.5" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="36.5" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="36.5" />
+          <ConnectorPoint PointX="6.3229191666666669" PointY="36.5" />
+          <ConnectorPoint PointX="6.4895858333333329" PointY="36.5" />
+          <ConnectorPoint PointX="6.5260454166666664" PointY="36.5" />
+          <ConnectorPoint PointX="6.6927120833333325" PointY="36.5" />
+          <ConnectorPoint PointX="12.125" PointY="36.5" />
+          <ConnectorPoint PointX="12.5" PointY="36.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_consulta_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.6406225" PointY="36.875" />
+          <ConnectorPoint PointX="13.6406225" PointY="29.45660162109375" />
+          <ConnectorPoint PointX="6.75" PointY="29.45660162109375" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK589C4EBDD526F1E" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="29.119794863281246" />
+          <ConnectorPoint PointX="13.9218775" PointY="29.119794863281246" />
+          <ConnectorPoint PointX="13.9218775" PointY="36.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKDE2881F52977839B" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.609369999999998" PointY="36.875" />
+          <ConnectorPoint PointX="13.609369999999998" PointY="29.487854121093751" />
+          <ConnectorPoint PointX="6.75" PointY="29.487854121093751" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_Consulta_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="30.518951822916669" />
+          <ConnectorPoint PointX="5.25" PointY="30.518951822916669" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK91D9EFAE8A1319FF" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="35.003906251602572" />
+          <ConnectorPoint PointX="5.1875" PointY="35.691406251602572" />
+          <ConnectorPoint PointX="5.1875" PointY="54.4612939453125" />
+          <ConnectorPoint PointX="5.25" PointY="54.4612939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKAA358BEF8A1319FF" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.49884615384615" PointY="35.028138020833339" />
+          <ConnectorPoint PointX="5.09375" PointY="35.62304186698718" />
+          <ConnectorPoint PointX="5.09375" PointY="60.74974609375" />
+          <ConnectorPoint PointX="5.25" PointY="60.74974609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKAAEE312E8A1319FF" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.4746153846153822" PointY="35.028138020833339" />
+          <ConnectorPoint PointX="5.03125" PointY="35.584772636217949" />
+          <ConnectorPoint PointX="5.03125" PointY="64.057444661458334" />
+          <ConnectorPoint PointX="5.25" PointY="64.057444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKBF69A97F8A1319FF" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="34.9796754823718" />
+          <ConnectorPoint PointX="5" PointY="35.4796754823718" />
+          <ConnectorPoint PointX="5" PointY="57.432444661458334" />
+          <ConnectorPoint PointX="5.010416666666667" PointY="57.432444661458334" />
+          <ConnectorPoint PointX="5.177083333333333" PointY="57.432444661458334" />
+          <ConnectorPoint PointX="5.25" PointY="57.432444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKC773DEB18A1319FF" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.4815384615384586" PointY="35.028138020833339" />
+          <ConnectorPoint PointX="4.96875" PointY="35.515349559294876" />
+          <ConnectorPoint PointX="4.96875" PointY="67.692047526041662" />
+          <ConnectorPoint PointX="5.25" PointY="67.692047526041662" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKDE2881F58A1319FF" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="29.384475911458335" />
+          <ConnectorPoint PointX="5.25" PointY="29.384475911458335" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKFCF4D80D2B972831" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="32.143992513020834" />
+          <ConnectorPoint PointX="3" PointY="32.143992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_respostaalunoterceira_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="32.662903645833339" />
+          <ConnectorPoint PointX="6" PointY="50.422801106770834" />
+          <ConnectorPoint PointX="7.5" PointY="50.422801106770834" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_respostaprimeira_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.4062525" PointY="32.662903645833339" />
+          <ConnectorPoint PointX="6.4062525" PointY="42.288076171875" />
+          <ConnectorPoint PointX="7.5" PointY="42.288076171875" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_respostaquarta_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="28.375" />
+          <ConnectorPoint PointX="6" PointY="25.701650390625" />
+          <ConnectorPoint PointX="7.5" PointY="25.701650390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_respostasegunda_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="31.768951822916669" />
+          <ConnectorPoint PointX="7.5" PointY="31.768951822916669" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK877B3B565097F805" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.5937475" PointY="32.662903645833339" />
+          <ConnectorPoint PointX="5.5937475" PointY="49.367648053385423" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="49.367648053385423" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="49.367648053385423" />
+          <ConnectorPoint PointX="7.5" PointY="49.367648053385423" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK88D8D79A5097F805" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.6093787499999994" PointY="32.662903645833339" />
+          <ConnectorPoint PointX="6.6093787499999994" PointY="39.5502855859375" />
+          <ConnectorPoint PointX="7.5" PointY="39.5502855859375" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKB29DB8E35097F805" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.4062525" PointY="28.375" />
+          <ConnectorPoint PointX="6.4062525" PointY="26.708728085937494" />
+          <ConnectorPoint PointX="7.5" PointY="26.708728085937494" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKEFEE246A5097F805" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="31.259475911458335" />
+          <ConnectorPoint PointX="7.5" PointY="31.259475911458335" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_intervencaorespostaquarta_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="24.307444661458334" />
+          <ConnectorPoint PointX="9.75" PointY="24.307444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK800BA011D2B646E7" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="23.966222330729167" />
+          <ConnectorPoint PointX="9.75" PointY="23.966222330729167" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_intervencaorespostasegunda_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="31.432444661458334" />
+          <ConnectorPoint PointX="9.75" PointY="31.432444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKD03D22FCA4FE1140" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="31.091222330729167" />
+          <ConnectorPoint PointX="9.75" PointY="31.091222330729167" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_medicamentoqueixa_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="67.692047526041662" />
+          <ConnectorPoint PointX="7.5" PointY="67.692047526041662" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK8099C4A73D02FC3D" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="66.846023763020838" />
+          <ConnectorPoint PointX="7.5" PointY="66.846023763020838" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_medicamentoqueixaquarta_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="27.192047526041669" />
+          <ConnectorPoint PointX="12" PointY="27.192047526041669" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK78D999E947C18322" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="26.346023763020835" />
+          <ConnectorPoint PointX="12" PointY="26.346023763020835" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_medicamentoqueixasegunda_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="34.442047526041669" />
+          <ConnectorPoint PointX="12" PointY="34.442047526041669" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKF12E64244E1862F8" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="33.596023763020838" />
+          <ConnectorPoint PointX="12" PointY="33.596023763020838" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_queixarespostaprimeira_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="42.240143229166669" />
+          <ConnectorPoint PointX="9.75" PointY="42.240143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK1E43344B8872A0F6" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="41.682571614583338" />
+          <ConnectorPoint PointX="9.75" PointY="41.682571614583338" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_queixarespostaquarta_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="26.639150390625" />
+          <ConnectorPoint PointX="9.75" PointY="26.639150390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK5BA98DD4D2B646E7" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="26.069575195312503" />
+          <ConnectorPoint PointX="9.75" PointY="26.069575195312503" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK685CED99A4FE1140" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="33.826650390625005" />
+          <ConnectorPoint PointX="9.75" PointY="33.826650390625005" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FKFD098D39A4FE1140" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="33.2883251953125" />
+          <ConnectorPoint PointX="9.75" PointY="33.2883251953125" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK_queixarespostaterceira_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="50.490143229166669" />
+          <ConnectorPoint PointX="9.75" PointY="50.490143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK1CE59807871504B2" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="49.932571614583338" />
+          <ConnectorPoint PointX="9.75" PointY="49.932571614583338" />
+        </AssociationConnector>
+        <AssociationConnector Association="PacienteVirtualModel.FK6998F652B972831" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="33.037985026041667" />
+          <ConnectorPoint PointX="1.5" PointY="40.432444661458334" />
+          <ConnectorPoint PointX="3" PointY="40.432444661458334" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
