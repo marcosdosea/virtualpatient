@@ -14,6 +14,10 @@ namespace Negocio
 
         private static GerenciadorTurma gTurma;
 
+        private GerenciadorTurma()
+        {
+        }
+
         public static GerenciadorTurma GetInstance()
         {
             if (gTurma == null)
@@ -68,22 +72,14 @@ namespace Negocio
             }
         }
 
-        private static void Atribuir(TurmaModel turma, TurmaE _turmaE)
-        {
-            _turmaE.codigo = turma.Codigo;
-            _turmaE.fktutor = turma.Tutor;
-            _turmaE.nmDisciplina = turma.NomeDisciplina;
-            _turmaE.periodo = turma.Periodo;
-        }
-
         /// <summary>
         /// Remove dados do turma
         /// </summary>
         /// <param name="codTurma"></param>
         public void Remover(long idTurma)
         {
-            if (idTurma == 1)
-                throw new NegocioException("A turma não pode ser removido.");
+            //if (idTurma == 1)
+            //    throw new NegocioException("A turma não pode ser removido.");
             try
             {
                 var repTurma = new RepositorioGenerico<TurmaE>();
@@ -143,6 +139,19 @@ namespace Negocio
         public IEnumerable<TurmaModel> ObterPorNome(string nomeDisciplina)
         {
             return GetQuery().Where(turma => turma.NomeDisciplina.StartsWith(nomeDisciplina)).ToList();
+        }
+
+        /// <summary>
+        /// Atribui dados da classe de modelo para classe entity de persistência
+        /// </summary>
+        /// <param name="turma"></param>
+        /// <param name="_turmaE"></param>
+        private static void Atribuir(TurmaModel turma, TurmaE _turmaE)
+        {
+            _turmaE.codigo = turma.Codigo;
+            _turmaE.fktutor = turma.Tutor;
+            _turmaE.nmDisciplina = turma.NomeDisciplina;
+            _turmaE.periodo = turma.Periodo;
         }
     }
 }

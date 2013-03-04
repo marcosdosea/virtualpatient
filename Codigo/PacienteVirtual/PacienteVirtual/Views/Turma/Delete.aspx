@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.turma>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.TurmaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Delete
@@ -14,22 +14,22 @@
 
     <div class="display-label">codigo</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.codigo) %>
+        <%: Html.DisplayFor(model => model.Codigo) %>
     </div>
 
     <div class="display-label">periodo</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.periodo) %>
+        <%: Html.DisplayFor(model => model.Periodo) %>
     </div>
 
     <div class="display-label">tutor</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.tutor.nome) %>
+        <%: Html.DisplayFor(model => model.Tutor) %>
     </div>
 
     <div class="display-label">nmDisciplina</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.nmDisciplina) %>
+        <%: Html.DisplayFor(model => model.NomeDisciplina) %>
     </div>
 </fieldset>
 <% using (Html.BeginForm()) { %>

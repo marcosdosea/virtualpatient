@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.Data.turma>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.TurmaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -31,21 +31,21 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <%: Html.DisplayFor(modelItem => item.codigo) %>
+            <%: Html.DisplayFor(modelItem => item.Codigo) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.periodo) %>
+            <%: Html.DisplayFor(modelItem => item.Periodo) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.tutor.nome) %>
+            <%: Html.DisplayFor(modelItem => item.Tutor) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.nmDisciplina) %>
+            <%: Html.DisplayFor(modelItem => item.NomeDisciplina) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { id=item.id }) %> |
-            <%: Html.ActionLink("Details", "Details", new { id=item.id }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { id=item.id }) %>
+            <%: Html.ActionLink("Edit", "Edit", new { id=item.Id }) %> |
+            <%: Html.ActionLink("Details", "Details", new { id=item.Id }) %> |
+            <%: Html.ActionLink("Delete", "Delete", new { id=item.Id }) %>
         </td>
     </tr>
 <% } %>

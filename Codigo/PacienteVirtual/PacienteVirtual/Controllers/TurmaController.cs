@@ -20,8 +20,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
-            var turma = db.TurmaSet.Include("tutor");
-            return View(turma.ToList());
+            return View(GerenciadorTurma.GetInstance().ObterTodos());
         }
 
         //

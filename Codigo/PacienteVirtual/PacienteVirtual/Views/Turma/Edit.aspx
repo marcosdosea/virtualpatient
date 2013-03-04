@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.turma>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.TurmaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Edit
@@ -16,38 +16,30 @@
     <fieldset>
         <legend>turma</legend>
 
-        <%: Html.HiddenFor(model => model.id) %>
+        <%: Html.HiddenFor(model => model.Id) %>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.codigo) %>
+            <%: Html.LabelFor(model => model.Codigo) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.codigo) %>
-            <%: Html.ValidationMessageFor(model => model.codigo) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.periodo) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.periodo) %>
-            <%: Html.ValidationMessageFor(model => model.periodo) %>
+            <%: Html.EditorFor(model => model.Codigo) %>
+            <%: Html.ValidationMessageFor(model => model.Codigo) %>
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.fktutor, "tutor") %>
+            <%: Html.LabelFor(model => model.Periodo) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("fktutor", String.Empty) %>
-            <%: Html.ValidationMessageFor(model => model.fktutor) %>
+            <%: Html.EditorFor(model => model.Periodo) %>
+            <%: Html.ValidationMessageFor(model => model.Periodo) %>
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.nmDisciplina) %>
+            <%: Html.LabelFor(model => model.NomeDisciplina) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.nmDisciplina) %>
-            <%: Html.ValidationMessageFor(model => model.nmDisciplina) %>
+            <%: Html.EditorFor(model => model.NomeDisciplina) %>
+            <%: Html.ValidationMessageFor(model => model.NomeDisciplina) %>
         </div>
 
         <p>
