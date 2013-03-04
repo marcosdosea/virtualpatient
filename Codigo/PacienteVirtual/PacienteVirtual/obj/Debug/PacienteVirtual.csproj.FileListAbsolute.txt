@@ -1,7 +1,0 @@
-C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual\bin\PacienteVirtual.dll
-C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual\bin\PacienteVirtual.pdb
-C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual\bin\EntityFramework.dll
-C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual\bin\EntityFramework.xml
-C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.dll
-C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.pdb
