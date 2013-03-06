@@ -1,29 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.TurmaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+    Turmas
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Index</h2>
+<h2>Turmas</h2>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+    <%: Html.ActionLink("Nova Turma", "Create") %>
 </p>
 <table>
     <tr>
         <th>
-            codigo
+            Código
         </th>
         <th>
-            periodo
+            Período
         </th>
         <th>
-            tutor
+            Tutor
         </th>
         <th>
-            nmDisciplina
+            Nome da Disciplina
         </th>
         <th></th>
     </tr>
@@ -43,9 +43,9 @@
             <%: Html.DisplayFor(modelItem => item.NomeDisciplina) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { id=item.Id }) %> |
-            <%: Html.ActionLink("Details", "Details", new { id=item.Id }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { id=item.Id }) %>
+            <%: Html.ActionLink("Editar", "Edit", new { id=item.Id }) %> |
+            <%: Html.ActionLink("Detalhes", "Details", new { id=item.Id }) %> |
+            <%: Html.ActionLink("Excluir", "Delete", new { id=item.Id }) %>
         </td>
     </tr>
 <% } %>
