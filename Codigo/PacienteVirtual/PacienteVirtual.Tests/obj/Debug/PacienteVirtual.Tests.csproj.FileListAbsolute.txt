@@ -6,3 +6,11 @@ C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\Pacien
 C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.dll
 C:\Users\Marcos Dosea\Desktop\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.pdb
+D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.dll.config
+D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.dll
+D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.pdb
+D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.dll
+D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.pdb
+D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.dll
+D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.pdb
