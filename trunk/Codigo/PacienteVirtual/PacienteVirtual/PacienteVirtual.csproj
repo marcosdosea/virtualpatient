@@ -77,8 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DisciplinaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TurmaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -91,9 +91,9 @@
       <DependentUpon>PacienteVirtualModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Data\RepositorioGenerico.cs" />
-    <Compile Include="Models\Negocio\GerenciadorTurma.cs" />
+    <Compile Include="Models\Negocio\GerenciadorDisciplina.cs" />
     <Compile Include="Models\Negocio\NegocioException.cs" />
-    <Compile Include="Models\TurmaModel.cs" />
+    <Compile Include="Models\DisciplinaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,11 +135,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Views\Turma\Create.aspx" />
-    <Content Include="Views\Turma\Delete.aspx" />
-    <Content Include="Views\Turma\Details.aspx" />
-    <Content Include="Views\Turma\Edit.aspx" />
-    <Content Include="Views\Turma\Index.aspx" />
+    <Content Include="Views\Disciplina\Create.aspx" />
+    <Content Include="Views\Disciplina\Delete.aspx" />
+    <Content Include="Views\Disciplina\Details.aspx" />
+    <Content Include="Views\Disciplina\Edit.aspx" />
+    <Content Include="Views\Disciplina\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

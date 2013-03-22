@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.TurmaModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.DisciplinaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Editar Turma
+    Edit
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Editar Turma</h2>
+<h2>Edit</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -14,25 +14,9 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>Editar Turma</legend>
+        <legend>DisciplinaE</legend>
 
-        <%: Html.HiddenFor(model => model.Id) %>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Codigo) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Codigo) %>
-            <%: Html.ValidationMessageFor(model => model.Codigo) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Periodo) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Periodo) %>
-            <%: Html.ValidationMessageFor(model => model.Periodo) %>
-        </div>
+        <%: Html.HiddenFor(model => model.IdDisciplina) %>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.NomeDisciplina) %>
@@ -49,7 +33,7 @@
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Voltar", "Index") %>
+    <%: Html.ActionLink("Back to List", "Index") %>
 </div>
 
 </asp:Content>
