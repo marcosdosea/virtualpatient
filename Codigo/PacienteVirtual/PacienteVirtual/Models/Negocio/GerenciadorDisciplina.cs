@@ -145,7 +145,7 @@ namespace Negocio
         /// <param name="_disciplinaE"></param>
         private static void Atribuir(DisciplinaModel disciplina, DisciplinaE _disciplinaE)
         {
-            _disciplinaE.IdDisciplina = disciplina.IdDisciplina;
+            //_disciplinaE.IdDisciplina = disciplina.IdDisciplina;
             _disciplinaE.NomeDisciplina = disciplina.NomeDisciplina;
         }
     }
