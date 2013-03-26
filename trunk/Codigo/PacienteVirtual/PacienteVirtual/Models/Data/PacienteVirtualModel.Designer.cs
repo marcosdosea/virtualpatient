@@ -56,7 +56,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "FKFD098D39A4FE1140", "respostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostasegunda), "queixarespostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostasegunda), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "FK_queixarespostaterceira_1", "respostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaterceira), "queixarespostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostaterceira), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "FK1CE59807871504B2", "respostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaterceira), "queixarespostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostaterceira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_Curso_Instituicao", "tb_instituicao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_instituicao), "tb_curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_curso), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "FK_Curso_Instituicao", "tb_instituicao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_instituicao), "tb_curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.CursoE), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "FK_Disciplina", "tb_disciplina", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.DisciplinaE), "tb_disciplina_curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_disciplina_curso), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "FK_Instituicao", "tb_instituicao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_instituicao), "tb_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_turma), true)]
 
@@ -449,18 +449,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_curso> tb_curso
+        public ObjectSet<CursoE> tb_curso
         {
             get
             {
                 if ((_tb_curso == null))
                 {
-                    _tb_curso = base.CreateObjectSet<tb_curso>("tb_curso");
+                    _tb_curso = base.CreateObjectSet<CursoE>("tb_curso");
                 }
                 return _tb_curso;
             }
         }
-        private ObjectSet<tb_curso> _tb_curso;
+        private ObjectSet<CursoE> _tb_curso;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -749,9 +749,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_curso EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_curso(tb_curso tb_curso)
+        public void AddTotb_curso(CursoE cursoE)
         {
-            base.AddObject("tb_curso", tb_curso);
+            base.AddObject("tb_curso", cursoE);
         }
     
         /// <summary>
@@ -2959,6 +2959,157 @@ namespace PacienteVirtual.Models.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostasegunda>("pvModel.FKEFEE246A5097F805", "respostasegunda", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="CursoE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class CursoE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new CursoE object.
+        /// </summary>
+        /// <param name="idCurso">Initial value of the IdCurso property.</param>
+        /// <param name="nomeCurso">Initial value of the NomeCurso property.</param>
+        /// <param name="idInstituicao">Initial value of the IdInstituicao property.</param>
+        public static CursoE CreateCursoE(global::System.Int32 idCurso, global::System.String nomeCurso, global::System.Int32 idInstituicao)
+        {
+            CursoE cursoE = new CursoE();
+            cursoE.IdCurso = idCurso;
+            cursoE.NomeCurso = nomeCurso;
+            cursoE.IdInstituicao = idInstituicao;
+            return cursoE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdCurso
+        {
+            get
+            {
+                return _IdCurso;
+            }
+            set
+            {
+                if (_IdCurso != value)
+                {
+                    OnIdCursoChanging(value);
+                    ReportPropertyChanging("IdCurso");
+                    _IdCurso = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdCurso");
+                    OnIdCursoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdCurso;
+        partial void OnIdCursoChanging(global::System.Int32 value);
+        partial void OnIdCursoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String NomeCurso
+        {
+            get
+            {
+                return _NomeCurso;
+            }
+            set
+            {
+                OnNomeCursoChanging(value);
+                ReportPropertyChanging("NomeCurso");
+                _NomeCurso = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("NomeCurso");
+                OnNomeCursoChanged();
+            }
+        }
+        private global::System.String _NomeCurso;
+        partial void OnNomeCursoChanging(global::System.String value);
+        partial void OnNomeCursoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdInstituicao
+        {
+            get
+            {
+                return _IdInstituicao;
+            }
+            set
+            {
+                OnIdInstituicaoChanging(value);
+                ReportPropertyChanging("IdInstituicao");
+                _IdInstituicao = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdInstituicao");
+                OnIdInstituicaoChanged();
+            }
+        }
+        private global::System.Int32 _IdInstituicao;
+        partial void OnIdInstituicaoChanging(global::System.Int32 value);
+        partial void OnIdInstituicaoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Curso_Instituicao", "tb_instituicao")]
+        public tb_instituicao tb_instituicao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_instituicao>("pvModel.FK_Curso_Instituicao", "tb_instituicao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_instituicao>("pvModel.FK_Curso_Instituicao", "tb_instituicao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_instituicao> tb_instituicaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_instituicao>("pvModel.FK_Curso_Instituicao", "tb_instituicao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_instituicao>("pvModel.FK_Curso_Instituicao", "tb_instituicao", value);
                 }
             }
         }
@@ -9475,157 +9626,6 @@ namespace PacienteVirtual.Models.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_curso")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_curso : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_curso object.
-        /// </summary>
-        /// <param name="idCurso">Initial value of the IdCurso property.</param>
-        /// <param name="nomeCurso">Initial value of the NomeCurso property.</param>
-        /// <param name="idInstituicao">Initial value of the IdInstituicao property.</param>
-        public static tb_curso Createtb_curso(global::System.Int32 idCurso, global::System.String nomeCurso, global::System.Int32 idInstituicao)
-        {
-            tb_curso tb_curso = new tb_curso();
-            tb_curso.IdCurso = idCurso;
-            tb_curso.NomeCurso = nomeCurso;
-            tb_curso.IdInstituicao = idInstituicao;
-            return tb_curso;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdCurso
-        {
-            get
-            {
-                return _IdCurso;
-            }
-            set
-            {
-                if (_IdCurso != value)
-                {
-                    OnIdCursoChanging(value);
-                    ReportPropertyChanging("IdCurso");
-                    _IdCurso = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdCurso");
-                    OnIdCursoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdCurso;
-        partial void OnIdCursoChanging(global::System.Int32 value);
-        partial void OnIdCursoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String NomeCurso
-        {
-            get
-            {
-                return _NomeCurso;
-            }
-            set
-            {
-                OnNomeCursoChanging(value);
-                ReportPropertyChanging("NomeCurso");
-                _NomeCurso = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("NomeCurso");
-                OnNomeCursoChanged();
-            }
-        }
-        private global::System.String _NomeCurso;
-        partial void OnNomeCursoChanging(global::System.String value);
-        partial void OnNomeCursoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdInstituicao
-        {
-            get
-            {
-                return _IdInstituicao;
-            }
-            set
-            {
-                OnIdInstituicaoChanging(value);
-                ReportPropertyChanging("IdInstituicao");
-                _IdInstituicao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdInstituicao");
-                OnIdInstituicaoChanged();
-            }
-        }
-        private global::System.Int32 _IdInstituicao;
-        partial void OnIdInstituicaoChanging(global::System.Int32 value);
-        partial void OnIdInstituicaoChanged();
-
-        #endregion
-
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Curso_Instituicao", "tb_instituicao")]
-        public tb_instituicao tb_instituicao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_instituicao>("pvModel.FK_Curso_Instituicao", "tb_instituicao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_instituicao>("pvModel.FK_Curso_Instituicao", "tb_instituicao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_instituicao> tb_instituicaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_instituicao>("pvModel.FK_Curso_Instituicao", "tb_instituicao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_instituicao>("pvModel.FK_Curso_Instituicao", "tb_instituicao", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_disciplina_curso")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -9867,17 +9867,17 @@ namespace PacienteVirtual.Models.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Curso_Instituicao", "tb_curso")]
-        public EntityCollection<tb_curso> tb_curso
+        public EntityCollection<CursoE> CursoE
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_curso>("pvModel.FK_Curso_Instituicao", "tb_curso");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CursoE>("pvModel.FK_Curso_Instituicao", "tb_curso");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_curso>("pvModel.FK_Curso_Instituicao", "tb_curso", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CursoE>("pvModel.FK_Curso_Instituicao", "tb_curso", value);
                 }
             }
         }

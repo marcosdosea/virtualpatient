@@ -22,3 +22,11 @@ C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtu
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.csprojResolveAssemblyReference.cache
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.dll
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.pdb
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.dll.config
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.dll
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.pdb
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.dll
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.pdb
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.csprojResolveAssemblyReference.cache
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.dll
+D:\Iúri\UFS\Iniciação Ciêntifica\Projeto\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.pdb
