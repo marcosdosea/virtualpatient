@@ -20,6 +20,7 @@
             <nav>
                 <ul id="menu">
                     <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
+                     <li><%: Html.ActionLink("Curso", "Index", "Curso")%></li>
                     <li><%: Html.ActionLink("Disciplina", "Index", "Disciplina")%></li>
                     <li><%: Html.ActionLink("Instituição", "Index", "Instituicao")%></li>
                     <li><%: Html.ActionLink("About", "About", "Home")%></li>

@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\DisciplinaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstituicaoController.cs" />
@@ -84,6 +85,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CursoModel.cs" />
     <Compile Include="Models\Data\DadosException.cs" />
     <Compile Include="Models\Data\IRepositorioGenerico.cs" />
     <Compile Include="Models\Data\PacienteVirtualModel.Designer.cs">
@@ -93,6 +95,7 @@
     </Compile>
     <Compile Include="Models\Data\RepositorioGenerico.cs" />
     <Compile Include="Models\InstituicaoModel.cs" />
+    <Compile Include="Models\Negocio\GerenciadorCurso.cs" />
     <Compile Include="Models\Negocio\GerenciadorDisciplina.cs" />
     <Compile Include="Models\Negocio\GerenciadorInstituicao.cs" />
     <Compile Include="Models\Negocio\NegocioException.cs" />
@@ -138,6 +141,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Views\Curso\Create.aspx" />
+    <Content Include="Views\Curso\Delete.aspx" />
+    <Content Include="Views\Curso\Details.aspx" />
+    <Content Include="Views\Curso\Edit.aspx" />
+    <Content Include="Views\Curso\Index.aspx" />
     <Content Include="Views\Disciplina\Create.aspx" />
     <Content Include="Views\Disciplina\Delete.aspx" />
     <Content Include="Views\Disciplina\Details.aspx" />

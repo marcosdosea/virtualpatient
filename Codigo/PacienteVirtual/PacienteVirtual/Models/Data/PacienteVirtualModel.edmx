@@ -1104,7 +1104,7 @@
           <EntitySet Name="respostaquarta" EntityType="pvModel.respostaquarta" />
           <EntitySet Name="respostasegunda" EntityType="pvModel.respostasegunda" />
           <EntitySet Name="respostaterceira" EntityType="pvModel.respostaterceira" />
-          <EntitySet Name="tb_curso" EntityType="pvModel.tb_curso" />
+          <EntitySet Name="tb_curso" EntityType="pvModel.CursoE" />
           <EntitySet Name="tb_disciplina" EntityType="pvModel.DisciplinaE" />
           <EntitySet Name="tb_disciplina_curso" EntityType="pvModel.tb_disciplina_curso" />
           <EntitySet Name="tb_instituicao" EntityType="pvModel.tb_instituicao" />
@@ -1679,7 +1679,7 @@
           <NavigationProperty Name="queixarespostaterceira" Relationship="pvModel.FK_queixarespostaterceira_1" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
           <NavigationProperty Name="queixarespostaterceira1" Relationship="pvModel.FK1CE59807871504B2" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
         </EntityType>
-        <EntityType Name="tb_curso">
+        <EntityType Name="CursoE">
           <Key>
             <PropertyRef Name="IdCurso" />
           </Key>
@@ -1712,7 +1712,7 @@
           <Property Name="IdInstituicao" Type="Int32" Nullable="false" />
           <Property Name="NomeInstituicao" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Sigla" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="tb_curso" Relationship="pvModel.FK_Curso_Instituicao" FromRole="tb_instituicao" ToRole="tb_curso" />
+          <NavigationProperty Name="CursoE" Relationship="pvModel.FK_Curso_Instituicao" FromRole="tb_instituicao" ToRole="tb_curso" />
           <NavigationProperty Name="tb_turma" Relationship="pvModel.FK_Instituicao" FromRole="tb_instituicao" ToRole="tb_turma" />
         </EntityType>
         <EntityType Name="tb_perfil_usuario">
@@ -2200,7 +2200,7 @@
         </Association>
         <Association Name="FK_Curso_Instituicao">
           <End Role="tb_instituicao" Type="pvModel.tb_instituicao" Multiplicity="1" />
-          <End Role="tb_curso" Type="pvModel.tb_curso" Multiplicity="*" />
+          <End Role="tb_curso" Type="pvModel.CursoE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_instituicao">
               <PropertyRef Name="IdInstituicao" />
@@ -2509,7 +2509,7 @@
             <ScalarProperty Name="nota" ColumnName="nota" />
             <ScalarProperty Name="imc" ColumnName="imc" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tb_curso"><EntityTypeMapping TypeName="pvModel.tb_curso"><MappingFragment StoreEntitySet="tb_curso">
+          <EntitySetMapping Name="tb_curso"><EntityTypeMapping TypeName="pvModel.CursoE"><MappingFragment StoreEntitySet="tb_curso">
             <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
             <ScalarProperty Name="NomeCurso" ColumnName="NomeCurso" />
             <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
@@ -2597,7 +2597,7 @@
         <EntityTypeShape EntityType="pvModel.respostaquarta" Width="1.5" PointX="5.25" PointY="19.875" Height="3.9033007812500031" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.respostasegunda" Width="1.5" PointX="5.25" PointY="27.125" Height="3.9033007812500031" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.respostaterceira" Width="1.5" PointX="5.25" PointY="44.625" Height="4.0956022135416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_curso" Width="1.5" PointX="3" PointY="1" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.CursoE" Width="1.5" PointX="3" PointY="1" Height="1.7879850260416674" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.DisciplinaE" Width="1.5" PointX="5.75" PointY="0.875" Height="1.595683593749996" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_disciplina_curso" Width="1.5" PointX="8" PointY="0.875" Height="1.595683593749996" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_instituicao" Width="1.5" PointX="0.75" PointY="2.375" Height="1.9802864583333384" IsExpanded="true" />
