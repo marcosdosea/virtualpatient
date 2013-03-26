@@ -14,3 +14,11 @@ D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\P
 D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\ResolveAssemblyReference.cache
 D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.dll
 D:\virtualpatient\trunk\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.pdb
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.dll.config
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.dll
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.Tests.pdb
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.dll
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\bin\Debug\PacienteVirtual.pdb
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.csprojResolveAssemblyReference.cache
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.dll
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual\PacienteVirtual.Tests\obj\Debug\PacienteVirtual.Tests.pdb
