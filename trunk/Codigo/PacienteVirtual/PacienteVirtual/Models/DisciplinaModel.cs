@@ -15,5 +15,6 @@ namespace PacienteVirtual.Models
         [Required]
         [Display(Name = "Disciplina: ")]
         public string NomeDisciplina { get; set; }
+
     }
 }

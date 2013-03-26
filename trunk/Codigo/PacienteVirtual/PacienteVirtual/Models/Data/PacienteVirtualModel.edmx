@@ -1272,7 +1272,7 @@
             <End Role="tb_instituicao" EntitySet="tb_instituicao" />
             <End Role="tb_turma" EntitySet="tb_turma" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="aluno">
           <Key>
             <PropertyRef Name="login" />
@@ -2522,11 +2522,14 @@
             <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
             <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tb_instituicao"><EntityTypeMapping TypeName="pvModel.tb_instituicao"><MappingFragment StoreEntitySet="tb_instituicao">
-            <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
-            <ScalarProperty Name="NomeInstituicao" ColumnName="NomeInstituicao" />
-            <ScalarProperty Name="Sigla" ColumnName="Sigla" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tb_instituicao">
+            <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_instituicao)">
+              <MappingFragment StoreEntitySet="tb_instituicao">
+                <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+                <ScalarProperty Name="NomeInstituicao" ColumnName="NomeInstituicao" />
+              </MappingFragment>
+            </EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="tb_perfil_usuario"><EntityTypeMapping TypeName="pvModel.tb_perfil_usuario"><MappingFragment StoreEntitySet="tb_perfil_usuario">
             <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
             <ScalarProperty Name="NomePerfil" ColumnName="NomePerfil" />
@@ -2552,7 +2555,7 @@
             <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
             <ScalarProperty Name="IdPerfilUsuario" ColumnName="IdPerfilUsuario" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
