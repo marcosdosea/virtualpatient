@@ -81,6 +81,7 @@
     <Compile Include="Controllers\DisciplinaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstituicaoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -98,8 +99,10 @@
     <Compile Include="Models\Negocio\GerenciadorCurso.cs" />
     <Compile Include="Models\Negocio\GerenciadorDisciplina.cs" />
     <Compile Include="Models\Negocio\GerenciadorInstituicao.cs" />
+    <Compile Include="Models\Negocio\GerenciadorUsuario.cs" />
     <Compile Include="Models\Negocio\NegocioException.cs" />
     <Compile Include="Models\DisciplinaModel.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +144,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Views\Account\Registro.aspx" />
     <Content Include="Views\Curso\Create.aspx" />
     <Content Include="Views\Curso\Delete.aspx" />
     <Content Include="Views\Curso\Details.aspx" />
@@ -156,6 +160,11 @@
     <Content Include="Views\Instituicao\Details.aspx" />
     <Content Include="Views\Instituicao\Edit.aspx" />
     <Content Include="Views\Instituicao\Index.aspx" />
+    <Content Include="Views\Usuario\Create.aspx" />
+    <Content Include="Views\Usuario\Delete.aspx" />
+    <Content Include="Views\Usuario\Details.aspx" />
+    <Content Include="Views\Usuario\Edit.aspx" />
+    <Content Include="Views\Usuario\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -59,6 +59,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "FK_Curso_Instituicao", "tb_instituicao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_instituicao), "tb_curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.CursoE), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "FK_Disciplina", "tb_disciplina", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.DisciplinaE), "tb_disciplina_curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_disciplina_curso), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "FK_Instituicao", "tb_instituicao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_instituicao), "tb_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_turma), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "FK6998F652B972831", "tutor", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.tutor), "turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.turma), true)]
 
 #endregion
 
@@ -545,18 +546,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_usuario> tb_usuario
+        public ObjectSet<UsuarioE> tb_usuario
         {
             get
             {
                 if ((_tb_usuario == null))
                 {
-                    _tb_usuario = base.CreateObjectSet<tb_usuario>("tb_usuario");
+                    _tb_usuario = base.CreateObjectSet<UsuarioE>("tb_usuario");
                 }
                 return _tb_usuario;
             }
         }
-        private ObjectSet<tb_usuario> _tb_usuario;
+        private ObjectSet<UsuarioE> _tb_usuario;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -573,6 +574,86 @@ namespace PacienteVirtual.Models.Data
             }
         }
         private ObjectSet<tb_usuario_turma> _tb_usuario_turma;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<instituicao> instituicao
+        {
+            get
+            {
+                if ((_instituicao == null))
+                {
+                    _instituicao = base.CreateObjectSet<instituicao>("instituicao");
+                }
+                return _instituicao;
+            }
+        }
+        private ObjectSet<instituicao> _instituicao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<teste> teste
+        {
+            get
+            {
+                if ((_teste == null))
+                {
+                    _teste = base.CreateObjectSet<teste>("teste");
+                }
+                return _teste;
+            }
+        }
+        private ObjectSet<teste> _teste;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<turma> turma
+        {
+            get
+            {
+                if ((_turma == null))
+                {
+                    _turma = base.CreateObjectSet<turma>("turma");
+                }
+                return _turma;
+            }
+        }
+        private ObjectSet<turma> _turma;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tutor> tutor
+        {
+            get
+            {
+                if ((_tutor == null))
+                {
+                    _tutor = base.CreateObjectSet<tutor>("tutor");
+                }
+                return _tutor;
+            }
+        }
+        private ObjectSet<tutor> _tutor;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<usuario> usuario
+        {
+            get
+            {
+                if ((_usuario == null))
+                {
+                    _usuario = base.CreateObjectSet<usuario>("usuario");
+                }
+                return _usuario;
+            }
+        }
+        private ObjectSet<usuario> _usuario;
 
         #endregion
 
@@ -797,9 +878,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_usuario EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_usuario(tb_usuario tb_usuario)
+        public void AddTotb_usuario(UsuarioE usuarioE)
         {
-            base.AddObject("tb_usuario", tb_usuario);
+            base.AddObject("tb_usuario", usuarioE);
         }
     
         /// <summary>
@@ -808,6 +889,46 @@ namespace PacienteVirtual.Models.Data
         public void AddTotb_usuario_turma(tb_usuario_turma tb_usuario_turma)
         {
             base.AddObject("tb_usuario_turma", tb_usuario_turma);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the instituicao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToinstituicao(instituicao instituicao)
+        {
+            base.AddObject("instituicao", instituicao);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the teste EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToteste(teste teste)
+        {
+            base.AddObject("teste", teste);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the turma EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToturma(turma turma)
+        {
+            base.AddObject("turma", turma);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tutor EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotutor(tutor tutor)
+        {
+            base.AddObject("tutor", tutor);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the usuario EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTousuario(usuario usuario)
+        {
+            base.AddObject("usuario", usuario);
         }
 
         #endregion
@@ -3225,6 +3346,87 @@ namespace PacienteVirtual.Models.Data
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="instituicao")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class instituicao : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new instituicao object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        public static instituicao Createinstituicao(global::System.Int32 id)
+        {
+            instituicao instituicao = new instituicao();
+            instituicao.id = id;
+            return instituicao;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String nome
+        {
+            get
+            {
+                return _nome;
+            }
+            set
+            {
+                OnnomeChanging(value);
+                ReportPropertyChanging("nome");
+                _nome = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("nome");
+                OnnomeChanged();
+            }
+        }
+        private global::System.String _nome;
+        partial void OnnomeChanging(global::System.String value);
+        partial void OnnomeChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>
@@ -10193,37 +10395,58 @@ namespace PacienteVirtual.Models.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_usuario")]
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_usuario_turma")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class tb_usuario : EntityObject
+    public partial class tb_usuario_turma : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new tb_usuario object.
+        /// Create a new tb_usuario_turma object.
         /// </summary>
+        /// <param name="idTurma">Initial value of the IdTurma property.</param>
         /// <param name="idUsuario">Initial value of the IdUsuario property.</param>
-        /// <param name="cpf">Initial value of the Cpf property.</param>
-        /// <param name="nomeUsuario">Initial value of the NomeUsuario property.</param>
-        /// <param name="email">Initial value of the Email property.</param>
-        /// <param name="login">Initial value of the Login property.</param>
-        /// <param name="senha">Initial value of the Senha property.</param>
-        public static tb_usuario Createtb_usuario(global::System.Int64 idUsuario, global::System.String cpf, global::System.String nomeUsuario, global::System.String email, global::System.String login, global::System.String senha)
+        /// <param name="idPerfilUsuario">Initial value of the IdPerfilUsuario property.</param>
+        public static tb_usuario_turma Createtb_usuario_turma(global::System.Int32 idTurma, global::System.Int64 idUsuario, global::System.Int32 idPerfilUsuario)
         {
-            tb_usuario tb_usuario = new tb_usuario();
-            tb_usuario.IdUsuario = idUsuario;
-            tb_usuario.Cpf = cpf;
-            tb_usuario.NomeUsuario = nomeUsuario;
-            tb_usuario.Email = email;
-            tb_usuario.Login = login;
-            tb_usuario.Senha = senha;
-            return tb_usuario;
+            tb_usuario_turma tb_usuario_turma = new tb_usuario_turma();
+            tb_usuario_turma.IdTurma = idTurma;
+            tb_usuario_turma.IdUsuario = idUsuario;
+            tb_usuario_turma.IdPerfilUsuario = idPerfilUsuario;
+            return tb_usuario_turma;
         }
 
         #endregion
 
         #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdTurma
+        {
+            get
+            {
+                return _IdTurma;
+            }
+            set
+            {
+                if (_IdTurma != value)
+                {
+                    OnIdTurmaChanging(value);
+                    ReportPropertyChanging("IdTurma");
+                    _IdTurma = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdTurma");
+                    OnIdTurmaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdTurma;
+        partial void OnIdTurmaChanging(global::System.Int32 value);
+        partial void OnIdTurmaChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -10250,6 +10473,657 @@ namespace PacienteVirtual.Models.Data
         }
         private global::System.Int64 _IdUsuario;
         partial void OnIdUsuarioChanging(global::System.Int64 value);
+        partial void OnIdUsuarioChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPerfilUsuario
+        {
+            get
+            {
+                return _IdPerfilUsuario;
+            }
+            set
+            {
+                OnIdPerfilUsuarioChanging(value);
+                ReportPropertyChanging("IdPerfilUsuario");
+                _IdPerfilUsuario = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdPerfilUsuario");
+                OnIdPerfilUsuarioChanged();
+            }
+        }
+        private global::System.Int32 _IdPerfilUsuario;
+        partial void OnIdPerfilUsuarioChanging(global::System.Int32 value);
+        partial void OnIdPerfilUsuarioChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="teste")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class teste : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new teste object.
+        /// </summary>
+        /// <param name="cODIGO">Initial value of the CODIGO property.</param>
+        public static teste Createteste(global::System.Int32 cODIGO)
+        {
+            teste teste = new teste();
+            teste.CODIGO = cODIGO;
+            return teste;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CODIGO
+        {
+            get
+            {
+                return _CODIGO;
+            }
+            set
+            {
+                if (_CODIGO != value)
+                {
+                    OnCODIGOChanging(value);
+                    ReportPropertyChanging("CODIGO");
+                    _CODIGO = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("CODIGO");
+                    OnCODIGOChanged();
+                }
+            }
+        }
+        private global::System.Int32 _CODIGO;
+        partial void OnCODIGOChanging(global::System.Int32 value);
+        partial void OnCODIGOChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String DESCRICAO
+        {
+            get
+            {
+                return _DESCRICAO;
+            }
+            set
+            {
+                OnDESCRICAOChanging(value);
+                ReportPropertyChanging("DESCRICAO");
+                _DESCRICAO = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DESCRICAO");
+                OnDESCRICAOChanged();
+            }
+        }
+        private global::System.String _DESCRICAO;
+        partial void OnDESCRICAOChanging(global::System.String value);
+        partial void OnDESCRICAOChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] VIDEO
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_VIDEO);
+            }
+            set
+            {
+                OnVIDEOChanging(value);
+                ReportPropertyChanging("VIDEO");
+                _VIDEO = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("VIDEO");
+                OnVIDEOChanged();
+            }
+        }
+        private global::System.Byte[] _VIDEO;
+        partial void OnVIDEOChanging(global::System.Byte[] value);
+        partial void OnVIDEOChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="turma")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class turma : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new turma object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        public static turma Createturma(global::System.Int32 id)
+        {
+            turma turma = new turma();
+            turma.id = id;
+            return turma;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String codigo
+        {
+            get
+            {
+                return _codigo;
+            }
+            set
+            {
+                OncodigoChanging(value);
+                ReportPropertyChanging("codigo");
+                _codigo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("codigo");
+                OncodigoChanged();
+            }
+        }
+        private global::System.String _codigo;
+        partial void OncodigoChanging(global::System.String value);
+        partial void OncodigoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String periodo
+        {
+            get
+            {
+                return _periodo;
+            }
+            set
+            {
+                OnperiodoChanging(value);
+                ReportPropertyChanging("periodo");
+                _periodo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("periodo");
+                OnperiodoChanged();
+            }
+        }
+        private global::System.String _periodo;
+        partial void OnperiodoChanging(global::System.String value);
+        partial void OnperiodoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String fktutor
+        {
+            get
+            {
+                return _fktutor;
+            }
+            set
+            {
+                OnfktutorChanging(value);
+                ReportPropertyChanging("fktutor");
+                _fktutor = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("fktutor");
+                OnfktutorChanged();
+            }
+        }
+        private global::System.String _fktutor;
+        partial void OnfktutorChanging(global::System.String value);
+        partial void OnfktutorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String nmDisciplina
+        {
+            get
+            {
+                return _nmDisciplina;
+            }
+            set
+            {
+                OnnmDisciplinaChanging(value);
+                ReportPropertyChanging("nmDisciplina");
+                _nmDisciplina = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("nmDisciplina");
+                OnnmDisciplinaChanged();
+            }
+        }
+        private global::System.String _nmDisciplina;
+        partial void OnnmDisciplinaChanging(global::System.String value);
+        partial void OnnmDisciplinaChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK6998F652B972831", "tutor")]
+        public tutor tutor
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tutor>("pvModel.FK6998F652B972831", "tutor").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tutor>("pvModel.FK6998F652B972831", "tutor").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tutor> tutorReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tutor>("pvModel.FK6998F652B972831", "tutor");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tutor>("pvModel.FK6998F652B972831", "tutor", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tutor")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tutor : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new tutor object.
+        /// </summary>
+        /// <param name="login">Initial value of the login property.</param>
+        public static tutor Createtutor(global::System.String login)
+        {
+            tutor tutor = new tutor();
+            tutor.login = login;
+            return tutor;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String login
+        {
+            get
+            {
+                return _login;
+            }
+            set
+            {
+                if (_login != value)
+                {
+                    OnloginChanging(value);
+                    ReportPropertyChanging("login");
+                    _login = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("login");
+                    OnloginChanged();
+                }
+            }
+        }
+        private global::System.String _login;
+        partial void OnloginChanging(global::System.String value);
+        partial void OnloginChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String nome
+        {
+            get
+            {
+                return _nome;
+            }
+            set
+            {
+                OnnomeChanging(value);
+                ReportPropertyChanging("nome");
+                _nome = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("nome");
+                OnnomeChanged();
+            }
+        }
+        private global::System.String _nome;
+        partial void OnnomeChanging(global::System.String value);
+        partial void OnnomeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK6998F652B972831", "turma")]
+        public EntityCollection<turma> turma
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<turma>("pvModel.FK6998F652B972831", "turma");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<turma>("pvModel.FK6998F652B972831", "turma", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="usuario")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class usuario : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new usuario object.
+        /// </summary>
+        /// <param name="login">Initial value of the login property.</param>
+        public static usuario Createusuario(global::System.String login)
+        {
+            usuario usuario = new usuario();
+            usuario.login = login;
+            return usuario;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String login
+        {
+            get
+            {
+                return _login;
+            }
+            set
+            {
+                if (_login != value)
+                {
+                    OnloginChanging(value);
+                    ReportPropertyChanging("login");
+                    _login = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("login");
+                    OnloginChanged();
+                }
+            }
+        }
+        private global::System.String _login;
+        partial void OnloginChanging(global::System.String value);
+        partial void OnloginChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String email
+        {
+            get
+            {
+                return _email;
+            }
+            set
+            {
+                OnemailChanging(value);
+                ReportPropertyChanging("email");
+                _email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("email");
+                OnemailChanged();
+            }
+        }
+        private global::System.String _email;
+        partial void OnemailChanging(global::System.String value);
+        partial void OnemailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String senha
+        {
+            get
+            {
+                return _senha;
+            }
+            set
+            {
+                OnsenhaChanging(value);
+                ReportPropertyChanging("senha");
+                _senha = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("senha");
+                OnsenhaChanged();
+            }
+        }
+        private global::System.String _senha;
+        partial void OnsenhaChanging(global::System.String value);
+        partial void OnsenhaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String tpUsuario
+        {
+            get
+            {
+                return _tpUsuario;
+            }
+            set
+            {
+                OntpUsuarioChanging(value);
+                ReportPropertyChanging("tpUsuario");
+                _tpUsuario = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("tpUsuario");
+                OntpUsuarioChanged();
+            }
+        }
+        private global::System.String _tpUsuario;
+        partial void OntpUsuarioChanging(global::System.String value);
+        partial void OntpUsuarioChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String nome
+        {
+            get
+            {
+                return _nome;
+            }
+            set
+            {
+                OnnomeChanging(value);
+                ReportPropertyChanging("nome");
+                _nome = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("nome");
+                OnnomeChanged();
+            }
+        }
+        private global::System.String _nome;
+        partial void OnnomeChanging(global::System.String value);
+        partial void OnnomeChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="UsuarioE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class UsuarioE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new UsuarioE object.
+        /// </summary>
+        /// <param name="idUsuario">Initial value of the IdUsuario property.</param>
+        /// <param name="cpf">Initial value of the Cpf property.</param>
+        /// <param name="nomeUsuario">Initial value of the NomeUsuario property.</param>
+        /// <param name="email">Initial value of the Email property.</param>
+        /// <param name="login">Initial value of the Login property.</param>
+        /// <param name="senha">Initial value of the Senha property.</param>
+        public static UsuarioE CreateUsuarioE(global::System.Int32 idUsuario, global::System.String cpf, global::System.String nomeUsuario, global::System.String email, global::System.String login, global::System.String senha)
+        {
+            UsuarioE usuarioE = new UsuarioE();
+            usuarioE.IdUsuario = idUsuario;
+            usuarioE.Cpf = cpf;
+            usuarioE.NomeUsuario = nomeUsuario;
+            usuarioE.Email = email;
+            usuarioE.Login = login;
+            usuarioE.Senha = senha;
+            return usuarioE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdUsuario
+        {
+            get
+            {
+                return _IdUsuario;
+            }
+            set
+            {
+                if (_IdUsuario != value)
+                {
+                    OnIdUsuarioChanging(value);
+                    ReportPropertyChanging("IdUsuario");
+                    _IdUsuario = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdUsuario");
+                    OnIdUsuarioChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdUsuario;
+        partial void OnIdUsuarioChanging(global::System.Int32 value);
         partial void OnIdUsuarioChanged();
     
         /// <summary>
@@ -10395,118 +11269,6 @@ namespace PacienteVirtual.Models.Data
         private global::System.String _tpUsuario;
         partial void OntpUsuarioChanging(global::System.String value);
         partial void OntpUsuarioChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_usuario_turma")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_usuario_turma : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_usuario_turma object.
-        /// </summary>
-        /// <param name="idTurma">Initial value of the IdTurma property.</param>
-        /// <param name="idUsuario">Initial value of the IdUsuario property.</param>
-        /// <param name="idPerfilUsuario">Initial value of the IdPerfilUsuario property.</param>
-        public static tb_usuario_turma Createtb_usuario_turma(global::System.Int32 idTurma, global::System.Int64 idUsuario, global::System.Int32 idPerfilUsuario)
-        {
-            tb_usuario_turma tb_usuario_turma = new tb_usuario_turma();
-            tb_usuario_turma.IdTurma = idTurma;
-            tb_usuario_turma.IdUsuario = idUsuario;
-            tb_usuario_turma.IdPerfilUsuario = idPerfilUsuario;
-            return tb_usuario_turma;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdTurma
-        {
-            get
-            {
-                return _IdTurma;
-            }
-            set
-            {
-                if (_IdTurma != value)
-                {
-                    OnIdTurmaChanging(value);
-                    ReportPropertyChanging("IdTurma");
-                    _IdTurma = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdTurma");
-                    OnIdTurmaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdTurma;
-        partial void OnIdTurmaChanging(global::System.Int32 value);
-        partial void OnIdTurmaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdUsuario
-        {
-            get
-            {
-                return _IdUsuario;
-            }
-            set
-            {
-                if (_IdUsuario != value)
-                {
-                    OnIdUsuarioChanging(value);
-                    ReportPropertyChanging("IdUsuario");
-                    _IdUsuario = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdUsuario");
-                    OnIdUsuarioChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdUsuario;
-        partial void OnIdUsuarioChanging(global::System.Int64 value);
-        partial void OnIdUsuarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPerfilUsuario
-        {
-            get
-            {
-                return _IdPerfilUsuario;
-            }
-            set
-            {
-                OnIdPerfilUsuarioChanging(value);
-                ReportPropertyChanging("IdPerfilUsuario");
-                _IdPerfilUsuario = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdPerfilUsuario");
-                OnIdPerfilUsuarioChanged();
-            }
-        }
-        private global::System.Int32 _IdPerfilUsuario;
-        partial void OnIdPerfilUsuarioChanging(global::System.Int32 value);
-        partial void OnIdPerfilUsuarioChanged();
 
         #endregion
 
