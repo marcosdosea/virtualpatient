@@ -6,11 +6,15 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using PacienteVirtual.Models;
+using System.Data;
+using System.Data.Entity;
+using PacienteVirtual.Models.Data;
 
 namespace PacienteVirtual.Controllers
 {
     public class AccountController : Controller
     {
+        private pvEntities db = new pvEntities();
 
         //
         // GET: /Account/LogOn
@@ -64,7 +68,7 @@ namespace PacienteVirtual.Controllers
         //
         // GET: /Account/Register
 
-        public ActionResult Register()
+        public ActionResult Registro()
         {
             return View();
         }
@@ -73,27 +77,16 @@ namespace PacienteVirtual.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Registro(UsuarioE usuarioe)
         {
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
-
-                if (createStatus == MembershipCreateStatus.Success)
-                {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
-                }
+                db.tb_usuario.AddObject(usuarioe);
+                db.SaveChanges();
+                return RedirectToAction("LogOn");
             }
 
-            // If we got this far, something failed, redisplay form
-            return View(model);
+            return View(usuarioe);
         }
 
         //

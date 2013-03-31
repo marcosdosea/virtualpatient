@@ -4,11 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="pvModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="pvModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="pvModelStoreContainer">
           <EntitySet Name="aluno" EntityType="pvModel.Store.aluno" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="casoclinico" EntityType="pvModel.Store.casoclinico" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="consulta" EntityType="pvModel.Store.consulta" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="instituicao" EntityType="pvModel.Store.instituicao" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="intervencao" EntityType="pvModel.Store.intervencao" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="intervencaorespostaquarta" EntityType="pvModel.Store.intervencaorespostaquarta" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="intervencaorespostasegunda" EntityType="pvModel.Store.intervencaorespostasegunda" store:Type="Tables" Schema="pv1" />
@@ -35,6 +36,10 @@
           <EntitySet Name="tb_turma" EntityType="pvModel.Store.tb_turma" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="tb_usuario" EntityType="pvModel.Store.tb_usuario" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="tb_usuario_turma" EntityType="pvModel.Store.tb_usuario_turma" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="teste" EntityType="pvModel.Store.teste" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="turma" EntityType="pvModel.Store.turma" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="tutor" EntityType="pvModel.Store.tutor" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="usuario" EntityType="pvModel.Store.usuario" store:Type="Tables" Schema="pv1" />
           <AssociationSet Name="FK_aluno_2" Association="pvModel.Store.FK_aluno_2">
             <End Role="consulta" EntitySet="consulta" />
             <End Role="aluno" EntitySet="aluno" />
@@ -126,6 +131,10 @@
           <AssociationSet Name="FK685CED99A4FE1140" Association="pvModel.Store.FK685CED99A4FE1140">
             <End Role="respostasegunda" EntitySet="respostasegunda" />
             <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
+          </AssociationSet>
+          <AssociationSet Name="FK6998F652B972831" Association="pvModel.Store.FK6998F652B972831">
+            <End Role="tutor" EntitySet="tutor" />
+            <End Role="turma" EntitySet="turma" />
           </AssociationSet>
           <AssociationSet Name="FK78D999E947C18322" Association="pvModel.Store.FK78D999E947C18322">
             <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
@@ -267,6 +276,13 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="fkCasoClinico" Type="int" Nullable="false" />
           <Property Name="fkAluno" Type="varchar" Nullable="false" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="instituicao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="intervencao">
           <Key>
@@ -597,6 +613,41 @@
           <Property Name="IdUsuario" Type="bigint" Nullable="false" />
           <Property Name="IdPerfilUsuario" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="teste">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="100" />
+          <Property Name="VIDEO" Type="longblob" />
+        </EntityType>
+        <EntityType Name="turma">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="varchar" MaxLength="2" />
+          <Property Name="periodo" Type="varchar" MaxLength="6" />
+          <Property Name="fktutor" Type="varchar" MaxLength="40" />
+          <Property Name="nmDisciplina" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tutor">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="senha" Type="varchar" MaxLength="255" />
+          <Property Name="tpUsuario" Type="varchar" MaxLength="255" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+        </EntityType>
         <Association Name="FK_aluno_2">
           <End Role="consulta" Type="pvModel.Store.consulta" Multiplicity="0..1" />
           <End Role="aluno" Type="pvModel.Store.aluno" Multiplicity="*" />
@@ -873,6 +924,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK6998F652B972831">
+          <End Role="tutor" Type="pvModel.Store.tutor" Multiplicity="0..1" />
+          <End Role="turma" Type="pvModel.Store.turma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tutor">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="turma">
+              <PropertyRef Name="fktutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK78D999E947C18322">
           <End Role="queixarespostaquarta" Type="pvModel.Store.queixarespostaquarta" Multiplicity="1" />
           <End Role="medicamentoqueixaquarta" Type="pvModel.Store.medicamentoqueixaquarta" Multiplicity="*" />
@@ -1077,8 +1140,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="pvModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -1110,7 +1172,7 @@
           <EntitySet Name="tb_instituicao" EntityType="pvModel.tb_instituicao" />
           <EntitySet Name="tb_perfil_usuario" EntityType="pvModel.tb_perfil_usuario" />
           <EntitySet Name="tb_turma" EntityType="pvModel.tb_turma" />
-          <EntitySet Name="tb_usuario" EntityType="pvModel.tb_usuario" />
+          <EntitySet Name="tb_usuario" EntityType="pvModel.UsuarioE" />
           <EntitySet Name="tb_usuario_turma" EntityType="pvModel.tb_usuario_turma" />
           <AssociationSet Name="FK_aluno_2" Association="pvModel.FK_aluno_2">
             <End Role="consulta" EntitySet="consulta" />
@@ -1272,6 +1334,15 @@
             <End Role="tb_instituicao" EntitySet="tb_instituicao" />
             <End Role="tb_turma" EntitySet="tb_turma" />
           </AssociationSet>
+          <EntitySet Name="instituicao" EntityType="pvModel.instituicao" />
+          <EntitySet Name="teste" EntityType="pvModel.teste" />
+          <EntitySet Name="turma" EntityType="pvModel.turma" />
+          <EntitySet Name="tutor" EntityType="pvModel.tutor" />
+          <EntitySet Name="usuario" EntityType="pvModel.usuario" />
+          <AssociationSet Name="FK6998F652B972831" Association="pvModel.FK6998F652B972831">
+            <End Role="tutor" EntitySet="tutor" />
+            <End Role="turma" EntitySet="turma" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="aluno">
           <Key>
@@ -1291,7 +1362,7 @@
           <Property Name="matricula" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
           <Property Name="fkTurma" Type="Int32" />
           <Property Name="nome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <Property Name="liberado" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="liberado" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
           <Property Name="fkConsultaAtual" Type="Int32" />
           <Property Name="nrConsulta" Type="Int32" Nullable="false" />
           <Property Name="nrTentativa" Type="Int32" Nullable="false" />
@@ -1311,7 +1382,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="alergias" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="altura" Type="Single" Nullable="false" />
-          <Property Name="dataNascimento" Type="DateTime" />
+          <Property Name="dataNascimento" Type="DateTime" Precision="3" />
           <Property Name="disponibilidade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="escolaridade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="flBebeAlcool" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -1326,8 +1397,8 @@
           <Property Name="planoDeSaude" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="pressaoDiastolica" Type="Int32" Nullable="false" />
           <Property Name="pressaoSistolica" Type="Int32" Nullable="false" />
-          <Property Name="relatoDeCasoPrimeiraConsulta" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
-          <Property Name="relatoDeCasoTerceiraConsulta" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="relatoDeCasoPrimeiraConsulta" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="relatoDeCasoTerceiraConsulta" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="temperatura" Type="Single" Nullable="false" />
           <Property Name="historiaAlcoolAnterior" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="historiaAlcoolAtual" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -1387,7 +1458,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="justificativa" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="justificativa" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="numeroIntervencao" Type="Int32" Nullable="false" />
           <Property Name="fkResposta4" Type="Int32" Nullable="false" />
           <NavigationProperty Name="respostaquarta" Relationship="pvModel.FK_intervencaorespostaquarta_1" FromRole="intervencaorespostaquarta" ToRole="respostaquarta" />
@@ -1399,7 +1470,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="justificativa" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="justificativa" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="numeroIntervencao" Type="Int32" />
           <Property Name="fkResposta2" Type="Int32" Nullable="false" />
           <NavigationProperty Name="respostasegunda" Relationship="pvModel.FK_intervencaorespostasegunda_1" FromRole="intervencaorespostasegunda" ToRole="respostasegunda" />
@@ -1569,8 +1640,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="alergias" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="altura" Type="Single" Nullable="false" />
-          <Property Name="dataDeRealizacao" Type="DateTime" />
-          <Property Name="dataNascimento" Type="DateTime" />
+          <Property Name="dataDeRealizacao" Type="DateTime" Precision="0" />
+          <Property Name="dataNascimento" Type="DateTime" Precision="0" />
           <Property Name="escolaridade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="flAlturaCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="flBebeAlcool" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -1623,7 +1694,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" />
+          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fkConsulta" Type="Int32" Nullable="false" />
           <Property Name="numeroTentativa" Type="Int32" Nullable="false" />
           <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
@@ -1643,7 +1714,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" />
+          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fkConsulta" Type="Int32" Nullable="false" />
           <Property Name="numeroTentativa" Type="Int32" Nullable="false" />
           <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
@@ -1668,7 +1739,7 @@
           <Property Name="pressaodiastolica" Type="Int64" />
           <Property Name="peso" Type="Single" />
           <Property Name="fkConsulta" Type="Int32" Nullable="false" />
-          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" />
+          <Property Name="dataRealizacao" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
           <Property Name="comentario" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="comentarioAluno" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
@@ -1733,11 +1804,11 @@
           <Property Name="IdInstituicao" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tb_instituicao" Relationship="pvModel.FK_Instituicao" FromRole="tb_turma" ToRole="tb_instituicao" />
         </EntityType>
-        <EntityType Name="tb_usuario">
+        <EntityType Name="UsuarioE">
           <Key>
             <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="IdUsuario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cpf" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
           <Property Name="NomeUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -2234,6 +2305,62 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="instituicao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nome" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="teste">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Type="Int32" Name="CODIGO" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DESCRICAO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="VIDEO" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="turma">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="codigo" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="periodo" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fktutor" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nmDisciplina" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tutor" Relationship="pvModel.FK6998F652B972831" FromRole="turma" ToRole="tutor" />
+        </EntityType>
+        <EntityType Name="tutor">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Type="String" Name="login" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nome" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="turma" Relationship="pvModel.FK6998F652B972831" FromRole="tutor" ToRole="turma" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Type="String" Name="login" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="senha" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tpUsuario" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nome" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK6998F652B972831">
+          <End Type="pvModel.tutor" Role="tutor" Multiplicity="0..1" />
+          <End Type="pvModel.turma" Role="turma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tutor">
+              <PropertyRef Name="login" />
+            </Principal>
+            <Dependent Role="turma">
+              <PropertyRef Name="fktutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2541,7 +2668,7 @@
             <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
             <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tb_usuario"><EntityTypeMapping TypeName="pvModel.tb_usuario"><MappingFragment StoreEntitySet="tb_usuario">
+          <EntitySetMapping Name="tb_usuario"><EntityTypeMapping TypeName="pvModel.UsuarioE"><MappingFragment StoreEntitySet="tb_usuario">
             <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
             <ScalarProperty Name="Cpf" ColumnName="Cpf" />
             <ScalarProperty Name="NomeUsuario" ColumnName="NomeUsuario" />
@@ -2555,6 +2682,53 @@
             <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
             <ScalarProperty Name="IdPerfilUsuario" ColumnName="IdPerfilUsuario" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="instituicao">
+            <EntityTypeMapping TypeName="pvModel.instituicao">
+              <MappingFragment StoreEntitySet="instituicao">
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teste">
+            <EntityTypeMapping TypeName="pvModel.teste">
+              <MappingFragment StoreEntitySet="teste">
+                <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="turma">
+            <EntityTypeMapping TypeName="pvModel.turma">
+              <MappingFragment StoreEntitySet="turma">
+                <ScalarProperty Name="nmDisciplina" ColumnName="nmDisciplina" />
+                <ScalarProperty Name="fktutor" ColumnName="fktutor" />
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tutor">
+            <EntityTypeMapping TypeName="pvModel.tutor">
+              <MappingFragment StoreEntitySet="tutor">
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="login" ColumnName="login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="pvModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="tpUsuario" ColumnName="tpUsuario" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="login" ColumnName="login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2575,7 +2749,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="65">
         <EntityTypeShape EntityType="pvModel.aluno" Width="1.5" PointX="5.25" PointY="11.875" Height="6.0186165364583317" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.casoclinico" Width="1.5" PointX="0.75" PointY="26" Height="8.51853515625" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.consulta" Width="1.5" PointX="3" PointY="28.125" Height="4.2879036458333353" IsExpanded="true" />
@@ -2603,7 +2777,7 @@
         <EntityTypeShape EntityType="pvModel.tb_instituicao" Width="1.5" PointX="0.75" PointY="2.375" Height="1.9802864583333384" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_perfil_usuario" Width="1.5" PointX="5.75" PointY="3.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_turma" Width="1.5" PointX="3" PointY="3.625" Height="2.172587890624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_usuario" Width="1.5" PointX="0.75" PointY="6.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.UsuarioE" Width="1.5" PointX="0.75" PointY="6.75" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_usuario_turma" Width="1.5" PointX="2.75" PointY="6.75" Height="1.5956835937500102" IsExpanded="true" />
         <AssociationConnector Association="pvModel.FK_aluno_2" ManuallyRouted="false">
           <ConnectorPoint PointX="3.75" PointY="28.125" />
@@ -2802,6 +2976,12 @@
           <ConnectorPoint PointX="2.25" PointY="3.9901432291666694" />
           <ConnectorPoint PointX="3" PointY="3.9901432291666694" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="pvModel.instituicao" Width="1.5" PointX="8.2758263239058785" PointY="13.988533264952029" />
+        <EntityTypeShape EntityType="pvModel.teste" Width="1.5" PointX="11.801295189094402" PointY="28.599841220583691" />
+        <EntityTypeShape EntityType="pvModel.turma" Width="1.5" PointX="2.8843677802404235" PointY="30.501681580441854" />
+        <EntityTypeShape EntityType="pvModel.tutor" Width="1.5" PointX="10.155368992199827" PointY="21.498850489733204" />
+        <EntityTypeShape EntityType="pvModel.usuario" Width="1.5" PointX="7.4419512559855123" PointY="10.883177330197384" />
+        <AssociationConnector Association="pvModel.FK6998F652B972831" />
       </Diagram>
     </Diagrams>
   </Designer>
