@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.CursoE>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.CursoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Details
@@ -18,7 +18,7 @@
 
     <div class="display-label">tb_instituicao</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.tb_instituicao.NomeInstituicao) %>
+        <!--%: Html.DisplayFor(model => model.tb_instituicao.NomeInstituicao) %-->
     </div>
 </fieldset>
 <p>

@@ -99,12 +99,16 @@ namespace PacienteVirtual.Models.Negocio
             var repCurso = new RepositorioGenerico<CursoE>();
             var pvEntities = (pvEntities)repCurso.ObterContexto();
             var query = from curso in pvEntities.tb_curso
-                        select new CursoModel
+                        join table2 in pvEntities.tb_instituicao.AsEnumerable()
+                        on curso.Field<string>("idInstituicao") equals table2.Field<string>("idInstituicao") into joined
+                        from table3 in joined.DefaultIfEmpty()
+                        select new 
                         {
                             IdCurso = curso.IdCurso,
                             NomeCurso = curso.NomeCurso,
-                            IdInstituicao = curso.IdInstituicao
+                            IdInstituicao = curso.IdInstituicao,
                            
+                            Comment = table3 != null ? table3.Field<String>("Comment") : null
                         };
             return query;
         }
