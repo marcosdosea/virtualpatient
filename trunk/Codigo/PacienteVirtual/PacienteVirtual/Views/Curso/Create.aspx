@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.CursoE>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.CursoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Create
@@ -28,7 +28,7 @@
             <%: Html.LabelFor(model => model.IdInstituicao, "tb_instituicao") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdInstituicao", String.Empty) %>
+            <!--%: Html.DropDownList("IdInstituicao", String.Empty) %-->
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
 

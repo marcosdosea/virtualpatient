@@ -13,7 +13,7 @@ namespace PacienteVirtual.Models
         public int IdCurso { get; set; }
 
         [Required]
-        [Display(Name = "Disciplina: ")]
+        [Display(Name = "Curso: ")]
         public string NomeCurso { get; set; }
 
 
