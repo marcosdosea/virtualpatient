@@ -98,17 +98,15 @@ namespace PacienteVirtual.Models.Negocio
         {
             var repCurso = new RepositorioGenerico<CursoE>();
             var pvEntities = (pvEntities)repCurso.ObterContexto();
-            var query = from curso in pvEntities.tb_curso
-                        join table2 in pvEntities.tb_instituicao.AsEnumerable()
-                        on curso.Field<string>("idInstituicao") equals table2.Field<string>("idInstituicao") into joined
-                        from table3 in joined.DefaultIfEmpty()
-                        select new 
+            var query = from tb_curso in pvEntities.tb_curso
+                        join tb_instituicao in pvEntities.tb_instituicao
+                        on tb_curso.IdInstituicao equals tb_instituicao.IdInstituicao
+                        select new CursoModel
                         {
-                            IdCurso = curso.IdCurso,
-                            NomeCurso = curso.NomeCurso,
-                            IdInstituicao = curso.IdInstituicao,
-                           
-                            Comment = table3 != null ? table3.Field<String>("Comment") : null
+                            IdCurso = tb_curso.IdCurso,
+                            IdInstituicao = tb_curso.IdInstituicao,
+                            NomeCurso = tb_curso.NomeCurso,
+                            NomeInstituicao = tb_instituicao.NomeInstituicao
                         };
             return query;
         }

@@ -99,10 +99,8 @@
     <Compile Include="Models\Negocio\GerenciadorCurso.cs" />
     <Compile Include="Models\Negocio\GerenciadorDisciplina.cs" />
     <Compile Include="Models\Negocio\GerenciadorInstituicao.cs" />
-    <Compile Include="Models\Negocio\GerenciadorUsuario.cs" />
     <Compile Include="Models\Negocio\NegocioException.cs" />
     <Compile Include="Models\DisciplinaModel.cs" />
-    <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
