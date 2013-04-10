@@ -41,7 +41,15 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            // ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao");
+           
+            List<string> colors = new List<string>();
+            colors.Add("red");
+            colors.Add("green");
+            colors.Add("blue");
+            ViewBag.ListColors = colors; //colors is List
+
+            ViewBag.Instituicoes1 = GerenciadorInstituicao.GetInstance().ObterTodos();
+            ViewBag.Instituicoes2 = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
             return View();
         }
 
@@ -49,23 +57,26 @@ namespace PacienteVirtual.Controllers
         // POST: /Curso/Create
 
         [HttpPost]
-        public ActionResult Create(CursoE cursoe/*CursoModel cursoModel*/)
+        public ActionResult Create(/*CursoE cursoe*/CursoModel cursoModel)
         {
             if (ModelState.IsValid)
             {
 
-                db.tb_curso.AddObject(cursoe);
+                /*db.tb_curso.AddObject(cursoe);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");*/
 
-                //cursoModel.IdCurso = GerenciadorCurso.GetInstance().Inserir(cursoModel);
+                cursoModel.IdInstituicao = ToInt32(Request.Form["IdInstituicao"].ToString());
+
+
+                cursoModel.IdCurso = GerenciadorCurso.GetInstance().Inserir(cursoModel);
 
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", cursoe.IdInstituicao);
-            return View(cursoe);
-            // return View(cursoModel);
+            /*ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", cursoe.IdInstituicao);
+            return View(cursoe);*/
+            return View(cursoModel);
         }
 
         //
