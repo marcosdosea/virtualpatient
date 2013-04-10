@@ -34,8 +34,8 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         public int Inserir(InstituicaoModel instituicao)
         {
-            var repInstituicao = new RepositorioGenerico<tb_instituicao>();
-            tb_instituicao _tb_instituicao = new tb_instituicao();
+            var repInstituicao = new RepositorioGenerico<InstituicaoE>();
+            InstituicaoE _tb_instituicao = new InstituicaoE();
             try
             {
                 Atribuir(instituicao, _tb_instituicao);
@@ -60,8 +60,8 @@ namespace PacienteVirtual.Models.Negocio
         {
             try
             {
-                var repInstituicao = new RepositorioGenerico<tb_instituicao>();
-                tb_instituicao _tb_instituicao = repInstituicao.ObterEntidade(d => d.IdInstituicao == instituicao.IdInstituicao);
+                var repInstituicao = new RepositorioGenerico<InstituicaoE>();
+                InstituicaoE _tb_instituicao = repInstituicao.ObterEntidade(d => d.IdInstituicao == instituicao.IdInstituicao);
                 Atribuir(instituicao, _tb_instituicao);
 
                 repInstituicao.SaveChanges();
@@ -80,7 +80,7 @@ namespace PacienteVirtual.Models.Negocio
         {
             try
             {
-                var repInstituicao = new RepositorioGenerico<tb_instituicao>();
+                var repInstituicao = new RepositorioGenerico<InstituicaoE>();
                 repInstituicao.Remover(d => d.IdInstituicao == idInstituicao);
                 repInstituicao.SaveChanges();
             }
@@ -96,7 +96,7 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         private IQueryable<InstituicaoModel> GetQuery()
         {
-            var repInstituicao = new RepositorioGenerico<tb_instituicao>();
+            var repInstituicao = new RepositorioGenerico<InstituicaoE>();
             var pvEntities = (pvEntities)repInstituicao.ObterContexto();
             var query = from instituicao in pvEntities.tb_instituicao
                         select new InstituicaoModel
@@ -142,7 +142,7 @@ namespace PacienteVirtual.Models.Negocio
         /// </summary>
         /// <param name="instituicao"></param>
         /// <param name="_tb_instituicao"></param>
-        private static void Atribuir(InstituicaoModel instituicao, tb_instituicao _tb_instituicao)
+        private static void Atribuir(InstituicaoModel instituicao, InstituicaoE _tb_instituicao)
         {
             //_tb_instituicao.IdInstituicao = instituicao.IdInstituicao;
             _tb_instituicao.NomeInstituicao = instituicao.NomeInstituicao;

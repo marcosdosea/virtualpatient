@@ -28,7 +28,7 @@
             <%: Html.DisplayFor(modelItem => item.NomeCurso) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.tb_instituicao.NomeInstituicao) %>
+            <%: Html.DisplayFor(modelItem => item.NomeInstituicao) %>
         </td>
         <td>
             <%: Html.ActionLink("Edit", "Edit", new { id=item.IdCurso }) %> |

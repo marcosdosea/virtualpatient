@@ -24,5 +24,8 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "Nome Instituição: ")]
         public string NomeInstituicao { get; set; }
+
+        [Display(Name = "Instituições: ")]
+        public IEnumerable<InstituicaoModel> Instituicoes { get; set; }
     }
 }
