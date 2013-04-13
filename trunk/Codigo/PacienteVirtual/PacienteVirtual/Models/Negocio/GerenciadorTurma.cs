@@ -110,7 +110,7 @@ namespace PacienteVirtual.Models.Negocio
                             IdInstituicao = tb_turma.IdInstituicao,
 
                             NomeInstituicao = tb_instituicao.NomeInstituicao,
-                            NomeDisciplina = tb_instituicao.NomeDisciplina
+                            NomeDisciplina = tb_disciplina.NomeDisciplina
       
                         };
             return query;
