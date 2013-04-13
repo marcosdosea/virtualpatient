@@ -22,6 +22,7 @@
                     <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
                     <li><%: Html.ActionLink("Usuario", "Index", "Usuario")%></li>
                     <li><%: Html.ActionLink("Curso", "Index", "Curso")%></li>
+                    <li><%: Html.ActionLink("Turma", "Index", "Turma")%></li>
                     <li><%: Html.ActionLink("Disciplina", "Index", "Disciplina")%></li>
                     <li><%: Html.ActionLink("Instituição", "Index", "Instituicao")%></li>
                     <li><%: Html.ActionLink("About", "About", "Home")%></li>

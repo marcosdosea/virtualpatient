@@ -19,6 +19,7 @@
 
     <div class="display-label">tb_instituicao</div>
     <div class="display-field">
+        <%: ViewBag.Instituicao %>
         <!--%: Html.DisplayFor(model => model.tb_instituicao.NomeInstituicao) %-->
     </div>
 </fieldset>

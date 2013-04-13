@@ -6,12 +6,13 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Edit</h2>
+    <h2>Edit</h2>
 
-<script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
-<% using (Html.BeginForm()) { %>
+    <% using (Html.BeginForm())
+       { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>CursoE</legend>
@@ -31,6 +32,10 @@
         </div>
         <div class="editor-field">
             <!--%: Html.DropDownList("IdInstituicao", String.Empty) %-->
+            <%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes,"IdInstituicao","NomeInstituicao"), "Selecione")%>
+            <br />
+
+            <%: Html.ValidationMessageFor(model => model.NomeInstituicao) %>
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
 
@@ -38,10 +43,10 @@
             <input type="submit" value="Save" />
         </p>
     </fieldset>
-<% } %>
+    <% } %>
 
-<div>
-    <%: Html.ActionLink("Back to List", "Index") %>
-</div>
+    <div>
+        <%: Html.ActionLink("Back to List", "Index") %>
+    </div>
 
 </asp:Content>

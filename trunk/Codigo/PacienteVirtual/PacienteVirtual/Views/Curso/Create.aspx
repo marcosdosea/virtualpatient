@@ -38,21 +38,43 @@
             </li>
             <% } %>
         </div>
-        <%   foreach (var person in ViewBag.Instituicoes1)
+        
+        <table>
+            
+
+                <th>asd</th>
+                <th>asd</th>
+                <th>asd</th>
+   
+            <tr>
+                   <td>asd</td>
+                <td>asd</td>
+                <td>asd</td> 
+
+            </tr>
+              <tr>
+                   <td>asd</td>
+                <td>asd</td>
+                <td>asd</td> 
+
+            </tr>
+
+      
+         </table>
+
+        <%   foreach (var instituicao in ViewBag.Instituicoes1)
              {%>
   
-        comboBox.Items.Add(person.NomeInstituicao);<br />
+        comboBox.Items.Add(instituicao.NomeInstituicao);<br />
 
         <% }%>
 
         <%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes1,"IdInstituicao","NomeInstituicao"), "Selecione1")%>
         <br />
-        <%: Html.DropDownList("IdInstituicao", (IEnumerable<SelectListItem>)ViewBag.Instituicoes2, "Selecione2")%>
-
-
-        <%: Html.ValidationMessageFor(model => model.NomeInstituicao) %>
-
-        
+       
+        <%: Html.DropDownList("NomeInstituicao", (IEnumerable<SelectListItem>)ViewBag.Instituicoes2, "Selecione2")%>
+         <%: Html.ValidationMessageFor(model => model.NomeInstituicao) %>
+       
         <p>
             <input type="submit" value="Create" />
         </p>

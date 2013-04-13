@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using PacienteVirtual.Models.Data;
+﻿using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Models.Negocio;
 
 namespace PacienteVirtual.Controllers
-{ 
+{
     public class InstituicaoController : Controller
     {
-        
+
         //
         // GET: /Instituicao/
 
@@ -36,7 +29,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Create()
         {
             return View();
-        } 
+        }
 
         //
         // POST: /Instituicao/Create
@@ -47,15 +40,15 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 instituicaoModel.IdInstituicao = GerenciadorInstituicao.GetInstance().Inserir(instituicaoModel);
-                return RedirectToAction("Index"); 
+                return RedirectToAction("Index");
             }
 
             return View(instituicaoModel);
         }
-        
+
         //
         // GET: /Instituicao/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
             InstituicaoModel instituicaoModel = GerenciadorInstituicao.GetInstance().Obter(id);
@@ -78,7 +71,7 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /Instituicao/Delete/5
- 
+
         public ActionResult Delete(int id)
         {
             InstituicaoModel instituicaoModel = GerenciadorInstituicao.GetInstance().Obter(id);
