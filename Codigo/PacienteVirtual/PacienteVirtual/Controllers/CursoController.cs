@@ -31,9 +31,11 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(int id)
         {
-            CursoE cursoe = db.tb_curso.Single(c => c.IdCurso == id);
-            return View(cursoe);
-            //return View(GerenciadorCurso.GetInstance().Obter(id));
+           /* var cursoe = db.tb_curso.Single(c => c.IdCurso == id);
+            return View(cursoe);*/
+            var idInstituicao = GerenciadorCurso.GetInstance().Obter(id).IdInstituicao;
+            ViewBag.Instituicao = GerenciadorInstituicao.GetInstance().Obter(idInstituicao).NomeInstituicao;
+            return View(GerenciadorCurso.GetInstance().Obter(id));
         }
 
         //
@@ -50,6 +52,7 @@ namespace PacienteVirtual.Controllers
 
             ViewBag.Instituicoes1 = GerenciadorInstituicao.GetInstance().ObterTodos();
             ViewBag.Instituicoes2 = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
+            
             return View();
         }
 
@@ -66,9 +69,6 @@ namespace PacienteVirtual.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");*/
 
-                cursoModel.IdInstituicao = ToInt32(Request.Form["IdInstituicao"].ToString());
-
-
                 cursoModel.IdCurso = GerenciadorCurso.GetInstance().Inserir(cursoModel);
 
                 return RedirectToAction("Index");
@@ -78,7 +78,6 @@ namespace PacienteVirtual.Controllers
             return View(cursoe);*/
             return View(cursoModel);
         }
-
         //
         // GET: /Curso/Edit/5
 
@@ -87,7 +86,9 @@ namespace PacienteVirtual.Controllers
             /*CursoE cursoe = db.tb_curso.Single(c => c.IdCurso == id);
             ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", cursoe.IdInstituicao);
             return View(cursoe);*/
-
+            ViewBag.Instituicoes = GerenciadorInstituicao.GetInstance().ObterTodos();
+           // ViewBag.Instituicoes2 = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
+            
             CursoModel cursoModel = GerenciadorCurso.GetInstance().Obter(id);
             return View(cursoModel);
         }
@@ -120,6 +121,8 @@ namespace PacienteVirtual.Controllers
 
             /*CursoE cursoe = db.tb_curso.Single(c => c.IdCurso == id);
             return View(cursoe);*/
+            var idInstituicao = GerenciadorCurso.GetInstance().Obter(id).IdInstituicao;
+            ViewBag.Instituicao = GerenciadorInstituicao.GetInstance().Obter(idInstituicao).NomeInstituicao;
             CursoModel cursoModel = GerenciadorCurso.GetInstance().Obter(id);
             return View(cursoModel);
         }

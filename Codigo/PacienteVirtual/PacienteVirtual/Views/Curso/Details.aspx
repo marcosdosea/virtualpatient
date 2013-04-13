@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.CursoModel>" %>
+<%@ Import Namespace="System.Web.Mvc.Html" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Details
@@ -18,7 +19,8 @@
 
     <div class="display-label">tb_instituicao</div>
     <div class="display-field">
-        <!--%: Html.DisplayFor(model => model.tb_instituicao.NomeInstituicao) %-->
+         <%: Html.LabelFor(model => model.NomeInstituicao) %>
+       <%: ViewBag.Instituicao %>
     </div>
 </fieldset>
 <p>

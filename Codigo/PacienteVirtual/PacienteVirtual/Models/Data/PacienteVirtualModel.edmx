@@ -1171,7 +1171,7 @@
           <EntitySet Name="tb_disciplina_curso" EntityType="pvModel.tb_disciplina_curso" />
           <EntitySet Name="tb_instituicao" EntityType="pvModel.InstituicaoE" />
           <EntitySet Name="tb_perfil_usuario" EntityType="pvModel.tb_perfil_usuario" />
-          <EntitySet Name="tb_turma" EntityType="pvModel.tb_turma" />
+          <EntitySet Name="tb_turma" EntityType="pvModel.TurmaE" />
           <EntitySet Name="tb_usuario" EntityType="pvModel.UsuarioE" />
           <EntitySet Name="tb_usuario_turma" EntityType="pvModel.tb_usuario_turma" />
           <AssociationSet Name="FK_aluno_2" Association="pvModel.FK_aluno_2">
@@ -1793,7 +1793,7 @@
           <Property Name="IdPerfil" Type="Int32" Nullable="false" />
           <Property Name="NomePerfil" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
         </EntityType>
-        <EntityType Name="tb_turma">
+        <EntityType Name="TurmaE">
           <Key>
             <PropertyRef Name="IdTurma" />
           </Key>
@@ -2295,7 +2295,7 @@
         </Association>
         <Association Name="FK_Instituicao">
           <End Role="tb_instituicao" Type="pvModel.InstituicaoE" Multiplicity="1" />
-          <End Role="tb_turma" Type="pvModel.tb_turma" Multiplicity="*" />
+          <End Role="tb_turma" Type="pvModel.TurmaE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_instituicao">
               <PropertyRef Name="IdInstituicao" />
@@ -2661,7 +2661,7 @@
             <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
             <ScalarProperty Name="NomePerfil" ColumnName="NomePerfil" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tb_turma"><EntityTypeMapping TypeName="pvModel.tb_turma"><MappingFragment StoreEntitySet="tb_turma">
+          <EntitySetMapping Name="tb_turma"><EntityTypeMapping TypeName="pvModel.TurmaE"><MappingFragment StoreEntitySet="tb_turma">
             <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
             <ScalarProperty Name="Codigo" ColumnName="Codigo" />
             <ScalarProperty Name="Periodo" ColumnName="Periodo" />
@@ -2749,7 +2749,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel" ZoomLevel="65">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="97">
         <EntityTypeShape EntityType="pvModel.aluno" Width="1.5" PointX="5.25" PointY="11.875" Height="6.0186165364583317" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.casoclinico" Width="1.5" PointX="0.75" PointY="26" Height="8.51853515625" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.consulta" Width="1.5" PointX="3" PointY="28.125" Height="4.2879036458333353" IsExpanded="true" />
@@ -2776,7 +2776,7 @@
         <EntityTypeShape EntityType="pvModel.tb_disciplina_curso" Width="1.5" PointX="8" PointY="0.875" Height="1.595683593749996" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.InstituicaoE" Width="1.5" PointX="0.75" PointY="2.375" Height="1.9802864583333384" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_perfil_usuario" Width="1.5" PointX="5.75" PointY="3.75" Height="1.4033821614583246" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_turma" Width="1.5" PointX="3" PointY="3.625" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.TurmaE" Width="1.5" PointX="3" PointY="3.625" Height="2.172587890624996" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.UsuarioE" Width="1.5" PointX="0.75" PointY="6.75" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_usuario_turma" Width="1.5" PointX="2.75" PointY="6.75" Height="1.5956835937500102" IsExpanded="true" />
         <AssociationConnector Association="pvModel.FK_aluno_2" ManuallyRouted="false">
