@@ -38,29 +38,27 @@
             </li>
             <% } %>
         </div>
-        
+
         <table>
-            
+            <th>asd</th>
+            <th>asd</th>
+            <th>asd</th>
 
-                <th>asd</th>
-                <th>asd</th>
-                <th>asd</th>
-   
             <tr>
-                   <td>asd</td>
                 <td>asd</td>
-                <td>asd</td> 
+                <td>asd</td>
+                <td>asd</td>
 
             </tr>
-              <tr>
-                   <td>asd</td>
+            <tr>
                 <td>asd</td>
-                <td>asd</td> 
+                <td>asd</td>
+                <td>asd</td>
 
             </tr>
 
-      
-         </table>
+
+        </table>
 
         <%   foreach (var instituicao in ViewBag.Instituicoes1)
              {%>
@@ -71,10 +69,10 @@
 
         <%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes1,"IdInstituicao","NomeInstituicao"), "Selecione1")%>
         <br />
-       
+
         <%: Html.DropDownList("NomeInstituicao", (IEnumerable<SelectListItem>)ViewBag.Instituicoes2, "Selecione2")%>
-         <%: Html.ValidationMessageFor(model => model.NomeInstituicao) %>
-       
+        <%: Html.ValidationMessageFor(model => model.NomeInstituicao) %>
+
         <p>
             <input type="submit" value="Create" />
         </p>

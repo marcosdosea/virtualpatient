@@ -8,7 +8,7 @@ namespace PacienteVirtual.Models
 {
     public class TurmaModel
     {
-        [Required]
+
         [Display(Name = "IdTurma: ")]
         public int IdTurma { get; set; }
 
@@ -20,11 +20,9 @@ namespace PacienteVirtual.Models
         [Display(Name = "Período: ")]
         public string Periodo { get; set; }
 
-        [Required]
         [Display(Name = "IdDsiciplina: ")]
         public int IdDisciplina { get; set; }
 
-        [Required]
         [Display(Name = "IdInstituicao: ")]
         public int IdInstituicao { get; set; }
 

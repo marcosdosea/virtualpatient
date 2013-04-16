@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.TurmaE>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.TurmaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Details
@@ -21,14 +21,14 @@
         <%: Html.DisplayFor(model => model.Periodo) %>
     </div>
 
-    <div class="display-label">IdDisciplina</div>
+    <div class="display-label">Nome da Disciplina</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.IdDisciplina) %>
+        <%: Html.DisplayFor(model => model.NomeDisciplina) %>
     </div>
 
     <div class="display-label">tb_instituicao</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.tb_instituicao.NomeInstituicao) %>
+        <%: Html.DisplayFor(model => model.NomeInstituicao) %>
     </div>
 </fieldset>
 <p>
