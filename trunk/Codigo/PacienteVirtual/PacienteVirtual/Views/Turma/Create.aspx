@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.TurmaE>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.TurmaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Create
@@ -43,8 +43,11 @@
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdInstituicao, "tb_instituicao") %>
         </div>
+                <%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes,"IdInstituicao","NomeInstituicao"), "Selecione")%>
+        <br />
+       
         <div class="editor-field">
-            <%: Html.DropDownList("IdInstituicao", String.Empty) %>
+            <!--%: Html.DropDownList("IdInstituicao", String.Empty) %-->
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
 

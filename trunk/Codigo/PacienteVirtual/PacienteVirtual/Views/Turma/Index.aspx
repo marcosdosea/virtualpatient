@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.Data.TurmaE>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.TurmaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -40,7 +40,7 @@
             <%: Html.DisplayFor(modelItem => item.IdDisciplina) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.tb_instituicao.NomeInstituicao) %>
+            <%: Html.DisplayFor(modelItem => item.NomeInstituicao) %>
         </td>
         <td>
             <%: Html.ActionLink("Edit", "Edit", new { id=item.IdTurma }) %> |

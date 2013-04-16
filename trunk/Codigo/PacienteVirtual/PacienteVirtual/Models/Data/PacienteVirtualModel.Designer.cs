@@ -3584,8 +3584,6 @@ namespace PacienteVirtual.Models.Data
 
         #endregion
 
-
-        public string NomeDisciplina { get; set; }
     }
     
     /// <summary>
