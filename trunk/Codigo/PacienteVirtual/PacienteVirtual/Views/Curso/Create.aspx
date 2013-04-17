@@ -56,17 +56,20 @@
                 <td>asd</td>
 
             </tr>
-
-
+        </table>
+        <br />
+        <table>
+            <th>Instituições</th>
+            <%   foreach (var instituicao in ViewBag.Instituicoes1)
+                 {%>
+            <tr>
+                <td><%: instituicao.NomeInstituicao %>
+                </td>
+            </tr>
+            <% }%>
         </table>
 
-        <%   foreach (var instituicao in ViewBag.Instituicoes1)
-             {%>
-  
-        comboBox.Items.Add(instituicao.NomeInstituicao);<br />
-
-        <% }%>
-
+        <br />
         <%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes1,"IdInstituicao","NomeInstituicao"), "Selecione1")%>
         <br />
 
