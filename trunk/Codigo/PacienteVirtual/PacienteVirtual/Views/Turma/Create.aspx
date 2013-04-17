@@ -46,8 +46,12 @@
                 <%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes,"IdInstituicao","NomeInstituicao"), "Selecione")%>
         <br />
        
+           <div class="editor-label">
+                <%: Html.LabelFor(model => model.NomeDisciplina, "Disciplinas") %>
+        </div>
         <div class="editor-field">
             <!--%: Html.DropDownList("IdInstituicao", String.Empty) %-->
+            <%= Html.DropDownList("IdDisciplina", new SelectList((IEnumerable)ViewBag.Disciplinas,"IdDisciplina","NomeDisciplina"), "Selecione")%>
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
 
