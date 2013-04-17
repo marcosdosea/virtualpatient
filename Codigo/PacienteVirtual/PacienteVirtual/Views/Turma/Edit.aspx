@@ -36,11 +36,10 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdDisciplina) %>
+               <%: Html.LabelFor(model => model.NomeDisciplina, "Disciplinas") %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.IdDisciplina) %>
-            <%: Html.ValidationMessageFor(model => model.IdDisciplina) %>
+            <%= Html.DropDownList("IdDisciplina", new SelectList((IEnumerable)ViewBag.Disciplinas,"IdDisciplina","NomeDisciplina"), "Selecione")%>
         </div>
 
         <div class="editor-label">
