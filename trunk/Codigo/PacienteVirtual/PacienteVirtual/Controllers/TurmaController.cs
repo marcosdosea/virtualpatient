@@ -14,7 +14,7 @@ namespace PacienteVirtual.Controllers
 {
     public class TurmaController : Controller
     {
-        //private pvEntities db = new pvEntities();
+        private GerenciadorInstituicao gInstituicao = GerenciadorInstituicao.GetInstance();
 
         //
         // GET: /Turma/
@@ -43,10 +43,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            /*ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao");
-            return View();*/
-            ViewBag.Instituicoes = GerenciadorInstituicao.GetInstance().ObterTodos();
-            ViewBag.Disciplinas = GerenciadorDisciplina.GetInstance().ObterTodos();
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos(), "IdInstituicao", "NomeInstituicao");
             return View();
         }
 
@@ -58,19 +55,12 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                /*  db.tb_turma.AddObject(turmae);
-                  db.SaveChanges();
-                  return RedirectToAction("Index"); */
                 turmaModel.IdTurma = GerenciadorTurma.GetInstance().Inserir(turmaModel);
-
                 return RedirectToAction("Index");
-
             }
 
-            /*ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", turmae.IdInstituicao);
-            return View(turmae);*/
-
-            return RedirectToAction("Index");
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
+            return View(turmaModel);
         }
 
         //
@@ -78,10 +68,6 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Edit(int id)
         {
-
-            /*TurmaE turmae = db.tb_turma.Single(t => t.IdTurma == id);
-            ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", turmae.IdInstituicao);
-            return View(turmae);*/
 
             ViewBag.Instituicoes = GerenciadorInstituicao.GetInstance().ObterTodos();
             ViewBag.Disciplinas = GerenciadorDisciplina.GetInstance().ObterTodos();
