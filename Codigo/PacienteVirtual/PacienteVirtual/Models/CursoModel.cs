@@ -21,7 +21,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "Código Instituição: ")]
         public int IdInstituicao { get; set; }
 
-        [Required]
         [Display(Name = "Nome Instituição: ")]
         public string NomeInstituicao { get; set; }
     }

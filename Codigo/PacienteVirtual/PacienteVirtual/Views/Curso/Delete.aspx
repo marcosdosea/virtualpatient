@@ -6,21 +6,20 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Delete</h2>
+<h2>Excluir Cursos</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Confirma exclusão do curso?</h3>
 <fieldset>
     <legend>CursoE</legend>
 
-    <div class="display-label">NomeCurso</div>
+    <div class="display-label"><%: Html.LabelFor(model => model.NomeCurso) %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.NomeCurso) %>
     </div>
 
-    <div class="display-label">tb_instituicao</div>
+    <div class="display-label"><%: Html.LabelFor(model => model.NomeInstituicao) %></div>
     <div class="display-field">
-        <%: ViewBag.Instituicao %>
-        <!--%: Html.DisplayFor(model => model.tb_instituicao.NomeInstituicao) %-->
+        <%: Html.DisplayFor(model => model.NomeInstituicao) %> 
     </div>
 </fieldset>
 <% using (Html.BeginForm()) { %>

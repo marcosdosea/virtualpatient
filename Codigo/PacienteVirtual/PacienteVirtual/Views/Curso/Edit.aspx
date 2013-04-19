@@ -28,14 +28,10 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdInstituicao, "tb_instituicao") %>
+            <%: Html.LabelFor(model => model.NomeInstituicao) %>
         </div>
         <div class="editor-field">
-            <!--%: Html.DropDownList("IdInstituicao", String.Empty) %-->
-            <%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes,"IdInstituicao","NomeInstituicao"), "Selecione")%>
-            <br />
-
-            <%: Html.ValidationMessageFor(model => model.NomeInstituicao) %>
+            <%= Html.DropDownList("IdInstituicao", String.Empty)%>
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
 

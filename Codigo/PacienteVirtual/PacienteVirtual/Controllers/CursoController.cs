@@ -13,29 +13,21 @@ namespace PacienteVirtual.Controllers
 {
     public class CursoController : Controller
     {
-        private pvEntities db = new pvEntities();
+        GerenciadorCurso gCurso = GerenciadorCurso.GetInstance();
+        GerenciadorInstituicao gInstituicao = GerenciadorInstituicao.GetInstance();
 
         //
         // GET: /Curso/
-
         public ViewResult Index()
         {
-            /*var tb_curso = db.tb_curso.Include("tb_instituicao");
-            return View(tb_curso.ToList());*/
-
-           return View(GerenciadorCurso.GetInstance().ObterTodos());
+           return View(gCurso.ObterTodos());
         }
 
         //
         // GET: /Curso/Details/5
-
         public ViewResult Details(int id)
         {
-           /* var cursoe = db.tb_curso.Single(c => c.IdCurso == id);
-            return View(cursoe);*/
-            var idInstituicao = GerenciadorCurso.GetInstance().Obter(id).IdInstituicao;
-            ViewBag.Instituicao = GerenciadorInstituicao.GetInstance().Obter(idInstituicao).NomeInstituicao;
-            return View(GerenciadorCurso.GetInstance().Obter(id));
+            return View(gCurso.Obter(id));
         }
 
         //
@@ -43,53 +35,30 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-           
-            List<string> colors = new List<string>();
-            colors.Add("red");
-            colors.Add("green");
-            colors.Add("blue");
-            ViewBag.ListColors = colors; //colors is List
-
-            ViewBag.Instituicoes1 = GerenciadorInstituicao.GetInstance().ObterTodos();
-            ViewBag.Instituicoes2 = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
-            
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
             return View();
         }
 
         //
         // POST: /Curso/Create
-
         [HttpPost]
-        public ActionResult Create(/*CursoE cursoe*/CursoModel cursoModel)
+        public ActionResult Create(CursoModel cursoModel)
         {
             if (ModelState.IsValid)
             {
-
-                /*db.tb_curso.AddObject(cursoe);
-                db.SaveChanges();
-                return RedirectToAction("Index");*/
-
-                cursoModel.IdCurso = GerenciadorCurso.GetInstance().Inserir(cursoModel);
-
+                cursoModel.IdCurso = gCurso.Inserir(cursoModel);
                 return RedirectToAction("Index");
             }
-
-            /*ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", cursoe.IdInstituicao);
-            return View(cursoe);*/
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", cursoModel.IdInstituicao);
             return View(cursoModel);
         }
+        
         //
         // GET: /Curso/Edit/5
-
         public ActionResult Edit(int id)
         {
-            /*CursoE cursoe = db.tb_curso.Single(c => c.IdCurso == id);
-            ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", cursoe.IdInstituicao);
-            return View(cursoe);*/
-            ViewBag.Instituicoes = GerenciadorInstituicao.GetInstance().ObterTodos();
-           // ViewBag.Instituicoes2 = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
-            
-            CursoModel cursoModel = GerenciadorCurso.GetInstance().Obter(id);
+            CursoModel cursoModel = gCurso.Obter(id);
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", cursoModel.IdInstituicao);
             return View(cursoModel);
         }
 
@@ -97,19 +66,14 @@ namespace PacienteVirtual.Controllers
         // POST: /Curso/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(/*CursoE cursoe*/ CursoModel cursoModel)
+        public ActionResult Edit(CursoModel cursoModel)
         {
             if (ModelState.IsValid)
             {
-                /*db.tb_curso.Attach(cursoe);
-                db.ObjectStateManager.ChangeObjectState(cursoe, EntityState.Modified);
-                db.SaveChanges();
-                return RedirectToAction("Index");*/
-                GerenciadorCurso.GetInstance().Atualizar(cursoModel);
+                gCurso.Atualizar(cursoModel);
                 return RedirectToAction("Index");
             }
-            /*  ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", cursoe.IdInstituicao);
-              return View(cursoe);*/
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", cursoModel.IdInstituicao);
             return View(cursoModel);
         }
 
@@ -118,13 +82,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Delete(int id)
         {
-
-            /*CursoE cursoe = db.tb_curso.Single(c => c.IdCurso == id);
-            return View(cursoe);*/
-            var idInstituicao = GerenciadorCurso.GetInstance().Obter(id).IdInstituicao;
-            ViewBag.Instituicao = GerenciadorInstituicao.GetInstance().Obter(idInstituicao).NomeInstituicao;
-            CursoModel cursoModel = GerenciadorCurso.GetInstance().Obter(id);
-            return View(cursoModel);
+            return View(gCurso.Obter(id));
         }
 
         //
@@ -133,18 +91,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            /* CursoE cursoe = db.tb_curso.Single(c => c.IdCurso == id);
-             db.tb_curso.DeleteObject(cursoe);
-             db.SaveChanges();
-             return RedirectToAction("Index");*/
-            GerenciadorCurso.GetInstance().Remover(id);
+            gCurso.Remover(id);
             return RedirectToAction("Index");
 
         }
 
         protected override void Dispose(bool disposing)
         {
-            //db.Dispose();
             base.Dispose(disposing);
         }
     }

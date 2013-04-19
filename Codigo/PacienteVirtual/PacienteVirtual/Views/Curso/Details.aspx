@@ -12,15 +12,14 @@
 <fieldset>
     <legend>CursoE</legend>
 
-    <div class="display-label">NomeCurso</div>
+    <div class="display-label"><%: Html.LabelFor(model => model.NomeCurso) %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.NomeCurso) %>
     </div>
 
-    <div class="display-label">tb_instituicao</div>
+    <div class="display-label"><%: Html.LabelFor(model => model.NomeInstituicao) %></div>
     <div class="display-field">
-         <%: Html.LabelFor(model => model.NomeInstituicao) %>
-       <%: ViewBag.Instituicao %>
+         <%: Html.DisplayFor(model => model.NomeInstituicao) %>
     </div>
 </fieldset>
 <p>

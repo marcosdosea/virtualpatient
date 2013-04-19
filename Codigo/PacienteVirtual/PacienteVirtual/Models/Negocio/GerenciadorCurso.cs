@@ -148,6 +148,7 @@ namespace PacienteVirtual.Models.Negocio
         private static void Atribuir(CursoModel curso, CursoE _cursoE)
         {
             _cursoE.NomeCurso = curso.NomeCurso;
+            _cursoE.IdInstituicao = curso.IdInstituicao;
         }
     }
 }
