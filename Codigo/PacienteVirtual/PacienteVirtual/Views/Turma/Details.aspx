@@ -26,7 +26,7 @@
         <%: Html.DisplayFor(model => model.NomeDisciplina) %>
     </div>
 
-    <div class="display-label">tb_instituicao</div>
+    <div class="display-label">Instituicao</div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.NomeInstituicao) %>
     </div>

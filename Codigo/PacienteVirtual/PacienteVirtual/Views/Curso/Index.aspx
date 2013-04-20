@@ -17,7 +17,7 @@
             NomeCurso
         </th>
         <th>
-            tb_instituicao
+           Instituição
         </th>
         <th></th>
     </tr>

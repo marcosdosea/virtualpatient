@@ -14,17 +14,16 @@ namespace PacienteVirtual.Controllers
 {
     public class TurmaController : Controller
     {
-        private GerenciadorInstituicao gInstituicao = GerenciadorInstituicao.GetInstance();
+        GerenciadorTurma gTurma = GerenciadorTurma.GetInstance();
+        GerenciadorInstituicao gInstituicao = GerenciadorInstituicao.GetInstance();
+        GerenciadorDisciplina gDisciplina = GerenciadorDisciplina.GetInstance();
 
         //
         // GET: /Turma/
 
         public ViewResult Index()
         {
-            /*var tb_turma = db.tb_turma.Include("tb_instituicao");
-            return View(tb_turma.ToList());*/
-
-            return View(GerenciadorTurma.GetInstance().ObterTodos());
+            return View(gTurma.ObterTodos());
         }
 
         //
@@ -32,10 +31,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(int id)
         {
-            /*TurmaE turmae = db.tb_turma.Single(t => t.IdTurma == id);
-            return View(turmae);*/
-            return View(GerenciadorTurma.GetInstance().Obter(id));
-
+            return View(gTurma.Obter(id));
         }
 
         //
@@ -43,7 +39,8 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos(), "IdInstituicao", "NomeInstituicao");
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
+            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina");
             return View();
         }
 
@@ -55,11 +52,13 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                turmaModel.IdTurma = GerenciadorTurma.GetInstance().Inserir(turmaModel);
+                turmaModel.IdTurma = gTurma.Inserir(turmaModel);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
+            //ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
+            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina"); 
             return View(turmaModel);
         }
 
@@ -68,9 +67,8 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Edit(int id)
         {
-
-            ViewBag.Instituicoes = GerenciadorInstituicao.GetInstance().ObterTodos();
-            ViewBag.Disciplinas = GerenciadorDisciplina.GetInstance().ObterTodos();
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
+            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina"); 
             TurmaModel turmaModel = GerenciadorTurma.GetInstance().Obter(id);
             return View(turmaModel);
         }
@@ -83,16 +81,13 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                /*db.tb_turma.Attach(turmae);
-                db.ObjectStateManager.ChangeObjectState(turmae, EntityState.Modified);
-                db.SaveChanges();
-                return RedirectToAction("Index");*/
-
-                GerenciadorTurma.GetInstance().Atualizar(turmaModel);
+                
+                gTurma.Atualizar(turmaModel);
                 return RedirectToAction("Index");
             }
-            /*ViewBag.IdInstituicao = new SelectList(db.tb_instituicao, "IdInstituicao", "NomeInstituicao", turmae.IdInstituicao);
-            return View(turmae);*/
+            
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
+            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina");
             return View(turmaModel);
         }
 
@@ -101,12 +96,11 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Delete(int id)
         {
-            /*TurmaE turmae = db.tb_turma.Single(t => t.IdTurma == id);
-            return View(turmae);*/
+
             TurmaModel turmaModel = GerenciadorTurma.GetInstance().Obter(id);
             
-            ViewBag.Instituicao = GerenciadorInstituicao.GetInstance().Obter(turmaModel.IdInstituicao).NomeInstituicao;
-            ViewBag.Disciplinas = GerenciadorDisciplina.GetInstance().Obter(turmaModel.IdDisciplina).NomeDisciplina;
+            ViewBag.Instituicao = gInstituicao.Obter(turmaModel.IdInstituicao).NomeInstituicao;
+            ViewBag.Disciplinas = gDisciplina.Obter(turmaModel.IdDisciplina).NomeDisciplina;
             
             return View(turmaModel);
         }
@@ -118,12 +112,8 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            /*STurmaE turmae = db.tb_turma.Single(t => t.IdTurma == id);
-            db.tb_turma.DeleteObject(turmae);
-            db.SaveChanges();
-            return RedirectToAction("Index");*/
-
-            GerenciadorTurma.GetInstance().Remover(id);
+          
+            gTurma.Remover(id);
             return RedirectToAction("Index");
 
         }

@@ -23,9 +23,9 @@
             IdDisciplina
         </th>
         <th>
-            tb_instituicao
+            Instituição
         </th>
-        <th></th>
+        <th colspan="3"> Opções </th>
     </tr>
 
 <% foreach (var item in Model) { %>
