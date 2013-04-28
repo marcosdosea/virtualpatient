@@ -57,7 +57,7 @@
         <td>
             <%: Html.ActionLink("Editar", "Edit", new { id=item.IdUsuario }) %> |
             <%: Html.ActionLink("Detalhes", "Details", new { id=item.IdUsuario }) %> |
-            <%: Html.ActionLink("Deletar", "Delete", new { id=item.IdUsuario }) %>
+            <%: Html.ActionLink("Remover", "Delete", new { id=item.IdUsuario }) %>
         </td>
     </tr>
 <% } %>

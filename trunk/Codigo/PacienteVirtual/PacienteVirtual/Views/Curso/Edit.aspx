@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.CursoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Edit
+   Curso
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Edit</h2>
+    <h2>Curso</h2>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -15,7 +15,7 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>CursoE</legend>
+        <legend>Editar Curso</legend>
 
         <%: Html.HiddenFor(model => model.IdCurso) %>
 
@@ -31,18 +31,18 @@
             <%: Html.LabelFor(model => model.NomeInstituicao) %>
         </div>
         <div class="editor-field">
-            <%= Html.DropDownList("IdInstituicao", String.Empty)%>
+            <%= Html.DropDownList("IdInstituicao", "Selecione")%>
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Salvar" />
         </p>
     </fieldset>
     <% } %>
 
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Html.ActionLink("Voltar", "Index") %>
     </div>
 
 </asp:Content>

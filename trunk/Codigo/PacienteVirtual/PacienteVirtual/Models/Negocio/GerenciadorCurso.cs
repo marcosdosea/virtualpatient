@@ -47,7 +47,6 @@ namespace PacienteVirtual.Models.Negocio
             {
                 throw new DadosException("Curso", e.Message, e);
             }
-
         }
 
         /// <summary>

@@ -1,20 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.InstituicaoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+    Instituição
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Index</h2>
+<h2>Instituição</h2>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+    <%: Html.ActionLink("Nova Instituição", "Create") %>
 </p>
 <table>
     <tr>
         <th>
-            NomeInstituicao
+            Nome da Instituicao
         </th>
         <th>
             Sigla
@@ -31,9 +31,9 @@
             <%: Html.DisplayFor(modelItem => item.Sigla) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { id=item.IdInstituicao }) %> |
-            <%: Html.ActionLink("Details", "Details", new { id=item.IdInstituicao }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { id=item.IdInstituicao }) %>
+            <%: Html.ActionLink("Editar", "Edit", new { id=item.IdInstituicao }) %> |
+            <%: Html.ActionLink("Detalhes", "Details", new { id=item.IdInstituicao }) %> |
+            <%: Html.ActionLink("Remover", "Delete", new { id=item.IdInstituicao }) %>
         </td>
     </tr>
 <% } %>
