@@ -578,38 +578,6 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<instituicao> instituicao
-        {
-            get
-            {
-                if ((_instituicao == null))
-                {
-                    _instituicao = base.CreateObjectSet<instituicao>("instituicao");
-                }
-                return _instituicao;
-            }
-        }
-        private ObjectSet<instituicao> _instituicao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<teste> teste
-        {
-            get
-            {
-                if ((_teste == null))
-                {
-                    _teste = base.CreateObjectSet<teste>("teste");
-                }
-                return _teste;
-            }
-        }
-        private ObjectSet<teste> _teste;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<turma> turma
         {
             get
@@ -889,22 +857,6 @@ namespace PacienteVirtual.Models.Data
         public void AddTotb_usuario_turma(tb_usuario_turma tb_usuario_turma)
         {
             base.AddObject("tb_usuario_turma", tb_usuario_turma);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the instituicao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToinstituicao(instituicao instituicao)
-        {
-            base.AddObject("instituicao", instituicao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the teste EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToteste(teste teste)
-        {
-            base.AddObject("teste", teste);
         }
     
         /// <summary>
@@ -3346,87 +3298,6 @@ namespace PacienteVirtual.Models.Data
 
         #endregion
 
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="instituicao")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class instituicao : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new instituicao object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        public static instituicao Createinstituicao(global::System.Int32 id)
-        {
-            instituicao instituicao = new instituicao();
-            instituicao.id = id;
-            return instituicao;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String nome
-        {
-            get
-            {
-                return _nome;
-            }
-            set
-            {
-                OnnomeChanging(value);
-                ReportPropertyChanging("nome");
-                _nome = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("nome");
-                OnnomeChanged();
-            }
-        }
-        private global::System.String _nome;
-        partial void OnnomeChanging(global::System.String value);
-        partial void OnnomeChanged();
-
-        #endregion
-
-    
     }
     
     /// <summary>
@@ -10299,111 +10170,6 @@ namespace PacienteVirtual.Models.Data
         private global::System.Int32 _IdPerfilUsuario;
         partial void OnIdPerfilUsuarioChanging(global::System.Int32 value);
         partial void OnIdPerfilUsuarioChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="teste")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class teste : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new teste object.
-        /// </summary>
-        /// <param name="cODIGO">Initial value of the CODIGO property.</param>
-        public static teste Createteste(global::System.Int32 cODIGO)
-        {
-            teste teste = new teste();
-            teste.CODIGO = cODIGO;
-            return teste;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 CODIGO
-        {
-            get
-            {
-                return _CODIGO;
-            }
-            set
-            {
-                if (_CODIGO != value)
-                {
-                    OnCODIGOChanging(value);
-                    ReportPropertyChanging("CODIGO");
-                    _CODIGO = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("CODIGO");
-                    OnCODIGOChanged();
-                }
-            }
-        }
-        private global::System.Int32 _CODIGO;
-        partial void OnCODIGOChanging(global::System.Int32 value);
-        partial void OnCODIGOChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String DESCRICAO
-        {
-            get
-            {
-                return _DESCRICAO;
-            }
-            set
-            {
-                OnDESCRICAOChanging(value);
-                ReportPropertyChanging("DESCRICAO");
-                _DESCRICAO = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("DESCRICAO");
-                OnDESCRICAOChanged();
-            }
-        }
-        private global::System.String _DESCRICAO;
-        partial void OnDESCRICAOChanging(global::System.String value);
-        partial void OnDESCRICAOChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] VIDEO
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_VIDEO);
-            }
-            set
-            {
-                OnVIDEOChanging(value);
-                ReportPropertyChanging("VIDEO");
-                _VIDEO = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("VIDEO");
-                OnVIDEOChanged();
-            }
-        }
-        private global::System.Byte[] _VIDEO;
-        partial void OnVIDEOChanging(global::System.Byte[] value);
-        partial void OnVIDEOChanged();
 
         #endregion
 

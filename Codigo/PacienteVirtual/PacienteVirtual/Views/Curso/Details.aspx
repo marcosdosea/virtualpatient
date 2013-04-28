@@ -2,15 +2,15 @@
 <%@ Import Namespace="System.Web.Mvc.Html" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Details
+    Curso
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Details</h2>
+<h2>Curso</h2>
 
 <fieldset>
-    <legend>CursoE</legend>
+    <legend>Detalhes do Curso</legend>
 
     <div class="display-label"><%: Html.LabelFor(model => model.NomeCurso) %></div>
     <div class="display-field">
