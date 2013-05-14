@@ -8,8 +8,8 @@ histórias
 
 variaveis (gravar data e hora do preenchimento de dados variáveis)
 =========
-medicamentos anteriores (até que mês/ano)
 razao do encontro
+medicamentos anteriores (até que mês/ano)
 estilo de vida
 parâmetros clínicos
 medicamentos prescritos

@@ -503,30 +503,30 @@ INSERT INTO `queixarespostasegunda` VALUES (33,-1,8,'V',5,'Hiperlipidemia','1974
 UNLOCK TABLES;
 
 --
--- Table structure for table `tb_curso_disciplina`
+-- Table structure for table `queixarespostaterceira`
 --
 
-DROP TABLE IF EXISTS `tb_curso_disciplina`;
+DROP TABLE IF EXISTS `queixarespostaterceira`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tb_curso_disciplina` (
-  `IdCurso` int(11) NOT NULL,
-  `IdDisciplina` int(11) NOT NULL,
-  PRIMARY KEY (`IdCurso`,`IdDisciplina`),
-  KEY `fk_tb_curso_has_tb_disciplina_tb_disciplina1` (`IdDisciplina`),
-  KEY `fk_tb_curso_has_tb_disciplina_tb_curso1` (`IdCurso`),
-  CONSTRAINT `fk_tb_curso_has_tb_disciplina_tb_curso1` FOREIGN KEY (`IdCurso`) REFERENCES `tb_curso` (`IdCurso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tb_curso_has_tb_disciplina_tb_disciplina1` FOREIGN KEY (`IdDisciplina`) REFERENCES `tb_disciplina` (`IdDisciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION
+CREATE TABLE `queixarespostaterceira` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(80) NOT NULL DEFAULT '',
+  `fkResposta` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK1CE59807871504B2` (`fkResposta`),
+  CONSTRAINT `FK1CE59807871504B2` FOREIGN KEY (`fkResposta`) REFERENCES `respostaterceira` (`id`),
+  CONSTRAINT `FK_queixarespostaterceira_1` FOREIGN KEY (`fkResposta`) REFERENCES `respostaterceira` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tb_curso_disciplina`
+-- Dumping data for table `queixarespostaterceira`
 --
 
-LOCK TABLES `tb_curso_disciplina` WRITE;
-/*!40000 ALTER TABLE `tb_curso_disciplina` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_curso_disciplina` ENABLE KEYS */;
+LOCK TABLES `queixarespostaterceira` WRITE;
+/*!40000 ALTER TABLE `queixarespostaterceira` DISABLE KEYS */;
+/*!40000 ALTER TABLE `queixarespostaterceira` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -640,33 +640,6 @@ LOCK TABLES `medicamentoprescrito` WRITE;
 /*!40000 ALTER TABLE `medicamentoprescrito` DISABLE KEYS */;
 INSERT INTO `medicamentoprescrito` VALUES (3,'Metformina','850 mg','Cardiologista','I.S.T.','1 comprimido depois do almoço',3,'F'),(4,'Losartano, Atenolol, Anlodipino, Hidroclorotiazida','50/50/5/12,5 mg','Cardiologista','I.S.T.','1 comprimido de 12/12h, porém o paciente relata tomar somente 1 comprimido antes do almoço',3,'F'),(5,'Atorvastatina','20 mg ','Cardiologista','I.S.T.','1 comprimido 12h',3,'F'),(9,'Pantoprazol','40 mg','Gastroenterologista','S.B.','1 comprimido em jejum e 1 a noite (durante 3 meses), porém não comprou o medicamento, achou muito caro',5,'F'),(10,'Sinvastatina/Ezetimiba ','20/10 mg','Cardiologista','M.R.','1 comprimido depois do jantar',5,'F'),(11,'Ciprofibrato','100 mg','Cardiologista','M.R.','1 comprimido ao dia',5,'F'),(12,'Anlodipino','5 mg','Cardiologista','M.R. ','1 comprimido de 12/12h',5,'F'),(13,'Celecoxib','200 mg','Oncologista','A.C.','1 comprimido ao dia, após o almoço',5,'F'),(14,'Ácido acetilsalicílico','100 mg','Cardiologista','M.R.','1 comprimido após o almoço',5,'F'),(15,'Enalapril','10 mg','Cardiologista','A.L.V.','1 comprimido de 12/12h',6,'F'),(16,'Atenolol','25 mg','Cardiologista','A.L.V.','1 comprimido às 12h',6,'F'),(17,'Latanoprost','50 mcg','Oftalmologista','não lembra','1 gota em cada olho ao deitar',6,'F'),(18,'Omeprazol','20 mg','Cardiologista','A.L.V.','1 comprimido em jejum',6,'F'),(19,'Ácido acetilsalicílico ','100 mg','Cardiologista','J.B.R.','1 comprimido depois do almoço, desde 12/2008',7,'F'),(20,'Atenolol','50 mg','Cardiologista','J.B.R','1 comprimido no café e 1 no jantar, desde 12/2008',7,'F'),(21,'Diltiazem','60 mg','Cardiologista','J.B.R.','1 comprimido 3 vezes ao dia, mas usa duas vezes ao dia nas refeições',7,'F'),(22,'Domperidona','10 mg','Endocrinologista','V.C.','1 comprimido 30 minutos antes das refeições (duas vezes ao dia)',7,'F'),(23,'Mononitrato de Isossorbida ','20 mg','Cardiologista','J.B.R.','1 comprimido depois das refeições (3 vezes ao dia)',7,'F'),(24,'Sinvastatina','40 mg','Cardiologista','J.B.R.','1 comprimido no jantar',7,'F'),(25,'Oxcarbazepina','300 mg','Neurologista','R.C.','1 comprimido depois do café e 1 depois do jantar, desde 02/2009',7,'F'),(26,'Vildagliptina/Metformina ','50/850 mg','Endocrinologista','V.C.','1 comprimido de cada 30 minutos antes do café e 30 minutos antes do jantar, desde 10/2008',7,'F'),(27,'Fluoxetina ','20 mg','Endocrinologista','V.C.','1 comprimido às 10h',7,'F'),(28,'Insulina Humana Regular ','12/6/6 U','Endocrinologista','V.C.','12 U antes do café/ 6 U antes do almoço/ 6 U antes do jantar',7,'F'),(29,'Insulina NPH ','30/18/24 U','Endocrinologista','V.C.','30 U antes do café/ 18 U antes do almoço/ 24 U antes do jantar',7,'F'),(30,'Hidroclorotiazida/Amilorida ','25/2,5 mg','Cardiologista','F.P.','1 comprimido em dias alternados, porém refere tomar some a hidroclorotiazida (por conta própria)',8,'F'),(31,'Captopril','25 mg','Cardiologista','F.P.','1 comprimido 3 vezes ao dia, usa apenas 10 e 17h, desde 12/2008',8,'F'),(32,'Furosemida','40 mg','Cardiologista','F.P.','1 comprimido às 9h, não usa, está prescrito desde 12/2008',8,'F'),(33,'Ácido acetilsalicílico ','100 mg','Cardiologista','F.P.','1 comprimido depois do almoço',8,'F'),(34,'Ranitidina','150 mg','Clínico Geral','J.M.','1 comprimido em jejum, desde 12/2008',8,'F'),(35,'Sinvastatina','20 mg','Cardiologista','F.P.','1 comprimido antes de dormir, desde 11/2008',8,'F'),(36,'Glibenclamida','5 mg','Geriatra','W.','1 comprimido duas vezes ao dia, só usa 1 comprimido antes do café',8,'F'),(37,'Metformina','850 mg','Geriatra','W.','1 comprimido duas vezes ao dia, 1 comprimido após o café e 1 após o almoço (parte o comprimido para engolir)',8,'F'),(38,'Nimesulida/Acetaminofeno/Ciclobenzaprina','manipulado','não delcarado','não delcarado','1 comprimido após o café e 1 após o jantar, desde 11/2006',8,'F'),(39,'Metformina','850 mg','Endocrinologista','M.L.','1 comprimido depois do almoço, desde 11/2008',9,'F'),(40,'Omeprazol','20 mg','Endocrinologista','M.L.','1 comprimido ao dia, porém só usa quando sente dor',9,'F'),(41,'Valsartano/Anlodipino ','160/5 mg','Cardiologista','J.L.L.B.','1 comprimido após o café da manhã',9,'F'),(42,'Insulina NPH','30 U em jejum e 20 U às 17h','Endocrinologista','M.L.','desde 04/2008',9,'F'),(43,'Cafeína/Carisoprodol/Diclofenaco sódico/Paracetamol ','30/125/50/300 mg','Ortopedista','A.L.','1 comprimido de 8/8h, usa apenas após o café da manhã e após o jantar, para a hérnia de disco, desde 12/2008',9,'F'),(44,'Sulfacetamida sódica','3% loção ?oil free?','Dermatologista','L.S.B.','nas manchas brancas na pele a noite durante 2 meses, desde 01/2009',9,'F'),(45,'Tacrolimus','0,1% creme','Dermatologista','L.S.B.','nas manchas brancas a noite durante 2 meses, desde 01/2009',9,'F');
 /*!40000 ALTER TABLE `medicamentoprescrito` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tb_turma_pessoa`
---
-
-DROP TABLE IF EXISTS `tb_turma_pessoa`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tb_turma_pessoa` (
-  `IdTurma` int(11) NOT NULL,
-  `IdPessoa` int(11) NOT NULL,
-  PRIMARY KEY (`IdTurma`,`IdPessoa`),
-  KEY `fk_tb_turma_has_tb_pessoa_tb_pessoa1` (`IdPessoa`),
-  KEY `fk_tb_turma_has_tb_pessoa_tb_turma1` (`IdTurma`),
-  CONSTRAINT `fk_tb_turma_has_tb_pessoa_tb_turma1` FOREIGN KEY (`IdTurma`) REFERENCES `tb_turma` (`IdTurma`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tb_turma_has_tb_pessoa_tb_pessoa1` FOREIGN KEY (`IdPessoa`) REFERENCES `tb_pessoa` (`IdPessoa`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tb_turma_pessoa`
---
-
-LOCK TABLES `tb_turma_pessoa` WRITE;
-/*!40000 ALTER TABLE `tb_turma_pessoa` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_turma_pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1053,15 +1026,18 @@ CREATE TABLE `tb_paciente_pessoa_turma` (
   `IdTurma` int(11) NOT NULL,
   `IdPaciente` int(11) NOT NULL,
   `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaVariavel` bigint(20) NOT NULL,
   `GrupoAtividades` int(11) NOT NULL,
   `EstadoPreenchimento` int(11) NOT NULL,
   PRIMARY KEY (`IdPessoa`,`IdTurma`,`IdPaciente`),
   KEY `fk_tb_paciente_pessoa_turma_tb_paciente1` (`IdPaciente`),
   KEY `fk_tb_paciente_pessoa_turma_tb_consulta_fixo1` (`IdConsutaFixo`),
   KEY `fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1` (`IdTurma`,`IdPessoa`),
-  CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_paciente1` FOREIGN KEY (`IdPaciente`) REFERENCES `tb_paciente` (`IdPaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  KEY `fk_tb_paciente_pessoa_turma_tb_consulta_variavel1` (`IdConsultaVariavel`),
+  CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_consulta_fixo1` FOREIGN KEY (`IdConsutaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsutaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1` FOREIGN KEY (`IdTurma`, `IdPessoa`) REFERENCES `tb_turma_pessoa` (`IdTurma`, `IdPessoa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_consulta_fixo1` FOREIGN KEY (`IdConsutaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsutaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_consulta_variavel1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_paciente1` FOREIGN KEY (`IdPaciente`) REFERENCES `tb_paciente` (`IdPaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1189,33 +1165,6 @@ LOCK TABLES `medicamentonaoprescrito` WRITE;
 /*!40000 ALTER TABLE `medicamentonaoprescrito` DISABLE KEYS */;
 INSERT INTO `medicamentonaoprescrito` VALUES (2,'Polivitamínico (sulfato ferroso, vitamina C, vitamina B12, ácido fólico, vitamina B1, vitamina B2, vitamina B6, nicotinamida, pantotenato de cálcio, concentrado gastro-hepático)','400mg/100mg/15mcg/0,5mg/30mg/5mg/10mg/25mg/15mg/(1:50)100mg','1 comprimido após o almoço para fraqueza',3,'F'),(4,'Ranitidina','150 mg','1 comprimido em jejum e 1 comprimido a noite',5,'F'),(5,'Polivitamínico (sulfato ferroso, vitamina C, vitamina B12, ácido fólico, vitamina B1, vitamina B2, vitamina B6, nicotinamida, pantotenato de cálcio, concentrado gastro-hepático)','400mg/100mg/15mcg/0,5mg/30mg/5mg/10mg/25mg/15mg/(1:50)100mg','1 comprimido após o almoço',5,'F'),(6,'Polivitamínico e mineral','variada','1 comprimido ao dia',9,'F');
 /*!40000 ALTER TABLE `medicamentonaoprescrito` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `queixarespostaterceira`
---
-
-DROP TABLE IF EXISTS `queixarespostaterceira`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `queixarespostaterceira` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(80) NOT NULL DEFAULT '',
-  `fkResposta` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK1CE59807871504B2` (`fkResposta`),
-  CONSTRAINT `FK1CE59807871504B2` FOREIGN KEY (`fkResposta`) REFERENCES `respostaterceira` (`id`),
-  CONSTRAINT `FK_queixarespostaterceira_1` FOREIGN KEY (`fkResposta`) REFERENCES `respostaterceira` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `queixarespostaterceira`
---
-
-LOCK TABLES `queixarespostaterceira` WRITE;
-/*!40000 ALTER TABLE `queixarespostaterceira` DISABLE KEYS */;
-/*!40000 ALTER TABLE `queixarespostaterceira` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1421,37 +1370,30 @@ LOCK TABLES `medicamentoqueixaquarta` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tb_paciente_pessoa_turma_consulta_variavel`
+-- Table structure for table `tb_curso_disciplina`
 --
 
-DROP TABLE IF EXISTS `tb_paciente_pessoa_turma_consulta_variavel`;
+DROP TABLE IF EXISTS `tb_curso_disciplina`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tb_paciente_pessoa_turma_consulta_variavel` (
-  `IdPaciente` int(11) NOT NULL,
-  `IdPessoa` int(11) NOT NULL,
-  `IdTurma` int(11) NOT NULL,
-  `IdConsultaVariavel` bigint(20) NOT NULL,
-  `Sequencia` int(11) NOT NULL,
-  `ComentarioTutor` varchar(500) DEFAULT NULL,
-  `DataEnvio` datetime NOT NULL,
-  `DataConclusao` datetime NOT NULL,
-  `EstadoPreenchimento` int(11) NOT NULL,
-  PRIMARY KEY (`IdPaciente`,`IdPessoa`,`IdTurma`,`IdConsultaVariavel`,`Sequencia`),
-  KEY `fk_tb_paciente_pessoa_turma_has_tb_consulta_variavel_tb_consu1` (`IdConsultaVariavel`),
-  KEY `fk_tb_paciente_pessoa_turma_has_tb_consulta_variavel_tb_pacie1` (`IdPaciente`,`IdPessoa`,`IdTurma`),
-  CONSTRAINT `fk_tb_paciente_pessoa_turma_has_tb_consulta_variavel_tb_pacie1` FOREIGN KEY (`IdPaciente`) REFERENCES `tb_paciente_pessoa_turma` (`IdPaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tb_paciente_pessoa_turma_has_tb_consulta_variavel_tb_consu1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION
+CREATE TABLE `tb_curso_disciplina` (
+  `IdCurso` int(11) NOT NULL,
+  `IdDisciplina` int(11) NOT NULL,
+  PRIMARY KEY (`IdCurso`,`IdDisciplina`),
+  KEY `fk_tb_curso_has_tb_disciplina_tb_disciplina1` (`IdDisciplina`),
+  KEY `fk_tb_curso_has_tb_disciplina_tb_curso1` (`IdCurso`),
+  CONSTRAINT `fk_tb_curso_has_tb_disciplina_tb_curso1` FOREIGN KEY (`IdCurso`) REFERENCES `tb_curso` (`IdCurso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_curso_has_tb_disciplina_tb_disciplina1` FOREIGN KEY (`IdDisciplina`) REFERENCES `tb_disciplina` (`IdDisciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tb_paciente_pessoa_turma_consulta_variavel`
+-- Dumping data for table `tb_curso_disciplina`
 --
 
-LOCK TABLES `tb_paciente_pessoa_turma_consulta_variavel` WRITE;
-/*!40000 ALTER TABLE `tb_paciente_pessoa_turma_consulta_variavel` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_paciente_pessoa_turma_consulta_variavel` ENABLE KEYS */;
+LOCK TABLES `tb_curso_disciplina` WRITE;
+/*!40000 ALTER TABLE `tb_curso_disciplina` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_curso_disciplina` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1719,4 +1661,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-13 23:02:56
+-- Dump completed on 2013-05-13 23:22:25
