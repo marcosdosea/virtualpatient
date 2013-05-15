@@ -674,10 +674,10 @@ DROP TABLE IF EXISTS `tb_consulta_fixo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_consulta_fixo` (
-  `IdConsutaFixo` bigint(20) NOT NULL AUTO_INCREMENT,
+  `IdConsultaFixo` bigint(20) NOT NULL AUTO_INCREMENT,
   `IdPaciente` int(11) NOT NULL,
   `EhGabarito` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`IdConsutaFixo`)
+  PRIMARY KEY (`IdConsultaFixo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1025,16 +1025,16 @@ CREATE TABLE `tb_paciente_pessoa_turma` (
   `IdPessoa` int(11) NOT NULL,
   `IdTurma` int(11) NOT NULL,
   `IdPaciente` int(11) NOT NULL,
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `IdConsultaVariavel` bigint(20) NOT NULL,
   `GrupoAtividades` int(11) NOT NULL,
   `EstadoPreenchimento` int(11) NOT NULL,
   PRIMARY KEY (`IdPessoa`,`IdTurma`,`IdPaciente`),
   KEY `fk_tb_paciente_pessoa_turma_tb_paciente1` (`IdPaciente`),
-  KEY `fk_tb_paciente_pessoa_turma_tb_consulta_fixo1` (`IdConsutaFixo`),
+  KEY `fk_tb_paciente_pessoa_turma_tb_consulta_fixo1` (`IdConsultaFixo`),
   KEY `fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1` (`IdTurma`,`IdPessoa`),
   KEY `fk_tb_paciente_pessoa_turma_tb_consulta_variavel1` (`IdConsultaVariavel`),
-  CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_consulta_fixo1` FOREIGN KEY (`IdConsutaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsutaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_consulta_fixo1` FOREIGN KEY (`IdConsultaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1` FOREIGN KEY (`IdTurma`, `IdPessoa`) REFERENCES `tb_turma_pessoa` (`IdTurma`, `IdPessoa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_consulta_variavel1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_paciente_pessoa_turma_tb_paciente1` FOREIGN KEY (`IdPaciente`) REFERENCES `tb_paciente` (`IdPaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1058,11 +1058,11 @@ DROP TABLE IF EXISTS `tb_historia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_historia` (
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `HistoriaMedicaPregressa` varchar(255) NOT NULL,
   `HistoriaFamiliar` varchar(255) NOT NULL,
-  PRIMARY KEY (`IdConsutaFixo`),
-  CONSTRAINT `fk_tb_historia_tb_consulta_fixo1` FOREIGN KEY (`IdConsutaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsutaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`IdConsultaFixo`),
+  CONSTRAINT `fk_tb_historia_tb_consulta_fixo1` FOREIGN KEY (`IdConsultaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1461,7 +1461,7 @@ DROP TABLE IF EXISTS `tb_experiencia_medicamentos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_experiencia_medicamentos` (
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `IdRespostaEsperaTratamento` int(11) NOT NULL,
   `IdRespostaPreocupacoes` int(11) NOT NULL,
   `IdRespostaGrauEntendimento` int(11) NOT NULL,
@@ -1473,14 +1473,14 @@ CREATE TABLE `tb_experiencia_medicamentos` (
   `AtencaoGrauEntendimento` tinyint(1) NOT NULL,
   `AtencaoCultural` tinyint(1) NOT NULL,
   `AtencaoComportamento` tinyint(1) NOT NULL,
-  PRIMARY KEY (`IdConsutaFixo`),
+  PRIMARY KEY (`IdConsultaFixo`),
   KEY `fk_tb_experiencia_medicamentos_tb_resposta1` (`IdRespostaEsperaTratamento`),
   KEY `fk_tb_experiencia_medicamentos_tb_resposta2` (`IdRespostaPreocupacoes`),
   KEY `fk_tb_experiencia_medicamentos_tb_resposta3` (`IdRespostaGrauEntendimento`),
   KEY `fk_tb_experiencia_medicamentos_tb_resposta4` (`IdRespostaCultural`),
   KEY `fk_tb_experiencia_medicamentos_tb_resposta5` (`IdRespostaComportamento`),
   KEY `fk_tb_experiencia_medicamentos_tb_resposta6` (`IdRespostaIncorporadoPlano`),
-  CONSTRAINT `fk_tb_experiencia_medicamentos_tb_consulta_fixo1` FOREIGN KEY (`IdConsutaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsutaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_experiencia_medicamentos_tb_consulta_fixo1` FOREIGN KEY (`IdConsultaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_experiencia_medicamentos_tb_resposta1` FOREIGN KEY (`IdRespostaEsperaTratamento`) REFERENCES `tb_resposta` (`IdResposta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_experiencia_medicamentos_tb_resposta2` FOREIGN KEY (`IdRespostaPreocupacoes`) REFERENCES `tb_resposta` (`IdResposta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_experiencia_medicamentos_tb_resposta3` FOREIGN KEY (`IdRespostaGrauEntendimento`) REFERENCES `tb_resposta` (`IdResposta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -1595,7 +1595,7 @@ DROP TABLE IF EXISTS `tb_demograficos_antropometricos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_demograficos_antropometricos` (
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Genero` char(1) NOT NULL,
   `DataNascimento` datetime DEFAULT NULL,
@@ -1605,12 +1605,12 @@ CREATE TABLE `tb_demograficos_antropometricos` (
   `IdEscolaridade` int(11) NOT NULL,
   `IdOcupacao` int(11) NOT NULL,
   `IdPlanoSaude` int(11) NOT NULL,
-  PRIMARY KEY (`IdConsutaFixo`),
-  KEY `fk_tb_demograficos_antropometricos_tb_consulta_fixo1` (`IdConsutaFixo`),
+  PRIMARY KEY (`IdConsultaFixo`),
+  KEY `fk_tb_demograficos_antropometricos_tb_consulta_fixo1` (`IdConsultaFixo`),
   KEY `fk_tb_demograficos_antropometricos_tb_escolaridade1` (`IdEscolaridade`),
   KEY `fk_tb_demograficos_antropometricos_tb_ocupacao1` (`IdOcupacao`),
   KEY `fk_tb_demograficos_antropometricos_tb_plano_saude1` (`IdPlanoSaude`),
-  CONSTRAINT `fk_tb_demograficos_antropometricos_tb_consulta_fixo1` FOREIGN KEY (`IdConsutaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsutaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_demograficos_antropometricos_tb_consulta_fixo1` FOREIGN KEY (`IdConsultaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_demograficos_antropometricos_tb_escolaridade1` FOREIGN KEY (`IdEscolaridade`) REFERENCES `tb_escolaridade` (`IdEscolaridade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_demograficos_antropometricos_tb_ocupacao1` FOREIGN KEY (`IdOcupacao`) REFERENCES `tb_ocupacao` (`IdOcupacao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_demograficos_antropometricos_tb_plano_saude1` FOREIGN KEY (`IdPlanoSaude`) REFERENCES `tb_plano_saude` (`IdPlanoSaude`) ON DELETE NO ACTION ON UPDATE NO ACTION
