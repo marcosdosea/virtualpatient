@@ -47,7 +47,7 @@ namespace PacienteVirtual.Models.Negocio
             }
             catch (Exception e)
             {
-                throw new NegocioException();
+                throw new DadosException("Institucao", e.Message, e);
             }
 
         }
