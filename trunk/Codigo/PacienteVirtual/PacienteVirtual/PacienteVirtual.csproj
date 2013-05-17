@@ -76,17 +76,29 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConsultaFixoController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
+    <Compile Include="Controllers\DemograficosAntropomedicosController.cs" />
     <Compile Include="Controllers\DisciplinaController.cs" />
+    <Compile Include="Controllers\ExperienciaMedicamentosController.cs" />
+    <Compile Include="Controllers\HistoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstituicaoController.cs" />
+    <Compile Include="Controllers\PacientePessoaTurmaController.cs" />
     <Compile Include="Controllers\TurmaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ExperienciaMedicamentosModel.cs" />
+    <Compile Include="Models\ConsultaFixoModel.cs" />
     <Compile Include="Models\CursoModel.cs" />
     <Compile Include="Models\Data\DadosException.cs" />
     <Compile Include="Models\Data\IRepositorioGenerico.cs" />
@@ -96,9 +108,17 @@
       <DependentUpon>PacienteVirtualModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Data\RepositorioGenerico.cs" />
+    <Compile Include="Models\DemograficosAntropometricosModel.cs" />
+    <Compile Include="Models\HistoriaModel.cs" />
     <Compile Include="Models\InstituicaoModel.cs" />
+    <Compile Include="Models\Negocio\GerenciadorExperienciaMedicamentos.cs" />
+    <Compile Include="Models\Negocio\GerenciadorPacientePessoaTurma.cs" />
+    <Compile Include="Models\PacientePessoaTurmaModel.cs" />
+    <Compile Include="Models\Negocio\GerenciadorConsultaFixo.cs" />
     <Compile Include="Models\Negocio\GerenciadorCurso.cs" />
+    <Compile Include="Models\Negocio\GerenciadorDemograficosAntropomedicos.cs" />
     <Compile Include="Models\Negocio\GerenciadorDisciplina.cs" />
+    <Compile Include="Models\Negocio\GerenciadorHistoria.cs" />
     <Compile Include="Models\Negocio\GerenciadorInstituicao.cs" />
     <Compile Include="Models\Negocio\GerenciadorTurma.cs" />
     <Compile Include="Models\Negocio\NegocioException.cs" />
@@ -151,21 +171,46 @@
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Views\Account\Registro.aspx" />
+    <Content Include="Views\ConsultaFixo\Create.aspx" />
+    <Content Include="Views\ConsultaFixo\Delete.aspx" />
+    <Content Include="Views\ConsultaFixo\Details.aspx" />
+    <Content Include="Views\ConsultaFixo\Edit.aspx" />
+    <Content Include="Views\ConsultaFixo\Index.aspx" />
     <Content Include="Views\Curso\Create.aspx" />
     <Content Include="Views\Curso\Delete.aspx" />
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Create.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Delete.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Details.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Edit.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Index.aspx" />
     <Content Include="Views\Disciplina\Create.aspx" />
     <Content Include="Views\Disciplina\Delete.aspx" />
     <Content Include="Views\Disciplina\Details.aspx" />
     <Content Include="Views\Disciplina\Edit.aspx" />
     <Content Include="Views\Disciplina\Index.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Create.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Delete.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Details.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Edit.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Index.aspx" />
+    <Content Include="Views\Historia\Create.aspx" />
+    <Content Include="Views\Historia\Delete.aspx" />
+    <Content Include="Views\Historia\Details.aspx" />
+    <Content Include="Views\Historia\Edit.aspx" />
+    <Content Include="Views\Historia\Index.aspx" />
     <Content Include="Views\Instituicao\Create.aspx" />
     <Content Include="Views\Instituicao\Delete.aspx" />
     <Content Include="Views\Instituicao\Details.aspx" />
     <Content Include="Views\Instituicao\Edit.aspx" />
     <Content Include="Views\Instituicao\Index.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Create.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Delete.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Details.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Edit.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Index.aspx" />
     <Content Include="Views\Turma\Create.aspx" />
     <Content Include="Views\Turma\Delete.aspx" />
     <Content Include="Views\Turma\Details.aspx" />
@@ -209,6 +254,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_LocalResources\" />
     <Folder Include="Content\themes\pv\" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +271,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
