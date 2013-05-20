@@ -1,0 +1,833 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pvModelStoreContainer" CdmEntityContainer="pvEntities">
+    <EntitySetMapping Name="aluno">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.aluno)">
+        <MappingFragment StoreEntitySet="aluno">
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="anoInicioCurso" ColumnName="anoInicioCurso" />
+          <ScalarProperty Name="flCursouAssistenciaFarmaceutica" ColumnName="flCursouAssistenciaFarmaceutica" />
+          <ScalarProperty Name="flCursouAtencaoFarmaceutica" ColumnName="flCursouAtencaoFarmaceutica" />
+          <ScalarProperty Name="flCursouDispencaoFarmaceutica" ColumnName="flCursouDispencaoFarmaceutica" />
+          <ScalarProperty Name="flCursouFarmaciaClinica" ColumnName="flCursouFarmaciaClinica" />
+          <ScalarProperty Name="flCursouIntroducaoFarmacia" ColumnName="flCursouIntroducaoFarmacia" />
+          <ScalarProperty Name="flCursouSemiologiaFarmaceutica" ColumnName="flCursouSemiologiaFarmaceutica" />
+          <ScalarProperty Name="flCursouTopicosFarmaciaClinica" ColumnName="flCursouTopicosFarmaciaClinica" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="idade" ColumnName="idade" />
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
+          <ScalarProperty Name="fkTurma" ColumnName="fkTurma" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="liberado" ColumnName="liberado" />
+          <ScalarProperty Name="fkConsultaAtual" ColumnName="fkConsultaAtual" />
+          <ScalarProperty Name="nrConsulta" ColumnName="nrConsulta" />
+          <ScalarProperty Name="nrTentativa" ColumnName="nrTentativa" />
+          <ScalarProperty Name="flAcessoCasa" ColumnName="flAcessoCasa" />
+          <ScalarProperty Name="flAcessoCasaAmigo" ColumnName="flAcessoCasaAmigo" />
+          <ScalarProperty Name="flAcessoOutro" ColumnName="flAcessoOutro" />
+          <ScalarProperty Name="flAcessoUniversidade" ColumnName="flAcessoUniversidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="casoclinico">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.casoclinico)">
+        <MappingFragment StoreEntitySet="casoclinico">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="alergias" ColumnName="alergias" />
+          <ScalarProperty Name="altura" ColumnName="altura" />
+          <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="disponibilidade" ColumnName="disponibilidade" />
+          <ScalarProperty Name="escolaridade" ColumnName="escolaridade" />
+          <ScalarProperty Name="flBebeAlcool" ColumnName="flBebeAlcool" />
+          <ScalarProperty Name="flBebeCafe" ColumnName="flBebeCafe" />
+          <ScalarProperty Name="flFuma" ColumnName="flFuma" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="medicosQueAtendem" ColumnName="medicosQueAtendem" />
+          <ScalarProperty Name="moradiaFamilia" ColumnName="moradiaFamilia" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="ocupacao" ColumnName="ocupacao" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="planoDeSaude" ColumnName="planoDeSaude" />
+          <ScalarProperty Name="pressaoDiastolica" ColumnName="pressaoDiastolica" />
+          <ScalarProperty Name="pressaoSistolica" ColumnName="pressaoSistolica" />
+          <ScalarProperty Name="relatoDeCasoPrimeiraConsulta" ColumnName="relatoDeCasoPrimeiraConsulta" />
+          <ScalarProperty Name="relatoDeCasoTerceiraConsulta" ColumnName="relatoDeCasoTerceiraConsulta" />
+          <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+          <ScalarProperty Name="historiaAlcoolAnterior" ColumnName="historiaAlcoolAnterior" />
+          <ScalarProperty Name="historiaAlcoolAtual" ColumnName="historiaAlcoolAtual" />
+          <ScalarProperty Name="historiaCafeAnterior" ColumnName="historiaCafeAnterior" />
+          <ScalarProperty Name="historiaCafeAtual" ColumnName="historiaCafeAtual" />
+          <ScalarProperty Name="historiaTabacoAnterior" ColumnName="historiaTabacoAnterior" />
+          <ScalarProperty Name="historiaTabacoAtual" ColumnName="historiaTabacoAtual" />
+          <ScalarProperty Name="peso2" ColumnName="peso2" />
+          <ScalarProperty Name="pressaoDiastolica2" ColumnName="pressaoDiastolica2" />
+          <ScalarProperty Name="pressaoSistolica2" ColumnName="pressaoSistolica2" />
+          <ScalarProperty Name="temperatura2" ColumnName="temperatura2" />
+          <ScalarProperty Name="tipoBebidaAlcoolica" ColumnName="tipoBebidaAlcoolica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consulta">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.consulta)">
+        <MappingFragment StoreEntitySet="consulta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+          <ScalarProperty Name="fkAluno" ColumnName="fkAluno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="intervencao">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.intervencao)">
+        <MappingFragment StoreEntitySet="intervencao">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="numeroEtapa" ColumnName="numeroEtapa" />
+          <ScalarProperty Name="numeroIntervencao" ColumnName="numeroIntervencao" />
+          <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="intervencaorespostaquarta">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.intervencaorespostaquarta)">
+        <MappingFragment StoreEntitySet="intervencaorespostaquarta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="justificativa" ColumnName="justificativa" />
+          <ScalarProperty Name="numeroIntervencao" ColumnName="numeroIntervencao" />
+          <ScalarProperty Name="fkResposta4" ColumnName="fkResposta4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="intervencaorespostasegunda">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.intervencaorespostasegunda)">
+        <MappingFragment StoreEntitySet="intervencaorespostasegunda">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="justificativa" ColumnName="justificativa" />
+          <ScalarProperty Name="numeroIntervencao" ColumnName="numeroIntervencao" />
+          <ScalarProperty Name="fkResposta2" ColumnName="fkResposta2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medicamentonaoprescrito">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.medicamentonaoprescrito)">
+        <MappingFragment StoreEntitySet="medicamentonaoprescrito">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dosagem" ColumnName="dosagem" />
+          <ScalarProperty Name="posologia" ColumnName="posologia" />
+          <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+          <ScalarProperty Name="flItalico" ColumnName="flItalico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medicamentoprescrito">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.medicamentoprescrito)">
+        <MappingFragment StoreEntitySet="medicamentoprescrito">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dosagem" ColumnName="dosagem" />
+          <ScalarProperty Name="especialidadeMedico" ColumnName="especialidadeMedico" />
+          <ScalarProperty Name="nmMedico" ColumnName="nmMedico" />
+          <ScalarProperty Name="posologia" ColumnName="posologia" />
+          <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+          <ScalarProperty Name="flItalico" ColumnName="flItalico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medicamentoqueixa">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.medicamentoqueixa)">
+        <MappingFragment StoreEntitySet="medicamentoqueixa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dose" ColumnName="dose" />
+          <ScalarProperty Name="efetivo" ColumnName="efetivo" />
+          <ScalarProperty Name="necessario" ColumnName="necessario" />
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="seguro" ColumnName="seguro" />
+          <ScalarProperty Name="cumprimento" ColumnName="cumprimento" />
+          <ScalarProperty Name="fkQueixa" ColumnName="fkQueixa" />
+          <ScalarProperty Name="conheceCumpre" ColumnName="conheceCumpre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medicamentoqueixaquarta">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.medicamentoqueixaquarta)">
+        <MappingFragment StoreEntitySet="medicamentoqueixaquarta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dose" ColumnName="dose" />
+          <ScalarProperty Name="efetivo" ColumnName="efetivo" />
+          <ScalarProperty Name="necessario" ColumnName="necessario" />
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="seguro" ColumnName="seguro" />
+          <ScalarProperty Name="cumprimento" ColumnName="cumprimento" />
+          <ScalarProperty Name="fkQueixaQuarta" ColumnName="fkQueixaQuarta" />
+          <ScalarProperty Name="conheceCumpre" ColumnName="conheceCumpre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medicamentoqueixasegunda">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.medicamentoqueixasegunda)">
+        <MappingFragment StoreEntitySet="medicamentoqueixasegunda">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dose" ColumnName="dose" />
+          <ScalarProperty Name="efetivo" ColumnName="efetivo" />
+          <ScalarProperty Name="necessario" ColumnName="necessario" />
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="seguro" ColumnName="seguro" />
+          <ScalarProperty Name="cumprimento" ColumnName="cumprimento" />
+          <ScalarProperty Name="fkQueixaSegunda" ColumnName="fkQueixaSegunda" />
+          <ScalarProperty Name="conheceCumpre" ColumnName="conheceCumpre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="parametroclinico">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.parametroclinico)">
+        <MappingFragment StoreEntitySet="parametroclinico">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="unidade" ColumnName="unidade" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="valorDeReferencia" ColumnName="valorDeReferencia" />
+          <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queixa">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.queixa)">
+        <MappingFragment StoreEntitySet="queixa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="numeroEtapa" ColumnName="numeroEtapa" />
+          <ScalarProperty Name="numeroPRM" ColumnName="numeroPRM" />
+          <ScalarProperty Name="fkCasoClinico" ColumnName="fkCasoClinico" />
+          <ScalarProperty Name="conheceOuPreocupa" ColumnName="conheceOuPreocupa" />
+          <ScalarProperty Name="periodoSurgimento" ColumnName="periodoSurgimento" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queixarespostaprimeira">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.queixarespostaprimeira)">
+        <MappingFragment StoreEntitySet="queixarespostaprimeira">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="fkResposta" ColumnName="fkResposta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queixarespostaquarta">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.queixarespostaquarta)">
+        <MappingFragment StoreEntitySet="queixarespostaquarta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="numeroPRM" ColumnName="numeroPRM" />
+          <ScalarProperty Name="fkResposta4" ColumnName="fkResposta4" />
+          <ScalarProperty Name="periodoSurgimento" ColumnName="periodoSurgimento" />
+          <ScalarProperty Name="flConheceOuPreocupa" ColumnName="flConheceOuPreocupa" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queixarespostasegunda">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.queixarespostasegunda)">
+        <MappingFragment StoreEntitySet="queixarespostasegunda">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="numeroPRM" ColumnName="numeroPRM" />
+          <ScalarProperty Name="fkResposta2" ColumnName="fkResposta2" />
+          <ScalarProperty Name="flConheceOuPreocupa" ColumnName="flConheceOuPreocupa" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="periodoSurgimento" ColumnName="periodoSurgimento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queixarespostaterceira">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.queixarespostaterceira)">
+        <MappingFragment StoreEntitySet="queixarespostaterceira">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="fkResposta" ColumnName="fkResposta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="respostaprimeira">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.respostaprimeira)">
+        <MappingFragment StoreEntitySet="respostaprimeira">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="alergias" ColumnName="alergias" />
+          <ScalarProperty Name="altura" ColumnName="altura" />
+          <ScalarProperty Name="dataDeRealizacao" ColumnName="dataDeRealizacao" />
+          <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="escolaridade" ColumnName="escolaridade" />
+          <ScalarProperty Name="flAlturaCerta" ColumnName="flAlturaCerta" />
+          <ScalarProperty Name="flBebeAlcool" ColumnName="flBebeAlcool" />
+          <ScalarProperty Name="flBebeAlcoolCerto" ColumnName="flBebeAlcoolCerto" />
+          <ScalarProperty Name="flBebeCafe" ColumnName="flBebeCafe" />
+          <ScalarProperty Name="flBebeCafeCerto" ColumnName="flBebeCafeCerto" />
+          <ScalarProperty Name="flDataNascimentoCerta" ColumnName="flDataNascimentoCerta" />
+          <ScalarProperty Name="flEscolaridadeCerta" ColumnName="flEscolaridadeCerta" />
+          <ScalarProperty Name="flFuma" ColumnName="flFuma" />
+          <ScalarProperty Name="flFumaCerto" ColumnName="flFumaCerto" />
+          <ScalarProperty Name="flGeneroCerto" ColumnName="flGeneroCerto" />
+          <ScalarProperty Name="flIMCCerto" ColumnName="flIMCCerto" />
+          <ScalarProperty Name="flNomeCerto" ColumnName="flNomeCerto" />
+          <ScalarProperty Name="flOcupacaoCerta" ColumnName="flOcupacaoCerta" />
+          <ScalarProperty Name="flPesoCerto" ColumnName="flPesoCerto" />
+          <ScalarProperty Name="flPressaoDiastolicaCerta" ColumnName="flPressaoDiastolicaCerta" />
+          <ScalarProperty Name="flPressaoSistolicaCerta" ColumnName="flPressaoSistolicaCerta" />
+          <ScalarProperty Name="flTemperaturaCerta" ColumnName="flTemperaturaCerta" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="IMC" ColumnName="IMC" />
+          <ScalarProperty Name="medicosQueAtendem" ColumnName="medicosQueAtendem" />
+          <ScalarProperty Name="moradiaFamilia" ColumnName="moradiaFamilia" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="ocupacao" ColumnName="ocupacao" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="pressaoDiastolica" ColumnName="pressaoDiastolica" />
+          <ScalarProperty Name="pressaoSistolica" ColumnName="pressaoSistolica" />
+          <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+          <ScalarProperty Name="planoDeSaude" ColumnName="planoDeSaude" />
+          <ScalarProperty Name="numeroTentativa" ColumnName="numeroTentativa" />
+          <ScalarProperty Name="fkConsulta" ColumnName="fkConsulta" />
+          <ScalarProperty Name="flCorreto" ColumnName="flCorreto" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="comentarioAluno" ColumnName="comentarioAluno" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="historiaAlcoolAnterior" ColumnName="historiaAlcoolAnterior" />
+          <ScalarProperty Name="historiaAlcoolAtual" ColumnName="historiaAlcoolAtual" />
+          <ScalarProperty Name="historiaCafeAnterior" ColumnName="historiaCafeAnterior" />
+          <ScalarProperty Name="historiaCafeAtual" ColumnName="historiaCafeAtual" />
+          <ScalarProperty Name="historiaTabacoAnterior" ColumnName="historiaTabacoAnterior" />
+          <ScalarProperty Name="historiaTabacoAtual" ColumnName="historiaTabacoAtual" />
+          <ScalarProperty Name="tipoBebidaAlcoolica" ColumnName="tipoBebidaAlcoolica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="respostaquarta">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.respostaquarta)">
+        <MappingFragment StoreEntitySet="respostaquarta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dataRealizacao" ColumnName="dataRealizacao" />
+          <ScalarProperty Name="fkConsulta" ColumnName="fkConsulta" />
+          <ScalarProperty Name="numeroTentativa" ColumnName="numeroTentativa" />
+          <ScalarProperty Name="flCorreto" ColumnName="flCorreto" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="comentarioAluno" ColumnName="comentarioAluno" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="carta" ColumnName="carta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="respostasegunda">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.respostasegunda)">
+        <MappingFragment StoreEntitySet="respostasegunda">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dataRealizacao" ColumnName="dataRealizacao" />
+          <ScalarProperty Name="fkConsulta" ColumnName="fkConsulta" />
+          <ScalarProperty Name="numeroTentativa" ColumnName="numeroTentativa" />
+          <ScalarProperty Name="flCorreto" ColumnName="flCorreto" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="comentarioAluno" ColumnName="comentarioAluno" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="carta" ColumnName="carta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="respostaterceira">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.respostaterceira)">
+        <MappingFragment StoreEntitySet="respostaterceira">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+          <ScalarProperty Name="pressaosistolica" ColumnName="pressaosistolica" />
+          <ScalarProperty Name="pressaodiastolica" ColumnName="pressaodiastolica" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="fkConsulta" ColumnName="fkConsulta" />
+          <ScalarProperty Name="dataRealizacao" ColumnName="dataRealizacao" />
+          <ScalarProperty Name="flCorreto" ColumnName="flCorreto" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="comentarioAluno" ColumnName="comentarioAluno" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="imc" ColumnName="imc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_curso">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.CursoE)">
+        <MappingFragment StoreEntitySet="tb_curso">
+          <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+          <ScalarProperty Name="NomeCurso" ColumnName="NomeCurso" />
+          <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_disciplina">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.DisciplinaE)">
+        <MappingFragment StoreEntitySet="tb_disciplina">
+          <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
+          <ScalarProperty Name="NomeDisciplina" ColumnName="NomeDisciplina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_disciplina_curso">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_disciplina_curso)">
+        <MappingFragment StoreEntitySet="tb_disciplina_curso">
+          <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
+          <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_instituicao">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.InstituicaoE)">
+        <MappingFragment StoreEntitySet="tb_instituicao">
+          <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
+          <ScalarProperty Name="NomeInstituicao" ColumnName="NomeInstituicao" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_perfil_usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_perfil_usuario)">
+        <MappingFragment StoreEntitySet="tb_perfil_usuario">
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="NomePerfil" ColumnName="NomePerfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_turma">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.TurmaE)">
+        <MappingFragment StoreEntitySet="tb_turma">
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
+          <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.UsuarioE)">
+        <MappingFragment StoreEntitySet="tb_usuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="NomeUsuario" ColumnName="NomeUsuario" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="tpUsuario" ColumnName="tpUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario_turma">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_usuario_turma)">
+        <MappingFragment StoreEntitySet="tb_usuario_turma">
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdPerfilUsuario" ColumnName="IdPerfilUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="turma">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.turma)">
+        <MappingFragment StoreEntitySet="turma">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="fktutor" ColumnName="fktutor" />
+          <ScalarProperty Name="nmDisciplina" ColumnName="nmDisciplina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tutor">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tutor)">
+        <MappingFragment StoreEntitySet="tutor">
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.usuario)">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="tpUsuario" ColumnName="tpUsuario" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_video">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.VideoE)">
+        <MappingFragment StoreEntitySet="tb_video">
+          <ScalarProperty Name="IdVideo" ColumnName="IdVideo" />
+          <ScalarProperty Name="NomeVideo" ColumnName="NomeVideo" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_aspnet_applications">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_applications)">
+        <MappingFragment StoreEntitySet="my_aspnet_applications">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_aspnet_membership">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_membership)">
+        <MappingFragment StoreEntitySet="my_aspnet_membership">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordKey" ColumnName="PasswordKey" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_aspnet_profiles">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_profiles)">
+        <MappingFragment StoreEntitySet="my_aspnet_profiles">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="valueindex" ColumnName="valueindex" />
+          <ScalarProperty Name="stringdata" ColumnName="stringdata" />
+          <ScalarProperty Name="binarydata" ColumnName="binarydata" />
+          <ScalarProperty Name="lastUpdatedDate" ColumnName="lastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_aspnet_roles">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_roles)">
+        <MappingFragment StoreEntitySet="my_aspnet_roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="applicationId" ColumnName="applicationId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_aspnet_sessioncleanup">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_sessioncleanup)">
+        <MappingFragment StoreEntitySet="my_aspnet_sessioncleanup">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="LastRun" ColumnName="LastRun" />
+          <ScalarProperty Name="IntervalMinutes" ColumnName="IntervalMinutes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_aspnet_sessions">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_sessions)">
+        <MappingFragment StoreEntitySet="my_aspnet_sessions">
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Expires" ColumnName="Expires" />
+          <ScalarProperty Name="LockDate" ColumnName="LockDate" />
+          <ScalarProperty Name="LockId" ColumnName="LockId" />
+          <ScalarProperty Name="Timeout" ColumnName="Timeout" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="SessionItems" ColumnName="SessionItems" />
+          <ScalarProperty Name="Flags" ColumnName="Flags" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_aspnet_users">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_users)">
+        <MappingFragment StoreEntitySet="my_aspnet_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="applicationId" ColumnName="applicationId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isAnonymous" ColumnName="isAnonymous" />
+          <ScalarProperty Name="lastActivityDate" ColumnName="lastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="my_aspnet_usersinroles">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_usersinroles)">
+        <MappingFragment StoreEntitySet="my_aspnet_usersinroles">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_alergia">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_alergia)">
+        <MappingFragment StoreEntitySet="tb_alergia">
+          <ScalarProperty Name="IdAlergia" ColumnName="IdAlergia" />
+          <ScalarProperty Name="Alergia" ColumnName="Alergia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_consulta_fixo">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_consulta_fixo)">
+        <MappingFragment StoreEntitySet="tb_consulta_fixo">
+          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="EhGabarito" ColumnName="EhGabarito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_consulta_parametro">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_consulta_parametro)">
+        <MappingFragment StoreEntitySet="tb_consulta_parametro">
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+          <ScalarProperty Name="IdParamentoClinico" ColumnName="IdParamentoClinico" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="ValorReferencia" ColumnName="ValorReferencia" />
+          <ScalarProperty Name="Unidade" ColumnName="Unidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_consulta_variavel">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_consulta_variavel)">
+        <MappingFragment StoreEntitySet="tb_consulta_variavel">
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
+          <ScalarProperty Name="Lembretes" ColumnName="Lembretes" />
+          <ScalarProperty Name="EhGabarito" ColumnName="EhGabarito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_demograficos_antropometricos">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_demograficos_antropometricos)">
+        <MappingFragment StoreEntitySet="tb_demograficos_antropometricos">
+          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="MedicosAtendem" ColumnName="MedicosAtendem" />
+          <ScalarProperty Name="MoradiaFamilia" ColumnName="MoradiaFamilia" />
+          <ScalarProperty Name="OndeAdquireMedicamentos" ColumnName="OndeAdquireMedicamentos" />
+          <ScalarProperty Name="IdEscolaridade" ColumnName="IdEscolaridade" />
+          <ScalarProperty Name="IdOcupacao" ColumnName="IdOcupacao" />
+          <ScalarProperty Name="IdPlanoSaude" ColumnName="IdPlanoSaude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_escolaridade">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_escolaridade)">
+        <MappingFragment StoreEntitySet="tb_escolaridade">
+          <ScalarProperty Name="IdEscolaridade" ColumnName="IdEscolaridade" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_estilo_vida">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_estilo_vida)">
+        <MappingFragment StoreEntitySet="tb_estilo_vida">
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+          <ScalarProperty Name="TabacoConsumo" ColumnName="TabacoConsumo" />
+          <ScalarProperty Name="TabacoUso" ColumnName="TabacoUso" />
+          <ScalarProperty Name="TabacoParou" ColumnName="TabacoParou" />
+          <ScalarProperty Name="CafeConsumo" ColumnName="CafeConsumo" />
+          <ScalarProperty Name="CafeUso" ColumnName="CafeUso" />
+          <ScalarProperty Name="CafeParou" ColumnName="CafeParou" />
+          <ScalarProperty Name="AlcoolConsumo" ColumnName="AlcoolConsumo" />
+          <ScalarProperty Name="AlcoolUso" ColumnName="AlcoolUso" />
+          <ScalarProperty Name="AlcoolTipoBebida" ColumnName="AlcoolTipoBebida" />
+          <ScalarProperty Name="AlcoolParou" ColumnName="AlcoolParou" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_exames_fisicos">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_exames_fisicos)">
+        <MappingFragment StoreEntitySet="tb_exames_fisicos">
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Altura" ColumnName="Altura" />
+          <ScalarProperty Name="PressaoDiastolica" ColumnName="PressaoDiastolica" />
+          <ScalarProperty Name="PressaoSistolica" ColumnName="PressaoSistolica" />
+          <ScalarProperty Name="Glicemia" ColumnName="Glicemia" />
+          <ScalarProperty Name="IdAlergia" ColumnName="IdAlergia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_experiencia_medicamentos">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_experiencia_medicamentos)">
+        <MappingFragment StoreEntitySet="tb_experiencia_medicamentos">
+          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="IdRespostaEsperaTratamento" ColumnName="IdRespostaEsperaTratamento" />
+          <ScalarProperty Name="IdRespostaPreocupacoes" ColumnName="IdRespostaPreocupacoes" />
+          <ScalarProperty Name="IdRespostaGrauEntendimento" ColumnName="IdRespostaGrauEntendimento" />
+          <ScalarProperty Name="IdRespostaCultural" ColumnName="IdRespostaCultural" />
+          <ScalarProperty Name="IdRespostaComportamento" ColumnName="IdRespostaComportamento" />
+          <ScalarProperty Name="IdRespostaIncorporadoPlano" ColumnName="IdRespostaIncorporadoPlano" />
+          <ScalarProperty Name="AtencaoEsperaTratamento" ColumnName="AtencaoEsperaTratamento" />
+          <ScalarProperty Name="AtencaoPreocupacoes" ColumnName="AtencaoPreocupacoes" />
+          <ScalarProperty Name="AtencaoGrauEntendimento" ColumnName="AtencaoGrauEntendimento" />
+          <ScalarProperty Name="AtencaoCultural" ColumnName="AtencaoCultural" />
+          <ScalarProperty Name="AtencaoComportamento" ColumnName="AtencaoComportamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_historia">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_historia)">
+        <MappingFragment StoreEntitySet="tb_historia">
+          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="HistoriaMedicaPregressa" ColumnName="HistoriaMedicaPregressa" />
+          <ScalarProperty Name="HistoriaFamiliar" ColumnName="HistoriaFamiliar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_medicamento_nao_prescrito">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_medicamento_nao_prescrito)">
+        <MappingFragment StoreEntitySet="tb_medicamento_nao_prescrito">
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="Fitoterapico" ColumnName="Fitoterapico" />
+          <ScalarProperty Name="Dosagem" ColumnName="Dosagem" />
+          <ScalarProperty Name="Posologia" ColumnName="Posologia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_medicamento_prescrito">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_medicamento_prescrito)">
+        <MappingFragment StoreEntitySet="tb_medicamento_prescrito">
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="Fitoterapico" ColumnName="Fitoterapico" />
+          <ScalarProperty Name="Dosagem" ColumnName="Dosagem" />
+          <ScalarProperty Name="Posologia" ColumnName="Posologia" />
+          <ScalarProperty Name="Prescritor" ColumnName="Prescritor" />
+          <ScalarProperty Name="Especialidade" ColumnName="Especialidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_medicamentos">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_medicamentos)">
+        <MappingFragment StoreEntitySet="tb_medicamentos">
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_medicamentos_anteriores">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_medicamentos_anteriores)">
+        <MappingFragment StoreEntitySet="tb_medicamentos_anteriores">
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="Indicacao" ColumnName="Indicacao" />
+          <ScalarProperty Name="Resposta" ColumnName="Resposta" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ocupacao">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_ocupacao)">
+        <MappingFragment StoreEntitySet="tb_ocupacao">
+          <ScalarProperty Name="IdOcupacao" ColumnName="IdOcupacao" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_paciente">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_paciente)">
+        <MappingFragment StoreEntitySet="tb_paciente">
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_paciente_pessoa_turma">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_paciente_pessoa_turma)">
+        <MappingFragment StoreEntitySet="tb_paciente_pessoa_turma">
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+          <ScalarProperty Name="GrupoAtividades" ColumnName="GrupoAtividades" />
+          <ScalarProperty Name="EstadoPreenchimento" ColumnName="EstadoPreenchimento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_parametro_clinico">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_parametro_clinico)">
+        <MappingFragment StoreEntitySet="tb_parametro_clinico">
+          <ScalarProperty Name="IdParamentoClinico" ColumnName="IdParamentoClinico" />
+          <ScalarProperty Name="ParametroClinico" ColumnName="ParametroClinico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pergunta">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_pergunta)">
+        <MappingFragment StoreEntitySet="tb_pergunta">
+          <ScalarProperty Name="IdPergunta" ColumnName="IdPergunta" />
+          <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pessoa">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_pessoa)">
+        <MappingFragment StoreEntitySet="tb_pessoa">
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_plano_saude">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_plano_saude)">
+        <MappingFragment StoreEntitySet="tb_plano_saude">
+          <ScalarProperty Name="IdPlanoSaude" ColumnName="IdPlanoSaude" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_relato_clinico">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_relato_clinico)">
+        <MappingFragment StoreEntitySet="tb_relato_clinico">
+          <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="OrdemCronologia" ColumnName="OrdemCronologia" />
+          <ScalarProperty Name="RelatoTextual" ColumnName="RelatoTextual" />
+          <ScalarProperty Name="RelatoVideo" ColumnName="RelatoVideo" />
+          <ScalarProperty Name="NivelDificuldade" ColumnName="NivelDificuldade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_resposta">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_resposta)">
+        <MappingFragment StoreEntitySet="tb_resposta">
+          <ScalarProperty Name="IdResposta" ColumnName="IdResposta" />
+          <ScalarProperty Name="Resposta" ColumnName="Resposta" />
+          <ScalarProperty Name="IdPergunta" ColumnName="IdPergunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tb_curso_disciplina" TypeName="pvModel.tb_curso_disciplina" StoreEntitySet="tb_curso_disciplina">
+      <EndProperty Name="CursoE">
+        <ScalarProperty Name="IdCurso" ColumnName="tb_curso_IdCurso" />
+      </EndProperty>
+      <EndProperty Name="DisciplinaE">
+        <ScalarProperty Name="IdDisciplina" ColumnName="tb_disciplina_IdDisciplina" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_razao_encontro" TypeName="pvModel.tb_razao_encontro" StoreEntitySet="tb_consulta_variavel">
+      <EndProperty Name="tb_resposta">
+        <ScalarProperty Name="IdResposta" ColumnName="tb_resposta_IdResposta" />
+      </EndProperty>
+      <EndProperty Name="tb_consulta_variavel">
+        <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+      </EndProperty>
+      <Condition ColumnName="tb_resposta_IdResposta" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,18 @@
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\PacienteVirtual.dll
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\PacienteVirtual.pdb
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\EntityFramework.dll
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\EntityFramework.xml
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.dll
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.pdb
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\Html5MVCWebControls.dll
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\Html5MVCWebControls.xml
+D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\ResolveAssemblyReference.cache
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\bin\PacienteVirtual.dll
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\bin\PacienteVirtual.pdb
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\bin\EntityFramework.dll
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\bin\Html5MVCWebControls.dll
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\bin\EntityFramework.xml
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\bin\Html5MVCWebControls.xml
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\ResolveAssemblyReference.cache
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.dll
+D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.pdb
