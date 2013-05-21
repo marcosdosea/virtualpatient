@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 05/20/2013 12:45:02
--- Generated from EDMX file: D:\Projetos\PV\virtualpatient - Cópia\Codigo\PacienteVirtual\PacienteVirtual\Models\Data\PacienteVirtualModel.edmx
+-- Date Created: 05/21/2013 11:06:04
+-- Generated from EDMX file: C:\Users\Iuri\Desktop\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\Models\Data\PacienteVirtualModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -268,30 +268,6 @@ IF OBJECT_ID(N'[pv1].[medicamentoqueixaquarta]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[pv1].[medicamentoqueixasegunda]', 'U') IS NOT NULL
     DROP TABLE [pv1].[medicamentoqueixasegunda];
-GO
-IF OBJECT_ID(N'[pv1].[my_aspnet_applications]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[my_aspnet_applications];
-GO
-IF OBJECT_ID(N'[pv1].[my_aspnet_membership]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[my_aspnet_membership];
-GO
-IF OBJECT_ID(N'[pv1].[my_aspnet_profiles]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[my_aspnet_profiles];
-GO
-IF OBJECT_ID(N'[pv1].[my_aspnet_roles]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[my_aspnet_roles];
-GO
-IF OBJECT_ID(N'[pv1].[my_aspnet_sessioncleanup]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[my_aspnet_sessioncleanup];
-GO
-IF OBJECT_ID(N'[pv1].[my_aspnet_sessions]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[my_aspnet_sessions];
-GO
-IF OBJECT_ID(N'[pv1].[my_aspnet_users]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[my_aspnet_users];
-GO
-IF OBJECT_ID(N'[pv1].[my_aspnet_usersinroles]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[my_aspnet_usersinroles];
 GO
 IF OBJECT_ID(N'[pv1].[parametroclinico]', 'U') IS NOT NULL
     DROP TABLE [pv1].[parametroclinico];
@@ -858,96 +834,6 @@ CREATE TABLE [dbo].[tb_video] (
 );
 GO
 
--- Creating table 'my_aspnet_applications'
-CREATE TABLE [dbo].[my_aspnet_applications] (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [name] varchar(256)  NULL,
-    [description] varchar(256)  NULL
-);
-GO
-
--- Creating table 'my_aspnet_membership'
-CREATE TABLE [dbo].[my_aspnet_membership] (
-    [userId] int  NOT NULL,
-    [Email] varchar(128)  NULL,
-    [Comment] varchar(255)  NULL,
-    [Password] varchar(128)  NOT NULL,
-    [PasswordKey] varchar(32)  NULL,
-    [PasswordFormat] tinyint  NULL,
-    [PasswordQuestion] varchar(255)  NULL,
-    [PasswordAnswer] varchar(255)  NULL,
-    [IsApproved] bool  NULL,
-    [LastActivityDate] datetime  NULL,
-    [LastLoginDate] datetime  NULL,
-    [LastPasswordChangedDate] datetime  NULL,
-    [CreationDate] datetime  NULL,
-    [IsLockedOut] bool  NULL,
-    [LastLockedOutDate] datetime  NULL,
-    [FailedPasswordAttemptCount] bigint  NULL,
-    [FailedPasswordAttemptWindowStart] datetime  NULL,
-    [FailedPasswordAnswerAttemptCount] bigint  NULL,
-    [FailedPasswordAnswerAttemptWindowStart] datetime  NULL
-);
-GO
-
--- Creating table 'my_aspnet_profiles'
-CREATE TABLE [dbo].[my_aspnet_profiles] (
-    [userId] int  NOT NULL,
-    [valueindex] longtext  NULL,
-    [stringdata] longtext  NULL,
-    [binarydata] longblob  NULL,
-    [lastUpdatedDate] datetime  NOT NULL
-);
-GO
-
--- Creating table 'my_aspnet_roles'
-CREATE TABLE [dbo].[my_aspnet_roles] (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [applicationId] int  NOT NULL,
-    [name] varchar(255)  NOT NULL
-);
-GO
-
--- Creating table 'my_aspnet_sessioncleanup'
-CREATE TABLE [dbo].[my_aspnet_sessioncleanup] (
-    [LastRun] datetime  NOT NULL,
-    [IntervalMinutes] int  NOT NULL,
-    [ApplicationId] int  NOT NULL
-);
-GO
-
--- Creating table 'my_aspnet_sessions'
-CREATE TABLE [dbo].[my_aspnet_sessions] (
-    [SessionId] varchar(191)  NOT NULL,
-    [ApplicationId] int  NOT NULL,
-    [Created] datetime  NOT NULL,
-    [Expires] datetime  NOT NULL,
-    [LockDate] datetime  NOT NULL,
-    [LockId] int  NOT NULL,
-    [Timeout] int  NOT NULL,
-    [Locked] bool  NOT NULL,
-    [SessionItems] longblob  NULL,
-    [Flags] int  NOT NULL
-);
-GO
-
--- Creating table 'my_aspnet_users'
-CREATE TABLE [dbo].[my_aspnet_users] (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [applicationId] int  NOT NULL,
-    [name] varchar(256)  NOT NULL,
-    [isAnonymous] bool  NOT NULL,
-    [lastActivityDate] datetime  NULL
-);
-GO
-
--- Creating table 'my_aspnet_usersinroles'
-CREATE TABLE [dbo].[my_aspnet_usersinroles] (
-    [userId] int  NOT NULL,
-    [roleId] int  NOT NULL
-);
-GO
-
 -- Creating table 'tb_alergia'
 CREATE TABLE [dbo].[tb_alergia] (
     [IdAlergia] int  NOT NULL,
@@ -957,7 +843,7 @@ GO
 
 -- Creating table 'tb_consulta_fixo'
 CREATE TABLE [dbo].[tb_consulta_fixo] (
-    [IdConsutaFixo] bigint IDENTITY(1,1) NOT NULL,
+    [IdConsultaFixo] bigint IDENTITY(1,1) NOT NULL,
     [IdPaciente] int  NOT NULL,
     [EhGabarito] bool  NOT NULL
 );
@@ -986,7 +872,7 @@ GO
 
 -- Creating table 'tb_demograficos_antropometricos'
 CREATE TABLE [dbo].[tb_demograficos_antropometricos] (
-    [IdConsutaFixo] bigint  NOT NULL,
+    [IdConsultaFixo] bigint  NOT NULL,
     [Nome] varchar(50)  NOT NULL,
     [Genero] varchar(1)  NOT NULL,
     [DataNascimento] datetime  NULL,
@@ -1036,7 +922,7 @@ GO
 
 -- Creating table 'tb_experiencia_medicamentos'
 CREATE TABLE [dbo].[tb_experiencia_medicamentos] (
-    [IdConsutaFixo] bigint  NOT NULL,
+    [IdConsultaFixo] bigint  NOT NULL,
     [IdRespostaEsperaTratamento] int  NOT NULL,
     [IdRespostaPreocupacoes] int  NOT NULL,
     [IdRespostaGrauEntendimento] int  NOT NULL,
@@ -1053,7 +939,7 @@ GO
 
 -- Creating table 'tb_historia'
 CREATE TABLE [dbo].[tb_historia] (
-    [IdConsutaFixo] bigint  NOT NULL,
+    [IdConsultaFixo] bigint  NOT NULL,
     [HistoriaMedicaPregressa] varchar(255)  NOT NULL,
     [HistoriaFamiliar] varchar(255)  NOT NULL
 );
@@ -1118,7 +1004,7 @@ CREATE TABLE [dbo].[tb_paciente_pessoa_turma] (
     [IdPessoa] int  NOT NULL,
     [IdTurma] int  NOT NULL,
     [IdPaciente] int  NOT NULL,
-    [IdConsutaFixo] bigint  NOT NULL,
+    [IdConsultaFixo] bigint  NOT NULL,
     [IdConsultaVariavel] bigint  NOT NULL,
     [GrupoAtividades] int  NOT NULL,
     [EstadoPreenchimento] int  NOT NULL
@@ -1381,64 +1267,16 @@ ADD CONSTRAINT [PK_tb_video]
     PRIMARY KEY CLUSTERED ([IdVideo], [NomeVideo] ASC);
 GO
 
--- Creating primary key on [id] in table 'my_aspnet_applications'
-ALTER TABLE [dbo].[my_aspnet_applications]
-ADD CONSTRAINT [PK_my_aspnet_applications]
-    PRIMARY KEY CLUSTERED ([id] ASC);
-GO
-
--- Creating primary key on [userId] in table 'my_aspnet_membership'
-ALTER TABLE [dbo].[my_aspnet_membership]
-ADD CONSTRAINT [PK_my_aspnet_membership]
-    PRIMARY KEY CLUSTERED ([userId] ASC);
-GO
-
--- Creating primary key on [userId] in table 'my_aspnet_profiles'
-ALTER TABLE [dbo].[my_aspnet_profiles]
-ADD CONSTRAINT [PK_my_aspnet_profiles]
-    PRIMARY KEY CLUSTERED ([userId] ASC);
-GO
-
--- Creating primary key on [id] in table 'my_aspnet_roles'
-ALTER TABLE [dbo].[my_aspnet_roles]
-ADD CONSTRAINT [PK_my_aspnet_roles]
-    PRIMARY KEY CLUSTERED ([id] ASC);
-GO
-
--- Creating primary key on [ApplicationId] in table 'my_aspnet_sessioncleanup'
-ALTER TABLE [dbo].[my_aspnet_sessioncleanup]
-ADD CONSTRAINT [PK_my_aspnet_sessioncleanup]
-    PRIMARY KEY CLUSTERED ([ApplicationId] ASC);
-GO
-
--- Creating primary key on [SessionId], [ApplicationId] in table 'my_aspnet_sessions'
-ALTER TABLE [dbo].[my_aspnet_sessions]
-ADD CONSTRAINT [PK_my_aspnet_sessions]
-    PRIMARY KEY CLUSTERED ([SessionId], [ApplicationId] ASC);
-GO
-
--- Creating primary key on [id] in table 'my_aspnet_users'
-ALTER TABLE [dbo].[my_aspnet_users]
-ADD CONSTRAINT [PK_my_aspnet_users]
-    PRIMARY KEY CLUSTERED ([id] ASC);
-GO
-
--- Creating primary key on [userId], [roleId] in table 'my_aspnet_usersinroles'
-ALTER TABLE [dbo].[my_aspnet_usersinroles]
-ADD CONSTRAINT [PK_my_aspnet_usersinroles]
-    PRIMARY KEY CLUSTERED ([userId], [roleId] ASC);
-GO
-
 -- Creating primary key on [IdAlergia] in table 'tb_alergia'
 ALTER TABLE [dbo].[tb_alergia]
 ADD CONSTRAINT [PK_tb_alergia]
     PRIMARY KEY CLUSTERED ([IdAlergia] ASC);
 GO
 
--- Creating primary key on [IdConsutaFixo] in table 'tb_consulta_fixo'
+-- Creating primary key on [IdConsultaFixo] in table 'tb_consulta_fixo'
 ALTER TABLE [dbo].[tb_consulta_fixo]
 ADD CONSTRAINT [PK_tb_consulta_fixo]
-    PRIMARY KEY CLUSTERED ([IdConsutaFixo] ASC);
+    PRIMARY KEY CLUSTERED ([IdConsultaFixo] ASC);
 GO
 
 -- Creating primary key on [IdConsultaVariavel], [IdParamentoClinico] in table 'tb_consulta_parametro'
@@ -1453,10 +1291,10 @@ ADD CONSTRAINT [PK_tb_consulta_variavel]
     PRIMARY KEY CLUSTERED ([IdConsultaVariavel] ASC);
 GO
 
--- Creating primary key on [IdConsutaFixo] in table 'tb_demograficos_antropometricos'
+-- Creating primary key on [IdConsultaFixo] in table 'tb_demograficos_antropometricos'
 ALTER TABLE [dbo].[tb_demograficos_antropometricos]
 ADD CONSTRAINT [PK_tb_demograficos_antropometricos]
-    PRIMARY KEY CLUSTERED ([IdConsutaFixo] ASC);
+    PRIMARY KEY CLUSTERED ([IdConsultaFixo] ASC);
 GO
 
 -- Creating primary key on [IdEscolaridade] in table 'tb_escolaridade'
@@ -1477,16 +1315,16 @@ ADD CONSTRAINT [PK_tb_exames_fisicos]
     PRIMARY KEY CLUSTERED ([IdConsultaVariavel] ASC);
 GO
 
--- Creating primary key on [IdConsutaFixo] in table 'tb_experiencia_medicamentos'
+-- Creating primary key on [IdConsultaFixo] in table 'tb_experiencia_medicamentos'
 ALTER TABLE [dbo].[tb_experiencia_medicamentos]
 ADD CONSTRAINT [PK_tb_experiencia_medicamentos]
-    PRIMARY KEY CLUSTERED ([IdConsutaFixo] ASC);
+    PRIMARY KEY CLUSTERED ([IdConsultaFixo] ASC);
 GO
 
--- Creating primary key on [IdConsutaFixo] in table 'tb_historia'
+-- Creating primary key on [IdConsultaFixo] in table 'tb_historia'
 ALTER TABLE [dbo].[tb_historia]
 ADD CONSTRAINT [PK_tb_historia]
-    PRIMARY KEY CLUSTERED ([IdConsutaFixo] ASC);
+    PRIMARY KEY CLUSTERED ([IdConsultaFixo] ASC);
 GO
 
 -- Creating primary key on [IdConsultaVariavel], [IdMedicamento] in table 'tb_medicamento_nao_prescrito'
@@ -2160,45 +1998,45 @@ ON [dbo].[tb_exames_fisicos]
     ([IdAlergia]);
 GO
 
--- Creating foreign key on [IdConsutaFixo] in table 'tb_demograficos_antropometricos'
+-- Creating foreign key on [IdConsultaFixo] in table 'tb_demograficos_antropometricos'
 ALTER TABLE [dbo].[tb_demograficos_antropometricos]
 ADD CONSTRAINT [fk_tb_demograficos_antropometricos_tb_consulta_fixo1]
-    FOREIGN KEY ([IdConsutaFixo])
+    FOREIGN KEY ([IdConsultaFixo])
     REFERENCES [dbo].[tb_consulta_fixo]
-        ([IdConsutaFixo])
+        ([IdConsultaFixo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating foreign key on [IdConsutaFixo] in table 'tb_experiencia_medicamentos'
+-- Creating foreign key on [IdConsultaFixo] in table 'tb_experiencia_medicamentos'
 ALTER TABLE [dbo].[tb_experiencia_medicamentos]
 ADD CONSTRAINT [fk_tb_experiencia_medicamentos_tb_consulta_fixo1]
-    FOREIGN KEY ([IdConsutaFixo])
+    FOREIGN KEY ([IdConsultaFixo])
     REFERENCES [dbo].[tb_consulta_fixo]
-        ([IdConsutaFixo])
+        ([IdConsultaFixo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating foreign key on [IdConsutaFixo] in table 'tb_historia'
+-- Creating foreign key on [IdConsultaFixo] in table 'tb_historia'
 ALTER TABLE [dbo].[tb_historia]
 ADD CONSTRAINT [fk_tb_historia_tb_consulta_fixo1]
-    FOREIGN KEY ([IdConsutaFixo])
+    FOREIGN KEY ([IdConsultaFixo])
     REFERENCES [dbo].[tb_consulta_fixo]
-        ([IdConsutaFixo])
+        ([IdConsultaFixo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating foreign key on [IdConsutaFixo] in table 'tb_paciente_pessoa_turma'
+-- Creating foreign key on [IdConsultaFixo] in table 'tb_paciente_pessoa_turma'
 ALTER TABLE [dbo].[tb_paciente_pessoa_turma]
 ADD CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_consulta_fixo1]
-    FOREIGN KEY ([IdConsutaFixo])
+    FOREIGN KEY ([IdConsultaFixo])
     REFERENCES [dbo].[tb_consulta_fixo]
-        ([IdConsutaFixo])
+        ([IdConsultaFixo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'fk_tb_paciente_pessoa_turma_tb_consulta_fixo1'
 CREATE INDEX [IX_fk_tb_paciente_pessoa_turma_tb_consulta_fixo1]
 ON [dbo].[tb_paciente_pessoa_turma]
-    ([IdConsutaFixo]);
+    ([IdConsultaFixo]);
 GO
 
 -- Creating foreign key on [IdConsultaVariavel] in table 'tb_consulta_parametro'
