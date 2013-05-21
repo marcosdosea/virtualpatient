@@ -82,19 +82,26 @@
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\ConsultaFixoController.cs" />
     <Compile Include="Controllers\CursoController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\DemograficosAntropomedicosController.cs" />
     <Compile Include="Controllers\DisciplinaController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\ExperienciaMedicamentosController.cs" />
+    <Compile Include="Controllers\HistoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\InstituicaoController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\SampleController.cs" />
+    <Compile Include="Controllers\PacientePessoaTurmaController.cs" />
+    <Compile Include="Controllers\SampleController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\TurmaController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -104,24 +111,60 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\CursoModel.cs" />
-    <Compile Include="Models\Data\DadosException.cs" />
-    <Compile Include="Models\Data\IRepositorioGenerico.cs" />
+    <Compile Include="Models\AccountModels.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ConsultaFixoModel.cs" />
+    <Compile Include="Models\CursoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Data\DadosException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Data\IRepositorioGenerico.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\Data\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PacienteVirtualModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Data\RepositorioGenerico.cs" />
-    <Compile Include="Models\InstituicaoModel.cs" />
-    <Compile Include="Models\Negocio\GerenciadorCurso.cs" />
-    <Compile Include="Models\Negocio\GerenciadorDisciplina.cs" />
-    <Compile Include="Models\Negocio\GerenciadorInstituicao.cs" />
-    <Compile Include="Models\Negocio\GerenciadorTurma.cs" />
-    <Compile Include="Models\Negocio\NegocioException.cs" />
-    <Compile Include="Models\DisciplinaModel.cs" />
-    <Compile Include="Models\TurmaModel.cs" />
+    <Compile Include="Models\Data\RepositorioGenerico.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\DemograficosAntropometricosModel.cs" />
+    <Compile Include="Models\DisciplinaModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ExperienciaMedicamentosModel.cs" />
+    <Compile Include="Models\HistoriaModel.cs" />
+    <Compile Include="Models\InstituicaoModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Negocio\GerenciadorConsultaFixo.cs" />
+    <Compile Include="Models\Negocio\GerenciadorCurso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Negocio\GerenciadorDemograficosAntropomedicos.cs" />
+    <Compile Include="Models\Negocio\GerenciadorDisciplina.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Negocio\GerenciadorExperienciaMedicamentos.cs" />
+    <Compile Include="Models\Negocio\GerenciadorHistoria.cs" />
+    <Compile Include="Models\Negocio\GerenciadorInstituicao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Negocio\GerenciadorPacientePessoaTurma.cs" />
+    <Compile Include="Models\Negocio\GerenciadorTurma.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Negocio\NegocioException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\PacientePessoaTurmaModel.cs" />
+    <Compile Include="Models\TurmaModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,22 +218,57 @@
     <Content Include="Uploads\Matricula.txt" />
     <Content Include="Uploads\PilhaDados.java" />
     <Content Include="Uploads\Um Homem De Sorte.avi" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Account\Registro.aspx" />
+    <Content Include="Views\ConsultaFixo\Create.aspx" />
+    <Content Include="Views\ConsultaFixo\Delete.aspx" />
+    <Content Include="Views\ConsultaFixo\Details.aspx" />
+    <Content Include="Views\ConsultaFixo\Edit.aspx" />
+    <Content Include="Views\ConsultaFixo\Index.aspx" />
     <Content Include="Views\Curso\Create.aspx" />
     <Content Include="Views\Curso\Delete.aspx" />
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Create.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Delete.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Details.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Edit.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Index.aspx" />
     <Content Include="Views\Disciplina\Create.aspx" />
     <Content Include="Views\Disciplina\Delete.aspx" />
     <Content Include="Views\Disciplina\Details.aspx" />
     <Content Include="Views\Disciplina\Edit.aspx" />
     <Content Include="Views\Disciplina\Index.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Create.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Delete.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Details.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Edit.aspx" />
+    <Content Include="Views\ExperienciaMedicamentos\Index.aspx" />
+    <Content Include="Views\Historia\Create.aspx" />
+    <Content Include="Views\Historia\Delete.aspx" />
+    <Content Include="Views\Historia\Details.aspx" />
+    <Content Include="Views\Historia\Edit.aspx" />
+    <Content Include="Views\Historia\Index.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Instituicao\Create.aspx" />
     <Content Include="Views\Instituicao\Delete.aspx" />
     <Content Include="Views\Instituicao\Details.aspx" />
     <Content Include="Views\Instituicao\Edit.aspx" />
     <Content Include="Views\Instituicao\Index.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Create.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Delete.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Details.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Edit.aspx" />
+    <Content Include="Views\PacientePessoaTurma\Index.aspx" />
+    <Content Include="Views\Sample\Index.cshtml" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Turma\Create.aspx" />
     <Content Include="Views\Turma\Delete.aspx" />
     <Content Include="Views\Turma\Details.aspx" />
@@ -201,6 +279,7 @@
     <Content Include="Views\Usuario\Details.aspx" />
     <Content Include="Views\Usuario\Edit.aspx" />
     <Content Include="Views\Usuario\Index.aspx" />
+    <Content Include="Views\Web.config" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -221,16 +300,6 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="Views\Account\ChangePassword.aspx" />
-    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
-    <Content Include="Views\Account\LogOn.aspx" />
-    <Content Include="Views\Account\Register.aspx" />
-    <Content Include="Views\Home\About.aspx" />
-    <Content Include="Views\Home\Index.aspx" />
-    <Content Include="Views\Shared\Error.aspx" />
-    <Content Include="Views\Shared\LogOnUserControl.ascx" />
-    <Content Include="Views\Shared\Site.Master" />
-    <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\themes\pv\" />
@@ -239,20 +308,17 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\Data\PacienteVirtualModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PacienteVirtualModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Uploads\Certidão de Quitação - Emissão.pdf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Sample\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\uploads\Minority.Report.2002.720p.BluRay.x264.YIFY.srt" />
     <Content Include="App_Data\uploads\projetoTC.rar" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\Data\PacienteVirtualModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PacienteVirtualModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
