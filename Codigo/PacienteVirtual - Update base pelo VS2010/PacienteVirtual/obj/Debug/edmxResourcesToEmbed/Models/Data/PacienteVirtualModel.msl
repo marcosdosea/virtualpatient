@@ -468,104 +468,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="my_aspnet_applications">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_applications)">
-        <MappingFragment StoreEntitySet="my_aspnet_applications">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="description" ColumnName="description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="my_aspnet_membership">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_membership)">
-        <MappingFragment StoreEntitySet="my_aspnet_membership">
-          <ScalarProperty Name="userId" ColumnName="userId" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="PasswordKey" ColumnName="PasswordKey" />
-          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
-          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
-          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
-          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
-          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
-          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
-          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
-          <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
-          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
-          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
-          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
-          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="my_aspnet_profiles">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_profiles)">
-        <MappingFragment StoreEntitySet="my_aspnet_profiles">
-          <ScalarProperty Name="userId" ColumnName="userId" />
-          <ScalarProperty Name="valueindex" ColumnName="valueindex" />
-          <ScalarProperty Name="stringdata" ColumnName="stringdata" />
-          <ScalarProperty Name="binarydata" ColumnName="binarydata" />
-          <ScalarProperty Name="lastUpdatedDate" ColumnName="lastUpdatedDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="my_aspnet_roles">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_roles)">
-        <MappingFragment StoreEntitySet="my_aspnet_roles">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="applicationId" ColumnName="applicationId" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="my_aspnet_sessioncleanup">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_sessioncleanup)">
-        <MappingFragment StoreEntitySet="my_aspnet_sessioncleanup">
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-          <ScalarProperty Name="LastRun" ColumnName="LastRun" />
-          <ScalarProperty Name="IntervalMinutes" ColumnName="IntervalMinutes" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="my_aspnet_sessions">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_sessions)">
-        <MappingFragment StoreEntitySet="my_aspnet_sessions">
-          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-          <ScalarProperty Name="Created" ColumnName="Created" />
-          <ScalarProperty Name="Expires" ColumnName="Expires" />
-          <ScalarProperty Name="LockDate" ColumnName="LockDate" />
-          <ScalarProperty Name="LockId" ColumnName="LockId" />
-          <ScalarProperty Name="Timeout" ColumnName="Timeout" />
-          <ScalarProperty Name="Locked" ColumnName="Locked" />
-          <ScalarProperty Name="SessionItems" ColumnName="SessionItems" />
-          <ScalarProperty Name="Flags" ColumnName="Flags" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="my_aspnet_users">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_users)">
-        <MappingFragment StoreEntitySet="my_aspnet_users">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="applicationId" ColumnName="applicationId" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="isAnonymous" ColumnName="isAnonymous" />
-          <ScalarProperty Name="lastActivityDate" ColumnName="lastActivityDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="my_aspnet_usersinroles">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.my_aspnet_usersinroles)">
-        <MappingFragment StoreEntitySet="my_aspnet_usersinroles">
-          <ScalarProperty Name="userId" ColumnName="userId" />
-          <ScalarProperty Name="roleId" ColumnName="roleId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_alergia">
       <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_alergia)">
         <MappingFragment StoreEntitySet="tb_alergia">
@@ -577,7 +479,7 @@
     <EntitySetMapping Name="tb_consulta_fixo">
       <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_consulta_fixo)">
         <MappingFragment StoreEntitySet="tb_consulta_fixo">
-          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
           <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
           <ScalarProperty Name="EhGabarito" ColumnName="EhGabarito" />
         </MappingFragment>
@@ -608,7 +510,7 @@
     <EntitySetMapping Name="tb_demograficos_antropometricos">
       <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_demograficos_antropometricos)">
         <MappingFragment StoreEntitySet="tb_demograficos_antropometricos">
-          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Genero" ColumnName="Genero" />
           <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
@@ -662,7 +564,7 @@
     <EntitySetMapping Name="tb_experiencia_medicamentos">
       <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_experiencia_medicamentos)">
         <MappingFragment StoreEntitySet="tb_experiencia_medicamentos">
-          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
           <ScalarProperty Name="IdRespostaEsperaTratamento" ColumnName="IdRespostaEsperaTratamento" />
           <ScalarProperty Name="IdRespostaPreocupacoes" ColumnName="IdRespostaPreocupacoes" />
           <ScalarProperty Name="IdRespostaGrauEntendimento" ColumnName="IdRespostaGrauEntendimento" />
@@ -680,7 +582,7 @@
     <EntitySetMapping Name="tb_historia">
       <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_historia)">
         <MappingFragment StoreEntitySet="tb_historia">
-          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
           <ScalarProperty Name="HistoriaMedicaPregressa" ColumnName="HistoriaMedicaPregressa" />
           <ScalarProperty Name="HistoriaFamiliar" ColumnName="HistoriaFamiliar" />
         </MappingFragment>
@@ -752,7 +654,7 @@
           <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
           <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
           <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
-          <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
           <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
           <ScalarProperty Name="GrupoAtividades" ColumnName="GrupoAtividades" />
           <ScalarProperty Name="EstadoPreenchimento" ColumnName="EstadoPreenchimento" />

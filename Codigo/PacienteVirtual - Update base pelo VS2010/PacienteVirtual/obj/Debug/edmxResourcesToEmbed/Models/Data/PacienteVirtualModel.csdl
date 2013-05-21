@@ -198,14 +198,6 @@
       <End Role="turma" EntitySet="turma" />
     </AssociationSet>
     <EntitySet Name="tb_video" EntityType="pvModel.VideoE" />
-    <EntitySet Name="my_aspnet_applications" EntityType="pvModel.my_aspnet_applications" />
-    <EntitySet Name="my_aspnet_membership" EntityType="pvModel.my_aspnet_membership" />
-    <EntitySet Name="my_aspnet_profiles" EntityType="pvModel.my_aspnet_profiles" />
-    <EntitySet Name="my_aspnet_roles" EntityType="pvModel.my_aspnet_roles" />
-    <EntitySet Name="my_aspnet_sessioncleanup" EntityType="pvModel.my_aspnet_sessioncleanup" />
-    <EntitySet Name="my_aspnet_sessions" EntityType="pvModel.my_aspnet_sessions" />
-    <EntitySet Name="my_aspnet_users" EntityType="pvModel.my_aspnet_users" />
-    <EntitySet Name="my_aspnet_usersinroles" EntityType="pvModel.my_aspnet_usersinroles" />
     <EntitySet Name="tb_alergia" EntityType="pvModel.tb_alergia" />
     <EntitySet Name="tb_consulta_fixo" EntityType="pvModel.tb_consulta_fixo" />
     <EntitySet Name="tb_consulta_parametro" EntityType="pvModel.tb_consulta_parametro" />
@@ -1367,98 +1359,6 @@
     <Property Type="String" Name="NomeVideo" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Type="Binary" Name="Video" Nullable="false" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="my_aspnet_applications">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="name" MaxLength="256" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="description" MaxLength="256" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="my_aspnet_membership">
-    <Key>
-      <PropertyRef Name="userId" />
-    </Key>
-    <Property Type="Int32" Name="userId" Nullable="false" />
-    <Property Type="String" Name="Email" MaxLength="128" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Comment" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="PasswordKey" MaxLength="32" FixedLength="false" Unicode="false" />
-    <Property Type="SByte" Name="PasswordFormat" />
-    <Property Type="String" Name="PasswordQuestion" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="PasswordAnswer" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="Boolean" Name="IsApproved" />
-    <Property Type="DateTime" Name="LastActivityDate" />
-    <Property Type="DateTime" Name="LastLoginDate" />
-    <Property Type="DateTime" Name="LastPasswordChangedDate" />
-    <Property Type="DateTime" Name="CreationDate" />
-    <Property Type="Boolean" Name="IsLockedOut" />
-    <Property Type="DateTime" Name="LastLockedOutDate" />
-    <Property Type="Int64" Name="FailedPasswordAttemptCount" />
-    <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" />
-    <Property Type="Int64" Name="FailedPasswordAnswerAttemptCount" />
-    <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" />
-  </EntityType>
-  <EntityType Name="my_aspnet_profiles">
-    <Key>
-      <PropertyRef Name="userId" />
-    </Key>
-    <Property Type="Int32" Name="userId" Nullable="false" />
-    <Property Type="String" Name="valueindex" MaxLength="1073741823" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="stringdata" MaxLength="1073741823" FixedLength="false" Unicode="false" />
-    <Property Type="Binary" Name="binarydata" MaxLength="Max" FixedLength="false" />
-    <Property Type="DateTime" Name="lastUpdatedDate" Nullable="false" />
-  </EntityType>
-  <EntityType Name="my_aspnet_roles">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="applicationId" Nullable="false" />
-    <Property Type="String" Name="name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="my_aspnet_sessioncleanup">
-    <Key>
-      <PropertyRef Name="ApplicationId" />
-    </Key>
-    <Property Type="DateTime" Name="LastRun" Nullable="false" />
-    <Property Type="Int32" Name="IntervalMinutes" Nullable="false" />
-    <Property Type="Int32" Name="ApplicationId" Nullable="false" />
-  </EntityType>
-  <EntityType Name="my_aspnet_sessions">
-    <Key>
-      <PropertyRef Name="SessionId" />
-      <PropertyRef Name="ApplicationId" />
-    </Key>
-    <Property Type="String" Name="SessionId" Nullable="false" MaxLength="191" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="ApplicationId" Nullable="false" />
-    <Property Type="DateTime" Name="Created" Nullable="false" />
-    <Property Type="DateTime" Name="Expires" Nullable="false" />
-    <Property Type="DateTime" Name="LockDate" Nullable="false" />
-    <Property Type="Int32" Name="LockId" Nullable="false" />
-    <Property Type="Int32" Name="Timeout" Nullable="false" />
-    <Property Type="Boolean" Name="Locked" Nullable="false" />
-    <Property Type="Binary" Name="SessionItems" MaxLength="Max" FixedLength="false" />
-    <Property Type="Int32" Name="Flags" Nullable="false" />
-  </EntityType>
-  <EntityType Name="my_aspnet_users">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="applicationId" Nullable="false" />
-    <Property Type="String" Name="name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
-    <Property Type="Boolean" Name="isAnonymous" Nullable="false" />
-    <Property Type="DateTime" Name="lastActivityDate" />
-  </EntityType>
-  <EntityType Name="my_aspnet_usersinroles">
-    <Key>
-      <PropertyRef Name="userId" />
-      <PropertyRef Name="roleId" />
-    </Key>
-    <Property Type="Int32" Name="userId" Nullable="false" />
-    <Property Type="Int32" Name="roleId" Nullable="false" />
-  </EntityType>
   <EntityType Name="tb_alergia">
     <Key>
       <PropertyRef Name="IdAlergia" />
@@ -1469,9 +1369,9 @@
   </EntityType>
   <EntityType Name="tb_consulta_fixo">
     <Key>
-      <PropertyRef Name="IdConsutaFixo" />
+      <PropertyRef Name="IdConsultaFixo" />
     </Key>
-    <Property Type="Int64" Name="IdConsutaFixo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Int32" Name="IdPaciente" Nullable="false" />
     <Property Type="Boolean" Name="EhGabarito" Nullable="false" />
     <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_demograficos_antropometricos" />
@@ -1513,9 +1413,9 @@
   </EntityType>
   <EntityType Name="tb_demograficos_antropometricos">
     <Key>
-      <PropertyRef Name="IdConsutaFixo" />
+      <PropertyRef Name="IdConsultaFixo" />
     </Key>
-    <Property Type="Int64" Name="IdConsutaFixo" Nullable="false" />
+    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
     <Property Type="String" Name="Nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="DataNascimento" />
@@ -1571,9 +1471,9 @@
   </EntityType>
   <EntityType Name="tb_experiencia_medicamentos">
     <Key>
-      <PropertyRef Name="IdConsutaFixo" />
+      <PropertyRef Name="IdConsultaFixo" />
     </Key>
-    <Property Type="Int64" Name="IdConsutaFixo" Nullable="false" />
+    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
     <Property Type="Int32" Name="IdRespostaEsperaTratamento" Nullable="false" />
     <Property Type="Int32" Name="IdRespostaPreocupacoes" Nullable="false" />
     <Property Type="Int32" Name="IdRespostaGrauEntendimento" Nullable="false" />
@@ -1595,9 +1495,9 @@
   </EntityType>
   <EntityType Name="tb_historia">
     <Key>
-      <PropertyRef Name="IdConsutaFixo" />
+      <PropertyRef Name="IdConsultaFixo" />
     </Key>
-    <Property Type="Int64" Name="IdConsutaFixo" Nullable="false" />
+    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
     <Property Type="String" Name="HistoriaMedicaPregressa" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="HistoriaFamiliar" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_historia_tb_consulta_fixo1" FromRole="tb_historia" ToRole="tb_consulta_fixo" />
@@ -1680,7 +1580,7 @@
     <Property Type="Int32" Name="IdPessoa" Nullable="false" />
     <Property Type="Int32" Name="IdTurma" Nullable="false" />
     <Property Type="Int32" Name="IdPaciente" Nullable="false" />
-    <Property Type="Int64" Name="IdConsutaFixo" Nullable="false" />
+    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
     <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
     <Property Type="Int32" Name="GrupoAtividades" Nullable="false" />
     <Property Type="Int32" Name="EstadoPreenchimento" Nullable="false" />
@@ -1765,10 +1665,10 @@
     <End Type="pvModel.tb_demograficos_antropometricos" Role="tb_demograficos_antropometricos" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tb_consulta_fixo">
-        <PropertyRef Name="IdConsutaFixo" />
+        <PropertyRef Name="IdConsultaFixo" />
       </Principal>
       <Dependent Role="tb_demograficos_antropometricos">
-        <PropertyRef Name="IdConsutaFixo" />
+        <PropertyRef Name="IdConsultaFixo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1777,10 +1677,10 @@
     <End Type="pvModel.tb_experiencia_medicamentos" Role="tb_experiencia_medicamentos" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tb_consulta_fixo">
-        <PropertyRef Name="IdConsutaFixo" />
+        <PropertyRef Name="IdConsultaFixo" />
       </Principal>
       <Dependent Role="tb_experiencia_medicamentos">
-        <PropertyRef Name="IdConsutaFixo" />
+        <PropertyRef Name="IdConsultaFixo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1789,10 +1689,10 @@
     <End Type="pvModel.tb_historia" Role="tb_historia" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tb_consulta_fixo">
-        <PropertyRef Name="IdConsutaFixo" />
+        <PropertyRef Name="IdConsultaFixo" />
       </Principal>
       <Dependent Role="tb_historia">
-        <PropertyRef Name="IdConsutaFixo" />
+        <PropertyRef Name="IdConsultaFixo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1801,10 +1701,10 @@
     <End Type="pvModel.tb_paciente_pessoa_turma" Role="tb_paciente_pessoa_turma" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_consulta_fixo">
-        <PropertyRef Name="IdConsutaFixo" />
+        <PropertyRef Name="IdConsultaFixo" />
       </Principal>
       <Dependent Role="tb_paciente_pessoa_turma">
-        <PropertyRef Name="IdConsutaFixo" />
+        <PropertyRef Name="IdConsultaFixo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
