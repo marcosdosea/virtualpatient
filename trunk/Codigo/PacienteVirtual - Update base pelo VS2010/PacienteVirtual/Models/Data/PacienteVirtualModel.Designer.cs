@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -73,9 +74,9 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_exames_fisicos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.tb_exames_fisicos), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_medicamento_nao_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_medicamento_nao_prescrito), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_paciente_pessoa_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.PacientePessoaTurmaE), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_escolaridade), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_ocupacao), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_plano_saude), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.EscolaridadeE), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.OcupacaoE), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PlanoSaudeE), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta1", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_resposta), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta2", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_resposta), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta3", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_resposta), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
@@ -752,18 +753,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_escolaridade> tb_escolaridade
+        public ObjectSet<EscolaridadeE> tb_escolaridade
         {
             get
             {
                 if ((_tb_escolaridade == null))
                 {
-                    _tb_escolaridade = base.CreateObjectSet<tb_escolaridade>("tb_escolaridade");
+                    _tb_escolaridade = base.CreateObjectSet<EscolaridadeE>("tb_escolaridade");
                 }
                 return _tb_escolaridade;
             }
         }
-        private ObjectSet<tb_escolaridade> _tb_escolaridade;
+        private ObjectSet<EscolaridadeE> _tb_escolaridade;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -896,18 +897,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_ocupacao> tb_ocupacao
+        public ObjectSet<OcupacaoE> tb_ocupacao
         {
             get
             {
                 if ((_tb_ocupacao == null))
                 {
-                    _tb_ocupacao = base.CreateObjectSet<tb_ocupacao>("tb_ocupacao");
+                    _tb_ocupacao = base.CreateObjectSet<OcupacaoE>("tb_ocupacao");
                 }
                 return _tb_ocupacao;
             }
         }
-        private ObjectSet<tb_ocupacao> _tb_ocupacao;
+        private ObjectSet<OcupacaoE> _tb_ocupacao;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -976,34 +977,34 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_pessoa> tb_pessoa
+        public ObjectSet<PessoaE> tb_pessoa
         {
             get
             {
                 if ((_tb_pessoa == null))
                 {
-                    _tb_pessoa = base.CreateObjectSet<tb_pessoa>("tb_pessoa");
+                    _tb_pessoa = base.CreateObjectSet<PessoaE>("tb_pessoa");
                 }
                 return _tb_pessoa;
             }
         }
-        private ObjectSet<tb_pessoa> _tb_pessoa;
+        private ObjectSet<PessoaE> _tb_pessoa;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_plano_saude> tb_plano_saude
+        public ObjectSet<PlanoSaudeE> tb_plano_saude
         {
             get
             {
                 if ((_tb_plano_saude == null))
                 {
-                    _tb_plano_saude = base.CreateObjectSet<tb_plano_saude>("tb_plano_saude");
+                    _tb_plano_saude = base.CreateObjectSet<PlanoSaudeE>("tb_plano_saude");
                 }
                 return _tb_plano_saude;
             }
         }
-        private ObjectSet<tb_plano_saude> _tb_plano_saude;
+        private ObjectSet<PlanoSaudeE> _tb_plano_saude;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1038,6 +1039,7 @@ namespace PacienteVirtual.Models.Data
         private ObjectSet<tb_resposta> _tb_resposta;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -1347,9 +1349,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_escolaridade EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_escolaridade(tb_escolaridade tb_escolaridade)
+        public void AddTotb_escolaridade(EscolaridadeE escolaridadeE)
         {
-            base.AddObject("tb_escolaridade", tb_escolaridade);
+            base.AddObject("tb_escolaridade", escolaridadeE);
         }
     
         /// <summary>
@@ -1419,9 +1421,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_ocupacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_ocupacao(tb_ocupacao tb_ocupacao)
+        public void AddTotb_ocupacao(OcupacaoE ocupacaoE)
         {
-            base.AddObject("tb_ocupacao", tb_ocupacao);
+            base.AddObject("tb_ocupacao", ocupacaoE);
         }
     
         /// <summary>
@@ -1459,17 +1461,17 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_pessoa EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_pessoa(tb_pessoa tb_pessoa)
+        public void AddTotb_pessoa(PessoaE pessoaE)
         {
-            base.AddObject("tb_pessoa", tb_pessoa);
+            base.AddObject("tb_pessoa", pessoaE);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_plano_saude EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_plano_saude(tb_plano_saude tb_plano_saude)
+        public void AddTotb_plano_saude(PlanoSaudeE planoSaudeE)
         {
-            base.AddObject("tb_plano_saude", tb_plano_saude);
+            base.AddObject("tb_plano_saude", planoSaudeE);
         }
     
         /// <summary>
@@ -1489,11 +1491,11 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -1528,6 +1530,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2062,6 +2065,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnflAcessoUniversidadeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2186,6 +2190,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2220,6 +2225,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2994,6 +3000,7 @@ namespace PacienteVirtual.Models.Data
         partial void OntipoBebidaAlcoolicaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3152,6 +3159,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3180,6 +3188,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3258,6 +3267,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkAlunoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3634,6 +3644,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3662,6 +3673,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3740,6 +3752,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnEhGabaritoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3880,6 +3893,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3908,6 +3922,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3986,6 +4001,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdInstituicaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4050,6 +4066,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4084,6 +4101,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4330,6 +4348,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdPlanoSaudeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4378,15 +4397,15 @@ namespace PacienteVirtual.Models.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade")]
-        public tb_escolaridade tb_escolaridade
+        public EscolaridadeE tb_escolaridade
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_escolaridade>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EscolaridadeE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_escolaridade>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EscolaridadeE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade").Value = value;
             }
         }
         /// <summary>
@@ -4394,17 +4413,17 @@ namespace PacienteVirtual.Models.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<tb_escolaridade> tb_escolaridadeReference
+        public EntityReference<EscolaridadeE> tb_escolaridadeReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_escolaridade>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EscolaridadeE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_escolaridade>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EscolaridadeE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade", value);
                 }
             }
         }
@@ -4416,15 +4435,15 @@ namespace PacienteVirtual.Models.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao")]
-        public tb_ocupacao tb_ocupacao
+        public OcupacaoE tb_ocupacao
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_ocupacao>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OcupacaoE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_ocupacao>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OcupacaoE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao").Value = value;
             }
         }
         /// <summary>
@@ -4432,17 +4451,17 @@ namespace PacienteVirtual.Models.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<tb_ocupacao> tb_ocupacaoReference
+        public EntityReference<OcupacaoE> tb_ocupacaoReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_ocupacao>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OcupacaoE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_ocupacao>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<OcupacaoE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao", value);
                 }
             }
         }
@@ -4454,15 +4473,15 @@ namespace PacienteVirtual.Models.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude")]
-        public tb_plano_saude tb_plano_saude
+        public PlanoSaudeE tb_plano_saude
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_plano_saude>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PlanoSaudeE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_plano_saude>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PlanoSaudeE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude").Value = value;
             }
         }
         /// <summary>
@@ -4470,22 +4489,23 @@ namespace PacienteVirtual.Models.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<tb_plano_saude> tb_plano_saudeReference
+        public EntityReference<PlanoSaudeE> tb_plano_saudeReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_plano_saude>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PlanoSaudeE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_plano_saude>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PlanoSaudeE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude", value);
                 }
             }
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4512,6 +4532,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4566,6 +4587,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeDisciplinaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4614,6 +4636,116 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="EscolaridadeE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class EscolaridadeE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new EscolaridadeE object.
+        /// </summary>
+        /// <param name="idEscolaridade">Initial value of the IdEscolaridade property.</param>
+        /// <param name="nivel">Initial value of the Nivel property.</param>
+        public static EscolaridadeE CreateEscolaridadeE(global::System.Int32 idEscolaridade, global::System.String nivel)
+        {
+            EscolaridadeE escolaridadeE = new EscolaridadeE();
+            escolaridadeE.IdEscolaridade = idEscolaridade;
+            escolaridadeE.Nivel = nivel;
+            return escolaridadeE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdEscolaridade
+        {
+            get
+            {
+                return _IdEscolaridade;
+            }
+            set
+            {
+                if (_IdEscolaridade != value)
+                {
+                    OnIdEscolaridadeChanging(value);
+                    ReportPropertyChanging("IdEscolaridade");
+                    _IdEscolaridade = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdEscolaridade");
+                    OnIdEscolaridadeChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdEscolaridade;
+        partial void OnIdEscolaridadeChanging(global::System.Int32 value);
+        partial void OnIdEscolaridadeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nivel
+        {
+            get
+            {
+                return _Nivel;
+            }
+            set
+            {
+                OnNivelChanging(value);
+                ReportPropertyChanging("Nivel");
+                _Nivel = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nivel");
+                OnNivelChanged();
+            }
+        }
+        private global::System.String _Nivel;
+        partial void OnNivelChanging(global::System.String value);
+        partial void OnNivelChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos")]
+        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -4660,6 +4792,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4954,6 +5087,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnAtencaoComportamentoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5224,6 +5358,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5252,6 +5387,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5330,6 +5466,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnHistoriaFamiliarChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5372,6 +5509,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5400,6 +5538,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5478,6 +5617,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnSiglaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5526,6 +5666,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5554,6 +5695,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5680,6 +5822,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkCasoClinicoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5722,6 +5865,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5750,6 +5894,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5876,6 +6021,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkResposta4Changed();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5956,6 +6102,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5982,6 +6129,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6108,6 +6256,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkResposta2Changed();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6188,6 +6337,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6212,6 +6362,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6362,6 +6513,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnflItalicoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6404,6 +6556,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6428,6 +6581,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6626,6 +6780,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnflItalicoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6668,6 +6823,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6694,6 +6850,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6940,6 +7097,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnconheceCumpreChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -7020,6 +7178,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -7046,6 +7205,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -7292,6 +7452,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnconheceCumpreChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -7372,6 +7533,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -7398,6 +7560,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -7644,6 +7807,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnconheceCumpreChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -7724,6 +7888,116 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="OcupacaoE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class OcupacaoE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new OcupacaoE object.
+        /// </summary>
+        /// <param name="idOcupacao">Initial value of the IdOcupacao property.</param>
+        /// <param name="descricao">Initial value of the Descricao property.</param>
+        public static OcupacaoE CreateOcupacaoE(global::System.Int32 idOcupacao, global::System.String descricao)
+        {
+            OcupacaoE ocupacaoE = new OcupacaoE();
+            ocupacaoE.IdOcupacao = idOcupacao;
+            ocupacaoE.Descricao = descricao;
+            return ocupacaoE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdOcupacao
+        {
+            get
+            {
+                return _IdOcupacao;
+            }
+            set
+            {
+                if (_IdOcupacao != value)
+                {
+                    OnIdOcupacaoChanging(value);
+                    ReportPropertyChanging("IdOcupacao");
+                    _IdOcupacao = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdOcupacao");
+                    OnIdOcupacaoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdOcupacao;
+        partial void OnIdOcupacaoChanging(global::System.Int32 value);
+        partial void OnIdOcupacaoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Descricao
+        {
+            get
+            {
+                return _Descricao;
+            }
+            set
+            {
+                OnDescricaoChanging(value);
+                ReportPropertyChanging("Descricao");
+                _Descricao = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Descricao");
+                OnDescricaoChanged();
+            }
+        }
+        private global::System.String _Descricao;
+        partial void OnDescricaoChanging(global::System.String value);
+        partial void OnDescricaoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos")]
+        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -7760,6 +8034,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -7940,6 +8215,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnEstadoPreenchimentoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -8058,6 +8334,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -8084,6 +8361,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -8234,6 +8512,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkCasoClinicoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -8276,6 +8555,199 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PessoaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PessoaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PessoaE object.
+        /// </summary>
+        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        public static PessoaE CreatePessoaE(global::System.Int32 idPessoa, global::System.String nome)
+        {
+            PessoaE pessoaE = new PessoaE();
+            pessoaE.IdPessoa = idPessoa;
+            pessoaE.Nome = nome;
+            return pessoaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPessoa
+        {
+            get
+            {
+                return _IdPessoa;
+            }
+            set
+            {
+                if (_IdPessoa != value)
+                {
+                    OnIdPessoaChanging(value);
+                    ReportPropertyChanging("IdPessoa");
+                    _IdPessoa = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdPessoa");
+                    OnIdPessoaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdPessoa;
+        partial void OnIdPessoaChanging(global::System.Int32 value);
+        partial void OnIdPessoaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PlanoSaudeE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PlanoSaudeE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PlanoSaudeE object.
+        /// </summary>
+        /// <param name="idPlanoSaude">Initial value of the IdPlanoSaude property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        public static PlanoSaudeE CreatePlanoSaudeE(global::System.Int32 idPlanoSaude, global::System.String nome)
+        {
+            PlanoSaudeE planoSaudeE = new PlanoSaudeE();
+            planoSaudeE.IdPlanoSaude = idPlanoSaude;
+            planoSaudeE.Nome = nome;
+            return planoSaudeE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPlanoSaude
+        {
+            get
+            {
+                return _IdPlanoSaude;
+            }
+            set
+            {
+                if (_IdPlanoSaude != value)
+                {
+                    OnIdPlanoSaudeChanging(value);
+                    ReportPropertyChanging("IdPlanoSaude");
+                    _IdPlanoSaude = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdPlanoSaude");
+                    OnIdPlanoSaudeChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdPlanoSaude;
+        partial void OnIdPlanoSaudeChanging(global::System.Int32 value);
+        partial void OnIdPlanoSaudeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos")]
+        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -8304,6 +8776,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -8502,6 +8975,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnprioridadeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -8588,6 +9062,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -8616,6 +9091,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -8694,6 +9170,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkRespostaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -8774,6 +9251,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -8804,6 +9282,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -8978,6 +9457,7 @@ namespace PacienteVirtual.Models.Data
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -9102,6 +9582,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -9132,6 +9613,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -9306,6 +9788,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnperiodoSurgimentoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -9430,6 +9913,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -9458,6 +9942,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -9536,6 +10021,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkRespostaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -9616,6 +10102,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -9656,6 +10143,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -10790,6 +11278,7 @@ namespace PacienteVirtual.Models.Data
         partial void OntipoBebidaAlcoolicaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -10914,6 +11403,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -10944,6 +11434,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -11166,6 +11657,7 @@ namespace PacienteVirtual.Models.Data
         partial void OncartaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -11334,6 +11826,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -11364,6 +11857,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -11586,6 +12080,7 @@ namespace PacienteVirtual.Models.Data
         partial void OncartaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -11754,6 +12249,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -11784,6 +12280,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -12078,6 +12575,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnimcChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -12202,6 +12700,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -12228,6 +12727,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -12282,6 +12782,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnAlergiaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -12308,6 +12809,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -12334,6 +12836,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -12463,6 +12966,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnUnidadeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -12543,6 +13047,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -12571,6 +13076,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -12697,6 +13203,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnEhGabaritoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -12963,6 +13470,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -12989,6 +13497,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -13046,6 +13555,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdCursoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -13088,112 +13598,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_escolaridade")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_escolaridade : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_escolaridade object.
-        /// </summary>
-        /// <param name="idEscolaridade">Initial value of the IdEscolaridade property.</param>
-        /// <param name="nivel">Initial value of the Nivel property.</param>
-        public static tb_escolaridade Createtb_escolaridade(global::System.Int32 idEscolaridade, global::System.String nivel)
-        {
-            tb_escolaridade tb_escolaridade = new tb_escolaridade();
-            tb_escolaridade.IdEscolaridade = idEscolaridade;
-            tb_escolaridade.Nivel = nivel;
-            return tb_escolaridade;
-        }
 
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdEscolaridade
-        {
-            get
-            {
-                return _IdEscolaridade;
-            }
-            set
-            {
-                if (_IdEscolaridade != value)
-                {
-                    OnIdEscolaridadeChanging(value);
-                    ReportPropertyChanging("IdEscolaridade");
-                    _IdEscolaridade = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdEscolaridade");
-                    OnIdEscolaridadeChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdEscolaridade;
-        partial void OnIdEscolaridadeChanging(global::System.Int32 value);
-        partial void OnIdEscolaridadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Nivel
-        {
-            get
-            {
-                return _Nivel;
-            }
-            set
-            {
-                OnNivelChanging(value);
-                ReportPropertyChanging("Nivel");
-                _Nivel = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Nivel");
-                OnNivelChanged();
-            }
-        }
-        private global::System.String _Nivel;
-        partial void OnNivelChanging(global::System.String value);
-        partial void OnNivelChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos")]
-        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -13230,6 +13635,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -13500,6 +13906,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnAlcoolParouChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -13542,6 +13949,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -13568,6 +13976,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -13742,6 +14151,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdAlergiaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -13822,6 +14232,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -13850,6 +14261,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -13979,6 +14391,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnPosologiaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -14059,6 +14472,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -14085,6 +14499,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14262,6 +14677,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnEspecialidadeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -14342,6 +14758,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -14368,6 +14785,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14422,6 +14840,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -14492,6 +14911,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -14518,6 +14938,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14647,6 +15068,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnPeriodoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -14727,112 +15149,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_ocupacao")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_ocupacao : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_ocupacao object.
-        /// </summary>
-        /// <param name="idOcupacao">Initial value of the IdOcupacao property.</param>
-        /// <param name="descricao">Initial value of the Descricao property.</param>
-        public static tb_ocupacao Createtb_ocupacao(global::System.Int32 idOcupacao, global::System.String descricao)
-        {
-            tb_ocupacao tb_ocupacao = new tb_ocupacao();
-            tb_ocupacao.IdOcupacao = idOcupacao;
-            tb_ocupacao.Descricao = descricao;
-            return tb_ocupacao;
-        }
 
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdOcupacao
-        {
-            get
-            {
-                return _IdOcupacao;
-            }
-            set
-            {
-                if (_IdOcupacao != value)
-                {
-                    OnIdOcupacaoChanging(value);
-                    ReportPropertyChanging("IdOcupacao");
-                    _IdOcupacao = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdOcupacao");
-                    OnIdOcupacaoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdOcupacao;
-        partial void OnIdOcupacaoChanging(global::System.Int32 value);
-        partial void OnIdOcupacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Descricao
-        {
-            get
-            {
-                return _Descricao;
-            }
-            set
-            {
-                OnDescricaoChanging(value);
-                ReportPropertyChanging("Descricao");
-                _Descricao = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Descricao");
-                OnDescricaoChanged();
-            }
-        }
-        private global::System.String _Descricao;
-        partial void OnDescricaoChanging(global::System.String value);
-        partial void OnDescricaoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos")]
-        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -14859,6 +15176,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14937,6 +15255,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnFotoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -14985,6 +15304,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -15011,6 +15331,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15065,6 +15386,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnParametroClinicoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -15091,6 +15413,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -15117,6 +15440,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15171,6 +15495,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomePerfilChanged();
 
         #endregion
+
     
     }
     
@@ -15198,6 +15523,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15252,6 +15578,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnPerguntaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -15278,193 +15605,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_pessoa")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_pessoa : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_pessoa object.
-        /// </summary>
-        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
-        /// <param name="nome">Initial value of the Nome property.</param>
-        public static tb_pessoa Createtb_pessoa(global::System.Int32 idPessoa, global::System.String nome)
-        {
-            tb_pessoa tb_pessoa = new tb_pessoa();
-            tb_pessoa.IdPessoa = idPessoa;
-            tb_pessoa.Nome = nome;
-            return tb_pessoa;
-        }
 
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPessoa
-        {
-            get
-            {
-                return _IdPessoa;
-            }
-            set
-            {
-                if (_IdPessoa != value)
-                {
-                    OnIdPessoaChanging(value);
-                    ReportPropertyChanging("IdPessoa");
-                    _IdPessoa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPessoa");
-                    OnIdPessoaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPessoa;
-        partial void OnIdPessoaChanging(global::System.Int32 value);
-        partial void OnIdPessoaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Nome
-        {
-            get
-            {
-                return _Nome;
-            }
-            set
-            {
-                OnNomeChanging(value);
-                ReportPropertyChanging("Nome");
-                _Nome = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Nome");
-                OnNomeChanged();
-            }
-        }
-        private global::System.String _Nome;
-        partial void OnNomeChanging(global::System.String value);
-        partial void OnNomeChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_plano_saude")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_plano_saude : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_plano_saude object.
-        /// </summary>
-        /// <param name="idPlanoSaude">Initial value of the IdPlanoSaude property.</param>
-        /// <param name="nome">Initial value of the Nome property.</param>
-        public static tb_plano_saude Createtb_plano_saude(global::System.Int32 idPlanoSaude, global::System.String nome)
-        {
-            tb_plano_saude tb_plano_saude = new tb_plano_saude();
-            tb_plano_saude.IdPlanoSaude = idPlanoSaude;
-            tb_plano_saude.Nome = nome;
-            return tb_plano_saude;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPlanoSaude
-        {
-            get
-            {
-                return _IdPlanoSaude;
-            }
-            set
-            {
-                if (_IdPlanoSaude != value)
-                {
-                    OnIdPlanoSaudeChanging(value);
-                    ReportPropertyChanging("IdPlanoSaude");
-                    _IdPlanoSaude = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPlanoSaude");
-                    OnIdPlanoSaudeChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPlanoSaude;
-        partial void OnIdPlanoSaudeChanging(global::System.Int32 value);
-        partial void OnIdPlanoSaudeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Nome
-        {
-            get
-            {
-                return _Nome;
-            }
-            set
-            {
-                OnNomeChanging(value);
-                ReportPropertyChanging("Nome");
-                _Nome = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Nome");
-                OnNomeChanged();
-            }
-        }
-        private global::System.String _Nome;
-        partial void OnNomeChanging(global::System.String value);
-        partial void OnNomeChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos")]
-        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -15495,6 +15636,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15645,6 +15787,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnNivelDificuldadeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -15709,6 +15852,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -15737,6 +15881,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15815,6 +15960,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdPerguntaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -16011,6 +16157,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -16039,6 +16186,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16120,6 +16268,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdPerfilUsuarioChanged();
 
         #endregion
+
     
     }
     
@@ -16145,6 +16294,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16271,6 +16421,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnnmDisciplinaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -16313,6 +16464,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -16341,6 +16493,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16467,6 +16620,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdInstituicaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -16509,6 +16663,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -16533,6 +16688,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16587,6 +16743,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnnomeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -16613,6 +16770,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -16637,6 +16795,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16763,6 +16922,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnnomeChanged();
 
         #endregion
+
     
     }
     
@@ -16798,6 +16958,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16972,6 +17133,7 @@ namespace PacienteVirtual.Models.Data
         partial void OntpUsuarioChanged();
 
         #endregion
+
     
     }
     
@@ -17001,6 +17163,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -17082,9 +17245,11 @@ namespace PacienteVirtual.Models.Data
         partial void OnVideoChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

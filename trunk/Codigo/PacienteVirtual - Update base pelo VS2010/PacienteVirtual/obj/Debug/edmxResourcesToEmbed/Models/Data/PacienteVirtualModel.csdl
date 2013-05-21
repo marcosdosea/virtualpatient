@@ -203,7 +203,7 @@
     <EntitySet Name="tb_consulta_parametro" EntityType="pvModel.tb_consulta_parametro" />
     <EntitySet Name="tb_consulta_variavel" EntityType="pvModel.tb_consulta_variavel" />
     <EntitySet Name="tb_demograficos_antropometricos" EntityType="pvModel.DemograficosAntropometricosE" />
-    <EntitySet Name="tb_escolaridade" EntityType="pvModel.tb_escolaridade" />
+    <EntitySet Name="tb_escolaridade" EntityType="pvModel.EscolaridadeE" />
     <EntitySet Name="tb_estilo_vida" EntityType="pvModel.tb_estilo_vida" />
     <EntitySet Name="tb_exames_fisicos" EntityType="pvModel.tb_exames_fisicos" />
     <EntitySet Name="tb_experiencia_medicamentos" EntityType="pvModel.ExperienciaMedicamentosE" />
@@ -212,13 +212,13 @@
     <EntitySet Name="tb_medicamento_prescrito" EntityType="pvModel.tb_medicamento_prescrito" />
     <EntitySet Name="tb_medicamentos" EntityType="pvModel.tb_medicamentos" />
     <EntitySet Name="tb_medicamentos_anteriores" EntityType="pvModel.tb_medicamentos_anteriores" />
-    <EntitySet Name="tb_ocupacao" EntityType="pvModel.tb_ocupacao" />
+    <EntitySet Name="tb_ocupacao" EntityType="pvModel.OcupacaoE" />
     <EntitySet Name="tb_paciente" EntityType="pvModel.tb_paciente" />
     <EntitySet Name="tb_paciente_pessoa_turma" EntityType="pvModel.PacientePessoaTurmaE" />
     <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.tb_parametro_clinico" />
     <EntitySet Name="tb_pergunta" EntityType="pvModel.tb_pergunta" />
-    <EntitySet Name="tb_pessoa" EntityType="pvModel.tb_pessoa" />
-    <EntitySet Name="tb_plano_saude" EntityType="pvModel.tb_plano_saude" />
+    <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
+    <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
     <EntitySet Name="tb_relato_clinico" EntityType="pvModel.tb_relato_clinico" />
     <EntitySet Name="tb_resposta" EntityType="pvModel.tb_resposta" />
     <AssociationSet Name="fk_tb_exames_fisicos_tb_alergia1" Association="pvModel.fk_tb_exames_fisicos_tb_alergia1">
@@ -1430,7 +1430,7 @@
     <NavigationProperty Name="tb_ocupacao" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" FromRole="tb_demograficos_antropometricos" ToRole="tb_ocupacao" />
     <NavigationProperty Name="tb_plano_saude" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" FromRole="tb_demograficos_antropometricos" ToRole="tb_plano_saude" />
   </EntityType>
-  <EntityType Name="tb_escolaridade">
+  <EntityType Name="EscolaridadeE">
     <Key>
       <PropertyRef Name="IdEscolaridade" />
     </Key>
@@ -1553,7 +1553,7 @@
     <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" FromRole="tb_medicamentos_anteriores" ToRole="tb_consulta_variavel" />
     <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" FromRole="tb_medicamentos_anteriores" ToRole="tb_medicamentos" />
   </EntityType>
-  <EntityType Name="tb_ocupacao">
+  <EntityType Name="OcupacaoE">
     <Key>
       <PropertyRef Name="IdOcupacao" />
     </Key>
@@ -1604,14 +1604,14 @@
     <Property Type="String" Name="Pergunta" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tb_resposta" Relationship="pvModel.fk_tb_resposta_tb_pergunta1" FromRole="tb_pergunta" ToRole="tb_resposta" />
   </EntityType>
-  <EntityType Name="tb_pessoa">
+  <EntityType Name="PessoaE">
     <Key>
       <PropertyRef Name="IdPessoa" />
     </Key>
     <Property Type="Int32" Name="IdPessoa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="Nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="tb_plano_saude">
+  <EntityType Name="PlanoSaudeE">
     <Key>
       <PropertyRef Name="IdPlanoSaude" />
     </Key>
@@ -1817,7 +1817,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_tb_demograficos_antropometricos_tb_escolaridade1">
-    <End Type="pvModel.tb_escolaridade" Role="tb_escolaridade" Multiplicity="1" />
+    <End Type="pvModel.EscolaridadeE" Role="tb_escolaridade" Multiplicity="1" />
     <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_escolaridade">
@@ -1829,7 +1829,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_tb_demograficos_antropometricos_tb_ocupacao1">
-    <End Type="pvModel.tb_ocupacao" Role="tb_ocupacao" Multiplicity="1" />
+    <End Type="pvModel.OcupacaoE" Role="tb_ocupacao" Multiplicity="1" />
     <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_ocupacao">
@@ -1841,7 +1841,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_tb_demograficos_antropometricos_tb_plano_saude1">
-    <End Type="pvModel.tb_plano_saude" Role="tb_plano_saude" Multiplicity="1" />
+    <End Type="pvModel.PlanoSaudeE" Role="tb_plano_saude" Multiplicity="1" />
     <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_plano_saude">

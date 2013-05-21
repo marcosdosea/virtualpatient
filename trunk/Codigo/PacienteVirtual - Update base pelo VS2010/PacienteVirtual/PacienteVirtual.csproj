@@ -86,10 +86,12 @@
     <Compile Include="Controllers\CursoController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\OcupacaoController.cs" />
     <Compile Include="Controllers\DemograficosAntropomedicosController.cs" />
     <Compile Include="Controllers\DisciplinaController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\EscolaridadeController.cs" />
     <Compile Include="Controllers\ExperienciaMedicamentosController.cs" />
     <Compile Include="Controllers\HistoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs">
@@ -99,6 +101,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\PacientePessoaTurmaController.cs" />
+    <Compile Include="Controllers\PessoaController.cs" />
+    <Compile Include="Controllers\PlanoSaudeController.cs" />
     <Compile Include="Controllers\SampleController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -136,6 +140,7 @@
     <Compile Include="Models\DisciplinaModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\EscolaridadeModel.cs" />
     <Compile Include="Models\ExperienciaMedicamentosModel.cs" />
     <Compile Include="Models\HistoriaModel.cs" />
     <Compile Include="Models\InstituicaoModel.cs">
@@ -149,19 +154,26 @@
     <Compile Include="Models\Negocio\GerenciadorDisciplina.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Negocio\GerenciadorEscolaridade.cs" />
     <Compile Include="Models\Negocio\GerenciadorExperienciaMedicamentos.cs" />
     <Compile Include="Models\Negocio\GerenciadorHistoria.cs" />
     <Compile Include="Models\Negocio\GerenciadorInstituicao.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Negocio\GerenciadorOcupacao.cs" />
     <Compile Include="Models\Negocio\GerenciadorPacientePessoaTurma.cs" />
+    <Compile Include="Models\Negocio\GerenciadorPessoa.cs" />
+    <Compile Include="Models\Negocio\GerenciadorPlanoSaude.cs" />
     <Compile Include="Models\Negocio\GerenciadorTurma.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Negocio\NegocioException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\OcupacaoModel.cs" />
     <Compile Include="Models\PacientePessoaTurmaModel.cs" />
+    <Compile Include="Models\PessoaModel.cs" />
+    <Compile Include="Models\PlanoSaudeModel.cs" />
     <Compile Include="Models\TurmaModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -233,6 +245,11 @@
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
+    <Content Include="Views\Ocupacao\Create.aspx" />
+    <Content Include="Views\Ocupacao\Delete.aspx" />
+    <Content Include="Views\Ocupacao\Details.aspx" />
+    <Content Include="Views\Ocupacao\Edit.aspx" />
+    <Content Include="Views\Ocupacao\Index.aspx" />
     <Content Include="Views\DemograficosAntropomedicos\Create.aspx" />
     <Content Include="Views\DemograficosAntropomedicos\Delete.aspx" />
     <Content Include="Views\DemograficosAntropomedicos\Details.aspx" />
@@ -243,6 +260,11 @@
     <Content Include="Views\Disciplina\Details.aspx" />
     <Content Include="Views\Disciplina\Edit.aspx" />
     <Content Include="Views\Disciplina\Index.aspx" />
+    <Content Include="Views\Escolaridade\Create.aspx" />
+    <Content Include="Views\Escolaridade\Delete.aspx" />
+    <Content Include="Views\Escolaridade\Details.aspx" />
+    <Content Include="Views\Escolaridade\Edit.aspx" />
+    <Content Include="Views\Escolaridade\Index.aspx" />
     <Content Include="Views\ExperienciaMedicamentos\Create.aspx" />
     <Content Include="Views\ExperienciaMedicamentos\Delete.aspx" />
     <Content Include="Views\ExperienciaMedicamentos\Details.aspx" />
@@ -265,6 +287,16 @@
     <Content Include="Views\PacientePessoaTurma\Details.aspx" />
     <Content Include="Views\PacientePessoaTurma\Edit.aspx" />
     <Content Include="Views\PacientePessoaTurma\Index.aspx" />
+    <Content Include="Views\Pessoa\Create.aspx" />
+    <Content Include="Views\Pessoa\Delete.aspx" />
+    <Content Include="Views\Pessoa\Details.aspx" />
+    <Content Include="Views\Pessoa\Edit.aspx" />
+    <Content Include="Views\Pessoa\Index.aspx" />
+    <Content Include="Views\PlanoSaude\Create.aspx" />
+    <Content Include="Views\PlanoSaude\Delete.aspx" />
+    <Content Include="Views\PlanoSaude\Details.aspx" />
+    <Content Include="Views\PlanoSaude\Edit.aspx" />
+    <Content Include="Views\PlanoSaude\Index.aspx" />
     <Content Include="Views\Sample\Index.cshtml" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />

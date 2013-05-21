@@ -31,3 +31,11 @@ D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo 
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\EntityFramework.dll
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\EntityFramework.xml
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\Html5MVCWebControls.xml
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\PacienteVirtual.dll
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\PacienteVirtual.pdb
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\EntityFramework.dll
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\EntityFramework.xml
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\Html5MVCWebControls.xml
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.csprojResolveAssemblyReference.cache
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.dll
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.pdb

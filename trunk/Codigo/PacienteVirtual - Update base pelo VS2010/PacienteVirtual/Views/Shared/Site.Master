@@ -46,6 +46,14 @@
                         <%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li>
                     <li>
                         <%: Html.ActionLink("ConsultaFixo --", "Index", "ConsultaFixo")%></li>
+                    <li>
+                        <%: Html.ActionLink("Escolaridade", "Index", "Escolaridade")%></li>
+                    <li>
+                        <%: Html.ActionLink("Ocupação", "Index", "Ocupacao")%></li>
+                    <li>
+                        <%: Html.ActionLink("Plano de Saúde", "Index", "PlanoSaude")%></li>
+                    <li>
+                        <%: Html.ActionLink("Pessoa", "Index", "Pessoa")%></li>
                 </ul>
             </nav>
         </header>

@@ -524,7 +524,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_escolaridade">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_escolaridade)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.EscolaridadeE)">
         <MappingFragment StoreEntitySet="tb_escolaridade">
           <ScalarProperty Name="IdEscolaridade" ColumnName="IdEscolaridade" />
           <ScalarProperty Name="Nivel" ColumnName="Nivel" />
@@ -632,7 +632,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_ocupacao">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_ocupacao)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.OcupacaoE)">
         <MappingFragment StoreEntitySet="tb_ocupacao">
           <ScalarProperty Name="IdOcupacao" ColumnName="IdOcupacao" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
@@ -678,7 +678,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_pessoa">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_pessoa)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.PessoaE)">
         <MappingFragment StoreEntitySet="tb_pessoa">
           <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -686,7 +686,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_plano_saude">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_plano_saude)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.PlanoSaudeE)">
         <MappingFragment StoreEntitySet="tb_plano_saude">
           <ScalarProperty Name="IdPlanoSaude" ColumnName="IdPlanoSaude" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
