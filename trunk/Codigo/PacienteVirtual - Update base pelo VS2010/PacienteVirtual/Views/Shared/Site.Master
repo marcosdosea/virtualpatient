@@ -54,6 +54,10 @@
                         <%: Html.ActionLink("Plano de Saúde", "Index", "PlanoSaude")%></li>
                     <li>
                         <%: Html.ActionLink("Pessoa", "Index", "Pessoa")%></li>
+                    <li>
+                        <%: Html.ActionLink("Pergunta", "Index", "Pergunta")%></li>
+                    <li>
+                        <%: Html.ActionLink("Resposta", "Index", "Resposta")%></li>
                 </ul>
             </nav>
         </header>

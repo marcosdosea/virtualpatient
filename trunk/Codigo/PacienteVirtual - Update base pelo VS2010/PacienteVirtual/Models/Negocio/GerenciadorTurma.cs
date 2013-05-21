@@ -10,7 +10,7 @@ namespace PacienteVirtual.Models.Negocio
     public class GerenciadorTurma
     {
 
-         private static GerenciadorTurma gTurma;
+        private static GerenciadorTurma gTurma;
 
         private GerenciadorTurma() { }
 
