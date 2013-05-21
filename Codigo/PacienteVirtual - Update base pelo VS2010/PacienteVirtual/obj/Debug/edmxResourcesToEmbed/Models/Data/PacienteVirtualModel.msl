@@ -670,7 +670,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_pergunta">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_pergunta)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.PerguntaE)">
         <MappingFragment StoreEntitySet="tb_pergunta">
           <ScalarProperty Name="IdPergunta" ColumnName="IdPergunta" />
           <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
@@ -706,7 +706,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_resposta">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_resposta)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.RespostaE)">
         <MappingFragment StoreEntitySet="tb_resposta">
           <ScalarProperty Name="IdResposta" ColumnName="IdResposta" />
           <ScalarProperty Name="Resposta" ColumnName="Resposta" />

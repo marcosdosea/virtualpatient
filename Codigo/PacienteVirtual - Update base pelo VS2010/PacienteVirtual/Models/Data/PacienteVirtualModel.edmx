@@ -2127,11 +2127,11 @@
           <EntitySet Name="tb_paciente" EntityType="pvModel.tb_paciente" />
           <EntitySet Name="tb_paciente_pessoa_turma" EntityType="pvModel.PacientePessoaTurmaE" />
           <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.tb_parametro_clinico" />
-          <EntitySet Name="tb_pergunta" EntityType="pvModel.tb_pergunta" />
+          <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
           <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
           <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
           <EntitySet Name="tb_relato_clinico" EntityType="pvModel.tb_relato_clinico" />
-          <EntitySet Name="tb_resposta" EntityType="pvModel.tb_resposta" />
+          <EntitySet Name="tb_resposta" EntityType="pvModel.RespostaE" />
           <AssociationSet Name="fk_tb_exames_fisicos_tb_alergia1" Association="pvModel.fk_tb_exames_fisicos_tb_alergia1">
             <End Role="tb_alergia" EntitySet="tb_alergia" />
             <End Role="tb_exames_fisicos" EntitySet="tb_exames_fisicos" />
@@ -3507,7 +3507,7 @@
           <Property Type="String" Name="ParametroClinico" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tb_consulta_parametro" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1" FromRole="tb_parametro_clinico" ToRole="tb_consulta_parametro" />
         </EntityType>
-        <EntityType Name="tb_pergunta">
+        <EntityType Name="PerguntaE">
           <Key>
             <PropertyRef Name="IdPergunta" />
           </Key>
@@ -3543,7 +3543,7 @@
           <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_tb_relato_clinico1" FromRole="tb_relato_clinico" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_paciente" Relationship="pvModel.fk_tb_relato_clinico_tb_paciente1" FromRole="tb_relato_clinico" ToRole="tb_paciente" />
         </EntityType>
-        <EntityType Name="tb_resposta">
+        <EntityType Name="RespostaE">
           <Key>
             <PropertyRef Name="IdResposta" />
           </Key>
@@ -3764,7 +3764,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_experiencia_medicamentos_tb_resposta1">
-          <End Type="pvModel.tb_resposta" Role="tb_resposta" Multiplicity="1" />
+          <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
           <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_resposta">
@@ -3776,7 +3776,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_experiencia_medicamentos_tb_resposta2">
-          <End Type="pvModel.tb_resposta" Role="tb_resposta" Multiplicity="1" />
+          <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
           <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_resposta">
@@ -3788,7 +3788,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_experiencia_medicamentos_tb_resposta3">
-          <End Type="pvModel.tb_resposta" Role="tb_resposta" Multiplicity="1" />
+          <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
           <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_resposta">
@@ -3800,7 +3800,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_experiencia_medicamentos_tb_resposta4">
-          <End Type="pvModel.tb_resposta" Role="tb_resposta" Multiplicity="1" />
+          <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
           <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_resposta">
@@ -3812,7 +3812,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_experiencia_medicamentos_tb_resposta5">
-          <End Type="pvModel.tb_resposta" Role="tb_resposta" Multiplicity="1" />
+          <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
           <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_resposta">
@@ -3824,7 +3824,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_experiencia_medicamentos_tb_resposta6">
-          <End Type="pvModel.tb_resposta" Role="tb_resposta" Multiplicity="1" />
+          <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
           <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_resposta">
@@ -3896,8 +3896,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_resposta_tb_pergunta1">
-          <End Type="pvModel.tb_pergunta" Role="tb_pergunta" Multiplicity="1" />
-          <End Type="pvModel.tb_resposta" Role="tb_resposta" Multiplicity="*" />
+          <End Type="pvModel.PerguntaE" Role="tb_pergunta" Multiplicity="1" />
+          <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_pergunta">
               <PropertyRef Name="IdPergunta" />
@@ -3913,7 +3913,7 @@
         </Association>
         <Association Name="tb_razao_encontro">
           <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="*" />
-          <End Type="pvModel.tb_resposta" Role="tb_resposta" Multiplicity="0..1" />
+          <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="0..1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -4590,7 +4590,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_pergunta">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_pergunta)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.PerguntaE)">
         <MappingFragment StoreEntitySet="tb_pergunta">
           <ScalarProperty Name="IdPergunta" ColumnName="IdPergunta" />
           <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
@@ -4626,7 +4626,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_resposta">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_resposta)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.RespostaE)">
         <MappingFragment StoreEntitySet="tb_resposta">
           <ScalarProperty Name="IdResposta" ColumnName="IdResposta" />
           <ScalarProperty Name="Resposta" ColumnName="Resposta" />
@@ -4920,11 +4920,11 @@
         <EntityTypeShape EntityType="pvModel.tb_paciente" Width="1.5" PointX="13.375" PointY="15.625" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="pvModel.PacientePessoaTurmaE" Width="1.5" PointX="20.125" PointY="17.5" Height="2.9417936197916674" />
         <EntityTypeShape EntityType="pvModel.tb_parametro_clinico" Width="1.5" PointX="20.875" PointY="26.5" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="pvModel.tb_pergunta" Width="1.5" PointX="23.875" PointY="12.5" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="pvModel.PerguntaE" Width="1.5" PointX="23.875" PointY="12.5" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.PessoaE" Width="1.5" PointX="5.375" PointY="6.75" Height="1.4033821614583246" />
         <EntityTypeShape EntityType="pvModel.PlanoSaudeE" Width="1.5" PointX="20.875" PointY="3.5" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.tb_relato_clinico" Width="1.5" PointX="15.625" PointY="19.125" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="pvModel.tb_resposta" Width="1.5" PointX="26.125" PointY="14.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="pvModel.RespostaE" Width="1.5" PointX="26.125" PointY="14.75" Height="3.1340950520833246" />
         <AssociationConnector Association="pvModel.fk_tb_exames_fisicos_tb_alergia1" >
           <ConnectorPoint PointX="22.03125" PointY="13.095683593749996" />
           <ConnectorPoint PointX="22.03125" PointY="17.124746093749991" />

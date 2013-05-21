@@ -101,8 +101,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\PacientePessoaTurmaController.cs" />
+    <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\PlanoSaudeController.cs" />
+    <Compile Include="Controllers\RespostaController.cs" />
     <Compile Include="Controllers\SampleController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -162,8 +164,10 @@
     </Compile>
     <Compile Include="Models\Negocio\GerenciadorOcupacao.cs" />
     <Compile Include="Models\Negocio\GerenciadorPacientePessoaTurma.cs" />
+    <Compile Include="Models\Negocio\GerenciadorPergunta.cs" />
     <Compile Include="Models\Negocio\GerenciadorPessoa.cs" />
     <Compile Include="Models\Negocio\GerenciadorPlanoSaude.cs" />
+    <Compile Include="Models\Negocio\GerenciadorResposta.cs" />
     <Compile Include="Models\Negocio\GerenciadorTurma.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -172,8 +176,10 @@
     </Compile>
     <Compile Include="Models\OcupacaoModel.cs" />
     <Compile Include="Models\PacientePessoaTurmaModel.cs" />
+    <Compile Include="Models\PerguntaModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />
     <Compile Include="Models\PlanoSaudeModel.cs" />
+    <Compile Include="Models\RespostaModel.cs" />
     <Compile Include="Models\TurmaModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -287,6 +293,11 @@
     <Content Include="Views\PacientePessoaTurma\Details.aspx" />
     <Content Include="Views\PacientePessoaTurma\Edit.aspx" />
     <Content Include="Views\PacientePessoaTurma\Index.aspx" />
+    <Content Include="Views\Pergunta\Create.aspx" />
+    <Content Include="Views\Pergunta\Delete.aspx" />
+    <Content Include="Views\Pergunta\Details.aspx" />
+    <Content Include="Views\Pergunta\Edit.aspx" />
+    <Content Include="Views\Pergunta\Index.aspx" />
     <Content Include="Views\Pessoa\Create.aspx" />
     <Content Include="Views\Pessoa\Delete.aspx" />
     <Content Include="Views\Pessoa\Details.aspx" />
@@ -297,6 +308,11 @@
     <Content Include="Views\PlanoSaude\Details.aspx" />
     <Content Include="Views\PlanoSaude\Edit.aspx" />
     <Content Include="Views\PlanoSaude\Index.aspx" />
+    <Content Include="Views\Resposta\Create.aspx" />
+    <Content Include="Views\Resposta\Delete.aspx" />
+    <Content Include="Views\Resposta\Details.aspx" />
+    <Content Include="Views\Resposta\Edit.aspx" />
+    <Content Include="Views\Resposta\Index.aspx" />
     <Content Include="Views\Sample\Index.cshtml" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
