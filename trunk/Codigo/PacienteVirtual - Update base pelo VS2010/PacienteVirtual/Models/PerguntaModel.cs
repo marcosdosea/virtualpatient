@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using PacienteVirtual.App_GlobalResources;
 
 namespace PacienteVirtual.Models
 {
     public class PerguntaModel
     {
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "Código: ")]
         public int IdPergunta { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "Código: ")]
         public String Pergunta { get; set; }
 

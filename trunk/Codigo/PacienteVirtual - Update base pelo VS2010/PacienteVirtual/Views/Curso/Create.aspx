@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.CursoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Curso
+   <%: Resources.Mensagem.curso%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Criar Curso</h2>
+    <h2><%: Resources.Mensagem.criar%></h2>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -31,18 +31,18 @@
             <!--%: Html.LabelFor(model => model.NomeInstituicao) %-->
         <!--/div-->
         <div class="editor-field">
-            <%: Html.DropDownList("IdInstituicao", "Selecione")%>
+            <%: Html.DropDownList("IdInstituicao", Resources.Mensagem.selecione)%>
             <%: Html.ValidationMessageFor(model => model.IdInstituicao)%>
         </div>
         <p>
-            <input type="submit" value="Criar" />
+            <input type="submit" value="<%: Resources.Mensagem.salvar%>" />
         </p>
 
     </fieldset>
     <% } %>
 
     <div>
-        <%: Html.ActionLink("Voltar", "Index") %>
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </div>
 
 </asp:Content>

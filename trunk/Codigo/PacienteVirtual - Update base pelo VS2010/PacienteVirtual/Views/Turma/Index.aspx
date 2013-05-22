@@ -1,37 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.TurmaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Turma
+    <%: Resources.Mensagem.turma %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Turma</h2>
+<h2><%: Resources.Mensagem.turma %></h2>
 
 <p>
-    <%: Html.ActionLink("Nova Turma", "Create") %>
+    <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
 <table>
     <tr>
         <th>
-            Código
+            <%: Resources.Mensagem.codigo %>
         </th>
         <th>
-            Período
+            <%: Resources.Mensagem.periodo %>
         </th>
         <th>
-            Código da Disciplina
+            <%: Resources.Mensagem.disciplina %>
         </th>
         <th>
-            Instituição
+            <%: Resources.Mensagem.instituicao %>
         </th>
         <th colspan="3"> Opções </th>
     </tr>
 
 <% 
-    
-    
-    
     
 foreach (var item in Model) { %>
     <tr>
@@ -48,9 +45,9 @@ foreach (var item in Model) { %>
             <%: Html.DisplayFor(modelItem => item.NomeInstituicao) %>
         </td>
         <td>
-            <%: Html.ActionLink("Editar", "Edit", new { id=item.IdTurma }) %> |
-            <%: Html.ActionLink("Detalhes", "Details", new { id=item.IdTurma }) %> |
-            <%: Html.ActionLink("Remover", "Delete", new { id=item.IdTurma }) %>
+            <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = item.IdTurma })%> |
+            <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdTurma }) %> |
+            <%: Html.ActionLink(Resources.Mensagem.deletar, "Delete", new { id=item.IdTurma }) %>
         </td>
     </tr>
 <% } %>

@@ -2,15 +2,15 @@
 <%@ Import Namespace="System.Web.Mvc.Html" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Curso
+     <%: Resources.Mensagem.detalhes %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Curso</h2>
+<h2> <%: Resources.Mensagem.detalhes %></h2>
 
 <fieldset>
-    <legend>Detalhes do Curso</legend>
+    <legend> <%: Resources.Mensagem.curso %></legend>
 
     <div class="display-label"><%: Html.LabelFor(model => model.NomeCurso) %></div>
     <div class="display-field">
@@ -24,8 +24,8 @@
 </fieldset>
 <p>
 
-    <%: Html.ActionLink("Edit", "Edit", new { id=Model.IdCurso }) %> |
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=Model.IdCurso }) %> |
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
 </p>
 
 </asp:Content>

@@ -1,16 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.TurmaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Turma
+    <%: Resources.Mensagem.deletar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Turma</h2>
+    <h2> <%: Resources.Mensagem.deletar %></h2>
 
-    <h3>Você tem certeza que deseja excluir esta turma?</h3>
+    <h3> <%: Resources.Mensagem.deletar_pergunta %></h3>
     <fieldset>
-        <legend>Excluir Turma</legend>
+        <legend> <%: Resources.Mensagem.turma %></legend>
 
         <div class="display-label">  <%: Html.LabelFor(model => model.Codigo) %></div>
         <div class="display-field">
@@ -31,12 +31,11 @@
         <div class="display-field">
             <%: Html.DisplayFor(model => model.NomeInstituicao) %>
         </div>
-        <p>
-            <input type="submit" value="Excluir" />
-        </p>
+
     </fieldset>
     <% using (Html.BeginForm())
        { %>
-        <%: Html.ActionLink("Voltar", "Index") %>
+        <input type="submit" value="<%: Resources.Mensagem.deletar %>" >
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     <% } %>
 </asp:Content>

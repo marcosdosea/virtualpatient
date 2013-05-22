@@ -1,29 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.PacientePessoaTurmaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+    <%: Resources.Mensagem.paciente_pessoa_turma %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Index</h2>
+<h2><%: Resources.Mensagem.paciente_pessoa_turma %></h2>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+    <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
 <table>
     <tr>
         <th>
-            tb_consulta_fixo
+          <%: Resources.Mensagem.consulta_dados_fixos %>
         </th>
         <th>
-            tb_consulta_variavel
+            <%: Resources.Mensagem.consulta_dados_variaveis %>
         </th>
         <th>
-            GrupoAtividades
+            <%: Resources.Mensagem.grupo_atividades %>
         </th>
         <th>
-            EstadoPreenchimento
+            <%: Resources.Mensagem.estado_preenchimento %>
         </th>
         <th></th>
     </tr>
@@ -31,21 +31,22 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.tb_consulta_fixo.IdConsultaFixo) %>
+            <%: Html.DisplayFor(modelItem => item.IdConsultaFixo) %>
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.tb_consulta_variavel.Lembretes) %>
+        consulta variável - falta
+            <!--%: Html.DisplayFor(modelItem => item.tb_consulta_variavel.Lembretes) %-->
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.GrupoAtividades) %>
+            <%: Html.DisplayFor(modelItem => item.GrupoAtividades) %>
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.EstadoPreenchimento) %>
+            <%: Html.DisplayFor(modelItem => item.EstadoPreenchimento) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
+            <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { /* id=item.PrimaryKey */ }) %> |
+            <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { /* id=item.PrimaryKey */ }) %> |
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { /* id=item.PrimaryKey */ }) %>
         </td>
     </tr>
 <% } %>

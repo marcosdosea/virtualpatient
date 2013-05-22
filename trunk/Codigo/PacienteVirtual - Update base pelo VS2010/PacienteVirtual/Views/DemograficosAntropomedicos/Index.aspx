@@ -1,44 +1,44 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.DemograficosAntropometricosModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+<%: Resources.Mensagem.demografico_antropometricos %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Index</h2>
+<h2><%: Resources.Mensagem.demografico_antropometricos %></h2>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+    <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
 <table>
     <tr>
         <th>
-            Nome
+        <%: Resources.Mensagem.nome %>
         </th>
         <th>
-            Genero
+        <%: Resources.Mensagem.genero %>
         </th>
         <th>
-            DataNascimento
+             <%: Resources.Mensagem.data_nascimento %>
         </th>
         <th>
-            MedicosAtendem
+             <%: Resources.Mensagem.medicos_atendem %>
         </th>
         <th>
-            MoradiaFamilia
+              <%: Resources.Mensagem.moradia_familia %>
         </th>
         <th>
-            OndeAdquireMedicamentos
+              <%: Resources.Mensagem.onde_adquire_medicamentos %>
         </th>
         <th>
-            tb_escolaridade
+              <%: Resources.Mensagem.escolaridade %>
         </th>
         <th>
-            tb_ocupacao
+             <%: Resources.Mensagem.ocupacao %>
         </th>
         <th>
-            tb_plano_saude
+            <%: Resources.Mensagem.plano_saude %>
         </th>
         <th></th>
     </tr>
@@ -64,18 +64,18 @@
             <%: Html.DisplayFor(modelItem => item.OndeAdquireMedicamentos) %>
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.tb_escolaridade.Nivel) %>
+            <%: Html.DisplayFor(modelItem => item.EscolaridadeNivel) %>
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.tb_ocupacao.Descricao) %>
+            <%: Html.DisplayFor(modelItem => item.OcupacaoDescricao) %>
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.tb_plano_saude.Nome) %>
+            <%: Html.DisplayFor(modelItem => item.PlanoSaudeNome) %>
         </td>
-        <td-->
-            <%: Html.ActionLink("Edit", "Edit", new { id=item.IdConsultaFixo }) %> |
-            <%: Html.ActionLink("Details", "Details", new { id=item.IdConsultaFixo }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { id=item.IdConsultaFixo }) %>
+        <td>
+            <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdConsultaFixo }) %> |
+            <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = item.IdConsultaFixo })%> |
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = item.IdConsultaFixo })%>
         </td>
     </tr>
 <% } %>

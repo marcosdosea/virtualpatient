@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.DemograficosAntropometricosModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Edit
+    <%: Resources.Mensagem.editar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Edit</h2>
+<h2><%: Resources.Mensagem.editar %></h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -14,7 +14,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>tb_demograficos_antropometricos</legend>
+        <legend><%: Resources.Mensagem.demografico_antropometricos %></legend>
 
         <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
 
@@ -70,7 +70,7 @@
             <%: Html.LabelFor(model => model.IdEscolaridade, "tb_escolaridade") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdEscolaridade", String.Empty) %>
+            <%: Html.DropDownList("IdEscolaridade", "Selecione") %>
             <%: Html.ValidationMessageFor(model => model.IdEscolaridade) %>
         </div>
 
@@ -78,7 +78,7 @@
             <%: Html.LabelFor(model => model.IdOcupacao, "tb_ocupacao") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdOcupacao", String.Empty) %>
+            <%: Html.DropDownList("IdOcupacao", "Selecione") %>
             <%: Html.ValidationMessageFor(model => model.IdOcupacao) %>
         </div>
 
@@ -86,18 +86,18 @@
             <%: Html.LabelFor(model => model.IdPlanoSaude, "tb_plano_saude") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdPlanoSaude", String.Empty) %>
+            <%: Html.DropDownList("IdPlanoSaude", "Selecione") %>
             <%: Html.ValidationMessageFor(model => model.IdPlanoSaude) %>
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </p>
     </fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink( Resources.Mensagem.voltar, "Index") %>
 </div>
 
 </asp:Content>

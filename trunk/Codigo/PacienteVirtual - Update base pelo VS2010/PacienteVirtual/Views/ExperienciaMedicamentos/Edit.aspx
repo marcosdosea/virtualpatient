@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ExperienciaMedicamentosModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Edit
+<%: Resources.Mensagem.editar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Edit</h2>
+<h2><%: Resources.Mensagem.editar %></h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -14,7 +14,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>tb_experiencia_medicamentos</legend>
+        <legend><%: Resources.Mensagem.experiencia_medicamentos %></legend>
 
         <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
 
@@ -22,7 +22,7 @@
             <%: Html.LabelFor(model => model.IdRespostaEsperaTratamento, "tb_resposta") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaEsperaTratamento", String.Empty) %>
+            <%: Html.DropDownList("IdRespostaEsperaTratamento", "Selecione") %>
             <%: Html.ValidationMessageFor(model => model.IdRespostaEsperaTratamento) %>
         </div>
 
@@ -30,7 +30,7 @@
             <%: Html.LabelFor(model => model.IdRespostaPreocupacoes, "tb_resposta1") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaPreocupacoes", String.Empty) %>
+            <%: Html.DropDownList("IdRespostaPreocupacoes", "Selecione")%>
             <%: Html.ValidationMessageFor(model => model.IdRespostaPreocupacoes) %>
         </div>
 
@@ -38,7 +38,7 @@
             <%: Html.LabelFor(model => model.IdRespostaGrauEntendimento, "tb_resposta2") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaGrauEntendimento", String.Empty) %>
+            <%: Html.DropDownList("IdRespostaGrauEntendimento", "Selecione")%>
             <%: Html.ValidationMessageFor(model => model.IdRespostaGrauEntendimento) %>
         </div>
 
@@ -46,7 +46,7 @@
             <%: Html.LabelFor(model => model.IdRespostaCultural, "tb_resposta3") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaCultural", String.Empty) %>
+            <%: Html.DropDownList("IdRespostaCultural", "Selecione")%>
             <%: Html.ValidationMessageFor(model => model.IdRespostaCultural) %>
         </div>
 
@@ -54,7 +54,7 @@
             <%: Html.LabelFor(model => model.IdRespostaComportamento, "tb_resposta4") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaComportamento", String.Empty) %>
+            <%: Html.DropDownList("IdRespostaComportamento", "Selecione")%>
             <%: Html.ValidationMessageFor(model => model.IdRespostaComportamento) %>
         </div>
 
@@ -62,7 +62,7 @@
             <%: Html.LabelFor(model => model.IdRespostaIncorporadoPlano, "tb_resposta5") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaIncorporadoPlano", String.Empty) %>
+            <%: Html.DropDownList("IdRespostaIncorporadoPlano", "Selecione")%>
             <%: Html.ValidationMessageFor(model => model.IdRespostaIncorporadoPlano) %>
         </div>
 
@@ -113,7 +113,7 @@
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink(Resources.Mensagem.editar, "Index")%>
 </div>
 
 </asp:Content>
