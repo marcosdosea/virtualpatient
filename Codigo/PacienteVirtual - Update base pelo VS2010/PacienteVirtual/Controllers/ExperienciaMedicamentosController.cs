@@ -17,13 +17,13 @@ namespace PacienteVirtual.Controllers
 
         GerenciadorExperienciaMedicamentos gExpMedicamento = GerenciadorExperienciaMedicamentos.GetInstance();
         GerenciadorConsultaFixo gConsultaFixo = GerenciadorConsultaFixo.GetInstance();
+        GerenciadorResposta gResposta = GerenciadorResposta.GetInstance();
 
         //
         // GET: /ExperienciaMedicamentos/
 
         public ViewResult Index()
         {
-            //var tb_experiencia_medicamentos = db.tb_experiencia_medicamentos.Include("tb_consulta_fixo").Include("tb_resposta").Include("tb_resposta1").Include("tb_resposta2").Include("tb_resposta3").Include("tb_resposta4").Include("tb_resposta5");
             return View(gExpMedicamento.ObterTodos());
         }
 
@@ -32,7 +32,6 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(long id)
         {
-            //PacientePessoaTurmaE tb_experiencia_medicamentos = db.tb_experiencia_medicamentos.Single(t => t.IdConsultaFixo == id);
             return View(gExpMedicamento.Obter(id));
         }
 
@@ -41,16 +40,14 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            //ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo");
-
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");
 
-            ViewBag.IdRespostaEsperaTratamento = new SelectList(db.tb_resposta, "IdResposta", "Resposta");
-            ViewBag.IdRespostaPreocupacoes = new SelectList(db.tb_resposta, "IdResposta", "Resposta");
-            ViewBag.IdRespostaGrauEntendimento = new SelectList(db.tb_resposta, "IdResposta", "Resposta");
-            ViewBag.IdRespostaCultural = new SelectList(db.tb_resposta, "IdResposta", "Resposta");
-            ViewBag.IdRespostaComportamento = new SelectList(db.tb_resposta, "IdResposta", "Resposta");
-            ViewBag.IdRespostaIncorporadoPlano = new SelectList(db.tb_resposta, "IdResposta", "Resposta");
+            ViewBag.IdRespostaEsperaTratamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaPreocupacoes = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaGrauEntendimento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaCultural = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaComportamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaIncorporadoPlano = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
             return View();
         } 
 
@@ -67,13 +64,13 @@ namespace PacienteVirtual.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", expMedicamento.IdConsultaFixo);
-            ViewBag.IdRespostaEsperaTratamento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaEsperaTratamento);
-            ViewBag.IdRespostaPreocupacoes = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaPreocupacoes);
-            ViewBag.IdRespostaGrauEntendimento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaGrauEntendimento);
-            ViewBag.IdRespostaCultural = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaCultural);
-            ViewBag.IdRespostaComportamento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaComportamento);
-            ViewBag.IdRespostaIncorporadoPlano = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaIncorporadoPlano);
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", expMedicamento.IdConsultaFixo);
+            ViewBag.IdRespostaEsperaTratamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaEsperaTratamento);
+            ViewBag.IdRespostaPreocupacoes = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaPreocupacoes);
+            ViewBag.IdRespostaGrauEntendimento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaGrauEntendimento);
+            ViewBag.IdRespostaCultural = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaCultural);
+            ViewBag.IdRespostaComportamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaComportamento);
+            ViewBag.IdRespostaIncorporadoPlano = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaIncorporadoPlano);
             return View(expMedicamento);
         }
         
@@ -82,17 +79,15 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Edit(long id)
         {
-            //ExperienciaMedicamentosE tb_experiencia_medicamentos = db.tb_experiencia_medicamentos.Single(t => t.IdConsultaFixo == id);
-
             ExperienciaMedicamentosModel expMedicamento = gExpMedicamento.Obter(id);
 
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", expMedicamento.IdConsultaFixo);
-            ViewBag.IdRespostaEsperaTratamento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaEsperaTratamento);
-            ViewBag.IdRespostaPreocupacoes = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaPreocupacoes);
-            ViewBag.IdRespostaGrauEntendimento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaGrauEntendimento);
-            ViewBag.IdRespostaCultural = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaCultural);
-            ViewBag.IdRespostaComportamento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaComportamento);
-            ViewBag.IdRespostaIncorporadoPlano = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaIncorporadoPlano);
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", expMedicamento.IdConsultaFixo);
+            ViewBag.IdRespostaEsperaTratamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaEsperaTratamento);
+            ViewBag.IdRespostaPreocupacoes = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaPreocupacoes);
+            ViewBag.IdRespostaGrauEntendimento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaGrauEntendimento);
+            ViewBag.IdRespostaCultural = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaCultural);
+            ViewBag.IdRespostaComportamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaComportamento);
+            ViewBag.IdRespostaIncorporadoPlano = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaIncorporadoPlano);
             return View(expMedicamento);
         }
 
@@ -104,22 +99,18 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.tb_experiencia_medicamentos.Attach(tb_experiencia_medicamentos);
-                //db.ObjectStateManager.ChangeObjectState(tb_experiencia_medicamentos, EntityState.Modified);
-                //db.SaveChanges();
-
                 gExpMedicamento.Atualizar(expMedicamento);
 
                 return RedirectToAction("Index");
             }
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");
 
-            ViewBag.IdRespostaEsperaTratamento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaEsperaTratamento);
-            ViewBag.IdRespostaPreocupacoes = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaPreocupacoes);
-            ViewBag.IdRespostaGrauEntendimento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaGrauEntendimento);
-            ViewBag.IdRespostaCultural = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaCultural);
-            ViewBag.IdRespostaComportamento = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaComportamento);
-            ViewBag.IdRespostaIncorporadoPlano = new SelectList(db.tb_resposta, "IdResposta", "Resposta", expMedicamento.IdRespostaIncorporadoPlano);
+            ViewBag.IdRespostaEsperaTratamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaEsperaTratamento);
+            ViewBag.IdRespostaPreocupacoes = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaPreocupacoes);
+            ViewBag.IdRespostaGrauEntendimento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaGrauEntendimento);
+            ViewBag.IdRespostaCultural = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaCultural);
+            ViewBag.IdRespostaComportamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaComportamento);
+            ViewBag.IdRespostaIncorporadoPlano = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta", expMedicamento.IdRespostaIncorporadoPlano);
             return View(expMedicamento);
         }
 
@@ -128,7 +119,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(long id)
         {
-            //ExperienciaMedicamentosE tb_experiencia_medicamentos = db.tb_experiencia_medicamentos.Single(t => t.IdConsultaFixo == id);
             return View(gExpMedicamento.Obter(id));
         }
 
@@ -138,9 +128,6 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(long id)
         {
-            //ExperienciaMedicamentosE tb_experiencia_medicamentos = db.tb_experiencia_medicamentos.Single(t => t.IdConsultaFixo == id);
-            //db.tb_experiencia_medicamentos.DeleteObject(tb_experiencia_medicamentos);
-            //db.SaveChanges();
             gExpMedicamento.Remover(id);
             return RedirectToAction("Index");
         }

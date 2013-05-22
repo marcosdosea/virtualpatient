@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace PacienteVirtual.Models
 {
@@ -14,6 +15,7 @@ namespace PacienteVirtual.Models
 
         public String Genero { get; set; }
 
+        [Required]
         public DateTime DataNascimento { get; set; }
 
         public string MedicosAtendem { get; set; }

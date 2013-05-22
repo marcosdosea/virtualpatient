@@ -15,6 +15,14 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>tb_demograficos_antropometricos</legend>
+                
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.IdConsultaFixo) %>
+        </div>
+        <div class="editor-field">
+             <%: Html.DropDownList("IdConsultaFixo", String.Empty)%>
+            <%: Html.ValidationMessageFor(model => model.IdConsultaFixo) %>
+        </div>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Nome) %>
