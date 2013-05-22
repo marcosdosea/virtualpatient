@@ -29,7 +29,6 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(long id)
         {
-           // ConsultaFixoE tb_consulta_fixo = db.tb_consulta_fixo.Single(t => t.IdConsultaFixo == id);
             return View(gConsultaFixo.Obter(id));
         }
 
@@ -61,7 +60,6 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(long id)
         {
 
-            //ConsultaFixoE tb_consulta_fixo = db.tb_consulta_fixo.Single(t => t.IdConsultaFixo == id);
             return View(gConsultaFixo.Obter(id));
         }
 
@@ -84,7 +82,7 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(long id)
         {
-           // ConsultaFixoE tb_consulta_fixo = db.tb_consulta_fixo.Single(t => t.IdConsultaFixo == id);
+   
             return View(gConsultaFixo.Obter(id));
         }
 

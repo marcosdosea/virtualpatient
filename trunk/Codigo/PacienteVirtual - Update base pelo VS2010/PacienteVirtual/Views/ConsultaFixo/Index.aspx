@@ -28,6 +28,7 @@
 <% foreach (var item in Model) { %>
     <tr>
           <td>
+           <%: Html.LabelFor(model => item.IdConsultaFixo) %>
             <%: Html.DisplayFor(modelItem => item.IdConsultaFixo) %>
         </td>
         <td>

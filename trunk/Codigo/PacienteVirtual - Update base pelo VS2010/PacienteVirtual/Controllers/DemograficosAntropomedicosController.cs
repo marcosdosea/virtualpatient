@@ -17,6 +17,10 @@ namespace PacienteVirtual.Controllers
 
         GerenciadorDemograficosAntropometricos gDemoAntrop = GerenciadorDemograficosAntropometricos.GetInstance();
         GerenciadorConsultaFixo gConsultaFixo = GerenciadorConsultaFixo.GetInstance();
+        GerenciadorEscolaridade gEscolaridade = GerenciadorEscolaridade.GetInstance();
+        GerenciadorPlanoSaude gPlanoSaude = GerenciadorPlanoSaude.GetInstance();
+        GerenciadorOcupacao gOcupacao = GerenciadorOcupacao.GetInstance();
+
         //
         // GET: /DemograficosAntropomedicos/
 
@@ -39,9 +43,9 @@ namespace PacienteVirtual.Controllers
         public ActionResult Create()
         {
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");
-            ViewBag.IdEscolaridade = new SelectList(db.tb_escolaridade, "IdEscolaridade", "Nivel");
-            ViewBag.IdOcupacao = new SelectList(db.tb_ocupacao, "IdOcupacao", "Descricao");
-            ViewBag.IdPlanoSaude = new SelectList(db.tb_plano_saude, "IdPlanoSaude", "Nome");
+            ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel");
+            ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao");
+            ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome");
             return View();
         } 
 
@@ -60,9 +64,9 @@ namespace PacienteVirtual.Controllers
             }
 
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");
-            ViewBag.IdEscolaridade = new SelectList(db.tb_escolaridade, "IdEscolaridade", "Nivel", demograficosAntropometricosModel.IdEscolaridade);
-            ViewBag.IdOcupacao = new SelectList(db.tb_ocupacao, "IdOcupacao", "Descricao", demograficosAntropometricosModel.IdOcupacao);
-            ViewBag.IdPlanoSaude = new SelectList(db.tb_plano_saude, "IdPlanoSaude", "Nome", demograficosAntropometricosModel.IdPlanoSaude);
+            ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel");
+            ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao");
+            ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome");
             return View(demograficosAntropometricosModel);
         }
         
@@ -73,11 +77,11 @@ namespace PacienteVirtual.Controllers
         {
            // DemograficosAntropometricosE tb_demograficos_antropometricos = db.tb_demograficos_antropometricos.Single(t => t.IdConsultaFixo == id);
             DemograficosAntropometricosModel demoAntro = gDemoAntrop.Obter(id);
-            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", demoAntro.IdConsultaFixo);
+            ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel",demoAntro.IdEscolaridade);
+            ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao", demoAntro.IdOcupacao);
+            ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome", demoAntro.IdPlanoSaude);
 
-            ViewBag.IdEscolaridade = new SelectList(db.tb_escolaridade, "IdEscolaridade", "Nivel", demoAntro.IdEscolaridade);
-            ViewBag.IdOcupacao = new SelectList(db.tb_ocupacao, "IdOcupacao", "Descricao", demoAntro.IdOcupacao);
-            ViewBag.IdPlanoSaude = new SelectList(db.tb_plano_saude, "IdPlanoSaude", "Nome", demoAntro.IdPlanoSaude);
             return View(demoAntro);
         }
 
@@ -85,24 +89,23 @@ namespace PacienteVirtual.Controllers
         // POST: /DemograficosAntropomedicos/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(DemograficosAntropometricosModel demograficosAntropometricosModel)
+        public ActionResult Edit(DemograficosAntropometricosModel demoAntro)
         {
             if (ModelState.IsValid)
             {
                 //db.tb_demograficos_antropometricos.Attach(tb_demograficos_antropometricos);
                 //db.ObjectStateManager.ChangeObjectState(tb_demograficos_antropometricos, EntityState.Modified);
                 //db.SaveChanges();
-                gDemoAntrop.Atualizar(demograficosAntropometricosModel);
+                gDemoAntrop.Atualizar(demoAntro);
                 
                 return RedirectToAction("Index");
             }
-            //ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", demograficosAntropometricosModel.IdConsultaFixo);
-            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");
-            
-            ViewBag.IdEscolaridade = new SelectList(db.tb_escolaridade, "IdEscolaridade", "Nivel", demograficosAntropometricosModel.IdEscolaridade);
-            ViewBag.IdOcupacao = new SelectList(db.tb_ocupacao, "IdOcupacao", "Descricao", demograficosAntropometricosModel.IdOcupacao);
-            ViewBag.IdPlanoSaude = new SelectList(db.tb_plano_saude, "IdPlanoSaude", "Nome", demograficosAntropometricosModel.IdPlanoSaude);
-            return View(demograficosAntropometricosModel);
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", demoAntro.IdConsultaFixo);
+            ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel", demoAntro.IdEscolaridade);
+            ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao", demoAntro.IdOcupacao);
+            ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome", demoAntro.IdPlanoSaude);
+           
+            return View(demoAntro);
         }
 
         //

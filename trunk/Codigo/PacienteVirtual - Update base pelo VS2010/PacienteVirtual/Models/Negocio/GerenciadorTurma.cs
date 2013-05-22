@@ -153,7 +153,7 @@ namespace PacienteVirtual.Models.Negocio
         private static void Atribuir(TurmaModel turma, TurmaE _turmaE)
         {
             _turmaE.Codigo = turma.Codigo;
-            _turmaE.IdInstituicao = turma.IdInstituicao;
+            _turmaE.Periodo = turma.Periodo;
             _turmaE.IdDisciplina = turma.IdDisciplina;
         }
     }

@@ -30,7 +30,6 @@ D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo 
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\PacienteVirtual.pdb
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\EntityFramework.dll
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\EntityFramework.xml
-D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\Html5MVCWebControls.xml
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\PacienteVirtual.dll
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\PacienteVirtual.pdb
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\EntityFramework.dll
@@ -39,3 +38,12 @@ C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.csprojResolveAssemblyReference.cache
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.dll
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.pdb
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\en\PacienteVirtual.resources.dll
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\pt-br\PacienteVirtual.resources.dll
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.App_GlobalResources.Mensagem.en.resources
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.App_GlobalResources.Mensagem.pt-br.resources
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\GenerateResource.read.1.tlog
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\GenerateResource.write.1.tlog
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\en\PacienteVirtual.resources.dll
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\pt-br\PacienteVirtual.resources.dll
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.App_GlobalResources.Mensagem.resources

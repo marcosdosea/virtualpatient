@@ -34,14 +34,6 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdDisciplina) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.IdDisciplina) %>
-            <%: Html.ValidationMessageFor(model => model.IdDisciplina) %>
-        </div>
-
-        <div class="editor-label">
             <%: Html.LabelFor(model => model.IdInstituicao, "Instituições") %>
         </div>
         <%: Html.DropDownList("IdDisciplina", "Selecione") %>

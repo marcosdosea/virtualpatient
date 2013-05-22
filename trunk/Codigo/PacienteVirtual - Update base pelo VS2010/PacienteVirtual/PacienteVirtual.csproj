@@ -79,6 +79,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Mensagem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensagem.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Mensagem.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensagem.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Mensagem.pt-br.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensagem.pt-br.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -130,6 +145,7 @@
     <Compile Include="Models\Data\IRepositorioGenerico.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Data\LocalizarDisplayNomeAtributo.cs" />
     <Compile Include="Models\Data\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -186,11 +202,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\uploads\Kalimba.mp3" />
-    <Content Include="App_Data\uploads\Maid with the Flaxen Hair.mp3" />
-    <Content Include="App_Data\uploads\Sem Limites.rmvb_snapshot_00.00.07_[2013.04.18_13.20.19].jpg" />
-    <Content Include="App_Data\uploads\SleepAway.mp3" />
-    <Content Include="App_Data\uploads\video1.webm" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -350,6 +361,7 @@
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Content\themes\pv\" />
   </ItemGroup>
   <ItemGroup>
@@ -359,14 +371,28 @@
     <Content Include="Uploads\Certidão de Quitação - Emissão.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\uploads\Minority.Report.2002.720p.BluRay.x264.YIFY.srt" />
-    <Content Include="App_Data\uploads\projetoTC.rar" />
-  </ItemGroup>
-  <ItemGroup>
     <EntityDeploy Include="Models\Data\PacienteVirtualModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PacienteVirtualModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Mensagem.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensagem.en.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Mensagem.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensagem.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Mensagem.pt-br.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensagem.pt-br.designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

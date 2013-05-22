@@ -16,6 +16,7 @@ namespace PacienteVirtual.Controllers
         private pvEntities db = new pvEntities();
 
         GerenciadorHistoria gHistoria = GerenciadorHistoria.GetInstance();
+        GerenciadorConsultaFixo gConsultaFixo = GerenciadorConsultaFixo.GetInstance();
         //
         // GET: /Historica/
 
@@ -37,7 +38,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo");
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");
             return View();
         } 
 
@@ -55,7 +56,7 @@ namespace PacienteVirtual.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", historiaModel.IdConsultaFixo);
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", historiaModel.IdConsultaFixo);
             return View(historiaModel);
         }
         
@@ -66,7 +67,7 @@ namespace PacienteVirtual.Controllers
         {
             //HistoriaE tb_historia = db.tb_historia.Single(t => t.IdConsultaFixo == id);
             HistoriaModel historiaModel = gHistoria.Obter(id);
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", historiaModel.IdConsultaFixo);
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", historiaModel.IdConsultaFixo);
 
             return View(historiaModel.IdConsultaFixo);
         }
@@ -79,14 +80,10 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.tb_historia.Attach(tb_historia);
-                //db.ObjectStateManager.ChangeObjectState(tb_historia, EntityState.Modified);
-                //db.SaveChanges();
-
                 gHistoria.Atualizar(historiaModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", historiaModel.IdConsultaFixo);
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", historiaModel.IdConsultaFixo);
             return View(historiaModel);
         }
 
@@ -95,9 +92,7 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(long id)
         {
-            //HistoriaE tb_historia = db.tb_historia.Single(t => t.IdConsultaFixo == id);
-            
-            return View(gHistoria.Obter(id));
+             return View(gHistoria.Obter(id));
         }
 
         //
@@ -106,9 +101,6 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(long id)
         {
-            //HistoriaE tb_historia = db.tb_historia.Single(t => t.IdConsultaFixo == id);
-            //db.tb_historia.DeleteObject(tb_historia);
-            //db.SaveChanges();
             gHistoria.Remover(id);
             return RedirectToAction("Index");
         }

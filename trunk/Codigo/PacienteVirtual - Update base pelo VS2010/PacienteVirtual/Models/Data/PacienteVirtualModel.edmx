@@ -4924,14 +4924,12 @@
         <EntityTypeShape EntityType="pvModel.PessoaE" Width="1.5" PointX="5.375" PointY="6.75" Height="1.4033821614583246" />
         <EntityTypeShape EntityType="pvModel.PlanoSaudeE" Width="1.5" PointX="20.875" PointY="3.5" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.tb_relato_clinico" Width="1.5" PointX="15.625" PointY="19.125" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="pvModel.RespostaE" Width="1.5" PointX="26.125" PointY="14.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="pvModel.RespostaE" Width="2" PointX="25.875" PointY="14.75" Height="3.1340950520833246" />
         <AssociationConnector Association="pvModel.fk_tb_exames_fisicos_tb_alergia1" >
           <ConnectorPoint PointX="22.03125" PointY="13.095683593749996" />
           <ConnectorPoint PointX="22.03125" PointY="17.124746093749991" />
           <ConnectorPoint PointX="22.666666666666668" PointY="17.124746093749991" />
           <ConnectorPoint PointX="22.833333333333332" PointY="17.124746093749991" />
-          <ConnectorPoint PointX="22.916666666666668" PointY="17.124746093749991" />
-          <ConnectorPoint PointX="23.083333333333332" PointY="17.124746093749991" />
           <ConnectorPoint PointX="23.125" PointY="17.124746093749991" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" >
@@ -4954,23 +4952,21 @@
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" >
           <ConnectorPoint PointX="18.625" PointY="17.114889322916667" />
           <ConnectorPoint PointX="18.625" PointY="17.364889322916667" />
-          <ConnectorPoint PointX="19.416666666666668" PointY="17.364889322916667" />
-          <ConnectorPoint PointX="19.71525741025641" PointY="17.364889322916667" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="17.364889322916667" />
+          <ConnectorPoint PointX="19.458333333333336" PointY="17.364889322916667" />
+          <ConnectorPoint PointX="19.715257410256406" PointY="17.364889322916667" />
+          <ConnectorPoint PointX="19.906555989583335" PointY="17.364889322916667" />
           <ConnectorPoint PointX="20.083333333333332" PointY="17.364889322916667" />
-          <ConnectorPoint PointX="22.541666666666668" PointY="17.364889322916667" />
-          <ConnectorPoint PointX="22.833333333333332" PointY="17.364889322916667" />
+          <ConnectorPoint PointX="22.583333333333336" PointY="17.364889322916667" />
+          <ConnectorPoint PointX="22.833333333333336" PointY="17.364889322916667" />
           <ConnectorPoint PointX="22.875" PointY="17.364889322916667" />
           <ConnectorPoint PointX="22.875" PointY="18.134095052083325" />
-          <ConnectorPoint PointX="22.916666666666668" PointY="18.134095052083325" />
-          <ConnectorPoint PointX="23.083333333333332" PointY="18.134095052083325" />
-          <ConnectorPoint PointX="25.791666666666668" PointY="18.134095052083325" />
-          <ConnectorPoint PointX="25.958333333333332" PointY="18.134095052083325" />
-          <ConnectorPoint PointX="26.791666666666668" PointY="18.134095052083325" />
-          <ConnectorPoint PointX="26.958333333333332" PointY="18.134095052083325" />
+          <ConnectorPoint PointX="25.541666666666668" PointY="18.134095052083325" />
+          <ConnectorPoint PointX="25.708333333333332" PointY="18.134095052083325" />
+          <ConnectorPoint PointX="25.885416666666668" PointY="18.134095052083325" />
+          <ConnectorPoint PointX="26.052083333333332" PointY="18.134095052083325" />
           <ConnectorPoint PointX="28" PointY="18.134095052083325" />
-          <ConnectorPoint PointX="28" PointY="16.336253255208334" />
-          <ConnectorPoint PointX="28.375" PointY="16.336253255208334" />
+          <ConnectorPoint PointX="28" PointY="18.110071071451813" />
+          <ConnectorPoint PointX="28.375" PointY="18.110071071451813" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_historia_tb_consulta_fixo1" >
           <ConnectorPoint PointX="19.375" PointY="17.10796524599359" />
@@ -4982,8 +4978,6 @@
           <ConnectorPoint PointX="19.375" PointY="17.08950370753205" />
           <ConnectorPoint PointX="19.625" PointY="17.33950370753205" />
           <ConnectorPoint PointX="19.625" PointY="17" />
-          <ConnectorPoint PointX="19.816074434901122" PointY="17.191074434901122" />
-          <ConnectorPoint PointX="19.933925565098878" PointY="17.308925565098878" />
           <ConnectorPoint PointX="19.941074434901122" PointY="17.316074434901122" />
           <ConnectorPoint PointX="20.058925565098878" PointY="17.433925565098878" />
           <ConnectorPoint PointX="20.125" PointY="17.5" />
@@ -4991,7 +4985,7 @@
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" >
           <ConnectorPoint PointX="19.375" PointY="20.997091471354167" />
           <ConnectorPoint PointX="19.697916666666668" PointY="20.997091471354167" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="20.997091471354167" />
+          <ConnectorPoint PointX="19.864583333333332" PointY="20.997091471354167" />
           <ConnectorPoint PointX="22.666666666666668" PointY="20.997091471354167" />
           <ConnectorPoint PointX="22.958333333333332" PointY="20.997091471354167" />
           <ConnectorPoint PointX="23.125" PointY="20.997091471354167" />
@@ -5005,10 +4999,10 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" >
           <ConnectorPoint PointX="19.375" PointY="19.717293735677089" />
-          <ConnectorPoint PointX="19.416666666666668" PointY="19.717293735677089" />
-          <ConnectorPoint PointX="19.583333333333332" PointY="19.717293735677089" />
+          <ConnectorPoint PointX="19.458333333333336" PointY="19.717293735677089" />
+          <ConnectorPoint PointX="19.625" PointY="19.717293735677089" />
           <ConnectorPoint PointX="19.697916666666668" PointY="19.717293735677089" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="19.717293735677089" />
+          <ConnectorPoint PointX="19.864583333333332" PointY="19.717293735677089" />
           <ConnectorPoint PointX="20" PointY="19.717293735677089" />
           <ConnectorPoint PointX="20" PointY="20.691793619791667" />
           <ConnectorPoint PointX="22.666666666666668" PointY="20.691793619791667" />
@@ -5020,10 +5014,10 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" >
           <ConnectorPoint PointX="19.375" PointY="18.5" />
-          <ConnectorPoint PointX="19.441074434901122" PointY="18.433925565098878" />
-          <ConnectorPoint PointX="19.558925565098878" PointY="18.316074434901122" />
+          <ConnectorPoint PointX="19.48274110156779" PointY="18.39225889843221" />
+          <ConnectorPoint PointX="19.600592231765546" PointY="18.274407768234454" />
           <ConnectorPoint PointX="19.722324434901122" PointY="18.152675565098878" />
-          <ConnectorPoint PointX="19.933925565098878" PointY="17.941074434901122" />
+          <ConnectorPoint PointX="19.840175565098878" PointY="18.034824434901122" />
           <ConnectorPoint PointX="20" PointY="17.875" />
           <ConnectorPoint PointX="20" PointY="14.966222830729166" />
           <ConnectorPoint PointX="20.125" PointY="14.966222830729166" />
@@ -5040,16 +5034,14 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" >
           <ConnectorPoint PointX="19.375" PointY="20.357192603515628" />
-          <ConnectorPoint PointX="19.5" PointY="20.357192603515628" />
-          <ConnectorPoint PointX="19.5" PointY="17.25" />
+          <ConnectorPoint PointX="19.541666666666668" PointY="20.357192603515628" />
           <ConnectorPoint PointX="19.541666666666668" PointY="17.25" />
-          <ConnectorPoint PointX="19.708333333333332" PointY="17.25" />
           <ConnectorPoint PointX="19.791666666666668" PointY="17.25" />
           <ConnectorPoint PointX="20.083333333333332" PointY="17.25" />
-          <ConnectorPoint PointX="22.625" PointY="17.25" />
-          <ConnectorPoint PointX="22.625" PointY="17.99949218750001" />
+          <ConnectorPoint PointX="22.666666666666668" PointY="17.25" />
           <ConnectorPoint PointX="22.666666666666668" PointY="17.99949218750001" />
-          <ConnectorPoint PointX="23.083333333333332" PointY="17.99949218750001" />
+          <ConnectorPoint PointX="22.791666666666668" PointY="17.99949218750001" />
+          <ConnectorPoint PointX="22.958333333333332" PointY="17.99949218750001" />
           <ConnectorPoint PointX="23.875" PointY="17.99949218750001" />
           <ConnectorPoint PointX="23.875" PointY="17.74949218750001" />
         </AssociationConnector>
@@ -5064,10 +5056,10 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" >
           <ConnectorPoint PointX="19.375" PointY="19.077399367838538" />
-          <ConnectorPoint PointX="19.416666666666668" PointY="19.077399367838538" />
-          <ConnectorPoint PointX="19.583333333333332" PointY="19.077399367838538" />
+          <ConnectorPoint PointX="19.458333333333336" PointY="19.077399367838538" />
+          <ConnectorPoint PointX="19.625" PointY="19.077399367838538" />
           <ConnectorPoint PointX="19.697916666666668" PointY="19.077399367838538" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="19.077399367838538" />
+          <ConnectorPoint PointX="19.864583333333332" PointY="19.077399367838538" />
           <ConnectorPoint PointX="20.125" PointY="19.077399367838538" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" >
@@ -5087,37 +5079,31 @@
           <ConnectorPoint PointX="23.4687475" PointY="8.125" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta1" >
-          <ConnectorPoint PointX="27.625" PointY="15.480626627604167" />
-          <ConnectorPoint PointX="28.375" PointY="15.480626627604167" />
+          <ConnectorPoint PointX="27.875" PointY="15.479426269531249" />
+          <ConnectorPoint PointX="28.375" PointY="15.479426269531249" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta2" >
-          <ConnectorPoint PointX="27.625" PointY="17.172674153645829" />
-          <ConnectorPoint PointX="27.916666666666668" PointY="17.172674153645829" />
-          <ConnectorPoint PointX="28.083333333333332" PointY="17.172674153645829" />
-          <ConnectorPoint PointX="28.375" PointY="17.172674153645829" />
+          <ConnectorPoint PointX="27.875" PointY="16.433603719075517" />
+          <ConnectorPoint PointX="28.375" PointY="16.433603719075517" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta3" >
-          <ConnectorPoint PointX="27.625" PointY="15.90843994140625" />
-          <ConnectorPoint PointX="28.375" PointY="15.90843994140625" />
+          <ConnectorPoint PointX="27.875" PointY="15.956514994303383" />
+          <ConnectorPoint PointX="28.375" PointY="15.956514994303383" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta4" >
-          <ConnectorPoint PointX="27.625" PointY="15.052813313802083" />
-          <ConnectorPoint PointX="28.375" PointY="15.052813313802083" />
+          <ConnectorPoint PointX="27.875" PointY="15.052213134765625" />
+          <ConnectorPoint PointX="28.375" PointY="15.052213134765625" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta5" >
-          <ConnectorPoint PointX="27.625" PointY="16.754463704427081" />
-          <ConnectorPoint PointX="27.916666666666668" PointY="16.754463704427081" />
-          <ConnectorPoint PointX="28.083333333333332" PointY="16.754463704427081" />
-          <ConnectorPoint PointX="28.375" PointY="16.754463704427081" />
+          <ConnectorPoint PointX="27.875" PointY="16.959367675781245" />
+          <ConnectorPoint PointX="28.375" PointY="16.959367675781245" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta6" >
-          <ConnectorPoint PointX="27.625" PointY="17.590884602864577" />
-          <ConnectorPoint PointX="27.916666666666668" PointY="17.590884602864577" />
-          <ConnectorPoint PointX="28.083333333333332" PointY="17.590884602864577" />
-          <ConnectorPoint PointX="28.375" PointY="17.590884602864577" />
+          <ConnectorPoint PointX="27.875" PointY="17.452978863932291" />
+          <ConnectorPoint PointX="28.375" PointY="17.452978863932291" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1" >
-          <ConnectorPoint PointX="19.375" PointY="13.292977766025635" />
+          <ConnectorPoint PointX="19.375" PointY="12.365143229166662" />
           <ConnectorPoint PointX="19.624808692307688" PointY="13.542786458333325" />
           <ConnectorPoint PointX="20.385416666666668" PointY="13.542786458333325" />
           <ConnectorPoint PointX="20.552083333333332" PointY="13.542786458333325" />
@@ -5128,20 +5114,28 @@
           <ConnectorPoint PointX="23.125" PointY="23.125" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2" >
-          <ConnectorPoint PointX="19.375" PointY="13.292879612179487" />
-          <ConnectorPoint PointX="20.46875" PointY="13.292879612179487" />
+          <ConnectorPoint PointX="19.375" PointY="12.365143229166662" />
+          <ConnectorPoint PointX="20.46875" PointY="12.365143229166662" />
           <ConnectorPoint PointX="20.46875" PointY="14" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" >
-          <ConnectorPoint PointX="19.375" PointY="12.30268780608975" />
-          <ConnectorPoint PointX="20.625" PointY="12.30268780608975" />
-          <ConnectorPoint PointX="20.625" PointY="13.408183593749996" />
-          <ConnectorPoint PointX="21.947916666666668" PointY="13.408183593749996" />
-          <ConnectorPoint PointX="22.114583333333332" PointY="13.408183593749996" />
-          <ConnectorPoint PointX="23.375" PointY="13.408183593749996" />
+          <ConnectorPoint PointX="19.375" PointY="12.891466843749988" />
+          <ConnectorPoint PointX="19.403313565008503" PointY="12.891466843749988" />
+          <ConnectorPoint PointX="19.569980231675167" PointY="12.891466843749988" />
+          <ConnectorPoint PointX="20.385416666666668" PointY="12.891466843749988" />
+          <ConnectorPoint PointX="20.552083333333332" PointY="12.891466843749988" />
+          <ConnectorPoint PointX="20.625" PointY="12.891466843749988" />
+          <ConnectorPoint PointX="20.625" PointY="13.345683593749996" />
+          <ConnectorPoint PointX="21.947916666666668" PointY="13.345683593749996" />
+          <ConnectorPoint PointX="22.114583333333332" PointY="13.345683593749996" />
+          <ConnectorPoint PointX="23.375" PointY="13.345683593749996" />
           <ConnectorPoint PointX="23.375" PointY="14.5" />
-          <ConnectorPoint PointX="25.875" PointY="14.5" />
-          <ConnectorPoint PointX="25.875" PointY="18.75" />
+          <ConnectorPoint PointX="24.947916666666668" PointY="14.5" />
+          <ConnectorPoint PointX="25.114583333333332" PointY="14.5" />
+          <ConnectorPoint PointX="25.625" PointY="14.5" />
+          <ConnectorPoint PointX="25.625" PointY="18.75" />
+          <ConnectorPoint PointX="25.885416666666668" PointY="18.75" />
+          <ConnectorPoint PointX="26.052083333333332" PointY="18.75" />
           <ConnectorPoint PointX="26.875" PointY="18.75" />
           <ConnectorPoint PointX="26.875" PointY="19.125" />
         </AssociationConnector>
@@ -5150,10 +5144,10 @@
           <ConnectorPoint PointX="14.125" PointY="18.021393729166661" />
           <ConnectorPoint PointX="14.447919166666667" PointY="18.021393729166661" />
           <ConnectorPoint PointX="14.614585833333335" PointY="18.021393729166661" />
-          <ConnectorPoint PointX="19.416666666666668" PointY="18.021393729166661" />
-          <ConnectorPoint PointX="19.583333333333332" PointY="18.021393729166661" />
+          <ConnectorPoint PointX="19.458333333333336" PointY="18.021393729166661" />
+          <ConnectorPoint PointX="19.625" PointY="18.021393729166661" />
           <ConnectorPoint PointX="19.697916666666668" PointY="18.021393729166661" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="18.021393729166661" />
+          <ConnectorPoint PointX="19.936939604166671" PointY="18.021393729166661" />
           <ConnectorPoint PointX="20.125" PointY="18.021393729166661" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_relato_clinico_tb_paciente1" >
@@ -5162,32 +5156,26 @@
           <ConnectorPoint PointX="15.625" PointY="20.403595377604162" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_resposta_tb_pergunta1" >
-          <ConnectorPoint PointX="25.375" PointY="13.297841796874991" />
-          <ConnectorPoint PointX="26.875" PointY="13.297841796874991" />
-          <ConnectorPoint PointX="26.875" PointY="14.75" />
+          <ConnectorPoint PointX="25.03125" PointY="14.095683593749982" />
+          <ConnectorPoint PointX="25.03125" PointY="14.84375" />
+          <ConnectorPoint PointX="25.541666666666668" PointY="14.84375" />
+          <ConnectorPoint PointX="25.708333333333332" PointY="14.84375" />
+          <ConnectorPoint PointX="25.875" PointY="14.84375" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.tb_curso_disciplina" >
           <ConnectorPoint PointX="4.5" PointY="1.8314925130208333" />
           <ConnectorPoint PointX="5.75" PointY="1.8314925130208333" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.tb_razao_encontro" >
-          <ConnectorPoint PointX="19.375" PointY="21.488795572916665" />
-          <ConnectorPoint PointX="19.697916666666668" PointY="21.488795572916665" />
-          <ConnectorPoint PointX="19.864583333333332" PointY="21.488795572916665" />
-          <ConnectorPoint PointX="19.875" PointY="21.488795572916665" />
-          <ConnectorPoint PointX="19.875" PointY="17" />
-          <ConnectorPoint PointX="19.916666666666668" PointY="17" />
-          <ConnectorPoint PointX="20.083333333333332" PointY="17" />
-          <ConnectorPoint PointX="21.947916666666668" PointY="17" />
-          <ConnectorPoint PointX="22.114583333333332" PointY="17" />
-          <ConnectorPoint PointX="22.666666666666668" PointY="17" />
-          <ConnectorPoint PointX="22.833333333333332" PointY="17" />
-          <ConnectorPoint PointX="23" PointY="17" />
-          <ConnectorPoint PointX="23" PointY="18.384095052083325" />
-          <ConnectorPoint PointX="25.791666666666668" PointY="18.384095052083325" />
-          <ConnectorPoint PointX="25.958333333333332" PointY="18.384095052083325" />
-          <ConnectorPoint PointX="26.875" PointY="18.384095052083325" />
-          <ConnectorPoint PointX="26.875" PointY="17.884095052083325" />
+          <ConnectorPoint PointX="19.375" PointY="21.619944661458334" />
+          <ConnectorPoint PointX="19.697916666666668" PointY="21.619944661458334" />
+          <ConnectorPoint PointX="19.864583333333332" PointY="21.619944661458334" />
+          <ConnectorPoint PointX="21.947916666666668" PointY="21.619944661458334" />
+          <ConnectorPoint PointX="22.114583333333332" PointY="21.619944661458334" />
+          <ConnectorPoint PointX="22.666666666666668" PointY="21.619944661458334" />
+          <ConnectorPoint PointX="22.958333333333332" PointY="21.619944661458334" />
+          <ConnectorPoint PointX="25.96875" PointY="21.619944661458334" />
+          <ConnectorPoint PointX="25.96875" PointY="17.884095052083325" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
