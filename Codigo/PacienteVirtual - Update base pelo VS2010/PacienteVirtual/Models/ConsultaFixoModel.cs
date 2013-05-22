@@ -16,11 +16,12 @@ namespace PacienteVirtual.Models
         [Display(Name = "Código")]
         public long IdConsultaFixo { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "nome")]
-        [LocalizarDisplayNomeAtributo("nome", NameResourceType = typeof(Mensagem))] // //Exemplo 1
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [LocalizarDisplayNomeAtributo("teste", NameResourceType = typeof(Mensagem))] // //Exemplo 1
         public int IdPaciente { get; set; }
 
-        [Display(Name = "nome", ResourceType = typeof(Mensagem))] //Exemplo 2
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "teste", ResourceType = typeof(Mensagem))] //Exemplo 2
         public bool EhGabarito { get; set; }
     }
 }

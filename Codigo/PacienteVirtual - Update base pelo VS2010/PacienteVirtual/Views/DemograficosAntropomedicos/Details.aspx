@@ -1,65 +1,65 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.DemograficosAntropometricosModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Details
+    <%: Resources.Mensagem.detalhes %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Details</h2>
+<h2><%: Resources.Mensagem.detalhes %></h2>
 
 <fieldset>
-    <legend>tb_demograficos_antropometricos</legend>
+    <legend><%: Resources.Mensagem.demografico_antropometricos %></legend>
 
-    <div class="display-label">Nome</div>
+    <div class="display-label"><%: Resources.Mensagem.nome %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Nome) %>
     </div>
 
-    <div class="display-label">Genero</div>
+    <div class="display-label"><%: Resources.Mensagem.genero %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Genero) %>
     </div>
 
-    <div class="display-label">DataNascimento</div>
+    <div class="display-label"><%: Resources.Mensagem.data_nascimento %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.DataNascimento) %>
     </div>
 
-    <div class="display-label">MedicosAtendem</div>
+    <div class="display-label"><%: Resources.Mensagem.medicos_atendem%></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.MedicosAtendem) %>
     </div>
 
-    <div class="display-label">MoradiaFamilia</div>
+    <div class="display-label"><%: Resources.Mensagem.moradia_familia %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.MoradiaFamilia) %>
     </div>
 
-    <div class="display-label">OndeAdquireMedicamentos</div>
+    <div class="display-label"><%: Resources.Mensagem.onde_adquire_medicamentos %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.OndeAdquireMedicamentos) %>
     </div>
 
-    <div class="display-label">tb_escolaridade</div>
+    <div class="display-label"><%: Resources.Mensagem.nivel_escolaridade %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.tb_escolaridade.Nivel) %>
+        <%: Html.DisplayFor(model => model.EscolaridadeNivel) %>
     </div>
 
-    <div class="display-label">tb_ocupacao</div>
+    <div class="display-label"><%: Resources.Mensagem.ocupacao %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.tb_ocupacao.Descricao) %>
+        <%: Html.DisplayFor(model => model.OcupacaoDescricao) %>
     </div>
 
-    <div class="display-label">tb_plano_saude</div>
+    <div class="display-label"><%: Resources.Mensagem.plano_saude %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.tb_plano_saude.Nome) %>
+        <%: Html.DisplayFor(model => model.PlanoSaudeNome) %>
     </div>
 </fieldset>
 <p>
 
-    <%: Html.ActionLink("Edit", "Edit", new { id=Model.IdConsultaFixo }) %> |
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = Model.IdConsultaFixo })%> |
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Index")%>
 </p>
 
 </asp:Content>

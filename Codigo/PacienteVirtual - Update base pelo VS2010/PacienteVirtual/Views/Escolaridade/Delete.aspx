@@ -1,26 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.EscolaridadeModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Escolaridade
+    <%: Resources.Mensagem.deletar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Escolaridade</h2>
+<h2><%: Resources.Mensagem.deletar %></h2>
 
-<h3>Você tem certeza que deseja excluir esta escolaridade?</h3>
+<h3><%: Resources.Mensagem.deletar_pergunta %></h3>
 <fieldset>
-    <legend>Remover Escolaridade</legend>
+    <legend><%: Resources.Mensagem.escolaridade %></legend>
 
-    <div class="display-label">Nivel</div>
+    <div class="display-label"><%: Resources.Mensagem.nivel_escolaridade %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Nivel) %>
     </div>
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>
-        <input type="submit" value="Delete" /> |
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <input type="submit" value="<%: Resources.Mensagem.deletar %>" /> |
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </p>
 <% } %>
 

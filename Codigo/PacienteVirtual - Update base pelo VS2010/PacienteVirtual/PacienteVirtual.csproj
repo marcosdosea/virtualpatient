@@ -90,9 +90,9 @@
       <DependentUpon>Mensagem.en.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Mensagem.pt-br.designer.cs">
-      <AutoGen>True</AutoGen>
+      <DependentUpon>Mensageme.pt-br.resx</DependentUpon>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Mensagem.pt-br.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
@@ -381,17 +381,15 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagem.en.designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="App_GlobalResources\Mensageme.pt-br.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Mensagem.pt-br.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Mensagem.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagem.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\Mensagem.pt-br.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Mensagem.pt-br.designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

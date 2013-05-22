@@ -61,7 +61,376 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Teste padrão.
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string asdf {
+            get {
+                return ResourceManager.GetString("asdf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *O campo &quot;{0}&quot; é obrigatório..
+        /// </summary>
+        public static string campo_requerido {
+            get {
+                return ResourceManager.GetString("campo_requerido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código.
+        /// </summary>
+        public static string codigo {
+            get {
+                return ResourceManager.GetString("codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código da Instituição.
+        /// </summary>
+        public static string codigo_instituicao {
+            get {
+                return ResourceManager.GetString("codigo_instituicao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comportamento.
+        /// </summary>
+        public static string comportamento {
+            get {
+                return ResourceManager.GetString("comportamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atenção - Comportamento.
+        /// </summary>
+        public static string comportamento_atencao {
+            get {
+                return ResourceManager.GetString("comportamento_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consulta.
+        /// </summary>
+        public static string consulta {
+            get {
+                return ResourceManager.GetString("consulta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consulta Dados Fixos.
+        /// </summary>
+        public static string consulta_dados_fixos {
+            get {
+                return ResourceManager.GetString("consulta_dados_fixos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consulta Dados Variáveis.
+        /// </summary>
+        public static string consulta_dados_variaveis {
+            get {
+                return ResourceManager.GetString("consulta_dados_variaveis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Criar.
+        /// </summary>
+        public static string criar {
+            get {
+                return ResourceManager.GetString("criar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cultural.
+        /// </summary>
+        public static string cultural {
+            get {
+                return ResourceManager.GetString("cultural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atenção - Cultura.
+        /// </summary>
+        public static string cultural_atencao {
+            get {
+                return ResourceManager.GetString("cultural_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Curso.
+        /// </summary>
+        public static string curso {
+            get {
+                return ResourceManager.GetString("curso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data de Nascimento.
+        /// </summary>
+        public static string data_nascimento {
+            get {
+                return ResourceManager.GetString("data_nascimento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deletar.
+        /// </summary>
+        public static string deletar {
+            get {
+                return ResourceManager.GetString("deletar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Você tem certeza que deseja deletar esse dado?.
+        /// </summary>
+        public static string deletar_pergunta {
+            get {
+                return ResourceManager.GetString("deletar_pergunta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dados Demograficos e Antropometricos.
+        /// </summary>
+        public static string demografico_antropometricos {
+            get {
+                return ResourceManager.GetString("demografico_antropometricos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descrição.
+        /// </summary>
+        public static string descricao {
+            get {
+                return ResourceManager.GetString("descricao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detalhes.
+        /// </summary>
+        public static string detalhes {
+            get {
+                return ResourceManager.GetString("detalhes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disciplina.
+        /// </summary>
+        public static string disciplina {
+            get {
+                return ResourceManager.GetString("disciplina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editar.
+        /// </summary>
+        public static string editar {
+            get {
+                return ResourceManager.GetString("editar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eh Gabarito.
+        /// </summary>
+        public static string eh_gabarito {
+            get {
+                return ResourceManager.GetString("eh_gabarito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Escolaridade.
+        /// </summary>
+        public static string escolaridade {
+            get {
+                return ResourceManager.GetString("escolaridade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Espera tratamento.
+        /// </summary>
+        public static string espera_tratamento {
+            get {
+                return ResourceManager.GetString("espera_tratamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atenção - Espera tratamento.
+        /// </summary>
+        public static string espera_tratamento_atencao {
+            get {
+                return ResourceManager.GetString("espera_tratamento_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estado de Preencimento.
+        /// </summary>
+        public static string estado_preenchimento {
+            get {
+                return ResourceManager.GetString("estado_preenchimento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluir.
+        /// </summary>
+        public static string excluir {
+            get {
+                return ResourceManager.GetString("excluir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Experiência com Medicamentos.
+        /// </summary>
+        public static string experiencia_medicamentos {
+            get {
+                return ResourceManager.GetString("experiencia_medicamentos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Género.
+        /// </summary>
+        public static string genero {
+            get {
+                return ResourceManager.GetString("genero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grau Entendimento.
+        /// </summary>
+        public static string grau_entendimento {
+            get {
+                return ResourceManager.GetString("grau_entendimento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atenção - Grau Entendimento.
+        /// </summary>
+        public static string grau_entendimento_atencao {
+            get {
+                return ResourceManager.GetString("grau_entendimento_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grupos Atividades.
+        /// </summary>
+        public static string grupo_atividades {
+            get {
+                return ResourceManager.GetString("grupo_atividades", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to História do Paciente.
+        /// </summary>
+        public static string historia {
+            get {
+                return ResourceManager.GetString("historia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to História Familiar.
+        /// </summary>
+        public static string historia_familiar {
+            get {
+                return ResourceManager.GetString("historia_familiar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to História de  Medicamento Pregresso.
+        /// </summary>
+        public static string historia_medicamento_pregressa {
+            get {
+                return ResourceManager.GetString("historia_medicamento_pregressa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plano Incorporado.
+        /// </summary>
+        public static string incorporado_plano {
+            get {
+                return ResourceManager.GetString("incorporado_plano", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atenção - Plano Incorporado.
+        /// </summary>
+        public static string incorporado_plano_atencao {
+            get {
+                return ResourceManager.GetString("incorporado_plano_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instituição.
+        /// </summary>
+        public static string instituicao {
+            get {
+                return ResourceManager.GetString("instituicao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Médicos que Atendem.
+        /// </summary>
+        public static string medicos_atendem {
+            get {
+                return ResourceManager.GetString("medicos_atendem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moradia da Família.
+        /// </summary>
+        public static string moradia_familia {
+            get {
+                return ResourceManager.GetString("moradia_familia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nível de Escolaridade.
+        /// </summary>
+        public static string nivel_escolaridade {
+            get {
+                return ResourceManager.GetString("nivel_escolaridade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome.
         /// </summary>
         public static string nome {
             get {
@@ -70,11 +439,164 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O campo {0} é obrigatório..
+        ///   Looks up a localized string similar to Ocupação.
         /// </summary>
-        public static string Required {
+        public static string ocupacao {
             get {
-                return ResourceManager.GetString("Required", resourceCulture);
+                return ResourceManager.GetString("ocupacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Onde adquire os medicamentos.
+        /// </summary>
+        public static string onde_adquire_medicamentos {
+            get {
+                return ResourceManager.GetString("onde_adquire_medicamentos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to paciente.
+        /// </summary>
+        public static string paciente {
+            get {
+                return ResourceManager.GetString("paciente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paciente Pessoa Turma.
+        /// </summary>
+        public static string paciente_pessoa_turma {
+            get {
+                return ResourceManager.GetString("paciente_pessoa_turma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pergunta.
+        /// </summary>
+        public static string pergunta {
+            get {
+                return ResourceManager.GetString("pergunta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Período.
+        /// </summary>
+        public static string periodo {
+            get {
+                return ResourceManager.GetString("periodo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pessoa.
+        /// </summary>
+        public static string pessoa {
+            get {
+                return ResourceManager.GetString("pessoa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plano de Saúde.
+        /// </summary>
+        public static string plano_saude {
+            get {
+                return ResourceManager.GetString("plano_saude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preocupações.
+        /// </summary>
+        public static string preocupacoes {
+            get {
+                return ResourceManager.GetString("preocupacoes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atenção - Preocupações.
+        /// </summary>
+        public static string preocupacoes_atencao {
+            get {
+                return ResourceManager.GetString("preocupacoes_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remover.
+        /// </summary>
+        public static string remover {
+            get {
+                return ResourceManager.GetString("remover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Respostas.
+        /// </summary>
+        public static string resposta {
+            get {
+                return ResourceManager.GetString("resposta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salvar.
+        /// </summary>
+        public static string salvar {
+            get {
+                return ResourceManager.GetString("salvar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selecione.
+        /// </summary>
+        public static string selecione {
+            get {
+                return ResourceManager.GetString("selecione", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sigla.
+        /// </summary>
+        public static string sigla {
+            get {
+                return ResourceManager.GetString("sigla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Teste Arquivo Padrão - Resources.
+        /// </summary>
+        public static string teste {
+            get {
+                return ResourceManager.GetString("teste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turma.
+        /// </summary>
+        public static string turma {
+            get {
+                return ResourceManager.GetString("turma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voltar.
+        /// </summary>
+        public static string voltar {
+            get {
+                return ResourceManager.GetString("voltar", resourceCulture);
             }
         }
     }

@@ -1,30 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ConsultaFixoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Details
+    <%: Resources.Mensagem.detalhes%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Details</h2>
+<h2><%: Resources.Mensagem.detalhes%></h2>
 
 <fieldset>
-    <legend>tb_consulta_fixo</legend>
+    <legend><%: Resources.Mensagem.consulta_dados_fixos%></legend>
 
-    <div class="display-label">IdPaciente</div>
+    <div class="display-label"><%: Resources.Mensagem.paciente%></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.IdPaciente) %>
     </div>
 
-    <div class="display-label">EhGabarito</div>
+    <div class="display-label"><%: Resources.Mensagem.eh_gabarito%></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.EhGabarito) %>
     </div>
 </fieldset>
 <p>
 
-    <%: Html.ActionLink("Edit", "Edit", new { id=Model.IdConsultaFixo }) %> |
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=Model.IdConsultaFixo }) %> |
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
 </p>
 
 </asp:Content>

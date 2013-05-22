@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using PacienteVirtual.App_GlobalResources;
 
 namespace PacienteVirtual.Models
 {
@@ -12,11 +13,11 @@ namespace PacienteVirtual.Models
         [Display(Name = "IdTurma: ")]
         public int IdTurma { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "Código: ")]
         public string Codigo { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "Período: ")]
         public string Periodo { get; set; }
 
