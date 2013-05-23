@@ -640,7 +640,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_paciente">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_paciente)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.PacienteE)">
         <MappingFragment StoreEntitySet="tb_paciente">
           <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />

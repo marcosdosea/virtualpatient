@@ -45,3 +45,8 @@ D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo 
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\en\PacienteVirtual.resources.dll
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.App_GlobalResources.Mensagem.resources
 D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\Html5MVCWebControls.xml
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.App_GlobalResources.Mensagem.resources
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.App_GlobalResources.Mensagem.en.resources
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.csproj.GenerateResource.Cache
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\en\PacienteVirtual.resources.dll
+C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\en\PacienteVirtual.resources.dll
