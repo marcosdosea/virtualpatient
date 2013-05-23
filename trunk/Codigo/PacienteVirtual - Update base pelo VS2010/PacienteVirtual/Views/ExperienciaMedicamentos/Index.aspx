@@ -14,27 +14,35 @@
 <table>
     <tr>
         <th>
-            tb_resposta
+        <%: Resources.Mensagem.consulta_dados_fixos_codigo%>
+          <!--   tb_resposta -->
         </th>
         <th>
-            tb_resposta1
+        <%: Resources.Mensagem.espera_tratamento%>
+          <!--   tb_resposta1 -->
         </th>
         <th>
-            tb_resposta2
+        <%: Resources.Mensagem.preocupacoes%>
+            <!-- tb_resposta2 -->
         </th>
         <th>
-            tb_resposta3
+        <%: Resources.Mensagem.grau_entendimento%>
+           <!--  tb_resposta3 -->
         </th>
         <th>
-            tb_resposta4
+        <%: Resources.Mensagem.cultural%>
+            <!-- tb_resposta4 -->
+        </th> 
+        <th>
+        <%: Resources.Mensagem.comportamento%>
+           <!--  tb_resposta5 -->
         </th>
         <th>
-            tb_resposta5
-        </th>
-        <th>
-        <%: Resources.Mensagem.espera_tratamento_atencao%>
+        <%: Resources.Mensagem.incorporado_plano%>
             <!-- AtencaoEsperaTratamento-->
         </th>
+
+
         <th>
         <%: Resources.Mensagem.preocupacoes_atencao%>
             <!-- AtencaoPreocupacoes-->

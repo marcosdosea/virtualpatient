@@ -123,7 +123,7 @@
   <data name="codigo" xml:space="preserve">
     <value>Código</value>
   </data>
-  <data name="codigo_instituicao" xml:space="preserve">
+  <data name="instituicao_codigo" xml:space="preserve">
     <value>Código da Instituição</value>
   </data>
   <data name="consulta_dados_fixos" xml:space="preserve">
@@ -265,7 +265,7 @@
     <value>Eh Gabarito</value>
   </data>
   <data name="paciente" xml:space="preserve">
-    <value>paciente</value>
+    <value>Paciente</value>
   </data>
   <data name="salvar" xml:space="preserve">
     <value>Salvar</value>
@@ -296,5 +296,20 @@
   </data>
   <data name="periodo" xml:space="preserve">
     <value>Período</value>
+  </data>
+  <data name="instituicao_nome" xml:space="preserve">
+    <value>Nome da Instituição</value>
+  </data>
+  <data name="consulta_dados_fixos_codigo" xml:space="preserve">
+    <value>Código Consulta Dados Fixos</value>
+  </data>
+  <data name="consulta_dados_variaveis_codigo" xml:space="preserve">
+    <value>Código Consulta Dados Variáveis</value>
+  </data>
+  <data name="pergunta_codigo" xml:space="preserve">
+    <value>Código Pergunta</value>
+  </data>
+  <data name="resposta_codigo" xml:space="preserve">
+    <value>Código Resposta</value>
   </data>
 </root>

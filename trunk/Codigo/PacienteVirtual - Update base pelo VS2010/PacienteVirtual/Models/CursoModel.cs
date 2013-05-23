@@ -19,10 +19,10 @@ namespace PacienteVirtual.Models
 
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "codigo_instituicao", ResourceType = typeof(Mensagem))]
+        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public int IdInstituicao { get; set; }
 
-        [Display(Name = "Nome da Instituição: ")]
+       [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public string NomeInstituicao { get; set; }
     }
 } 

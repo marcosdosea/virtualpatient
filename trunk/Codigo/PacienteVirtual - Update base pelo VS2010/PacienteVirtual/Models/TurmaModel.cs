@@ -14,23 +14,26 @@ namespace PacienteVirtual.Models
         public int IdTurma { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Código: ")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public string Codigo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Período: ")]
+        [Display(Name = "periodo", ResourceType = typeof(Mensagem))]
         public string Periodo { get; set; }
 
-        [Display(Name = "IdDsiciplina: ")]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "disciplina", ResourceType = typeof(Mensagem))]
         public int IdDisciplina { get; set; }
 
-        [Display(Name = "IdInstituicao: ")]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public int IdInstituicao { get; set; }
 
-        [Display(Name = "Nome da Instituição: ")]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public string NomeInstituicao { get; set; }
 
-        [Display(Name = "Nome da Disciplina: ")]
+        [Display(Name = "disciplina", ResourceType = typeof(Mensagem))]
         public string NomeDisciplina { get; set; }
 
 

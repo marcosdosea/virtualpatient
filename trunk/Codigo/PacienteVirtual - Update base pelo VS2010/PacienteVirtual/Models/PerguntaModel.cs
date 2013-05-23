@@ -10,11 +10,11 @@ namespace PacienteVirtual.Models
     public class PerguntaModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Código: ")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))] 
         public int IdPergunta { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Código: ")]
+        [Display(Name = "pergunta", ResourceType = typeof(Mensagem))] 
         public String Pergunta { get; set; }
 
     }
