@@ -10,11 +10,11 @@ namespace PacienteVirtual.Models
     public class PlanoSaudeModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Código: ")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))] 
         public int IdPlanoSaude { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Nome do Plano: ")]
+        [Display(Name = "nome", ResourceType = typeof(Mensagem))] 
         public String Nome { get; set; }
     }
 }

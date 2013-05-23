@@ -19,49 +19,49 @@
             <%: Html.LabelFor(model => model.IdConsultaFixo) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdConsultaFixo", "Selecione")%>
+            <%: Html.DropDownList("IdConsultaFixo", Resources.Mensagem.selecione)%>
             <%: Html.ValidationMessageFor(model => model.IdConsultaFixo) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdRespostaEsperaTratamento) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaEsperaTratamento", "Selecione") %>
+            <%: Html.DropDownList("IdRespostaEsperaTratamento", Resources.Mensagem.selecione) %>
             <%: Html.ValidationMessageFor(model => model.IdRespostaEsperaTratamento) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdRespostaPreocupacoes) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaPreocupacoes", "Selecione") %>
+            <%: Html.DropDownList("IdRespostaPreocupacoes", Resources.Mensagem.selecione) %>
             <%: Html.ValidationMessageFor(model => model.IdRespostaPreocupacoes) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdRespostaGrauEntendimento) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaGrauEntendimento", "Selecione") %>
+            <%: Html.DropDownList("IdRespostaGrauEntendimento", Resources.Mensagem.selecione) %>
             <%: Html.ValidationMessageFor(model => model.IdRespostaGrauEntendimento) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdRespostaCultural) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaCultural", "Selecione") %>
+            <%: Html.DropDownList("IdRespostaCultural", Resources.Mensagem.selecione) %>
             <%: Html.ValidationMessageFor(model => model.IdRespostaCultural) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdRespostaComportamento) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaComportamento", "Selecione") %>
+            <%: Html.DropDownList("IdRespostaComportamento", Resources.Mensagem.selecione) %>
             <%: Html.ValidationMessageFor(model => model.IdRespostaComportamento) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdRespostaIncorporadoPlano) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdRespostaIncorporadoPlano", "Selecione") %>
+            <%: Html.DropDownList("IdRespostaIncorporadoPlano", Resources.Mensagem.selecione) %>
             <%: Html.ValidationMessageFor(model => model.IdRespostaIncorporadoPlano) %>
         </div>
         <div class="editor-label">

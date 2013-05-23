@@ -9,19 +9,20 @@ namespace PacienteVirtual.Models
 {
     public class RespostaModel
     {
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Código da resposta: ")]
+
+        [Display(Name = "resposta_codigo", ResourceType = typeof(Mensagem))]
         public int IdResposta { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Resposta: ")]
+        [Display(Name = "resposta", ResourceType = typeof(Mensagem))]
         public String Resposta { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Código da pergunta: ")]
+
+        [Display(Name = "pergunta_codigo", ResourceType = typeof(Mensagem))]
         public int IdPergunta { get; set; }
 
-        [Display(Name = "Pergunta: ")]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "pergunta", ResourceType = typeof(Mensagem))]
         public String Pergunta { get; set; }
 
     }

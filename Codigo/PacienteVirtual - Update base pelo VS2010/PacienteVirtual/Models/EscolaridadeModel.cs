@@ -10,11 +10,11 @@ namespace PacienteVirtual.Models
     public class EscolaridadeModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Código: ")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))] 
         public int IdEscolaridade { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "Nível: ")]
+        [Display(Name = "nivel_escolaridade", ResourceType = typeof(Mensagem))] 
         public String Nivel { get; set; }
 
     }
