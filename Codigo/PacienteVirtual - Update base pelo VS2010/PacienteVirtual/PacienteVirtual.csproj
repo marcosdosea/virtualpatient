@@ -89,11 +89,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Mensagem.en.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Mensagem.pt-br.designer.cs">
-      <DependentUpon>Mensageme.pt-br.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="App_GlobalResources\Mensagem.pt-br1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +115,7 @@
     <Compile Include="Controllers\InstituicaoController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\PacientePessoaTurmaController.cs" />
     <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
@@ -184,6 +180,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Negocio\GerenciadorOcupacao.cs" />
+    <Compile Include="Models\Negocio\GerenciadorPaciente.cs" />
     <Compile Include="Models\Negocio\GerenciadorPacientePessoaTurma.cs" />
     <Compile Include="Models\Negocio\GerenciadorPergunta.cs" />
     <Compile Include="Models\Negocio\GerenciadorPessoa.cs" />
@@ -196,6 +193,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\OcupacaoModel.cs" />
+    <Compile Include="Models\PacienteModel.cs" />
     <Compile Include="Models\PacientePessoaTurmaModel.cs" />
     <Compile Include="Models\PerguntaModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />
@@ -309,6 +307,11 @@
     <Content Include="Views\PacientePessoaTurma\Details.aspx" />
     <Content Include="Views\PacientePessoaTurma\Edit.aspx" />
     <Content Include="Views\PacientePessoaTurma\Index.aspx" />
+    <Content Include="Views\Paciente\Create.aspx" />
+    <Content Include="Views\Paciente\Delete.aspx" />
+    <Content Include="Views\Paciente\Details.aspx" />
+    <Content Include="Views\Paciente\Edit.aspx" />
+    <Content Include="Views\Paciente\Index.aspx" />
     <Content Include="Views\Pergunta\Create.aspx" />
     <Content Include="Views\Pergunta\Delete.aspx" />
     <Content Include="Views\Pergunta\Details.aspx" />
@@ -386,10 +389,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagem.en.designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Content Include="App_GlobalResources\Mensageme.pt-br.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Mensagem.pt-br.designer.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Mensagem.pt-br.resx">

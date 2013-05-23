@@ -2124,7 +2124,7 @@
           <EntitySet Name="tb_medicamentos" EntityType="pvModel.tb_medicamentos" />
           <EntitySet Name="tb_medicamentos_anteriores" EntityType="pvModel.tb_medicamentos_anteriores" />
           <EntitySet Name="tb_ocupacao" EntityType="pvModel.OcupacaoE" />
-          <EntitySet Name="tb_paciente" EntityType="pvModel.tb_paciente" />
+          <EntitySet Name="tb_paciente" EntityType="pvModel.PacienteE" />
           <EntitySet Name="tb_paciente_pessoa_turma" EntityType="pvModel.PacientePessoaTurmaE" />
           <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.tb_parametro_clinico" />
           <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
@@ -3472,7 +3472,7 @@
           <Property Type="String" Name="Descricao" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" FromRole="tb_ocupacao" ToRole="tb_demograficos_antropometricos" />
         </EntityType>
-        <EntityType Name="tb_paciente">
+        <EntityType Name="PacienteE">
           <Key>
             <PropertyRef Name="IdPaciente" />
           </Key>
@@ -3872,7 +3872,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_paciente_pessoa_turma_tb_paciente1">
-          <End Type="pvModel.tb_paciente" Role="tb_paciente" Multiplicity="1" />
+          <End Type="pvModel.PacienteE" Role="tb_paciente" Multiplicity="1" />
           <End Type="pvModel.PacientePessoaTurmaE" Role="tb_paciente_pessoa_turma" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_paciente">
@@ -3884,7 +3884,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_relato_clinico_tb_paciente1">
-          <End Type="pvModel.tb_paciente" Role="tb_paciente" Multiplicity="1" />
+          <End Type="pvModel.PacienteE" Role="tb_paciente" Multiplicity="1" />
           <End Type="pvModel.tb_relato_clinico" Role="tb_relato_clinico" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_paciente">
@@ -4560,7 +4560,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_paciente">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_paciente)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.PacienteE)">
         <MappingFragment StoreEntitySet="tb_paciente">
           <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -4917,7 +4917,7 @@
         <EntityTypeShape EntityType="pvModel.tb_medicamentos" Width="1.5" PointX="17.875" PointY="11.375" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="pvModel.tb_medicamentos_anteriores" Width="1.5" PointX="26.125" PointY="19.125" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="pvModel.OcupacaoE" Width="1.5" PointX="20.875" PointY="9.125" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="pvModel.tb_paciente" Width="1.5" PointX="13.375" PointY="15.625" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="pvModel.PacienteE" Width="1.5" PointX="13.375" PointY="15.625" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="pvModel.PacientePessoaTurmaE" Width="1.5" PointX="20.125" PointY="17.5" Height="2.9417936197916674" />
         <EntityTypeShape EntityType="pvModel.tb_parametro_clinico" Width="1.5" PointX="20.875" PointY="26.5" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.PerguntaE" Width="1.5" PointX="23.875" PointY="12.5" Height="1.5956835937499818" />
