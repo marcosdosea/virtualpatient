@@ -219,7 +219,7 @@
     <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
     <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
     <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
-    <EntitySet Name="tb_relato_clinico" EntityType="pvModel.tb_relato_clinico" />
+    <EntitySet Name="tb_relato_clinico" EntityType="pvModel.RelatoClinicoE" />
     <EntitySet Name="tb_resposta" EntityType="pvModel.RespostaE" />
     <AssociationSet Name="fk_tb_exames_fisicos_tb_alergia1" Association="pvModel.fk_tb_exames_fisicos_tb_alergia1">
       <End Role="tb_alergia" EntitySet="tb_alergia" />
@@ -1619,7 +1619,7 @@
     <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" FromRole="tb_plano_saude" ToRole="tb_demograficos_antropometricos" />
   </EntityType>
-  <EntityType Name="tb_relato_clinico">
+  <EntityType Name="RelatoClinicoE">
     <Key>
       <PropertyRef Name="IdRelato" />
     </Key>
@@ -1757,7 +1757,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_tb_consulta_variavel_tb_relato_clinico1">
-    <End Type="pvModel.tb_relato_clinico" Role="tb_relato_clinico" Multiplicity="1" />
+    <End Type="pvModel.RelatoClinicoE" Role="tb_relato_clinico" Multiplicity="1" />
     <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_relato_clinico">
@@ -1974,7 +1974,7 @@
   </Association>
   <Association Name="fk_tb_relato_clinico_tb_paciente1">
     <End Type="pvModel.PacienteE" Role="tb_paciente" Multiplicity="1" />
-    <End Type="pvModel.tb_relato_clinico" Role="tb_relato_clinico" Multiplicity="*" />
+    <End Type="pvModel.RelatoClinicoE" Role="tb_relato_clinico" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_paciente">
         <PropertyRef Name="IdPaciente" />

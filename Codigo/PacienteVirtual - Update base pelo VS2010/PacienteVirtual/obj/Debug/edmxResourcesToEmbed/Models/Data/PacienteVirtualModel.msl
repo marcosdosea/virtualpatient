@@ -694,7 +694,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_relato_clinico">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_relato_clinico)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.RelatoClinicoE)">
         <MappingFragment StoreEntitySet="tb_relato_clinico">
           <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
           <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />

@@ -69,7 +69,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_parametro_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_parametro_clinico), "tb_consulta_parametro", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_consulta_parametro), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_medicamentos_anteriores", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_medicamentos_anteriores), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_medicamento_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_medicamento_prescrito), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_relato_clinico), "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RelatoClinicoE), "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_estilo_vida_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_estilo_vida", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.tb_estilo_vida), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_exames_fisicos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.tb_exames_fisicos), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_medicamento_nao_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_medicamento_nao_prescrito), true)]
@@ -87,7 +87,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_medicamentos), "tb_medicamento_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_medicamento_prescrito), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_medicamentos), "tb_medicamentos_anteriores", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_medicamentos_anteriores), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PacienteE), "tb_paciente_pessoa_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.PacientePessoaTurmaE), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_relato_clinico_tb_paciente1", "tb_paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PacienteE), "tb_relato_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_relato_clinico), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_relato_clinico_tb_paciente1", "tb_paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PacienteE), "tb_relato_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.RelatoClinicoE), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_resposta_tb_pergunta1", "tb_pergunta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PerguntaE), "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.RespostaE), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_curso_disciplina", "CursoE", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.CursoE), "DisciplinaE", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DisciplinaE))]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_razao_encontro", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.RespostaE))]
@@ -1009,18 +1009,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_relato_clinico> tb_relato_clinico
+        public ObjectSet<RelatoClinicoE> tb_relato_clinico
         {
             get
             {
                 if ((_tb_relato_clinico == null))
                 {
-                    _tb_relato_clinico = base.CreateObjectSet<tb_relato_clinico>("tb_relato_clinico");
+                    _tb_relato_clinico = base.CreateObjectSet<RelatoClinicoE>("tb_relato_clinico");
                 }
                 return _tb_relato_clinico;
             }
         }
-        private ObjectSet<tb_relato_clinico> _tb_relato_clinico;
+        private ObjectSet<RelatoClinicoE> _tb_relato_clinico;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1477,9 +1477,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_relato_clinico EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_relato_clinico(tb_relato_clinico tb_relato_clinico)
+        public void AddTotb_relato_clinico(RelatoClinicoE relatoClinicoE)
         {
-            base.AddObject("tb_relato_clinico", tb_relato_clinico);
+            base.AddObject("tb_relato_clinico", relatoClinicoE);
         }
     
         /// <summary>
@@ -8136,17 +8136,17 @@ namespace PacienteVirtual.Models.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_relato_clinico_tb_paciente1", "tb_relato_clinico")]
-        public EntityCollection<tb_relato_clinico> tb_relato_clinico
+        public EntityCollection<RelatoClinicoE> tb_relato_clinico
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_relato_clinico>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_relato_clinico");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<RelatoClinicoE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_relato_clinico");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_relato_clinico>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_relato_clinico", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<RelatoClinicoE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_relato_clinico", value);
                 }
             }
         }
@@ -10361,6 +10361,253 @@ namespace PacienteVirtual.Models.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaterceira>("pvModel.FK1CE59807871504B2", "respostaterceira", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="RelatoClinicoE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class RelatoClinicoE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new RelatoClinicoE object.
+        /// </summary>
+        /// <param name="idRelato">Initial value of the IdRelato property.</param>
+        /// <param name="idPaciente">Initial value of the IdPaciente property.</param>
+        /// <param name="ordemCronologia">Initial value of the OrdemCronologia property.</param>
+        /// <param name="nivelDificuldade">Initial value of the NivelDificuldade property.</param>
+        public static RelatoClinicoE CreateRelatoClinicoE(global::System.Int32 idRelato, global::System.Int32 idPaciente, global::System.Int32 ordemCronologia, global::System.Int32 nivelDificuldade)
+        {
+            RelatoClinicoE relatoClinicoE = new RelatoClinicoE();
+            relatoClinicoE.IdRelato = idRelato;
+            relatoClinicoE.IdPaciente = idPaciente;
+            relatoClinicoE.OrdemCronologia = ordemCronologia;
+            relatoClinicoE.NivelDificuldade = nivelDificuldade;
+            return relatoClinicoE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdRelato
+        {
+            get
+            {
+                return _IdRelato;
+            }
+            set
+            {
+                if (_IdRelato != value)
+                {
+                    OnIdRelatoChanging(value);
+                    ReportPropertyChanging("IdRelato");
+                    _IdRelato = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdRelato");
+                    OnIdRelatoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdRelato;
+        partial void OnIdRelatoChanging(global::System.Int32 value);
+        partial void OnIdRelatoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPaciente
+        {
+            get
+            {
+                return _IdPaciente;
+            }
+            set
+            {
+                OnIdPacienteChanging(value);
+                ReportPropertyChanging("IdPaciente");
+                _IdPaciente = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdPaciente");
+                OnIdPacienteChanged();
+            }
+        }
+        private global::System.Int32 _IdPaciente;
+        partial void OnIdPacienteChanging(global::System.Int32 value);
+        partial void OnIdPacienteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 OrdemCronologia
+        {
+            get
+            {
+                return _OrdemCronologia;
+            }
+            set
+            {
+                OnOrdemCronologiaChanging(value);
+                ReportPropertyChanging("OrdemCronologia");
+                _OrdemCronologia = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("OrdemCronologia");
+                OnOrdemCronologiaChanged();
+            }
+        }
+        private global::System.Int32 _OrdemCronologia;
+        partial void OnOrdemCronologiaChanging(global::System.Int32 value);
+        partial void OnOrdemCronologiaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String RelatoTextual
+        {
+            get
+            {
+                return _RelatoTextual;
+            }
+            set
+            {
+                OnRelatoTextualChanging(value);
+                ReportPropertyChanging("RelatoTextual");
+                _RelatoTextual = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("RelatoTextual");
+                OnRelatoTextualChanged();
+            }
+        }
+        private global::System.String _RelatoTextual;
+        partial void OnRelatoTextualChanging(global::System.String value);
+        partial void OnRelatoTextualChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RelatoVideo
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RelatoVideo);
+            }
+            set
+            {
+                OnRelatoVideoChanging(value);
+                ReportPropertyChanging("RelatoVideo");
+                _RelatoVideo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("RelatoVideo");
+                OnRelatoVideoChanged();
+            }
+        }
+        private global::System.Byte[] _RelatoVideo;
+        partial void OnRelatoVideoChanging(global::System.Byte[] value);
+        partial void OnRelatoVideoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 NivelDificuldade
+        {
+            get
+            {
+                return _NivelDificuldade;
+            }
+            set
+            {
+                OnNivelDificuldadeChanging(value);
+                ReportPropertyChanging("NivelDificuldade");
+                _NivelDificuldade = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NivelDificuldade");
+                OnNivelDificuldadeChanged();
+            }
+        }
+        private global::System.Int32 _NivelDificuldade;
+        partial void OnNivelDificuldadeChanging(global::System.Int32 value);
+        partial void OnNivelDificuldadeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_relato_clinico1", "tb_consulta_variavel")]
+        public EntityCollection<tb_consulta_variavel> tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_consulta_variavel>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_consulta_variavel>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_relato_clinico_tb_paciente1", "tb_paciente")]
+        public PacienteE tb_paciente
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PacienteE> tb_pacienteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente", value);
                 }
             }
         }
@@ -13849,15 +14096,15 @@ namespace PacienteVirtual.Models.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico")]
-        public tb_relato_clinico tb_relato_clinico
+        public RelatoClinicoE tb_relato_clinico
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_relato_clinico>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_relato_clinico>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico").Value = value;
             }
         }
         /// <summary>
@@ -13865,17 +14112,17 @@ namespace PacienteVirtual.Models.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<tb_relato_clinico> tb_relato_clinicoReference
+        public EntityReference<RelatoClinicoE> tb_relato_clinicoReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_relato_clinico>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_relato_clinico>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RelatoClinicoE>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_relato_clinico", value);
                 }
             }
         }
@@ -15911,253 +16158,6 @@ namespace PacienteVirtual.Models.Data
         #endregion
 
     
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_relato_clinico")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_relato_clinico : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_relato_clinico object.
-        /// </summary>
-        /// <param name="idRelato">Initial value of the IdRelato property.</param>
-        /// <param name="idPaciente">Initial value of the IdPaciente property.</param>
-        /// <param name="ordemCronologia">Initial value of the OrdemCronologia property.</param>
-        /// <param name="nivelDificuldade">Initial value of the NivelDificuldade property.</param>
-        public static tb_relato_clinico Createtb_relato_clinico(global::System.Int32 idRelato, global::System.Int32 idPaciente, global::System.Int32 ordemCronologia, global::System.Int32 nivelDificuldade)
-        {
-            tb_relato_clinico tb_relato_clinico = new tb_relato_clinico();
-            tb_relato_clinico.IdRelato = idRelato;
-            tb_relato_clinico.IdPaciente = idPaciente;
-            tb_relato_clinico.OrdemCronologia = ordemCronologia;
-            tb_relato_clinico.NivelDificuldade = nivelDificuldade;
-            return tb_relato_clinico;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdRelato
-        {
-            get
-            {
-                return _IdRelato;
-            }
-            set
-            {
-                if (_IdRelato != value)
-                {
-                    OnIdRelatoChanging(value);
-                    ReportPropertyChanging("IdRelato");
-                    _IdRelato = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdRelato");
-                    OnIdRelatoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdRelato;
-        partial void OnIdRelatoChanging(global::System.Int32 value);
-        partial void OnIdRelatoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPaciente
-        {
-            get
-            {
-                return _IdPaciente;
-            }
-            set
-            {
-                OnIdPacienteChanging(value);
-                ReportPropertyChanging("IdPaciente");
-                _IdPaciente = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdPaciente");
-                OnIdPacienteChanged();
-            }
-        }
-        private global::System.Int32 _IdPaciente;
-        partial void OnIdPacienteChanging(global::System.Int32 value);
-        partial void OnIdPacienteChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 OrdemCronologia
-        {
-            get
-            {
-                return _OrdemCronologia;
-            }
-            set
-            {
-                OnOrdemCronologiaChanging(value);
-                ReportPropertyChanging("OrdemCronologia");
-                _OrdemCronologia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("OrdemCronologia");
-                OnOrdemCronologiaChanged();
-            }
-        }
-        private global::System.Int32 _OrdemCronologia;
-        partial void OnOrdemCronologiaChanging(global::System.Int32 value);
-        partial void OnOrdemCronologiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String RelatoTextual
-        {
-            get
-            {
-                return _RelatoTextual;
-            }
-            set
-            {
-                OnRelatoTextualChanging(value);
-                ReportPropertyChanging("RelatoTextual");
-                _RelatoTextual = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("RelatoTextual");
-                OnRelatoTextualChanged();
-            }
-        }
-        private global::System.String _RelatoTextual;
-        partial void OnRelatoTextualChanging(global::System.String value);
-        partial void OnRelatoTextualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] RelatoVideo
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_RelatoVideo);
-            }
-            set
-            {
-                OnRelatoVideoChanging(value);
-                ReportPropertyChanging("RelatoVideo");
-                _RelatoVideo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("RelatoVideo");
-                OnRelatoVideoChanged();
-            }
-        }
-        private global::System.Byte[] _RelatoVideo;
-        partial void OnRelatoVideoChanging(global::System.Byte[] value);
-        partial void OnRelatoVideoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 NivelDificuldade
-        {
-            get
-            {
-                return _NivelDificuldade;
-            }
-            set
-            {
-                OnNivelDificuldadeChanging(value);
-                ReportPropertyChanging("NivelDificuldade");
-                _NivelDificuldade = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("NivelDificuldade");
-                OnNivelDificuldadeChanged();
-            }
-        }
-        private global::System.Int32 _NivelDificuldade;
-        partial void OnNivelDificuldadeChanging(global::System.Int32 value);
-        partial void OnNivelDificuldadeChanged();
-
-        #endregion
-
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_relato_clinico1", "tb_consulta_variavel")]
-        public EntityCollection<tb_consulta_variavel> tb_consulta_variavel
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_consulta_variavel>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_consulta_variavel");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_consulta_variavel>("pvModel.fk_tb_consulta_variavel_tb_relato_clinico1", "tb_consulta_variavel", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_relato_clinico_tb_paciente1", "tb_paciente")]
-        public PacienteE tb_paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<PacienteE> tb_pacienteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente", value);
-                }
-            }
-        }
-
-        #endregion
-
     }
     
     /// <summary>

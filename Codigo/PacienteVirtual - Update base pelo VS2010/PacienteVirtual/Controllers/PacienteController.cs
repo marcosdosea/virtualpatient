@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using PacienteVirtual.Models.Data;
 using PacienteVirtual.Models.Negocio;
 using PacienteVirtual.Models;
+using System.IO;
 
 namespace PacienteVirtual.Controllers
 { 
@@ -43,13 +44,19 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(PacienteModel pacienteModel)
         {
-            /**if (Request.Files.Count > 0)
+            /**
+            using (pvEntities contexto = new pvEntities())
             {
-                int tamanho = (int)Request.Files[0].InputStream.Length;
-                byte[] arq = new byte[tamanho];
-                Request.Files[0].InputStream.Read(arq, 0, tamanho);
-                byte[] arqUp = arq;
-                pacienteModel.Foto = arqUp;
+                //Salva a imagem na base de dados
+                if (Request.Files.Count > 0)
+                {
+                    int tamanho = (int)Request.Files[0].InputStream.Length;
+                    byte[] arq = new byte[tamanho];
+                    Request.Files[0].InputStream.Read(arq, 0, tamanho);
+                    byte[] arqUp = arq;
+                    //img = arqUp;
+                    pacienteModel.Foto = arqUp;
+                }
             } */
             
             if (ModelState.IsValid)
@@ -57,18 +64,6 @@ namespace PacienteVirtual.Controllers
                 pacienteModel.IdPaciente = GerenciadorPaciente.GetInstance().Inserir(pacienteModel);
                 return RedirectToAction("Index");
             }
-            /**
-            if (Request.Files.Count > 0)
-            {
-                int tamanho = (int)Request.Files[0].InputStream.Length;
-                byte[] arq = new byte[tamanho];
-                Request.Files[0].InputStream.Read(arq, 0, tamanho);
-                byte[] arqUp = arq;
-                cadastro.ImageData = arqUp;
-                db.Cadastroes.Add(cadastro);
-                db.SaveChanges();
-                return RedirectToAction("Index"); //Manda de volta pra listagem 
-            }*/
 
             return View(pacienteModel);
         }
@@ -120,5 +115,7 @@ namespace PacienteVirtual.Controllers
             //db.Dispose();
             base.Dispose(disposing);
         }
+
+        public object sessao { get; set; }
     }
 }

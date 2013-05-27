@@ -100,7 +100,7 @@ namespace PacienteVirtual.Models.Negocio
                         select new PacienteModel
                         {
                             IdPaciente = paciente.IdPaciente,
-                            Nome = paciente.Nome,
+                            NomePaciente = paciente.Nome,
                             Foto = paciente.Foto
                         };
             return query;
@@ -132,7 +132,7 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         public IEnumerable<PacienteModel> ObterPorNome(string nome)
         {
-            return GetQuery().Where(paciente => paciente.Nome.StartsWith(nome)).ToList();
+            return GetQuery().Where(paciente => paciente.NomePaciente.StartsWith(nome)).ToList();
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace PacienteVirtual.Models.Negocio
         private static void Atribuir(PacienteModel paciente, PacienteE _tb_paciente)
         {
             //_tb_paciente.IdPaciente = paciente.IdPaciente;
-            _tb_paciente.Nome = paciente.Nome;
+            _tb_paciente.Nome = paciente.NomePaciente;
             _tb_paciente.Foto = paciente.Foto;
         }
     }
