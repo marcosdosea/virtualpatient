@@ -9,8 +9,8 @@ namespace PacienteVirtual.Models
 {
     public class CursoModel
     {
-         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdCurso { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -22,7 +22,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public int IdInstituicao { get; set; }
 
-       [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
+        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public string NomeInstituicao { get; set; }
     }
 } 

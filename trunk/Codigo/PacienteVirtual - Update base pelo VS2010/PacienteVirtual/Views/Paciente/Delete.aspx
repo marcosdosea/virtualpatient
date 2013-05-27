@@ -14,7 +14,7 @@
 
     <div class="display-label">Nome</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.Nome) %>
+        <%: Html.DisplayFor(model => model.NomePaciente) %>
     </div>
 </fieldset>
 <% using (Html.BeginForm()) { %>
