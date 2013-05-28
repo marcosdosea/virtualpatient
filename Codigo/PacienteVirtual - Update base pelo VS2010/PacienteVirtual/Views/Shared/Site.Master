@@ -42,8 +42,8 @@
                         <%: Html.ActionLink("Historia --", "Index", "Historia")%></li>
                     <li>
                         <%: Html.ActionLink("ExperienciaMedicamentos --", "Index", "ExperienciaMedicamentos")%></li>
-                    <li>
-                        <%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li>
+                    <!--li>
+                        <!%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li-->
                     <li>
                         <%: Html.ActionLink("ConsultaFixo --", "Index", "ConsultaFixo")%></li>
                     <li>
@@ -58,10 +58,8 @@
                         <%: Html.ActionLink("Pergunta", "Index", "Pergunta")%></li>
                     <li>
                         <%: Html.ActionLink("Resposta", "Index", "Resposta")%></li>
-                    <li>
+                                            <li>
                         <%: Html.ActionLink("Paciente", "Index", "Paciente")%></li>
-                    <li>
-                        <%: Html.ActionLink("Relato Clínico", "Index", "RelatoClinico")%></li>
                 </ul>
             </nav>
         </header>

@@ -18,8 +18,11 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         //[LocalizarDisplayNomeAtributo("teste", NameResourceType = typeof(Mensagem))] // //Exemplo 1
-        [Display(Name = "paciente", ResourceType = typeof(Mensagem))]
+        [Display(Name = "paciente_codigo", ResourceType = typeof(Mensagem))]
         public int IdPaciente { get; set; }
+
+        [Display(Name = "paciente", ResourceType = typeof(Mensagem))]
+        public string PacienteNome { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "eh_gabarito", ResourceType = typeof(Mensagem))] //Exemplo 2

@@ -15,7 +15,7 @@ namespace PacienteVirtual.Controllers
     {
        
         GerenciadorConsultaFixo gConsultaFixo = GerenciadorConsultaFixo.GetInstance();
-
+        GerenciadorPaciente gPaciente = GerenciadorPaciente.GetInstance();
         //
         // GET: /ConsultaFixo/
 
@@ -37,6 +37,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos(), "IdPaciente", "NomePaciente");
             return View();
         } 
 
@@ -48,8 +49,8 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                consultaFixoModel.IdConsultaFixo = gConsultaFixo.Inserir(consultaFixoModel);
-                return RedirectToAction("Index");  
+               consultaFixoModel.IdConsultaFixo = gConsultaFixo.Inserir(consultaFixoModel);
+               return RedirectToAction("Create", "DemograficosAntropomedicos", new { id = consultaFixoModel.IdConsultaFixo });  
             }
             return View(consultaFixoModel);
         }

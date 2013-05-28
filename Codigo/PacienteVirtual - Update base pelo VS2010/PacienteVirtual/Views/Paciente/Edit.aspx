@@ -25,11 +25,16 @@
             <%: Html.EditorFor(model => model.NomePaciente) %>
             <%: Html.ValidationMessageFor(model => model.NomePaciente) %>
         </div>
+         <asp:Image ID="Image2" runat="server" 
+            ImageUrl='<%# "ImageHandler.ashx?ImgID="+ Eval("id") %>' Height="150px" 
+            Width="150px"/>
 
+        <asp:Image   Height="150px"  Width="150px" ID="Image1" runat="server" />
         <p>
             <input type="submit" value="Save" />
         </p>
     </fieldset>
+    
 <% } %>
 
 <div>

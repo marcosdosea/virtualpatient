@@ -11,9 +11,14 @@
 <fieldset>
     <legend><%: Resources.Mensagem.consulta_dados_fixos%></legend>
 
-    <div class="display-label"><%: Resources.Mensagem.paciente%></div>
+    <div class="display-label"><%: Resources.Mensagem.paciente_codigo%></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.IdPaciente) %>
+    </div>
+
+        <div class="display-label"><%: Resources.Mensagem.paciente%></div>
+    <div class="display-field">
+        <%: Html.DisplayFor(model => model.PacienteNome) %>
     </div>
 
     <div class="display-label"><%: Resources.Mensagem.eh_gabarito%></div>
