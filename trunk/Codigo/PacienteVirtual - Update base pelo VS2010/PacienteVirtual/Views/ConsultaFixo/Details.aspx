@@ -26,6 +26,7 @@
         <%: Html.DisplayFor(model => model.EhGabarito) %>
     </div>
 </fieldset>
+
 <p>
 
     <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=Model.IdConsultaFixo }) %> |

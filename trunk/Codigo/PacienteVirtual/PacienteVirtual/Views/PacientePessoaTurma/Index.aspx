@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.PacientePessoaTurmaModel>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.Data.tb_paciente_pessoa_turma>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -31,16 +31,16 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.tb_consulta_fixo.IdConsultaFixo) %>
+            <%: Html.DisplayFor(modelItem => item.tb_consulta_fixo.IdConsutaFixo) %>
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.tb_consulta_variavel.Lembretes) %>
+            <%: Html.DisplayFor(modelItem => item.tb_consulta_variavel.Lembretes) %>
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.GrupoAtividades) %>
+            <%: Html.DisplayFor(modelItem => item.GrupoAtividades) %>
         </td>
         <td>
-            <!--%: Html.DisplayFor(modelItem => item.EstadoPreenchimento) %>
+            <%: Html.DisplayFor(modelItem => item.EstadoPreenchimento) %>
         </td>
         <td>
             <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |

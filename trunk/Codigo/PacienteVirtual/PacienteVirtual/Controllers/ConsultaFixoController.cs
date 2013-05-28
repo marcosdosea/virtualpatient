@@ -6,100 +6,107 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PacienteVirtual.Models.Data;
-using PacienteVirtual.Models;
 using PacienteVirtual.Models.Negocio;
 
 namespace PacienteVirtual.Controllers
 { 
     public class ConsultaFixoController : Controller
     {
+        private pvEntities db = new pvEntities();
+
+
+        GerenciadorConsultaFixo gGerenciadorConsultaFixo = GerenciadorConsultaFixo.GetInstance();
        
-        GerenciadorConsultaFixo gConsultaFixo = GerenciadorConsultaFixo.GetInstance();
 
         //
         // GET: /ConsultaFixo/
 
         public ViewResult Index()
         {
-            return View(gConsultaFixo.ObterTodos());
+            return View(gGerenciadorConsultaFixo.ObterTodos());
         }
 
         //
-        // GET: /ConsultaFixo/Details/5
+        // GET: /Default1/Details/5
 
         public ViewResult Details(long id)
         {
-           // ConsultaFixoE tb_consulta_fixo = db.tb_consulta_fixo.Single(t => t.IdConsultaFixo == id);
-            return View(gConsultaFixo.Obter(id));
+            return View(gGerenciadorConsultaFixo.Obter(id));
         }
 
         //
-        // GET: /ConsultaFixo/Create
+        // GET: /Default1/Create
 
         public ActionResult Create()
         {
             return View();
-        } 
-
-        //
-        // POST: /ConsultaFixo/Create
-
-        [HttpPost]
-        public ActionResult Create(ConsultaFixoModel consultaFixoModel)
-        {
-            if (ModelState.IsValid)
-            {
-                consultaFixoModel.IdConsultaFixo = gConsultaFixo.Inserir(consultaFixoModel);
-                return RedirectToAction("Index");  
-            }
-            return View(consultaFixoModel);
-        }
-        
-        //
-        // GET: /ConsultaFixo/Edit/5
- 
-        public ActionResult Edit(long id)
-        {
-
-            //ConsultaFixoE tb_consulta_fixo = db.tb_consulta_fixo.Single(t => t.IdConsultaFixo == id);
-            return View(gConsultaFixo.Obter(id));
         }
 
         //
-        // POST: /ConsultaFixo/Edit/5
+        // POST: /Default1/Create
 
         [HttpPost]
-        public ActionResult Edit(ConsultaFixoModel consultaFixoModel)
+        public ActionResult Create(ConsultaFixoE consultafixoe)
         {
             if (ModelState.IsValid)
             {
-                gConsultaFixo.Atualizar(consultaFixoModel);
+                db.tb_consulta_fixo.AddObject(consultafixoe);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(consultaFixoModel);
+
+            return View(consultafixoe);
         }
 
         //
-        // GET: /ConsultaFixo/Delete/5
- 
+        // GET: /Default1/Edit/5
+
+        public ActionResult Edit(long id)
+        {
+            ConsultaFixoE consultafixoe = db.tb_consulta_fixo.Single(c => c.IdConsultaFixo == id);
+            return View(consultafixoe);
+        }
+
+        //
+        // POST: /Default1/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(ConsultaFixoE consultafixoe)
+        {
+            if (ModelState.IsValid)
+            {
+                db.tb_consulta_fixo.Attach(consultafixoe);
+                db.ObjectStateManager.ChangeObjectState(consultafixoe, EntityState.Modified);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(consultafixoe);
+        }
+
+        //
+        // GET: /Default1/Delete/5
+
         public ActionResult Delete(long id)
         {
-           // ConsultaFixoE tb_consulta_fixo = db.tb_consulta_fixo.Single(t => t.IdConsultaFixo == id);
-            return View(gConsultaFixo.Obter(id));
+            ConsultaFixoE consultafixoe = db.tb_consulta_fixo.Single(c => c.IdConsultaFixo == id);
+            return View(consultafixoe);
         }
 
         //
-        // POST: /ConsultaFixo/Delete/5
+        // POST: /Default1/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(long id)
         {
-            gConsultaFixo.Remover(id);
+            ConsultaFixoE consultafixoe = db.tb_consulta_fixo.Single(c => c.IdConsultaFixo == id);
+            db.tb_consulta_fixo.DeleteObject(consultafixoe);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
+            db.Dispose();
             base.Dispose(disposing);
         }
     }

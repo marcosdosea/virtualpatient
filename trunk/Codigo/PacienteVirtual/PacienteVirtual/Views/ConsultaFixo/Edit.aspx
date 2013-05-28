@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ConsultaFixoModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.tb_consulta_fixo>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Edit
@@ -16,7 +16,7 @@
     <fieldset>
         <legend>tb_consulta_fixo</legend>
 
-        <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
+        <%: Html.HiddenFor(model => model.IdConsutaFixo) %>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdPaciente) %>

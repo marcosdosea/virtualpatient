@@ -9,6 +9,7 @@ namespace PacienteVirtual.Models.Negocio
 {
     public class GerenciadorConsultaFixo
     {
+
         private static GerenciadorConsultaFixo gConsultaFixo;
 
         private GerenciadorConsultaFixo() { }
@@ -55,7 +56,7 @@ namespace PacienteVirtual.Models.Negocio
             try
             {
                 var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
-                ConsultaFixoE _consultaFixoE = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == consultaFixo.IdConsultaFixo);
+                ConsultaFixoE _consultaFixoE = repConsultaFixo.ObterEntidade(c => c.IdConsultaFixo == consultaFixo.IdConsultaFixo);
                 Atribuir(consultaFixo, _consultaFixoE);
 
                 repConsultaFixo.SaveChanges();
@@ -70,14 +71,14 @@ namespace PacienteVirtual.Models.Negocio
         /// Remove dados do consultaFixo
         /// </summary>
         /// <param name="codDisciplina"></param>
-        public void Remover(long idConsultaFixo)
+        public void Remover(int idConsultaFixo)
         {
             //if (idConsultaFixo == 1)
             //    throw new NegocioException("A consultaFixo não pode ser removido.");
             try
             {
                 var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
-                repConsultaFixo.Remover(cf => cf.IdConsultaFixo == idConsultaFixo);
+                repConsultaFixo.Remover(c => c.IdConsultaFixo == idConsultaFixo);
                 repConsultaFixo.SaveChanges();
             }
             catch (Exception e)
@@ -93,13 +94,15 @@ namespace PacienteVirtual.Models.Negocio
         private IQueryable<ConsultaFixoModel> GetQuery()
         {
             var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
+
             var pvEntities = (pvEntities)repConsultaFixo.ObterContexto();
-            var query = from tb_consulta_fixo in pvEntities.tb_consulta_fixo
+
+            var query = from consultaFixo in pvEntities.tb_consulta_fixo
                         select new ConsultaFixoModel
                         {
-                            IdConsultaFixo = tb_consulta_fixo.IdConsultaFixo,
-                            IdPaciente = tb_consulta_fixo.IdPaciente,
-                            EhGabarito = tb_consulta_fixo.EhGabarito,
+                            IdConsultaFixo = (long) consultaFixo.IdConsultaFixo,
+                            IdPaciente = consultaFixo.IdPaciente,
+                            EhGabarito = consultaFixo.EhGabarito
                         };
             return query;
         }
@@ -116,6 +119,7 @@ namespace PacienteVirtual.Models.Negocio
         /// <summary>
         /// Obtém consultaFixo com o código especificiado
         /// </summary>
+        /// <param name="codDisciplina"></param>
         /// <returns></returns>
         public ConsultaFixoModel Obter(long idConsultaFixo)
         {
@@ -127,9 +131,9 @@ namespace PacienteVirtual.Models.Negocio
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public IEnumerable<ConsultaFixoModel> ObterPorNome(int IdPaciente)
+        public IEnumerable<ConsultaFixoModel> ObterPorIdPaciente(int idPaciente)
         {
-            return GetQuery().Where(consultaFixo => consultaFixo.IdPaciente == IdPaciente).ToList();
+            return GetQuery().Where(consultaFixo => consultaFixo.IdPaciente == idPaciente).ToList();
         }
 
         /// <summary>
@@ -140,7 +144,8 @@ namespace PacienteVirtual.Models.Negocio
         private static void Atribuir(ConsultaFixoModel consultaFixo, ConsultaFixoE _consultaFixoE)
         {
             _consultaFixoE.IdPaciente = consultaFixo.IdPaciente;
-            _consultaFixoE.EhGabarito = consultaFixo.EhGabarito;
+           
         }
+
     }
 }

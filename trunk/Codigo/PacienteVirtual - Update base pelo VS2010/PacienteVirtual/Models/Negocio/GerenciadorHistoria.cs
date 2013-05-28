@@ -29,14 +29,14 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         public long Inserir(HistoriaModel historia)
         {
-            var repConsultaFixo = new RepositorioGenerico<HistoriaE>();
+            var repHistoria = new RepositorioGenerico<HistoriaE>();
             HistoriaE _historiaE = new HistoriaE();
             try
             {
                 Atribuir(historia, _historiaE);
 
-                repConsultaFixo.Inserir(_historiaE);
-                repConsultaFixo.SaveChanges();
+                repHistoria.Inserir(_historiaE);
+                repHistoria.SaveChanges();
 
                 return _historiaE.IdConsultaFixo;
             }
@@ -54,11 +54,11 @@ namespace PacienteVirtual.Models.Negocio
         {
             try
             {
-                var repConsultaFixo = new RepositorioGenerico<HistoriaE>();
-                HistoriaE _historiaE = repConsultaFixo.ObterEntidade(h => h.IdConsultaFixo == historia.IdConsultaFixo);
+                var repHistoria = new RepositorioGenerico<HistoriaE>();
+                HistoriaE _historiaE = repHistoria.ObterEntidade(h => h.IdConsultaFixo == historia.IdConsultaFixo);
                 Atribuir(historia, _historiaE);
 
-                repConsultaFixo.SaveChanges();
+                repHistoria.SaveChanges();
             }
             catch (Exception e)
             {
@@ -76,9 +76,9 @@ namespace PacienteVirtual.Models.Negocio
             //    throw new NegocioException("A historia não pode ser removido.");
             try
             {
-                var repConsultaFixo = new RepositorioGenerico<HistoriaE>();
-                repConsultaFixo.Remover(h => h.IdConsultaFixo == idConsultaFixo);
-                repConsultaFixo.SaveChanges();
+                var repHistoria = new RepositorioGenerico<HistoriaE>();
+                repHistoria.Remover(h => h.IdConsultaFixo == idConsultaFixo);
+                repHistoria.SaveChanges();
             }
             catch (Exception e)
             {
@@ -92,8 +92,8 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         private IQueryable<HistoriaModel> GetQuery()
         {
-            var repConsultaFixo = new RepositorioGenerico<HistoriaE>();
-            var pvEntities = (pvEntities)repConsultaFixo.ObterContexto();
+            var repHistoria = new RepositorioGenerico<HistoriaE>();
+            var pvEntities = (pvEntities)repHistoria.ObterContexto();
             var query = from historia in pvEntities.tb_historia
                         select new HistoriaModel
                         {

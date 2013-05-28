@@ -6,8 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PacienteVirtual.Models.Data;
-using PacienteVirtual.Models.Negocio;
-using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
 { 
@@ -15,24 +13,22 @@ namespace PacienteVirtual.Controllers
     {
         private pvEntities db = new pvEntities();
 
-        GerenciadorPacientePessoaTurma gPacPessTurma = GerenciadorPacientePessoaTurma.GetInstance();
-
         //
         // GET: /PacientePessoaTurma/
 
         public ViewResult Index()
         {
-            //var tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Include("tb_consulta_fixo").Include("tb_consulta_variavel").Include("tb_paciente");
-            return View(gPacPessTurma.ObterTodos());
+            var tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Include("tb_consulta_fixo").Include("tb_consulta_variavel").Include("tb_paciente");
+            return View(tb_paciente_pessoa_turma.ToList());
         }
 
         //
         // GET: /PacientePessoaTurma/Details/5
 
-       public ViewResult Details(int id)// passar três tipos de Id
+        public ViewResult Details(int id)
         {
-           // PacientePessoaTurmaE tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
-            return View(gPacPessTurma.Obter(id));
+            tb_paciente_pessoa_turma tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
+            return View(tb_paciente_pessoa_turma);
         }
 
         //
@@ -40,7 +36,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo");
+            ViewBag.IdConsutaFixo = new SelectList(db.tb_consulta_fixo, "IdConsutaFixo", "IdConsutaFixo");
             ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes");
             ViewBag.IdPaciente = new SelectList(db.tb_paciente, "IdPaciente", "Nome");
             return View();
@@ -50,21 +46,19 @@ namespace PacienteVirtual.Controllers
         // POST: /PacientePessoaTurma/Create
 
         [HttpPost]
-        public ActionResult Create(PacientePessoaTurmaModel pacPessTurma)
+        public ActionResult Create(tb_paciente_pessoa_turma tb_paciente_pessoa_turma)
         {
             if (ModelState.IsValid)
             {
-                //db.tb_paciente_pessoa_turma.AddObject(tb_paciente_pessoa_turma);
-                //db.SaveChanges();
-
-                gPacPessTurma.Inserir(pacPessTurma);
+                db.tb_paciente_pessoa_turma.AddObject(tb_paciente_pessoa_turma);
+                db.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", pacPessTurma.IdConsultaFixo);
-            ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes", pacPessTurma.IdConsultaVariavel);
-            ViewBag.IdPaciente = new SelectList(db.tb_paciente, "IdPaciente", "Nome", pacPessTurma.IdPaciente);
-            return View(pacPessTurma);
+            ViewBag.IdConsutaFixo = new SelectList(db.tb_consulta_fixo, "IdConsutaFixo", "IdConsutaFixo", tb_paciente_pessoa_turma.IdConsutaFixo);
+            ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes", tb_paciente_pessoa_turma.IdConsultaVariavel);
+            ViewBag.IdPaciente = new SelectList(db.tb_paciente, "IdPaciente", "Nome", tb_paciente_pessoa_turma.IdPaciente);
+            return View(tb_paciente_pessoa_turma);
         }
         
         //
@@ -72,34 +66,30 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Edit(int id)
         {
-           // PacientePessoaTurmaModel pacPessTurma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
-            PacientePessoaTurmaModel pacPessTurma = gPacPessTurma.Obter(id);
-            
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", pacPessTurma.IdConsultaFixo);
-            ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes", pacPessTurma.IdConsultaVariavel);
-            ViewBag.IdPaciente = new SelectList(db.tb_paciente, "IdPaciente", "Nome", pacPessTurma.IdPaciente);
-            return View(pacPessTurma.IdPaciente);
+            tb_paciente_pessoa_turma tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
+            ViewBag.IdConsutaFixo = new SelectList(db.tb_consulta_fixo, "IdConsutaFixo", "IdConsutaFixo", tb_paciente_pessoa_turma.IdConsutaFixo);
+            ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes", tb_paciente_pessoa_turma.IdConsultaVariavel);
+            ViewBag.IdPaciente = new SelectList(db.tb_paciente, "IdPaciente", "Nome", tb_paciente_pessoa_turma.IdPaciente);
+            return View(tb_paciente_pessoa_turma);
         }
 
         //
         // POST: /PacientePessoaTurma/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(PacientePessoaTurmaModel pacPessTurma)
+        public ActionResult Edit(tb_paciente_pessoa_turma tb_paciente_pessoa_turma)
         {
             if (ModelState.IsValid)
             {
-                //db.tb_paciente_pessoa_turma.Attach(tb_paciente_pessoa_turma);
-                //db.ObjectStateManager.ChangeObjectState(tb_paciente_pessoa_turma, EntityState.Modified);
-                //db.SaveChanges();
-
-                gPacPessTurma.Atualizar(pacPessTurma);
+                db.tb_paciente_pessoa_turma.Attach(tb_paciente_pessoa_turma);
+                db.ObjectStateManager.ChangeObjectState(tb_paciente_pessoa_turma, EntityState.Modified);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdConsultaFixo = new SelectList(db.tb_consulta_fixo, "IdConsultaFixo", "IdConsultaFixo", pacPessTurma.IdConsultaFixo);
-            ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes", pacPessTurma.IdConsultaVariavel);
-            ViewBag.IdPaciente = new SelectList(db.tb_paciente, "IdPaciente", "Nome", pacPessTurma.IdPaciente);
-            return View(pacPessTurma);
+            ViewBag.IdConsutaFixo = new SelectList(db.tb_consulta_fixo, "IdConsutaFixo", "IdConsutaFixo", tb_paciente_pessoa_turma.IdConsutaFixo);
+            ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes", tb_paciente_pessoa_turma.IdConsultaVariavel);
+            ViewBag.IdPaciente = new SelectList(db.tb_paciente, "IdPaciente", "Nome", tb_paciente_pessoa_turma.IdPaciente);
+            return View(tb_paciente_pessoa_turma);
         }
 
         //
@@ -107,8 +97,8 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(int id)
         {
-            //PacientePessoaTurmaE tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
-            return View(gPacPessTurma.Obter(id));
+            tb_paciente_pessoa_turma tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
+            return View(tb_paciente_pessoa_turma);
         }
 
         //
@@ -116,18 +106,16 @@ namespace PacienteVirtual.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
-        {
-            //PacientePessoaTurmaE tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
-            //db.tb_paciente_pessoa_turma.DeleteObject(tb_paciente_pessoa_turma);
-            //db.SaveChanges();
-
-            gPacPessTurma.Remover(id);
+        {            
+            tb_paciente_pessoa_turma tb_paciente_pessoa_turma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
+            db.tb_paciente_pessoa_turma.DeleteObject(tb_paciente_pessoa_turma);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            //db.Dispose();
+            db.Dispose();
             base.Dispose(disposing);
         }
     }

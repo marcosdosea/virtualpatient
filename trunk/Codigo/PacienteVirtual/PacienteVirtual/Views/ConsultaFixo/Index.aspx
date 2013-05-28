@@ -13,9 +13,6 @@
 </p>
 <table>
     <tr>
-         <th>
-            IdCursoFixo
-        </th>
         <th>
             IdPaciente
         </th>
@@ -27,12 +24,10 @@
 
 <% foreach (var item in Model) { %>
     <tr>
-          <td>
-            <%: Html.DisplayFor(modelItem => item.IdConsultaFixo) %>
-        </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.IdPaciente) %>
         </td>
+
         <td>
             <%: Html.DisplayFor(modelItem => item.EhGabarito) %>
         </td>

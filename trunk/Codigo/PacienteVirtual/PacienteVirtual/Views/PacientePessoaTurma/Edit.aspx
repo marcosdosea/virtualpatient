@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.PacientePessoaTurmaModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.tb_paciente_pessoa_turma>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Edit
@@ -23,11 +23,11 @@
         <%: Html.HiddenFor(model => model.IdPaciente) %>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdConsultaFixo, "tb_consulta_fixo") %>
+            <%: Html.LabelFor(model => model.IdConsutaFixo, "tb_consulta_fixo") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdConsultaFixo", String.Empty) %>
-            <%: Html.ValidationMessageFor(model => model.IdConsultaFixo) %>
+            <%: Html.DropDownList("IdConsutaFixo", String.Empty) %>
+            <%: Html.ValidationMessageFor(model => model.IdConsutaFixo) %>
         </div>
 
         <div class="editor-label">
