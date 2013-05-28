@@ -662,7 +662,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_parametro_clinico">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_parametro_clinico)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.ParamentoClinicoE)">
         <MappingFragment StoreEntitySet="tb_parametro_clinico">
           <ScalarProperty Name="IdParamentoClinico" ColumnName="IdParamentoClinico" />
           <ScalarProperty Name="ParametroClinico" ColumnName="ParametroClinico" />

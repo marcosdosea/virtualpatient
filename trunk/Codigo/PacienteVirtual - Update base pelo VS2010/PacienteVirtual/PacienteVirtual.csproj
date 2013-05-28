@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\PacientePessoaTurmaController.cs" />
+    <Compile Include="Controllers\ParamentoClinicoController.cs" />
     <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\PlanoSaudeController.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Models\Negocio\GerenciadorOcupacao.cs" />
     <Compile Include="Models\Negocio\GerenciadorPaciente.cs" />
     <Compile Include="Models\Negocio\GerenciadorPacientePessoaTurma.cs" />
+    <Compile Include="Models\Negocio\GerenciadorParamentoClinico.cs" />
     <Compile Include="Models\Negocio\GerenciadorPergunta.cs" />
     <Compile Include="Models\Negocio\GerenciadorPessoa.cs" />
     <Compile Include="Models\Negocio\GerenciadorPlanoSaude.cs" />
@@ -194,10 +196,10 @@
     <Compile Include="Models\Negocio\NegocioException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Negocio\repRelatoClinicoE.cs" />
     <Compile Include="Models\OcupacaoModel.cs" />
     <Compile Include="Models\PacienteModel.cs" />
     <Compile Include="Models\PacientePessoaTurmaModel.cs" />
+    <Compile Include="Models\ParamentoClinicoModel.cs" />
     <Compile Include="Models\PerguntaModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />
     <Compile Include="Models\PlanoSaudeModel.cs" />
@@ -320,6 +322,11 @@
     <Content Include="Views\Paciente\Details.aspx" />
     <Content Include="Views\Paciente\Edit.aspx" />
     <Content Include="Views\Paciente\Index.aspx" />
+    <Content Include="Views\ParamentoClinico\Create.aspx" />
+    <Content Include="Views\ParamentoClinico\Delete.aspx" />
+    <Content Include="Views\ParamentoClinico\Details.aspx" />
+    <Content Include="Views\ParamentoClinico\Edit.aspx" />
+    <Content Include="Views\ParamentoClinico\Index.aspx" />
     <Content Include="Views\Pergunta\Create.aspx" />
     <Content Include="Views\Pergunta\Delete.aspx" />
     <Content Include="Views\Pergunta\Details.aspx" />
