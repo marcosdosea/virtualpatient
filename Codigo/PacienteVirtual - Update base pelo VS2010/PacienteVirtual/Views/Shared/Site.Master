@@ -58,8 +58,12 @@
                         <%: Html.ActionLink("Pergunta", "Index", "Pergunta")%></li>
                     <li>
                         <%: Html.ActionLink("Resposta", "Index", "Resposta")%></li>
-                                            <li>
+                    <li>
                         <%: Html.ActionLink("Paciente", "Index", "Paciente")%></li>
+                    <li>
+                        <%: Html.ActionLink("Relato clínico", "Index", "RelatoClinico")%></li>
+                    <li>
+                        <%: Html.ActionLink("Paramento clínico", "Index", "ParamentoClinico")%></li>
                 </ul>
             </nav>
         </header>

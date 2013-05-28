@@ -241,7 +241,7 @@ DROP TABLE IF EXISTS `tb_consulta_variavel`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_consulta_variavel` (
   `IdConsultaVariavel` bigint(20) NOT NULL AUTO_INCREMENT,
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `IdRelato` int(11) NOT NULL,
   `IdRazaoEncontro` int(11) NOT NULL,
   `DataPreenchimento` datetime DEFAULT NULL,
@@ -738,14 +738,14 @@ DROP TABLE IF EXISTS `tb_consulta_fixo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_consulta_fixo` (
-  `IdConsutaFixo` bigint(20) NOT NULL AUTO_INCREMENT,
+  `IdConsultaFixo` bigint(20) NOT NULL AUTO_INCREMENT,
   `IdTurma` int(11) NOT NULL,
   `IdPessoa` int(11) NOT NULL,
   `EstadoPreenchimento` char(1) NOT NULL DEFAULT 'A',
   `EhGabarito` tinyint(1) NOT NULL DEFAULT '0',
   `DataAtualizacao` datetime DEFAULT NULL,
   `ComentariosTutor` text,
-  PRIMARY KEY (`IdConsutaFixo`)
+  PRIMARY KEY (`IdConsultaFixo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -766,13 +766,13 @@ DROP TABLE IF EXISTS `tb_diario_pessoal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_diario_pessoal` (
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `IdMedicamento` int(11) NOT NULL,
   `Periodo` char(1) NOT NULL,
   `Horario` varchar(20) DEFAULT NULL,
   `Quantidade` varchar(20) DEFAULT NULL,
   `TipoBebida` char(1) DEFAULT NULL,
-  PRIMARY KEY (`IdConsutaFixo`,`IdMedicamento`)
+  PRIMARY KEY (`IdConsultaFixo`,`IdMedicamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1163,10 +1163,10 @@ DROP TABLE IF EXISTS `tb_historia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_historia` (
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `HistoriaMedicaPregressa` varchar(255) NOT NULL,
   `HistoriaFamiliar` varchar(255) NOT NULL,
-  PRIMARY KEY (`IdConsutaFixo`)
+  PRIMARY KEY (`IdConsultaFixo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1622,7 +1622,7 @@ DROP TABLE IF EXISTS `tb_experiencia_medicamentos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_experiencia_medicamentos` (
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `IdRespostaEsperaTratamento` int(11) NOT NULL,
   `IdRespostaPreocupacoes` int(11) NOT NULL,
   `IdRespostaGrauEntendimento` int(11) NOT NULL,
@@ -1634,7 +1634,7 @@ CREATE TABLE `tb_experiencia_medicamentos` (
   `AtencaoGrauEntendimento` tinyint(1) NOT NULL,
   `AtencaoCultural` tinyint(1) NOT NULL,
   `AtencaoComportamento` tinyint(1) NOT NULL,
-  PRIMARY KEY (`IdConsutaFixo`)
+  PRIMARY KEY (`IdConsultaFixo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1766,7 +1766,7 @@ DROP TABLE IF EXISTS `tb_demograficos_antropometricos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_demograficos_antropometricos` (
-  `IdConsutaFixo` bigint(20) NOT NULL,
+  `IdConsultaFixo` bigint(20) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Genero` char(1) NOT NULL,
   `DataNascimento` datetime DEFAULT NULL,
@@ -1776,7 +1776,7 @@ CREATE TABLE `tb_demograficos_antropometricos` (
   `IdEscolaridade` int(11) NOT NULL,
   `IdOcupacao` int(11) NOT NULL,
   `IdPlanoSaude` int(11) NOT NULL,
-  PRIMARY KEY (`IdConsutaFixo`)
+  PRIMARY KEY (`IdConsultaFixo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

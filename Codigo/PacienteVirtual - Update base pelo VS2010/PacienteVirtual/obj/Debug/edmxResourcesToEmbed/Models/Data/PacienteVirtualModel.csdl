@@ -215,7 +215,7 @@
     <EntitySet Name="tb_ocupacao" EntityType="pvModel.OcupacaoE" />
     <EntitySet Name="tb_paciente" EntityType="pvModel.PacienteE" />
     <EntitySet Name="tb_paciente_pessoa_turma" EntityType="pvModel.PacientePessoaTurmaE" />
-    <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.tb_parametro_clinico" />
+    <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.ParamentoClinicoE" />
     <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
     <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
     <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
@@ -1588,7 +1588,7 @@
     <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_consulta_variavel" />
     <NavigationProperty Name="tb_paciente" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_paciente" />
   </EntityType>
-  <EntityType Name="tb_parametro_clinico">
+  <EntityType Name="ParamentoClinicoE">
     <Key>
       <PropertyRef Name="IdParamentoClinico" />
     </Key>
@@ -1721,7 +1721,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1">
-    <End Type="pvModel.tb_parametro_clinico" Role="tb_parametro_clinico" Multiplicity="1" />
+    <End Type="pvModel.ParamentoClinicoE" Role="tb_parametro_clinico" Multiplicity="1" />
     <End Type="pvModel.tb_consulta_parametro" Role="tb_consulta_parametro" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_parametro_clinico">

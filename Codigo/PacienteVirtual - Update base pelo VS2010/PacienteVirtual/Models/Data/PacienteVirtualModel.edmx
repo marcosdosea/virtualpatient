@@ -2126,7 +2126,7 @@
           <EntitySet Name="tb_ocupacao" EntityType="pvModel.OcupacaoE" />
           <EntitySet Name="tb_paciente" EntityType="pvModel.PacienteE" />
           <EntitySet Name="tb_paciente_pessoa_turma" EntityType="pvModel.PacientePessoaTurmaE" />
-          <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.tb_parametro_clinico" />
+          <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.ParamentoClinicoE" />
           <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
           <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
           <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
@@ -3499,7 +3499,7 @@
           <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_paciente" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_paciente" />
         </EntityType>
-        <EntityType Name="tb_parametro_clinico">
+        <EntityType Name="ParamentoClinicoE">
           <Key>
             <PropertyRef Name="IdParamentoClinico" />
           </Key>
@@ -3632,7 +3632,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1">
-          <End Type="pvModel.tb_parametro_clinico" Role="tb_parametro_clinico" Multiplicity="1" />
+          <End Type="pvModel.ParamentoClinicoE" Role="tb_parametro_clinico" Multiplicity="1" />
           <End Type="pvModel.tb_consulta_parametro" Role="tb_consulta_parametro" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_parametro_clinico">
@@ -4582,7 +4582,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_parametro_clinico">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_parametro_clinico)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.ParamentoClinicoE)">
         <MappingFragment StoreEntitySet="tb_parametro_clinico">
           <ScalarProperty Name="IdParamentoClinico" ColumnName="IdParamentoClinico" />
           <ScalarProperty Name="ParametroClinico" ColumnName="ParametroClinico" />
@@ -4670,7 +4670,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel" ZoomLevel="80">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="95">
         <EntityTypeShape EntityType="pvModel.aluno" Width="1.5" PointX="5.25" PointY="11.875" Height="6.0186165364583317" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.casoclinico" Width="1.5" PointX="0.75" PointY="26" Height="8.51853515625" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.consulta" Width="1.5" PointX="3" PointY="28.125" Height="4.2879036458333353" IsExpanded="true" />
@@ -4919,7 +4919,7 @@
         <EntityTypeShape EntityType="pvModel.OcupacaoE" Width="1.5" PointX="20.875" PointY="9.125" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.PacienteE" Width="1.5" PointX="13.375" PointY="15.625" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="pvModel.PacientePessoaTurmaE" Width="1.5" PointX="20.125" PointY="17.5" Height="2.9417936197916674" />
-        <EntityTypeShape EntityType="pvModel.tb_parametro_clinico" Width="1.5" PointX="20.875" PointY="26.5" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="pvModel.ParamentoClinicoE" Width="1.5" PointX="20.875" PointY="26.5" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.PerguntaE" Width="1.5" PointX="23.875" PointY="12.5" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.PessoaE" Width="1.5" PointX="5.375" PointY="6.75" Height="1.4033821614583246" />
         <EntityTypeShape EntityType="pvModel.PlanoSaudeE" Width="1.5" PointX="20.875" PointY="3.5" Height="1.5956835937499818" />
