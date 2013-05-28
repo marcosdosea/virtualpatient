@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.PacientePessoaTurmaModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.tb_paciente_pessoa_turma>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Create
@@ -17,18 +17,18 @@
         <legend>tb_paciente_pessoa_turma</legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdConsultaFixo, "tb_consulta_fixo") %>
+            <%: Html.LabelFor(model => model.IdConsutaFixo, "tb_consulta_fixo") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdConsultaFixo", String.Empty) %>
-            <%: Html.ValidationMessageFor(model => model.IdConsultaFixo) %>
+            <%: Html.DropDownList("IdConsutaFixo", String.Empty) %>
+            <%: Html.ValidationMessageFor(model => model.IdConsutaFixo) %>
         </div>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdConsultaVariavel, "tb_consulta_variavel") %>
         </div>
         <div class="editor-field">
-            <!--%: Html.DropDownList("IdConsultaVariavel", String.Empty) %-->
+            <%: Html.DropDownList("IdConsultaVariavel", String.Empty) %>
             <%: Html.ValidationMessageFor(model => model.IdConsultaVariavel) %>
         </div>
 

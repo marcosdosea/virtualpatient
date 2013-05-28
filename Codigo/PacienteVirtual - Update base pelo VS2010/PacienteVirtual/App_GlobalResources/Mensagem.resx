@@ -315,4 +315,28 @@
   <data name="campo_MouF" xml:space="preserve">
     <value>Campo {0} só aceita "M" ou "F"</value>
   </data>
+  <data name="tutor_comentarios" xml:space="preserve">
+    <value>Comentários do Tutor</value>
+  </data>
+  <data name="data_envio" xml:space="preserve">
+    <value>Data de Envio</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="pessoa_codigo" xml:space="preserve">
+    <value>Código Pessoa</value>
+  </data>
+  <data name="relato_relato" xml:space="preserve">
+    <value>Código Relato</value>
+  </data>
+  <data name="turma_codigo" xml:space="preserve">
+    <value>Código Turma</value>
+  </data>
+  <data name="historia_medica_pregressa" xml:space="preserve">
+    <value>História Médica Pregressa</value>
+  </data>
+  <data name="data_atualizacao" xml:space="preserve">
+    <value>Data de Atualização</value>
+  </data>
 </root>

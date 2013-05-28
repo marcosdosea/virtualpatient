@@ -1,213 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="pvModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="pvEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="aluno" EntityType="pvModel.aluno" />
-    <EntitySet Name="casoclinico" EntityType="pvModel.casoclinico" />
-    <EntitySet Name="consulta" EntityType="pvModel.consulta" />
-    <EntitySet Name="intervencao" EntityType="pvModel.intervencao" />
-    <EntitySet Name="intervencaorespostaquarta" EntityType="pvModel.intervencaorespostaquarta" />
-    <EntitySet Name="intervencaorespostasegunda" EntityType="pvModel.intervencaorespostasegunda" />
-    <EntitySet Name="medicamentonaoprescrito" EntityType="pvModel.medicamentonaoprescrito" />
-    <EntitySet Name="medicamentoprescrito" EntityType="pvModel.medicamentoprescrito" />
-    <EntitySet Name="medicamentoqueixa" EntityType="pvModel.medicamentoqueixa" />
-    <EntitySet Name="medicamentoqueixaquarta" EntityType="pvModel.medicamentoqueixaquarta" />
-    <EntitySet Name="medicamentoqueixasegunda" EntityType="pvModel.medicamentoqueixasegunda" />
-    <EntitySet Name="parametroclinico" EntityType="pvModel.parametroclinico" />
-    <EntitySet Name="queixa" EntityType="pvModel.queixa" />
-    <EntitySet Name="queixarespostaprimeira" EntityType="pvModel.queixarespostaprimeira" />
-    <EntitySet Name="queixarespostaquarta" EntityType="pvModel.queixarespostaquarta" />
-    <EntitySet Name="queixarespostasegunda" EntityType="pvModel.queixarespostasegunda" />
-    <EntitySet Name="queixarespostaterceira" EntityType="pvModel.queixarespostaterceira" />
-    <EntitySet Name="respostaprimeira" EntityType="pvModel.respostaprimeira" />
-    <EntitySet Name="respostaquarta" EntityType="pvModel.respostaquarta" />
-    <EntitySet Name="respostasegunda" EntityType="pvModel.respostasegunda" />
-    <EntitySet Name="respostaterceira" EntityType="pvModel.respostaterceira" />
-    <EntitySet Name="tb_curso" EntityType="pvModel.CursoE" />
-    <EntitySet Name="tb_disciplina" EntityType="pvModel.DisciplinaE" />
-    <EntitySet Name="tb_disciplina_curso" EntityType="pvModel.tb_disciplina_curso" />
-    <EntitySet Name="tb_instituicao" EntityType="pvModel.InstituicaoE" />
-    <EntitySet Name="tb_perfil_usuario" EntityType="pvModel.tb_perfil_usuario" />
-    <EntitySet Name="tb_turma" EntityType="pvModel.TurmaE" />
-    <EntitySet Name="tb_usuario" EntityType="pvModel.UsuarioE" />
-    <EntitySet Name="tb_usuario_turma" EntityType="pvModel.tb_usuario_turma" />
-    <AssociationSet Name="FK_aluno_2" Association="pvModel.FK_aluno_2">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="aluno" EntitySet="aluno" />
-    </AssociationSet>
-    <AssociationSet Name="FK_consulta_2" Association="pvModel.FK_consulta_2">
-      <End Role="aluno" EntitySet="aluno" />
-      <End Role="consulta" EntitySet="consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK589C4EBDD526F1E" Association="pvModel.FK589C4EBDD526F1E">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="aluno" EntitySet="aluno" />
-    </AssociationSet>
-    <AssociationSet Name="FKDE2881F52977839B" Association="pvModel.FKDE2881F52977839B">
-      <End Role="aluno" EntitySet="aluno" />
-      <End Role="consulta" EntitySet="consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Consulta_1" Association="pvModel.FK_Consulta_1">
-      <End Role="casoclinico" EntitySet="casoclinico" />
-      <End Role="consulta" EntitySet="consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK91D9EFAE8A1319FF" Association="pvModel.FK91D9EFAE8A1319FF">
-      <End Role="casoclinico" EntitySet="casoclinico" />
-      <End Role="intervencao" EntitySet="intervencao" />
-    </AssociationSet>
-    <AssociationSet Name="FKAA358BEF8A1319FF" Association="pvModel.FKAA358BEF8A1319FF">
-      <End Role="casoclinico" EntitySet="casoclinico" />
-      <End Role="medicamentoprescrito" EntitySet="medicamentoprescrito" />
-    </AssociationSet>
-    <AssociationSet Name="FKAAEE312E8A1319FF" Association="pvModel.FKAAEE312E8A1319FF">
-      <End Role="casoclinico" EntitySet="casoclinico" />
-      <End Role="parametroclinico" EntitySet="parametroclinico" />
-    </AssociationSet>
-    <AssociationSet Name="FKBF69A97F8A1319FF" Association="pvModel.FKBF69A97F8A1319FF">
-      <End Role="casoclinico" EntitySet="casoclinico" />
-      <End Role="medicamentonaoprescrito" EntitySet="medicamentonaoprescrito" />
-    </AssociationSet>
-    <AssociationSet Name="FKC773DEB18A1319FF" Association="pvModel.FKC773DEB18A1319FF">
-      <End Role="casoclinico" EntitySet="casoclinico" />
-      <End Role="queixa" EntitySet="queixa" />
-    </AssociationSet>
-    <AssociationSet Name="FKDE2881F58A1319FF" Association="pvModel.FKDE2881F58A1319FF">
-      <End Role="casoclinico" EntitySet="casoclinico" />
-      <End Role="consulta" EntitySet="consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_respostaalunoterceira_1" Association="pvModel.FK_respostaalunoterceira_1">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="respostaterceira" EntitySet="respostaterceira" />
-    </AssociationSet>
-    <AssociationSet Name="FK_respostaprimeira_1" Association="pvModel.FK_respostaprimeira_1">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="respostaprimeira" EntitySet="respostaprimeira" />
-    </AssociationSet>
-    <AssociationSet Name="FK_respostaquarta_1" Association="pvModel.FK_respostaquarta_1">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="respostaquarta" EntitySet="respostaquarta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_respostasegunda_1" Association="pvModel.FK_respostasegunda_1">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="respostasegunda" EntitySet="respostasegunda" />
-    </AssociationSet>
-    <AssociationSet Name="FK877B3B565097F805" Association="pvModel.FK877B3B565097F805">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="respostaterceira" EntitySet="respostaterceira" />
-    </AssociationSet>
-    <AssociationSet Name="FK88D8D79A5097F805" Association="pvModel.FK88D8D79A5097F805">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="respostaprimeira" EntitySet="respostaprimeira" />
-    </AssociationSet>
-    <AssociationSet Name="FKB29DB8E35097F805" Association="pvModel.FKB29DB8E35097F805">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="respostaquarta" EntitySet="respostaquarta" />
-    </AssociationSet>
-    <AssociationSet Name="FKEFEE246A5097F805" Association="pvModel.FKEFEE246A5097F805">
-      <End Role="consulta" EntitySet="consulta" />
-      <End Role="respostasegunda" EntitySet="respostasegunda" />
-    </AssociationSet>
-    <AssociationSet Name="FK_intervencaorespostaquarta_1" Association="pvModel.FK_intervencaorespostaquarta_1">
-      <End Role="respostaquarta" EntitySet="respostaquarta" />
-      <End Role="intervencaorespostaquarta" EntitySet="intervencaorespostaquarta" />
-    </AssociationSet>
-    <AssociationSet Name="FK800BA011D2B646E7" Association="pvModel.FK800BA011D2B646E7">
-      <End Role="respostaquarta" EntitySet="respostaquarta" />
-      <End Role="intervencaorespostaquarta" EntitySet="intervencaorespostaquarta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_intervencaorespostasegunda_1" Association="pvModel.FK_intervencaorespostasegunda_1">
-      <End Role="respostasegunda" EntitySet="respostasegunda" />
-      <End Role="intervencaorespostasegunda" EntitySet="intervencaorespostasegunda" />
-    </AssociationSet>
-    <AssociationSet Name="FKD03D22FCA4FE1140" Association="pvModel.FKD03D22FCA4FE1140">
-      <End Role="respostasegunda" EntitySet="respostasegunda" />
-      <End Role="intervencaorespostasegunda" EntitySet="intervencaorespostasegunda" />
-    </AssociationSet>
-    <AssociationSet Name="FK_medicamentoqueixa_1" Association="pvModel.FK_medicamentoqueixa_1">
-      <End Role="queixa" EntitySet="queixa" />
-      <End Role="medicamentoqueixa" EntitySet="medicamentoqueixa" />
-    </AssociationSet>
-    <AssociationSet Name="FK8099C4A73D02FC3D" Association="pvModel.FK8099C4A73D02FC3D">
-      <End Role="queixa" EntitySet="queixa" />
-      <End Role="medicamentoqueixa" EntitySet="medicamentoqueixa" />
-    </AssociationSet>
-    <AssociationSet Name="FK_medicamentoqueixaquarta_1" Association="pvModel.FK_medicamentoqueixaquarta_1">
-      <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
-      <End Role="medicamentoqueixaquarta" EntitySet="medicamentoqueixaquarta" />
-    </AssociationSet>
-    <AssociationSet Name="FK78D999E947C18322" Association="pvModel.FK78D999E947C18322">
-      <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
-      <End Role="medicamentoqueixaquarta" EntitySet="medicamentoqueixaquarta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_medicamentoqueixasegunda_1" Association="pvModel.FK_medicamentoqueixasegunda_1">
-      <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
-      <End Role="medicamentoqueixasegunda" EntitySet="medicamentoqueixasegunda" />
-    </AssociationSet>
-    <AssociationSet Name="FKF12E64244E1862F8" Association="pvModel.FKF12E64244E1862F8">
-      <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
-      <End Role="medicamentoqueixasegunda" EntitySet="medicamentoqueixasegunda" />
-    </AssociationSet>
-    <AssociationSet Name="FK_queixarespostaprimeira_1" Association="pvModel.FK_queixarespostaprimeira_1">
-      <End Role="respostaprimeira" EntitySet="respostaprimeira" />
-      <End Role="queixarespostaprimeira" EntitySet="queixarespostaprimeira" />
-    </AssociationSet>
-    <AssociationSet Name="FK1E43344B8872A0F6" Association="pvModel.FK1E43344B8872A0F6">
-      <End Role="respostaprimeira" EntitySet="respostaprimeira" />
-      <End Role="queixarespostaprimeira" EntitySet="queixarespostaprimeira" />
-    </AssociationSet>
-    <AssociationSet Name="FK_queixarespostaquarta_1" Association="pvModel.FK_queixarespostaquarta_1">
-      <End Role="respostaquarta" EntitySet="respostaquarta" />
-      <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
-    </AssociationSet>
-    <AssociationSet Name="FK5BA98DD4D2B646E7" Association="pvModel.FK5BA98DD4D2B646E7">
-      <End Role="respostaquarta" EntitySet="respostaquarta" />
-      <End Role="queixarespostaquarta" EntitySet="queixarespostaquarta" />
-    </AssociationSet>
-    <AssociationSet Name="FK685CED99A4FE1140" Association="pvModel.FK685CED99A4FE1140">
-      <End Role="respostasegunda" EntitySet="respostasegunda" />
-      <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
-    </AssociationSet>
-    <AssociationSet Name="FKFD098D39A4FE1140" Association="pvModel.FKFD098D39A4FE1140">
-      <End Role="respostasegunda" EntitySet="respostasegunda" />
-      <End Role="queixarespostasegunda" EntitySet="queixarespostasegunda" />
-    </AssociationSet>
-    <AssociationSet Name="FK_queixarespostaterceira_1" Association="pvModel.FK_queixarespostaterceira_1">
-      <End Role="respostaterceira" EntitySet="respostaterceira" />
-      <End Role="queixarespostaterceira" EntitySet="queixarespostaterceira" />
-    </AssociationSet>
-    <AssociationSet Name="FK1CE59807871504B2" Association="pvModel.FK1CE59807871504B2">
-      <End Role="respostaterceira" EntitySet="respostaterceira" />
-      <End Role="queixarespostaterceira" EntitySet="queixarespostaterceira" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Curso_Instituicao" Association="pvModel.FK_Curso_Instituicao">
-      <End Role="tb_instituicao" EntitySet="tb_instituicao" />
-      <End Role="tb_curso" EntitySet="tb_curso" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Disciplina" Association="pvModel.FK_Disciplina">
-      <End Role="tb_disciplina" EntitySet="tb_disciplina" />
-      <End Role="tb_disciplina_curso" EntitySet="tb_disciplina_curso" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Instituicao" Association="pvModel.FK_Instituicao">
-      <End Role="tb_instituicao" EntitySet="tb_instituicao" />
-      <End Role="tb_turma" EntitySet="tb_turma" />
-    </AssociationSet>
-    <EntitySet Name="turma" EntityType="pvModel.turma" />
-    <EntitySet Name="tutor" EntityType="pvModel.tutor" />
-    <EntitySet Name="usuario" EntityType="pvModel.usuario" />
-    <AssociationSet Name="FK6998F652B972831" Association="pvModel.FK6998F652B972831">
-      <End Role="tutor" EntitySet="tutor" />
-      <End Role="turma" EntitySet="turma" />
-    </AssociationSet>
-    <EntitySet Name="tb_video" EntityType="pvModel.VideoE" />
+    <EntitySet Name="alunoes" EntityType="pvModel.aluno" />
+    <EntitySet Name="casoclinicoes" EntityType="pvModel.casoclinico" />
+    <EntitySet Name="consultas" EntityType="pvModel.consulta" />
+    <EntitySet Name="intervencaos" EntityType="pvModel.intervencao" />
+    <EntitySet Name="intervencaorespostaquartas" EntityType="pvModel.intervencaorespostaquarta" />
+    <EntitySet Name="intervencaorespostasegundas" EntityType="pvModel.intervencaorespostasegunda" />
+    <EntitySet Name="medicamentonaoprescritoes" EntityType="pvModel.medicamentonaoprescrito" />
+    <EntitySet Name="medicamentoprescritoes" EntityType="pvModel.medicamentoprescrito" />
+    <EntitySet Name="medicamentoqueixas" EntityType="pvModel.medicamentoqueixa" />
+    <EntitySet Name="medicamentoqueixaquartas" EntityType="pvModel.medicamentoqueixaquarta" />
+    <EntitySet Name="medicamentoqueixasegundas" EntityType="pvModel.medicamentoqueixasegunda" />
+    <EntitySet Name="parametroclinicoes" EntityType="pvModel.parametroclinico" />
+    <EntitySet Name="queixas" EntityType="pvModel.queixa" />
+    <EntitySet Name="queixarespostaprimeiras" EntityType="pvModel.queixarespostaprimeira" />
+    <EntitySet Name="queixarespostaquartas" EntityType="pvModel.queixarespostaquarta" />
+    <EntitySet Name="queixarespostasegundas" EntityType="pvModel.queixarespostasegunda" />
+    <EntitySet Name="queixarespostaterceiras" EntityType="pvModel.queixarespostaterceira" />
+    <EntitySet Name="respostaprimeiras" EntityType="pvModel.respostaprimeira" />
+    <EntitySet Name="respostaquartas" EntityType="pvModel.respostaquarta" />
+    <EntitySet Name="respostasegundas" EntityType="pvModel.respostasegunda" />
+    <EntitySet Name="respostaterceiras" EntityType="pvModel.respostaterceira" />
+    <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.tb_acao_alternativa" />
+    <EntitySet Name="tb_acao_queixa" EntityType="pvModel.tb_acao_queixa" />
     <EntitySet Name="tb_alergia" EntityType="pvModel.tb_alergia" />
+    <EntitySet Name="tb_alergia_exames_fisicos" EntityType="pvModel.tb_alergia_exames_fisicos" />
     <EntitySet Name="tb_consulta_fixo" EntityType="pvModel.ConsultaFixoE" />
     <EntitySet Name="tb_consulta_parametro" EntityType="pvModel.tb_consulta_parametro" />
     <EntitySet Name="tb_consulta_variavel" EntityType="pvModel.tb_consulta_variavel" />
+    <EntitySet Name="tb_consulta_variavel_queixa" EntityType="pvModel.tb_consulta_variavel_queixa" />
+    <EntitySet Name="tb_curso" EntityType="pvModel.CursoE" />
+    <EntitySet Name="tb_curso_disciplina" EntityType="pvModel.tb_curso_disciplina" />
     <EntitySet Name="tb_demograficos_antropometricos" EntityType="pvModel.DemograficosAntropometricosE" />
+    <EntitySet Name="tb_diario_pessoal" EntityType="pvModel.tb_diario_pessoal" />
+    <EntitySet Name="tb_disciplina" EntityType="pvModel.DisciplinaE" />
     <EntitySet Name="tb_escolaridade" EntityType="pvModel.EscolaridadeE" />
     <EntitySet Name="tb_estilo_vida" EntityType="pvModel.tb_estilo_vida" />
     <EntitySet Name="tb_exames_fisicos" EntityType="pvModel.tb_exames_fisicos" />
     <EntitySet Name="tb_experiencia_medicamentos" EntityType="pvModel.ExperienciaMedicamentosE" />
     <EntitySet Name="tb_historia" EntityType="pvModel.HistoriaE" />
+    <EntitySet Name="tb_historico" EntityType="pvModel.HistoricoE" />
+    <EntitySet Name="tb_instituicao" EntityType="pvModel.InstituicaoE" />
     <EntitySet Name="tb_medicamento_nao_prescrito" EntityType="pvModel.tb_medicamento_nao_prescrito" />
     <EntitySet Name="tb_medicamento_prescrito" EntityType="pvModel.tb_medicamento_prescrito" />
     <EntitySet Name="tb_medicamentos" EntityType="pvModel.tb_medicamentos" />
@@ -215,135 +49,185 @@
     <EntitySet Name="tb_ocupacao" EntityType="pvModel.OcupacaoE" />
     <EntitySet Name="tb_paciente" EntityType="pvModel.PacienteE" />
     <EntitySet Name="tb_paciente_pessoa_turma" EntityType="pvModel.PacientePessoaTurmaE" />
-    <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.ParamentoClinicoE" />
+    <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.tb_parametro_clinico" />
+    <EntitySet Name="tb_perfil_usuario" EntityType="pvModel.tb_perfil_usuario" />
     <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
     <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
     <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
+    <EntitySet Name="tb_queixa" EntityType="pvModel.tb_queixa" />
+    <EntitySet Name="tb_queixa_medicamentos" EntityType="pvModel.tb_queixa_medicamentos" />
+    <EntitySet Name="tb_razao_encontro" EntityType="pvModel.tb_razao_encontro" />
     <EntitySet Name="tb_relato_clinico" EntityType="pvModel.RelatoClinicoE" />
     <EntitySet Name="tb_resposta" EntityType="pvModel.RespostaE" />
-    <AssociationSet Name="fk_tb_exames_fisicos_tb_alergia1" Association="pvModel.fk_tb_exames_fisicos_tb_alergia1">
-      <End Role="tb_alergia" EntitySet="tb_alergia" />
-      <End Role="tb_exames_fisicos" EntitySet="tb_exames_fisicos" />
+    <EntitySet Name="tb_sistema" EntityType="pvModel.tb_sistema" />
+    <EntitySet Name="tb_turma" EntityType="pvModel.TurmaE" />
+    <EntitySet Name="tb_turma_pessoa" EntityType="pvModel.tb_turma_pessoa" />
+    <EntitySet Name="tb_turma_pessoa_relato" EntityType="pvModel.tb_turma_pessoa_relato" />
+    <EntitySet Name="tb_usuario" EntityType="pvModel.UsuarioE" />
+    <EntitySet Name="tb_usuario_turma" EntityType="pvModel.tb_usuario_turma" />
+    <AssociationSet Name="FK_aluno_2" Association="pvModel.FK_aluno_2">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="aluno" EntitySet="alunoes" />
     </AssociationSet>
-    <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_consulta_fixo1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1">
-      <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
-      <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
+    <AssociationSet Name="FK_consulta_2" Association="pvModel.FK_consulta_2">
+      <End Role="aluno" EntitySet="alunoes" />
+      <End Role="consulta" EntitySet="consultas" />
     </AssociationSet>
-    <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_consulta_fixo1" Association="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1">
-      <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
-      <End Role="tb_experiencia_medicamentos" EntitySet="tb_experiencia_medicamentos" />
+    <AssociationSet Name="FK589C4EBDD526F1E" Association="pvModel.FK589C4EBDD526F1E">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="aluno" EntitySet="alunoes" />
     </AssociationSet>
-    <AssociationSet Name="fk_tb_historia_tb_consulta_fixo1" Association="pvModel.fk_tb_historia_tb_consulta_fixo1">
-      <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
-      <End Role="tb_historia" EntitySet="tb_historia" />
+    <AssociationSet Name="FKDE2881F52977839B" Association="pvModel.FKDE2881F52977839B">
+      <End Role="aluno" EntitySet="alunoes" />
+      <End Role="consulta" EntitySet="consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consulta_1" Association="pvModel.FK_Consulta_1">
+      <End Role="casoclinico" EntitySet="casoclinicoes" />
+      <End Role="consulta" EntitySet="consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK91D9EFAE8A1319FF" Association="pvModel.FK91D9EFAE8A1319FF">
+      <End Role="casoclinico" EntitySet="casoclinicoes" />
+      <End Role="intervencao" EntitySet="intervencaos" />
+    </AssociationSet>
+    <AssociationSet Name="FKAA358BEF8A1319FF" Association="pvModel.FKAA358BEF8A1319FF">
+      <End Role="casoclinico" EntitySet="casoclinicoes" />
+      <End Role="medicamentoprescrito" EntitySet="medicamentoprescritoes" />
+    </AssociationSet>
+    <AssociationSet Name="FKAAEE312E8A1319FF" Association="pvModel.FKAAEE312E8A1319FF">
+      <End Role="casoclinico" EntitySet="casoclinicoes" />
+      <End Role="parametroclinico" EntitySet="parametroclinicoes" />
+    </AssociationSet>
+    <AssociationSet Name="FKBF69A97F8A1319FF" Association="pvModel.FKBF69A97F8A1319FF">
+      <End Role="casoclinico" EntitySet="casoclinicoes" />
+      <End Role="medicamentonaoprescrito" EntitySet="medicamentonaoprescritoes" />
+    </AssociationSet>
+    <AssociationSet Name="FKC773DEB18A1319FF" Association="pvModel.FKC773DEB18A1319FF">
+      <End Role="casoclinico" EntitySet="casoclinicoes" />
+      <End Role="queixa" EntitySet="queixas" />
+    </AssociationSet>
+    <AssociationSet Name="FKDE2881F58A1319FF" Association="pvModel.FKDE2881F58A1319FF">
+      <End Role="casoclinico" EntitySet="casoclinicoes" />
+      <End Role="consulta" EntitySet="consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_respostaalunoterceira_1" Association="pvModel.FK_respostaalunoterceira_1">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="respostaterceira" EntitySet="respostaterceiras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_respostaprimeira_1" Association="pvModel.FK_respostaprimeira_1">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="respostaprimeira" EntitySet="respostaprimeiras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_respostaquarta_1" Association="pvModel.FK_respostaquarta_1">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="respostaquarta" EntitySet="respostaquartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_respostasegunda_1" Association="pvModel.FK_respostasegunda_1">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="respostasegunda" EntitySet="respostasegundas" />
+    </AssociationSet>
+    <AssociationSet Name="FK877B3B565097F805" Association="pvModel.FK877B3B565097F805">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="respostaterceira" EntitySet="respostaterceiras" />
+    </AssociationSet>
+    <AssociationSet Name="FK88D8D79A5097F805" Association="pvModel.FK88D8D79A5097F805">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="respostaprimeira" EntitySet="respostaprimeiras" />
+    </AssociationSet>
+    <AssociationSet Name="FKB29DB8E35097F805" Association="pvModel.FKB29DB8E35097F805">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="respostaquarta" EntitySet="respostaquartas" />
+    </AssociationSet>
+    <AssociationSet Name="FKEFEE246A5097F805" Association="pvModel.FKEFEE246A5097F805">
+      <End Role="consulta" EntitySet="consultas" />
+      <End Role="respostasegunda" EntitySet="respostasegundas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_intervencaorespostaquarta_1" Association="pvModel.FK_intervencaorespostaquarta_1">
+      <End Role="respostaquarta" EntitySet="respostaquartas" />
+      <End Role="intervencaorespostaquarta" EntitySet="intervencaorespostaquartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK800BA011D2B646E7" Association="pvModel.FK800BA011D2B646E7">
+      <End Role="respostaquarta" EntitySet="respostaquartas" />
+      <End Role="intervencaorespostaquarta" EntitySet="intervencaorespostaquartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_intervencaorespostasegunda_1" Association="pvModel.FK_intervencaorespostasegunda_1">
+      <End Role="respostasegunda" EntitySet="respostasegundas" />
+      <End Role="intervencaorespostasegunda" EntitySet="intervencaorespostasegundas" />
+    </AssociationSet>
+    <AssociationSet Name="FKD03D22FCA4FE1140" Association="pvModel.FKD03D22FCA4FE1140">
+      <End Role="respostasegunda" EntitySet="respostasegundas" />
+      <End Role="intervencaorespostasegunda" EntitySet="intervencaorespostasegundas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_medicamentoqueixa_1" Association="pvModel.FK_medicamentoqueixa_1">
+      <End Role="queixa" EntitySet="queixas" />
+      <End Role="medicamentoqueixa" EntitySet="medicamentoqueixas" />
+    </AssociationSet>
+    <AssociationSet Name="FK8099C4A73D02FC3D" Association="pvModel.FK8099C4A73D02FC3D">
+      <End Role="queixa" EntitySet="queixas" />
+      <End Role="medicamentoqueixa" EntitySet="medicamentoqueixas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_medicamentoqueixaquarta_1" Association="pvModel.FK_medicamentoqueixaquarta_1">
+      <End Role="queixarespostaquarta" EntitySet="queixarespostaquartas" />
+      <End Role="medicamentoqueixaquarta" EntitySet="medicamentoqueixaquartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK78D999E947C18322" Association="pvModel.FK78D999E947C18322">
+      <End Role="queixarespostaquarta" EntitySet="queixarespostaquartas" />
+      <End Role="medicamentoqueixaquarta" EntitySet="medicamentoqueixaquartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_medicamentoqueixasegunda_1" Association="pvModel.FK_medicamentoqueixasegunda_1">
+      <End Role="queixarespostasegunda" EntitySet="queixarespostasegundas" />
+      <End Role="medicamentoqueixasegunda" EntitySet="medicamentoqueixasegundas" />
+    </AssociationSet>
+    <AssociationSet Name="FKF12E64244E1862F8" Association="pvModel.FKF12E64244E1862F8">
+      <End Role="queixarespostasegunda" EntitySet="queixarespostasegundas" />
+      <End Role="medicamentoqueixasegunda" EntitySet="medicamentoqueixasegundas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_queixarespostaprimeira_1" Association="pvModel.FK_queixarespostaprimeira_1">
+      <End Role="respostaprimeira" EntitySet="respostaprimeiras" />
+      <End Role="queixarespostaprimeira" EntitySet="queixarespostaprimeiras" />
+    </AssociationSet>
+    <AssociationSet Name="FK1E43344B8872A0F6" Association="pvModel.FK1E43344B8872A0F6">
+      <End Role="respostaprimeira" EntitySet="respostaprimeiras" />
+      <End Role="queixarespostaprimeira" EntitySet="queixarespostaprimeiras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_queixarespostaquarta_1" Association="pvModel.FK_queixarespostaquarta_1">
+      <End Role="respostaquarta" EntitySet="respostaquartas" />
+      <End Role="queixarespostaquarta" EntitySet="queixarespostaquartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK5BA98DD4D2B646E7" Association="pvModel.FK5BA98DD4D2B646E7">
+      <End Role="respostaquarta" EntitySet="respostaquartas" />
+      <End Role="queixarespostaquarta" EntitySet="queixarespostaquartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK685CED99A4FE1140" Association="pvModel.FK685CED99A4FE1140">
+      <End Role="respostasegunda" EntitySet="respostasegundas" />
+      <End Role="queixarespostasegunda" EntitySet="queixarespostasegundas" />
+    </AssociationSet>
+    <AssociationSet Name="FKFD098D39A4FE1140" Association="pvModel.FKFD098D39A4FE1140">
+      <End Role="respostasegunda" EntitySet="respostasegundas" />
+      <End Role="queixarespostasegunda" EntitySet="queixarespostasegundas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_queixarespostaterceira_1" Association="pvModel.FK_queixarespostaterceira_1">
+      <End Role="respostaterceira" EntitySet="respostaterceiras" />
+      <End Role="queixarespostaterceira" EntitySet="queixarespostaterceiras" />
+    </AssociationSet>
+    <AssociationSet Name="FK1CE59807871504B2" Association="pvModel.FK1CE59807871504B2">
+      <End Role="respostaterceira" EntitySet="respostaterceiras" />
+      <End Role="queixarespostaterceira" EntitySet="queixarespostaterceiras" />
     </AssociationSet>
     <AssociationSet Name="fk_tb_paciente_pessoa_turma_tb_consulta_fixo1" Association="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1">
       <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
       <End Role="tb_paciente_pessoa_turma" EntitySet="tb_paciente_pessoa_turma" />
     </AssociationSet>
-    <AssociationSet Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1">
-      <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-      <End Role="tb_consulta_parametro" EntitySet="tb_consulta_parametro" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1" Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1">
-      <End Role="tb_parametro_clinico" EntitySet="tb_parametro_clinico" />
-      <End Role="tb_consulta_parametro" EntitySet="tb_consulta_parametro" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1">
-      <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-      <End Role="tb_medicamentos_anteriores" EntitySet="tb_medicamentos_anteriores" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2">
-      <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-      <End Role="tb_medicamento_prescrito" EntitySet="tb_medicamento_prescrito" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_consulta_variavel_tb_relato_clinico1" Association="pvModel.fk_tb_consulta_variavel_tb_relato_clinico1">
-      <End Role="tb_relato_clinico" EntitySet="tb_relato_clinico" />
-      <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_estilo_vida_tb_consulta_variavel1" Association="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1">
-      <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-      <End Role="tb_estilo_vida" EntitySet="tb_estilo_vida" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_exames_fisicos_tb_consulta_variavel1" Association="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1">
-      <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-      <End Role="tb_exames_fisicos" EntitySet="tb_exames_fisicos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_medicamento_prescrito_tb_consulta_variavel1" Association="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1">
-      <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-      <End Role="tb_medicamento_nao_prescrito" EntitySet="tb_medicamento_nao_prescrito" />
-    </AssociationSet>
     <AssociationSet Name="fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" Association="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1">
       <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
       <End Role="tb_paciente_pessoa_turma" EntitySet="tb_paciente_pessoa_turma" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_escolaridade1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1">
-      <End Role="tb_escolaridade" EntitySet="tb_escolaridade" />
-      <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_ocupacao1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1">
-      <End Role="tb_ocupacao" EntitySet="tb_ocupacao" />
-      <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_plano_saude1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1">
-      <End Role="tb_plano_saude" EntitySet="tb_plano_saude" />
-      <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_resposta1" Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta1">
-      <End Role="tb_resposta" EntitySet="tb_resposta" />
-      <End Role="tb_experiencia_medicamentos" EntitySet="tb_experiencia_medicamentos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_resposta2" Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta2">
-      <End Role="tb_resposta" EntitySet="tb_resposta" />
-      <End Role="tb_experiencia_medicamentos" EntitySet="tb_experiencia_medicamentos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_resposta3" Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta3">
-      <End Role="tb_resposta" EntitySet="tb_resposta" />
-      <End Role="tb_experiencia_medicamentos" EntitySet="tb_experiencia_medicamentos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_resposta4" Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta4">
-      <End Role="tb_resposta" EntitySet="tb_resposta" />
-      <End Role="tb_experiencia_medicamentos" EntitySet="tb_experiencia_medicamentos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_resposta5" Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta5">
-      <End Role="tb_resposta" EntitySet="tb_resposta" />
-      <End Role="tb_experiencia_medicamentos" EntitySet="tb_experiencia_medicamentos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_resposta6" Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta6">
-      <End Role="tb_resposta" EntitySet="tb_resposta" />
-      <End Role="tb_experiencia_medicamentos" EntitySet="tb_experiencia_medicamentos" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_medicamento_prescrito_tb_medicamentos1" Association="pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1">
-      <End Role="tb_medicamentos" EntitySet="tb_medicamentos" />
-      <End Role="tb_medicamento_nao_prescrito" EntitySet="tb_medicamento_nao_prescrito" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2" Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2">
-      <End Role="tb_medicamentos" EntitySet="tb_medicamentos" />
-      <End Role="tb_medicamento_prescrito" EntitySet="tb_medicamento_prescrito" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1">
-      <End Role="tb_medicamentos" EntitySet="tb_medicamentos" />
-      <End Role="tb_medicamentos_anteriores" EntitySet="tb_medicamentos_anteriores" />
     </AssociationSet>
     <AssociationSet Name="fk_tb_paciente_pessoa_turma_tb_paciente1" Association="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1">
       <End Role="tb_paciente" EntitySet="tb_paciente" />
       <End Role="tb_paciente_pessoa_turma" EntitySet="tb_paciente_pessoa_turma" />
     </AssociationSet>
-    <AssociationSet Name="fk_tb_relato_clinico_tb_paciente1" Association="pvModel.fk_tb_relato_clinico_tb_paciente1">
-      <End Role="tb_paciente" EntitySet="tb_paciente" />
-      <End Role="tb_relato_clinico" EntitySet="tb_relato_clinico" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_resposta_tb_pergunta1" Association="pvModel.fk_tb_resposta_tb_pergunta1">
-      <End Role="tb_pergunta" EntitySet="tb_pergunta" />
-      <End Role="tb_resposta" EntitySet="tb_resposta" />
-    </AssociationSet>
-    <AssociationSet Name="tb_curso_disciplina" Association="pvModel.tb_curso_disciplina">
-      <End Role="CursoE" EntitySet="tb_curso" />
-      <End Role="DisciplinaE" EntitySet="tb_disciplina" />
-    </AssociationSet>
-    <AssociationSet Name="tb_razao_encontro" Association="pvModel.tb_razao_encontro">
-      <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-      <End Role="tb_resposta" EntitySet="tb_resposta" />
+    <AssociationSet Name="fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1" Association="pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1">
+      <End Role="tb_turma_pessoa" EntitySet="tb_turma_pessoa" />
+      <End Role="tb_paciente_pessoa_turma" EntitySet="tb_paciente_pessoa_turma" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="aluno">
@@ -364,7 +248,7 @@
     <Property Name="matricula" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
     <Property Name="fkTurma" Type="Int32" />
     <Property Name="nome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-    <Property Name="liberado" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="liberado" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
     <Property Name="fkConsultaAtual" Type="Int32" />
     <Property Name="nrConsulta" Type="Int32" Nullable="false" />
     <Property Name="nrTentativa" Type="Int32" Nullable="false" />
@@ -373,9 +257,9 @@
     <Property Name="flAcessoOutro" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
     <Property Name="flAcessoUniversidade" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="consulta" Relationship="pvModel.FK_aluno_2" FromRole="aluno" ToRole="consulta" />
-    <NavigationProperty Name="consulta1" Relationship="pvModel.FK_consulta_2" FromRole="aluno" ToRole="consulta" />
-    <NavigationProperty Name="consulta2" Relationship="pvModel.FK589C4EBDD526F1E" FromRole="aluno" ToRole="consulta" />
-    <NavigationProperty Name="consulta3" Relationship="pvModel.FKDE2881F52977839B" FromRole="aluno" ToRole="consulta" />
+    <NavigationProperty Name="consultas" Relationship="pvModel.FK_consulta_2" FromRole="aluno" ToRole="consulta" />
+    <NavigationProperty Name="consulta1" Relationship="pvModel.FK589C4EBDD526F1E" FromRole="aluno" ToRole="consulta" />
+    <NavigationProperty Name="consultas1" Relationship="pvModel.FKDE2881F52977839B" FromRole="aluno" ToRole="consulta" />
   </EntityType>
   <EntityType Name="casoclinico">
     <Key>
@@ -384,7 +268,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="alergias" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="altura" Type="Single" Nullable="false" />
-    <Property Name="dataNascimento" Type="DateTime" Precision="3" />
+    <Property Name="dataNascimento" Type="DateTime" />
     <Property Name="disponibilidade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="escolaridade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="flBebeAlcool" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -399,8 +283,8 @@
     <Property Name="planoDeSaude" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="pressaoDiastolica" Type="Int32" Nullable="false" />
     <Property Name="pressaoSistolica" Type="Int32" Nullable="false" />
-    <Property Name="relatoDeCasoPrimeiraConsulta" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="relatoDeCasoTerceiraConsulta" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="relatoDeCasoPrimeiraConsulta" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+    <Property Name="relatoDeCasoTerceiraConsulta" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
     <Property Name="temperatura" Type="Single" Nullable="false" />
     <Property Name="historiaAlcoolAnterior" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="historiaAlcoolAtual" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -413,13 +297,13 @@
     <Property Name="pressaoSistolica2" Type="Int32" />
     <Property Name="temperatura2" Type="Single" />
     <Property Name="tipoBebidaAlcoolica" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="consulta" Relationship="pvModel.FK_Consulta_1" FromRole="casoclinico" ToRole="consulta" />
-    <NavigationProperty Name="intervencao" Relationship="pvModel.FK91D9EFAE8A1319FF" FromRole="casoclinico" ToRole="intervencao" />
-    <NavigationProperty Name="medicamentoprescrito" Relationship="pvModel.FKAA358BEF8A1319FF" FromRole="casoclinico" ToRole="medicamentoprescrito" />
-    <NavigationProperty Name="parametroclinico" Relationship="pvModel.FKAAEE312E8A1319FF" FromRole="casoclinico" ToRole="parametroclinico" />
-    <NavigationProperty Name="medicamentonaoprescrito" Relationship="pvModel.FKBF69A97F8A1319FF" FromRole="casoclinico" ToRole="medicamentonaoprescrito" />
-    <NavigationProperty Name="queixa" Relationship="pvModel.FKC773DEB18A1319FF" FromRole="casoclinico" ToRole="queixa" />
-    <NavigationProperty Name="consulta1" Relationship="pvModel.FKDE2881F58A1319FF" FromRole="casoclinico" ToRole="consulta" />
+    <NavigationProperty Name="consultas" Relationship="pvModel.FK_Consulta_1" FromRole="casoclinico" ToRole="consulta" />
+    <NavigationProperty Name="intervencaos" Relationship="pvModel.FK91D9EFAE8A1319FF" FromRole="casoclinico" ToRole="intervencao" />
+    <NavigationProperty Name="medicamentoprescritoes" Relationship="pvModel.FKAA358BEF8A1319FF" FromRole="casoclinico" ToRole="medicamentoprescrito" />
+    <NavigationProperty Name="parametroclinicoes" Relationship="pvModel.FKAAEE312E8A1319FF" FromRole="casoclinico" ToRole="parametroclinico" />
+    <NavigationProperty Name="medicamentonaoprescritoes" Relationship="pvModel.FKBF69A97F8A1319FF" FromRole="casoclinico" ToRole="medicamentonaoprescrito" />
+    <NavigationProperty Name="queixas" Relationship="pvModel.FKC773DEB18A1319FF" FromRole="casoclinico" ToRole="queixa" />
+    <NavigationProperty Name="consultas1" Relationship="pvModel.FKDE2881F58A1319FF" FromRole="casoclinico" ToRole="consulta" />
   </EntityType>
   <EntityType Name="consulta">
     <Key>
@@ -428,20 +312,20 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="fkCasoClinico" Type="Int32" Nullable="false" />
     <Property Name="fkAluno" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="aluno" Relationship="pvModel.FK_aluno_2" FromRole="consulta" ToRole="aluno" />
-    <NavigationProperty Name="aluno1" Relationship="pvModel.FK_consulta_2" FromRole="consulta" ToRole="aluno" />
-    <NavigationProperty Name="aluno2" Relationship="pvModel.FK589C4EBDD526F1E" FromRole="consulta" ToRole="aluno" />
-    <NavigationProperty Name="aluno3" Relationship="pvModel.FKDE2881F52977839B" FromRole="consulta" ToRole="aluno" />
+    <NavigationProperty Name="alunoes" Relationship="pvModel.FK_aluno_2" FromRole="consulta" ToRole="aluno" />
+    <NavigationProperty Name="aluno" Relationship="pvModel.FK_consulta_2" FromRole="consulta" ToRole="aluno" />
+    <NavigationProperty Name="alunoes1" Relationship="pvModel.FK589C4EBDD526F1E" FromRole="consulta" ToRole="aluno" />
+    <NavigationProperty Name="aluno1" Relationship="pvModel.FKDE2881F52977839B" FromRole="consulta" ToRole="aluno" />
     <NavigationProperty Name="casoclinico" Relationship="pvModel.FK_Consulta_1" FromRole="consulta" ToRole="casoclinico" />
     <NavigationProperty Name="casoclinico1" Relationship="pvModel.FKDE2881F58A1319FF" FromRole="consulta" ToRole="casoclinico" />
-    <NavigationProperty Name="respostaterceira" Relationship="pvModel.FK_respostaalunoterceira_1" FromRole="consulta" ToRole="respostaterceira" />
-    <NavigationProperty Name="respostaprimeira" Relationship="pvModel.FK_respostaprimeira_1" FromRole="consulta" ToRole="respostaprimeira" />
-    <NavigationProperty Name="respostaquarta" Relationship="pvModel.FK_respostaquarta_1" FromRole="consulta" ToRole="respostaquarta" />
-    <NavigationProperty Name="respostasegunda" Relationship="pvModel.FK_respostasegunda_1" FromRole="consulta" ToRole="respostasegunda" />
-    <NavigationProperty Name="respostaterceira1" Relationship="pvModel.FK877B3B565097F805" FromRole="consulta" ToRole="respostaterceira" />
-    <NavigationProperty Name="respostaprimeira1" Relationship="pvModel.FK88D8D79A5097F805" FromRole="consulta" ToRole="respostaprimeira" />
-    <NavigationProperty Name="respostaquarta1" Relationship="pvModel.FKB29DB8E35097F805" FromRole="consulta" ToRole="respostaquarta" />
-    <NavigationProperty Name="respostasegunda1" Relationship="pvModel.FKEFEE246A5097F805" FromRole="consulta" ToRole="respostasegunda" />
+    <NavigationProperty Name="respostaterceiras" Relationship="pvModel.FK_respostaalunoterceira_1" FromRole="consulta" ToRole="respostaterceira" />
+    <NavigationProperty Name="respostaprimeiras" Relationship="pvModel.FK_respostaprimeira_1" FromRole="consulta" ToRole="respostaprimeira" />
+    <NavigationProperty Name="respostaquartas" Relationship="pvModel.FK_respostaquarta_1" FromRole="consulta" ToRole="respostaquarta" />
+    <NavigationProperty Name="respostasegundas" Relationship="pvModel.FK_respostasegunda_1" FromRole="consulta" ToRole="respostasegunda" />
+    <NavigationProperty Name="respostaterceiras1" Relationship="pvModel.FK877B3B565097F805" FromRole="consulta" ToRole="respostaterceira" />
+    <NavigationProperty Name="respostaprimeiras1" Relationship="pvModel.FK88D8D79A5097F805" FromRole="consulta" ToRole="respostaprimeira" />
+    <NavigationProperty Name="respostaquartas1" Relationship="pvModel.FKB29DB8E35097F805" FromRole="consulta" ToRole="respostaquarta" />
+    <NavigationProperty Name="respostasegundas1" Relationship="pvModel.FKEFEE246A5097F805" FromRole="consulta" ToRole="respostasegunda" />
   </EntityType>
   <EntityType Name="intervencao">
     <Key>
@@ -460,7 +344,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-    <Property Name="justificativa" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="justificativa" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
     <Property Name="numeroIntervencao" Type="Int32" Nullable="false" />
     <Property Name="fkResposta4" Type="Int32" Nullable="false" />
     <NavigationProperty Name="respostaquarta" Relationship="pvModel.FK_intervencaorespostaquarta_1" FromRole="intervencaorespostaquarta" ToRole="respostaquarta" />
@@ -472,7 +356,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="descricao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-    <Property Name="justificativa" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="justificativa" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
     <Property Name="numeroIntervencao" Type="Int32" />
     <Property Name="fkResposta2" Type="Int32" Nullable="false" />
     <NavigationProperty Name="respostasegunda" Relationship="pvModel.FK_intervencaorespostasegunda_1" FromRole="intervencaorespostasegunda" ToRole="respostasegunda" />
@@ -580,8 +464,8 @@
     <Property Name="periodoSurgimento" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="prioridade" Type="Int32" />
     <NavigationProperty Name="casoclinico" Relationship="pvModel.FKC773DEB18A1319FF" FromRole="queixa" ToRole="casoclinico" />
-    <NavigationProperty Name="medicamentoqueixa" Relationship="pvModel.FK_medicamentoqueixa_1" FromRole="queixa" ToRole="medicamentoqueixa" />
-    <NavigationProperty Name="medicamentoqueixa1" Relationship="pvModel.FK8099C4A73D02FC3D" FromRole="queixa" ToRole="medicamentoqueixa" />
+    <NavigationProperty Name="medicamentoqueixas" Relationship="pvModel.FK_medicamentoqueixa_1" FromRole="queixa" ToRole="medicamentoqueixa" />
+    <NavigationProperty Name="medicamentoqueixas1" Relationship="pvModel.FK8099C4A73D02FC3D" FromRole="queixa" ToRole="medicamentoqueixa" />
   </EntityType>
   <EntityType Name="queixarespostaprimeira">
     <Key>
@@ -604,8 +488,8 @@
     <Property Name="flConheceOuPreocupa" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
     <Property Name="prioridade" Type="Int64" Nullable="false" />
     <Property Name="descricao" Type="String" MaxLength="125" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="medicamentoqueixaquarta" Relationship="pvModel.FK_medicamentoqueixaquarta_1" FromRole="queixarespostaquarta" ToRole="medicamentoqueixaquarta" />
-    <NavigationProperty Name="medicamentoqueixaquarta1" Relationship="pvModel.FK78D999E947C18322" FromRole="queixarespostaquarta" ToRole="medicamentoqueixaquarta" />
+    <NavigationProperty Name="medicamentoqueixaquartas" Relationship="pvModel.FK_medicamentoqueixaquarta_1" FromRole="queixarespostaquarta" ToRole="medicamentoqueixaquarta" />
+    <NavigationProperty Name="medicamentoqueixaquartas1" Relationship="pvModel.FK78D999E947C18322" FromRole="queixarespostaquarta" ToRole="medicamentoqueixaquarta" />
     <NavigationProperty Name="respostaquarta" Relationship="pvModel.FK_queixarespostaquarta_1" FromRole="queixarespostaquarta" ToRole="respostaquarta" />
     <NavigationProperty Name="respostaquarta1" Relationship="pvModel.FK5BA98DD4D2B646E7" FromRole="queixarespostaquarta" ToRole="respostaquarta" />
   </EntityType>
@@ -620,8 +504,8 @@
     <Property Name="prioridade" Type="Int64" Nullable="false" />
     <Property Name="descricao" Type="String" MaxLength="125" Unicode="false" FixedLength="false" />
     <Property Name="periodoSurgimento" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="medicamentoqueixasegunda" Relationship="pvModel.FK_medicamentoqueixasegunda_1" FromRole="queixarespostasegunda" ToRole="medicamentoqueixasegunda" />
-    <NavigationProperty Name="medicamentoqueixasegunda1" Relationship="pvModel.FKF12E64244E1862F8" FromRole="queixarespostasegunda" ToRole="medicamentoqueixasegunda" />
+    <NavigationProperty Name="medicamentoqueixasegundas" Relationship="pvModel.FK_medicamentoqueixasegunda_1" FromRole="queixarespostasegunda" ToRole="medicamentoqueixasegunda" />
+    <NavigationProperty Name="medicamentoqueixasegundas1" Relationship="pvModel.FKF12E64244E1862F8" FromRole="queixarespostasegunda" ToRole="medicamentoqueixasegunda" />
     <NavigationProperty Name="respostasegunda" Relationship="pvModel.FK685CED99A4FE1140" FromRole="queixarespostasegunda" ToRole="respostasegunda" />
     <NavigationProperty Name="respostasegunda1" Relationship="pvModel.FKFD098D39A4FE1140" FromRole="queixarespostasegunda" ToRole="respostasegunda" />
   </EntityType>
@@ -642,8 +526,8 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="alergias" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="altura" Type="Single" Nullable="false" />
-    <Property Name="dataDeRealizacao" Type="DateTime" Precision="0" />
-    <Property Name="dataNascimento" Type="DateTime" Precision="0" />
+    <Property Name="dataDeRealizacao" Type="DateTime" />
+    <Property Name="dataNascimento" Type="DateTime" />
     <Property Name="escolaridade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="flAlturaCerta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="flBebeAlcool" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -688,15 +572,15 @@
     <Property Name="tipoBebidaAlcoolica" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="consulta" Relationship="pvModel.FK_respostaprimeira_1" FromRole="respostaprimeira" ToRole="consulta" />
     <NavigationProperty Name="consulta1" Relationship="pvModel.FK88D8D79A5097F805" FromRole="respostaprimeira" ToRole="consulta" />
-    <NavigationProperty Name="queixarespostaprimeira" Relationship="pvModel.FK_queixarespostaprimeira_1" FromRole="respostaprimeira" ToRole="queixarespostaprimeira" />
-    <NavigationProperty Name="queixarespostaprimeira1" Relationship="pvModel.FK1E43344B8872A0F6" FromRole="respostaprimeira" ToRole="queixarespostaprimeira" />
+    <NavigationProperty Name="queixarespostaprimeiras" Relationship="pvModel.FK_queixarespostaprimeira_1" FromRole="respostaprimeira" ToRole="queixarespostaprimeira" />
+    <NavigationProperty Name="queixarespostaprimeiras1" Relationship="pvModel.FK1E43344B8872A0F6" FromRole="respostaprimeira" ToRole="queixarespostaprimeira" />
   </EntityType>
   <EntityType Name="respostaquarta">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="dataRealizacao" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="dataRealizacao" Type="DateTime" Nullable="false" />
     <Property Name="fkConsulta" Type="Int32" Nullable="false" />
     <Property Name="numeroTentativa" Type="Int32" Nullable="false" />
     <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
@@ -706,17 +590,17 @@
     <Property Name="carta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="consulta" Relationship="pvModel.FK_respostaquarta_1" FromRole="respostaquarta" ToRole="consulta" />
     <NavigationProperty Name="consulta1" Relationship="pvModel.FKB29DB8E35097F805" FromRole="respostaquarta" ToRole="consulta" />
-    <NavigationProperty Name="intervencaorespostaquarta" Relationship="pvModel.FK_intervencaorespostaquarta_1" FromRole="respostaquarta" ToRole="intervencaorespostaquarta" />
-    <NavigationProperty Name="intervencaorespostaquarta1" Relationship="pvModel.FK800BA011D2B646E7" FromRole="respostaquarta" ToRole="intervencaorespostaquarta" />
-    <NavigationProperty Name="queixarespostaquarta" Relationship="pvModel.FK_queixarespostaquarta_1" FromRole="respostaquarta" ToRole="queixarespostaquarta" />
-    <NavigationProperty Name="queixarespostaquarta1" Relationship="pvModel.FK5BA98DD4D2B646E7" FromRole="respostaquarta" ToRole="queixarespostaquarta" />
+    <NavigationProperty Name="intervencaorespostaquartas" Relationship="pvModel.FK_intervencaorespostaquarta_1" FromRole="respostaquarta" ToRole="intervencaorespostaquarta" />
+    <NavigationProperty Name="intervencaorespostaquartas1" Relationship="pvModel.FK800BA011D2B646E7" FromRole="respostaquarta" ToRole="intervencaorespostaquarta" />
+    <NavigationProperty Name="queixarespostaquartas" Relationship="pvModel.FK_queixarespostaquarta_1" FromRole="respostaquarta" ToRole="queixarespostaquarta" />
+    <NavigationProperty Name="queixarespostaquartas1" Relationship="pvModel.FK5BA98DD4D2B646E7" FromRole="respostaquarta" ToRole="queixarespostaquarta" />
   </EntityType>
   <EntityType Name="respostasegunda">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="dataRealizacao" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="dataRealizacao" Type="DateTime" Nullable="false" />
     <Property Name="fkConsulta" Type="Int32" Nullable="false" />
     <Property Name="numeroTentativa" Type="Int32" Nullable="false" />
     <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
@@ -726,10 +610,10 @@
     <Property Name="carta" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="consulta" Relationship="pvModel.FK_respostasegunda_1" FromRole="respostasegunda" ToRole="consulta" />
     <NavigationProperty Name="consulta1" Relationship="pvModel.FKEFEE246A5097F805" FromRole="respostasegunda" ToRole="consulta" />
-    <NavigationProperty Name="intervencaorespostasegunda" Relationship="pvModel.FK_intervencaorespostasegunda_1" FromRole="respostasegunda" ToRole="intervencaorespostasegunda" />
-    <NavigationProperty Name="intervencaorespostasegunda1" Relationship="pvModel.FKD03D22FCA4FE1140" FromRole="respostasegunda" ToRole="intervencaorespostasegunda" />
-    <NavigationProperty Name="queixarespostasegunda" Relationship="pvModel.FK685CED99A4FE1140" FromRole="respostasegunda" ToRole="queixarespostasegunda" />
-    <NavigationProperty Name="queixarespostasegunda1" Relationship="pvModel.FKFD098D39A4FE1140" FromRole="respostasegunda" ToRole="queixarespostasegunda" />
+    <NavigationProperty Name="intervencaorespostasegundas" Relationship="pvModel.FK_intervencaorespostasegunda_1" FromRole="respostasegunda" ToRole="intervencaorespostasegunda" />
+    <NavigationProperty Name="intervencaorespostasegundas1" Relationship="pvModel.FKD03D22FCA4FE1140" FromRole="respostasegunda" ToRole="intervencaorespostasegunda" />
+    <NavigationProperty Name="queixarespostasegundas" Relationship="pvModel.FK685CED99A4FE1140" FromRole="respostasegunda" ToRole="queixarespostasegunda" />
+    <NavigationProperty Name="queixarespostasegundas1" Relationship="pvModel.FKFD098D39A4FE1140" FromRole="respostasegunda" ToRole="queixarespostasegunda" />
   </EntityType>
   <EntityType Name="respostaterceira">
     <Key>
@@ -741,7 +625,7 @@
     <Property Name="pressaodiastolica" Type="Int64" />
     <Property Name="peso" Type="Single" />
     <Property Name="fkConsulta" Type="Int32" Nullable="false" />
-    <Property Name="dataRealizacao" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="dataRealizacao" Type="DateTime" />
     <Property Name="flCorreto" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
     <Property Name="comentario" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
     <Property Name="comentarioAluno" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
@@ -749,8 +633,86 @@
     <Property Name="imc" Type="Single" Nullable="false" />
     <NavigationProperty Name="consulta" Relationship="pvModel.FK_respostaalunoterceira_1" FromRole="respostaterceira" ToRole="consulta" />
     <NavigationProperty Name="consulta1" Relationship="pvModel.FK877B3B565097F805" FromRole="respostaterceira" ToRole="consulta" />
-    <NavigationProperty Name="queixarespostaterceira" Relationship="pvModel.FK_queixarespostaterceira_1" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
-    <NavigationProperty Name="queixarespostaterceira1" Relationship="pvModel.FK1CE59807871504B2" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
+    <NavigationProperty Name="queixarespostaterceiras" Relationship="pvModel.FK_queixarespostaterceira_1" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
+    <NavigationProperty Name="queixarespostaterceiras1" Relationship="pvModel.FK1CE59807871504B2" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
+  </EntityType>
+  <EntityType Name="tb_acao_alternativa">
+    <Key>
+      <PropertyRef Name="IdAcaoAlternativa" />
+    </Key>
+    <Property Name="IdAcaoAlternativa" Type="Int32" Nullable="false" />
+    <Property Name="DescricaoAcao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_acao_queixa">
+    <Key>
+      <PropertyRef Name="IdAcaoQueixa" />
+    </Key>
+    <Property Name="IdAcaoQueixa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescricaoAcao" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_alergia">
+    <Key>
+      <PropertyRef Name="IdAlergia" />
+    </Key>
+    <Property Name="IdAlergia" Type="Int32" Nullable="false" />
+    <Property Name="Alergia" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_alergia_exames_fisicos">
+    <Key>
+      <PropertyRef Name="IdAlergia" />
+      <PropertyRef Name="IdConsultaVariavel" />
+    </Key>
+    <Property Name="IdAlergia" Type="Int32" Nullable="false" />
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConsultaFixoE">
+    <Key>
+      <PropertyRef Name="IdConsultaFixo" />
+    </Key>
+    <Property Name="IdConsultaFixo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTurma" Type="Int32" Nullable="false" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="EstadoPreenchimento" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="EhGabarito" Type="Boolean" Nullable="false" />
+    <Property Name="DataAtualizacao" Type="DateTime" />
+    <Property Name="ComentariosTutor" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_paciente_pessoa_turma" />
+  </EntityType>
+  <EntityType Name="tb_consulta_parametro">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+      <PropertyRef Name="IdParamentoClinico" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="IdParamentoClinico" Type="Int32" Nullable="false" />
+    <Property Name="Valor" Type="Single" />
+    <Property Name="ValorReferencia" Type="Single" />
+    <Property Name="Unidade" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_consulta_variavel">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdConsultaFixo" Type="Int64" Nullable="false" />
+    <Property Name="IdRelato" Type="Int32" Nullable="false" />
+    <Property Name="IdRazaoEncontro" Type="Int32" Nullable="false" />
+    <Property Name="DataPreenchimento" Type="DateTime" />
+    <Property Name="Lembretes" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="ComentariosTutor" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_paciente_pessoa_turma" />
+  </EntityType>
+  <EntityType Name="tb_consulta_variavel_queixa">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+      <PropertyRef Name="IdQueixa" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="IdQueixa" Type="Int32" Nullable="false" />
+    <Property Name="IdAcaoQueixa" Type="Int32" Nullable="false" />
+    <Property Name="Motivo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="Desde" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="Prioridade" Type="Int32" />
   </EntityType>
   <EntityType Name="CursoE">
     <Key>
@@ -759,8 +721,41 @@
     <Property Name="IdCurso" Type="Int32" Nullable="false" />
     <Property Name="NomeCurso" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
     <Property Name="IdInstituicao" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tb_instituicao" Relationship="pvModel.FK_Curso_Instituicao" FromRole="tb_curso" ToRole="tb_instituicao" />
-    <NavigationProperty Name="tb_disciplina" Relationship="pvModel.tb_curso_disciplina" FromRole="CursoE" ToRole="DisciplinaE" />
+  </EntityType>
+  <EntityType Name="tb_curso_disciplina">
+    <Key>
+      <PropertyRef Name="IdCurso" />
+      <PropertyRef Name="IdDisciplina" />
+    </Key>
+    <Property Name="IdCurso" Type="Int32" Nullable="false" />
+    <Property Name="IdDisciplina" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DemograficosAntropometricosE">
+    <Key>
+      <PropertyRef Name="IdConsultaFixo" />
+    </Key>
+    <Property Name="IdConsultaFixo" Type="Int64" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Genero" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="DataNascimento" Type="DateTime" />
+    <Property Name="MedicosAtendem" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MoradiaFamilia" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="OndeAdquireMedicamentos" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IdEscolaridade" Type="Int32" Nullable="false" />
+    <Property Name="IdOcupacao" Type="Int32" Nullable="false" />
+    <Property Name="IdPlanoSaude" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_diario_pessoal">
+    <Key>
+      <PropertyRef Name="IdConsultaFixo" />
+      <PropertyRef Name="IdMedicamento" />
+    </Key>
+    <Property Name="IdConsultaFixo" Type="Int64" Nullable="false" />
+    <Property Name="IdMedicamento" Type="Int32" Nullable="false" />
+    <Property Name="Periodo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="Horario" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Quantidade" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="TipoBebida" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="DisciplinaE">
     <Key>
@@ -768,17 +763,80 @@
     </Key>
     <Property Name="IdDisciplina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NomeDisciplina" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="tb_disciplina_curso" Relationship="pvModel.FK_Disciplina" FromRole="tb_disciplina" ToRole="tb_disciplina_curso" />
-    <NavigationProperty Name="tb_curso" Relationship="pvModel.tb_curso_disciplina" FromRole="DisciplinaE" ToRole="CursoE" />
   </EntityType>
-  <EntityType Name="tb_disciplina_curso">
+  <EntityType Name="EscolaridadeE">
     <Key>
-      <PropertyRef Name="IdDisciplina" />
-      <PropertyRef Name="IdCurso" />
+      <PropertyRef Name="IdEscolaridade" />
     </Key>
-    <Property Name="IdDisciplina" Type="Int32" Nullable="false" />
-    <Property Name="IdCurso" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="tb_disciplina" Relationship="pvModel.FK_Disciplina" FromRole="tb_disciplina_curso" ToRole="tb_disciplina" />
+    <Property Name="IdEscolaridade" Type="Int32" Nullable="false" />
+    <Property Name="Nivel" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_estilo_vida">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="TabacoConsumo" Type="Boolean" Nullable="false" />
+    <Property Name="TabacoUso" Type="Int16" Nullable="false" />
+    <Property Name="TabacoParou" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CafeConsumo" Type="Boolean" Nullable="false" />
+    <Property Name="CafeUso" Type="Int16" Nullable="false" />
+    <Property Name="CafeParou" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AlcoolConsumo" Type="Boolean" Nullable="false" />
+    <Property Name="AlcoolUso" Type="Int16" Nullable="false" />
+    <Property Name="AlcoolTipoBebida" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AlcoolParou" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_exames_fisicos">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="Peso" Type="Single" />
+    <Property Name="Altura" Type="Single" />
+    <Property Name="PressaoDiastolica" Type="Single" />
+    <Property Name="PressaoSistolica" Type="Single" />
+    <Property Name="Glicemia" Type="Single" />
+  </EntityType>
+  <EntityType Name="ExperienciaMedicamentosE">
+    <Key>
+      <PropertyRef Name="IdConsultaFixo" />
+    </Key>
+    <Property Name="IdConsultaFixo" Type="Int64" Nullable="false" />
+    <Property Name="IdRespostaEsperaTratamento" Type="Int32" Nullable="false" />
+    <Property Name="IdRespostaPreocupacoes" Type="Int32" Nullable="false" />
+    <Property Name="IdRespostaGrauEntendimento" Type="Int32" Nullable="false" />
+    <Property Name="IdRespostaCultural" Type="Int32" Nullable="false" />
+    <Property Name="IdRespostaComportamento" Type="Int32" Nullable="false" />
+    <Property Name="IdRespostaIncorporadoPlano" Type="Int32" Nullable="false" />
+    <Property Name="AtencaoEsperaTratamento" Type="Boolean" Nullable="false" />
+    <Property Name="AtencaoPreocupacoes" Type="Boolean" Nullable="false" />
+    <Property Name="AtencaoGrauEntendimento" Type="Boolean" Nullable="false" />
+    <Property Name="AtencaoCultural" Type="Boolean" Nullable="false" />
+    <Property Name="AtencaoComportamento" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistoriaE">
+    <Key>
+      <PropertyRef Name="IdConsultaFixo" />
+    </Key>
+    <Property Name="IdConsultaFixo" Type="Int64" Nullable="false" />
+    <Property Name="HistoriaMedicaPregressa" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HistoriaFamiliar" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="HistoricoE">
+    <Key>
+      <PropertyRef Name="IdHistorico" />
+    </Key>
+    <Property Name="IdHistorico" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="IdTurma" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="IdTutor" Type="Int32" Nullable="false" />
+    <Property Name="IdRelato" Type="Int32" Nullable="false" />
+    <Property Name="DataEnvio" Type="DateTime" />
+    <Property Name="DataResposta" Type="DateTime" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="ComentarioTutor" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="InstituicaoE">
     <Key>
@@ -787,8 +845,89 @@
     <Property Name="IdInstituicao" Type="Int32" Nullable="false" />
     <Property Name="NomeInstituicao" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
     <Property Name="Sigla" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="CursoE" Relationship="pvModel.FK_Curso_Instituicao" FromRole="tb_instituicao" ToRole="tb_curso" />
-    <NavigationProperty Name="tb_turma" Relationship="pvModel.FK_Instituicao" FromRole="tb_instituicao" ToRole="tb_turma" />
+  </EntityType>
+  <EntityType Name="tb_medicamento_nao_prescrito">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+      <PropertyRef Name="IdMedicamento" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="IdMedicamento" Type="Int32" Nullable="false" />
+    <Property Name="Fitoterapico" Type="Boolean" Nullable="false" />
+    <Property Name="Dosagem" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Posologia" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_medicamento_prescrito">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+      <PropertyRef Name="IdMedicamento" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="IdMedicamento" Type="Int32" Nullable="false" />
+    <Property Name="Fitoterapico" Type="Boolean" />
+    <Property Name="Dosagem" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Posologia" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Prescritor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Especialidade" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_medicamentos">
+    <Key>
+      <PropertyRef Name="IdMedicamento" />
+    </Key>
+    <Property Name="IdMedicamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_medicamentos_anteriores">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+      <PropertyRef Name="IdMedicamento" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="IdMedicamento" Type="Int32" Nullable="false" />
+    <Property Name="Indicacao" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Resposta" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Periodo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="OcupacaoE">
+    <Key>
+      <PropertyRef Name="IdOcupacao" />
+    </Key>
+    <Property Name="IdOcupacao" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PacienteE">
+    <Key>
+      <PropertyRef Name="IdPaciente" />
+    </Key>
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1" FromRole="tb_paciente" ToRole="tb_paciente_pessoa_turma" />
+  </EntityType>
+  <EntityType Name="PacientePessoaTurmaE">
+    <Key>
+      <PropertyRef Name="IdPessoa" />
+      <PropertyRef Name="IdTurma" />
+      <PropertyRef Name="IdPaciente" />
+    </Key>
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="IdTurma" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="IdConsultaFixo" Type="Int64" Nullable="false" />
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="GrupoAtividades" Type="Int32" Nullable="false" />
+    <Property Name="EstadoPreenchimento" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_consulta_fixo" />
+    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_consulta_variavel" />
+    <NavigationProperty Name="tb_paciente" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_paciente" />
+    <NavigationProperty Name="tb_turma_pessoa" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_turma_pessoa" />
+  </EntityType>
+  <EntityType Name="tb_parametro_clinico">
+    <Key>
+      <PropertyRef Name="IdParamentoClinico" />
+    </Key>
+    <Property Name="IdParamentoClinico" Type="Int32" Nullable="false" />
+    <Property Name="ParametroClinico" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="tb_perfil_usuario">
     <Key>
@@ -796,6 +935,87 @@
     </Key>
     <Property Name="IdPerfil" Type="Int32" Nullable="false" />
     <Property Name="NomePerfil" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PerguntaE">
+    <Key>
+      <PropertyRef Name="IdPergunta" />
+    </Key>
+    <Property Name="IdPergunta" Type="Int32" Nullable="false" />
+    <Property Name="Pergunta" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PessoaE">
+    <Key>
+      <PropertyRef Name="IdPessoa" />
+    </Key>
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PlanoSaudeE">
+    <Key>
+      <PropertyRef Name="IdPlanoSaude" />
+    </Key>
+    <Property Name="IdPlanoSaude" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_queixa">
+    <Key>
+      <PropertyRef Name="IdQueixa" />
+    </Key>
+    <Property Name="IdQueixa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescricaoQueixa" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_queixa_medicamentos">
+    <Key>
+      <PropertyRef Name="IdConsultaVariavel" />
+      <PropertyRef Name="IdQueixa" />
+      <PropertyRef Name="IdMedicamento" />
+    </Key>
+    <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
+    <Property Name="IdQueixa" Type="Int32" Nullable="false" />
+    <Property Name="IdMedicamento" Type="Int32" Nullable="false" />
+    <Property Name="SuspeitaIdAcaoQueixa" Type="Int32" Nullable="false" />
+    <Property Name="Dose" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Desde" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="Necessario" Type="Boolean" Nullable="false" />
+    <Property Name="Efetivo" Type="Boolean" Nullable="false" />
+    <Property Name="Seguro" Type="Boolean" Nullable="false" />
+    <Property Name="Cumprimento" Type="Boolean" Nullable="false" />
+    <Property Name="IdAcaoAlternativa1" Type="Int32" Nullable="false" />
+    <Property Name="IdAcaoAlternativa2" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_razao_encontro">
+    <Key>
+      <PropertyRef Name="IdRazaoEncontro" />
+    </Key>
+    <Property Name="IdRazaoEncontro" Type="Int32" Nullable="false" />
+    <Property Name="DescricaoRazao" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="RelatoClinicoE">
+    <Key>
+      <PropertyRef Name="IdRelato" />
+    </Key>
+    <Property Name="IdRelato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="OrdemCronologia" Type="Int32" Nullable="false" />
+    <Property Name="RelatoTextual" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="RelatoVideo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="NivelDificuldade" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RespostaE">
+    <Key>
+      <PropertyRef Name="IdResposta" />
+    </Key>
+    <Property Name="IdResposta" Type="Int32" Nullable="false" />
+    <Property Name="Resposta" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="IdPergunta" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_sistema">
+    <Key>
+      <PropertyRef Name="IdSistema" />
+    </Key>
+    <Property Name="IdSistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeSistema" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="TurmaE">
     <Key>
@@ -806,13 +1026,31 @@
     <Property Name="Periodo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
     <Property Name="IdDisciplina" Type="Int32" Nullable="false" />
     <Property Name="IdInstituicao" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tb_instituicao" Relationship="pvModel.FK_Instituicao" FromRole="tb_turma" ToRole="tb_instituicao" />
+  </EntityType>
+  <EntityType Name="tb_turma_pessoa">
+    <Key>
+      <PropertyRef Name="IdTurma" />
+      <PropertyRef Name="IdPessoa" />
+    </Key>
+    <Property Name="IdTurma" Type="Int32" Nullable="false" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1" FromRole="tb_turma_pessoa" ToRole="tb_paciente_pessoa_turma" />
+  </EntityType>
+  <EntityType Name="tb_turma_pessoa_relato">
+    <Key>
+      <PropertyRef Name="IdTurma" />
+      <PropertyRef Name="IdPessoa" />
+      <PropertyRef Name="IdRelato" />
+    </Key>
+    <Property Name="IdTurma" Type="Int32" Nullable="false" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="IdRelato" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="UsuarioE">
     <Key>
       <PropertyRef Name="IdUsuario" />
     </Key>
-    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Cpf" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
     <Property Name="NomeUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -1273,540 +1511,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Curso_Instituicao">
-    <End Role="tb_instituicao" Type="pvModel.InstituicaoE" Multiplicity="1" />
-    <End Role="tb_curso" Type="pvModel.CursoE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_instituicao">
-        <PropertyRef Name="IdInstituicao" />
-      </Principal>
-      <Dependent Role="tb_curso">
-        <PropertyRef Name="IdInstituicao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Disciplina">
-    <End Role="tb_disciplina" Type="pvModel.DisciplinaE" Multiplicity="1" />
-    <End Role="tb_disciplina_curso" Type="pvModel.tb_disciplina_curso" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_disciplina">
-        <PropertyRef Name="IdDisciplina" />
-      </Principal>
-      <Dependent Role="tb_disciplina_curso">
-        <PropertyRef Name="IdDisciplina" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Instituicao">
-    <End Role="tb_instituicao" Type="pvModel.InstituicaoE" Multiplicity="1" />
-    <End Role="tb_turma" Type="pvModel.TurmaE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_instituicao">
-        <PropertyRef Name="IdInstituicao" />
-      </Principal>
-      <Dependent Role="tb_turma">
-        <PropertyRef Name="IdInstituicao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="turma">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="codigo" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="periodo" MaxLength="6" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="fktutor" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="nmDisciplina" MaxLength="255" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tutor" Relationship="pvModel.FK6998F652B972831" FromRole="turma" ToRole="tutor" />
-  </EntityType>
-  <EntityType Name="tutor">
-    <Key>
-      <PropertyRef Name="login" />
-    </Key>
-    <Property Type="String" Name="login" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="nome" MaxLength="255" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="turma" Relationship="pvModel.FK6998F652B972831" FromRole="tutor" ToRole="turma" />
-  </EntityType>
-  <EntityType Name="usuario">
-    <Key>
-      <PropertyRef Name="login" />
-    </Key>
-    <Property Type="String" Name="login" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="email" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="senha" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="tpUsuario" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="nome" MaxLength="255" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <Association Name="FK6998F652B972831">
-    <End Type="pvModel.tutor" Role="tutor" Multiplicity="0..1" />
-    <End Type="pvModel.turma" Role="turma" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tutor">
-        <PropertyRef Name="login" />
-      </Principal>
-      <Dependent Role="turma">
-        <PropertyRef Name="fktutor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="VideoE">
-    <Key>
-      <PropertyRef Name="IdVideo" />
-      <PropertyRef Name="NomeVideo" />
-    </Key>
-    <Property Type="Int32" Name="IdVideo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="NomeVideo" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Type="Binary" Name="Video" Nullable="false" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="tb_alergia">
-    <Key>
-      <PropertyRef Name="IdAlergia" />
-    </Key>
-    <Property Type="Int32" Name="IdAlergia" Nullable="false" />
-    <Property Type="String" Name="Alergia" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_exames_fisicos" Relationship="pvModel.fk_tb_exames_fisicos_tb_alergia1" FromRole="tb_alergia" ToRole="tb_exames_fisicos" />
-  </EntityType>
-  <EntityType Name="ConsultaFixoE">
-    <Key>
-      <PropertyRef Name="IdConsultaFixo" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="IdPaciente" Nullable="false" />
-    <Property Type="Boolean" Name="EhGabarito" Nullable="false" />
-    <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_demograficos_antropometricos" />
-    <NavigationProperty Name="tb_experiencia_medicamentos" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_experiencia_medicamentos" />
-    <NavigationProperty Name="tb_historia" Relationship="pvModel.fk_tb_historia_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_historia" />
-    <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_paciente_pessoa_turma" />
-  </EntityType>
-  <EntityType Name="tb_consulta_parametro">
-    <Key>
-      <PropertyRef Name="IdConsultaVariavel" />
-      <PropertyRef Name="IdParamentoClinico" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
-    <Property Type="Int32" Name="IdParamentoClinico" Nullable="false" />
-    <Property Type="Single" Name="Valor" />
-    <Property Type="Single" Name="ValorReferencia" />
-    <Property Type="String" Name="Unidade" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" FromRole="tb_consulta_parametro" ToRole="tb_consulta_variavel" />
-    <NavigationProperty Name="tb_parametro_clinico" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1" FromRole="tb_consulta_parametro" ToRole="tb_parametro_clinico" />
-  </EntityType>
-  <EntityType Name="tb_consulta_variavel">
-    <Key>
-      <PropertyRef Name="IdConsultaVariavel" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="DateTime" Name="Data" />
-    <Property Type="Int32" Name="IdRelato" Nullable="false" />
-    <Property Type="String" Name="Lembretes" MaxLength="65535" FixedLength="false" Unicode="false" />
-    <Property Type="Boolean" Name="EhGabarito" Nullable="false" />
-    <NavigationProperty Name="tb_consulta_parametro" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" FromRole="tb_consulta_variavel" ToRole="tb_consulta_parametro" />
-    <NavigationProperty Name="tb_medicamentos_anteriores" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" FromRole="tb_consulta_variavel" ToRole="tb_medicamentos_anteriores" />
-    <NavigationProperty Name="tb_medicamento_prescrito" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" FromRole="tb_consulta_variavel" ToRole="tb_medicamento_prescrito" />
-    <NavigationProperty Name="tb_relato_clinico" Relationship="pvModel.fk_tb_consulta_variavel_tb_relato_clinico1" FromRole="tb_consulta_variavel" ToRole="tb_relato_clinico" />
-    <NavigationProperty Name="tb_estilo_vida" Relationship="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_estilo_vida" />
-    <NavigationProperty Name="tb_exames_fisicos" Relationship="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_exames_fisicos" />
-    <NavigationProperty Name="tb_medicamento_nao_prescrito" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_medicamento_nao_prescrito" />
-    <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_paciente_pessoa_turma" />
-    <NavigationProperty Name="tb_resposta" Relationship="pvModel.tb_razao_encontro" FromRole="tb_consulta_variavel" ToRole="tb_resposta" />
-  </EntityType>
-  <EntityType Name="DemograficosAntropometricosE">
-    <Key>
-      <PropertyRef Name="IdConsultaFixo" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
-    <Property Type="String" Name="Nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="DataNascimento" />
-    <Property Type="String" Name="MedicosAtendem" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="MoradiaFamilia" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="OndeAdquireMedicamentos" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="IdEscolaridade" Nullable="false" />
-    <Property Type="Int32" Name="IdOcupacao" Nullable="false" />
-    <Property Type="Int32" Name="IdPlanoSaude" Nullable="false" />
-    <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" FromRole="tb_demograficos_antropometricos" ToRole="tb_consulta_fixo" />
-    <NavigationProperty Name="tb_escolaridade" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" FromRole="tb_demograficos_antropometricos" ToRole="tb_escolaridade" />
-    <NavigationProperty Name="tb_ocupacao" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" FromRole="tb_demograficos_antropometricos" ToRole="tb_ocupacao" />
-    <NavigationProperty Name="tb_plano_saude" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" FromRole="tb_demograficos_antropometricos" ToRole="tb_plano_saude" />
-  </EntityType>
-  <EntityType Name="EscolaridadeE">
-    <Key>
-      <PropertyRef Name="IdEscolaridade" />
-    </Key>
-    <Property Type="Int32" Name="IdEscolaridade" Nullable="false" />
-    <Property Type="String" Name="Nivel" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" FromRole="tb_escolaridade" ToRole="tb_demograficos_antropometricos" />
-  </EntityType>
-  <EntityType Name="tb_estilo_vida">
-    <Key>
-      <PropertyRef Name="IdConsultaVariavel" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
-    <Property Type="Boolean" Name="TabacoConsumo" Nullable="false" />
-    <Property Type="Int16" Name="TabacoUso" Nullable="false" />
-    <Property Type="String" Name="TabacoParou" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Boolean" Name="CafeConsumo" Nullable="false" />
-    <Property Type="Int16" Name="CafeUso" Nullable="false" />
-    <Property Type="String" Name="CafeParou" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Boolean" Name="AlcoolConsumo" Nullable="false" />
-    <Property Type="Int16" Name="AlcoolUso" Nullable="false" />
-    <Property Type="String" Name="AlcoolTipoBebida" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="AlcoolParou" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" FromRole="tb_estilo_vida" ToRole="tb_consulta_variavel" />
-  </EntityType>
-  <EntityType Name="tb_exames_fisicos">
-    <Key>
-      <PropertyRef Name="IdConsultaVariavel" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
-    <Property Type="Single" Name="Peso" />
-    <Property Type="Single" Name="Altura" />
-    <Property Type="Single" Name="PressaoDiastolica" />
-    <Property Type="Single" Name="PressaoSistolica" />
-    <Property Type="Single" Name="Glicemia" />
-    <Property Type="Int32" Name="IdAlergia" Nullable="false" />
-    <NavigationProperty Name="tb_alergia" Relationship="pvModel.fk_tb_exames_fisicos_tb_alergia1" FromRole="tb_exames_fisicos" ToRole="tb_alergia" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" FromRole="tb_exames_fisicos" ToRole="tb_consulta_variavel" />
-  </EntityType>
-  <EntityType Name="ExperienciaMedicamentosE">
-    <Key>
-      <PropertyRef Name="IdConsultaFixo" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
-    <Property Type="Int32" Name="IdRespostaEsperaTratamento" Nullable="false" />
-    <Property Type="Int32" Name="IdRespostaPreocupacoes" Nullable="false" />
-    <Property Type="Int32" Name="IdRespostaGrauEntendimento" Nullable="false" />
-    <Property Type="Int32" Name="IdRespostaCultural" Nullable="false" />
-    <Property Type="Int32" Name="IdRespostaComportamento" Nullable="false" />
-    <Property Type="Int32" Name="IdRespostaIncorporadoPlano" Nullable="false" />
-    <Property Type="Boolean" Name="AtencaoEsperaTratamento" Nullable="false" />
-    <Property Type="Boolean" Name="AtencaoPreocupacoes" Nullable="false" />
-    <Property Type="Boolean" Name="AtencaoGrauEntendimento" Nullable="false" />
-    <Property Type="Boolean" Name="AtencaoCultural" Nullable="false" />
-    <Property Type="Boolean" Name="AtencaoComportamento" Nullable="false" />
-    <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" FromRole="tb_experiencia_medicamentos" ToRole="tb_consulta_fixo" />
-    <NavigationProperty Name="tb_resposta" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta1" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
-    <NavigationProperty Name="tb_resposta1" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta2" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
-    <NavigationProperty Name="tb_resposta2" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta3" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
-    <NavigationProperty Name="tb_resposta3" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta4" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
-    <NavigationProperty Name="tb_resposta4" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta5" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
-    <NavigationProperty Name="tb_resposta5" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta6" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
-  </EntityType>
-  <EntityType Name="HistoriaE">
-    <Key>
-      <PropertyRef Name="IdConsultaFixo" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
-    <Property Type="String" Name="HistoriaMedicaPregressa" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="HistoriaFamiliar" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_historia_tb_consulta_fixo1" FromRole="tb_historia" ToRole="tb_consulta_fixo" />
-  </EntityType>
-  <EntityType Name="tb_medicamento_nao_prescrito">
-    <Key>
-      <PropertyRef Name="IdConsultaVariavel" />
-      <PropertyRef Name="IdMedicamento" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
-    <Property Type="Int32" Name="IdMedicamento" Nullable="false" />
-    <Property Type="Boolean" Name="Fitoterapico" Nullable="false" />
-    <Property Type="String" Name="Dosagem" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Posologia" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1" FromRole="tb_medicamento_nao_prescrito" ToRole="tb_consulta_variavel" />
-    <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1" FromRole="tb_medicamento_nao_prescrito" ToRole="tb_medicamentos" />
-  </EntityType>
-  <EntityType Name="tb_medicamento_prescrito">
-    <Key>
-      <PropertyRef Name="IdConsultaVariavel" />
-      <PropertyRef Name="IdMedicamento" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
-    <Property Type="Int32" Name="IdMedicamento" Nullable="false" />
-    <Property Type="Boolean" Name="Fitoterapico" />
-    <Property Type="String" Name="Dosagem" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Posologia" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Prescritor" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Especialidade" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" FromRole="tb_medicamento_prescrito" ToRole="tb_consulta_variavel" />
-    <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2" FromRole="tb_medicamento_prescrito" ToRole="tb_medicamentos" />
-  </EntityType>
-  <EntityType Name="tb_medicamentos">
-    <Key>
-      <PropertyRef Name="IdMedicamento" />
-    </Key>
-    <Property Type="Int32" Name="IdMedicamento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_medicamento_nao_prescrito" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1" FromRole="tb_medicamentos" ToRole="tb_medicamento_nao_prescrito" />
-    <NavigationProperty Name="tb_medicamento_prescrito" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2" FromRole="tb_medicamentos" ToRole="tb_medicamento_prescrito" />
-    <NavigationProperty Name="tb_medicamentos_anteriores" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" FromRole="tb_medicamentos" ToRole="tb_medicamentos_anteriores" />
-  </EntityType>
-  <EntityType Name="tb_medicamentos_anteriores">
-    <Key>
-      <PropertyRef Name="IdConsultaVariavel" />
-      <PropertyRef Name="IdMedicamento" />
-    </Key>
-    <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
-    <Property Type="Int32" Name="IdMedicamento" Nullable="false" />
-    <Property Type="String" Name="Indicacao" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Resposta" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Periodo" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" FromRole="tb_medicamentos_anteriores" ToRole="tb_consulta_variavel" />
-    <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" FromRole="tb_medicamentos_anteriores" ToRole="tb_medicamentos" />
-  </EntityType>
-  <EntityType Name="OcupacaoE">
-    <Key>
-      <PropertyRef Name="IdOcupacao" />
-    </Key>
-    <Property Type="Int32" Name="IdOcupacao" Nullable="false" />
-    <Property Type="String" Name="Descricao" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" FromRole="tb_ocupacao" ToRole="tb_demograficos_antropometricos" />
-  </EntityType>
-  <EntityType Name="PacienteE">
-    <Key>
-      <PropertyRef Name="IdPaciente" />
-    </Key>
-    <Property Type="Int32" Name="IdPaciente" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="Binary" Name="Foto" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1" FromRole="tb_paciente" ToRole="tb_paciente_pessoa_turma" />
-    <NavigationProperty Name="tb_relato_clinico" Relationship="pvModel.fk_tb_relato_clinico_tb_paciente1" FromRole="tb_paciente" ToRole="tb_relato_clinico" />
-  </EntityType>
-  <EntityType Name="PacientePessoaTurmaE">
-    <Key>
-      <PropertyRef Name="IdPessoa" />
-      <PropertyRef Name="IdTurma" />
-      <PropertyRef Name="IdPaciente" />
-    </Key>
-    <Property Type="Int32" Name="IdPessoa" Nullable="false" />
-    <Property Type="Int32" Name="IdTurma" Nullable="false" />
-    <Property Type="Int32" Name="IdPaciente" Nullable="false" />
-    <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
-    <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
-    <Property Type="Int32" Name="GrupoAtividades" Nullable="false" />
-    <Property Type="Int32" Name="EstadoPreenchimento" Nullable="false" />
-    <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_consulta_fixo" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_consulta_variavel" />
-    <NavigationProperty Name="tb_paciente" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_paciente" />
-  </EntityType>
-  <EntityType Name="ParamentoClinicoE">
-    <Key>
-      <PropertyRef Name="IdParamentoClinico" />
-    </Key>
-    <Property Type="Int32" Name="IdParamentoClinico" Nullable="false" />
-    <Property Type="String" Name="ParametroClinico" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_consulta_parametro" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1" FromRole="tb_parametro_clinico" ToRole="tb_consulta_parametro" />
-  </EntityType>
-  <EntityType Name="PerguntaE">
-    <Key>
-      <PropertyRef Name="IdPergunta" />
-    </Key>
-    <Property Type="Int32" Name="IdPergunta" Nullable="false" />
-    <Property Type="String" Name="Pergunta" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_resposta" Relationship="pvModel.fk_tb_resposta_tb_pergunta1" FromRole="tb_pergunta" ToRole="tb_resposta" />
-  </EntityType>
-  <EntityType Name="PessoaE">
-    <Key>
-      <PropertyRef Name="IdPessoa" />
-    </Key>
-    <Property Type="Int32" Name="IdPessoa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="PlanoSaudeE">
-    <Key>
-      <PropertyRef Name="IdPlanoSaude" />
-    </Key>
-    <Property Type="Int32" Name="IdPlanoSaude" Nullable="false" />
-    <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" FromRole="tb_plano_saude" ToRole="tb_demograficos_antropometricos" />
-  </EntityType>
-  <EntityType Name="RelatoClinicoE">
-    <Key>
-      <PropertyRef Name="IdRelato" />
-    </Key>
-    <Property Type="Int32" Name="IdRelato" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="IdPaciente" Nullable="false" />
-    <Property Type="Int32" Name="OrdemCronologia" Nullable="false" />
-    <Property Type="String" Name="RelatoTextual" MaxLength="65535" FixedLength="false" Unicode="false" />
-    <Property Type="Binary" Name="RelatoVideo" MaxLength="Max" FixedLength="false" />
-    <Property Type="Int32" Name="NivelDificuldade" Nullable="false" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_tb_relato_clinico1" FromRole="tb_relato_clinico" ToRole="tb_consulta_variavel" />
-    <NavigationProperty Name="tb_paciente" Relationship="pvModel.fk_tb_relato_clinico_tb_paciente1" FromRole="tb_relato_clinico" ToRole="tb_paciente" />
-  </EntityType>
-  <EntityType Name="RespostaE">
-    <Key>
-      <PropertyRef Name="IdResposta" />
-    </Key>
-    <Property Type="Int32" Name="IdResposta" Nullable="false" />
-    <Property Type="String" Name="Resposta" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="IdPergunta" Nullable="false" />
-    <NavigationProperty Name="tb_experiencia_medicamentos" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta1" FromRole="tb_resposta" ToRole="tb_experiencia_medicamentos" />
-    <NavigationProperty Name="tb_experiencia_medicamentos1" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta2" FromRole="tb_resposta" ToRole="tb_experiencia_medicamentos" />
-    <NavigationProperty Name="tb_experiencia_medicamentos2" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta3" FromRole="tb_resposta" ToRole="tb_experiencia_medicamentos" />
-    <NavigationProperty Name="tb_experiencia_medicamentos3" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta4" FromRole="tb_resposta" ToRole="tb_experiencia_medicamentos" />
-    <NavigationProperty Name="tb_experiencia_medicamentos4" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta5" FromRole="tb_resposta" ToRole="tb_experiencia_medicamentos" />
-    <NavigationProperty Name="tb_experiencia_medicamentos5" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta6" FromRole="tb_resposta" ToRole="tb_experiencia_medicamentos" />
-    <NavigationProperty Name="tb_pergunta" Relationship="pvModel.fk_tb_resposta_tb_pergunta1" FromRole="tb_resposta" ToRole="tb_pergunta" />
-    <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.tb_razao_encontro" FromRole="tb_resposta" ToRole="tb_consulta_variavel" />
-  </EntityType>
-  <Association Name="fk_tb_exames_fisicos_tb_alergia1">
-    <End Type="pvModel.tb_alergia" Role="tb_alergia" Multiplicity="1" />
-    <End Type="pvModel.tb_exames_fisicos" Role="tb_exames_fisicos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_alergia">
-        <PropertyRef Name="IdAlergia" />
-      </Principal>
-      <Dependent Role="tb_exames_fisicos">
-        <PropertyRef Name="IdAlergia" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_demograficos_antropometricos_tb_consulta_fixo1">
-    <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-    <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_fixo">
-        <PropertyRef Name="IdConsultaFixo" />
-      </Principal>
-      <Dependent Role="tb_demograficos_antropometricos">
-        <PropertyRef Name="IdConsultaFixo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_experiencia_medicamentos_tb_consulta_fixo1">
-    <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-    <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_fixo">
-        <PropertyRef Name="IdConsultaFixo" />
-      </Principal>
-      <Dependent Role="tb_experiencia_medicamentos">
-        <PropertyRef Name="IdConsultaFixo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_historia_tb_consulta_fixo1">
-    <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-    <End Type="pvModel.HistoriaE" Role="tb_historia" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_fixo">
-        <PropertyRef Name="IdConsultaFixo" />
-      </Principal>
-      <Dependent Role="tb_historia">
-        <PropertyRef Name="IdConsultaFixo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_tb_paciente_pessoa_turma_tb_consulta_fixo1">
-    <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-    <End Type="pvModel.PacientePessoaTurmaE" Role="tb_paciente_pessoa_turma" Multiplicity="*" />
+    <End Role="tb_consulta_fixo" Type="pvModel.ConsultaFixoE" Multiplicity="1" />
+    <End Role="tb_paciente_pessoa_turma" Type="pvModel.PacientePessoaTurmaE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_consulta_fixo">
         <PropertyRef Name="IdConsultaFixo" />
       </Principal>
       <Dependent Role="tb_paciente_pessoa_turma">
         <PropertyRef Name="IdConsultaFixo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1">
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
-    <End Type="pvModel.tb_consulta_parametro" Role="tb_consulta_parametro" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_variavel">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Principal>
-      <Dependent Role="tb_consulta_parametro">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1">
-    <End Type="pvModel.ParamentoClinicoE" Role="tb_parametro_clinico" Multiplicity="1" />
-    <End Type="pvModel.tb_consulta_parametro" Role="tb_consulta_parametro" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_parametro_clinico">
-        <PropertyRef Name="IdParamentoClinico" />
-      </Principal>
-      <Dependent Role="tb_consulta_parametro">
-        <PropertyRef Name="IdParamentoClinico" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1">
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
-    <End Type="pvModel.tb_medicamentos_anteriores" Role="tb_medicamentos_anteriores" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_variavel">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Principal>
-      <Dependent Role="tb_medicamentos_anteriores">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2">
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
-    <End Type="pvModel.tb_medicamento_prescrito" Role="tb_medicamento_prescrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_variavel">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Principal>
-      <Dependent Role="tb_medicamento_prescrito">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_consulta_variavel_tb_relato_clinico1">
-    <End Type="pvModel.RelatoClinicoE" Role="tb_relato_clinico" Multiplicity="1" />
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_relato_clinico">
-        <PropertyRef Name="IdRelato" />
-      </Principal>
-      <Dependent Role="tb_consulta_variavel">
-        <PropertyRef Name="IdRelato" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_estilo_vida_tb_consulta_variavel1">
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
-    <End Type="pvModel.tb_estilo_vida" Role="tb_estilo_vida" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_variavel">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Principal>
-      <Dependent Role="tb_estilo_vida">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_exames_fisicos_tb_consulta_variavel1">
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
-    <End Type="pvModel.tb_exames_fisicos" Role="tb_exames_fisicos" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_variavel">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Principal>
-      <Dependent Role="tb_exames_fisicos">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_medicamento_prescrito_tb_consulta_variavel1">
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
-    <End Type="pvModel.tb_medicamento_nao_prescrito" Role="tb_medicamento_nao_prescrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_consulta_variavel">
-        <PropertyRef Name="IdConsultaVariavel" />
-      </Principal>
-      <Dependent Role="tb_medicamento_nao_prescrito">
-        <PropertyRef Name="IdConsultaVariavel" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_tb_paciente_pessoa_turma_tb_consulta_variavel1">
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
-    <End Type="pvModel.PacientePessoaTurmaE" Role="tb_paciente_pessoa_turma" Multiplicity="*" />
+    <End Role="tb_consulta_variavel" Type="pvModel.tb_consulta_variavel" Multiplicity="1" />
+    <End Role="tb_paciente_pessoa_turma" Type="pvModel.PacientePessoaTurmaE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_consulta_variavel">
         <PropertyRef Name="IdConsultaVariavel" />
@@ -1816,153 +1535,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_tb_demograficos_antropometricos_tb_escolaridade1">
-    <End Type="pvModel.EscolaridadeE" Role="tb_escolaridade" Multiplicity="1" />
-    <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_escolaridade">
-        <PropertyRef Name="IdEscolaridade" />
-      </Principal>
-      <Dependent Role="tb_demograficos_antropometricos">
-        <PropertyRef Name="IdEscolaridade" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_demograficos_antropometricos_tb_ocupacao1">
-    <End Type="pvModel.OcupacaoE" Role="tb_ocupacao" Multiplicity="1" />
-    <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_ocupacao">
-        <PropertyRef Name="IdOcupacao" />
-      </Principal>
-      <Dependent Role="tb_demograficos_antropometricos">
-        <PropertyRef Name="IdOcupacao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_demograficos_antropometricos_tb_plano_saude1">
-    <End Type="pvModel.PlanoSaudeE" Role="tb_plano_saude" Multiplicity="1" />
-    <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_plano_saude">
-        <PropertyRef Name="IdPlanoSaude" />
-      </Principal>
-      <Dependent Role="tb_demograficos_antropometricos">
-        <PropertyRef Name="IdPlanoSaude" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_experiencia_medicamentos_tb_resposta1">
-    <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
-    <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_resposta">
-        <PropertyRef Name="IdResposta" />
-      </Principal>
-      <Dependent Role="tb_experiencia_medicamentos">
-        <PropertyRef Name="IdRespostaEsperaTratamento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_experiencia_medicamentos_tb_resposta2">
-    <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
-    <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_resposta">
-        <PropertyRef Name="IdResposta" />
-      </Principal>
-      <Dependent Role="tb_experiencia_medicamentos">
-        <PropertyRef Name="IdRespostaPreocupacoes" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_experiencia_medicamentos_tb_resposta3">
-    <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
-    <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_resposta">
-        <PropertyRef Name="IdResposta" />
-      </Principal>
-      <Dependent Role="tb_experiencia_medicamentos">
-        <PropertyRef Name="IdRespostaGrauEntendimento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_experiencia_medicamentos_tb_resposta4">
-    <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
-    <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_resposta">
-        <PropertyRef Name="IdResposta" />
-      </Principal>
-      <Dependent Role="tb_experiencia_medicamentos">
-        <PropertyRef Name="IdRespostaCultural" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_experiencia_medicamentos_tb_resposta5">
-    <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
-    <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_resposta">
-        <PropertyRef Name="IdResposta" />
-      </Principal>
-      <Dependent Role="tb_experiencia_medicamentos">
-        <PropertyRef Name="IdRespostaComportamento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_experiencia_medicamentos_tb_resposta6">
-    <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="1" />
-    <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_resposta">
-        <PropertyRef Name="IdResposta" />
-      </Principal>
-      <Dependent Role="tb_experiencia_medicamentos">
-        <PropertyRef Name="IdRespostaIncorporadoPlano" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_medicamento_prescrito_tb_medicamentos1">
-    <End Type="pvModel.tb_medicamentos" Role="tb_medicamentos" Multiplicity="1" />
-    <End Type="pvModel.tb_medicamento_nao_prescrito" Role="tb_medicamento_nao_prescrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_medicamentos">
-        <PropertyRef Name="IdMedicamento" />
-      </Principal>
-      <Dependent Role="tb_medicamento_nao_prescrito">
-        <PropertyRef Name="IdMedicamento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2">
-    <End Type="pvModel.tb_medicamentos" Role="tb_medicamentos" Multiplicity="1" />
-    <End Type="pvModel.tb_medicamento_prescrito" Role="tb_medicamento_prescrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_medicamentos">
-        <PropertyRef Name="IdMedicamento" />
-      </Principal>
-      <Dependent Role="tb_medicamento_prescrito">
-        <PropertyRef Name="IdMedicamento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1">
-    <End Type="pvModel.tb_medicamentos" Role="tb_medicamentos" Multiplicity="1" />
-    <End Type="pvModel.tb_medicamentos_anteriores" Role="tb_medicamentos_anteriores" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_medicamentos">
-        <PropertyRef Name="IdMedicamento" />
-      </Principal>
-      <Dependent Role="tb_medicamentos_anteriores">
-        <PropertyRef Name="IdMedicamento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_tb_paciente_pessoa_turma_tb_paciente1">
-    <End Type="pvModel.PacienteE" Role="tb_paciente" Multiplicity="1" />
-    <End Type="pvModel.PacientePessoaTurmaE" Role="tb_paciente_pessoa_turma" Multiplicity="*" />
+    <End Role="tb_paciente" Type="pvModel.PacienteE" Multiplicity="1" />
+    <End Role="tb_paciente_pessoa_turma" Type="pvModel.PacientePessoaTurmaE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_paciente">
         <PropertyRef Name="IdPaciente" />
@@ -1972,36 +1547,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_tb_relato_clinico_tb_paciente1">
-    <End Type="pvModel.PacienteE" Role="tb_paciente" Multiplicity="1" />
-    <End Type="pvModel.RelatoClinicoE" Role="tb_relato_clinico" Multiplicity="*" />
+  <Association Name="fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1">
+    <End Role="tb_turma_pessoa" Type="pvModel.tb_turma_pessoa" Multiplicity="1" />
+    <End Role="tb_paciente_pessoa_turma" Type="pvModel.PacientePessoaTurmaE" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tb_paciente">
-        <PropertyRef Name="IdPaciente" />
+      <Principal Role="tb_turma_pessoa">
+        <PropertyRef Name="IdTurma" />
+        <PropertyRef Name="IdPessoa" />
       </Principal>
-      <Dependent Role="tb_relato_clinico">
-        <PropertyRef Name="IdPaciente" />
+      <Dependent Role="tb_paciente_pessoa_turma">
+        <PropertyRef Name="IdTurma" />
+        <PropertyRef Name="IdPessoa" />
       </Dependent>
     </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_resposta_tb_pergunta1">
-    <End Type="pvModel.PerguntaE" Role="tb_pergunta" Multiplicity="1" />
-    <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_pergunta">
-        <PropertyRef Name="IdPergunta" />
-      </Principal>
-      <Dependent Role="tb_resposta">
-        <PropertyRef Name="IdPergunta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tb_curso_disciplina">
-    <End Type="pvModel.CursoE" Role="CursoE" Multiplicity="*" />
-    <End Type="pvModel.DisciplinaE" Role="DisciplinaE" Multiplicity="*" />
-  </Association>
-  <Association Name="tb_razao_encontro">
-    <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="*" />
-    <End Type="pvModel.RespostaE" Role="tb_resposta" Multiplicity="0..1" />
   </Association>
 </Schema>

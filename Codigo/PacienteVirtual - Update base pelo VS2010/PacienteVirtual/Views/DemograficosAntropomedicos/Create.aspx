@@ -16,6 +16,7 @@
         <legend>
             <%: Resources.Mensagem.demografico_antropometricos %></legend>
         <div class="editor-label">
+
             <%: Html.LabelFor(model => model.IdConsultaFixo) %>
         </div>
         <div class="editor-field">

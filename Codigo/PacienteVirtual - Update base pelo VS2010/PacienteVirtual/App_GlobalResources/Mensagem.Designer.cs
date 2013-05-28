@@ -187,6 +187,24 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data de Atualização.
+        /// </summary>
+        public static string data_atualizacao {
+            get {
+                return ResourceManager.GetString("data_atualizacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data de Envio.
+        /// </summary>
+        public static string data_envio {
+            get {
+                return ResourceManager.GetString("data_envio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data de Nascimento.
         /// </summary>
         public static string data_nascimento {
@@ -295,6 +313,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Estado.
+        /// </summary>
+        public static string estado {
+            get {
+                return ResourceManager.GetString("estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estado de Preencimento.
         /// </summary>
         public static string estado_preenchimento {
@@ -372,6 +399,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string historia_familiar {
             get {
                 return ResourceManager.GetString("historia_familiar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to História Médica Pregressa.
+        /// </summary>
+        public static string historia_medica_pregressa {
+            get {
+                return ResourceManager.GetString("historia_medica_pregressa", resourceCulture);
             }
         }
         
@@ -547,6 +583,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Código Pessoa.
+        /// </summary>
+        public static string pessoa_codigo {
+            get {
+                return ResourceManager.GetString("pessoa_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Plano de Saúde.
         /// </summary>
         public static string plano_saude {
@@ -570,6 +615,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string preocupacoes_atencao {
             get {
                 return ResourceManager.GetString("preocupacoes_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código Relato.
+        /// </summary>
+        public static string relato_relato {
+            get {
+                return ResourceManager.GetString("relato_relato", resourceCulture);
             }
         }
         
@@ -642,6 +696,24 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string turma {
             get {
                 return ResourceManager.GetString("turma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código Turma.
+        /// </summary>
+        public static string turma_codigo {
+            get {
+                return ResourceManager.GetString("turma_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comentários do Tutor.
+        /// </summary>
+        public static string tutor_comentarios {
+            get {
+                return ResourceManager.GetString("tutor_comentarios", resourceCulture);
             }
         }
         

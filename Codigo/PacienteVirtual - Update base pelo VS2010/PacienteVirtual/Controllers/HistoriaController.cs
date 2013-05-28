@@ -17,6 +17,7 @@ namespace PacienteVirtual.Controllers
 
         GerenciadorHistoria gHistoria = GerenciadorHistoria.GetInstance();
         GerenciadorConsultaFixo gConsultaFixo = GerenciadorConsultaFixo.GetInstance();
+
         //
         // GET: /Historica/
 

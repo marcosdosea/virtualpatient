@@ -164,6 +164,7 @@
     <Compile Include="Models\EscolaridadeModel.cs" />
     <Compile Include="Models\ExperienciaMedicamentosModel.cs" />
     <Compile Include="Models\HistoriaModel.cs" />
+    <Compile Include="Models\HistoricoModel.cs" />
     <Compile Include="Models\InstituicaoModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -399,12 +400,6 @@
     <Content Include="Uploads\Certidão de Quitação - Emissão.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\Data\PacienteVirtualModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PacienteVirtualModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Mensagem.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagem.en.designer.cs</LastGenOutput>
@@ -415,6 +410,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagem.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\Data\PacienteVirtualModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PacienteVirtualModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

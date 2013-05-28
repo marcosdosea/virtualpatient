@@ -95,15 +95,20 @@ namespace PacienteVirtual.Models.Negocio
             var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
             var pvEntities = (pvEntities)repConsultaFixo.ObterContexto();
             var query = from tb_consulta_fixo in pvEntities.tb_consulta_fixo
-                        join tb_paciente in pvEntities.tb_paciente
-                        on tb_consulta_fixo.IdPaciente equals tb_paciente.IdPaciente
+                        join tb_pessoa in pvEntities.tb_pessoa
+                        on tb_consulta_fixo.IdPessoa equals tb_pessoa.IdPessoa
+
                         select new ConsultaFixoModel
                         {
                             IdConsultaFixo = tb_consulta_fixo.IdConsultaFixo,
-                            IdPaciente = tb_consulta_fixo.IdPaciente,
+                            IdTurma = tb_consulta_fixo.IdTurma,
+                            IdPessoa = tb_consulta_fixo.IdPessoa,
+                            EstadoPreenchimento = tb_consulta_fixo.EstadoPreenchimento,
                             EhGabarito = tb_consulta_fixo.EhGabarito,
+                            DataAtualizacao = (DateTime)tb_consulta_fixo.DataAtualizacao,
+                            ComentariosTutor = tb_consulta_fixo.ComentariosTutor,
 
-                            PacienteNome = tb_paciente.Nome
+                            PessoaNome = tb_pessoa.Nome
                         };
             return query;
         }
@@ -131,10 +136,10 @@ namespace PacienteVirtual.Models.Negocio
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public IEnumerable<ConsultaFixoModel> ObterPorNome(int IdPaciente)
-        {
-            return GetQuery().Where(consultaFixo => consultaFixo.IdPaciente == IdPaciente).ToList();
-        }
+       // public IEnumerable<ConsultaFixoModel> ObterPorNome(int IdPaciente)
+        //{
+        //    return GetQuery().Where(consultaFixo => consultaFixo.IdPessoa == IdPaciente).ToList();
+        //}
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
@@ -143,8 +148,14 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="_consultaFixoE"></param>
         private static void Atribuir(ConsultaFixoModel consultaFixo, ConsultaFixoE _consultaFixoE)
         {
-            _consultaFixoE.IdPaciente = consultaFixo.IdPaciente;
+            _consultaFixoE.IdConsultaFixo = consultaFixo.IdConsultaFixo;
+            _consultaFixoE.IdTurma = consultaFixo.IdTurma;
+            _consultaFixoE.IdPessoa = consultaFixo.IdPessoa;
+            _consultaFixoE.EstadoPreenchimento = consultaFixo.EstadoPreenchimento;
             _consultaFixoE.EhGabarito = consultaFixo.EhGabarito;
+            _consultaFixoE.DataAtualizacao = (DateTime)consultaFixo.DataAtualizacao;
+            _consultaFixoE.ComentariosTutor = consultaFixo.ComentariosTutor;
+
         }
     }
 }

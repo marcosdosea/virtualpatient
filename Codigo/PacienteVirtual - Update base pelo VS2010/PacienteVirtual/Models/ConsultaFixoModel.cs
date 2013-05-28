@@ -18,14 +18,32 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         //[LocalizarDisplayNomeAtributo("teste", NameResourceType = typeof(Mensagem))] // //Exemplo 1
-        [Display(Name = "paciente_codigo", ResourceType = typeof(Mensagem))]
-        public int IdPaciente { get; set; }
+        [Display(Name = "turma_codigo", ResourceType = typeof(Mensagem))]
+        public int IdTurma { get; set; }
 
-        [Display(Name = "paciente", ResourceType = typeof(Mensagem))]
-        public string PacienteNome { get; set; }
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        //[LocalizarDisplayNomeAtributo("teste", NameResourceType = typeof(Mensagem))] // //Exemplo 1
+        [Display(Name = "pessoa_codigo", ResourceType = typeof(Mensagem))]
+        public int IdPessoa { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "estado_preenchimento", ResourceType = typeof(Mensagem))]
+        public string EstadoPreenchimento { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "eh_gabarito", ResourceType = typeof(Mensagem))] //Exemplo 2
         public bool EhGabarito { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "data_atualizacao", ResourceType = typeof(Mensagem))] 
+        public DateTime DataAtualizacao { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "tutor_comentarios", ResourceType = typeof(Mensagem))] 
+        public string ComentariosTutor { get; set; }
+
+        public string PessoaNome { get; set; }
+
+
     }
 }

@@ -40,17 +40,17 @@ namespace PacienteVirtual.Controllers
         //
         // GET: /DemograficosAntropomedicos/Create
 
-        public ActionResult Create(long id)
+        public ActionResult Create(ConsultaFixoModel consultaFixo)
         {
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos(), "IdConsultaFixo", "IdConsultaFixo");
-            ViewBag.IdConsultaFixo1 = id;
             ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel");
             ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao");
             ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome");
-              
+            //ViewBag.ig = consultaFixo.IdConsultaFixo;
+
             DemograficosAntropometricosModel d = new DemograficosAntropometricosModel();
-            d.IdConsultaFixo = id;
-            return View(d);
+            d.IdConsultaFixo = consultaFixo.IdConsultaFixo;
+            return View(d); 
         } 
 
         //
@@ -64,7 +64,7 @@ namespace PacienteVirtual.Controllers
                 //db.tb_demograficos_antropometricos.AddObject(tb_demograficos_antropometricos);
                 //db.SaveChanges();
                demograficosAntropometricosModel.IdConsultaFixo = gDemoAntrop.Inserir(demograficosAntropometricosModel);
-                return RedirectToAction("Index");  
+                return RedirectToAction("Index","ConsultaFixo");  
             }
 
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");

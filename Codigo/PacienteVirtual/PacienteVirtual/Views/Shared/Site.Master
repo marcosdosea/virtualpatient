@@ -32,12 +32,17 @@
 
 
 
+
+
+
+
                       <li><%: Html.ActionLink("PacientePessoaTurma --", "Index", "PacientePessoaTurma")%></li>
                       <li><%: Html.ActionLink("Historia --", "Index", "Historia")%></li>
                       <li><%: Html.ActionLink("ExperienciaMedicamentos --", "Index", "ExperienciaMedicamentos")%></li>
                       <li><%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li>
                       <li><%: Html.ActionLink("ConsultaFixo --", "Index", "ConsultaFixo")%></li>
 
+                       <li><%: Html.ActionLink("ConsultaFixo", "Index", "ConsultaFixo")%></li>
                 </ul>
             </nav>
         </header>
