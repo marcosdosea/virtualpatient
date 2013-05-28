@@ -16,11 +16,11 @@
     <fieldset>
         <legend><%: Resources.Mensagem.consulta_dados_fixos%></legend>
 
-        <div class="editor-label">
+                <div class="editor-label">
             <%: Html.LabelFor(model => model.IdPaciente) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.IdPaciente) %>
+             <%: Html.DropDownList("IdPaciente", Resources.Mensagem.selecione)%>
             <%: Html.ValidationMessageFor(model => model.IdPaciente) %>
         </div>
 

@@ -95,11 +95,15 @@ namespace PacienteVirtual.Models.Negocio
             var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
             var pvEntities = (pvEntities)repConsultaFixo.ObterContexto();
             var query = from tb_consulta_fixo in pvEntities.tb_consulta_fixo
+                        join tb_paciente in pvEntities.tb_paciente
+                        on tb_consulta_fixo.IdPaciente equals tb_paciente.IdPaciente
                         select new ConsultaFixoModel
                         {
                             IdConsultaFixo = tb_consulta_fixo.IdConsultaFixo,
                             IdPaciente = tb_consulta_fixo.IdPaciente,
                             EhGabarito = tb_consulta_fixo.EhGabarito,
+
+                            PacienteNome = tb_paciente.Nome
                         };
             return query;
         }

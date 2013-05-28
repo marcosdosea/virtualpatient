@@ -61,11 +61,11 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Campo {0} só aceita &quot;M&quot; ou &quot;F&quot;.
         /// </summary>
-        public static string asdf {
+        public static string campo_MouF {
             get {
-                return ResourceManager.GetString("asdf", resourceCulture);
+                return ResourceManager.GetString("campo_MouF", resourceCulture);
             }
         }
         
@@ -489,6 +489,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string paciente {
             get {
                 return ResourceManager.GetString("paciente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código do Paciente.
+        /// </summary>
+        public static string paciente_codigo {
+            get {
+                return ResourceManager.GetString("paciente_codigo", resourceCulture);
             }
         }
         

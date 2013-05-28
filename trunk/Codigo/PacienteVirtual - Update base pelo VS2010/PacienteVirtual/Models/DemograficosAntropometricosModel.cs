@@ -17,11 +17,13 @@ namespace PacienteVirtual.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [RegularExpression("M|F",ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_MouF")]
         [Display(Name = "genero", ResourceType = typeof(Mensagem))]
-        public String Genero { get; set; }
+        public string Genero { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "data_nascimento", ResourceType = typeof(Mensagem))]
+        [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

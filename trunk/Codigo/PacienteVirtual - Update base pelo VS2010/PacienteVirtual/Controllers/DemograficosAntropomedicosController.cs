@@ -40,13 +40,17 @@ namespace PacienteVirtual.Controllers
         //
         // GET: /DemograficosAntropomedicos/Create
 
-        public ActionResult Create()
+        public ActionResult Create(long id)
         {
-            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo");
+            ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos(), "IdConsultaFixo", "IdConsultaFixo");
+            ViewBag.IdConsultaFixo1 = id;
             ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel");
             ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao");
             ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome");
-            return View();
+              
+            DemograficosAntropometricosModel d = new DemograficosAntropometricosModel();
+            d.IdConsultaFixo = id;
+            return View(d);
         } 
 
         //

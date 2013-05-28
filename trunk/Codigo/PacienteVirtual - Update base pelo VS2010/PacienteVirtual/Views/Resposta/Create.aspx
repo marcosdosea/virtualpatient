@@ -25,10 +25,10 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdPergunta, "Pergunta pertencente a resposta") %>
+            <%: Html.LabelFor(model => model.IdPergunta) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdPergunta", String.Empty) %>
+            <%: Html.DropDownList("IdPergunta", Resources.Mensagem.selecione) %>
             <%: Html.ValidationMessageFor(model => model.IdPergunta) %>
         </div>
 
