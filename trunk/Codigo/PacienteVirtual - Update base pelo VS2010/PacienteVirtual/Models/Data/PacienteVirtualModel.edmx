@@ -1521,7 +1521,7 @@
           <EntitySet Name="tb_curso" EntityType="pvModel.CursoE" />
           <EntitySet Name="tb_curso_disciplina" EntityType="pvModel.tb_curso_disciplina" />
           <EntitySet Name="tb_demograficos_antropometricos" EntityType="pvModel.DemograficosAntropometricosE" />
-          <EntitySet Name="tb_diario_pessoal" EntityType="pvModel.tb_diario_pessoal" />
+          <EntitySet Name="tb_diario_pessoal" EntityType="pvModel.DiarioPessoalE" />
           <EntitySet Name="tb_disciplina" EntityType="pvModel.DisciplinaE" />
           <EntitySet Name="tb_escolaridade" EntityType="pvModel.EscolaridadeE" />
           <EntitySet Name="tb_estilo_vida" EntityType="pvModel.tb_estilo_vida" />
@@ -2233,7 +2233,7 @@
           <Property Name="IdOcupacao" Type="Int32" Nullable="false" />
           <Property Name="IdPlanoSaude" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="tb_diario_pessoal">
+        <EntityType Name="DiarioPessoalE">
           <Key>
             <PropertyRef Name="IdConsultaFixo" />
             <PropertyRef Name="IdMedicamento" />
@@ -3523,7 +3523,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_diario_pessoal">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_diario_pessoal)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.DiarioPessoalE)">
         <MappingFragment StoreEntitySet="tb_diario_pessoal">
           <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
           <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
@@ -3877,7 +3877,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel" ZoomLevel="163">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="39">
         <EntityTypeShape EntityType="pvModel.aluno" Width="1.5" PointX="5.25" PointY="11.875" Height="6.0186165364583317" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.casoclinico" Width="1.5" PointX="0.75" PointY="26" Height="8.51853515625" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.consulta" Width="1.5" PointX="3" PointY="28.125" Height="4.2879036458333353" IsExpanded="true" />
@@ -3910,7 +3910,7 @@
         <EntityTypeShape EntityType="pvModel.CursoE" Width="1.5" PointX="7.75" PointY="3.75" Height="1.5956835937500102" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_curso_disciplina" Width="1.5" PointX="8.75" PointY="6.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.DemograficosAntropometricosE" Width="1.5" PointX="9.75" PointY="0.75" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_diario_pessoal" Width="1.5" PointX="7.75" PointY="9.75" Height="2.1725878906250102" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.DiarioPessoalE" Width="1.5" PointX="7.75" PointY="9.75" Height="2.1725878906250102" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.DisciplinaE" Width="1.5" PointX="9.75" PointY="9.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.EscolaridadeE" Width="1.5" PointX="10.75" PointY="4.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_estilo_vida" Width="1.5" PointX="11.75" PointY="0.75" Height="3.1340950520833246" IsExpanded="true" />

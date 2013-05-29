@@ -159,6 +159,5 @@ namespace PacienteVirtual.Models.Negocio
 
         }
 
-
     }
 }

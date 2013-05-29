@@ -64,9 +64,10 @@
                         <%: Html.ActionLink("Relato clínico", "Index", "RelatoClinico")%></li>
                     <li>
                         <%: Html.ActionLink("Parametro clínico", "Index", "ParametroClinico")%></li>
-
-                            <li>
+                    <li>
                         <%: Html.ActionLink("Histórico", "Index", "Historico")%></li>
+                                            <li>
+                        <%: Html.ActionLink("Diário Pessoal", "Index", "DiarioPessoal")%></li>
                 </ul>
             </nav>
         </header>

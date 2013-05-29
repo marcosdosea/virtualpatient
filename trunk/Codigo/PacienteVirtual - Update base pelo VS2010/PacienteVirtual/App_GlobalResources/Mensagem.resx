@@ -348,4 +348,19 @@
   <data name="tutor_codigo" xml:space="preserve">
     <value>Código Tutor</value>
   </data>
+  <data name="diario_pessoal" xml:space="preserve">
+    <value>Diário Pessoal</value>
+  </data>
+  <data name="horario" xml:space="preserve">
+    <value>Horário</value>
+  </data>
+  <data name="medicamento_codigo" xml:space="preserve">
+    <value>Código Medicamento</value>
+  </data>
+  <data name="quantidade" xml:space="preserve">
+    <value>Quantidade</value>
+  </data>
+  <data name="tipo_bebida" xml:space="preserve">
+    <value>Tipo de Bebida</value>
+  </data>
 </root>

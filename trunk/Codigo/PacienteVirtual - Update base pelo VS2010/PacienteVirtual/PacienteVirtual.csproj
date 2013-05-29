@@ -101,6 +101,7 @@
     <Compile Include="Controllers\CursoController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\DiarioPessoalController.cs" />
     <Compile Include="Controllers\HistoricoController.cs" />
     <Compile Include="Controllers\OcupacaoController.cs" />
     <Compile Include="Controllers\DemograficosAntropomedicosController.cs" />
@@ -175,6 +176,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Negocio\GerenciadorDemograficosAntropomedicos.cs" />
+    <Compile Include="Models\Negocio\GerenciadorDiarioPessoal.cs" />
     <Compile Include="Models\Negocio\GerenciadorDisciplina.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -279,6 +281,11 @@
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
+    <Content Include="Views\DiarioPessoal\Create.aspx" />
+    <Content Include="Views\DiarioPessoal\Delete.aspx" />
+    <Content Include="Views\DiarioPessoal\Details.aspx" />
+    <Content Include="Views\DiarioPessoal\Edit.aspx" />
+    <Content Include="Views\DiarioPessoal\Index.aspx" />
     <Content Include="Views\Historico\Create.aspx" />
     <Content Include="Views\Historico\Delete.aspx" />
     <Content Include="Views\Historico\Details.aspx" />
