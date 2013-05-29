@@ -109,11 +109,11 @@ DROP TABLE IF EXISTS `tb_consulta_parametro`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_consulta_parametro` (
   `IdConsultaVariavel` bigint(20) NOT NULL,
-  `IdParamentoClinico` int(11) NOT NULL,
+  `IdParametroClinico` int(11) NOT NULL,
   `Valor` float DEFAULT NULL,
   `ValorReferencia` float DEFAULT NULL,
   `Unidade` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`IdConsultaVariavel`,`IdParamentoClinico`)
+  PRIMARY KEY (`IdConsultaVariavel`,`IdParametroClinico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -580,9 +580,9 @@ DROP TABLE IF EXISTS `tb_parametro_clinico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_parametro_clinico` (
-  `IdParamentoClinico` int(11) NOT NULL,
+  `IdParametroClinico` int(11) NOT NULL AUTO_INCREMENT,
   `ParametroClinico` varchar(100) NOT NULL,
-  PRIMARY KEY (`IdParamentoClinico`)
+  PRIMARY KEY (`IdParametroClinico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -816,7 +816,7 @@ DROP TABLE IF EXISTS `tb_curso`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_curso` (
-  `IdCurso` int(11) NOT NULL,
+  `IdCurso` int(11) NOT NULL AUTO_INCREMENT,
   `NomeCurso` varchar(45) NOT NULL,
   `IdInstituicao` int(11) NOT NULL,
   PRIMARY KEY (`IdCurso`),
