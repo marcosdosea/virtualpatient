@@ -881,18 +881,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<ParametoClinicoE> tb_parametro_clinico
+        public ObjectSet<ParametroClinicoE> tb_parametro_clinico
         {
             get
             {
                 if ((_tb_parametro_clinico == null))
                 {
-                    _tb_parametro_clinico = base.CreateObjectSet<ParametoClinicoE>("tb_parametro_clinico");
+                    _tb_parametro_clinico = base.CreateObjectSet<ParametroClinicoE>("tb_parametro_clinico");
                 }
                 return _tb_parametro_clinico;
             }
         }
-        private ObjectSet<ParametoClinicoE> _tb_parametro_clinico;
+        private ObjectSet<ParametroClinicoE> _tb_parametro_clinico;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1524,9 +1524,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_parametro_clinico EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_parametro_clinico(ParametoClinicoE parametoClinicoE)
+        public void AddTotb_parametro_clinico(ParametroClinicoE parametroClinicoE)
         {
-            base.AddObject("tb_parametro_clinico", parametoClinicoE);
+            base.AddObject("tb_parametro_clinico", parametroClinicoE);
         }
     
         /// <summary>
@@ -8199,87 +8199,6 @@ namespace PacienteVirtual.Models.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="ParametoClinicoE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class ParametoClinicoE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new ParametoClinicoE object.
-        /// </summary>
-        /// <param name="idParamentoClinico">Initial value of the IdParamentoClinico property.</param>
-        /// <param name="parametroClinico">Initial value of the ParametroClinico property.</param>
-        public static ParametoClinicoE CreateParametoClinicoE(global::System.Int32 idParamentoClinico, global::System.String parametroClinico)
-        {
-            ParametoClinicoE parametoClinicoE = new ParametoClinicoE();
-            parametoClinicoE.IdParamentoClinico = idParamentoClinico;
-            parametoClinicoE.ParametroClinico = parametroClinico;
-            return parametoClinicoE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdParamentoClinico
-        {
-            get
-            {
-                return _IdParamentoClinico;
-            }
-            set
-            {
-                if (_IdParamentoClinico != value)
-                {
-                    OnIdParamentoClinicoChanging(value);
-                    ReportPropertyChanging("IdParamentoClinico");
-                    _IdParamentoClinico = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdParamentoClinico");
-                    OnIdParamentoClinicoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdParamentoClinico;
-        partial void OnIdParamentoClinicoChanging(global::System.Int32 value);
-        partial void OnIdParamentoClinicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String ParametroClinico
-        {
-            get
-            {
-                return _ParametroClinico;
-            }
-            set
-            {
-                OnParametroClinicoChanging(value);
-                ReportPropertyChanging("ParametroClinico");
-                _ParametroClinico = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("ParametroClinico");
-                OnParametroClinicoChanged();
-            }
-        }
-        private global::System.String _ParametroClinico;
-        partial void OnParametroClinicoChanging(global::System.String value);
-        partial void OnParametroClinicoChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="parametroclinico")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -8493,6 +8412,87 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="ParametroClinicoE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ParametroClinicoE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ParametroClinicoE object.
+        /// </summary>
+        /// <param name="idParametroClinico">Initial value of the IdParametroClinico property.</param>
+        /// <param name="parametroClinico">Initial value of the ParametroClinico property.</param>
+        public static ParametroClinicoE CreateParametroClinicoE(global::System.Int32 idParametroClinico, global::System.String parametroClinico)
+        {
+            ParametroClinicoE parametroClinicoE = new ParametroClinicoE();
+            parametroClinicoE.IdParametroClinico = idParametroClinico;
+            parametroClinicoE.ParametroClinico = parametroClinico;
+            return parametroClinicoE;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdParametroClinico
+        {
+            get
+            {
+                return _IdParametroClinico;
+            }
+            set
+            {
+                if (_IdParametroClinico != value)
+                {
+                    OnIdParametroClinicoChanging(value);
+                    ReportPropertyChanging("IdParametroClinico");
+                    _IdParametroClinico = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdParametroClinico");
+                    OnIdParametroClinicoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdParametroClinico;
+        partial void OnIdParametroClinicoChanging(global::System.Int32 value);
+        partial void OnIdParametroClinicoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ParametroClinico
+        {
+            get
+            {
+                return _ParametroClinico;
+            }
+            set
+            {
+                OnParametroClinicoChanging(value);
+                ReportPropertyChanging("ParametroClinico");
+                _ParametroClinico = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ParametroClinico");
+                OnParametroClinicoChanged();
+            }
+        }
+        private global::System.String _ParametroClinico;
+        partial void OnParametroClinicoChanging(global::System.String value);
+        partial void OnParametroClinicoChanged();
+
+        #endregion
+    
     }
     
     /// <summary>
