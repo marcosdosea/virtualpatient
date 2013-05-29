@@ -327,7 +327,7 @@
   <data name="pessoa_codigo" xml:space="preserve">
     <value>Código Pessoa</value>
   </data>
-  <data name="relato_relato" xml:space="preserve">
+  <data name="relato_codigo" xml:space="preserve">
     <value>Código Relato</value>
   </data>
   <data name="turma_codigo" xml:space="preserve">
@@ -338,5 +338,14 @@
   </data>
   <data name="data_atualizacao" xml:space="preserve">
     <value>Data de Atualização</value>
+  </data>
+  <data name="data_resposta" xml:space="preserve">
+    <value>Data da Resposta</value>
+  </data>
+  <data name="historico" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="tutor_codigo" xml:space="preserve">
+    <value>Código Tutor</value>
   </data>
 </root>

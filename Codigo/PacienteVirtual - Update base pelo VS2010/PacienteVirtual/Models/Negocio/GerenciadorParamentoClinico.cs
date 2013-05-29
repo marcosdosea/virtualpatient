@@ -32,8 +32,8 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         public int Inserir(ParamentoClinicoModel paramentoClinico)
         {
-            var repParametroClinico = new RepositorioGenerico<ParamentoClinicoE>();
-            ParamentoClinicoE _tb_parametro_clinico = new ParamentoClinicoE();
+            var repParametroClinico = new RepositorioGenerico<ParametoClinicoE>();
+            ParametoClinicoE _tb_parametro_clinico = new ParametoClinicoE();
             try
             {
                 Atribuir(paramentoClinico, _tb_parametro_clinico);
@@ -58,8 +58,8 @@ namespace PacienteVirtual.Models.Negocio
         {
             try
             {
-                var repParametroClinico = new RepositorioGenerico<ParamentoClinicoE>();
-                ParamentoClinicoE _tb_parametro_clinico = repParametroClinico.ObterEntidade(d => d.IdParamentoClinico == paramentoClinico.IdParamentoClinico);
+                var repParametroClinico = new RepositorioGenerico<ParametoClinicoE>();
+                ParametoClinicoE _tb_parametro_clinico = repParametroClinico.ObterEntidade(d => d.IdParamentoClinico == paramentoClinico.IdParamentoClinico);
                 Atribuir(paramentoClinico, _tb_parametro_clinico);
 
                 repParametroClinico.SaveChanges();
@@ -78,7 +78,7 @@ namespace PacienteVirtual.Models.Negocio
         {
             try
             {
-                var repParametroClinico = new RepositorioGenerico<ParamentoClinicoE>();
+                var repParametroClinico = new RepositorioGenerico<ParametoClinicoE>();
                 repParametroClinico.Remover(d => d.IdParamentoClinico == idParamentoClinico);
                 repParametroClinico.SaveChanges();
             }
@@ -94,7 +94,7 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         private IQueryable<ParamentoClinicoModel> GetQuery()
         {
-            var repParametroClinico = new RepositorioGenerico<ParamentoClinicoE>();
+            var repParametroClinico = new RepositorioGenerico<ParametoClinicoE>();
             var pvEntities = (pvEntities)repParametroClinico.ObterContexto();
             var query = from paramentoClinico in pvEntities.tb_parametro_clinico
                         select new ParamentoClinicoModel
@@ -139,7 +139,7 @@ namespace PacienteVirtual.Models.Negocio
         /// </summary>
         /// <param name="paramentoClinico"></param>
         /// <param name="_tb_parametro_clinico"></param>
-        private static void Atribuir(ParamentoClinicoModel paramentoClinico, ParamentoClinicoE _tb_parametro_clinico)
+        private static void Atribuir(ParamentoClinicoModel paramentoClinico, ParametoClinicoE _tb_parametro_clinico)
         {
             _tb_parametro_clinico.ParametroClinico = paramentoClinico.ParamentoClinico;
         }

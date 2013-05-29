@@ -1538,7 +1538,7 @@
           <EntitySet Name="tb_ocupacao" EntityType="pvModel.OcupacaoE" />
           <EntitySet Name="tb_paciente" EntityType="pvModel.PacienteE" />
           <EntitySet Name="tb_paciente_pessoa_turma" EntityType="pvModel.PacientePessoaTurmaE" />
-          <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.tb_parametro_clinico" />
+          <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.ParametoClinicoE" />
           <EntitySet Name="tb_perfil_usuario" EntityType="pvModel.tb_perfil_usuario" />
           <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
           <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
@@ -2154,7 +2154,7 @@
           <Property Name="IdAlergia" Type="Int32" Nullable="false" />
           <Property Name="IdConsultaVariavel" Type="Int64" Nullable="false" />
         </EntityType>
-        <EntityType Name="ConsultaFixoE">
+        <EntityType Name="ConsultaFixoE" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
           <Key>
             <PropertyRef Name="IdConsultaFixo" />
           </Key>
@@ -2411,7 +2411,7 @@
           <NavigationProperty Name="tb_paciente" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_paciente" />
           <NavigationProperty Name="tb_turma_pessoa" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1" FromRole="tb_paciente_pessoa_turma" ToRole="tb_turma_pessoa" />
         </EntityType>
-        <EntityType Name="tb_parametro_clinico">
+        <EntityType Name="ParametoClinicoE">
           <Key>
             <PropertyRef Name="IdParamentoClinico" />
           </Key>
@@ -3513,7 +3513,7 @@
             <ScalarProperty Name="GrupoAtividades" ColumnName="GrupoAtividades" />
             <ScalarProperty Name="EstadoPreenchimento" ColumnName="EstadoPreenchimento" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tb_parametro_clinico"><EntityTypeMapping TypeName="pvModel.tb_parametro_clinico"><MappingFragment StoreEntitySet="tb_parametro_clinico">
+          <EntitySetMapping Name="tb_parametro_clinico"><EntityTypeMapping TypeName="pvModel.ParametoClinicoE"><MappingFragment StoreEntitySet="tb_parametro_clinico">
             <ScalarProperty Name="IdParamentoClinico" ColumnName="IdParamentoClinico" />
             <ScalarProperty Name="ParametroClinico" ColumnName="ParametroClinico" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -3623,7 +3623,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel" ZoomLevel="63">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="13">
         <EntityTypeShape EntityType="pvModel.aluno" Width="1.5" PointX="5.25" PointY="11.875" Height="6.0186165364583317" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.casoclinico" Width="1.5" PointX="0.75" PointY="26" Height="8.51853515625" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.consulta" Width="1.5" PointX="3" PointY="28.125" Height="4.2879036458333353" IsExpanded="true" />
@@ -3672,7 +3672,7 @@
         <EntityTypeShape EntityType="pvModel.OcupacaoE" Width="1.5" PointX="13.75" PointY="14.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PacienteE" Width="1.5" PointX="0.75" PointY="9.125" Height="1.7879850260416674" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PacientePessoaTurmaE" Width="1.5" PointX="3" PointY="1" Height="3.134095052083353" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_parametro_clinico" Width="1.5" PointX="15.75" PointY="0.75" Height="1.4033821614583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.ParametoClinicoE" Width="1.5" PointX="15.75" PointY="0.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_perfil_usuario" Width="1.5" PointX="15.75" PointY="6.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PerguntaE" Width="1.5" PointX="15.75" PointY="9.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PessoaE" Width="1.5" PointX="9.75" PointY="15.75" Height="1.4033821614583246" IsExpanded="true" />

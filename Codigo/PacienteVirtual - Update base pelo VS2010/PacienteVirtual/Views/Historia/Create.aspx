@@ -37,7 +37,7 @@
             <%: Html.ValidationMessageFor(model => model.HistoriaFamiliar) %>
         </div>
         <p>
-            <input type="submit" value="<%: Resources.Mensagem.criar%>" />
+            <input type="submit" value="<%: Resources.Mensagem.salvar%>" />
         </p>
     </fieldset>
     <% } %>

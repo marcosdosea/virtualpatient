@@ -70,7 +70,7 @@ namespace PacienteVirtual.Controllers
             HistoriaModel historiaModel = gHistoria.Obter(id);
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", historiaModel.IdConsultaFixo);
 
-            return View(historiaModel.IdConsultaFixo);
+            return View(historiaModel);
         }
 
         //
