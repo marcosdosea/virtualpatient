@@ -625,18 +625,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_diario_pessoal> tb_diario_pessoal
+        public ObjectSet<DiarioPessoalE> tb_diario_pessoal
         {
             get
             {
                 if ((_tb_diario_pessoal == null))
                 {
-                    _tb_diario_pessoal = base.CreateObjectSet<tb_diario_pessoal>("tb_diario_pessoal");
+                    _tb_diario_pessoal = base.CreateObjectSet<DiarioPessoalE>("tb_diario_pessoal");
                 }
                 return _tb_diario_pessoal;
             }
         }
-        private ObjectSet<tb_diario_pessoal> _tb_diario_pessoal;
+        private ObjectSet<DiarioPessoalE> _tb_diario_pessoal;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1396,9 +1396,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_diario_pessoal EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_diario_pessoal(tb_diario_pessoal tb_diario_pessoal)
+        public void AddTotb_diario_pessoal(DiarioPessoalE diarioPessoalE)
         {
-            base.AddObject("tb_diario_pessoal", tb_diario_pessoal);
+            base.AddObject("tb_diario_pessoal", diarioPessoalE);
         }
     
         /// <summary>
@@ -4412,6 +4412,188 @@ namespace PacienteVirtual.Models.Data
         private global::System.Int32 _IdPlanoSaude;
         partial void OnIdPlanoSaudeChanging(global::System.Int32 value);
         partial void OnIdPlanoSaudeChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="DiarioPessoalE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class DiarioPessoalE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new DiarioPessoalE object.
+        /// </summary>
+        /// <param name="idConsultaFixo">Initial value of the IdConsultaFixo property.</param>
+        /// <param name="idMedicamento">Initial value of the IdMedicamento property.</param>
+        /// <param name="periodo">Initial value of the Periodo property.</param>
+        public static DiarioPessoalE CreateDiarioPessoalE(global::System.Int64 idConsultaFixo, global::System.Int32 idMedicamento, global::System.String periodo)
+        {
+            DiarioPessoalE diarioPessoalE = new DiarioPessoalE();
+            diarioPessoalE.IdConsultaFixo = idConsultaFixo;
+            diarioPessoalE.IdMedicamento = idMedicamento;
+            diarioPessoalE.Periodo = periodo;
+            return diarioPessoalE;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdConsultaFixo
+        {
+            get
+            {
+                return _IdConsultaFixo;
+            }
+            set
+            {
+                if (_IdConsultaFixo != value)
+                {
+                    OnIdConsultaFixoChanging(value);
+                    ReportPropertyChanging("IdConsultaFixo");
+                    _IdConsultaFixo = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdConsultaFixo");
+                    OnIdConsultaFixoChanged();
+                }
+            }
+        }
+        private global::System.Int64 _IdConsultaFixo;
+        partial void OnIdConsultaFixoChanging(global::System.Int64 value);
+        partial void OnIdConsultaFixoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdMedicamento
+        {
+            get
+            {
+                return _IdMedicamento;
+            }
+            set
+            {
+                if (_IdMedicamento != value)
+                {
+                    OnIdMedicamentoChanging(value);
+                    ReportPropertyChanging("IdMedicamento");
+                    _IdMedicamento = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdMedicamento");
+                    OnIdMedicamentoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdMedicamento;
+        partial void OnIdMedicamentoChanging(global::System.Int32 value);
+        partial void OnIdMedicamentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Periodo
+        {
+            get
+            {
+                return _Periodo;
+            }
+            set
+            {
+                OnPeriodoChanging(value);
+                ReportPropertyChanging("Periodo");
+                _Periodo = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Periodo");
+                OnPeriodoChanged();
+            }
+        }
+        private global::System.String _Periodo;
+        partial void OnPeriodoChanging(global::System.String value);
+        partial void OnPeriodoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Horario
+        {
+            get
+            {
+                return _Horario;
+            }
+            set
+            {
+                OnHorarioChanging(value);
+                ReportPropertyChanging("Horario");
+                _Horario = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Horario");
+                OnHorarioChanged();
+            }
+        }
+        private global::System.String _Horario;
+        partial void OnHorarioChanging(global::System.String value);
+        partial void OnHorarioChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Quantidade
+        {
+            get
+            {
+                return _Quantidade;
+            }
+            set
+            {
+                OnQuantidadeChanging(value);
+                ReportPropertyChanging("Quantidade");
+                _Quantidade = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Quantidade");
+                OnQuantidadeChanged();
+            }
+        }
+        private global::System.String _Quantidade;
+        partial void OnQuantidadeChanging(global::System.String value);
+        partial void OnQuantidadeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TipoBebida
+        {
+            get
+            {
+                return _TipoBebida;
+            }
+            set
+            {
+                OnTipoBebidaChanging(value);
+                ReportPropertyChanging("TipoBebida");
+                _TipoBebida = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TipoBebida");
+                OnTipoBebidaChanged();
+            }
+        }
+        private global::System.String _TipoBebida;
+        partial void OnTipoBebidaChanging(global::System.String value);
+        partial void OnTipoBebidaChanged();
 
         #endregion
     
@@ -13924,188 +14106,6 @@ namespace PacienteVirtual.Models.Data
         private global::System.Int32 _IdDisciplina;
         partial void OnIdDisciplinaChanging(global::System.Int32 value);
         partial void OnIdDisciplinaChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_diario_pessoal")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_diario_pessoal : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_diario_pessoal object.
-        /// </summary>
-        /// <param name="idConsultaFixo">Initial value of the IdConsultaFixo property.</param>
-        /// <param name="idMedicamento">Initial value of the IdMedicamento property.</param>
-        /// <param name="periodo">Initial value of the Periodo property.</param>
-        public static tb_diario_pessoal Createtb_diario_pessoal(global::System.Int64 idConsultaFixo, global::System.Int32 idMedicamento, global::System.String periodo)
-        {
-            tb_diario_pessoal tb_diario_pessoal = new tb_diario_pessoal();
-            tb_diario_pessoal.IdConsultaFixo = idConsultaFixo;
-            tb_diario_pessoal.IdMedicamento = idMedicamento;
-            tb_diario_pessoal.Periodo = periodo;
-            return tb_diario_pessoal;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaFixo
-        {
-            get
-            {
-                return _IdConsultaFixo;
-            }
-            set
-            {
-                if (_IdConsultaFixo != value)
-                {
-                    OnIdConsultaFixoChanging(value);
-                    ReportPropertyChanging("IdConsultaFixo");
-                    _IdConsultaFixo = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdConsultaFixo");
-                    OnIdConsultaFixoChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdConsultaFixo;
-        partial void OnIdConsultaFixoChanging(global::System.Int64 value);
-        partial void OnIdConsultaFixoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdMedicamento
-        {
-            get
-            {
-                return _IdMedicamento;
-            }
-            set
-            {
-                if (_IdMedicamento != value)
-                {
-                    OnIdMedicamentoChanging(value);
-                    ReportPropertyChanging("IdMedicamento");
-                    _IdMedicamento = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdMedicamento");
-                    OnIdMedicamentoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdMedicamento;
-        partial void OnIdMedicamentoChanging(global::System.Int32 value);
-        partial void OnIdMedicamentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Periodo
-        {
-            get
-            {
-                return _Periodo;
-            }
-            set
-            {
-                OnPeriodoChanging(value);
-                ReportPropertyChanging("Periodo");
-                _Periodo = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Periodo");
-                OnPeriodoChanged();
-            }
-        }
-        private global::System.String _Periodo;
-        partial void OnPeriodoChanging(global::System.String value);
-        partial void OnPeriodoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Horario
-        {
-            get
-            {
-                return _Horario;
-            }
-            set
-            {
-                OnHorarioChanging(value);
-                ReportPropertyChanging("Horario");
-                _Horario = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Horario");
-                OnHorarioChanged();
-            }
-        }
-        private global::System.String _Horario;
-        partial void OnHorarioChanging(global::System.String value);
-        partial void OnHorarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Quantidade
-        {
-            get
-            {
-                return _Quantidade;
-            }
-            set
-            {
-                OnQuantidadeChanging(value);
-                ReportPropertyChanging("Quantidade");
-                _Quantidade = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Quantidade");
-                OnQuantidadeChanged();
-            }
-        }
-        private global::System.String _Quantidade;
-        partial void OnQuantidadeChanging(global::System.String value);
-        partial void OnQuantidadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String TipoBebida
-        {
-            get
-            {
-                return _TipoBebida;
-            }
-            set
-            {
-                OnTipoBebidaChanging(value);
-                ReportPropertyChanging("TipoBebida");
-                _TipoBebida = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("TipoBebida");
-                OnTipoBebidaChanged();
-            }
-        }
-        private global::System.String _TipoBebida;
-        partial void OnTipoBebidaChanging(global::System.String value);
-        partial void OnTipoBebidaChanged();
 
         #endregion
     

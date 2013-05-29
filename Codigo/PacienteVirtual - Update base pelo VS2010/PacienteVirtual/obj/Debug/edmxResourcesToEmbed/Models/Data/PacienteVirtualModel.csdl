@@ -33,7 +33,7 @@
     <EntitySet Name="tb_curso" EntityType="pvModel.CursoE" />
     <EntitySet Name="tb_curso_disciplina" EntityType="pvModel.tb_curso_disciplina" />
     <EntitySet Name="tb_demograficos_antropometricos" EntityType="pvModel.DemograficosAntropometricosE" />
-    <EntitySet Name="tb_diario_pessoal" EntityType="pvModel.tb_diario_pessoal" />
+    <EntitySet Name="tb_diario_pessoal" EntityType="pvModel.DiarioPessoalE" />
     <EntitySet Name="tb_disciplina" EntityType="pvModel.DisciplinaE" />
     <EntitySet Name="tb_escolaridade" EntityType="pvModel.EscolaridadeE" />
     <EntitySet Name="tb_estilo_vida" EntityType="pvModel.tb_estilo_vida" />
@@ -745,7 +745,7 @@
     <Property Name="IdOcupacao" Type="Int32" Nullable="false" />
     <Property Name="IdPlanoSaude" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="tb_diario_pessoal">
+  <EntityType Name="DiarioPessoalE">
     <Key>
       <PropertyRef Name="IdConsultaFixo" />
       <PropertyRef Name="IdMedicamento" />

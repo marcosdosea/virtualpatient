@@ -469,7 +469,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_diario_pessoal">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_diario_pessoal)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.DiarioPessoalE)">
         <MappingFragment StoreEntitySet="tb_diario_pessoal">
           <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
           <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
