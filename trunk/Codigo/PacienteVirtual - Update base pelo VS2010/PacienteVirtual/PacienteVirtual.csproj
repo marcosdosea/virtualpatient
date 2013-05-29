@@ -101,6 +101,7 @@
     <Compile Include="Controllers\CursoController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\HistoricoController.cs" />
     <Compile Include="Controllers\OcupacaoController.cs" />
     <Compile Include="Controllers\DemograficosAntropomedicosController.cs" />
     <Compile Include="Controllers\DisciplinaController.cs">
@@ -117,7 +118,7 @@
     </Compile>
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\PacientePessoaTurmaController.cs" />
-    <Compile Include="Controllers\ParamentoClinicoController.cs" />
+    <Compile Include="Controllers\ParametoClinicoController.cs" />
     <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\PlanoSaudeController.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Models\Negocio\GerenciadorEscolaridade.cs" />
     <Compile Include="Models\Negocio\GerenciadorExperienciaMedicamentos.cs" />
     <Compile Include="Models\Negocio\GerenciadorHistoria.cs" />
+    <Compile Include="Models\Negocio\GerenciadorHistorico.cs" />
     <Compile Include="Models\Negocio\GerenciadorInstituicao.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -276,6 +278,11 @@
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
+    <Content Include="Views\Historico\Create.aspx" />
+    <Content Include="Views\Historico\Delete.aspx" />
+    <Content Include="Views\Historico\Details.aspx" />
+    <Content Include="Views\Historico\Edit.aspx" />
+    <Content Include="Views\Historico\Index.aspx" />
     <Content Include="Views\Ocupacao\Create.aspx" />
     <Content Include="Views\Ocupacao\Delete.aspx" />
     <Content Include="Views\Ocupacao\Details.aspx" />
@@ -323,11 +330,11 @@
     <Content Include="Views\Paciente\Details.aspx" />
     <Content Include="Views\Paciente\Edit.aspx" />
     <Content Include="Views\Paciente\Index.aspx" />
-    <Content Include="Views\ParamentoClinico\Create.aspx" />
-    <Content Include="Views\ParamentoClinico\Delete.aspx" />
-    <Content Include="Views\ParamentoClinico\Details.aspx" />
-    <Content Include="Views\ParamentoClinico\Edit.aspx" />
-    <Content Include="Views\ParamentoClinico\Index.aspx" />
+    <Content Include="Views\ParametoClinico\Create.aspx" />
+    <Content Include="Views\ParametoClinico\Delete.aspx" />
+    <Content Include="Views\ParametoClinico\Details.aspx" />
+    <Content Include="Views\ParametoClinico\Edit.aspx" />
+    <Content Include="Views\ParametoClinico\Index.aspx" />
     <Content Include="Views\Pergunta\Create.aspx" />
     <Content Include="Views\Pergunta\Delete.aspx" />
     <Content Include="Views\Pergunta\Details.aspx" />

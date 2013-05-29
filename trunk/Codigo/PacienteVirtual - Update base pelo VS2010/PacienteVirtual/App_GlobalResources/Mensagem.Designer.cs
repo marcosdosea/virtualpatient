@@ -214,6 +214,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data da Resposta.
+        /// </summary>
+        public static string data_resposta {
+            get {
+                return ResourceManager.GetString("data_resposta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deletar.
         /// </summary>
         public static string deletar {
@@ -421,6 +430,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Histórico.
+        /// </summary>
+        public static string historico {
+            get {
+                return ResourceManager.GetString("historico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Plano Incorporado.
         /// </summary>
         public static string incorporado_plano {
@@ -621,9 +639,9 @@ namespace PacienteVirtual.App_GlobalResources {
         /// <summary>
         ///   Looks up a localized string similar to Código Relato.
         /// </summary>
-        public static string relato_relato {
+        public static string relato_codigo {
             get {
-                return ResourceManager.GetString("relato_relato", resourceCulture);
+                return ResourceManager.GetString("relato_codigo", resourceCulture);
             }
         }
         
@@ -705,6 +723,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string turma_codigo {
             get {
                 return ResourceManager.GetString("turma_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código Tutor.
+        /// </summary>
+        public static string tutor_codigo {
+            get {
+                return ResourceManager.GetString("tutor_codigo", resourceCulture);
             }
         }
         
