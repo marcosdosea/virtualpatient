@@ -11,14 +11,14 @@ using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
 { 
-    public class ParamentoClinicoController : Controller
+    public class ParametroClinicoController : Controller
     {
         //
         // GET: /ParamentoClinico/
 
         public ViewResult Index()
         {
-            return View(GerenciadorParamentoClinico.GetInstance().ObterTodos());
+            return View(GerenciadorParametroClinico.GetInstance().ObterTodos());
         }
 
         //
@@ -26,7 +26,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(int id)
         {
-            return View(GerenciadorParamentoClinico.GetInstance().Obter(id));
+            return View(GerenciadorParametroClinico.GetInstance().Obter(id));
         }
 
         //
@@ -41,15 +41,15 @@ namespace PacienteVirtual.Controllers
         // POST: /ParamentoClinico/Create
 
         [HttpPost]
-        public ActionResult Create(ParamentoClinicoModel paramentoClinicoModel)
+        public ActionResult Create(ParametroClinicoModel parametroClinicoModel)
         {
             if (ModelState.IsValid)
             {
-                paramentoClinicoModel.IdParamentoClinico = GerenciadorParamentoClinico.GetInstance().Inserir(paramentoClinicoModel);
+                parametroClinicoModel.IdParametroClinico = GerenciadorParametroClinico.GetInstance().Inserir(parametroClinicoModel);
                 return RedirectToAction("Index");
             }
 
-            return View(paramentoClinicoModel);
+            return View(parametroClinicoModel);
         }
 
         //
@@ -57,22 +57,22 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Edit(int id)
         {
-            ParamentoClinicoModel paramentoClinicoModel = GerenciadorParamentoClinico.GetInstance().Obter(id);
-            return View(paramentoClinicoModel);
+            ParametroClinicoModel parametroClinicoModel = GerenciadorParametroClinico.GetInstance().Obter(id);
+            return View(parametroClinicoModel);
         }
 
         //
         // POST: /ParamentoClinico/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ParamentoClinicoModel paramentoClinicoModel)
+        public ActionResult Edit(ParametroClinicoModel parametroClinicoModel)
         {
             if (ModelState.IsValid)
             {
-                GerenciadorParamentoClinico.GetInstance().Atualizar(paramentoClinicoModel);
+                GerenciadorParametroClinico.GetInstance().Atualizar(parametroClinicoModel);
                 return RedirectToAction("Index");
             }
-            return View(paramentoClinicoModel);
+            return View(parametroClinicoModel);
         }
 
         //
@@ -80,8 +80,8 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Delete(int id)
         {
-            ParamentoClinicoModel paramentoClinicoModel = GerenciadorParamentoClinico.GetInstance().Obter(id);
-            return View(paramentoClinicoModel);
+            ParametroClinicoModel parametroClinicoModel = GerenciadorParametroClinico.GetInstance().Obter(id);
+            return View(parametroClinicoModel);
         }
 
         //
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            GerenciadorParamentoClinico.GetInstance().Remover(id);
+            GerenciadorParametroClinico.GetInstance().Remover(id);
             return RedirectToAction("Index");
         }
 

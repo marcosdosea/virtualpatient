@@ -7,14 +7,14 @@ using PacienteVirtual.App_GlobalResources;
 
 namespace PacienteVirtual.Models
 {
-    public class ParamentoClinicoModel
+    public class ParametroClinicoModel
     {
         [Required/**(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")*/]
         [Display(Name = "codigo"/**, ResourceType = typeof(Mensagem)*/)]
-        public int IdParamentoClinico { get; set; }
+        public int IdParametroClinico { get; set; }
 
         [Required/**(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")*/]
         [Display(Name = "Paramento clínico"/**, ResourceType = typeof(Mensagem)*/)]
-        public String ParamentoClinico { get; set; }
+        public String ParametroClinico { get; set; }
     }
 }

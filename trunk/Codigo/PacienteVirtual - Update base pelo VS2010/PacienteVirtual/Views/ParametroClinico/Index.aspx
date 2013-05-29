@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.ParamentoClinicoModel>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.ParametroClinicoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -22,12 +22,12 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <%: Html.DisplayFor(modelItem => item.ParamentoClinico) %>
+            <%: Html.DisplayFor(modelItem => item.ParametroClinico) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { id=item.IdParamentoClinico }) %> |
-            <%: Html.ActionLink("Details", "Details", new { id=item.IdParamentoClinico }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { id=item.IdParamentoClinico }) %>
+            <%: Html.ActionLink("Edit", "Edit", new { id=item.IdParametroClinico }) %> |
+            <%: Html.ActionLink("Details", "Details", new { id=item.IdParametroClinico }) %> |
+            <%: Html.ActionLink("Delete", "Delete", new { id=item.IdParametroClinico }) %>
         </td>
     </tr>
 <% } %>

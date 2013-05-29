@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ParamentoClinicoModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ParametroClinicoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Create
@@ -17,11 +17,11 @@
         <legend>tb_parametro_clinico</legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.ParamentoClinico) %>
+            <%: Html.LabelFor(model => model.ParametroClinico) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.ParamentoClinico) %>
-            <%: Html.ValidationMessageFor(model => model.ParamentoClinico) %>
+            <%: Html.EditorFor(model => model.ParametroClinico) %>
+            <%: Html.ValidationMessageFor(model => model.ParametroClinico) %>
         </div>
 
         <p>

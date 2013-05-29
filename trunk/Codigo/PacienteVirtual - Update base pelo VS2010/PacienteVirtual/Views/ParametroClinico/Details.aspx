@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ParamentoClinicoModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ParametroClinicoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Details
@@ -13,12 +13,12 @@
 
     <div class="display-label">ParametroClinico</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.ParamentoClinico) %>
+        <%: Html.DisplayFor(model => model.ParametroClinico) %>
     </div>
 </fieldset>
 <p>
 
-    <%: Html.ActionLink("Edit", "Edit", new { id=Model.IdParamentoClinico }) %> |
+    <%: Html.ActionLink("Edit", "Edit", new { id=Model.IdParametroClinico }) %> |
     <%: Html.ActionLink("Back to List", "Index") %>
 </p>
 

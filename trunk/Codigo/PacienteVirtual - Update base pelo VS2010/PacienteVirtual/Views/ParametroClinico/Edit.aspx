@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ParamentoClinicoModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ParametroClinicoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Create
+    Edit
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Create</h2>
+<h2>Edit</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -16,16 +16,18 @@
     <fieldset>
         <legend>tb_parametro_clinico</legend>
 
+        <%: Html.HiddenFor(model => model.IdParametroClinico) %>
+
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.ParamentoClinico) %>
+            <%: Html.LabelFor(model => model.ParametroClinico) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.ParamentoClinico) %>
-            <%: Html.ValidationMessageFor(model => model.ParamentoClinico) %>
+            <%: Html.EditorFor(model => model.ParametroClinico) %>
+            <%: Html.ValidationMessageFor(model => model.ParametroClinico) %>
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Save" />
         </p>
     </fieldset>
 <% } %>
