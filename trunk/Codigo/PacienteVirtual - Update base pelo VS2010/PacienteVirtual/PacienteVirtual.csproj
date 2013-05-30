@@ -123,11 +123,13 @@
     <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\PlanoSaudeController.cs" />
+    <Compile Include="Controllers\RazaoEncontroController.cs" />
     <Compile Include="Controllers\RelatoClinicoController.cs" />
     <Compile Include="Controllers\RespostaController.cs" />
     <Compile Include="Controllers\SampleController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\SistemaController.cs" />
     <Compile Include="Controllers\TurmaController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -195,8 +197,10 @@
     <Compile Include="Models\Negocio\GerenciadorPergunta.cs" />
     <Compile Include="Models\Negocio\GerenciadorPessoa.cs" />
     <Compile Include="Models\Negocio\GerenciadorPlanoSaude.cs" />
+    <Compile Include="Models\Negocio\GerenciadorRazaoEncontro.cs" />
     <Compile Include="Models\Negocio\GerenciadorRelato.cs" />
     <Compile Include="Models\Negocio\GerenciadorResposta.cs" />
+    <Compile Include="Models\Negocio\GerenciadorSistema.cs" />
     <Compile Include="Models\Negocio\GerenciadorTurma.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -211,8 +215,10 @@
     <Compile Include="Models\PerguntaModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />
     <Compile Include="Models\PlanoSaudeModel.cs" />
+    <Compile Include="Models\RazaoEncontroModel.cs" />
     <Compile Include="Models\RelatoClinicoModel.cs" />
     <Compile Include="Models\RespostaModel.cs" />
+    <Compile Include="Models\SistemaModel.cs" />
     <Compile Include="Models\TurmaModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -361,6 +367,11 @@
     <Content Include="Views\PlanoSaude\Details.aspx" />
     <Content Include="Views\PlanoSaude\Edit.aspx" />
     <Content Include="Views\PlanoSaude\Index.aspx" />
+    <Content Include="Views\RazaoEncontro\Create.aspx" />
+    <Content Include="Views\RazaoEncontro\Delete.aspx" />
+    <Content Include="Views\RazaoEncontro\Details.aspx" />
+    <Content Include="Views\RazaoEncontro\Edit.aspx" />
+    <Content Include="Views\RazaoEncontro\Index.aspx" />
     <Content Include="Views\RelatoClinico\Create.aspx" />
     <Content Include="Views\RelatoClinico\Delete.aspx" />
     <Content Include="Views\RelatoClinico\Details.aspx" />
@@ -375,6 +386,11 @@
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Sistema\Create.aspx" />
+    <Content Include="Views\Sistema\Delete.aspx" />
+    <Content Include="Views\Sistema\Details.aspx" />
+    <Content Include="Views\Sistema\Edit.aspx" />
+    <Content Include="Views\Sistema\Index.aspx" />
     <Content Include="Views\TurmaPessoaRelato\Create.aspx" />
     <Content Include="Views\TurmaPessoaRelato\Delete.aspx" />
     <Content Include="Views\TurmaPessoaRelato\Details.aspx" />

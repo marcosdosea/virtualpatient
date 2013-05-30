@@ -718,7 +718,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_razao_encontro">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_razao_encontro)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.RazaoEncontroE)">
         <MappingFragment StoreEntitySet="tb_razao_encontro">
           <ScalarProperty Name="IdRazaoEncontro" ColumnName="IdRazaoEncontro" />
           <ScalarProperty Name="DescricaoRazao" ColumnName="DescricaoRazao" />
@@ -747,7 +747,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_sistema">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_sistema)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.SistemaE)">
         <MappingFragment StoreEntitySet="tb_sistema">
           <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
           <ScalarProperty Name="NomeSistema" ColumnName="NomeSistema" />
