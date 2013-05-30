@@ -22,7 +22,7 @@
     <EntitySet Name="respostaquartas" EntityType="pvModel.respostaquarta" />
     <EntitySet Name="respostasegundas" EntityType="pvModel.respostasegunda" />
     <EntitySet Name="respostaterceiras" EntityType="pvModel.respostaterceira" />
-    <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.tb_acao_alternativa" />
+    <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.AcaoAlternativaE" />
     <EntitySet Name="tb_acao_queixa" EntityType="pvModel.tb_acao_queixa" />
     <EntitySet Name="tb_alergia" EntityType="pvModel.tb_alergia" />
     <EntitySet Name="tb_alergia_exames_fisicos" EntityType="pvModel.tb_alergia_exames_fisicos" />
@@ -44,7 +44,7 @@
     <EntitySet Name="tb_instituicao" EntityType="pvModel.InstituicaoE" />
     <EntitySet Name="tb_medicamento_nao_prescrito" EntityType="pvModel.tb_medicamento_nao_prescrito" />
     <EntitySet Name="tb_medicamento_prescrito" EntityType="pvModel.tb_medicamento_prescrito" />
-    <EntitySet Name="tb_medicamentos" EntityType="pvModel.tb_medicamentos" />
+    <EntitySet Name="tb_medicamentos" EntityType="pvModel.MedicamentosE" />
     <EntitySet Name="tb_medicamentos_anteriores" EntityType="pvModel.tb_medicamentos_anteriores" />
     <EntitySet Name="tb_ocupacao" EntityType="pvModel.OcupacaoE" />
     <EntitySet Name="tb_paciente" EntityType="pvModel.PacienteE" />
@@ -636,7 +636,7 @@
     <NavigationProperty Name="queixarespostaterceiras" Relationship="pvModel.FK_queixarespostaterceira_1" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
     <NavigationProperty Name="queixarespostaterceiras1" Relationship="pvModel.FK1CE59807871504B2" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
   </EntityType>
-  <EntityType Name="tb_acao_alternativa">
+  <EntityType Name="AcaoAlternativaE">
     <Key>
       <PropertyRef Name="IdAcaoAlternativa" />
     </Key>
@@ -870,7 +870,7 @@
     <Property Name="Prescritor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Especialidade" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
   </EntityType>
-  <EntityType Name="tb_medicamentos">
+  <EntityType Name="MedicamentosE">
     <Key>
       <PropertyRef Name="IdMedicamento" />
     </Key>

@@ -94,6 +94,7 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Controllers\AcaoAlternativaController.cs" />
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +104,7 @@
     </Compile>
     <Compile Include="Controllers\DiarioPessoalController.cs" />
     <Compile Include="Controllers\HistoricoController.cs" />
+    <Compile Include="Controllers\MedicamentosController.cs" />
     <Compile Include="Controllers\OcupacaoController.cs" />
     <Compile Include="Controllers\DemograficosAntropomedicosController.cs" />
     <Compile Include="Controllers\DisciplinaController.cs">
@@ -140,6 +142,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AcaoAlternativaModel.cs" />
     <Compile Include="Models\AccountModels.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -174,6 +177,8 @@
     <Compile Include="Models\InstituicaoModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\MedicamentosModel.cs" />
+    <Compile Include="Models\Negocio\GerenciadorAcaoAlternativa.cs" />
     <Compile Include="Models\Negocio\GerenciadorConsultaFixo.cs" />
     <Compile Include="Models\Negocio\GerenciadorCurso.cs">
       <SubType>Code</SubType>
@@ -190,6 +195,7 @@
     <Compile Include="Models\Negocio\GerenciadorInstituicao.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Negocio\GerenciadorMedicamentos.cs" />
     <Compile Include="Models\Negocio\GerenciadorOcupacao.cs" />
     <Compile Include="Models\Negocio\GerenciadorPaciente.cs" />
     <Compile Include="Models\Negocio\GerenciadorPacientePessoaTurma.cs" />
@@ -275,6 +281,11 @@
     <Content Include="Uploads\Matricula.txt" />
     <Content Include="Uploads\PilhaDados.java" />
     <Content Include="Uploads\Um Homem De Sorte.avi" />
+    <Content Include="Views\AcaoAlternativa\Create.aspx" />
+    <Content Include="Views\AcaoAlternativa\Delete.aspx" />
+    <Content Include="Views\AcaoAlternativa\Details.aspx" />
+    <Content Include="Views\AcaoAlternativa\Edit.aspx" />
+    <Content Include="Views\AcaoAlternativa\Index.aspx" />
     <Content Include="Views\Account\ChangePassword.aspx" />
     <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
     <Content Include="Views\Account\LogOn.aspx" />
@@ -300,6 +311,11 @@
     <Content Include="Views\Historico\Details.aspx" />
     <Content Include="Views\Historico\Edit.aspx" />
     <Content Include="Views\Historico\Index.aspx" />
+    <Content Include="Views\Medicamentos\Create.aspx" />
+    <Content Include="Views\Medicamentos\Delete.aspx" />
+    <Content Include="Views\Medicamentos\Details.aspx" />
+    <Content Include="Views\Medicamentos\Edit.aspx" />
+    <Content Include="Views\Medicamentos\Index.aspx" />
     <Content Include="Views\Ocupacao\Create.aspx" />
     <Content Include="Views\Ocupacao\Delete.aspx" />
     <Content Include="Views\Ocupacao\Details.aspx" />

@@ -1510,7 +1510,7 @@
           <EntitySet Name="respostaquartas" EntityType="pvModel.respostaquarta" />
           <EntitySet Name="respostasegundas" EntityType="pvModel.respostasegunda" />
           <EntitySet Name="respostaterceiras" EntityType="pvModel.respostaterceira" />
-          <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.tb_acao_alternativa" />
+          <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.AcaoAlternativaE" />
           <EntitySet Name="tb_acao_queixa" EntityType="pvModel.tb_acao_queixa" />
           <EntitySet Name="tb_alergia" EntityType="pvModel.tb_alergia" />
           <EntitySet Name="tb_alergia_exames_fisicos" EntityType="pvModel.tb_alergia_exames_fisicos" />
@@ -1532,7 +1532,7 @@
           <EntitySet Name="tb_instituicao" EntityType="pvModel.InstituicaoE" />
           <EntitySet Name="tb_medicamento_nao_prescrito" EntityType="pvModel.tb_medicamento_nao_prescrito" />
           <EntitySet Name="tb_medicamento_prescrito" EntityType="pvModel.tb_medicamento_prescrito" />
-          <EntitySet Name="tb_medicamentos" EntityType="pvModel.tb_medicamentos" />
+          <EntitySet Name="tb_medicamentos" EntityType="pvModel.MedicamentosE" />
           <EntitySet Name="tb_medicamentos_anteriores" EntityType="pvModel.tb_medicamentos_anteriores" />
           <EntitySet Name="tb_ocupacao" EntityType="pvModel.OcupacaoE" />
           <EntitySet Name="tb_paciente" EntityType="pvModel.PacienteE" />
@@ -2124,7 +2124,7 @@
           <NavigationProperty Name="queixarespostaterceiras" Relationship="pvModel.FK_queixarespostaterceira_1" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
           <NavigationProperty Name="queixarespostaterceiras1" Relationship="pvModel.FK1CE59807871504B2" FromRole="respostaterceira" ToRole="queixarespostaterceira" />
         </EntityType>
-        <EntityType Name="tb_acao_alternativa">
+        <EntityType Name="AcaoAlternativaE">
           <Key>
             <PropertyRef Name="IdAcaoAlternativa" />
           </Key>
@@ -2358,7 +2358,7 @@
           <Property Name="Prescritor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Especialidade" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
         </EntityType>
-        <EntityType Name="tb_medicamentos">
+        <EntityType Name="MedicamentosE">
           <Key>
             <PropertyRef Name="IdMedicamento" />
           </Key>
@@ -3409,7 +3409,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_acao_alternativa">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_acao_alternativa)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.AcaoAlternativaE)">
         <MappingFragment StoreEntitySet="tb_acao_alternativa">
           <ScalarProperty Name="IdAcaoAlternativa" ColumnName="IdAcaoAlternativa" />
           <ScalarProperty Name="DescricaoAcao" ColumnName="DescricaoAcao" />
@@ -3656,7 +3656,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_medicamentos">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_medicamentos)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.MedicamentosE)">
         <MappingFragment StoreEntitySet="tb_medicamentos">
           <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -3899,7 +3899,7 @@
         <EntityTypeShape EntityType="pvModel.respostaquarta" Width="1.5" PointX="5.25" PointY="19.875" Height="3.9033007812500031" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.respostasegunda" Width="1.5" PointX="5.25" PointY="27.125" Height="3.9033007812500031" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.respostaterceira" Width="1.5" PointX="5.25" PointY="44.625" Height="4.0956022135416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_acao_alternativa" Width="1.5" PointX="5.75" PointY="0.75" Height="1.4033821614583282" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.AcaoAlternativaE" Width="1.5" PointX="5.75" PointY="0.75" Height="1.4033821614583282" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_acao_queixa" Width="1.5" PointX="2.75" PointY="5.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_alergia" Width="1.5" PointX="5.75" PointY="3.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_alergia_exames_fisicos" Width="1.5" PointX="4.75" PointY="6.75" Height="1.4033821614583246" IsExpanded="true" />
@@ -3921,7 +3921,7 @@
         <EntityTypeShape EntityType="pvModel.InstituicaoE" Width="1.5" PointX="13.75" PointY="0.75" Height="1.5956835937500102" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_medicamento_nao_prescrito" Width="1.5" PointX="13.75" PointY="7.75" Height="1.9802864583333246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_medicamento_prescrito" Width="1.5" PointX="13.75" PointY="10.75" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_medicamentos" Width="1.5" PointX="0.75" PointY="14.75" Height="1.4033821614583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.MedicamentosE" Width="1.5" PointX="0.75" PointY="14.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_medicamentos_anteriores" Width="1.5" PointX="14.75" PointY="3.75" Height="1.9802864583333246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.OcupacaoE" Width="1.5" PointX="13.75" PointY="14.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PacienteE" Width="1.5" PointX="0.75" PointY="9.125" Height="1.7879850260416674" IsExpanded="true" />
