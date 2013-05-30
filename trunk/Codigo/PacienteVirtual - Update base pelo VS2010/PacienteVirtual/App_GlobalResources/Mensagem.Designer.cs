@@ -106,6 +106,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Código Resposta Comportamento.
+        /// </summary>
+        public static string comportamento_resposta_codigo {
+            get {
+                return ResourceManager.GetString("comportamento_resposta_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consulta.
         /// </summary>
         public static string consulta {
@@ -174,6 +183,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string cultural_atencao {
             get {
                 return ResourceManager.GetString("cultural_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código Resposta Cultural.
+        /// </summary>
+        public static string cultural_resposta_codigo {
+            get {
+                return ResourceManager.GetString("cultural_resposta_codigo", resourceCulture);
             }
         }
         
@@ -331,6 +349,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Código Resposta Espera Tratamento.
+        /// </summary>
+        public static string espera_tratamento_resposta_codigo {
+            get {
+                return ResourceManager.GetString("espera_tratamento_resposta_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estado.
         /// </summary>
         public static string estado {
@@ -390,6 +417,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string grau_entendimento_atencao {
             get {
                 return ResourceManager.GetString("grau_entendimento_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código Resposta Grau Entendimento.
+        /// </summary>
+        public static string grau_entendimento_reposta_codigo {
+            get {
+                return ResourceManager.GetString("grau_entendimento_reposta_codigo", resourceCulture);
             }
         }
         
@@ -471,6 +507,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string incorporado_plano_atencao {
             get {
                 return ResourceManager.GetString("incorporado_plano_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código Resposta Incorporado Plano.
+        /// </summary>
+        public static string incorporado_plano_resposta_codigo {
+            get {
+                return ResourceManager.GetString("incorporado_plano_resposta_codigo", resourceCulture);
             }
         }
         
@@ -660,6 +705,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string preocupacoes_atencao {
             get {
                 return ResourceManager.GetString("preocupacoes_atencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código Resposta Preocupações.
+        /// </summary>
+        public static string preocupacoes_resposta_codigo {
+            get {
+                return ResourceManager.GetString("preocupacoes_resposta_codigo", resourceCulture);
             }
         }
         

@@ -68,6 +68,8 @@
                         <%: Html.ActionLink("Histórico", "Index", "Historico")%></li>
                                             <li>
                         <%: Html.ActionLink("Diário Pessoal", "Index", "DiarioPessoal")%></li>
+                                                                    <li>
+                        <%: Html.ActionLink("Turma Pessoa Relato", "Index", "TurmaPessoaRelato")%></li>
                 </ul>
             </nav>
         </header>

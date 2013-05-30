@@ -1550,7 +1550,7 @@
           <EntitySet Name="tb_sistema" EntityType="pvModel.tb_sistema" />
           <EntitySet Name="tb_turma" EntityType="pvModel.TurmaE" />
           <EntitySet Name="tb_turma_pessoa" EntityType="pvModel.tb_turma_pessoa" />
-          <EntitySet Name="tb_turma_pessoa_relato" EntityType="pvModel.tb_turma_pessoa_relato" />
+          <EntitySet Name="tb_turma_pessoa_relato" EntityType="pvModel.TurmaPessoaRelatoE" />
           <EntitySet Name="tb_usuario" EntityType="pvModel.UsuarioE" />
           <EntitySet Name="tb_usuario_turma" EntityType="pvModel.tb_usuario_turma" />
           <AssociationSet Name="FK_aluno_2" Association="pvModel.FK_aluno_2">
@@ -2524,7 +2524,7 @@
           <Property Name="IdPessoa" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1" FromRole="tb_turma_pessoa" ToRole="tb_paciente_pessoa_turma" />
         </EntityType>
-        <EntityType Name="tb_turma_pessoa_relato">
+        <EntityType Name="TurmaPessoaRelatoE">
           <Key>
             <PropertyRef Name="IdTurma" />
             <PropertyRef Name="IdPessoa" />
@@ -3828,7 +3828,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_turma_pessoa_relato">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_turma_pessoa_relato)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.TurmaPessoaRelatoE)">
         <MappingFragment StoreEntitySet="tb_turma_pessoa_relato">
           <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
           <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
@@ -3939,7 +3939,7 @@
         <EntityTypeShape EntityType="pvModel.tb_sistema" Width="1.5" PointX="17.75" PointY="11.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.TurmaE" Width="1.5" PointX="11.75" PointY="17.75" Height="1.9802864583333246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_turma_pessoa" Width="1.5" PointX="0.75" PointY="11.75" Height="1.5956835937499818" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_turma_pessoa_relato" Width="1.5" PointX="17.75" PointY="14.75" Height="1.5956835937499818" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.TurmaPessoaRelatoE" Width="1.5" PointX="17.75" PointY="14.75" Height="1.5956835937499818" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.UsuarioE" Width="1.5" PointX="17.75" PointY="17.75" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_usuario_turma" Width="1.5" PointX="13.75" PointY="18.75" Height="1.5956835937499818" IsExpanded="true" />
         <AssociationConnector Association="pvModel.FK_aluno_2" ManuallyRouted="false">

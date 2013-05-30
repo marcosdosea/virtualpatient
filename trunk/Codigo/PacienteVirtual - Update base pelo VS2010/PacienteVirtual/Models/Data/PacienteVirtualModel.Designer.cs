@@ -1089,18 +1089,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_turma_pessoa_relato> tb_turma_pessoa_relato
+        public ObjectSet<TurmaPessoaRelatoE> tb_turma_pessoa_relato
         {
             get
             {
                 if ((_tb_turma_pessoa_relato == null))
                 {
-                    _tb_turma_pessoa_relato = base.CreateObjectSet<tb_turma_pessoa_relato>("tb_turma_pessoa_relato");
+                    _tb_turma_pessoa_relato = base.CreateObjectSet<TurmaPessoaRelatoE>("tb_turma_pessoa_relato");
                 }
                 return _tb_turma_pessoa_relato;
             }
         }
-        private ObjectSet<tb_turma_pessoa_relato> _tb_turma_pessoa_relato;
+        private ObjectSet<TurmaPessoaRelatoE> _tb_turma_pessoa_relato;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1628,9 +1628,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_turma_pessoa_relato EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_turma_pessoa_relato(tb_turma_pessoa_relato tb_turma_pessoa_relato)
+        public void AddTotb_turma_pessoa_relato(TurmaPessoaRelatoE turmaPessoaRelatoE)
         {
-            base.AddObject("tb_turma_pessoa_relato", tb_turma_pessoa_relato);
+            base.AddObject("tb_turma_pessoa_relato", turmaPessoaRelatoE);
         }
     
         /// <summary>
@@ -15997,119 +15997,6 @@ namespace PacienteVirtual.Models.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_turma_pessoa_relato")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_turma_pessoa_relato : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_turma_pessoa_relato object.
-        /// </summary>
-        /// <param name="idTurma">Initial value of the IdTurma property.</param>
-        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
-        /// <param name="idRelato">Initial value of the IdRelato property.</param>
-        public static tb_turma_pessoa_relato Createtb_turma_pessoa_relato(global::System.Int32 idTurma, global::System.Int32 idPessoa, global::System.Int32 idRelato)
-        {
-            tb_turma_pessoa_relato tb_turma_pessoa_relato = new tb_turma_pessoa_relato();
-            tb_turma_pessoa_relato.IdTurma = idTurma;
-            tb_turma_pessoa_relato.IdPessoa = idPessoa;
-            tb_turma_pessoa_relato.IdRelato = idRelato;
-            return tb_turma_pessoa_relato;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdTurma
-        {
-            get
-            {
-                return _IdTurma;
-            }
-            set
-            {
-                if (_IdTurma != value)
-                {
-                    OnIdTurmaChanging(value);
-                    ReportPropertyChanging("IdTurma");
-                    _IdTurma = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdTurma");
-                    OnIdTurmaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdTurma;
-        partial void OnIdTurmaChanging(global::System.Int32 value);
-        partial void OnIdTurmaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPessoa
-        {
-            get
-            {
-                return _IdPessoa;
-            }
-            set
-            {
-                if (_IdPessoa != value)
-                {
-                    OnIdPessoaChanging(value);
-                    ReportPropertyChanging("IdPessoa");
-                    _IdPessoa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPessoa");
-                    OnIdPessoaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPessoa;
-        partial void OnIdPessoaChanging(global::System.Int32 value);
-        partial void OnIdPessoaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdRelato
-        {
-            get
-            {
-                return _IdRelato;
-            }
-            set
-            {
-                if (_IdRelato != value)
-                {
-                    OnIdRelatoChanging(value);
-                    ReportPropertyChanging("IdRelato");
-                    _IdRelato = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdRelato");
-                    OnIdRelatoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdRelato;
-        partial void OnIdRelatoChanging(global::System.Int32 value);
-        partial void OnIdRelatoChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_usuario_turma")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -16367,6 +16254,119 @@ namespace PacienteVirtual.Models.Data
         private global::System.Int32 _IdInstituicao;
         partial void OnIdInstituicaoChanging(global::System.Int32 value);
         partial void OnIdInstituicaoChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="TurmaPessoaRelatoE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TurmaPessoaRelatoE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new TurmaPessoaRelatoE object.
+        /// </summary>
+        /// <param name="idTurma">Initial value of the IdTurma property.</param>
+        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
+        /// <param name="idRelato">Initial value of the IdRelato property.</param>
+        public static TurmaPessoaRelatoE CreateTurmaPessoaRelatoE(global::System.Int32 idTurma, global::System.Int32 idPessoa, global::System.Int32 idRelato)
+        {
+            TurmaPessoaRelatoE turmaPessoaRelatoE = new TurmaPessoaRelatoE();
+            turmaPessoaRelatoE.IdTurma = idTurma;
+            turmaPessoaRelatoE.IdPessoa = idPessoa;
+            turmaPessoaRelatoE.IdRelato = idRelato;
+            return turmaPessoaRelatoE;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdTurma
+        {
+            get
+            {
+                return _IdTurma;
+            }
+            set
+            {
+                if (_IdTurma != value)
+                {
+                    OnIdTurmaChanging(value);
+                    ReportPropertyChanging("IdTurma");
+                    _IdTurma = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdTurma");
+                    OnIdTurmaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdTurma;
+        partial void OnIdTurmaChanging(global::System.Int32 value);
+        partial void OnIdTurmaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPessoa
+        {
+            get
+            {
+                return _IdPessoa;
+            }
+            set
+            {
+                if (_IdPessoa != value)
+                {
+                    OnIdPessoaChanging(value);
+                    ReportPropertyChanging("IdPessoa");
+                    _IdPessoa = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdPessoa");
+                    OnIdPessoaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdPessoa;
+        partial void OnIdPessoaChanging(global::System.Int32 value);
+        partial void OnIdPessoaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdRelato
+        {
+            get
+            {
+                return _IdRelato;
+            }
+            set
+            {
+                if (_IdRelato != value)
+                {
+                    OnIdRelatoChanging(value);
+                    ReportPropertyChanging("IdRelato");
+                    _IdRelato = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdRelato");
+                    OnIdRelatoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdRelato;
+        partial void OnIdRelatoChanging(global::System.Int32 value);
+        partial void OnIdRelatoChanged();
 
         #endregion
     
