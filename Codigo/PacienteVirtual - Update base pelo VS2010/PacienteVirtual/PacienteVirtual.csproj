@@ -131,6 +131,7 @@
     <Compile Include="Controllers\TurmaController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\TurmaPessoaRelatoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -199,6 +200,7 @@
     <Compile Include="Models\Negocio\GerenciadorTurma.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Negocio\GerenciadorTurmaPessoaRelato.cs" />
     <Compile Include="Models\Negocio\NegocioException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -214,6 +216,7 @@
     <Compile Include="Models\TurmaModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\TurmaPessoaRelatoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -372,6 +375,11 @@
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\TurmaPessoaRelato\Create.aspx" />
+    <Content Include="Views\TurmaPessoaRelato\Delete.aspx" />
+    <Content Include="Views\TurmaPessoaRelato\Details.aspx" />
+    <Content Include="Views\TurmaPessoaRelato\Edit.aspx" />
+    <Content Include="Views\TurmaPessoaRelato\Index.aspx" />
     <Content Include="Views\Turma\Create.aspx" />
     <Content Include="Views\Turma\Delete.aspx" />
     <Content Include="Views\Turma\Details.aspx" />

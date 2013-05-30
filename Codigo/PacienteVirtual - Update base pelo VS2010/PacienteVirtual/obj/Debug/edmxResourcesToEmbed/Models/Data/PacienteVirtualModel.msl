@@ -774,7 +774,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_turma_pessoa_relato">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_turma_pessoa_relato)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.TurmaPessoaRelatoE)">
         <MappingFragment StoreEntitySet="tb_turma_pessoa_relato">
           <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
           <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />

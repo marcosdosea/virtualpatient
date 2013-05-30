@@ -363,4 +363,22 @@
   <data name="tipo_bebida" xml:space="preserve">
     <value>Tipo de Bebida</value>
   </data>
+  <data name="comportamento_resposta_codigo" xml:space="preserve">
+    <value>Código Resposta Comportamento</value>
+  </data>
+  <data name="cultural_resposta_codigo" xml:space="preserve">
+    <value>Código Resposta Cultural</value>
+  </data>
+  <data name="espera_tratamento_resposta_codigo" xml:space="preserve">
+    <value>Código Resposta Espera Tratamento</value>
+  </data>
+  <data name="grau_entendimento_reposta_codigo" xml:space="preserve">
+    <value>Código Resposta Grau Entendimento</value>
+  </data>
+  <data name="incorporado_plano_resposta_codigo" xml:space="preserve">
+    <value>Código Resposta Incorporado Plano</value>
+  </data>
+  <data name="preocupacoes_resposta_codigo" xml:space="preserve">
+    <value>Código Resposta Preocupações</value>
+  </data>
 </root>

@@ -62,7 +62,7 @@
     <EntitySet Name="tb_sistema" EntityType="pvModel.tb_sistema" />
     <EntitySet Name="tb_turma" EntityType="pvModel.TurmaE" />
     <EntitySet Name="tb_turma_pessoa" EntityType="pvModel.tb_turma_pessoa" />
-    <EntitySet Name="tb_turma_pessoa_relato" EntityType="pvModel.tb_turma_pessoa_relato" />
+    <EntitySet Name="tb_turma_pessoa_relato" EntityType="pvModel.TurmaPessoaRelatoE" />
     <EntitySet Name="tb_usuario" EntityType="pvModel.UsuarioE" />
     <EntitySet Name="tb_usuario_turma" EntityType="pvModel.tb_usuario_turma" />
     <AssociationSet Name="FK_aluno_2" Association="pvModel.FK_aluno_2">
@@ -1036,7 +1036,7 @@
     <Property Name="IdPessoa" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tb_paciente_pessoa_turma" Relationship="pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1" FromRole="tb_turma_pessoa" ToRole="tb_paciente_pessoa_turma" />
   </EntityType>
-  <EntityType Name="tb_turma_pessoa_relato">
+  <EntityType Name="TurmaPessoaRelatoE">
     <Key>
       <PropertyRef Name="IdTurma" />
       <PropertyRef Name="IdPessoa" />

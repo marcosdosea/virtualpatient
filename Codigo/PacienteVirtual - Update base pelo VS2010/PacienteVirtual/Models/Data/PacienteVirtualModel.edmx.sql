@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2013 22:41:49
+-- Date Created: 05/29/2013 21:14:51
 -- Generated from EDMX file: D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\Models\Data\PacienteVirtualModel.edmx
 -- --------------------------------------------------
 
@@ -15,325 +15,325 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[pv1].[FK_aluno_2]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[aluno] DROP CONSTRAINT [FK_aluno_2];
+IF OBJECT_ID(N'[dbo].[FK_aluno_2]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[alunoes] DROP CONSTRAINT [FK_aluno_2];
 GO
-IF OBJECT_ID(N'[pv1].[FK_Consulta_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[consulta] DROP CONSTRAINT [FK_Consulta_1];
+IF OBJECT_ID(N'[dbo].[FK_consulta_2]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[consultas] DROP CONSTRAINT [FK_consulta_2];
 GO
-IF OBJECT_ID(N'[pv1].[FK_consulta_2]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[consulta] DROP CONSTRAINT [FK_consulta_2];
+IF OBJECT_ID(N'[dbo].[FK_FK589C4EBDD526F1E]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[alunoes] DROP CONSTRAINT [FK_FK589C4EBDD526F1E];
 GO
-IF OBJECT_ID(N'[pv1].[FK_intervencaorespostaquarta_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[intervencaorespostaquarta] DROP CONSTRAINT [FK_intervencaorespostaquarta_1];
+IF OBJECT_ID(N'[dbo].[FK_FKDE2881F52977839B]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[consultas] DROP CONSTRAINT [FK_FKDE2881F52977839B];
 GO
-IF OBJECT_ID(N'[pv1].[FK_intervencaorespostasegunda_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[intervencaorespostasegunda] DROP CONSTRAINT [FK_intervencaorespostasegunda_1];
+IF OBJECT_ID(N'[dbo].[FK_Consulta_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[consultas] DROP CONSTRAINT [FK_Consulta_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_medicamentoqueixa_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[medicamentoqueixa] DROP CONSTRAINT [FK_medicamentoqueixa_1];
+IF OBJECT_ID(N'[dbo].[FK_FK91D9EFAE8A1319FF]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[intervencaos] DROP CONSTRAINT [FK_FK91D9EFAE8A1319FF];
 GO
-IF OBJECT_ID(N'[pv1].[FK_medicamentoqueixaquarta_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[medicamentoqueixaquarta] DROP CONSTRAINT [FK_medicamentoqueixaquarta_1];
+IF OBJECT_ID(N'[dbo].[FK_FKAA358BEF8A1319FF]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[medicamentoprescritoes] DROP CONSTRAINT [FK_FKAA358BEF8A1319FF];
 GO
-IF OBJECT_ID(N'[pv1].[FK_medicamentoqueixasegunda_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[medicamentoqueixasegunda] DROP CONSTRAINT [FK_medicamentoqueixasegunda_1];
+IF OBJECT_ID(N'[dbo].[FK_FKAAEE312E8A1319FF]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[parametroclinicoes] DROP CONSTRAINT [FK_FKAAEE312E8A1319FF];
 GO
-IF OBJECT_ID(N'[pv1].[FK_queixarespostaprimeira_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixarespostaprimeira] DROP CONSTRAINT [FK_queixarespostaprimeira_1];
+IF OBJECT_ID(N'[dbo].[FK_FKBF69A97F8A1319FF]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[medicamentonaoprescritoes] DROP CONSTRAINT [FK_FKBF69A97F8A1319FF];
 GO
-IF OBJECT_ID(N'[pv1].[FK_queixarespostaquarta_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixarespostaquarta] DROP CONSTRAINT [FK_queixarespostaquarta_1];
+IF OBJECT_ID(N'[dbo].[FK_FKC773DEB18A1319FF]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixas] DROP CONSTRAINT [FK_FKC773DEB18A1319FF];
 GO
-IF OBJECT_ID(N'[pv1].[FK_queixarespostaterceira_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixarespostaterceira] DROP CONSTRAINT [FK_queixarespostaterceira_1];
+IF OBJECT_ID(N'[dbo].[FK_FKDE2881F58A1319FF]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[consultas] DROP CONSTRAINT [FK_FKDE2881F58A1319FF];
 GO
-IF OBJECT_ID(N'[pv1].[FK_respostaalunoterceira_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[respostaterceira] DROP CONSTRAINT [FK_respostaalunoterceira_1];
+IF OBJECT_ID(N'[dbo].[FK_respostaalunoterceira_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[respostaterceiras] DROP CONSTRAINT [FK_respostaalunoterceira_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_respostaprimeira_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[respostaprimeira] DROP CONSTRAINT [FK_respostaprimeira_1];
+IF OBJECT_ID(N'[dbo].[FK_respostaprimeira_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[respostaprimeiras] DROP CONSTRAINT [FK_respostaprimeira_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_respostaquarta_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[respostaquarta] DROP CONSTRAINT [FK_respostaquarta_1];
+IF OBJECT_ID(N'[dbo].[FK_respostaquarta_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[respostaquartas] DROP CONSTRAINT [FK_respostaquarta_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_respostasegunda_1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[respostasegunda] DROP CONSTRAINT [FK_respostasegunda_1];
+IF OBJECT_ID(N'[dbo].[FK_respostasegunda_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[respostasegundas] DROP CONSTRAINT [FK_respostasegunda_1];
 GO
-IF OBJECT_ID(N'[pv1].[fk_tb_paciente_pessoa_turma_tb_consulta_fixo1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[tb_paciente_pessoa_turma] DROP CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_consulta_fixo1];
+IF OBJECT_ID(N'[dbo].[FK_FK877B3B565097F805]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[respostaterceiras] DROP CONSTRAINT [FK_FK877B3B565097F805];
 GO
-IF OBJECT_ID(N'[pv1].[fk_tb_paciente_pessoa_turma_tb_consulta_variavel1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[tb_paciente_pessoa_turma] DROP CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_consulta_variavel1];
+IF OBJECT_ID(N'[dbo].[FK_FK88D8D79A5097F805]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[respostaprimeiras] DROP CONSTRAINT [FK_FK88D8D79A5097F805];
 GO
-IF OBJECT_ID(N'[pv1].[fk_tb_paciente_pessoa_turma_tb_paciente1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[tb_paciente_pessoa_turma] DROP CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_paciente1];
+IF OBJECT_ID(N'[dbo].[FK_FKB29DB8E35097F805]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[respostaquartas] DROP CONSTRAINT [FK_FKB29DB8E35097F805];
 GO
-IF OBJECT_ID(N'[pv1].[fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[tb_paciente_pessoa_turma] DROP CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1];
+IF OBJECT_ID(N'[dbo].[FK_FKEFEE246A5097F805]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[respostasegundas] DROP CONSTRAINT [FK_FKEFEE246A5097F805];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK1CE59807871504B2]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixarespostaterceira] DROP CONSTRAINT [FK_FK1CE59807871504B2];
+IF OBJECT_ID(N'[dbo].[FK_intervencaorespostaquarta_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[intervencaorespostaquartas] DROP CONSTRAINT [FK_intervencaorespostaquarta_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK1E43344B8872A0F6]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixarespostaprimeira] DROP CONSTRAINT [FK_FK1E43344B8872A0F6];
+IF OBJECT_ID(N'[dbo].[FK_FK800BA011D2B646E7]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[intervencaorespostaquartas] DROP CONSTRAINT [FK_FK800BA011D2B646E7];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK589C4EBDD526F1E]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[aluno] DROP CONSTRAINT [FK_FK589C4EBDD526F1E];
+IF OBJECT_ID(N'[dbo].[FK_intervencaorespostasegunda_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[intervencaorespostasegundas] DROP CONSTRAINT [FK_intervencaorespostasegunda_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK5BA98DD4D2B646E7]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixarespostaquarta] DROP CONSTRAINT [FK_FK5BA98DD4D2B646E7];
+IF OBJECT_ID(N'[dbo].[FK_FKD03D22FCA4FE1140]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[intervencaorespostasegundas] DROP CONSTRAINT [FK_FKD03D22FCA4FE1140];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK685CED99A4FE1140]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixarespostasegunda] DROP CONSTRAINT [FK_FK685CED99A4FE1140];
+IF OBJECT_ID(N'[dbo].[FK_medicamentoqueixa_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[medicamentoqueixas] DROP CONSTRAINT [FK_medicamentoqueixa_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK78D999E947C18322]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[medicamentoqueixaquarta] DROP CONSTRAINT [FK_FK78D999E947C18322];
+IF OBJECT_ID(N'[dbo].[FK_FK8099C4A73D02FC3D]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[medicamentoqueixas] DROP CONSTRAINT [FK_FK8099C4A73D02FC3D];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK800BA011D2B646E7]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[intervencaorespostaquarta] DROP CONSTRAINT [FK_FK800BA011D2B646E7];
+IF OBJECT_ID(N'[dbo].[FK_medicamentoqueixaquarta_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[medicamentoqueixaquartas] DROP CONSTRAINT [FK_medicamentoqueixaquarta_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK8099C4A73D02FC3D]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[medicamentoqueixa] DROP CONSTRAINT [FK_FK8099C4A73D02FC3D];
+IF OBJECT_ID(N'[dbo].[FK_FK78D999E947C18322]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[medicamentoqueixaquartas] DROP CONSTRAINT [FK_FK78D999E947C18322];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK877B3B565097F805]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[respostaterceira] DROP CONSTRAINT [FK_FK877B3B565097F805];
+IF OBJECT_ID(N'[dbo].[FK_medicamentoqueixasegunda_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[medicamentoqueixasegundas] DROP CONSTRAINT [FK_medicamentoqueixasegunda_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK88D8D79A5097F805]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[respostaprimeira] DROP CONSTRAINT [FK_FK88D8D79A5097F805];
+IF OBJECT_ID(N'[dbo].[FK_FKF12E64244E1862F8]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[medicamentoqueixasegundas] DROP CONSTRAINT [FK_FKF12E64244E1862F8];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FK91D9EFAE8A1319FF]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[intervencao] DROP CONSTRAINT [FK_FK91D9EFAE8A1319FF];
+IF OBJECT_ID(N'[dbo].[FK_queixarespostaprimeira_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixarespostaprimeiras] DROP CONSTRAINT [FK_queixarespostaprimeira_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKAA358BEF8A1319FF]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[medicamentoprescrito] DROP CONSTRAINT [FK_FKAA358BEF8A1319FF];
+IF OBJECT_ID(N'[dbo].[FK_FK1E43344B8872A0F6]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixarespostaprimeiras] DROP CONSTRAINT [FK_FK1E43344B8872A0F6];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKAAEE312E8A1319FF]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[parametroclinico] DROP CONSTRAINT [FK_FKAAEE312E8A1319FF];
+IF OBJECT_ID(N'[dbo].[FK_queixarespostaquarta_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixarespostaquartas] DROP CONSTRAINT [FK_queixarespostaquarta_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKB29DB8E35097F805]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[respostaquarta] DROP CONSTRAINT [FK_FKB29DB8E35097F805];
+IF OBJECT_ID(N'[dbo].[FK_FK5BA98DD4D2B646E7]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixarespostaquartas] DROP CONSTRAINT [FK_FK5BA98DD4D2B646E7];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKBF69A97F8A1319FF]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[medicamentonaoprescrito] DROP CONSTRAINT [FK_FKBF69A97F8A1319FF];
+IF OBJECT_ID(N'[dbo].[FK_FK685CED99A4FE1140]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixarespostasegundas] DROP CONSTRAINT [FK_FK685CED99A4FE1140];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKC773DEB18A1319FF]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixa] DROP CONSTRAINT [FK_FKC773DEB18A1319FF];
+IF OBJECT_ID(N'[dbo].[FK_FKFD098D39A4FE1140]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixarespostasegundas] DROP CONSTRAINT [FK_FKFD098D39A4FE1140];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKD03D22FCA4FE1140]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[intervencaorespostasegunda] DROP CONSTRAINT [FK_FKD03D22FCA4FE1140];
+IF OBJECT_ID(N'[dbo].[FK_queixarespostaterceira_1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixarespostaterceiras] DROP CONSTRAINT [FK_queixarespostaterceira_1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKDE2881F52977839B]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[consulta] DROP CONSTRAINT [FK_FKDE2881F52977839B];
+IF OBJECT_ID(N'[dbo].[FK_FK1CE59807871504B2]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[queixarespostaterceiras] DROP CONSTRAINT [FK_FK1CE59807871504B2];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKDE2881F58A1319FF]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[consulta] DROP CONSTRAINT [FK_FKDE2881F58A1319FF];
+IF OBJECT_ID(N'[dbo].[fk_tb_paciente_pessoa_turma_tb_consulta_fixo1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_paciente_pessoa_turma] DROP CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_consulta_fixo1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKEFEE246A5097F805]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[respostasegunda] DROP CONSTRAINT [FK_FKEFEE246A5097F805];
+IF OBJECT_ID(N'[dbo].[fk_tb_paciente_pessoa_turma_tb_consulta_variavel1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_paciente_pessoa_turma] DROP CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_consulta_variavel1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKF12E64244E1862F8]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[medicamentoqueixasegunda] DROP CONSTRAINT [FK_FKF12E64244E1862F8];
+IF OBJECT_ID(N'[dbo].[fk_tb_paciente_pessoa_turma_tb_paciente1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_paciente_pessoa_turma] DROP CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_paciente1];
 GO
-IF OBJECT_ID(N'[pv1].[FK_FKFD098D39A4FE1140]', 'F') IS NOT NULL
-    ALTER TABLE [pv1].[queixarespostasegunda] DROP CONSTRAINT [FK_FKFD098D39A4FE1140];
+IF OBJECT_ID(N'[dbo].[fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tb_paciente_pessoa_turma] DROP CONSTRAINT [fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[pv1].[aluno]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[aluno];
+IF OBJECT_ID(N'[dbo].[alunoes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[alunoes];
 GO
-IF OBJECT_ID(N'[pv1].[casoclinico]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[casoclinico];
+IF OBJECT_ID(N'[dbo].[casoclinicoes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[casoclinicoes];
 GO
-IF OBJECT_ID(N'[pv1].[consulta]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[consulta];
+IF OBJECT_ID(N'[dbo].[consultas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[consultas];
 GO
-IF OBJECT_ID(N'[pv1].[intervencao]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[intervencao];
+IF OBJECT_ID(N'[dbo].[intervencaos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[intervencaos];
 GO
-IF OBJECT_ID(N'[pv1].[intervencaorespostaquarta]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[intervencaorespostaquarta];
+IF OBJECT_ID(N'[dbo].[intervencaorespostaquartas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[intervencaorespostaquartas];
 GO
-IF OBJECT_ID(N'[pv1].[intervencaorespostasegunda]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[intervencaorespostasegunda];
+IF OBJECT_ID(N'[dbo].[intervencaorespostasegundas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[intervencaorespostasegundas];
 GO
-IF OBJECT_ID(N'[pv1].[medicamentonaoprescrito]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[medicamentonaoprescrito];
+IF OBJECT_ID(N'[dbo].[medicamentonaoprescritoes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[medicamentonaoprescritoes];
 GO
-IF OBJECT_ID(N'[pv1].[medicamentoprescrito]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[medicamentoprescrito];
+IF OBJECT_ID(N'[dbo].[medicamentoprescritoes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[medicamentoprescritoes];
 GO
-IF OBJECT_ID(N'[pv1].[medicamentoqueixa]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[medicamentoqueixa];
+IF OBJECT_ID(N'[dbo].[medicamentoqueixas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[medicamentoqueixas];
 GO
-IF OBJECT_ID(N'[pv1].[medicamentoqueixaquarta]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[medicamentoqueixaquarta];
+IF OBJECT_ID(N'[dbo].[medicamentoqueixaquartas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[medicamentoqueixaquartas];
 GO
-IF OBJECT_ID(N'[pv1].[medicamentoqueixasegunda]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[medicamentoqueixasegunda];
+IF OBJECT_ID(N'[dbo].[medicamentoqueixasegundas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[medicamentoqueixasegundas];
 GO
-IF OBJECT_ID(N'[pv1].[parametroclinico]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[parametroclinico];
+IF OBJECT_ID(N'[dbo].[parametroclinicoes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[parametroclinicoes];
 GO
-IF OBJECT_ID(N'[pv1].[queixa]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[queixa];
+IF OBJECT_ID(N'[dbo].[queixas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[queixas];
 GO
-IF OBJECT_ID(N'[pv1].[queixarespostaprimeira]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[queixarespostaprimeira];
+IF OBJECT_ID(N'[dbo].[queixarespostaprimeiras]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[queixarespostaprimeiras];
 GO
-IF OBJECT_ID(N'[pv1].[queixarespostaquarta]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[queixarespostaquarta];
+IF OBJECT_ID(N'[dbo].[queixarespostaquartas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[queixarespostaquartas];
 GO
-IF OBJECT_ID(N'[pv1].[queixarespostasegunda]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[queixarespostasegunda];
+IF OBJECT_ID(N'[dbo].[queixarespostasegundas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[queixarespostasegundas];
 GO
-IF OBJECT_ID(N'[pv1].[queixarespostaterceira]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[queixarespostaterceira];
+IF OBJECT_ID(N'[dbo].[queixarespostaterceiras]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[queixarespostaterceiras];
 GO
-IF OBJECT_ID(N'[pv1].[respostaprimeira]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[respostaprimeira];
+IF OBJECT_ID(N'[dbo].[respostaprimeiras]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[respostaprimeiras];
 GO
-IF OBJECT_ID(N'[pv1].[respostaquarta]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[respostaquarta];
+IF OBJECT_ID(N'[dbo].[respostaquartas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[respostaquartas];
 GO
-IF OBJECT_ID(N'[pv1].[respostasegunda]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[respostasegunda];
+IF OBJECT_ID(N'[dbo].[respostasegundas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[respostasegundas];
 GO
-IF OBJECT_ID(N'[pv1].[respostaterceira]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[respostaterceira];
+IF OBJECT_ID(N'[dbo].[respostaterceiras]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[respostaterceiras];
 GO
-IF OBJECT_ID(N'[pv1].[tb_acao_alternativa]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_acao_alternativa];
+IF OBJECT_ID(N'[dbo].[tb_acao_alternativa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_acao_alternativa];
 GO
-IF OBJECT_ID(N'[pv1].[tb_acao_queixa]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_acao_queixa];
+IF OBJECT_ID(N'[dbo].[tb_acao_queixa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_acao_queixa];
 GO
-IF OBJECT_ID(N'[pv1].[tb_alergia]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_alergia];
+IF OBJECT_ID(N'[dbo].[tb_alergia]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_alergia];
 GO
-IF OBJECT_ID(N'[pv1].[tb_alergia_exames_fisicos]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_alergia_exames_fisicos];
+IF OBJECT_ID(N'[dbo].[tb_alergia_exames_fisicos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_alergia_exames_fisicos];
 GO
-IF OBJECT_ID(N'[pv1].[tb_consulta_fixo]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_consulta_fixo];
+IF OBJECT_ID(N'[dbo].[tb_consulta_fixo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_consulta_fixo];
 GO
-IF OBJECT_ID(N'[pv1].[tb_consulta_parametro]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_consulta_parametro];
+IF OBJECT_ID(N'[dbo].[tb_consulta_parametro]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_consulta_parametro];
 GO
-IF OBJECT_ID(N'[pv1].[tb_consulta_variavel]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_consulta_variavel];
+IF OBJECT_ID(N'[dbo].[tb_consulta_variavel]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_consulta_variavel];
 GO
-IF OBJECT_ID(N'[pv1].[tb_consulta_variavel_queixa]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_consulta_variavel_queixa];
+IF OBJECT_ID(N'[dbo].[tb_consulta_variavel_queixa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_consulta_variavel_queixa];
 GO
-IF OBJECT_ID(N'[pv1].[tb_curso]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_curso];
+IF OBJECT_ID(N'[dbo].[tb_curso]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_curso];
 GO
-IF OBJECT_ID(N'[pv1].[tb_curso_disciplina]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_curso_disciplina];
+IF OBJECT_ID(N'[dbo].[tb_curso_disciplina]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_curso_disciplina];
 GO
-IF OBJECT_ID(N'[pv1].[tb_demograficos_antropometricos]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_demograficos_antropometricos];
+IF OBJECT_ID(N'[dbo].[tb_demograficos_antropometricos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_demograficos_antropometricos];
 GO
-IF OBJECT_ID(N'[pv1].[tb_diario_pessoal]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_diario_pessoal];
+IF OBJECT_ID(N'[dbo].[tb_diario_pessoal]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_diario_pessoal];
 GO
-IF OBJECT_ID(N'[pv1].[tb_disciplina]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_disciplina];
+IF OBJECT_ID(N'[dbo].[tb_disciplina]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_disciplina];
 GO
-IF OBJECT_ID(N'[pv1].[tb_escolaridade]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_escolaridade];
+IF OBJECT_ID(N'[dbo].[tb_escolaridade]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_escolaridade];
 GO
-IF OBJECT_ID(N'[pv1].[tb_estilo_vida]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_estilo_vida];
+IF OBJECT_ID(N'[dbo].[tb_estilo_vida]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_estilo_vida];
 GO
-IF OBJECT_ID(N'[pv1].[tb_exames_fisicos]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_exames_fisicos];
+IF OBJECT_ID(N'[dbo].[tb_exames_fisicos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_exames_fisicos];
 GO
-IF OBJECT_ID(N'[pv1].[tb_experiencia_medicamentos]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_experiencia_medicamentos];
+IF OBJECT_ID(N'[dbo].[tb_experiencia_medicamentos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_experiencia_medicamentos];
 GO
-IF OBJECT_ID(N'[pv1].[tb_historia]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_historia];
+IF OBJECT_ID(N'[dbo].[tb_historia]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_historia];
 GO
-IF OBJECT_ID(N'[pv1].[tb_historico]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_historico];
+IF OBJECT_ID(N'[dbo].[tb_historico]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_historico];
 GO
-IF OBJECT_ID(N'[pv1].[tb_instituicao]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_instituicao];
+IF OBJECT_ID(N'[dbo].[tb_instituicao]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_instituicao];
 GO
-IF OBJECT_ID(N'[pv1].[tb_medicamento_nao_prescrito]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_medicamento_nao_prescrito];
+IF OBJECT_ID(N'[dbo].[tb_medicamento_nao_prescrito]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_medicamento_nao_prescrito];
 GO
-IF OBJECT_ID(N'[pv1].[tb_medicamento_prescrito]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_medicamento_prescrito];
+IF OBJECT_ID(N'[dbo].[tb_medicamento_prescrito]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_medicamento_prescrito];
 GO
-IF OBJECT_ID(N'[pv1].[tb_medicamentos]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_medicamentos];
+IF OBJECT_ID(N'[dbo].[tb_medicamentos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_medicamentos];
 GO
-IF OBJECT_ID(N'[pv1].[tb_medicamentos_anteriores]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_medicamentos_anteriores];
+IF OBJECT_ID(N'[dbo].[tb_medicamentos_anteriores]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_medicamentos_anteriores];
 GO
-IF OBJECT_ID(N'[pv1].[tb_ocupacao]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_ocupacao];
+IF OBJECT_ID(N'[dbo].[tb_ocupacao]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_ocupacao];
 GO
-IF OBJECT_ID(N'[pv1].[tb_paciente]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_paciente];
+IF OBJECT_ID(N'[dbo].[tb_paciente]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_paciente];
 GO
-IF OBJECT_ID(N'[pv1].[tb_paciente_pessoa_turma]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_paciente_pessoa_turma];
+IF OBJECT_ID(N'[dbo].[tb_paciente_pessoa_turma]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_paciente_pessoa_turma];
 GO
-IF OBJECT_ID(N'[pv1].[tb_parametro_clinico]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_parametro_clinico];
+IF OBJECT_ID(N'[dbo].[tb_parametro_clinico]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_parametro_clinico];
 GO
-IF OBJECT_ID(N'[pv1].[tb_perfil_usuario]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_perfil_usuario];
+IF OBJECT_ID(N'[dbo].[tb_perfil_usuario]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_perfil_usuario];
 GO
-IF OBJECT_ID(N'[pv1].[tb_pergunta]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_pergunta];
+IF OBJECT_ID(N'[dbo].[tb_pergunta]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_pergunta];
 GO
-IF OBJECT_ID(N'[pv1].[tb_pessoa]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_pessoa];
+IF OBJECT_ID(N'[dbo].[tb_pessoa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_pessoa];
 GO
-IF OBJECT_ID(N'[pv1].[tb_plano_saude]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_plano_saude];
+IF OBJECT_ID(N'[dbo].[tb_plano_saude]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_plano_saude];
 GO
-IF OBJECT_ID(N'[pv1].[tb_queixa]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_queixa];
+IF OBJECT_ID(N'[dbo].[tb_queixa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_queixa];
 GO
-IF OBJECT_ID(N'[pv1].[tb_queixa_medicamentos]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_queixa_medicamentos];
+IF OBJECT_ID(N'[dbo].[tb_queixa_medicamentos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_queixa_medicamentos];
 GO
-IF OBJECT_ID(N'[pv1].[tb_razao_encontro]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_razao_encontro];
+IF OBJECT_ID(N'[dbo].[tb_razao_encontro]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_razao_encontro];
 GO
-IF OBJECT_ID(N'[pv1].[tb_relato_clinico]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_relato_clinico];
+IF OBJECT_ID(N'[dbo].[tb_relato_clinico]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_relato_clinico];
 GO
-IF OBJECT_ID(N'[pv1].[tb_resposta]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_resposta];
+IF OBJECT_ID(N'[dbo].[tb_resposta]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_resposta];
 GO
-IF OBJECT_ID(N'[pv1].[tb_sistema]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_sistema];
+IF OBJECT_ID(N'[dbo].[tb_sistema]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_sistema];
 GO
-IF OBJECT_ID(N'[pv1].[tb_turma]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_turma];
+IF OBJECT_ID(N'[dbo].[tb_turma]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_turma];
 GO
-IF OBJECT_ID(N'[pv1].[tb_turma_pessoa]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_turma_pessoa];
+IF OBJECT_ID(N'[dbo].[tb_turma_pessoa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_turma_pessoa];
 GO
-IF OBJECT_ID(N'[pv1].[tb_turma_pessoa_relato]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_turma_pessoa_relato];
+IF OBJECT_ID(N'[dbo].[tb_turma_pessoa_relato]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_turma_pessoa_relato];
 GO
-IF OBJECT_ID(N'[pv1].[tb_usuario]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_usuario];
+IF OBJECT_ID(N'[dbo].[tb_usuario]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_usuario];
 GO
-IF OBJECT_ID(N'[pv1].[tb_usuario_turma]', 'U') IS NOT NULL
-    DROP TABLE [pv1].[tb_usuario_turma];
+IF OBJECT_ID(N'[dbo].[tb_usuario_turma]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tb_usuario_turma];
 GO
 
 -- --------------------------------------------------
