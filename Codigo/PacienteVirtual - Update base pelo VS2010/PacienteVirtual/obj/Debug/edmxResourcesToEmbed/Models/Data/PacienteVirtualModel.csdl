@@ -56,10 +56,10 @@
     <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
     <EntitySet Name="tb_queixa" EntityType="pvModel.tb_queixa" />
     <EntitySet Name="tb_queixa_medicamentos" EntityType="pvModel.tb_queixa_medicamentos" />
-    <EntitySet Name="tb_razao_encontro" EntityType="pvModel.tb_razao_encontro" />
+    <EntitySet Name="tb_razao_encontro" EntityType="pvModel.RazaoEncontroE" />
     <EntitySet Name="tb_relato_clinico" EntityType="pvModel.RelatoClinicoE" />
     <EntitySet Name="tb_resposta" EntityType="pvModel.RespostaE" />
-    <EntitySet Name="tb_sistema" EntityType="pvModel.tb_sistema" />
+    <EntitySet Name="tb_sistema" EntityType="pvModel.SistemaE" />
     <EntitySet Name="tb_turma" EntityType="pvModel.TurmaE" />
     <EntitySet Name="tb_turma_pessoa" EntityType="pvModel.tb_turma_pessoa" />
     <EntitySet Name="tb_turma_pessoa_relato" EntityType="pvModel.TurmaPessoaRelatoE" />
@@ -984,7 +984,7 @@
     <Property Name="IdAcaoAlternativa1" Type="Int32" Nullable="false" />
     <Property Name="IdAcaoAlternativa2" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="tb_razao_encontro">
+  <EntityType Name="RazaoEncontroE">
     <Key>
       <PropertyRef Name="IdRazaoEncontro" />
     </Key>
@@ -1010,7 +1010,7 @@
     <Property Name="Resposta" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="IdPergunta" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="tb_sistema">
+  <EntityType Name="SistemaE">
     <Key>
       <PropertyRef Name="IdSistema" />
     </Key>

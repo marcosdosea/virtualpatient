@@ -70,6 +70,10 @@
                         <%: Html.ActionLink("Diário Pessoal", "Index", "DiarioPessoal")%></li>
                                                                     <li>
                         <%: Html.ActionLink("Turma Pessoa Relato", "Index", "TurmaPessoaRelato")%></li>
+                                                                    <li>
+                        <%: Html.ActionLink("Razão do Encontro", "Index", "RazaoEncontro")%></li>
+                                                                    <li>
+                        <%: Html.ActionLink("Sistema", "Index", "Sistema")%></li>
                 </ul>
             </nav>
         </header>
