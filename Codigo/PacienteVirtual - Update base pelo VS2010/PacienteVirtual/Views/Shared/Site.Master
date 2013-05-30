@@ -74,6 +74,10 @@
                         <%: Html.ActionLink("Razão do Encontro", "Index", "RazaoEncontro")%></li>
                                                                     <li>
                         <%: Html.ActionLink("Sistema", "Index", "Sistema")%></li>
+                                                                    <li>
+                        <%: Html.ActionLink("Medicamentos", "Index", "Medicamentos")%></li>
+                                                                    <li>
+                        <%: Html.ActionLink("Ação Alternativa", "Index", "AcaoAlternativa")%></li>
                 </ul>
             </nav>
         </header>

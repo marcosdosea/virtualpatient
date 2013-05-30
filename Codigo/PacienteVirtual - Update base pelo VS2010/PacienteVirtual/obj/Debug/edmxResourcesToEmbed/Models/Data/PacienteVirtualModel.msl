@@ -355,7 +355,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_acao_alternativa">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_acao_alternativa)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.AcaoAlternativaE)">
         <MappingFragment StoreEntitySet="tb_acao_alternativa">
           <ScalarProperty Name="IdAcaoAlternativa" ColumnName="IdAcaoAlternativa" />
           <ScalarProperty Name="DescricaoAcao" ColumnName="DescricaoAcao" />
@@ -602,7 +602,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_medicamentos">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_medicamentos)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.MedicamentosE)">
         <MappingFragment StoreEntitySet="tb_medicamentos">
           <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
