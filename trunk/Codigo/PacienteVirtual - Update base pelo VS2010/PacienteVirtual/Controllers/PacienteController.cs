@@ -77,6 +77,17 @@ namespace PacienteVirtual.Controllers
             return View(pacienteModel);
         }
 
+        public FileContentResult GetImage(int id)
+        {
+
+            var imageData = GerenciadorPaciente.GetInstance().Obter(id).Foto;
+            if (imageData != null)
+                return File(imageData, "image/jpg");
+
+            return null;
+
+
+        }
         //
         // POST: /Paciente/Edit/5
 

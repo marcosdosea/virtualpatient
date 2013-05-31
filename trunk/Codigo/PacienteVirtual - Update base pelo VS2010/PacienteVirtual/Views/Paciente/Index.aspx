@@ -16,7 +16,9 @@
         <th>
             Nome
         </th>
-        <th></th>
+          <th>
+            Foto
+        </th>
     </tr>
 
 <% foreach (var item in Model) { %>
@@ -24,6 +26,9 @@
         <td>
             <%: Html.DisplayFor(modelItem => item.NomePaciente) %>
         </td>
+        	   <td>
+            <img src='<%: Url.Action("GetImage", "Paciente", new { id= item.IdPaciente }) %>' width="100" height="110" alt="Foto" />
+         </td>
         <td>
             <%: Html.ActionLink("Edit", "Edit", new { id=item.IdPaciente }) %> |
             <%: Html.ActionLink("Details", "Details", new { id=item.IdPaciente }) %> |
