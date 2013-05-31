@@ -1511,7 +1511,7 @@
           <EntitySet Name="respostasegundas" EntityType="pvModel.respostasegunda" />
           <EntitySet Name="respostaterceiras" EntityType="pvModel.respostaterceira" />
           <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.AcaoAlternativaE" />
-          <EntitySet Name="tb_acao_queixa" EntityType="pvModel.tb_acao_queixa" />
+          <EntitySet Name="tb_acao_queixa" EntityType="pvModel.AcaoQueixaE" />
           <EntitySet Name="tb_alergia" EntityType="pvModel.tb_alergia" />
           <EntitySet Name="tb_alergia_exames_fisicos" EntityType="pvModel.tb_alergia_exames_fisicos" />
           <EntitySet Name="tb_consulta_fixo" EntityType="pvModel.ConsultaFixoE" />
@@ -1542,7 +1542,7 @@
           <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
           <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
           <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
-          <EntitySet Name="tb_queixa" EntityType="pvModel.tb_queixa" />
+          <EntitySet Name="tb_queixa" EntityType="pvModel.QueixaE" />
           <EntitySet Name="tb_queixa_medicamentos" EntityType="pvModel.tb_queixa_medicamentos" />
           <EntitySet Name="tb_razao_encontro" EntityType="pvModel.RazaoEncontroE" />
           <EntitySet Name="tb_relato_clinico" EntityType="pvModel.RelatoClinicoE" />
@@ -2131,7 +2131,7 @@
           <Property Name="IdAcaoAlternativa" Type="Int32" Nullable="false" />
           <Property Name="DescricaoAcao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
         </EntityType>
-        <EntityType Name="tb_acao_queixa">
+        <EntityType Name="AcaoQueixaE">
           <Key>
             <PropertyRef Name="IdAcaoQueixa" />
           </Key>
@@ -2445,7 +2445,7 @@
           <Property Name="IdPlanoSaude" Type="Int32" Nullable="false" />
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
         </EntityType>
-        <EntityType Name="tb_queixa">
+        <EntityType Name="QueixaE">
           <Key>
             <PropertyRef Name="IdQueixa" />
           </Key>
@@ -3417,7 +3417,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_acao_queixa">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_acao_queixa)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.AcaoQueixaE)">
         <MappingFragment StoreEntitySet="tb_acao_queixa">
           <ScalarProperty Name="IdAcaoQueixa" ColumnName="IdAcaoQueixa" />
           <ScalarProperty Name="DescricaoAcao" ColumnName="DescricaoAcao" />
@@ -3745,7 +3745,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_queixa">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_queixa)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.QueixaE)">
         <MappingFragment StoreEntitySet="tb_queixa">
           <ScalarProperty Name="IdQueixa" ColumnName="IdQueixa" />
           <ScalarProperty Name="DescricaoQueixa" ColumnName="DescricaoQueixa" />
@@ -3877,7 +3877,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel" ZoomLevel="65">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="85">
         <EntityTypeShape EntityType="pvModel.aluno" Width="1.5" PointX="5.25" PointY="11.875" Height="6.0186165364583317" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.casoclinico" Width="1.5" PointX="0.75" PointY="26" Height="8.51853515625" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.consulta" Width="1.5" PointX="3" PointY="28.125" Height="4.2879036458333353" IsExpanded="true" />
@@ -3900,7 +3900,7 @@
         <EntityTypeShape EntityType="pvModel.respostasegunda" Width="1.5" PointX="5.25" PointY="27.125" Height="3.9033007812500031" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.respostaterceira" Width="1.5" PointX="5.25" PointY="44.625" Height="4.0956022135416674" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.AcaoAlternativaE" Width="1.5" PointX="5.75" PointY="0.75" Height="1.4033821614583282" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_acao_queixa" Width="1.5" PointX="2.75" PointY="5.75" Height="1.4033821614583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.AcaoQueixaE" Width="1.5" PointX="2.75" PointY="5.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_alergia" Width="1.5" PointX="5.75" PointY="3.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_alergia_exames_fisicos" Width="1.5" PointX="4.75" PointY="6.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.ConsultaFixoE" Width="1.5" PointX="0.75" PointY="1.25" Height="2.5571907552083246" IsExpanded="true" />
@@ -3931,7 +3931,7 @@
         <EntityTypeShape EntityType="pvModel.PerguntaE" Width="1.5" PointX="15.75" PointY="9.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PessoaE" Width="1.5" PointX="9.75" PointY="15.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PlanoSaudeE" Width="1.5" PointX="15.75" PointY="12.75" Height="1.4033821614583246" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_queixa" Width="1.5" PointX="15.75" PointY="15.75" Height="1.5956835937499818" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.QueixaE" Width="1.5" PointX="15.75" PointY="15.75" Height="1.5956835937499818" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_queixa_medicamentos" Width="1.5" PointX="17.75" PointY="0.75" Height="3.3263964843749818" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.RazaoEncontroE" Width="1.5" PointX="0.75" PointY="17.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.RelatoClinicoE" Width="1.5" PointX="17.75" PointY="5.75" Height="2.1725878906249818" IsExpanded="true" />

@@ -363,7 +363,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_acao_queixa">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_acao_queixa)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.AcaoQueixaE)">
         <MappingFragment StoreEntitySet="tb_acao_queixa">
           <ScalarProperty Name="IdAcaoQueixa" ColumnName="IdAcaoQueixa" />
           <ScalarProperty Name="DescricaoAcao" ColumnName="DescricaoAcao" />
@@ -691,7 +691,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_queixa">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_queixa)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.QueixaE)">
         <MappingFragment StoreEntitySet="tb_queixa">
           <ScalarProperty Name="IdQueixa" ColumnName="IdQueixa" />
           <ScalarProperty Name="DescricaoQueixa" ColumnName="DescricaoQueixa" />

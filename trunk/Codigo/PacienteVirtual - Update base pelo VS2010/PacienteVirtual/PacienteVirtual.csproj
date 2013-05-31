@@ -95,6 +95,7 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Controllers\AcaoAlternativaController.cs" />
+    <Compile Include="Controllers\AcaoQueixaController.cs" />
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -125,6 +126,7 @@
     <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\PlanoSaudeController.cs" />
+    <Compile Include="Controllers\QueixaController.cs" />
     <Compile Include="Controllers\RazaoEncontroController.cs" />
     <Compile Include="Controllers\RelatoClinicoController.cs" />
     <Compile Include="Controllers\RespostaController.cs" />
@@ -143,6 +145,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AcaoAlternativaModel.cs" />
+    <Compile Include="Models\AcaoQueixaModel.cs" />
     <Compile Include="Models\AccountModels.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -179,6 +182,7 @@
     </Compile>
     <Compile Include="Models\MedicamentosModel.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoAlternativa.cs" />
+    <Compile Include="Models\Negocio\GerenciadorAcaoQueixa.cs" />
     <Compile Include="Models\Negocio\GerenciadorConsultaFixo.cs" />
     <Compile Include="Models\Negocio\GerenciadorCurso.cs">
       <SubType>Code</SubType>
@@ -203,6 +207,7 @@
     <Compile Include="Models\Negocio\GerenciadorPergunta.cs" />
     <Compile Include="Models\Negocio\GerenciadorPessoa.cs" />
     <Compile Include="Models\Negocio\GerenciadorPlanoSaude.cs" />
+    <Compile Include="Models\Negocio\GerenciadorQueixa.cs" />
     <Compile Include="Models\Negocio\GerenciadorRazaoEncontro.cs" />
     <Compile Include="Models\Negocio\GerenciadorRelato.cs" />
     <Compile Include="Models\Negocio\GerenciadorResposta.cs" />
@@ -221,6 +226,7 @@
     <Compile Include="Models\PerguntaModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />
     <Compile Include="Models\PlanoSaudeModel.cs" />
+    <Compile Include="Models\QueixaModel.cs" />
     <Compile Include="Models\RazaoEncontroModel.cs" />
     <Compile Include="Models\RelatoClinicoModel.cs" />
     <Compile Include="Models\RespostaModel.cs" />
@@ -286,6 +292,11 @@
     <Content Include="Views\AcaoAlternativa\Details.aspx" />
     <Content Include="Views\AcaoAlternativa\Edit.aspx" />
     <Content Include="Views\AcaoAlternativa\Index.aspx" />
+    <Content Include="Views\AcaoQueixa\Create.aspx" />
+    <Content Include="Views\AcaoQueixa\Delete.aspx" />
+    <Content Include="Views\AcaoQueixa\Details.aspx" />
+    <Content Include="Views\AcaoQueixa\Edit.aspx" />
+    <Content Include="Views\AcaoQueixa\Index.aspx" />
     <Content Include="Views\Account\ChangePassword.aspx" />
     <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
     <Content Include="Views\Account\LogOn.aspx" />
@@ -383,6 +394,11 @@
     <Content Include="Views\PlanoSaude\Details.aspx" />
     <Content Include="Views\PlanoSaude\Edit.aspx" />
     <Content Include="Views\PlanoSaude\Index.aspx" />
+    <Content Include="Views\Queixa\Create.aspx" />
+    <Content Include="Views\Queixa\Delete.aspx" />
+    <Content Include="Views\Queixa\Details.aspx" />
+    <Content Include="Views\Queixa\Edit.aspx" />
+    <Content Include="Views\Queixa\Index.aspx" />
     <Content Include="Views\RazaoEncontro\Create.aspx" />
     <Content Include="Views\RazaoEncontro\Delete.aspx" />
     <Content Include="Views\RazaoEncontro\Details.aspx" />
