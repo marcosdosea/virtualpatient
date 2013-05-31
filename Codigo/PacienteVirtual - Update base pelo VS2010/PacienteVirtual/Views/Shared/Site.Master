@@ -78,6 +78,10 @@
                         <%: Html.ActionLink("Medicamentos", "Index", "Medicamentos")%></li>
                                                                     <li>
                         <%: Html.ActionLink("Ação Alternativa", "Index", "AcaoAlternativa")%></li>
+                                                                    <li>
+                        <%: Html.ActionLink("Ação Queixa", "Index", "AcaoQueixa")%></li>
+                                                                    <li>
+                        <%: Html.ActionLink("Queixa", "Index", "Queixa")%></li>
                 </ul>
             </nav>
         </header>

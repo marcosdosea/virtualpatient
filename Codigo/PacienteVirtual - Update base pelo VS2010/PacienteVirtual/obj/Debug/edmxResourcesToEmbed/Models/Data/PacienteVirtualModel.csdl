@@ -23,7 +23,7 @@
     <EntitySet Name="respostasegundas" EntityType="pvModel.respostasegunda" />
     <EntitySet Name="respostaterceiras" EntityType="pvModel.respostaterceira" />
     <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.AcaoAlternativaE" />
-    <EntitySet Name="tb_acao_queixa" EntityType="pvModel.tb_acao_queixa" />
+    <EntitySet Name="tb_acao_queixa" EntityType="pvModel.AcaoQueixaE" />
     <EntitySet Name="tb_alergia" EntityType="pvModel.tb_alergia" />
     <EntitySet Name="tb_alergia_exames_fisicos" EntityType="pvModel.tb_alergia_exames_fisicos" />
     <EntitySet Name="tb_consulta_fixo" EntityType="pvModel.ConsultaFixoE" />
@@ -54,7 +54,7 @@
     <EntitySet Name="tb_pergunta" EntityType="pvModel.PerguntaE" />
     <EntitySet Name="tb_pessoa" EntityType="pvModel.PessoaE" />
     <EntitySet Name="tb_plano_saude" EntityType="pvModel.PlanoSaudeE" />
-    <EntitySet Name="tb_queixa" EntityType="pvModel.tb_queixa" />
+    <EntitySet Name="tb_queixa" EntityType="pvModel.QueixaE" />
     <EntitySet Name="tb_queixa_medicamentos" EntityType="pvModel.tb_queixa_medicamentos" />
     <EntitySet Name="tb_razao_encontro" EntityType="pvModel.RazaoEncontroE" />
     <EntitySet Name="tb_relato_clinico" EntityType="pvModel.RelatoClinicoE" />
@@ -643,7 +643,7 @@
     <Property Name="IdAcaoAlternativa" Type="Int32" Nullable="false" />
     <Property Name="DescricaoAcao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
   </EntityType>
-  <EntityType Name="tb_acao_queixa">
+  <EntityType Name="AcaoQueixaE">
     <Key>
       <PropertyRef Name="IdAcaoQueixa" />
     </Key>
@@ -957,7 +957,7 @@
     <Property Name="IdPlanoSaude" Type="Int32" Nullable="false" />
     <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
   </EntityType>
-  <EntityType Name="tb_queixa">
+  <EntityType Name="QueixaE">
     <Key>
       <PropertyRef Name="IdQueixa" />
     </Key>

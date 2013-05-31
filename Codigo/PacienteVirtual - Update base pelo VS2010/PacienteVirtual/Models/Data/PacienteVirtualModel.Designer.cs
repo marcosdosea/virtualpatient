@@ -466,18 +466,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_acao_queixa> tb_acao_queixa
+        public ObjectSet<AcaoQueixaE> tb_acao_queixa
         {
             get
             {
                 if ((_tb_acao_queixa == null))
                 {
-                    _tb_acao_queixa = base.CreateObjectSet<tb_acao_queixa>("tb_acao_queixa");
+                    _tb_acao_queixa = base.CreateObjectSet<AcaoQueixaE>("tb_acao_queixa");
                 }
                 return _tb_acao_queixa;
             }
         }
-        private ObjectSet<tb_acao_queixa> _tb_acao_queixa;
+        private ObjectSet<AcaoQueixaE> _tb_acao_queixa;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -962,18 +962,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_queixa> tb_queixa
+        public ObjectSet<QueixaE> tb_queixa
         {
             get
             {
                 if ((_tb_queixa == null))
                 {
-                    _tb_queixa = base.CreateObjectSet<tb_queixa>("tb_queixa");
+                    _tb_queixa = base.CreateObjectSet<QueixaE>("tb_queixa");
                 }
                 return _tb_queixa;
             }
         }
-        private ObjectSet<tb_queixa> _tb_queixa;
+        private ObjectSet<QueixaE> _tb_queixa;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1318,9 +1318,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_acao_queixa EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_acao_queixa(tb_acao_queixa tb_acao_queixa)
+        public void AddTotb_acao_queixa(AcaoQueixaE acaoQueixaE)
         {
-            base.AddObject("tb_acao_queixa", tb_acao_queixa);
+            base.AddObject("tb_acao_queixa", acaoQueixaE);
         }
     
         /// <summary>
@@ -1566,9 +1566,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_queixa EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_queixa(tb_queixa tb_queixa)
+        public void AddTotb_queixa(QueixaE queixaE)
         {
-            base.AddObject("tb_queixa", tb_queixa);
+            base.AddObject("tb_queixa", queixaE);
         }
     
         /// <summary>
@@ -1727,6 +1727,89 @@ namespace PacienteVirtual.Models.Data
                 OnDescricaoAcaoChanging(value);
                 ReportPropertyChanging("DescricaoAcao");
                 _DescricaoAcao = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DescricaoAcao");
+                OnDescricaoAcaoChanged();
+            }
+        }
+        private global::System.String _DescricaoAcao;
+        partial void OnDescricaoAcaoChanging(global::System.String value);
+        partial void OnDescricaoAcaoChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="AcaoQueixaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class AcaoQueixaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new AcaoQueixaE object.
+        /// </summary>
+        /// <param name="idAcaoQueixa">Initial value of the IdAcaoQueixa property.</param>
+        /// <param name="descricaoAcao">Initial value of the DescricaoAcao property.</param>
+        public static AcaoQueixaE CreateAcaoQueixaE(global::System.Int32 idAcaoQueixa, global::System.String descricaoAcao)
+        {
+            AcaoQueixaE acaoQueixaE = new AcaoQueixaE();
+            acaoQueixaE.IdAcaoQueixa = idAcaoQueixa;
+            acaoQueixaE.DescricaoAcao = descricaoAcao;
+            return acaoQueixaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdAcaoQueixa
+        {
+            get
+            {
+                return _IdAcaoQueixa;
+            }
+            set
+            {
+                if (_IdAcaoQueixa != value)
+                {
+                    OnIdAcaoQueixaChanging(value);
+                    ReportPropertyChanging("IdAcaoQueixa");
+                    _IdAcaoQueixa = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdAcaoQueixa");
+                    OnIdAcaoQueixaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdAcaoQueixa;
+        partial void OnIdAcaoQueixaChanging(global::System.Int32 value);
+        partial void OnIdAcaoQueixaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String DescricaoAcao
+        {
+            get
+            {
+                return _DescricaoAcao;
+            }
+            set
+            {
+                OnDescricaoAcaoChanging(value);
+                ReportPropertyChanging("DescricaoAcao");
+                _DescricaoAcao = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("DescricaoAcao");
                 OnDescricaoAcaoChanged();
             }
@@ -9477,6 +9560,115 @@ namespace PacienteVirtual.Models.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="QueixaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class QueixaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new QueixaE object.
+        /// </summary>
+        /// <param name="idQueixa">Initial value of the IdQueixa property.</param>
+        /// <param name="descricaoQueixa">Initial value of the DescricaoQueixa property.</param>
+        /// <param name="idSistema">Initial value of the IdSistema property.</param>
+        public static QueixaE CreateQueixaE(global::System.Int32 idQueixa, global::System.String descricaoQueixa, global::System.Int32 idSistema)
+        {
+            QueixaE queixaE = new QueixaE();
+            queixaE.IdQueixa = idQueixa;
+            queixaE.DescricaoQueixa = descricaoQueixa;
+            queixaE.IdSistema = idSistema;
+            return queixaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdQueixa
+        {
+            get
+            {
+                return _IdQueixa;
+            }
+            set
+            {
+                if (_IdQueixa != value)
+                {
+                    OnIdQueixaChanging(value);
+                    ReportPropertyChanging("IdQueixa");
+                    _IdQueixa = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdQueixa");
+                    OnIdQueixaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdQueixa;
+        partial void OnIdQueixaChanging(global::System.Int32 value);
+        partial void OnIdQueixaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String DescricaoQueixa
+        {
+            get
+            {
+                return _DescricaoQueixa;
+            }
+            set
+            {
+                OnDescricaoQueixaChanging(value);
+                ReportPropertyChanging("DescricaoQueixa");
+                _DescricaoQueixa = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("DescricaoQueixa");
+                OnDescricaoQueixaChanged();
+            }
+        }
+        private global::System.String _DescricaoQueixa;
+        partial void OnDescricaoQueixaChanging(global::System.String value);
+        partial void OnDescricaoQueixaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdSistema
+        {
+            get
+            {
+                return _IdSistema;
+            }
+            set
+            {
+                OnIdSistemaChanging(value);
+                ReportPropertyChanging("IdSistema");
+                _IdSistema = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdSistema");
+                OnIdSistemaChanged();
+            }
+        }
+        private global::System.Int32 _IdSistema;
+        partial void OnIdSistemaChanging(global::System.Int32 value);
+        partial void OnIdSistemaChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="queixarespostaprimeira")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -13571,89 +13763,6 @@ namespace PacienteVirtual.Models.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_acao_queixa")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_acao_queixa : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_acao_queixa object.
-        /// </summary>
-        /// <param name="idAcaoQueixa">Initial value of the IdAcaoQueixa property.</param>
-        /// <param name="descricaoAcao">Initial value of the DescricaoAcao property.</param>
-        public static tb_acao_queixa Createtb_acao_queixa(global::System.Int32 idAcaoQueixa, global::System.String descricaoAcao)
-        {
-            tb_acao_queixa tb_acao_queixa = new tb_acao_queixa();
-            tb_acao_queixa.IdAcaoQueixa = idAcaoQueixa;
-            tb_acao_queixa.DescricaoAcao = descricaoAcao;
-            return tb_acao_queixa;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdAcaoQueixa
-        {
-            get
-            {
-                return _IdAcaoQueixa;
-            }
-            set
-            {
-                if (_IdAcaoQueixa != value)
-                {
-                    OnIdAcaoQueixaChanging(value);
-                    ReportPropertyChanging("IdAcaoQueixa");
-                    _IdAcaoQueixa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdAcaoQueixa");
-                    OnIdAcaoQueixaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdAcaoQueixa;
-        partial void OnIdAcaoQueixaChanging(global::System.Int32 value);
-        partial void OnIdAcaoQueixaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String DescricaoAcao
-        {
-            get
-            {
-                return _DescricaoAcao;
-            }
-            set
-            {
-                OnDescricaoAcaoChanging(value);
-                ReportPropertyChanging("DescricaoAcao");
-                _DescricaoAcao = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("DescricaoAcao");
-                OnDescricaoAcaoChanged();
-            }
-        }
-        private global::System.String _DescricaoAcao;
-        partial void OnDescricaoAcaoChanging(global::System.String value);
-        partial void OnDescricaoAcaoChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_alergia")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -15570,115 +15679,6 @@ namespace PacienteVirtual.Models.Data
         private global::System.String _NomePerfil;
         partial void OnNomePerfilChanging(global::System.String value);
         partial void OnNomePerfilChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_queixa")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_queixa : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_queixa object.
-        /// </summary>
-        /// <param name="idQueixa">Initial value of the IdQueixa property.</param>
-        /// <param name="descricaoQueixa">Initial value of the DescricaoQueixa property.</param>
-        /// <param name="idSistema">Initial value of the IdSistema property.</param>
-        public static tb_queixa Createtb_queixa(global::System.Int32 idQueixa, global::System.String descricaoQueixa, global::System.Int32 idSistema)
-        {
-            tb_queixa tb_queixa = new tb_queixa();
-            tb_queixa.IdQueixa = idQueixa;
-            tb_queixa.DescricaoQueixa = descricaoQueixa;
-            tb_queixa.IdSistema = idSistema;
-            return tb_queixa;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdQueixa
-        {
-            get
-            {
-                return _IdQueixa;
-            }
-            set
-            {
-                if (_IdQueixa != value)
-                {
-                    OnIdQueixaChanging(value);
-                    ReportPropertyChanging("IdQueixa");
-                    _IdQueixa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdQueixa");
-                    OnIdQueixaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdQueixa;
-        partial void OnIdQueixaChanging(global::System.Int32 value);
-        partial void OnIdQueixaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String DescricaoQueixa
-        {
-            get
-            {
-                return _DescricaoQueixa;
-            }
-            set
-            {
-                OnDescricaoQueixaChanging(value);
-                ReportPropertyChanging("DescricaoQueixa");
-                _DescricaoQueixa = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("DescricaoQueixa");
-                OnDescricaoQueixaChanged();
-            }
-        }
-        private global::System.String _DescricaoQueixa;
-        partial void OnDescricaoQueixaChanging(global::System.String value);
-        partial void OnDescricaoQueixaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdSistema
-        {
-            get
-            {
-                return _IdSistema;
-            }
-            set
-            {
-                OnIdSistemaChanging(value);
-                ReportPropertyChanging("IdSistema");
-                _IdSistema = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdSistema");
-                OnIdSistemaChanged();
-            }
-        }
-        private global::System.Int32 _IdSistema;
-        partial void OnIdSistemaChanging(global::System.Int32 value);
-        partial void OnIdSistemaChanged();
 
         #endregion
 
