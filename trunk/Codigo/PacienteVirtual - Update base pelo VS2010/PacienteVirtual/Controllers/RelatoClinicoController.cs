@@ -76,7 +76,15 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
             return View(relatoModel);
         }
+        public FileContentResult GetImage(int id)
+        {
 
+            var imageData = GerenciadorRelato.GetInstance().Obter(id).RelatoVideo;
+            if (imageData != null)
+                return File(imageData, "video/mp4");
+
+            return null;
+        }
         //
         // GET: /Curso/Delete/5
 

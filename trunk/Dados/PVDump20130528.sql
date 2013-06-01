@@ -191,7 +191,7 @@ DROP TABLE IF EXISTS `tb_paciente`;
 CREATE TABLE `tb_paciente` (
   `IdPaciente` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(100) NOT NULL,
-  `Foto` blob,
+  `Foto` longblob,
   PRIMARY KEY (`IdPaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
