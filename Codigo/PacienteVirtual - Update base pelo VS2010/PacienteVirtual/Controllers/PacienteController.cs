@@ -14,6 +14,7 @@ namespace PacienteVirtual.Controllers
 { 
     public class PacienteController : Controller
     {
+         private pvEntities db = new pvEntities();
         //
         // GET: /Paciente/
 
@@ -42,32 +43,23 @@ namespace PacienteVirtual.Controllers
         // POST: /Paciente/Create
 
         [HttpPost]
-        public ActionResult Create(PacienteModel pacienteModel)
+        public ActionResult Create(PacienteE pacientee)
         {
-            /**
-            using (pvEntities contexto = new pvEntities())
-            {
-                //Salva a imagem na base de dados
-                if (Request.Files.Count > 0)
-                {
-                    int tamanho = (int)Request.Files[0].InputStream.Length;
-                    byte[] arq = new byte[tamanho];
-                    Request.Files[0].InputStream.Read(arq, 0, tamanho);
-                    byte[] arqUp = arq;
-                    //img = arqUp;
-                    pacienteModel.Foto = arqUp;
-                }
-            } */
-            
             if (ModelState.IsValid)
             {
-                pacienteModel.IdPaciente = GerenciadorPaciente.GetInstance().Inserir(pacienteModel);
+                int tamanho = (int)Request.Files[0].InputStream.Length;
+                byte[] arq = new byte[tamanho];
+                Request.Files[0].InputStream.Read(arq, 0, tamanho);
+                byte[] arqUp = arq;
+                pacientee.Foto = arqUp;
+
+                db.tb_paciente.AddObject(pacientee);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(pacienteModel);
+            return View(pacientee);
         }
-
         //
         // GET: /Paciente/Edit/5
 
@@ -85,8 +77,6 @@ namespace PacienteVirtual.Controllers
                 return File(imageData, "image/jpg");
 
             return null;
-
-
         }
         //
         // POST: /Paciente/Edit/5

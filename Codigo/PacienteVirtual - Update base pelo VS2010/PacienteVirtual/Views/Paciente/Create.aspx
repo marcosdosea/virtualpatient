@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.PacienteModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.PacienteE>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Create
@@ -17,11 +17,11 @@
         <legend>Criar Paciente</legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.NomePaciente)%>
+            <%: Html.LabelFor(model => model.Nome)%>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.NomePaciente)%>
-            <%: Html.ValidationMessageFor(model => model.NomePaciente)%>
+            <%: Html.EditorFor(model => model.Nome)%>
+            <%: Html.ValidationMessageFor(model => model.Nome)%>
         </div>
 
         <div class="editor-label">
@@ -29,6 +29,7 @@
         </div>
 
         <div class="editor-field">
+
             <input type="file" name="Arquivo" value="Selecione a imagem" />
             <%: Html.ValidationMessageFor(model => model.Foto)%>
         </div>

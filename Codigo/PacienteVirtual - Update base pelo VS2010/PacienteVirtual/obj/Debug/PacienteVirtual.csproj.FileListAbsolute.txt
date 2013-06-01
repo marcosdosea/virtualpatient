@@ -48,3 +48,4 @@ C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\en\PacienteVirtual.resources.dll
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.dll
 C:\Users\CLEVERTON\Desktop\Paciente Virtual\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\obj\Debug\PacienteVirtual.pdb
+D:\Projetos\PV\Projeto\virtualpatient\Codigo\PacienteVirtual - Update base pelo VS2010\PacienteVirtual\bin\Html5MVCWebControls.xml
