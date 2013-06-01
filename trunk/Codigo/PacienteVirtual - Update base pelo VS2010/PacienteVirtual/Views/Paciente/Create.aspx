@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Data.PacienteE>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.PacienteModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Create
@@ -17,11 +17,11 @@
         <legend>Criar Paciente</legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Nome)%>
+            <%: Html.LabelFor(model => model.NomePaciente)%>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Nome)%>
-            <%: Html.ValidationMessageFor(model => model.Nome)%>
+            <%: Html.EditorFor(model => model.NomePaciente)%>
+            <%: Html.ValidationMessageFor(model => model.NomePaciente)%>
         </div>
 
         <div class="editor-label">
