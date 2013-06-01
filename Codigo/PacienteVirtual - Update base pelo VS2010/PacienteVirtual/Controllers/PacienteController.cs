@@ -43,7 +43,7 @@ namespace PacienteVirtual.Controllers
         // POST: /Paciente/Create
 
         [HttpPost]
-        public ActionResult Create(PacienteE pacientee)
+        public ActionResult Create(PacienteModel pacienteModel)
         {
             if (ModelState.IsValid)
             {
@@ -51,14 +51,13 @@ namespace PacienteVirtual.Controllers
                 byte[] arq = new byte[tamanho];
                 Request.Files[0].InputStream.Read(arq, 0, tamanho);
                 byte[] arqUp = arq;
-                pacientee.Foto = arqUp;
+                pacienteModel.Foto = arqUp;
+                GerenciadorPaciente.GetInstance().Inserir(pacienteModel);
 
-                db.tb_paciente.AddObject(pacientee);
-                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(pacientee);
+            return View(pacienteModel);
         }
         //
         // GET: /Paciente/Edit/5
