@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.AcaoQueixaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Edit
+    <%: Resources.Mensagem.editar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Edit</h2>
+<h2><%: Resources.Mensagem.editar %></h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -14,7 +14,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>tb_acao_queixa</legend>
+        <legend><%: Resources.Mensagem.acao_queixa %></legend>
 
         <%: Html.HiddenFor(model => model.IdAcaoQueixa) %>
 
@@ -27,13 +27,13 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </p>
     </fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
 </div>
 
 </asp:Content>
