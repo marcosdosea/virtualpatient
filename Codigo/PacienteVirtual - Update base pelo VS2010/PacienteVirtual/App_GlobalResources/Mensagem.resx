@@ -381,4 +381,43 @@
   <data name="preocupacoes_resposta_codigo" xml:space="preserve">
     <value>Código Resposta Preocupações</value>
   </data>
+  <data name="codigo_sistema" xml:space="preserve">
+    <value>Cógido do Sistema</value>
+  </data>
+  <data name="descricao_acao" xml:space="preserve">
+    <value>Descrição da Ação</value>
+  </data>
+  <data name="descricao_queixa" xml:space="preserve">
+    <value>Descrição da Queixa</value>
+  </data>
+  <data name="descricao_razao" xml:space="preserve">
+    <value>Descrição da Razão do Encontro</value>
+  </data>
+  <data name="nome_sistema" xml:space="preserve">
+    <value>Nome do Sistema</value>
+  </data>
+  <data name="parametro_clinico" xml:space="preserve">
+    <value>Parâmetro Clínico</value>
+  </data>
+  <data name="nome_medicamento" xml:space="preserve">
+    <value>Nome do Medicamento</value>
+  </data>
+  <data name="acao_alternativa" xml:space="preserve">
+    <value>Ação Alternativa</value>
+  </data>
+  <data name="acao_queixa" xml:space="preserve">
+    <value>Ação Queixa</value>
+  </data>
+  <data name="medicamentos" xml:space="preserve">
+    <value>Medicamentos</value>
+  </data>
+  <data name="queixa" xml:space="preserve">
+    <value>Queixa</value>
+  </data>
+  <data name="razao_encontro" xml:space="preserve">
+    <value>Razão do Encontro</value>
+  </data>
+  <data name="sistema" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
 </root>
