@@ -13,7 +13,7 @@ namespace PacienteVirtual.Controllers
 { 
     public class RelatoClinicoController : Controller
     {
-        GerenciadorRelato gRelato = GerenciadorRelato.GetInstance();
+        GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
         GerenciadorPaciente gPaciente = GerenciadorPaciente.GetInstance();
 
         //
@@ -79,7 +79,7 @@ namespace PacienteVirtual.Controllers
         public FileContentResult GetImage(int id)
         {
 
-            var imageData = GerenciadorRelato.GetInstance().Obter(id).RelatoVideo;
+            var imageData = GerenciadorRelatoClinico.GetInstance().Obter(id).RelatoVideo;
             if (imageData != null)
                 return File(imageData, "video/mp4");
 

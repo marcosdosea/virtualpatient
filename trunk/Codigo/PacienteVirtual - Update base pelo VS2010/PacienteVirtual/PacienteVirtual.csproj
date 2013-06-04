@@ -209,7 +209,7 @@
     <Compile Include="Models\Negocio\GerenciadorPlanoSaude.cs" />
     <Compile Include="Models\Negocio\GerenciadorQueixa.cs" />
     <Compile Include="Models\Negocio\GerenciadorRazaoEncontro.cs" />
-    <Compile Include="Models\Negocio\GerenciadorRelato.cs" />
+    <Compile Include="Models\Negocio\GerenciadorRelatoClinico.cs" />
     <Compile Include="Models\Negocio\GerenciadorResposta.cs" />
     <Compile Include="Models\Negocio\GerenciadorSistema.cs" />
     <Compile Include="Models\Negocio\GerenciadorTurma.cs">
@@ -280,13 +280,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Uploads\Desenho2.java" />
-    <Content Include="Uploads\Desenho6.java" />
+    <Content Include="Uploads\How to Draw Manga Eyes, Four Different Ways.mp4" />
+    <Content Include="Uploads\How to Draw Manga Hair, Male and Female.avi" />
     <Content Include="Uploads\JanSvankmajer.avi" />
-    <Content Include="Uploads\JanSvankmajer.mp4" />
-    <Content Include="Uploads\Matricula.txt" />
-    <Content Include="Uploads\PilhaDados.java" />
-    <Content Include="Uploads\Um Homem De Sorte.avi" />
+    <Content Include="Uploads\JanSvankmajer_.mp4" />
     <Content Include="Views\AcaoAlternativa\Create.aspx" />
     <Content Include="Views\AcaoAlternativa\Delete.aspx" />
     <Content Include="Views\AcaoAlternativa\Details.aspx" />
@@ -438,7 +435,9 @@
     <Content Include="Views\Usuario\Details.aspx" />
     <Content Include="Views\Usuario\Edit.aspx" />
     <Content Include="Views\Usuario\Index.aspx" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -466,9 +465,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Uploads\Certidão de Quitação - Emissão.pdf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Mensagem.en.resx">
