@@ -6,16 +6,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PacienteVirtual.Models.Data;
-using PacienteVirtual.Models;
 using PacienteVirtual.Models.Negocio;
+using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
 { 
     public class ConsultaFixoController : Controller
     {
-       
+
         GerenciadorConsultaFixo gConsultaFixo = GerenciadorConsultaFixo.GetInstance();
-        GerenciadorPaciente gPaciente = GerenciadorPaciente.GetInstance();
         //
         // GET: /ConsultaFixo/
 
@@ -29,6 +28,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(long id)
         {
+
             return View(gConsultaFixo.Obter(id));
         }
 
@@ -37,7 +37,6 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos(), "IdPaciente", "NomePaciente");
             return View();
         } 
 
@@ -45,15 +44,16 @@ namespace PacienteVirtual.Controllers
         // POST: /ConsultaFixo/Create
 
         [HttpPost]
-        public ActionResult Create(ConsultaFixoModel consultaFixoModel)
+        public ActionResult Create(ConsultaFixoModel consultafixoModel)
         {
             if (ModelState.IsValid)
             {
-               consultaFixoModel.IdConsultaFixo = gConsultaFixo.Inserir(consultaFixoModel);// irá ser salvo após ser salvo a
-                // tabela DemograficosAntropomedicos
-               return RedirectToAction("Create", "DemograficosAntropomedicos", consultaFixoModel);  
+                consultafixoModel.IdConsultaFixo = gConsultaFixo.Inserir(consultafixoModel);
+                return RedirectToAction("Create", "DemograficosAntropomedicos", consultafixoModel);
+                //return RedirectToAction("Index");  
             }
-            return View(consultaFixoModel);
+
+            return View(consultafixoModel);
         }
         
         //
@@ -61,7 +61,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Edit(long id)
         {
-
             return View(gConsultaFixo.Obter(id));
         }
 
@@ -69,14 +68,15 @@ namespace PacienteVirtual.Controllers
         // POST: /ConsultaFixo/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ConsultaFixoModel consultaFixoModel)
+        public ActionResult Edit(ConsultaFixoModel consultafixoModel)
         {
             if (ModelState.IsValid)
             {
-                gConsultaFixo.Atualizar(consultaFixoModel);
+                gConsultaFixo.Atualizar(consultafixoModel);
+       
                 return RedirectToAction("Index");
             }
-            return View(consultaFixoModel);
+            return View(consultafixoModel);
         }
 
         //
@@ -84,7 +84,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(long id)
         {
-   
             return View(gConsultaFixo.Obter(id));
         }
 

@@ -11,7 +11,8 @@
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
-<% using (Html.BeginForm()) { %>
+<% using (Html.BeginForm("Create", "RelatoClinico", FormMethod.Post, new { enctype = "multipart/form-data" }))
+   { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>tb_relato_clinico</legend>
@@ -39,6 +40,12 @@
             <%: Html.EditorFor(model => model.RelatoTextual) %>
             <%: Html.ValidationMessageFor(model => model.RelatoTextual) %>
         </div>
+
+              <div class="editor-field">
+       <input type="file" name="Arquivo" value="Selecione o video" />
+
+        </div>
+
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.NivelDificuldade) %>

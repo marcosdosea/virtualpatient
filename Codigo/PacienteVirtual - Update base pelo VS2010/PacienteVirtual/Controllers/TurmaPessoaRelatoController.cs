@@ -16,6 +16,7 @@ namespace PacienteVirtual.Controllers
         private pvEntities db = new pvEntities();
 
         GerenciadorTurmaPessoaRelato gturmaPessRelato = GerenciadorTurmaPessoaRelato.GetInstance();
+       
         //
         // GET: /TurmaPessoaRelato/
 
@@ -38,9 +39,11 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            return View();
-        } 
+            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
+            ViewBag.IdPessoa = new SelectList(GerenciadorPessoa.GetInstance().ObterTodos().ToList(), "IdPessoa", "Nome");
 
+            return View();
+        }
         //
         // POST: /TurmaPessoaRelato/Create
 
