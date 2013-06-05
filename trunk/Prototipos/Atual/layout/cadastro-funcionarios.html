@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>LocSystem - Cadastro de Funcionários</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="css/imperio.css" />
+		<link rel="stylesheet" type="text/css" href="css/datepicker.css" />
+        
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+	</head>
+    <body>
+        <div class="container-fluid nopadding">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="header">
+                        <a href="#">
+							<img src="img/logo.png" alt="" />
+						</a>
+						<div class="hright">
+							<div id="userinfo" class="column">
+								<a class="userinfo dropown-toggle" data-toggle="dropdown" href="#userinfo">									
+									<span><strong>Olá "Usuário"</strong></span>
+								</a>
+                                    <ul class="dropdown-menu">
+										<li><a href="#">Editar Perfil</a></li>
+										<li><a href="#">Editar Preferêndias</a></li>
+										<li><a href="login.html">Sair</a></li>
+									</ul>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="container">
+            <div class="row-fluid">
+                <div class="span3 leftmenu">
+                    <ul class="nav">
+                        <li><a href="index.html"><span class="ico"><i class="icon-home"></i></span><span class="text">Início</span></a></li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="icon-edit"></i></span><span class="text">Cadastro</span><span class="indicator"></span></a>
+                            <ul>                            
+                                <li><a href="cadastro-clientes.html"><span class="ico"><i class="icon-list-alt"></i></span><span class="text">Clientes</span></a></li>
+								<li><a href="cadastro-produtos.html"><span class="ico"><i class="icon-tags"></i></span><span class="text">Produtos</span></a></li>
+								<li class="active"><a href="cadastro-funcionarios.html"><span class="ico"><i class="icon-user"></i></span><span class="text">Funcionários</span></a></li>                        
+                            </ul>
+                        </li>
+						<li>
+							<a href="#"><span class="ico"><i class="icon-pencil"></i></span><span class="text">Movimentações</span><span class="indicator"></a>
+							<ul>                            
+                                <li><a href="locacao.html"><span class="ico"><i class="icon-shopping-cart"></i></span><span class="text">Locação</span></a></li>
+								<li><a href=""><span class="ico"><i class="icon-arrow-left"></i></span><span class="text">Devolução</span></a></li>
+								<li><a href=""><span class="ico"><i class="icon-arrow-right"></i></span><span class="text">Entrada</span></a></li>                        
+                            </ul>
+						</li>
+                        <li><a href=""><span class="ico"><i class="icon-signal"></i></span><span class="text">Relatórios</span></a></li>
+                        
+                    </ul>
+                </div>
+                <div class="span9" id="content">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="box alternate">
+                                <div class="box-title">
+                                    Cadastro de Funcionários
+                                </div>
+                                <div class="box-content ">
+                                    <form id="register_form" name="register_form" action="#" method="post" class="form-horizontal">
+                                        <div class="control-group">
+                                            <label class="control-label">Nome Completo *</label>
+                                            <div class="controls">
+                                                <input id="nome" name="nome" type="text" class="span6"/>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Código *</label>
+                                            <div class="controls">
+                                                <input id="codigo_func" name="codigo_func" type="text" class="span6"/>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">CPF *</label>
+                                            <div class="controls">
+                                                <input id="cpf_func" name="cpf_func" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">RG *</label>
+                                            <div class="controls">
+                                                <input id="rg_func" name="rg_func" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">CTPS *</label>
+                                            <div class="controls">
+                                                <input id="ctps" name="ctps" type="text" />
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Série *</label>
+                                            <div class="controls">
+                                                <input id="serie" name="serie" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">PIS *</label>
+                                            <div class="controls">
+                                                <input id="pis" name="pis" type="text" />
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Data de Nascimento *</label>
+                                            <div class="controls">
+                                                <div id="dp2" class="input-append date inline" data-date="16-05-2013" data-date-format="dd-mm-yyyy">
+                                                    <input id="data_nasc_func" name="data_nasc_func" type="text" class="span2" value="16-05-2013" disabled/>
+                                                    <span class="add-on"><i class="icon-calendar"></i></span>
+                                                </div>
+											</div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Data de Admissão *</label>
+                                            <div class="controls">
+                                                <div id="dp2" class="input-append date inline" data-date="16-05-2013" data-date-format="dd-mm-yyyy">
+                                                    <input id="data_adm_func" name="data_adm_func"type="text" class="span2" value="16-05-2013" disabled/>
+                                                    <span class="add-on"><i class="icon-calendar"></i></span>
+                                                </div>
+											</div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">Endereço</label>
+                                            <div class="controls">
+                                                <input id="endereco" name="endereco" type="text" class="span6"/>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Estado </label>
+                                            <div class="controls">
+                                                <select id="estado_func" name="estado_func"></select>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Cidade</label>
+                                            <div class="controls">
+                                                <select id="cidade_func" name="cidade_func"></select>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Nome do pai *</label>
+                                            <div class="controls">
+                                                <input id="nome_pai" name="nome_pai" type="text" class="span6"/>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Nome da mãe *</label>
+                                            <div class="controls">
+                                                <input id="nome_mae" name="nome_mae" type="text" class="span6"/>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Exames periódicos</label>
+                                            <div class="controls">
+                                                <input id="exames" name="exames" type="text" />
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Telefone celular *</label>
+                                            <div class="controls">
+                                                <input id="cel_func" name="cel_func" type="text" />
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">Observação</label>
+                                            <div class="controls">
+                                                <textarea id="obs" class="span10"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+											<input type="submit" class="btn btn-primary" value="Salvar" />
+                                            <button class="btn">Novo</button>
+											<button class="btn">Editar</button>
+											<button class="btn">Excluir</button>
+											<button class="btn">Relatórios</button>
+										</div>
+                                    </form>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>                
+                </div>
+            
+            </div>       
+        </div>  
+    
+    
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="js/bootstrap-colorpicker.js"></script>
+		<script type="text/javascript" src="js/imperio.general.js"></script>
+        <script type="text/javascript" src="js/imperio.forms.js"></script>
+		<script type="text/javascript" src="http://cidades-estados-js.googlecode.com/files/cidades-estados-v0.2.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				new dgCidadesEstados(
+					document.getElementById('estado_func'),
+					document.getElementById('cidade_func'),
+					true
+				);
+			}
+		</script>
+    </body>
+</html>
