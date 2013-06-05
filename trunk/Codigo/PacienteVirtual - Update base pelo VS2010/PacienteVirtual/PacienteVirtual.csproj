@@ -99,6 +99,7 @@
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\AlergiaController.cs" />
     <Compile Include="Controllers\ConsultaFixoController.cs" />
     <Compile Include="Controllers\CursoController.cs">
       <SubType>Code</SubType>
@@ -149,6 +150,7 @@
     <Compile Include="Models\AccountModels.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\AlergiaModel.cs" />
     <Compile Include="Models\ConsultaFixoModel.cs" />
     <Compile Include="Models\CursoModel.cs">
       <SubType>Code</SubType>
@@ -183,6 +185,7 @@
     <Compile Include="Models\MedicamentosModel.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoAlternativa.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoQueixa.cs" />
+    <Compile Include="Models\Negocio\GerenciadorAlergia.cs" />
     <Compile Include="Models\Negocio\GerenciadorConsultaFixo.cs" />
     <Compile Include="Models\Negocio\GerenciadorCurso.cs">
       <SubType>Code</SubType>
@@ -299,6 +302,11 @@
     <Content Include="Views\Account\LogOn.aspx" />
     <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Account\Registro.aspx" />
+    <Content Include="Views\Alergia\Create.aspx" />
+    <Content Include="Views\Alergia\Delete.aspx" />
+    <Content Include="Views\Alergia\Details.aspx" />
+    <Content Include="Views\Alergia\Edit.aspx" />
+    <Content Include="Views\Alergia\Index.aspx" />
     <Content Include="Views\ConsultaFixo\Create.aspx" />
     <Content Include="Views\ConsultaFixo\Delete.aspx" />
     <Content Include="Views\ConsultaFixo\Details.aspx" />

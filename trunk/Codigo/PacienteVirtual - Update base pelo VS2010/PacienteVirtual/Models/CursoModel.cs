@@ -9,7 +9,6 @@ namespace PacienteVirtual.Models
 {
     public class CursoModel
     {
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdCurso { get; set; }
 

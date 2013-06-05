@@ -24,7 +24,7 @@
     <EntitySet Name="respostaterceiras" EntityType="pvModel.respostaterceira" />
     <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.AcaoAlternativaE" />
     <EntitySet Name="tb_acao_queixa" EntityType="pvModel.AcaoQueixaE" />
-    <EntitySet Name="tb_alergia" EntityType="pvModel.tb_alergia" />
+    <EntitySet Name="tb_alergia" EntityType="pvModel.AlergiaE" />
     <EntitySet Name="tb_alergia_exames_fisicos" EntityType="pvModel.tb_alergia_exames_fisicos" />
     <EntitySet Name="tb_consulta_fixo" EntityType="pvModel.ConsultaFixoE" />
     <EntitySet Name="tb_consulta_parametro" EntityType="pvModel.tb_consulta_parametro" />
@@ -650,7 +650,7 @@
     <Property Name="IdAcaoQueixa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DescricaoAcao" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
   </EntityType>
-  <EntityType Name="tb_alergia">
+  <EntityType Name="AlergiaE">
     <Key>
       <PropertyRef Name="IdAlergia" />
     </Key>

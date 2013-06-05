@@ -84,6 +84,8 @@
                         <%: Html.ActionLink("Queixa", "Index", "Queixa")%></li>
                     <li>
                         <%: Html.ActionLink("Sample", "Index", "Sample")%></li>
+                                            <li>
+                        <%: Html.ActionLink("Alergia", "Index", "Alergia")%></li>
                 </ul>
             </nav>
         </header>
