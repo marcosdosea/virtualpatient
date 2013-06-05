@@ -46,7 +46,10 @@ namespace PacienteVirtual.Controllers
         }
         //
         // POST: /TurmaPessoaRelato/Create
-
+       // protected void Foo_DataBound(object sender, EventArgs e)
+      //  {
+        //      GerenciadorPessoa.GetInstance().ObterTodos().DataBind();
+       // }
         [HttpPost]
         public ActionResult Create(TurmaPessoaRelatoModel TurmaPessoaRelatoModel)
         {

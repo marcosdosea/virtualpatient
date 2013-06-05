@@ -1512,7 +1512,7 @@
           <EntitySet Name="respostaterceiras" EntityType="pvModel.respostaterceira" />
           <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.AcaoAlternativaE" />
           <EntitySet Name="tb_acao_queixa" EntityType="pvModel.AcaoQueixaE" />
-          <EntitySet Name="tb_alergia" EntityType="pvModel.tb_alergia" />
+          <EntitySet Name="tb_alergia" EntityType="pvModel.AlergiaE" />
           <EntitySet Name="tb_alergia_exames_fisicos" EntityType="pvModel.tb_alergia_exames_fisicos" />
           <EntitySet Name="tb_consulta_fixo" EntityType="pvModel.ConsultaFixoE" />
           <EntitySet Name="tb_consulta_parametro" EntityType="pvModel.tb_consulta_parametro" />
@@ -2138,7 +2138,7 @@
           <Property Name="IdAcaoQueixa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DescricaoAcao" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
         </EntityType>
-        <EntityType Name="tb_alergia">
+        <EntityType Name="AlergiaE">
           <Key>
             <PropertyRef Name="IdAlergia" />
           </Key>
@@ -3425,7 +3425,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_alergia">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_alergia)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.AlergiaE)">
         <MappingFragment StoreEntitySet="tb_alergia">
           <ScalarProperty Name="IdAlergia" ColumnName="IdAlergia" />
           <ScalarProperty Name="Alergia" ColumnName="Alergia" />
@@ -3901,7 +3901,7 @@
         <EntityTypeShape EntityType="pvModel.respostaterceira" Width="1.5" PointX="5.25" PointY="44.625" Height="4.0956022135416674" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.AcaoAlternativaE" Width="1.5" PointX="5.75" PointY="0.75" Height="1.4033821614583282" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.AcaoQueixaE" Width="1.5" PointX="2.75" PointY="5.75" Height="1.4033821614583246" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.tb_alergia" Width="1.5" PointX="5.75" PointY="3.75" Height="1.4033821614583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.AlergiaE" Width="1.5" PointX="5.75" PointY="3.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_alergia_exames_fisicos" Width="1.5" PointX="4.75" PointY="6.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.ConsultaFixoE" Width="1.5" PointX="0.75" PointY="1.25" Height="2.5571907552083246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_consulta_parametro" Width="1.5" PointX="6.75" PointY="6.75" Height="1.9802864583333246" IsExpanded="true" />

@@ -420,4 +420,7 @@
   <data name="sistema" xml:space="preserve">
     <value>Sistema</value>
   </data>
+  <data name="alergia" xml:space="preserve">
+    <value>Alergia</value>
+  </data>
 </root>
