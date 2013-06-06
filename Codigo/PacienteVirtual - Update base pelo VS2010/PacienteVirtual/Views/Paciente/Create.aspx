@@ -36,6 +36,9 @@
         <p>
             <input type="submit" value="Create" />
         </p>
+        <div class="progress progress-info progress-striped">
+<div class="bar" style="width: 100%"></div>
+</div>
     </fieldset>
 <% } %>
 
