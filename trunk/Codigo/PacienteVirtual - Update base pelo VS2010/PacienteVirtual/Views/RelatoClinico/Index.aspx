@@ -1,27 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.RelatoClinicoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Relato Clínico
+    <%: Resources.Mensagem.relato_clinico %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Index</h2>
+        <%: Resources.Mensagem.relato_clinico %></h2>
     <p>
         <%: Html.ActionLink("Create New", "Create") %>
     </p>
     <div class="box-content"> <table class="table table-bordered table-striped">
         <tr>
             <th>
-                Relato Clínico
+               <%: Resources.Mensagem.relato_clinico %>
             </th>
             <th>
-                OrdemCronologia
+                <%: Resources.Mensagem.ordem_cronologica %>
             </th>
             <th>
-                RelatoTextual
+                <%: Resources.Mensagem.relato_textual %>
             </th>
             <th>
-                NivelDificuldade
+                <%: Resources.Mensagem.nivel_dificuldade %>
             </th>
             <th>
                 video
@@ -84,11 +84,11 @@
             </td>
             <td>
       
-                <%: Html.ActionLink("Edit", "Edit", new { id=item.IdRelato }) %>
+                <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdRelato }) %>
                 |
-                <%: Html.ActionLink("Details", "Details", new { id=item.IdRelato }) %>
+                <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdRelato }) %>
                 |
-                <%: Html.ActionLink("Delete", "Delete", new { id=item.IdRelato }) %>
+                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdRelato }) %>
             </td>
         </tr>
         <% } %>

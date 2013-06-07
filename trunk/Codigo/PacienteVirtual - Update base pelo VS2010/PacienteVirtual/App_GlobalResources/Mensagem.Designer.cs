@@ -457,6 +457,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Foto.
+        /// </summary>
+        public static string foto {
+            get {
+                return ResourceManager.GetString("foto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Género.
         /// </summary>
         public static string genero {
@@ -646,6 +655,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Níve de Dificuldade.
+        /// </summary>
+        public static string nivel_dificuldade {
+            get {
+                return ResourceManager.GetString("nivel_dificuldade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nível de Escolaridade.
         /// </summary>
         public static string nivel_escolaridade {
@@ -696,6 +714,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string onde_adquire_medicamentos {
             get {
                 return ResourceManager.GetString("onde_adquire_medicamentos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ordem Cornológica.
+        /// </summary>
+        public static string ordem_cronologica {
+            get {
+                return ResourceManager.GetString("ordem_cronologica", resourceCulture);
             }
         }
         
@@ -844,11 +871,29 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Relato Clínico.
+        /// </summary>
+        public static string relato_clinico {
+            get {
+                return ResourceManager.GetString("relato_clinico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Código Relato.
         /// </summary>
         public static string relato_codigo {
             get {
                 return ResourceManager.GetString("relato_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Relato Textual.
+        /// </summary>
+        public static string relato_textual {
+            get {
+                return ResourceManager.GetString("relato_textual", resourceCulture);
             }
         }
         
