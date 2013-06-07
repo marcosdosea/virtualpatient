@@ -3,20 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.criar %>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <h2><%: Resources.Mensagem.criar %></h2>
-
+    <h2>
+        <%: Resources.Mensagem.criar %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
+        type="text/javascript"></script>
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.turma %></legend>
-
+        <legend>
+            <%: Resources.Mensagem.turma %></legend>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Codigo) %>
         </div>
@@ -24,7 +22,6 @@
             <%: Html.EditorFor(model => model.Codigo) %>
             <%: Html.ValidationMessageFor(model => model.Codigo) %>
         </div>
-
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Periodo) %>
         </div>
@@ -32,14 +29,12 @@
             <%: Html.EditorFor(model => model.Periodo) %>
             <%: Html.ValidationMessageFor(model => model.Periodo) %>
         </div>
-
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdInstituicao, "Instituições") %>
         </div>
         <%: Html.DropDownList("IdDisciplina", Resources.Mensagem.selecione)%>
         <!--%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes,"IdInstituicao","NomeInstituicao"), "Selecione")%-->
         <br />
-
         <div class="editor-label">
             <%: Html.LabelFor(model => model.NomeDisciplina, "Disciplinas") %>
         </div>
@@ -48,15 +43,14 @@
             <!--%= Html.DropDownList("IdDisciplina", new SelectList((IEnumerable)ViewBag.Disciplinas,"IdDisciplina","NomeDisciplina"), "Selecione")%-->
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
-
-        <p>
-            <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
-        </p>
+        <div class="form-actions">
+            <p>
+                <input type="submit" class="btn" value="<%: Resources.Mensagem.salvar %>" />
+            </p>
+        </div>
     </fieldset>
     <% } %>
-
     <div>
         <%: Html.ActionLink("Voltar", "Index") %>
     </div>
-
 </asp:Content>

@@ -9,7 +9,7 @@
     <p>
         <%: Html.ActionLink("Create New", "Create") %>
     </p>
-    <table>
+    <div class="box-content"> <table class="table table-bordered table-striped">
         <tr>
             <th>
                 Nome
@@ -41,5 +41,5 @@
             </td>
         </tr>
         <% } %>
-    </table>
+    </table></div>
 </asp:Content>

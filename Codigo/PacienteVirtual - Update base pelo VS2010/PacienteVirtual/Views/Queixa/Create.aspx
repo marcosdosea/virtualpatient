@@ -20,7 +20,9 @@
             <%: Html.LabelFor(model => model.DescricaoQueixa) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.DescricaoQueixa) %>
+        <div class="controls">
+            <%: Html.TextAreaFor(model => model.DescricaoQueixa) %>
+            </div>
             <%: Html.ValidationMessageFor(model => model.DescricaoQueixa) %>
         </div>
 
