@@ -423,4 +423,19 @@
   <data name="alergia" xml:space="preserve">
     <value>Alergia</value>
   </data>
+  <data name="foto" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="nivel_dificuldade" xml:space="preserve">
+    <value>Níve de Dificuldade</value>
+  </data>
+  <data name="ordem_cronologica" xml:space="preserve">
+    <value>Ordem Cornológica</value>
+  </data>
+  <data name="relato_clinico" xml:space="preserve">
+    <value>Relato Clínico</value>
+  </data>
+  <data name="relato_textual" xml:space="preserve">
+    <value>Relato Textual</value>
+  </data>
 </root>

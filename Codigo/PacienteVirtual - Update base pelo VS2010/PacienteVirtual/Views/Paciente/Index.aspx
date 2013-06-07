@@ -1,21 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.PacienteModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+  <%: Resources.Mensagem.paciente %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Index</h2>
+        <%: Resources.Mensagem.paciente %></h2>
     <p>
-        <%: Html.ActionLink("Create New", "Create") %>
+        <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
     </p>
     <div class="box-content"> <table class="table table-bordered table-striped">
         <tr>
             <th>
-                Nome
+                <%: Resources.Mensagem.nome %>
             </th>
             <th>
-                Foto
+                <%: Resources.Mensagem.foto %>
             </th>
         </tr>
         <% foreach (var item in Model)
@@ -33,11 +33,11 @@
                 </div>
             </td>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { id=item.IdPaciente }) %>
+                <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdPaciente }) %>
                 |
-                <%: Html.ActionLink("Details", "Details", new { id=item.IdPaciente }) %>
+                <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdPaciente }) %>
                 |
-                <%: Html.ActionLink("Delete", "Delete", new { id=item.IdPaciente }) %>
+                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdPaciente }) %>
             </td>
         </tr>
         <% } %>
