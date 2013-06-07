@@ -11,7 +11,7 @@
 <p>
     <%: Html.ActionLink(Resources.Mensagem.criar, "Create")%>
 </p>
-<table>
+<div class="box-content"> <table class="table table-bordered table-striped">
     <tr>
         <th>
         <%: Resources.Mensagem.consulta_dados_fixos_codigo%>
@@ -105,6 +105,6 @@
     </tr>
 <% } %>
 
-</table>
+</table></div>
 
 </asp:Content>

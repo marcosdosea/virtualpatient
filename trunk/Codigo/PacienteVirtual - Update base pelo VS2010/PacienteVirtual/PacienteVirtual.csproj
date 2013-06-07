@@ -284,9 +284,11 @@
     <Content Include="Content\themes\pv\img\glyphicons-halflings-white.png" />
     <Content Include="Content\themes\pv\img\glyphicons-halflings.png" />
     <Content Include="Content\themes\pv\img\hue.png" />
+    <Content Include="Content\themes\pv\img\icons\!.png" />
     <Content Include="Content\themes\pv\img\icons\adress_book.png" />
     <Content Include="Content\themes\pv\img\icons\attach.png" />
     <Content Include="Content\themes\pv\img\icons\book.png" />
+    <Content Include="Content\themes\pv\img\icons\c.png" />
     <Content Include="Content\themes\pv\img\icons\calendar.png" />
     <Content Include="Content\themes\pv\img\icons\camera.png" />
     <Content Include="Content\themes\pv\img\icons\charts.png" />
@@ -308,6 +310,7 @@
     <Content Include="Content\themes\pv\img\icons\home.png" />
     <Content Include="Content\themes\pv\img\icons\inbox.png" />
     <Content Include="Content\themes\pv\img\icons\leaf.png" />
+    <Content Include="Content\themes\pv\img\icons\mensagem.png" />
     <Content Include="Content\themes\pv\img\icons\music.png" />
     <Content Include="Content\themes\pv\img\icons\new_window.png" />
     <Content Include="Content\themes\pv\img\icons\notes.png" />
@@ -318,6 +321,7 @@
     <Content Include="Content\themes\pv\img\icons\signal.png" />
     <Content Include="Content\themes\pv\img\icons\stats.png" />
     <Content Include="Content\themes\pv\img\icons\tag.png" />
+    <Content Include="Content\themes\pv\img\icons\telefone.png" />
     <Content Include="Content\themes\pv\img\icons\tint.png" />
     <Content Include="Content\themes\pv\img\icons\user.png" />
     <Content Include="Content\themes\pv\img\icons\users.png" />
