@@ -31,8 +31,8 @@
         <div class="page">
             <header class="container">
                 <div id="title">
-                    <h1>           
-                       <%: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1>
+                    <h1>
+                        <%: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1>
                 </div>
                 <div id="logindisplay">
                     <% Html.RenderPartial("LogOnUserControl"); %>
@@ -50,12 +50,33 @@
                                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastros
                                         <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
+                                            <li><%: Html.ActionLink("Turma", "Index", "Turma")%></li>
+                                            <li><%: Html.ActionLink("Curso", "Index", "Curso")%></li>
+                                            <li><%: Html.ActionLink("Disciplina", "Index", "Disciplina")%></li>
+                                            <li><%: Html.ActionLink("Instituição", "Index", "Instituicao")%></li>
+                                            <li><%: Html.ActionLink("Escolaridade", "Index", "Escolaridade")%></li>
+                                             <li class="divider"></li>
+                                             <li><%: Html.ActionLink("Paciente", "Index", "Paciente")%></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="nav-collapse collapse">
+                            <nav class="nav">
+                                <ul class="nav" role="menu" aria-labelledby="dropdownMenu">
+                                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pacientes
+                                        <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
                                             <li>
-                                                <%: Html.ActionLink("Paciente", "Index", "Paciente")%></li>
-                                            <li><a href="#">Another action </a></li>
-                                            <li><a href="#">Something else here </a></li>
+                                                <%: Html.ActionLink("Listar", "Index", "Paciente")%></li>
+                                            <li>
+                                                <%: Html.ActionLink("Criar", "Create", "Paciente")%></li>
+                                            <li>
+                                                <%: Html.ActionLink("Editar", "Edit", "Paciente")%></li>
                                             <li class="divider"></li>
-                                            <li><a href="#">Separated link </a></li>
+                                            <li>
+                                                <%: Html.ActionLink("Excluir", "Delete", "Paciente")%></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -65,18 +86,14 @@
                 </div>
                 <!-- /.navbar -->
                 <%: Html.ActionLink("--  Usuario", "Index", "Usuario")%>
-                <%: Html.ActionLink("--  Curso", "Index", "Curso")%>
-                <%: Html.ActionLink("--  Turma", "Index", "Turma")%>
-                <%: Html.ActionLink("--  Disciplina", "Index", "Disciplina")%>
-                <%: Html.ActionLink("--  Instituição", "Index", "Instituicao")%>
                 <%: Html.ActionLink("--  About", "About", "Home")%>
                 <%: Html.ActionLink("--  PacientePessoaTurma", "Index", "PacientePessoaTurma")%>
                 <%: Html.ActionLink("--  Historia", "Index", "Historia")%>
                 <%: Html.ActionLink("--  ExperienciaMedicamentos", "Index", "ExperienciaMedicamentos")%>
+                <%: Html.ActionLink("--  CadastroConsultaFixo", "Index", "CadastroConsultaFixo")%>
                 <!--li>
 <!%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li-->
                 <%: Html.ActionLink("--  ConsultaFixo", "Index", "ConsultaFixo")%>
-                <%: Html.ActionLink("--  Escolaridade", "Index", "Escolaridade")%>
                 <%: Html.ActionLink("--  Ocupação", "Index", "Ocupacao")%>
                 <%: Html.ActionLink("--  Plano de Saúde", "Index", "PlanoSaude")%>
                 <%: Html.ActionLink("--  Pessoa", "Index", "Pessoa")%>
@@ -106,7 +123,6 @@
             <p>
                 <img alt="imagem" src="../../Content/themes/pv/img/icons/!.png" />
                 Footer
-
                 <!-- img alt="imagem" src="../../Content/themes/pv/img/icons/c.png" /-->
             </p>
         </footer>
