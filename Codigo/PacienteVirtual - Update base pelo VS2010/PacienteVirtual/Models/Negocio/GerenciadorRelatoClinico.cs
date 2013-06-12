@@ -124,11 +124,20 @@ namespace PacienteVirtual.Models.Negocio
         /// </summary>
         /// <param name="codDisciplina"></param>
         /// <returns></returns>
-        public RelatoClinicoModel Obter(int idCurso)
+        public IEnumerable<RelatoClinicoModel> ObterRelatos(int idPaciente)
         {
-            return GetQuery().Where(relato => relato.IdRelato == idCurso).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(relato => relato.IdPaciente == idPaciente).ToList();
         }
 
+        /// <summary>
+        /// Obtém relato com o código especificiado
+        /// </summary>
+        /// <param name="codDisciplina"></param>
+        /// <returns></returns>
+        public RelatoClinicoModel Obter(int idPaciente)
+        {
+            return GetQuery().Where(relato => relato.IdPaciente == idPaciente).ToList().ElementAtOrDefault(0);
+        }
         /// <summary>
         /// Obtém relatos que iniciam com o relato em texto
         /// </summary>

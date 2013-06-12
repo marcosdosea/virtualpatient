@@ -17,9 +17,11 @@ namespace PacienteVirtual.Models
         [Display(Name = "Nome do paciente: ")]
         public String NomePaciente { get; set; }
 
-        //[Required]
+       // [Required]
         [Display(Name = "Foto do paciente: ")]
         public byte[] Foto { get; set; }
+
+        public int QuantRelatos { get; set; }
 
     }
 }

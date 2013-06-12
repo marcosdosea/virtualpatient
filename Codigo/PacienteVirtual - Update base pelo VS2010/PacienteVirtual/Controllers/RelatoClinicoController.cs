@@ -47,7 +47,7 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 relatoModel.IdRelato = gRelato.Inserir(relatoModel);
-                return RedirectToAction("Index");
+                return PartialView();
             }
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
             return View(relatoModel);

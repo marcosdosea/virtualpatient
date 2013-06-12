@@ -28,7 +28,7 @@
                 <div class="media">
                     <a class="pull-left" href="#">
                         <img src='<%: Url.Action("GetImage", "Paciente", new { id= item.IdPaciente }) %>'
-                            width="100" height="110" alt="Foto" />
+                            width="100" height="110" alt="<%: Url.Action("GetImage", "Paciente", new { id= item.IdPaciente }) %>" />
                     </a>
                 </div>
             </td>

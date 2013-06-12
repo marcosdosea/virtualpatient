@@ -9,6 +9,7 @@ using PacienteVirtual.Models.Data;
 using PacienteVirtual.Models.Negocio;
 using PacienteVirtual.Models;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace PacienteVirtual.Controllers
 { 
@@ -39,6 +40,20 @@ namespace PacienteVirtual.Controllers
             return View();
         }
 
+        protected void btnPreview_Click(object sender, EventArgs e)
+        {
+            Button btnSomeButton = sender as Button;
+            btnSomeButton.Text = "I was clicked!";
+        }
+
+        /*protected void btnPreview_Click(object sender, EventArgs e)
+        {
+
+            Session["ImageBytes"] = PhotoUpload.FileBytes;
+
+            ImagePreview.ImageUrl = "~/ImageHandler.ashx";
+
+        }*/
         //
         // POST: /Paciente/Create
 
@@ -59,6 +74,8 @@ namespace PacienteVirtual.Controllers
 
             return View(pacienteModel);
         }
+
+
         //
         // GET: /Paciente/Edit/5
 

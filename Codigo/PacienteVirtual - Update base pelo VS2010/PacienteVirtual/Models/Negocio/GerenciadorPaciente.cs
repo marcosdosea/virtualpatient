@@ -5,6 +5,7 @@ using System.Web;
 using PacienteVirtual.Models.Data;
 using Dados;
 using Negocio;
+using PacienteVirtual.Models.ViewModel;
 
 namespace PacienteVirtual.Models.Negocio
 {
