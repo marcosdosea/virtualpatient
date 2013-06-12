@@ -85,7 +85,9 @@
                     </div>
                 </div>
                 <!-- /.navbar -->
-                <%: Html.ActionLink("--  Usuario", "Index", "Usuario")%>
+                
+                <%: Html.ActionLink("--  VMPaciente", "Index", "VMPaciente")%>
+                 <%: Html.ActionLink("--  Usuario", "Index", "Usuario")%>
                 <%: Html.ActionLink("--  About", "About", "Home")%>
                 <%: Html.ActionLink("--  PacientePessoaTurma", "Index", "PacientePessoaTurma")%>
                 <%: Html.ActionLink("--  Historia", "Index", "Historia")%>

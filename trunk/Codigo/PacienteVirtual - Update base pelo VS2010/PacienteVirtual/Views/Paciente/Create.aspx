@@ -9,6 +9,20 @@
 <h2><%: Resources.Mensagem.criar %></h2>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
+<script type="text/javascript">
+//Lê Url do diretorio selecionado 
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#PreviewDaImagem').attr('src', e.target.result);
+            };
+     reader.readAsDataURL(input.files[0]);
+        }
+}
+
+</script>
 
 <% using (Html.BeginForm("Create", "Paciente", FormMethod.Post, new { enctype = "multipart/form-data" }))
    { %>
@@ -30,7 +44,9 @@
 
         <div class="editor-field">
 
-            <input type="file" name="Arquivo" value="Selecione a imagem" />
+        <img class="media" id="PreviewDaImagem" src="" alt="Definir Imagem Padrão" style="width:250px; height:250px;"  />
+
+            <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" />
             <%: Html.ValidationMessageFor(model => model.Foto)%>
         </div>
         <p>

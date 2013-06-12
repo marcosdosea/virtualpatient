@@ -60,6 +60,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", pacPessTurma.IdConsultaFixo);
             ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes", pacPessTurma.IdConsultaVariavel);
             ViewBag.IdPaciente = new SelectList(db.tb_paciente, "IdPaciente", "Nome", pacPessTurma.IdPaciente);
+            
             return View(pacPessTurma);
         }
         

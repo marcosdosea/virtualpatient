@@ -142,6 +142,7 @@
     <Compile Include="Controllers\UsuarioController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\VMPacienteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,6 +226,8 @@
     <Compile Include="Models\OcupacaoModel.cs" />
     <Compile Include="Models\PacienteModel.cs" />
     <Compile Include="Models\PacientePessoaTurmaModel.cs" />
+    <Compile Include="Models\PacienteRelato.cs" />
+    <Compile Include="Models\PacienteVirtualContext.cs" />
     <Compile Include="Models\ParametroClinicoModel.cs" />
     <Compile Include="Models\PerguntaModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />
@@ -238,6 +241,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\TurmaPessoaRelatoModel.cs" />
+    <Compile Include="Models\ViewModel\VMPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -498,10 +502,12 @@
     <Content Include="Views\RazaoEncontro\Edit.aspx" />
     <Content Include="Views\RazaoEncontro\Index.aspx" />
     <Content Include="Views\RelatoClinico\Create.aspx" />
+    <Content Include="Views\RelatoClinico\CreatePartial.ascx" />
     <Content Include="Views\RelatoClinico\Delete.aspx" />
     <Content Include="Views\RelatoClinico\Details.aspx" />
     <Content Include="Views\RelatoClinico\Edit.aspx" />
     <Content Include="Views\RelatoClinico\Index.aspx" />
+    <Content Include="Views\RelatoClinico\ViewPage1.aspx" />
     <Content Include="Views\Resposta\Create.aspx" />
     <Content Include="Views\Resposta\Delete.aspx" />
     <Content Include="Views\Resposta\Details.aspx" />
@@ -531,6 +537,8 @@
     <Content Include="Views\Usuario\Details.aspx" />
     <Content Include="Views\Usuario\Edit.aspx" />
     <Content Include="Views\Usuario\Index.aspx" />
+    <Content Include="Views\VMPaciente\Create.aspx" />
+    <Content Include="Views\VMPaciente\Index.aspx" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
