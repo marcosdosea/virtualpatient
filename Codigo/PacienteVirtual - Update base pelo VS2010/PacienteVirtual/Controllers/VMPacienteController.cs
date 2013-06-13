@@ -94,17 +94,19 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
             VMPaciente vmPaciente = new VMPaciente();
 
             vmPaciente.paciente = GerenciadorPaciente.GetInstance().Obter(id);
-            vmPaciente.demograficosAntropomedicos = GerenciadorDemograficosAntropometricos.GetInstance().Obter(id);
+            ViewBag.demoAntroModel = GerenciadorDemograficosAntropometricos.GetInstance().Obter(id);
             vmPaciente.experienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(id);
             vmPaciente.diarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(id);
 
             return View(vmPaciente);
         }
 
-        [HttpPost]
-        public ActionResult DemograficosAntropomedicos(DemograficosAntropomedicosController demoAntroModel)
+        public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel demoAntroModel)
         {
-            return View(demoAntroModel);
+            DemograficosAntropometricosModel demo = new DemograficosAntropometricosModel();
+            demo = demoAntroModel;
+
+            return PartialView("Index");
         }
 
     }

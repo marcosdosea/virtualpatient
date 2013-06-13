@@ -36,7 +36,7 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">but this dictionary requires a model item of type 
-                    < % Html.RenderPartial("ViewUserControl1");%>
+                    <% Html.RenderPartial("DemograficosAntropomedicos", Model.demograficosAntropomedicos);%>
                 </div>
                 <div class="tab-pane" id="tab2">
                     <p>
