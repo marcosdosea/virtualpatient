@@ -3877,7 +3877,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel" ZoomLevel="85">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="45">
         <EntityTypeShape EntityType="pvModel.aluno" Width="1.5" PointX="5.25" PointY="11.875" Height="6.0186165364583317" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.casoclinico" Width="1.5" PointX="0.75" PointY="26" Height="8.51853515625" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.consulta" Width="1.5" PointX="3" PointY="28.125" Height="4.2879036458333353" IsExpanded="true" />
@@ -3925,7 +3925,7 @@
         <EntityTypeShape EntityType="pvModel.tb_medicamentos_anteriores" Width="1.5" PointX="14.75" PointY="3.75" Height="1.9802864583333246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.OcupacaoE" Width="1.5" PointX="13.75" PointY="14.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PacienteE" Width="1.5" PointX="0.75" PointY="9.125" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="pvModel.PacientePessoaTurmaE" Width="1.5" PointX="3" PointY="1" Height="3.134095052083353" IsExpanded="true" />
+        <EntityTypeShape EntityType="pvModel.PacientePessoaTurmaE" Width="1.5" PointX="3.75" PointY="0.875" Height="3.134095052083353" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.ParametroClinicoE" Width="1.5" PointX="15.75" PointY="0.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.tb_perfil_usuario" Width="1.5" PointX="15.75" PointY="6.75" Height="1.4033821614583246" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.PerguntaE" Width="1.5" PointX="15.75" PointY="9.75" Height="1.4033821614583246" IsExpanded="true" />
@@ -4129,22 +4129,24 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="2.5285953776041623" />
-          <ConnectorPoint PointX="3" PointY="2.5285953776041623" />
+          <ConnectorPoint PointX="3.75" PointY="2.5285953776041623" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="7.8240364583333246" />
-          <ConnectorPoint PointX="4.40625" PointY="7.8240364583333246" />
-          <ConnectorPoint PointX="4.40625" PointY="4.134095052083353" />
+          <ConnectorPoint PointX="2.25" PointY="8.3240364583333246" />
+          <ConnectorPoint PointX="4.2916641666666671" PointY="8.3240364583333246" />
+          <ConnectorPoint PointX="4.4583308333333331" PointY="8.3240364583333246" />
+          <ConnectorPoint PointX="4.5" PointY="8.3240364583333246" />
+          <ConnectorPoint PointX="4.5" PointY="4.009095052083353" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="10.018992513020834" />
           <ConnectorPoint PointX="4.3749975" PointY="10.018992513020834" />
-          <ConnectorPoint PointX="4.3749975" PointY="4.134095052083353" />
+          <ConnectorPoint PointX="4.3749975" PointY="4.009095052083353" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="12.547841796874991" />
-          <ConnectorPoint PointX="4.4375025" PointY="12.547841796874991" />
-          <ConnectorPoint PointX="4.4375025" PointY="4.134095052083353" />
+          <ConnectorPoint PointX="4.6250025" PointY="12.547841796874991" />
+          <ConnectorPoint PointX="4.6250025" PointY="4.009095052083353" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

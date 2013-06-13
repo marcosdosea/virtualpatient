@@ -22,10 +22,13 @@
             }
         }
     </script>
-    <% using (Html.BeginForm())
+    <% using (Html.BeginForm("Create", "VMPaciente", FormMethod.Post, new { enctype = "multipart/form-data" }))
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
+    
+    <% int i = 0;  %>
+
         <legend>VMPaciente</legend>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.paciente.NomePaciente) %>
@@ -50,45 +53,46 @@
         </div>
         <br />
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.relatosClinico[0].OrdemCronologica) %>
+            <%: Html.LabelFor(model => model.relatosClinico[i].OrdemCronologica) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.relatosClinico[0].OrdemCronologica)%>
-            <%: Html.ValidationMessageFor(model => model.relatosClinico[0].OrdemCronologica)%>
+            <%: Html.EditorFor(model => model.relatosClinico[i].OrdemCronologica)%>
+            <%: Html.ValidationMessageFor(model => model.relatosClinico[i].OrdemCronologica)%>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.relatosClinico[0].RelatoTextual)%>
+            <%: Html.LabelFor(model => model.relatosClinico[i].RelatoTextual)%>
         </div>
         <div class="control-group">
             <label class="control-label">
                 Observação</label>
-            <div class="controls">
-                <%: Html.TextAreaFor(model => model.relatosClinico[0].RelatoTextual)%>
+            <div id="obs" class="controls">
+                <%:  Html.TextAreaFor(model => model.relatosClinico[i].RelatoTextual)%>
             </div>
             <div class="editor-field">
-                <%: Html.ValidationMessageFor(model => model.relatosClinico[0].RelatoTextual)%>
+                <%: Html.ValidationMessageFor(model => model.relatosClinico[i].RelatoTextual)%>
             </div>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.relatosClinico[0].RelatoVideo) %>
+            <%: Html.LabelFor(model => model.relatosClinico[i].RelatoVideo) %>
         </div>
         relato de Vídeo ainda não fuciona
         <div class="editor-field">
             <input type="file" name="Arquivo" value="Selecione o video" />
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.relatosClinico[0].NivelDificuldade)%>
+            <%: Html.LabelFor(model => model.relatosClinico[i].NivelDificuldade)%>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.relatosClinico[0].NivelDificuldade)%>
-            <%: Html.ValidationMessageFor(model => model.relatosClinico[0].NivelDificuldade)%>
+            <%: Html.EditorFor(model => model.relatosClinico[i].NivelDificuldade)%>
+            <%: Html.ValidationMessageFor(model => model.relatosClinico[i].NivelDificuldade)%>
         </div>
         <p>
             <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </p>
+
     </fieldset>
     <% } %>
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+       <%: Html.ActionLink("Back to List", "Index") %> 
     </div>
 </asp:Content>

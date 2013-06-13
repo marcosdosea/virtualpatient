@@ -108,6 +108,35 @@ namespace PacienteVirtual.Models.Negocio
         }
 
         /// <summary>
+        /// Consulta para retornar dados da entidade paciente com seus relatos
+        /// </summary>
+        /// <returns></returns>
+        //private IQueryable<VMPaciente> GetQueryRelatos()
+        //{
+        //    var repPaciente = new RepositorioGenerico<PacienteE>();
+        //    var pvEntities = (pvEntities)repPaciente.ObterContexto();
+        //    var query = from pacient in pvEntities.tb_paciente
+        //                join relatos in pvEntities.tb_relato_clinico
+        //               on pacient.IdPaciente equals relatos.IdPaciente 
+        //                select new VMPaciente
+        //                {
+        //                    paciente = pacient,
+        //                    relatosClinico = orderGroup as List<RelatoClinicoModel>
+   
+        //                };
+        //    return query;
+        //}
+
+        /// <summary>
+        /// Obtém todos os pacientes cadastradas
+        /// </summary>
+        /// <returns></returns>
+        //public IEnumerable<VMPaciente> ObterTodosVM()
+        //{
+        //    return GetQueryRelatos().ToList();
+        //}
+
+        /// <summary>
         /// Obtém todos os pacientes cadastradas
         /// </summary>
         /// <returns></returns>

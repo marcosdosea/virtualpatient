@@ -8,6 +8,14 @@ namespace PacienteVirtual.Models
 {
     public class PacienteModel
     {
+        public PacienteModel() { }  
+        public PacienteModel(int idPaciente, string nomePaciente, byte[] foto, int quantRelatos)
+        {
+            IdPaciente = idPaciente;
+            NomePaciente = nomePaciente;
+            Foto = foto;
+            QuantRelatos = quantRelatos;
+        }
 
         [Required]
         [Display(Name = "Código: ")]
@@ -17,7 +25,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "Nome do paciente: ")]
         public String NomePaciente { get; set; }
 
-       // [Required]
+        // [Required]
         [Display(Name = "Foto do paciente: ")]
         public byte[] Foto { get; set; }
 
