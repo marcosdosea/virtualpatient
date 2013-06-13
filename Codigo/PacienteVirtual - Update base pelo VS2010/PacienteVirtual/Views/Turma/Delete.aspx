@@ -35,7 +35,7 @@
     </fieldset>
     <% using (Html.BeginForm())
        { %>
-        <input type="submit" value="<%: Resources.Mensagem.deletar %>" >
+        <input type="submit" value="<%: Resources.Mensagem.deletar %>" />
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     <% } %>
 </asp:Content>

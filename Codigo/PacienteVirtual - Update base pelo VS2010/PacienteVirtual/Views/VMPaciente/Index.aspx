@@ -45,7 +45,7 @@
                 <%: Html.DisplayFor(modelItem => item.quantRelatos)%>
             </td>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %>
+                <%: Html.ActionLink("Edit", "Edit", new { id=item.paciente.IdPaciente }) %>
                 |
                 <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %>
                 |

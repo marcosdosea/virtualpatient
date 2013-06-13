@@ -17,33 +17,30 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
 
         public ActionResult Index()
         {
-
             return View(listaVMPaciente());//Tipar a View com uma lista
         }
 
         //Método destinado a pesquisar todos os paciente e obter todos os seus relatos
         private List<VMPaciente> listaVMPaciente()
         {
-
             List<VMPaciente> listPacienteVM = new List<VMPaciente>();
 
             GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
-            foreach (PacienteModel paciente in GerenciadorPaciente.GetInstance().ObterTodos())
+            IEnumerable<PacienteModel> listPacientes = GerenciadorPaciente.GetInstance().ObterTodos();
+            foreach (PacienteModel paciente in listPacientes)
             {
                 VMPaciente vmPaciente = new VMPaciente();
                 vmPaciente.paciente = paciente;
                 vmPaciente.relatosClinico = gRelato.ObterRelatos(paciente.IdPaciente).ToList();
-                vmPaciente.quantRelatos =  vmPaciente.relatosClinico.Count();
+                vmPaciente.quantRelatos = vmPaciente.relatosClinico.Count();
                 listPacienteVM.Add(vmPaciente);
 
             }
-
             return listPacienteVM;
         }
 
         public FileContentResult GetImage(int id)
         {
-
             var imageData = GerenciadorPaciente.GetInstance().Obter(id).Foto;
             if (imageData != null)
                 return File(imageData, "image/jpg");
@@ -52,7 +49,6 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
 
         public ActionResult Create()
         {
-
             return View();
         }
 
@@ -62,7 +58,6 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
         {
             if (ModelState.IsValid)
             {
-
                 int tamanho = (int)Request.Files[0].InputStream.Length;
                 byte[] arq = new byte[tamanho];
                 Request.Files[0].InputStream.Read(arq, 0, tamanho);
@@ -70,19 +65,47 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
                 vmPaciente.paciente.Foto = arqUp;
                 int idPaciente = GerenciadorPaciente.GetInstance().Inserir(vmPaciente.paciente);
 
-                foreach (RelatoClinicoModel relato in vmPaciente.relatosClinico)
+                if (ModelState.IsValidField("relatosClinico"))
                 {
-                    relato.IdPaciente = idPaciente;
-                    GerenciadorRelatoClinico.GetInstance().Inserir(relato);
+                    List<RelatoClinicoModel> listaRelato = vmPaciente.relatosClinico;
+                    if (listaRelato != null)
+                        foreach (RelatoClinicoModel relato in listaRelato)
+                        {
+                            relato.IdPaciente = idPaciente;
+                            GerenciadorRelatoClinico.GetInstance().Inserir(relato);
+                        }
+                    else
+                        return RedirectToAction("Index","Home");
+                    return RedirectToAction("Index");
                 }
-
-                return RedirectToAction("Index");
             }
 
             return View(vmPaciente);
         }
 
+        [HttpPost]
+        public ActionResult CriarNovoRelato(VMPaciente vmPaciente)
+        {
+            return View();
+        }
 
+        public ActionResult Edit(int id)
+        {
+            VMPaciente vmPaciente = new VMPaciente();
+
+            vmPaciente.paciente = GerenciadorPaciente.GetInstance().Obter(id);
+            vmPaciente.demograficosAntropomedicos = GerenciadorDemograficosAntropometricos.GetInstance().Obter(id);
+            vmPaciente.experienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(id);
+            vmPaciente.diarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(id);
+
+            return View(vmPaciente);
+        }
+
+        [HttpPost]
+        public ActionResult DemograficosAntropomedicos(DemograficosAntropomedicosController demoAntroModel)
+        {
+            return View(demoAntroModel);
+        }
 
     }
 }

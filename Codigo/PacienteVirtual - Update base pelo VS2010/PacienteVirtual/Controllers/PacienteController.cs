@@ -67,6 +67,7 @@ namespace PacienteVirtual.Controllers
                 Request.Files[0].InputStream.Read(arq, 0, tamanho);
                 byte[] arqUp = arq;
                 pacienteModel.Foto = arqUp;
+
                 GerenciadorPaciente.GetInstance().Inserir(pacienteModel);
 
                 return RedirectToAction("Index");
