@@ -409,8 +409,8 @@
     <Content Include="Views\Curso\Delete.aspx" />
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
+    <Content Include="Views\Curso\ExibirDisciplina.ascx" />
     <Content Include="Views\Curso\Index.aspx" />
-    <Content Include="Views\VMPaciente\DemograficosAntropomedicos.ascx" />
     <Content Include="Views\DiarioPessoal\Create.aspx" />
     <Content Include="Views\DiarioPessoal\Delete.aspx" />
     <Content Include="Views\DiarioPessoal\Details.aspx" />
@@ -539,6 +539,7 @@
     <Content Include="Views\Usuario\Edit.aspx" />
     <Content Include="Views\Usuario\Index.aspx" />
     <Content Include="Views\VMPaciente\Create.aspx" />
+    <Content Include="Views\VMPaciente\DemograficosAntropomedicos.ascx" />
     <Content Include="Views\VMPaciente\DiarioPessoal.ascx" />
     <Content Include="Views\VMPaciente\Edit.aspx" />
     <Content Include="Views\VMPaciente\Index.aspx" />

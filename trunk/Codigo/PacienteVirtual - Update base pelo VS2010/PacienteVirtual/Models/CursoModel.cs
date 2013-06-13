@@ -23,5 +23,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public string NomeInstituicao { get; set; }
+
+        public InstituicaoModel disciplinaModel { get; set; }
     }
 } 

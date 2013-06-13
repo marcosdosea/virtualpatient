@@ -20,7 +20,9 @@ namespace PacienteVirtual.Controllers
         // GET: /Curso/
         public ViewResult Index()
         {
-           return View(gCurso.ObterTodos());
+            IEnumerable<CursoModel> c = gCurso.ObterTodos();
+            ViewBag.c2 = c.ToList()[1];
+           return View(c);
         }
 
         //
@@ -30,6 +32,11 @@ namespace PacienteVirtual.Controllers
             return View(gCurso.Obter(id));
         }
 
+        public PartialViewResult ExibirDisciplina(DisciplinaModel d) {
+
+
+            return PartialView(d);
+        }
         //
         // GET: /Curso/Create
 

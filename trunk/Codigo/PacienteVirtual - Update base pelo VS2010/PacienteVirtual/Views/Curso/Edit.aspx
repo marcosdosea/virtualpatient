@@ -40,7 +40,7 @@
         </p>
     </fieldset>
     <% } %>
-
+    <% Html.RenderPartial("ExibirDisciplina", this.ViewData.Model.disciplinaModel, new ViewDataDictionary()); %>
     <div>
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </div>
