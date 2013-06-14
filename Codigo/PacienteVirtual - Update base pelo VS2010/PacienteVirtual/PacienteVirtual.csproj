@@ -542,7 +542,9 @@
     <Content Include="Views\VMPaciente\DemograficosAntropomedicos.ascx" />
     <Content Include="Views\VMPaciente\DiarioPessoal.ascx" />
     <Content Include="Views\VMPaciente\Edit.aspx" />
+    <Content Include="Views\VMPaciente\ExperienciaMedicamentos.ascx" />
     <Content Include="Views\VMPaciente\Index.aspx" />
+    <Content Include="Views\VMPaciente\RelatoClinico.ascx" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
