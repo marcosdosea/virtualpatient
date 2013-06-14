@@ -93,8 +93,7 @@
                 <%: Html.ActionLink("--  Historia", "Index", "Historia")%>
                 <%: Html.ActionLink("--  ExperienciaMedicamentos", "Index", "ExperienciaMedicamentos")%>
                 <%: Html.ActionLink("--  CadastroConsultaFixo", "Index", "CadastroConsultaFixo")%>
-                <!--li>
-<!%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li-->
+                <li><%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li>
                 <%: Html.ActionLink("--  ConsultaFixo", "Index", "ConsultaFixo")%>
                 <%: Html.ActionLink("--  Ocupação", "Index", "Ocupacao")%>
                 <%: Html.ActionLink("--  Plano de Saúde", "Index", "PlanoSaude")%>

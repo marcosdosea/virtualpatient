@@ -17,6 +17,8 @@ namespace PacienteVirtual.Models.ViewModel
 
         public DiarioPessoalModel diarioPessoal { get; set; }
 
+        public RelatoClinicoModel relatoClinico { get; set; }
+
         public int quantRelatos { get; set; }
         
     }
