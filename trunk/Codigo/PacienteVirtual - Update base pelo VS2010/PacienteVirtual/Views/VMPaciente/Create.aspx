@@ -26,8 +26,8 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-    
-    <% int i = 0;  %>
+
+        <% int i = 0;  %>
 
         <legend>VMPaciente</legend>
         <div class="editor-label">
@@ -89,10 +89,9 @@
         <p>
             <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </p>
-
     </fieldset>
     <% } %>
     <div>
-       <%: Html.ActionLink("Back to List", "Index") %> 
+        <%: Html.ActionLink("Back to List", "Index") %>
     </div>
 </asp:Content>

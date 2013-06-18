@@ -95,32 +95,32 @@ namespace PacienteVirtual.Models.Negocio
             var repDemoAntrop = new RepositorioGenerico<DemograficosAntropometricosE>();
             var pvEntities = (pvEntities)repDemoAntrop.ObterContexto();
             var query = from demoAntrop in pvEntities.tb_demograficos_antropometricos
-                        join tb_escolaridade in pvEntities.tb_escolaridade
-                       on demoAntrop.IdEscolaridade equals tb_escolaridade.IdEscolaridade
-                        
-                        join tb_ocupacao in pvEntities.tb_ocupacao
-                      on demoAntrop.IdOcupacao equals tb_ocupacao.IdOcupacao
+                        //  join tb_escolaridade in pvEntities.tb_escolaridade
+                        // on demoAntrop.IdEscolaridade equals tb_escolaridade.IdEscolaridade
 
-                       join tb_plano_saude in pvEntities.tb_plano_saude
-                      on demoAntrop.IdPlanoSaude equals tb_plano_saude.IdPlanoSaude
+                        //  join tb_ocupacao in pvEntities.tb_ocupacao
+                        //on demoAntrop.IdOcupacao equals tb_ocupacao.IdOcupacao
+
+                        // join tb_plano_saude in pvEntities.tb_plano_saude
+                        //on demoAntrop.IdPlanoSaude equals tb_plano_saude.IdPlanoSaude
                         select new DemograficosAntropometricosModel
                         {
                             IdConsultaFixo = demoAntrop.IdConsultaFixo,
                             Nome = demoAntrop.Nome,
                             Genero = demoAntrop.Genero,
-                            DataNascimento = (DateTime) demoAntrop.DataNascimento,
+                            DataNascimento = (DateTime)demoAntrop.DataNascimento,
                             MedicosAtendem = demoAntrop.MedicosAtendem,
                             MoradiaFamilia = demoAntrop.MoradiaFamilia,
                             OndeAdquireMedicamentos = demoAntrop.OndeAdquireMedicamentos,
-                            
+
                             IdEscolaridade = demoAntrop.IdEscolaridade,
-                            EscolaridadeNivel = tb_escolaridade.Nivel,
+                            //EscolaridadeNivel = tb_escolaridade.Nivel,
 
-                            IdOcupacao = demoAntrop.IdOcupacao,
-                            OcupacaoDescricao = tb_ocupacao.Descricao,
+                            //IdOcupacao = demoAntrop.IdOcupacao,
+                            //OcupacaoDescricao = tb_ocupacao.Descricao,
 
-                            IdPlanoSaude = demoAntrop.IdPlanoSaude,
-                            PlanoSaudeNome = tb_plano_saude.Nome
+                            //IdPlanoSaude = demoAntrop.IdPlanoSaude,
+                            //PlanoSaudeNome = tb_plano_saude.Nome
                         };
             return query;
         }

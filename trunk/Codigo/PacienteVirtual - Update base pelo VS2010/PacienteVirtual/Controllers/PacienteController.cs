@@ -10,12 +10,13 @@ using PacienteVirtual.Models.Negocio;
 using PacienteVirtual.Models;
 using System.IO;
 using System.Web.UI.WebControls;
+using System.Text;
 
 namespace PacienteVirtual.Controllers
-{ 
+{
     public class PacienteController : Controller
     {
-         private pvEntities db = new pvEntities();
+        private pvEntities db = new pvEntities();
         //
         // GET: /Paciente/
 
@@ -62,12 +63,18 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                int tamanho = (int)Request.Files[0].InputStream.Length;
-                byte[] arq = new byte[tamanho];
-                Request.Files[0].InputStream.Read(arq, 0, tamanho);
-                byte[] arqUp = arq;
-                pacienteModel.Foto = arqUp;
 
+                int tamanho = (int)Request.Files[0].InputStream.Length;
+                if (tamanho == 0)
+                    pacienteModel.Foto = null;
+                else
+                {
+                    byte[] arq = new byte[tamanho];
+                    Request.Files[0].InputStream.Read(arq, 0, tamanho);
+                    byte[] arqUp = arq;
+
+                    pacienteModel.Foto = arqUp;
+                }
                 GerenciadorPaciente.GetInstance().Inserir(pacienteModel);
 
                 return RedirectToAction("Index");
@@ -88,12 +95,13 @@ namespace PacienteVirtual.Controllers
 
         public FileContentResult GetImage(int id)
         {
-
             var imageData = GerenciadorPaciente.GetInstance().Obter(id).Foto;
             if (imageData != null)
                 return File(imageData, "image/jpg");
 
-            return null;
+            // byte[] buffer = System.IO.File.ReadAllBytes("~/Content/themes/pv/img/default-avatar.png");
+            byte[] byt = System.IO.File.ReadAllBytes(Server.MapPath("~/Content/themes/pv/img/default-avatar.png"));
+            return File(byt, "image/jpg");
         }
         //
         // POST: /Paciente/Edit/5
@@ -103,6 +111,21 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                int tamanho = (int)Request.Files[0].InputStream.Length;
+                if (tamanho == 0)
+                    pacienteModel.Foto = GerenciadorPaciente.GetInstance().Obter(pacienteModel.IdPaciente).Foto;
+                else
+                {
+                    byte[] arq = new byte[tamanho];
+                    Request.Files[0].InputStream.Read(arq, 0, tamanho);
+                    byte[] arqUp = arq;
+
+                    pacienteModel.Foto = arqUp;
+                }
+               
+  
+
                 GerenciadorPaciente.GetInstance().Atualizar(pacienteModel);
                 return RedirectToAction("Index");
             }
@@ -134,6 +157,5 @@ namespace PacienteVirtual.Controllers
             base.Dispose(disposing);
         }
 
-        public object sessao { get; set; }
     }
 }

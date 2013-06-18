@@ -16,6 +16,8 @@
     <div class="display-field">
         <%: Html.DisplayFor(model => model.NomePaciente) %>
     </div>
+     <img src='<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = Model.IdPaciente})) %>'
+            width="100" height="110" alt="<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = Model.IdPaciente})) %>" />
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>

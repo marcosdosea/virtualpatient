@@ -6,7 +6,7 @@
 
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
-    <fieldset>
+    <fieldset >
         <legend>DemograficosAntropometricosModel</legend>
 
         <div class="editor-label">
@@ -112,10 +112,11 @@
             <%: Html.EditorFor(model => model.PlanoSaudeNome) %>
             <%: Html.ValidationMessageFor(model => model.PlanoSaudeNome) %>
         </div>
-
+        <div class="form-actions">
         <p>
-            <input type="submit" value="Create" />
+            <input class="btn btn-large" type="submit" value="Create" />
         </p>
+        </div>
     </fieldset>
 <% } %>
 
