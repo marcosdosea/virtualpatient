@@ -8,57 +8,64 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("pvModel", "FK_aluno_2", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.consulta), "aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.aluno), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_consulta_2", "aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.aluno), "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.consulta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK589C4EBDD526F1E", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.consulta), "aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.aluno), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKDE2881F52977839B", "aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.aluno), "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.consulta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_Consulta_1", "casoclinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.casoclinico), "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.consulta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK91D9EFAE8A1319FF", "casoclinico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.casoclinico), "intervencao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.intervencao), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKAA358BEF8A1319FF", "casoclinico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.casoclinico), "medicamentoprescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.medicamentoprescrito), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKAAEE312E8A1319FF", "casoclinico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.casoclinico), "parametroclinico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.parametroclinico), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKBF69A97F8A1319FF", "casoclinico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.casoclinico), "medicamentonaoprescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.medicamentonaoprescrito), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKC773DEB18A1319FF", "casoclinico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.casoclinico), "queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixa), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKDE2881F58A1319FF", "casoclinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.casoclinico), "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.consulta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_respostaalunoterceira_1", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.consulta), "respostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.respostaterceira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_respostaprimeira_1", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.consulta), "respostaprimeira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.respostaprimeira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_respostaquarta_1", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.consulta), "respostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.respostaquarta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_respostasegunda_1", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.consulta), "respostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.respostasegunda), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK877B3B565097F805", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.consulta), "respostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.respostaterceira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK88D8D79A5097F805", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.consulta), "respostaprimeira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.respostaprimeira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKB29DB8E35097F805", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.consulta), "respostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.respostaquarta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKEFEE246A5097F805", "consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.consulta), "respostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.respostasegunda), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_intervencaorespostaquarta_1", "respostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaquarta), "intervencaorespostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.intervencaorespostaquarta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK800BA011D2B646E7", "respostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaquarta), "intervencaorespostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.intervencaorespostaquarta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_intervencaorespostasegunda_1", "respostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostasegunda), "intervencaorespostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.intervencaorespostasegunda), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKD03D22FCA4FE1140", "respostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostasegunda), "intervencaorespostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.intervencaorespostasegunda), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_medicamentoqueixa_1", "queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.queixa), "medicamentoqueixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.medicamentoqueixa), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK8099C4A73D02FC3D", "queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.queixa), "medicamentoqueixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.medicamentoqueixa), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_medicamentoqueixaquarta_1", "queixarespostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.queixarespostaquarta), "medicamentoqueixaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.medicamentoqueixaquarta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK78D999E947C18322", "queixarespostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.queixarespostaquarta), "medicamentoqueixaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.medicamentoqueixaquarta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_medicamentoqueixasegunda_1", "queixarespostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.queixarespostasegunda), "medicamentoqueixasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.medicamentoqueixasegunda), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKF12E64244E1862F8", "queixarespostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.queixarespostasegunda), "medicamentoqueixasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.medicamentoqueixasegunda), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_queixarespostaprimeira_1", "respostaprimeira", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaprimeira), "queixarespostaprimeira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostaprimeira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK1E43344B8872A0F6", "respostaprimeira", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaprimeira), "queixarespostaprimeira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostaprimeira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_queixarespostaquarta_1", "respostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaquarta), "queixarespostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostaquarta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK5BA98DD4D2B646E7", "respostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaquarta), "queixarespostaquarta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostaquarta), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK685CED99A4FE1140", "respostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostasegunda), "queixarespostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostasegunda), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FKFD098D39A4FE1140", "respostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostasegunda), "queixarespostasegunda", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostasegunda), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK_queixarespostaterceira_1", "respostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaterceira), "queixarespostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostaterceira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "FK1CE59807871504B2", "respostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.respostaterceira), "queixarespostaterceira", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.queixarespostaterceira), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaFixoE), "tb_paciente_pessoa_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.PacientePessoaTurmaE), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_consulta_variavel), "tb_paciente_pessoa_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.PacientePessoaTurmaE), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PacienteE), "tb_paciente_pessoa_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.PacientePessoaTurmaE), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.tb_turma_pessoa), "tb_paciente_pessoa_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.PacientePessoaTurmaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_acao_alternativa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.AcaoAlternativaE), "tb_queixa_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.QueixaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_acao_alternativa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.AcaoAlternativaE), "tb_queixa_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.QueixaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_acao_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.AcaoQueixaE), "tb_consulta_variavel_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ConsultaVariavelQueixaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_acao_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.AcaoQueixaE), "tb_queixa_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.QueixaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaFixoE), "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaFixoE), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaFixoE), "tb_diario_pessoal", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DiarioPessoalE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaFixoE), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_historia_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaFixoE), "tb_historia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.HistoriaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), "tb_consulta_parametro", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ConsultaParametroE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_parametro_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ParametroClinicoE), "tb_consulta_parametro", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ConsultaParametroE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), "tb_medicamentos_anteriores", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.MedicamentosAnterioresE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), "tb_medicamento_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.MedicamentoPrescritoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), "tb_consulta_variavel_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ConsultaVariavelQueixaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_tb_razao_encontro1", "tb_razao_encontro", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RazaoEncontroE), "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_turma_pessoa_relato", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.TurmaPessoaRelatoE), "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_estilo_vida_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), "tb_estilo_vida", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.EstiloVidaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), "tb_exames_fisicos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.Data.ExamesFisicosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.ConsultaVariavelE), "tb_medicamento_nao_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.MedicamentoNaoPrescritoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.QueixaE), "tb_consulta_variavel_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ConsultaVariavelQueixaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "FK_Curso_Instituicao", "tb_instituicao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.InstituicaoE), "tb_curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.CursoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.EscolaridadeE), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.OcupacaoE), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PlanoSaudeE), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DemograficosAntropometricosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diario_pessoal_tb_medicamentos1", "tb_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.MedicamentosE), "tb_diario_pessoal", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DiarioPessoalE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta1", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RespostaE), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta2", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RespostaE), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta3", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RespostaE), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta4", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RespostaE), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta5", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RespostaE), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta6", "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RespostaE), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExperienciaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_historico_tb_pessoa1", "tb_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PessoaE), "tb_historico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.HistoricoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_historico_tb_relato_clinico1", "tb_relato_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RelatoClinicoE), "tb_historico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.HistoricoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "FK_Instituicao", "tb_instituicao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.InstituicaoE), "tb_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.TurmaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.MedicamentosE), "tb_medicamento_nao_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.MedicamentoNaoPrescritoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.MedicamentosE), "tb_medicamento_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.MedicamentoPrescritoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.MedicamentosE), "tb_medicamentos_anteriores", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.MedicamentosAnterioresE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.MedicamentosE), "tb_queixa_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.QueixaMedicamentosE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_relato_clinico_tb_paciente1", "tb_paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PacienteE), "tb_relato_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.RelatoClinicoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_resposta_tb_pergunta1", "tb_pergunta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PerguntaE), "tb_resposta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.RespostaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.PessoaE), "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.TurmaPessoaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_queixa_tb_sistema1", "tb_sistema", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.SistemaE), "tb_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.QueixaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_relato_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.RelatoClinicoE), "tb_turma_pessoa_relato", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.TurmaPessoaRelatoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.TurmaE), "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.TurmaPessoaE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.Data.TurmaPessoaE), "tb_turma_pessoa_relato", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.TurmaPessoaRelatoE), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "tb_alergia_exames_fisicos", "tb_alergia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.AlergiaE), "tb_exames_fisicos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.ExamesFisicosE))]
+[assembly: EdmRelationshipAttribute("pvModel", "tb_curso_disciplina", "tb_curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.CursoE), "tb_disciplina", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.Data.DisciplinaE))]
 
 #endregion
 
@@ -113,342 +120,6 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<aluno> alunoes
-        {
-            get
-            {
-                if ((_alunoes == null))
-                {
-                    _alunoes = base.CreateObjectSet<aluno>("alunoes");
-                }
-                return _alunoes;
-            }
-        }
-        private ObjectSet<aluno> _alunoes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<casoclinico> casoclinicoes
-        {
-            get
-            {
-                if ((_casoclinicoes == null))
-                {
-                    _casoclinicoes = base.CreateObjectSet<casoclinico>("casoclinicoes");
-                }
-                return _casoclinicoes;
-            }
-        }
-        private ObjectSet<casoclinico> _casoclinicoes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<consulta> consultas
-        {
-            get
-            {
-                if ((_consultas == null))
-                {
-                    _consultas = base.CreateObjectSet<consulta>("consultas");
-                }
-                return _consultas;
-            }
-        }
-        private ObjectSet<consulta> _consultas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<intervencao> intervencaos
-        {
-            get
-            {
-                if ((_intervencaos == null))
-                {
-                    _intervencaos = base.CreateObjectSet<intervencao>("intervencaos");
-                }
-                return _intervencaos;
-            }
-        }
-        private ObjectSet<intervencao> _intervencaos;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<intervencaorespostaquarta> intervencaorespostaquartas
-        {
-            get
-            {
-                if ((_intervencaorespostaquartas == null))
-                {
-                    _intervencaorespostaquartas = base.CreateObjectSet<intervencaorespostaquarta>("intervencaorespostaquartas");
-                }
-                return _intervencaorespostaquartas;
-            }
-        }
-        private ObjectSet<intervencaorespostaquarta> _intervencaorespostaquartas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<intervencaorespostasegunda> intervencaorespostasegundas
-        {
-            get
-            {
-                if ((_intervencaorespostasegundas == null))
-                {
-                    _intervencaorespostasegundas = base.CreateObjectSet<intervencaorespostasegunda>("intervencaorespostasegundas");
-                }
-                return _intervencaorespostasegundas;
-            }
-        }
-        private ObjectSet<intervencaorespostasegunda> _intervencaorespostasegundas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<medicamentonaoprescrito> medicamentonaoprescritoes
-        {
-            get
-            {
-                if ((_medicamentonaoprescritoes == null))
-                {
-                    _medicamentonaoprescritoes = base.CreateObjectSet<medicamentonaoprescrito>("medicamentonaoprescritoes");
-                }
-                return _medicamentonaoprescritoes;
-            }
-        }
-        private ObjectSet<medicamentonaoprescrito> _medicamentonaoprescritoes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<medicamentoprescrito> medicamentoprescritoes
-        {
-            get
-            {
-                if ((_medicamentoprescritoes == null))
-                {
-                    _medicamentoprescritoes = base.CreateObjectSet<medicamentoprescrito>("medicamentoprescritoes");
-                }
-                return _medicamentoprescritoes;
-            }
-        }
-        private ObjectSet<medicamentoprescrito> _medicamentoprescritoes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<medicamentoqueixa> medicamentoqueixas
-        {
-            get
-            {
-                if ((_medicamentoqueixas == null))
-                {
-                    _medicamentoqueixas = base.CreateObjectSet<medicamentoqueixa>("medicamentoqueixas");
-                }
-                return _medicamentoqueixas;
-            }
-        }
-        private ObjectSet<medicamentoqueixa> _medicamentoqueixas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<medicamentoqueixaquarta> medicamentoqueixaquartas
-        {
-            get
-            {
-                if ((_medicamentoqueixaquartas == null))
-                {
-                    _medicamentoqueixaquartas = base.CreateObjectSet<medicamentoqueixaquarta>("medicamentoqueixaquartas");
-                }
-                return _medicamentoqueixaquartas;
-            }
-        }
-        private ObjectSet<medicamentoqueixaquarta> _medicamentoqueixaquartas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<medicamentoqueixasegunda> medicamentoqueixasegundas
-        {
-            get
-            {
-                if ((_medicamentoqueixasegundas == null))
-                {
-                    _medicamentoqueixasegundas = base.CreateObjectSet<medicamentoqueixasegunda>("medicamentoqueixasegundas");
-                }
-                return _medicamentoqueixasegundas;
-            }
-        }
-        private ObjectSet<medicamentoqueixasegunda> _medicamentoqueixasegundas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<parametroclinico> parametroclinicoes
-        {
-            get
-            {
-                if ((_parametroclinicoes == null))
-                {
-                    _parametroclinicoes = base.CreateObjectSet<parametroclinico>("parametroclinicoes");
-                }
-                return _parametroclinicoes;
-            }
-        }
-        private ObjectSet<parametroclinico> _parametroclinicoes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<queixa> queixas
-        {
-            get
-            {
-                if ((_queixas == null))
-                {
-                    _queixas = base.CreateObjectSet<queixa>("queixas");
-                }
-                return _queixas;
-            }
-        }
-        private ObjectSet<queixa> _queixas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<queixarespostaprimeira> queixarespostaprimeiras
-        {
-            get
-            {
-                if ((_queixarespostaprimeiras == null))
-                {
-                    _queixarespostaprimeiras = base.CreateObjectSet<queixarespostaprimeira>("queixarespostaprimeiras");
-                }
-                return _queixarespostaprimeiras;
-            }
-        }
-        private ObjectSet<queixarespostaprimeira> _queixarespostaprimeiras;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<queixarespostaquarta> queixarespostaquartas
-        {
-            get
-            {
-                if ((_queixarespostaquartas == null))
-                {
-                    _queixarespostaquartas = base.CreateObjectSet<queixarespostaquarta>("queixarespostaquartas");
-                }
-                return _queixarespostaquartas;
-            }
-        }
-        private ObjectSet<queixarespostaquarta> _queixarespostaquartas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<queixarespostasegunda> queixarespostasegundas
-        {
-            get
-            {
-                if ((_queixarespostasegundas == null))
-                {
-                    _queixarespostasegundas = base.CreateObjectSet<queixarespostasegunda>("queixarespostasegundas");
-                }
-                return _queixarespostasegundas;
-            }
-        }
-        private ObjectSet<queixarespostasegunda> _queixarespostasegundas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<queixarespostaterceira> queixarespostaterceiras
-        {
-            get
-            {
-                if ((_queixarespostaterceiras == null))
-                {
-                    _queixarespostaterceiras = base.CreateObjectSet<queixarespostaterceira>("queixarespostaterceiras");
-                }
-                return _queixarespostaterceiras;
-            }
-        }
-        private ObjectSet<queixarespostaterceira> _queixarespostaterceiras;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<respostaprimeira> respostaprimeiras
-        {
-            get
-            {
-                if ((_respostaprimeiras == null))
-                {
-                    _respostaprimeiras = base.CreateObjectSet<respostaprimeira>("respostaprimeiras");
-                }
-                return _respostaprimeiras;
-            }
-        }
-        private ObjectSet<respostaprimeira> _respostaprimeiras;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<respostaquarta> respostaquartas
-        {
-            get
-            {
-                if ((_respostaquartas == null))
-                {
-                    _respostaquartas = base.CreateObjectSet<respostaquarta>("respostaquartas");
-                }
-                return _respostaquartas;
-            }
-        }
-        private ObjectSet<respostaquarta> _respostaquartas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<respostasegunda> respostasegundas
-        {
-            get
-            {
-                if ((_respostasegundas == null))
-                {
-                    _respostasegundas = base.CreateObjectSet<respostasegunda>("respostasegundas");
-                }
-                return _respostasegundas;
-            }
-        }
-        private ObjectSet<respostasegunda> _respostasegundas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<respostaterceira> respostaterceiras
-        {
-            get
-            {
-                if ((_respostaterceiras == null))
-                {
-                    _respostaterceiras = base.CreateObjectSet<respostaterceira>("respostaterceiras");
-                }
-                return _respostaterceiras;
-            }
-        }
-        private ObjectSet<respostaterceira> _respostaterceiras;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<AcaoAlternativaE> tb_acao_alternativa
         {
             get
@@ -497,22 +168,6 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_alergia_exames_fisicos> tb_alergia_exames_fisicos
-        {
-            get
-            {
-                if ((_tb_alergia_exames_fisicos == null))
-                {
-                    _tb_alergia_exames_fisicos = base.CreateObjectSet<tb_alergia_exames_fisicos>("tb_alergia_exames_fisicos");
-                }
-                return _tb_alergia_exames_fisicos;
-            }
-        }
-        private ObjectSet<tb_alergia_exames_fisicos> _tb_alergia_exames_fisicos;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<ConsultaFixoE> tb_consulta_fixo
         {
             get
@@ -529,50 +184,50 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_consulta_parametro> tb_consulta_parametro
+        public ObjectSet<ConsultaParametroE> tb_consulta_parametro
         {
             get
             {
                 if ((_tb_consulta_parametro == null))
                 {
-                    _tb_consulta_parametro = base.CreateObjectSet<tb_consulta_parametro>("tb_consulta_parametro");
+                    _tb_consulta_parametro = base.CreateObjectSet<ConsultaParametroE>("tb_consulta_parametro");
                 }
                 return _tb_consulta_parametro;
             }
         }
-        private ObjectSet<tb_consulta_parametro> _tb_consulta_parametro;
+        private ObjectSet<ConsultaParametroE> _tb_consulta_parametro;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_consulta_variavel> tb_consulta_variavel
+        public ObjectSet<ConsultaVariavelE> tb_consulta_variavel
         {
             get
             {
                 if ((_tb_consulta_variavel == null))
                 {
-                    _tb_consulta_variavel = base.CreateObjectSet<tb_consulta_variavel>("tb_consulta_variavel");
+                    _tb_consulta_variavel = base.CreateObjectSet<ConsultaVariavelE>("tb_consulta_variavel");
                 }
                 return _tb_consulta_variavel;
             }
         }
-        private ObjectSet<tb_consulta_variavel> _tb_consulta_variavel;
+        private ObjectSet<ConsultaVariavelE> _tb_consulta_variavel;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_consulta_variavel_queixa> tb_consulta_variavel_queixa
+        public ObjectSet<ConsultaVariavelQueixaE> tb_consulta_variavel_queixa
         {
             get
             {
                 if ((_tb_consulta_variavel_queixa == null))
                 {
-                    _tb_consulta_variavel_queixa = base.CreateObjectSet<tb_consulta_variavel_queixa>("tb_consulta_variavel_queixa");
+                    _tb_consulta_variavel_queixa = base.CreateObjectSet<ConsultaVariavelQueixaE>("tb_consulta_variavel_queixa");
                 }
                 return _tb_consulta_variavel_queixa;
             }
         }
-        private ObjectSet<tb_consulta_variavel_queixa> _tb_consulta_variavel_queixa;
+        private ObjectSet<ConsultaVariavelQueixaE> _tb_consulta_variavel_queixa;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -589,22 +244,6 @@ namespace PacienteVirtual.Models.Data
             }
         }
         private ObjectSet<CursoE> _tb_curso;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_curso_disciplina> tb_curso_disciplina
-        {
-            get
-            {
-                if ((_tb_curso_disciplina == null))
-                {
-                    _tb_curso_disciplina = base.CreateObjectSet<tb_curso_disciplina>("tb_curso_disciplina");
-                }
-                return _tb_curso_disciplina;
-            }
-        }
-        private ObjectSet<tb_curso_disciplina> _tb_curso_disciplina;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -673,34 +312,34 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_estilo_vida> tb_estilo_vida
+        public ObjectSet<EstiloVidaE> tb_estilo_vida
         {
             get
             {
                 if ((_tb_estilo_vida == null))
                 {
-                    _tb_estilo_vida = base.CreateObjectSet<tb_estilo_vida>("tb_estilo_vida");
+                    _tb_estilo_vida = base.CreateObjectSet<EstiloVidaE>("tb_estilo_vida");
                 }
                 return _tb_estilo_vida;
             }
         }
-        private ObjectSet<tb_estilo_vida> _tb_estilo_vida;
+        private ObjectSet<EstiloVidaE> _tb_estilo_vida;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_exames_fisicos> tb_exames_fisicos
+        public ObjectSet<ExamesFisicosE> tb_exames_fisicos
         {
             get
             {
                 if ((_tb_exames_fisicos == null))
                 {
-                    _tb_exames_fisicos = base.CreateObjectSet<tb_exames_fisicos>("tb_exames_fisicos");
+                    _tb_exames_fisicos = base.CreateObjectSet<ExamesFisicosE>("tb_exames_fisicos");
                 }
                 return _tb_exames_fisicos;
             }
         }
-        private ObjectSet<tb_exames_fisicos> _tb_exames_fisicos;
+        private ObjectSet<ExamesFisicosE> _tb_exames_fisicos;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -769,34 +408,34 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_medicamento_nao_prescrito> tb_medicamento_nao_prescrito
+        public ObjectSet<MedicamentoNaoPrescritoE> tb_medicamento_nao_prescrito
         {
             get
             {
                 if ((_tb_medicamento_nao_prescrito == null))
                 {
-                    _tb_medicamento_nao_prescrito = base.CreateObjectSet<tb_medicamento_nao_prescrito>("tb_medicamento_nao_prescrito");
+                    _tb_medicamento_nao_prescrito = base.CreateObjectSet<MedicamentoNaoPrescritoE>("tb_medicamento_nao_prescrito");
                 }
                 return _tb_medicamento_nao_prescrito;
             }
         }
-        private ObjectSet<tb_medicamento_nao_prescrito> _tb_medicamento_nao_prescrito;
+        private ObjectSet<MedicamentoNaoPrescritoE> _tb_medicamento_nao_prescrito;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_medicamento_prescrito> tb_medicamento_prescrito
+        public ObjectSet<MedicamentoPrescritoE> tb_medicamento_prescrito
         {
             get
             {
                 if ((_tb_medicamento_prescrito == null))
                 {
-                    _tb_medicamento_prescrito = base.CreateObjectSet<tb_medicamento_prescrito>("tb_medicamento_prescrito");
+                    _tb_medicamento_prescrito = base.CreateObjectSet<MedicamentoPrescritoE>("tb_medicamento_prescrito");
                 }
                 return _tb_medicamento_prescrito;
             }
         }
-        private ObjectSet<tb_medicamento_prescrito> _tb_medicamento_prescrito;
+        private ObjectSet<MedicamentoPrescritoE> _tb_medicamento_prescrito;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -817,18 +456,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_medicamentos_anteriores> tb_medicamentos_anteriores
+        public ObjectSet<MedicamentosAnterioresE> tb_medicamentos_anteriores
         {
             get
             {
                 if ((_tb_medicamentos_anteriores == null))
                 {
-                    _tb_medicamentos_anteriores = base.CreateObjectSet<tb_medicamentos_anteriores>("tb_medicamentos_anteriores");
+                    _tb_medicamentos_anteriores = base.CreateObjectSet<MedicamentosAnterioresE>("tb_medicamentos_anteriores");
                 }
                 return _tb_medicamentos_anteriores;
             }
         }
-        private ObjectSet<tb_medicamentos_anteriores> _tb_medicamentos_anteriores;
+        private ObjectSet<MedicamentosAnterioresE> _tb_medicamentos_anteriores;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -865,22 +504,6 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PacientePessoaTurmaE> tb_paciente_pessoa_turma
-        {
-            get
-            {
-                if ((_tb_paciente_pessoa_turma == null))
-                {
-                    _tb_paciente_pessoa_turma = base.CreateObjectSet<PacientePessoaTurmaE>("tb_paciente_pessoa_turma");
-                }
-                return _tb_paciente_pessoa_turma;
-            }
-        }
-        private ObjectSet<PacientePessoaTurmaE> _tb_paciente_pessoa_turma;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<ParametroClinicoE> tb_parametro_clinico
         {
             get
@@ -897,18 +520,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_perfil_usuario> tb_perfil_usuario
+        public ObjectSet<PerfilUsuarioE> tb_perfil_usuario
         {
             get
             {
                 if ((_tb_perfil_usuario == null))
                 {
-                    _tb_perfil_usuario = base.CreateObjectSet<tb_perfil_usuario>("tb_perfil_usuario");
+                    _tb_perfil_usuario = base.CreateObjectSet<PerfilUsuarioE>("tb_perfil_usuario");
                 }
                 return _tb_perfil_usuario;
             }
         }
-        private ObjectSet<tb_perfil_usuario> _tb_perfil_usuario;
+        private ObjectSet<PerfilUsuarioE> _tb_perfil_usuario;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -977,18 +600,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_queixa_medicamentos> tb_queixa_medicamentos
+        public ObjectSet<QueixaMedicamentosE> tb_queixa_medicamentos
         {
             get
             {
                 if ((_tb_queixa_medicamentos == null))
                 {
-                    _tb_queixa_medicamentos = base.CreateObjectSet<tb_queixa_medicamentos>("tb_queixa_medicamentos");
+                    _tb_queixa_medicamentos = base.CreateObjectSet<QueixaMedicamentosE>("tb_queixa_medicamentos");
                 }
                 return _tb_queixa_medicamentos;
             }
         }
-        private ObjectSet<tb_queixa_medicamentos> _tb_queixa_medicamentos;
+        private ObjectSet<QueixaMedicamentosE> _tb_queixa_medicamentos;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1073,18 +696,18 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_turma_pessoa> tb_turma_pessoa
+        public ObjectSet<TurmaPessoaE> tb_turma_pessoa
         {
             get
             {
                 if ((_tb_turma_pessoa == null))
                 {
-                    _tb_turma_pessoa = base.CreateObjectSet<tb_turma_pessoa>("tb_turma_pessoa");
+                    _tb_turma_pessoa = base.CreateObjectSet<TurmaPessoaE>("tb_turma_pessoa");
                 }
                 return _tb_turma_pessoa;
             }
         }
-        private ObjectSet<tb_turma_pessoa> _tb_turma_pessoa;
+        private ObjectSet<TurmaPessoaE> _tb_turma_pessoa;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1121,189 +744,22 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_usuario_turma> tb_usuario_turma
+        public ObjectSet<UsuarioTurmaE> tb_usuario_turma
         {
             get
             {
                 if ((_tb_usuario_turma == null))
                 {
-                    _tb_usuario_turma = base.CreateObjectSet<tb_usuario_turma>("tb_usuario_turma");
+                    _tb_usuario_turma = base.CreateObjectSet<UsuarioTurmaE>("tb_usuario_turma");
                 }
                 return _tb_usuario_turma;
             }
         }
-        private ObjectSet<tb_usuario_turma> _tb_usuario_turma;
+        private ObjectSet<UsuarioTurmaE> _tb_usuario_turma;
 
         #endregion
+
         #region AddTo Methods
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the alunoes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToalunoes(aluno aluno)
-        {
-            base.AddObject("alunoes", aluno);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the casoclinicoes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTocasoclinicoes(casoclinico casoclinico)
-        {
-            base.AddObject("casoclinicoes", casoclinico);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the consultas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToconsultas(consulta consulta)
-        {
-            base.AddObject("consultas", consulta);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the intervencaos EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTointervencaos(intervencao intervencao)
-        {
-            base.AddObject("intervencaos", intervencao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the intervencaorespostaquartas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTointervencaorespostaquartas(intervencaorespostaquarta intervencaorespostaquarta)
-        {
-            base.AddObject("intervencaorespostaquartas", intervencaorespostaquarta);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the intervencaorespostasegundas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTointervencaorespostasegundas(intervencaorespostasegunda intervencaorespostasegunda)
-        {
-            base.AddObject("intervencaorespostasegundas", intervencaorespostasegunda);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the medicamentonaoprescritoes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomedicamentonaoprescritoes(medicamentonaoprescrito medicamentonaoprescrito)
-        {
-            base.AddObject("medicamentonaoprescritoes", medicamentonaoprescrito);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the medicamentoprescritoes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomedicamentoprescritoes(medicamentoprescrito medicamentoprescrito)
-        {
-            base.AddObject("medicamentoprescritoes", medicamentoprescrito);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the medicamentoqueixas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomedicamentoqueixas(medicamentoqueixa medicamentoqueixa)
-        {
-            base.AddObject("medicamentoqueixas", medicamentoqueixa);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the medicamentoqueixaquartas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomedicamentoqueixaquartas(medicamentoqueixaquarta medicamentoqueixaquarta)
-        {
-            base.AddObject("medicamentoqueixaquartas", medicamentoqueixaquarta);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the medicamentoqueixasegundas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomedicamentoqueixasegundas(medicamentoqueixasegunda medicamentoqueixasegunda)
-        {
-            base.AddObject("medicamentoqueixasegundas", medicamentoqueixasegunda);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the parametroclinicoes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToparametroclinicoes(parametroclinico parametroclinico)
-        {
-            base.AddObject("parametroclinicoes", parametroclinico);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the queixas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToqueixas(queixa queixa)
-        {
-            base.AddObject("queixas", queixa);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the queixarespostaprimeiras EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToqueixarespostaprimeiras(queixarespostaprimeira queixarespostaprimeira)
-        {
-            base.AddObject("queixarespostaprimeiras", queixarespostaprimeira);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the queixarespostaquartas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToqueixarespostaquartas(queixarespostaquarta queixarespostaquarta)
-        {
-            base.AddObject("queixarespostaquartas", queixarespostaquarta);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the queixarespostasegundas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToqueixarespostasegundas(queixarespostasegunda queixarespostasegunda)
-        {
-            base.AddObject("queixarespostasegundas", queixarespostasegunda);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the queixarespostaterceiras EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToqueixarespostaterceiras(queixarespostaterceira queixarespostaterceira)
-        {
-            base.AddObject("queixarespostaterceiras", queixarespostaterceira);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the respostaprimeiras EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTorespostaprimeiras(respostaprimeira respostaprimeira)
-        {
-            base.AddObject("respostaprimeiras", respostaprimeira);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the respostaquartas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTorespostaquartas(respostaquarta respostaquarta)
-        {
-            base.AddObject("respostaquartas", respostaquarta);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the respostasegundas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTorespostasegundas(respostasegunda respostasegunda)
-        {
-            base.AddObject("respostasegundas", respostasegunda);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the respostaterceiras EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTorespostaterceiras(respostaterceira respostaterceira)
-        {
-            base.AddObject("respostaterceiras", respostaterceira);
-        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_acao_alternativa EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -1330,14 +786,6 @@ namespace PacienteVirtual.Models.Data
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tb_alergia_exames_fisicos EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_alergia_exames_fisicos(tb_alergia_exames_fisicos tb_alergia_exames_fisicos)
-        {
-            base.AddObject("tb_alergia_exames_fisicos", tb_alergia_exames_fisicos);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the tb_consulta_fixo EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_consulta_fixo(ConsultaFixoE consultaFixoE)
@@ -1348,25 +796,25 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_consulta_parametro EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_consulta_parametro(tb_consulta_parametro tb_consulta_parametro)
+        public void AddTotb_consulta_parametro(ConsultaParametroE consultaParametroE)
         {
-            base.AddObject("tb_consulta_parametro", tb_consulta_parametro);
+            base.AddObject("tb_consulta_parametro", consultaParametroE);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_consulta_variavel EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_consulta_variavel(tb_consulta_variavel tb_consulta_variavel)
+        public void AddTotb_consulta_variavel(ConsultaVariavelE consultaVariavelE)
         {
-            base.AddObject("tb_consulta_variavel", tb_consulta_variavel);
+            base.AddObject("tb_consulta_variavel", consultaVariavelE);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_consulta_variavel_queixa EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_consulta_variavel_queixa(tb_consulta_variavel_queixa tb_consulta_variavel_queixa)
+        public void AddTotb_consulta_variavel_queixa(ConsultaVariavelQueixaE consultaVariavelQueixaE)
         {
-            base.AddObject("tb_consulta_variavel_queixa", tb_consulta_variavel_queixa);
+            base.AddObject("tb_consulta_variavel_queixa", consultaVariavelQueixaE);
         }
     
         /// <summary>
@@ -1375,14 +823,6 @@ namespace PacienteVirtual.Models.Data
         public void AddTotb_curso(CursoE cursoE)
         {
             base.AddObject("tb_curso", cursoE);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_curso_disciplina EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_curso_disciplina(tb_curso_disciplina tb_curso_disciplina)
-        {
-            base.AddObject("tb_curso_disciplina", tb_curso_disciplina);
         }
     
         /// <summary>
@@ -1420,17 +860,17 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_estilo_vida EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_estilo_vida(tb_estilo_vida tb_estilo_vida)
+        public void AddTotb_estilo_vida(EstiloVidaE estiloVidaE)
         {
-            base.AddObject("tb_estilo_vida", tb_estilo_vida);
+            base.AddObject("tb_estilo_vida", estiloVidaE);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_exames_fisicos EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_exames_fisicos(tb_exames_fisicos tb_exames_fisicos)
+        public void AddTotb_exames_fisicos(ExamesFisicosE examesFisicosE)
         {
-            base.AddObject("tb_exames_fisicos", tb_exames_fisicos);
+            base.AddObject("tb_exames_fisicos", examesFisicosE);
         }
     
         /// <summary>
@@ -1468,17 +908,17 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_medicamento_nao_prescrito EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_medicamento_nao_prescrito(tb_medicamento_nao_prescrito tb_medicamento_nao_prescrito)
+        public void AddTotb_medicamento_nao_prescrito(MedicamentoNaoPrescritoE medicamentoNaoPrescritoE)
         {
-            base.AddObject("tb_medicamento_nao_prescrito", tb_medicamento_nao_prescrito);
+            base.AddObject("tb_medicamento_nao_prescrito", medicamentoNaoPrescritoE);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_medicamento_prescrito EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_medicamento_prescrito(tb_medicamento_prescrito tb_medicamento_prescrito)
+        public void AddTotb_medicamento_prescrito(MedicamentoPrescritoE medicamentoPrescritoE)
         {
-            base.AddObject("tb_medicamento_prescrito", tb_medicamento_prescrito);
+            base.AddObject("tb_medicamento_prescrito", medicamentoPrescritoE);
         }
     
         /// <summary>
@@ -1492,9 +932,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_medicamentos_anteriores EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_medicamentos_anteriores(tb_medicamentos_anteriores tb_medicamentos_anteriores)
+        public void AddTotb_medicamentos_anteriores(MedicamentosAnterioresE medicamentosAnterioresE)
         {
-            base.AddObject("tb_medicamentos_anteriores", tb_medicamentos_anteriores);
+            base.AddObject("tb_medicamentos_anteriores", medicamentosAnterioresE);
         }
     
         /// <summary>
@@ -1514,14 +954,6 @@ namespace PacienteVirtual.Models.Data
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tb_paciente_pessoa_turma EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_paciente_pessoa_turma(PacientePessoaTurmaE pacientePessoaTurmaE)
-        {
-            base.AddObject("tb_paciente_pessoa_turma", pacientePessoaTurmaE);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the tb_parametro_clinico EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_parametro_clinico(ParametroClinicoE parametroClinicoE)
@@ -1532,9 +964,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_perfil_usuario EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_perfil_usuario(tb_perfil_usuario tb_perfil_usuario)
+        public void AddTotb_perfil_usuario(PerfilUsuarioE perfilUsuarioE)
         {
-            base.AddObject("tb_perfil_usuario", tb_perfil_usuario);
+            base.AddObject("tb_perfil_usuario", perfilUsuarioE);
         }
     
         /// <summary>
@@ -1572,9 +1004,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_queixa_medicamentos EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_queixa_medicamentos(tb_queixa_medicamentos tb_queixa_medicamentos)
+        public void AddTotb_queixa_medicamentos(QueixaMedicamentosE queixaMedicamentosE)
         {
-            base.AddObject("tb_queixa_medicamentos", tb_queixa_medicamentos);
+            base.AddObject("tb_queixa_medicamentos", queixaMedicamentosE);
         }
     
         /// <summary>
@@ -1620,9 +1052,9 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_turma_pessoa EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_turma_pessoa(tb_turma_pessoa tb_turma_pessoa)
+        public void AddTotb_turma_pessoa(TurmaPessoaE turmaPessoaE)
         {
-            base.AddObject("tb_turma_pessoa", tb_turma_pessoa);
+            base.AddObject("tb_turma_pessoa", turmaPessoaE);
         }
     
         /// <summary>
@@ -1644,17 +1076,17 @@ namespace PacienteVirtual.Models.Data
         /// <summary>
         /// Deprecated Method for adding a new object to the tb_usuario_turma EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotb_usuario_turma(tb_usuario_turma tb_usuario_turma)
+        public void AddTotb_usuario_turma(UsuarioTurmaE usuarioTurmaE)
         {
-            base.AddObject("tb_usuario_turma", tb_usuario_turma);
+            base.AddObject("tb_usuario_turma", usuarioTurmaE);
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -1679,6 +1111,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1733,7 +1166,56 @@ namespace PacienteVirtual.Models.Data
         partial void OnDescricaoAcaoChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_queixa_medicamentos")]
+        public EntityCollection<QueixaMedicamentosE> tb_queixa_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<QueixaMedicamentosE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_queixa_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<QueixaMedicamentosE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_queixa_medicamentos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_queixa_medicamentos")]
+        public EntityCollection<QueixaMedicamentosE> tb_queixa_medicamentos1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<QueixaMedicamentosE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_queixa_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<QueixaMedicamentosE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_queixa_medicamentos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -1760,6 +1242,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1814,7 +1297,56 @@ namespace PacienteVirtual.Models.Data
         partial void OnDescricaoAcaoChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_consulta_variavel_queixa")]
+        public EntityCollection<ConsultaVariavelQueixaE> tb_consulta_variavel_queixa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ConsultaVariavelQueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_consulta_variavel_queixa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ConsultaVariavelQueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_consulta_variavel_queixa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_queixa_medicamentos")]
+        public EntityCollection<QueixaMedicamentosE> tb_queixa_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<QueixaMedicamentosE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_queixa_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<QueixaMedicamentosE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_queixa_medicamentos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -1841,6 +1373,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1895,575 +1428,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnAlergiaChanged();
 
         #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="aluno")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class aluno : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new aluno object.
-        /// </summary>
-        /// <param name="login">Initial value of the login property.</param>
-        /// <param name="anoInicioCurso">Initial value of the anoInicioCurso property.</param>
-        /// <param name="idade">Initial value of the idade property.</param>
-        /// <param name="nome">Initial value of the nome property.</param>
-        /// <param name="nrConsulta">Initial value of the nrConsulta property.</param>
-        /// <param name="nrTentativa">Initial value of the nrTentativa property.</param>
-        public static aluno Createaluno(global::System.String login, global::System.Int32 anoInicioCurso, global::System.Int32 idade, global::System.String nome, global::System.Int32 nrConsulta, global::System.Int32 nrTentativa)
-        {
-            aluno aluno = new aluno();
-            aluno.login = login;
-            aluno.anoInicioCurso = anoInicioCurso;
-            aluno.idade = idade;
-            aluno.nome = nome;
-            aluno.nrConsulta = nrConsulta;
-            aluno.nrTentativa = nrTentativa;
-            return aluno;
-        }
 
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String login
-        {
-            get
-            {
-                return _login;
-            }
-            set
-            {
-                if (_login != value)
-                {
-                    OnloginChanging(value);
-                    ReportPropertyChanging("login");
-                    _login = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("login");
-                    OnloginChanged();
-                }
-            }
-        }
-        private global::System.String _login;
-        partial void OnloginChanging(global::System.String value);
-        partial void OnloginChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 anoInicioCurso
-        {
-            get
-            {
-                return _anoInicioCurso;
-            }
-            set
-            {
-                OnanoInicioCursoChanging(value);
-                ReportPropertyChanging("anoInicioCurso");
-                _anoInicioCurso = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("anoInicioCurso");
-                OnanoInicioCursoChanged();
-            }
-        }
-        private global::System.Int32 _anoInicioCurso;
-        partial void OnanoInicioCursoChanging(global::System.Int32 value);
-        partial void OnanoInicioCursoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCursouAssistenciaFarmaceutica
-        {
-            get
-            {
-                return _flCursouAssistenciaFarmaceutica;
-            }
-            set
-            {
-                OnflCursouAssistenciaFarmaceuticaChanging(value);
-                ReportPropertyChanging("flCursouAssistenciaFarmaceutica");
-                _flCursouAssistenciaFarmaceutica = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCursouAssistenciaFarmaceutica");
-                OnflCursouAssistenciaFarmaceuticaChanged();
-            }
-        }
-        private global::System.String _flCursouAssistenciaFarmaceutica;
-        partial void OnflCursouAssistenciaFarmaceuticaChanging(global::System.String value);
-        partial void OnflCursouAssistenciaFarmaceuticaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCursouAtencaoFarmaceutica
-        {
-            get
-            {
-                return _flCursouAtencaoFarmaceutica;
-            }
-            set
-            {
-                OnflCursouAtencaoFarmaceuticaChanging(value);
-                ReportPropertyChanging("flCursouAtencaoFarmaceutica");
-                _flCursouAtencaoFarmaceutica = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCursouAtencaoFarmaceutica");
-                OnflCursouAtencaoFarmaceuticaChanged();
-            }
-        }
-        private global::System.String _flCursouAtencaoFarmaceutica;
-        partial void OnflCursouAtencaoFarmaceuticaChanging(global::System.String value);
-        partial void OnflCursouAtencaoFarmaceuticaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCursouDispencaoFarmaceutica
-        {
-            get
-            {
-                return _flCursouDispencaoFarmaceutica;
-            }
-            set
-            {
-                OnflCursouDispencaoFarmaceuticaChanging(value);
-                ReportPropertyChanging("flCursouDispencaoFarmaceutica");
-                _flCursouDispencaoFarmaceutica = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCursouDispencaoFarmaceutica");
-                OnflCursouDispencaoFarmaceuticaChanged();
-            }
-        }
-        private global::System.String _flCursouDispencaoFarmaceutica;
-        partial void OnflCursouDispencaoFarmaceuticaChanging(global::System.String value);
-        partial void OnflCursouDispencaoFarmaceuticaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCursouFarmaciaClinica
-        {
-            get
-            {
-                return _flCursouFarmaciaClinica;
-            }
-            set
-            {
-                OnflCursouFarmaciaClinicaChanging(value);
-                ReportPropertyChanging("flCursouFarmaciaClinica");
-                _flCursouFarmaciaClinica = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCursouFarmaciaClinica");
-                OnflCursouFarmaciaClinicaChanged();
-            }
-        }
-        private global::System.String _flCursouFarmaciaClinica;
-        partial void OnflCursouFarmaciaClinicaChanging(global::System.String value);
-        partial void OnflCursouFarmaciaClinicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCursouIntroducaoFarmacia
-        {
-            get
-            {
-                return _flCursouIntroducaoFarmacia;
-            }
-            set
-            {
-                OnflCursouIntroducaoFarmaciaChanging(value);
-                ReportPropertyChanging("flCursouIntroducaoFarmacia");
-                _flCursouIntroducaoFarmacia = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCursouIntroducaoFarmacia");
-                OnflCursouIntroducaoFarmaciaChanged();
-            }
-        }
-        private global::System.String _flCursouIntroducaoFarmacia;
-        partial void OnflCursouIntroducaoFarmaciaChanging(global::System.String value);
-        partial void OnflCursouIntroducaoFarmaciaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCursouSemiologiaFarmaceutica
-        {
-            get
-            {
-                return _flCursouSemiologiaFarmaceutica;
-            }
-            set
-            {
-                OnflCursouSemiologiaFarmaceuticaChanging(value);
-                ReportPropertyChanging("flCursouSemiologiaFarmaceutica");
-                _flCursouSemiologiaFarmaceutica = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCursouSemiologiaFarmaceutica");
-                OnflCursouSemiologiaFarmaceuticaChanged();
-            }
-        }
-        private global::System.String _flCursouSemiologiaFarmaceutica;
-        partial void OnflCursouSemiologiaFarmaceuticaChanging(global::System.String value);
-        partial void OnflCursouSemiologiaFarmaceuticaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCursouTopicosFarmaciaClinica
-        {
-            get
-            {
-                return _flCursouTopicosFarmaciaClinica;
-            }
-            set
-            {
-                OnflCursouTopicosFarmaciaClinicaChanging(value);
-                ReportPropertyChanging("flCursouTopicosFarmaciaClinica");
-                _flCursouTopicosFarmaciaClinica = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCursouTopicosFarmaciaClinica");
-                OnflCursouTopicosFarmaciaClinicaChanged();
-            }
-        }
-        private global::System.String _flCursouTopicosFarmaciaClinica;
-        partial void OnflCursouTopicosFarmaciaClinicaChanging(global::System.String value);
-        partial void OnflCursouTopicosFarmaciaClinicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String genero
-        {
-            get
-            {
-                return _genero;
-            }
-            set
-            {
-                OngeneroChanging(value);
-                ReportPropertyChanging("genero");
-                _genero = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("genero");
-                OngeneroChanged();
-            }
-        }
-        private global::System.String _genero;
-        partial void OngeneroChanging(global::System.String value);
-        partial void OngeneroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 idade
-        {
-            get
-            {
-                return _idade;
-            }
-            set
-            {
-                OnidadeChanging(value);
-                ReportPropertyChanging("idade");
-                _idade = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("idade");
-                OnidadeChanged();
-            }
-        }
-        private global::System.Int32 _idade;
-        partial void OnidadeChanging(global::System.Int32 value);
-        partial void OnidadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String matricula
-        {
-            get
-            {
-                return _matricula;
-            }
-            set
-            {
-                OnmatriculaChanging(value);
-                ReportPropertyChanging("matricula");
-                _matricula = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("matricula");
-                OnmatriculaChanged();
-            }
-        }
-        private global::System.String _matricula;
-        partial void OnmatriculaChanging(global::System.String value);
-        partial void OnmatriculaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> fkTurma
-        {
-            get
-            {
-                return _fkTurma;
-            }
-            set
-            {
-                OnfkTurmaChanging(value);
-                ReportPropertyChanging("fkTurma");
-                _fkTurma = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkTurma");
-                OnfkTurmaChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _fkTurma;
-        partial void OnfkTurmaChanging(Nullable<global::System.Int32> value);
-        partial void OnfkTurmaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String nome
-        {
-            get
-            {
-                return _nome;
-            }
-            set
-            {
-                OnnomeChanging(value);
-                ReportPropertyChanging("nome");
-                _nome = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("nome");
-                OnnomeChanged();
-            }
-        }
-        private global::System.String _nome;
-        partial void OnnomeChanging(global::System.String value);
-        partial void OnnomeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String liberado
-        {
-            get
-            {
-                return _liberado;
-            }
-            set
-            {
-                OnliberadoChanging(value);
-                ReportPropertyChanging("liberado");
-                _liberado = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("liberado");
-                OnliberadoChanged();
-            }
-        }
-        private global::System.String _liberado;
-        partial void OnliberadoChanging(global::System.String value);
-        partial void OnliberadoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> fkConsultaAtual
-        {
-            get
-            {
-                return _fkConsultaAtual;
-            }
-            set
-            {
-                OnfkConsultaAtualChanging(value);
-                ReportPropertyChanging("fkConsultaAtual");
-                _fkConsultaAtual = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkConsultaAtual");
-                OnfkConsultaAtualChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _fkConsultaAtual;
-        partial void OnfkConsultaAtualChanging(Nullable<global::System.Int32> value);
-        partial void OnfkConsultaAtualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 nrConsulta
-        {
-            get
-            {
-                return _nrConsulta;
-            }
-            set
-            {
-                OnnrConsultaChanging(value);
-                ReportPropertyChanging("nrConsulta");
-                _nrConsulta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("nrConsulta");
-                OnnrConsultaChanged();
-            }
-        }
-        private global::System.Int32 _nrConsulta;
-        partial void OnnrConsultaChanging(global::System.Int32 value);
-        partial void OnnrConsultaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 nrTentativa
-        {
-            get
-            {
-                return _nrTentativa;
-            }
-            set
-            {
-                OnnrTentativaChanging(value);
-                ReportPropertyChanging("nrTentativa");
-                _nrTentativa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("nrTentativa");
-                OnnrTentativaChanged();
-            }
-        }
-        private global::System.Int32 _nrTentativa;
-        partial void OnnrTentativaChanging(global::System.Int32 value);
-        partial void OnnrTentativaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flAcessoCasa
-        {
-            get
-            {
-                return _flAcessoCasa;
-            }
-            set
-            {
-                OnflAcessoCasaChanging(value);
-                ReportPropertyChanging("flAcessoCasa");
-                _flAcessoCasa = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flAcessoCasa");
-                OnflAcessoCasaChanged();
-            }
-        }
-        private global::System.String _flAcessoCasa;
-        partial void OnflAcessoCasaChanging(global::System.String value);
-        partial void OnflAcessoCasaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flAcessoCasaAmigo
-        {
-            get
-            {
-                return _flAcessoCasaAmigo;
-            }
-            set
-            {
-                OnflAcessoCasaAmigoChanging(value);
-                ReportPropertyChanging("flAcessoCasaAmigo");
-                _flAcessoCasaAmigo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flAcessoCasaAmigo");
-                OnflAcessoCasaAmigoChanged();
-            }
-        }
-        private global::System.String _flAcessoCasaAmigo;
-        partial void OnflAcessoCasaAmigoChanging(global::System.String value);
-        partial void OnflAcessoCasaAmigoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flAcessoOutro
-        {
-            get
-            {
-                return _flAcessoOutro;
-            }
-            set
-            {
-                OnflAcessoOutroChanging(value);
-                ReportPropertyChanging("flAcessoOutro");
-                _flAcessoOutro = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flAcessoOutro");
-                OnflAcessoOutroChanged();
-            }
-        }
-        private global::System.String _flAcessoOutro;
-        partial void OnflAcessoOutroChanging(global::System.String value);
-        partial void OnflAcessoOutroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flAcessoUniversidade
-        {
-            get
-            {
-                return _flAcessoUniversidade;
-            }
-            set
-            {
-                OnflAcessoUniversidadeChanging(value);
-                ReportPropertyChanging("flAcessoUniversidade");
-                _flAcessoUniversidade = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flAcessoUniversidade");
-                OnflAcessoUniversidadeChanged();
-            }
-        }
-        private global::System.String _flAcessoUniversidade;
-        partial void OnflAcessoUniversidadeChanging(global::System.String value);
-        partial void OnflAcessoUniversidadeChanged();
-
-        #endregion
     
         #region Navigation Properties
     
@@ -2473,1569 +1438,24 @@ namespace PacienteVirtual.Models.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_aluno_2", "consulta")]
-        public consulta consulta
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "tb_alergia_exames_fisicos", "tb_exames_fisicos")]
+        public EntityCollection<ExamesFisicosE> tb_exames_fisicos
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_aluno_2", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_aluno_2", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consultaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_aluno_2", "consulta");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExamesFisicosE>("pvModel.tb_alergia_exames_fisicos", "tb_exames_fisicos");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FK_aluno_2", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_consulta_2", "consulta")]
-        public EntityCollection<consulta> consultas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<consulta>("pvModel.FK_consulta_2", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<consulta>("pvModel.FK_consulta_2", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK589C4EBDD526F1E", "consulta")]
-        public consulta consulta1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK589C4EBDD526F1E", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK589C4EBDD526F1E", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consulta1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK589C4EBDD526F1E", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FK589C4EBDD526F1E", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKDE2881F52977839B", "consulta")]
-        public EntityCollection<consulta> consultas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<consulta>("pvModel.FKDE2881F52977839B", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<consulta>("pvModel.FKDE2881F52977839B", "consulta", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExamesFisicosE>("pvModel.tb_alergia_exames_fisicos", "tb_exames_fisicos", value);
                 }
             }
         }
 
         #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="casoclinico")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class casoclinico : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new casoclinico object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="altura">Initial value of the altura property.</param>
-        /// <param name="peso">Initial value of the peso property.</param>
-        /// <param name="pressaoDiastolica">Initial value of the pressaoDiastolica property.</param>
-        /// <param name="pressaoSistolica">Initial value of the pressaoSistolica property.</param>
-        /// <param name="temperatura">Initial value of the temperatura property.</param>
-        public static casoclinico Createcasoclinico(global::System.Int32 id, global::System.Single altura, global::System.Single peso, global::System.Int32 pressaoDiastolica, global::System.Int32 pressaoSistolica, global::System.Single temperatura)
-        {
-            casoclinico casoclinico = new casoclinico();
-            casoclinico.id = id;
-            casoclinico.altura = altura;
-            casoclinico.peso = peso;
-            casoclinico.pressaoDiastolica = pressaoDiastolica;
-            casoclinico.pressaoSistolica = pressaoSistolica;
-            casoclinico.temperatura = temperatura;
-            return casoclinico;
-        }
 
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String alergias
-        {
-            get
-            {
-                return _alergias;
-            }
-            set
-            {
-                OnalergiasChanging(value);
-                ReportPropertyChanging("alergias");
-                _alergias = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("alergias");
-                OnalergiasChanged();
-            }
-        }
-        private global::System.String _alergias;
-        partial void OnalergiasChanging(global::System.String value);
-        partial void OnalergiasChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single altura
-        {
-            get
-            {
-                return _altura;
-            }
-            set
-            {
-                OnalturaChanging(value);
-                ReportPropertyChanging("altura");
-                _altura = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("altura");
-                OnalturaChanged();
-            }
-        }
-        private global::System.Single _altura;
-        partial void OnalturaChanging(global::System.Single value);
-        partial void OnalturaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> dataNascimento
-        {
-            get
-            {
-                return _dataNascimento;
-            }
-            set
-            {
-                OndataNascimentoChanging(value);
-                ReportPropertyChanging("dataNascimento");
-                _dataNascimento = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dataNascimento");
-                OndataNascimentoChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _dataNascimento;
-        partial void OndataNascimentoChanging(Nullable<global::System.DateTime> value);
-        partial void OndataNascimentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String disponibilidade
-        {
-            get
-            {
-                return _disponibilidade;
-            }
-            set
-            {
-                OndisponibilidadeChanging(value);
-                ReportPropertyChanging("disponibilidade");
-                _disponibilidade = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("disponibilidade");
-                OndisponibilidadeChanged();
-            }
-        }
-        private global::System.String _disponibilidade;
-        partial void OndisponibilidadeChanging(global::System.String value);
-        partial void OndisponibilidadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String escolaridade
-        {
-            get
-            {
-                return _escolaridade;
-            }
-            set
-            {
-                OnescolaridadeChanging(value);
-                ReportPropertyChanging("escolaridade");
-                _escolaridade = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("escolaridade");
-                OnescolaridadeChanged();
-            }
-        }
-        private global::System.String _escolaridade;
-        partial void OnescolaridadeChanging(global::System.String value);
-        partial void OnescolaridadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flBebeAlcool
-        {
-            get
-            {
-                return _flBebeAlcool;
-            }
-            set
-            {
-                OnflBebeAlcoolChanging(value);
-                ReportPropertyChanging("flBebeAlcool");
-                _flBebeAlcool = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flBebeAlcool");
-                OnflBebeAlcoolChanged();
-            }
-        }
-        private global::System.String _flBebeAlcool;
-        partial void OnflBebeAlcoolChanging(global::System.String value);
-        partial void OnflBebeAlcoolChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flBebeCafe
-        {
-            get
-            {
-                return _flBebeCafe;
-            }
-            set
-            {
-                OnflBebeCafeChanging(value);
-                ReportPropertyChanging("flBebeCafe");
-                _flBebeCafe = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flBebeCafe");
-                OnflBebeCafeChanged();
-            }
-        }
-        private global::System.String _flBebeCafe;
-        partial void OnflBebeCafeChanging(global::System.String value);
-        partial void OnflBebeCafeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flFuma
-        {
-            get
-            {
-                return _flFuma;
-            }
-            set
-            {
-                OnflFumaChanging(value);
-                ReportPropertyChanging("flFuma");
-                _flFuma = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flFuma");
-                OnflFumaChanged();
-            }
-        }
-        private global::System.String _flFuma;
-        partial void OnflFumaChanging(global::System.String value);
-        partial void OnflFumaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String genero
-        {
-            get
-            {
-                return _genero;
-            }
-            set
-            {
-                OngeneroChanging(value);
-                ReportPropertyChanging("genero");
-                _genero = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("genero");
-                OngeneroChanged();
-            }
-        }
-        private global::System.String _genero;
-        partial void OngeneroChanging(global::System.String value);
-        partial void OngeneroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String medicosQueAtendem
-        {
-            get
-            {
-                return _medicosQueAtendem;
-            }
-            set
-            {
-                OnmedicosQueAtendemChanging(value);
-                ReportPropertyChanging("medicosQueAtendem");
-                _medicosQueAtendem = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("medicosQueAtendem");
-                OnmedicosQueAtendemChanged();
-            }
-        }
-        private global::System.String _medicosQueAtendem;
-        partial void OnmedicosQueAtendemChanging(global::System.String value);
-        partial void OnmedicosQueAtendemChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String moradiaFamilia
-        {
-            get
-            {
-                return _moradiaFamilia;
-            }
-            set
-            {
-                OnmoradiaFamiliaChanging(value);
-                ReportPropertyChanging("moradiaFamilia");
-                _moradiaFamilia = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("moradiaFamilia");
-                OnmoradiaFamiliaChanged();
-            }
-        }
-        private global::System.String _moradiaFamilia;
-        partial void OnmoradiaFamiliaChanging(global::System.String value);
-        partial void OnmoradiaFamiliaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String nome
-        {
-            get
-            {
-                return _nome;
-            }
-            set
-            {
-                OnnomeChanging(value);
-                ReportPropertyChanging("nome");
-                _nome = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("nome");
-                OnnomeChanged();
-            }
-        }
-        private global::System.String _nome;
-        partial void OnnomeChanging(global::System.String value);
-        partial void OnnomeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ocupacao
-        {
-            get
-            {
-                return _ocupacao;
-            }
-            set
-            {
-                OnocupacaoChanging(value);
-                ReportPropertyChanging("ocupacao");
-                _ocupacao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ocupacao");
-                OnocupacaoChanged();
-            }
-        }
-        private global::System.String _ocupacao;
-        partial void OnocupacaoChanging(global::System.String value);
-        partial void OnocupacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single peso
-        {
-            get
-            {
-                return _peso;
-            }
-            set
-            {
-                OnpesoChanging(value);
-                ReportPropertyChanging("peso");
-                _peso = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("peso");
-                OnpesoChanged();
-            }
-        }
-        private global::System.Single _peso;
-        partial void OnpesoChanging(global::System.Single value);
-        partial void OnpesoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String planoDeSaude
-        {
-            get
-            {
-                return _planoDeSaude;
-            }
-            set
-            {
-                OnplanoDeSaudeChanging(value);
-                ReportPropertyChanging("planoDeSaude");
-                _planoDeSaude = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("planoDeSaude");
-                OnplanoDeSaudeChanged();
-            }
-        }
-        private global::System.String _planoDeSaude;
-        partial void OnplanoDeSaudeChanging(global::System.String value);
-        partial void OnplanoDeSaudeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 pressaoDiastolica
-        {
-            get
-            {
-                return _pressaoDiastolica;
-            }
-            set
-            {
-                OnpressaoDiastolicaChanging(value);
-                ReportPropertyChanging("pressaoDiastolica");
-                _pressaoDiastolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pressaoDiastolica");
-                OnpressaoDiastolicaChanged();
-            }
-        }
-        private global::System.Int32 _pressaoDiastolica;
-        partial void OnpressaoDiastolicaChanging(global::System.Int32 value);
-        partial void OnpressaoDiastolicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 pressaoSistolica
-        {
-            get
-            {
-                return _pressaoSistolica;
-            }
-            set
-            {
-                OnpressaoSistolicaChanging(value);
-                ReportPropertyChanging("pressaoSistolica");
-                _pressaoSistolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pressaoSistolica");
-                OnpressaoSistolicaChanged();
-            }
-        }
-        private global::System.Int32 _pressaoSistolica;
-        partial void OnpressaoSistolicaChanging(global::System.Int32 value);
-        partial void OnpressaoSistolicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String relatoDeCasoPrimeiraConsulta
-        {
-            get
-            {
-                return _relatoDeCasoPrimeiraConsulta;
-            }
-            set
-            {
-                OnrelatoDeCasoPrimeiraConsultaChanging(value);
-                ReportPropertyChanging("relatoDeCasoPrimeiraConsulta");
-                _relatoDeCasoPrimeiraConsulta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("relatoDeCasoPrimeiraConsulta");
-                OnrelatoDeCasoPrimeiraConsultaChanged();
-            }
-        }
-        private global::System.String _relatoDeCasoPrimeiraConsulta;
-        partial void OnrelatoDeCasoPrimeiraConsultaChanging(global::System.String value);
-        partial void OnrelatoDeCasoPrimeiraConsultaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String relatoDeCasoTerceiraConsulta
-        {
-            get
-            {
-                return _relatoDeCasoTerceiraConsulta;
-            }
-            set
-            {
-                OnrelatoDeCasoTerceiraConsultaChanging(value);
-                ReportPropertyChanging("relatoDeCasoTerceiraConsulta");
-                _relatoDeCasoTerceiraConsulta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("relatoDeCasoTerceiraConsulta");
-                OnrelatoDeCasoTerceiraConsultaChanged();
-            }
-        }
-        private global::System.String _relatoDeCasoTerceiraConsulta;
-        partial void OnrelatoDeCasoTerceiraConsultaChanging(global::System.String value);
-        partial void OnrelatoDeCasoTerceiraConsultaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single temperatura
-        {
-            get
-            {
-                return _temperatura;
-            }
-            set
-            {
-                OntemperaturaChanging(value);
-                ReportPropertyChanging("temperatura");
-                _temperatura = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("temperatura");
-                OntemperaturaChanged();
-            }
-        }
-        private global::System.Single _temperatura;
-        partial void OntemperaturaChanging(global::System.Single value);
-        partial void OntemperaturaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaAlcoolAnterior
-        {
-            get
-            {
-                return _historiaAlcoolAnterior;
-            }
-            set
-            {
-                OnhistoriaAlcoolAnteriorChanging(value);
-                ReportPropertyChanging("historiaAlcoolAnterior");
-                _historiaAlcoolAnterior = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaAlcoolAnterior");
-                OnhistoriaAlcoolAnteriorChanged();
-            }
-        }
-        private global::System.String _historiaAlcoolAnterior;
-        partial void OnhistoriaAlcoolAnteriorChanging(global::System.String value);
-        partial void OnhistoriaAlcoolAnteriorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaAlcoolAtual
-        {
-            get
-            {
-                return _historiaAlcoolAtual;
-            }
-            set
-            {
-                OnhistoriaAlcoolAtualChanging(value);
-                ReportPropertyChanging("historiaAlcoolAtual");
-                _historiaAlcoolAtual = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaAlcoolAtual");
-                OnhistoriaAlcoolAtualChanged();
-            }
-        }
-        private global::System.String _historiaAlcoolAtual;
-        partial void OnhistoriaAlcoolAtualChanging(global::System.String value);
-        partial void OnhistoriaAlcoolAtualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaCafeAnterior
-        {
-            get
-            {
-                return _historiaCafeAnterior;
-            }
-            set
-            {
-                OnhistoriaCafeAnteriorChanging(value);
-                ReportPropertyChanging("historiaCafeAnterior");
-                _historiaCafeAnterior = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaCafeAnterior");
-                OnhistoriaCafeAnteriorChanged();
-            }
-        }
-        private global::System.String _historiaCafeAnterior;
-        partial void OnhistoriaCafeAnteriorChanging(global::System.String value);
-        partial void OnhistoriaCafeAnteriorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaCafeAtual
-        {
-            get
-            {
-                return _historiaCafeAtual;
-            }
-            set
-            {
-                OnhistoriaCafeAtualChanging(value);
-                ReportPropertyChanging("historiaCafeAtual");
-                _historiaCafeAtual = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaCafeAtual");
-                OnhistoriaCafeAtualChanged();
-            }
-        }
-        private global::System.String _historiaCafeAtual;
-        partial void OnhistoriaCafeAtualChanging(global::System.String value);
-        partial void OnhistoriaCafeAtualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaTabacoAnterior
-        {
-            get
-            {
-                return _historiaTabacoAnterior;
-            }
-            set
-            {
-                OnhistoriaTabacoAnteriorChanging(value);
-                ReportPropertyChanging("historiaTabacoAnterior");
-                _historiaTabacoAnterior = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaTabacoAnterior");
-                OnhistoriaTabacoAnteriorChanged();
-            }
-        }
-        private global::System.String _historiaTabacoAnterior;
-        partial void OnhistoriaTabacoAnteriorChanging(global::System.String value);
-        partial void OnhistoriaTabacoAnteriorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaTabacoAtual
-        {
-            get
-            {
-                return _historiaTabacoAtual;
-            }
-            set
-            {
-                OnhistoriaTabacoAtualChanging(value);
-                ReportPropertyChanging("historiaTabacoAtual");
-                _historiaTabacoAtual = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaTabacoAtual");
-                OnhistoriaTabacoAtualChanged();
-            }
-        }
-        private global::System.String _historiaTabacoAtual;
-        partial void OnhistoriaTabacoAtualChanging(global::System.String value);
-        partial void OnhistoriaTabacoAtualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> peso2
-        {
-            get
-            {
-                return _peso2;
-            }
-            set
-            {
-                Onpeso2Changing(value);
-                ReportPropertyChanging("peso2");
-                _peso2 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("peso2");
-                Onpeso2Changed();
-            }
-        }
-        private Nullable<global::System.Single> _peso2;
-        partial void Onpeso2Changing(Nullable<global::System.Single> value);
-        partial void Onpeso2Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> pressaoDiastolica2
-        {
-            get
-            {
-                return _pressaoDiastolica2;
-            }
-            set
-            {
-                OnpressaoDiastolica2Changing(value);
-                ReportPropertyChanging("pressaoDiastolica2");
-                _pressaoDiastolica2 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pressaoDiastolica2");
-                OnpressaoDiastolica2Changed();
-            }
-        }
-        private Nullable<global::System.Int32> _pressaoDiastolica2;
-        partial void OnpressaoDiastolica2Changing(Nullable<global::System.Int32> value);
-        partial void OnpressaoDiastolica2Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> pressaoSistolica2
-        {
-            get
-            {
-                return _pressaoSistolica2;
-            }
-            set
-            {
-                OnpressaoSistolica2Changing(value);
-                ReportPropertyChanging("pressaoSistolica2");
-                _pressaoSistolica2 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pressaoSistolica2");
-                OnpressaoSistolica2Changed();
-            }
-        }
-        private Nullable<global::System.Int32> _pressaoSistolica2;
-        partial void OnpressaoSistolica2Changing(Nullable<global::System.Int32> value);
-        partial void OnpressaoSistolica2Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> temperatura2
-        {
-            get
-            {
-                return _temperatura2;
-            }
-            set
-            {
-                Ontemperatura2Changing(value);
-                ReportPropertyChanging("temperatura2");
-                _temperatura2 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("temperatura2");
-                Ontemperatura2Changed();
-            }
-        }
-        private Nullable<global::System.Single> _temperatura2;
-        partial void Ontemperatura2Changing(Nullable<global::System.Single> value);
-        partial void Ontemperatura2Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String tipoBebidaAlcoolica
-        {
-            get
-            {
-                return _tipoBebidaAlcoolica;
-            }
-            set
-            {
-                OntipoBebidaAlcoolicaChanging(value);
-                ReportPropertyChanging("tipoBebidaAlcoolica");
-                _tipoBebidaAlcoolica = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("tipoBebidaAlcoolica");
-                OntipoBebidaAlcoolicaChanged();
-            }
-        }
-        private global::System.String _tipoBebidaAlcoolica;
-        partial void OntipoBebidaAlcoolicaChanging(global::System.String value);
-        partial void OntipoBebidaAlcoolicaChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Consulta_1", "consulta")]
-        public EntityCollection<consulta> consultas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<consulta>("pvModel.FK_Consulta_1", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<consulta>("pvModel.FK_Consulta_1", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK91D9EFAE8A1319FF", "intervencao")]
-        public EntityCollection<intervencao> intervencaos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<intervencao>("pvModel.FK91D9EFAE8A1319FF", "intervencao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<intervencao>("pvModel.FK91D9EFAE8A1319FF", "intervencao", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKAA358BEF8A1319FF", "medicamentoprescrito")]
-        public EntityCollection<medicamentoprescrito> medicamentoprescritoes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<medicamentoprescrito>("pvModel.FKAA358BEF8A1319FF", "medicamentoprescrito");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<medicamentoprescrito>("pvModel.FKAA358BEF8A1319FF", "medicamentoprescrito", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKAAEE312E8A1319FF", "parametroclinico")]
-        public EntityCollection<parametroclinico> parametroclinicoes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<parametroclinico>("pvModel.FKAAEE312E8A1319FF", "parametroclinico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<parametroclinico>("pvModel.FKAAEE312E8A1319FF", "parametroclinico", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKBF69A97F8A1319FF", "medicamentonaoprescrito")]
-        public EntityCollection<medicamentonaoprescrito> medicamentonaoprescritoes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<medicamentonaoprescrito>("pvModel.FKBF69A97F8A1319FF", "medicamentonaoprescrito");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<medicamentonaoprescrito>("pvModel.FKBF69A97F8A1319FF", "medicamentonaoprescrito", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKC773DEB18A1319FF", "queixa")]
-        public EntityCollection<queixa> queixas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixa>("pvModel.FKC773DEB18A1319FF", "queixa");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixa>("pvModel.FKC773DEB18A1319FF", "queixa", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKDE2881F58A1319FF", "consulta")]
-        public EntityCollection<consulta> consultas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<consulta>("pvModel.FKDE2881F58A1319FF", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<consulta>("pvModel.FKDE2881F58A1319FF", "consulta", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="consulta")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class consulta : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new consulta object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="fkCasoClinico">Initial value of the fkCasoClinico property.</param>
-        /// <param name="fkAluno">Initial value of the fkAluno property.</param>
-        public static consulta Createconsulta(global::System.Int32 id, global::System.Int32 fkCasoClinico, global::System.String fkAluno)
-        {
-            consulta consulta = new consulta();
-            consulta.id = id;
-            consulta.fkCasoClinico = fkCasoClinico;
-            consulta.fkAluno = fkAluno;
-            return consulta;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkCasoClinico
-        {
-            get
-            {
-                return _fkCasoClinico;
-            }
-            set
-            {
-                OnfkCasoClinicoChanging(value);
-                ReportPropertyChanging("fkCasoClinico");
-                _fkCasoClinico = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkCasoClinico");
-                OnfkCasoClinicoChanged();
-            }
-        }
-        private global::System.Int32 _fkCasoClinico;
-        partial void OnfkCasoClinicoChanging(global::System.Int32 value);
-        partial void OnfkCasoClinicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String fkAluno
-        {
-            get
-            {
-                return _fkAluno;
-            }
-            set
-            {
-                OnfkAlunoChanging(value);
-                ReportPropertyChanging("fkAluno");
-                _fkAluno = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("fkAluno");
-                OnfkAlunoChanged();
-            }
-        }
-        private global::System.String _fkAluno;
-        partial void OnfkAlunoChanging(global::System.String value);
-        partial void OnfkAlunoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_aluno_2", "aluno")]
-        public EntityCollection<aluno> alunoes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aluno>("pvModel.FK_aluno_2", "aluno");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aluno>("pvModel.FK_aluno_2", "aluno", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_consulta_2", "aluno")]
-        public aluno aluno
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aluno>("pvModel.FK_consulta_2", "aluno").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aluno>("pvModel.FK_consulta_2", "aluno").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<aluno> alunoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aluno>("pvModel.FK_consulta_2", "aluno");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aluno>("pvModel.FK_consulta_2", "aluno", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK589C4EBDD526F1E", "aluno")]
-        public EntityCollection<aluno> alunoes1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aluno>("pvModel.FK589C4EBDD526F1E", "aluno");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aluno>("pvModel.FK589C4EBDD526F1E", "aluno", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKDE2881F52977839B", "aluno")]
-        public aluno aluno1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aluno>("pvModel.FKDE2881F52977839B", "aluno").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aluno>("pvModel.FKDE2881F52977839B", "aluno").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<aluno> aluno1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aluno>("pvModel.FKDE2881F52977839B", "aluno");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aluno>("pvModel.FKDE2881F52977839B", "aluno", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Consulta_1", "casoclinico")]
-        public casoclinico casoclinico
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FK_Consulta_1", "casoclinico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FK_Consulta_1", "casoclinico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<casoclinico> casoclinicoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FK_Consulta_1", "casoclinico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<casoclinico>("pvModel.FK_Consulta_1", "casoclinico", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKDE2881F58A1319FF", "casoclinico")]
-        public casoclinico casoclinico1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKDE2881F58A1319FF", "casoclinico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKDE2881F58A1319FF", "casoclinico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<casoclinico> casoclinico1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKDE2881F58A1319FF", "casoclinico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<casoclinico>("pvModel.FKDE2881F58A1319FF", "casoclinico", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_respostaalunoterceira_1", "respostaterceira")]
-        public EntityCollection<respostaterceira> respostaterceiras
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respostaterceira>("pvModel.FK_respostaalunoterceira_1", "respostaterceira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostaterceira>("pvModel.FK_respostaalunoterceira_1", "respostaterceira", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_respostaprimeira_1", "respostaprimeira")]
-        public EntityCollection<respostaprimeira> respostaprimeiras
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respostaprimeira>("pvModel.FK_respostaprimeira_1", "respostaprimeira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostaprimeira>("pvModel.FK_respostaprimeira_1", "respostaprimeira", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_respostaquarta_1", "respostaquarta")]
-        public EntityCollection<respostaquarta> respostaquartas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respostaquarta>("pvModel.FK_respostaquarta_1", "respostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostaquarta>("pvModel.FK_respostaquarta_1", "respostaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_respostasegunda_1", "respostasegunda")]
-        public EntityCollection<respostasegunda> respostasegundas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respostasegunda>("pvModel.FK_respostasegunda_1", "respostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostasegunda>("pvModel.FK_respostasegunda_1", "respostasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK877B3B565097F805", "respostaterceira")]
-        public EntityCollection<respostaterceira> respostaterceiras1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respostaterceira>("pvModel.FK877B3B565097F805", "respostaterceira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostaterceira>("pvModel.FK877B3B565097F805", "respostaterceira", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK88D8D79A5097F805", "respostaprimeira")]
-        public EntityCollection<respostaprimeira> respostaprimeiras1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respostaprimeira>("pvModel.FK88D8D79A5097F805", "respostaprimeira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostaprimeira>("pvModel.FK88D8D79A5097F805", "respostaprimeira", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKB29DB8E35097F805", "respostaquarta")]
-        public EntityCollection<respostaquarta> respostaquartas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respostaquarta>("pvModel.FKB29DB8E35097F805", "respostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostaquarta>("pvModel.FKB29DB8E35097F805", "respostaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKEFEE246A5097F805", "respostasegunda")]
-        public EntityCollection<respostasegunda> respostasegundas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respostasegunda>("pvModel.FKEFEE246A5097F805", "respostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respostasegunda>("pvModel.FKEFEE246A5097F805", "respostasegunda", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -4052,22 +1472,19 @@ namespace PacienteVirtual.Models.Data
         /// Create a new ConsultaFixoE object.
         /// </summary>
         /// <param name="idConsultaFixo">Initial value of the IdConsultaFixo property.</param>
-        /// <param name="idTurma">Initial value of the IdTurma property.</param>
-        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
         /// <param name="estadoPreenchimento">Initial value of the EstadoPreenchimento property.</param>
         /// <param name="ehGabarito">Initial value of the EhGabarito property.</param>
-        public static ConsultaFixoE CreateConsultaFixoE(global::System.Int64 idConsultaFixo, global::System.Int32 idTurma, global::System.Int32 idPessoa, global::System.String estadoPreenchimento, global::System.Boolean ehGabarito)
+        public static ConsultaFixoE CreateConsultaFixoE(global::System.Int64 idConsultaFixo, global::System.String estadoPreenchimento, global::System.Boolean ehGabarito)
         {
             ConsultaFixoE consultaFixoE = new ConsultaFixoE();
             consultaFixoE.IdConsultaFixo = idConsultaFixo;
-            consultaFixoE.IdTurma = idTurma;
-            consultaFixoE.IdPessoa = idPessoa;
             consultaFixoE.EstadoPreenchimento = estadoPreenchimento;
             consultaFixoE.EhGabarito = ehGabarito;
             return consultaFixoE;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4096,54 +1513,6 @@ namespace PacienteVirtual.Models.Data
         private global::System.Int64 _IdConsultaFixo;
         partial void OnIdConsultaFixoChanging(global::System.Int64 value);
         partial void OnIdConsultaFixoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdTurma
-        {
-            get
-            {
-                return _IdTurma;
-            }
-            set
-            {
-                OnIdTurmaChanging(value);
-                ReportPropertyChanging("IdTurma");
-                _IdTurma = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdTurma");
-                OnIdTurmaChanged();
-            }
-        }
-        private global::System.Int32 _IdTurma;
-        partial void OnIdTurmaChanging(global::System.Int32 value);
-        partial void OnIdTurmaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPessoa
-        {
-            get
-            {
-                return _IdPessoa;
-            }
-            set
-            {
-                OnIdPessoaChanging(value);
-                ReportPropertyChanging("IdPessoa");
-                _IdPessoa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdPessoa");
-                OnIdPessoaChanged();
-            }
-        }
-        private global::System.Int32 _IdPessoa;
-        partial void OnIdPessoaChanging(global::System.Int32 value);
-        partial void OnIdPessoaChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4242,6 +1611,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnComentariosTutorChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4251,23 +1621,1265 @@ namespace PacienteVirtual.Models.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_paciente_pessoa_turma")]
-        public EntityCollection<PacientePessoaTurmaE> tb_paciente_pessoa_turma
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_variavel")]
+        public EntityCollection<ConsultaVariavelE> tb_consulta_variavel
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PacientePessoaTurmaE>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_paciente_pessoa_turma");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_variavel");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PacientePessoaTurmaE>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_paciente_pessoa_turma", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_demograficos_antropometricos")]
+        public DemograficosAntropometricosE tb_demograficos_antropometricos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_demograficos_antropometricos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_demograficos_antropometricos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<DemograficosAntropometricosE> tb_demograficos_antropometricosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_demograficos_antropometricos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_demograficos_antropometricos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_diario_pessoal")]
+        public EntityCollection<DiarioPessoalE> tb_diario_pessoal
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DiarioPessoalE>("pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_diario_pessoal");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DiarioPessoalE>("pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_diario_pessoal", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_experiencia_medicamentos")]
+        public ExperienciaMedicamentosE tb_experiencia_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_experiencia_medicamentos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_experiencia_medicamentos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ExperienciaMedicamentosE> tb_experiencia_medicamentosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_experiencia_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_experiencia_medicamentos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_historia_tb_consulta_fixo1", "tb_historia")]
+        public HistoriaE tb_historia
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<HistoriaE>("pvModel.fk_tb_historia_tb_consulta_fixo1", "tb_historia").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<HistoriaE>("pvModel.fk_tb_historia_tb_consulta_fixo1", "tb_historia").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<HistoriaE> tb_historiaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<HistoriaE>("pvModel.fk_tb_historia_tb_consulta_fixo1", "tb_historia");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<HistoriaE>("pvModel.fk_tb_historia_tb_consulta_fixo1", "tb_historia", value);
                 }
             }
         }
 
         #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="ConsultaParametroE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ConsultaParametroE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ConsultaParametroE object.
+        /// </summary>
+        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
+        /// <param name="idParamentoClinico">Initial value of the IdParamentoClinico property.</param>
+        public static ConsultaParametroE CreateConsultaParametroE(global::System.Int64 idConsultaVariavel, global::System.Int32 idParamentoClinico)
+        {
+            ConsultaParametroE consultaParametroE = new ConsultaParametroE();
+            consultaParametroE.IdConsultaVariavel = idConsultaVariavel;
+            consultaParametroE.IdParamentoClinico = idParamentoClinico;
+            return consultaParametroE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdConsultaVariavel
+        {
+            get
+            {
+                return _IdConsultaVariavel;
+            }
+            set
+            {
+                if (_IdConsultaVariavel != value)
+                {
+                    OnIdConsultaVariavelChanging(value);
+                    ReportPropertyChanging("IdConsultaVariavel");
+                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdConsultaVariavel");
+                    OnIdConsultaVariavelChanged();
+                }
+            }
+        }
+        private global::System.Int64 _IdConsultaVariavel;
+        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
+        partial void OnIdConsultaVariavelChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdParamentoClinico
+        {
+            get
+            {
+                return _IdParamentoClinico;
+            }
+            set
+            {
+                if (_IdParamentoClinico != value)
+                {
+                    OnIdParamentoClinicoChanging(value);
+                    ReportPropertyChanging("IdParamentoClinico");
+                    _IdParamentoClinico = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdParamentoClinico");
+                    OnIdParamentoClinicoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdParamentoClinico;
+        partial void OnIdParamentoClinicoChanging(global::System.Int32 value);
+        partial void OnIdParamentoClinicoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> Valor
+        {
+            get
+            {
+                return _Valor;
+            }
+            set
+            {
+                OnValorChanging(value);
+                ReportPropertyChanging("Valor");
+                _Valor = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Valor");
+                OnValorChanged();
+            }
+        }
+        private Nullable<global::System.Single> _Valor;
+        partial void OnValorChanging(Nullable<global::System.Single> value);
+        partial void OnValorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> ValorReferencia
+        {
+            get
+            {
+                return _ValorReferencia;
+            }
+            set
+            {
+                OnValorReferenciaChanging(value);
+                ReportPropertyChanging("ValorReferencia");
+                _ValorReferencia = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ValorReferencia");
+                OnValorReferenciaChanged();
+            }
+        }
+        private Nullable<global::System.Single> _ValorReferencia;
+        partial void OnValorReferenciaChanging(Nullable<global::System.Single> value);
+        partial void OnValorReferenciaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unidade
+        {
+            get
+            {
+                return _Unidade;
+            }
+            set
+            {
+                OnUnidadeChanging(value);
+                ReportPropertyChanging("Unidade");
+                _Unidade = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unidade");
+                OnUnidadeChanged();
+            }
+        }
+        private global::System.String _Unidade;
+        partial void OnUnidadeChanging(global::System.String value);
+        partial void OnUnidadeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_variavel")]
+        public ConsultaVariavelE tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_variavel").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_variavel").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaVariavelE> tb_consulta_variavelReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_parametro_clinico")]
+        public ParametroClinicoE tb_parametro_clinico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ParametroClinicoE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_parametro_clinico").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ParametroClinicoE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_parametro_clinico").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ParametroClinicoE> tb_parametro_clinicoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ParametroClinicoE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_parametro_clinico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ParametroClinicoE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_parametro_clinico", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="ConsultaVariavelE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ConsultaVariavelE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ConsultaVariavelE object.
+        /// </summary>
+        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
+        /// <param name="idConsutaFixo">Initial value of the IdConsutaFixo property.</param>
+        /// <param name="idTurma">Initial value of the IdTurma property.</param>
+        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
+        /// <param name="idRelato">Initial value of the IdRelato property.</param>
+        /// <param name="idRazaoEncontro">Initial value of the IdRazaoEncontro property.</param>
+        public static ConsultaVariavelE CreateConsultaVariavelE(global::System.Int64 idConsultaVariavel, global::System.Int64 idConsutaFixo, global::System.Int32 idTurma, global::System.Int32 idPessoa, global::System.Int32 idRelato, global::System.Int32 idRazaoEncontro)
+        {
+            ConsultaVariavelE consultaVariavelE = new ConsultaVariavelE();
+            consultaVariavelE.IdConsultaVariavel = idConsultaVariavel;
+            consultaVariavelE.IdConsutaFixo = idConsutaFixo;
+            consultaVariavelE.IdTurma = idTurma;
+            consultaVariavelE.IdPessoa = idPessoa;
+            consultaVariavelE.IdRelato = idRelato;
+            consultaVariavelE.IdRazaoEncontro = idRazaoEncontro;
+            return consultaVariavelE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdConsultaVariavel
+        {
+            get
+            {
+                return _IdConsultaVariavel;
+            }
+            set
+            {
+                if (_IdConsultaVariavel != value)
+                {
+                    OnIdConsultaVariavelChanging(value);
+                    ReportPropertyChanging("IdConsultaVariavel");
+                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdConsultaVariavel");
+                    OnIdConsultaVariavelChanged();
+                }
+            }
+        }
+        private global::System.Int64 _IdConsultaVariavel;
+        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
+        partial void OnIdConsultaVariavelChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdConsutaFixo
+        {
+            get
+            {
+                return _IdConsutaFixo;
+            }
+            set
+            {
+                OnIdConsutaFixoChanging(value);
+                ReportPropertyChanging("IdConsutaFixo");
+                _IdConsutaFixo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdConsutaFixo");
+                OnIdConsutaFixoChanged();
+            }
+        }
+        private global::System.Int64 _IdConsutaFixo;
+        partial void OnIdConsutaFixoChanging(global::System.Int64 value);
+        partial void OnIdConsutaFixoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdTurma
+        {
+            get
+            {
+                return _IdTurma;
+            }
+            set
+            {
+                OnIdTurmaChanging(value);
+                ReportPropertyChanging("IdTurma");
+                _IdTurma = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdTurma");
+                OnIdTurmaChanged();
+            }
+        }
+        private global::System.Int32 _IdTurma;
+        partial void OnIdTurmaChanging(global::System.Int32 value);
+        partial void OnIdTurmaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPessoa
+        {
+            get
+            {
+                return _IdPessoa;
+            }
+            set
+            {
+                OnIdPessoaChanging(value);
+                ReportPropertyChanging("IdPessoa");
+                _IdPessoa = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdPessoa");
+                OnIdPessoaChanged();
+            }
+        }
+        private global::System.Int32 _IdPessoa;
+        partial void OnIdPessoaChanging(global::System.Int32 value);
+        partial void OnIdPessoaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdRelato
+        {
+            get
+            {
+                return _IdRelato;
+            }
+            set
+            {
+                OnIdRelatoChanging(value);
+                ReportPropertyChanging("IdRelato");
+                _IdRelato = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdRelato");
+                OnIdRelatoChanged();
+            }
+        }
+        private global::System.Int32 _IdRelato;
+        partial void OnIdRelatoChanging(global::System.Int32 value);
+        partial void OnIdRelatoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdRazaoEncontro
+        {
+            get
+            {
+                return _IdRazaoEncontro;
+            }
+            set
+            {
+                OnIdRazaoEncontroChanging(value);
+                ReportPropertyChanging("IdRazaoEncontro");
+                _IdRazaoEncontro = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdRazaoEncontro");
+                OnIdRazaoEncontroChanged();
+            }
+        }
+        private global::System.Int32 _IdRazaoEncontro;
+        partial void OnIdRazaoEncontroChanging(global::System.Int32 value);
+        partial void OnIdRazaoEncontroChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> DataPreenchimento
+        {
+            get
+            {
+                return _DataPreenchimento;
+            }
+            set
+            {
+                OnDataPreenchimentoChanging(value);
+                ReportPropertyChanging("DataPreenchimento");
+                _DataPreenchimento = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DataPreenchimento");
+                OnDataPreenchimentoChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _DataPreenchimento;
+        partial void OnDataPreenchimentoChanging(Nullable<global::System.DateTime> value);
+        partial void OnDataPreenchimentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Lembretes
+        {
+            get
+            {
+                return _Lembretes;
+            }
+            set
+            {
+                OnLembretesChanging(value);
+                ReportPropertyChanging("Lembretes");
+                _Lembretes = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Lembretes");
+                OnLembretesChanged();
+            }
+        }
+        private global::System.String _Lembretes;
+        partial void OnLembretesChanging(global::System.String value);
+        partial void OnLembretesChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ComentariosTutor
+        {
+            get
+            {
+                return _ComentariosTutor;
+            }
+            set
+            {
+                OnComentariosTutorChanging(value);
+                ReportPropertyChanging("ComentariosTutor");
+                _ComentariosTutor = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ComentariosTutor");
+                OnComentariosTutorChanged();
+            }
+        }
+        private global::System.String _ComentariosTutor;
+        partial void OnComentariosTutorChanging(global::System.String value);
+        partial void OnComentariosTutorChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_fixo")]
+        public ConsultaFixoE tb_consulta_fixo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_fixo").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_fixo").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaFixoE> tb_consulta_fixoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_fixo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaFixoE>("pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1", "tb_consulta_fixo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_parametro")]
+        public EntityCollection<ConsultaParametroE> tb_consulta_parametro
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ConsultaParametroE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_parametro");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ConsultaParametroE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1", "tb_consulta_parametro", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_medicamentos_anteriores")]
+        public EntityCollection<MedicamentosAnterioresE> tb_medicamentos_anteriores
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<MedicamentosAnterioresE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_medicamentos_anteriores");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<MedicamentosAnterioresE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_medicamentos_anteriores", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_medicamento_prescrito")]
+        public EntityCollection<MedicamentoPrescritoE> tb_medicamento_prescrito
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<MedicamentoPrescritoE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_medicamento_prescrito");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<MedicamentoPrescritoE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_medicamento_prescrito", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel_queixa")]
+        public EntityCollection<ConsultaVariavelQueixaE> tb_consulta_variavel_queixa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ConsultaVariavelQueixaE>("pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel_queixa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ConsultaVariavelQueixaE>("pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel_queixa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_razao_encontro1", "tb_razao_encontro")]
+        public RazaoEncontroE tb_razao_encontro
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RazaoEncontroE>("pvModel.fk_tb_consulta_variavel_tb_razao_encontro1", "tb_razao_encontro").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RazaoEncontroE>("pvModel.fk_tb_consulta_variavel_tb_razao_encontro1", "tb_razao_encontro").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RazaoEncontroE> tb_razao_encontroReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RazaoEncontroE>("pvModel.fk_tb_consulta_variavel_tb_razao_encontro1", "tb_razao_encontro");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RazaoEncontroE>("pvModel.fk_tb_consulta_variavel_tb_razao_encontro1", "tb_razao_encontro", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_turma_pessoa_relato")]
+        public TurmaPessoaRelatoE tb_turma_pessoa_relato
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaPessoaRelatoE>("pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_turma_pessoa_relato").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaPessoaRelatoE>("pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_turma_pessoa_relato").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TurmaPessoaRelatoE> tb_turma_pessoa_relatoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaPessoaRelatoE>("pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_turma_pessoa_relato");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TurmaPessoaRelatoE>("pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_turma_pessoa_relato", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_estilo_vida_tb_consulta_variavel1", "tb_estilo_vida")]
+        public EstiloVidaE tb_estilo_vida
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EstiloVidaE>("pvModel.fk_tb_estilo_vida_tb_consulta_variavel1", "tb_estilo_vida").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EstiloVidaE>("pvModel.fk_tb_estilo_vida_tb_consulta_variavel1", "tb_estilo_vida").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<EstiloVidaE> tb_estilo_vidaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EstiloVidaE>("pvModel.fk_tb_estilo_vida_tb_consulta_variavel1", "tb_estilo_vida");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EstiloVidaE>("pvModel.fk_tb_estilo_vida_tb_consulta_variavel1", "tb_estilo_vida", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_exames_fisicos")]
+        public ExamesFisicosE tb_exames_fisicos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ExamesFisicosE>("pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_exames_fisicos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ExamesFisicosE>("pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_exames_fisicos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ExamesFisicosE> tb_exames_fisicosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ExamesFisicosE>("pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_exames_fisicos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ExamesFisicosE>("pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_exames_fisicos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_medicamento_nao_prescrito")]
+        public EntityCollection<MedicamentoNaoPrescritoE> tb_medicamento_nao_prescrito
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<MedicamentoNaoPrescritoE>("pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_medicamento_nao_prescrito");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<MedicamentoNaoPrescritoE>("pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_medicamento_nao_prescrito", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="ConsultaVariavelQueixaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ConsultaVariavelQueixaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ConsultaVariavelQueixaE object.
+        /// </summary>
+        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
+        /// <param name="idQueixa">Initial value of the IdQueixa property.</param>
+        /// <param name="idAcaoQueixa">Initial value of the IdAcaoQueixa property.</param>
+        /// <param name="motivo">Initial value of the Motivo property.</param>
+        public static ConsultaVariavelQueixaE CreateConsultaVariavelQueixaE(global::System.Int64 idConsultaVariavel, global::System.Int32 idQueixa, global::System.Int32 idAcaoQueixa, global::System.String motivo)
+        {
+            ConsultaVariavelQueixaE consultaVariavelQueixaE = new ConsultaVariavelQueixaE();
+            consultaVariavelQueixaE.IdConsultaVariavel = idConsultaVariavel;
+            consultaVariavelQueixaE.IdQueixa = idQueixa;
+            consultaVariavelQueixaE.IdAcaoQueixa = idAcaoQueixa;
+            consultaVariavelQueixaE.Motivo = motivo;
+            return consultaVariavelQueixaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdConsultaVariavel
+        {
+            get
+            {
+                return _IdConsultaVariavel;
+            }
+            set
+            {
+                if (_IdConsultaVariavel != value)
+                {
+                    OnIdConsultaVariavelChanging(value);
+                    ReportPropertyChanging("IdConsultaVariavel");
+                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdConsultaVariavel");
+                    OnIdConsultaVariavelChanged();
+                }
+            }
+        }
+        private global::System.Int64 _IdConsultaVariavel;
+        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
+        partial void OnIdConsultaVariavelChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdQueixa
+        {
+            get
+            {
+                return _IdQueixa;
+            }
+            set
+            {
+                if (_IdQueixa != value)
+                {
+                    OnIdQueixaChanging(value);
+                    ReportPropertyChanging("IdQueixa");
+                    _IdQueixa = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdQueixa");
+                    OnIdQueixaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdQueixa;
+        partial void OnIdQueixaChanging(global::System.Int32 value);
+        partial void OnIdQueixaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdAcaoQueixa
+        {
+            get
+            {
+                return _IdAcaoQueixa;
+            }
+            set
+            {
+                OnIdAcaoQueixaChanging(value);
+                ReportPropertyChanging("IdAcaoQueixa");
+                _IdAcaoQueixa = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdAcaoQueixa");
+                OnIdAcaoQueixaChanged();
+            }
+        }
+        private global::System.Int32 _IdAcaoQueixa;
+        partial void OnIdAcaoQueixaChanging(global::System.Int32 value);
+        partial void OnIdAcaoQueixaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Motivo
+        {
+            get
+            {
+                return _Motivo;
+            }
+            set
+            {
+                OnMotivoChanging(value);
+                ReportPropertyChanging("Motivo");
+                _Motivo = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Motivo");
+                OnMotivoChanged();
+            }
+        }
+        private global::System.String _Motivo;
+        partial void OnMotivoChanging(global::System.String value);
+        partial void OnMotivoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Desde
+        {
+            get
+            {
+                return _Desde;
+            }
+            set
+            {
+                OnDesdeChanging(value);
+                ReportPropertyChanging("Desde");
+                _Desde = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Desde");
+                OnDesdeChanged();
+            }
+        }
+        private global::System.String _Desde;
+        partial void OnDesdeChanging(global::System.String value);
+        partial void OnDesdeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Prioridade
+        {
+            get
+            {
+                return _Prioridade;
+            }
+            set
+            {
+                OnPrioridadeChanging(value);
+                ReportPropertyChanging("Prioridade");
+                _Prioridade = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Prioridade");
+                OnPrioridadeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Prioridade;
+        partial void OnPrioridadeChanging(Nullable<global::System.Int32> value);
+        partial void OnPrioridadeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_acao_queixa")]
+        public AcaoQueixaE tb_acao_queixa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoQueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_acao_queixa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoQueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_acao_queixa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<AcaoQueixaE> tb_acao_queixaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoQueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_acao_queixa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<AcaoQueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_acao_queixa1", "tb_acao_queixa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel")]
+        public ConsultaVariavelE tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaVariavelE> tb_consulta_variavelReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_queixa")]
+        public QueixaE tb_queixa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<QueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_queixa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<QueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_queixa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<QueixaE> tb_queixaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<QueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_queixa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<QueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_queixa", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -4296,6 +2908,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4374,7 +2987,72 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdInstituicaoChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Curso_Instituicao", "tb_instituicao")]
+        public InstituicaoE tb_instituicao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InstituicaoE>("pvModel.FK_Curso_Instituicao", "tb_instituicao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InstituicaoE>("pvModel.FK_Curso_Instituicao", "tb_instituicao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<InstituicaoE> tb_instituicaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InstituicaoE>("pvModel.FK_Curso_Instituicao", "tb_instituicao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<InstituicaoE>("pvModel.FK_Curso_Instituicao", "tb_instituicao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "tb_curso_disciplina", "tb_disciplina")]
+        public EntityCollection<DisciplinaE> tb_disciplina
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DisciplinaE>("pvModel.tb_curso_disciplina", "tb_disciplina");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DisciplinaE>("pvModel.tb_curso_disciplina", "tb_disciplina", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -4409,6 +3087,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4655,7 +3334,164 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdPlanoSaudeChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_consulta_fixo")]
+        public ConsultaFixoE tb_consulta_fixo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_consulta_fixo").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_consulta_fixo").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaFixoE> tb_consulta_fixoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_consulta_fixo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaFixoE>("pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_consulta_fixo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade")]
+        public EscolaridadeE tb_escolaridade
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EscolaridadeE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EscolaridadeE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<EscolaridadeE> tb_escolaridadeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EscolaridadeE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EscolaridadeE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_escolaridade", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao")]
+        public OcupacaoE tb_ocupacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OcupacaoE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OcupacaoE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<OcupacaoE> tb_ocupacaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OcupacaoE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<OcupacaoE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_ocupacao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude")]
+        public PlanoSaudeE tb_plano_saude
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PlanoSaudeE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PlanoSaudeE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PlanoSaudeE> tb_plano_saudeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PlanoSaudeE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PlanoSaudeE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_plano_saude", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -4684,6 +3520,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4837,7 +3674,88 @@ namespace PacienteVirtual.Models.Data
         partial void OnTipoBebidaChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_consulta_fixo")]
+        public ConsultaFixoE tb_consulta_fixo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_consulta_fixo").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_consulta_fixo").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaFixoE> tb_consulta_fixoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_consulta_fixo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaFixoE>("pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_consulta_fixo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diario_pessoal_tb_medicamentos1", "tb_medicamentos")]
+        public MedicamentosE tb_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_diario_pessoal_tb_medicamentos1", "tb_medicamentos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_diario_pessoal_tb_medicamentos1", "tb_medicamentos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<MedicamentosE> tb_medicamentosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_diario_pessoal_tb_medicamentos1", "tb_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<MedicamentosE>("pvModel.fk_tb_diario_pessoal_tb_medicamentos1", "tb_medicamentos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -4864,6 +3782,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4918,7 +3837,34 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeDisciplinaChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "tb_curso_disciplina", "tb_curso")]
+        public EntityCollection<CursoE> tb_curso
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CursoE>("pvModel.tb_curso_disciplina", "tb_curso");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CursoE>("pvModel.tb_curso_disciplina", "tb_curso", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -4945,6 +3891,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4999,7 +3946,626 @@ namespace PacienteVirtual.Models.Data
         partial void OnNivelChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos")]
+        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1", "tb_demograficos_antropometricos", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="EstiloVidaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class EstiloVidaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new EstiloVidaE object.
+        /// </summary>
+        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
+        /// <param name="tabacoConsumo">Initial value of the TabacoConsumo property.</param>
+        /// <param name="tabacoUso">Initial value of the TabacoUso property.</param>
+        /// <param name="cafeConsumo">Initial value of the CafeConsumo property.</param>
+        /// <param name="cafeUso">Initial value of the CafeUso property.</param>
+        /// <param name="alcoolConsumo">Initial value of the AlcoolConsumo property.</param>
+        /// <param name="alcoolUso">Initial value of the AlcoolUso property.</param>
+        public static EstiloVidaE CreateEstiloVidaE(global::System.Int64 idConsultaVariavel, global::System.Boolean tabacoConsumo, global::System.Int16 tabacoUso, global::System.Boolean cafeConsumo, global::System.Int16 cafeUso, global::System.Boolean alcoolConsumo, global::System.Int16 alcoolUso)
+        {
+            EstiloVidaE estiloVidaE = new EstiloVidaE();
+            estiloVidaE.IdConsultaVariavel = idConsultaVariavel;
+            estiloVidaE.TabacoConsumo = tabacoConsumo;
+            estiloVidaE.TabacoUso = tabacoUso;
+            estiloVidaE.CafeConsumo = cafeConsumo;
+            estiloVidaE.CafeUso = cafeUso;
+            estiloVidaE.AlcoolConsumo = alcoolConsumo;
+            estiloVidaE.AlcoolUso = alcoolUso;
+            return estiloVidaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdConsultaVariavel
+        {
+            get
+            {
+                return _IdConsultaVariavel;
+            }
+            set
+            {
+                if (_IdConsultaVariavel != value)
+                {
+                    OnIdConsultaVariavelChanging(value);
+                    ReportPropertyChanging("IdConsultaVariavel");
+                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdConsultaVariavel");
+                    OnIdConsultaVariavelChanged();
+                }
+            }
+        }
+        private global::System.Int64 _IdConsultaVariavel;
+        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
+        partial void OnIdConsultaVariavelChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean TabacoConsumo
+        {
+            get
+            {
+                return _TabacoConsumo;
+            }
+            set
+            {
+                OnTabacoConsumoChanging(value);
+                ReportPropertyChanging("TabacoConsumo");
+                _TabacoConsumo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TabacoConsumo");
+                OnTabacoConsumoChanged();
+            }
+        }
+        private global::System.Boolean _TabacoConsumo;
+        partial void OnTabacoConsumoChanging(global::System.Boolean value);
+        partial void OnTabacoConsumoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int16 TabacoUso
+        {
+            get
+            {
+                return _TabacoUso;
+            }
+            set
+            {
+                OnTabacoUsoChanging(value);
+                ReportPropertyChanging("TabacoUso");
+                _TabacoUso = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TabacoUso");
+                OnTabacoUsoChanged();
+            }
+        }
+        private global::System.Int16 _TabacoUso;
+        partial void OnTabacoUsoChanging(global::System.Int16 value);
+        partial void OnTabacoUsoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TabacoParou
+        {
+            get
+            {
+                return _TabacoParou;
+            }
+            set
+            {
+                OnTabacoParouChanging(value);
+                ReportPropertyChanging("TabacoParou");
+                _TabacoParou = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TabacoParou");
+                OnTabacoParouChanged();
+            }
+        }
+        private global::System.String _TabacoParou;
+        partial void OnTabacoParouChanging(global::System.String value);
+        partial void OnTabacoParouChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean CafeConsumo
+        {
+            get
+            {
+                return _CafeConsumo;
+            }
+            set
+            {
+                OnCafeConsumoChanging(value);
+                ReportPropertyChanging("CafeConsumo");
+                _CafeConsumo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CafeConsumo");
+                OnCafeConsumoChanged();
+            }
+        }
+        private global::System.Boolean _CafeConsumo;
+        partial void OnCafeConsumoChanging(global::System.Boolean value);
+        partial void OnCafeConsumoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int16 CafeUso
+        {
+            get
+            {
+                return _CafeUso;
+            }
+            set
+            {
+                OnCafeUsoChanging(value);
+                ReportPropertyChanging("CafeUso");
+                _CafeUso = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CafeUso");
+                OnCafeUsoChanged();
+            }
+        }
+        private global::System.Int16 _CafeUso;
+        partial void OnCafeUsoChanging(global::System.Int16 value);
+        partial void OnCafeUsoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CafeParou
+        {
+            get
+            {
+                return _CafeParou;
+            }
+            set
+            {
+                OnCafeParouChanging(value);
+                ReportPropertyChanging("CafeParou");
+                _CafeParou = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("CafeParou");
+                OnCafeParouChanged();
+            }
+        }
+        private global::System.String _CafeParou;
+        partial void OnCafeParouChanging(global::System.String value);
+        partial void OnCafeParouChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean AlcoolConsumo
+        {
+            get
+            {
+                return _AlcoolConsumo;
+            }
+            set
+            {
+                OnAlcoolConsumoChanging(value);
+                ReportPropertyChanging("AlcoolConsumo");
+                _AlcoolConsumo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AlcoolConsumo");
+                OnAlcoolConsumoChanged();
+            }
+        }
+        private global::System.Boolean _AlcoolConsumo;
+        partial void OnAlcoolConsumoChanging(global::System.Boolean value);
+        partial void OnAlcoolConsumoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int16 AlcoolUso
+        {
+            get
+            {
+                return _AlcoolUso;
+            }
+            set
+            {
+                OnAlcoolUsoChanging(value);
+                ReportPropertyChanging("AlcoolUso");
+                _AlcoolUso = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AlcoolUso");
+                OnAlcoolUsoChanged();
+            }
+        }
+        private global::System.Int16 _AlcoolUso;
+        partial void OnAlcoolUsoChanging(global::System.Int16 value);
+        partial void OnAlcoolUsoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AlcoolTipoBebida
+        {
+            get
+            {
+                return _AlcoolTipoBebida;
+            }
+            set
+            {
+                OnAlcoolTipoBebidaChanging(value);
+                ReportPropertyChanging("AlcoolTipoBebida");
+                _AlcoolTipoBebida = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AlcoolTipoBebida");
+                OnAlcoolTipoBebidaChanged();
+            }
+        }
+        private global::System.String _AlcoolTipoBebida;
+        partial void OnAlcoolTipoBebidaChanging(global::System.String value);
+        partial void OnAlcoolTipoBebidaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AlcoolParou
+        {
+            get
+            {
+                return _AlcoolParou;
+            }
+            set
+            {
+                OnAlcoolParouChanging(value);
+                ReportPropertyChanging("AlcoolParou");
+                _AlcoolParou = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AlcoolParou");
+                OnAlcoolParouChanged();
+            }
+        }
+        private global::System.String _AlcoolParou;
+        partial void OnAlcoolParouChanging(global::System.String value);
+        partial void OnAlcoolParouChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_estilo_vida_tb_consulta_variavel1", "tb_consulta_variavel")]
+        public ConsultaVariavelE tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_estilo_vida_tb_consulta_variavel1", "tb_consulta_variavel").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_estilo_vida_tb_consulta_variavel1", "tb_consulta_variavel").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaVariavelE> tb_consulta_variavelReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_estilo_vida_tb_consulta_variavel1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_estilo_vida_tb_consulta_variavel1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="ExamesFisicosE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ExamesFisicosE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ExamesFisicosE object.
+        /// </summary>
+        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
+        public static ExamesFisicosE CreateExamesFisicosE(global::System.Int64 idConsultaVariavel)
+        {
+            ExamesFisicosE examesFisicosE = new ExamesFisicosE();
+            examesFisicosE.IdConsultaVariavel = idConsultaVariavel;
+            return examesFisicosE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdConsultaVariavel
+        {
+            get
+            {
+                return _IdConsultaVariavel;
+            }
+            set
+            {
+                if (_IdConsultaVariavel != value)
+                {
+                    OnIdConsultaVariavelChanging(value);
+                    ReportPropertyChanging("IdConsultaVariavel");
+                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdConsultaVariavel");
+                    OnIdConsultaVariavelChanged();
+                }
+            }
+        }
+        private global::System.Int64 _IdConsultaVariavel;
+        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
+        partial void OnIdConsultaVariavelChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> Peso
+        {
+            get
+            {
+                return _Peso;
+            }
+            set
+            {
+                OnPesoChanging(value);
+                ReportPropertyChanging("Peso");
+                _Peso = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Peso");
+                OnPesoChanged();
+            }
+        }
+        private Nullable<global::System.Single> _Peso;
+        partial void OnPesoChanging(Nullable<global::System.Single> value);
+        partial void OnPesoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> Altura
+        {
+            get
+            {
+                return _Altura;
+            }
+            set
+            {
+                OnAlturaChanging(value);
+                ReportPropertyChanging("Altura");
+                _Altura = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Altura");
+                OnAlturaChanged();
+            }
+        }
+        private Nullable<global::System.Single> _Altura;
+        partial void OnAlturaChanging(Nullable<global::System.Single> value);
+        partial void OnAlturaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> PressaoDiastolica
+        {
+            get
+            {
+                return _PressaoDiastolica;
+            }
+            set
+            {
+                OnPressaoDiastolicaChanging(value);
+                ReportPropertyChanging("PressaoDiastolica");
+                _PressaoDiastolica = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PressaoDiastolica");
+                OnPressaoDiastolicaChanged();
+            }
+        }
+        private Nullable<global::System.Single> _PressaoDiastolica;
+        partial void OnPressaoDiastolicaChanging(Nullable<global::System.Single> value);
+        partial void OnPressaoDiastolicaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> PressaoSistolica
+        {
+            get
+            {
+                return _PressaoSistolica;
+            }
+            set
+            {
+                OnPressaoSistolicaChanging(value);
+                ReportPropertyChanging("PressaoSistolica");
+                _PressaoSistolica = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PressaoSistolica");
+                OnPressaoSistolicaChanged();
+            }
+        }
+        private Nullable<global::System.Single> _PressaoSistolica;
+        partial void OnPressaoSistolicaChanging(Nullable<global::System.Single> value);
+        partial void OnPressaoSistolicaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> Glicemia
+        {
+            get
+            {
+                return _Glicemia;
+            }
+            set
+            {
+                OnGlicemiaChanging(value);
+                ReportPropertyChanging("Glicemia");
+                _Glicemia = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Glicemia");
+                OnGlicemiaChanged();
+            }
+        }
+        private Nullable<global::System.Single> _Glicemia;
+        partial void OnGlicemiaChanging(Nullable<global::System.Single> value);
+        partial void OnGlicemiaChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel")]
+        public ConsultaVariavelE tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaVariavelE> tb_consulta_variavelReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "tb_alergia_exames_fisicos", "tb_alergia")]
+        public EntityCollection<AlergiaE> tb_alergia
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<AlergiaE>("pvModel.tb_alergia_exames_fisicos", "tb_alergia");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<AlergiaE>("pvModel.tb_alergia_exames_fisicos", "tb_alergia", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -5046,6 +4612,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5340,7 +4907,278 @@ namespace PacienteVirtual.Models.Data
         partial void OnAtencaoComportamentoChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_consulta_fixo")]
+        public ConsultaFixoE tb_consulta_fixo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_consulta_fixo").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_consulta_fixo").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaFixoE> tb_consulta_fixoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_consulta_fixo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaFixoE>("pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_consulta_fixo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta1", "tb_resposta")]
+        public RespostaE tb_resposta
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta1", "tb_resposta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta1", "tb_resposta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RespostaE> tb_respostaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta1", "tb_resposta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta1", "tb_resposta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta2", "tb_resposta")]
+        public RespostaE tb_resposta1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta2", "tb_resposta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta2", "tb_resposta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RespostaE> tb_resposta1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta2", "tb_resposta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta2", "tb_resposta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta3", "tb_resposta")]
+        public RespostaE tb_resposta2
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta3", "tb_resposta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta3", "tb_resposta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RespostaE> tb_resposta2Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta3", "tb_resposta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta3", "tb_resposta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta4", "tb_resposta")]
+        public RespostaE tb_resposta3
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta4", "tb_resposta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta4", "tb_resposta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RespostaE> tb_resposta3Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta4", "tb_resposta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta4", "tb_resposta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta5", "tb_resposta")]
+        public RespostaE tb_resposta4
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta5", "tb_resposta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta5", "tb_resposta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RespostaE> tb_resposta4Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta5", "tb_resposta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta5", "tb_resposta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta6", "tb_resposta")]
+        public RespostaE tb_resposta5
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta6", "tb_resposta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta6", "tb_resposta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RespostaE> tb_resposta5Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta6", "tb_resposta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RespostaE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta6", "tb_resposta", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -5369,6 +5207,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5447,7 +5286,50 @@ namespace PacienteVirtual.Models.Data
         partial void OnHistoriaFamiliarChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_historia_tb_consulta_fixo1", "tb_consulta_fixo")]
+        public ConsultaFixoE tb_consulta_fixo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_historia_tb_consulta_fixo1", "tb_consulta_fixo").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_historia_tb_consulta_fixo1", "tb_consulta_fixo").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaFixoE> tb_consulta_fixoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_historia_tb_consulta_fixo1", "tb_consulta_fixo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaFixoE>("pvModel.fk_tb_historia_tb_consulta_fixo1", "tb_consulta_fixo", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -5482,6 +5364,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5728,7 +5611,88 @@ namespace PacienteVirtual.Models.Data
         partial void OnComentarioTutorChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_historico_tb_pessoa1", "tb_pessoa")]
+        public PessoaE tb_pessoa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PessoaE>("pvModel.fk_tb_historico_tb_pessoa1", "tb_pessoa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PessoaE>("pvModel.fk_tb_historico_tb_pessoa1", "tb_pessoa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PessoaE> tb_pessoaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PessoaE>("pvModel.fk_tb_historico_tb_pessoa1", "tb_pessoa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PessoaE>("pvModel.fk_tb_historico_tb_pessoa1", "tb_pessoa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_historico_tb_relato_clinico1", "tb_relato_clinico")]
+        public RelatoClinicoE tb_relato_clinico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_historico_tb_relato_clinico1", "tb_relato_clinico").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_historico_tb_relato_clinico1", "tb_relato_clinico").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RelatoClinicoE> tb_relato_clinicoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_historico_tb_relato_clinico1", "tb_relato_clinico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RelatoClinicoE>("pvModel.fk_tb_historico_tb_relato_clinico1", "tb_relato_clinico", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -5757,6 +5721,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5835,161 +5800,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnSiglaChanged();
 
         #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="intervencao")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class intervencao : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new intervencao object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="numeroEtapa">Initial value of the numeroEtapa property.</param>
-        /// <param name="numeroIntervencao">Initial value of the numeroIntervencao property.</param>
-        public static intervencao Createintervencao(global::System.Int32 id, global::System.Int32 numeroEtapa, global::System.Int32 numeroIntervencao)
-        {
-            intervencao intervencao = new intervencao();
-            intervencao.id = id;
-            intervencao.numeroEtapa = numeroEtapa;
-            intervencao.numeroIntervencao = numeroIntervencao;
-            return intervencao;
-        }
 
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroEtapa
-        {
-            get
-            {
-                return _numeroEtapa;
-            }
-            set
-            {
-                OnnumeroEtapaChanging(value);
-                ReportPropertyChanging("numeroEtapa");
-                _numeroEtapa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroEtapa");
-                OnnumeroEtapaChanged();
-            }
-        }
-        private global::System.Int32 _numeroEtapa;
-        partial void OnnumeroEtapaChanging(global::System.Int32 value);
-        partial void OnnumeroEtapaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroIntervencao
-        {
-            get
-            {
-                return _numeroIntervencao;
-            }
-            set
-            {
-                OnnumeroIntervencaoChanging(value);
-                ReportPropertyChanging("numeroIntervencao");
-                _numeroIntervencao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroIntervencao");
-                OnnumeroIntervencaoChanged();
-            }
-        }
-        private global::System.Int32 _numeroIntervencao;
-        partial void OnnumeroIntervencaoChanging(global::System.Int32 value);
-        partial void OnnumeroIntervencaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> fkCasoClinico
-        {
-            get
-            {
-                return _fkCasoClinico;
-            }
-            set
-            {
-                OnfkCasoClinicoChanging(value);
-                ReportPropertyChanging("fkCasoClinico");
-                _fkCasoClinico = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkCasoClinico");
-                OnfkCasoClinicoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _fkCasoClinico;
-        partial void OnfkCasoClinicoChanging(Nullable<global::System.Int32> value);
-        partial void OnfkCasoClinicoChanged();
-
-        #endregion
     
         #region Navigation Properties
     
@@ -5999,8976 +5810,75 @@ namespace PacienteVirtual.Models.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK91D9EFAE8A1319FF", "casoclinico")]
-        public casoclinico casoclinico
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Curso_Instituicao", "tb_curso")]
+        public EntityCollection<CursoE> tb_curso
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FK91D9EFAE8A1319FF", "casoclinico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FK91D9EFAE8A1319FF", "casoclinico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<casoclinico> casoclinicoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FK91D9EFAE8A1319FF", "casoclinico");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CursoE>("pvModel.FK_Curso_Instituicao", "tb_curso");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<casoclinico>("pvModel.FK91D9EFAE8A1319FF", "casoclinico", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CursoE>("pvModel.FK_Curso_Instituicao", "tb_curso", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Instituicao", "tb_turma")]
+        public EntityCollection<TurmaE> tb_turma
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TurmaE>("pvModel.FK_Instituicao", "tb_turma");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TurmaE>("pvModel.FK_Instituicao", "tb_turma", value);
                 }
             }
         }
 
         #endregion
+
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="intervencaorespostaquarta")]
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="MedicamentoNaoPrescritoE")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class intervencaorespostaquarta : EntityObject
+    public partial class MedicamentoNaoPrescritoE : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new intervencaorespostaquarta object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="numeroIntervencao">Initial value of the numeroIntervencao property.</param>
-        /// <param name="fkResposta4">Initial value of the fkResposta4 property.</param>
-        public static intervencaorespostaquarta Createintervencaorespostaquarta(global::System.Int32 id, global::System.Int32 numeroIntervencao, global::System.Int32 fkResposta4)
-        {
-            intervencaorespostaquarta intervencaorespostaquarta = new intervencaorespostaquarta();
-            intervencaorespostaquarta.id = id;
-            intervencaorespostaquarta.numeroIntervencao = numeroIntervencao;
-            intervencaorespostaquarta.fkResposta4 = fkResposta4;
-            return intervencaorespostaquarta;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String justificativa
-        {
-            get
-            {
-                return _justificativa;
-            }
-            set
-            {
-                OnjustificativaChanging(value);
-                ReportPropertyChanging("justificativa");
-                _justificativa = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("justificativa");
-                OnjustificativaChanged();
-            }
-        }
-        private global::System.String _justificativa;
-        partial void OnjustificativaChanging(global::System.String value);
-        partial void OnjustificativaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroIntervencao
-        {
-            get
-            {
-                return _numeroIntervencao;
-            }
-            set
-            {
-                OnnumeroIntervencaoChanging(value);
-                ReportPropertyChanging("numeroIntervencao");
-                _numeroIntervencao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroIntervencao");
-                OnnumeroIntervencaoChanged();
-            }
-        }
-        private global::System.Int32 _numeroIntervencao;
-        partial void OnnumeroIntervencaoChanging(global::System.Int32 value);
-        partial void OnnumeroIntervencaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkResposta4
-        {
-            get
-            {
-                return _fkResposta4;
-            }
-            set
-            {
-                OnfkResposta4Changing(value);
-                ReportPropertyChanging("fkResposta4");
-                _fkResposta4 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkResposta4");
-                OnfkResposta4Changed();
-            }
-        }
-        private global::System.Int32 _fkResposta4;
-        partial void OnfkResposta4Changing(global::System.Int32 value);
-        partial void OnfkResposta4Changed();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_intervencaorespostaquarta_1", "respostaquarta")]
-        public respostaquarta respostaquarta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK_intervencaorespostaquarta_1", "respostaquarta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK_intervencaorespostaquarta_1", "respostaquarta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostaquarta> respostaquartaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK_intervencaorespostaquarta_1", "respostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaquarta>("pvModel.FK_intervencaorespostaquarta_1", "respostaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK800BA011D2B646E7", "respostaquarta")]
-        public respostaquarta respostaquarta1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK800BA011D2B646E7", "respostaquarta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK800BA011D2B646E7", "respostaquarta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostaquarta> respostaquarta1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK800BA011D2B646E7", "respostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaquarta>("pvModel.FK800BA011D2B646E7", "respostaquarta", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="intervencaorespostasegunda")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class intervencaorespostasegunda : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new intervencaorespostasegunda object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="fkResposta2">Initial value of the fkResposta2 property.</param>
-        public static intervencaorespostasegunda Createintervencaorespostasegunda(global::System.Int32 id, global::System.Int32 fkResposta2)
-        {
-            intervencaorespostasegunda intervencaorespostasegunda = new intervencaorespostasegunda();
-            intervencaorespostasegunda.id = id;
-            intervencaorespostasegunda.fkResposta2 = fkResposta2;
-            return intervencaorespostasegunda;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String justificativa
-        {
-            get
-            {
-                return _justificativa;
-            }
-            set
-            {
-                OnjustificativaChanging(value);
-                ReportPropertyChanging("justificativa");
-                _justificativa = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("justificativa");
-                OnjustificativaChanged();
-            }
-        }
-        private global::System.String _justificativa;
-        partial void OnjustificativaChanging(global::System.String value);
-        partial void OnjustificativaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> numeroIntervencao
-        {
-            get
-            {
-                return _numeroIntervencao;
-            }
-            set
-            {
-                OnnumeroIntervencaoChanging(value);
-                ReportPropertyChanging("numeroIntervencao");
-                _numeroIntervencao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroIntervencao");
-                OnnumeroIntervencaoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _numeroIntervencao;
-        partial void OnnumeroIntervencaoChanging(Nullable<global::System.Int32> value);
-        partial void OnnumeroIntervencaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkResposta2
-        {
-            get
-            {
-                return _fkResposta2;
-            }
-            set
-            {
-                OnfkResposta2Changing(value);
-                ReportPropertyChanging("fkResposta2");
-                _fkResposta2 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkResposta2");
-                OnfkResposta2Changed();
-            }
-        }
-        private global::System.Int32 _fkResposta2;
-        partial void OnfkResposta2Changing(global::System.Int32 value);
-        partial void OnfkResposta2Changed();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_intervencaorespostasegunda_1", "respostasegunda")]
-        public respostasegunda respostasegunda
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FK_intervencaorespostasegunda_1", "respostasegunda").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FK_intervencaorespostasegunda_1", "respostasegunda").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostasegunda> respostasegundaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FK_intervencaorespostasegunda_1", "respostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostasegunda>("pvModel.FK_intervencaorespostasegunda_1", "respostasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKD03D22FCA4FE1140", "respostasegunda")]
-        public respostasegunda respostasegunda1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FKD03D22FCA4FE1140", "respostasegunda").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FKD03D22FCA4FE1140", "respostasegunda").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostasegunda> respostasegunda1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FKD03D22FCA4FE1140", "respostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostasegunda>("pvModel.FKD03D22FCA4FE1140", "respostasegunda", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="medicamentonaoprescrito")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class medicamentonaoprescrito : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new medicamentonaoprescrito object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        public static medicamentonaoprescrito Createmedicamentonaoprescrito(global::System.Int32 id)
-        {
-            medicamentonaoprescrito medicamentonaoprescrito = new medicamentonaoprescrito();
-            medicamentonaoprescrito.id = id;
-            return medicamentonaoprescrito;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String dosagem
-        {
-            get
-            {
-                return _dosagem;
-            }
-            set
-            {
-                OndosagemChanging(value);
-                ReportPropertyChanging("dosagem");
-                _dosagem = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("dosagem");
-                OndosagemChanged();
-            }
-        }
-        private global::System.String _dosagem;
-        partial void OndosagemChanging(global::System.String value);
-        partial void OndosagemChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String posologia
-        {
-            get
-            {
-                return _posologia;
-            }
-            set
-            {
-                OnposologiaChanging(value);
-                ReportPropertyChanging("posologia");
-                _posologia = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("posologia");
-                OnposologiaChanged();
-            }
-        }
-        private global::System.String _posologia;
-        partial void OnposologiaChanging(global::System.String value);
-        partial void OnposologiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> fkCasoClinico
-        {
-            get
-            {
-                return _fkCasoClinico;
-            }
-            set
-            {
-                OnfkCasoClinicoChanging(value);
-                ReportPropertyChanging("fkCasoClinico");
-                _fkCasoClinico = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkCasoClinico");
-                OnfkCasoClinicoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _fkCasoClinico;
-        partial void OnfkCasoClinicoChanging(Nullable<global::System.Int32> value);
-        partial void OnfkCasoClinicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flItalico
-        {
-            get
-            {
-                return _flItalico;
-            }
-            set
-            {
-                OnflItalicoChanging(value);
-                ReportPropertyChanging("flItalico");
-                _flItalico = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flItalico");
-                OnflItalicoChanged();
-            }
-        }
-        private global::System.String _flItalico;
-        partial void OnflItalicoChanging(global::System.String value);
-        partial void OnflItalicoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKBF69A97F8A1319FF", "casoclinico")]
-        public casoclinico casoclinico
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKBF69A97F8A1319FF", "casoclinico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKBF69A97F8A1319FF", "casoclinico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<casoclinico> casoclinicoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKBF69A97F8A1319FF", "casoclinico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<casoclinico>("pvModel.FKBF69A97F8A1319FF", "casoclinico", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="medicamentoprescrito")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class medicamentoprescrito : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new medicamentoprescrito object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        public static medicamentoprescrito Createmedicamentoprescrito(global::System.Int32 id)
-        {
-            medicamentoprescrito medicamentoprescrito = new medicamentoprescrito();
-            medicamentoprescrito.id = id;
-            return medicamentoprescrito;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String dosagem
-        {
-            get
-            {
-                return _dosagem;
-            }
-            set
-            {
-                OndosagemChanging(value);
-                ReportPropertyChanging("dosagem");
-                _dosagem = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("dosagem");
-                OndosagemChanged();
-            }
-        }
-        private global::System.String _dosagem;
-        partial void OndosagemChanging(global::System.String value);
-        partial void OndosagemChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String especialidadeMedico
-        {
-            get
-            {
-                return _especialidadeMedico;
-            }
-            set
-            {
-                OnespecialidadeMedicoChanging(value);
-                ReportPropertyChanging("especialidadeMedico");
-                _especialidadeMedico = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("especialidadeMedico");
-                OnespecialidadeMedicoChanged();
-            }
-        }
-        private global::System.String _especialidadeMedico;
-        partial void OnespecialidadeMedicoChanging(global::System.String value);
-        partial void OnespecialidadeMedicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String nmMedico
-        {
-            get
-            {
-                return _nmMedico;
-            }
-            set
-            {
-                OnnmMedicoChanging(value);
-                ReportPropertyChanging("nmMedico");
-                _nmMedico = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("nmMedico");
-                OnnmMedicoChanged();
-            }
-        }
-        private global::System.String _nmMedico;
-        partial void OnnmMedicoChanging(global::System.String value);
-        partial void OnnmMedicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String posologia
-        {
-            get
-            {
-                return _posologia;
-            }
-            set
-            {
-                OnposologiaChanging(value);
-                ReportPropertyChanging("posologia");
-                _posologia = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("posologia");
-                OnposologiaChanged();
-            }
-        }
-        private global::System.String _posologia;
-        partial void OnposologiaChanging(global::System.String value);
-        partial void OnposologiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> fkCasoClinico
-        {
-            get
-            {
-                return _fkCasoClinico;
-            }
-            set
-            {
-                OnfkCasoClinicoChanging(value);
-                ReportPropertyChanging("fkCasoClinico");
-                _fkCasoClinico = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkCasoClinico");
-                OnfkCasoClinicoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _fkCasoClinico;
-        partial void OnfkCasoClinicoChanging(Nullable<global::System.Int32> value);
-        partial void OnfkCasoClinicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flItalico
-        {
-            get
-            {
-                return _flItalico;
-            }
-            set
-            {
-                OnflItalicoChanging(value);
-                ReportPropertyChanging("flItalico");
-                _flItalico = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flItalico");
-                OnflItalicoChanged();
-            }
-        }
-        private global::System.String _flItalico;
-        partial void OnflItalicoChanging(global::System.String value);
-        partial void OnflItalicoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKAA358BEF8A1319FF", "casoclinico")]
-        public casoclinico casoclinico
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKAA358BEF8A1319FF", "casoclinico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKAA358BEF8A1319FF", "casoclinico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<casoclinico> casoclinicoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKAA358BEF8A1319FF", "casoclinico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<casoclinico>("pvModel.FKAA358BEF8A1319FF", "casoclinico", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="medicamentoqueixa")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class medicamentoqueixa : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new medicamentoqueixa object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="fkQueixa">Initial value of the fkQueixa property.</param>
-        public static medicamentoqueixa Createmedicamentoqueixa(global::System.Int32 id, global::System.Int32 fkQueixa)
-        {
-            medicamentoqueixa medicamentoqueixa = new medicamentoqueixa();
-            medicamentoqueixa.id = id;
-            medicamentoqueixa.fkQueixa = fkQueixa;
-            return medicamentoqueixa;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String dose
-        {
-            get
-            {
-                return _dose;
-            }
-            set
-            {
-                OndoseChanging(value);
-                ReportPropertyChanging("dose");
-                _dose = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("dose");
-                OndoseChanged();
-            }
-        }
-        private global::System.String _dose;
-        partial void OndoseChanging(global::System.String value);
-        partial void OndoseChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String efetivo
-        {
-            get
-            {
-                return _efetivo;
-            }
-            set
-            {
-                OnefetivoChanging(value);
-                ReportPropertyChanging("efetivo");
-                _efetivo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("efetivo");
-                OnefetivoChanged();
-            }
-        }
-        private global::System.String _efetivo;
-        partial void OnefetivoChanging(global::System.String value);
-        partial void OnefetivoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String necessario
-        {
-            get
-            {
-                return _necessario;
-            }
-            set
-            {
-                OnnecessarioChanging(value);
-                ReportPropertyChanging("necessario");
-                _necessario = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("necessario");
-                OnnecessarioChanged();
-            }
-        }
-        private global::System.String _necessario;
-        partial void OnnecessarioChanging(global::System.String value);
-        partial void OnnecessarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String periodo
-        {
-            get
-            {
-                return _periodo;
-            }
-            set
-            {
-                OnperiodoChanging(value);
-                ReportPropertyChanging("periodo");
-                _periodo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("periodo");
-                OnperiodoChanged();
-            }
-        }
-        private global::System.String _periodo;
-        partial void OnperiodoChanging(global::System.String value);
-        partial void OnperiodoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String seguro
-        {
-            get
-            {
-                return _seguro;
-            }
-            set
-            {
-                OnseguroChanging(value);
-                ReportPropertyChanging("seguro");
-                _seguro = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("seguro");
-                OnseguroChanged();
-            }
-        }
-        private global::System.String _seguro;
-        partial void OnseguroChanging(global::System.String value);
-        partial void OnseguroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String cumprimento
-        {
-            get
-            {
-                return _cumprimento;
-            }
-            set
-            {
-                OncumprimentoChanging(value);
-                ReportPropertyChanging("cumprimento");
-                _cumprimento = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("cumprimento");
-                OncumprimentoChanged();
-            }
-        }
-        private global::System.String _cumprimento;
-        partial void OncumprimentoChanging(global::System.String value);
-        partial void OncumprimentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkQueixa
-        {
-            get
-            {
-                return _fkQueixa;
-            }
-            set
-            {
-                OnfkQueixaChanging(value);
-                ReportPropertyChanging("fkQueixa");
-                _fkQueixa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkQueixa");
-                OnfkQueixaChanged();
-            }
-        }
-        private global::System.Int32 _fkQueixa;
-        partial void OnfkQueixaChanging(global::System.Int32 value);
-        partial void OnfkQueixaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String conheceCumpre
-        {
-            get
-            {
-                return _conheceCumpre;
-            }
-            set
-            {
-                OnconheceCumpreChanging(value);
-                ReportPropertyChanging("conheceCumpre");
-                _conheceCumpre = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("conheceCumpre");
-                OnconheceCumpreChanged();
-            }
-        }
-        private global::System.String _conheceCumpre;
-        partial void OnconheceCumpreChanging(global::System.String value);
-        partial void OnconheceCumpreChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_medicamentoqueixa_1", "queixa")]
-        public queixa queixa
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixa>("pvModel.FK_medicamentoqueixa_1", "queixa").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixa>("pvModel.FK_medicamentoqueixa_1", "queixa").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<queixa> queixaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixa>("pvModel.FK_medicamentoqueixa_1", "queixa");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<queixa>("pvModel.FK_medicamentoqueixa_1", "queixa", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK8099C4A73D02FC3D", "queixa")]
-        public queixa queixa1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixa>("pvModel.FK8099C4A73D02FC3D", "queixa").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixa>("pvModel.FK8099C4A73D02FC3D", "queixa").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<queixa> queixa1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixa>("pvModel.FK8099C4A73D02FC3D", "queixa");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<queixa>("pvModel.FK8099C4A73D02FC3D", "queixa", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="medicamentoqueixaquarta")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class medicamentoqueixaquarta : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new medicamentoqueixaquarta object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="fkQueixaQuarta">Initial value of the fkQueixaQuarta property.</param>
-        public static medicamentoqueixaquarta Createmedicamentoqueixaquarta(global::System.Int32 id, global::System.Int32 fkQueixaQuarta)
-        {
-            medicamentoqueixaquarta medicamentoqueixaquarta = new medicamentoqueixaquarta();
-            medicamentoqueixaquarta.id = id;
-            medicamentoqueixaquarta.fkQueixaQuarta = fkQueixaQuarta;
-            return medicamentoqueixaquarta;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String dose
-        {
-            get
-            {
-                return _dose;
-            }
-            set
-            {
-                OndoseChanging(value);
-                ReportPropertyChanging("dose");
-                _dose = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("dose");
-                OndoseChanged();
-            }
-        }
-        private global::System.String _dose;
-        partial void OndoseChanging(global::System.String value);
-        partial void OndoseChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String efetivo
-        {
-            get
-            {
-                return _efetivo;
-            }
-            set
-            {
-                OnefetivoChanging(value);
-                ReportPropertyChanging("efetivo");
-                _efetivo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("efetivo");
-                OnefetivoChanged();
-            }
-        }
-        private global::System.String _efetivo;
-        partial void OnefetivoChanging(global::System.String value);
-        partial void OnefetivoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String necessario
-        {
-            get
-            {
-                return _necessario;
-            }
-            set
-            {
-                OnnecessarioChanging(value);
-                ReportPropertyChanging("necessario");
-                _necessario = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("necessario");
-                OnnecessarioChanged();
-            }
-        }
-        private global::System.String _necessario;
-        partial void OnnecessarioChanging(global::System.String value);
-        partial void OnnecessarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String periodo
-        {
-            get
-            {
-                return _periodo;
-            }
-            set
-            {
-                OnperiodoChanging(value);
-                ReportPropertyChanging("periodo");
-                _periodo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("periodo");
-                OnperiodoChanged();
-            }
-        }
-        private global::System.String _periodo;
-        partial void OnperiodoChanging(global::System.String value);
-        partial void OnperiodoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String seguro
-        {
-            get
-            {
-                return _seguro;
-            }
-            set
-            {
-                OnseguroChanging(value);
-                ReportPropertyChanging("seguro");
-                _seguro = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("seguro");
-                OnseguroChanged();
-            }
-        }
-        private global::System.String _seguro;
-        partial void OnseguroChanging(global::System.String value);
-        partial void OnseguroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String cumprimento
-        {
-            get
-            {
-                return _cumprimento;
-            }
-            set
-            {
-                OncumprimentoChanging(value);
-                ReportPropertyChanging("cumprimento");
-                _cumprimento = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("cumprimento");
-                OncumprimentoChanged();
-            }
-        }
-        private global::System.String _cumprimento;
-        partial void OncumprimentoChanging(global::System.String value);
-        partial void OncumprimentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkQueixaQuarta
-        {
-            get
-            {
-                return _fkQueixaQuarta;
-            }
-            set
-            {
-                OnfkQueixaQuartaChanging(value);
-                ReportPropertyChanging("fkQueixaQuarta");
-                _fkQueixaQuarta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkQueixaQuarta");
-                OnfkQueixaQuartaChanged();
-            }
-        }
-        private global::System.Int32 _fkQueixaQuarta;
-        partial void OnfkQueixaQuartaChanging(global::System.Int32 value);
-        partial void OnfkQueixaQuartaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String conheceCumpre
-        {
-            get
-            {
-                return _conheceCumpre;
-            }
-            set
-            {
-                OnconheceCumpreChanging(value);
-                ReportPropertyChanging("conheceCumpre");
-                _conheceCumpre = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("conheceCumpre");
-                OnconheceCumpreChanged();
-            }
-        }
-        private global::System.String _conheceCumpre;
-        partial void OnconheceCumpreChanging(global::System.String value);
-        partial void OnconheceCumpreChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_medicamentoqueixaquarta_1", "queixarespostaquarta")]
-        public queixarespostaquarta queixarespostaquarta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostaquarta>("pvModel.FK_medicamentoqueixaquarta_1", "queixarespostaquarta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostaquarta>("pvModel.FK_medicamentoqueixaquarta_1", "queixarespostaquarta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<queixarespostaquarta> queixarespostaquartaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostaquarta>("pvModel.FK_medicamentoqueixaquarta_1", "queixarespostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<queixarespostaquarta>("pvModel.FK_medicamentoqueixaquarta_1", "queixarespostaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK78D999E947C18322", "queixarespostaquarta")]
-        public queixarespostaquarta queixarespostaquarta1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostaquarta>("pvModel.FK78D999E947C18322", "queixarespostaquarta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostaquarta>("pvModel.FK78D999E947C18322", "queixarespostaquarta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<queixarespostaquarta> queixarespostaquarta1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostaquarta>("pvModel.FK78D999E947C18322", "queixarespostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<queixarespostaquarta>("pvModel.FK78D999E947C18322", "queixarespostaquarta", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="medicamentoqueixasegunda")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class medicamentoqueixasegunda : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new medicamentoqueixasegunda object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="fkQueixaSegunda">Initial value of the fkQueixaSegunda property.</param>
-        public static medicamentoqueixasegunda Createmedicamentoqueixasegunda(global::System.Int32 id, global::System.Int32 fkQueixaSegunda)
-        {
-            medicamentoqueixasegunda medicamentoqueixasegunda = new medicamentoqueixasegunda();
-            medicamentoqueixasegunda.id = id;
-            medicamentoqueixasegunda.fkQueixaSegunda = fkQueixaSegunda;
-            return medicamentoqueixasegunda;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String dose
-        {
-            get
-            {
-                return _dose;
-            }
-            set
-            {
-                OndoseChanging(value);
-                ReportPropertyChanging("dose");
-                _dose = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("dose");
-                OndoseChanged();
-            }
-        }
-        private global::System.String _dose;
-        partial void OndoseChanging(global::System.String value);
-        partial void OndoseChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String efetivo
-        {
-            get
-            {
-                return _efetivo;
-            }
-            set
-            {
-                OnefetivoChanging(value);
-                ReportPropertyChanging("efetivo");
-                _efetivo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("efetivo");
-                OnefetivoChanged();
-            }
-        }
-        private global::System.String _efetivo;
-        partial void OnefetivoChanging(global::System.String value);
-        partial void OnefetivoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String necessario
-        {
-            get
-            {
-                return _necessario;
-            }
-            set
-            {
-                OnnecessarioChanging(value);
-                ReportPropertyChanging("necessario");
-                _necessario = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("necessario");
-                OnnecessarioChanged();
-            }
-        }
-        private global::System.String _necessario;
-        partial void OnnecessarioChanging(global::System.String value);
-        partial void OnnecessarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String periodo
-        {
-            get
-            {
-                return _periodo;
-            }
-            set
-            {
-                OnperiodoChanging(value);
-                ReportPropertyChanging("periodo");
-                _periodo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("periodo");
-                OnperiodoChanged();
-            }
-        }
-        private global::System.String _periodo;
-        partial void OnperiodoChanging(global::System.String value);
-        partial void OnperiodoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String seguro
-        {
-            get
-            {
-                return _seguro;
-            }
-            set
-            {
-                OnseguroChanging(value);
-                ReportPropertyChanging("seguro");
-                _seguro = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("seguro");
-                OnseguroChanged();
-            }
-        }
-        private global::System.String _seguro;
-        partial void OnseguroChanging(global::System.String value);
-        partial void OnseguroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String cumprimento
-        {
-            get
-            {
-                return _cumprimento;
-            }
-            set
-            {
-                OncumprimentoChanging(value);
-                ReportPropertyChanging("cumprimento");
-                _cumprimento = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("cumprimento");
-                OncumprimentoChanged();
-            }
-        }
-        private global::System.String _cumprimento;
-        partial void OncumprimentoChanging(global::System.String value);
-        partial void OncumprimentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkQueixaSegunda
-        {
-            get
-            {
-                return _fkQueixaSegunda;
-            }
-            set
-            {
-                OnfkQueixaSegundaChanging(value);
-                ReportPropertyChanging("fkQueixaSegunda");
-                _fkQueixaSegunda = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkQueixaSegunda");
-                OnfkQueixaSegundaChanged();
-            }
-        }
-        private global::System.Int32 _fkQueixaSegunda;
-        partial void OnfkQueixaSegundaChanging(global::System.Int32 value);
-        partial void OnfkQueixaSegundaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String conheceCumpre
-        {
-            get
-            {
-                return _conheceCumpre;
-            }
-            set
-            {
-                OnconheceCumpreChanging(value);
-                ReportPropertyChanging("conheceCumpre");
-                _conheceCumpre = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("conheceCumpre");
-                OnconheceCumpreChanged();
-            }
-        }
-        private global::System.String _conheceCumpre;
-        partial void OnconheceCumpreChanging(global::System.String value);
-        partial void OnconheceCumpreChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_medicamentoqueixasegunda_1", "queixarespostasegunda")]
-        public queixarespostasegunda queixarespostasegunda
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostasegunda>("pvModel.FK_medicamentoqueixasegunda_1", "queixarespostasegunda").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostasegunda>("pvModel.FK_medicamentoqueixasegunda_1", "queixarespostasegunda").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<queixarespostasegunda> queixarespostasegundaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostasegunda>("pvModel.FK_medicamentoqueixasegunda_1", "queixarespostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<queixarespostasegunda>("pvModel.FK_medicamentoqueixasegunda_1", "queixarespostasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKF12E64244E1862F8", "queixarespostasegunda")]
-        public queixarespostasegunda queixarespostasegunda1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostasegunda>("pvModel.FKF12E64244E1862F8", "queixarespostasegunda").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostasegunda>("pvModel.FKF12E64244E1862F8", "queixarespostasegunda").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<queixarespostasegunda> queixarespostasegunda1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<queixarespostasegunda>("pvModel.FKF12E64244E1862F8", "queixarespostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<queixarespostasegunda>("pvModel.FKF12E64244E1862F8", "queixarespostasegunda", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="MedicamentosE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class MedicamentosE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new MedicamentosE object.
-        /// </summary>
-        /// <param name="idMedicamento">Initial value of the IdMedicamento property.</param>
-        /// <param name="nome">Initial value of the Nome property.</param>
-        public static MedicamentosE CreateMedicamentosE(global::System.Int32 idMedicamento, global::System.String nome)
-        {
-            MedicamentosE medicamentosE = new MedicamentosE();
-            medicamentosE.IdMedicamento = idMedicamento;
-            medicamentosE.Nome = nome;
-            return medicamentosE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdMedicamento
-        {
-            get
-            {
-                return _IdMedicamento;
-            }
-            set
-            {
-                if (_IdMedicamento != value)
-                {
-                    OnIdMedicamentoChanging(value);
-                    ReportPropertyChanging("IdMedicamento");
-                    _IdMedicamento = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdMedicamento");
-                    OnIdMedicamentoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdMedicamento;
-        partial void OnIdMedicamentoChanging(global::System.Int32 value);
-        partial void OnIdMedicamentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Nome
-        {
-            get
-            {
-                return _Nome;
-            }
-            set
-            {
-                OnNomeChanging(value);
-                ReportPropertyChanging("Nome");
-                _Nome = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Nome");
-                OnNomeChanged();
-            }
-        }
-        private global::System.String _Nome;
-        partial void OnNomeChanging(global::System.String value);
-        partial void OnNomeChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="OcupacaoE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class OcupacaoE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new OcupacaoE object.
-        /// </summary>
-        /// <param name="idOcupacao">Initial value of the IdOcupacao property.</param>
-        /// <param name="descricao">Initial value of the Descricao property.</param>
-        public static OcupacaoE CreateOcupacaoE(global::System.Int32 idOcupacao, global::System.String descricao)
-        {
-            OcupacaoE ocupacaoE = new OcupacaoE();
-            ocupacaoE.IdOcupacao = idOcupacao;
-            ocupacaoE.Descricao = descricao;
-            return ocupacaoE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdOcupacao
-        {
-            get
-            {
-                return _IdOcupacao;
-            }
-            set
-            {
-                if (_IdOcupacao != value)
-                {
-                    OnIdOcupacaoChanging(value);
-                    ReportPropertyChanging("IdOcupacao");
-                    _IdOcupacao = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdOcupacao");
-                    OnIdOcupacaoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdOcupacao;
-        partial void OnIdOcupacaoChanging(global::System.Int32 value);
-        partial void OnIdOcupacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Descricao
-        {
-            get
-            {
-                return _Descricao;
-            }
-            set
-            {
-                OnDescricaoChanging(value);
-                ReportPropertyChanging("Descricao");
-                _Descricao = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Descricao");
-                OnDescricaoChanged();
-            }
-        }
-        private global::System.String _Descricao;
-        partial void OnDescricaoChanging(global::System.String value);
-        partial void OnDescricaoChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PacienteE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class PacienteE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new PacienteE object.
-        /// </summary>
-        /// <param name="idPaciente">Initial value of the IdPaciente property.</param>
-        /// <param name="nome">Initial value of the Nome property.</param>
-        public static PacienteE CreatePacienteE(global::System.Int32 idPaciente, global::System.String nome)
-        {
-            PacienteE pacienteE = new PacienteE();
-            pacienteE.IdPaciente = idPaciente;
-            pacienteE.Nome = nome;
-            return pacienteE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPaciente
-        {
-            get
-            {
-                return _IdPaciente;
-            }
-            set
-            {
-                if (_IdPaciente != value)
-                {
-                    OnIdPacienteChanging(value);
-                    ReportPropertyChanging("IdPaciente");
-                    _IdPaciente = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPaciente");
-                    OnIdPacienteChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPaciente;
-        partial void OnIdPacienteChanging(global::System.Int32 value);
-        partial void OnIdPacienteChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Nome
-        {
-            get
-            {
-                return _Nome;
-            }
-            set
-            {
-                OnNomeChanging(value);
-                ReportPropertyChanging("Nome");
-                _Nome = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Nome");
-                OnNomeChanged();
-            }
-        }
-        private global::System.String _Nome;
-        partial void OnNomeChanging(global::System.String value);
-        partial void OnNomeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] Foto
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_Foto);
-            }
-            set
-            {
-                OnFotoChanging(value);
-                ReportPropertyChanging("Foto");
-                _Foto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Foto");
-                OnFotoChanged();
-            }
-        }
-        private global::System.Byte[] _Foto;
-        partial void OnFotoChanging(global::System.Byte[] value);
-        partial void OnFotoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente_pessoa_turma")]
-        public EntityCollection<PacientePessoaTurmaE> tb_paciente_pessoa_turma
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PacientePessoaTurmaE>("pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente_pessoa_turma");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PacientePessoaTurmaE>("pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente_pessoa_turma", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PacientePessoaTurmaE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class PacientePessoaTurmaE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new PacientePessoaTurmaE object.
-        /// </summary>
-        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
-        /// <param name="idTurma">Initial value of the IdTurma property.</param>
-        /// <param name="idPaciente">Initial value of the IdPaciente property.</param>
-        /// <param name="idConsultaFixo">Initial value of the IdConsultaFixo property.</param>
-        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
-        /// <param name="grupoAtividades">Initial value of the GrupoAtividades property.</param>
-        /// <param name="estadoPreenchimento">Initial value of the EstadoPreenchimento property.</param>
-        public static PacientePessoaTurmaE CreatePacientePessoaTurmaE(global::System.Int32 idPessoa, global::System.Int32 idTurma, global::System.Int32 idPaciente, global::System.Int64 idConsultaFixo, global::System.Int64 idConsultaVariavel, global::System.Int32 grupoAtividades, global::System.Int32 estadoPreenchimento)
-        {
-            PacientePessoaTurmaE pacientePessoaTurmaE = new PacientePessoaTurmaE();
-            pacientePessoaTurmaE.IdPessoa = idPessoa;
-            pacientePessoaTurmaE.IdTurma = idTurma;
-            pacientePessoaTurmaE.IdPaciente = idPaciente;
-            pacientePessoaTurmaE.IdConsultaFixo = idConsultaFixo;
-            pacientePessoaTurmaE.IdConsultaVariavel = idConsultaVariavel;
-            pacientePessoaTurmaE.GrupoAtividades = grupoAtividades;
-            pacientePessoaTurmaE.EstadoPreenchimento = estadoPreenchimento;
-            return pacientePessoaTurmaE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPessoa
-        {
-            get
-            {
-                return _IdPessoa;
-            }
-            set
-            {
-                if (_IdPessoa != value)
-                {
-                    OnIdPessoaChanging(value);
-                    ReportPropertyChanging("IdPessoa");
-                    _IdPessoa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPessoa");
-                    OnIdPessoaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPessoa;
-        partial void OnIdPessoaChanging(global::System.Int32 value);
-        partial void OnIdPessoaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdTurma
-        {
-            get
-            {
-                return _IdTurma;
-            }
-            set
-            {
-                if (_IdTurma != value)
-                {
-                    OnIdTurmaChanging(value);
-                    ReportPropertyChanging("IdTurma");
-                    _IdTurma = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdTurma");
-                    OnIdTurmaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdTurma;
-        partial void OnIdTurmaChanging(global::System.Int32 value);
-        partial void OnIdTurmaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPaciente
-        {
-            get
-            {
-                return _IdPaciente;
-            }
-            set
-            {
-                if (_IdPaciente != value)
-                {
-                    OnIdPacienteChanging(value);
-                    ReportPropertyChanging("IdPaciente");
-                    _IdPaciente = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPaciente");
-                    OnIdPacienteChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPaciente;
-        partial void OnIdPacienteChanging(global::System.Int32 value);
-        partial void OnIdPacienteChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaFixo
-        {
-            get
-            {
-                return _IdConsultaFixo;
-            }
-            set
-            {
-                OnIdConsultaFixoChanging(value);
-                ReportPropertyChanging("IdConsultaFixo");
-                _IdConsultaFixo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdConsultaFixo");
-                OnIdConsultaFixoChanged();
-            }
-        }
-        private global::System.Int64 _IdConsultaFixo;
-        partial void OnIdConsultaFixoChanging(global::System.Int64 value);
-        partial void OnIdConsultaFixoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaVariavel
-        {
-            get
-            {
-                return _IdConsultaVariavel;
-            }
-            set
-            {
-                OnIdConsultaVariavelChanging(value);
-                ReportPropertyChanging("IdConsultaVariavel");
-                _IdConsultaVariavel = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdConsultaVariavel");
-                OnIdConsultaVariavelChanged();
-            }
-        }
-        private global::System.Int64 _IdConsultaVariavel;
-        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
-        partial void OnIdConsultaVariavelChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 GrupoAtividades
-        {
-            get
-            {
-                return _GrupoAtividades;
-            }
-            set
-            {
-                OnGrupoAtividadesChanging(value);
-                ReportPropertyChanging("GrupoAtividades");
-                _GrupoAtividades = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("GrupoAtividades");
-                OnGrupoAtividadesChanged();
-            }
-        }
-        private global::System.Int32 _GrupoAtividades;
-        partial void OnGrupoAtividadesChanging(global::System.Int32 value);
-        partial void OnGrupoAtividadesChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 EstadoPreenchimento
-        {
-            get
-            {
-                return _EstadoPreenchimento;
-            }
-            set
-            {
-                OnEstadoPreenchimentoChanging(value);
-                ReportPropertyChanging("EstadoPreenchimento");
-                _EstadoPreenchimento = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("EstadoPreenchimento");
-                OnEstadoPreenchimentoChanged();
-            }
-        }
-        private global::System.Int32 _EstadoPreenchimento;
-        partial void OnEstadoPreenchimentoChanging(global::System.Int32 value);
-        partial void OnEstadoPreenchimentoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_consulta_fixo")]
-        public ConsultaFixoE tb_consulta_fixo
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_consulta_fixo").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_consulta_fixo").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<ConsultaFixoE> tb_consulta_fixoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaFixoE>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_consulta_fixo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaFixoE>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_fixo1", "tb_consulta_fixo", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_consulta_variavel")]
-        public tb_consulta_variavel tb_consulta_variavel
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consulta_variavel>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_consulta_variavel").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consulta_variavel>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_consulta_variavel").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_consulta_variavel> tb_consulta_variavelReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consulta_variavel>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_consulta_variavel");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_consulta_variavel>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_consulta_variavel", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente")]
-        public PacienteE tb_paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<PacienteE> tb_pacienteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacienteE>("pvModel.fk_tb_paciente_pessoa_turma_tb_paciente1", "tb_paciente", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_turma_pessoa")]
-        public tb_turma_pessoa tb_turma_pessoa
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_turma_pessoa>("pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_turma_pessoa").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_turma_pessoa>("pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_turma_pessoa").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_turma_pessoa> tb_turma_pessoaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_turma_pessoa>("pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_turma_pessoa");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_turma_pessoa>("pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_turma_pessoa", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="parametroclinico")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class parametroclinico : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new parametroclinico object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="valor">Initial value of the valor property.</param>
-        public static parametroclinico Createparametroclinico(global::System.Int32 id, global::System.Single valor)
-        {
-            parametroclinico parametroclinico = new parametroclinico();
-            parametroclinico.id = id;
-            parametroclinico.valor = valor;
-            return parametroclinico;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String unidade
-        {
-            get
-            {
-                return _unidade;
-            }
-            set
-            {
-                OnunidadeChanging(value);
-                ReportPropertyChanging("unidade");
-                _unidade = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("unidade");
-                OnunidadeChanged();
-            }
-        }
-        private global::System.String _unidade;
-        partial void OnunidadeChanging(global::System.String value);
-        partial void OnunidadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single valor
-        {
-            get
-            {
-                return _valor;
-            }
-            set
-            {
-                OnvalorChanging(value);
-                ReportPropertyChanging("valor");
-                _valor = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("valor");
-                OnvalorChanged();
-            }
-        }
-        private global::System.Single _valor;
-        partial void OnvalorChanging(global::System.Single value);
-        partial void OnvalorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String valorDeReferencia
-        {
-            get
-            {
-                return _valorDeReferencia;
-            }
-            set
-            {
-                OnvalorDeReferenciaChanging(value);
-                ReportPropertyChanging("valorDeReferencia");
-                _valorDeReferencia = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("valorDeReferencia");
-                OnvalorDeReferenciaChanged();
-            }
-        }
-        private global::System.String _valorDeReferencia;
-        partial void OnvalorDeReferenciaChanging(global::System.String value);
-        partial void OnvalorDeReferenciaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> fkCasoClinico
-        {
-            get
-            {
-                return _fkCasoClinico;
-            }
-            set
-            {
-                OnfkCasoClinicoChanging(value);
-                ReportPropertyChanging("fkCasoClinico");
-                _fkCasoClinico = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkCasoClinico");
-                OnfkCasoClinicoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _fkCasoClinico;
-        partial void OnfkCasoClinicoChanging(Nullable<global::System.Int32> value);
-        partial void OnfkCasoClinicoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKAAEE312E8A1319FF", "casoclinico")]
-        public casoclinico casoclinico
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKAAEE312E8A1319FF", "casoclinico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKAAEE312E8A1319FF", "casoclinico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<casoclinico> casoclinicoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKAAEE312E8A1319FF", "casoclinico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<casoclinico>("pvModel.FKAAEE312E8A1319FF", "casoclinico", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="ParametroClinicoE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class ParametroClinicoE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new ParametroClinicoE object.
-        /// </summary>
-        /// <param name="idParametroClinico">Initial value of the IdParametroClinico property.</param>
-        /// <param name="parametroClinico">Initial value of the ParametroClinico property.</param>
-        public static ParametroClinicoE CreateParametroClinicoE(global::System.Int32 idParametroClinico, global::System.String parametroClinico)
-        {
-            ParametroClinicoE parametroClinicoE = new ParametroClinicoE();
-            parametroClinicoE.IdParametroClinico = idParametroClinico;
-            parametroClinicoE.ParametroClinico = parametroClinico;
-            return parametroClinicoE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdParametroClinico
-        {
-            get
-            {
-                return _IdParametroClinico;
-            }
-            set
-            {
-                if (_IdParametroClinico != value)
-                {
-                    OnIdParametroClinicoChanging(value);
-                    ReportPropertyChanging("IdParametroClinico");
-                    _IdParametroClinico = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdParametroClinico");
-                    OnIdParametroClinicoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdParametroClinico;
-        partial void OnIdParametroClinicoChanging(global::System.Int32 value);
-        partial void OnIdParametroClinicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String ParametroClinico
-        {
-            get
-            {
-                return _ParametroClinico;
-            }
-            set
-            {
-                OnParametroClinicoChanging(value);
-                ReportPropertyChanging("ParametroClinico");
-                _ParametroClinico = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("ParametroClinico");
-                OnParametroClinicoChanged();
-            }
-        }
-        private global::System.String _ParametroClinico;
-        partial void OnParametroClinicoChanging(global::System.String value);
-        partial void OnParametroClinicoChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PerguntaE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class PerguntaE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new PerguntaE object.
-        /// </summary>
-        /// <param name="idPergunta">Initial value of the IdPergunta property.</param>
-        /// <param name="pergunta">Initial value of the Pergunta property.</param>
-        public static PerguntaE CreatePerguntaE(global::System.Int32 idPergunta, global::System.String pergunta)
-        {
-            PerguntaE perguntaE = new PerguntaE();
-            perguntaE.IdPergunta = idPergunta;
-            perguntaE.Pergunta = pergunta;
-            return perguntaE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPergunta
-        {
-            get
-            {
-                return _IdPergunta;
-            }
-            set
-            {
-                if (_IdPergunta != value)
-                {
-                    OnIdPerguntaChanging(value);
-                    ReportPropertyChanging("IdPergunta");
-                    _IdPergunta = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPergunta");
-                    OnIdPerguntaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPergunta;
-        partial void OnIdPerguntaChanging(global::System.Int32 value);
-        partial void OnIdPerguntaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Pergunta
-        {
-            get
-            {
-                return _Pergunta;
-            }
-            set
-            {
-                OnPerguntaChanging(value);
-                ReportPropertyChanging("Pergunta");
-                _Pergunta = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Pergunta");
-                OnPerguntaChanged();
-            }
-        }
-        private global::System.String _Pergunta;
-        partial void OnPerguntaChanging(global::System.String value);
-        partial void OnPerguntaChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PessoaE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class PessoaE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new PessoaE object.
-        /// </summary>
-        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
-        /// <param name="nome">Initial value of the Nome property.</param>
-        public static PessoaE CreatePessoaE(global::System.Int32 idPessoa, global::System.String nome)
-        {
-            PessoaE pessoaE = new PessoaE();
-            pessoaE.IdPessoa = idPessoa;
-            pessoaE.Nome = nome;
-            return pessoaE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPessoa
-        {
-            get
-            {
-                return _IdPessoa;
-            }
-            set
-            {
-                if (_IdPessoa != value)
-                {
-                    OnIdPessoaChanging(value);
-                    ReportPropertyChanging("IdPessoa");
-                    _IdPessoa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPessoa");
-                    OnIdPessoaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPessoa;
-        partial void OnIdPessoaChanging(global::System.Int32 value);
-        partial void OnIdPessoaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Nome
-        {
-            get
-            {
-                return _Nome;
-            }
-            set
-            {
-                OnNomeChanging(value);
-                ReportPropertyChanging("Nome");
-                _Nome = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Nome");
-                OnNomeChanged();
-            }
-        }
-        private global::System.String _Nome;
-        partial void OnNomeChanging(global::System.String value);
-        partial void OnNomeChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PlanoSaudeE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class PlanoSaudeE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new PlanoSaudeE object.
-        /// </summary>
-        /// <param name="idPlanoSaude">Initial value of the IdPlanoSaude property.</param>
-        /// <param name="nome">Initial value of the Nome property.</param>
-        public static PlanoSaudeE CreatePlanoSaudeE(global::System.Int32 idPlanoSaude, global::System.String nome)
-        {
-            PlanoSaudeE planoSaudeE = new PlanoSaudeE();
-            planoSaudeE.IdPlanoSaude = idPlanoSaude;
-            planoSaudeE.Nome = nome;
-            return planoSaudeE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPlanoSaude
-        {
-            get
-            {
-                return _IdPlanoSaude;
-            }
-            set
-            {
-                if (_IdPlanoSaude != value)
-                {
-                    OnIdPlanoSaudeChanging(value);
-                    ReportPropertyChanging("IdPlanoSaude");
-                    _IdPlanoSaude = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPlanoSaude");
-                    OnIdPlanoSaudeChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPlanoSaude;
-        partial void OnIdPlanoSaudeChanging(global::System.Int32 value);
-        partial void OnIdPlanoSaudeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Nome
-        {
-            get
-            {
-                return _Nome;
-            }
-            set
-            {
-                OnNomeChanging(value);
-                ReportPropertyChanging("Nome");
-                _Nome = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Nome");
-                OnNomeChanged();
-            }
-        }
-        private global::System.String _Nome;
-        partial void OnNomeChanging(global::System.String value);
-        partial void OnNomeChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="queixa")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class queixa : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new queixa object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="numeroEtapa">Initial value of the numeroEtapa property.</param>
-        /// <param name="numeroPRM">Initial value of the numeroPRM property.</param>
-        public static queixa Createqueixa(global::System.Int32 id, global::System.Int32 numeroEtapa, global::System.Int32 numeroPRM)
-        {
-            queixa queixa = new queixa();
-            queixa.id = id;
-            queixa.numeroEtapa = numeroEtapa;
-            queixa.numeroPRM = numeroPRM;
-            return queixa;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroEtapa
-        {
-            get
-            {
-                return _numeroEtapa;
-            }
-            set
-            {
-                OnnumeroEtapaChanging(value);
-                ReportPropertyChanging("numeroEtapa");
-                _numeroEtapa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroEtapa");
-                OnnumeroEtapaChanged();
-            }
-        }
-        private global::System.Int32 _numeroEtapa;
-        partial void OnnumeroEtapaChanging(global::System.Int32 value);
-        partial void OnnumeroEtapaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroPRM
-        {
-            get
-            {
-                return _numeroPRM;
-            }
-            set
-            {
-                OnnumeroPRMChanging(value);
-                ReportPropertyChanging("numeroPRM");
-                _numeroPRM = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroPRM");
-                OnnumeroPRMChanged();
-            }
-        }
-        private global::System.Int32 _numeroPRM;
-        partial void OnnumeroPRMChanging(global::System.Int32 value);
-        partial void OnnumeroPRMChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> fkCasoClinico
-        {
-            get
-            {
-                return _fkCasoClinico;
-            }
-            set
-            {
-                OnfkCasoClinicoChanging(value);
-                ReportPropertyChanging("fkCasoClinico");
-                _fkCasoClinico = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkCasoClinico");
-                OnfkCasoClinicoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _fkCasoClinico;
-        partial void OnfkCasoClinicoChanging(Nullable<global::System.Int32> value);
-        partial void OnfkCasoClinicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String conheceOuPreocupa
-        {
-            get
-            {
-                return _conheceOuPreocupa;
-            }
-            set
-            {
-                OnconheceOuPreocupaChanging(value);
-                ReportPropertyChanging("conheceOuPreocupa");
-                _conheceOuPreocupa = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("conheceOuPreocupa");
-                OnconheceOuPreocupaChanged();
-            }
-        }
-        private global::System.String _conheceOuPreocupa;
-        partial void OnconheceOuPreocupaChanging(global::System.String value);
-        partial void OnconheceOuPreocupaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String periodoSurgimento
-        {
-            get
-            {
-                return _periodoSurgimento;
-            }
-            set
-            {
-                OnperiodoSurgimentoChanging(value);
-                ReportPropertyChanging("periodoSurgimento");
-                _periodoSurgimento = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("periodoSurgimento");
-                OnperiodoSurgimentoChanged();
-            }
-        }
-        private global::System.String _periodoSurgimento;
-        partial void OnperiodoSurgimentoChanging(global::System.String value);
-        partial void OnperiodoSurgimentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> prioridade
-        {
-            get
-            {
-                return _prioridade;
-            }
-            set
-            {
-                OnprioridadeChanging(value);
-                ReportPropertyChanging("prioridade");
-                _prioridade = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("prioridade");
-                OnprioridadeChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _prioridade;
-        partial void OnprioridadeChanging(Nullable<global::System.Int32> value);
-        partial void OnprioridadeChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKC773DEB18A1319FF", "casoclinico")]
-        public casoclinico casoclinico
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKC773DEB18A1319FF", "casoclinico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKC773DEB18A1319FF", "casoclinico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<casoclinico> casoclinicoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<casoclinico>("pvModel.FKC773DEB18A1319FF", "casoclinico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<casoclinico>("pvModel.FKC773DEB18A1319FF", "casoclinico", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_medicamentoqueixa_1", "medicamentoqueixa")]
-        public EntityCollection<medicamentoqueixa> medicamentoqueixas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<medicamentoqueixa>("pvModel.FK_medicamentoqueixa_1", "medicamentoqueixa");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<medicamentoqueixa>("pvModel.FK_medicamentoqueixa_1", "medicamentoqueixa", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK8099C4A73D02FC3D", "medicamentoqueixa")]
-        public EntityCollection<medicamentoqueixa> medicamentoqueixas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<medicamentoqueixa>("pvModel.FK8099C4A73D02FC3D", "medicamentoqueixa");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<medicamentoqueixa>("pvModel.FK8099C4A73D02FC3D", "medicamentoqueixa", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="QueixaE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class QueixaE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new QueixaE object.
-        /// </summary>
-        /// <param name="idQueixa">Initial value of the IdQueixa property.</param>
-        /// <param name="descricaoQueixa">Initial value of the DescricaoQueixa property.</param>
-        /// <param name="idSistema">Initial value of the IdSistema property.</param>
-        public static QueixaE CreateQueixaE(global::System.Int32 idQueixa, global::System.String descricaoQueixa, global::System.Int32 idSistema)
-        {
-            QueixaE queixaE = new QueixaE();
-            queixaE.IdQueixa = idQueixa;
-            queixaE.DescricaoQueixa = descricaoQueixa;
-            queixaE.IdSistema = idSistema;
-            return queixaE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdQueixa
-        {
-            get
-            {
-                return _IdQueixa;
-            }
-            set
-            {
-                if (_IdQueixa != value)
-                {
-                    OnIdQueixaChanging(value);
-                    ReportPropertyChanging("IdQueixa");
-                    _IdQueixa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdQueixa");
-                    OnIdQueixaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdQueixa;
-        partial void OnIdQueixaChanging(global::System.Int32 value);
-        partial void OnIdQueixaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String DescricaoQueixa
-        {
-            get
-            {
-                return _DescricaoQueixa;
-            }
-            set
-            {
-                OnDescricaoQueixaChanging(value);
-                ReportPropertyChanging("DescricaoQueixa");
-                _DescricaoQueixa = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("DescricaoQueixa");
-                OnDescricaoQueixaChanged();
-            }
-        }
-        private global::System.String _DescricaoQueixa;
-        partial void OnDescricaoQueixaChanging(global::System.String value);
-        partial void OnDescricaoQueixaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdSistema
-        {
-            get
-            {
-                return _IdSistema;
-            }
-            set
-            {
-                OnIdSistemaChanging(value);
-                ReportPropertyChanging("IdSistema");
-                _IdSistema = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdSistema");
-                OnIdSistemaChanged();
-            }
-        }
-        private global::System.Int32 _IdSistema;
-        partial void OnIdSistemaChanging(global::System.Int32 value);
-        partial void OnIdSistemaChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="queixarespostaprimeira")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class queixarespostaprimeira : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new queixarespostaprimeira object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="fkResposta">Initial value of the fkResposta property.</param>
-        public static queixarespostaprimeira Createqueixarespostaprimeira(global::System.Int32 id, global::System.String descricao, global::System.Int32 fkResposta)
-        {
-            queixarespostaprimeira queixarespostaprimeira = new queixarespostaprimeira();
-            queixarespostaprimeira.id = id;
-            queixarespostaprimeira.descricao = descricao;
-            queixarespostaprimeira.fkResposta = fkResposta;
-            return queixarespostaprimeira;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkResposta
-        {
-            get
-            {
-                return _fkResposta;
-            }
-            set
-            {
-                OnfkRespostaChanging(value);
-                ReportPropertyChanging("fkResposta");
-                _fkResposta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkResposta");
-                OnfkRespostaChanged();
-            }
-        }
-        private global::System.Int32 _fkResposta;
-        partial void OnfkRespostaChanging(global::System.Int32 value);
-        partial void OnfkRespostaChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_queixarespostaprimeira_1", "respostaprimeira")]
-        public respostaprimeira respostaprimeira
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaprimeira>("pvModel.FK_queixarespostaprimeira_1", "respostaprimeira").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaprimeira>("pvModel.FK_queixarespostaprimeira_1", "respostaprimeira").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostaprimeira> respostaprimeiraReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaprimeira>("pvModel.FK_queixarespostaprimeira_1", "respostaprimeira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaprimeira>("pvModel.FK_queixarespostaprimeira_1", "respostaprimeira", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK1E43344B8872A0F6", "respostaprimeira")]
-        public respostaprimeira respostaprimeira1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaprimeira>("pvModel.FK1E43344B8872A0F6", "respostaprimeira").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaprimeira>("pvModel.FK1E43344B8872A0F6", "respostaprimeira").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostaprimeira> respostaprimeira1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaprimeira>("pvModel.FK1E43344B8872A0F6", "respostaprimeira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaprimeira>("pvModel.FK1E43344B8872A0F6", "respostaprimeira", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="queixarespostaquarta")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class queixarespostaquarta : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new queixarespostaquarta object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="numeroPRM">Initial value of the numeroPRM property.</param>
-        /// <param name="fkResposta4">Initial value of the fkResposta4 property.</param>
-        /// <param name="prioridade">Initial value of the prioridade property.</param>
-        public static queixarespostaquarta Createqueixarespostaquarta(global::System.Int32 id, global::System.Int32 numeroPRM, global::System.Int32 fkResposta4, global::System.Int64 prioridade)
-        {
-            queixarespostaquarta queixarespostaquarta = new queixarespostaquarta();
-            queixarespostaquarta.id = id;
-            queixarespostaquarta.numeroPRM = numeroPRM;
-            queixarespostaquarta.fkResposta4 = fkResposta4;
-            queixarespostaquarta.prioridade = prioridade;
-            return queixarespostaquarta;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroPRM
-        {
-            get
-            {
-                return _numeroPRM;
-            }
-            set
-            {
-                OnnumeroPRMChanging(value);
-                ReportPropertyChanging("numeroPRM");
-                _numeroPRM = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroPRM");
-                OnnumeroPRMChanged();
-            }
-        }
-        private global::System.Int32 _numeroPRM;
-        partial void OnnumeroPRMChanging(global::System.Int32 value);
-        partial void OnnumeroPRMChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkResposta4
-        {
-            get
-            {
-                return _fkResposta4;
-            }
-            set
-            {
-                OnfkResposta4Changing(value);
-                ReportPropertyChanging("fkResposta4");
-                _fkResposta4 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkResposta4");
-                OnfkResposta4Changed();
-            }
-        }
-        private global::System.Int32 _fkResposta4;
-        partial void OnfkResposta4Changing(global::System.Int32 value);
-        partial void OnfkResposta4Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String periodoSurgimento
-        {
-            get
-            {
-                return _periodoSurgimento;
-            }
-            set
-            {
-                OnperiodoSurgimentoChanging(value);
-                ReportPropertyChanging("periodoSurgimento");
-                _periodoSurgimento = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("periodoSurgimento");
-                OnperiodoSurgimentoChanged();
-            }
-        }
-        private global::System.String _periodoSurgimento;
-        partial void OnperiodoSurgimentoChanging(global::System.String value);
-        partial void OnperiodoSurgimentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flConheceOuPreocupa
-        {
-            get
-            {
-                return _flConheceOuPreocupa;
-            }
-            set
-            {
-                OnflConheceOuPreocupaChanging(value);
-                ReportPropertyChanging("flConheceOuPreocupa");
-                _flConheceOuPreocupa = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flConheceOuPreocupa");
-                OnflConheceOuPreocupaChanged();
-            }
-        }
-        private global::System.String _flConheceOuPreocupa;
-        partial void OnflConheceOuPreocupaChanging(global::System.String value);
-        partial void OnflConheceOuPreocupaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 prioridade
-        {
-            get
-            {
-                return _prioridade;
-            }
-            set
-            {
-                OnprioridadeChanging(value);
-                ReportPropertyChanging("prioridade");
-                _prioridade = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("prioridade");
-                OnprioridadeChanged();
-            }
-        }
-        private global::System.Int64 _prioridade;
-        partial void OnprioridadeChanging(global::System.Int64 value);
-        partial void OnprioridadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_medicamentoqueixaquarta_1", "medicamentoqueixaquarta")]
-        public EntityCollection<medicamentoqueixaquarta> medicamentoqueixaquartas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<medicamentoqueixaquarta>("pvModel.FK_medicamentoqueixaquarta_1", "medicamentoqueixaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<medicamentoqueixaquarta>("pvModel.FK_medicamentoqueixaquarta_1", "medicamentoqueixaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK78D999E947C18322", "medicamentoqueixaquarta")]
-        public EntityCollection<medicamentoqueixaquarta> medicamentoqueixaquartas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<medicamentoqueixaquarta>("pvModel.FK78D999E947C18322", "medicamentoqueixaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<medicamentoqueixaquarta>("pvModel.FK78D999E947C18322", "medicamentoqueixaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_queixarespostaquarta_1", "respostaquarta")]
-        public respostaquarta respostaquarta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK_queixarespostaquarta_1", "respostaquarta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK_queixarespostaquarta_1", "respostaquarta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostaquarta> respostaquartaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK_queixarespostaquarta_1", "respostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaquarta>("pvModel.FK_queixarespostaquarta_1", "respostaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK5BA98DD4D2B646E7", "respostaquarta")]
-        public respostaquarta respostaquarta1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK5BA98DD4D2B646E7", "respostaquarta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK5BA98DD4D2B646E7", "respostaquarta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostaquarta> respostaquarta1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaquarta>("pvModel.FK5BA98DD4D2B646E7", "respostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaquarta>("pvModel.FK5BA98DD4D2B646E7", "respostaquarta", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="queixarespostasegunda")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class queixarespostasegunda : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new queixarespostasegunda object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="numeroPRM">Initial value of the numeroPRM property.</param>
-        /// <param name="fkResposta2">Initial value of the fkResposta2 property.</param>
-        /// <param name="prioridade">Initial value of the prioridade property.</param>
-        public static queixarespostasegunda Createqueixarespostasegunda(global::System.Int32 id, global::System.Int32 numeroPRM, global::System.Int32 fkResposta2, global::System.Int64 prioridade)
-        {
-            queixarespostasegunda queixarespostasegunda = new queixarespostasegunda();
-            queixarespostasegunda.id = id;
-            queixarespostasegunda.numeroPRM = numeroPRM;
-            queixarespostasegunda.fkResposta2 = fkResposta2;
-            queixarespostasegunda.prioridade = prioridade;
-            return queixarespostasegunda;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroPRM
-        {
-            get
-            {
-                return _numeroPRM;
-            }
-            set
-            {
-                OnnumeroPRMChanging(value);
-                ReportPropertyChanging("numeroPRM");
-                _numeroPRM = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroPRM");
-                OnnumeroPRMChanged();
-            }
-        }
-        private global::System.Int32 _numeroPRM;
-        partial void OnnumeroPRMChanging(global::System.Int32 value);
-        partial void OnnumeroPRMChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkResposta2
-        {
-            get
-            {
-                return _fkResposta2;
-            }
-            set
-            {
-                OnfkResposta2Changing(value);
-                ReportPropertyChanging("fkResposta2");
-                _fkResposta2 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkResposta2");
-                OnfkResposta2Changed();
-            }
-        }
-        private global::System.Int32 _fkResposta2;
-        partial void OnfkResposta2Changing(global::System.Int32 value);
-        partial void OnfkResposta2Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flConheceOuPreocupa
-        {
-            get
-            {
-                return _flConheceOuPreocupa;
-            }
-            set
-            {
-                OnflConheceOuPreocupaChanging(value);
-                ReportPropertyChanging("flConheceOuPreocupa");
-                _flConheceOuPreocupa = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flConheceOuPreocupa");
-                OnflConheceOuPreocupaChanged();
-            }
-        }
-        private global::System.String _flConheceOuPreocupa;
-        partial void OnflConheceOuPreocupaChanging(global::System.String value);
-        partial void OnflConheceOuPreocupaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 prioridade
-        {
-            get
-            {
-                return _prioridade;
-            }
-            set
-            {
-                OnprioridadeChanging(value);
-                ReportPropertyChanging("prioridade");
-                _prioridade = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("prioridade");
-                OnprioridadeChanged();
-            }
-        }
-        private global::System.Int64 _prioridade;
-        partial void OnprioridadeChanging(global::System.Int64 value);
-        partial void OnprioridadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String periodoSurgimento
-        {
-            get
-            {
-                return _periodoSurgimento;
-            }
-            set
-            {
-                OnperiodoSurgimentoChanging(value);
-                ReportPropertyChanging("periodoSurgimento");
-                _periodoSurgimento = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("periodoSurgimento");
-                OnperiodoSurgimentoChanged();
-            }
-        }
-        private global::System.String _periodoSurgimento;
-        partial void OnperiodoSurgimentoChanging(global::System.String value);
-        partial void OnperiodoSurgimentoChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_medicamentoqueixasegunda_1", "medicamentoqueixasegunda")]
-        public EntityCollection<medicamentoqueixasegunda> medicamentoqueixasegundas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<medicamentoqueixasegunda>("pvModel.FK_medicamentoqueixasegunda_1", "medicamentoqueixasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<medicamentoqueixasegunda>("pvModel.FK_medicamentoqueixasegunda_1", "medicamentoqueixasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKF12E64244E1862F8", "medicamentoqueixasegunda")]
-        public EntityCollection<medicamentoqueixasegunda> medicamentoqueixasegundas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<medicamentoqueixasegunda>("pvModel.FKF12E64244E1862F8", "medicamentoqueixasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<medicamentoqueixasegunda>("pvModel.FKF12E64244E1862F8", "medicamentoqueixasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK685CED99A4FE1140", "respostasegunda")]
-        public respostasegunda respostasegunda
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FK685CED99A4FE1140", "respostasegunda").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FK685CED99A4FE1140", "respostasegunda").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostasegunda> respostasegundaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FK685CED99A4FE1140", "respostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostasegunda>("pvModel.FK685CED99A4FE1140", "respostasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKFD098D39A4FE1140", "respostasegunda")]
-        public respostasegunda respostasegunda1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FKFD098D39A4FE1140", "respostasegunda").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FKFD098D39A4FE1140", "respostasegunda").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostasegunda> respostasegunda1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostasegunda>("pvModel.FKFD098D39A4FE1140", "respostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostasegunda>("pvModel.FKFD098D39A4FE1140", "respostasegunda", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="queixarespostaterceira")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class queixarespostaterceira : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new queixarespostaterceira object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="descricao">Initial value of the descricao property.</param>
-        /// <param name="fkResposta">Initial value of the fkResposta property.</param>
-        public static queixarespostaterceira Createqueixarespostaterceira(global::System.Int32 id, global::System.String descricao, global::System.Int32 fkResposta)
-        {
-            queixarespostaterceira queixarespostaterceira = new queixarespostaterceira();
-            queixarespostaterceira.id = id;
-            queixarespostaterceira.descricao = descricao;
-            queixarespostaterceira.fkResposta = fkResposta;
-            return queixarespostaterceira;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descricao
-        {
-            get
-            {
-                return _descricao;
-            }
-            set
-            {
-                OndescricaoChanging(value);
-                ReportPropertyChanging("descricao");
-                _descricao = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descricao");
-                OndescricaoChanged();
-            }
-        }
-        private global::System.String _descricao;
-        partial void OndescricaoChanging(global::System.String value);
-        partial void OndescricaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkResposta
-        {
-            get
-            {
-                return _fkResposta;
-            }
-            set
-            {
-                OnfkRespostaChanging(value);
-                ReportPropertyChanging("fkResposta");
-                _fkResposta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkResposta");
-                OnfkRespostaChanged();
-            }
-        }
-        private global::System.Int32 _fkResposta;
-        partial void OnfkRespostaChanging(global::System.Int32 value);
-        partial void OnfkRespostaChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_queixarespostaterceira_1", "respostaterceira")]
-        public respostaterceira respostaterceira
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaterceira>("pvModel.FK_queixarespostaterceira_1", "respostaterceira").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaterceira>("pvModel.FK_queixarespostaterceira_1", "respostaterceira").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostaterceira> respostaterceiraReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaterceira>("pvModel.FK_queixarespostaterceira_1", "respostaterceira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaterceira>("pvModel.FK_queixarespostaterceira_1", "respostaterceira", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK1CE59807871504B2", "respostaterceira")]
-        public respostaterceira respostaterceira1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaterceira>("pvModel.FK1CE59807871504B2", "respostaterceira").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaterceira>("pvModel.FK1CE59807871504B2", "respostaterceira").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<respostaterceira> respostaterceira1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<respostaterceira>("pvModel.FK1CE59807871504B2", "respostaterceira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<respostaterceira>("pvModel.FK1CE59807871504B2", "respostaterceira", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="RazaoEncontroE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class RazaoEncontroE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new RazaoEncontroE object.
-        /// </summary>
-        /// <param name="idRazaoEncontro">Initial value of the IdRazaoEncontro property.</param>
-        /// <param name="descricaoRazao">Initial value of the DescricaoRazao property.</param>
-        public static RazaoEncontroE CreateRazaoEncontroE(global::System.Int32 idRazaoEncontro, global::System.String descricaoRazao)
-        {
-            RazaoEncontroE razaoEncontroE = new RazaoEncontroE();
-            razaoEncontroE.IdRazaoEncontro = idRazaoEncontro;
-            razaoEncontroE.DescricaoRazao = descricaoRazao;
-            return razaoEncontroE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdRazaoEncontro
-        {
-            get
-            {
-                return _IdRazaoEncontro;
-            }
-            set
-            {
-                if (_IdRazaoEncontro != value)
-                {
-                    OnIdRazaoEncontroChanging(value);
-                    ReportPropertyChanging("IdRazaoEncontro");
-                    _IdRazaoEncontro = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdRazaoEncontro");
-                    OnIdRazaoEncontroChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdRazaoEncontro;
-        partial void OnIdRazaoEncontroChanging(global::System.Int32 value);
-        partial void OnIdRazaoEncontroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String DescricaoRazao
-        {
-            get
-            {
-                return _DescricaoRazao;
-            }
-            set
-            {
-                OnDescricaoRazaoChanging(value);
-                ReportPropertyChanging("DescricaoRazao");
-                _DescricaoRazao = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("DescricaoRazao");
-                OnDescricaoRazaoChanged();
-            }
-        }
-        private global::System.String _DescricaoRazao;
-        partial void OnDescricaoRazaoChanging(global::System.String value);
-        partial void OnDescricaoRazaoChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="RelatoClinicoE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class RelatoClinicoE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new RelatoClinicoE object.
-        /// </summary>
-        /// <param name="idRelato">Initial value of the IdRelato property.</param>
-        /// <param name="idPaciente">Initial value of the IdPaciente property.</param>
-        /// <param name="ordemCronologia">Initial value of the OrdemCronologia property.</param>
-        /// <param name="nivelDificuldade">Initial value of the NivelDificuldade property.</param>
-        public static RelatoClinicoE CreateRelatoClinicoE(global::System.Int32 idRelato, global::System.Int32 idPaciente, global::System.Int32 ordemCronologia, global::System.Int32 nivelDificuldade)
-        {
-            RelatoClinicoE relatoClinicoE = new RelatoClinicoE();
-            relatoClinicoE.IdRelato = idRelato;
-            relatoClinicoE.IdPaciente = idPaciente;
-            relatoClinicoE.OrdemCronologia = ordemCronologia;
-            relatoClinicoE.NivelDificuldade = nivelDificuldade;
-            return relatoClinicoE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdRelato
-        {
-            get
-            {
-                return _IdRelato;
-            }
-            set
-            {
-                if (_IdRelato != value)
-                {
-                    OnIdRelatoChanging(value);
-                    ReportPropertyChanging("IdRelato");
-                    _IdRelato = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdRelato");
-                    OnIdRelatoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdRelato;
-        partial void OnIdRelatoChanging(global::System.Int32 value);
-        partial void OnIdRelatoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPaciente
-        {
-            get
-            {
-                return _IdPaciente;
-            }
-            set
-            {
-                OnIdPacienteChanging(value);
-                ReportPropertyChanging("IdPaciente");
-                _IdPaciente = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdPaciente");
-                OnIdPacienteChanged();
-            }
-        }
-        private global::System.Int32 _IdPaciente;
-        partial void OnIdPacienteChanging(global::System.Int32 value);
-        partial void OnIdPacienteChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 OrdemCronologia
-        {
-            get
-            {
-                return _OrdemCronologia;
-            }
-            set
-            {
-                OnOrdemCronologiaChanging(value);
-                ReportPropertyChanging("OrdemCronologia");
-                _OrdemCronologia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("OrdemCronologia");
-                OnOrdemCronologiaChanged();
-            }
-        }
-        private global::System.Int32 _OrdemCronologia;
-        partial void OnOrdemCronologiaChanging(global::System.Int32 value);
-        partial void OnOrdemCronologiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String RelatoTextual
-        {
-            get
-            {
-                return _RelatoTextual;
-            }
-            set
-            {
-                OnRelatoTextualChanging(value);
-                ReportPropertyChanging("RelatoTextual");
-                _RelatoTextual = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("RelatoTextual");
-                OnRelatoTextualChanged();
-            }
-        }
-        private global::System.String _RelatoTextual;
-        partial void OnRelatoTextualChanging(global::System.String value);
-        partial void OnRelatoTextualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] RelatoVideo
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_RelatoVideo);
-            }
-            set
-            {
-                OnRelatoVideoChanging(value);
-                ReportPropertyChanging("RelatoVideo");
-                _RelatoVideo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("RelatoVideo");
-                OnRelatoVideoChanged();
-            }
-        }
-        private global::System.Byte[] _RelatoVideo;
-        partial void OnRelatoVideoChanging(global::System.Byte[] value);
-        partial void OnRelatoVideoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 NivelDificuldade
-        {
-            get
-            {
-                return _NivelDificuldade;
-            }
-            set
-            {
-                OnNivelDificuldadeChanging(value);
-                ReportPropertyChanging("NivelDificuldade");
-                _NivelDificuldade = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("NivelDificuldade");
-                OnNivelDificuldadeChanged();
-            }
-        }
-        private global::System.Int32 _NivelDificuldade;
-        partial void OnNivelDificuldadeChanging(global::System.Int32 value);
-        partial void OnNivelDificuldadeChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="RespostaE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class RespostaE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new RespostaE object.
-        /// </summary>
-        /// <param name="idResposta">Initial value of the IdResposta property.</param>
-        /// <param name="resposta">Initial value of the Resposta property.</param>
-        /// <param name="idPergunta">Initial value of the IdPergunta property.</param>
-        public static RespostaE CreateRespostaE(global::System.Int32 idResposta, global::System.String resposta, global::System.Int32 idPergunta)
-        {
-            RespostaE respostaE = new RespostaE();
-            respostaE.IdResposta = idResposta;
-            respostaE.Resposta = resposta;
-            respostaE.IdPergunta = idPergunta;
-            return respostaE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdResposta
-        {
-            get
-            {
-                return _IdResposta;
-            }
-            set
-            {
-                if (_IdResposta != value)
-                {
-                    OnIdRespostaChanging(value);
-                    ReportPropertyChanging("IdResposta");
-                    _IdResposta = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdResposta");
-                    OnIdRespostaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdResposta;
-        partial void OnIdRespostaChanging(global::System.Int32 value);
-        partial void OnIdRespostaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Resposta
-        {
-            get
-            {
-                return _Resposta;
-            }
-            set
-            {
-                OnRespostaChanging(value);
-                ReportPropertyChanging("Resposta");
-                _Resposta = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Resposta");
-                OnRespostaChanged();
-            }
-        }
-        private global::System.String _Resposta;
-        partial void OnRespostaChanging(global::System.String value);
-        partial void OnRespostaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPergunta
-        {
-            get
-            {
-                return _IdPergunta;
-            }
-            set
-            {
-                OnIdPerguntaChanging(value);
-                ReportPropertyChanging("IdPergunta");
-                _IdPergunta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdPergunta");
-                OnIdPerguntaChanged();
-            }
-        }
-        private global::System.Int32 _IdPergunta;
-        partial void OnIdPerguntaChanging(global::System.Int32 value);
-        partial void OnIdPerguntaChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="respostaprimeira")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class respostaprimeira : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new respostaprimeira object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="altura">Initial value of the altura property.</param>
-        /// <param name="peso">Initial value of the peso property.</param>
-        /// <param name="pressaoDiastolica">Initial value of the pressaoDiastolica property.</param>
-        /// <param name="pressaoSistolica">Initial value of the pressaoSistolica property.</param>
-        /// <param name="temperatura">Initial value of the temperatura property.</param>
-        /// <param name="numeroTentativa">Initial value of the numeroTentativa property.</param>
-        /// <param name="fkConsulta">Initial value of the fkConsulta property.</param>
-        /// <param name="nota">Initial value of the nota property.</param>
-        public static respostaprimeira Createrespostaprimeira(global::System.Int32 id, global::System.Single altura, global::System.Single peso, global::System.Int32 pressaoDiastolica, global::System.Int32 pressaoSistolica, global::System.Single temperatura, global::System.Int64 numeroTentativa, global::System.Int32 fkConsulta, global::System.Single nota)
-        {
-            respostaprimeira respostaprimeira = new respostaprimeira();
-            respostaprimeira.id = id;
-            respostaprimeira.altura = altura;
-            respostaprimeira.peso = peso;
-            respostaprimeira.pressaoDiastolica = pressaoDiastolica;
-            respostaprimeira.pressaoSistolica = pressaoSistolica;
-            respostaprimeira.temperatura = temperatura;
-            respostaprimeira.numeroTentativa = numeroTentativa;
-            respostaprimeira.fkConsulta = fkConsulta;
-            respostaprimeira.nota = nota;
-            return respostaprimeira;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String alergias
-        {
-            get
-            {
-                return _alergias;
-            }
-            set
-            {
-                OnalergiasChanging(value);
-                ReportPropertyChanging("alergias");
-                _alergias = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("alergias");
-                OnalergiasChanged();
-            }
-        }
-        private global::System.String _alergias;
-        partial void OnalergiasChanging(global::System.String value);
-        partial void OnalergiasChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single altura
-        {
-            get
-            {
-                return _altura;
-            }
-            set
-            {
-                OnalturaChanging(value);
-                ReportPropertyChanging("altura");
-                _altura = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("altura");
-                OnalturaChanged();
-            }
-        }
-        private global::System.Single _altura;
-        partial void OnalturaChanging(global::System.Single value);
-        partial void OnalturaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> dataDeRealizacao
-        {
-            get
-            {
-                return _dataDeRealizacao;
-            }
-            set
-            {
-                OndataDeRealizacaoChanging(value);
-                ReportPropertyChanging("dataDeRealizacao");
-                _dataDeRealizacao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dataDeRealizacao");
-                OndataDeRealizacaoChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _dataDeRealizacao;
-        partial void OndataDeRealizacaoChanging(Nullable<global::System.DateTime> value);
-        partial void OndataDeRealizacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> dataNascimento
-        {
-            get
-            {
-                return _dataNascimento;
-            }
-            set
-            {
-                OndataNascimentoChanging(value);
-                ReportPropertyChanging("dataNascimento");
-                _dataNascimento = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dataNascimento");
-                OndataNascimentoChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _dataNascimento;
-        partial void OndataNascimentoChanging(Nullable<global::System.DateTime> value);
-        partial void OndataNascimentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String escolaridade
-        {
-            get
-            {
-                return _escolaridade;
-            }
-            set
-            {
-                OnescolaridadeChanging(value);
-                ReportPropertyChanging("escolaridade");
-                _escolaridade = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("escolaridade");
-                OnescolaridadeChanged();
-            }
-        }
-        private global::System.String _escolaridade;
-        partial void OnescolaridadeChanging(global::System.String value);
-        partial void OnescolaridadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flAlturaCerta
-        {
-            get
-            {
-                return _flAlturaCerta;
-            }
-            set
-            {
-                OnflAlturaCertaChanging(value);
-                ReportPropertyChanging("flAlturaCerta");
-                _flAlturaCerta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flAlturaCerta");
-                OnflAlturaCertaChanged();
-            }
-        }
-        private global::System.String _flAlturaCerta;
-        partial void OnflAlturaCertaChanging(global::System.String value);
-        partial void OnflAlturaCertaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flBebeAlcool
-        {
-            get
-            {
-                return _flBebeAlcool;
-            }
-            set
-            {
-                OnflBebeAlcoolChanging(value);
-                ReportPropertyChanging("flBebeAlcool");
-                _flBebeAlcool = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flBebeAlcool");
-                OnflBebeAlcoolChanged();
-            }
-        }
-        private global::System.String _flBebeAlcool;
-        partial void OnflBebeAlcoolChanging(global::System.String value);
-        partial void OnflBebeAlcoolChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flBebeAlcoolCerto
-        {
-            get
-            {
-                return _flBebeAlcoolCerto;
-            }
-            set
-            {
-                OnflBebeAlcoolCertoChanging(value);
-                ReportPropertyChanging("flBebeAlcoolCerto");
-                _flBebeAlcoolCerto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flBebeAlcoolCerto");
-                OnflBebeAlcoolCertoChanged();
-            }
-        }
-        private global::System.String _flBebeAlcoolCerto;
-        partial void OnflBebeAlcoolCertoChanging(global::System.String value);
-        partial void OnflBebeAlcoolCertoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flBebeCafe
-        {
-            get
-            {
-                return _flBebeCafe;
-            }
-            set
-            {
-                OnflBebeCafeChanging(value);
-                ReportPropertyChanging("flBebeCafe");
-                _flBebeCafe = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flBebeCafe");
-                OnflBebeCafeChanged();
-            }
-        }
-        private global::System.String _flBebeCafe;
-        partial void OnflBebeCafeChanging(global::System.String value);
-        partial void OnflBebeCafeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flBebeCafeCerto
-        {
-            get
-            {
-                return _flBebeCafeCerto;
-            }
-            set
-            {
-                OnflBebeCafeCertoChanging(value);
-                ReportPropertyChanging("flBebeCafeCerto");
-                _flBebeCafeCerto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flBebeCafeCerto");
-                OnflBebeCafeCertoChanged();
-            }
-        }
-        private global::System.String _flBebeCafeCerto;
-        partial void OnflBebeCafeCertoChanging(global::System.String value);
-        partial void OnflBebeCafeCertoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flDataNascimentoCerta
-        {
-            get
-            {
-                return _flDataNascimentoCerta;
-            }
-            set
-            {
-                OnflDataNascimentoCertaChanging(value);
-                ReportPropertyChanging("flDataNascimentoCerta");
-                _flDataNascimentoCerta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flDataNascimentoCerta");
-                OnflDataNascimentoCertaChanged();
-            }
-        }
-        private global::System.String _flDataNascimentoCerta;
-        partial void OnflDataNascimentoCertaChanging(global::System.String value);
-        partial void OnflDataNascimentoCertaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flEscolaridadeCerta
-        {
-            get
-            {
-                return _flEscolaridadeCerta;
-            }
-            set
-            {
-                OnflEscolaridadeCertaChanging(value);
-                ReportPropertyChanging("flEscolaridadeCerta");
-                _flEscolaridadeCerta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flEscolaridadeCerta");
-                OnflEscolaridadeCertaChanged();
-            }
-        }
-        private global::System.String _flEscolaridadeCerta;
-        partial void OnflEscolaridadeCertaChanging(global::System.String value);
-        partial void OnflEscolaridadeCertaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flFuma
-        {
-            get
-            {
-                return _flFuma;
-            }
-            set
-            {
-                OnflFumaChanging(value);
-                ReportPropertyChanging("flFuma");
-                _flFuma = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flFuma");
-                OnflFumaChanged();
-            }
-        }
-        private global::System.String _flFuma;
-        partial void OnflFumaChanging(global::System.String value);
-        partial void OnflFumaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flFumaCerto
-        {
-            get
-            {
-                return _flFumaCerto;
-            }
-            set
-            {
-                OnflFumaCertoChanging(value);
-                ReportPropertyChanging("flFumaCerto");
-                _flFumaCerto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flFumaCerto");
-                OnflFumaCertoChanged();
-            }
-        }
-        private global::System.String _flFumaCerto;
-        partial void OnflFumaCertoChanging(global::System.String value);
-        partial void OnflFumaCertoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flGeneroCerto
-        {
-            get
-            {
-                return _flGeneroCerto;
-            }
-            set
-            {
-                OnflGeneroCertoChanging(value);
-                ReportPropertyChanging("flGeneroCerto");
-                _flGeneroCerto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flGeneroCerto");
-                OnflGeneroCertoChanged();
-            }
-        }
-        private global::System.String _flGeneroCerto;
-        partial void OnflGeneroCertoChanging(global::System.String value);
-        partial void OnflGeneroCertoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flIMCCerto
-        {
-            get
-            {
-                return _flIMCCerto;
-            }
-            set
-            {
-                OnflIMCCertoChanging(value);
-                ReportPropertyChanging("flIMCCerto");
-                _flIMCCerto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flIMCCerto");
-                OnflIMCCertoChanged();
-            }
-        }
-        private global::System.String _flIMCCerto;
-        partial void OnflIMCCertoChanging(global::System.String value);
-        partial void OnflIMCCertoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flNomeCerto
-        {
-            get
-            {
-                return _flNomeCerto;
-            }
-            set
-            {
-                OnflNomeCertoChanging(value);
-                ReportPropertyChanging("flNomeCerto");
-                _flNomeCerto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flNomeCerto");
-                OnflNomeCertoChanged();
-            }
-        }
-        private global::System.String _flNomeCerto;
-        partial void OnflNomeCertoChanging(global::System.String value);
-        partial void OnflNomeCertoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flOcupacaoCerta
-        {
-            get
-            {
-                return _flOcupacaoCerta;
-            }
-            set
-            {
-                OnflOcupacaoCertaChanging(value);
-                ReportPropertyChanging("flOcupacaoCerta");
-                _flOcupacaoCerta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flOcupacaoCerta");
-                OnflOcupacaoCertaChanged();
-            }
-        }
-        private global::System.String _flOcupacaoCerta;
-        partial void OnflOcupacaoCertaChanging(global::System.String value);
-        partial void OnflOcupacaoCertaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flPesoCerto
-        {
-            get
-            {
-                return _flPesoCerto;
-            }
-            set
-            {
-                OnflPesoCertoChanging(value);
-                ReportPropertyChanging("flPesoCerto");
-                _flPesoCerto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flPesoCerto");
-                OnflPesoCertoChanged();
-            }
-        }
-        private global::System.String _flPesoCerto;
-        partial void OnflPesoCertoChanging(global::System.String value);
-        partial void OnflPesoCertoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flPressaoDiastolicaCerta
-        {
-            get
-            {
-                return _flPressaoDiastolicaCerta;
-            }
-            set
-            {
-                OnflPressaoDiastolicaCertaChanging(value);
-                ReportPropertyChanging("flPressaoDiastolicaCerta");
-                _flPressaoDiastolicaCerta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flPressaoDiastolicaCerta");
-                OnflPressaoDiastolicaCertaChanged();
-            }
-        }
-        private global::System.String _flPressaoDiastolicaCerta;
-        partial void OnflPressaoDiastolicaCertaChanging(global::System.String value);
-        partial void OnflPressaoDiastolicaCertaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flPressaoSistolicaCerta
-        {
-            get
-            {
-                return _flPressaoSistolicaCerta;
-            }
-            set
-            {
-                OnflPressaoSistolicaCertaChanging(value);
-                ReportPropertyChanging("flPressaoSistolicaCerta");
-                _flPressaoSistolicaCerta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flPressaoSistolicaCerta");
-                OnflPressaoSistolicaCertaChanged();
-            }
-        }
-        private global::System.String _flPressaoSistolicaCerta;
-        partial void OnflPressaoSistolicaCertaChanging(global::System.String value);
-        partial void OnflPressaoSistolicaCertaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flTemperaturaCerta
-        {
-            get
-            {
-                return _flTemperaturaCerta;
-            }
-            set
-            {
-                OnflTemperaturaCertaChanging(value);
-                ReportPropertyChanging("flTemperaturaCerta");
-                _flTemperaturaCerta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flTemperaturaCerta");
-                OnflTemperaturaCertaChanged();
-            }
-        }
-        private global::System.String _flTemperaturaCerta;
-        partial void OnflTemperaturaCertaChanging(global::System.String value);
-        partial void OnflTemperaturaCertaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String genero
-        {
-            get
-            {
-                return _genero;
-            }
-            set
-            {
-                OngeneroChanging(value);
-                ReportPropertyChanging("genero");
-                _genero = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("genero");
-                OngeneroChanged();
-            }
-        }
-        private global::System.String _genero;
-        partial void OngeneroChanging(global::System.String value);
-        partial void OngeneroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> IMC
-        {
-            get
-            {
-                return _IMC;
-            }
-            set
-            {
-                OnIMCChanging(value);
-                ReportPropertyChanging("IMC");
-                _IMC = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IMC");
-                OnIMCChanged();
-            }
-        }
-        private Nullable<global::System.Single> _IMC;
-        partial void OnIMCChanging(Nullable<global::System.Single> value);
-        partial void OnIMCChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String medicosQueAtendem
-        {
-            get
-            {
-                return _medicosQueAtendem;
-            }
-            set
-            {
-                OnmedicosQueAtendemChanging(value);
-                ReportPropertyChanging("medicosQueAtendem");
-                _medicosQueAtendem = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("medicosQueAtendem");
-                OnmedicosQueAtendemChanged();
-            }
-        }
-        private global::System.String _medicosQueAtendem;
-        partial void OnmedicosQueAtendemChanging(global::System.String value);
-        partial void OnmedicosQueAtendemChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String moradiaFamilia
-        {
-            get
-            {
-                return _moradiaFamilia;
-            }
-            set
-            {
-                OnmoradiaFamiliaChanging(value);
-                ReportPropertyChanging("moradiaFamilia");
-                _moradiaFamilia = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("moradiaFamilia");
-                OnmoradiaFamiliaChanged();
-            }
-        }
-        private global::System.String _moradiaFamilia;
-        partial void OnmoradiaFamiliaChanging(global::System.String value);
-        partial void OnmoradiaFamiliaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String nome
-        {
-            get
-            {
-                return _nome;
-            }
-            set
-            {
-                OnnomeChanging(value);
-                ReportPropertyChanging("nome");
-                _nome = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("nome");
-                OnnomeChanged();
-            }
-        }
-        private global::System.String _nome;
-        partial void OnnomeChanging(global::System.String value);
-        partial void OnnomeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ocupacao
-        {
-            get
-            {
-                return _ocupacao;
-            }
-            set
-            {
-                OnocupacaoChanging(value);
-                ReportPropertyChanging("ocupacao");
-                _ocupacao = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ocupacao");
-                OnocupacaoChanged();
-            }
-        }
-        private global::System.String _ocupacao;
-        partial void OnocupacaoChanging(global::System.String value);
-        partial void OnocupacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single peso
-        {
-            get
-            {
-                return _peso;
-            }
-            set
-            {
-                OnpesoChanging(value);
-                ReportPropertyChanging("peso");
-                _peso = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("peso");
-                OnpesoChanged();
-            }
-        }
-        private global::System.Single _peso;
-        partial void OnpesoChanging(global::System.Single value);
-        partial void OnpesoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 pressaoDiastolica
-        {
-            get
-            {
-                return _pressaoDiastolica;
-            }
-            set
-            {
-                OnpressaoDiastolicaChanging(value);
-                ReportPropertyChanging("pressaoDiastolica");
-                _pressaoDiastolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pressaoDiastolica");
-                OnpressaoDiastolicaChanged();
-            }
-        }
-        private global::System.Int32 _pressaoDiastolica;
-        partial void OnpressaoDiastolicaChanging(global::System.Int32 value);
-        partial void OnpressaoDiastolicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 pressaoSistolica
-        {
-            get
-            {
-                return _pressaoSistolica;
-            }
-            set
-            {
-                OnpressaoSistolicaChanging(value);
-                ReportPropertyChanging("pressaoSistolica");
-                _pressaoSistolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pressaoSistolica");
-                OnpressaoSistolicaChanged();
-            }
-        }
-        private global::System.Int32 _pressaoSistolica;
-        partial void OnpressaoSistolicaChanging(global::System.Int32 value);
-        partial void OnpressaoSistolicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single temperatura
-        {
-            get
-            {
-                return _temperatura;
-            }
-            set
-            {
-                OntemperaturaChanging(value);
-                ReportPropertyChanging("temperatura");
-                _temperatura = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("temperatura");
-                OntemperaturaChanged();
-            }
-        }
-        private global::System.Single _temperatura;
-        partial void OntemperaturaChanging(global::System.Single value);
-        partial void OntemperaturaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String planoDeSaude
-        {
-            get
-            {
-                return _planoDeSaude;
-            }
-            set
-            {
-                OnplanoDeSaudeChanging(value);
-                ReportPropertyChanging("planoDeSaude");
-                _planoDeSaude = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("planoDeSaude");
-                OnplanoDeSaudeChanged();
-            }
-        }
-        private global::System.String _planoDeSaude;
-        partial void OnplanoDeSaudeChanging(global::System.String value);
-        partial void OnplanoDeSaudeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 numeroTentativa
-        {
-            get
-            {
-                return _numeroTentativa;
-            }
-            set
-            {
-                OnnumeroTentativaChanging(value);
-                ReportPropertyChanging("numeroTentativa");
-                _numeroTentativa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroTentativa");
-                OnnumeroTentativaChanged();
-            }
-        }
-        private global::System.Int64 _numeroTentativa;
-        partial void OnnumeroTentativaChanging(global::System.Int64 value);
-        partial void OnnumeroTentativaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkConsulta
-        {
-            get
-            {
-                return _fkConsulta;
-            }
-            set
-            {
-                OnfkConsultaChanging(value);
-                ReportPropertyChanging("fkConsulta");
-                _fkConsulta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkConsulta");
-                OnfkConsultaChanged();
-            }
-        }
-        private global::System.Int32 _fkConsulta;
-        partial void OnfkConsultaChanging(global::System.Int32 value);
-        partial void OnfkConsultaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCorreto
-        {
-            get
-            {
-                return _flCorreto;
-            }
-            set
-            {
-                OnflCorretoChanging(value);
-                ReportPropertyChanging("flCorreto");
-                _flCorreto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCorreto");
-                OnflCorretoChanged();
-            }
-        }
-        private global::System.String _flCorreto;
-        partial void OnflCorretoChanging(global::System.String value);
-        partial void OnflCorretoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String comentario
-        {
-            get
-            {
-                return _comentario;
-            }
-            set
-            {
-                OncomentarioChanging(value);
-                ReportPropertyChanging("comentario");
-                _comentario = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("comentario");
-                OncomentarioChanged();
-            }
-        }
-        private global::System.String _comentario;
-        partial void OncomentarioChanging(global::System.String value);
-        partial void OncomentarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String comentarioAluno
-        {
-            get
-            {
-                return _comentarioAluno;
-            }
-            set
-            {
-                OncomentarioAlunoChanging(value);
-                ReportPropertyChanging("comentarioAluno");
-                _comentarioAluno = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("comentarioAluno");
-                OncomentarioAlunoChanged();
-            }
-        }
-        private global::System.String _comentarioAluno;
-        partial void OncomentarioAlunoChanging(global::System.String value);
-        partial void OncomentarioAlunoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single nota
-        {
-            get
-            {
-                return _nota;
-            }
-            set
-            {
-                OnnotaChanging(value);
-                ReportPropertyChanging("nota");
-                _nota = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("nota");
-                OnnotaChanged();
-            }
-        }
-        private global::System.Single _nota;
-        partial void OnnotaChanging(global::System.Single value);
-        partial void OnnotaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaAlcoolAnterior
-        {
-            get
-            {
-                return _historiaAlcoolAnterior;
-            }
-            set
-            {
-                OnhistoriaAlcoolAnteriorChanging(value);
-                ReportPropertyChanging("historiaAlcoolAnterior");
-                _historiaAlcoolAnterior = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaAlcoolAnterior");
-                OnhistoriaAlcoolAnteriorChanged();
-            }
-        }
-        private global::System.String _historiaAlcoolAnterior;
-        partial void OnhistoriaAlcoolAnteriorChanging(global::System.String value);
-        partial void OnhistoriaAlcoolAnteriorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaAlcoolAtual
-        {
-            get
-            {
-                return _historiaAlcoolAtual;
-            }
-            set
-            {
-                OnhistoriaAlcoolAtualChanging(value);
-                ReportPropertyChanging("historiaAlcoolAtual");
-                _historiaAlcoolAtual = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaAlcoolAtual");
-                OnhistoriaAlcoolAtualChanged();
-            }
-        }
-        private global::System.String _historiaAlcoolAtual;
-        partial void OnhistoriaAlcoolAtualChanging(global::System.String value);
-        partial void OnhistoriaAlcoolAtualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaCafeAnterior
-        {
-            get
-            {
-                return _historiaCafeAnterior;
-            }
-            set
-            {
-                OnhistoriaCafeAnteriorChanging(value);
-                ReportPropertyChanging("historiaCafeAnterior");
-                _historiaCafeAnterior = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaCafeAnterior");
-                OnhistoriaCafeAnteriorChanged();
-            }
-        }
-        private global::System.String _historiaCafeAnterior;
-        partial void OnhistoriaCafeAnteriorChanging(global::System.String value);
-        partial void OnhistoriaCafeAnteriorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaCafeAtual
-        {
-            get
-            {
-                return _historiaCafeAtual;
-            }
-            set
-            {
-                OnhistoriaCafeAtualChanging(value);
-                ReportPropertyChanging("historiaCafeAtual");
-                _historiaCafeAtual = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaCafeAtual");
-                OnhistoriaCafeAtualChanged();
-            }
-        }
-        private global::System.String _historiaCafeAtual;
-        partial void OnhistoriaCafeAtualChanging(global::System.String value);
-        partial void OnhistoriaCafeAtualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaTabacoAnterior
-        {
-            get
-            {
-                return _historiaTabacoAnterior;
-            }
-            set
-            {
-                OnhistoriaTabacoAnteriorChanging(value);
-                ReportPropertyChanging("historiaTabacoAnterior");
-                _historiaTabacoAnterior = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaTabacoAnterior");
-                OnhistoriaTabacoAnteriorChanged();
-            }
-        }
-        private global::System.String _historiaTabacoAnterior;
-        partial void OnhistoriaTabacoAnteriorChanging(global::System.String value);
-        partial void OnhistoriaTabacoAnteriorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String historiaTabacoAtual
-        {
-            get
-            {
-                return _historiaTabacoAtual;
-            }
-            set
-            {
-                OnhistoriaTabacoAtualChanging(value);
-                ReportPropertyChanging("historiaTabacoAtual");
-                _historiaTabacoAtual = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("historiaTabacoAtual");
-                OnhistoriaTabacoAtualChanged();
-            }
-        }
-        private global::System.String _historiaTabacoAtual;
-        partial void OnhistoriaTabacoAtualChanging(global::System.String value);
-        partial void OnhistoriaTabacoAtualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String tipoBebidaAlcoolica
-        {
-            get
-            {
-                return _tipoBebidaAlcoolica;
-            }
-            set
-            {
-                OntipoBebidaAlcoolicaChanging(value);
-                ReportPropertyChanging("tipoBebidaAlcoolica");
-                _tipoBebidaAlcoolica = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("tipoBebidaAlcoolica");
-                OntipoBebidaAlcoolicaChanged();
-            }
-        }
-        private global::System.String _tipoBebidaAlcoolica;
-        partial void OntipoBebidaAlcoolicaChanging(global::System.String value);
-        partial void OntipoBebidaAlcoolicaChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_respostaprimeira_1", "consulta")]
-        public consulta consulta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaprimeira_1", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaprimeira_1", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consultaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaprimeira_1", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FK_respostaprimeira_1", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK88D8D79A5097F805", "consulta")]
-        public consulta consulta1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK88D8D79A5097F805", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK88D8D79A5097F805", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consulta1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK88D8D79A5097F805", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FK88D8D79A5097F805", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_queixarespostaprimeira_1", "queixarespostaprimeira")]
-        public EntityCollection<queixarespostaprimeira> queixarespostaprimeiras
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixarespostaprimeira>("pvModel.FK_queixarespostaprimeira_1", "queixarespostaprimeira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixarespostaprimeira>("pvModel.FK_queixarespostaprimeira_1", "queixarespostaprimeira", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK1E43344B8872A0F6", "queixarespostaprimeira")]
-        public EntityCollection<queixarespostaprimeira> queixarespostaprimeiras1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixarespostaprimeira>("pvModel.FK1E43344B8872A0F6", "queixarespostaprimeira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixarespostaprimeira>("pvModel.FK1E43344B8872A0F6", "queixarespostaprimeira", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="respostaquarta")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class respostaquarta : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new respostaquarta object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="dataRealizacao">Initial value of the dataRealizacao property.</param>
-        /// <param name="fkConsulta">Initial value of the fkConsulta property.</param>
-        /// <param name="numeroTentativa">Initial value of the numeroTentativa property.</param>
-        public static respostaquarta Createrespostaquarta(global::System.Int32 id, global::System.DateTime dataRealizacao, global::System.Int32 fkConsulta, global::System.Int32 numeroTentativa)
-        {
-            respostaquarta respostaquarta = new respostaquarta();
-            respostaquarta.id = id;
-            respostaquarta.dataRealizacao = dataRealizacao;
-            respostaquarta.fkConsulta = fkConsulta;
-            respostaquarta.numeroTentativa = numeroTentativa;
-            return respostaquarta;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime dataRealizacao
-        {
-            get
-            {
-                return _dataRealizacao;
-            }
-            set
-            {
-                OndataRealizacaoChanging(value);
-                ReportPropertyChanging("dataRealizacao");
-                _dataRealizacao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dataRealizacao");
-                OndataRealizacaoChanged();
-            }
-        }
-        private global::System.DateTime _dataRealizacao;
-        partial void OndataRealizacaoChanging(global::System.DateTime value);
-        partial void OndataRealizacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkConsulta
-        {
-            get
-            {
-                return _fkConsulta;
-            }
-            set
-            {
-                OnfkConsultaChanging(value);
-                ReportPropertyChanging("fkConsulta");
-                _fkConsulta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkConsulta");
-                OnfkConsultaChanged();
-            }
-        }
-        private global::System.Int32 _fkConsulta;
-        partial void OnfkConsultaChanging(global::System.Int32 value);
-        partial void OnfkConsultaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroTentativa
-        {
-            get
-            {
-                return _numeroTentativa;
-            }
-            set
-            {
-                OnnumeroTentativaChanging(value);
-                ReportPropertyChanging("numeroTentativa");
-                _numeroTentativa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroTentativa");
-                OnnumeroTentativaChanged();
-            }
-        }
-        private global::System.Int32 _numeroTentativa;
-        partial void OnnumeroTentativaChanging(global::System.Int32 value);
-        partial void OnnumeroTentativaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCorreto
-        {
-            get
-            {
-                return _flCorreto;
-            }
-            set
-            {
-                OnflCorretoChanging(value);
-                ReportPropertyChanging("flCorreto");
-                _flCorreto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCorreto");
-                OnflCorretoChanged();
-            }
-        }
-        private global::System.String _flCorreto;
-        partial void OnflCorretoChanging(global::System.String value);
-        partial void OnflCorretoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String comentario
-        {
-            get
-            {
-                return _comentario;
-            }
-            set
-            {
-                OncomentarioChanging(value);
-                ReportPropertyChanging("comentario");
-                _comentario = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("comentario");
-                OncomentarioChanged();
-            }
-        }
-        private global::System.String _comentario;
-        partial void OncomentarioChanging(global::System.String value);
-        partial void OncomentarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String comentarioAluno
-        {
-            get
-            {
-                return _comentarioAluno;
-            }
-            set
-            {
-                OncomentarioAlunoChanging(value);
-                ReportPropertyChanging("comentarioAluno");
-                _comentarioAluno = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("comentarioAluno");
-                OncomentarioAlunoChanged();
-            }
-        }
-        private global::System.String _comentarioAluno;
-        partial void OncomentarioAlunoChanging(global::System.String value);
-        partial void OncomentarioAlunoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> nota
-        {
-            get
-            {
-                return _nota;
-            }
-            set
-            {
-                OnnotaChanging(value);
-                ReportPropertyChanging("nota");
-                _nota = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("nota");
-                OnnotaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _nota;
-        partial void OnnotaChanging(Nullable<global::System.Single> value);
-        partial void OnnotaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String carta
-        {
-            get
-            {
-                return _carta;
-            }
-            set
-            {
-                OncartaChanging(value);
-                ReportPropertyChanging("carta");
-                _carta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("carta");
-                OncartaChanged();
-            }
-        }
-        private global::System.String _carta;
-        partial void OncartaChanging(global::System.String value);
-        partial void OncartaChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_respostaquarta_1", "consulta")]
-        public consulta consulta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaquarta_1", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaquarta_1", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consultaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaquarta_1", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FK_respostaquarta_1", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKB29DB8E35097F805", "consulta")]
-        public consulta consulta1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FKB29DB8E35097F805", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FKB29DB8E35097F805", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consulta1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FKB29DB8E35097F805", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FKB29DB8E35097F805", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_intervencaorespostaquarta_1", "intervencaorespostaquarta")]
-        public EntityCollection<intervencaorespostaquarta> intervencaorespostaquartas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<intervencaorespostaquarta>("pvModel.FK_intervencaorespostaquarta_1", "intervencaorespostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<intervencaorespostaquarta>("pvModel.FK_intervencaorespostaquarta_1", "intervencaorespostaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK800BA011D2B646E7", "intervencaorespostaquarta")]
-        public EntityCollection<intervencaorespostaquarta> intervencaorespostaquartas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<intervencaorespostaquarta>("pvModel.FK800BA011D2B646E7", "intervencaorespostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<intervencaorespostaquarta>("pvModel.FK800BA011D2B646E7", "intervencaorespostaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_queixarespostaquarta_1", "queixarespostaquarta")]
-        public EntityCollection<queixarespostaquarta> queixarespostaquartas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixarespostaquarta>("pvModel.FK_queixarespostaquarta_1", "queixarespostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixarespostaquarta>("pvModel.FK_queixarespostaquarta_1", "queixarespostaquarta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK5BA98DD4D2B646E7", "queixarespostaquarta")]
-        public EntityCollection<queixarespostaquarta> queixarespostaquartas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixarespostaquarta>("pvModel.FK5BA98DD4D2B646E7", "queixarespostaquarta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixarespostaquarta>("pvModel.FK5BA98DD4D2B646E7", "queixarespostaquarta", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="respostasegunda")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class respostasegunda : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new respostasegunda object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="dataRealizacao">Initial value of the dataRealizacao property.</param>
-        /// <param name="fkConsulta">Initial value of the fkConsulta property.</param>
-        /// <param name="numeroTentativa">Initial value of the numeroTentativa property.</param>
-        public static respostasegunda Createrespostasegunda(global::System.Int32 id, global::System.DateTime dataRealizacao, global::System.Int32 fkConsulta, global::System.Int32 numeroTentativa)
-        {
-            respostasegunda respostasegunda = new respostasegunda();
-            respostasegunda.id = id;
-            respostasegunda.dataRealizacao = dataRealizacao;
-            respostasegunda.fkConsulta = fkConsulta;
-            respostasegunda.numeroTentativa = numeroTentativa;
-            return respostasegunda;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime dataRealizacao
-        {
-            get
-            {
-                return _dataRealizacao;
-            }
-            set
-            {
-                OndataRealizacaoChanging(value);
-                ReportPropertyChanging("dataRealizacao");
-                _dataRealizacao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dataRealizacao");
-                OndataRealizacaoChanged();
-            }
-        }
-        private global::System.DateTime _dataRealizacao;
-        partial void OndataRealizacaoChanging(global::System.DateTime value);
-        partial void OndataRealizacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkConsulta
-        {
-            get
-            {
-                return _fkConsulta;
-            }
-            set
-            {
-                OnfkConsultaChanging(value);
-                ReportPropertyChanging("fkConsulta");
-                _fkConsulta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkConsulta");
-                OnfkConsultaChanged();
-            }
-        }
-        private global::System.Int32 _fkConsulta;
-        partial void OnfkConsultaChanging(global::System.Int32 value);
-        partial void OnfkConsultaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numeroTentativa
-        {
-            get
-            {
-                return _numeroTentativa;
-            }
-            set
-            {
-                OnnumeroTentativaChanging(value);
-                ReportPropertyChanging("numeroTentativa");
-                _numeroTentativa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numeroTentativa");
-                OnnumeroTentativaChanged();
-            }
-        }
-        private global::System.Int32 _numeroTentativa;
-        partial void OnnumeroTentativaChanging(global::System.Int32 value);
-        partial void OnnumeroTentativaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCorreto
-        {
-            get
-            {
-                return _flCorreto;
-            }
-            set
-            {
-                OnflCorretoChanging(value);
-                ReportPropertyChanging("flCorreto");
-                _flCorreto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCorreto");
-                OnflCorretoChanged();
-            }
-        }
-        private global::System.String _flCorreto;
-        partial void OnflCorretoChanging(global::System.String value);
-        partial void OnflCorretoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String comentario
-        {
-            get
-            {
-                return _comentario;
-            }
-            set
-            {
-                OncomentarioChanging(value);
-                ReportPropertyChanging("comentario");
-                _comentario = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("comentario");
-                OncomentarioChanged();
-            }
-        }
-        private global::System.String _comentario;
-        partial void OncomentarioChanging(global::System.String value);
-        partial void OncomentarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String comentarioAluno
-        {
-            get
-            {
-                return _comentarioAluno;
-            }
-            set
-            {
-                OncomentarioAlunoChanging(value);
-                ReportPropertyChanging("comentarioAluno");
-                _comentarioAluno = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("comentarioAluno");
-                OncomentarioAlunoChanged();
-            }
-        }
-        private global::System.String _comentarioAluno;
-        partial void OncomentarioAlunoChanging(global::System.String value);
-        partial void OncomentarioAlunoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> nota
-        {
-            get
-            {
-                return _nota;
-            }
-            set
-            {
-                OnnotaChanging(value);
-                ReportPropertyChanging("nota");
-                _nota = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("nota");
-                OnnotaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _nota;
-        partial void OnnotaChanging(Nullable<global::System.Single> value);
-        partial void OnnotaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String carta
-        {
-            get
-            {
-                return _carta;
-            }
-            set
-            {
-                OncartaChanging(value);
-                ReportPropertyChanging("carta");
-                _carta = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("carta");
-                OncartaChanged();
-            }
-        }
-        private global::System.String _carta;
-        partial void OncartaChanging(global::System.String value);
-        partial void OncartaChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_respostasegunda_1", "consulta")]
-        public consulta consulta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostasegunda_1", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostasegunda_1", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consultaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostasegunda_1", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FK_respostasegunda_1", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKEFEE246A5097F805", "consulta")]
-        public consulta consulta1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FKEFEE246A5097F805", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FKEFEE246A5097F805", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consulta1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FKEFEE246A5097F805", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FKEFEE246A5097F805", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_intervencaorespostasegunda_1", "intervencaorespostasegunda")]
-        public EntityCollection<intervencaorespostasegunda> intervencaorespostasegundas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<intervencaorespostasegunda>("pvModel.FK_intervencaorespostasegunda_1", "intervencaorespostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<intervencaorespostasegunda>("pvModel.FK_intervencaorespostasegunda_1", "intervencaorespostasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKD03D22FCA4FE1140", "intervencaorespostasegunda")]
-        public EntityCollection<intervencaorespostasegunda> intervencaorespostasegundas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<intervencaorespostasegunda>("pvModel.FKD03D22FCA4FE1140", "intervencaorespostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<intervencaorespostasegunda>("pvModel.FKD03D22FCA4FE1140", "intervencaorespostasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK685CED99A4FE1140", "queixarespostasegunda")]
-        public EntityCollection<queixarespostasegunda> queixarespostasegundas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixarespostasegunda>("pvModel.FK685CED99A4FE1140", "queixarespostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixarespostasegunda>("pvModel.FK685CED99A4FE1140", "queixarespostasegunda", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FKFD098D39A4FE1140", "queixarespostasegunda")]
-        public EntityCollection<queixarespostasegunda> queixarespostasegundas1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixarespostasegunda>("pvModel.FKFD098D39A4FE1140", "queixarespostasegunda");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixarespostasegunda>("pvModel.FKFD098D39A4FE1140", "queixarespostasegunda", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="respostaterceira")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class respostaterceira : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new respostaterceira object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="fkConsulta">Initial value of the fkConsulta property.</param>
-        /// <param name="imc">Initial value of the imc property.</param>
-        public static respostaterceira Createrespostaterceira(global::System.Int32 id, global::System.Int32 fkConsulta, global::System.Single imc)
-        {
-            respostaterceira respostaterceira = new respostaterceira();
-            respostaterceira.id = id;
-            respostaterceira.fkConsulta = fkConsulta;
-            respostaterceira.imc = imc;
-            return respostaterceira;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> temperatura
-        {
-            get
-            {
-                return _temperatura;
-            }
-            set
-            {
-                OntemperaturaChanging(value);
-                ReportPropertyChanging("temperatura");
-                _temperatura = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("temperatura");
-                OntemperaturaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _temperatura;
-        partial void OntemperaturaChanging(Nullable<global::System.Single> value);
-        partial void OntemperaturaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int64> pressaosistolica
-        {
-            get
-            {
-                return _pressaosistolica;
-            }
-            set
-            {
-                OnpressaosistolicaChanging(value);
-                ReportPropertyChanging("pressaosistolica");
-                _pressaosistolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pressaosistolica");
-                OnpressaosistolicaChanged();
-            }
-        }
-        private Nullable<global::System.Int64> _pressaosistolica;
-        partial void OnpressaosistolicaChanging(Nullable<global::System.Int64> value);
-        partial void OnpressaosistolicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int64> pressaodiastolica
-        {
-            get
-            {
-                return _pressaodiastolica;
-            }
-            set
-            {
-                OnpressaodiastolicaChanging(value);
-                ReportPropertyChanging("pressaodiastolica");
-                _pressaodiastolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pressaodiastolica");
-                OnpressaodiastolicaChanged();
-            }
-        }
-        private Nullable<global::System.Int64> _pressaodiastolica;
-        partial void OnpressaodiastolicaChanging(Nullable<global::System.Int64> value);
-        partial void OnpressaodiastolicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> peso
-        {
-            get
-            {
-                return _peso;
-            }
-            set
-            {
-                OnpesoChanging(value);
-                ReportPropertyChanging("peso");
-                _peso = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("peso");
-                OnpesoChanged();
-            }
-        }
-        private Nullable<global::System.Single> _peso;
-        partial void OnpesoChanging(Nullable<global::System.Single> value);
-        partial void OnpesoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 fkConsulta
-        {
-            get
-            {
-                return _fkConsulta;
-            }
-            set
-            {
-                OnfkConsultaChanging(value);
-                ReportPropertyChanging("fkConsulta");
-                _fkConsulta = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fkConsulta");
-                OnfkConsultaChanged();
-            }
-        }
-        private global::System.Int32 _fkConsulta;
-        partial void OnfkConsultaChanging(global::System.Int32 value);
-        partial void OnfkConsultaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> dataRealizacao
-        {
-            get
-            {
-                return _dataRealizacao;
-            }
-            set
-            {
-                OndataRealizacaoChanging(value);
-                ReportPropertyChanging("dataRealizacao");
-                _dataRealizacao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dataRealizacao");
-                OndataRealizacaoChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _dataRealizacao;
-        partial void OndataRealizacaoChanging(Nullable<global::System.DateTime> value);
-        partial void OndataRealizacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String flCorreto
-        {
-            get
-            {
-                return _flCorreto;
-            }
-            set
-            {
-                OnflCorretoChanging(value);
-                ReportPropertyChanging("flCorreto");
-                _flCorreto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("flCorreto");
-                OnflCorretoChanged();
-            }
-        }
-        private global::System.String _flCorreto;
-        partial void OnflCorretoChanging(global::System.String value);
-        partial void OnflCorretoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String comentario
-        {
-            get
-            {
-                return _comentario;
-            }
-            set
-            {
-                OncomentarioChanging(value);
-                ReportPropertyChanging("comentario");
-                _comentario = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("comentario");
-                OncomentarioChanged();
-            }
-        }
-        private global::System.String _comentario;
-        partial void OncomentarioChanging(global::System.String value);
-        partial void OncomentarioChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String comentarioAluno
-        {
-            get
-            {
-                return _comentarioAluno;
-            }
-            set
-            {
-                OncomentarioAlunoChanging(value);
-                ReportPropertyChanging("comentarioAluno");
-                _comentarioAluno = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("comentarioAluno");
-                OncomentarioAlunoChanged();
-            }
-        }
-        private global::System.String _comentarioAluno;
-        partial void OncomentarioAlunoChanging(global::System.String value);
-        partial void OncomentarioAlunoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> nota
-        {
-            get
-            {
-                return _nota;
-            }
-            set
-            {
-                OnnotaChanging(value);
-                ReportPropertyChanging("nota");
-                _nota = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("nota");
-                OnnotaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _nota;
-        partial void OnnotaChanging(Nullable<global::System.Single> value);
-        partial void OnnotaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Single imc
-        {
-            get
-            {
-                return _imc;
-            }
-            set
-            {
-                OnimcChanging(value);
-                ReportPropertyChanging("imc");
-                _imc = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("imc");
-                OnimcChanged();
-            }
-        }
-        private global::System.Single _imc;
-        partial void OnimcChanging(global::System.Single value);
-        partial void OnimcChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_respostaalunoterceira_1", "consulta")]
-        public consulta consulta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaalunoterceira_1", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaalunoterceira_1", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consultaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK_respostaalunoterceira_1", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FK_respostaalunoterceira_1", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK877B3B565097F805", "consulta")]
-        public consulta consulta1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK877B3B565097F805", "consulta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK877B3B565097F805", "consulta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<consulta> consulta1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<consulta>("pvModel.FK877B3B565097F805", "consulta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<consulta>("pvModel.FK877B3B565097F805", "consulta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_queixarespostaterceira_1", "queixarespostaterceira")]
-        public EntityCollection<queixarespostaterceira> queixarespostaterceiras
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixarespostaterceira>("pvModel.FK_queixarespostaterceira_1", "queixarespostaterceira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixarespostaterceira>("pvModel.FK_queixarespostaterceira_1", "queixarespostaterceira", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK1CE59807871504B2", "queixarespostaterceira")]
-        public EntityCollection<queixarespostaterceira> queixarespostaterceiras1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<queixarespostaterceira>("pvModel.FK1CE59807871504B2", "queixarespostaterceira");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<queixarespostaterceira>("pvModel.FK1CE59807871504B2", "queixarespostaterceira", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="SistemaE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class SistemaE : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new SistemaE object.
-        /// </summary>
-        /// <param name="idSistema">Initial value of the IdSistema property.</param>
-        /// <param name="nomeSistema">Initial value of the NomeSistema property.</param>
-        public static SistemaE CreateSistemaE(global::System.Int32 idSistema, global::System.String nomeSistema)
-        {
-            SistemaE sistemaE = new SistemaE();
-            sistemaE.IdSistema = idSistema;
-            sistemaE.NomeSistema = nomeSistema;
-            return sistemaE;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdSistema
-        {
-            get
-            {
-                return _IdSistema;
-            }
-            set
-            {
-                if (_IdSistema != value)
-                {
-                    OnIdSistemaChanging(value);
-                    ReportPropertyChanging("IdSistema");
-                    _IdSistema = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdSistema");
-                    OnIdSistemaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdSistema;
-        partial void OnIdSistemaChanging(global::System.Int32 value);
-        partial void OnIdSistemaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String NomeSistema
-        {
-            get
-            {
-                return _NomeSistema;
-            }
-            set
-            {
-                OnNomeSistemaChanging(value);
-                ReportPropertyChanging("NomeSistema");
-                _NomeSistema = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("NomeSistema");
-                OnNomeSistemaChanged();
-            }
-        }
-        private global::System.String _NomeSistema;
-        partial void OnNomeSistemaChanging(global::System.String value);
-        partial void OnNomeSistemaChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_alergia_exames_fisicos")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_alergia_exames_fisicos : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_alergia_exames_fisicos object.
-        /// </summary>
-        /// <param name="idAlergia">Initial value of the IdAlergia property.</param>
-        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
-        public static tb_alergia_exames_fisicos Createtb_alergia_exames_fisicos(global::System.Int32 idAlergia, global::System.Int64 idConsultaVariavel)
-        {
-            tb_alergia_exames_fisicos tb_alergia_exames_fisicos = new tb_alergia_exames_fisicos();
-            tb_alergia_exames_fisicos.IdAlergia = idAlergia;
-            tb_alergia_exames_fisicos.IdConsultaVariavel = idConsultaVariavel;
-            return tb_alergia_exames_fisicos;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdAlergia
-        {
-            get
-            {
-                return _IdAlergia;
-            }
-            set
-            {
-                if (_IdAlergia != value)
-                {
-                    OnIdAlergiaChanging(value);
-                    ReportPropertyChanging("IdAlergia");
-                    _IdAlergia = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdAlergia");
-                    OnIdAlergiaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdAlergia;
-        partial void OnIdAlergiaChanging(global::System.Int32 value);
-        partial void OnIdAlergiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaVariavel
-        {
-            get
-            {
-                return _IdConsultaVariavel;
-            }
-            set
-            {
-                if (_IdConsultaVariavel != value)
-                {
-                    OnIdConsultaVariavelChanging(value);
-                    ReportPropertyChanging("IdConsultaVariavel");
-                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdConsultaVariavel");
-                    OnIdConsultaVariavelChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdConsultaVariavel;
-        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
-        partial void OnIdConsultaVariavelChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_consulta_parametro")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_consulta_parametro : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_consulta_parametro object.
-        /// </summary>
-        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
-        /// <param name="idParamentoClinico">Initial value of the IdParamentoClinico property.</param>
-        public static tb_consulta_parametro Createtb_consulta_parametro(global::System.Int64 idConsultaVariavel, global::System.Int32 idParamentoClinico)
-        {
-            tb_consulta_parametro tb_consulta_parametro = new tb_consulta_parametro();
-            tb_consulta_parametro.IdConsultaVariavel = idConsultaVariavel;
-            tb_consulta_parametro.IdParamentoClinico = idParamentoClinico;
-            return tb_consulta_parametro;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaVariavel
-        {
-            get
-            {
-                return _IdConsultaVariavel;
-            }
-            set
-            {
-                if (_IdConsultaVariavel != value)
-                {
-                    OnIdConsultaVariavelChanging(value);
-                    ReportPropertyChanging("IdConsultaVariavel");
-                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdConsultaVariavel");
-                    OnIdConsultaVariavelChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdConsultaVariavel;
-        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
-        partial void OnIdConsultaVariavelChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdParamentoClinico
-        {
-            get
-            {
-                return _IdParamentoClinico;
-            }
-            set
-            {
-                if (_IdParamentoClinico != value)
-                {
-                    OnIdParamentoClinicoChanging(value);
-                    ReportPropertyChanging("IdParamentoClinico");
-                    _IdParamentoClinico = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdParamentoClinico");
-                    OnIdParamentoClinicoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdParamentoClinico;
-        partial void OnIdParamentoClinicoChanging(global::System.Int32 value);
-        partial void OnIdParamentoClinicoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> Valor
-        {
-            get
-            {
-                return _Valor;
-            }
-            set
-            {
-                OnValorChanging(value);
-                ReportPropertyChanging("Valor");
-                _Valor = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Valor");
-                OnValorChanged();
-            }
-        }
-        private Nullable<global::System.Single> _Valor;
-        partial void OnValorChanging(Nullable<global::System.Single> value);
-        partial void OnValorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> ValorReferencia
-        {
-            get
-            {
-                return _ValorReferencia;
-            }
-            set
-            {
-                OnValorReferenciaChanging(value);
-                ReportPropertyChanging("ValorReferencia");
-                _ValorReferencia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("ValorReferencia");
-                OnValorReferenciaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _ValorReferencia;
-        partial void OnValorReferenciaChanging(Nullable<global::System.Single> value);
-        partial void OnValorReferenciaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Unidade
-        {
-            get
-            {
-                return _Unidade;
-            }
-            set
-            {
-                OnUnidadeChanging(value);
-                ReportPropertyChanging("Unidade");
-                _Unidade = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Unidade");
-                OnUnidadeChanged();
-            }
-        }
-        private global::System.String _Unidade;
-        partial void OnUnidadeChanging(global::System.String value);
-        partial void OnUnidadeChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_consulta_variavel")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_consulta_variavel : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_consulta_variavel object.
-        /// </summary>
-        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
-        /// <param name="idConsultaFixo">Initial value of the IdConsultaFixo property.</param>
-        /// <param name="idRelato">Initial value of the IdRelato property.</param>
-        /// <param name="idRazaoEncontro">Initial value of the IdRazaoEncontro property.</param>
-        public static tb_consulta_variavel Createtb_consulta_variavel(global::System.Int64 idConsultaVariavel, global::System.Int64 idConsultaFixo, global::System.Int32 idRelato, global::System.Int32 idRazaoEncontro)
-        {
-            tb_consulta_variavel tb_consulta_variavel = new tb_consulta_variavel();
-            tb_consulta_variavel.IdConsultaVariavel = idConsultaVariavel;
-            tb_consulta_variavel.IdConsultaFixo = idConsultaFixo;
-            tb_consulta_variavel.IdRelato = idRelato;
-            tb_consulta_variavel.IdRazaoEncontro = idRazaoEncontro;
-            return tb_consulta_variavel;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaVariavel
-        {
-            get
-            {
-                return _IdConsultaVariavel;
-            }
-            set
-            {
-                if (_IdConsultaVariavel != value)
-                {
-                    OnIdConsultaVariavelChanging(value);
-                    ReportPropertyChanging("IdConsultaVariavel");
-                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdConsultaVariavel");
-                    OnIdConsultaVariavelChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdConsultaVariavel;
-        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
-        partial void OnIdConsultaVariavelChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaFixo
-        {
-            get
-            {
-                return _IdConsultaFixo;
-            }
-            set
-            {
-                OnIdConsultaFixoChanging(value);
-                ReportPropertyChanging("IdConsultaFixo");
-                _IdConsultaFixo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdConsultaFixo");
-                OnIdConsultaFixoChanged();
-            }
-        }
-        private global::System.Int64 _IdConsultaFixo;
-        partial void OnIdConsultaFixoChanging(global::System.Int64 value);
-        partial void OnIdConsultaFixoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdRelato
-        {
-            get
-            {
-                return _IdRelato;
-            }
-            set
-            {
-                OnIdRelatoChanging(value);
-                ReportPropertyChanging("IdRelato");
-                _IdRelato = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdRelato");
-                OnIdRelatoChanged();
-            }
-        }
-        private global::System.Int32 _IdRelato;
-        partial void OnIdRelatoChanging(global::System.Int32 value);
-        partial void OnIdRelatoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdRazaoEncontro
-        {
-            get
-            {
-                return _IdRazaoEncontro;
-            }
-            set
-            {
-                OnIdRazaoEncontroChanging(value);
-                ReportPropertyChanging("IdRazaoEncontro");
-                _IdRazaoEncontro = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdRazaoEncontro");
-                OnIdRazaoEncontroChanged();
-            }
-        }
-        private global::System.Int32 _IdRazaoEncontro;
-        partial void OnIdRazaoEncontroChanging(global::System.Int32 value);
-        partial void OnIdRazaoEncontroChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> DataPreenchimento
-        {
-            get
-            {
-                return _DataPreenchimento;
-            }
-            set
-            {
-                OnDataPreenchimentoChanging(value);
-                ReportPropertyChanging("DataPreenchimento");
-                _DataPreenchimento = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("DataPreenchimento");
-                OnDataPreenchimentoChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _DataPreenchimento;
-        partial void OnDataPreenchimentoChanging(Nullable<global::System.DateTime> value);
-        partial void OnDataPreenchimentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Lembretes
-        {
-            get
-            {
-                return _Lembretes;
-            }
-            set
-            {
-                OnLembretesChanging(value);
-                ReportPropertyChanging("Lembretes");
-                _Lembretes = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Lembretes");
-                OnLembretesChanged();
-            }
-        }
-        private global::System.String _Lembretes;
-        partial void OnLembretesChanging(global::System.String value);
-        partial void OnLembretesChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ComentariosTutor
-        {
-            get
-            {
-                return _ComentariosTutor;
-            }
-            set
-            {
-                OnComentariosTutorChanging(value);
-                ReportPropertyChanging("ComentariosTutor");
-                _ComentariosTutor = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ComentariosTutor");
-                OnComentariosTutorChanged();
-            }
-        }
-        private global::System.String _ComentariosTutor;
-        partial void OnComentariosTutorChanging(global::System.String value);
-        partial void OnComentariosTutorChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_paciente_pessoa_turma")]
-        public EntityCollection<PacientePessoaTurmaE> tb_paciente_pessoa_turma
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PacientePessoaTurmaE>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_paciente_pessoa_turma");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PacientePessoaTurmaE>("pvModel.fk_tb_paciente_pessoa_turma_tb_consulta_variavel1", "tb_paciente_pessoa_turma", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_consulta_variavel_queixa")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_consulta_variavel_queixa : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_consulta_variavel_queixa object.
-        /// </summary>
-        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
-        /// <param name="idQueixa">Initial value of the IdQueixa property.</param>
-        /// <param name="idAcaoQueixa">Initial value of the IdAcaoQueixa property.</param>
-        /// <param name="motivo">Initial value of the Motivo property.</param>
-        public static tb_consulta_variavel_queixa Createtb_consulta_variavel_queixa(global::System.Int64 idConsultaVariavel, global::System.Int32 idQueixa, global::System.Int32 idAcaoQueixa, global::System.String motivo)
-        {
-            tb_consulta_variavel_queixa tb_consulta_variavel_queixa = new tb_consulta_variavel_queixa();
-            tb_consulta_variavel_queixa.IdConsultaVariavel = idConsultaVariavel;
-            tb_consulta_variavel_queixa.IdQueixa = idQueixa;
-            tb_consulta_variavel_queixa.IdAcaoQueixa = idAcaoQueixa;
-            tb_consulta_variavel_queixa.Motivo = motivo;
-            return tb_consulta_variavel_queixa;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaVariavel
-        {
-            get
-            {
-                return _IdConsultaVariavel;
-            }
-            set
-            {
-                if (_IdConsultaVariavel != value)
-                {
-                    OnIdConsultaVariavelChanging(value);
-                    ReportPropertyChanging("IdConsultaVariavel");
-                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdConsultaVariavel");
-                    OnIdConsultaVariavelChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdConsultaVariavel;
-        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
-        partial void OnIdConsultaVariavelChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdQueixa
-        {
-            get
-            {
-                return _IdQueixa;
-            }
-            set
-            {
-                if (_IdQueixa != value)
-                {
-                    OnIdQueixaChanging(value);
-                    ReportPropertyChanging("IdQueixa");
-                    _IdQueixa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdQueixa");
-                    OnIdQueixaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdQueixa;
-        partial void OnIdQueixaChanging(global::System.Int32 value);
-        partial void OnIdQueixaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdAcaoQueixa
-        {
-            get
-            {
-                return _IdAcaoQueixa;
-            }
-            set
-            {
-                OnIdAcaoQueixaChanging(value);
-                ReportPropertyChanging("IdAcaoQueixa");
-                _IdAcaoQueixa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdAcaoQueixa");
-                OnIdAcaoQueixaChanged();
-            }
-        }
-        private global::System.Int32 _IdAcaoQueixa;
-        partial void OnIdAcaoQueixaChanging(global::System.Int32 value);
-        partial void OnIdAcaoQueixaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Motivo
-        {
-            get
-            {
-                return _Motivo;
-            }
-            set
-            {
-                OnMotivoChanging(value);
-                ReportPropertyChanging("Motivo");
-                _Motivo = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Motivo");
-                OnMotivoChanged();
-            }
-        }
-        private global::System.String _Motivo;
-        partial void OnMotivoChanging(global::System.String value);
-        partial void OnMotivoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Desde
-        {
-            get
-            {
-                return _Desde;
-            }
-            set
-            {
-                OnDesdeChanging(value);
-                ReportPropertyChanging("Desde");
-                _Desde = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Desde");
-                OnDesdeChanged();
-            }
-        }
-        private global::System.String _Desde;
-        partial void OnDesdeChanging(global::System.String value);
-        partial void OnDesdeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> Prioridade
-        {
-            get
-            {
-                return _Prioridade;
-            }
-            set
-            {
-                OnPrioridadeChanging(value);
-                ReportPropertyChanging("Prioridade");
-                _Prioridade = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Prioridade");
-                OnPrioridadeChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _Prioridade;
-        partial void OnPrioridadeChanging(Nullable<global::System.Int32> value);
-        partial void OnPrioridadeChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_curso_disciplina")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_curso_disciplina : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_curso_disciplina object.
-        /// </summary>
-        /// <param name="idCurso">Initial value of the IdCurso property.</param>
-        /// <param name="idDisciplina">Initial value of the IdDisciplina property.</param>
-        public static tb_curso_disciplina Createtb_curso_disciplina(global::System.Int32 idCurso, global::System.Int32 idDisciplina)
-        {
-            tb_curso_disciplina tb_curso_disciplina = new tb_curso_disciplina();
-            tb_curso_disciplina.IdCurso = idCurso;
-            tb_curso_disciplina.IdDisciplina = idDisciplina;
-            return tb_curso_disciplina;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdCurso
-        {
-            get
-            {
-                return _IdCurso;
-            }
-            set
-            {
-                if (_IdCurso != value)
-                {
-                    OnIdCursoChanging(value);
-                    ReportPropertyChanging("IdCurso");
-                    _IdCurso = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdCurso");
-                    OnIdCursoChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdCurso;
-        partial void OnIdCursoChanging(global::System.Int32 value);
-        partial void OnIdCursoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdDisciplina
-        {
-            get
-            {
-                return _IdDisciplina;
-            }
-            set
-            {
-                if (_IdDisciplina != value)
-                {
-                    OnIdDisciplinaChanging(value);
-                    ReportPropertyChanging("IdDisciplina");
-                    _IdDisciplina = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdDisciplina");
-                    OnIdDisciplinaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdDisciplina;
-        partial void OnIdDisciplinaChanging(global::System.Int32 value);
-        partial void OnIdDisciplinaChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_estilo_vida")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_estilo_vida : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_estilo_vida object.
-        /// </summary>
-        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
-        /// <param name="tabacoConsumo">Initial value of the TabacoConsumo property.</param>
-        /// <param name="tabacoUso">Initial value of the TabacoUso property.</param>
-        /// <param name="cafeConsumo">Initial value of the CafeConsumo property.</param>
-        /// <param name="cafeUso">Initial value of the CafeUso property.</param>
-        /// <param name="alcoolConsumo">Initial value of the AlcoolConsumo property.</param>
-        /// <param name="alcoolUso">Initial value of the AlcoolUso property.</param>
-        public static tb_estilo_vida Createtb_estilo_vida(global::System.Int64 idConsultaVariavel, global::System.Boolean tabacoConsumo, global::System.Int16 tabacoUso, global::System.Boolean cafeConsumo, global::System.Int16 cafeUso, global::System.Boolean alcoolConsumo, global::System.Int16 alcoolUso)
-        {
-            tb_estilo_vida tb_estilo_vida = new tb_estilo_vida();
-            tb_estilo_vida.IdConsultaVariavel = idConsultaVariavel;
-            tb_estilo_vida.TabacoConsumo = tabacoConsumo;
-            tb_estilo_vida.TabacoUso = tabacoUso;
-            tb_estilo_vida.CafeConsumo = cafeConsumo;
-            tb_estilo_vida.CafeUso = cafeUso;
-            tb_estilo_vida.AlcoolConsumo = alcoolConsumo;
-            tb_estilo_vida.AlcoolUso = alcoolUso;
-            return tb_estilo_vida;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaVariavel
-        {
-            get
-            {
-                return _IdConsultaVariavel;
-            }
-            set
-            {
-                if (_IdConsultaVariavel != value)
-                {
-                    OnIdConsultaVariavelChanging(value);
-                    ReportPropertyChanging("IdConsultaVariavel");
-                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdConsultaVariavel");
-                    OnIdConsultaVariavelChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdConsultaVariavel;
-        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
-        partial void OnIdConsultaVariavelChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean TabacoConsumo
-        {
-            get
-            {
-                return _TabacoConsumo;
-            }
-            set
-            {
-                OnTabacoConsumoChanging(value);
-                ReportPropertyChanging("TabacoConsumo");
-                _TabacoConsumo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("TabacoConsumo");
-                OnTabacoConsumoChanged();
-            }
-        }
-        private global::System.Boolean _TabacoConsumo;
-        partial void OnTabacoConsumoChanging(global::System.Boolean value);
-        partial void OnTabacoConsumoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int16 TabacoUso
-        {
-            get
-            {
-                return _TabacoUso;
-            }
-            set
-            {
-                OnTabacoUsoChanging(value);
-                ReportPropertyChanging("TabacoUso");
-                _TabacoUso = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("TabacoUso");
-                OnTabacoUsoChanged();
-            }
-        }
-        private global::System.Int16 _TabacoUso;
-        partial void OnTabacoUsoChanging(global::System.Int16 value);
-        partial void OnTabacoUsoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String TabacoParou
-        {
-            get
-            {
-                return _TabacoParou;
-            }
-            set
-            {
-                OnTabacoParouChanging(value);
-                ReportPropertyChanging("TabacoParou");
-                _TabacoParou = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("TabacoParou");
-                OnTabacoParouChanged();
-            }
-        }
-        private global::System.String _TabacoParou;
-        partial void OnTabacoParouChanging(global::System.String value);
-        partial void OnTabacoParouChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean CafeConsumo
-        {
-            get
-            {
-                return _CafeConsumo;
-            }
-            set
-            {
-                OnCafeConsumoChanging(value);
-                ReportPropertyChanging("CafeConsumo");
-                _CafeConsumo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CafeConsumo");
-                OnCafeConsumoChanged();
-            }
-        }
-        private global::System.Boolean _CafeConsumo;
-        partial void OnCafeConsumoChanging(global::System.Boolean value);
-        partial void OnCafeConsumoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int16 CafeUso
-        {
-            get
-            {
-                return _CafeUso;
-            }
-            set
-            {
-                OnCafeUsoChanging(value);
-                ReportPropertyChanging("CafeUso");
-                _CafeUso = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CafeUso");
-                OnCafeUsoChanged();
-            }
-        }
-        private global::System.Int16 _CafeUso;
-        partial void OnCafeUsoChanging(global::System.Int16 value);
-        partial void OnCafeUsoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String CafeParou
-        {
-            get
-            {
-                return _CafeParou;
-            }
-            set
-            {
-                OnCafeParouChanging(value);
-                ReportPropertyChanging("CafeParou");
-                _CafeParou = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("CafeParou");
-                OnCafeParouChanged();
-            }
-        }
-        private global::System.String _CafeParou;
-        partial void OnCafeParouChanging(global::System.String value);
-        partial void OnCafeParouChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean AlcoolConsumo
-        {
-            get
-            {
-                return _AlcoolConsumo;
-            }
-            set
-            {
-                OnAlcoolConsumoChanging(value);
-                ReportPropertyChanging("AlcoolConsumo");
-                _AlcoolConsumo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("AlcoolConsumo");
-                OnAlcoolConsumoChanged();
-            }
-        }
-        private global::System.Boolean _AlcoolConsumo;
-        partial void OnAlcoolConsumoChanging(global::System.Boolean value);
-        partial void OnAlcoolConsumoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int16 AlcoolUso
-        {
-            get
-            {
-                return _AlcoolUso;
-            }
-            set
-            {
-                OnAlcoolUsoChanging(value);
-                ReportPropertyChanging("AlcoolUso");
-                _AlcoolUso = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("AlcoolUso");
-                OnAlcoolUsoChanged();
-            }
-        }
-        private global::System.Int16 _AlcoolUso;
-        partial void OnAlcoolUsoChanging(global::System.Int16 value);
-        partial void OnAlcoolUsoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String AlcoolTipoBebida
-        {
-            get
-            {
-                return _AlcoolTipoBebida;
-            }
-            set
-            {
-                OnAlcoolTipoBebidaChanging(value);
-                ReportPropertyChanging("AlcoolTipoBebida");
-                _AlcoolTipoBebida = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("AlcoolTipoBebida");
-                OnAlcoolTipoBebidaChanged();
-            }
-        }
-        private global::System.String _AlcoolTipoBebida;
-        partial void OnAlcoolTipoBebidaChanging(global::System.String value);
-        partial void OnAlcoolTipoBebidaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String AlcoolParou
-        {
-            get
-            {
-                return _AlcoolParou;
-            }
-            set
-            {
-                OnAlcoolParouChanging(value);
-                ReportPropertyChanging("AlcoolParou");
-                _AlcoolParou = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("AlcoolParou");
-                OnAlcoolParouChanged();
-            }
-        }
-        private global::System.String _AlcoolParou;
-        partial void OnAlcoolParouChanging(global::System.String value);
-        partial void OnAlcoolParouChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_exames_fisicos")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_exames_fisicos : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_exames_fisicos object.
-        /// </summary>
-        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
-        public static tb_exames_fisicos Createtb_exames_fisicos(global::System.Int64 idConsultaVariavel)
-        {
-            tb_exames_fisicos tb_exames_fisicos = new tb_exames_fisicos();
-            tb_exames_fisicos.IdConsultaVariavel = idConsultaVariavel;
-            return tb_exames_fisicos;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdConsultaVariavel
-        {
-            get
-            {
-                return _IdConsultaVariavel;
-            }
-            set
-            {
-                if (_IdConsultaVariavel != value)
-                {
-                    OnIdConsultaVariavelChanging(value);
-                    ReportPropertyChanging("IdConsultaVariavel");
-                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdConsultaVariavel");
-                    OnIdConsultaVariavelChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdConsultaVariavel;
-        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
-        partial void OnIdConsultaVariavelChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> Peso
-        {
-            get
-            {
-                return _Peso;
-            }
-            set
-            {
-                OnPesoChanging(value);
-                ReportPropertyChanging("Peso");
-                _Peso = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Peso");
-                OnPesoChanged();
-            }
-        }
-        private Nullable<global::System.Single> _Peso;
-        partial void OnPesoChanging(Nullable<global::System.Single> value);
-        partial void OnPesoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> Altura
-        {
-            get
-            {
-                return _Altura;
-            }
-            set
-            {
-                OnAlturaChanging(value);
-                ReportPropertyChanging("Altura");
-                _Altura = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Altura");
-                OnAlturaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _Altura;
-        partial void OnAlturaChanging(Nullable<global::System.Single> value);
-        partial void OnAlturaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> PressaoDiastolica
-        {
-            get
-            {
-                return _PressaoDiastolica;
-            }
-            set
-            {
-                OnPressaoDiastolicaChanging(value);
-                ReportPropertyChanging("PressaoDiastolica");
-                _PressaoDiastolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PressaoDiastolica");
-                OnPressaoDiastolicaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _PressaoDiastolica;
-        partial void OnPressaoDiastolicaChanging(Nullable<global::System.Single> value);
-        partial void OnPressaoDiastolicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> PressaoSistolica
-        {
-            get
-            {
-                return _PressaoSistolica;
-            }
-            set
-            {
-                OnPressaoSistolicaChanging(value);
-                ReportPropertyChanging("PressaoSistolica");
-                _PressaoSistolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PressaoSistolica");
-                OnPressaoSistolicaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _PressaoSistolica;
-        partial void OnPressaoSistolicaChanging(Nullable<global::System.Single> value);
-        partial void OnPressaoSistolicaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Single> Glicemia
-        {
-            get
-            {
-                return _Glicemia;
-            }
-            set
-            {
-                OnGlicemiaChanging(value);
-                ReportPropertyChanging("Glicemia");
-                _Glicemia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Glicemia");
-                OnGlicemiaChanged();
-            }
-        }
-        private Nullable<global::System.Single> _Glicemia;
-        partial void OnGlicemiaChanging(Nullable<global::System.Single> value);
-        partial void OnGlicemiaChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_medicamento_nao_prescrito")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_medicamento_nao_prescrito : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_medicamento_nao_prescrito object.
+        /// Create a new MedicamentoNaoPrescritoE object.
         /// </summary>
         /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
         /// <param name="idMedicamento">Initial value of the IdMedicamento property.</param>
         /// <param name="fitoterapico">Initial value of the Fitoterapico property.</param>
-        public static tb_medicamento_nao_prescrito Createtb_medicamento_nao_prescrito(global::System.Int64 idConsultaVariavel, global::System.Int32 idMedicamento, global::System.Boolean fitoterapico)
+        public static MedicamentoNaoPrescritoE CreateMedicamentoNaoPrescritoE(global::System.Int64 idConsultaVariavel, global::System.Int32 idMedicamento, global::System.Boolean fitoterapico)
         {
-            tb_medicamento_nao_prescrito tb_medicamento_nao_prescrito = new tb_medicamento_nao_prescrito();
-            tb_medicamento_nao_prescrito.IdConsultaVariavel = idConsultaVariavel;
-            tb_medicamento_nao_prescrito.IdMedicamento = idMedicamento;
-            tb_medicamento_nao_prescrito.Fitoterapico = fitoterapico;
-            return tb_medicamento_nao_prescrito;
+            MedicamentoNaoPrescritoE medicamentoNaoPrescritoE = new MedicamentoNaoPrescritoE();
+            medicamentoNaoPrescritoE.IdConsultaVariavel = idConsultaVariavel;
+            medicamentoNaoPrescritoE.IdMedicamento = idMedicamento;
+            medicamentoNaoPrescritoE.Fitoterapico = fitoterapico;
+            return medicamentoNaoPrescritoE;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15098,33 +6008,115 @@ namespace PacienteVirtual.Models.Data
         partial void OnPosologiaChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel")]
+        public ConsultaVariavelE tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaVariavelE> tb_consulta_variavelReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamentos")]
+        public MedicamentosE tb_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamentos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamentos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<MedicamentosE> tb_medicamentosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<MedicamentosE>("pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamentos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_medicamento_prescrito")]
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="MedicamentoPrescritoE")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class tb_medicamento_prescrito : EntityObject
+    public partial class MedicamentoPrescritoE : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new tb_medicamento_prescrito object.
+        /// Create a new MedicamentoPrescritoE object.
         /// </summary>
         /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
         /// <param name="idMedicamento">Initial value of the IdMedicamento property.</param>
-        public static tb_medicamento_prescrito Createtb_medicamento_prescrito(global::System.Int64 idConsultaVariavel, global::System.Int32 idMedicamento)
+        public static MedicamentoPrescritoE CreateMedicamentoPrescritoE(global::System.Int64 idConsultaVariavel, global::System.Int32 idMedicamento)
         {
-            tb_medicamento_prescrito tb_medicamento_prescrito = new tb_medicamento_prescrito();
-            tb_medicamento_prescrito.IdConsultaVariavel = idConsultaVariavel;
-            tb_medicamento_prescrito.IdMedicamento = idMedicamento;
-            return tb_medicamento_prescrito;
+            MedicamentoPrescritoE medicamentoPrescritoE = new MedicamentoPrescritoE();
+            medicamentoPrescritoE.IdConsultaVariavel = idConsultaVariavel;
+            medicamentoPrescritoE.IdMedicamento = idMedicamento;
+            return medicamentoPrescritoE;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15302,33 +6294,115 @@ namespace PacienteVirtual.Models.Data
         partial void OnEspecialidadeChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_consulta_variavel")]
+        public ConsultaVariavelE tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_consulta_variavel").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_consulta_variavel").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaVariavelE> tb_consulta_variavelReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamentos")]
+        public MedicamentosE tb_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamentos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamentos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<MedicamentosE> tb_medicamentosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamentos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_medicamentos_anteriores")]
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="MedicamentosAnterioresE")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class tb_medicamentos_anteriores : EntityObject
+    public partial class MedicamentosAnterioresE : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new tb_medicamentos_anteriores object.
+        /// Create a new MedicamentosAnterioresE object.
         /// </summary>
         /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
         /// <param name="idMedicamento">Initial value of the IdMedicamento property.</param>
-        public static tb_medicamentos_anteriores Createtb_medicamentos_anteriores(global::System.Int64 idConsultaVariavel, global::System.Int32 idMedicamento)
+        public static MedicamentosAnterioresE CreateMedicamentosAnterioresE(global::System.Int64 idConsultaVariavel, global::System.Int32 idMedicamento)
         {
-            tb_medicamentos_anteriores tb_medicamentos_anteriores = new tb_medicamentos_anteriores();
-            tb_medicamentos_anteriores.IdConsultaVariavel = idConsultaVariavel;
-            tb_medicamentos_anteriores.IdMedicamento = idMedicamento;
-            return tb_medicamentos_anteriores;
+            MedicamentosAnterioresE medicamentosAnterioresE = new MedicamentosAnterioresE();
+            medicamentosAnterioresE.IdConsultaVariavel = idConsultaVariavel;
+            medicamentosAnterioresE.IdMedicamento = idMedicamento;
+            return medicamentosAnterioresE;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15458,33 +6532,663 @@ namespace PacienteVirtual.Models.Data
         partial void OnPeriodoChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_consulta_variavel")]
+        public ConsultaVariavelE tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_consulta_variavel").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_consulta_variavel").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ConsultaVariavelE> tb_consulta_variavelReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos")]
+        public MedicamentosE tb_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<MedicamentosE> tb_medicamentosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_perfil_usuario")]
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="MedicamentosE")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class tb_perfil_usuario : EntityObject
+    public partial class MedicamentosE : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new tb_perfil_usuario object.
+        /// Create a new MedicamentosE object.
         /// </summary>
-        /// <param name="idPerfil">Initial value of the IdPerfil property.</param>
-        /// <param name="nomePerfil">Initial value of the NomePerfil property.</param>
-        public static tb_perfil_usuario Createtb_perfil_usuario(global::System.Int32 idPerfil, global::System.String nomePerfil)
+        /// <param name="idMedicamento">Initial value of the IdMedicamento property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        public static MedicamentosE CreateMedicamentosE(global::System.Int32 idMedicamento, global::System.String nome)
         {
-            tb_perfil_usuario tb_perfil_usuario = new tb_perfil_usuario();
-            tb_perfil_usuario.IdPerfil = idPerfil;
-            tb_perfil_usuario.NomePerfil = nomePerfil;
-            return tb_perfil_usuario;
+            MedicamentosE medicamentosE = new MedicamentosE();
+            medicamentosE.IdMedicamento = idMedicamento;
+            medicamentosE.Nome = nome;
+            return medicamentosE;
         }
 
         #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdMedicamento
+        {
+            get
+            {
+                return _IdMedicamento;
+            }
+            set
+            {
+                if (_IdMedicamento != value)
+                {
+                    OnIdMedicamentoChanging(value);
+                    ReportPropertyChanging("IdMedicamento");
+                    _IdMedicamento = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdMedicamento");
+                    OnIdMedicamentoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdMedicamento;
+        partial void OnIdMedicamentoChanging(global::System.Int32 value);
+        partial void OnIdMedicamentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diario_pessoal_tb_medicamentos1", "tb_diario_pessoal")]
+        public EntityCollection<DiarioPessoalE> tb_diario_pessoal
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DiarioPessoalE>("pvModel.fk_tb_diario_pessoal_tb_medicamentos1", "tb_diario_pessoal");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DiarioPessoalE>("pvModel.fk_tb_diario_pessoal_tb_medicamentos1", "tb_diario_pessoal", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamento_nao_prescrito")]
+        public EntityCollection<MedicamentoNaoPrescritoE> tb_medicamento_nao_prescrito
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<MedicamentoNaoPrescritoE>("pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamento_nao_prescrito");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<MedicamentoNaoPrescritoE>("pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1", "tb_medicamento_nao_prescrito", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamento_prescrito")]
+        public EntityCollection<MedicamentoPrescritoE> tb_medicamento_prescrito
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<MedicamentoPrescritoE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamento_prescrito");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<MedicamentoPrescritoE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2", "tb_medicamento_prescrito", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos_anteriores")]
+        public EntityCollection<MedicamentosAnterioresE> tb_medicamentos_anteriores
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<MedicamentosAnterioresE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos_anteriores");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<MedicamentosAnterioresE>("pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1", "tb_medicamentos_anteriores", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_queixa_medicamentos")]
+        public EntityCollection<QueixaMedicamentosE> tb_queixa_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<QueixaMedicamentosE>("pvModel.fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_queixa_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<QueixaMedicamentosE>("pvModel.fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_queixa_medicamentos", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="OcupacaoE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class OcupacaoE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new OcupacaoE object.
+        /// </summary>
+        /// <param name="idOcupacao">Initial value of the IdOcupacao property.</param>
+        /// <param name="descricao">Initial value of the Descricao property.</param>
+        public static OcupacaoE CreateOcupacaoE(global::System.Int32 idOcupacao, global::System.String descricao)
+        {
+            OcupacaoE ocupacaoE = new OcupacaoE();
+            ocupacaoE.IdOcupacao = idOcupacao;
+            ocupacaoE.Descricao = descricao;
+            return ocupacaoE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdOcupacao
+        {
+            get
+            {
+                return _IdOcupacao;
+            }
+            set
+            {
+                if (_IdOcupacao != value)
+                {
+                    OnIdOcupacaoChanging(value);
+                    ReportPropertyChanging("IdOcupacao");
+                    _IdOcupacao = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdOcupacao");
+                    OnIdOcupacaoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdOcupacao;
+        partial void OnIdOcupacaoChanging(global::System.Int32 value);
+        partial void OnIdOcupacaoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Descricao
+        {
+            get
+            {
+                return _Descricao;
+            }
+            set
+            {
+                OnDescricaoChanging(value);
+                ReportPropertyChanging("Descricao");
+                _Descricao = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Descricao");
+                OnDescricaoChanged();
+            }
+        }
+        private global::System.String _Descricao;
+        partial void OnDescricaoChanging(global::System.String value);
+        partial void OnDescricaoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos")]
+        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1", "tb_demograficos_antropometricos", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PacienteE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PacienteE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PacienteE object.
+        /// </summary>
+        /// <param name="idPaciente">Initial value of the IdPaciente property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        public static PacienteE CreatePacienteE(global::System.Int32 idPaciente, global::System.String nome)
+        {
+            PacienteE pacienteE = new PacienteE();
+            pacienteE.IdPaciente = idPaciente;
+            pacienteE.Nome = nome;
+            return pacienteE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPaciente
+        {
+            get
+            {
+                return _IdPaciente;
+            }
+            set
+            {
+                if (_IdPaciente != value)
+                {
+                    OnIdPacienteChanging(value);
+                    ReportPropertyChanging("IdPaciente");
+                    _IdPaciente = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdPaciente");
+                    OnIdPacienteChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdPaciente;
+        partial void OnIdPacienteChanging(global::System.Int32 value);
+        partial void OnIdPacienteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] Foto
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_Foto);
+            }
+            set
+            {
+                OnFotoChanging(value);
+                ReportPropertyChanging("Foto");
+                _Foto = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Foto");
+                OnFotoChanged();
+            }
+        }
+        private global::System.Byte[] _Foto;
+        partial void OnFotoChanging(global::System.Byte[] value);
+        partial void OnFotoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_relato_clinico_tb_paciente1", "tb_relato_clinico")]
+        public EntityCollection<RelatoClinicoE> tb_relato_clinico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<RelatoClinicoE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_relato_clinico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<RelatoClinicoE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_relato_clinico", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="ParametroClinicoE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ParametroClinicoE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ParametroClinicoE object.
+        /// </summary>
+        /// <param name="idParametroClinico">Initial value of the IdParametroClinico property.</param>
+        /// <param name="parametroClinico">Initial value of the ParametroClinico property.</param>
+        public static ParametroClinicoE CreateParametroClinicoE(global::System.Int32 idParametroClinico, global::System.String parametroClinico)
+        {
+            ParametroClinicoE parametroClinicoE = new ParametroClinicoE();
+            parametroClinicoE.IdParametroClinico = idParametroClinico;
+            parametroClinicoE.ParametroClinico = parametroClinico;
+            return parametroClinicoE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdParametroClinico
+        {
+            get
+            {
+                return _IdParametroClinico;
+            }
+            set
+            {
+                if (_IdParametroClinico != value)
+                {
+                    OnIdParametroClinicoChanging(value);
+                    ReportPropertyChanging("IdParametroClinico");
+                    _IdParametroClinico = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdParametroClinico");
+                    OnIdParametroClinicoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdParametroClinico;
+        partial void OnIdParametroClinicoChanging(global::System.Int32 value);
+        partial void OnIdParametroClinicoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ParametroClinico
+        {
+            get
+            {
+                return _ParametroClinico;
+            }
+            set
+            {
+                OnParametroClinicoChanging(value);
+                ReportPropertyChanging("ParametroClinico");
+                _ParametroClinico = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ParametroClinico");
+                OnParametroClinicoChanged();
+            }
+        }
+        private global::System.String _ParametroClinico;
+        partial void OnParametroClinicoChanging(global::System.String value);
+        partial void OnParametroClinicoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_consulta_parametro")]
+        public EntityCollection<ConsultaParametroE> tb_consulta_parametro
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ConsultaParametroE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_consulta_parametro");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ConsultaParametroE>("pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1", "tb_consulta_parametro", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PerfilUsuarioE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PerfilUsuarioE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PerfilUsuarioE object.
+        /// </summary>
+        /// <param name="idPerfil">Initial value of the IdPerfil property.</param>
+        /// <param name="nomePerfil">Initial value of the NomePerfil property.</param>
+        public static PerfilUsuarioE CreatePerfilUsuarioE(global::System.Int32 idPerfil, global::System.String nomePerfil)
+        {
+            PerfilUsuarioE perfilUsuarioE = new PerfilUsuarioE();
+            perfilUsuarioE.IdPerfil = idPerfil;
+            perfilUsuarioE.NomePerfil = nomePerfil;
+            return perfilUsuarioE;
+        }
+
+        #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15539,21 +7243,544 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomePerfilChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_queixa_medicamentos")]
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PerguntaE")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class tb_queixa_medicamentos : EntityObject
+    public partial class PerguntaE : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new tb_queixa_medicamentos object.
+        /// Create a new PerguntaE object.
+        /// </summary>
+        /// <param name="idPergunta">Initial value of the IdPergunta property.</param>
+        /// <param name="pergunta">Initial value of the Pergunta property.</param>
+        public static PerguntaE CreatePerguntaE(global::System.Int32 idPergunta, global::System.String pergunta)
+        {
+            PerguntaE perguntaE = new PerguntaE();
+            perguntaE.IdPergunta = idPergunta;
+            perguntaE.Pergunta = pergunta;
+            return perguntaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPergunta
+        {
+            get
+            {
+                return _IdPergunta;
+            }
+            set
+            {
+                if (_IdPergunta != value)
+                {
+                    OnIdPerguntaChanging(value);
+                    ReportPropertyChanging("IdPergunta");
+                    _IdPergunta = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdPergunta");
+                    OnIdPerguntaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdPergunta;
+        partial void OnIdPerguntaChanging(global::System.Int32 value);
+        partial void OnIdPerguntaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Pergunta
+        {
+            get
+            {
+                return _Pergunta;
+            }
+            set
+            {
+                OnPerguntaChanging(value);
+                ReportPropertyChanging("Pergunta");
+                _Pergunta = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Pergunta");
+                OnPerguntaChanged();
+            }
+        }
+        private global::System.String _Pergunta;
+        partial void OnPerguntaChanging(global::System.String value);
+        partial void OnPerguntaChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_resposta_tb_pergunta1", "tb_resposta")]
+        public EntityCollection<RespostaE> tb_resposta
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<RespostaE>("pvModel.fk_tb_resposta_tb_pergunta1", "tb_resposta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<RespostaE>("pvModel.fk_tb_resposta_tb_pergunta1", "tb_resposta", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PessoaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PessoaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PessoaE object.
+        /// </summary>
+        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        public static PessoaE CreatePessoaE(global::System.Int32 idPessoa, global::System.String nome)
+        {
+            PessoaE pessoaE = new PessoaE();
+            pessoaE.IdPessoa = idPessoa;
+            pessoaE.Nome = nome;
+            return pessoaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPessoa
+        {
+            get
+            {
+                return _IdPessoa;
+            }
+            set
+            {
+                if (_IdPessoa != value)
+                {
+                    OnIdPessoaChanging(value);
+                    ReportPropertyChanging("IdPessoa");
+                    _IdPessoa = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdPessoa");
+                    OnIdPessoaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdPessoa;
+        partial void OnIdPessoaChanging(global::System.Int32 value);
+        partial void OnIdPessoaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_historico_tb_pessoa1", "tb_historico")]
+        public EntityCollection<HistoricoE> tb_historico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<HistoricoE>("pvModel.fk_tb_historico_tb_pessoa1", "tb_historico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<HistoricoE>("pvModel.fk_tb_historico_tb_pessoa1", "tb_historico", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_turma_pessoa")]
+        public EntityCollection<TurmaPessoaE> tb_turma_pessoa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TurmaPessoaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_turma_pessoa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TurmaPessoaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_turma_pessoa", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="PlanoSaudeE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PlanoSaudeE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PlanoSaudeE object.
+        /// </summary>
+        /// <param name="idPlanoSaude">Initial value of the IdPlanoSaude property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        public static PlanoSaudeE CreatePlanoSaudeE(global::System.Int32 idPlanoSaude, global::System.String nome)
+        {
+            PlanoSaudeE planoSaudeE = new PlanoSaudeE();
+            planoSaudeE.IdPlanoSaude = idPlanoSaude;
+            planoSaudeE.Nome = nome;
+            return planoSaudeE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPlanoSaude
+        {
+            get
+            {
+                return _IdPlanoSaude;
+            }
+            set
+            {
+                if (_IdPlanoSaude != value)
+                {
+                    OnIdPlanoSaudeChanging(value);
+                    ReportPropertyChanging("IdPlanoSaude");
+                    _IdPlanoSaude = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdPlanoSaude");
+                    OnIdPlanoSaudeChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdPlanoSaude;
+        partial void OnIdPlanoSaudeChanging(global::System.Int32 value);
+        partial void OnIdPlanoSaudeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos")]
+        public EntityCollection<DemograficosAntropometricosE> tb_demograficos_antropometricos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DemograficosAntropometricosE>("pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1", "tb_demograficos_antropometricos", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="QueixaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class QueixaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new QueixaE object.
+        /// </summary>
+        /// <param name="idQueixa">Initial value of the IdQueixa property.</param>
+        /// <param name="descricaoQueixa">Initial value of the DescricaoQueixa property.</param>
+        /// <param name="idSistema">Initial value of the IdSistema property.</param>
+        public static QueixaE CreateQueixaE(global::System.Int32 idQueixa, global::System.String descricaoQueixa, global::System.Int32 idSistema)
+        {
+            QueixaE queixaE = new QueixaE();
+            queixaE.IdQueixa = idQueixa;
+            queixaE.DescricaoQueixa = descricaoQueixa;
+            queixaE.IdSistema = idSistema;
+            return queixaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdQueixa
+        {
+            get
+            {
+                return _IdQueixa;
+            }
+            set
+            {
+                if (_IdQueixa != value)
+                {
+                    OnIdQueixaChanging(value);
+                    ReportPropertyChanging("IdQueixa");
+                    _IdQueixa = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdQueixa");
+                    OnIdQueixaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdQueixa;
+        partial void OnIdQueixaChanging(global::System.Int32 value);
+        partial void OnIdQueixaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String DescricaoQueixa
+        {
+            get
+            {
+                return _DescricaoQueixa;
+            }
+            set
+            {
+                OnDescricaoQueixaChanging(value);
+                ReportPropertyChanging("DescricaoQueixa");
+                _DescricaoQueixa = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("DescricaoQueixa");
+                OnDescricaoQueixaChanged();
+            }
+        }
+        private global::System.String _DescricaoQueixa;
+        partial void OnDescricaoQueixaChanging(global::System.String value);
+        partial void OnDescricaoQueixaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdSistema
+        {
+            get
+            {
+                return _IdSistema;
+            }
+            set
+            {
+                OnIdSistemaChanging(value);
+                ReportPropertyChanging("IdSistema");
+                _IdSistema = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdSistema");
+                OnIdSistemaChanged();
+            }
+        }
+        private global::System.Int32 _IdSistema;
+        partial void OnIdSistemaChanging(global::System.Int32 value);
+        partial void OnIdSistemaChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_consulta_variavel_queixa")]
+        public EntityCollection<ConsultaVariavelQueixaE> tb_consulta_variavel_queixa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ConsultaVariavelQueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_consulta_variavel_queixa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ConsultaVariavelQueixaE>("pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_consulta_variavel_queixa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_tb_sistema1", "tb_sistema")]
+        public SistemaE tb_sistema
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SistemaE>("pvModel.fk_tb_queixa_tb_sistema1", "tb_sistema").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SistemaE>("pvModel.fk_tb_queixa_tb_sistema1", "tb_sistema").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<SistemaE> tb_sistemaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SistemaE>("pvModel.fk_tb_queixa_tb_sistema1", "tb_sistema");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SistemaE>("pvModel.fk_tb_queixa_tb_sistema1", "tb_sistema", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="QueixaMedicamentosE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class QueixaMedicamentosE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new QueixaMedicamentosE object.
         /// </summary>
         /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
         /// <param name="idQueixa">Initial value of the IdQueixa property.</param>
@@ -15565,23 +7792,24 @@ namespace PacienteVirtual.Models.Data
         /// <param name="cumprimento">Initial value of the Cumprimento property.</param>
         /// <param name="idAcaoAlternativa1">Initial value of the IdAcaoAlternativa1 property.</param>
         /// <param name="idAcaoAlternativa2">Initial value of the IdAcaoAlternativa2 property.</param>
-        public static tb_queixa_medicamentos Createtb_queixa_medicamentos(global::System.Int64 idConsultaVariavel, global::System.Int32 idQueixa, global::System.Int32 idMedicamento, global::System.Int32 suspeitaIdAcaoQueixa, global::System.Boolean necessario, global::System.Boolean efetivo, global::System.Boolean seguro, global::System.Boolean cumprimento, global::System.Int32 idAcaoAlternativa1, global::System.Int32 idAcaoAlternativa2)
+        public static QueixaMedicamentosE CreateQueixaMedicamentosE(global::System.Int64 idConsultaVariavel, global::System.Int32 idQueixa, global::System.Int32 idMedicamento, global::System.Int32 suspeitaIdAcaoQueixa, global::System.Boolean necessario, global::System.Boolean efetivo, global::System.Boolean seguro, global::System.Boolean cumprimento, global::System.Int32 idAcaoAlternativa1, global::System.Int32 idAcaoAlternativa2)
         {
-            tb_queixa_medicamentos tb_queixa_medicamentos = new tb_queixa_medicamentos();
-            tb_queixa_medicamentos.IdConsultaVariavel = idConsultaVariavel;
-            tb_queixa_medicamentos.IdQueixa = idQueixa;
-            tb_queixa_medicamentos.IdMedicamento = idMedicamento;
-            tb_queixa_medicamentos.SuspeitaIdAcaoQueixa = suspeitaIdAcaoQueixa;
-            tb_queixa_medicamentos.Necessario = necessario;
-            tb_queixa_medicamentos.Efetivo = efetivo;
-            tb_queixa_medicamentos.Seguro = seguro;
-            tb_queixa_medicamentos.Cumprimento = cumprimento;
-            tb_queixa_medicamentos.IdAcaoAlternativa1 = idAcaoAlternativa1;
-            tb_queixa_medicamentos.IdAcaoAlternativa2 = idAcaoAlternativa2;
-            return tb_queixa_medicamentos;
+            QueixaMedicamentosE queixaMedicamentosE = new QueixaMedicamentosE();
+            queixaMedicamentosE.IdConsultaVariavel = idConsultaVariavel;
+            queixaMedicamentosE.IdQueixa = idQueixa;
+            queixaMedicamentosE.IdMedicamento = idMedicamento;
+            queixaMedicamentosE.SuspeitaIdAcaoQueixa = suspeitaIdAcaoQueixa;
+            queixaMedicamentosE.Necessario = necessario;
+            queixaMedicamentosE.Efetivo = efetivo;
+            queixaMedicamentosE.Seguro = seguro;
+            queixaMedicamentosE.Cumprimento = cumprimento;
+            queixaMedicamentosE.IdAcaoAlternativa1 = idAcaoAlternativa1;
+            queixaMedicamentosE.IdAcaoAlternativa2 = idAcaoAlternativa2;
+            return queixaMedicamentosE;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -15882,90 +8110,7 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdAcaoAlternativa2Changed();
 
         #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_turma_pessoa")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tb_turma_pessoa : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tb_turma_pessoa object.
-        /// </summary>
-        /// <param name="idTurma">Initial value of the IdTurma property.</param>
-        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
-        public static tb_turma_pessoa Createtb_turma_pessoa(global::System.Int32 idTurma, global::System.Int32 idPessoa)
-        {
-            tb_turma_pessoa tb_turma_pessoa = new tb_turma_pessoa();
-            tb_turma_pessoa.IdTurma = idTurma;
-            tb_turma_pessoa.IdPessoa = idPessoa;
-            return tb_turma_pessoa;
-        }
 
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdTurma
-        {
-            get
-            {
-                return _IdTurma;
-            }
-            set
-            {
-                if (_IdTurma != value)
-                {
-                    OnIdTurmaChanging(value);
-                    ReportPropertyChanging("IdTurma");
-                    _IdTurma = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdTurma");
-                    OnIdTurmaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdTurma;
-        partial void OnIdTurmaChanging(global::System.Int32 value);
-        partial void OnIdTurmaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdPessoa
-        {
-            get
-            {
-                return _IdPessoa;
-            }
-            set
-            {
-                if (_IdPessoa != value)
-                {
-                    OnIdPessoaChanging(value);
-                    ReportPropertyChanging("IdPessoa");
-                    _IdPessoa = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdPessoa");
-                    OnIdPessoaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdPessoa;
-        partial void OnIdPessoaChanging(global::System.Int32 value);
-        partial void OnIdPessoaChanged();
-
-        #endregion
     
         #region Navigation Properties
     
@@ -15975,51 +8120,181 @@ namespace PacienteVirtual.Models.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_paciente_pessoa_turma")]
-        public EntityCollection<PacientePessoaTurmaE> tb_paciente_pessoa_turma
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_acao_alternativa")]
+        public AcaoAlternativaE tb_acao_alternativa
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PacientePessoaTurmaE>("pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_paciente_pessoa_turma");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoAlternativaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_acao_alternativa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoAlternativaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_acao_alternativa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<AcaoAlternativaE> tb_acao_alternativaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoAlternativaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_acao_alternativa");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PacientePessoaTurmaE>("pvModel.fk_tb_paciente_pessoa_turma_tb_turma_has_tb_pessoa1", "tb_paciente_pessoa_turma", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<AcaoAlternativaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa1", "tb_acao_alternativa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_acao_alternativa")]
+        public AcaoAlternativaE tb_acao_alternativa1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoAlternativaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_acao_alternativa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoAlternativaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_acao_alternativa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<AcaoAlternativaE> tb_acao_alternativa1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoAlternativaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_acao_alternativa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<AcaoAlternativaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_alternativa2", "tb_acao_alternativa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_acao_queixa")]
+        public AcaoQueixaE tb_acao_queixa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoQueixaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_acao_queixa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoQueixaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_acao_queixa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<AcaoQueixaE> tb_acao_queixaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AcaoQueixaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_acao_queixa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<AcaoQueixaE>("pvModel.fk_tb_queixa_medicamentos_tb_acao_queixa1", "tb_acao_queixa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_medicamentos")]
+        public MedicamentosE tb_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_medicamentos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_medicamentos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<MedicamentosE> tb_medicamentosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<MedicamentosE>("pvModel.fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1", "tb_medicamentos", value);
                 }
             }
         }
 
         #endregion
+
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_usuario_turma")]
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="RazaoEncontroE")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class tb_usuario_turma : EntityObject
+    public partial class RazaoEncontroE : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new tb_usuario_turma object.
+        /// Create a new RazaoEncontroE object.
         /// </summary>
-        /// <param name="idTurma">Initial value of the IdTurma property.</param>
-        /// <param name="idUsuario">Initial value of the IdUsuario property.</param>
-        /// <param name="idPerfilUsuario">Initial value of the IdPerfilUsuario property.</param>
-        public static tb_usuario_turma Createtb_usuario_turma(global::System.Int32 idTurma, global::System.Int64 idUsuario, global::System.Int32 idPerfilUsuario)
+        /// <param name="idRazaoEncontro">Initial value of the IdRazaoEncontro property.</param>
+        /// <param name="descricaoRazao">Initial value of the DescricaoRazao property.</param>
+        public static RazaoEncontroE CreateRazaoEncontroE(global::System.Int32 idRazaoEncontro, global::System.String descricaoRazao)
         {
-            tb_usuario_turma tb_usuario_turma = new tb_usuario_turma();
-            tb_usuario_turma.IdTurma = idTurma;
-            tb_usuario_turma.IdUsuario = idUsuario;
-            tb_usuario_turma.IdPerfilUsuario = idPerfilUsuario;
-            return tb_usuario_turma;
+            RazaoEncontroE razaoEncontroE = new RazaoEncontroE();
+            razaoEncontroE.IdRazaoEncontro = idRazaoEncontro;
+            razaoEncontroE.DescricaoRazao = descricaoRazao;
+            return razaoEncontroE;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16027,81 +8302,742 @@ namespace PacienteVirtual.Models.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 IdTurma
+        public global::System.Int32 IdRazaoEncontro
         {
             get
             {
-                return _IdTurma;
+                return _IdRazaoEncontro;
             }
             set
             {
-                if (_IdTurma != value)
+                if (_IdRazaoEncontro != value)
                 {
-                    OnIdTurmaChanging(value);
-                    ReportPropertyChanging("IdTurma");
-                    _IdTurma = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdTurma");
-                    OnIdTurmaChanged();
+                    OnIdRazaoEncontroChanging(value);
+                    ReportPropertyChanging("IdRazaoEncontro");
+                    _IdRazaoEncontro = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdRazaoEncontro");
+                    OnIdRazaoEncontroChanged();
                 }
             }
         }
-        private global::System.Int32 _IdTurma;
-        partial void OnIdTurmaChanging(global::System.Int32 value);
-        partial void OnIdTurmaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 IdUsuario
-        {
-            get
-            {
-                return _IdUsuario;
-            }
-            set
-            {
-                if (_IdUsuario != value)
-                {
-                    OnIdUsuarioChanging(value);
-                    ReportPropertyChanging("IdUsuario");
-                    _IdUsuario = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdUsuario");
-                    OnIdUsuarioChanged();
-                }
-            }
-        }
-        private global::System.Int64 _IdUsuario;
-        partial void OnIdUsuarioChanging(global::System.Int64 value);
-        partial void OnIdUsuarioChanged();
+        private global::System.Int32 _IdRazaoEncontro;
+        partial void OnIdRazaoEncontroChanging(global::System.Int32 value);
+        partial void OnIdRazaoEncontroChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 IdPerfilUsuario
+        public global::System.String DescricaoRazao
         {
             get
             {
-                return _IdPerfilUsuario;
+                return _DescricaoRazao;
             }
             set
             {
-                OnIdPerfilUsuarioChanging(value);
-                ReportPropertyChanging("IdPerfilUsuario");
-                _IdPerfilUsuario = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdPerfilUsuario");
-                OnIdPerfilUsuarioChanged();
+                OnDescricaoRazaoChanging(value);
+                ReportPropertyChanging("DescricaoRazao");
+                _DescricaoRazao = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("DescricaoRazao");
+                OnDescricaoRazaoChanged();
             }
         }
-        private global::System.Int32 _IdPerfilUsuario;
-        partial void OnIdPerfilUsuarioChanging(global::System.Int32 value);
-        partial void OnIdPerfilUsuarioChanged();
+        private global::System.String _DescricaoRazao;
+        partial void OnDescricaoRazaoChanging(global::System.String value);
+        partial void OnDescricaoRazaoChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_razao_encontro1", "tb_consulta_variavel")]
+        public EntityCollection<ConsultaVariavelE> tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_tb_razao_encontro1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_tb_razao_encontro1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="RelatoClinicoE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class RelatoClinicoE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new RelatoClinicoE object.
+        /// </summary>
+        /// <param name="idRelato">Initial value of the IdRelato property.</param>
+        /// <param name="idPaciente">Initial value of the IdPaciente property.</param>
+        /// <param name="ordemCronologia">Initial value of the OrdemCronologia property.</param>
+        /// <param name="nivelDificuldade">Initial value of the NivelDificuldade property.</param>
+        public static RelatoClinicoE CreateRelatoClinicoE(global::System.Int32 idRelato, global::System.Int32 idPaciente, global::System.Int32 ordemCronologia, global::System.Int32 nivelDificuldade)
+        {
+            RelatoClinicoE relatoClinicoE = new RelatoClinicoE();
+            relatoClinicoE.IdRelato = idRelato;
+            relatoClinicoE.IdPaciente = idPaciente;
+            relatoClinicoE.OrdemCronologia = ordemCronologia;
+            relatoClinicoE.NivelDificuldade = nivelDificuldade;
+            return relatoClinicoE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdRelato
+        {
+            get
+            {
+                return _IdRelato;
+            }
+            set
+            {
+                if (_IdRelato != value)
+                {
+                    OnIdRelatoChanging(value);
+                    ReportPropertyChanging("IdRelato");
+                    _IdRelato = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdRelato");
+                    OnIdRelatoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdRelato;
+        partial void OnIdRelatoChanging(global::System.Int32 value);
+        partial void OnIdRelatoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPaciente
+        {
+            get
+            {
+                return _IdPaciente;
+            }
+            set
+            {
+                OnIdPacienteChanging(value);
+                ReportPropertyChanging("IdPaciente");
+                _IdPaciente = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdPaciente");
+                OnIdPacienteChanged();
+            }
+        }
+        private global::System.Int32 _IdPaciente;
+        partial void OnIdPacienteChanging(global::System.Int32 value);
+        partial void OnIdPacienteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 OrdemCronologia
+        {
+            get
+            {
+                return _OrdemCronologia;
+            }
+            set
+            {
+                OnOrdemCronologiaChanging(value);
+                ReportPropertyChanging("OrdemCronologia");
+                _OrdemCronologia = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("OrdemCronologia");
+                OnOrdemCronologiaChanged();
+            }
+        }
+        private global::System.Int32 _OrdemCronologia;
+        partial void OnOrdemCronologiaChanging(global::System.Int32 value);
+        partial void OnOrdemCronologiaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String RelatoTextual
+        {
+            get
+            {
+                return _RelatoTextual;
+            }
+            set
+            {
+                OnRelatoTextualChanging(value);
+                ReportPropertyChanging("RelatoTextual");
+                _RelatoTextual = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("RelatoTextual");
+                OnRelatoTextualChanged();
+            }
+        }
+        private global::System.String _RelatoTextual;
+        partial void OnRelatoTextualChanging(global::System.String value);
+        partial void OnRelatoTextualChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RelatoVideo
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RelatoVideo);
+            }
+            set
+            {
+                OnRelatoVideoChanging(value);
+                ReportPropertyChanging("RelatoVideo");
+                _RelatoVideo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("RelatoVideo");
+                OnRelatoVideoChanged();
+            }
+        }
+        private global::System.Byte[] _RelatoVideo;
+        partial void OnRelatoVideoChanging(global::System.Byte[] value);
+        partial void OnRelatoVideoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 NivelDificuldade
+        {
+            get
+            {
+                return _NivelDificuldade;
+            }
+            set
+            {
+                OnNivelDificuldadeChanging(value);
+                ReportPropertyChanging("NivelDificuldade");
+                _NivelDificuldade = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NivelDificuldade");
+                OnNivelDificuldadeChanged();
+            }
+        }
+        private global::System.Int32 _NivelDificuldade;
+        partial void OnNivelDificuldadeChanging(global::System.Int32 value);
+        partial void OnNivelDificuldadeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_historico_tb_relato_clinico1", "tb_historico")]
+        public EntityCollection<HistoricoE> tb_historico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<HistoricoE>("pvModel.fk_tb_historico_tb_relato_clinico1", "tb_historico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<HistoricoE>("pvModel.fk_tb_historico_tb_relato_clinico1", "tb_historico", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_relato_clinico_tb_paciente1", "tb_paciente")]
+        public PacienteE tb_paciente
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PacienteE> tb_pacienteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacienteE>("pvModel.fk_tb_relato_clinico_tb_paciente1", "tb_paciente", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_turma_pessoa_relato")]
+        public EntityCollection<TurmaPessoaRelatoE> tb_turma_pessoa_relato
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TurmaPessoaRelatoE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_turma_pessoa_relato");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TurmaPessoaRelatoE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_turma_pessoa_relato", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="RespostaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class RespostaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new RespostaE object.
+        /// </summary>
+        /// <param name="idResposta">Initial value of the IdResposta property.</param>
+        /// <param name="resposta">Initial value of the Resposta property.</param>
+        /// <param name="idPergunta">Initial value of the IdPergunta property.</param>
+        public static RespostaE CreateRespostaE(global::System.Int32 idResposta, global::System.String resposta, global::System.Int32 idPergunta)
+        {
+            RespostaE respostaE = new RespostaE();
+            respostaE.IdResposta = idResposta;
+            respostaE.Resposta = resposta;
+            respostaE.IdPergunta = idPergunta;
+            return respostaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdResposta
+        {
+            get
+            {
+                return _IdResposta;
+            }
+            set
+            {
+                if (_IdResposta != value)
+                {
+                    OnIdRespostaChanging(value);
+                    ReportPropertyChanging("IdResposta");
+                    _IdResposta = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdResposta");
+                    OnIdRespostaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdResposta;
+        partial void OnIdRespostaChanging(global::System.Int32 value);
+        partial void OnIdRespostaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Resposta
+        {
+            get
+            {
+                return _Resposta;
+            }
+            set
+            {
+                OnRespostaChanging(value);
+                ReportPropertyChanging("Resposta");
+                _Resposta = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Resposta");
+                OnRespostaChanged();
+            }
+        }
+        private global::System.String _Resposta;
+        partial void OnRespostaChanging(global::System.String value);
+        partial void OnRespostaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPergunta
+        {
+            get
+            {
+                return _IdPergunta;
+            }
+            set
+            {
+                OnIdPerguntaChanging(value);
+                ReportPropertyChanging("IdPergunta");
+                _IdPergunta = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdPergunta");
+                OnIdPerguntaChanged();
+            }
+        }
+        private global::System.Int32 _IdPergunta;
+        partial void OnIdPerguntaChanging(global::System.Int32 value);
+        partial void OnIdPerguntaChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta1", "tb_experiencia_medicamentos")]
+        public EntityCollection<ExperienciaMedicamentosE> tb_experiencia_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta1", "tb_experiencia_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta1", "tb_experiencia_medicamentos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta2", "tb_experiencia_medicamentos")]
+        public EntityCollection<ExperienciaMedicamentosE> tb_experiencia_medicamentos1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta2", "tb_experiencia_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta2", "tb_experiencia_medicamentos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta3", "tb_experiencia_medicamentos")]
+        public EntityCollection<ExperienciaMedicamentosE> tb_experiencia_medicamentos2
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta3", "tb_experiencia_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta3", "tb_experiencia_medicamentos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta4", "tb_experiencia_medicamentos")]
+        public EntityCollection<ExperienciaMedicamentosE> tb_experiencia_medicamentos3
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta4", "tb_experiencia_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta4", "tb_experiencia_medicamentos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta5", "tb_experiencia_medicamentos")]
+        public EntityCollection<ExperienciaMedicamentosE> tb_experiencia_medicamentos4
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta5", "tb_experiencia_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta5", "tb_experiencia_medicamentos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_resposta6", "tb_experiencia_medicamentos")]
+        public EntityCollection<ExperienciaMedicamentosE> tb_experiencia_medicamentos5
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta6", "tb_experiencia_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExperienciaMedicamentosE>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta6", "tb_experiencia_medicamentos", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_resposta_tb_pergunta1", "tb_pergunta")]
+        public PerguntaE tb_pergunta
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PerguntaE>("pvModel.fk_tb_resposta_tb_pergunta1", "tb_pergunta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PerguntaE>("pvModel.fk_tb_resposta_tb_pergunta1", "tb_pergunta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PerguntaE> tb_perguntaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PerguntaE>("pvModel.fk_tb_resposta_tb_pergunta1", "tb_pergunta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PerguntaE>("pvModel.fk_tb_resposta_tb_pergunta1", "tb_pergunta", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="SistemaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class SistemaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new SistemaE object.
+        /// </summary>
+        /// <param name="idSistema">Initial value of the IdSistema property.</param>
+        /// <param name="nomeSistema">Initial value of the NomeSistema property.</param>
+        public static SistemaE CreateSistemaE(global::System.Int32 idSistema, global::System.String nomeSistema)
+        {
+            SistemaE sistemaE = new SistemaE();
+            sistemaE.IdSistema = idSistema;
+            sistemaE.NomeSistema = nomeSistema;
+            return sistemaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdSistema
+        {
+            get
+            {
+                return _IdSistema;
+            }
+            set
+            {
+                if (_IdSistema != value)
+                {
+                    OnIdSistemaChanging(value);
+                    ReportPropertyChanging("IdSistema");
+                    _IdSistema = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdSistema");
+                    OnIdSistemaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdSistema;
+        partial void OnIdSistemaChanging(global::System.Int32 value);
+        partial void OnIdSistemaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String NomeSistema
+        {
+            get
+            {
+                return _NomeSistema;
+            }
+            set
+            {
+                OnNomeSistemaChanging(value);
+                ReportPropertyChanging("NomeSistema");
+                _NomeSistema = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("NomeSistema");
+                OnNomeSistemaChanged();
+            }
+        }
+        private global::System.String _NomeSistema;
+        partial void OnNomeSistemaChanging(global::System.String value);
+        partial void OnNomeSistemaChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_tb_sistema1", "tb_queixa")]
+        public EntityCollection<QueixaE> tb_queixa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<QueixaE>("pvModel.fk_tb_queixa_tb_sistema1", "tb_queixa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<QueixaE>("pvModel.fk_tb_queixa_tb_sistema1", "tb_queixa", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -16130,6 +9066,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16256,7 +9193,260 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdInstituicaoChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "FK_Instituicao", "tb_instituicao")]
+        public InstituicaoE tb_instituicao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InstituicaoE>("pvModel.FK_Instituicao", "tb_instituicao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InstituicaoE>("pvModel.FK_Instituicao", "tb_instituicao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<InstituicaoE> tb_instituicaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InstituicaoE>("pvModel.FK_Instituicao", "tb_instituicao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<InstituicaoE>("pvModel.FK_Instituicao", "tb_instituicao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma_pessoa")]
+        public EntityCollection<TurmaPessoaE> tb_turma_pessoa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TurmaPessoaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma_pessoa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TurmaPessoaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma_pessoa", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="TurmaPessoaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TurmaPessoaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new TurmaPessoaE object.
+        /// </summary>
+        /// <param name="idTurma">Initial value of the IdTurma property.</param>
+        /// <param name="idPessoa">Initial value of the IdPessoa property.</param>
+        public static TurmaPessoaE CreateTurmaPessoaE(global::System.Int32 idTurma, global::System.Int32 idPessoa)
+        {
+            TurmaPessoaE turmaPessoaE = new TurmaPessoaE();
+            turmaPessoaE.IdTurma = idTurma;
+            turmaPessoaE.IdPessoa = idPessoa;
+            return turmaPessoaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdTurma
+        {
+            get
+            {
+                return _IdTurma;
+            }
+            set
+            {
+                if (_IdTurma != value)
+                {
+                    OnIdTurmaChanging(value);
+                    ReportPropertyChanging("IdTurma");
+                    _IdTurma = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdTurma");
+                    OnIdTurmaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdTurma;
+        partial void OnIdTurmaChanging(global::System.Int32 value);
+        partial void OnIdTurmaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPessoa
+        {
+            get
+            {
+                return _IdPessoa;
+            }
+            set
+            {
+                if (_IdPessoa != value)
+                {
+                    OnIdPessoaChanging(value);
+                    ReportPropertyChanging("IdPessoa");
+                    _IdPessoa = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdPessoa");
+                    OnIdPessoaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdPessoa;
+        partial void OnIdPessoaChanging(global::System.Int32 value);
+        partial void OnIdPessoaChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_pessoa")]
+        public PessoaE tb_pessoa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PessoaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_pessoa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PessoaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_pessoa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PessoaE> tb_pessoaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PessoaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_pessoa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PessoaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_pessoa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma")]
+        public TurmaE tb_turma
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TurmaE> tb_turmaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TurmaE>("pvModel.fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa_relato")]
+        public EntityCollection<TurmaPessoaRelatoE> tb_turma_pessoa_relato
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TurmaPessoaRelatoE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa_relato");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TurmaPessoaRelatoE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa_relato", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -16285,6 +9475,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16369,7 +9560,110 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdRelatoChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_consulta_variavel")]
+        public EntityCollection<ConsultaVariavelE> tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ConsultaVariavelE>("pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_relato_clinico")]
+        public RelatoClinicoE tb_relato_clinico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_relato_clinico").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_relato_clinico").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RelatoClinicoE> tb_relato_clinicoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelatoClinicoE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_relato_clinico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RelatoClinicoE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1", "tb_relato_clinico", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa")]
+        public TurmaPessoaE tb_turma_pessoa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaPessoaE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaPessoaE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TurmaPessoaE> tb_turma_pessoaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TurmaPessoaE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TurmaPessoaE>("pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -16404,6 +9698,7 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -16578,9 +9873,123 @@ namespace PacienteVirtual.Models.Data
         partial void OntpUsuarioChanged();
 
         #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="UsuarioTurmaE")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class UsuarioTurmaE : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new UsuarioTurmaE object.
+        /// </summary>
+        /// <param name="idTurma">Initial value of the IdTurma property.</param>
+        /// <param name="idUsuario">Initial value of the IdUsuario property.</param>
+        /// <param name="idPerfilUsuario">Initial value of the IdPerfilUsuario property.</param>
+        public static UsuarioTurmaE CreateUsuarioTurmaE(global::System.Int32 idTurma, global::System.Int64 idUsuario, global::System.Int32 idPerfilUsuario)
+        {
+            UsuarioTurmaE usuarioTurmaE = new UsuarioTurmaE();
+            usuarioTurmaE.IdTurma = idTurma;
+            usuarioTurmaE.IdUsuario = idUsuario;
+            usuarioTurmaE.IdPerfilUsuario = idPerfilUsuario;
+            return usuarioTurmaE;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdTurma
+        {
+            get
+            {
+                return _IdTurma;
+            }
+            set
+            {
+                if (_IdTurma != value)
+                {
+                    OnIdTurmaChanging(value);
+                    ReportPropertyChanging("IdTurma");
+                    _IdTurma = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdTurma");
+                    OnIdTurmaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdTurma;
+        partial void OnIdTurmaChanging(global::System.Int32 value);
+        partial void OnIdTurmaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdUsuario
+        {
+            get
+            {
+                return _IdUsuario;
+            }
+            set
+            {
+                if (_IdUsuario != value)
+                {
+                    OnIdUsuarioChanging(value);
+                    ReportPropertyChanging("IdUsuario");
+                    _IdUsuario = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdUsuario");
+                    OnIdUsuarioChanged();
+                }
+            }
+        }
+        private global::System.Int64 _IdUsuario;
+        partial void OnIdUsuarioChanging(global::System.Int64 value);
+        partial void OnIdUsuarioChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdPerfilUsuario
+        {
+            get
+            {
+                return _IdPerfilUsuario;
+            }
+            set
+            {
+                OnIdPerfilUsuarioChanging(value);
+                ReportPropertyChanging("IdPerfilUsuario");
+                _IdPerfilUsuario = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdPerfilUsuario");
+                OnIdPerfilUsuarioChanged();
+            }
+        }
+        private global::System.Int32 _IdPerfilUsuario;
+        partial void OnIdPerfilUsuarioChanging(global::System.Int32 value);
+        partial void OnIdPerfilUsuarioChanged();
+
+        #endregion
+
     
     }
 
     #endregion
+
     
 }

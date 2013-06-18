@@ -23,7 +23,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
-            return View(gPacPessTurma.ObterTodos());
+            return View();// View(gPacPessTurma.ObterTodos());
         }
 
         //
@@ -31,7 +31,7 @@ namespace PacienteVirtual.Controllers
 
        public ViewResult Details(int id)// passar três tipos de Id
         {
-            return View(gPacPessTurma.Obter(id));
+            return null;//View(gPacPessTurma.Obter(id));
         }
 
         //
@@ -53,7 +53,7 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                gPacPessTurma.Inserir(pacPessTurma);
+                //gPacPessTurma.Inserir(pacPessTurma);
                 return RedirectToAction("Index");  
             }
 
@@ -70,7 +70,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(int id)
         {
            // PacientePessoaTurmaModel pacPessTurma = db.tb_paciente_pessoa_turma.Single(t => t.IdPessoa == id);
-            PacientePessoaTurmaModel pacPessTurma = gPacPessTurma.Obter(id);
+            PacientePessoaTurmaModel pacPessTurma = null;//gPacPessTurma.Obter(id);
 
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", pacPessTurma.IdConsultaFixo);
             ViewBag.IdConsultaVariavel = new SelectList(db.tb_consulta_variavel, "IdConsultaVariavel", "Lembretes", pacPessTurma.IdConsultaVariavel);
@@ -86,7 +86,7 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                gPacPessTurma.Atualizar(pacPessTurma);
+                //gPacPessTurma.Atualizar(pacPessTurma);
                 return RedirectToAction("Index");
             }
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", pacPessTurma.IdConsultaFixo);
@@ -100,7 +100,7 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View(gPacPessTurma.Obter(id));
+            return View();// View(gPacPessTurma.Obter(id));
         }
 
         //
@@ -109,7 +109,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            gPacPessTurma.Remover(id);
+            //gPacPessTurma.Remover(id);
             return RedirectToAction("Index");
         }
 
