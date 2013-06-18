@@ -13,11 +13,11 @@
             <%: Html.LabelFor(model => model.RelatoTextual) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.RelatoTextual) %>
+            <%: Html.TextAreaFor(model => model.RelatoTextual, new { @cols = "100", @rows = "50" }) %>
             <%: Html.ValidationMessageFor(model => model.RelatoTextual) %>
         </div>
 
-
+        <p>
             <input type="submit" value="Save" />
         </p>
     </fieldset>

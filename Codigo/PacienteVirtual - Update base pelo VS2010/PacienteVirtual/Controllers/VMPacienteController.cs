@@ -75,7 +75,7 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
                             GerenciadorRelatoClinico.GetInstance().Inserir(relato);
                         }
                     else
-                        return RedirectToAction("Index","Home");
+                        return RedirectToAction("Index", "Home");
                     return RedirectToAction("Index");
                 }
             }
@@ -94,32 +94,64 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
             VMPaciente vmPaciente = new VMPaciente();
 
             vmPaciente.paciente = GerenciadorPaciente.GetInstance().Obter(id);
-            vmPaciente.demograficosAntropomedicos = GerenciadorDemograficosAntropometricos.GetInstance().Obter(id);
+
             vmPaciente.experienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(id);
-            vmPaciente.diarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(id);
+
+
+            DiarioPessoalModel dp = new DiarioPessoalModel();
+            dp.Horario = "09/12/1992";
+            dp.IdConsultaFixo = 9;
+            dp.IdMedicamento = 7;
+            dp.Periodo = "segundo";
+            dp.Quantidade = "5";
+            dp.TipoBebida = "cachaça";
+
+            vmPaciente.diarioPessoal = dp;
+
             vmPaciente.relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(id);
             ViewBag.ab = "aD";
             return View(vmPaciente);
         }
 
+        public PartialViewResult DemograficosAntropomedicos(int id)
+        {
+            DemograficosAntropometricosModel dm = new DemograficosAntropometricosModel();
+            dm.IdConsultaFixo = id;
+            dm.IdEscolaridade = id;
+            dm.IdPlanoSaude = id;
+            dm.Nome = "asdf";
+            dm.OcupacaoDescricao = "funcionário";
+
+            return PartialView(dm);
+        }
+        [HttpPost]
+        public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel d)
+        {
+
+            if (ModelState.IsValid)
+            {
+                //db.tb_demograficos_antropometricos.AddObject(tb_demograficos_antropometricos);
+                //db.SaveChanges();
+                d.IdConsultaFixo = GerenciadorDemograficosAntropometricos.GetInstance().Inserir(d);
+                return PartialView(d);
+            }
+            d.IdConsultaFixo = 666;
+            return PartialView(d);
+        }
+
+
         public PartialViewResult RelatoClinico(RelatoClinicoModel relato)
         {
             return PartialView();
-
         }
 
 
-        public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel demoAntro)
+        public PartialViewResult DiarioPessoal(DiarioPessoalModel id)
         {
-            return PartialView();
+            if (id == null)
+                return PartialView(7);
 
-        }
-
-
-        public ViewResult DiarioPessoal(DiarioPessoalModel d)
-        {
-
-            return View();
+            return PartialView(id);
         }
 
         public ViewResult ExperienciaMedicamentos(ExperienciaMedicamentosModel d)
@@ -128,5 +160,23 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
             return View();
         }
 
+
+        public ActionResult Curso(CursoModel cursoModel)
+        {
+            return View();
+        }
+
+        //
+        // POST: /Curso/Create
+        //[HttpPost]
+        //public ActionResult Curso(CursoModel cursoModel)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        cursoModel.IdCurso = GerenciadorCurso.GetInstance().Inserir(cursoModel);
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(cursoModel);
+        //}
     }
 }

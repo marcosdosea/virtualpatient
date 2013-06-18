@@ -43,8 +43,9 @@ function readURL(input) {
         </div>
 
         <div class="editor-field">
-
-        <img class="media" id="PreviewDaImagem" src="" alt="Definir Imagem Padrão" style="width:250px; height:250px;"  />
+         <!--%: Html.TextBoxFor(m => m.Foto, new { type = "file" }) %-->
+        <img class="media" id="PreviewDaImagem" src="<%: Url.Content("~/Content/themes/pv/img/default-avatar.png") %>"
+         alt="Definir Imagem Padrão" style="width:250px; height:250px;"  />
 
             <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" />
             <%: Html.ValidationMessageFor(model => model.Foto)%>
@@ -52,7 +53,7 @@ function readURL(input) {
         <p>
             <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </p>
-        <div class="progress progress-info progress-striped">
+        <div class="progress progress-info progress-striped active ">
 <div class="bar" style="width: 100%"></div>
 </div>
     </fieldset>

@@ -18,9 +18,11 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /Curso/
-        public ViewResult Index()
+
+        public ViewResult Listar(int id)
         {
-            return View(gRelato.ObterTodos());
+
+            return View(gRelato.ObterRelatos(id));
         }
 
         //

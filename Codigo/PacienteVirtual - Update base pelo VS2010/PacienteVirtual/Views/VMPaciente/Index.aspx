@@ -42,9 +42,12 @@
                 </div>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.quantRelatos)%>
+                <%: Html.DisplayFor(modelItem => item.quantRelatos)%> 
+                |<%: Html.ActionLink("Listar Relatos", "Listar", "RelatoClinico", new RouteValueDictionary(new { id = item.paciente.IdPaciente }), null)%>
             </td>
+            
             <td>
+            &nbsp &nbsp &nbsp &nbsp &nbsp
                 <%: Html.ActionLink("Edit", "Edit", new { id=item.paciente.IdPaciente }) %>
                 |
                 <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %>
