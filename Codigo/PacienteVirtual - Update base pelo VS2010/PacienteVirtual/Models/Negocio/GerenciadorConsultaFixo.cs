@@ -95,20 +95,20 @@ namespace PacienteVirtual.Models.Negocio
             var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
             var pvEntities = (pvEntities)repConsultaFixo.ObterContexto();
             var query = from tb_consulta_fixo in pvEntities.tb_consulta_fixo
-                        join tb_pessoa in pvEntities.tb_pessoa
-                        on tb_consulta_fixo.IdPessoa equals tb_pessoa.IdPessoa
+                        //join tb_pessoa in pvEntities.tb_pessoa
+                        //on tb_consulta_fixo.IdPessoa equals tb_pessoa.IdPessoa
 
                         select new ConsultaFixoModel
                         {
                             IdConsultaFixo = tb_consulta_fixo.IdConsultaFixo,
-                            IdTurma = tb_consulta_fixo.IdTurma,
-                            IdPessoa = tb_consulta_fixo.IdPessoa,
+                            //IdTurma = tb_consulta_fixo.IdTurma,
+                            //IdPessoa = tb_consulta_fixo.IdPessoa,
                             EstadoPreenchimento = tb_consulta_fixo.EstadoPreenchimento,
                             EhGabarito = tb_consulta_fixo.EhGabarito,
                             DataAtualizacao = (DateTime)tb_consulta_fixo.DataAtualizacao,
                             ComentariosTutor = tb_consulta_fixo.ComentariosTutor,
 
-                            PessoaNome = tb_pessoa.Nome
+                            //PessoaNome = tb_pessoa.Nome
                         };
             return query;
         }
@@ -149,8 +149,8 @@ namespace PacienteVirtual.Models.Negocio
         private static void Atribuir(ConsultaFixoModel consultaFixo, ConsultaFixoE _consultaFixoE)
         {
             _consultaFixoE.IdConsultaFixo = consultaFixo.IdConsultaFixo;
-            _consultaFixoE.IdTurma = consultaFixo.IdTurma;
-            _consultaFixoE.IdPessoa = consultaFixo.IdPessoa;
+            //_consultaFixoE.IdTurma = consultaFixo.IdTurma;
+            //_consultaFixoE.IdPessoa = consultaFixo.IdPessoa;
             _consultaFixoE.EstadoPreenchimento = consultaFixo.EstadoPreenchimento;
             _consultaFixoE.EhGabarito = consultaFixo.EhGabarito;
             _consultaFixoE.DataAtualizacao = (DateTime)consultaFixo.DataAtualizacao;
