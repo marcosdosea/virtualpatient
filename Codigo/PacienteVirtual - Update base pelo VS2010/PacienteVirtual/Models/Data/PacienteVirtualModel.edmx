@@ -276,9 +276,9 @@
         </EntityType>
         <EntityType Name="tb_consulta_fixo">
           <Key>
-            <PropertyRef Name="IdConsutaFixo" />
+            <PropertyRef Name="IdConsultaFixo" />
           </Key>
-          <Property Name="IdConsutaFixo" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdConsultaFixo" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="EstadoPreenchimento" Type="char" Nullable="false" MaxLength="1" />
           <Property Name="EhGabarito" Type="bool" Nullable="false" />
           <Property Name="DataAtualizacao" Type="datetime" />
@@ -300,7 +300,7 @@
             <PropertyRef Name="IdConsultaVariavel" />
           </Key>
           <Property Name="IdConsultaVariavel" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="IdConsutaFixo" Type="bigint" Nullable="false" />
+          <Property Name="IdConsultaFixo" Type="bigint" Nullable="false" />
           <Property Name="IdTurma" Type="int" Nullable="false" />
           <Property Name="IdPessoa" Type="int" Nullable="false" />
           <Property Name="IdRelato" Type="int" Nullable="false" />
@@ -342,9 +342,9 @@
         </EntityType>
         <EntityType Name="tb_demograficos_antropometricos">
           <Key>
-            <PropertyRef Name="IdConsutaFixo" />
+            <PropertyRef Name="IdConsultaFixo" />
           </Key>
-          <Property Name="IdConsutaFixo" Type="bigint" Nullable="false" />
+          <Property Name="IdConsultaFixo" Type="bigint" Nullable="false" />
           <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Genero" Type="char" Nullable="false" MaxLength="1" />
           <Property Name="DataNascimento" Type="datetime" />
@@ -357,10 +357,10 @@
         </EntityType>
         <EntityType Name="tb_diario_pessoal">
           <Key>
-            <PropertyRef Name="IdConsutaFixo" />
+            <PropertyRef Name="IdConsultaFixo" />
             <PropertyRef Name="IdMedicamento" />
           </Key>
-          <Property Name="IdConsutaFixo" Type="bigint" Nullable="false" />
+          <Property Name="IdConsultaFixo" Type="bigint" Nullable="false" />
           <Property Name="IdMedicamento" Type="int" Nullable="false" />
           <Property Name="Periodo" Type="char" Nullable="false" MaxLength="1" />
           <Property Name="Horario" Type="varchar" MaxLength="20" />
@@ -410,9 +410,9 @@
         </EntityType>
         <EntityType Name="tb_experiencia_medicamentos">
           <Key>
-            <PropertyRef Name="IdConsutaFixo" />
+            <PropertyRef Name="IdConsultaFixo" />
           </Key>
-          <Property Name="IdConsutaFixo" Type="bigint" Nullable="false" />
+          <Property Name="IdConsultaFixo" Type="bigint" Nullable="false" />
           <Property Name="IdRespostaEsperaTratamento" Type="int" Nullable="false" />
           <Property Name="IdRespostaPreocupacoes" Type="int" Nullable="false" />
           <Property Name="IdRespostaGrauEntendimento" Type="int" Nullable="false" />
@@ -427,9 +427,9 @@
         </EntityType>
         <EntityType Name="tb_historia">
           <Key>
-            <PropertyRef Name="IdConsutaFixo" />
+            <PropertyRef Name="IdConsultaFixo" />
           </Key>
-          <Property Name="IdConsutaFixo" Type="bigint" Nullable="false" />
+          <Property Name="IdConsultaFixo" Type="bigint" Nullable="false" />
           <Property Name="HistoriaMedicaPregressa" Type="varchar" Nullable="false" MaxLength="255" />
           <Property Name="HistoriaFamiliar" Type="varchar" Nullable="false" MaxLength="255" />
         </EntityType>
@@ -830,10 +830,10 @@
           <End Role="tb_consulta_variavel" Type="pvModel.Store.tb_consulta_variavel" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Principal>
             <Dependent Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -894,10 +894,10 @@
           <End Role="tb_demograficos_antropometricos" Type="pvModel.Store.tb_demograficos_antropometricos" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Principal>
             <Dependent Role="tb_demograficos_antropometricos">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -942,10 +942,10 @@
           <End Role="tb_diario_pessoal" Type="pvModel.Store.tb_diario_pessoal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Principal>
             <Dependent Role="tb_diario_pessoal">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -990,10 +990,10 @@
           <End Role="tb_experiencia_medicamentos" Type="pvModel.Store.tb_experiencia_medicamentos" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Principal>
             <Dependent Role="tb_experiencia_medicamentos">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1074,10 +1074,10 @@
           <End Role="tb_historia" Type="pvModel.Store.tb_historia" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Principal>
             <Dependent Role="tb_historia">
-              <PropertyRef Name="IdConsutaFixo" />
+              <PropertyRef Name="IdConsultaFixo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1259,19 +1259,14 @@
           <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.AcaoAlternativaE" />
           <EntitySet Name="tb_acao_queixa" EntityType="pvModel.AcaoQueixaE" />
           <EntitySet Name="tb_alergia" EntityType="pvModel.AlergiaE" />
-          <EntitySet Name="tb_consulta_fixo" EntityType="pvModel.ConsultaFixoE" />
           <EntitySet Name="tb_consulta_parametro" EntityType="pvModel.ConsultaParametroE" />
-          <EntitySet Name="tb_consulta_variavel" EntityType="pvModel.ConsultaVariavelE" />
           <EntitySet Name="tb_consulta_variavel_queixa" EntityType="pvModel.ConsultaVariavelQueixaE" />
           <EntitySet Name="tb_curso" EntityType="pvModel.CursoE" />
-          <EntitySet Name="tb_demograficos_antropometricos" EntityType="pvModel.DemograficosAntropometricosE" />
-          <EntitySet Name="tb_diario_pessoal" EntityType="pvModel.DiarioPessoalE" />
           <EntitySet Name="tb_disciplina" EntityType="pvModel.DisciplinaE" />
           <EntitySet Name="tb_escolaridade" EntityType="pvModel.EscolaridadeE" />
           <EntitySet Name="tb_estilo_vida" EntityType="pvModel.EstiloVidaE" />
           <EntitySet Name="tb_exames_fisicos" EntityType="pvModel.ExamesFisicosE" />
           <EntitySet Name="tb_experiencia_medicamentos" EntityType="pvModel.ExperienciaMedicamentosE" />
-          <EntitySet Name="tb_historia" EntityType="pvModel.HistoriaE" />
           <EntitySet Name="tb_historico" EntityType="pvModel.HistoricoE" />
           <EntitySet Name="tb_instituicao" EntityType="pvModel.InstituicaoE" />
           <EntitySet Name="tb_medicamento_nao_prescrito" EntityType="pvModel.MedicamentoNaoPrescritoE" />
@@ -1312,65 +1307,9 @@
             <End Role="tb_acao_queixa" EntitySet="tb_acao_queixa" />
             <End Role="tb_queixa_medicamentos" EntitySet="tb_queixa_medicamentos" />
           </AssociationSet>
-          <AssociationSet Name="fk_tb_consulta_variavel_tb_consulta_fixo1" Association="pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1">
-            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_consulta_fixo1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1">
-            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
-            <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_diario_pessoal_tb_consulta_fixo1" Association="pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1">
-            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
-            <End Role="tb_diario_pessoal" EntitySet="tb_diario_pessoal" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_consulta_fixo1" Association="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1">
-            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
-            <End Role="tb_experiencia_medicamentos" EntitySet="tb_experiencia_medicamentos" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_historia_tb_consulta_fixo1" Association="pvModel.fk_tb_historia_tb_consulta_fixo1">
-            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
-            <End Role="tb_historia" EntitySet="tb_historia" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1">
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-            <End Role="tb_consulta_parametro" EntitySet="tb_consulta_parametro" />
-          </AssociationSet>
           <AssociationSet Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1" Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1">
             <End Role="tb_parametro_clinico" EntitySet="tb_parametro_clinico" />
             <End Role="tb_consulta_parametro" EntitySet="tb_consulta_parametro" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1">
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-            <End Role="tb_medicamentos_anteriores" EntitySet="tb_medicamentos_anteriores" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2">
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-            <End Role="tb_medicamento_prescrito" EntitySet="tb_medicamento_prescrito" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" Association="pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1">
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-            <End Role="tb_consulta_variavel_queixa" EntitySet="tb_consulta_variavel_queixa" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_consulta_variavel_tb_razao_encontro1" Association="pvModel.fk_tb_consulta_variavel_tb_razao_encontro1">
-            <End Role="tb_razao_encontro" EntitySet="tb_razao_encontro" />
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_consulta_variavel_tb_turma_pessoa_relato1" Association="pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1">
-            <End Role="tb_turma_pessoa_relato" EntitySet="tb_turma_pessoa_relato" />
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_estilo_vida_tb_consulta_variavel1" Association="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1">
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-            <End Role="tb_estilo_vida" EntitySet="tb_estilo_vida" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_exames_fisicos_tb_consulta_variavel1" Association="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1">
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-            <End Role="tb_exames_fisicos" EntitySet="tb_exames_fisicos" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_medicamento_prescrito_tb_consulta_variavel1" Association="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1">
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-            <End Role="tb_medicamento_nao_prescrito" EntitySet="tb_medicamento_nao_prescrito" />
           </AssociationSet>
           <AssociationSet Name="fk_tb_consulta_variavel_queixa_tb_queixa1" Association="pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1">
             <End Role="tb_queixa" EntitySet="tb_queixa" />
@@ -1379,22 +1318,6 @@
           <AssociationSet Name="FK_Curso_Instituicao" Association="pvModel.FK_Curso_Instituicao">
             <End Role="tb_instituicao" EntitySet="tb_instituicao" />
             <End Role="tb_curso" EntitySet="tb_curso" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_escolaridade1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1">
-            <End Role="tb_escolaridade" EntitySet="tb_escolaridade" />
-            <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_ocupacao1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1">
-            <End Role="tb_ocupacao" EntitySet="tb_ocupacao" />
-            <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_plano_saude1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1">
-            <End Role="tb_plano_saude" EntitySet="tb_plano_saude" />
-            <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_diario_pessoal_tb_medicamentos1" Association="pvModel.fk_tb_diario_pessoal_tb_medicamentos1">
-            <End Role="tb_medicamentos" EntitySet="tb_medicamentos" />
-            <End Role="tb_diario_pessoal" EntitySet="tb_diario_pessoal" />
           </AssociationSet>
           <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_resposta1" Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta1">
             <End Role="tb_resposta" EntitySet="tb_resposta" />
@@ -1484,6 +1407,83 @@
             <End Role="tb_curso" EntitySet="tb_curso" />
             <End Role="tb_disciplina" EntitySet="tb_disciplina" />
           </AssociationSet>
+          <EntitySet Name="tb_consulta_fixo" EntityType="pvModel.ConsultaFixoE" />
+          <EntitySet Name="tb_consulta_variavel" EntityType="pvModel.ConsultaVariavelE" />
+          <EntitySet Name="tb_demograficos_antropometricos" EntityType="pvModel.DemograficosAntropometricosE" />
+          <EntitySet Name="tb_diario_pessoal" EntityType="pvModel.DiarioPessoalE" />
+          <EntitySet Name="tb_historia" EntityType="pvModel.HistoriaE" />
+          <AssociationSet Name="fk_tb_consulta_variavel_tb_consulta_fixo1" Association="pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1">
+            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_consulta_fixo1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1">
+            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
+            <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_diario_pessoal_tb_consulta_fixo1" Association="pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1">
+            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
+            <End Role="tb_diario_pessoal" EntitySet="tb_diario_pessoal" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_experiencia_medicamentos_tb_consulta_fixo1" Association="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1">
+            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
+            <End Role="ExperienciaMedicamentosE" EntitySet="tb_experiencia_medicamentos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_historia_tb_consulta_fixo1" Association="pvModel.fk_tb_historia_tb_consulta_fixo1">
+            <End Role="tb_consulta_fixo" EntitySet="tb_consulta_fixo" />
+            <End Role="tb_historia" EntitySet="tb_historia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1">
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+            <End Role="ConsultaParametroE" EntitySet="tb_consulta_parametro" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1">
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+            <End Role="MedicamentosAnterioresE" EntitySet="tb_medicamentos_anteriores" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2">
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+            <End Role="MedicamentoPrescritoE" EntitySet="tb_medicamento_prescrito" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" Association="pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1">
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+            <End Role="ConsultaVariavelQueixaE" EntitySet="tb_consulta_variavel_queixa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_consulta_variavel_tb_razao_encontro1" Association="pvModel.fk_tb_consulta_variavel_tb_razao_encontro1">
+            <End Role="RazaoEncontroE" EntitySet="tb_razao_encontro" />
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_consulta_variavel_tb_turma_pessoa_relato1" Association="pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1">
+            <End Role="TurmaPessoaRelatoE" EntitySet="tb_turma_pessoa_relato" />
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_estilo_vida_tb_consulta_variavel1" Association="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1">
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+            <End Role="EstiloVidaE" EntitySet="tb_estilo_vida" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_exames_fisicos_tb_consulta_variavel1" Association="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1">
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+            <End Role="ExamesFisicosE" EntitySet="tb_exames_fisicos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_medicamento_prescrito_tb_consulta_variavel1" Association="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1">
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+            <End Role="MedicamentoNaoPrescritoE" EntitySet="tb_medicamento_nao_prescrito" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_escolaridade1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1">
+            <End Role="EscolaridadeE" EntitySet="tb_escolaridade" />
+            <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_ocupacao1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1">
+            <End Role="OcupacaoE" EntitySet="tb_ocupacao" />
+            <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_demograficos_antropometricos_tb_plano_saude1" Association="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1">
+            <End Role="PlanoSaudeE" EntitySet="tb_plano_saude" />
+            <End Role="tb_demograficos_antropometricos" EntitySet="tb_demograficos_antropometricos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tb_diario_pessoal_tb_medicamentos1" Association="pvModel.fk_tb_diario_pessoal_tb_medicamentos1">
+            <End Role="MedicamentosE" EntitySet="tb_medicamentos" />
+            <End Role="tb_diario_pessoal" EntitySet="tb_diario_pessoal" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AcaoAlternativaE">
           <Key>
@@ -1511,21 +1511,6 @@
           <Property Type="String" Name="Alergia" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tb_exames_fisicos" Relationship="pvModel.tb_alergia_exames_fisicos" FromRole="tb_alergia" ToRole="tb_exames_fisicos" />
         </EntityType>
-        <EntityType Name="ConsultaFixoE">
-          <Key>
-            <PropertyRef Name="IdConsultaFixo" />
-          </Key>
-          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="EstadoPreenchimento" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="EhGabarito" Nullable="false" />
-          <Property Type="DateTime" Name="DataAtualizacao" />
-          <Property Type="String" Name="ComentariosTutor" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_consulta_variavel" />
-          <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_demograficos_antropometricos" />
-          <NavigationProperty Name="tb_diario_pessoal" Relationship="pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_diario_pessoal" />
-          <NavigationProperty Name="tb_experiencia_medicamentos" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_experiencia_medicamentos" />
-          <NavigationProperty Name="tb_historia" Relationship="pvModel.fk_tb_historia_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_historia" />
-        </EntityType>
         <EntityType Name="ConsultaParametroE">
           <Key>
             <PropertyRef Name="IdConsultaVariavel" />
@@ -1536,32 +1521,8 @@
           <Property Type="Single" Name="Valor" />
           <Property Type="Single" Name="ValorReferencia" />
           <Property Type="String" Name="Unidade" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" FromRole="tb_consulta_parametro" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_parametro_clinico" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1" FromRole="tb_consulta_parametro" ToRole="tb_parametro_clinico" />
-        </EntityType>
-        <EntityType Name="ConsultaVariavelE">
-          <Key>
-            <PropertyRef Name="IdConsultaVariavel" />
-          </Key>
-          <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int64" Name="IdConsutaFixo" Nullable="false" />
-          <Property Type="Int32" Name="IdTurma" Nullable="false" />
-          <Property Type="Int32" Name="IdPessoa" Nullable="false" />
-          <Property Type="Int32" Name="IdRelato" Nullable="false" />
-          <Property Type="Int32" Name="IdRazaoEncontro" Nullable="false" />
-          <Property Type="DateTime" Name="DataPreenchimento" />
-          <Property Type="String" Name="Lembretes" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ComentariosTutor" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1" FromRole="tb_consulta_variavel" ToRole="tb_consulta_fixo" />
-          <NavigationProperty Name="tb_consulta_parametro" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" FromRole="tb_consulta_variavel" ToRole="tb_consulta_parametro" />
-          <NavigationProperty Name="tb_medicamentos_anteriores" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" FromRole="tb_consulta_variavel" ToRole="tb_medicamentos_anteriores" />
-          <NavigationProperty Name="tb_medicamento_prescrito" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" FromRole="tb_consulta_variavel" ToRole="tb_medicamento_prescrito" />
-          <NavigationProperty Name="tb_consulta_variavel_queixa" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_consulta_variavel_queixa" />
-          <NavigationProperty Name="tb_razao_encontro" Relationship="pvModel.fk_tb_consulta_variavel_tb_razao_encontro1" FromRole="tb_consulta_variavel" ToRole="tb_razao_encontro" />
-          <NavigationProperty Name="tb_turma_pessoa_relato" Relationship="pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1" FromRole="tb_consulta_variavel" ToRole="tb_turma_pessoa_relato" />
-          <NavigationProperty Name="tb_estilo_vida" Relationship="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_estilo_vida" />
-          <NavigationProperty Name="tb_exames_fisicos" Relationship="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_exames_fisicos" />
-          <NavigationProperty Name="tb_medicamento_nao_prescrito" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_medicamento_nao_prescrito" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" FromRole="ConsultaParametroE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="ConsultaVariavelQueixaE">
           <Key>
@@ -1575,8 +1536,8 @@
           <Property Type="String" Name="Desde" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Prioridade" />
           <NavigationProperty Name="tb_acao_queixa" Relationship="pvModel.fk_tb_consulta_variavel_queixa_tb_acao_queixa1" FromRole="tb_consulta_variavel_queixa" ToRole="tb_acao_queixa" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" FromRole="tb_consulta_variavel_queixa" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_queixa" Relationship="pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1" FromRole="tb_consulta_variavel_queixa" ToRole="tb_queixa" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" FromRole="ConsultaVariavelQueixaE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="CursoE">
           <Key>
@@ -1587,39 +1548,6 @@
           <Property Type="Int32" Name="IdInstituicao" Nullable="false" />
           <NavigationProperty Name="tb_instituicao" Relationship="pvModel.FK_Curso_Instituicao" FromRole="tb_curso" ToRole="tb_instituicao" />
           <NavigationProperty Name="tb_disciplina" Relationship="pvModel.tb_curso_disciplina" FromRole="tb_curso" ToRole="tb_disciplina" />
-        </EntityType>
-        <EntityType Name="DemograficosAntropometricosE">
-          <Key>
-            <PropertyRef Name="IdConsultaFixo" />
-          </Key>
-          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
-          <Property Type="String" Name="Nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="DataNascimento" />
-          <Property Type="String" Name="MedicosAtendem" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="MoradiaFamilia" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="OndeAdquireMedicamentos" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="IdEscolaridade" Nullable="false" />
-          <Property Type="Int32" Name="IdOcupacao" Nullable="false" />
-          <Property Type="Int32" Name="IdPlanoSaude" Nullable="false" />
-          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" FromRole="tb_demograficos_antropometricos" ToRole="tb_consulta_fixo" />
-          <NavigationProperty Name="tb_escolaridade" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" FromRole="tb_demograficos_antropometricos" ToRole="tb_escolaridade" />
-          <NavigationProperty Name="tb_ocupacao" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" FromRole="tb_demograficos_antropometricos" ToRole="tb_ocupacao" />
-          <NavigationProperty Name="tb_plano_saude" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" FromRole="tb_demograficos_antropometricos" ToRole="tb_plano_saude" />
-        </EntityType>
-        <EntityType Name="DiarioPessoalE">
-          <Key>
-            <PropertyRef Name="IdConsultaFixo" />
-            <PropertyRef Name="IdMedicamento" />
-          </Key>
-          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
-          <Property Type="Int32" Name="IdMedicamento" Nullable="false" />
-          <Property Type="String" Name="Periodo" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Horario" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Quantidade" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="TipoBebida" MaxLength="1" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1" FromRole="tb_diario_pessoal" ToRole="tb_consulta_fixo" />
-          <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_diario_pessoal_tb_medicamentos1" FromRole="tb_diario_pessoal" ToRole="tb_medicamentos" />
         </EntityType>
         <EntityType Name="DisciplinaE">
           <Key>
@@ -1635,7 +1563,7 @@
           </Key>
           <Property Type="Int32" Name="IdEscolaridade" Nullable="false" />
           <Property Type="String" Name="Nivel" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" FromRole="tb_escolaridade" ToRole="tb_demograficos_antropometricos" />
+          <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" FromRole="EscolaridadeE" ToRole="tb_demograficos_antropometricos" />
         </EntityType>
         <EntityType Name="EstiloVidaE">
           <Key>
@@ -1652,7 +1580,7 @@
           <Property Type="Int16" Name="AlcoolUso" Nullable="false" />
           <Property Type="String" Name="AlcoolTipoBebida" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="AlcoolParou" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" FromRole="tb_estilo_vida" ToRole="tb_consulta_variavel" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" FromRole="EstiloVidaE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="ExamesFisicosE">
           <Key>
@@ -1664,14 +1592,13 @@
           <Property Type="Single" Name="PressaoDiastolica" />
           <Property Type="Single" Name="PressaoSistolica" />
           <Property Type="Single" Name="Glicemia" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" FromRole="tb_exames_fisicos" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_alergia" Relationship="pvModel.tb_alergia_exames_fisicos" FromRole="tb_exames_fisicos" ToRole="tb_alergia" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" FromRole="ExamesFisicosE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="ExperienciaMedicamentosE">
           <Key>
             <PropertyRef Name="IdConsultaFixo" />
           </Key>
-          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
           <Property Type="Int32" Name="IdRespostaEsperaTratamento" Nullable="false" />
           <Property Type="Int32" Name="IdRespostaPreocupacoes" Nullable="false" />
           <Property Type="Int32" Name="IdRespostaGrauEntendimento" Nullable="false" />
@@ -1683,22 +1610,14 @@
           <Property Type="Boolean" Name="AtencaoGrauEntendimento" Nullable="false" />
           <Property Type="Boolean" Name="AtencaoCultural" Nullable="false" />
           <Property Type="Boolean" Name="AtencaoComportamento" Nullable="false" />
-          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" FromRole="tb_experiencia_medicamentos" ToRole="tb_consulta_fixo" />
           <NavigationProperty Name="tb_resposta" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta1" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
           <NavigationProperty Name="tb_resposta1" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta2" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
           <NavigationProperty Name="tb_resposta2" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta3" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
           <NavigationProperty Name="tb_resposta3" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta4" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
           <NavigationProperty Name="tb_resposta4" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta5" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
           <NavigationProperty Name="tb_resposta5" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_resposta6" FromRole="tb_experiencia_medicamentos" ToRole="tb_resposta" />
-        </EntityType>
-        <EntityType Name="HistoriaE">
-          <Key>
-            <PropertyRef Name="IdConsultaFixo" />
-          </Key>
           <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
-          <Property Type="String" Name="HistoriaMedicaPregressa" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="HistoriaFamiliar" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_historia_tb_consulta_fixo1" FromRole="tb_historia" ToRole="tb_consulta_fixo" />
+          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" FromRole="ExperienciaMedicamentosE" ToRole="tb_consulta_fixo" />
         </EntityType>
         <EntityType Name="HistoricoE">
           <Key>
@@ -1737,8 +1656,8 @@
           <Property Type="Boolean" Name="Fitoterapico" Nullable="false" />
           <Property Type="String" Name="Dosagem" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Posologia" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1" FromRole="tb_medicamento_nao_prescrito" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1" FromRole="tb_medicamento_nao_prescrito" ToRole="tb_medicamentos" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1" FromRole="MedicamentoNaoPrescritoE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="MedicamentoPrescritoE">
           <Key>
@@ -1752,8 +1671,8 @@
           <Property Type="String" Name="Posologia" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Prescritor" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Especialidade" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" FromRole="tb_medicamento_prescrito" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2" FromRole="tb_medicamento_prescrito" ToRole="tb_medicamentos" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" FromRole="MedicamentoPrescritoE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="MedicamentosE">
           <Key>
@@ -1761,11 +1680,11 @@
           </Key>
           <Property Type="Int32" Name="IdMedicamento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_diario_pessoal" Relationship="pvModel.fk_tb_diario_pessoal_tb_medicamentos1" FromRole="tb_medicamentos" ToRole="tb_diario_pessoal" />
           <NavigationProperty Name="tb_medicamento_nao_prescrito" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1" FromRole="tb_medicamentos" ToRole="tb_medicamento_nao_prescrito" />
           <NavigationProperty Name="tb_medicamento_prescrito" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2" FromRole="tb_medicamentos" ToRole="tb_medicamento_prescrito" />
           <NavigationProperty Name="tb_medicamentos_anteriores" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" FromRole="tb_medicamentos" ToRole="tb_medicamentos_anteriores" />
           <NavigationProperty Name="tb_queixa_medicamentos" Relationship="pvModel.fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1" FromRole="tb_medicamentos" ToRole="tb_queixa_medicamentos" />
+          <NavigationProperty Name="tb_diario_pessoal" Relationship="pvModel.fk_tb_diario_pessoal_tb_medicamentos1" FromRole="MedicamentosE" ToRole="tb_diario_pessoal" />
         </EntityType>
         <EntityType Name="MedicamentosAnterioresE">
           <Key>
@@ -1777,8 +1696,8 @@
           <Property Type="String" Name="Indicacao" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Resposta" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Periodo" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" FromRole="tb_medicamentos_anteriores" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" FromRole="tb_medicamentos_anteriores" ToRole="tb_medicamentos" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" FromRole="MedicamentosAnterioresE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="OcupacaoE">
           <Key>
@@ -1786,7 +1705,7 @@
           </Key>
           <Property Type="Int32" Name="IdOcupacao" Nullable="false" />
           <Property Type="String" Name="Descricao" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" FromRole="tb_ocupacao" ToRole="tb_demograficos_antropometricos" />
+          <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" FromRole="OcupacaoE" ToRole="tb_demograficos_antropometricos" />
         </EntityType>
         <EntityType Name="PacienteE">
           <Key>
@@ -1835,7 +1754,7 @@
           </Key>
           <Property Type="Int32" Name="IdPlanoSaude" Nullable="false" />
           <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" FromRole="tb_plano_saude" ToRole="tb_demograficos_antropometricos" />
+          <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" FromRole="PlanoSaudeE" ToRole="tb_demograficos_antropometricos" />
         </EntityType>
         <EntityType Name="QueixaE">
           <Key>
@@ -1876,7 +1795,7 @@
           </Key>
           <Property Type="Int32" Name="IdRazaoEncontro" Nullable="false" />
           <Property Type="String" Name="DescricaoRazao" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_tb_razao_encontro1" FromRole="tb_razao_encontro" ToRole="tb_consulta_variavel" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_tb_razao_encontro1" FromRole="RazaoEncontroE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="RelatoClinicoE">
           <Key>
@@ -1947,9 +1866,9 @@
           <Property Type="Int32" Name="IdTurma" Nullable="false" />
           <Property Type="Int32" Name="IdPessoa" Nullable="false" />
           <Property Type="Int32" Name="IdRelato" Nullable="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1" FromRole="tb_turma_pessoa_relato" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_relato_clinico" Relationship="pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1" FromRole="tb_turma_pessoa_relato" ToRole="tb_relato_clinico" />
           <NavigationProperty Name="tb_turma_pessoa" Relationship="pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1" FromRole="tb_turma_pessoa_relato" ToRole="tb_turma_pessoa" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1" FromRole="TurmaPessoaRelatoE" ToRole="tb_consulta_variavel" />
         </EntityType>
         <EntityType Name="UsuarioE">
           <Key>
@@ -2020,78 +1939,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_tb_consulta_variavel_tb_consulta_fixo1">
-          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Principal>
-            <Dependent Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsutaFixo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_demograficos_antropometricos_tb_consulta_fixo1">
-          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-          <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Principal>
-            <Dependent Role="tb_demograficos_antropometricos">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_diario_pessoal_tb_consulta_fixo1">
-          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-          <End Type="pvModel.DiarioPessoalE" Role="tb_diario_pessoal" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Principal>
-            <Dependent Role="tb_diario_pessoal">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_experiencia_medicamentos_tb_consulta_fixo1">
-          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-          <End Type="pvModel.ExperienciaMedicamentosE" Role="tb_experiencia_medicamentos" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Principal>
-            <Dependent Role="tb_experiencia_medicamentos">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_historia_tb_consulta_fixo1">
-          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
-          <End Type="pvModel.HistoriaE" Role="tb_historia" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_fixo">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Principal>
-            <Dependent Role="tb_historia">
-              <PropertyRef Name="IdConsultaFixo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1">
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
-          <End Type="pvModel.ConsultaParametroE" Role="tb_consulta_parametro" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Principal>
-            <Dependent Role="tb_consulta_parametro">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1">
           <End Type="pvModel.ParametroClinicoE" Role="tb_parametro_clinico" Multiplicity="1" />
           <End Type="pvModel.ConsultaParametroE" Role="tb_consulta_parametro" Multiplicity="*" />
@@ -2101,106 +1948,6 @@
             </Principal>
             <Dependent Role="tb_consulta_parametro">
               <PropertyRef Name="IdParamentoClinico" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1">
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
-          <End Type="pvModel.MedicamentosAnterioresE" Role="tb_medicamentos_anteriores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Principal>
-            <Dependent Role="tb_medicamentos_anteriores">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2">
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
-          <End Type="pvModel.MedicamentoPrescritoE" Role="tb_medicamento_prescrito" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Principal>
-            <Dependent Role="tb_medicamento_prescrito">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1">
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
-          <End Type="pvModel.ConsultaVariavelQueixaE" Role="tb_consulta_variavel_queixa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Principal>
-            <Dependent Role="tb_consulta_variavel_queixa">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_consulta_variavel_tb_razao_encontro1">
-          <End Type="pvModel.RazaoEncontroE" Role="tb_razao_encontro" Multiplicity="1" />
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_razao_encontro">
-              <PropertyRef Name="IdRazaoEncontro" />
-            </Principal>
-            <Dependent Role="tb_consulta_variavel">
-              <PropertyRef Name="IdRazaoEncontro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_consulta_variavel_tb_turma_pessoa_relato1">
-          <End Type="pvModel.TurmaPessoaRelatoE" Role="tb_turma_pessoa_relato" Multiplicity="1" />
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_turma_pessoa_relato">
-              <PropertyRef Name="IdTurma" />
-              <PropertyRef Name="IdPessoa" />
-              <PropertyRef Name="IdRelato" />
-            </Principal>
-            <Dependent Role="tb_consulta_variavel">
-              <PropertyRef Name="IdTurma" />
-              <PropertyRef Name="IdPessoa" />
-              <PropertyRef Name="IdRelato" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_estilo_vida_tb_consulta_variavel1">
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
-          <End Type="pvModel.EstiloVidaE" Role="tb_estilo_vida" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Principal>
-            <Dependent Role="tb_estilo_vida">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_exames_fisicos_tb_consulta_variavel1">
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
-          <End Type="pvModel.ExamesFisicosE" Role="tb_exames_fisicos" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Principal>
-            <Dependent Role="tb_exames_fisicos">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_medicamento_prescrito_tb_consulta_variavel1">
-          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
-          <End Type="pvModel.MedicamentoNaoPrescritoE" Role="tb_medicamento_nao_prescrito" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Principal>
-            <Dependent Role="tb_medicamento_nao_prescrito">
-              <PropertyRef Name="IdConsultaVariavel" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2225,54 +1972,6 @@
             </Principal>
             <Dependent Role="tb_curso">
               <PropertyRef Name="IdInstituicao" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_demograficos_antropometricos_tb_escolaridade1">
-          <End Type="pvModel.EscolaridadeE" Role="tb_escolaridade" Multiplicity="1" />
-          <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_escolaridade">
-              <PropertyRef Name="IdEscolaridade" />
-            </Principal>
-            <Dependent Role="tb_demograficos_antropometricos">
-              <PropertyRef Name="IdEscolaridade" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_demograficos_antropometricos_tb_ocupacao1">
-          <End Type="pvModel.OcupacaoE" Role="tb_ocupacao" Multiplicity="1" />
-          <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_ocupacao">
-              <PropertyRef Name="IdOcupacao" />
-            </Principal>
-            <Dependent Role="tb_demograficos_antropometricos">
-              <PropertyRef Name="IdOcupacao" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_demograficos_antropometricos_tb_plano_saude1">
-          <End Type="pvModel.PlanoSaudeE" Role="tb_plano_saude" Multiplicity="1" />
-          <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_plano_saude">
-              <PropertyRef Name="IdPlanoSaude" />
-            </Principal>
-            <Dependent Role="tb_demograficos_antropometricos">
-              <PropertyRef Name="IdPlanoSaude" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tb_diario_pessoal_tb_medicamentos1">
-          <End Type="pvModel.MedicamentosE" Role="tb_medicamentos" Multiplicity="1" />
-          <End Type="pvModel.DiarioPessoalE" Role="tb_diario_pessoal" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_medicamentos">
-              <PropertyRef Name="IdMedicamento" />
-            </Principal>
-            <Dependent Role="tb_diario_pessoal">
-              <PropertyRef Name="IdMedicamento" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2526,6 +2225,307 @@
           <End Type="pvModel.CursoE" Role="tb_curso" Multiplicity="*" />
           <End Type="pvModel.DisciplinaE" Role="tb_disciplina" Multiplicity="*" />
         </Association>
+        <EntityType Name="ConsultaFixoE">
+          <Key>
+            <PropertyRef Name="IdConsultaFixo" />
+          </Key>
+          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EstadoPreenchimento" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="EhGabarito" Nullable="false" />
+          <Property Type="DateTime" Name="DataAtualizacao" />
+          <Property Type="String" Name="ComentariosTutor" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_consulta_variavel" />
+          <NavigationProperty Name="tb_demograficos_antropometricos" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_demograficos_antropometricos" />
+          <NavigationProperty Name="tb_diario_pessoal" Relationship="pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_diario_pessoal" />
+          <NavigationProperty Name="tb_experiencia_medicamentos" Relationship="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="ExperienciaMedicamentosE" />
+          <NavigationProperty Name="tb_historia" Relationship="pvModel.fk_tb_historia_tb_consulta_fixo1" FromRole="tb_consulta_fixo" ToRole="tb_historia" />
+        </EntityType>
+        <EntityType Name="ConsultaVariavelE">
+          <Key>
+            <PropertyRef Name="IdConsultaVariavel" />
+          </Key>
+          <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
+          <Property Type="Int32" Name="IdTurma" Nullable="false" />
+          <Property Type="Int32" Name="IdPessoa" Nullable="false" />
+          <Property Type="Int32" Name="IdRelato" Nullable="false" />
+          <Property Type="Int32" Name="IdRazaoEncontro" Nullable="false" />
+          <Property Type="DateTime" Name="DataPreenchimento" />
+          <Property Type="String" Name="Lembretes" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ComentariosTutor" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1" FromRole="tb_consulta_variavel" ToRole="tb_consulta_fixo" />
+          <NavigationProperty Name="tb_consulta_parametro" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" FromRole="tb_consulta_variavel" ToRole="ConsultaParametroE" />
+          <NavigationProperty Name="tb_medicamentos_anteriores" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" FromRole="tb_consulta_variavel" ToRole="MedicamentosAnterioresE" />
+          <NavigationProperty Name="tb_medicamento_prescrito" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" FromRole="tb_consulta_variavel" ToRole="MedicamentoPrescritoE" />
+          <NavigationProperty Name="tb_consulta_variavel_queixa" Relationship="pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="ConsultaVariavelQueixaE" />
+          <NavigationProperty Name="tb_razao_encontro" Relationship="pvModel.fk_tb_consulta_variavel_tb_razao_encontro1" FromRole="tb_consulta_variavel" ToRole="RazaoEncontroE" />
+          <NavigationProperty Name="tb_turma_pessoa_relato" Relationship="pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1" FromRole="tb_consulta_variavel" ToRole="TurmaPessoaRelatoE" />
+          <NavigationProperty Name="tb_estilo_vida" Relationship="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="EstiloVidaE" />
+          <NavigationProperty Name="tb_exames_fisicos" Relationship="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="ExamesFisicosE" />
+          <NavigationProperty Name="tb_medicamento_nao_prescrito" Relationship="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="MedicamentoNaoPrescritoE" />
+        </EntityType>
+        <EntityType Name="DemograficosAntropometricosE">
+          <Key>
+            <PropertyRef Name="IdConsultaFixo" />
+          </Key>
+          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataNascimento" />
+          <Property Type="String" Name="MedicosAtendem" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MoradiaFamilia" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OndeAdquireMedicamentos" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdEscolaridade" Nullable="false" />
+          <Property Type="Int32" Name="IdOcupacao" Nullable="false" />
+          <Property Type="Int32" Name="IdPlanoSaude" Nullable="false" />
+          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" FromRole="tb_demograficos_antropometricos" ToRole="tb_consulta_fixo" />
+          <NavigationProperty Name="tb_escolaridade" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" FromRole="tb_demograficos_antropometricos" ToRole="EscolaridadeE" />
+          <NavigationProperty Name="tb_ocupacao" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" FromRole="tb_demograficos_antropometricos" ToRole="OcupacaoE" />
+          <NavigationProperty Name="tb_plano_saude" Relationship="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" FromRole="tb_demograficos_antropometricos" ToRole="PlanoSaudeE" />
+        </EntityType>
+        <EntityType Name="DiarioPessoalE">
+          <Key>
+            <PropertyRef Name="IdConsultaFixo" />
+            <PropertyRef Name="IdMedicamento" />
+          </Key>
+          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
+          <Property Type="Int32" Name="IdMedicamento" Nullable="false" />
+          <Property Type="String" Name="Periodo" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Horario" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Quantidade" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TipoBebida" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1" FromRole="tb_diario_pessoal" ToRole="tb_consulta_fixo" />
+          <NavigationProperty Name="tb_medicamentos" Relationship="pvModel.fk_tb_diario_pessoal_tb_medicamentos1" FromRole="tb_diario_pessoal" ToRole="MedicamentosE" />
+        </EntityType>
+        <EntityType Name="HistoriaE">
+          <Key>
+            <PropertyRef Name="IdConsultaFixo" />
+          </Key>
+          <Property Type="Int64" Name="IdConsultaFixo" Nullable="false" />
+          <Property Type="String" Name="HistoriaMedicaPregressa" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HistoriaFamiliar" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_consulta_fixo" Relationship="pvModel.fk_tb_historia_tb_consulta_fixo1" FromRole="tb_historia" ToRole="tb_consulta_fixo" />
+        </EntityType>
+        <Association Name="fk_tb_consulta_variavel_tb_consulta_fixo1">
+          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_fixo">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Principal>
+            <Dependent Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_demograficos_antropometricos_tb_consulta_fixo1">
+          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
+          <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_fixo">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Principal>
+            <Dependent Role="tb_demograficos_antropometricos">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_diario_pessoal_tb_consulta_fixo1">
+          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
+          <End Type="pvModel.DiarioPessoalE" Role="tb_diario_pessoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_fixo">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Principal>
+            <Dependent Role="tb_diario_pessoal">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_experiencia_medicamentos_tb_consulta_fixo1">
+          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
+          <End Type="pvModel.ExperienciaMedicamentosE" Role="ExperienciaMedicamentosE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_fixo">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Principal>
+            <Dependent Role="ExperienciaMedicamentosE">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_historia_tb_consulta_fixo1">
+          <End Type="pvModel.ConsultaFixoE" Role="tb_consulta_fixo" Multiplicity="1" />
+          <End Type="pvModel.HistoriaE" Role="tb_historia" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_fixo">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Principal>
+            <Dependent Role="tb_historia">
+              <PropertyRef Name="IdConsultaFixo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1">
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
+          <End Type="pvModel.ConsultaParametroE" Role="ConsultaParametroE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Principal>
+            <Dependent Role="ConsultaParametroE">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1">
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
+          <End Type="pvModel.MedicamentosAnterioresE" Role="MedicamentosAnterioresE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Principal>
+            <Dependent Role="MedicamentosAnterioresE">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2">
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
+          <End Type="pvModel.MedicamentoPrescritoE" Role="MedicamentoPrescritoE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Principal>
+            <Dependent Role="MedicamentoPrescritoE">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1">
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
+          <End Type="pvModel.ConsultaVariavelQueixaE" Role="ConsultaVariavelQueixaE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Principal>
+            <Dependent Role="ConsultaVariavelQueixaE">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_consulta_variavel_tb_razao_encontro1">
+          <End Type="pvModel.RazaoEncontroE" Role="RazaoEncontroE" Multiplicity="1" />
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RazaoEncontroE">
+              <PropertyRef Name="IdRazaoEncontro" />
+            </Principal>
+            <Dependent Role="tb_consulta_variavel">
+              <PropertyRef Name="IdRazaoEncontro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_consulta_variavel_tb_turma_pessoa_relato1">
+          <End Type="pvModel.TurmaPessoaRelatoE" Role="TurmaPessoaRelatoE" Multiplicity="1" />
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TurmaPessoaRelatoE">
+              <PropertyRef Name="IdTurma" />
+              <PropertyRef Name="IdPessoa" />
+              <PropertyRef Name="IdRelato" />
+            </Principal>
+            <Dependent Role="tb_consulta_variavel">
+              <PropertyRef Name="IdTurma" />
+              <PropertyRef Name="IdPessoa" />
+              <PropertyRef Name="IdRelato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_estilo_vida_tb_consulta_variavel1">
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
+          <End Type="pvModel.EstiloVidaE" Role="EstiloVidaE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Principal>
+            <Dependent Role="EstiloVidaE">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_exames_fisicos_tb_consulta_variavel1">
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
+          <End Type="pvModel.ExamesFisicosE" Role="ExamesFisicosE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Principal>
+            <Dependent Role="ExamesFisicosE">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_medicamento_prescrito_tb_consulta_variavel1">
+          <End Type="pvModel.ConsultaVariavelE" Role="tb_consulta_variavel" Multiplicity="1" />
+          <End Type="pvModel.MedicamentoNaoPrescritoE" Role="MedicamentoNaoPrescritoE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Principal>
+            <Dependent Role="MedicamentoNaoPrescritoE">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_demograficos_antropometricos_tb_escolaridade1">
+          <End Type="pvModel.EscolaridadeE" Role="EscolaridadeE" Multiplicity="1" />
+          <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EscolaridadeE">
+              <PropertyRef Name="IdEscolaridade" />
+            </Principal>
+            <Dependent Role="tb_demograficos_antropometricos">
+              <PropertyRef Name="IdEscolaridade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_demograficos_antropometricos_tb_ocupacao1">
+          <End Type="pvModel.OcupacaoE" Role="OcupacaoE" Multiplicity="1" />
+          <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OcupacaoE">
+              <PropertyRef Name="IdOcupacao" />
+            </Principal>
+            <Dependent Role="tb_demograficos_antropometricos">
+              <PropertyRef Name="IdOcupacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_demograficos_antropometricos_tb_plano_saude1">
+          <End Type="pvModel.PlanoSaudeE" Role="PlanoSaudeE" Multiplicity="1" />
+          <End Type="pvModel.DemograficosAntropometricosE" Role="tb_demograficos_antropometricos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanoSaudeE">
+              <PropertyRef Name="IdPlanoSaude" />
+            </Principal>
+            <Dependent Role="tb_demograficos_antropometricos">
+              <PropertyRef Name="IdPlanoSaude" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tb_diario_pessoal_tb_medicamentos1">
+          <End Type="pvModel.MedicamentosE" Role="MedicamentosE" Multiplicity="1" />
+          <End Type="pvModel.DiarioPessoalE" Role="tb_diario_pessoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicamentosE">
+              <PropertyRef Name="IdMedicamento" />
+            </Principal>
+            <Dependent Role="tb_diario_pessoal">
+              <PropertyRef Name="IdMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2556,17 +2556,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tb_consulta_fixo">
-            <EntityTypeMapping TypeName="pvModel.ConsultaFixoE">
-              <MappingFragment StoreEntitySet="tb_consulta_fixo">
-                <ScalarProperty Name="ComentariosTutor" ColumnName="ComentariosTutor" />
-                <ScalarProperty Name="DataAtualizacao" ColumnName="DataAtualizacao" />
-                <ScalarProperty Name="EhGabarito" ColumnName="EhGabarito" />
-                <ScalarProperty Name="EstadoPreenchimento" ColumnName="EstadoPreenchimento" />
-                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsutaFixo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_consulta_parametro">
             <EntityTypeMapping TypeName="pvModel.ConsultaParametroE">
               <MappingFragment StoreEntitySet="tb_consulta_parametro">
@@ -2574,21 +2563,6 @@
                 <ScalarProperty Name="ValorReferencia" ColumnName="ValorReferencia" />
                 <ScalarProperty Name="Valor" ColumnName="Valor" />
                 <ScalarProperty Name="IdParamentoClinico" ColumnName="IdParamentoClinico" />
-                <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_consulta_variavel">
-            <EntityTypeMapping TypeName="pvModel.ConsultaVariavelE">
-              <MappingFragment StoreEntitySet="tb_consulta_variavel">
-                <ScalarProperty Name="ComentariosTutor" ColumnName="ComentariosTutor" />
-                <ScalarProperty Name="Lembretes" ColumnName="Lembretes" />
-                <ScalarProperty Name="DataPreenchimento" ColumnName="DataPreenchimento" />
-                <ScalarProperty Name="IdRazaoEncontro" ColumnName="IdRazaoEncontro" />
-                <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
-                <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
-                <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
-                <ScalarProperty Name="IdConsutaFixo" ColumnName="IdConsutaFixo" />
                 <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2611,34 +2585,6 @@
                 <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
                 <ScalarProperty Name="NomeCurso" ColumnName="NomeCurso" />
                 <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_demograficos_antropometricos">
-            <EntityTypeMapping TypeName="pvModel.DemograficosAntropometricosE">
-              <MappingFragment StoreEntitySet="tb_demograficos_antropometricos">
-                <ScalarProperty Name="IdPlanoSaude" ColumnName="IdPlanoSaude" />
-                <ScalarProperty Name="IdOcupacao" ColumnName="IdOcupacao" />
-                <ScalarProperty Name="IdEscolaridade" ColumnName="IdEscolaridade" />
-                <ScalarProperty Name="OndeAdquireMedicamentos" ColumnName="OndeAdquireMedicamentos" />
-                <ScalarProperty Name="MoradiaFamilia" ColumnName="MoradiaFamilia" />
-                <ScalarProperty Name="MedicosAtendem" ColumnName="MedicosAtendem" />
-                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
-                <ScalarProperty Name="Genero" ColumnName="Genero" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsutaFixo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_diario_pessoal">
-            <EntityTypeMapping TypeName="pvModel.DiarioPessoalE">
-              <MappingFragment StoreEntitySet="tb_diario_pessoal">
-                <ScalarProperty Name="TipoBebida" ColumnName="TipoBebida" />
-                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
-                <ScalarProperty Name="Horario" ColumnName="Horario" />
-                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
-                <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
-                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsutaFixo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2690,6 +2636,7 @@
           <EntitySetMapping Name="tb_experiencia_medicamentos">
             <EntityTypeMapping TypeName="pvModel.ExperienciaMedicamentosE">
               <MappingFragment StoreEntitySet="tb_experiencia_medicamentos">
+                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
                 <ScalarProperty Name="AtencaoComportamento" ColumnName="AtencaoComportamento" />
                 <ScalarProperty Name="AtencaoCultural" ColumnName="AtencaoCultural" />
                 <ScalarProperty Name="AtencaoGrauEntendimento" ColumnName="AtencaoGrauEntendimento" />
@@ -2701,16 +2648,6 @@
                 <ScalarProperty Name="IdRespostaGrauEntendimento" ColumnName="IdRespostaGrauEntendimento" />
                 <ScalarProperty Name="IdRespostaPreocupacoes" ColumnName="IdRespostaPreocupacoes" />
                 <ScalarProperty Name="IdRespostaEsperaTratamento" ColumnName="IdRespostaEsperaTratamento" />
-                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsutaFixo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_historia">
-            <EntityTypeMapping TypeName="pvModel.HistoriaE">
-              <MappingFragment StoreEntitySet="tb_historia">
-                <ScalarProperty Name="HistoriaFamiliar" ColumnName="HistoriaFamiliar" />
-                <ScalarProperty Name="HistoriaMedicaPregressa" ColumnName="HistoriaMedicaPregressa" />
-                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsutaFixo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2969,6 +2906,69 @@
               <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="tb_consulta_fixo">
+            <EntityTypeMapping TypeName="pvModel.ConsultaFixoE">
+              <MappingFragment StoreEntitySet="tb_consulta_fixo">
+                <ScalarProperty Name="ComentariosTutor" ColumnName="ComentariosTutor" />
+                <ScalarProperty Name="DataAtualizacao" ColumnName="DataAtualizacao" />
+                <ScalarProperty Name="EhGabarito" ColumnName="EhGabarito" />
+                <ScalarProperty Name="EstadoPreenchimento" ColumnName="EstadoPreenchimento" />
+                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_consulta_variavel">
+            <EntityTypeMapping TypeName="pvModel.ConsultaVariavelE">
+              <MappingFragment StoreEntitySet="tb_consulta_variavel">
+                <ScalarProperty Name="ComentariosTutor" ColumnName="ComentariosTutor" />
+                <ScalarProperty Name="Lembretes" ColumnName="Lembretes" />
+                <ScalarProperty Name="DataPreenchimento" ColumnName="DataPreenchimento" />
+                <ScalarProperty Name="IdRazaoEncontro" ColumnName="IdRazaoEncontro" />
+                <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
+                <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+                <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+                <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_demograficos_antropometricos">
+            <EntityTypeMapping TypeName="pvModel.DemograficosAntropometricosE">
+              <MappingFragment StoreEntitySet="tb_demograficos_antropometricos">
+                <ScalarProperty Name="IdPlanoSaude" ColumnName="IdPlanoSaude" />
+                <ScalarProperty Name="IdOcupacao" ColumnName="IdOcupacao" />
+                <ScalarProperty Name="IdEscolaridade" ColumnName="IdEscolaridade" />
+                <ScalarProperty Name="OndeAdquireMedicamentos" ColumnName="OndeAdquireMedicamentos" />
+                <ScalarProperty Name="MoradiaFamilia" ColumnName="MoradiaFamilia" />
+                <ScalarProperty Name="MedicosAtendem" ColumnName="MedicosAtendem" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_diario_pessoal">
+            <EntityTypeMapping TypeName="pvModel.DiarioPessoalE">
+              <MappingFragment StoreEntitySet="tb_diario_pessoal">
+                <ScalarProperty Name="TipoBebida" ColumnName="TipoBebida" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="Horario" ColumnName="Horario" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_historia">
+            <EntityTypeMapping TypeName="pvModel.HistoriaE">
+              <MappingFragment StoreEntitySet="tb_historia">
+                <ScalarProperty Name="HistoriaFamiliar" ColumnName="HistoriaFamiliar" />
+                <ScalarProperty Name="HistoriaMedicaPregressa" ColumnName="HistoriaMedicaPregressa" />
+                <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -2992,26 +2992,21 @@
         <EntityTypeShape EntityType="pvModel.AcaoAlternativaE" Width="1.5" PointX="6" PointY="4.125" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="pvModel.AcaoQueixaE" Width="1.5" PointX="6" PointY="13.875" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="pvModel.AlergiaE" Width="1.5" PointX="6" PointY="35.375" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="pvModel.ConsultaFixoE" Width="1.5" PointX="0.75" PointY="20.625" Height="2.9417936197916674" />
         <EntityTypeShape EntityType="pvModel.ConsultaParametroE" Width="1.5" PointX="8.25" PointY="20.875" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="pvModel.ConsultaVariavelE" Width="1.5" PointX="3" PointY="19.75" Height="4.6725065104166674" />
         <EntityTypeShape EntityType="pvModel.ConsultaVariavelQueixaE" Width="1.5" PointX="8.25" PointY="16.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="pvModel.CursoE" Width="1.5" PointX="3.75" PointY="53.375" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="pvModel.DemograficosAntropometricosE" Width="1.5" PointX="6" PointY="20.25" Height="3.710999348958353" />
-        <EntityTypeShape EntityType="pvModel.DiarioPessoalE" Width="1.5" PointX="6" PointY="16.875" Height="2.5571907552083246" />
         <EntityTypeShape EntityType="pvModel.DisciplinaE" Width="1.5" PointX="6" PointY="53.5" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.EscolaridadeE" Width="1.5" PointX="3.75" PointY="13" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.EstiloVidaE" Width="1.5" PointX="5.25" PointY="31.125" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="pvModel.ExamesFisicosE" Width="1.5" PointX="8.25" PointY="24.875" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="pvModel.ExperienciaMedicamentosE" Width="1.5" PointX="6" PointY="24.75" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="pvModel.HistoriaE" Width="1.5" PointX="3" PointY="39.875" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="pvModel.ExperienciaMedicamentosE" Width="1.5" PointX="6" PointY="24.75" Height="4.8648079427083388" />
         <EntityTypeShape EntityType="pvModel.HistoricoE" Width="1.5" PointX="5.75" PointY="39.125" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="pvModel.InstituicaoE" Width="1.5" PointX="1.5" PointY="53.375" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="pvModel.MedicamentoNaoPrescritoE" Width="1.5" PointX="11.25" PointY="20.875" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="pvModel.MedicamentoPrescritoE" Width="1.5" PointX="11.25" PointY="16.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="pvModel.MedicamentosE" Width="1.5" PointX="3.75" PointY="15.875" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="pvModel.MedicamentosE" Width="1.5" PointX="6.375" PointY="15.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="pvModel.MedicamentosAnterioresE" Width="1.5" PointX="11.25" PointY="24.875" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="pvModel.OcupacaoE" Width="1.5" PointX="3.75" PointY="25.375" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="pvModel.OcupacaoE" Width="1.5" PointX="4.25" PointY="25.375" Height="1.5956835937500031" />
         <EntityTypeShape EntityType="pvModel.PacienteE" Width="1.5" PointX="1.5" PointY="36.625" Height="1.7879850260416106" />
         <EntityTypeShape EntityType="pvModel.ParametroClinicoE" Width="1.5" PointX="6" PointY="7.375" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="pvModel.PerfilUsuarioE" Width="1.5" PointX="0.75" PointY="0.75" Height="1.403382161458353" />
@@ -3040,281 +3035,81 @@
           <ConnectorPoint PointX="8.5937475" PointY="11" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_queixa_tb_acao_queixa1" >
-          <ConnectorPoint PointX="7.5" PointY="15.662985026041667" />
-          <ConnectorPoint PointX="7.875" PointY="16.037985026041667" />
-          <ConnectorPoint PointX="7.875" PointY="18.124746093749991" />
-          <ConnectorPoint PointX="7.979166666666667" PointY="18.124746093749991" />
-          <ConnectorPoint PointX="8.1458333333333339" PointY="18.124746093749991" />
-          <ConnectorPoint PointX="8.25" PointY="18.124746093749991" />
+          <ConnectorPoint PointX="6.15625" PointY="15.662985026041667" />
+          <ConnectorPoint PointX="6.15625" PointY="18.503238059895835" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="18.503238059895835" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="18.503238059895835" />
+          <ConnectorPoint PointX="7.4479186666666672" PointY="18.503238059895835" />
+          <ConnectorPoint PointX="7.6145853333333333" PointY="18.503238059895835" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="18.503238059895835" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="18.503238059895835" />
+          <ConnectorPoint PointX="8.25" PointY="18.503238059895835" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_queixa_medicamentos_tb_acao_queixa1" >
           <ConnectorPoint PointX="7.5" PointY="14.485301106770805" />
-          <ConnectorPoint PointX="7.854166666666667" PointY="14.485301106770804" />
-          <ConnectorPoint PointX="8.1458333333333339" PointY="14.485301106770805" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="14.485301106770805" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="14.485301106770805" />
           <ConnectorPoint PointX="8.25" PointY="14.485301106770805" />
         </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1" >
-          <ConnectorPoint PointX="2.25" PointY="22.095896809895834" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="22.095896809895834" />
-          <ConnectorPoint PointX="2.5833333333333335" PointY="22.095896809895834" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="22.095896809895834" />
-          <ConnectorPoint PointX="2.8333333333333335" PointY="22.095896809895834" />
-          <ConnectorPoint PointX="3" PointY="22.095896809895834" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" >
-          <ConnectorPoint PointX="2.25" PointY="21.329196404947922" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="21.329196404947922" />
-          <ConnectorPoint PointX="2.5833333333333335" PointY="21.329196404947922" />
-          <ConnectorPoint PointX="2.75" PointY="21.329196404947922" />
-          <ConnectorPoint PointX="2.75" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="2.7916666666666665" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="2.9583333333333335" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="3.1666666666666665" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="3.3333333333333335" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="3.5104166666666665" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="3.6770833333333335" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="5.416666666666667" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="5.739583333333333" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="5.75" PointY="24.672506510416667" />
-          <ConnectorPoint PointX="5.75" PointY="24.210999348958353" />
-          <ConnectorPoint PointX="5.791666666666667" PointY="24.210999348958353" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="24.210999348958353" />
-          <ConnectorPoint PointX="6.75" PointY="24.210999348958353" />
-          <ConnectorPoint PointX="6.75" PointY="23.960999348958353" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1" >
-          <ConnectorPoint PointX="2.25" PointY="22.862597214843746" />
-          <ConnectorPoint PointX="2.5" PointY="22.862597214843746" />
-          <ConnectorPoint PointX="2.5" PointY="19.5" />
-          <ConnectorPoint PointX="3.2604166666666665" PointY="19.5" />
-          <ConnectorPoint PointX="3.4270833333333335" PointY="19.5" />
-          <ConnectorPoint PointX="4.6424358974358979" PointY="19.5" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="19.5" />
-          <ConnectorPoint PointX="5.072916666666667" PointY="19.5" />
-          <ConnectorPoint PointX="5.239583333333333" PointY="19.5" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="19.5" />
-          <ConnectorPoint PointX="5.723958333333333" PointY="19.5" />
-          <ConnectorPoint PointX="5.75" PointY="19.5" />
-          <ConnectorPoint PointX="5.75" PointY="20" />
-          <ConnectorPoint PointX="5.838541666666667" PointY="20" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="20" />
-          <ConnectorPoint PointX="6.75" PointY="20" />
-          <ConnectorPoint PointX="6.75" PointY="19.432190755208325" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" >
-          <ConnectorPoint PointX="2.25" PointY="23.2459474173177" />
-          <ConnectorPoint PointX="2.5" PointY="23.2459474173177" />
-          <ConnectorPoint PointX="2.5" PointY="24.922506510416667" />
-          <ConnectorPoint PointX="2.7916666666666665" PointY="24.922506510416667" />
-          <ConnectorPoint PointX="2.9583333333333335" PointY="24.922506510416667" />
-          <ConnectorPoint PointX="3.1666666666666665" PointY="24.922506510416667" />
-          <ConnectorPoint PointX="3.3333333333333335" PointY="24.922506510416667" />
-          <ConnectorPoint PointX="3.5104166666666665" PointY="24.922506510416667" />
-          <ConnectorPoint PointX="3.6770833333333335" PointY="24.922506510416667" />
-          <ConnectorPoint PointX="5.5" PointY="24.922506510416667" />
-          <ConnectorPoint PointX="5.5" PointY="24.335999348958353" />
-          <ConnectorPoint PointX="5.557291666666667" PointY="24.335999348958353" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="24.335999348958353" />
-          <ConnectorPoint PointX="6.3750005000000005" PointY="24.335999348958353" />
-          <ConnectorPoint PointX="6.3750005000000005" PointY="24.75" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_historia_tb_consulta_fixo1" >
-          <ConnectorPoint PointX="2.25" PointY="22.47924701236979" />
-          <ConnectorPoint PointX="2.4166666666666665" PointY="22.47924701236979" />
-          <ConnectorPoint PointX="2.5833333333333335" PointY="22.47924701236979" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="22.47924701236979" />
-          <ConnectorPoint PointX="2.8333333333333335" PointY="22.47924701236979" />
-          <ConnectorPoint PointX="2.875" PointY="22.47924701236979" />
-          <ConnectorPoint PointX="2.875" PointY="25.375" />
-          <ConnectorPoint PointX="3.1666666666666665" PointY="25.375" />
-          <ConnectorPoint PointX="3.3333333333333335" PointY="25.375" />
-          <ConnectorPoint PointX="3.5" PointY="25.375" />
-          <ConnectorPoint PointX="3.5" PointY="39.5" />
-          <ConnectorPoint PointX="3.75" PointY="39.5" />
-          <ConnectorPoint PointX="3.75" PointY="39.875" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" >
-          <ConnectorPoint PointX="4.5" PointY="24.117249348958353" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="24.117249348958353" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="24.117249348958353" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="24.117249348958353" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="24.117249348958353" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="24.117249348958353" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="24.117249348958353" />
-          <ConnectorPoint PointX="9" PointY="24.117249348958353" />
-          <ConnectorPoint PointX="9" PointY="23.239889322916667" />
-        </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1" >
-          <ConnectorPoint PointX="7.5" PointY="8.90837490144229" />
-          <ConnectorPoint PointX="8.0625" PointY="9.47087490144229" />
-          <ConnectorPoint PointX="8.0625" PointY="22.057444661458334" />
-          <ConnectorPoint PointX="8.25" PointY="22.057444661458334" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" >
-          <ConnectorPoint PointX="4.5" PointY="22.027372174479126" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="22.027372174479126" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="22.027372174479126" />
-          <ConnectorPoint PointX="5.557291666666667" PointY="22.027372174479126" />
-          <ConnectorPoint PointX="5.755208333333333" PointY="22.027372174479126" />
-          <ConnectorPoint PointX="5.875" PointY="22.027372174479126" />
-          <ConnectorPoint PointX="5.875" PointY="24.460999348958353" />
-          <ConnectorPoint PointX="6.2916671666666675" PointY="24.460999348958353" />
-          <ConnectorPoint PointX="6.4583338333333336" PointY="24.460999348958353" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="24.460999348958353" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="24.460999348958353" />
-          <ConnectorPoint PointX="12" PointY="24.460999348958353" />
-          <ConnectorPoint PointX="12" PointY="24.875" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" >
-          <ConnectorPoint PointX="4.5" PointY="19.807691307692306" />
-          <ConnectorPoint PointX="5.15625" PointY="19.151441307692306" />
-          <ConnectorPoint PointX="5.15625" PointY="20.124492187499982" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="20.124492187499982" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="20.124492187499982" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="20.124492187499982" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="20.124492187499982" />
-          <ConnectorPoint PointX="7.979166666666667" PointY="20.124492187499982" />
-          <ConnectorPoint PointX="8.1458333333333339" PointY="20.124492187499982" />
-          <ConnectorPoint PointX="10.625" PointY="20.124492187499982" />
-          <ConnectorPoint PointX="11.25" PointY="19.499492187499982" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="4.47576923076923" PointY="19.75" />
-          <ConnectorPoint PointX="4.875" PointY="19.350769230769231" />
-          <ConnectorPoint PointX="4.875" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="5.072916666666667" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="5.239583333333333" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="7.875" PointY="19.874492187499982" />
-          <ConnectorPoint PointX="8.00357443490112" PointY="19.74591775259886" />
-          <ConnectorPoint PointX="8.1214255650988783" PointY="19.628066622401104" />
-          <ConnectorPoint PointX="8.25" PointY="19.499492187499982" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_tb_razao_encontro1" >
-          <ConnectorPoint PointX="2.25" PointY="18.324036458333325" />
-          <ConnectorPoint PointX="3.34375" PointY="18.324036458333325" />
-          <ConnectorPoint PointX="3.34375" PointY="19.75" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1" >
-          <ConnectorPoint PointX="2.25" PointY="29.852885742187482" />
-          <ConnectorPoint PointX="3.25" PointY="29.852885742187482" />
-          <ConnectorPoint PointX="3.25" PointY="24.422506510416667" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="3.59375" PointY="24.422506510416667" />
-          <ConnectorPoint PointX="3.59375" PointY="32.788198242187491" />
-          <ConnectorPoint PointX="5.25" PointY="32.788198242187491" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="4.5" PointY="23.07231076171874" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="23.07231076171874" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="23.07231076171874" />
-          <ConnectorPoint PointX="5.625" PointY="23.07231076171874" />
-          <ConnectorPoint PointX="5.625" PointY="24.273499348958353" />
-          <ConnectorPoint PointX="5.713541666666667" PointY="24.273499348958353" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="24.273499348958353" />
-          <ConnectorPoint PointX="9" PointY="24.273499348958353" />
-          <ConnectorPoint PointX="9" PointY="24.875" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="4.5" PointY="24.37925292968751" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="24.37925292968751" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="24.37925292968751" />
-          <ConnectorPoint PointX="5.557291666666667" PointY="24.37925292968751" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="24.37925292968751" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="24.37925292968751" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="24.37925292968751" />
-          <ConnectorPoint PointX="12" PointY="24.37925292968751" />
-          <ConnectorPoint PointX="12" PointY="23.239889322916667" />
+          <ConnectorPoint PointX="7.5" PointY="8.1728417968749909" />
+          <ConnectorPoint PointX="8" PointY="8.1728417968749909" />
+          <ConnectorPoint PointX="8" PointY="15.5" />
+          <ConnectorPoint PointX="8.125" PointY="15.5" />
+          <ConnectorPoint PointX="8.125" PointY="16.5" />
+          <ConnectorPoint PointX="8" PointY="16.5" />
+          <ConnectorPoint PointX="8" PointY="20.5" />
+          <ConnectorPoint PointX="9" PointY="20.5" />
+          <ConnectorPoint PointX="9" PointY="20.875" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1" >
-          <ConnectorPoint PointX="7.5" PointY="12.292977766025661" />
-          <ConnectorPoint PointX="7.9375" PointY="12.730477766025661" />
-          <ConnectorPoint PointX="7.9375" PointY="17.406121046875" />
-          <ConnectorPoint PointX="7.979166666666667" PointY="17.406121046875" />
-          <ConnectorPoint PointX="8.1458333333333339" PointY="17.406121046875" />
-          <ConnectorPoint PointX="8.25" PointY="17.406121046875" />
+          <ConnectorPoint PointX="7.5" PointY="10.8676688984375" />
+          <ConnectorPoint PointX="8" PointY="10.8676688984375" />
+          <ConnectorPoint PointX="8" PointY="15.345602213541611" />
+          <ConnectorPoint PointX="8.02340517963234" PointY="15.345602213541611" />
+          <ConnectorPoint PointX="8.1900718462990074" PointY="15.345602213541611" />
+          <ConnectorPoint PointX="9" PointY="15.345602213541611" />
+          <ConnectorPoint PointX="9" PointY="16.75" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.FK_Curso_Instituicao" >
           <ConnectorPoint PointX="3" PointY="54.365143229166662" />
           <ConnectorPoint PointX="3.75" PointY="54.365143229166662" />
         </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" >
-          <ConnectorPoint PointX="5.25" PointY="14.595683593749982" />
-          <ConnectorPoint PointX="5.625" PointY="14.970683593749982" />
-          <ConnectorPoint PointX="5.625" PointY="21.138686587239562" />
-          <ConnectorPoint PointX="5.713541666666667" PointY="21.138686587239562" />
-          <ConnectorPoint PointX="5.911458333333333" PointY="21.138686587239562" />
-          <ConnectorPoint PointX="6" PointY="21.138686587239562" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" >
-          <ConnectorPoint PointX="5.25" PointY="25.438460538461534" />
-          <ConnectorPoint PointX="5.6875" PointY="25.000960538461534" />
-          <ConnectorPoint PointX="5.6875" PointY="22.549841468098933" />
-          <ConnectorPoint PointX="5.713541666666667" PointY="22.549841468098933" />
-          <ConnectorPoint PointX="5.958333333333333" PointY="22.549841468098933" />
-          <ConnectorPoint PointX="6" PointY="22.549841468098933" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" >
-          <ConnectorPoint PointX="5.25" PointY="27.657306692307689" />
-          <ConnectorPoint PointX="5.65625" PointY="27.251056692307685" />
-          <ConnectorPoint PointX="5.65625" PointY="23.516654555338548" />
-          <ConnectorPoint PointX="5.713541666666667" PointY="23.516654555338548" />
-          <ConnectorPoint PointX="5.958333333333333" PointY="23.516654555338548" />
-          <ConnectorPoint PointX="6" PointY="23.516654555338548" />
-        </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_diario_pessoal_tb_medicamentos1" >
-          <ConnectorPoint PointX="5.25" PointY="17.557444661458334" />
-          <ConnectorPoint PointX="5.416666666666667" PointY="17.557444661458334" />
-          <ConnectorPoint PointX="5.911458333333333" PointY="17.557444661458334" />
-          <ConnectorPoint PointX="6" PointY="17.557444661458334" />
-        </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta1" >
-          <ConnectorPoint PointX="5.1969230769230768" PointY="9.56679361979161" />
-          <ConnectorPoint PointX="5.6129494349011217" PointY="9.9828199777696529" />
-          <ConnectorPoint PointX="5.7308005650988791" PointY="10.100671107967411" />
-          <ConnectorPoint PointX="5.796875" PointY="10.166745542868533" />
-          <ConnectorPoint PointX="5.796875" PointY="27.086253255208334" />
-          <ConnectorPoint PointX="6" PointY="27.086253255208334" />
+          <ConnectorPoint PointX="5.25" PointY="9.4929464659454581" />
+          <ConnectorPoint PointX="5.828125" PointY="10.071071465945458" />
+          <ConnectorPoint PointX="5.828125" PointY="24.526202923076923" />
+          <ConnectorPoint PointX="6.051922076923077" PointY="24.75" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta2" >
-          <ConnectorPoint PointX="5.2176923076923076" PointY="9.56679361979161" />
-          <ConnectorPoint PointX="5.6129494349011217" PointY="9.9620507470004238" />
-          <ConnectorPoint PointX="5.7308005650988791" PointY="10.079901877198182" />
-          <ConnectorPoint PointX="5.828125" PointY="10.177226312099304" />
-          <ConnectorPoint PointX="5.828125" PointY="27.086253255208334" />
-          <ConnectorPoint PointX="6" PointY="27.086253255208334" />
+          <ConnectorPoint PointX="5.25" PointY="9.53679261979161" />
+          <ConnectorPoint PointX="5.796875" PointY="10.08366761979161" />
+          <ConnectorPoint PointX="5.796875" PointY="24.515722153846156" />
+          <ConnectorPoint PointX="6.0311528461538462" PointY="24.75" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta3" >
-          <ConnectorPoint PointX="5.2384615384615376" PointY="9.56679361979161" />
-          <ConnectorPoint PointX="5.6129494349011217" PointY="9.9412815162311929" />
-          <ConnectorPoint PointX="5.7308005650988791" PointY="10.059132646428951" />
-          <ConnectorPoint PointX="5.921875" PointY="10.250207081330073" />
-          <ConnectorPoint PointX="5.921875" PointY="27.086253255208334" />
-          <ConnectorPoint PointX="6" PointY="27.086253255208334" />
+          <ConnectorPoint PointX="5.2176923076923076" PointY="9.56679361979161" />
+          <ConnectorPoint PointX="5.625" PointY="9.9741013120993038" />
+          <ConnectorPoint PointX="5.625" PointY="24.364616384615385" />
+          <ConnectorPoint PointX="6.0103836153846153" PointY="24.75" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta4" >
           <ConnectorPoint PointX="5.25" PointY="9.5575618505608411" />
-          <ConnectorPoint PointX="5.953125" PointY="10.260686850560841" />
-          <ConnectorPoint PointX="5.953125" PointY="27.086253255208334" />
-          <ConnectorPoint PointX="6" PointY="27.086253255208334" />
+          <ConnectorPoint PointX="5.78125" PointY="10.088811850560841" />
+          <ConnectorPoint PointX="5.78125" PointY="24.542788461538461" />
+          <ConnectorPoint PointX="6" PointY="24.761538461538461" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta5" >
-          <ConnectorPoint PointX="5.25" PointY="9.53679261979161" />
-          <ConnectorPoint PointX="5.640625" PointY="9.92741761979161" />
-          <ConnectorPoint PointX="5.640625" PointY="27.086253255208334" />
-          <ConnectorPoint PointX="6" PointY="27.086253255208334" />
+          <ConnectorPoint PointX="5.2384615384615376" PointY="9.56679361979161" />
+          <ConnectorPoint PointX="5.75" PointY="10.078332081330073" />
+          <ConnectorPoint PointX="5.75" PointY="24.532307692307693" />
+          <ConnectorPoint PointX="6" PointY="24.782307692307693" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_resposta6" >
-          <ConnectorPoint PointX="5.25" PointY="9.4929464659454581" />
-          <ConnectorPoint PointX="5.671875" PointY="9.9148214659454581" />
-          <ConnectorPoint PointX="5.671875" PointY="27.086253255208334" />
-          <ConnectorPoint PointX="6" PointY="27.086253255208334" />
+          <ConnectorPoint PointX="5.2280769230769231" PointY="9.56679361979161" />
+          <ConnectorPoint PointX="5.71875" PointY="10.057466696714688" />
+          <ConnectorPoint PointX="5.71875" PointY="24.521826923076922" />
+          <ConnectorPoint PointX="6" PointY="24.803076923076922" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_historico_tb_pessoa1" >
           <ConnectorPoint PointX="3" PointY="48.518992513020834" />
@@ -3323,10 +3118,10 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_historico_tb_relato_clinico1" >
           <ConnectorPoint PointX="3" PointY="34.873337341346136" />
-          <ConnectorPoint PointX="3.375" PointY="35.248337341346136" />
-          <ConnectorPoint PointX="3.375" PointY="38.75" />
-          <ConnectorPoint PointX="3.4166666666666665" PointY="38.75" />
-          <ConnectorPoint PointX="3.5833333333333335" PointY="38.75" />
+          <ConnectorPoint PointX="3.4166669166666668" PointY="35.248337341346136" />
+          <ConnectorPoint PointX="3.4166669166666668" PointY="38.75" />
+          <ConnectorPoint PointX="3.5416666666666665" PointY="38.75" />
+          <ConnectorPoint PointX="3.7083333333333335" PointY="38.75" />
           <ConnectorPoint PointX="5.375" PointY="38.75" />
           <ConnectorPoint PointX="5.75" PointY="39.125" />
         </AssociationConnector>
@@ -3335,57 +3130,40 @@
           <ConnectorPoint PointX="2.25" PointY="52.489889322916667" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_medicamento_prescrito_tb_medicamentos1" >
-          <ConnectorPoint PointX="5.25" PointY="16.684970330729172" />
-          <ConnectorPoint PointX="5.5" PointY="16.684970330729172" />
-          <ConnectorPoint PointX="5.5" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="7.916666666666667" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="8.1458333333333339" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="10.916666666666666" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="11.083333333333334" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="12" PointY="19.749492187499982" />
-          <ConnectorPoint PointX="12" PointY="20.875" />
+          <ConnectorPoint PointX="7.125" PointY="18.114889322916667" />
+          <ConnectorPoint PointX="7.125" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="7.4479186666666672" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="7.6145853333333333" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="10.916666666666666" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="11.083333333333334" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="11.611977666666666" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="11.778644333333334" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="12.203126000000001" PointY="23.614889322916667" />
+          <ConnectorPoint PointX="12.203126000000001" PointY="23.239889322916667" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos2" >
-          <ConnectorPoint PointX="5.25" PointY="16.248732665364592" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="16.248732665364592" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="16.248732665364592" />
-          <ConnectorPoint PointX="7.791666666666667" PointY="16.248732665364592" />
-          <ConnectorPoint PointX="8.1458333333333339" PointY="16.248732665364592" />
-          <ConnectorPoint PointX="12" PointY="16.248732665364592" />
+          <ConnectorPoint PointX="7.875" PointY="16.2187475" />
+          <ConnectorPoint PointX="8.0416666666666661" PointY="16.2187475" />
+          <ConnectorPoint PointX="8.2083333333333339" PointY="16.2187475" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="16.2187475" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="16.2187475" />
+          <ConnectorPoint PointX="12" PointY="16.2187475" />
           <ConnectorPoint PointX="12" PointY="16.75" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" >
-          <ConnectorPoint PointX="4.3125005000000005" PointY="18.239889322916667" />
-          <ConnectorPoint PointX="4.3125005000000005" PointY="19.25" />
-          <ConnectorPoint PointX="4.9743579743589725" PointY="19.25" />
-          <ConnectorPoint PointX="5.239583333333333" PointY="19.25" />
-          <ConnectorPoint PointX="5.375" PointY="19.25" />
-          <ConnectorPoint PointX="5.375" PointY="24.5625" />
-          <ConnectorPoint PointX="5.416666666666667" PointY="24.562499999999996" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="24.5625" />
-          <ConnectorPoint PointX="6.2916671666666675" PointY="24.5625" />
-          <ConnectorPoint PointX="6.4583338333333336" PointY="24.5625" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="24.5625" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="24.5625" />
-          <ConnectorPoint PointX="10.875" PointY="24.5625" />
-          <ConnectorPoint PointX="10.875" PointY="26.057444661458334" />
-          <ConnectorPoint PointX="11.25" PointY="26.057444661458334" />
+          <ConnectorPoint PointX="7.531252" PointY="18.114889322916667" />
+          <ConnectorPoint PointX="7.531252" PointY="24.5" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="24.5" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="24.5" />
+          <ConnectorPoint PointX="10.875" PointY="24.5" />
+          <ConnectorPoint PointX="10.875" PointY="26.469686974959934" />
+          <ConnectorPoint PointX="11.25" PointY="26.469686974959934" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1" >
-          <ConnectorPoint PointX="5.25" PointY="15.907306692307694" />
-          <ConnectorPoint PointX="5.5660744349011209" PointY="15.591232257406571" />
-          <ConnectorPoint PointX="5.6995505650988791" PointY="15.457756127208814" />
-          <ConnectorPoint PointX="5.71875" PointY="15.438556692307692" />
-          <ConnectorPoint PointX="5.71875" PointY="13.115143229166677" />
-          <ConnectorPoint PointX="5.744791666666667" PointY="13.115143229166675" />
-          <ConnectorPoint PointX="6.036458333333333" PointY="13.115143229166677" />
-          <ConnectorPoint PointX="7.854166666666667" PointY="13.115143229166675" />
-          <ConnectorPoint PointX="8.1458333333333339" PointY="13.115143229166677" />
-          <ConnectorPoint PointX="8.25" PointY="13.115143229166677" />
+          <ConnectorPoint PointX="7.875" PointY="15.75" />
+          <ConnectorPoint PointX="8.25" PointY="15.095602213541611" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_relato_clinico_tb_paciente1" >
           <ConnectorPoint PointX="2.25" PointY="36.625" />
@@ -3401,13 +3179,13 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_queixa_tb_sistema1" >
           <ConnectorPoint PointX="5.25" PointY="11.422841796874991" />
-          <ConnectorPoint PointX="5.557291666666667" PointY="11.422841796874989" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="11.422841796874989" />
           <ConnectorPoint PointX="5.911458333333333" PointY="11.422841796874991" />
           <ConnectorPoint PointX="6" PointY="11.422841796874991" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1" >
           <ConnectorPoint PointX="1.875" PointY="32.125" />
-          <ConnectorPoint PointX="1.875" PointY="30.422587890624982" />
+          <ConnectorPoint PointX="1.875" PointY="30.422587890625003" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_turma_has_tb_pessoa_tb_turma1" >
           <ConnectorPoint PointX="1.5" PointY="50.125" />
@@ -3418,18 +3196,211 @@
         <AssociationConnector Association="pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1" >
           <ConnectorPoint PointX="1.5" PointY="44.958890729166683" />
           <ConnectorPoint PointX="1.0937475" PointY="44.958890729166683" />
-          <ConnectorPoint PointX="1.0937475" PointY="30.422587890624982" />
+          <ConnectorPoint PointX="1.0937475" PointY="30.422587890625003" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.tb_alergia_exames_fisicos" >
           <ConnectorPoint PointX="7.5" PointY="36.172841796874991" />
           <ConnectorPoint PointX="9" PointY="36.172841796874991" />
-          <ConnectorPoint PointX="9" PointY="27.432190755208325" />
+          <ConnectorPoint PointX="9" PointY="27.432190755208335" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.tb_curso_disciplina" >
           <ConnectorPoint PointX="5.25" PointY="54.297841796874991" />
           <ConnectorPoint PointX="6" PointY="54.297841796874991" />
         </AssociationConnector>
-      </Diagram>
+        <EntityTypeShape EntityType="pvModel.ConsultaFixoE" Width="1.5" PointX="0.75" PointY="24.375" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="pvModel.ConsultaVariavelE" Width="1.5" PointX="2.75" PointY="21.625" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="pvModel.DemograficosAntropometricosE" Width="1.5" PointX="0.5" PointY="19" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="pvModel.DiarioPessoalE" Width="1.5" PointX="13" PointY="13.375" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="pvModel.HistoriaE" Width="1.5" PointX="3" PointY="39.75" Height="1.7879850260416674" />
+        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_tb_consulta_fixo1" >
+          <ConnectorPoint PointX="2.25" PointY="25.336253255208334" />
+          <ConnectorPoint PointX="2.75" PointY="25.336253255208334" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" >
+          <ConnectorPoint PointX="1.375" PointY="24.375" />
+          <ConnectorPoint PointX="1.375" PointY="22.710999348958325" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_diario_pessoal_tb_consulta_fixo1" >
+          <ConnectorPoint PointX="1.8437519999999998" PointY="24.375" />
+          <ConnectorPoint PointX="1.8437519999999998" PointY="22.960999348958325" />
+          <ConnectorPoint PointX="2.5" PointY="22.960999348958325" />
+          <ConnectorPoint PointX="2.5" PointY="14.84568359375" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="14.84568359375" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="14.84568359375" />
+          <ConnectorPoint PointX="5.5" PointY="14.84568359375" />
+          <ConnectorPoint PointX="5.5" PointY="13.625" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="13.624999999999998" />
+          <ConnectorPoint PointX="5.911458333333333" PointY="13.625" />
+          <ConnectorPoint PointX="8" PointY="13.625" />
+          <ConnectorPoint PointX="8" PointY="15.361227213541611" />
+          <ConnectorPoint PointX="8.0144513366926944" PointY="15.361227213541611" />
+          <ConnectorPoint PointX="8.1811180033593622" PointY="15.361227213541611" />
+          <ConnectorPoint PointX="12.625" PointY="15.361227213541611" />
+          <ConnectorPoint PointX="12.625" PointY="14.653595377604162" />
+          <ConnectorPoint PointX="13" PointY="14.653595377604162" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_experiencia_medicamentos_tb_consulta_fixo1" >
+          <ConnectorPoint PointX="2.25" PointY="27.174988606770835" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="27.174988606770835" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="27.174988606770835" />
+          <ConnectorPoint PointX="3.0416666666666665" PointY="27.174988606770835" />
+          <ConnectorPoint PointX="3.2083333333333335" PointY="27.174988606770835" />
+          <ConnectorPoint PointX="3.2604191666666664" PointY="27.174988606770835" />
+          <ConnectorPoint PointX="3.4270858333333334" PointY="27.174988606770835" />
+          <ConnectorPoint PointX="6" PointY="27.174988606770835" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_historia_tb_consulta_fixo1" >
+          <ConnectorPoint PointX="2.25" PointY="26.255620930989586" />
+          <ConnectorPoint PointX="2.5" PointY="26.255620930989586" />
+          <ConnectorPoint PointX="2.5" PointY="27.375" />
+          <ConnectorPoint PointX="3.0416666666666665" PointY="27.375" />
+          <ConnectorPoint PointX="3.2083333333333335" PointY="27.375" />
+          <ConnectorPoint PointX="3.2604191666666664" PointY="27.375" />
+          <ConnectorPoint PointX="3.4270858333333334" PointY="27.375" />
+          <ConnectorPoint PointX="3.625" PointY="27.375" />
+          <ConnectorPoint PointX="3.625" PointY="39.375" />
+          <ConnectorPoint PointX="3.75" PointY="39.375" />
+          <ConnectorPoint PointX="3.75" PointY="39.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" >
+          <ConnectorPoint PointX="4.25" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="5.119791666666667" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="5.286458333333333" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="5.911458333333333" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="7.4479186666666672" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="7.6145853333333333" PointY="22.432444661458334" />
+          <ConnectorPoint PointX="8.25" PointY="22.432444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" >
+          <ConnectorPoint PointX="4.25" PointY="25.074485627003206" />
+          <ConnectorPoint PointX="5.119791666666667" PointY="25.074485627003206" />
+          <ConnectorPoint PointX="5.286458333333333" PointY="25.074485627003206" />
+          <ConnectorPoint PointX="10.791666666666666" PointY="25.074485627003206" />
+          <ConnectorPoint PointX="10.958333333333334" PointY="25.074485627003206" />
+          <ConnectorPoint PointX="12" PointY="25.074485627003206" />
+          <ConnectorPoint PointX="12" PointY="24.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" >
+          <ConnectorPoint PointX="4.25" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="5.119791666666667" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="5.286458333333333" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="5.911458333333333" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="7.4479186666666672" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="7.6145853333333333" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="11" PointY="24.057444661458334" />
+          <ConnectorPoint PointX="11" PointY="19.874492187499996" />
+          <ConnectorPoint PointX="12" PointY="19.874492187499996" />
+          <ConnectorPoint PointX="12" PointY="19.4994921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" >
+          <ConnectorPoint PointX="3.70312625" PointY="21.625" />
+          <ConnectorPoint PointX="3.70312625" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="5.911458333333333" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="7.4479186666666672" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="7.6145853333333333" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="19.03261762369792" />
+          <ConnectorPoint PointX="8.25" PointY="19.03261762369792" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_tb_razao_encontro1" >
+          <ConnectorPoint PointX="2.25" PointY="17.547841796875" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="17.547841796875" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="17.547841796875" />
+          <ConnectorPoint PointX="3.0937475" PointY="17.547841796875" />
+          <ConnectorPoint PointX="3.0937475" PointY="21.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_tb_turma_pessoa_relato1" >
+          <ConnectorPoint PointX="2.25" PointY="29.852885742187503" />
+          <ConnectorPoint PointX="3.125" PointY="29.852885742187503" />
+          <ConnectorPoint PointX="3.125" PointY="26.297506510416667" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" >
+          <ConnectorPoint PointX="3.3437525" PointY="26.297506510416667" />
+          <ConnectorPoint PointX="3.3437525" PointY="31.59375" />
+          <ConnectorPoint PointX="3.5416666666666665" PointY="31.59375" />
+          <ConnectorPoint PointX="3.7083333333333335" PointY="31.59375" />
+          <ConnectorPoint PointX="5.25" PointY="31.59375" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" >
+          <ConnectorPoint PointX="4.25" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="5.119791666666667" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="5.286458333333333" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="5.911458333333333" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="7.4479186666666672" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="7.6145853333333333" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="9" PointY="22.848020883413461" />
+          <ConnectorPoint PointX="9" PointY="24.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1" >
+          <ConnectorPoint PointX="4.25" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="5.119791666666667" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="5.286458333333333" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="5.911458333333333" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="7.4479186666666672" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="7.6145853333333333" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="11.695311" PointY="24.20477283653846" />
+          <ConnectorPoint PointX="11.695311" PointY="23.239889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_escolaridade1" >
+          <ConnectorPoint PointX="4.78125" PointY="14.59568359375" />
+          <ConnectorPoint PointX="4.78125" PointY="20.297558811848958" />
+          <ConnectorPoint PointX="3.7864595833333334" PointY="20.297558811848958" />
+          <ConnectorPoint PointX="3.6197929166666665" PointY="20.297558811848958" />
+          <ConnectorPoint PointX="3.1770808333333336" PointY="20.297558811848958" />
+          <ConnectorPoint PointX="3.0104141666666666" PointY="20.297558811848958" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="20.297558811848958" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="20.297558811848958" />
+          <ConnectorPoint PointX="2" PointY="20.297558811848958" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_ocupacao1" >
+          <ConnectorPoint PointX="5.203125" PointY="25.375" />
+          <ConnectorPoint PointX="5.203125" PointY="20.961281905924473" />
+          <ConnectorPoint PointX="3.7864595833333334" PointY="20.961281905924473" />
+          <ConnectorPoint PointX="3.6197929166666665" PointY="20.961281905924473" />
+          <ConnectorPoint PointX="3.1770808333333336" PointY="20.961281905924473" />
+          <ConnectorPoint PointX="3.0104141666666666" PointY="20.961281905924473" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="20.961281905924473" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="20.961281905924473" />
+          <ConnectorPoint PointX="2" PointY="20.961281905924473" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_plano_saude1" >
+          <ConnectorPoint PointX="3.75" PointY="27.90625" />
+          <ConnectorPoint PointX="3.7083333333333335" PointY="27.90625" />
+          <ConnectorPoint PointX="3.5416666666666665" PointY="27.90625" />
+          <ConnectorPoint PointX="3.4270858333333334" PointY="27.90625" />
+          <ConnectorPoint PointX="3.2604191666666664" PointY="27.90625" />
+          <ConnectorPoint PointX="3.2083333333333335" PointY="27.90625" />
+          <ConnectorPoint PointX="3.0416666666666665" PointY="27.90625" />
+          <ConnectorPoint PointX="0.59375" PointY="27.90625" />
+          <ConnectorPoint PointX="0.59375" PointY="22.710999348958325" />
+        </AssociationConnector>
+        <AssociationConnector Association="pvModel.fk_tb_diario_pessoal_tb_medicamentos1" >
+          <ConnectorPoint PointX="7.875" PointY="16.484376249999993" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="16.484376249999993" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="16.484376249999993" />
+          <ConnectorPoint PointX="11.916666666666666" PointY="16.484376249999993" />
+          <ConnectorPoint PointX="12.083333333333334" PointY="16.484376249999993" />
+          <ConnectorPoint PointX="13.75" PointY="16.484376249999993" />
+          <ConnectorPoint PointX="13.75" PointY="15.932190755208325" />
+        </AssociationConnector>
+        </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>
