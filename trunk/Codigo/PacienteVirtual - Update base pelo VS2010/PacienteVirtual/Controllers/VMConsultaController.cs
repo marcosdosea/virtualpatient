@@ -39,7 +39,8 @@ namespace PacienteVirtual.Controllers
         //
         // GET: /VMConsulta/Create
 
-        public ActionResult Create(){
+        public ActionResult AdicionarAlterar()
+        {
             VMConsulta vmPaciente = new VMConsulta();
 
             //vmPaciente.paciente = GerenciadorPaciente.GetInstance().Obter(id);

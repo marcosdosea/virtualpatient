@@ -34,12 +34,9 @@
             <%: Html.ActionLink(Resources.Mensagem.editar , "Edit", new { id=item.IdCurso }) %> |
             <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = item.IdCurso })%> |
             <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdCurso }) %>
-          
-              <% Html.RenderPartial("ExibirDisciplina", item.disciplinaModel, new ViewDataDictionary()); %>
         </td>
     </tr>
 <% } %>
-
 
 </table></div>
 

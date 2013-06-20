@@ -10,7 +10,7 @@ using PacienteVirtual.Models.Negocio;
 using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
-{ 
+{
     public class RelatoClinicoController : Controller
     {
         GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
@@ -37,11 +37,23 @@ namespace PacienteVirtual.Controllers
             return View(gRelato.Obter(id));
         }
 
-        //
+        public FileContentResult GetImage(int id)
+        {
+            if (id != -1)
+            {
+                var imageData = GerenciadorPaciente.GetInstance().Obter(id).Foto;
+                if (imageData != null)
+                    return File(imageData, "image/jpg");
+            }
+            // byte[] buffer = System.IO.File.ReadAllBytes("~/Content/themes/pv/img/default-avatar.png");
+            byte[] byt = System.IO.File.ReadAllBytes(Server.MapPath("~/Content/themes/pv/img/default-avatar.png"));
+            return File(byt, "image/jpg");
+        }
         // GET: /RelatoClinico/Create
 
         public ActionResult Create()
         {
+            ViewBag.fotoId = -1;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             return View();
         }
@@ -51,12 +63,19 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(RelatoClinicoModel relatoModel)
         {
+            if (relatoModel.IdPaciente != null)
+            {
+                ViewBag.fotoId = relatoModel.IdPaciente;
+                ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
+                return View(relatoModel);
+            }
+
             if (ModelState.IsValid)
             {
                 relatoModel.IdRelato = gRelato.Inserir(relatoModel);
                 return PartialView();
             }
-            ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
+            ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             return View(relatoModel);
         }
 
@@ -83,7 +102,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
             return View(relatoModel);
         }
-        public FileContentResult GetImage(int id)
+
+        public FileContentResult GetVideo(int id)
         {
 
             var imageData = GerenciadorRelatoClinico.GetInstance().Obter(id).RelatoVideo;

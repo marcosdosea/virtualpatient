@@ -123,8 +123,6 @@ namespace PacienteVirtual.Controllers
 
                     pacienteModel.Foto = arqUp;
                 }
-               
-  
 
                 GerenciadorPaciente.GetInstance().Atualizar(pacienteModel);
                 return RedirectToAction("Index");

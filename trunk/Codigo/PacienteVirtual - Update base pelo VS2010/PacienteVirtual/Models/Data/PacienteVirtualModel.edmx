@@ -2988,7 +2988,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel" ZoomLevel="21">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="67">
         <EntityTypeShape EntityType="pvModel.AcaoAlternativaE" Width="1.5" PointX="6" PointY="4.125" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="pvModel.AcaoQueixaE" Width="1.5" PointX="6" PointY="13.875" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="pvModel.AlergiaE" Width="1.5" PointX="6" PointY="35.375" Height="1.5956835937499818" />
