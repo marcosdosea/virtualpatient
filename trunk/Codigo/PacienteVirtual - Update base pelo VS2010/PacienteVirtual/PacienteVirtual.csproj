@@ -86,6 +86,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Mensagem.en.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Mensagem.pt-br1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensagem.pt-br.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AcaoAlternativaController.cs" />
     <Compile Include="Controllers\AcaoQueixaController.cs" />
     <Compile Include="Controllers\AccountController.cs">
@@ -98,6 +103,8 @@
     </Compile>
     <Compile Include="Controllers\DiarioPessoalController.cs" />
     <Compile Include="Controllers\HistoricoController.cs" />
+    <Compile Include="Controllers\MedicamentoNaoPrescritoController.cs" />
+    <Compile Include="Controllers\MedicamentoPrescritoController.cs" />
     <Compile Include="Controllers\MedicamentosController.cs" />
     <Compile Include="Controllers\OcupacaoController.cs" />
     <Compile Include="Controllers\DemograficosAntropomedicosController.cs" />
@@ -176,6 +183,8 @@
     <Compile Include="Models\InstituicaoModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\MedicamentoNaoPrescritoModel.cs" />
+    <Compile Include="Models\MedicamentoPrescritoModel.cs" />
     <Compile Include="Models\MedicamentosModel.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoAlternativa.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoQueixa.cs" />
@@ -196,6 +205,8 @@
     <Compile Include="Models\Negocio\GerenciadorInstituicao.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Negocio\GerenciadorMedicamentoNaoPrescrito.cs" />
+    <Compile Include="Models\Negocio\GerenciadorMedicamentoPrescrito.cs" />
     <Compile Include="Models\Negocio\GerenciadorMedicamentos.cs" />
     <Compile Include="Models\Negocio\GerenciadorOcupacao.cs" />
     <Compile Include="Models\Negocio\GerenciadorPaciente.cs" />
@@ -404,6 +415,16 @@
     <Content Include="Views\ConsultaFixo\Details.aspx" />
     <Content Include="Views\ConsultaFixo\Edit.aspx" />
     <Content Include="Views\ConsultaFixo\Index.aspx" />
+    <Content Include="Views\MedicamentoNaoPrescrito\Create.aspx" />
+    <Content Include="Views\MedicamentoNaoPrescrito\Delete.aspx" />
+    <Content Include="Views\MedicamentoNaoPrescrito\Details.aspx" />
+    <Content Include="Views\MedicamentoNaoPrescrito\Edit.aspx" />
+    <Content Include="Views\MedicamentoNaoPrescrito\Index.aspx" />
+    <Content Include="Views\MedicamentoPrescrito\Create.aspx" />
+    <Content Include="Views\MedicamentoPrescrito\Delete.aspx" />
+    <Content Include="Views\MedicamentoPrescrito\Details.aspx" />
+    <Content Include="Views\MedicamentoPrescrito\Edit.aspx" />
+    <Content Include="Views\MedicamentoPrescrito\Index.aspx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />
     <Content Include="Views\VMConsulta\AdicionarAlterar.aspx" />
     <Content Include="Views\VMConsulta\DemograficosAntropomedicos.ascx" />
