@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pvModelStoreContainer" CdmEntityContainer="pvEntities">
+    <EntitySetMapping Name="tb_acao_alternativa">
+      <EntityTypeMapping TypeName="pvModel.AcaoAlternativaE">
+        <MappingFragment StoreEntitySet="tb_acao_alternativa">
+          <ScalarProperty Name="DescricaoAcao" ColumnName="DescricaoAcao" />
+          <ScalarProperty Name="IdAcaoAlternativa" ColumnName="IdAcaoAlternativa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_acao_queixa">
+      <EntityTypeMapping TypeName="pvModel.AcaoQueixaE">
+        <MappingFragment StoreEntitySet="tb_acao_queixa">
+          <ScalarProperty Name="DescricaoAcao" ColumnName="DescricaoAcao" />
+          <ScalarProperty Name="IdAcaoQueixa" ColumnName="IdAcaoQueixa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_alergia">
+      <EntityTypeMapping TypeName="pvModel.AlergiaE">
+        <MappingFragment StoreEntitySet="tb_alergia">
+          <ScalarProperty Name="Alergia" ColumnName="Alergia" />
+          <ScalarProperty Name="IdAlergia" ColumnName="IdAlergia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_consulta_parametro">
+      <EntityTypeMapping TypeName="pvModel.ConsultaParametroE">
+        <MappingFragment StoreEntitySet="tb_consulta_parametro">
+          <ScalarProperty Name="Unidade" ColumnName="Unidade" />
+          <ScalarProperty Name="ValorReferencia" ColumnName="ValorReferencia" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="IdParamentoClinico" ColumnName="IdParamentoClinico" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_consulta_variavel_queixa">
+      <EntityTypeMapping TypeName="pvModel.ConsultaVariavelQueixaE">
+        <MappingFragment StoreEntitySet="tb_consulta_variavel_queixa">
+          <ScalarProperty Name="Prioridade" ColumnName="Prioridade" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="IdAcaoQueixa" ColumnName="IdAcaoQueixa" />
+          <ScalarProperty Name="IdQueixa" ColumnName="IdQueixa" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_curso">
+      <EntityTypeMapping TypeName="pvModel.CursoE">
+        <MappingFragment StoreEntitySet="tb_curso">
+          <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
+          <ScalarProperty Name="NomeCurso" ColumnName="NomeCurso" />
+          <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_disciplina">
+      <EntityTypeMapping TypeName="pvModel.DisciplinaE">
+        <MappingFragment StoreEntitySet="tb_disciplina">
+          <ScalarProperty Name="NomeDisciplina" ColumnName="NomeDisciplina" />
+          <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_escolaridade">
+      <EntityTypeMapping TypeName="pvModel.EscolaridadeE">
+        <MappingFragment StoreEntitySet="tb_escolaridade">
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="IdEscolaridade" ColumnName="IdEscolaridade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_estilo_vida">
+      <EntityTypeMapping TypeName="pvModel.EstiloVidaE">
+        <MappingFragment StoreEntitySet="tb_estilo_vida">
+          <ScalarProperty Name="AlcoolParou" ColumnName="AlcoolParou" />
+          <ScalarProperty Name="AlcoolTipoBebida" ColumnName="AlcoolTipoBebida" />
+          <ScalarProperty Name="AlcoolUso" ColumnName="AlcoolUso" />
+          <ScalarProperty Name="AlcoolConsumo" ColumnName="AlcoolConsumo" />
+          <ScalarProperty Name="CafeParou" ColumnName="CafeParou" />
+          <ScalarProperty Name="CafeUso" ColumnName="CafeUso" />
+          <ScalarProperty Name="CafeConsumo" ColumnName="CafeConsumo" />
+          <ScalarProperty Name="TabacoParou" ColumnName="TabacoParou" />
+          <ScalarProperty Name="TabacoUso" ColumnName="TabacoUso" />
+          <ScalarProperty Name="TabacoConsumo" ColumnName="TabacoConsumo" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_exames_fisicos">
+      <EntityTypeMapping TypeName="pvModel.ExamesFisicosE">
+        <MappingFragment StoreEntitySet="tb_exames_fisicos">
+          <ScalarProperty Name="Glicemia" ColumnName="Glicemia" />
+          <ScalarProperty Name="PressaoSistolica" ColumnName="PressaoSistolica" />
+          <ScalarProperty Name="PressaoDiastolica" ColumnName="PressaoDiastolica" />
+          <ScalarProperty Name="Altura" ColumnName="Altura" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_experiencia_medicamentos">
+      <EntityTypeMapping TypeName="pvModel.ExperienciaMedicamentosE">
+        <MappingFragment StoreEntitySet="tb_experiencia_medicamentos">
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+          <ScalarProperty Name="AtencaoComportamento" ColumnName="AtencaoComportamento" />
+          <ScalarProperty Name="AtencaoCultural" ColumnName="AtencaoCultural" />
+          <ScalarProperty Name="AtencaoGrauEntendimento" ColumnName="AtencaoGrauEntendimento" />
+          <ScalarProperty Name="AtencaoPreocupacoes" ColumnName="AtencaoPreocupacoes" />
+          <ScalarProperty Name="AtencaoEsperaTratamento" ColumnName="AtencaoEsperaTratamento" />
+          <ScalarProperty Name="IdRespostaIncorporadoPlano" ColumnName="IdRespostaIncorporadoPlano" />
+          <ScalarProperty Name="IdRespostaComportamento" ColumnName="IdRespostaComportamento" />
+          <ScalarProperty Name="IdRespostaCultural" ColumnName="IdRespostaCultural" />
+          <ScalarProperty Name="IdRespostaGrauEntendimento" ColumnName="IdRespostaGrauEntendimento" />
+          <ScalarProperty Name="IdRespostaPreocupacoes" ColumnName="IdRespostaPreocupacoes" />
+          <ScalarProperty Name="IdRespostaEsperaTratamento" ColumnName="IdRespostaEsperaTratamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_historico">
+      <EntityTypeMapping TypeName="pvModel.HistoricoE">
+        <MappingFragment StoreEntitySet="tb_historico">
+          <ScalarProperty Name="ComentarioTutor" ColumnName="ComentarioTutor" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="DataResposta" ColumnName="DataResposta" />
+          <ScalarProperty Name="DataEnvio" ColumnName="DataEnvio" />
+          <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
+          <ScalarProperty Name="IdTutor" ColumnName="IdTutor" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="IdHistorico" ColumnName="IdHistorico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_instituicao">
+      <EntityTypeMapping TypeName="pvModel.InstituicaoE">
+        <MappingFragment StoreEntitySet="tb_instituicao">
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="NomeInstituicao" ColumnName="NomeInstituicao" />
+          <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_medicamento_nao_prescrito">
+      <EntityTypeMapping TypeName="pvModel.MedicamentoNaoPrescritoE">
+        <MappingFragment StoreEntitySet="tb_medicamento_nao_prescrito">
+          <ScalarProperty Name="Posologia" ColumnName="Posologia" />
+          <ScalarProperty Name="Dosagem" ColumnName="Dosagem" />
+          <ScalarProperty Name="Fitoterapico" ColumnName="Fitoterapico" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_medicamento_prescrito">
+      <EntityTypeMapping TypeName="pvModel.MedicamentoPrescritoE">
+        <MappingFragment StoreEntitySet="tb_medicamento_prescrito">
+          <ScalarProperty Name="Especialidade" ColumnName="Especialidade" />
+          <ScalarProperty Name="Prescritor" ColumnName="Prescritor" />
+          <ScalarProperty Name="Posologia" ColumnName="Posologia" />
+          <ScalarProperty Name="Dosagem" ColumnName="Dosagem" />
+          <ScalarProperty Name="Fitoterapico" ColumnName="Fitoterapico" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_medicamentos">
+      <EntityTypeMapping TypeName="pvModel.MedicamentosE">
+        <MappingFragment StoreEntitySet="tb_medicamentos">
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_medicamentos_anteriores">
+      <EntityTypeMapping TypeName="pvModel.MedicamentosAnterioresE">
+        <MappingFragment StoreEntitySet="tb_medicamentos_anteriores">
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Resposta" ColumnName="Resposta" />
+          <ScalarProperty Name="Indicacao" ColumnName="Indicacao" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ocupacao">
+      <EntityTypeMapping TypeName="pvModel.OcupacaoE">
+        <MappingFragment StoreEntitySet="tb_ocupacao">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="IdOcupacao" ColumnName="IdOcupacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_paciente">
+      <EntityTypeMapping TypeName="pvModel.PacienteE">
+        <MappingFragment StoreEntitySet="tb_paciente">
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_parametro_clinico">
+      <EntityTypeMapping TypeName="pvModel.ParametroClinicoE">
+        <MappingFragment StoreEntitySet="tb_parametro_clinico">
+          <ScalarProperty Name="ParametroClinico" ColumnName="ParametroClinico" />
+          <ScalarProperty Name="IdParametroClinico" ColumnName="IdParamentoClinico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_perfil_usuario">
+      <EntityTypeMapping TypeName="pvModel.PerfilUsuarioE">
+        <MappingFragment StoreEntitySet="tb_perfil_usuario">
+          <ScalarProperty Name="NomePerfil" ColumnName="NomePerfil" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pergunta">
+      <EntityTypeMapping TypeName="pvModel.PerguntaE">
+        <MappingFragment StoreEntitySet="tb_pergunta">
+          <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
+          <ScalarProperty Name="IdPergunta" ColumnName="IdPergunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pessoa">
+      <EntityTypeMapping TypeName="pvModel.PessoaE">
+        <MappingFragment StoreEntitySet="tb_pessoa">
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_plano_saude">
+      <EntityTypeMapping TypeName="pvModel.PlanoSaudeE">
+        <MappingFragment StoreEntitySet="tb_plano_saude">
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdPlanoSaude" ColumnName="IdPlanoSaude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_queixa">
+      <EntityTypeMapping TypeName="pvModel.QueixaE">
+        <MappingFragment StoreEntitySet="tb_queixa">
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="DescricaoQueixa" ColumnName="DescricaoQueixa" />
+          <ScalarProperty Name="IdQueixa" ColumnName="IdQueixa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_queixa_medicamentos">
+      <EntityTypeMapping TypeName="pvModel.QueixaMedicamentosE">
+        <MappingFragment StoreEntitySet="tb_queixa_medicamentos">
+          <ScalarProperty Name="IdAcaoAlternativa2" ColumnName="IdAcaoAlternativa2" />
+          <ScalarProperty Name="IdAcaoAlternativa1" ColumnName="IdAcaoAlternativa1" />
+          <ScalarProperty Name="Cumprimento" ColumnName="Cumprimento" />
+          <ScalarProperty Name="Seguro" ColumnName="Seguro" />
+          <ScalarProperty Name="Efetivo" ColumnName="Efetivo" />
+          <ScalarProperty Name="Necessario" ColumnName="Necessario" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="SuspeitaIdAcaoQueixa" ColumnName="SuspeitaIdAcaoQueixa" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="IdQueixa" ColumnName="IdQueixa" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_razao_encontro">
+      <EntityTypeMapping TypeName="pvModel.RazaoEncontroE">
+        <MappingFragment StoreEntitySet="tb_razao_encontro">
+          <ScalarProperty Name="DescricaoRazao" ColumnName="DescricaoRazao" />
+          <ScalarProperty Name="IdRazaoEncontro" ColumnName="IdRazaoEncontro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_relato_clinico">
+      <EntityTypeMapping TypeName="pvModel.RelatoClinicoE">
+        <MappingFragment StoreEntitySet="tb_relato_clinico">
+          <ScalarProperty Name="NivelDificuldade" ColumnName="NivelDificuldade" />
+          <ScalarProperty Name="RelatoVideo" ColumnName="RelatoVideo" />
+          <ScalarProperty Name="RelatoTextual" ColumnName="RelatoTextual" />
+          <ScalarProperty Name="OrdemCronologia" ColumnName="OrdemCronologia" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_resposta">
+      <EntityTypeMapping TypeName="pvModel.RespostaE">
+        <MappingFragment StoreEntitySet="tb_resposta">
+          <ScalarProperty Name="IdPergunta" ColumnName="IdPergunta" />
+          <ScalarProperty Name="Resposta" ColumnName="Resposta" />
+          <ScalarProperty Name="IdResposta" ColumnName="IdResposta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_sistema">
+      <EntityTypeMapping TypeName="pvModel.SistemaE">
+        <MappingFragment StoreEntitySet="tb_sistema">
+          <ScalarProperty Name="NomeSistema" ColumnName="NomeSistema" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_turma">
+      <EntityTypeMapping TypeName="pvModel.TurmaE">
+        <MappingFragment StoreEntitySet="tb_turma">
+          <ScalarProperty Name="IdInstituicao" ColumnName="IdInstituicao" />
+          <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_turma_pessoa">
+      <EntityTypeMapping TypeName="pvModel.TurmaPessoaE">
+        <MappingFragment StoreEntitySet="tb_turma_pessoa">
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_turma_pessoa_relato">
+      <EntityTypeMapping TypeName="pvModel.TurmaPessoaRelatoE">
+        <MappingFragment StoreEntitySet="tb_turma_pessoa_relato">
+          <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario">
+      <EntityTypeMapping TypeName="pvModel.UsuarioE">
+        <MappingFragment StoreEntitySet="tb_usuario">
+          <ScalarProperty Name="tpUsuario" ColumnName="tpUsuario" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NomeUsuario" ColumnName="NomeUsuario" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario_turma">
+      <EntityTypeMapping TypeName="pvModel.UsuarioTurmaE">
+        <MappingFragment StoreEntitySet="tb_usuario_turma">
+          <ScalarProperty Name="IdPerfilUsuario" ColumnName="IdPerfilUsuario" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tb_alergia_exames_fisicos" TypeName="pvModel.tb_alergia_exames_fisicos" StoreEntitySet="tb_alergia_exames_fisicos">
+      <EndProperty Name="tb_exames_fisicos">
+        <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+      </EndProperty>
+      <EndProperty Name="tb_alergia">
+        <ScalarProperty Name="IdAlergia" ColumnName="IdAlergia" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_curso_disciplina" TypeName="pvModel.tb_curso_disciplina" StoreEntitySet="tb_curso_disciplina">
+      <EndProperty Name="tb_disciplina">
+        <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
+      </EndProperty>
+      <EndProperty Name="tb_curso">
+        <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="tb_consulta_fixo">
+      <EntityTypeMapping TypeName="pvModel.ConsultaFixoE">
+        <MappingFragment StoreEntitySet="tb_consulta_fixo">
+          <ScalarProperty Name="ComentariosTutor" ColumnName="ComentariosTutor" />
+          <ScalarProperty Name="DataAtualizacao" ColumnName="DataAtualizacao" />
+          <ScalarProperty Name="EhGabarito" ColumnName="EhGabarito" />
+          <ScalarProperty Name="EstadoPreenchimento" ColumnName="EstadoPreenchimento" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_consulta_variavel">
+      <EntityTypeMapping TypeName="pvModel.ConsultaVariavelE">
+        <MappingFragment StoreEntitySet="tb_consulta_variavel">
+          <ScalarProperty Name="ComentariosTutor" ColumnName="ComentariosTutor" />
+          <ScalarProperty Name="Lembretes" ColumnName="Lembretes" />
+          <ScalarProperty Name="DataPreenchimento" ColumnName="DataPreenchimento" />
+          <ScalarProperty Name="IdRazaoEncontro" ColumnName="IdRazaoEncontro" />
+          <ScalarProperty Name="IdRelato" ColumnName="IdRelato" />
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="IdTurma" ColumnName="IdTurma" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+          <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_demograficos_antropometricos">
+      <EntityTypeMapping TypeName="pvModel.DemograficosAntropometricosE">
+        <MappingFragment StoreEntitySet="tb_demograficos_antropometricos">
+          <ScalarProperty Name="IdPlanoSaude" ColumnName="IdPlanoSaude" />
+          <ScalarProperty Name="IdOcupacao" ColumnName="IdOcupacao" />
+          <ScalarProperty Name="IdEscolaridade" ColumnName="IdEscolaridade" />
+          <ScalarProperty Name="OndeAdquireMedicamentos" ColumnName="OndeAdquireMedicamentos" />
+          <ScalarProperty Name="MoradiaFamilia" ColumnName="MoradiaFamilia" />
+          <ScalarProperty Name="MedicosAtendem" ColumnName="MedicosAtendem" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_diario_pessoal">
+      <EntityTypeMapping TypeName="pvModel.DiarioPessoalE">
+        <MappingFragment StoreEntitySet="tb_diario_pessoal">
+          <ScalarProperty Name="TipoBebida" ColumnName="TipoBebida" />
+          <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+          <ScalarProperty Name="Horario" ColumnName="Horario" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_historia">
+      <EntityTypeMapping TypeName="pvModel.HistoriaE">
+        <MappingFragment StoreEntitySet="tb_historia">
+          <ScalarProperty Name="HistoriaFamiliar" ColumnName="HistoriaFamiliar" />
+          <ScalarProperty Name="HistoriaMedicaPregressa" ColumnName="HistoriaMedicaPregressa" />
+          <ScalarProperty Name="IdConsultaFixo" ColumnName="IdConsultaFixo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
