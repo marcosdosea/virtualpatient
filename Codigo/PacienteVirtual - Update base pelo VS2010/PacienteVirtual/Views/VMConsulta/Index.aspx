@@ -6,9 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         Index</h2>
-    <p>
-        <%: Html.ActionLink("Create New", "Create") %>
-    </p>
     <table>
         <tr>
             <th>
@@ -49,7 +46,7 @@
             </td>
             <td>
                 &nbsp &nbsp &nbsp &nbsp &nbsp
-                <%: Html.ActionLink("Adicionar/Alterar Consultas", "Edit", new { id = item.paciente.IdPaciente }, new { @class = "span4", @cols = "40", @rows = "28" })%>
+                <%: Html.ActionLink("Adicionar/Alterar Consultas", "AdicionarAlterar", new { id = item.paciente.IdPaciente })%>
             </td>
         </tr>
         <% } %>

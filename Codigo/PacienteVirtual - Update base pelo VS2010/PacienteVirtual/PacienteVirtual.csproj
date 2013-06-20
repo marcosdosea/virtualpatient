@@ -405,7 +405,7 @@
     <Content Include="Views\ConsultaFixo\Edit.aspx" />
     <Content Include="Views\ConsultaFixo\Index.aspx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />
-    <Content Include="Views\VMConsulta\Create.aspx" />
+    <Content Include="Views\VMConsulta\AdicionarAlterar.aspx" />
     <Content Include="Views\VMConsulta\DemograficosAntropomedicos.ascx" />
     <Content Include="Views\VMConsulta\DiarioPessoal.ascx" />
     <Content Include="Views\VMConsulta\ExperienciaMedicamentos.ascx" />
