@@ -39,33 +39,39 @@
                 </div>
                 <div class="navbar">
                     <div class="navbar-inner fixe">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                            class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                        </a>
-                        <div class="brand">
-                            <%: Html.ActionLink("Paciente Virtual", "Index", "Home")%></div>
-                        <div class="nav-collapse collapse">
-                            <nav class="nav">
-                                <ul class="nav" role="menu" aria-labelledby="dropdownMenu">
-                                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastros
-                                        <b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                            <li><%: Html.ActionLink("Turma", "Index", "Turma")%></li>
-                                            <li><%: Html.ActionLink("Curso", "Index", "Curso")%></li>
-                                            <li><%: Html.ActionLink("Disciplina", "Index", "Disciplina")%></li>
-                                            <li><%: Html.ActionLink("Instituição", "Index", "Instituicao")%></li>
-                                            <li><%: Html.ActionLink("Escolaridade", "Index", "Escolaridade")%></li>
-                                             <li class="divider"></li>
-                                             <li><%: Html.ActionLink("Paciente", "Index", "Paciente")%></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="nav-collapse collapse">
-                            <nav class="nav">
-                                <ul class="nav" role="menu" aria-labelledby="dropdownMenu">
-                                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pacientes
+                        <div class="container">
+                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                            </a>
+                            <div class="brand">
+                                <%: Html.ActionLink("Paciente Virtual", "Index", "Home")%>
+                            </div>
+                            <div class="nav-collapse collapse">
+                                <nav class="nav">
+                                    <ul class="nav" role="menu" aria-labelledby="dropdownMenu">
+                                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastros
+                                            <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <%: Html.ActionLink("Curso", "Index", "Curso")%></li>
+                                                <li>
+                                                    <%: Html.ActionLink("Disciplina", "Index", "Disciplina")%></li>
+                                                <li>
+                                                    <%: Html.ActionLink("Instituição", "Index", "Instituicao")%></li>
+                                                <li>
+                                                    <%: Html.ActionLink("Escolaridade", "Index", "Escolaridade")%></li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <%: Html.ActionLink("Paciente", "Index", "Paciente")%></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav" role="menu">
+                                    <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">Pacientes
                                         <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>
@@ -80,20 +86,33 @@
                                         </ul>
                                     </li>
                                 </ul>
-                            </nav>
+                            </div>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav">
+                                    <li class="">
+                                        <%: Html.ActionLink("Turmas", "Index", "Turma")%>
+                                    </li>
+                                    <li class="">
+                                        <%: Html.ActionLink("Relatos Clínicos", "Index", "RelatoClinico")%>
+                                    </li>
+                                    <li class="">
+                                        <%: Html.ActionLink("Consultas", "Index", "VMConsulta")%>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- /.navbar -->
-                
                 <%: Html.ActionLink("--  VMPaciente", "Index", "VMPaciente")%>
-                 <%: Html.ActionLink("--  Usuario", "Index", "Usuario")%>
+                <%: Html.ActionLink("--  Usuario", "Index", "Usuario")%>
                 <%: Html.ActionLink("--  About", "About", "Home")%>
                 <%: Html.ActionLink("--  PacientePessoaTurma", "Index", "PacientePessoaTurma")%>
                 <%: Html.ActionLink("--  Historia", "Index", "Historia")%>
                 <%: Html.ActionLink("--  ExperienciaMedicamentos", "Index", "ExperienciaMedicamentos")%>
                 <%: Html.ActionLink("--  ConsultaFixo", "Index", "ConsultaFixo")%>
-                <li><%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li>
+                <li>
+                    <%: Html.ActionLink("DemograficosAntropomedicos --", "Index", "DemograficosAntropomedicos")%></li>
                 <%: Html.ActionLink("--  ConsultaFixo", "Index", "ConsultaFixo")%>
                 <%: Html.ActionLink("--  Ocupação", "Index", "Ocupacao")%>
                 <%: Html.ActionLink("--  Plano de Saúde", "Index", "PlanoSaude")%>

@@ -86,11 +86,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Mensagem.en.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Mensagem.pt-br1.designer.cs">
-      <DependentUpon>Mensagem.pt-br.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="Controllers\AcaoAlternativaController.cs" />
     <Compile Include="Controllers\AcaoQueixaController.cs" />
     <Compile Include="Controllers\AccountController.cs">
@@ -139,6 +134,7 @@
     <Compile Include="Controllers\UsuarioController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\VMConsultaController.cs" />
     <Compile Include="Controllers\VMPacienteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -236,6 +232,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\TurmaPessoaRelatoModel.cs" />
+    <Compile Include="Models\ViewModel\VMConsulta.cs" />
     <Compile Include="Models\ViewModel\VMPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -245,10 +242,8 @@
       <LastGenOutput>Mensagem.pt-br1.designer.cs</LastGenOutput>
     </Content>
     <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.xml" />
     <Content Include="bin\en\PacienteVirtual.resources.dll" />
     <Content Include="bin\Html5MVCWebControls.dll" />
-    <Content Include="bin\Html5MVCWebControls.xml" />
     <Content Include="bin\PacienteVirtual.dll" />
     <Content Include="bin\PacienteVirtual.pdb" />
     <Content Include="bin\pt-br\PacienteVirtual.resources.dll" />
@@ -410,6 +405,12 @@
     <Content Include="Views\ConsultaFixo\Edit.aspx" />
     <Content Include="Views\ConsultaFixo\Index.aspx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />
+    <Content Include="Views\VMConsulta\Create.aspx" />
+    <Content Include="Views\VMConsulta\DemograficosAntropomedicos.ascx" />
+    <Content Include="Views\VMConsulta\DiarioPessoal.ascx" />
+    <Content Include="Views\VMConsulta\ExperienciaMedicamentos.ascx" />
+    <Content Include="Views\VMConsulta\Index.aspx" />
+    <Content Include="Views\VMConsulta\RelatoClinico.ascx" />
     <Content Include="Views\VMPaciente\Curso.ascx" />
     <Content Include="Views\Curso\Create.aspx" />
     <Content Include="Views\Curso\Delete.aspx" />

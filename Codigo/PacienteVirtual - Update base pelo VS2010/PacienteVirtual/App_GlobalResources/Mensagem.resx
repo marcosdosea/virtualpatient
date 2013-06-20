@@ -309,9 +309,6 @@
   <data name="paciente_codigo" xml:space="preserve">
     <value>Código do Paciente</value>
   </data>
-  <data name="nome" xml:space="preserve">
-    <value>Nome</value>
-  </data>
   <data name="campo_MouF" xml:space="preserve">
     <value>Campo {0} só aceita "M" ou "F"</value>
   </data>
@@ -437,5 +434,8 @@
   </data>
   <data name="relato_textual" xml:space="preserve">
     <value>Relato Textual</value>
+  </data>
+  <data name="nome" xml:space="preserve">
+    <value>Nome</value>
   </data>
 </root>

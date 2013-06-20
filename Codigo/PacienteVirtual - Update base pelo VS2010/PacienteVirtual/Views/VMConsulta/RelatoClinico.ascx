@@ -14,15 +14,12 @@
         </div>
         <div class="editor-field">
           <%: Html.ValidationMessageFor(model => model.RelatoTextual) %>
-            <%: Html.TextAreaFor(model => model.RelatoTextual, new {@class="span4", @cols = "100", @rows = "50" }) %>
+            <%: Html.TextAreaFor(model => model.RelatoTextual, new {@class="span4", @cols = "40", @rows = "28" }) %>
         </div>
-
+         <div class="form-actions">
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Salvar" />
         </p>
+        </div>
     </fieldset>
 <% } %>
-
-<div>
-    <%: Html.ActionLink("Back to List", "Index") %>
-</div>
