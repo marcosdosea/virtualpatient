@@ -17,7 +17,12 @@ namespace PacienteVirtual.Controllers
         GerenciadorPaciente gPaciente = GerenciadorPaciente.GetInstance();
 
         //
-        // GET: /Curso/
+        // GET: /RelatoClinico/
+        public ViewResult Index()
+        {
+
+            return View(gRelato.ObterTodos());
+        }
 
         public ViewResult Listar(int id)
         {
@@ -26,14 +31,14 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // GET: /Curso/Details/5
+        // GET: /RelatoClinico/Details/5
         public ViewResult Details(int id)
         {
             return View(gRelato.Obter(id));
         }
 
         //
-        // GET: /Curso/Create
+        // GET: /RelatoClinico/Create
 
         public ActionResult Create()
         {
@@ -42,7 +47,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /Curso/Create
+        // POST: /RelatoClinico/Create
         [HttpPost]
         public ActionResult Create(RelatoClinicoModel relatoModel)
         {
@@ -56,7 +61,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // GET: /Curso/Edit/5
+        // GET: /RelatoClinico/Edit/5
         public ActionResult Edit(int id)
         {
             RelatoClinicoModel relatoModel = gRelato.Obter(id);
@@ -65,7 +70,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /Curso/Edit/5
+        // POST: /RelatoClinico/Edit/5
 
         [HttpPost]
         public ActionResult Edit(RelatoClinicoModel relatoModel)
@@ -88,7 +93,7 @@ namespace PacienteVirtual.Controllers
             return null;
         }
         //
-        // GET: /Curso/Delete/5
+        // GET: /RelatoClinico/Delete/5
 
         public ActionResult Delete(int id)
         {
@@ -96,7 +101,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /Curso/Delete/5
+        // POST: /RelatoClinico/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)

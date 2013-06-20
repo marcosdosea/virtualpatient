@@ -21,7 +21,7 @@
             <%: Html.LabelFor(model => model.NomePaciente) %>
         </div>
         <div class="editor-field"> 
-            <%: Html.DropDownList("IdPaciente", String.Empty) %>
+            <%: Html.DropDownList("IdPaciente", Resources.Mensagem.selecione)%>
             <%: Html.ValidationMessageFor(model => model.IdPaciente) %>
         </div>
 
@@ -36,8 +36,8 @@
         <div class="editor-label">
             <%: Html.LabelFor(model => model.RelatoTextual) %>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.RelatoTextual) %>
+        <div class="editor-field  left">
+             <%: Html.TextAreaFor(model => model.RelatoTextual, new {@class="span4",@cols = "80", @rows = "10" }) %>
             <%: Html.ValidationMessageFor(model => model.RelatoTextual) %>
         </div>
 
