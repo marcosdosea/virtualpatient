@@ -70,9 +70,8 @@
                             </div>
                             <div class="nav-collapse collapse">
                                 <ul class="nav" role="menu">
-                                    <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown">Pacientes
-                                        <b class="caret"></b></a>
+                                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Pacientes <b
+                                        class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <%: Html.ActionLink("Listar", "Index", "Paciente")%></li>
@@ -132,6 +131,11 @@
                 <%: Html.ActionLink("--  Queixa", "Index", "Queixa")%>
                 <%: Html.ActionLink("--  Sample", "Index", "Sample")%>
                 <%: Html.ActionLink("--  Alergia", "Index", "Alergia")%>
+
+                <%: Html.ActionLink("--  EstiloVida", "Index", "EstiloVida")%>
+                <%: Html.ActionLink("--  MedicamentoPrescrito", "Index", "MedicamentoPrescrito")%>
+                <%: Html.ActionLink("--  MedicamentoNaoPrescrito", "Index", "MedicamentoNaoPrescrito")%>
+                <%: Html.ActionLink("--  MedicamentosAnteriores", "Index", "MedicamentosAnteriores")%>
                 <section id="main">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server" />
                 </section>

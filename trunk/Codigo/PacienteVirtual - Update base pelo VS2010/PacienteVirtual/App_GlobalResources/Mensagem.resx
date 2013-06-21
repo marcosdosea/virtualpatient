@@ -438,4 +438,70 @@
   <data name="nome" xml:space="preserve">
     <value>Nome</value>
   </data>
+  <data name="consulta_variavel_codigo" xml:space="preserve">
+    <value>Código Consulta Variável</value>
+  </data>
+  <data name="indicacao" xml:space="preserve">
+    <value>Indicação</value>
+  </data>
+  <data name="alcool_consumo" xml:space="preserve">
+    <value>Consumo de álcool</value>
+  </data>
+  <data name="alcool_parou" xml:space="preserve">
+    <value>Parou o consumo</value>
+  </data>
+  <data name="alcool_tipo_bebida" xml:space="preserve">
+    <value>Tipo de bebida alcoólica</value>
+  </data>
+  <data name="alcool_uso" xml:space="preserve">
+    <value>Uso de álcool</value>
+  </data>
+  <data name="cafe_consumo" xml:space="preserve">
+    <value>Consumo de café</value>
+  </data>
+  <data name="cafe_parou" xml:space="preserve">
+    <value>Parou o consumo de café</value>
+  </data>
+  <data name="cafe_uso" xml:space="preserve">
+    <value>Uso de café</value>
+  </data>
+  <data name="dosagem" xml:space="preserve">
+    <value>Dosagem</value>
+  </data>
+  <data name="especialidade" xml:space="preserve">
+    <value>Especialidade</value>
+  </data>
+  <data name="fitoterapico" xml:space="preserve">
+    <value>Fisioterápico</value>
+  </data>
+  <data name="posologia" xml:space="preserve">
+    <value>Posologia</value>
+  </data>
+  <data name="prescritor" xml:space="preserve">
+    <value>Prescritor</value>
+  </data>
+  <data name="tabaco_consumo" xml:space="preserve">
+    <value>Consumo de tabaco</value>
+  </data>
+  <data name="tabaco_parou" xml:space="preserve">
+    <value>Parou o consumo de tabaco</value>
+  </data>
+  <data name="tabaco_uso" xml:space="preserve">
+    <value>Uso de tabaco</value>
+  </data>
+  <data name="consulta_variavel" xml:space="preserve">
+    <value>Consulta Variável</value>
+  </data>
+  <data name="estilo_vida" xml:space="preserve">
+    <value>Estilo de vida</value>
+  </data>
+  <data name="medicamentos_anteriores" xml:space="preserve">
+    <value>Medicamentos anteriores</value>
+  </data>
+  <data name="medicamento_nao_prescrito" xml:space="preserve">
+    <value>Medicamento não prescrito</value>
+  </data>
+  <data name="medicamento_prescrito" xml:space="preserve">
+    <value>Medicamento</value>
+  </data>
 </root>

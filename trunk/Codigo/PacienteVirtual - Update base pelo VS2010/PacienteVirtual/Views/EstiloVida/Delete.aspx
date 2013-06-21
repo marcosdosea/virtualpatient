@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.EstiloVidaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Delete
+<%: Resources.Mensagem.deletar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Delete</h2>
+<h2><%: Resources.Mensagem.deletar %></h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3><%: Resources.Mensagem.deletar_pergunta %></h3>
 <fieldset>
     <legend>EstiloVidaE</legend>
 
@@ -64,8 +64,8 @@
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>
-        <input type="submit" value="Delete" /> |
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Resources.Mensagem.deletar %> |
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </p>
 <% } %>
 
