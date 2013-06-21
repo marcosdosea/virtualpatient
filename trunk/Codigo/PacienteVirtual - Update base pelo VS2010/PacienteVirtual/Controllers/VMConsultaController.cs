@@ -58,10 +58,11 @@ namespace PacienteVirtual.Controllers
 
             vmPaciente.diarioPessoal = dp;
 
+            
             //vmPaciente.relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(id);
             ViewBag.ab = "aD";
             return View(vmPaciente);
-        } 
+        }
 
         //
         // POST: /VMConsulta/Create
@@ -83,7 +84,7 @@ namespace PacienteVirtual.Controllers
 
         public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel id)
         {
- 
+
             return PartialView();
         }
 
@@ -101,11 +102,46 @@ namespace PacienteVirtual.Controllers
             return PartialView(id);
         }
 
-        public ViewResult ExperienciaMedicamentos(ExperienciaMedicamentosModel d)
+        public PartialViewResult ExperienciaMedicamentos(ExperienciaMedicamentosModel id)
         {
 
-            return View();
+            return PartialView();
         }
 
+        public PartialViewResult EstiloVida(EstiloVidaModel id)
+        {
+
+            return PartialView();
+        }
+
+        public PartialViewResult MedicamentosAnteriores(MedicamentosAnterioresModel id)
+        {
+
+            return PartialView();
+        }
+
+        public PartialViewResult MedicamentoPrescrito(MedicamentoPrescritoModel id)
+        {
+
+            return PartialView();
+        }
+
+        public PartialViewResult MedicamentoNaoPrescrito(MedicamentoNaoPrescritoModel id)
+        {
+
+            return PartialView();
+        }
+
+        public PartialViewResult Queixa(QueixaModel id)
+        {
+            ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");
+            return PartialView();
+        }
+
+        public PartialViewResult ListarQueixa(QueixaModel id)
+        {
+            ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");
+            return PartialView();
+        }
     }
 }

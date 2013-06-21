@@ -421,6 +421,12 @@
     <Content Include="Views\ConsultaFixo\Details.aspx" />
     <Content Include="Views\ConsultaFixo\Edit.aspx" />
     <Content Include="Views\ConsultaFixo\Index.aspx" />
+    <Content Include="Views\VMConsulta\ListarQueixa.ascx" />
+    <Content Include="Views\VMConsulta\Queixa.ascx" />
+    <Content Include="Views\VMConsulta\MedicamentoNaoPrescrito.ascx" />
+    <Content Include="Views\VMConsulta\MedicamentoPrescrito.ascx" />
+    <Content Include="Views\VMConsulta\MedicamentosAnteriores.ascx" />
+    <Content Include="Views\VMConsulta\EstiloVida.ascx" />
     <Content Include="Views\EstiloVida\Create.aspx" />
     <Content Include="Views\EstiloVida\Delete.aspx" />
     <Content Include="Views\EstiloVida\Details.aspx" />

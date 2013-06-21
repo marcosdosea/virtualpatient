@@ -56,10 +56,8 @@
             <%: Html.EditorFor(model => model.TipoBebida) %>
             <%: Html.ValidationMessageFor(model => model.TipoBebida) %>
         </div>
-         <div class="form-actions">
-        <p>
-            <input type="submit" value="Salvar" />
-        </p>
-        </div>
+    <div class="form-actions">
+        <input class="btn" type="submit" value="Salvar" />
+    </div>
     </fieldset>
 <% } %>

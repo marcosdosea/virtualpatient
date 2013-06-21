@@ -101,6 +101,6 @@
     </div>
     <div class="form-actions">
         <input class="btn" type="submit" value="Salvar" />
-        </div>
+    </div>
 </fieldset>
 <% } %>
