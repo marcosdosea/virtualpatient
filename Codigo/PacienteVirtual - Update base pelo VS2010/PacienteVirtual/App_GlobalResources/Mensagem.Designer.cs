@@ -79,11 +79,74 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Consumo de álcool.
+        /// </summary>
+        public static string alcool_consumo {
+            get {
+                return ResourceManager.GetString("alcool_consumo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parou o consumo.
+        /// </summary>
+        public static string alcool_parou {
+            get {
+                return ResourceManager.GetString("alcool_parou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipo de bebida alcoólica.
+        /// </summary>
+        public static string alcool_tipo_bebida {
+            get {
+                return ResourceManager.GetString("alcool_tipo_bebida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uso de álcool.
+        /// </summary>
+        public static string alcool_uso {
+            get {
+                return ResourceManager.GetString("alcool_uso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alergia.
         /// </summary>
         public static string alergia {
             get {
                 return ResourceManager.GetString("alergia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consumo de café.
+        /// </summary>
+        public static string cafe_consumo {
+            get {
+                return ResourceManager.GetString("cafe_consumo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parou o consumo de café.
+        /// </summary>
+        public static string cafe_parou {
+            get {
+                return ResourceManager.GetString("cafe_parou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uso de café.
+        /// </summary>
+        public static string cafe_uso {
+            get {
+                return ResourceManager.GetString("cafe_uso", resourceCulture);
             }
         }
         
@@ -192,6 +255,24 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string consulta_dados_variaveis_codigo {
             get {
                 return ResourceManager.GetString("consulta_dados_variaveis_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consulta Variável.
+        /// </summary>
+        public static string consulta_variavel {
+            get {
+                return ResourceManager.GetString("consulta_variavel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código Consulta Variável.
+        /// </summary>
+        public static string consulta_variavel_codigo {
+            get {
+                return ResourceManager.GetString("consulta_variavel_codigo", resourceCulture);
             }
         }
         
@@ -367,6 +448,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dosagem.
+        /// </summary>
+        public static string dosagem {
+            get {
+                return ResourceManager.GetString("dosagem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editar.
         /// </summary>
         public static string editar {
@@ -390,6 +480,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string escolaridade {
             get {
                 return ResourceManager.GetString("escolaridade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Especialidade.
+        /// </summary>
+        public static string especialidade {
+            get {
+                return ResourceManager.GetString("especialidade", resourceCulture);
             }
         }
         
@@ -439,6 +538,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Estilo de vida.
+        /// </summary>
+        public static string estilo_vida {
+            get {
+                return ResourceManager.GetString("estilo_vida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Excluir.
         /// </summary>
         public static string excluir {
@@ -453,6 +561,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string experiencia_medicamentos {
             get {
                 return ResourceManager.GetString("experiencia_medicamentos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fisioterápico.
+        /// </summary>
+        public static string fitoterapico {
+            get {
+                return ResourceManager.GetString("fitoterapico", resourceCulture);
             }
         }
         
@@ -592,6 +709,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Indicação.
+        /// </summary>
+        public static string indicacao {
+            get {
+                return ResourceManager.GetString("indicacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Instituição.
         /// </summary>
         public static string instituicao {
@@ -628,11 +754,38 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Medicamento não prescrito.
+        /// </summary>
+        public static string medicamento_nao_prescrito {
+            get {
+                return ResourceManager.GetString("medicamento_nao_prescrito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medicamento.
+        /// </summary>
+        public static string medicamento_prescrito {
+            get {
+                return ResourceManager.GetString("medicamento_prescrito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Medicamentos.
         /// </summary>
         public static string medicamentos {
             get {
                 return ResourceManager.GetString("medicamentos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medicamentos anteriores.
+        /// </summary>
+        public static string medicamentos_anteriores {
+            get {
+                return ResourceManager.GetString("medicamentos_anteriores", resourceCulture);
             }
         }
         
@@ -817,6 +970,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Posologia.
+        /// </summary>
+        public static string posologia {
+            get {
+                return ResourceManager.GetString("posologia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Preocupações.
         /// </summary>
         public static string preocupacoes {
@@ -840,6 +1002,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string preocupacoes_resposta_codigo {
             get {
                 return ResourceManager.GetString("preocupacoes_resposta_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prescritor.
+        /// </summary>
+        public static string prescritor {
+            get {
+                return ResourceManager.GetString("prescritor", resourceCulture);
             }
         }
         
@@ -957,6 +1128,33 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string sistema {
             get {
                 return ResourceManager.GetString("sistema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consumo de tabaco.
+        /// </summary>
+        public static string tabaco_consumo {
+            get {
+                return ResourceManager.GetString("tabaco_consumo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parou o consumo de tabaco.
+        /// </summary>
+        public static string tabaco_parou {
+            get {
+                return ResourceManager.GetString("tabaco_parou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uso de tabaco.
+        /// </summary>
+        public static string tabaco_uso {
+            get {
+                return ResourceManager.GetString("tabaco_uso", resourceCulture);
             }
         }
         

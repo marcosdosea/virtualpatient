@@ -1,26 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.MedicamentoNaoPrescritoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+    <%: Resources.Mensagem.medicamento_nao_prescrito %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Index</h2>
+<h2><%: Resources.Mensagem.medicamento_nao_prescrito %></h2>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+    <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
-<table>
+<div class="box-content"> <table class="table table-bordered table-striped">
     <tr>
         <th>
-            Fitoterapico
+            <%: Resources.Mensagem.fitoterapico %>
         </th>
         <th>
-            Dosagem
+          <%: Resources.Mensagem.dosagem %>
         </th>
         <th>
-            Posologia
+            <%: Resources.Mensagem.posologia %>
         </th>
         <th></th>
     </tr>
@@ -37,13 +37,13 @@
             <%: Html.DisplayFor(modelItem => item.Posologia) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
+             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { /* id=item.PrimaryKey */ }) %> |
+            <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { /* id=item.PrimaryKey */ }) %> |
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { /* id=item.PrimaryKey */ }) %>
         </td>
     </tr>
 <% } %>
 
-</table>
+</table></div>
 
 </asp:Content>

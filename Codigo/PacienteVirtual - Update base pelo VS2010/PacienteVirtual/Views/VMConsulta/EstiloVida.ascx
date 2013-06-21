@@ -6,7 +6,7 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <legend>EstiloVidaE</legend>
+    <legend><%: Resources.Mensagem.estilo_vida %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <div class="editor-label">
         <%: Html.LabelFor(model => model.TabacoConsumo) %>

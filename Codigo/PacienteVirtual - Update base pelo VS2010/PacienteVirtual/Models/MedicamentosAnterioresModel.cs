@@ -11,7 +11,7 @@ namespace PacienteVirtual.Models
     {
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "consulta_variavel"/**, ResourceType = typeof(Mensagem)*/)]
+        [Display(Name = "consulta_variavel", ResourceType = typeof(Mensagem))]
         public Int64 IdConsultaVariavel { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -19,15 +19,15 @@ namespace PacienteVirtual.Models
         public Int32 IdMedicamento { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "indicacao"/**, ResourceType = typeof(Mensagem)*/)]
+        [Display(Name = "indicacao", ResourceType = typeof(Mensagem))]
         public string Indicacao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "resposta"/**, ResourceType = typeof(Mensagem)*/)]
+        [Display(Name = "resposta", ResourceType = typeof(Mensagem))]
         public string Resposta { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "periodo"/**, ResourceType = typeof(Mensagem)*/)]
+        [Display(Name = "periodo", ResourceType = typeof(Mensagem))]
         public string Periodo { get; set; }
 
     }

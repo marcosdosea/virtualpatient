@@ -1,47 +1,47 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.EstiloVidaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+ <%: Resources.Mensagem.estilo_vida %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Index</h2>
+<h2> <%: Resources.Mensagem.estilo_vida %></h2>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+    <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
-<table>
+<div class="box-content"> <table class="table table-bordered table-striped">
     <tr>
         <th>
-            TabacoConsumo
+             <%: Resources.Mensagem.tabaco_consumo %>
         </th>
         <th>
-            TabacoUso
+             <%: Resources.Mensagem.tabaco_uso %>
         </th>
         <th>
-            TabacoParou
+             <%: Resources.Mensagem.tabaco_parou %>
         </th>
         <th>
-            CafeConsumo
+             <%: Resources.Mensagem.cafe_consumo %>
         </th>
         <th>
-            CafeUso
+             <%: Resources.Mensagem.cafe_uso %>
         </th>
         <th>
-            CafeParou
+             <%: Resources.Mensagem.cafe_parou %>
         </th>
         <th>
-            AlcoolConsumo
+             <%: Resources.Mensagem.alcool_consumo %>
         </th>
         <th>
-            AlcoolUso
+             <%: Resources.Mensagem.alcool_uso %>
         </th>
         <th>
-            AlcoolTipoBebida
+             <%: Resources.Mensagem.tipo_bebida %>
         </th>
         <th>
-            AlcoolParou
+             <%: Resources.Mensagem.alcool_parou %>
         </th>
         <th></th>
     </tr>
@@ -79,13 +79,13 @@
             <%: Html.DisplayFor(modelItem => item.AlcoolParou) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { id=item.IdConsultaVariavel }) %> |
-            <%: Html.ActionLink("Details", "Details", new { id=item.IdConsultaVariavel }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { id=item.IdConsultaVariavel }) %>
+             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdConsultaVariavel }) %> |
+            <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdConsultaVariavel }) %> |
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdConsultaVariavel }) %>
         </td>
     </tr>
 <% } %>
 
-</table>
+</table></div>
 
 </asp:Content>
