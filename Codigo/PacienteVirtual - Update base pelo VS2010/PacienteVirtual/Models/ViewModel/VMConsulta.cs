@@ -17,6 +17,17 @@ namespace PacienteVirtual.Models.ViewModel
 
         public DiarioPessoalModel diarioPessoal { get; set; }
 
-        //falta estilo_vida, medicamentos_anteriores, Medicamentos_prescritos, medicamentos_não_prescritos
+
+
+        public EstiloVidaModel estilloVida { get; set; }
+
+        public MedicamentosAnterioresModel medicamentosAnteriores { get; set; }
+
+        public MedicamentoPrescritoModel medicamentoPrescrito { get; set; }
+
+        public MedicamentoNaoPrescritoModel medicamentoNaoPrescrito { get; set; }
+
+        public QueixaModel queixa { get; set; }
+ 
     }
 }

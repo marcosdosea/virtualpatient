@@ -63,7 +63,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(RelatoClinicoModel relatoModel)
         {
-            if (relatoModel.IdPaciente != null)
+            if (relatoModel.IdPaciente != -1)
             {
                 ViewBag.fotoId = relatoModel.IdPaciente;
                 ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");

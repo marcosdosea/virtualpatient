@@ -17,9 +17,7 @@
             <%: Html.TextAreaFor(model => model.RelatoTextual, new {@class="span4", @cols = "40", @rows = "28" }) %>
         </div>
          <div class="form-actions">
-        <p>
-            <input type="submit" value="Salvar" />
-        </p>
+            <input class="btn"type="submit" value="Salvar" />
         </div>
     </fieldset>
 <% } %>
