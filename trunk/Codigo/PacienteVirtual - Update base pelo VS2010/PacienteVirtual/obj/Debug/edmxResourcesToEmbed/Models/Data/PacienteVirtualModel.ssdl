@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="pvModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="pvModelStoreContainer">
+    <EntitySet Name="my_aspnet_roles" EntityType="pvModel.Store.my_aspnet_roles" store:Type="Tables" Schema="pv1" />
+    <EntitySet Name="my_aspnet_users" EntityType="pvModel.Store.my_aspnet_users" store:Type="Tables" Schema="pv1" />
+    <EntitySet Name="my_aspnet_usersinroles" EntityType="pvModel.Store.my_aspnet_usersinroles" store:Type="Tables" Schema="pv1" />
     <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.Store.tb_acao_alternativa" store:Type="Tables" Schema="pv1" />
     <EntitySet Name="tb_acao_queixa" EntityType="pvModel.Store.tb_acao_queixa" store:Type="Tables" Schema="pv1" />
     <EntitySet Name="tb_alergia" EntityType="pvModel.Store.tb_alergia" store:Type="Tables" Schema="pv1" />
@@ -28,7 +31,6 @@
     <EntitySet Name="tb_ocupacao" EntityType="pvModel.Store.tb_ocupacao" store:Type="Tables" Schema="pv1" />
     <EntitySet Name="tb_paciente" EntityType="pvModel.Store.tb_paciente" store:Type="Tables" Schema="pv1" />
     <EntitySet Name="tb_parametro_clinico" EntityType="pvModel.Store.tb_parametro_clinico" store:Type="Tables" Schema="pv1" />
-    <EntitySet Name="tb_perfil_usuario" EntityType="pvModel.Store.tb_perfil_usuario" store:Type="Tables" Schema="pv1" />
     <EntitySet Name="tb_pergunta" EntityType="pvModel.Store.tb_pergunta" store:Type="Tables" Schema="pv1" />
     <EntitySet Name="tb_pessoa" EntityType="pvModel.Store.tb_pessoa" store:Type="Tables" Schema="pv1" />
     <EntitySet Name="tb_plano_saude" EntityType="pvModel.Store.tb_plano_saude" store:Type="Tables" Schema="pv1" />
@@ -59,6 +61,10 @@
       <End Role="tb_exames_fisicos" EntitySet="tb_exames_fisicos" />
       <End Role="tb_alergia_exames_fisicos" EntitySet="tb_alergia_exames_fisicos" />
     </AssociationSet>
+    <AssociationSet Name="fk_tb_consulta_parametro_tb_parametro_clinico1" Association="pvModel.Store.fk_tb_consulta_parametro_tb_parametro_clinico1">
+      <End Role="tb_parametro_clinico" EntitySet="tb_parametro_clinico" />
+      <End Role="tb_consulta_parametro" EntitySet="tb_consulta_parametro" />
+    </AssociationSet>
     <AssociationSet Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" Association="pvModel.Store.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1">
       <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
       <End Role="tb_medicamentos_anteriores" EntitySet="tb_medicamentos_anteriores" />
@@ -77,10 +83,6 @@
     </AssociationSet>
     <AssociationSet Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1" Association="pvModel.Store.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_consulta_1">
       <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-      <End Role="tb_consulta_parametro" EntitySet="tb_consulta_parametro" />
-    </AssociationSet>
-    <AssociationSet Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1" Association="pvModel.Store.fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1">
-      <End Role="tb_parametro_clinico" EntitySet="tb_parametro_clinico" />
       <End Role="tb_consulta_parametro" EntitySet="tb_consulta_parametro" />
     </AssociationSet>
     <AssociationSet Name="fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1" Association="pvModel.Store.fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1">
@@ -240,6 +242,32 @@
       <End Role="tb_turma_pessoa_relato" EntitySet="tb_turma_pessoa_relato" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="my_aspnet_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="applicationId" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="my_aspnet_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="applicationId" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="256" />
+    <Property Name="isAnonymous" Type="bool" Nullable="false" />
+    <Property Name="lastActivityDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="my_aspnet_usersinroles">
+    <Key>
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="roleId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="roleId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="tb_acao_alternativa">
     <Key>
       <PropertyRef Name="IdAcaoAlternativa" />
@@ -258,7 +286,7 @@
     <Key>
       <PropertyRef Name="IdAlergia" />
     </Key>
-    <Property Name="IdAlergia" Type="int" Nullable="false" />
+    <Property Name="IdAlergia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Alergia" Type="varchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_alergia_exames_fisicos">
@@ -282,10 +310,10 @@
   <EntityType Name="tb_consulta_parametro">
     <Key>
       <PropertyRef Name="IdConsultaVariavel" />
-      <PropertyRef Name="IdParamentoClinico" />
+      <PropertyRef Name="IdParametroClinico" />
     </Key>
     <Property Name="IdConsultaVariavel" Type="bigint" Nullable="false" />
-    <Property Name="IdParamentoClinico" Type="int" Nullable="false" />
+    <Property Name="IdParametroClinico" Type="int" Nullable="false" />
     <Property Name="Valor" Type="float" />
     <Property Name="ValorReferencia" Type="float" />
     <Property Name="Unidade" Type="varchar" MaxLength="20" />
@@ -323,7 +351,7 @@
     <Key>
       <PropertyRef Name="IdCurso" />
     </Key>
-    <Property Name="IdCurso" Type="int" Nullable="false" />
+    <Property Name="IdCurso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="NomeCurso" Type="varchar" Nullable="false" MaxLength="45" />
     <Property Name="IdInstituicao" Type="int" Nullable="false" />
   </EntityType>
@@ -373,7 +401,7 @@
     <Key>
       <PropertyRef Name="IdEscolaridade" />
     </Key>
-    <Property Name="IdEscolaridade" Type="int" Nullable="false" />
+    <Property Name="IdEscolaridade" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Nivel" Type="varchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_estilo_vida">
@@ -447,7 +475,7 @@
     <Key>
       <PropertyRef Name="IdInstituicao" />
     </Key>
-    <Property Name="IdInstituicao" Type="int" Nullable="false" />
+    <Property Name="IdInstituicao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="NomeInstituicao" Type="varchar" Nullable="false" MaxLength="45" />
     <Property Name="Sigla" Type="varchar" Nullable="false" MaxLength="10" />
   </EntityType>
@@ -497,7 +525,7 @@
     <Key>
       <PropertyRef Name="IdOcupacao" />
     </Key>
-    <Property Name="IdOcupacao" Type="int" Nullable="false" />
+    <Property Name="IdOcupacao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_paciente">
@@ -506,27 +534,20 @@
     </Key>
     <Property Name="IdPaciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="100" />
-    <Property Name="Foto" Type="blob" />
+    <Property Name="Foto" Type="mediumblob" />
   </EntityType>
   <EntityType Name="tb_parametro_clinico">
     <Key>
-      <PropertyRef Name="IdParamentoClinico" />
+      <PropertyRef Name="IdParametroClinico" />
     </Key>
-    <Property Name="IdParamentoClinico" Type="int" Nullable="false" />
+    <Property Name="IdParametroClinico" Type="int" Nullable="false" />
     <Property Name="ParametroClinico" Type="varchar" Nullable="false" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="tb_perfil_usuario">
-    <Key>
-      <PropertyRef Name="IdPerfil" />
-    </Key>
-    <Property Name="IdPerfil" Type="int" Nullable="false" />
-    <Property Name="NomePerfil" Type="varchar" Nullable="false" MaxLength="45" />
   </EntityType>
   <EntityType Name="tb_pergunta">
     <Key>
       <PropertyRef Name="IdPergunta" />
     </Key>
-    <Property Name="IdPergunta" Type="int" Nullable="false" />
+    <Property Name="IdPergunta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Pergunta" Type="varchar" Nullable="false" MaxLength="255" />
   </EntityType>
   <EntityType Name="tb_pessoa">
@@ -540,7 +561,7 @@
     <Key>
       <PropertyRef Name="IdPlanoSaude" />
     </Key>
-    <Property Name="IdPlanoSaude" Type="int" Nullable="false" />
+    <Property Name="IdPlanoSaude" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_queixa">
@@ -592,7 +613,7 @@
     <Key>
       <PropertyRef Name="IdResposta" />
     </Key>
-    <Property Name="IdResposta" Type="int" Nullable="false" />
+    <Property Name="IdResposta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Resposta" Type="varchar" Nullable="false" MaxLength="255" />
     <Property Name="IdPergunta" Type="int" Nullable="false" />
   </EntityType>
@@ -700,6 +721,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_tb_consulta_parametro_tb_parametro_clinico1">
+    <End Role="tb_parametro_clinico" Type="pvModel.Store.tb_parametro_clinico" Multiplicity="1" />
+    <End Role="tb_consulta_parametro" Type="pvModel.Store.tb_consulta_parametro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_parametro_clinico">
+        <PropertyRef Name="IdParametroClinico" />
+      </Principal>
+      <Dependent Role="tb_consulta_parametro">
+        <PropertyRef Name="IdParametroClinico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1">
     <End Role="tb_consulta_variavel" Type="pvModel.Store.tb_consulta_variavel" Multiplicity="1" />
     <End Role="tb_medicamentos_anteriores" Type="pvModel.Store.tb_medicamentos_anteriores" Multiplicity="*" />
@@ -757,18 +790,6 @@
       </Principal>
       <Dependent Role="tb_consulta_parametro">
         <PropertyRef Name="IdConsultaVariavel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_tb_consulta_variavel_has_tb_parametro_clinico_tb_parametro1">
-    <End Role="tb_parametro_clinico" Type="pvModel.Store.tb_parametro_clinico" Multiplicity="1" />
-    <End Role="tb_consulta_parametro" Type="pvModel.Store.tb_consulta_parametro" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_parametro_clinico">
-        <PropertyRef Name="IdParamentoClinico" />
-      </Principal>
-      <Dependent Role="tb_consulta_parametro">
-        <PropertyRef Name="IdParamentoClinico" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
