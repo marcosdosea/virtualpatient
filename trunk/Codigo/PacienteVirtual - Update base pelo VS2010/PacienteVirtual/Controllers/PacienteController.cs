@@ -95,10 +95,12 @@ namespace PacienteVirtual.Controllers
 
         public FileContentResult GetImage(int id)
         {
-            var imageData = GerenciadorPaciente.GetInstance().Obter(id).Foto;
-            if (imageData != null)
-                return File(imageData, "image/jpg");
-
+            if (id != -1)
+            {
+                var imageData = GerenciadorPaciente.GetInstance().Obter(id).Foto;
+                if (imageData != null)
+                    return File(imageData, "image/jpg");
+            }
             // byte[] buffer = System.IO.File.ReadAllBytes("~/Content/themes/pv/img/default-avatar.png");
             byte[] byt = System.IO.File.ReadAllBytes(Server.MapPath("~/Content/themes/pv/img/default-avatar.png"));
             return File(byt, "image/jpg");

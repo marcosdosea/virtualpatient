@@ -103,7 +103,7 @@ namespace PacienteVirtual.Controllers
             return View(relatoModel);
         }
 
-        public FileContentResult GetVideo(int id)
+        /*public FileContentResult GetVideo(int id)
         {
 
             var imageData = GerenciadorRelatoClinico.GetInstance().Obter(id).RelatoVideo;
@@ -111,7 +111,8 @@ namespace PacienteVirtual.Controllers
                 return File(imageData, "video/mp4");
 
             return null;
-        }
+        }*/
+
         //
         // GET: /RelatoClinico/Delete/5
 
