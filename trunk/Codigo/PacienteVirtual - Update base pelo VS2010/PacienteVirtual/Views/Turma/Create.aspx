@@ -32,14 +32,14 @@
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdInstituicao, "Instituições") %>
         </div>
-        <%: Html.DropDownList("IdDisciplina", Resources.Mensagem.selecione)%>
+        <%: Html.DropDownList("IdInstituicao", Resources.Mensagem.selecione)%>
         <!--%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes,"IdInstituicao","NomeInstituicao"), "Selecione")%-->
         <br />
         <div class="editor-label">
             <%: Html.LabelFor(model => model.NomeDisciplina, "Disciplinas") %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdInstituicao", Resources.Mensagem.selecione) %>
+            <%: Html.DropDownList("IdDisciplina", Resources.Mensagem.selecione)%>
             <!--%= Html.DropDownList("IdDisciplina", new SelectList((IEnumerable)ViewBag.Disciplinas,"IdDisciplina","NomeDisciplina"), "Selecione")%-->
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
