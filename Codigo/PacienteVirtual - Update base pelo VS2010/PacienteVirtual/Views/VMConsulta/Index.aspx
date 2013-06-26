@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         Index</h2>
-    <table>
+    <div class="box-content"> <table class="table table-bordered table-striped">
         <tr>
             <th>
                 Id
@@ -51,4 +51,5 @@
         </tr>
         <% } %>
     </table>
+    </div>
 </asp:Content>

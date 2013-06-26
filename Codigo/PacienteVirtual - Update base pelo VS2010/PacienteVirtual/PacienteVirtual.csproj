@@ -86,7 +86,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Mensagem.en.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Mensagem.pt-br1.designer.cs">
+    <Compile Include="App_GlobalResources\Mensagem.pt-br.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Mensagem.pt-br.resx</DependentUpon>
@@ -254,10 +254,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\Mensagem.pt-br.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Mensagem.pt-br1.designer.cs</LastGenOutput>
-    </Content>
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\en\PacienteVirtual.resources.dll" />
     <Content Include="bin\Html5MVCWebControls.dll" />
@@ -298,6 +294,7 @@
     <Content Include="Content\themes\pv\css\colorpicker.css" />
     <Content Include="Content\themes\pv\css\datepicker.css" />
     <Content Include="Content\themes\pv\css\imperio.css" />
+    <Content Include="Content\themes\pv\img\logo.png" />
     <Content Include="Content\themes\pv\img\alpha.png" />
     <Content Include="Content\themes\pv\img\avatar.jpg" />
     <Content Include="Content\themes\pv\img\default-avatar.png" />
@@ -348,9 +345,11 @@
     <Content Include="Content\themes\pv\img\icons\user_add.png" />
     <Content Include="Content\themes\pv\img\icons\user_remove.png" />
     <Content Include="Content\themes\pv\img\icons\warning_sign.png" />
-    <Content Include="Content\themes\pv\img\logo.png" />
+    <Content Include="Content\themes\pv\img\ufs.png" />
     <Content Include="Content\themes\pv\img\saturation.png" />
     <Content Include="Content\themes\pv\img\switch.gif" />
+    <Content Include="Content\themes\pv\img\ufs2.png" />
+    <Content Include="Content\themes\pv\img\ufs3.png" />
     <Content Include="Content\themes\pv\js\bootstrap-colorpicker.js" />
     <Content Include="Content\themes\pv\js\bootstrap-datepicker.js" />
     <Content Include="Content\themes\pv\js\bootstrap.js" />
@@ -631,9 +630,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_GlobalResources\Mensagem.pt-br.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Mensagem.pt-br.designer.cs</LastGenOutput>
+    </Content>
     <EmbeddedResource Include="App_GlobalResources\Mensagem.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagem.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -10,9 +10,13 @@
     <h2><%: ViewBag.Message %></h2>
     <p>
     <%: Resources.Mensagem.teste %> <!-- Exemplo internacionalização -->
+           <br />  
+    <%: Resources.Mensagem.nome %>
         <br />  
+               <br />  
     <%: ViewData["nome"] %>
         To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
     </p>
-
+<input class="btn btn-primary btn-large" type="submit" value="Login" />
+</div>
 </asp:Content>
