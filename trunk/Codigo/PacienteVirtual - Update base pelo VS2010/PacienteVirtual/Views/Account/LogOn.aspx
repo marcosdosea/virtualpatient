@@ -40,9 +40,9 @@
                     <%: Html.LabelFor(m => m.RememberMe) %>
                 </div>
                 
-                <p>
-                    <input type="submit" value="Log On" />
-                </p>
+            <div class="form-actions">
+                <input class="btn" type="submit" value="Log On" />
+            </div>
             </fieldset>
         </div>
     <% } %>

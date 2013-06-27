@@ -4992,7 +4992,22 @@ footer,
 
 .footer {
 
-    background-color: rgb(44, 44, 44);
-    border-top: 0px solid rgb(44, 44, 44);
+    background-color: rgb(0, 0, 0);
+    border-top: 0px solid rgb(0, 0, 0);
     border-bottom: 0px solid rgb(44, 44, 44);
+}
+
+a.bandeira-brasil
+{
+    background-image: url(../img/icons/Flag_of_Brazil.png) no-repeat top left;
+     display: block;
+     width: 55px;
+     height: 56px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.bandeira
+{
+    color: #FFF;
+    background: url(../img/icons/United_Kingdom_Flag.png) no-repeat ;
 }

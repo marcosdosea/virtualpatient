@@ -46,9 +46,9 @@
                     <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
                 </div>
                 
-                <p>
-                    <input type="submit" value="Change Password" />
-                </p>
+            <div class="form-actions">
+                <input class="btn" type="submit" value="Change Password" />
+            </div>
             </fieldset>
         </div>
     <% } %>

@@ -50,9 +50,9 @@ function readURL(input) {
             <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" />
             <%: Html.ValidationMessageFor(model => model.Foto)%>
         </div>
-        <p>
-            <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
-        </p>
+    <div class="form-actions">
+        <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+    </div>
         <div class="progress progress-info progress-striped active ">
 <div class="bar" style="width: 100%"></div>
 </div>

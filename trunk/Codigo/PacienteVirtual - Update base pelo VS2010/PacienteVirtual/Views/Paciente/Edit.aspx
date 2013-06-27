@@ -44,9 +44,9 @@
             
         <img class="media" id="PreviewDaImagem" src="" alt="Definir Imagem Padrão" style="width: 250px;
             height: 250px;" />
-        <p>
-            <input type="submit" value="Save" />
-        </p>
+    <div class="form-actions">
+        <input class="btn" type="submit" value="Save" />
+    </div>
     </fieldset>
     <% } %>
     <div>

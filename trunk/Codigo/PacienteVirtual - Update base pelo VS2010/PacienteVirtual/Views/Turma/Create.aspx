@@ -44,9 +44,9 @@
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
         <div class="form-actions">
-            <p>
-                <input type="submit" class="btn" value="<%: Resources.Mensagem.salvar %>" />
-            </p>
+        <div class="form-actions">
+            <input class="btn" type="submit" class="btn" value="<%: Resources.Mensagem.salvar %>" />
+        </div>
         </div>
     </fieldset>
     <% } %>

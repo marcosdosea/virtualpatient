@@ -54,9 +54,9 @@
                     <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
                 </div>
                 
-                <p>
-                    <input type="submit" value="Register" />
-                </p>
+            <div class="form-actions">
+                <input class="btn" type="submit" value="Register" />
+            </div>
             </fieldset>
         </div>
     <% } %>
