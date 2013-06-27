@@ -27,14 +27,19 @@
     <script type="text/javascript" src="../../Content/themes/pv/js/imperio.general.js"></script>
 </head>
 <body>
+      
+<%= Html.ActionLink("Português", "ChangeCulture", "Account", new { lang = "pt-br", returnUrl = this.Request.RawUrl }, null)%>
+
+<%= Html.ActionLink("English", "ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl }, null)%>
+
     <div>
         <header class="container">
             <div id="title">
-               <br />
+                <br />
                 <a href="<%: Url.Action("Index", "Home")%>">
-                 <img style="width:190px; height:101px;" alt="Noob" src="../../Content/themes/pv/img/logo.png" />
-                     <!--h1>< %: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1-->
-                    </a>
+                    <img style="width: 190px; height: 101px;" alt="Noob" src="../../Content/themes/pv/img/logo.png" />
+                    <!--h1>< %: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1-->
+                </a>
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogOnUserControl"); %>
@@ -73,22 +78,24 @@
                         </nav>
                     </div>
                     <div class="nav-collapse collapse">
-                        <ul class="nav" role="menu">
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Pacientes <b
-                                class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <%: Html.ActionLink("Listar", "Index", "Paciente")%></li>
-                                    <li>
-                                        <%: Html.ActionLink("Criar", "Create", "Paciente")%></li>
-                                    <li>
-                                        <%: Html.ActionLink("Editar", "Edit", "Paciente")%></li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <%: Html.ActionLink("Excluir", "Delete", "Paciente")%></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <nav class="nav">
+                            <ul class="nav" role="menu" aria-labelledby="dropdownMenu">
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Paciente
+                                    <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <%: Html.ActionLink("Listar", "Index", "Paciente")%></li>
+                                        <li>
+                                            <%: Html.ActionLink("Criar", "Create", "Paciente")%></li>
+                                        <li>
+                                            <%: Html.ActionLink("Editar", "Edit", "Paciente")%></li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink("Excluir", "Delete", "Paciente")%></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
@@ -155,7 +162,7 @@
                 <div class="span3">
                     <div class="icon-star">
                     </div>
-                    Paciente Virtual    
+                    Paciente Virtual
                     <img alt="imagem" src="../../Content/themes/pv/img/ufs.png" />
                 </div>
             </div>

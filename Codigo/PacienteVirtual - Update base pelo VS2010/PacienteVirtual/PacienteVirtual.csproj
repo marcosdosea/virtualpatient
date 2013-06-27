@@ -76,15 +76,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Mensagem.en.designer.cs">
+      <DependentUpon>Mensagem.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_GlobalResources\Mensagem.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Mensagem.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Mensagem.en.designer.cs">
+    <Compile Include="App_GlobalResources\_Mensagem.en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Mensagem.en.resx</DependentUpon>
+      <DependentUpon>_Mensagem.en.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Mensagem.pt-br.designer.cs">
       <AutoGen>True</AutoGen>
@@ -627,6 +632,11 @@
     <EmbeddedResource Include="App_GlobalResources\Mensagem.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagem.en.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\_Mensagem.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Mensagem.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

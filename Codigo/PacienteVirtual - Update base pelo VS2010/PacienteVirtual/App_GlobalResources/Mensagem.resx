@@ -280,7 +280,7 @@
     <value>Descrição</value>
   </data>
   <data name="estado_preenchimento" xml:space="preserve">
-    <value>Estado de Preencimento</value>
+    <value>Estado de Preenchimento</value>
   </data>
   <data name="grupo_atividades" xml:space="preserve">
     <value>Grupos Atividades</value>
@@ -427,7 +427,7 @@
     <value>Níve de Dificuldade</value>
   </data>
   <data name="ordem_cronologica" xml:space="preserve">
-    <value>Ordem Cornológica</value>
+    <value>Ordem Cronológica</value>
   </data>
   <data name="relato_clinico" xml:space="preserve">
     <value>Relato Clínico</value>

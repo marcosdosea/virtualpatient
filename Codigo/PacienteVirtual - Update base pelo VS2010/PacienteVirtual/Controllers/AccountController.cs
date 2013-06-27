@@ -9,6 +9,7 @@ using PacienteVirtual.Models;
 using System.Data;
 using System.Data.Entity;
 using PacienteVirtual.Models.Data;
+using System.Globalization;
 
 namespace PacienteVirtual.Controllers
 {
@@ -182,5 +183,17 @@ namespace PacienteVirtual.Controllers
             }
         }
         #endregion
+
+        //Método necessário para alteração da Linguagem da aplicação
+        public ActionResult ChangeCulture(string lang, string returnUrl)
+        {
+
+            Session["Culture"] = new CultureInfo(lang);
+
+            return Redirect(returnUrl);
+
+        }
+
     }
+
 }
