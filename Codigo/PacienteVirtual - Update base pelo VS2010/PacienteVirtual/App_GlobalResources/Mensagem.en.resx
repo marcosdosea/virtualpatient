@@ -160,7 +160,7 @@
     <value>Delete</value>
   </data>
   <data name="experiencia_medicamentos" xml:space="preserve">
-    <value>Experiment with Drugs</value>
+    <value>Experiment with Medications</value>
   </data>
   <data name="genero" xml:space="preserve">
     <value>Gender</value>
@@ -503,5 +503,20 @@
   </data>
   <data name="medicamento_prescrito" xml:space="preserve">
     <value>Medication Prescribed</value>
+  </data>
+  <data name="listar" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="sobre" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="cadastros" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="paciente_virtual" xml:space="preserve">
+    <value>Virtual Patient</value>
   </data>
 </root>

@@ -99,9 +99,9 @@
             <%: Html.EditorFor(model => model.AtencaoComportamento) %>
             <%: Html.ValidationMessageFor(model => model.AtencaoComportamento) %>
         </div>
-        <p>
-            <input type="submit" value= "<%: Resources.Mensagem.criar%>" />
-        </p>
+    <div class="form-actions">
+        <input class="btn" type="submit" value= "<%: Resources.Mensagem.criar%>" />
+    </div>
     </fieldset>
     <% } %>
     <div>

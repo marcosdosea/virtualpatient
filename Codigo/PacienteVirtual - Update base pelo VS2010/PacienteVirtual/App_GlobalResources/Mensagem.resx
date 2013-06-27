@@ -504,4 +504,19 @@
   <data name="medicamento_prescrito" xml:space="preserve">
     <value>Medicamento</value>
   </data>
+  <data name="listar" xml:space="preserve">
+    <value>Listar</value>
+  </data>
+  <data name="sobre" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="usuario" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="cadastros" xml:space="preserve">
+    <value>Cadastros</value>
+  </data>
+  <data name="paciente_virtual" xml:space="preserve">
+    <value>Paciente Virtual</value>
+  </data>
 </root>

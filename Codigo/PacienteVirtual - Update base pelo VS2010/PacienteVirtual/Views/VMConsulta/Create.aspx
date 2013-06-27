@@ -74,9 +74,9 @@
             </div>
         </div>
         <!--div class="span3 bottom">
-            <p>
-                <input type="submit" value="Save" />
-            </p>
+        <div class="form-actions">
+            <input class="btn" type="submit" value="Save" />
+        </div>
         </div-->
     </fieldset>
     <% } %>

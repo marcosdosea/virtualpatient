@@ -22,9 +22,9 @@
 
         <%: Html.HiddenFor(model => model.IdRelato) %>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
+    <div class="form-actions">
+        <input class="btn" type="submit" value="Save" />
+    </div>
     </fieldset>
 <% } %>
 

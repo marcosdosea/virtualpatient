@@ -50,9 +50,9 @@
             <%: Html.EditorFor(model => model.EstadoPreenchimento) %>
             <%: Html.ValidationMessageFor(model => model.EstadoPreenchimento) %>
         </div>
-        <p>
-            <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
-        </p>
+    <div class="form-actions">
+        <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+    </div>
     </fieldset>
     <% } %>
     <div>

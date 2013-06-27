@@ -93,9 +93,9 @@
             <%: Html.DropDownList("IdPlanoSaude", Resources.Mensagem.selecione) %>
             <%: Html.ValidationMessageFor(model => model.IdPlanoSaude) %>
         </div>
-        <p>
-            <input type="submit" value="<%: Resources.Mensagem.criar %>" />
-        </p>
+    <div class="form-actions">
+        <input class="btn" type="submit" value="<%: Resources.Mensagem.criar %>" />
+    </div>
     </fieldset>
     <% } %>
     <div>

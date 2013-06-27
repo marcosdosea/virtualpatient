@@ -72,9 +72,9 @@
             <%: Html.ValidationMessageFor(model => model.tpUsuario) %>
         </div>
 
-        <p>
-            <input type="submit" value="Cadastrar" />
-        </p>
+    <div class="form-actions">
+        <input class="btn" type="submit" value="Cadastrar" />
+    </div>
     </fieldset>
     <% } %>
 

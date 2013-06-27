@@ -124,6 +124,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cadastros.
+        /// </summary>
+        public static string cadastros {
+            get {
+                return ResourceManager.GetString("cadastros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consumo de café.
         /// </summary>
         public static string cafe_consumo {
@@ -745,6 +754,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Listar.
+        /// </summary>
+        public static string listar {
+            get {
+                return ResourceManager.GetString("listar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Código Medicamento.
         /// </summary>
         public static string medicamento_codigo {
@@ -903,6 +921,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string paciente_pessoa_turma {
             get {
                 return ResourceManager.GetString("paciente_pessoa_turma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paciente Virtual.
+        /// </summary>
+        public static string paciente_virtual {
+            get {
+                return ResourceManager.GetString("paciente_virtual", resourceCulture);
             }
         }
         
@@ -1132,6 +1159,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sobre.
+        /// </summary>
+        public static string sobre {
+            get {
+                return ResourceManager.GetString("sobre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consumo de tabaco.
         /// </summary>
         public static string tabaco_consumo {
@@ -1209,6 +1245,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string tutor_comentarios {
             get {
                 return ResourceManager.GetString("tutor_comentarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuário.
+        /// </summary>
+        public static string usuario {
+            get {
+                return ResourceManager.GetString("usuario", resourceCulture);
             }
         }
         
