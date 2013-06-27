@@ -1,6 +1,6 @@
 ﻿<%@ Control  Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.CursoModel>" %>
 
-    <h2><%: Resources.Mensagem.criar%></h2>
+    <h2><%: Resources.Mensagem.criar %></h2>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>

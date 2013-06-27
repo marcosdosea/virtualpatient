@@ -7,7 +7,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset >
-        <legend>DemograficosAntropometricosModel</legend>
+        <legend><%: Resources.Mensagem.demografico_antropometricos %></legend>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdConsultaFixo) %>
@@ -114,12 +114,12 @@
         </div>
         <div class="form-actions">
         <p>
-            <input class="btn btn-large" type="submit" value="Create" />
+            <input class="btn btn-large" type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </p>
         </div>
     </fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Index")%>
 </div>

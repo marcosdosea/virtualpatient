@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ViewModel.VMPaciente>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Edit
+    <%: Resources.Mensagem.editar %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>
-        Edit</h2>
+    <h2><%: Resources.Mensagem.editar %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
@@ -13,7 +12,7 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <%: ViewBag.ab %>
+        <!-- <%: ViewBag.ab %> -->
         <legend>VMPaciente</legend>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.quantRelatos) %>
