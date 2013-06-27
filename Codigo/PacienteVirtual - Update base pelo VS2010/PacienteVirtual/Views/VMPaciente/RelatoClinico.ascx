@@ -7,7 +7,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>RelatoClinicoModel</legend>
+        <legend><%: Resources.Mensagem.relato_clinico %></legend>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.RelatoTextual) %>
@@ -18,11 +18,11 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </p>
     </fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
 </div>

@@ -60,7 +60,7 @@ namespace PacienteVirtual.Controllers
 
             
             //vmPaciente.relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(id);
-            ViewBag.ab = "aD";
+            //ViewBag.ab = "aD";
             return View(vmPaciente);
         }
 
