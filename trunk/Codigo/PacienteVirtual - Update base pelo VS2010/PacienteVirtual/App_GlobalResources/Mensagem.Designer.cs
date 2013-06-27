@@ -529,7 +529,7 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Estado de Preencimento.
+        ///   Looks up a localized string similar to Estado de Preenchimento.
         /// </summary>
         public static string estado_preenchimento {
             get {
@@ -871,7 +871,7 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ordem Cornológica.
+        ///   Looks up a localized string similar to Ordem Cronológica.
         /// </summary>
         public static string ordem_cronologica {
             get {
