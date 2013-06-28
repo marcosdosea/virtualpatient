@@ -7,7 +7,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>RelatoClinicoModel</legend>
+        <legend><%: Resources.Mensagem.relato_clinico %></legend>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.RelatoTextual) %>
@@ -17,7 +17,7 @@
             <%: Html.TextAreaFor(model => model.RelatoTextual, new {@class="span4", @cols = "40", @rows = "28" }) %>
         </div>
          <div class="form-actions">
-            <input class="btn"type="submit" value="Salvar" />
+            <input class="btn"type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </div>
     </fieldset>
 <% } %>

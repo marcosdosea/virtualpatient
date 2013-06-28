@@ -916,6 +916,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nome do Paciente.
+        /// </summary>
+        public static string paciente_nome {
+            get {
+                return ResourceManager.GetString("paciente_nome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paciente Pessoa Turma.
         /// </summary>
         public static string paciente_pessoa_turma {

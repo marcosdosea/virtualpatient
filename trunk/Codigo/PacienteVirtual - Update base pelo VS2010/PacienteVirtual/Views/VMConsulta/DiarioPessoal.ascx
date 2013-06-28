@@ -7,7 +7,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>DiarioPessoalModel</legend>
+        <legend><%: Resources.Mensagem.diario_pessoal %></legend>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.IdConsultaFixo) %>
@@ -57,7 +57,7 @@
             <%: Html.ValidationMessageFor(model => model.TipoBebida) %>
         </div>
     <div class="form-actions">
-        <input class="btn" type="submit" value="Salvar" />
+        <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>
     </fieldset>
 <% } %>

@@ -519,4 +519,7 @@
   <data name="paciente_virtual" xml:space="preserve">
     <value>Paciente Virtual</value>
   </data>
+  <data name="paciente_nome" xml:space="preserve">
+    <value>Nome do Paciente</value>
+  </data>
 </root>

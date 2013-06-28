@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ViewModel.VMConsulta>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Create
+    <%: Resources.Mensagem.consulta %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Create</h2>
+        <%: Resources.Mensagem.consulta %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
@@ -32,7 +32,7 @@
                 <div class="span2">
                     <div class="thumbnail right">
                         <blockquote>
-                            Nome do Paciente
+                            <%: Resources.Mensagem.nome %>
                         </blockquote>
                     </div>
                 </div>
@@ -53,9 +53,9 @@
                 <div class="tabbable">
                     <!-- Only required for left/right tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1-1" data-toggle="tab">Demográficos Antropomédicos</a></li>
-                           <li><a href="#tab1-2" data-toggle="tab">Experiência Medicamentos</a></li>
-                        <li><a href="#tab1-3" data-toggle="tab">Diário Pessoal</a></li>
+                        <li class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.demografico_antropometricos %></a></li>
+                           <li><a href="#tab1-2" data-toggle="tab"><%: Resources.Mensagem.experiencia_medicamentos %></a></li>
+                        <li><a href="#tab1-3" data-toggle="tab"><%: Resources.Mensagem.diario_pessoal %></a></li>
                      
                     </ul>
                     <div class="tab-content">
@@ -84,10 +84,10 @@
                 <div class="tabbable">
                     <!-- Only required for left/right tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab2-1" data-toggle="tab">Estilo de Vida</a></li>
-                           <li><a href="#tab2-2" data-toggle="tab">Medicamentos Anteriores</a></li>
-                        <li><a href="#tab2-3" data-toggle="tab">Medicamentos Prescritos</a></li>
-                     <li><a href="#tab2-4" data-toggle="tab">Medicamentos Não Prescritos</a></li>
+                        <li class="active"><a href="#tab2-1" data-toggle="tab"><%: Resources.Mensagem.estilo_vida %></a></li>
+                           <li><a href="#tab2-2" data-toggle="tab"><%: Resources.Mensagem.medicamentos_anteriores %></a></li>
+                        <li><a href="#tab2-3" data-toggle="tab"><%: Resources.Mensagem.medicamento_prescrito %></a></li>
+                     <li><a href="#tab2-4" data-toggle="tab"><%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
@@ -123,6 +123,6 @@
     </fieldset>
     <% } %>
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </div>
   </asp:Content>
