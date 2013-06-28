@@ -496,7 +496,7 @@
     <value>Lifestyle</value>
   </data>
   <data name="medicamentos_anteriores" xml:space="preserve">
-    <value>Previuos Medications</value>
+    <value>Previous Medications</value>
   </data>
   <data name="medicamento_nao_prescrito" xml:space="preserve">
     <value>Medication not Prescribed</value>
