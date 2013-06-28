@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.RelatoClinicoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Listar
+    <%: Resources.Mensagem.listar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Listar</h2>
+<h2><%: Resources.Mensagem.listar %></h2>
 
 <p>
     <%: Html.ActionLink("Create New", "Create") %>
@@ -14,22 +14,22 @@
     <div class="box-content"> <table class="table table-bordered table-striped">
     <tr>
         <th>
-            IdRelato
+            <%: Resources.Mensagem.relato_codigo %>
         </th>
         <th>
-            IdPaciente
+            <%: Resources.Mensagem.paciente_codigo %>
         </th>
         <th>
-            NomePaciente
+            <%: Resources.Mensagem.paciente_nome %>
         </th>
         <th>
-            OrdemCronologica
+            <%: Resources.Mensagem.ordem_cronologica %>
         </th>
         <th>
-            RelatoTextual
+            <%: Resources.Mensagem.relato_textual %>
         </th>
         <th>
-            NivelDificuldade
+            <%: Resources.Mensagem.nivel_dificuldade %>
         </th>
         <th></th>
     </tr>

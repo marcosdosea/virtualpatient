@@ -1,27 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.ViewModel.VMConsulta>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+    <%: Resources.Mensagem.consulta %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Index</h2>
+        <%: Resources.Mensagem.consulta %></h2>
     <div class="box-content"> <table class="table table-bordered table-striped">
         <tr>
             <th>
-                Id
+                <%: Resources.Mensagem.codigo %>
             </th>
             <th>
-                nome
+                <%: Resources.Mensagem.nome %>
             </th>
             <th>
-                foto
+                <%: Resources.Mensagem.foto %>
             </th>
             <th>
-                Relatos
+                <%: Resources.Mensagem.relato_clinico %>
             </th>
             <th>
-                Consultas
+                <%: Resources.Mensagem.consulta %>
             </th>
         </tr>
         <% foreach (var item in Model)
