@@ -49,8 +49,7 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 consultafixoModel.IdConsultaFixo = gConsultaFixo.Inserir(consultafixoModel);
-                return RedirectToAction("Create", "DemograficosAntropomedicos", consultafixoModel);
-                //return RedirectToAction("Index");  
+                return RedirectToAction("Create", "DemograficosAntropomedicos", consultafixoModel);  
             }
 
             return View(consultafixoModel);

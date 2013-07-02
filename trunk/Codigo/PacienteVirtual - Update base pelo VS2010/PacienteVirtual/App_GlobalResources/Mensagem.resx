@@ -522,4 +522,16 @@
   <data name="paciente_nome" xml:space="preserve">
     <value>Nome do Paciente</value>
   </data>
+  <data name="codigo_paciente" xml:space="preserve">
+    <value>Código do Paciente</value>
+  </data>
+  <data name="nome_paciente" xml:space="preserve">
+    <value>Nome do Paciente</value>
+  </data>
+  <data name="relato_texto" xml:space="preserve">
+    <value>Relato em Texto</value>
+  </data>
+  <data name="relato_video" xml:space="preserve">
+    <value>Relato em Vídeo</value>
+  </data>
 </root>

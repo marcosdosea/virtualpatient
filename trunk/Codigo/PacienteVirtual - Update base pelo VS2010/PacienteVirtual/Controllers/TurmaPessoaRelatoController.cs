@@ -30,7 +30,6 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(int id)
         {
-            //TurmaPessoaRelatoModel TurmaPessoaRelatoModel = db.tb_turma_pessoa_relato.Single(t => t.IdTurma == id);
             return View();
         }
 
@@ -44,18 +43,14 @@ namespace PacienteVirtual.Controllers
 
             return View();
         }
+       
         //
         // POST: /TurmaPessoaRelato/Create
-       // protected void Foo_DataBound(object sender, EventArgs e)
-      //  {
-        //      GerenciadorPessoa.GetInstance().ObterTodos().DataBind();
-       // }
         [HttpPost]
         public ActionResult Create(TurmaPessoaRelatoModel TurmaPessoaRelatoModel)
         {
             if (ModelState.IsValid)
             {
-               // db.TurmaPessoaRelatoModel.AddObject(TurmaPessoaRelatoModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
             }
@@ -68,7 +63,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Edit(int id)
         {
-            //TurmaPessoaRelatoModel TurmaPessoaRelatoModel = db.TurmaPessoaRelatoModel.Single(t => t.IdTurma == id);
             return View();
         }
 
@@ -80,7 +74,6 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.TurmaPessoaRelatoModel.Attach(TurmaPessoaRelatoModel);
                 db.ObjectStateManager.ChangeObjectState(TurmaPessoaRelatoModel, EntityState.Modified);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -93,7 +86,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(int id)
         {
-            //TurmaPessoaRelatoModel TurmaPessoaRelatoModel = db.TurmaPessoaRelatoModel.Single(t => t.IdTurma == id);
             return View();
         }
 
@@ -103,8 +95,6 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            //TurmaPessoaRelatoModel TurmaPessoaRelatoModel = db.TurmaPessoaRelatoModel.Single(t => t.IdTurma == id);
-            //db.TurmaPessoaRelatoModel.DeleteObject(TurmaPessoaRelatoModel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

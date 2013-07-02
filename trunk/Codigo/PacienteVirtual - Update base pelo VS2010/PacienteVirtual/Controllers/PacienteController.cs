@@ -47,14 +47,6 @@ namespace PacienteVirtual.Controllers
             btnSomeButton.Text = "I was clicked!";
         }
 
-        /*protected void btnPreview_Click(object sender, EventArgs e)
-        {
-
-            Session["ImageBytes"] = PhotoUpload.FileBytes;
-
-            ImagePreview.ImageUrl = "~/ImageHandler.ashx";
-
-        }*/
         //
         // POST: /Paciente/Create
 
@@ -101,7 +93,6 @@ namespace PacienteVirtual.Controllers
                 if (imageData != null)
                     return File(imageData, "image/jpg");
             }
-            // byte[] buffer = System.IO.File.ReadAllBytes("~/Content/themes/pv/img/default-avatar.png");
             byte[] byt = System.IO.File.ReadAllBytes(Server.MapPath("~/Content/themes/pv/img/default-avatar.png"));
             return File(byt, "image/jpg");
         }
@@ -153,7 +144,6 @@ namespace PacienteVirtual.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            //db.Dispose();
             base.Dispose(disposing);
         }
 

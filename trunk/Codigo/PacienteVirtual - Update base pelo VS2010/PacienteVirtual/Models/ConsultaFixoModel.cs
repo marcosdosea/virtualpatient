@@ -17,12 +17,10 @@ namespace PacienteVirtual.Models
         public long IdConsultaFixo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        //[LocalizarDisplayNomeAtributo("teste", NameResourceType = typeof(Mensagem))] // //Exemplo 1
         [Display(Name = "turma_codigo", ResourceType = typeof(Mensagem))]
         public int IdTurma { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        //[LocalizarDisplayNomeAtributo("teste", NameResourceType = typeof(Mensagem))] // //Exemplo 1
         [Display(Name = "pessoa_codigo", ResourceType = typeof(Mensagem))]
         public int IdPessoa { get; set; }
 
@@ -31,7 +29,7 @@ namespace PacienteVirtual.Models
         public string EstadoPreenchimento { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "eh_gabarito", ResourceType = typeof(Mensagem))] //Exemplo 2
+        [Display(Name = "eh_gabarito", ResourceType = typeof(Mensagem))] 
         public bool EhGabarito { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

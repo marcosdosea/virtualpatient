@@ -44,7 +44,7 @@
             </td>
             <td>
            
-            
+                <%: Html.DisplayFor(modelItem => item.RelatoVideo) %>
             </td>
             <td>
       

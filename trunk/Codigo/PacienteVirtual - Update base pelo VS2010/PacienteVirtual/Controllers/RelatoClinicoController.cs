@@ -45,7 +45,6 @@ namespace PacienteVirtual.Controllers
                 if (imageData != null)
                     return File(imageData, "image/jpg");
             }
-            // byte[] buffer = System.IO.File.ReadAllBytes("~/Content/themes/pv/img/default-avatar.png");
             byte[] byt = System.IO.File.ReadAllBytes(Server.MapPath("~/Content/themes/pv/img/default-avatar.png"));
             return File(byt, "image/jpg");
         }
@@ -102,16 +101,6 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
             return View(relatoModel);
         }
-
-        /*public FileContentResult GetVideo(int id)
-        {
-
-            var imageData = GerenciadorRelatoClinico.GetInstance().Obter(id).RelatoVideo;
-            if (imageData != null)
-                return File(imageData, "video/mp4");
-
-            return null;
-        }*/
 
         //
         // GET: /RelatoClinico/Delete/5
