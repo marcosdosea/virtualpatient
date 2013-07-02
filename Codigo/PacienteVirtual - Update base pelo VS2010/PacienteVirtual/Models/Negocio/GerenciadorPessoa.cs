@@ -144,6 +144,7 @@ namespace PacienteVirtual.Models.Negocio
         {
             //_pessoaE.IdPessoa = pessoa.IdPessoa;
             _pessoaE.Nome = pessoa.Nome;
+            
         }
     }
 }
