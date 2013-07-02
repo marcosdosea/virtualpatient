@@ -46,8 +46,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel");
             ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao");
             ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome");
-            //ViewBag.ig = consultaFixo.IdConsultaFixo;
-
+            
             DemograficosAntropometricosModel d = new DemograficosAntropometricosModel();
             d.IdConsultaFixo = consultaFixo.IdConsultaFixo;
             return View(d); 
@@ -61,9 +60,7 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.tb_demograficos_antropometricos.AddObject(tb_demograficos_antropometricos);
-                //db.SaveChanges();
-               demograficosAntropometricosModel.IdConsultaFixo = gDemoAntrop.Inserir(demograficosAntropometricosModel);
+                demograficosAntropometricosModel.IdConsultaFixo = gDemoAntrop.Inserir(demograficosAntropometricosModel);
                 return RedirectToAction("Index","ConsultaFixo");  
             }
 
@@ -79,7 +76,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Edit(long id)
         {
-           // DemograficosAntropometricosE tb_demograficos_antropometricos = db.tb_demograficos_antropometricos.Single(t => t.IdConsultaFixo == id);
             DemograficosAntropometricosModel demoAntro = gDemoAntrop.Obter(id);
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", demoAntro.IdConsultaFixo);
             ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel",demoAntro.IdEscolaridade);
@@ -97,9 +93,6 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.tb_demograficos_antropometricos.Attach(tb_demograficos_antropometricos);
-                //db.ObjectStateManager.ChangeObjectState(tb_demograficos_antropometricos, EntityState.Modified);
-                //db.SaveChanges();
                 gDemoAntrop.Atualizar(demoAntro);
                 
                 return RedirectToAction("Index");
@@ -117,7 +110,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(long id)
         {
-            //DemograficosAntropometricosE tb_demograficos_antropometricos = db.tb_demograficos_antropometricos.Single(t => t.IdConsultaFixo == id);
             return View(gDemoAntrop.Obter(id));
         }
 
@@ -127,16 +119,12 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(long id)
         {
-            //DemograficosAntropometricosE tb_demograficos_antropometricos = db.tb_demograficos_antropometricos.Single(t => t.IdConsultaFixo == id);
-            //db.tb_demograficos_antropometricos.DeleteObject(tb_demograficos_antropometricos);
-            //db.SaveChanges();
             gDemoAntrop.Remover(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            //db.Dispose();
             base.Dispose(disposing);
         }
     }

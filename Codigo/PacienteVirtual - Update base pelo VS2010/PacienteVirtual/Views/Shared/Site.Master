@@ -34,7 +34,7 @@
                 <div class="span9">
                     <a href="<%: Url.Action("Index", "Home")%>">
                     <!--style="width: 190px; height: 101px;"-->
-                        <img  alt="logo" src="../../Content/themes/pv/img/logo.png" />
+                        <img  alt="logo" src="../../Content/themes/pv/img/logo5.png" />
                         <!--h1>< %: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1-->
                     </a>
                     <!--

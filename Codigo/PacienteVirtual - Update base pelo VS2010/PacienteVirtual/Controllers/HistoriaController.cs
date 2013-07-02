@@ -51,8 +51,6 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.tb_historia.AddObject(tb_historia);
-               // db.SaveChanges();
                 historiaModel.IdConsultaFixo = gHistoria.Inserir(historiaModel);
                 return RedirectToAction("Index");  
             }
@@ -66,7 +64,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Edit(long id)
         {
-            //HistoriaE tb_historia = db.tb_historia.Single(t => t.IdConsultaFixo == id);
             HistoriaModel historiaModel = gHistoria.Obter(id);
             ViewBag.IdConsultaFixo = new SelectList(gConsultaFixo.ObterTodos().ToList(), "IdConsultaFixo", "IdConsultaFixo", historiaModel.IdConsultaFixo);
 
@@ -108,7 +105,6 @@ namespace PacienteVirtual.Controllers
 
         protected override void Dispose(bool disposing)
         {
-           // db.Dispose();
             base.Dispose(disposing);
         }
     }

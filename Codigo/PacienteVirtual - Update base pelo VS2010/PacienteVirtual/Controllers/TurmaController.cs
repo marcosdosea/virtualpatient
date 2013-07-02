@@ -55,8 +55,6 @@ namespace PacienteVirtual.Controllers
                 turmaModel.IdTurma = gTurma.Inserir(turmaModel);
                 return RedirectToAction("Index");
             }
-
-            //ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
             ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
             ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina"); 
             return View(turmaModel);
@@ -77,7 +75,7 @@ namespace PacienteVirtual.Controllers
         // POST: /Turma/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(TurmaModel turmaModel/*TurmaE turmae*/)
+        public ActionResult Edit(TurmaModel turmaModel)
         {
             if (ModelState.IsValid)
             {
@@ -120,7 +118,6 @@ namespace PacienteVirtual.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            //db.Dispose();
             base.Dispose(disposing);
         }
     }

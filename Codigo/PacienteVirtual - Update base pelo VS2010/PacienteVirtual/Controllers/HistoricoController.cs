@@ -61,7 +61,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Edit(long id)
         {
-            //HistoricoE historicoe = db.tb_historico.Single(h => h.IdHistorico == id);
             return View(gHistorico.Obter(id));
         }
 
@@ -84,7 +83,6 @@ namespace PacienteVirtual.Controllers
  
         public ActionResult Delete(long id)
         {
-           // HistoricoE historicoe = db.tb_historico.Single(h => h.IdHistorico == id);
             return View(gHistorico.Obter(id));
         }
 
