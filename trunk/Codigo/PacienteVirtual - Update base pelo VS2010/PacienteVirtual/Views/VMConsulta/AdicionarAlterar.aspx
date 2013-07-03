@@ -36,15 +36,17 @@
                         </blockquote>
                     </div>
                 </div>
+
+
                 <div class="thumbnail center">
-                    <%: Html.Html5().Media.Video("video1","~/videofile1.mp4","Browser does not support", new { @width="435px", @height="425px"}) %>
+              <iframe width="435px" height="425px" src="http://www.youtube.com/embed/f9EkBo8Wdkg"></iframe>      
                 </div>
                 <div class="thumbnail">
                     <% Html.RenderAction("RelatoClinico", "VMConsulta", new ViewDataDictionary(Model.relatoClinico));%>
                 </div>
-                   <div class="thumbnail">
+                <div class="thumbnail">
                     <% Html.RenderAction("Queixa", "VMConsulta", new ViewDataDictionary(Model.queixa));%>
-                     <% Html.RenderAction("ListarQueixa", "VMConsulta", new ViewDataDictionary(Model.queixa));%>
+                    <% Html.RenderAction("ListarQueixa", "VMConsulta", new ViewDataDictionary(Model.queixa));%>
                 </div>
             </div>
         </div>
@@ -53,10 +55,12 @@
                 <div class="tabbable">
                     <!-- Only required for left/right tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.demografico_antropometricos %></a></li>
-                           <li><a href="#tab1-2" data-toggle="tab"><%: Resources.Mensagem.experiencia_medicamentos %></a></li>
-                        <li><a href="#tab1-3" data-toggle="tab"><%: Resources.Mensagem.diario_pessoal %></a></li>
-                     
+                        <li class="active"><a href="#tab1-1" data-toggle="tab">
+                            <%: Resources.Mensagem.demografico_antropometricos %></a></li>
+                        <li><a href="#tab1-2" data-toggle="tab">
+                            <%: Resources.Mensagem.experiencia_medicamentos %></a></li>
+                        <li><a href="#tab1-3" data-toggle="tab">
+                            <%: Resources.Mensagem.diario_pessoal %></a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
@@ -78,16 +82,19 @@
                 </div>
             </div>
         </div>
-
-         <div class="span6">
+        <div class="span6">
             <div class="thumbnails">
                 <div class="tabbable">
                     <!-- Only required for left/right tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab2-1" data-toggle="tab"><%: Resources.Mensagem.estilo_vida %></a></li>
-                           <li><a href="#tab2-2" data-toggle="tab"><%: Resources.Mensagem.medicamentos_anteriores %></a></li>
-                        <li><a href="#tab2-3" data-toggle="tab"><%: Resources.Mensagem.medicamento_prescrito %></a></li>
-                     <li><a href="#tab2-4" data-toggle="tab"><%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
+                        <li class="active"><a href="#tab2-1" data-toggle="tab">
+                            <%: Resources.Mensagem.estilo_vida %></a></li>
+                        <li><a href="#tab2-2" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamentos_anteriores %></a></li>
+                        <li><a href="#tab2-3" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamento_prescrito %></a></li>
+                        <li><a href="#tab2-4" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
@@ -105,7 +112,7 @@
                                 <% Html.RenderAction("MedicamentoPrescrito", "VMConsulta", new ViewDataDictionary(Model.medicamentoPrescrito));%>
                             </div>
                         </div>
-                          <div class="tab-pane" id="tab2-4">
+                        <div class="tab-pane" id="tab2-4">
                             <div class="thumbnail">
                                 <% Html.RenderAction("MedicamentoNaoPrescrito", "VMConsulta", new ViewDataDictionary(Model.medicamentoNaoPrescrito));%>
                             </div>
@@ -114,7 +121,6 @@
                 </div>
             </div>
         </div>
-
         <!--div class="span3 bottom">
             <p>
                    <div class="form-actions"><input class="btn" type="submit" value="Salvar" /> </div>
@@ -125,4 +131,4 @@
     <div>
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </div>
-  </asp:Content>
+</asp:Content>
