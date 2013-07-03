@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-<head runat="server">
+<head id="Head1" runat="server">
     <title>
         <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
     </title>
@@ -33,8 +33,8 @@
                 <br />
                 <div class="span9">
                     <a href="<%: Url.Action("Index", "Home")%>">
-                    <!--style="width: 190px; height: 101px;"-->
-                        <img  alt="logo" src="../../Content/themes/pv/img/logo5.png" />
+                        <!--style="width: 190px; height: 101px;"-->
+                        <img alt="logo" src="../../Content/themes/pv/img/logo.png" />
                         <!--h1>< %: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1-->
                     </a>
                     <!--
@@ -85,16 +85,62 @@
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.curso, "Index", "Curso")%></li>
+                                            <%: Html.ActionLink(Resources.Mensagem.pergunta, "Index", "Pergunta")%>
+                                        </li>
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.disciplina, "Index", "Disciplina")%></li>
-                                        <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.instituicao, "Index", "Instituicao")%></li>
-                                        <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.escolaridade, "Index", "Escolaridade")%></li>
+                                            <%: Html.ActionLink(Resources.Mensagem.resposta, "Index", "Resposta")%>
+                                        </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.paciente, "Index", "Paciente")%></li>
+                                            <%: Html.ActionLink(Resources.Mensagem.alergia, "Index", "Alergia")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.medicamentos, "Index", "Medicamentos")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.plano_saude, "Index", "PlanoSaude")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.sistema, "Index", "Sistema")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.razao_encontro, "Index", "RazaoEncontro")%>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.queixa, "Index", "Queixa")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.acao_queixa, "Index", "AcaoQueixa")%>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.ocupacao, "Index", "Ocupacao")%>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="nav-collapse collapse">
+                        <nav class="nav">
+                            <ul class="nav" role="menu">
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <%: Resources.Mensagem.turma %>
+                                    <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.turma, "Index", "Turma")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.disciplina, "Index", "Disciplina")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.curso, "Index", "Curso")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.instituicao, "Index", "Instituicao")%>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -108,14 +154,11 @@
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.listar, "Index", "Paciente")%></li>
+                                            <%: Html.ActionLink(Resources.Mensagem.paciente, "Index", "Paciente")%>
+                                        </li>
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.criar, "Create", "Paciente")%></li>
-                                        <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "Paciente")%></li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.deletar, "Delete", "Paciente")%></li>
+                                            <%: Html.ActionLink(Resources.Mensagem.relato_clinico, "Index", "RelatoClinico")%>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -123,12 +166,6 @@
                     </div>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="">
-                                <%: Html.ActionLink(Resources.Mensagem.turma, "Index", "Turma")%>
-                            </li>
-                            <li class="">
-                                <%: Html.ActionLink(Resources.Mensagem.relato_clinico, "Index", "RelatoClinico")%>
-                            </li>
                             <li class="">
                                 <%: Html.ActionLink(Resources.Mensagem.consulta, "Index", "VMConsulta")%>
                             </li>
@@ -140,36 +177,6 @@
     </div>
     <!-- /.navbar -->
     <div class="container">
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.turma, "Index", "VMPaciente")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.usuario, "Index", "Usuario")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.sobre, "About", "Home")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.paciente_pessoa_turma, "Index", "PacientePessoaTurma")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.historia, "Index", "Historia")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.experiencia_medicamentos, "Index", "ExperienciaMedicamentos")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.consulta, "Index", "ConsultaFixo")%>
-        <%: Html.ActionLink("---- " + Resources.Mensagem.demografico_antropometricos+ "----", "Index", "DemograficosAntropomedicos")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.consulta_dados_fixos, "Index", "ConsultaFixo")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.ocupacao, "Index", "Ocupacao")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.plano_saude, "Index", "PlanoSaude")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.pessoa, "Index", "Pessoa")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.pergunta, "Index", "Pergunta")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.resposta, "Index", "Resposta")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.relato_clinico, "Index", "RelatoClinico")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.parametro_clinico, "Index", "ParametroClinico")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.historico, "Index", "Historico")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.diario_pessoal, "Index", "DiarioPessoal")%>
-        <!--%: Html.ActionLink("--  "+ Resources.Mensagem.turma_pessoa_relato, "Index", "TurmaPessoaRelato")%-->
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.razao_encontro, "Index", "RazaoEncontro")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.sistema, "Index", "Sistema")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.medicamentos, "Index", "Medicamentos")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.acao_alternativa, "Index", "AcaoAlternativa")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.acao_queixa, "Index", "AcaoQueixa")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.queixa, "Index", "Queixa")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.alergia, "Index", "Alergia")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.estilo_vida, "Index", "EstiloVida")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.medicamento_codigo, "Index", "MedicamentoPrescrito")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.medicamento_codigo, "Index", "MedicamentoNaoPrescrito")%>
-        <%: Html.ActionLink("--  "+ Resources.Mensagem.medicamentos_anteriores, "Index", "MedicamentosAnteriores")%>
         <section id="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </section>

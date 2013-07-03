@@ -186,6 +186,7 @@
     <Compile Include="Models\EscolaridadeModel.cs" />
     <Compile Include="Models\EstiloVidaModel.cs" />
     <Compile Include="Models\ExperienciaMedicamentosModel.cs" />
+    <Compile Include="Models\Global.cs" />
     <Compile Include="Models\HistoriaModel.cs" />
     <Compile Include="Models\HistoricoModel.cs" />
     <Compile Include="Models\InstituicaoModel.cs">
