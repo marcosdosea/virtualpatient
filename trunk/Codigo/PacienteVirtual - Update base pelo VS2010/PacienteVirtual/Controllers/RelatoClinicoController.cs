@@ -16,12 +16,24 @@ namespace PacienteVirtual.Controllers
         GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
         GerenciadorPaciente gPaciente = GerenciadorPaciente.GetInstance();
 
-        //
+
         // GET: /RelatoClinico/
         public ViewResult Index()
         {
+            ViewBag.foi = "não";
+            ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
+            return View();
+        }
 
-            return View(gRelato.ObterTodos());
+           [HttpPost]   
+        public ActionResult Index(int IdPaciente)
+        {
+            ViewBag.foi = IdPaciente + " foi";
+            ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
+            if (IdPaciente != null)
+               return View(gRelato.ObterRelatos(IdPaciente));
+
+            return View();
         }
 
         public ViewResult Listar(int id)
