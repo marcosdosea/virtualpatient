@@ -21,7 +21,6 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-
     </script>
     <% using (Html.BeginForm("Edit", "Paciente", FormMethod.Post, new { enctype = "multipart/form-data" }))
        { %>
@@ -50,6 +49,6 @@
     </fieldset>
     <% } %>
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Html.ActionLink("Back to List", "Index")%>
     </div>
 </asp:Content>
