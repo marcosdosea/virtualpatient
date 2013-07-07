@@ -20,17 +20,17 @@ namespace PacienteVirtual.Controllers
         // GET: /RelatoClinico/
         public ViewResult Index()
         {
-            ViewBag.foi = "não";
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             return View();
         }
 
-           [HttpPost]   
-        public ActionResult Index(int IdPaciente)
+        [HttpPost]
+        public ActionResult Index(int IdPaciente = -1)
         {
+
             ViewBag.foi = IdPaciente + " foi";
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
-            if (IdPaciente != null)
+            if (IdPaciente != -1)
                return View(gRelato.ObterRelatos(IdPaciente));
 
             return View();
@@ -74,18 +74,21 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(RelatoClinicoModel relatoModel)
         {
-            if (relatoModel.IdPaciente != -1)
+            if (ModelState.IsValid)
             {
+                relatoModel.IdRelato = gRelato.Inserir(relatoModel);
+                ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente",relatoModel.IdPaciente);
+                return View("Index", gRelato.ObterRelatos(relatoModel.IdPaciente));
+            }
+
+            if (relatoModel.IdPaciente > 0)
+            {
+                ViewBag.teste = "passou pelo -1" + relatoModel.IdPaciente;
                 ViewBag.fotoId = relatoModel.IdPaciente;
                 ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
                 return View(relatoModel);
             }
-
-            if (ModelState.IsValid)
-            {
-                relatoModel.IdRelato = gRelato.Inserir(relatoModel);
-                return PartialView();
-            }
+            ViewBag.fotoId = -1;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             return View(relatoModel);
         }
