@@ -3051,7 +3051,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="PacienteVirtualModel">
+      <Diagram Name="PacienteVirtualModel" ZoomLevel="64">
         <EntityTypeShape EntityType="pvModel.my_aspnet_roles" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.my_aspnet_users" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333335" IsExpanded="true" />
         <EntityTypeShape EntityType="pvModel.my_aspnet_usersinroles" Width="1.5" PointX="0.75" PointY="2.75" Height="1.4033821614583322" IsExpanded="true" />

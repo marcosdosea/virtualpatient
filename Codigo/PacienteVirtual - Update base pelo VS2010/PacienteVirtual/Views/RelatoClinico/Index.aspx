@@ -9,7 +9,6 @@
     <p>
         <%: Html.ActionLink(Resources.Mensagem.criar, "Create")%>
     </p>
-    <%: ViewBag.foi%>
     <% using (Html.BeginForm("Index", "RelatoClinico", FormMethod.Post, null))
        { %>
     <p>

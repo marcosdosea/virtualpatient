@@ -45,7 +45,7 @@
                 <%: Html.ValidationMessageFor(model => model.OrdemCronologica) %>
             </div>
             <div class="editor-field">
-                <input type="file" name="Arquivo" value="Selecione o video" />
+                <input class="span4" type="file" name="Arquivo" value="Selecione o video" />
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.NivelDificuldade) %>
@@ -54,9 +54,9 @@
                 <%: Html.EditorFor(model => model.NivelDificuldade) %>
                 <%: Html.ValidationMessageFor(model => model.NivelDificuldade) %>
             </div>
-        <div class="form-actions">
-            <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
-        </div>
+            <div class="form-actions">
+                <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+            </div>
         </div>
     </fieldset>
     <% } %>
