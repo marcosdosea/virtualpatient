@@ -3,8 +3,8 @@
 <script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-
-<% using (Html.BeginForm()) { %>
+<h1><%:  ViewBag.foi%></h1>
+<% using (Html.BeginForm()){ %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend><%: Resources.Mensagem.diario_pessoal %></legend>
@@ -57,7 +57,7 @@
             <%: Html.ValidationMessageFor(model => model.TipoBebida) %>
         </div>
     <div class="form-actions">
-        <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>
     </fieldset>
 <% } %>

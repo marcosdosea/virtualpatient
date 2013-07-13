@@ -34,6 +34,8 @@
                 <div class="span9">
                     <a href="<%: Url.Action("Index", "Home")%>">
                         <!--style="width: 190px; height: 101px;"-->
+                        <div class="bandeira-brasil">
+                        </div>
                         <img alt="logo" src="../../Content/themes/pv/img/logo.png" />
                         <!--h1>< %: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1-->
                     </a>
@@ -176,8 +178,21 @@
         </div>
     </div>
     <!-- /.navbar -->
+   
     <div class="container">
         <section id="main">
+          <!--input type="submit" class="btn btn-primary" rel="tooltip" value="Tema botão não funciona" title="O Css não funciona" />
+           <script type="text/javascript">
+               $('tooltip2').tooltip('show');
+
+               $(document).ready(function () {
+                   $("botao").tooltip({
+                       'selector': '',
+                       'placement': 'bottom'
+                   });
+                   console.log("jimmy");
+               });
+            </script-->
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </section>
     </div>

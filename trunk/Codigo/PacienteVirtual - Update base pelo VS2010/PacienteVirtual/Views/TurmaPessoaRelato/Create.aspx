@@ -17,7 +17,7 @@
         <legend>tb_turma_pessoa_relato</legend>
 
     <div class="form-actions">
-        <input class="btn" type="submit" value="Create" />
+        <input class="btn btn-primary" type="submit" value="Create" />
     </div>
     </fieldset>
 <% } %>

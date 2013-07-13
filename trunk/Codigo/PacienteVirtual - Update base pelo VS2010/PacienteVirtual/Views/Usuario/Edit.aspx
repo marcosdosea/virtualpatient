@@ -67,7 +67,7 @@
         </div>
 
     <div class="form-actions">
-        <input class="btn" type="submit" value="Save" />
+        <input class="btn btn-primary" type="submit" value="Save" />
     </div>
     </fieldset>
 <% } %>

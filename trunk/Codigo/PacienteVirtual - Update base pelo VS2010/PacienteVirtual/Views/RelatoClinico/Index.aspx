@@ -4,17 +4,28 @@
     <%: Resources.Mensagem.relato_clinico %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>
-        <%: Resources.Mensagem.relato_clinico %></h2>
-    <p>
-        <%: Html.ActionLink(Resources.Mensagem.criar, "Create")%>
-    </p>
-    <% using (Html.BeginForm("Index", "RelatoClinico", FormMethod.Post, null))
-       { %>
-    <p>
+    <div class="span9">
+        <h2>
+            <%: Resources.Mensagem.relato_clinico %></h2>
+        <p>
+            <%: Html.ActionLink(Resources.Mensagem.criar, "Create")%>
+        </p>
+        <% using (Html.BeginForm("Index", "RelatoClinico", FormMethod.Post, null))
+           { %>
         <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
         <!-- %: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { @onchange = "this.form.action = Index = 1;" })%-->
-    </p>
+
+    <% } %>
+        </div>
+    <% if (Model != null)
+       { %>
+    <div class="span2">
+
+        <div class="thumbnail">
+            <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = Model.First().IdPaciente})) %>"
+                alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
+        </div>
+    </div>
     <% } %>
     <div class="box-content">
         <table class="table table-bordered table-striped">

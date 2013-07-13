@@ -11,23 +11,24 @@ namespace PacienteVirtual.Models.ViewModel
 
         public RelatoClinicoModel relatoClinico { get; set; }
 
-        public DemograficosAntropometricosModel demograficosAntropomedicos { get; set; }
+        public int idConsultaFixo { get; set; }
 
-        public ExperienciaMedicamentosModel experienciaMedicamentos { get; set; }
+        public int idQueixa { get; set; }
 
-        public DiarioPessoalModel diarioPessoal { get; set; }
+        public int idDemograficosAntropomedicos { get; set; }
 
+        public int idExperienciaMedicamentos { get; set; }
 
+        public int idDiarioPessoal { get; set; }
 
-        public EstiloVidaModel estilloVida { get; set; }
+        public int idEstiloVida { get; set; }
 
-        public MedicamentosAnterioresModel medicamentosAnteriores { get; set; }
+        public int idMedicamentosAnteriores { get; set; }
 
-        public MedicamentoPrescritoModel medicamentoPrescrito { get; set; }
+        public int idMedicamentoPrescrito { get; set; }
 
-        public MedicamentoNaoPrescritoModel medicamentoNaoPrescrito { get; set; }
+        public int idMedicamentoNaoPrescrito { get; set; }
 
-        public QueixaModel queixa { get; set; }
  
     }
 }

@@ -73,7 +73,7 @@
         </div>
 
     <div class="form-actions">
-        <input class="btn" type="submit" value="Cadastrar" />
+        <input class="btn btn-primary" type="submit" value="Cadastrar" />
     </div>
     </fieldset>
     <% } %>

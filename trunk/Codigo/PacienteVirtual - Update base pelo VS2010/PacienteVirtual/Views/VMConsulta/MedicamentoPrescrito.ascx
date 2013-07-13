@@ -45,7 +45,7 @@
         <%: Html.ValidationMessageFor(model => model.Especialidade) %>
     </div>
     <div class="form-actions">
-        <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>
 </fieldset>
 <% } %>

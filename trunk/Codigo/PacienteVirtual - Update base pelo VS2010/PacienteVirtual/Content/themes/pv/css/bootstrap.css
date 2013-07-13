@@ -2750,6 +2750,12 @@ button.close {
 .btn-primary.active {
   background-color: #004099 \9;
 }
+.btn-primary, 
+.btn-danger,
+.btn-success {    
+  background-image: none; 
+  filter: none;
+}
 
 .btn-warning {
   background-color: #faa732;
