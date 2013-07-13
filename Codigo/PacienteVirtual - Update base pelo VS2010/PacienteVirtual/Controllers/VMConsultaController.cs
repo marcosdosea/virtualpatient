@@ -14,54 +14,56 @@ namespace PacienteVirtual.Controllers
         //
         // GET: /VMConsulta/
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            return View(listaVMConsulta());
+            ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
+            return View();
         }
 
-        //Método destinado a pesquisar todos os paciente e obter todos os seus relatos
-        private List<VMConsulta> listaVMConsulta()
+        [HttpPost]
+        public ActionResult Index(int IdPaciente = -1)
         {
-            List<VMConsulta> listPacienteVM = new List<VMConsulta>();
 
-            GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
-            IEnumerable<PacienteModel> listPacientes = GerenciadorPaciente.GetInstance().ObterTodos();
-            foreach (PacienteModel paciente in listPacientes)
-            {
-                VMConsulta vmPaciente = new VMConsulta();
-                vmPaciente.paciente = paciente;
-                listPacienteVM.Add(vmPaciente);
+            ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos().ToList(), "IdPaciente", "NomePaciente");
+            if (IdPaciente != -1)
+                return View(GerenciadorRelatoClinico.GetInstance().ObterRelatos(IdPaciente));
 
-            }
-            return listPacienteVM;
+            return View();
         }
+
+        //public ActionResult Index()
+        //{
+        //    return View(listaVMConsulta());
+        //}
+
+        ////Método destinado a pesquisar todos os paciente e obter todos os seus relatos
+        //private List<VMConsulta> listaVMConsulta()
+        //{
+        //    List<VMConsulta> listPacienteVM = new List<VMConsulta>();
+
+        //    GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
+        //    IEnumerable<PacienteModel> listPacientes = GerenciadorPaciente.GetInstance().ObterTodos();
+        //    foreach (PacienteModel paciente in listPacientes)
+        //    {
+        //        VMConsulta vmPaciente = new VMConsulta();
+        //        vmPaciente.paciente = paciente;
+        //        listPacienteVM.Add(vmPaciente);
+
+        //    }
+        //    return listPacienteVM;
+        //}
 
         //
         // GET: /VMConsulta/Create
 
-        public ActionResult AdicionarAlterar()
+        public ActionResult AdicionarAlterar(int idPaciente, int idRelato)
         {
-            VMConsulta vmPaciente = new VMConsulta();
+            VMConsulta vmConsulta = new VMConsulta();
 
-            //vmPaciente.paciente = GerenciadorPaciente.GetInstance().Obter(id);
+            vmConsulta.paciente = GerenciadorPaciente.GetInstance().Obter(idPaciente);
+            vmConsulta.relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(idRelato);
 
-            //vmPaciente.experienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(id);
-
-
-            DiarioPessoalModel dp = new DiarioPessoalModel();
-            dp.Horario = "09/12/1992";
-            dp.IdConsultaFixo = 9;
-            dp.IdMedicamento = 7;
-            dp.Periodo = "segundo";
-            dp.Quantidade = "5";
-            dp.TipoBebida = "cachaça";
-
-            vmPaciente.diarioPessoal = dp;
-
-            
-            //vmPaciente.relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(id);
-            //ViewBag.ab = "aD";
-            return View(vmPaciente);
+            return View(vmConsulta);
         }
 
         //
@@ -72,8 +74,6 @@ namespace PacienteVirtual.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
                 return RedirectToAction("Index");
             }
             catch
@@ -82,63 +82,94 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-        public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel id)
+        public PartialViewResult DemograficosAntropomedicos(int id)
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult ExperienciaMedicamentos(int id)
         {
 
             return PartialView();
         }
 
-        public PartialViewResult RelatoClinico(RelatoClinicoModel relato)
+        public PartialViewResult DiarioPessoal(int id)
         {
-            return PartialView();
-        }
+            ViewBag.foi = "foi Int";
 
-
-        public PartialViewResult DiarioPessoal(DiarioPessoalModel id)
-        {
-            if (id == null)
-                return PartialView(7);
-
-            return PartialView(id);
-        }
-
-        public PartialViewResult ExperienciaMedicamentos(ExperienciaMedicamentosModel id)
-        {
+            DiarioPessoalModel dp = new DiarioPessoalModel();
+            dp.Horario = "09/12/1992";
+            dp.IdConsultaFixo = 95;
+            dp.IdMedicamento = 7;
+            dp.Periodo = "segundo ....";
+            dp.Quantidade = "5";
+            dp.TipoBebida = "cachaça da boa";
 
             return PartialView();
         }
 
-        public PartialViewResult EstiloVida(EstiloVidaModel id)
+        //[HttpPost]
+        //public ActionResult DiarioPessoal(int id)
+        //{
+        //    ViewBag.foi = "foi? Não Válido";
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        ViewBag.foi = "foi? Valido";
+        //    }
+
+
+        //    DiarioPessoalModel dp = new DiarioPessoalModel();
+        //    dp.Horario = "09/12/1992";
+        //    dp.IdConsultaFixo = 5;
+        //    dp.IdMedicamento = 7;
+        //    dp.Periodo = "segundo";
+        //    dp.Quantidade = "5";
+        //    dp.TipoBebida = "cachaça da boa valido";
+
+        //   //if (model == null)
+        //   //     return PartialView(7);
+
+
+        //    return PartialView();
+        //}
+
+        public PartialViewResult RelatoClinico(RelatoClinicoModel model)
+        {
+            return PartialView(model);
+        }
+
+        public PartialViewResult EstiloVida(int id)
         {
 
             return PartialView();
         }
 
-        public PartialViewResult MedicamentosAnteriores(MedicamentosAnterioresModel id)
+        public PartialViewResult MedicamentosAnteriores(int id)
         {
 
             return PartialView();
         }
 
-        public PartialViewResult MedicamentoPrescrito(MedicamentoPrescritoModel id)
+        public PartialViewResult MedicamentoPrescrito(int id)
         {
 
             return PartialView();
         }
 
-        public PartialViewResult MedicamentoNaoPrescrito(MedicamentoNaoPrescritoModel id)
+        public PartialViewResult MedicamentoNaoPrescrito(int id)
         {
 
             return PartialView();
         }
 
-        public PartialViewResult Queixa(QueixaModel id)
+        public PartialViewResult Queixa(int id)
         {
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");
             return PartialView();
         }
 
-        public PartialViewResult ListarQueixa(QueixaModel id)
+        public PartialViewResult ListarQueixa(int id)
         {
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");
             return PartialView();

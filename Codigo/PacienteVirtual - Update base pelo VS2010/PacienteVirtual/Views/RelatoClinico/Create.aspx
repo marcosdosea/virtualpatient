@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.RelatoClinicoModel>" %>
+﻿<%@ Page Title="" Language="C#" MaintainScrollPositionOnPostback="true" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.RelatoClinicoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.criar %>
@@ -55,7 +55,7 @@
                 <%: Html.ValidationMessageFor(model => model.NivelDificuldade) %>
             </div>
             <div class="form-actions">
-                <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+                <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
             </div>
         </div>
     </fieldset>

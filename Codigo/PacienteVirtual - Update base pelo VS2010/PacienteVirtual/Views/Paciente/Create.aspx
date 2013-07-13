@@ -51,7 +51,7 @@ function readURL(input) {
             <%: Html.ValidationMessageFor(model => model.Foto)%>
         </div>
     <div class="form-actions">
-        <input class="btn" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>
         <div class="progress progress-info progress-striped active ">
 <div class="bar" style="width: 100%"></div>

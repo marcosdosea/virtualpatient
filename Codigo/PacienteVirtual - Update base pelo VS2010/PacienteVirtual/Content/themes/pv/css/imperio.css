@@ -10,6 +10,12 @@ a:hover {
 .box h1, .box h2, .box h3, .box h4, .box h5 , .box h6 {
     margin-bottom: 5px;
 }
+.btn-primary, 
+.btn-danger,
+.btn-success {    
+  background-image: none; 
+  filter: none;
+}
 a.cancel {
     color: #B20101;
 }
@@ -1088,4 +1094,9 @@ a.fc-event,
     .dataTables_paginate {
         padding-bottom: 35px;
     }
+}
+a.bandeira
+{
+    color: #FFF;
+    background: url(../img/logo.png) no-repeat ;
 }

@@ -45,7 +45,7 @@
         </div>
         <div class="form-actions">
         <div class="form-actions">
-            <input class="btn" type="submit" class="btn" value="<%: Resources.Mensagem.salvar %>" />
+            <input class="btn btn-primary" type="submit" class="btn btn-primary" value="<%: Resources.Mensagem.salvar %>" />
         </div>
         </div>
     </fieldset>

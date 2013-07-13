@@ -94,7 +94,7 @@
             <%: Html.ValidationMessageFor(model => model.IdPlanoSaude) %>
         </div>
     <div class="form-actions">
-        <input class="btn" type="submit" value="<%: Resources.Mensagem.criar %>" />
+        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.criar %>" />
     </div>
     </fieldset>
     <% } %>

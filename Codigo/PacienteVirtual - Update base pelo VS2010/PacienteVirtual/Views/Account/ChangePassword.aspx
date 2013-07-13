@@ -47,7 +47,7 @@
                 </div>
                 
             <div class="form-actions">
-                <input class="btn" type="submit" value="Change Password" />
+                <input class="btn btn-primary" type="submit" value="Change Password" />
             </div>
             </fieldset>
         </div>

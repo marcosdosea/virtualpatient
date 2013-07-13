@@ -103,6 +103,8 @@
     </Compile>
     <Compile Include="Controllers\AlergiaController.cs" />
     <Compile Include="Controllers\ConsultaFixoController.cs" />
+    <Compile Include="Controllers\ConsultaVariavelQueixaController.cs" />
+    <Compile Include="Controllers\VMConsultaController.cs" />
     <Compile Include="Controllers\CursoController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -148,7 +150,6 @@
     <Compile Include="Controllers\UsuarioController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\VMConsultaController.cs" />
     <Compile Include="Controllers\VMPacienteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -160,6 +161,8 @@
     </Compile>
     <Compile Include="Models\AlergiaModel.cs" />
     <Compile Include="Models\ConsultaFixoModel.cs" />
+    <Compile Include="Models\ConsultaVariavelModel.cs" />
+    <Compile Include="Models\ConsultaVariavelQueixaModel.cs" />
     <Compile Include="Models\CursoModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -196,6 +199,8 @@
     <Compile Include="Models\MedicamentoPrescritoModel.cs" />
     <Compile Include="Models\MedicamentosAnterioresModel.cs" />
     <Compile Include="Models\MedicamentosModel.cs" />
+    <Compile Include="Models\Negocio\GerenciadorConsultaVariavelQueixa.cs" />
+    <Compile Include="Models\Negocio\GerenciadorConsultaVariavel.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoAlternativa.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoQueixa.cs" />
     <Compile Include="Models\Negocio\GerenciadorAlergia.cs" />
@@ -434,6 +439,11 @@
     <Content Include="Views\ConsultaFixo\Details.aspx" />
     <Content Include="Views\ConsultaFixo\Edit.aspx" />
     <Content Include="Views\ConsultaFixo\Index.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Create.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Delete.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Details.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Edit.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Index.aspx" />
     <Content Include="Views\VMConsulta\ListarQueixa.ascx" />
     <Content Include="Views\VMConsulta\Queixa.ascx" />
     <Content Include="Views\VMConsulta\MedicamentoNaoPrescrito.ascx" />
@@ -687,7 +697,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52192</DevelopmentServerPort>
+          <DevelopmentServerPort>49577</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
