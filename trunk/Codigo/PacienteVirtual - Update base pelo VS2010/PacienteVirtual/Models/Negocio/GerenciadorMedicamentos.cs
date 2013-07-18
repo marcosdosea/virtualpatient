@@ -75,8 +75,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="idMedicamentos"></param>
         public void Remover(int idMedicamentos)
         {
-            //if (idOcupacao == 1)
-            //    throw new NegocioException("A ocupacao não pode ser removido.");
             try
             {
                 var repMedicamentos = new RepositorioGenerico<MedicamentosE>();

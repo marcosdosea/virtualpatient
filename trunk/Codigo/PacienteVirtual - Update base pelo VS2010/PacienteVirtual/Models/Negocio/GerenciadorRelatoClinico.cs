@@ -72,8 +72,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(int idCurso)
         {
-            //if (idCurso == 1)
-            //    throw new NegocioException("A relato não pode ser removido.");
             try
             {
                 var repRelato = new RepositorioGenerico<RelatoClinicoE>();

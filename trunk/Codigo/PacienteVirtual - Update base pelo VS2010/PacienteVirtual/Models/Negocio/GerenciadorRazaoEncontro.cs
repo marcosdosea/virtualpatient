@@ -75,8 +75,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="idRazaoEncontro"></param>
         public void Remover(int idRazaoEncontro)
         {
-            //if (idRazaoEncontro == 1)
-            //    throw new NegocioException("A razaoEncontro não pode ser removido.");
             try
             {
                 var repRazaoEncontro = new RepositorioGenerico<RazaoEncontroE>();

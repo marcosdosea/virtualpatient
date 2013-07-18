@@ -72,8 +72,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(int IdTurma)
         {
-            //if (idCurso == 1)
-            //    throw new NegocioException("A turmaPessoaRelato não pode ser removido.");
             try
             {
                 var repTurmaPessoaRelato = new RepositorioGenerico<TurmaPessoaRelatoE>();
@@ -95,8 +93,6 @@ namespace PacienteVirtual.Models.Negocio
             var repTurmaPessoaRelato = new RepositorioGenerico<TurmaPessoaRelatoE>();
             var pvEntities = (pvEntities)repTurmaPessoaRelato.ObterContexto();
             var query = from tb_turma_pessoa_relato in pvEntities.tb_turma_pessoa_relato
-                        //join tb_instituicao in pvEntities.tb_instituicao
-                        //on tb_turma_pessoa_relato.IdInstituicao equals tb_instituicao.IdInstituicao
                         select new TurmaPessoaRelatoModel
                         {
                             IdTurma = tb_turma_pessoa_relato.IdTurma,
@@ -115,26 +111,6 @@ namespace PacienteVirtual.Models.Negocio
         {
             return GetQuery().ToList();
         }
-
-        /// <summary>
-        /// Obtém turmaPessoaRelato com o código especificiado
-        /// </summary>
-        /// <param name="codDisciplina"></param>
-        /// <returns></returns>
-        /*public TurmaPessoaRelatoModel Obter(int idCurso)
-        {
-            return GetQuery().Where(turmaPessoaRelato => turmaPessoaRelato.IdCurso == idCurso).ToList().ElementAtOrDefault(0);
-        }*/
-
-        /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        /*public IEnumerable<TurmaPessoaRelatoModel> ObterPorNome(string nomeCurso)
-        {
-            return GetQuery().Where(turmaPessoaRelato => turmaPessoaRelato.NomeCurso.StartsWith(nomeCurso)).ToList();
-        }*/
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência

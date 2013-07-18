@@ -43,11 +43,10 @@ function readURL(input) {
         </div>
 
         <div class="editor-field">
-         <!--%: Html.TextBoxFor(m => m.Foto, new { type = "file" }) %-->
-        <img class="media" id="PreviewDaImagem" src="<%: Url.Content("~/Content/themes/pv/img/default-avatar.png") %>"
-         alt="Definir Imagem Padrão" style="width:250px; height:250px;"  />
-
-            <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" />
+            <img class="media" id="PreviewDaImagem" src="<%: Url.Content("~/Content/themes/pv/img/default-avatar.png") %>"
+            alt="Definir Imagem Padrão" style="width:250px; height:250px;"  />
+            <p>
+            <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" /></p>
             <%: Html.ValidationMessageFor(model => model.Foto)%>
         </div>
     <div class="form-actions">
