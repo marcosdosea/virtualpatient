@@ -78,8 +78,6 @@ namespace Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(int idDisciplina)
         {
-            //if (idDisciplina == 1)
-            //    throw new NegocioException("A disciplina não pode ser removido.");
             try
             {
                 var repDisciplina = new RepositorioGenerico<DisciplinaE>();
@@ -145,7 +143,6 @@ namespace Negocio
         /// <param name="_disciplinaE"></param>
         private static void Atribuir(DisciplinaModel disciplina, DisciplinaE _disciplinaE)
         {
-            //_disciplinaE.IdDisciplina = disciplina.IdDisciplina;
             _disciplinaE.NomeDisciplina = disciplina.NomeDisciplina;
         }
     }

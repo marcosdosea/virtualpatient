@@ -72,8 +72,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(int idAlergia)
         {
-            //if (idAlergia == 1)
-            //    throw new NegocioException("A alergia não pode ser removido.");
             try
             {
                 var repConsultaFixo = new RepositorioGenerico<AlergiaE>();
@@ -122,17 +120,7 @@ namespace PacienteVirtual.Models.Negocio
         {
             return GetQuery().Where(alergia => alergia.IdAlergia == idAlergia).ToList().ElementAtOrDefault(0);
         }
-
-        /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-       // public IEnumerable<AlergiaModel> ObterPorNome(int IdPaciente)
-        //{
-        //    return GetQuery().Where(alergia => alergia.IdPessoa == IdPaciente).ToList();
-        //}
-
+        
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
@@ -142,8 +130,6 @@ namespace PacienteVirtual.Models.Negocio
         {
             _alergiaE.IdAlergia = alergia.IdAlergia;
             _alergiaE.Alergia = alergia.Alergia;
-          
-
         }
     }
 }

@@ -144,7 +144,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="_tb_instituicao"></param>
         private static void Atribuir(InstituicaoModel instituicao, InstituicaoE _tb_instituicao)
         {
-            //_tb_instituicao.IdInstituicao = instituicao.IdInstituicao;
             _tb_instituicao.NomeInstituicao = instituicao.NomeInstituicao;
             _tb_instituicao.Sigla = instituicao.Sigla;
         }

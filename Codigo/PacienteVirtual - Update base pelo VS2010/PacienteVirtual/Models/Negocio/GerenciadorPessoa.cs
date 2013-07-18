@@ -75,8 +75,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="idPessoa"></param>
         public void Remover(int idPessoa)
         {
-            //if (idPessoa == 1)
-            //    throw new NegocioException("A pessoa não pode ser removido.");
             try
             {
                 var repPessoa = new RepositorioGenerico<PessoaE>();
@@ -142,7 +140,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="_pessoaE"></param>
         private static void Atribuir(PessoaModel pessoa, PessoaE _pessoaE)
         {
-            //_pessoaE.IdPessoa = pessoa.IdPessoa;
             _pessoaE.Nome = pessoa.Nome;
             
         }

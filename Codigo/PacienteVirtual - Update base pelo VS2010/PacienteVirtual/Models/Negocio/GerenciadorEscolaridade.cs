@@ -141,7 +141,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="_tb_escolaridade"></param>
         private static void Atribuir(EscolaridadeModel escolaridade, EscolaridadeE _tb_escolaridade)
         {
-            //_tb_escolaridade.IdEscolaridade = escolaridade.IdEscolaridade;
             _tb_escolaridade.Nivel = escolaridade.Nivel;
         }
     }

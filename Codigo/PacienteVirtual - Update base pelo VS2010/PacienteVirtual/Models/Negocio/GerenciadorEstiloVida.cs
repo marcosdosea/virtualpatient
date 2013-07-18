@@ -72,11 +72,8 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="idConsultaVariavel"></param>
         public void Remover(long idConsultaVariavel)
         {
-            //if (idConsultaFixo == 1)
-            //    throw new NegocioException("A DiarioPessoalModel não pode ser removido.");
             try
             {
-
                 var repEstiloVida = new RepositorioGenerico<EstiloVidaE>();
                 repEstiloVida.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel);
                 repEstiloVida.SaveChanges();

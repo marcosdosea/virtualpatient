@@ -71,8 +71,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(long idConsultaFixo)
         {
-            //if (idConsultaFixo == 1)
-            //    throw new NegocioException("A DiarioPessoalModel não pode ser removido.");
             try
             {
                 var repHistorico = new RepositorioGenerico<DiarioPessoalE>();

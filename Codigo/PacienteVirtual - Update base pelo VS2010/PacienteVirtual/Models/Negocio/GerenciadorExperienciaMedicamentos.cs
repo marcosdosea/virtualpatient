@@ -72,8 +72,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(long idConsultaFixo)
         {
-            //if (idCurso == 1)
-            //    throw new NegocioException("A expMedicamentos não pode ser removido.");
             try
             {
                 var repCurso = new RepositorioGenerico<ExperienciaMedicamentosE>();
@@ -133,17 +131,7 @@ namespace PacienteVirtual.Models.Negocio
         {
             return GetQuery().Where(expMedicamentos => expMedicamentos.IdConsultaFixo == idConsultaFixo).ToList().ElementAtOrDefault(0);
         }
-
-        /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        //public IEnumerable<ExperienciaMedicamentosModel> ObterPorNome(string nomeCurso)
-        //{
-         //   return GetQuery().Where(expMedicamentos => expMedicamentos.NomeCurso.StartsWith(nomeCurso)).ToList();
-        //}
-
+        
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>

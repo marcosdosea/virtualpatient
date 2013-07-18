@@ -72,8 +72,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(long idHistorico)
         {
-            //if (idConsultaFixo == 1)
-            //    throw new NegocioException("A Historico não pode ser removido.");
             try
             {
                 var repHistorico = new RepositorioGenerico<HistoricoE>();

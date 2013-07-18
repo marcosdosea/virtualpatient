@@ -75,8 +75,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(int idCurso)
         {
-            //if (idCurso == 1)
-            //    throw new NegocioException("A curso não pode ser removido.");
             try
             {
                 var repCurso = new RepositorioGenerico<CursoE>();
