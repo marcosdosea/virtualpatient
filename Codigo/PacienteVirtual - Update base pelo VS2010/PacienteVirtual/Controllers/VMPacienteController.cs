@@ -120,7 +120,7 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
             dm.IdEscolaridade = id;
             dm.IdPlanoSaude = id;
             dm.Nome = "asdf";
-            dm.OcupacaoDescricao = "funcionário";
+            dm.Descricao = "funcionário";
 
             return PartialView(dm);
         }
