@@ -93,11 +93,11 @@
                 <td></td>
                 <td>
                     <div class="editor-label">
-                        <%: Html.LabelFor(model => model.IdEscolaridade) %>
+                        <%: Html.LabelFor(model => model.Nivel) %>
                     </div>
                     <div class="editor-field">
-                        <%: Html.EditorFor(model => model.IdEscolaridade) %>
-                        <%: Html.ValidationMessageFor(model => model.IdEscolaridade) %>
+                        <%: Html.DropDownList("IdEscolaridade", Resources.Mensagem.selecione)%>
+                        <%: Html.ValidationMessageFor(model => model.IdEscolaridade)%>
                     </div>
                 </td>
             </tr>
@@ -106,43 +106,20 @@
             <tr>
                 <td>
                     <div class="editor-label">
-                        <%: Html.LabelFor(model => model.EscolaridadeNivel) %>
+                        <%: Html.LabelFor(model => model.Descricao) %>
                     </div>
                     <div class="editor-field">
-                        <%: Html.EditorFor(model => model.EscolaridadeNivel) %>
-                        <%: Html.ValidationMessageFor(model => model.EscolaridadeNivel) %>
+                        <%: Html.DropDownList("IdOcupacao", Resources.Mensagem.selecione)%>
+                        <%: Html.ValidationMessageFor(model => model.IdOcupacao)%>
                     </div>
                 </td>
                 <td></td>
                 <td>
                     <div class="editor-label">
-                        <%: Html.LabelFor(model => model.IdOcupacao) %>
+                        <%: Html.LabelFor(model => model.PlanoSaudeNome) %>
                     </div>
                     <div class="editor-field">
-                        <%: Html.EditorFor(model => model.IdOcupacao) %>
-                        <%: Html.ValidationMessageFor(model => model.IdOcupacao) %>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="editor-label">
-                        <%: Html.LabelFor(model => model.OcupacaoDescricao) %>
-                    </div>
-                    <div class="editor-field">
-                        <%: Html.EditorFor(model => model.OcupacaoDescricao) %>
-                        <%: Html.ValidationMessageFor(model => model.OcupacaoDescricao) %>
-                    </div>
-                </td>
-                <td></td>
-                <td>
-                    <div class="editor-label">
-                        <%: Html.LabelFor(model => model.IdPlanoSaude) %>
-                    </div>
-                    <div class="editor-field">
-                        <%: Html.EditorFor(model => model.IdPlanoSaude) %>
+                        <%: Html.DropDownList("IdPlanoSaude", Resources.Mensagem.selecione)%>
                         <%: Html.ValidationMessageFor(model => model.IdPlanoSaude) %>
                     </div>
                 </td>

@@ -84,6 +84,9 @@ namespace PacienteVirtual.Controllers
 
         public PartialViewResult DemograficosAntropomedicos(int id)
         {
+            ViewBag.IdEscolaridade = new SelectList(GerenciadorEscolaridade.GetInstance().ObterTodos().ToList(), "IdEscolaridade", "Nivel");
+            ViewBag.IdOcupacao = new SelectList(GerenciadorOcupacao.GetInstance().ObterTodos().ToList(), "IdOcupacao", "Descricao");
+            ViewBag.IdPlanoSaude = new SelectList(GerenciadorPlanoSaude.GetInstance().ObterTodos().ToList(), "IdPlanoSaude", "Nome");
             return PartialView();
         }
 
@@ -173,6 +176,6 @@ namespace PacienteVirtual.Controllers
         {
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");
             return PartialView();
-        }
+        }       
     }
 }

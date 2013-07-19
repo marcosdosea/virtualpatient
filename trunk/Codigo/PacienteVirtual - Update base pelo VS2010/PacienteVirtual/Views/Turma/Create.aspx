@@ -34,7 +34,7 @@
         </div>
         <%: Html.DropDownList("IdInstituicao", Resources.Mensagem.selecione)%>
         <!--%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes,"IdInstituicao","NomeInstituicao"), "Selecione")%-->
-        <br />
+        <br/>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.NomeDisciplina, "Disciplinas") %>
         </div>
@@ -43,11 +43,11 @@
             <!--%= Html.DropDownList("IdDisciplina", new SelectList((IEnumerable)ViewBag.Disciplinas,"IdDisciplina","NomeDisciplina"), "Selecione")%-->
             <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
         </div>
+        
         <div class="form-actions">
-        <div class="form-actions">
-            <input class="btn btn-primary" type="submit" class="btn btn-primary" value="<%: Resources.Mensagem.salvar %>" />
+            <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </div>
-        </div>
+        
     </fieldset>
     <% } %>
     <div>

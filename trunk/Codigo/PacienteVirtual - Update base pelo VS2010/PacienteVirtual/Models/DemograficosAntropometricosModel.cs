@@ -43,14 +43,14 @@ namespace PacienteVirtual.Models
         public int IdEscolaridade { get; set; }
 
         [Display(Name = "escolaridade", ResourceType = typeof(Mensagem))]
-        public string EscolaridadeNivel { get; set; }
+        public string Nivel { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ocupacao", ResourceType = typeof(Mensagem))]
         public int IdOcupacao { get; set; }
 
         [Display(Name = "ocupacao", ResourceType = typeof(Mensagem))]
-        public string OcupacaoDescricao { get; set; }
+        public string Descricao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "plano_saude", ResourceType = typeof(Mensagem))]
