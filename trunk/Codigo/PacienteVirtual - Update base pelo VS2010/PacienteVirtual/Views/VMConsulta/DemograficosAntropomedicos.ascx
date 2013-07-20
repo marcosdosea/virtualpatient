@@ -16,10 +16,10 @@
             <tr>
                 <td>
                     <div class="editor-label">
-                        <%: Html.LabelFor(model => model.IdConsultaFixo) %>
+                        <!--%: Html.LabelFor(model => model.IdConsultaFixo) %-->
                     </div>
                     <div class="editor-field">
-                        <%: Html.EditorFor(model => model.IdConsultaFixo) %>
+                        <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
                         <%: Html.ValidationMessageFor(model => model.IdConsultaFixo) %>
                     </div>
                 </td>
@@ -95,7 +95,7 @@
                 <td></td>
                 <td>
                     <div class="editor-label">
-                        <%: Html.LabelFor(model => model.Nivel) %>
+                        <%: Html.LabelFor(model => model.EscolaridadeNivel) %>
                     </div>
                     <div class="editor-field">
                         <%: Html.DropDownList("IdEscolaridade", Resources.Mensagem.selecione)%>
@@ -108,7 +108,7 @@
             <tr>
                 <td>
                     <div class="editor-label">
-                        <%: Html.LabelFor(model => model.Descricao) %>
+                        <%: Html.LabelFor(model => model.OcupacaoDescricao) %>
                     </div>
                     <div class="editor-field">
                         <%: Html.DropDownList("IdOcupacao", Resources.Mensagem.selecione)%>

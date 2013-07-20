@@ -120,10 +120,11 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
             dm.IdEscolaridade = id;
             dm.IdPlanoSaude = id;
             dm.Nome = "asdf";
-            dm.Descricao = "funcionário";
+            dm.OcupacaoDescricao = "funcionário";
 
             return PartialView(dm);
         }
+
         [HttpPost]
         public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel d)
         {

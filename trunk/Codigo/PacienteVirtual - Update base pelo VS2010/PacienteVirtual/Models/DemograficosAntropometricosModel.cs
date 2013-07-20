@@ -17,7 +17,7 @@ namespace PacienteVirtual.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [RegularExpression("M|F",ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_MouF")]
+        [RegularExpression("M|F", ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_MouF")]
         [Display(Name = "genero", ResourceType = typeof(Mensagem))]
         public string Genero { get; set; }
 
@@ -43,14 +43,14 @@ namespace PacienteVirtual.Models
         public int IdEscolaridade { get; set; }
 
         [Display(Name = "escolaridade", ResourceType = typeof(Mensagem))]
-        public string Nivel { get; set; }
+        public string EscolaridadeNivel { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ocupacao", ResourceType = typeof(Mensagem))]
         public int IdOcupacao { get; set; }
 
         [Display(Name = "ocupacao", ResourceType = typeof(Mensagem))]
-        public string Descricao { get; set; }
+        public string OcupacaoDescricao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "plano_saude", ResourceType = typeof(Mensagem))]
