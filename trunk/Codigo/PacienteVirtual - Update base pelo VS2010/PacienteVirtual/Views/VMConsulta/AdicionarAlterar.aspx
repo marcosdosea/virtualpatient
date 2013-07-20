@@ -30,10 +30,12 @@
                             alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
                     </div>
                 </div>
+               
                 <div class="span3">
                     <div class="thumbnail right">
                         <blockquote>
-                            <%: Resources.Mensagem.nome %> do Paciente : 
+                            <%: 
+                            Resources.Mensagem.nome %> do Paciente : 
                             <br />    
                             <br />
                             <%: Model.paciente.NomePaciente %>

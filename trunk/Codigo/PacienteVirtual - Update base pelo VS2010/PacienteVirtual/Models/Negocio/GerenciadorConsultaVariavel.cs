@@ -132,6 +132,17 @@ namespace PacienteVirtual.Models.Negocio
             return GetQuery().Where(consultaVariavel => consultaVariavel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
         }
 
+
+        /// <summary>
+        /// Obtém consultaVariavel com o código da Turma, Pessoa e Relato especificiado
+        /// </summary>
+        /// <returns></returns>
+        public ConsultaVariavelModel Obter(int idTurma, int idPessoa, int idRelato)
+        {
+            return GetQuery().Where(consultaVariavel => consultaVariavel.IdTurma == idTurma
+                && consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdRelato == idRelato).ToList().ElementAtOrDefault(0);
+        }
+
         /// <summary>
         /// Obtém disciplinas que iniciam com o nome
         /// </summary>

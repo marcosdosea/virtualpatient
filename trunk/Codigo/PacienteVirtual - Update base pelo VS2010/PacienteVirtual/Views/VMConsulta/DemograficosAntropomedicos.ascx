@@ -8,6 +8,8 @@
 <%: Html.ValidationSummary(true) %>
 <fieldset>
     <legend><%: Resources.Mensagem.demografico_antropometricos %></legend>
+    <h3> <%: ViewBag.foi %> </h3>
+
     <table class="table">
         <!-- <caption>Descrição ou sumário do que a tabela possui, especialmente útil para leitores de tela</caption> -->    
         <tbody>

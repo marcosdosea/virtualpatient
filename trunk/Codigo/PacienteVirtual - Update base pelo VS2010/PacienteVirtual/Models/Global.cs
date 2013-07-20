@@ -11,9 +11,9 @@ namespace PacienteVirtual.Models
         public const string NOME_USUARIO_PADRAO = "PV";
         public const string SENHA_USUARIO_PADRAO = "PV";
 
-        public const long ID_TURMA = 1;
-        public const long ID_PESSOA = 1;
-        public const long IDRELATO = 1;
+        public const int ID_TURMA = 1;
+        public const int ID_PESSOA = 1;
+        public const int IDRELATO = 1;
     }
         
 }

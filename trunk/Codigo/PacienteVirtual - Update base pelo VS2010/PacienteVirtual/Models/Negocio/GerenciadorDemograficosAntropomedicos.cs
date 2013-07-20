@@ -34,7 +34,6 @@ namespace PacienteVirtual.Models.Negocio
             try
             {
                 Atribuir(demoAntrop, _demoAntropE);
-
                 repDemoAntrop.Inserir(_demoAntropE);
                 repDemoAntrop.SaveChanges();
 
@@ -67,6 +66,38 @@ namespace PacienteVirtual.Models.Negocio
         }
 
         /// <summary>
+        /// Insere ou altera dados do demoAntrop 
+        /// </summary>
+        /// <param name="demoAntrop"></param>
+        /// <returns></returns>
+        public long InserirAlterar(DemograficosAntropometricosModel demoAntrop)
+        {
+            try
+            {
+                DemograficosAntropometricosE _demoAntropE = new DemograficosAntropometricosE();
+                var repDemoAntrop = new RepositorioGenerico<DemograficosAntropometricosE>();
+
+                if (demoAntrop.IdConsultaFixo == 0)//caso seja Inserção de novo registro
+                {
+                    Atribuir(demoAntrop, _demoAntropE);
+                    repDemoAntrop.Inserir(_demoAntropE);
+                }
+                else //caso atualização
+                {
+                    _demoAntropE = repDemoAntrop.ObterEntidade(da => da.IdConsultaFixo == demoAntrop.IdConsultaFixo);
+                    Atribuir(demoAntrop, _demoAntropE);
+                }
+                    repDemoAntrop.SaveChanges();
+
+                return _demoAntropE.IdConsultaFixo;
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("DemograficosAntropometricos", e.Message, e);
+            }
+        }
+
+        /// <summary>
         /// Remove dados do demoAntrop
         /// </summary>
         /// <param name="codDisciplina"></param>
@@ -77,6 +108,8 @@ namespace PacienteVirtual.Models.Negocio
                 var repDemoAntrop = new RepositorioGenerico<DemograficosAntropometricosE>();
                 repDemoAntrop.Remover(da => da.IdConsultaFixo == idConsultaFixo);
                 repDemoAntrop.SaveChanges();
+
+                              
             }
             catch (Exception e)
             {

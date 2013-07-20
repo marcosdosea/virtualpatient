@@ -105,7 +105,7 @@ namespace PacienteVirtual.Models.Negocio
                             IdAcaoQueixa = tb_consulta_variavel_queixa.IdAcaoQueixa,
                             Motivo = tb_consulta_variavel_queixa.Motivo,
                             Desde = tb_consulta_variavel_queixa.Desde,
-                            Prioridade = (int)tb_consulta_variavel_queixa.Prioridade,
+                            Prioridade = (int) tb_consulta_variavel_queixa.Prioridade,
 
                             DescricaoAcao = tb_acao_queixa.DescricaoAcao,
                         };
@@ -153,7 +153,7 @@ namespace PacienteVirtual.Models.Negocio
             _consultaVariavelQueixaE.IdAcaoQueixa = consultaVariavelQueixa.IdAcaoQueixa;
             _consultaVariavelQueixaE.Motivo = consultaVariavelQueixa.Motivo;
             _consultaVariavelQueixaE.Desde = consultaVariavelQueixa.Desde;
-            _consultaVariavelQueixaE.Prioridade = (int)consultaVariavelQueixa.Prioridade;
+            _consultaVariavelQueixaE.Prioridade = consultaVariavelQueixa.Prioridade;
         }
     }
 }
