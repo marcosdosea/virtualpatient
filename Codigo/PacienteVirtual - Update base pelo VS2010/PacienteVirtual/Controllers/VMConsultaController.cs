@@ -13,6 +13,7 @@ namespace PacienteVirtual.Controllers
     {
         //
         // GET: /VMConsulta/
+        GerenciadorDemograficosAntropometricos gDemoAntrop = GerenciadorDemograficosAntropometricos.GetInstance();
 
         public ViewResult Index()
         {
@@ -58,37 +59,68 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult AdicionarAlterar(int idPaciente, int idRelato)
         {
+            int idPessoa = Global.ID_PESSOA;
+            int idTurma = Global.ID_TURMA;
             VMConsulta vmConsulta = new VMConsulta();
 
             vmConsulta.paciente = GerenciadorPaciente.GetInstance().Obter(idPaciente);
             vmConsulta.relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(idRelato);
 
+            ConsultaVariavelModel consultaV = GerenciadorConsultaVariavel.GetInstance().Obter(idTurma, idPessoa, idRelato);
+
+
+            if (consultaV == null){
+
+                consultaV.IdPessoa = idPessoa;
+                consultaV.IdTurma = idTurma;
+                consultaV.IdRelato = idRelato;
+                consultaV.IdConsultaFixo = 1;//Default
+                consultaV.IdRazaoEncontro = 1;//Default
+
+                long idConsultaV = GerenciadorConsultaVariavel.GetInstance().Inserir(consultaV);
+                return View(vmConsulta);
+            }
+            
+
             return View(vmConsulta);
-        }
-
-        //
-        // POST: /VMConsulta/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         public PartialViewResult DemograficosAntropomedicos(int id)
         {
+            ViewBag.foi = "foi";
+            //DemograficosAntropometricosModel demoAntrop = GerenciadorDemograficosAntropometricos.GetInstance().Obter(id);
+
+            DemograficosAntropometricosModel demoAntrop = new DemograficosAntropometricosModel();
+            if (!demoAntrop.IdConsultaFixo.ToString().Equals(null))
+            ViewBag.foi = demoAntrop.IdConsultaFixo.ToString();
+                
             ViewBag.IdEscolaridade = new SelectList(GerenciadorEscolaridade.GetInstance().ObterTodos().ToList(), "IdEscolaridade", "Nivel");
             ViewBag.IdOcupacao = new SelectList(GerenciadorOcupacao.GetInstance().ObterTodos().ToList(), "IdOcupacao", "Descricao");
             ViewBag.IdPlanoSaude = new SelectList(GerenciadorPlanoSaude.GetInstance().ObterTodos().ToList(), "IdPlanoSaude", "Nome");
-            return PartialView();
+
+            return PartialView(demoAntrop);
         }
+        
+        [HttpPost]
+        public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel demoAntrop)
+        {
+            ViewBag.foi = "salvo " + demoAntrop.IdConsultaFixo;
+            ViewBag.IdEscolaridade = new SelectList(gDemoAntrop.ObterTodos(), "IdEscolaridade", "Nivel");
+            ViewBag.IdOcupacao = new SelectList(gDemoAntrop.ObterTodos(), "IdOcupacao", "Descricao");
+            ViewBag.IdPlanoSaude = new SelectList(gDemoAntrop.ObterTodos(), "IdPlanoSaude", "Nome");
+
+            if (ModelState.IsValid)
+            {
+                demoAntrop.IdConsultaFixo = gDemoAntrop.Inserir(demoAntrop);
+                ViewBag.foi = "salvo Mesmo";
+
+                return PartialView();
+            
+            }
+            return PartialView(demoAntrop);
+
+        }
+
 
         public PartialViewResult ExperienciaMedicamentos(int id)
         {
@@ -156,7 +188,6 @@ namespace PacienteVirtual.Controllers
 
         public PartialViewResult MedicamentoPrescrito(int id)
         {
-
             return PartialView();
         }
 
