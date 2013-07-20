@@ -65,17 +65,17 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
-                                <% Html.RenderAction("DemograficosAntropomedicos", "VMConsulta", new RouteValueDictionary(new { id = Model.idDemograficosAntropomedicos }));%>
+                                <% Html.RenderAction("DemograficosAntropomedicos", "VMConsulta", new RouteValueDictionary(new { id = Model.idConsultaFixo }));%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-2">
                             <div class="thumbnail">
-                                <% Html.RenderAction("ExperienciaMedicamentos", "VMConsulta", new RouteValueDictionary(new { id = Model.idExperienciaMedicamentos }));%>
+                                <% Html.RenderAction("ExperienciaMedicamentos", "VMConsulta", new RouteValueDictionary(new { id = Model.idConsultaFixo }));%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-3">
                             <div class="thumbnail">
-                                <% Html.RenderAction("DiarioPessoal", "VMConsulta", new RouteValueDictionary(new { id = Model.idDiarioPessoal }));%>
+                                <% Html.RenderAction("DiarioPessoal", "VMConsulta", new RouteValueDictionary(new { id = Model.idConsultaFixo }));%>
                             </div>
                         </div>
                     </div>

@@ -17,8 +17,9 @@
 
     <% } %>
         </div>
-    <% if (Model != null)
-       { %>
+    <% if (Model !=null)
+       { 
+          %>
     <div class="span2">
 
         <div class="thumbnail">

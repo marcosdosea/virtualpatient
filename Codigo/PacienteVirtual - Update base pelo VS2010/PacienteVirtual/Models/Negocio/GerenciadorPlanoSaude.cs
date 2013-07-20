@@ -99,7 +99,7 @@ namespace PacienteVirtual.Models.Negocio
                         select new PlanoSaudeModel
                         {
                             IdPlanoSaude = planoSaude.IdPlanoSaude,
-                            Nome = planoSaude.Nome
+                            PlanoSaudeNome = planoSaude.Nome
                         };
             return query;
         }
@@ -130,7 +130,7 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         public IEnumerable<PlanoSaudeModel> ObterPorNome(string nome)
         {
-            return GetQuery().Where(planoSaude => planoSaude.Nome.StartsWith(nome)).ToList();
+            return GetQuery().Where(planoSaude => planoSaude.PlanoSaudeNome.StartsWith(nome)).ToList();
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="_planoSaudeE"></param>
         private static void Atribuir(PlanoSaudeModel planoSaude, PlanoSaudeE _planoSaudeE)
         {
-            _planoSaudeE.Nome = planoSaude.Nome;
+            _planoSaudeE.Nome = planoSaude.PlanoSaudeNome;
         }
     }
 }

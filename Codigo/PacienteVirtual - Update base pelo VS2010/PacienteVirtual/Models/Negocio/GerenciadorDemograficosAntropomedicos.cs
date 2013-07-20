@@ -137,6 +137,8 @@ namespace PacienteVirtual.Models.Negocio
                             OndeAdquireMedicamentos = demoAntrop.OndeAdquireMedicamentos,
 
                             IdEscolaridade = demoAntrop.IdEscolaridade,
+                            IdOcupacao = demoAntrop.IdOcupacao,
+                            IdPlanoSaude = demoAntrop.IdPlanoSaude
                         };
             return query;
         }

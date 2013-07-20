@@ -11,15 +11,9 @@ namespace PacienteVirtual.Models.ViewModel
 
         public RelatoClinicoModel relatoClinico { get; set; }
 
-        public int idConsultaFixo { get; set; }
+        public long idConsultaFixo { get; set; }
 
         public int idQueixa { get; set; }
-
-        public int idDemograficosAntropomedicos { get; set; }
-
-        public int idExperienciaMedicamentos { get; set; }
-
-        public int idDiarioPessoal { get; set; }
 
         public int idEstiloVida { get; set; }
 
