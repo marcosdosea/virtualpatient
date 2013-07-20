@@ -32,7 +32,7 @@ namespace PacienteVirtual.Models
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "relato_video", ResourceType = typeof(Mensagem))]
-        public byte[] RelatoVideo { get; set; }
+        public string RelatoVideo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nivel_dificuldade", ResourceType = typeof(Mensagem))]
