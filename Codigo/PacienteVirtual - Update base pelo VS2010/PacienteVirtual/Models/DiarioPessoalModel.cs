@@ -12,11 +12,11 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "consulta_dados_fixos_codigo", ResourceType = typeof(Mensagem))]
-        public Int64 IdConsultaFixo { get; set; }
+        public long IdConsultaFixo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "medicamento_codigo", ResourceType = typeof(Mensagem))]
-        public Int32 IdMedicamento { get; set; }
+        public int IdMedicamento { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "periodo", ResourceType = typeof(Mensagem))]

@@ -99,7 +99,7 @@ namespace PacienteVirtual.Models.Negocio
                         select new MedicamentosModel
                         {
                             IdMedicamento = medicamentos.IdMedicamento,
-                            Nome = medicamentos.Nome
+                            MedicamentoNome = medicamentos.Nome
                         };
             return query;
         }
@@ -130,7 +130,7 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         public IEnumerable<MedicamentosModel> ObterPorNome(string nome)
         {
-            return GetQuery().Where(medicamentos => medicamentos.Nome.StartsWith(nome)).ToList();
+            return GetQuery().Where(medicamentos => medicamentos.MedicamentoNome.StartsWith(nome)).ToList();
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="_medicamentosE"></param>
         private static void Atribuir(MedicamentosModel medicamentos, MedicamentosE _medicamentosE)
         {
-            _medicamentosE.Nome = medicamentos.Nome;
+            _medicamentosE.Nome = medicamentos.MedicamentoNome;
         }
     }
 }
