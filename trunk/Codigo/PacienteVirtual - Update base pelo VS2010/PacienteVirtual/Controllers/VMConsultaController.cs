@@ -67,7 +67,7 @@ namespace PacienteVirtual.Controllers
             vmConsulta.relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(idRelato);
 
             ConsultaVariavelModel consultaV = GerenciadorConsultaVariavel.GetInstance().Obter(idTurma, idPessoa, idRelato);
-            
+
             if (consultaV == null)
             {
                 ConsultaVariavelModel consultaVM = new ConsultaVariavelModel();
@@ -88,7 +88,7 @@ namespace PacienteVirtual.Controllers
 
         public PartialViewResult DemograficosAntropomedicos(int id)
         {
-            DemograficosAntropometricosModel demoAntrop = GerenciadorDemograficosAntropometricos.GetInstance().Obter(id);
+            DemograficosAntropometricosModel demoAntrop = gDemoAntrop.Obter(id);
 
             ViewBag.foi = "";
 
@@ -103,7 +103,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdEscolaridade = new SelectList(GerenciadorEscolaridade.GetInstance().ObterTodos().ToList(), "IdEscolaridade", "EscolaridadeNivel", demoAntrop.IdEscolaridade);
             ViewBag.IdOcupacao = new SelectList(GerenciadorOcupacao.GetInstance().ObterTodos().ToList(), "IdOcupacao", "OcupacaoDescricao", demoAntrop.IdOcupacao);
             ViewBag.IdPlanoSaude = new SelectList(GerenciadorPlanoSaude.GetInstance().ObterTodos().ToList(), "IdPlanoSaude", "PlanoSaudeNome", demoAntrop.IdPlanoSaude);
-            
+
             return PartialView(demoAntrop);
         }
 
@@ -111,7 +111,7 @@ namespace PacienteVirtual.Controllers
         public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel demoAntrop)
         {
             ViewBag.foi = "";
-              
+
             if (ModelState.IsValid)
             {
                 gDemoAntrop.Atualizar(demoAntrop);
@@ -121,7 +121,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdEscolaridade = new SelectList(GerenciadorEscolaridade.GetInstance().ObterTodos().ToList(), "IdEscolaridade", "EscolaridadeNivel", demoAntrop.IdEscolaridade);
             ViewBag.IdOcupacao = new SelectList(GerenciadorOcupacao.GetInstance().ObterTodos().ToList(), "IdOcupacao", "OcupacaoDescricao", demoAntrop.IdOcupacao);
             ViewBag.IdPlanoSaude = new SelectList(GerenciadorPlanoSaude.GetInstance().ObterTodos().ToList(), "IdPlanoSaude", "PlanoSaudeNome", demoAntrop.IdPlanoSaude);
-            
+
             return PartialView(demoAntrop);
 
         }
@@ -133,46 +133,45 @@ namespace PacienteVirtual.Controllers
             return PartialView();
         }
 
+        //Valores retorna valores iniciais se exsitirem
         public PartialViewResult DiarioPessoal(int id)
         {
-            ViewBag.foi = "foi Int";
+            DiarioPessoalModel diarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(id);
 
-            DiarioPessoalModel dp = new DiarioPessoalModel();
-            dp.Horario = "09/12/1992";
-            dp.IdConsultaFixo = 95;
-            dp.IdMedicamento = 7;
-            dp.Periodo = "segundo ....";
-            dp.Quantidade = "5";
-            dp.TipoBebida = "cachaça da boa";
+            ViewBag.situacao = "ssssss";
 
-            return PartialView(dp);
+            if (diarioPessoal == null)
+            {
+                ViewBag.situacao = "Dados ainda não cadastrados";
+
+                diarioPessoal = new DiarioPessoalModel();
+                diarioPessoal.IdConsultaFixo = id;
+                diarioPessoal.IdMedicamento = 1; //Default
+                diarioPessoal.Periodo = "0"; //Default
+                GerenciadorDiarioPessoal.GetInstance().Inserir(diarioPessoal);
+            }
+
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", diarioPessoal.IdMedicamento);
+            
+            return PartialView(diarioPessoal);
         }
 
-        //[HttpPost]
-        //public ActionResult DiarioPessoal(int id)
-        //{
-        //    ViewBag.foi = "foi? Não Válido";
+        // Atualização de campos
+        [HttpPost]
+        public PartialViewResult DiarioPessoal(DiarioPessoalModel diarioModel)
+        {
+            ViewBag.situacao = "Atualizadodoaosdoaodoasdo";
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        ViewBag.foi = "foi? Valido";
-        //    }
+            if (ModelState.IsValid)
+            {
+                GerenciadorDiarioPessoal.GetInstance().Atualizar(diarioModel);
+                ViewBag.situacao = "Atualizado";
+            }
 
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", diarioModel.IdMedicamento);
 
-        //    DiarioPessoalModel dp = new DiarioPessoalModel();
-        //    dp.Horario = "09/12/1992";
-        //    dp.IdConsultaFixo = 5;
-        //    dp.IdMedicamento = 7;
-        //    dp.Periodo = "segundo";
-        //    dp.Quantidade = "5";
-        //    dp.TipoBebida = "cachaça da boa valido";
-
-        //   //if (model == null)
-        //   //     return PartialView(7);
-
-
-        //    return PartialView();
-        //}
+            return PartialView("DiarioPessoal",diarioModel);
+        }
 
         public PartialViewResult RelatoClinico(RelatoClinicoModel model)
         {

@@ -296,9 +296,11 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\themes\pv\css\bootstrap-responsive.css" />
     <Content Include="Content\themes\pv\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\pv\css\bootstrap-timepicker.min.css" />
     <Content Include="Content\themes\pv\css\bootstrap.css" />
     <Content Include="Content\themes\pv\css\bootstrap.min.css" />
     <Content Include="Content\themes\pv\css\colorpicker.css" />
+    <Content Include="Content\themes\pv\css\bootstrap-timepicker.css" />
     <Content Include="Content\themes\pv\css\datepicker.css" />
     <Content Include="Content\themes\pv\css\imperio.css" />
     <Content Include="Content\themes\pv\img\icons\Flag_of_Brazil.png" />
@@ -366,10 +368,12 @@
     <Content Include="Content\themes\pv\img\switch.gif" />
     <Content Include="Content\themes\pv\img\ufs2.png" />
     <Content Include="Content\themes\pv\img\ufs3.png" />
+    <Content Include="Content\themes\pv\js\bootstrap-timepicker.js" />
     <Content Include="Content\themes\pv\js\bootstrap-colorpicker.js" />
     <Content Include="Content\themes\pv\js\bootstrap-datepicker.js" />
     <Content Include="Content\themes\pv\js\bootstrap.js" />
     <Content Include="Content\themes\pv\js\bootstrap.min.js" />
+    <Content Include="Content\themes\pv\js\bootstrap-timepicker.min.js" />
     <Content Include="Content\themes\pv\js\excanvas.js" />
     <Content Include="Content\themes\pv\js\excanvas.min.js" />
     <Content Include="Content\themes\pv\js\fullcalendar.js" />
@@ -396,6 +400,7 @@
     <Content Include="Content\themes\pv\js\jquery.validate.js" />
     <Content Include="Content\themes\pv\js\jquery.validate.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Models\Data\PacienteVirtualModel.edmx.sql" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />

@@ -6243,13 +6243,11 @@ namespace PacienteVirtual.Models.Data
         /// </summary>
         /// <param name="idConsultaFixo">Initial value of the IdConsultaFixo property.</param>
         /// <param name="idMedicamento">Initial value of the IdMedicamento property.</param>
-        /// <param name="periodo">Initial value of the Periodo property.</param>
-        public static DiarioPessoalE CreateDiarioPessoalE(global::System.Int64 idConsultaFixo, global::System.Int32 idMedicamento, global::System.String periodo)
+        public static DiarioPessoalE CreateDiarioPessoalE(global::System.Int64 idConsultaFixo, global::System.Int32 idMedicamento)
         {
             DiarioPessoalE diarioPessoalE = new DiarioPessoalE();
             diarioPessoalE.IdConsultaFixo = idConsultaFixo;
             diarioPessoalE.IdMedicamento = idMedicamento;
-            diarioPessoalE.Periodo = periodo;
             return diarioPessoalE;
         }
 
@@ -6330,7 +6328,7 @@ namespace PacienteVirtual.Models.Data
                 OnPeriodoChanged();
             }
         }
-        private global::System.String _Periodo;
+        private global::System.String _Periodo = "\'0\'";
         partial void OnPeriodoChanging(global::System.String value);
         partial void OnPeriodoChanged();
     

@@ -28,14 +28,14 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         public long Inserir(DiarioPessoalModel DiarioPessoalModel)
         {
-            var repHistorico = new RepositorioGenerico<DiarioPessoalE>();
+            var repDiarioPessoal = new RepositorioGenerico<DiarioPessoalE>();
             DiarioPessoalE _DiarioPessoalE = new DiarioPessoalE();
             try
             {
                 Atribuir(DiarioPessoalModel, _DiarioPessoalE);
 
-                repHistorico.Inserir(_DiarioPessoalE);
-                repHistorico.SaveChanges();
+                repDiarioPessoal.Inserir(_DiarioPessoalE);
+                repDiarioPessoal.SaveChanges();
 
                 return _DiarioPessoalE.IdConsultaFixo;
             }
@@ -53,11 +53,11 @@ namespace PacienteVirtual.Models.Negocio
         {
             try
             {
-                var repHistorico = new RepositorioGenerico<DiarioPessoalE>();
-                DiarioPessoalE _DiarioPessoalE = repHistorico.ObterEntidade(dP => dP.IdConsultaFixo == DiarioPessoalModel.IdConsultaFixo);
+                var repDiarioPessoal = new RepositorioGenerico<DiarioPessoalE>();
+                DiarioPessoalE _DiarioPessoalE = repDiarioPessoal.ObterEntidade(dP => dP.IdConsultaFixo == DiarioPessoalModel.IdConsultaFixo);
                 Atribuir(DiarioPessoalModel, _DiarioPessoalE);
 
-                repHistorico.SaveChanges();
+                repDiarioPessoal.SaveChanges();
             }
             catch (Exception e)
             {
@@ -73,9 +73,9 @@ namespace PacienteVirtual.Models.Negocio
         {
             try
             {
-                var repHistorico = new RepositorioGenerico<DiarioPessoalE>();
-                repHistorico.Remover(dP => dP.IdConsultaFixo == idConsultaFixo);
-                repHistorico.SaveChanges();
+                var repDiarioPessoal = new RepositorioGenerico<DiarioPessoalE>();
+                repDiarioPessoal.Remover(dP => dP.IdConsultaFixo == idConsultaFixo);
+                repDiarioPessoal.SaveChanges();
             }
             catch (Exception e)
             {
@@ -89,8 +89,8 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         private IQueryable<DiarioPessoalModel> GetQuery()
         {
-            var repHistorico = new RepositorioGenerico<DiarioPessoalE>();
-            var pvEntities = (pvEntities)repHistorico.ObterContexto();
+            var repDiarioPessoal = new RepositorioGenerico<DiarioPessoalE>();
+            var pvEntities = (pvEntities)repDiarioPessoal.ObterContexto();
             var query = from tb_diario_pessoal in pvEntities.tb_diario_pessoal
                         select new DiarioPessoalModel
                         {

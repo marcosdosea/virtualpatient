@@ -1,8 +1,9 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DemograficosAntropometricosModel>" %>
 <script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
-    type="text/javascript"></script>
+<script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
+<script src="<%: Url.Content("~/Scripts/partial.view.reload.js") %>"  type="text/javascript"></script>
+
 <% using (Html.BeginForm())
    { %>
 <%: Html.ValidationSummary(true) %>
