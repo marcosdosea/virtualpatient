@@ -96,7 +96,6 @@ namespace PacienteVirtual.Models.Negocio
                         select new ConsultaFixoModel
                         {
                             IdConsultaFixo = tb_consulta_fixo.IdConsultaFixo,
-                            EstadoPreenchimento = tb_consulta_fixo.EstadoPreenchimento,
                             EhGabarito = tb_consulta_fixo.EhGabarito,
                             DataAtualizacao = (DateTime)tb_consulta_fixo.DataAtualizacao,
                             ComentariosTutor = tb_consulta_fixo.ComentariosTutor,
@@ -140,7 +139,6 @@ namespace PacienteVirtual.Models.Negocio
         private static void Atribuir(ConsultaFixoModel consultaFixo, ConsultaFixoE _consultaFixoE)
         {
             _consultaFixoE.IdConsultaFixo = consultaFixo.IdConsultaFixo;
-            _consultaFixoE.EstadoPreenchimento = consultaFixo.EstadoPreenchimento;
             _consultaFixoE.EhGabarito = consultaFixo.EhGabarito;
             _consultaFixoE.DataAtualizacao = (DateTime)consultaFixo.DataAtualizacao;
             _consultaFixoE.ComentariosTutor = consultaFixo.ComentariosTutor;
