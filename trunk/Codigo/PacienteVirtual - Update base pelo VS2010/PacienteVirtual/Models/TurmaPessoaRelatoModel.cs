@@ -22,6 +22,10 @@ namespace PacienteVirtual.Models
         public int IdRelato { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "consulta_dados_fixos_codigo", ResourceType = typeof(Mensagem))]
+        public long IdConsultaFixo { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "estado_preenchimento", ResourceType = typeof(Mensagem))]
         public string EstadoPreenchimento { get; set; }
     }

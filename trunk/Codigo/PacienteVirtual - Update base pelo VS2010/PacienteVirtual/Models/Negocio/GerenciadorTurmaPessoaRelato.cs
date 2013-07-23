@@ -98,8 +98,8 @@ namespace PacienteVirtual.Models.Negocio
                             IdTurma = tb_turma_pessoa_relato.IdTurma,
                             IdPessoa = tb_turma_pessoa_relato.IdPessoa,
                             IdRelato = tb_turma_pessoa_relato.IdRelato,
+                            IdConsultaFixo = tb_turma_pessoa_relato.IdConsultaFixo,
                             EstadoPreenchimento = tb_turma_pessoa_relato.EstadoPreencimento
-                           
                         };
             return query;
         }
@@ -123,6 +123,7 @@ namespace PacienteVirtual.Models.Negocio
             _turmaPessoaRelatoE.IdTurma = turmaPessoaRelato.IdTurma;
             _turmaPessoaRelatoE.IdPessoa = turmaPessoaRelato.IdPessoa;
             _turmaPessoaRelatoE.IdRelato = turmaPessoaRelato.IdRelato;
+            _turmaPessoaRelatoE.IdConsultaFixo = turmaPessoaRelato.IdConsultaFixo;
             _turmaPessoaRelatoE.EstadoPreencimento = turmaPessoaRelato.EstadoPreenchimento;
         }
     }
