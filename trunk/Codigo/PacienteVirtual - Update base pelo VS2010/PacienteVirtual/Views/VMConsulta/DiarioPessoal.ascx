@@ -46,11 +46,11 @@
         <%: Html.ValidationMessageFor(model => model.Quantidade) %>
     </div>
     <div class="editor-label">
-        <%: Html.LabelFor(model => model.TipoBebida) %>
+        <%: Html.LabelFor(model => model.IdBebida) %>
     </div>
     <div class="editor-field">
-        <%: Html.EditorFor(model => model.TipoBebida) %>
-        <%: Html.ValidationMessageFor(model => model.TipoBebida) %>
+        <%: Html.EditorFor(model => model.IdBebida) %>
+        <%: Html.ValidationMessageFor(model => model.IdBebida)%>
     </div>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
