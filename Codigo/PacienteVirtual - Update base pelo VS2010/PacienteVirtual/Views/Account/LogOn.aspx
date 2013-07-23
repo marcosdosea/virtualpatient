@@ -7,7 +7,7 @@
 <asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Log On</h2>
     <p>
-        Please enter your user name and password. <%: Html.ActionLink("Registre-se", "Registro") %> if you don't have an account.
+        Please enter your user name and password. <%: Html.ActionLink("Registre-se", "Register") %> if you don't have an account.
     </p>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
