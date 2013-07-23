@@ -20,6 +20,7 @@ namespace PacienteVirtual.Controllers
         // GET: /RelatoClinico/
         public ViewResult Index()
         {
+            ViewBag.codigo = -1;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             return View();
         }
@@ -28,11 +29,12 @@ namespace PacienteVirtual.Controllers
         public ActionResult Index(int IdPaciente = -1)
         {
 
-            ViewBag.foi = IdPaciente + " foi";
+            ViewBag.codigo = IdPaciente;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             if (IdPaciente != -1)
-               return View(gRelato.ObterRelatos(IdPaciente));
-
+            {
+                    return View(gRelato.ObterRelatos(IdPaciente).ToList());
+            }
             return View();
         }
 

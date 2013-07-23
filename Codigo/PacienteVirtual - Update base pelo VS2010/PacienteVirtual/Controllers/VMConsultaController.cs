@@ -17,6 +17,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
+            ViewBag.codigo = -1;
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
             return View();
         }
@@ -24,35 +25,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Index(int IdPaciente = -1)
         {
-
+            ViewBag.codigo = IdPaciente;
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             if (IdPaciente != -1)
                 return View(GerenciadorRelatoClinico.GetInstance().ObterRelatos(IdPaciente));
 
             return View();
         }
-
-        //public ActionResult Index()
-        //{
-        //    return View(listaVMConsulta());
-        //}
-
-        ////Método destinado a pesquisar todos os paciente e obter todos os seus relatos
-        //private List<VMConsulta> listaVMConsulta()
-        //{
-        //    List<VMConsulta> listPacienteVM = new List<VMConsulta>();
-
-        //    GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
-        //    IEnumerable<PacienteModel> listPacientes = GerenciadorPaciente.GetInstance().ObterTodos();
-        //    foreach (PacienteModel paciente in listPacientes)
-        //    {
-        //        VMConsulta vmPaciente = new VMConsulta();
-        //        vmPaciente.paciente = paciente;
-        //        listPacienteVM.Add(vmPaciente);
-
-        //    }
-        //    return listPacienteVM;
-        //}
 
         //
         // GET: /VMConsulta/Create
@@ -68,8 +47,19 @@ namespace PacienteVirtual.Controllers
 
             ConsultaVariavelModel consultaV = GerenciadorConsultaVariavel.GetInstance().Obter(idTurma, idPessoa, idRelato);
 
-            if (consultaV == null)
+            if (consultaV == null)//caso a consulta nunca tenha sido feita para esse relato
             {
+                //ainda em teste
+                //alimenta a tabela tb_turma_pessoa_relato 
+                TurmaPessoaRelatoModel tPR = new TurmaPessoaRelatoModel();
+                tPR.IdPessoa = idPessoa;
+                tPR.IdTurma = idTurma;
+                tPR.IdRelato = idRelato;
+                tPR.IdConsultaFixo = 1; //Default
+
+                GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tPR);
+                
+                //Cria uma consulta Variavel caso não exista uma para as seguintes especificações
                 ConsultaVariavelModel consultaVM = new ConsultaVariavelModel();
                 consultaVM.IdPessoa = idPessoa;
                 consultaVM.IdTurma = idTurma;
@@ -138,7 +128,7 @@ namespace PacienteVirtual.Controllers
         {
             DiarioPessoalModel diarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(id);
 
-            ViewBag.situacao = "ssssss";
+            ViewBag.situacao = "sssrrrsssss";
 
             if (diarioPessoal == null)
             {
@@ -170,7 +160,7 @@ namespace PacienteVirtual.Controllers
 
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", diarioModel.IdMedicamento);
 
-            return PartialView("DiarioPessoal",diarioModel);
+            return PartialView(diarioModel);
         }
 
         public PartialViewResult RelatoClinico(RelatoClinicoModel model)

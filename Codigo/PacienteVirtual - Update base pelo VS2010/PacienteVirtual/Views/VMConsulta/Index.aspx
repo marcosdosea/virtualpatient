@@ -13,15 +13,12 @@
         <!-- %: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { @onchange = "this.form.action = Index = 1;" })%-->
         <% } %>
     </div>
-    <% if (Model != null)
-       { %>
     <div class="span2">
         <div class="thumbnail">
-            <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = Model.First().IdPaciente})) %>"
+            <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = ViewBag.codigo})) %>"
                 alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
         </div>
     </div>
-    <% } %>
     <div class="box-content">
         <table class="table table-bordered table-striped">
             <tr>
@@ -40,8 +37,8 @@
                 <th>
                     video
                 </th>
-                    <th>
-                     <%: Resources.Mensagem.consulta %>
+                <th>
+                    <%: Resources.Mensagem.consulta %>
                 </th>
             </tr>
             <% if (Model != null)
@@ -64,7 +61,8 @@
                     <%: Html.DisplayFor(modelItem => item.RelatoVideo)%>
                 </td>
                 <td>
-                       <%: Html.ActionLink("Criar/Alterar", "AdicionarAlterar", new { idPaciente = item.IdPaciente, idRelato = item.IdRelato})%> |
+                    <%: Html.ActionLink("Criar/Alterar", "AdicionarAlterar", new { idPaciente = item.IdPaciente, idRelato = item.IdRelato})%>
+                    |
                 </td>
             </tr>
             <% } %>
