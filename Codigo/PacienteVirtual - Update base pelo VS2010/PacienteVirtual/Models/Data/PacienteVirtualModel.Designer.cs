@@ -8,13 +8,12 @@
 //------------------------------------------------------------------------------
 
 using System;
-using System.ComponentModel;
-using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Linq;
-using System.Runtime.Serialization;
+using System.Data.EntityClient;
+using System.ComponentModel;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -1164,7 +1163,6 @@ namespace PacienteVirtual.Models.Data
         private ObjectSet<tb_bebida> _tb_bebida;
 
         #endregion
-
         #region AddTo Methods
     
         /// <summary>
@@ -1672,11 +1670,11 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
+    
 
     #endregion
-
+    
     #region Entities
     
     /// <summary>
@@ -1701,7 +1699,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1756,7 +1753,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnDescricaoAcaoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -1805,7 +1801,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -1832,7 +1827,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -1887,7 +1881,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnDescricaoAcaoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -1936,7 +1929,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -1963,7 +1955,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -2018,7 +2009,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnAlergiaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -2045,7 +2035,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -2080,7 +2069,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -2615,7 +2603,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnflAcessoUniversidadeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -2740,7 +2727,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -2775,7 +2761,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -3550,7 +3535,6 @@ namespace PacienteVirtual.Models.Data
         partial void OntipoBebidaAlcoolicaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -3709,7 +3693,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -3738,7 +3721,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -3817,7 +3799,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkAlunoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -4194,7 +4175,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -4221,7 +4201,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -4324,7 +4303,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnComentariosTutorChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -4487,7 +4465,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -4514,7 +4491,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -4644,7 +4620,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnUnidadeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -4725,7 +4700,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -4760,7 +4734,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -4983,7 +4956,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnComentariosTutorChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -5250,7 +5222,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -5281,7 +5252,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -5435,7 +5405,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnPrioridadeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -5554,7 +5523,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -5583,7 +5551,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -5662,7 +5629,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdInstituicaoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -5727,7 +5693,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -5762,7 +5727,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -6009,7 +5973,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdPlanoSaudeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -6166,7 +6129,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -6197,7 +6159,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -6351,7 +6312,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdBebidaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -6470,7 +6430,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -6497,7 +6456,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -6552,7 +6510,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeDisciplinaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -6579,7 +6536,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -6606,7 +6562,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -6661,7 +6616,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNivelChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -6688,7 +6642,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -6725,7 +6678,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -6996,7 +6948,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnAlcoolParouChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -7039,7 +6990,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -7064,7 +7014,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -7215,7 +7164,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnGlicemiaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -7280,7 +7228,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -7327,7 +7274,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -7622,7 +7568,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnAtencaoComportamentoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -7893,7 +7838,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -7922,7 +7866,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -8001,7 +7944,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnHistoriaFamiliarChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -8044,7 +7986,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -8079,7 +8020,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -8326,7 +8266,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnComentarioTutorChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -8407,7 +8346,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -8436,7 +8374,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -8515,7 +8452,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnSiglaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -8564,7 +8500,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -8593,7 +8528,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -8720,7 +8654,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkCasoClinicoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -8763,7 +8696,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -8792,7 +8724,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -8919,7 +8850,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkResposta4Changed();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -9000,7 +8930,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -9027,7 +8956,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -9154,7 +9082,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkResposta2Changed();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -9235,7 +9162,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -9260,7 +9186,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -9411,7 +9336,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnflItalicoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -9454,7 +9378,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -9483,7 +9406,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -9613,7 +9535,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnPosologiaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -9694,7 +9615,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -9719,7 +9639,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -9918,7 +9837,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnflItalicoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -9961,7 +9879,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -9988,7 +9905,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -10166,7 +10082,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnEspecialidadeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -10247,7 +10162,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -10274,7 +10188,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -10521,7 +10434,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnconheceCumpreChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -10602,7 +10514,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -10629,7 +10540,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -10876,7 +10786,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnconheceCumpreChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -10957,7 +10866,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -10984,7 +10892,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -11231,7 +11138,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnconheceCumpreChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -11312,7 +11218,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -11339,7 +11244,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -11469,7 +11373,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnPeriodoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -11550,7 +11453,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -11577,7 +11479,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -11632,7 +11533,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -11747,7 +11647,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -11774,7 +11673,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -12237,7 +12135,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnFailedPasswordAnswerAttemptWindowStartChanged();
 
         #endregion
-
     
     }
     
@@ -12265,7 +12162,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -12320,7 +12216,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnDescricaoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -12347,7 +12242,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -12374,7 +12268,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -12453,7 +12346,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnFotoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -12480,7 +12372,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -12507,7 +12398,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -12658,7 +12548,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkCasoClinicoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -12701,7 +12590,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -12728,7 +12616,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -12783,7 +12670,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnParametroClinicoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -12810,7 +12696,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -12837,7 +12722,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -12892,7 +12776,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnPerguntaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -12919,7 +12802,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -12946,7 +12828,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -13001,7 +12882,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -13050,7 +12930,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -13077,7 +12956,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -13132,7 +13010,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -13159,7 +13036,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -13188,7 +13064,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -13387,7 +13262,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnprioridadeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -13474,7 +13348,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -13503,7 +13376,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -13582,7 +13454,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdSistemaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -13647,7 +13518,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -13690,7 +13560,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -13991,7 +13860,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdAcaoAlternativa2Changed();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -14148,7 +14016,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -14177,7 +14044,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -14256,7 +14122,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkRespostaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -14337,7 +14202,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -14368,7 +14232,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -14543,7 +14406,6 @@ namespace PacienteVirtual.Models.Data
         partial void OndescricaoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -14668,7 +14530,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -14699,7 +14560,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -14874,7 +14734,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnperiodoSurgimentoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -14999,7 +14858,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -15028,7 +14886,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -15107,7 +14964,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnfkRespostaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -15188,7 +15044,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -15215,7 +15070,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -15270,7 +15124,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnDescricaoRazaoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -15297,7 +15150,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -15330,7 +15182,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -15481,7 +15332,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNivelDificuldadeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -15568,7 +15418,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -15597,7 +15446,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -15676,7 +15524,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdPerguntaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -15851,7 +15698,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -15892,7 +15738,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -17027,7 +16872,6 @@ namespace PacienteVirtual.Models.Data
         partial void OntipoBebidaAlcoolicaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -17152,7 +16996,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -17183,7 +17026,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -17406,7 +17248,6 @@ namespace PacienteVirtual.Models.Data
         partial void OncartaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -17575,7 +17416,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -17606,7 +17446,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -17829,7 +17668,6 @@ namespace PacienteVirtual.Models.Data
         partial void OncartaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -17998,7 +17836,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -18027,7 +17864,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -18322,7 +18158,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnimcChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -18447,7 +18282,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -18474,7 +18308,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -18529,7 +18362,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeSistemaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -18556,7 +18388,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -18583,7 +18414,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -18638,7 +18468,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomeChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -18665,7 +18494,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -18692,7 +18520,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -18747,7 +18574,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnNomePerfilChanged();
 
         #endregion
-
     
     }
     
@@ -18781,7 +18607,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -18908,7 +18733,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdInstituicaoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -18973,7 +18797,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -19000,7 +18823,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -19058,7 +18880,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdPessoaChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -19161,7 +18982,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -19194,7 +19014,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -19330,7 +19149,6 @@ namespace PacienteVirtual.Models.Data
         partial void OnEstadoPreencimentoChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -19471,7 +19289,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -19506,7 +19323,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -19681,7 +19497,6 @@ namespace PacienteVirtual.Models.Data
         partial void OntpUsuarioChanged();
 
         #endregion
-
     
     }
     
@@ -19711,7 +19526,6 @@ namespace PacienteVirtual.Models.Data
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -19793,11 +19607,9 @@ namespace PacienteVirtual.Models.Data
         partial void OnIdPerfilUsuarioChanged();
 
         #endregion
-
     
     }
 
     #endregion
-
     
 }

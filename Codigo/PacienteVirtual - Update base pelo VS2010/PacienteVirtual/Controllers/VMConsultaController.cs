@@ -51,13 +51,14 @@ namespace PacienteVirtual.Controllers
             {
                 //ainda em teste
                 //alimenta a tabela tb_turma_pessoa_relato 
-                TurmaPessoaRelatoModel tPR = new TurmaPessoaRelatoModel();
-                tPR.IdPessoa = idPessoa;
-                tPR.IdTurma = idTurma;
-                tPR.IdRelato = idRelato;
-                tPR.IdConsultaFixo = 1; //Default
+                //TurmaPessoaRelatoModel tPR = new TurmaPessoaRelatoModel();
+                //tPR.IdPessoa = idPessoa;
+                //tPR.IdTurma = idTurma;
+                //tPR.IdRelato = idRelato;
+                //tPR.IdConsultaFixo = 1; //Default
+                //tPR.EstadoPreenchimento = "A";
 
-                GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tPR);
+                //GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tPR);
                 
                 //Cria uma consulta Variavel caso não exista uma para as seguintes especificações
                 ConsultaVariavelModel consultaVM = new ConsultaVariavelModel();
@@ -86,6 +87,11 @@ namespace PacienteVirtual.Controllers
             {
                 demoAntrop = new DemograficosAntropometricosModel();
                 demoAntrop.IdConsultaFixo = id;
+                demoAntrop.Nome = "";
+                demoAntrop.Genero = "";
+                demoAntrop.IdPlanoSaude = 1;
+                demoAntrop.IdEscolaridade = 1;
+                demoAntrop.IdOcupacao = 1;
                 ViewBag.foi = "Dados ainda não cadastrados";
                 gDemoAntrop.Inserir(demoAntrop);
             }
@@ -138,6 +144,7 @@ namespace PacienteVirtual.Controllers
                 diarioPessoal.IdConsultaFixo = id;
                 diarioPessoal.IdMedicamento = 1; //Default
                 diarioPessoal.Periodo = "0"; //Default
+                diarioPessoal.IdBebida = 1;
                 GerenciadorDiarioPessoal.GetInstance().Inserir(diarioPessoal);
             }
 
