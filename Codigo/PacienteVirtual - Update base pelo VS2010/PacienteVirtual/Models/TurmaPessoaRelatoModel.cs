@@ -20,5 +20,9 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "relato_codigo", ResourceType = typeof(Mensagem))]
         public int IdRelato { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "estado_preenchimento", ResourceType = typeof(Mensagem))]
+        public string EstadoPreenchimento { get; set; }
     }
 }

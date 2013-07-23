@@ -99,7 +99,7 @@ namespace PacienteVirtual.Models.Negocio
                             Periodo = tb_diario_pessoal.Periodo,
                             Horario = tb_diario_pessoal.Horario,
                             Quantidade = tb_diario_pessoal.Quantidade,
-                            TipoBebida = tb_diario_pessoal.TipoBebida,
+                            IdBebida = tb_diario_pessoal.IdBebida,
 
                         };
             return query;
@@ -145,7 +145,7 @@ namespace PacienteVirtual.Models.Negocio
             _DiarioPessoalE.Periodo = DiarioPessoalModel.Periodo;
             _DiarioPessoalE.Horario = DiarioPessoalModel.Horario;
             _DiarioPessoalE.Quantidade = DiarioPessoalModel.Quantidade;
-            _DiarioPessoalE.TipoBebida = DiarioPessoalModel.TipoBebida;
+            _DiarioPessoalE.IdBebida = DiarioPessoalModel.IdBebida;
 
         }
 

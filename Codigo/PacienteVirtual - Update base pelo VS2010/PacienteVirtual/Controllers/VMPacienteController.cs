@@ -104,7 +104,7 @@ namespace PacienteVirtual.Controllers.ViewModelControllers
             dp.IdMedicamento = 7;
             dp.Periodo = "segundo";
             dp.Quantidade = "5";
-            dp.TipoBebida = "cachaça";
+            dp.IdBebida = 1;
 
             vmPaciente.diarioPessoal = dp;
 

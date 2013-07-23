@@ -25,10 +25,6 @@ namespace PacienteVirtual.Models
         public int IdPessoa { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "estado_preenchimento", ResourceType = typeof(Mensagem))]
-        public string EstadoPreenchimento { get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "eh_gabarito", ResourceType = typeof(Mensagem))] 
         public bool EhGabarito { get; set; }
 

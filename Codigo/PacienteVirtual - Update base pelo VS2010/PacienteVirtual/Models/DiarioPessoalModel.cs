@@ -32,6 +32,6 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "tipo_bebida", ResourceType = typeof(Mensagem))]
-        public string TipoBebida { get; set; }
+        public int IdBebida { get; set; }
     }
 }
