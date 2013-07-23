@@ -10,7 +10,8 @@ using PacienteVirtual.Models.Negocio;
 using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
-{ 
+{
+    [Authorize(Roles = "administrador, tutor")]
     public class AlergiaController : Controller
     {
         GerenciadorAlergia gAlergia = GerenciadorAlergia.GetInstance();
