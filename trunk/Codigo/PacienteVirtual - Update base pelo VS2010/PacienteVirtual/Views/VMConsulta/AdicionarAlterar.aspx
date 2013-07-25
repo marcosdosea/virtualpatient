@@ -105,22 +105,22 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
                             <div class="thumbnail">
-                                <% Html.RenderAction("EstiloVida", "VMConsulta", new RouteValueDictionary(new { id = Model.idEstiloVida }));%>
+                                <% Html.RenderAction("EstiloVida", "VMConsulta", new RouteValueDictionary(new { id = Model.idConsultaVariavel }));%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-2">
                             <div class="thumbnail">
-                                <% Html.RenderAction("MedicamentosAnteriores", "VMConsulta", new RouteValueDictionary(new { id = Model.idMedicamentosAnteriores }));%>
+                                <% Html.RenderAction("MedicamentosAnteriores", "VMConsulta", new RouteValueDictionary(new { id = Model.idConsultaVariavel }));%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-3">
                             <div class="thumbnail">
-                                <% Html.RenderAction("MedicamentoPrescrito", "VMConsulta", new RouteValueDictionary(new { id = Model.idMedicamentoPrescrito }));%>
+                                <% Html.RenderAction("MedicamentoPrescrito", "VMConsulta", new RouteValueDictionary(new { id = Model.idConsultaVariavel }));%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-4">
                             <div class="thumbnail">
-                                <% Html.RenderAction("MedicamentoNaoPrescrito", "VMConsulta", new RouteValueDictionary(new { id = Model.idMedicamentoNaoPrescrito }));%>
+                                <% Html.RenderAction("MedicamentoNaoPrescrito", "VMConsulta", new RouteValueDictionary(new { id = Model.idConsultaVariavel }));%>
                             </div>
                         </div>
                     </div>

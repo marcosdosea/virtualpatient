@@ -534,4 +534,7 @@
   <data name="relato_video" xml:space="preserve">
     <value>Relate in Video</value>
   </data>
+  <data name="adicionar" xml:space="preserve">
+    <value>Add</value>
+  </data>
 </root>

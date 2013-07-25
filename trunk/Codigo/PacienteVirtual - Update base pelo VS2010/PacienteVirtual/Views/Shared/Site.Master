@@ -28,6 +28,13 @@
 </head>
 <body>
     <div>
+    <noscript>
+        <div>
+            <h2>This site requires JavaScript ... melhor invocar um View especificar para exibição de uma mensagem ao usuário
+            se possivel colocar tbm uma animação para intrete-lo</h2>
+        </div>
+    </noscript>
+
         <header class="container">
             <div id="title">
                 <br />

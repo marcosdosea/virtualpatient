@@ -13,16 +13,11 @@ namespace PacienteVirtual.Models.ViewModel
 
         public long idConsultaFixo { get; set; }
 
+        public long idConsultaVariavel { get; set; }
+
         public int idQueixa { get; set; }
 
-        public int idEstiloVida { get; set; }
-
-        public int idMedicamentosAnteriores { get; set; }
-
-        public int idMedicamentoPrescrito { get; set; }
-
-        public int idMedicamentoNaoPrescrito { get; set; }
-
- 
+      
+       
     }
 }

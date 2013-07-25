@@ -70,12 +70,31 @@ namespace PacienteVirtual.Models.Negocio
         /// Remove dados do MedicamentosAnteriores
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
+        public void Remover(long idConsultaVariavel, long idMedicamento)
+        {
+            try
+            {
+                var repMedicamentosAnteriores = new RepositorioGenerico<MedicamentosAnterioresE>();
+                repMedicamentosAnteriores.Remover(mA => mA.IdConsultaVariavel == idConsultaVariavel
+                    && mA.IdMedicamento == idMedicamento);
+                repMedicamentosAnteriores.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("MedicamentosAnteriores", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Remove dados do MedicamentosAnteriores
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
         public void Remover(long idConsultaVariavel)
         {
             try
             {
                 var repMedicamentosAnteriores = new RepositorioGenerico<MedicamentosAnterioresE>();
-                repMedicamentosAnteriores.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel);
+                repMedicamentosAnteriores.Remover(mA => mA.IdConsultaVariavel == idConsultaVariavel);
                 repMedicamentosAnteriores.SaveChanges();
             }
             catch (Exception e)
@@ -117,9 +136,9 @@ namespace PacienteVirtual.Models.Negocio
         /// Obtém MedicamentosAnteriores com o código especificiado
         /// </summary>
         /// <returns></returns>
-        public MedicamentosAnterioresModel Obter(long idConsultaVariavel)
+        public IEnumerable<MedicamentosAnterioresModel> Obter(long idConsultaVariavel)
         {
-            return GetQuery().Where(MedicamentosAnterioresModel => MedicamentosAnterioresModel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(MedicamentosAnterioresModel => MedicamentosAnterioresModel.IdConsultaVariavel == idConsultaVariavel);
         }
 
         /// <summary>
