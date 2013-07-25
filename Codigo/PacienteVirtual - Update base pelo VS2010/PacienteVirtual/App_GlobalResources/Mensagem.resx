@@ -502,7 +502,7 @@
     <value>Medicamento não prescrito</value>
   </data>
   <data name="medicamento_prescrito" xml:space="preserve">
-    <value>Medicamento</value>
+    <value>Medicamentos prescrito</value>
   </data>
   <data name="listar" xml:space="preserve">
     <value>Listar</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="relato_video" xml:space="preserve">
     <value>Relato em Vídeo</value>
+  </data>
+  <data name="adicionar" xml:space="preserve">
+    <value>Adicionar</value>
   </data>
 </root>

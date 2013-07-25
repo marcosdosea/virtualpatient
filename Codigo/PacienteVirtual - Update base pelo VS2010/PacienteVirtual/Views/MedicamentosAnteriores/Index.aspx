@@ -11,7 +11,8 @@
 <p>
     <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
-<div class="box-content"> <table class="table table-bordered table-striped">
+<div class="box-content">
+ <table class="table table-bordered table-striped">
     <tr>
         <th>
             <%: Resources.Mensagem.indicacao %>
