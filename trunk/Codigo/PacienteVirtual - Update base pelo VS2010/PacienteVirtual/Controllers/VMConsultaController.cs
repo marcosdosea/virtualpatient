@@ -150,13 +150,13 @@ namespace PacienteVirtual.Controllers
                 diarioPessoal = new DiarioPessoalModel();
                 diarioPessoal.IdConsultaFixo = id;
                 diarioPessoal.IdMedicamento = 1; //Default
-                diarioPessoal.Periodo = "0"; //Default
+                diarioPessoal.Periodo = "M"; //Default
                 diarioPessoal.IdBebida = 1;
                 GerenciadorDiarioPessoal.GetInstance().Inserir(diarioPessoal);
             }
 
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", diarioPessoal.IdMedicamento);
-            
+            ViewBag.IdBebida = new SelectList(GerenciadorBebida.GetInstance().ObterTodos().ToList(), "IdBebida", "NomeBebida", diarioPessoal.IdBebida);
             return PartialView(diarioPessoal);
         }
 
@@ -173,7 +173,7 @@ namespace PacienteVirtual.Controllers
             }
 
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", diarioModel.IdMedicamento);
-
+            ViewBag.IdBebida = new SelectList(GerenciadorBebida.GetInstance().ObterTodos().ToList(), "IdBebida", "NomeBebida", diarioModel.IdBebida);
             return PartialView(diarioModel);
         }
 

@@ -19,11 +19,11 @@
         <%: Html.HiddenFor(model => model.IdEscolaridade) %>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Nivel) %>
+            <%: Html.LabelFor(model => model.EscolaridadeNivel) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Nivel) %>
-            <%: Html.ValidationMessageFor(model => model.Nivel) %>
+            <%: Html.EditorFor(model => model.EscolaridadeNivel) %>
+            <%: Html.ValidationMessageFor(model => model.EscolaridadeNivel) %>
         </div>
 
     <div class="form-actions">

@@ -537,4 +537,10 @@
   <data name="adicionar" xml:space="preserve">
     <value>Adicionar</value>
   </data>
+  <data name="medicamento" xml:space="preserve">
+    <value>Medicamento</value>
+  </data>
+  <data name="bebida" xml:space="preserve">
+    <value>Bebida</value>
+  </data>
 </root>

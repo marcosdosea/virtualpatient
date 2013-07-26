@@ -18,6 +18,9 @@ namespace PacienteVirtual.Models
         [Display(Name = "medicamento_codigo", ResourceType = typeof(Mensagem))]
         public int IdMedicamento { get; set; }
 
+        [Display(Name = "medicamento", ResourceType = typeof(Mensagem))]
+        public String Medicamento { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "periodo", ResourceType = typeof(Mensagem))]
         public string Periodo { get; set; }
@@ -33,5 +36,8 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "tipo_bebida", ResourceType = typeof(Mensagem))]
         public int IdBebida { get; set; }
+
+        [Display(Name = "tipo_bebida", ResourceType = typeof(Mensagem))]
+        public String NomeBebida { get; set; }
     }
 }
