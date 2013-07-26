@@ -2649,7 +2649,7 @@
             <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
             <End Role="MedicamentoNaoPrescritoE" EntitySet="tb_medicamento_nao_prescrito" />
           </AssociationSet>
-          <EntitySet Name="tb_bebida" EntityType="pvModel.tb_bebida" />
+          <EntitySet Name="tb_bebida" EntityType="pvModel.BebidaE" />
           <AssociationSet Name="fk_tb_diario_pessoal_tb_bebida1" Association="pvModel.fk_tb_diario_pessoal_tb_bebida1">
             <End Role="tb_bebida" EntitySet="tb_bebida" />
             <End Role="DiarioPessoalE" EntitySet="tb_diario_pessoal" />
@@ -4575,7 +4575,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="tb_bebida">
+        <EntityType Name="BebidaE">
           <Key>
             <PropertyRef Name="IdBebida" />
           </Key>
@@ -4584,7 +4584,7 @@
           <NavigationProperty Name="tb_diario_pessoal" Relationship="pvModel.fk_tb_diario_pessoal_tb_bebida1" FromRole="tb_bebida" ToRole="DiarioPessoalE" />
         </EntityType>
         <Association Name="fk_tb_diario_pessoal_tb_bebida1">
-          <End Type="pvModel.tb_bebida" Role="tb_bebida" Multiplicity="1" />
+          <End Type="pvModel.BebidaE" Role="tb_bebida" Multiplicity="1" />
           <End Type="pvModel.DiarioPessoalE" Role="DiarioPessoalE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_bebida">
@@ -5402,7 +5402,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_bebida">
-      <EntityTypeMapping TypeName="IsTypeOf(pvModel.tb_bebida)">
+      <EntityTypeMapping TypeName="IsTypeOf(pvModel.BebidaE)">
         <MappingFragment StoreEntitySet="tb_bebida">
           <ScalarProperty Name="IdBebida" ColumnName="IdBebida" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -6073,7 +6073,7 @@
           <ConnectorPoint PointX="12" PointY="23.08287612680288" />
           <ConnectorPoint PointX="12" PointY="23.239889322916667" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="pvModel.tb_bebida" Width="1.5" PointX="8.375" PointY="3.875" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="pvModel.BebidaE" Width="1.5" PointX="8.375" PointY="3.875" Height="1.5956835937499818" />
         <AssociationConnector Association="pvModel.fk_tb_diario_pessoal_tb_bebida1" >
           <ConnectorPoint PointX="9.84375" PointY="5.4706835937499818" />
           <ConnectorPoint PointX="9.84375" PointY="19.5932421875" />

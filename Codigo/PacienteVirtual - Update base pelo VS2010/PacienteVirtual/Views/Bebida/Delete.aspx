@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.EscolaridadeModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.BebidaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.deletar %>
@@ -10,11 +10,11 @@
 
 <h3><%: Resources.Mensagem.deletar_pergunta %></h3>
 <fieldset>
-    <legend><%: Resources.Mensagem.escolaridade %></legend>
+    <legend><%: Resources.Mensagem.bebida %></legend>
 
-    <div class="display-label"><%: Resources.Mensagem.nivel_escolaridade %></div>
+    <div class="display-label"><%: Resources.Mensagem.bebida %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.EscolaridadeNivel) %>
+        <%: Html.DisplayFor(model => model.NomeBebida) %>
     </div>
 </fieldset>
 <% using (Html.BeginForm()) { %>

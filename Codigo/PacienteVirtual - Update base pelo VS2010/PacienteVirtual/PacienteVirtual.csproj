@@ -106,6 +106,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\AlergiaController.cs" />
+    <Compile Include="Controllers\BebidaController.cs" />
     <Compile Include="Controllers\ConsultaFixoController.cs" />
     <Compile Include="Controllers\VMConsultaController.cs" />
     <Compile Include="Controllers\CursoController.cs">
@@ -163,6 +164,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\AlergiaModel.cs" />
+    <Compile Include="Models\BebidaModel.cs" />
     <Compile Include="Models\ConsultaFixoModel.cs" />
     <Compile Include="Models\ConsultaVariavelModel.cs" />
     <Compile Include="Models\CursoModel.cs">
@@ -201,6 +203,7 @@
     <Compile Include="Models\MedicamentoPrescritoModel.cs" />
     <Compile Include="Models\MedicamentosAnterioresModel.cs" />
     <Compile Include="Models\MedicamentosModel.cs" />
+    <Compile Include="Models\Negocio\GerenciadorBebida.cs" />
     <Compile Include="Models\Negocio\GerenciadorConsultaVariavel.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoAlternativa.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoQueixa.cs" />
@@ -438,6 +441,11 @@
     <Content Include="Views\Alergia\Details.aspx" />
     <Content Include="Views\Alergia\Edit.aspx" />
     <Content Include="Views\Alergia\Index.aspx" />
+    <Content Include="Views\Bebida\Create.aspx" />
+    <Content Include="Views\Bebida\Delete.aspx" />
+    <Content Include="Views\Bebida\Details.aspx" />
+    <Content Include="Views\Bebida\Edit.aspx" />
+    <Content Include="Views\Bebida\Index.aspx" />
     <Content Include="Views\CadastroConsultaFixo\Index.aspx" />
     <Content Include="Views\ConsultaFixo\Create.aspx" />
     <Content Include="Views\ConsultaFixo\Delete.aspx" />

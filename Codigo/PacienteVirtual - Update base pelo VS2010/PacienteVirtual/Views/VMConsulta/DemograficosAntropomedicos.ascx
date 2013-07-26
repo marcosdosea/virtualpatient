@@ -5,8 +5,7 @@
 <%: Html.ValidationSummary(true) %>
 <fieldset>
     <legend><%: Resources.Mensagem.demografico_antropometricos %></legend>
-    <h3> <%: ViewBag.foi %> </h3>
-
+        <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
         <div class="row-fluid">
             <div class="span4">
                 <div class="editor-label">
