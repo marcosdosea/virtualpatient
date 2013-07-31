@@ -155,6 +155,13 @@ namespace PacienteVirtual.Controllers
                 GerenciadorDiarioPessoal.GetInstance().Inserir(diarioPessoal);
             }
 
+            /*
+            ViewBag.Periodo = new SelectList(new[] 
+            {
+                new {Valor = 1, Texto = "Manhã"}, 
+                new {Valor = 2, Texto = "Tarde"}, 
+                new {Valor = 3, Texto = "Noite"}
+            }, "Valor", "Texto"); */
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", diarioPessoal.IdMedicamento);
             ViewBag.IdBebida = new SelectList(GerenciadorBebida.GetInstance().ObterTodos().ToList(), "IdBebida", "NomeBebida", diarioPessoal.IdBebida);
             return PartialView(diarioPessoal);
