@@ -48,15 +48,15 @@ namespace PacienteVirtual.Controllers
         // POST: /Turma/Create
 
         [HttpPost]
-        public ActionResult Create(TurmaModel turmaModel/*TurmaE turmae*/)
+        public ActionResult Create(TurmaModel turmaModel)
         {
             if (ModelState.IsValid)
             {
                 turmaModel.IdTurma = gTurma.Inserir(turmaModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
-            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina"); 
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
+            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina", turmaModel.IdDisciplina); 
             return View(turmaModel);
         }
 
@@ -65,9 +65,9 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Edit(int id)
         {
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
-            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina"); 
             TurmaModel turmaModel = GerenciadorTurma.GetInstance().Obter(id);
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
+            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina", turmaModel.IdDisciplina); 
             return View(turmaModel);
         }
 
@@ -83,9 +83,9 @@ namespace PacienteVirtual.Controllers
                 gTurma.Atualizar(turmaModel);
                 return RedirectToAction("Index");
             }
-            
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
-            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina");
+
+            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
+            ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina", turmaModel.IdDisciplina);
             return View(turmaModel);
         }
 

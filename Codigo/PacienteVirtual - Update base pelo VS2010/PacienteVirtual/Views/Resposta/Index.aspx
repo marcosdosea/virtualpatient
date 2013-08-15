@@ -9,7 +9,7 @@
 <h2>  <%: Resources.Mensagem.resposta %></h2>
 
 <p>
-    <%: Html.ActionLink(Resources.Mensagem.resposta, "Create") %>
+    <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
 <div class="box-content"> <table class="table table-bordered table-striped">
     <tr>

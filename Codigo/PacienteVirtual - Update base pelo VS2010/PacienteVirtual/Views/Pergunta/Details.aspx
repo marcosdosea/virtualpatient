@@ -11,8 +11,8 @@
 <fieldset>
     <legend><%: Resources.Mensagem.pergunta %></legend>
 
-    <div class="display-label">Resources.Mensagem.pergunta</div>
-    <div class="display-field">
+    <div class="display-label"><%: Resources.Mensagem.pergunta %></div>
+    <div class="display-label">
         <%: Html.DisplayFor(model => model.Pergunta) %>
     </div>
 </fieldset>

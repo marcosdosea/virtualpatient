@@ -43,7 +43,7 @@ namespace PacienteVirtual.Models.Negocio
             }
             catch (Exception e)
             {
-                throw new DadosException("turma", e.Message, e);
+                throw new DadosException("Turma", e.Message, e);
             }
 
         }
@@ -64,7 +64,7 @@ namespace PacienteVirtual.Models.Negocio
             }
             catch (Exception e)
             {
-                throw new DadosException("turma", e.Message, e);
+                throw new DadosException("Turma", e.Message, e);
             }
         }
 
@@ -153,6 +153,7 @@ namespace PacienteVirtual.Models.Negocio
             _turmaE.Codigo = turma.Codigo;
             _turmaE.Periodo = turma.Periodo;
             _turmaE.IdDisciplina = turma.IdDisciplina;
+            _turmaE.IdInstituicao = turma.IdInstituicao;
         }
     }
 }

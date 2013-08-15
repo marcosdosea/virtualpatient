@@ -9,7 +9,7 @@ namespace PacienteVirtual.Models.Negocio
 {
     public class GerenciadorAlergia
     {
-        private static GerenciadorAlergia gAlergia;
+        public static GerenciadorAlergia gAlergia;
 
         private GerenciadorAlergia() { }
 
@@ -92,12 +92,12 @@ namespace PacienteVirtual.Models.Negocio
         {
             var repConsultaFixo = new RepositorioGenerico<AlergiaE>();
             var pvEntities = (pvEntities)repConsultaFixo.ObterContexto();
-            var query = from tb_alergia in pvEntities.tb_alergia
+            var query = from alergia in pvEntities.tb_alergia
 
                         select new AlergiaModel
                         {
-                            IdAlergia = tb_alergia.IdAlergia,
-                            Alergia = tb_alergia.Alergia,
+                            IdAlergia = alergia.IdAlergia,
+                            Alergia = alergia.Alergia,
    
                         };
             return query;
@@ -128,7 +128,6 @@ namespace PacienteVirtual.Models.Negocio
         /// <param name="_alergiaE"></param>
         private static void Atribuir(AlergiaModel alergia, AlergiaE _alergiaE)
         {
-            _alergiaE.IdAlergia = alergia.IdAlergia;
             _alergiaE.Alergia = alergia.Alergia;
         }
     }

@@ -7,14 +7,12 @@
     <h2>
         <%: Resources.Mensagem.criar %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
-        type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>
-            <%: Resources.Mensagem.turma %></legend>
+        <legend><%: Resources.Mensagem.turma %></legend>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Codigo) %>
         </div>
@@ -30,28 +28,25 @@
             <%: Html.ValidationMessageFor(model => model.Periodo) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdInstituicao, "Instituições") %>
+            <%: Html.LabelFor(model => model.NomeInstituicao) %>
         </div>
-        <%: Html.DropDownList("IdInstituicao", Resources.Mensagem.selecione)%>
-        <!--%= Html.DropDownList("IdInstituicao", new SelectList((IEnumerable)ViewBag.Instituicoes,"IdInstituicao","NomeInstituicao"), "Selecione")%-->
-        <br/>
+        <div class="editor-field">
+            <%: Html.DropDownList("IdInstituicao", Resources.Mensagem.selecione)%>
+            <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
+        </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.NomeDisciplina, "Disciplinas") %>
+            <%: Html.LabelFor(model => model.NomeDisciplina) %>
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdDisciplina", Resources.Mensagem.selecione)%>
-            <!--%= Html.DropDownList("IdDisciplina", new SelectList((IEnumerable)ViewBag.Disciplinas,"IdDisciplina","NomeDisciplina"), "Selecione")%-->
-            <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
+            <%: Html.ValidationMessageFor(model => model.IdDisciplina) %>
         </div>
-        
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </div>
-  
-        
     </fieldset>
     <% } %>
     <div>
-        <%: Html.ActionLink("Voltar", "Index") %>
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index")%>
     </div>
 </asp:Content>

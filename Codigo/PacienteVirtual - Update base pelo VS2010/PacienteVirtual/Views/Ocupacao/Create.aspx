@@ -17,11 +17,11 @@
         <legend> <%: Resources.Mensagem.ocupacao %> </legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Descricao) %>
+            <%: Html.LabelFor(model => model.OcupacaoDescricao)%>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Descricao) %>
-            <%: Html.ValidationMessageFor(model => model.Descricao) %>
+            <%: Html.EditorFor(model => model.OcupacaoDescricao)%>
+            <%: Html.ValidationMessageFor(model => model.OcupacaoDescricao)%>
         </div>
 
     <div class="form-actions">

@@ -39,7 +39,7 @@ foreach (var item in Model) { %>
             <%: Html.DisplayFor(modelItem => item.Periodo) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.IdDisciplina) %>
+            <%: Html.DisplayFor(modelItem => item.NomeDisciplina) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.NomeInstituicao) %>

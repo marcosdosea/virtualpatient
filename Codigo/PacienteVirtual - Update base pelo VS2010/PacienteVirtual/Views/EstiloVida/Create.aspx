@@ -14,7 +14,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>EstiloVidaE</legend>
+        <legend><%: Resources.Mensagem.estilo_vida %></legend>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.TabacoConsumo) %>

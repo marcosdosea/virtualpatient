@@ -100,6 +100,7 @@ namespace PacienteVirtual.Models.Negocio
                             IdResposta = tb_resposta.IdResposta,
                             IdPergunta = tb_resposta.IdPergunta,
                             Resposta = tb_resposta.Resposta,
+
                             Pergunta = tb_pergunta.Pergunta
                         };
             return query;
