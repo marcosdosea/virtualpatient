@@ -13,7 +13,7 @@
 <fieldset>
     <legend> <%: Resources.Mensagem.pergunta %></legend>
 
-    <div class="display-label">Resources.Mensagem.pergunta</div>
+    <div class="display-label"><%: Resources.Mensagem.pergunta %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Pergunta) %>
     </div>

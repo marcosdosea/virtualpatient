@@ -28,13 +28,13 @@
 </head>
 <body>
     <div>
-    <noscript>
-        <div>
-            <h2>This site requires JavaScript ... melhor invocar um View especificar para exibição de uma mensagem ao usuário
-            se possivel colocar tbm uma animação para intrete-lo</h2>
-        </div>
-    </noscript>
-
+        <noscript>
+            <div>
+                <h2>
+                    This site requires JavaScript ... melhor invocar um View especificar para exibição
+                    de uma mensagem ao usuário se possivel colocar tbm uma animação para intrete-lo</h2>
+            </div>
+        </noscript>
         <header class="container">
             <div id="title">
                 <br />
@@ -115,6 +115,12 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.razao_encontro, "Index", "RazaoEncontro")%>
                                         </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.escolaridade, "Index", "Escolaridade")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.bebida, "Index", "Bebida")%>
+                                        </li>
                                         <li class="divider"></li>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.queixa, "Index", "Queixa")%>
@@ -185,10 +191,9 @@
         </div>
     </div>
     <!-- /.navbar -->
-   
     <div class="container">
         <section id="main">
-          <!--input type="submit" class="btn btn-primary" rel="tooltip" value="Tema botão não funciona" title="O Css não funciona" />
+            <!--input type="submit" class="btn btn-primary" rel="tooltip" value="Tema botão não funciona" title="O Css não funciona" />
            <script type="text/javascript">
                $('tooltip2').tooltip('show');
 

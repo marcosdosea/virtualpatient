@@ -163,7 +163,6 @@ namespace PacienteVirtual.Models.Negocio
             _MedicamentosAnterioresE.Indicacao = medicamentosAnterioresModel.Indicacao;
             _MedicamentosAnterioresE.Resposta = medicamentosAnterioresModel.Resposta;
             _MedicamentosAnterioresE.Periodo = medicamentosAnterioresModel.Periodo;
-
         }
     }
 }

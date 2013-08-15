@@ -29,7 +29,7 @@
 
     <div class="display-label"><%: Resources.Mensagem.tipo_bebida %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.TipoBebida) %>
+        <%: Html.DisplayFor(model => model.NomeBebida) %>
     </div>
 </fieldset>
 <% using (Html.BeginForm()) { %>

@@ -11,7 +11,7 @@ using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
 {
-    [Authorize(Roles = "administrador, tutor")]
+    //[Authorize(Roles = "administrador, tutor")]
     public class AlergiaController : Controller
     {
         GerenciadorAlergia gAlergia = GerenciadorAlergia.GetInstance();
@@ -48,9 +48,7 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 alergia.IdAlergia = gAlergia.Inserir(alergia);
-
                 return RedirectToAction("Index");  
             }
 

@@ -22,7 +22,7 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Descricao) %>
+            <%: Html.DisplayFor(modelItem => item.OcupacaoDescricao) %>
         </td>
         <td>
             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = item.IdOcupacao })%> |

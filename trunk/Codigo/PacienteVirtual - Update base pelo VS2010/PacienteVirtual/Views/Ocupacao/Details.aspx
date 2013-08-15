@@ -10,7 +10,7 @@
 
     <div class="display-label"> <%: Resources.Mensagem.descricao %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.Descricao) %>
+        <%: Html.DisplayFor(model => model.OcupacaoDescricao)%>
     </div>
 </fieldset>
 <p>

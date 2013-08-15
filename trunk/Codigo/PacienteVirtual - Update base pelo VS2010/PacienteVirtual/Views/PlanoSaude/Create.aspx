@@ -17,11 +17,11 @@
         <legend><%: Resources.Mensagem.plano_saude %></legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Nome) %>
+            <%: Html.LabelFor(model => model.PlanoSaudeNome)%>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Nome) %>
-            <%: Html.ValidationMessageFor(model => model.Nome) %>
+            <%: Html.EditorFor(model => model.PlanoSaudeNome)%>
+            <%: Html.ValidationMessageFor(model => model.PlanoSaudeNome)%>
         </div>
 
     <div class="form-actions">

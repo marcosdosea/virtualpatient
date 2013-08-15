@@ -14,7 +14,7 @@
 
     <div class="display-label"><%: Resources.Mensagem.nome_medicamento %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.Nome) %>
+        <%: Html.DisplayFor(model => model.MedicamentoNome) %>
     </div>
 </fieldset>
 <% using (Html.BeginForm()) { %>

@@ -19,11 +19,11 @@
         <%: Html.HiddenFor(model => model.IdMedicamento) %>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Nome) %>
+            <%: Html.LabelFor(model => model.MedicamentoNome) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Nome) %>
-            <%: Html.ValidationMessageFor(model => model.Nome) %>
+            <%: Html.EditorFor(model => model.MedicamentoNome) %>
+            <%: Html.ValidationMessageFor(model => model.MedicamentoNome) %>
         </div>
 
     <div class="form-actions">

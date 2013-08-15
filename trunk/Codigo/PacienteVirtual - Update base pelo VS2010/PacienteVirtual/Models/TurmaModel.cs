@@ -29,7 +29,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public int IdInstituicao { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public string NomeInstituicao { get; set; }
 
