@@ -19,7 +19,7 @@ namespace PacienteVirtual.Controllers
         {
             ViewBag.codigo = -1;
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
-            return View();
+            return View(GerenciadorRelatoClinico.GetInstance().ObterTodos());
         }
 
         [HttpPost]
@@ -29,7 +29,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             if (IdPaciente != -1)
                 return View(GerenciadorRelatoClinico.GetInstance().ObterRelatos(IdPaciente));
-
+            if (IdPaciente == -1)
+                return View(GerenciadorRelatoClinico.GetInstance().ObterTodos());
             return View();
         }
 

@@ -20,6 +20,39 @@
     <div class="row-fluid">
         <div class="span4">
             <div class="editor-label">
+                <%: Html.LabelFor(model => model.MedicosAtendem)%>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.MedicosAtendem, new { @class = "textbox", style = "width:579px;" })%>
+                <%: Html.ValidationMessageFor(model => model.MedicosAtendem)%>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.MoradiaFamilia)%>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.MoradiaFamilia, new { @class = "textbox", style = "width:579px;" })%>
+                <%: Html.ValidationMessageFor(model => model.MoradiaFamilia)%>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.OndeAdquireMedicamentos)%>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.OndeAdquireMedicamentos, new { @class = "textbox", style = "width:579px;" })%>
+                <%: Html.ValidationMessageFor(model => model.OndeAdquireMedicamentos)%>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
                 <%: Html.LabelFor(model => model.Genero) %>
             </div>
             <div class="editor-field">
@@ -27,7 +60,7 @@
                 <%: Html.ValidationMessageFor(model => model.Genero) %>
             </div>
         </div>
-        <div class="span4">
+        <div class="span6">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.DataNascimento) %>
             </div>
@@ -36,36 +69,9 @@
                 <%: Html.ValidationMessageFor(model => model.DataNascimento) %>
             </div>
         </div>
-        <div class="span4">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.MedicosAtendem) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.MedicosAtendem, new { @class = "textbox", style = "width:176px;" })%>
-                <%: Html.ValidationMessageFor(model => model.MedicosAtendem) %>
-            </div>
-        </div>
+        
     </div>
-    <div class="row-fluid">
-        <div class="span6">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.MoradiaFamilia) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.MoradiaFamilia, new { @class = "textbox", style = "width:276px;" })%>
-                <%: Html.ValidationMessageFor(model => model.MoradiaFamilia) %>
-            </div>
-        </div>
-        <div class="span6">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.OndeAdquireMedicamentos) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.OndeAdquireMedicamentos, new { @class = "textbox", style = "width:276px;" })%>
-                <%: Html.ValidationMessageFor(model => model.OndeAdquireMedicamentos) %>
-            </div>
-        </div>
-    </div>
+    
     <div class="row-fluid">
         <div class="span6">
             <div class="editor-label">

@@ -12,7 +12,7 @@
         </p>
         <% using (Html.BeginForm("Index", "RelatoClinico", FormMethod.Post, null))
            { %>
-        <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
+        <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
         <!-- %: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { @onchange = "this.form.action = Index = 1;" })%-->
         <% } %>
     </div>

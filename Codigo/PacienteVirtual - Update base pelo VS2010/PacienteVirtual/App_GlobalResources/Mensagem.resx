@@ -543,4 +543,13 @@
   <data name="bebida" xml:space="preserve">
     <value>Bebida</value>
   </data>
+  <data name="listar_todos" xml:space="preserve">
+    <value>Listar Todos</value>
+  </data>
+  <data name="preencher" xml:space="preserve">
+    <value>Preencher</value>
+  </data>
+  <data name="status_preenchimento" xml:space="preserve">
+    <value>Status do Preenchimento</value>
+  </data>
 </root>

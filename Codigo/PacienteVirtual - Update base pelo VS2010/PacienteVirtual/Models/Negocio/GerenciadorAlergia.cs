@@ -90,8 +90,8 @@ namespace PacienteVirtual.Models.Negocio
         /// <returns></returns>
         private IQueryable<AlergiaModel> GetQuery()
         {
-            var repConsultaFixo = new RepositorioGenerico<AlergiaE>();
-            var pvEntities = (pvEntities)repConsultaFixo.ObterContexto();
+            var repAlergia = new RepositorioGenerico<AlergiaE>();
+            var pvEntities = (pvEntities)repAlergia.ObterContexto();
             var query = from alergia in pvEntities.tb_alergia
 
                         select new AlergiaModel
