@@ -790,6 +790,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Listar Todos.
+        /// </summary>
+        public static string listar_todos {
+            get {
+                return ResourceManager.GetString("listar_todos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Medicamento.
         /// </summary>
         public static string medicamento {
@@ -1060,6 +1069,15 @@ namespace PacienteVirtual.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Preencher.
+        /// </summary>
+        public static string preencher {
+            get {
+                return ResourceManager.GetString("preencher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Preocupações.
         /// </summary>
         public static string preocupacoes {
@@ -1236,6 +1254,15 @@ namespace PacienteVirtual.App_GlobalResources {
         public static string sobre {
             get {
                 return ResourceManager.GetString("sobre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status do Preenchimento.
+        /// </summary>
+        public static string status_preenchimento {
+            get {
+                return ResourceManager.GetString("status_preenchimento", resourceCulture);
             }
         }
         

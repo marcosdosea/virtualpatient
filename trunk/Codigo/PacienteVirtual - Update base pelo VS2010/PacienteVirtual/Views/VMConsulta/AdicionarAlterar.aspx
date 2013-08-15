@@ -1,16 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MaintainScrollPositionOnPostback="true" MasterPageFile="~/Views/Shared/Site.Master"
     Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ViewModel.VMConsulta>" %>
- <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.consulta %>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
- <!-- Arquivo necessário para as View partial -->
-<script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/partial.view.reload.js") %>"  type="text/javascript"></script>
+    <!-- Arquivo necessário para as View partial -->
+    <script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
+        type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/partial.view.reload.js") %>" type="text/javascript"></script>
     <h2>
         <%: Resources.Mensagem.consulta %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
@@ -36,13 +36,13 @@
                             alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
                     </div>
                 </div>
-               
                 <div class="span3">
                     <div class="thumbnail right">
                         <blockquote>
                             <%: 
-                            Resources.Mensagem.nome %> do Paciente : 
-                            <br />    
+                            Resources.Mensagem.nome %>
+                            do Paciente :
+                            <br />
                             <br />
                             <%: Model.paciente.NomePaciente %>
                         </blockquote>
@@ -50,10 +50,6 @@
                 </div>
                 <div class="thumbnail">
                     <% Html.RenderAction("RelatoClinico", "VMConsulta", new RouteValueDictionary(new { model = Model.relatoClinico }));%>
-                </div>
-                <div class="thumbnail">
-                    <% Html.RenderAction("Queixa", "VMConsulta", new RouteValueDictionary(new { id = Model.idQueixa }));%>
-                    <% Html.RenderAction("ListarQueixa", "VMConsulta", new { id = 1 });%>
                 </div>
             </div>
         </div>
@@ -124,6 +120,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="thumbnail">
+                    <% Html.RenderAction("Queixa", "VMConsulta", new RouteValueDictionary(new { id = Model.idQueixa }));%>
+                    <% Html.RenderAction("ListarQueixa", "VMConsulta", new { id = 1 });%>
                 </div>
             </div>
         </div>

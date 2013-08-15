@@ -9,7 +9,7 @@
             <%: Resources.Mensagem.consulta %></h2>
         <% using (Html.BeginForm("Index", "VMConsulta", FormMethod.Post, null))
            { %>
-        <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
+        <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
         <!-- %: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { @onchange = "this.form.action = Index = 1;" })%-->
         <% } %>
     </div>
@@ -23,19 +23,16 @@
         <table class="table table-bordered table-striped">
             <tr>
                 <th>
-                    <%: Resources.Mensagem.relato_clinico %>
+                    <%: Resources.Mensagem.paciente %>
                 </th>
                 <th>
                     <%: Resources.Mensagem.ordem_cronologica %>
                 </th>
                 <th>
-                    <%: Resources.Mensagem.relato_textual %>
-                </th>
-                <th>
                     <%: Resources.Mensagem.nivel_dificuldade %>
                 </th>
                 <th>
-                    video
+                    <%: Resources.Mensagem.status_preenchimento %>
                 </th>
                 <th>
                     <%: Resources.Mensagem.consulta %>
@@ -52,16 +49,11 @@
                     <%: Html.DisplayFor(modelItem => item.OrdemCronologica)%>
                 </td>
                 <td>
-                    <%: Html.DisplayFor(modelItem => item.RelatoTextual)%>
-                </td>
-                <td>
                     <%: Html.DisplayFor(modelItem => item.NivelDificuldade)%>
                 </td>
+                <td></td>
                 <td>
-                    <%: Html.DisplayFor(modelItem => item.RelatoVideo)%>
-                </td>
-                <td>
-                    <%: Html.ActionLink("Criar/Alterar", "AdicionarAlterar", new { idPaciente = item.IdPaciente, idRelato = item.IdRelato})%>
+                    <%: Html.ActionLink(Resources.Mensagem.preencher, "AdicionarAlterar", new { idPaciente = item.IdPaciente, idRelato = item.IdRelato})%>
                     |
                 </td>
             </tr>

@@ -22,7 +22,7 @@ namespace PacienteVirtual.Controllers
         {
             ViewBag.codigo = -1;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
-            return View();
+            return View(gRelato.ObterTodos());
         }
 
         [HttpPost]
@@ -34,6 +34,10 @@ namespace PacienteVirtual.Controllers
             if (IdPaciente != -1)
             {
                     return View(gRelato.ObterRelatos(IdPaciente).ToList());
+            } 
+            if (IdPaciente == -1)
+            {
+                return View(gRelato.ObterTodos());
             }
             return View();
         }
@@ -78,9 +82,20 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
+                bool salvar = true;
+                foreach (var ordem in gRelato.ObterRelatos(relatoModel.IdPaciente))
+                {
+                    if (ordem.OrdemCronologica == relatoModel.OrdemCronologica)
+                    {
+                         salvar = false;
+                         break;
+                    }
+                };
+                if(salvar) {
                 relatoModel.IdRelato = gRelato.Inserir(relatoModel);
                 ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente",relatoModel.IdPaciente);
                 return View("Index", gRelato.ObterRelatos(relatoModel.IdPaciente));
+                }
             }
 
             if (relatoModel.IdPaciente > 0)
@@ -88,6 +103,7 @@ namespace PacienteVirtual.Controllers
                 ViewBag.teste = "passou pelo -1" + relatoModel.IdPaciente;
                 ViewBag.fotoId = relatoModel.IdPaciente;
                 ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
+
                 return View(relatoModel);
             }
             ViewBag.fotoId = -1;
