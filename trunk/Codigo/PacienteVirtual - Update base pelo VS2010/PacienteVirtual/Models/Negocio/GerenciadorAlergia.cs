@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models.Data;
 using Dados;
+using Negocio;
 
 namespace PacienteVirtual.Models.Negocio
 {
@@ -11,7 +12,9 @@ namespace PacienteVirtual.Models.Negocio
     {
         public static GerenciadorAlergia gAlergia;
 
-        private GerenciadorAlergia() { }
+        private GerenciadorAlergia()
+        {
+        }
 
         public static GerenciadorAlergia GetInstance()
         {
@@ -23,42 +26,43 @@ namespace PacienteVirtual.Models.Negocio
         }
 
         /// <summary>
-        /// Insere dados do alergia
+        /// inserir dados da alergia
         /// </summary>
         /// <param name="alergia"></param>
         /// <returns></returns>
         public int Inserir(AlergiaModel alergia)
         {
-            var repConsultaFixo = new RepositorioGenerico<AlergiaE>();
-            AlergiaE _alergiaE = new AlergiaE();
+            var repAlergia = new RepositorioGenerico<AlergiaE>();
+            AlergiaE _tb_alergia = new AlergiaE();
             try
             {
-                Atribuir(alergia, _alergiaE);
+                Atribuir(alergia, _tb_alergia);
 
-                repConsultaFixo.Inserir(_alergiaE);
-                repConsultaFixo.SaveChanges();
+                repAlergia.Inserir(_tb_alergia);
+                repAlergia.SaveChanges();
 
-                return _alergiaE.IdAlergia;
+                return _tb_alergia.IdAlergia;
             }
             catch (Exception e)
             {
-                throw new DadosException("Alergia", e.Message, e);
+                throw new NegocioException("Alergia", e.Message, e);
             }
+
         }
 
         /// <summary>
-        /// Atualiza dados do alergia
+        /// Atualiza dados da Alergia
         /// </summary>
         /// <param name="alergia"></param>
         public void Atualizar(AlergiaModel alergia)
         {
             try
             {
-                var repConsultaFixo = new RepositorioGenerico<AlergiaE>();
-                AlergiaE _alergiaE = repConsultaFixo.ObterEntidade(cf => cf.IdAlergia == alergia.IdAlergia);
-                Atribuir(alergia, _alergiaE);
+                var repAlergia = new RepositorioGenerico<AlergiaE>();
+                AlergiaE _tb_alergia = repAlergia.ObterEntidade(d => d.IdAlergia == alergia.IdAlergia);
+                Atribuir(alergia, _tb_alergia);
 
-                repConsultaFixo.SaveChanges();
+                repAlergia.SaveChanges();
             }
             catch (Exception e)
             {
@@ -67,16 +71,16 @@ namespace PacienteVirtual.Models.Negocio
         }
 
         /// <summary>
-        /// Remove dados do alergia
+        /// Remove dados da Alergia
         /// </summary>
-        /// <param name="codDisciplina"></param>
+        /// <param name="idAlergia"></param>
         public void Remover(int idAlergia)
         {
             try
             {
-                var repConsultaFixo = new RepositorioGenerico<AlergiaE>();
-                repConsultaFixo.Remover(cf => cf.IdAlergia == idAlergia);
-                repConsultaFixo.SaveChanges();
+                var repAlergia = new RepositorioGenerico<AlergiaE>();
+                repAlergia.Remover(d => d.IdAlergia == idAlergia);
+                repAlergia.SaveChanges();
             }
             catch (Exception e)
             {
@@ -93,18 +97,16 @@ namespace PacienteVirtual.Models.Negocio
             var repAlergia = new RepositorioGenerico<AlergiaE>();
             var pvEntities = (pvEntities)repAlergia.ObterContexto();
             var query = from alergia in pvEntities.tb_alergia
-
                         select new AlergiaModel
                         {
                             IdAlergia = alergia.IdAlergia,
-                            Alergia = alergia.Alergia,
-   
+                            Alergia = alergia.Alergia
                         };
             return query;
         }
 
         /// <summary>
-        /// Obtém todos os alergia cadastrados
+        /// Obtém todos os alergias cadastradas
         /// </summary>
         /// <returns></returns>
         public IEnumerable<AlergiaModel> ObterTodos()
@@ -113,22 +115,33 @@ namespace PacienteVirtual.Models.Negocio
         }
 
         /// <summary>
-        /// Obtém alergia com o código especificiado
+        /// Obtém Alergia com o código especificiado
         /// </summary>
+        /// <param name="idAlergia"></param>
         /// <returns></returns>
-        public AlergiaModel Obter(long idAlergia)
+        public AlergiaModel Obter(int idAlergia)
         {
             return GetQuery().Where(alergia => alergia.IdAlergia == idAlergia).ToList().ElementAtOrDefault(0);
         }
-        
+
+        /// <summary>
+        /// Obtém a partir do alergia
+        /// </summary>
+        /// <param name="alergia"></param>
+        /// <returns></returns>
+        public IEnumerable<AlergiaModel> ObterPorNome(string alergia1)
+        {
+            return GetQuery().Where(alergia => alergia.Alergia.StartsWith(alergia1)).ToList();
+        }
+
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="alergia"></param>
-        /// <param name="_alergiaE"></param>
-        private static void Atribuir(AlergiaModel alergia, AlergiaE _alergiaE)
+        /// <param name="_tb_alergia"></param>
+        private static void Atribuir(AlergiaModel alergia, AlergiaE _tb_alergia)
         {
-            _alergiaE.Alergia = alergia.Alergia;
+            _tb_alergia.Alergia = alergia.Alergia;
         }
     }
 }

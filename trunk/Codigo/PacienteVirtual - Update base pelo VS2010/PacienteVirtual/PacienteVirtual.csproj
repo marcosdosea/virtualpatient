@@ -203,11 +203,11 @@
     <Compile Include="Models\MedicamentoPrescritoModel.cs" />
     <Compile Include="Models\MedicamentosAnterioresModel.cs" />
     <Compile Include="Models\MedicamentosModel.cs" />
+    <Compile Include="Models\Negocio\GerenciadorAlergia.cs" />
     <Compile Include="Models\Negocio\GerenciadorBebida.cs" />
     <Compile Include="Models\Negocio\GerenciadorConsultaVariavel.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoAlternativa.cs" />
     <Compile Include="Models\Negocio\GerenciadorAcaoQueixa.cs" />
-    <Compile Include="Models\Negocio\GerenciadorAlergia.cs" />
     <Compile Include="Models\Negocio\GerenciadorConsultaFixo.cs" />
     <Compile Include="Models\Negocio\GerenciadorCurso.cs">
       <SubType>Code</SubType>

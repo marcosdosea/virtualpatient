@@ -112,6 +112,8 @@ namespace PacienteVirtual.Models.Negocio
             var repMedicamentosAnteriores = new RepositorioGenerico<MedicamentosAnterioresE>();
             var pvEntities = (pvEntities)repMedicamentosAnteriores.ObterContexto();
             var query = from tb_medicamentos_anteriores in pvEntities.tb_medicamentos_anteriores
+                        join tb_medicamentos in pvEntities.tb_medicamentos
+                        on tb_medicamentos_anteriores.IdMedicamento equals tb_medicamentos.IdMedicamento
                         select new MedicamentosAnterioresModel
                         {
                             IdConsultaVariavel = tb_medicamentos_anteriores.IdConsultaVariavel,
@@ -119,6 +121,8 @@ namespace PacienteVirtual.Models.Negocio
                             Indicacao = tb_medicamentos_anteriores.Indicacao,
                             Resposta = tb_medicamentos_anteriores.Resposta,
                             Periodo = tb_medicamentos_anteriores.Periodo,
+
+                            MedicamentoNome = tb_medicamentos.Nome
                         };
             return query;
         }

@@ -68,6 +68,25 @@ namespace PacienteVirtual.Models.Negocio
         /// <summary>
         /// Remove dados do MedicamentoNaoPrescrito
         /// </summary>
+        /// <param long="idConsultaVariavel" long="idMedicamento"></param>
+        public void Remover(long idConsultaVariavel, long idMedicamento)
+        {
+            try
+            {
+
+                var repMedicamentoNaoPrescrito = new RepositorioGenerico<MedicamentoNaoPrescritoE>();
+                repMedicamentoNaoPrescrito.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel && dP.IdMedicamento == idMedicamento);
+                repMedicamentoNaoPrescrito.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("MedicamentoNaoPrescrito", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Remove dados do MedicamentoNaoPrescrito
+        /// </summary>
         /// <param name="idConsultaVariavel"></param>
         public void Remover(long idConsultaVariavel)
         {
@@ -92,6 +111,8 @@ namespace PacienteVirtual.Models.Negocio
             var repMedicamentoNaoPrescrito = new RepositorioGenerico<MedicamentoNaoPrescritoE>();
             var pvEntities = (pvEntities)repMedicamentoNaoPrescrito.ObterContexto();
             var query = from tb_medicamento_nao_prescrito in pvEntities.tb_medicamento_nao_prescrito
+                        join tb_medicamentos in pvEntities.tb_medicamentos
+                        on tb_medicamento_nao_prescrito.IdMedicamento equals tb_medicamentos.IdMedicamento
                         select new MedicamentoNaoPrescritoModel
                         {
                             IdConsultaVariavel = tb_medicamento_nao_prescrito.IdConsultaVariavel,
@@ -99,6 +120,8 @@ namespace PacienteVirtual.Models.Negocio
                             Fitoterapico = tb_medicamento_nao_prescrito.Fitoterapico,
                             Dosagem = tb_medicamento_nao_prescrito.Dosagem,
                             Posologia = tb_medicamento_nao_prescrito.Posologia,
+
+                            MedicamentoNome = tb_medicamentos.Nome
                         };
             return query;
         }
