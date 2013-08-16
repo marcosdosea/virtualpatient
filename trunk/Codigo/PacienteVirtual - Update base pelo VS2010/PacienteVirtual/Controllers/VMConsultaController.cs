@@ -96,13 +96,32 @@ namespace PacienteVirtual.Controllers
                 demoAntrop = new DemograficosAntropometricosModel();
                 demoAntrop.IdConsultaFixo = id;
                 demoAntrop.Nome = "";
-                demoAntrop.Genero = "";
+                demoAntrop.Genero = "M";
                 demoAntrop.IdPlanoSaude = 1;
                 demoAntrop.IdEscolaridade = 1;
                 demoAntrop.IdOcupacao = 1;
                 ViewBag.foi = "Dados ainda não cadastrados";
                 gDemoAntrop.Inserir(demoAntrop);
             }
+
+            /*
+            if (demoAntrop.Genero == "M")
+            {
+                ViewBag.Sexo = new SelectList(new[] 
+            {
+                new {Valor = 1, Texto = "M"}, 
+                new {Valor = 2, Texto = "F"}
+            }, "Valor", "Texto");
+            }
+            else 
+            {
+                ViewBag.Sexo = new SelectList(new[] 
+            {
+                new {Valor = 1, Texto = "F"}, 
+                new {Valor = 2, Texto = "M"}
+            }, "Valor", "Texto");
+            }
+            */
 
             ViewBag.IdEscolaridade = new SelectList(GerenciadorEscolaridade.GetInstance().ObterTodos().ToList(), "IdEscolaridade", "EscolaridadeNivel", demoAntrop.IdEscolaridade);
             ViewBag.IdOcupacao = new SelectList(GerenciadorOcupacao.GetInstance().ObterTodos().ToList(), "IdOcupacao", "OcupacaoDescricao", demoAntrop.IdOcupacao);
@@ -226,12 +245,13 @@ namespace PacienteVirtual.Controllers
         public PartialViewResult MedicamentosAnteriores(int id)
         {
             ViewBag.MedicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance().ObterTodos();
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 1);
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
          
             MedicamentosAnterioresModel medAnt = new MedicamentosAnterioresModel();
             medAnt.IdConsultaVariavel = id;
             return PartialView(medAnt);
         }
+
         // Medicamentos Anteriores
         [HttpPost]
         public PartialViewResult MedicamentosAnteriores(MedicamentosAnterioresModel medAnteriores)
@@ -240,8 +260,8 @@ namespace PacienteVirtual.Controllers
             {
                 GerenciadorMedicamentosAnteriores.GetInstance().Inserir(medAnteriores);
             }
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 1);
-            ViewBag.MedicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance().ObterTodos();
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
+            ViewBag.MedicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance().ObterTodos().ToList();
             
             return PartialView(medAnteriores);
         }
@@ -263,7 +283,23 @@ namespace PacienteVirtual.Controllers
 
         public PartialViewResult MedicamentoPrescrito(int id)
         {
-            return PartialView();
+            ViewBag.MedicamentosAnteriores = GerenciadorMedicamentoPrescrito.GetInstance().ObterTodos();
+            
+            MedicamentoPrescritoModel medAnt = new MedicamentoPrescritoModel();
+            medAnt.IdConsultaVariavel = id;
+            return PartialView(medAnt);
+        }
+
+        [HttpPost]
+        public PartialViewResult MedicamentoPrescrito(MedicamentoPrescritoModel medicamentosPrescritos)
+        {
+            if (ModelState.IsValid)
+            {
+                GerenciadorMedicamentoPrescrito.GetInstance().Inserir(medicamentosPrescritos);
+            }
+            ViewBag.MedicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance().ObterTodos().ToList();
+
+            return PartialView(medicamentosPrescritos);
         }
 
         public PartialViewResult MedicamentoNaoPrescrito(int id)
