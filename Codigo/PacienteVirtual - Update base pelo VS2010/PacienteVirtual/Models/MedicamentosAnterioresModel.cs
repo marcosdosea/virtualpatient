@@ -18,6 +18,9 @@ namespace PacienteVirtual.Models
         [Display(Name = "medicamento_codigo", ResourceType = typeof(Mensagem))]
         public Int32 IdMedicamento { get; set; }
 
+        [Display(Name = "medicamento", ResourceType = typeof(Mensagem))]
+        public String MedicamentoNome { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "indicacao", ResourceType = typeof(Mensagem))]
         public string Indicacao { get; set; }

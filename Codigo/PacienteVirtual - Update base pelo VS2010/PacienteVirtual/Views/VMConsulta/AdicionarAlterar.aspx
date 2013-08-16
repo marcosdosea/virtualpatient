@@ -97,7 +97,7 @@
                             <%: Resources.Mensagem.medicamento_prescrito %></a></li>
                         <li><a href="#tab2-4" data-toggle="tab">
                             <%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
-                    </ul>
+                    </ul> 
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
                             <div class="thumbnail">

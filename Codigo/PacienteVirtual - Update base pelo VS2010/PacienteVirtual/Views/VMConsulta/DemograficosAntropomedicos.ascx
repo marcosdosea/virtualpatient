@@ -56,7 +56,8 @@
                 <%: Html.LabelFor(model => model.Genero) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Genero, new { @class = "textbox", style = "width:176px;" })%>
+                <!--%: Html.DropDownList("Valor", new SelectList(ViewBag.Sexo))% -->
+                <%: Html.TextBoxFor(model => model.Genero)%>
                 <%: Html.ValidationMessageFor(model => model.Genero) %>
             </div>
         </div>
@@ -65,13 +66,12 @@
                 <%: Html.LabelFor(model => model.DataNascimento) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.DataNascimento, new { @class = "textbox", style = "width:176px;" })%>
+                <%: Html.TextBoxFor(model => model.DataNascimento, new { @Value = (String.Format("{0:dd/MM/yyyy}", Model.DataNascimento)), 
+                                                                         @class = "textbox", style = "width:176px;"})%>
                 <%: Html.ValidationMessageFor(model => model.DataNascimento) %>
             </div>
         </div>
-        
     </div>
-    
     <div class="row-fluid">
         <div class="span6">
             <div class="editor-label">
