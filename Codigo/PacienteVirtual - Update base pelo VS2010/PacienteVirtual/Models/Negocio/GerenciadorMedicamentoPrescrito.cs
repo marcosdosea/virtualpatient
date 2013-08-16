@@ -70,13 +70,13 @@ namespace PacienteVirtual.Models.Negocio
         /// Remove dados do MedicamentoPrescrito
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
-        public void Remover(long idConsultaVariavel)
+        public void Remover(long idConsultaVariavel, long idMedicamento)
         {
             try
             {
 
                 var repMedicamentoPrescrito = new RepositorioGenerico<MedicamentoPrescritoE>();
-                repMedicamentoPrescrito.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel);
+                repMedicamentoPrescrito.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel && dP.IdMedicamento == idMedicamento);
                 repMedicamentoPrescrito.SaveChanges();
             }
             catch (Exception e)
@@ -84,6 +84,26 @@ namespace PacienteVirtual.Models.Negocio
                 throw new DadosException("MedicamentoPrescrito", e.Message, e);
             }
         }
+
+
+        /// <summary>
+        /// Remove dados do MedicamentosPrescrito
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        public void Remover(long idConsultaVariavel)
+        {
+            try
+            {
+                var repMedicamentoPrescrito = new RepositorioGenerico<MedicamentoPrescritoE>();
+                repMedicamentoPrescrito.Remover(mP => mP.IdConsultaVariavel == idConsultaVariavel);
+                repMedicamentoPrescrito.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("MedicamentoPrescrito", e.Message, e);
+            }
+        }
+
 
         /// <summary>
         /// Consulta para retornar dados da entidade
@@ -94,6 +114,8 @@ namespace PacienteVirtual.Models.Negocio
             var repMedicamentoPrescrito = new RepositorioGenerico<MedicamentoPrescritoE>();
             var pvEntities = (pvEntities)repMedicamentoPrescrito.ObterContexto();
             var query = from tb_medicamento_prescrito in pvEntities.tb_medicamento_prescrito
+                        join tb_medicamentos in pvEntities.tb_medicamentos
+                        on tb_medicamento_prescrito.IdMedicamento equals tb_medicamentos.IdMedicamento
                         select new MedicamentoPrescritoModel
                         {
                             IdConsultaVariavel = tb_medicamento_prescrito.IdConsultaVariavel,
@@ -103,6 +125,8 @@ namespace PacienteVirtual.Models.Negocio
                             Posologia = tb_medicamento_prescrito.Posologia,
                             Prescritor = tb_medicamento_prescrito.Prescritor,
                             Especialidade = tb_medicamento_prescrito.Especialidade,
+
+                            MedicamentoNome = tb_medicamentos.Nome
                         };
             return query;
         }

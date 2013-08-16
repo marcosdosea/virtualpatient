@@ -1,7 +1,15 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.MedicamentosAnterioresModel>" %>
+<% using (Html.BeginForm())
+   { %>
+<%: Html.ValidationSummary(true) %>
+<legend>
+    <%: Resources.Mensagem.medicamentos_anteriores %></legend>
 <div class="box-content">
     <table class="table table-bordered table-striped">
         <tr>
+            <th>
+                <%: Resources.Mensagem.medicamento %>
+            </th>
             <th>
                 <%: Resources.Mensagem.indicacao %>
             </th>
@@ -17,6 +25,9 @@
         <% foreach (var item in ViewBag.MedicamentosAnteriores as List<PacienteVirtual.Models.MedicamentosAnterioresModel>)
            { %>
         <tr>
+            <td>
+                <%: Html.DisplayFor(items => item.MedicamentoNome)%>
+            </td>
             <td>
                 <%: Html.DisplayFor(items => item.Indicacao)%>
             </td>
@@ -36,9 +47,7 @@
         <% } %>
     </table>
 </div>
-<% using (Html.BeginForm())
-   { %>
-<%: Html.ValidationSummary(true) %>
+<%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
 <div class="row-fluid">
     <div class="span4">
         <div class="editor-label">

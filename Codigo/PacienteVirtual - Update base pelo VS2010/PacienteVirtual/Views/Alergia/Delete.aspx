@@ -20,7 +20,7 @@
 <% using (Html.BeginForm()) { %>
     <p>
         <input type="submit" value="Delete" /> |
-        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index")%>
+        <%: Html.ActionLink("Back to List", "Index") %>
     </p>
 <% } %>
 

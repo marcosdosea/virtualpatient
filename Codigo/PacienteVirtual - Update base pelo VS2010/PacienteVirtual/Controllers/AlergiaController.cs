@@ -10,17 +10,15 @@ using PacienteVirtual.Models.Negocio;
 using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
-{
-    //[Authorize(Roles = "administrador, tutor")]
+{ 
     public class AlergiaController : Controller
     {
-        GerenciadorAlergia gAlergia = GerenciadorAlergia.GetInstance();
         //
         // GET: /Alergia/
 
         public ViewResult Index()
         {
-            return View(gAlergia.ObterTodos());
+            return View(GerenciadorAlergia.GetInstance().ObterTodos());
         }
 
         //
@@ -28,8 +26,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(int id)
         {
-            
-            return View(gAlergia.Obter(id));
+            return View(GerenciadorAlergia.GetInstance().Obter(id));
         }
 
         //
@@ -38,52 +35,53 @@ namespace PacienteVirtual.Controllers
         public ActionResult Create()
         {
             return View();
-        } 
+        }
 
         //
         // POST: /Alergia/Create
 
         [HttpPost]
-        public ActionResult Create(AlergiaModel alergia)
+        public ActionResult Create(AlergiaModel alergiaModel)
         {
             if (ModelState.IsValid)
             {
-                alergia.IdAlergia = gAlergia.Inserir(alergia);
-                return RedirectToAction("Index");  
+                alergiaModel.IdAlergia = GerenciadorAlergia.GetInstance().Inserir(alergiaModel);
+                return RedirectToAction("Index");
             }
 
-            return View(alergia);
+            return View(alergiaModel);
         }
-        
+
         //
         // GET: /Alergia/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
-            return View(gAlergia.Obter(id));
+            AlergiaModel alergiaModel = GerenciadorAlergia.GetInstance().Obter(id);
+            return View(alergiaModel);
         }
 
         //
         // POST: /Alergia/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(AlergiaModel alergia)
+        public ActionResult Edit(AlergiaModel alergiaModel)
         {
             if (ModelState.IsValid)
             {
-                gAlergia.Atualizar(alergia);
+                GerenciadorAlergia.GetInstance().Atualizar(alergiaModel);
                 return RedirectToAction("Index");
             }
-            return View(alergia);
+            return View(alergiaModel);
         }
 
         //
         // GET: /Alergia/Delete/5
- 
+
         public ActionResult Delete(int id)
         {
-            
-            return View(gAlergia.Obter(id));
+            AlergiaModel alergiaModel = GerenciadorAlergia.GetInstance().Obter(id);
+            return View(alergiaModel);
         }
 
         //
@@ -92,7 +90,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            gAlergia.Remover(id);
+            GerenciadorAlergia.GetInstance().Remover(id);
             return RedirectToAction("Index");
         }
 

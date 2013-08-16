@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.AlergiaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.alergia%>
+    <%: Resources.Mensagem.alergia %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -9,12 +9,12 @@
 <h2><%: Resources.Mensagem.alergia %></h2>
 
 <p>
-    <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
+    <%: Html.ActionLink(Resources.Mensagem.criar, "Create")%>
 </p>
 <div class="box-content"> <table class="table table-bordered table-striped">
     <tr>
         <th>
-            <%: Resources.Mensagem.alergia %>
+            <%: Resources.Mensagem.criar%>
         </th>
         <th></th>
     </tr>
