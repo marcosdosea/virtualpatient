@@ -94,6 +94,9 @@
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.medicamentos, "OverflowException", "Erro")%>
+                                        </li>
+                                        <li>
                                             <%: Html.ActionLink(Resources.Mensagem.pergunta, "Index", "Pergunta")%>
                                         </li>
                                         <li>
