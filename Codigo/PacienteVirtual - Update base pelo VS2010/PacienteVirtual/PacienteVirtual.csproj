@@ -108,6 +108,7 @@
     <Compile Include="Controllers\AlergiaController.cs" />
     <Compile Include="Controllers\BebidaController.cs" />
     <Compile Include="Controllers\ConsultaFixoController.cs" />
+    <Compile Include="Controllers\ErrosController.cs" />
     <Compile Include="Controllers\VMConsultaController.cs" />
     <Compile Include="Controllers\CursoController.cs">
       <SubType>Code</SubType>
@@ -190,6 +191,7 @@
     <Compile Include="Models\DisciplinaModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\EmailModel.cs" />
     <Compile Include="Models\EscolaridadeModel.cs" />
     <Compile Include="Models\EstiloVidaModel.cs" />
     <Compile Include="Models\ExperienciaMedicamentosModel.cs" />
@@ -452,6 +454,8 @@
     <Content Include="Views\ConsultaFixo\Details.aspx" />
     <Content Include="Views\ConsultaFixo\Edit.aspx" />
     <Content Include="Views\ConsultaFixo\Index.aspx" />
+    <Content Include="Views\Erros\Index.aspx" />
+    <Content Include="Views\Shared\NotFound.aspx" />
     <Content Include="Views\VMConsulta\ListarQueixa.ascx" />
     <Content Include="Views\VMConsulta\Queixa.ascx" />
     <Content Include="Views\VMConsulta\MedicamentoNaoPrescrito.ascx" />

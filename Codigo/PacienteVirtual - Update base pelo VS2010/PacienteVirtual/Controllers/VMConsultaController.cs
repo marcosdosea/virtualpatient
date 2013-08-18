@@ -88,8 +88,9 @@ namespace PacienteVirtual.Controllers
         public PartialViewResult DemograficosAntropomedicos(int id)
         {
             DemograficosAntropometricosModel demoAntrop = gDemoAntrop.Obter(id);
-
-            ViewBag.foi = "";
+            TempData["IsReadOnly"] = false;
+            ViewBag.foi = "não";
+            Session["Tema"] = false;
 
             if (demoAntrop == null)
             {
@@ -133,7 +134,10 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public PartialViewResult DemograficosAntropomedicos(DemograficosAntropometricosModel demoAntrop)
         {
-            ViewBag.foi = "";
+            TempData["IsReadOnly"] = true;
+            ViewBag.foi = "foi";
+         
+            Session["Tema"] = true;
 
             if (ModelState.IsValid)
             {

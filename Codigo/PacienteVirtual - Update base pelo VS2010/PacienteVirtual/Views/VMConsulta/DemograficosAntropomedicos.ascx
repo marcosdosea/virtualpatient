@@ -1,5 +1,11 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DemograficosAntropometricosModel>" %>
-<% using (Html.BeginForm())
+
+<%: ViewBag.foi %>
+<%: TempData["IsReadOnly"].ToString()%>
+<%: Session["Tema"].ToString()%>
+<% Html.BeginForm("DemograficosAntropomedicos", "VMConsulta");%>
+
+<% using (Html.BeginForm()) 
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
@@ -108,3 +114,4 @@
     </div>
 </fieldset>
 <% } %>
+<% Html.EndForm();%>
