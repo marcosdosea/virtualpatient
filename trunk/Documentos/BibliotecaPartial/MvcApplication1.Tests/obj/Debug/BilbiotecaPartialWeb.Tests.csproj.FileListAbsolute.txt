@@ -1,0 +1,8 @@
+C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\bin\Debug\MvcApplication1.Tests.dll.config
+C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\bin\Debug\MvcApplication1.Tests.dll
+C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\bin\Debug\MvcApplication1.Tests.pdb
+C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\bin\Debug\MvcApplication1.dll
+C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\bin\Debug\MvcApplication1.pdb
+C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\obj\Debug\BilbiotecaPartialWeb.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\obj\Debug\MvcApplication1.Tests.dll
+C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\obj\Debug\MvcApplication1.Tests.pdb
