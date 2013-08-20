@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="740e7149-ec66-4585-8440-5c81d5b13a2d" name="Iuri@IURI-PC 2013-05-19 12:13:36" runUser="Iuri-PC\Iuri" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="42551c19-3808-4146-afd9-5b05c81cd823">
+    <Deployment runDeploymentRoot="Iuri_IURI-PC 2013-05-19 12_13_36">
+      <DeploymentItem filename="D:\Projetos\PV\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\PacienteVirtual.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-05-19T12:13:36.3179662-03:00" queuing="2013-05-19T12:13:41.0516025-03:00" start="2013-05-19T12:13:41.4884033-03:00" finish="2013-05-19T12:13:43.6100070-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="About" storage="d:\projetos\pv\virtualpatient\codigo\pacientevirtual\pacientevirtual.tests\bin\debug\pacientevirtual.tests.dll" id="a78c22cf-0469-7810-bc17-f7279b0a12e1">
+      <Execution id="d5e5b87e-8846-4c51-9817-756ba865a1ad" />
+      <TestMethod codeBase="D:/Projetos/PV/virtualpatient/Codigo/PacienteVirtual/PacienteVirtual.Tests/bin/Debug/PacienteVirtual.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PacienteVirtual.Tests.Controllers.HomeControllerTest, PacienteVirtual.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="Index" storage="d:\projetos\pv\virtualpatient\codigo\pacientevirtual\pacientevirtual.tests\bin\debug\pacientevirtual.tests.dll" id="1d311554-5af1-43ff-3772-537e9ce0a1f8">
+      <Execution id="1805cc7b-762f-4723-aded-ebf8e1d3c789" />
+      <TestMethod codeBase="D:/Projetos/PV/virtualpatient/Codigo/PacienteVirtual/PacienteVirtual.Tests/bin/Debug/PacienteVirtual.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PacienteVirtual.Tests.Controllers.HomeControllerTest, PacienteVirtual.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="1d311554-5af1-43ff-3772-537e9ce0a1f8" executionId="1805cc7b-762f-4723-aded-ebf8e1d3c789" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a78c22cf-0469-7810-bc17-f7279b0a12e1" executionId="d5e5b87e-8846-4c51-9817-756ba865a1ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="1805cc7b-762f-4723-aded-ebf8e1d3c789" testId="1d311554-5af1-43ff-3772-537e9ce0a1f8" testName="Index" computerName="IURI-PC" duration="00:00:00.4243719" startTime="2013-05-19T12:13:41.6912036-03:00" endTime="2013-05-19T12:13:43.2980065-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1805cc7b-762f-4723-aded-ebf8e1d3c789">
+    </UnitTestResult>
+    <UnitTestResult executionId="d5e5b87e-8846-4c51-9817-756ba865a1ad" testId="a78c22cf-0469-7810-bc17-f7279b0a12e1" testName="About" computerName="IURI-PC" duration="00:00:00.0009700" startTime="2013-05-19T12:13:43.3448066-03:00" endTime="2013-05-19T12:13:43.3604066-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d5e5b87e-8846-4c51-9817-756ba865a1ad">
+    </UnitTestResult>
+  </Results>
+</TestRun>
