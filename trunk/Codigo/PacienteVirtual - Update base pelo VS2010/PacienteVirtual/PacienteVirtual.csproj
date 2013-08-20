@@ -95,174 +95,171 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_Mensagem.en.resx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AcaoAlternativaController.cs" />
-    <Compile Include="Controllers\AcaoQueixaController.cs" />
+    <Compile Include="Controllers\Consulta\AcaoAlternativaController.cs" />
+    <Compile Include="Controllers\Consulta\AcaoQueixaController.cs" />
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\AlergiaController.cs" />
-    <Compile Include="Controllers\BebidaController.cs" />
-    <Compile Include="Controllers\ConsultaFixoController.cs" />
+    <Compile Include="Controllers\Cadastro\AlergiaController.cs" />
+    <Compile Include="Controllers\Cadastro\BebidaController.cs" />
+    <Compile Include="Controllers\Consulta\ConsultaFixoController.cs" />
+    <Compile Include="Controllers\Consulta\ConsultaVariavelQueixaController.cs" />
     <Compile Include="Controllers\ErrosController.cs" />
-    <Compile Include="Controllers\VMConsultaController.cs" />
-    <Compile Include="Controllers\CursoController.cs">
+    <Compile Include="Controllers\Consulta\VMConsultaController.cs" />
+    <Compile Include="Controllers\Turma\CursoController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\DiarioPessoalController.cs" />
-    <Compile Include="Controllers\EstiloVidaController.cs" />
-    <Compile Include="Controllers\HistoricoController.cs" />
-    <Compile Include="Controllers\MedicamentoNaoPrescritoController.cs" />
-    <Compile Include="Controllers\MedicamentoPrescritoController.cs" />
-    <Compile Include="Controllers\MedicamentosAnterioresController.cs" />
-    <Compile Include="Controllers\MedicamentosController.cs" />
-    <Compile Include="Controllers\OcupacaoController.cs" />
-    <Compile Include="Controllers\DemograficosAntropomedicosController.cs" />
-    <Compile Include="Controllers\DisciplinaController.cs">
+    <Compile Include="Controllers\Consulta\DiarioPessoalController.cs" />
+    <Compile Include="Controllers\Consulta\EstiloVidaController.cs" />
+    <Compile Include="Controllers\Consulta\HistoricoController.cs" />
+    <Compile Include="Controllers\Consulta\MedicamentoNaoPrescritoController.cs" />
+    <Compile Include="Controllers\Consulta\MedicamentoPrescritoController.cs" />
+    <Compile Include="Controllers\Consulta\MedicamentosAnterioresController.cs" />
+    <Compile Include="Controllers\Cadastro\MedicamentosController.cs" />
+    <Compile Include="Controllers\Cadastro\OcupacaoController.cs" />
+    <Compile Include="Controllers\Consulta\DemograficosAntropomedicosController.cs" />
+    <Compile Include="Controllers\Turma\DisciplinaController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\EscolaridadeController.cs" />
-    <Compile Include="Controllers\ExperienciaMedicamentosController.cs" />
-    <Compile Include="Controllers\HistoriaController.cs" />
+    <Compile Include="Controllers\Cadastro\EscolaridadeController.cs" />
+    <Compile Include="Controllers\Consulta\ExperienciaMedicamentosController.cs" />
+    <Compile Include="Controllers\Consulta\HistoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\InstituicaoController.cs">
+    <Compile Include="Controllers\Cadastro\InstituicaoController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\PacienteController.cs" />
-    <Compile Include="Controllers\PacientePessoaTurmaController.cs" />
-    <Compile Include="Controllers\ParametroClinicoController.cs" />
-    <Compile Include="Controllers\PerguntaController.cs" />
+    <Compile Include="Controllers\Paciente\PacienteController.cs" />
+    <Compile Include="Controllers\Turma\PacientePessoaTurmaController.cs" />
+    <Compile Include="Controllers\Cadastro\ParametroClinicoController.cs" />
+    <Compile Include="Controllers\Cadastro\PerguntaController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
-    <Compile Include="Controllers\PlanoSaudeController.cs" />
-    <Compile Include="Controllers\QueixaController.cs" />
-    <Compile Include="Controllers\RazaoEncontroController.cs" />
-    <Compile Include="Controllers\RelatoClinicoController.cs" />
-    <Compile Include="Controllers\RespostaController.cs" />
-    <Compile Include="Controllers\SampleController.cs">
+    <Compile Include="Controllers\Cadastro\PlanoSaudeController.cs" />
+    <Compile Include="Controllers\Cadastro\QueixaController.cs" />
+    <Compile Include="Controllers\Consulta\RazaoEncontroController.cs" />
+    <Compile Include="Controllers\Paciente\RelatoClinicoController.cs" />
+    <Compile Include="Controllers\Cadastro\RespostaController.cs" />
+    <Compile Include="Controllers\Cadastro\SistemaController.cs" />
+    <Compile Include="Controllers\Turma\TurmaController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\SistemaController.cs" />
-    <Compile Include="Controllers\TurmaController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\TurmaPessoaRelatoController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\VMPacienteController.cs" />
+    <Compile Include="Controllers\Turma\TurmaPessoaRelatoController.cs" />
+    <Compile Include="Controllers\Paciente\VMPacienteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AcaoAlternativaModel.cs" />
-    <Compile Include="Models\AcaoQueixaModel.cs" />
+    <Compile Include="Models\Consulta\AcaoAlternativaModel.cs" />
+    <Compile Include="Models\Consulta\AcaoQueixaModel.cs" />
     <Compile Include="Models\AccountModels.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\AlergiaModel.cs" />
-    <Compile Include="Models\BebidaModel.cs" />
-    <Compile Include="Models\ConsultaFixoModel.cs" />
-    <Compile Include="Models\ConsultaVariavelModel.cs" />
-    <Compile Include="Models\CursoModel.cs">
+    <Compile Include="Models\Cadastro\AlergiaModel.cs" />
+    <Compile Include="Models\Cadastro\BebidaModel.cs" />
+    <Compile Include="Models\Consulta\ConsultaFixoModel.cs" />
+    <Compile Include="Models\Consulta\ConsultaVariavelModel.cs" />
+    <Compile Include="Models\Consulta\ConsultaVariavelQueixaModel.cs" />
+    <Compile Include="Models\Turma\CursoModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Data\DadosException.cs">
+    <Compile Include="Persistence\DadosException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Data\IRepositorioGenerico.cs">
+    <Compile Include="Persistence\IRepositorioGenerico.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Data\LocalizarDisplayNomeAtributo.cs" />
-    <Compile Include="Models\Data\PacienteVirtualModel.Designer.cs">
+    <Compile Include="Persistence\LocalizarDisplayNomeAtributo.cs" />
+    <Compile Include="Models\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PacienteVirtualModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Data\RepositorioGenerico.cs">
+    <Compile Include="Persistence\RepositorioGenerico.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\DemograficosAntropometricosModel.cs" />
-    <Compile Include="Models\DiarioPessoalModel.cs" />
-    <Compile Include="Models\DisciplinaModel.cs">
+    <Compile Include="Models\Consulta\DemograficosAntropometricosModel.cs" />
+    <Compile Include="Models\Consulta\DiarioPessoalModel.cs" />
+    <Compile Include="Models\Turma\DisciplinaModel.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\EmailModel.cs" />
-    <Compile Include="Models\EscolaridadeModel.cs" />
-    <Compile Include="Models\EstiloVidaModel.cs" />
-    <Compile Include="Models\ExperienciaMedicamentosModel.cs" />
+    <Compile Include="Models\Cadastro\EscolaridadeModel.cs" />
+    <Compile Include="Models\Consulta\EstiloVidaModel.cs" />
+    <Compile Include="Models\Consulta\ExperienciaMedicamentosModel.cs" />
     <Compile Include="Models\Global.cs" />
-    <Compile Include="Models\HistoriaModel.cs" />
-    <Compile Include="Models\HistoricoModel.cs" />
-    <Compile Include="Models\InstituicaoModel.cs">
+    <Compile Include="Models\Consulta\HistoriaModel.cs" />
+    <Compile Include="Models\Consulta\HistoricoModel.cs" />
+    <Compile Include="Models\Turma\InstituicaoModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\MedicamentoNaoPrescritoModel.cs" />
-    <Compile Include="Models\MedicamentoPrescritoModel.cs" />
-    <Compile Include="Models\MedicamentosAnterioresModel.cs" />
-    <Compile Include="Models\MedicamentosModel.cs" />
-    <Compile Include="Models\Negocio\GerenciadorAlergia.cs" />
-    <Compile Include="Models\Negocio\GerenciadorBebida.cs" />
-    <Compile Include="Models\Negocio\GerenciadorConsultaVariavel.cs" />
-    <Compile Include="Models\Negocio\GerenciadorAcaoAlternativa.cs" />
-    <Compile Include="Models\Negocio\GerenciadorAcaoQueixa.cs" />
-    <Compile Include="Models\Negocio\GerenciadorConsultaFixo.cs" />
-    <Compile Include="Models\Negocio\GerenciadorCurso.cs">
+    <Compile Include="Models\Consulta\MedicamentoNaoPrescritoModel.cs" />
+    <Compile Include="Models\Consulta\MedicamentoPrescritoModel.cs" />
+    <Compile Include="Models\Consulta\MedicamentosAnterioresModel.cs" />
+    <Compile Include="Models\Cadastro\MedicamentosModel.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorAlergia.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorBebida.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorConsultaVariavel.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorAcaoAlternativa.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorAcaoQueixa.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorConsultaFixo.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorConsultaVariavelQueixa.cs" />
+    <Compile Include="Negocio\Turma\GerenciadorCurso.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Negocio\GerenciadorDemograficosAntropomedicos.cs" />
-    <Compile Include="Models\Negocio\GerenciadorDiarioPessoal.cs" />
-    <Compile Include="Models\Negocio\GerenciadorDisciplina.cs">
+    <Compile Include="Negocio\Consulta\GerenciadorDemograficosAntropomedicos.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorDiarioPessoal.cs" />
+    <Compile Include="Negocio\Turma\GerenciadorDisciplina.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Negocio\GerenciadorEscolaridade.cs" />
-    <Compile Include="Models\Negocio\GerenciadorEstiloVida.cs" />
-    <Compile Include="Models\Negocio\GerenciadorExperienciaMedicamentos.cs" />
-    <Compile Include="Models\Negocio\GerenciadorHistoria.cs" />
-    <Compile Include="Models\Negocio\GerenciadorHistorico.cs" />
-    <Compile Include="Models\Negocio\GerenciadorInstituicao.cs">
+    <Compile Include="Negocio\Cadastro\GerenciadorEscolaridade.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorEstiloVida.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorExperienciaMedicamentos.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorHistoria.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorHistorico.cs" />
+    <Compile Include="Negocio\Turma\GerenciadorInstituicao.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Negocio\GerenciadorMedicamentoNaoPrescrito.cs" />
-    <Compile Include="Models\Negocio\GerenciadorMedicamentoPrescrito.cs" />
-    <Compile Include="Models\Negocio\GerenciadorMedicamentos.cs" />
-    <Compile Include="Models\Negocio\GerenciadorMedicamentosAnteriores.cs" />
-    <Compile Include="Models\Negocio\GerenciadorOcupacao.cs" />
-    <Compile Include="Models\Negocio\GerenciadorPaciente.cs" />
-    <Compile Include="Models\Negocio\GerenciadorPacientePessoaTurma.cs" />
-    <Compile Include="Models\Negocio\GerenciadorParametroClinico.cs" />
-    <Compile Include="Models\Negocio\GerenciadorPergunta.cs" />
-    <Compile Include="Models\Negocio\GerenciadorPessoa.cs" />
-    <Compile Include="Models\Negocio\GerenciadorPlanoSaude.cs" />
-    <Compile Include="Models\Negocio\GerenciadorQueixa.cs" />
-    <Compile Include="Models\Negocio\GerenciadorRazaoEncontro.cs" />
-    <Compile Include="Models\Negocio\GerenciadorRelatoClinico.cs" />
-    <Compile Include="Models\Negocio\GerenciadorResposta.cs" />
-    <Compile Include="Models\Negocio\GerenciadorSistema.cs" />
-    <Compile Include="Models\Negocio\GerenciadorTurma.cs">
+    <Compile Include="Negocio\Consulta\GerenciadorMedicamentoNaoPrescrito.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorMedicamentoPrescrito.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorMedicamentos.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorMedicamentosAnteriores.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorOcupacao.cs" />
+    <Compile Include="Negocio\Paciente\GerenciadorPaciente.cs" />
+    <Compile Include="Negocio\Turma\GerenciadorPacientePessoaTurma.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorParametroClinico.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorPergunta.cs" />
+    <Compile Include="Negocio\GerenciadorPessoa.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorPlanoSaude.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorQueixa.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorRazaoEncontro.cs" />
+    <Compile Include="Negocio\Paciente\GerenciadorRelatoClinico.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorResposta.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorSistema.cs" />
+    <Compile Include="Negocio\Turma\GerenciadorTurma.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Negocio\GerenciadorTurmaPessoaRelato.cs" />
-    <Compile Include="Models\Negocio\NegocioException.cs">
+    <Compile Include="Negocio\Turma\GerenciadorTurmaPessoaRelato.cs" />
+    <Compile Include="Negocio\NegocioException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\OcupacaoModel.cs" />
-    <Compile Include="Models\PacienteModel.cs" />
-    <Compile Include="Models\PacientePessoaTurmaModel.cs" />
-    <Compile Include="Models\ParametroClinicoModel.cs" />
-    <Compile Include="Models\PerguntaModel.cs" />
+    <Compile Include="Models\Cadastro\OcupacaoModel.cs" />
+    <Compile Include="Models\Paciente\PacienteModel.cs" />
+    <Compile Include="Models\Turma\PacientePessoaTurmaModel.cs" />
+    <Compile Include="Models\Cadastro\ParametroClinicoModel.cs" />
+    <Compile Include="Models\Cadastro\PerguntaModel.cs" />
     <Compile Include="Models\PessoaModel.cs" />
-    <Compile Include="Models\PlanoSaudeModel.cs" />
-    <Compile Include="Models\QueixaModel.cs" />
-    <Compile Include="Models\RazaoEncontroModel.cs" />
-    <Compile Include="Models\RelatoClinicoModel.cs" />
-    <Compile Include="Models\RespostaModel.cs" />
-    <Compile Include="Models\SistemaModel.cs" />
-    <Compile Include="Models\TurmaModel.cs">
+    <Compile Include="Models\Cadastro\PlanoSaudeModel.cs" />
+    <Compile Include="Models\Cadastro\QueixaModel.cs" />
+    <Compile Include="Models\Consulta\RazaoEncontroModel.cs" />
+    <Compile Include="Models\Paciente\RelatoClinicoModel.cs" />
+    <Compile Include="Models\Cadastro\RespostaModel.cs" />
+    <Compile Include="Models\Cadastro\SistemaModel.cs" />
+    <Compile Include="Models\Turma\TurmaModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\TurmaPessoaRelatoModel.cs" />
-    <Compile Include="Models\ViewModel\VMConsulta.cs" />
-    <Compile Include="Models\ViewModel\VMPaciente.cs" />
+    <Compile Include="Models\Consulta\TurmaPessoaRelatoModel.cs" />
+    <Compile Include="Models\Consulta\VMConsulta.cs" />
+    <Compile Include="Models\Consulta\VMPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -402,7 +399,6 @@
     <Content Include="Content\themes\pv\js\jquery.validate.js" />
     <Content Include="Content\themes\pv\js\jquery.validate.min.js" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Data\PacienteVirtualModel.edmx.sql" />
     <Content Include="Scripts\partial.view.reload.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
@@ -673,7 +669,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\Data\PacienteVirtualModel.edmx">
+    <EntityDeploy Include="Models\PacienteVirtualModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PacienteVirtualModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
