@@ -410,10 +410,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Uploads\How to Draw Manga Eyes, Four Different Ways.mp4" />
-    <Content Include="Uploads\How to Draw Manga Hair, Male and Female.avi" />
-    <Content Include="Uploads\JanSvankmajer.avi" />
-    <Content Include="Uploads\JanSvankmajer_.mp4" />
     <Content Include="Views\AcaoAlternativa\Create.aspx" />
     <Content Include="Views\AcaoAlternativa\Delete.aspx" />
     <Content Include="Views\AcaoAlternativa\Details.aspx" />
