@@ -95,11 +95,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_Mensagem.en.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Mensagem.pt-br.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Mensagem.pt-br.resx</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\AcaoAlternativaController.cs" />
     <Compile Include="Controllers\AcaoQueixaController.cs" />
     <Compile Include="Controllers\AccountController.cs">
@@ -671,10 +666,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\Mensagem.pt-br.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Mensagem.pt-br.designer.cs</LastGenOutput>
-    </Content>
     <EmbeddedResource Include="App_GlobalResources\Mensagem.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Mensagem.Designer.cs</LastGenOutput>

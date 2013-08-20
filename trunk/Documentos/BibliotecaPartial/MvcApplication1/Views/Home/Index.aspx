@@ -8,6 +8,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <h2>Index</h2>
-    <% Html.RenderPartial("ListAutor", Model.Autores, new ViewDataDictionary()); %>
+    <% Html.RenderPartial("../Autor/ListAutor", Model.Autores, new ViewDataDictionary()); %>
     <% Html.RenderPartial("EditAutor", Model.Autor); %>
 </asp:Content>

@@ -6,3 +6,11 @@ C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\bin\Debug\M
 C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\obj\Debug\BilbiotecaPartialWeb.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\obj\Debug\MvcApplication1.Tests.dll
 C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1.Tests\obj\Debug\MvcApplication1.Tests.pdb
+D:\virtualpatient\trunk\Documentos\BibliotecaPartial\MvcApplication1.Tests\bin\Debug\MvcApplication1.Tests.dll.config
+D:\virtualpatient\trunk\Documentos\BibliotecaPartial\MvcApplication1.Tests\bin\Debug\MvcApplication1.Tests.dll
+D:\virtualpatient\trunk\Documentos\BibliotecaPartial\MvcApplication1.Tests\bin\Debug\MvcApplication1.Tests.pdb
+D:\virtualpatient\trunk\Documentos\BibliotecaPartial\MvcApplication1.Tests\bin\Debug\MvcApplication1.dll
+D:\virtualpatient\trunk\Documentos\BibliotecaPartial\MvcApplication1.Tests\bin\Debug\MvcApplication1.pdb
+D:\virtualpatient\trunk\Documentos\BibliotecaPartial\MvcApplication1.Tests\obj\Debug\BilbiotecaPartialWeb.Tests.csprojResolveAssemblyReference.cache
+D:\virtualpatient\trunk\Documentos\BibliotecaPartial\MvcApplication1.Tests\obj\Debug\MvcApplication1.Tests.dll
+D:\virtualpatient\trunk\Documentos\BibliotecaPartial\MvcApplication1.Tests\obj\Debug\MvcApplication1.Tests.pdb
