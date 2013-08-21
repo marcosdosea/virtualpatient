@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public bool Inserir(TurmaPessoaRelatoModel turmaPessoaRelato)
         {
-            var repTurmaPessoaRelato = new RepositorioGenerico<TurmaPessoaRelatoE>();
-            TurmaPessoaRelatoE _turmaPessoaRelatoE = new TurmaPessoaRelatoE();
+            var repTurmaPessoaRelato = new RepositorioGenerico<tb_turma_pessoa_relato>();
+            tb_turma_pessoa_relato _turmaPessoaRelatoE = new tb_turma_pessoa_relato();
             try
             {
                 Atribuir(turmaPessoaRelato, _turmaPessoaRelatoE);
@@ -54,8 +54,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repTurmaPessoaRelato = new RepositorioGenerico<TurmaPessoaRelatoE>();
-                TurmaPessoaRelatoE _turmaPessoaRelatoE = repTurmaPessoaRelato.ObterEntidade(c => c.IdTurma == turmaPessoaRelato.IdTurma);
+                var repTurmaPessoaRelato = new RepositorioGenerico<tb_turma_pessoa_relato>();
+                tb_turma_pessoa_relato _turmaPessoaRelatoE = repTurmaPessoaRelato.ObterEntidade(c => c.IdTurma == turmaPessoaRelato.IdTurma);
                 Atribuir(turmaPessoaRelato, _turmaPessoaRelatoE);
 
                 repTurmaPessoaRelato.SaveChanges();
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repTurmaPessoaRelato = new RepositorioGenerico<TurmaPessoaRelatoE>();
+                var repTurmaPessoaRelato = new RepositorioGenerico<tb_turma_pessoa_relato>();
                 repTurmaPessoaRelato.Remover(c => c.IdTurma == IdTurma);
                 repTurmaPessoaRelato.SaveChanges();
             }
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<TurmaPessoaRelatoModel> GetQuery()
         {
-            var repTurmaPessoaRelato = new RepositorioGenerico<TurmaPessoaRelatoE>();
+            var repTurmaPessoaRelato = new RepositorioGenerico<tb_turma_pessoa_relato>();
             var pvEntities = (pvEntities)repTurmaPessoaRelato.ObterContexto();
             var query = from tb_turma_pessoa_relato in pvEntities.tb_turma_pessoa_relato
                         select new TurmaPessoaRelatoModel
@@ -99,7 +99,10 @@ namespace PacienteVirtual.Negocio
                             IdPessoa = tb_turma_pessoa_relato.IdPessoa,
                             IdRelato = tb_turma_pessoa_relato.IdRelato,
                             IdConsultaFixo = tb_turma_pessoa_relato.IdConsultaFixo,
-                            EstadoPreenchimento = tb_turma_pessoa_relato.EstadoPreencimento
+                            EstadoPreenchimento = tb_turma_pessoa_relato.EstadoPreencimento,
+                            OrdemCronologica = tb_turma_pessoa_relato.tb_relato_clinico.OrdemCronologia,
+                            NivelDificuldade = tb_turma_pessoa_relato.tb_relato_clinico.NivelDificuldade,
+                            NomePaciente = tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.Nome
                         };
             return query;
         }
@@ -114,11 +117,20 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém todos os pacientes por pessoa
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TurmaPessoaRelatoModel> ObterPorPessoa(int codPessoa)
+        {
+            return GetQuery().Where(tpr => tpr.IdPessoa == codPessoa).ToList();
+        }
+
+        /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="turmaPessoaRelato"></param>
         /// <param name="_turmaPessoaRelatoE"></param>
-        private static void Atribuir(TurmaPessoaRelatoModel turmaPessoaRelato, TurmaPessoaRelatoE _turmaPessoaRelatoE)
+        private static void Atribuir(TurmaPessoaRelatoModel turmaPessoaRelato, tb_turma_pessoa_relato _turmaPessoaRelatoE)
         {
             _turmaPessoaRelatoE.IdTurma = turmaPessoaRelato.IdTurma;
             _turmaPessoaRelatoE.IdPessoa = turmaPessoaRelato.IdPessoa;

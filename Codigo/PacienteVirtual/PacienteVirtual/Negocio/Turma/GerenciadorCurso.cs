@@ -5,7 +5,6 @@ using System.Text;
 using Persistence;
 using System.Data.Common;
 using PacienteVirtual.Models;
-using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Negocio
 {
@@ -32,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(CursoModel curso)
         {
-            var repCurso = new RepositorioGenerico<CursoE>();
-            CursoE _cursoE = new CursoE();
+            var repCurso = new RepositorioGenerico<tb_curso>();
+            tb_curso _cursoE = new tb_curso();
             try
             {
                 Atribuir(curso, _cursoE);
@@ -57,8 +56,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repCurso = new RepositorioGenerico<CursoE>();
-                CursoE _cursoE = repCurso.ObterEntidade(c => c.IdCurso == curso.IdCurso);
+                var repCurso = new RepositorioGenerico<tb_curso>();
+                tb_curso _cursoE = repCurso.ObterEntidade(c => c.IdCurso == curso.IdCurso);
                 Atribuir(curso, _cursoE);
 
                 repCurso.SaveChanges();
@@ -77,7 +76,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repCurso = new RepositorioGenerico<CursoE>();
+                var repCurso = new RepositorioGenerico<tb_curso>();
                 repCurso.Remover(c => c.IdCurso == idCurso);
                 repCurso.SaveChanges();
             }
@@ -93,17 +92,13 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<CursoModel> GetQuery()
         {
-            var repCurso = new RepositorioGenerico<CursoE>();
+            var repCurso = new RepositorioGenerico<tb_curso>();
             var pvEntities = (pvEntities)repCurso.ObterContexto();
             var query = from tb_curso in pvEntities.tb_curso
-                        join tb_instituicao in pvEntities.tb_instituicao
-                        on tb_curso.IdInstituicao equals tb_instituicao.IdInstituicao
                         select new CursoModel
                         {
                             IdCurso = tb_curso.IdCurso,
-                            IdInstituicao = tb_curso.IdInstituicao,
                             NomeCurso = tb_curso.NomeCurso,
-                            NomeInstituicao = tb_instituicao.NomeInstituicao
                         };
             return query;
         }
@@ -142,10 +137,9 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="curso"></param>
         /// <param name="_cursoE"></param>
-        private static void Atribuir(CursoModel curso, CursoE _cursoE)
+        private static void Atribuir(CursoModel curso, tb_curso _cursoE)
         {
             _cursoE.NomeCurso = curso.NomeCurso;
-            _cursoE.IdInstituicao = curso.IdInstituicao;
         }
     }
 }

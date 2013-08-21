@@ -49,7 +49,6 @@ namespace PacienteVirtual.Controllers
                 cursoModel.IdCurso = gCurso.Inserir(cursoModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", cursoModel.IdInstituicao);
             return View(cursoModel);
         }
         
@@ -58,7 +57,6 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(int id)
         {
             CursoModel cursoModel = gCurso.Obter(id);
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", cursoModel.IdInstituicao);
             return View(cursoModel);
         }
 
@@ -73,7 +71,6 @@ namespace PacienteVirtual.Controllers
                 gCurso.Atualizar(cursoModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", cursoModel.IdInstituicao);
             return View(cursoModel);
         }
 

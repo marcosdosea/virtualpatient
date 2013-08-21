@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(ConsultaFixoModel consultaFixo)
         {
-            var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
-            ConsultaFixoE _consultaFixoE = new ConsultaFixoE();
+            var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+            tb_consulta_fixo _consultaFixoE = new tb_consulta_fixo();
             try
             {
                 Atribuir(consultaFixo, _consultaFixoE);
@@ -54,8 +54,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
-                ConsultaFixoE _consultaFixoE = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == consultaFixo.IdConsultaFixo);
+                var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+                tb_consulta_fixo _consultaFixoE = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == consultaFixo.IdConsultaFixo);
                 Atribuir(consultaFixo, _consultaFixoE);
 
                 repConsultaFixo.SaveChanges();
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
+                var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
                 repConsultaFixo.Remover(cf => cf.IdConsultaFixo == idConsultaFixo);
                 repConsultaFixo.SaveChanges();
             }
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<ConsultaFixoModel> GetQuery()
         {
-            var repConsultaFixo = new RepositorioGenerico<ConsultaFixoE>();
+            var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
             var pvEntities = (pvEntities)repConsultaFixo.ObterContexto();
             var query = from tb_consulta_fixo in pvEntities.tb_consulta_fixo
                         select new ConsultaFixoModel
@@ -136,7 +136,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="consultaFixo"></param>
         /// <param name="_consultaFixoE"></param>
-        private static void Atribuir(ConsultaFixoModel consultaFixo, ConsultaFixoE _consultaFixoE)
+        private static void Atribuir(ConsultaFixoModel consultaFixo, tb_consulta_fixo _consultaFixoE)
         {
             _consultaFixoE.IdConsultaFixo = consultaFixo.IdConsultaFixo;
             _consultaFixoE.EhGabarito = consultaFixo.EhGabarito;

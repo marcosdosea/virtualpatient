@@ -29,16 +29,16 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(HistoricoModel Historico)
         {
-            var repHistorico = new RepositorioGenerico<HistoricoE>();
-            HistoricoE _HistoricoE = new HistoricoE();
+            var repHistorico = new RepositorioGenerico<tb_historico>();
+            tb_historico _tb_historico = new tb_historico();
             try
             {
-                Atribuir(Historico, _HistoricoE);
+                Atribuir(Historico, _tb_historico);
 
-                repHistorico.Inserir(_HistoricoE);
+                repHistorico.Inserir(_tb_historico);
                 repHistorico.SaveChanges();
 
-                return _HistoricoE.IdHistorico;
+                return _tb_historico.IdHistorico;
             }
             catch (Exception e)
             {
@@ -54,9 +54,9 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repHistorico = new RepositorioGenerico<HistoricoE>();
-                HistoricoE _HistoricoE = repHistorico.ObterEntidade(h => h.IdHistorico == Historico.IdHistorico);
-                Atribuir(Historico, _HistoricoE);
+                var repHistorico = new RepositorioGenerico<tb_historico>();
+                tb_historico _tb_historico = repHistorico.ObterEntidade(h => h.IdHistorico == Historico.IdHistorico);
+                Atribuir(Historico, _tb_historico);
 
                 repHistorico.SaveChanges();
             }
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repHistorico = new RepositorioGenerico<HistoricoE>();
+                var repHistorico = new RepositorioGenerico<tb_historico>();
                 repHistorico.Remover(h => h.IdHistorico == idHistorico);
                 repHistorico.SaveChanges();
             }
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<HistoricoModel> GetQuery()
         {
-            var repHistorico = new RepositorioGenerico<HistoricoE>();
+            var repHistorico = new RepositorioGenerico<tb_historico>();
             var pvEntities = (pvEntities)repHistorico.ObterContexto();
             var query = from tb_historico in pvEntities.tb_historico
                         select new HistoricoModel
@@ -141,19 +141,19 @@ namespace PacienteVirtual.Negocio
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="Historico"></param>
-        /// <param name="_HistoricoE"></param>
-        private static void Atribuir(HistoricoModel Historico, HistoricoE _HistoricoE)
+        /// <param name="_tb_historico"></param>
+        private static void Atribuir(HistoricoModel Historico, tb_historico _tb_historico)
         {
-            _HistoricoE.IdHistorico = Historico.IdHistorico;
-            _HistoricoE.IdPessoa = Historico.IdPessoa;
-            _HistoricoE.IdTurma = Historico.IdTurma;
-            _HistoricoE.IdPaciente = Historico.IdPaciente;
-            _HistoricoE.IdTutor = Historico.IdTutor;
-            _HistoricoE.IdRelato = Historico.IdRelato;
-            _HistoricoE.DataEnvio = Historico.DataEnvio;
-            _HistoricoE.DataResposta = Historico.DataResposta;
-            _HistoricoE.Estado = Historico.Estado;
-            _HistoricoE.ComentarioTutor = Historico.ComentarioTutor;
+            _tb_historico.IdHistorico = Historico.IdHistorico;
+            _tb_historico.IdPessoa = Historico.IdPessoa;
+            _tb_historico.IdTurma = Historico.IdTurma;
+            _tb_historico.IdPaciente = Historico.IdPaciente;
+            _tb_historico.IdTutor = Historico.IdTutor;
+            _tb_historico.IdRelato = Historico.IdRelato;
+            _tb_historico.DataEnvio = Historico.DataEnvio;
+            _tb_historico.DataResposta = Historico.DataResposta;
+            _tb_historico.Estado = Historico.Estado;
+            _tb_historico.ComentarioTutor = Historico.ComentarioTutor;
 
         }
 

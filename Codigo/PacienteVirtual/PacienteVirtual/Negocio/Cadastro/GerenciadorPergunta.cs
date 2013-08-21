@@ -31,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(PerguntaModel pergunta)
         {
-            var repPergunta = new RepositorioGenerico<PerguntaE>();
-            PerguntaE _perguntaE = new PerguntaE();
+            var repPergunta = new RepositorioGenerico<tb_pergunta>();
+            tb_pergunta _perguntaE = new tb_pergunta();
             try
             {
                 Atribuir(pergunta, _perguntaE);
@@ -57,8 +57,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repPergunta = new RepositorioGenerico<PerguntaE>();
-                PerguntaE _perguntaE = repPergunta.ObterEntidade(d => d.IdPergunta == pergunta.IdPergunta);
+                var repPergunta = new RepositorioGenerico<tb_pergunta>();
+                tb_pergunta _perguntaE = repPergunta.ObterEntidade(d => d.IdPergunta == pergunta.IdPergunta);
                 Atribuir(pergunta, _perguntaE);
 
                 repPergunta.SaveChanges();
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repPergunta = new RepositorioGenerico<PerguntaE>();
+                var repPergunta = new RepositorioGenerico<tb_pergunta>();
                 repPergunta.Remover(d => d.IdPergunta == idPergunta);
                 repPergunta.SaveChanges();
             }
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<PerguntaModel> GetQuery()
         {
-            var repPergunta = new RepositorioGenerico<PerguntaE>();
+            var repPergunta = new RepositorioGenerico<tb_pergunta>();
             var pvEntities = (pvEntities)repPergunta.ObterContexto();
             var query = from pergunta in pvEntities.tb_pergunta
                         select new PerguntaModel
@@ -138,7 +138,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="pergunta"></param>
         /// <param name="_perguntaE"></param>
-        private static void Atribuir(PerguntaModel pergunta, PerguntaE _perguntaE)
+        private static void Atribuir(PerguntaModel pergunta, tb_pergunta _perguntaE)
         {
             _perguntaE.Pergunta = pergunta.Pergunta;
         }

@@ -31,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(AcaoQueixaModel acaoQueixa)
         {
-            var repAcaoQueixa = new RepositorioGenerico<AcaoQueixaE>();
-            AcaoQueixaE _acaoQueixaE = new AcaoQueixaE();
+            var repAcaoQueixa = new RepositorioGenerico<tb_acao_queixa>();
+            tb_acao_queixa _acaoQueixaE = new tb_acao_queixa();
             try
             {
                 Atribuir(acaoQueixa, _acaoQueixaE);
@@ -57,8 +57,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repAcaoQueixa = new RepositorioGenerico<AcaoQueixaE>();
-                AcaoQueixaE _acaoQueixaE = repAcaoQueixa.ObterEntidade(d => d.IdAcaoQueixa == acaoQueixa.IdAcaoQueixa);
+                var repAcaoQueixa = new RepositorioGenerico<tb_acao_queixa>();
+                tb_acao_queixa _acaoQueixaE = repAcaoQueixa.ObterEntidade(d => d.IdAcaoQueixa == acaoQueixa.IdAcaoQueixa);
                 Atribuir(acaoQueixa, _acaoQueixaE);
 
                 repAcaoQueixa.SaveChanges();
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repAcaoQueixa = new RepositorioGenerico<AcaoQueixaE>();
+                var repAcaoQueixa = new RepositorioGenerico<tb_acao_queixa>();
                 repAcaoQueixa.Remover(d => d.IdAcaoQueixa == idAcaoQueixa);
                 repAcaoQueixa.SaveChanges();
             }
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<AcaoQueixaModel> GetQuery()
         {
-            var repAcaoQueixa = new RepositorioGenerico<AcaoQueixaE>();
+            var repAcaoQueixa = new RepositorioGenerico<tb_acao_queixa>();
             var pvEntities = (pvEntities)repAcaoQueixa.ObterContexto();
             var query = from acaoQueixa in pvEntities.tb_acao_queixa
                         select new AcaoQueixaModel
@@ -138,7 +138,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="acaoQueixa"></param>
         /// <param name="_acaoQueixaE"></param>
-        private static void Atribuir(AcaoQueixaModel acaoQueixa, AcaoQueixaE _acaoQueixaE)
+        private static void Atribuir(AcaoQueixaModel acaoQueixa, tb_acao_queixa _acaoQueixaE)
         {
             _acaoQueixaE.DescricaoAcao = acaoQueixa.DescricaoAcao;
         }

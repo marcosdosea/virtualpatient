@@ -31,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(OcupacaoModel ocupacao)
         {
-            var repOcupacao = new RepositorioGenerico<OcupacaoE>();
-            OcupacaoE _ocupacaoE = new OcupacaoE();
+            var repOcupacao = new RepositorioGenerico<tb_ocupacao>();
+            tb_ocupacao _ocupacaoE = new tb_ocupacao();
             try
             {
                 Atribuir(ocupacao, _ocupacaoE);
@@ -57,8 +57,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repOcupacao = new RepositorioGenerico<OcupacaoE>();
-                OcupacaoE _ocupacaoE = repOcupacao.ObterEntidade(d => d.IdOcupacao == ocupacao.IdOcupacao);
+                var repOcupacao = new RepositorioGenerico<tb_ocupacao>();
+                tb_ocupacao _ocupacaoE = repOcupacao.ObterEntidade(d => d.IdOcupacao == ocupacao.IdOcupacao);
                 Atribuir(ocupacao, _ocupacaoE);
 
                 repOcupacao.SaveChanges();
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repOcupacao = new RepositorioGenerico<OcupacaoE>();
+                var repOcupacao = new RepositorioGenerico<tb_ocupacao>();
                 repOcupacao.Remover(d => d.IdOcupacao == idOcupacao);
                 repOcupacao.SaveChanges();
             }
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<OcupacaoModel> GetQuery()
         {
-            var repOcupacao = new RepositorioGenerico<OcupacaoE>();
+            var repOcupacao = new RepositorioGenerico<tb_ocupacao>();
             var pvEntities = (pvEntities)repOcupacao.ObterContexto();
             var query = from ocupacao in pvEntities.tb_ocupacao
                         select new OcupacaoModel
@@ -138,7 +138,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="ocupacao"></param>
         /// <param name="_ocupacaoE"></param>
-        private static void Atribuir(OcupacaoModel ocupacao, OcupacaoE _ocupacaoE)
+        private static void Atribuir(OcupacaoModel ocupacao, tb_ocupacao _ocupacaoE)
         {
             _ocupacaoE.Descricao = ocupacao.OcupacaoDescricao;
         }

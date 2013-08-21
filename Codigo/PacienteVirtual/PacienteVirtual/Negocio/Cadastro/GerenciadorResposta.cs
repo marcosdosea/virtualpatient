@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(RespostaModel resposta)
         {
-            var repCurso = new RepositorioGenerico<RespostaE>();
-            RespostaE _respostaE = new RespostaE();
+            var repCurso = new RepositorioGenerico<tb_resposta>();
+            tb_resposta _respostaE = new tb_resposta();
             try
             {
                 Atribuir(resposta, _respostaE);
@@ -54,8 +54,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repCurso = new RepositorioGenerico<RespostaE>();
-                RespostaE _respostaE = repCurso.ObterEntidade(c => c.IdResposta == resposta.IdResposta);
+                var repCurso = new RepositorioGenerico<tb_resposta>();
+                tb_resposta _respostaE = repCurso.ObterEntidade(c => c.IdResposta == resposta.IdResposta);
                 Atribuir(resposta, _respostaE);
 
                 repCurso.SaveChanges();
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repCurso = new RepositorioGenerico<RespostaE>();
+                var repCurso = new RepositorioGenerico<tb_resposta>();
                 repCurso.Remover(c => c.IdResposta == idResposta);
                 repCurso.SaveChanges();
             }
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<RespostaModel> GetQuery()
         {
-            var repCurso = new RepositorioGenerico<RespostaE>();
+            var repCurso = new RepositorioGenerico<tb_resposta>();
             var pvEntities = (pvEntities)repCurso.ObterContexto();
             var query = from tb_resposta in pvEntities.tb_resposta
                         join tb_pergunta in pvEntities.tb_pergunta
@@ -140,7 +140,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="resposta"></param>
         /// <param name="_respostaE"></param>
-        private static void Atribuir(RespostaModel resposta, RespostaE _respostaE)
+        private static void Atribuir(RespostaModel resposta, tb_resposta _respostaE)
         {
             _respostaE.Resposta = resposta.Resposta;
             _respostaE.IdPergunta = resposta.IdPergunta;

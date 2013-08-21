@@ -32,8 +32,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(AlergiaModel alergia)
         {
-            var repAlergia = new RepositorioGenerico<AlergiaE>();
-            AlergiaE _tb_alergia = new AlergiaE();
+            var repAlergia = new RepositorioGenerico<tb_alergia>();
+            tb_alergia _tb_alergia = new tb_alergia();
             try
             {
                 Atribuir(alergia, _tb_alergia);
@@ -58,8 +58,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repAlergia = new RepositorioGenerico<AlergiaE>();
-                AlergiaE _tb_alergia = repAlergia.ObterEntidade(d => d.IdAlergia == alergia.IdAlergia);
+                var repAlergia = new RepositorioGenerico<tb_alergia>();
+                tb_alergia _tb_alergia = repAlergia.ObterEntidade(d => d.IdAlergia == alergia.IdAlergia);
                 Atribuir(alergia, _tb_alergia);
 
                 repAlergia.SaveChanges();
@@ -78,7 +78,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repAlergia = new RepositorioGenerico<AlergiaE>();
+                var repAlergia = new RepositorioGenerico<tb_alergia>();
                 repAlergia.Remover(d => d.IdAlergia == idAlergia);
                 repAlergia.SaveChanges();
             }
@@ -94,7 +94,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<AlergiaModel> GetQuery()
         {
-            var repAlergia = new RepositorioGenerico<AlergiaE>();
+            var repAlergia = new RepositorioGenerico<tb_alergia>();
             var pvEntities = (pvEntities)repAlergia.ObterContexto();
             var query = from alergia in pvEntities.tb_alergia
                         select new AlergiaModel
@@ -139,7 +139,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="alergia"></param>
         /// <param name="_tb_alergia"></param>
-        private static void Atribuir(AlergiaModel alergia, AlergiaE _tb_alergia)
+        private static void Atribuir(AlergiaModel alergia, tb_alergia _tb_alergia)
         {
             _tb_alergia.Alergia = alergia.Alergia;
         }

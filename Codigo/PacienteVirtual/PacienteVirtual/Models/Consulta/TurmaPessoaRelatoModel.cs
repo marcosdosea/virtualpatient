@@ -28,5 +28,15 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "estado_preenchimento", ResourceType = typeof(Mensagem))]
         public string EstadoPreenchimento { get; set; }
+
+        [Display(Name = "ordem_cronologica", ResourceType = typeof(Mensagem))]
+        public int OrdemCronologica { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "nivel_dificuldade", ResourceType = typeof(Mensagem))]
+        public int NivelDificuldade { get; set; }
+
+        [Required]
+        public String NomePaciente { get; set; }
     }
 }

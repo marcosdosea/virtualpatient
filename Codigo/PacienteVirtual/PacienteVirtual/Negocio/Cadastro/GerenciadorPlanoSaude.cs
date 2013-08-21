@@ -31,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(PlanoSaudeModel planoSaude)
         {
-            var repPlanoSaude = new RepositorioGenerico<PlanoSaudeE>();
-            PlanoSaudeE _planoSaudeE = new PlanoSaudeE();
+            var repPlanoSaude = new RepositorioGenerico<tb_plano_saude>();
+            tb_plano_saude _planoSaudeE = new tb_plano_saude();
             try
             {
                 Atribuir(planoSaude, _planoSaudeE);
@@ -57,8 +57,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repPlanoSaude = new RepositorioGenerico<PlanoSaudeE>();
-                PlanoSaudeE _planoSaudeE = repPlanoSaude.ObterEntidade(d => d.IdPlanoSaude == planoSaude.IdPlanoSaude);
+                var repPlanoSaude = new RepositorioGenerico<tb_plano_saude>();
+                tb_plano_saude _planoSaudeE = repPlanoSaude.ObterEntidade(d => d.IdPlanoSaude == planoSaude.IdPlanoSaude);
                 Atribuir(planoSaude, _planoSaudeE);
 
                 repPlanoSaude.SaveChanges();
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repPlanoSaude = new RepositorioGenerico<PlanoSaudeE>();
+                var repPlanoSaude = new RepositorioGenerico<tb_plano_saude>();
                 repPlanoSaude.Remover(d => d.IdPlanoSaude == idPlanoSaude);
                 repPlanoSaude.SaveChanges();
             }
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<PlanoSaudeModel> GetQuery()
         {
-            var repPlanoSaude = new RepositorioGenerico<PlanoSaudeE>();
+            var repPlanoSaude = new RepositorioGenerico<tb_plano_saude>();
             var pvEntities = (pvEntities)repPlanoSaude.ObterContexto();
             var query = from planoSaude in pvEntities.tb_plano_saude
                         select new PlanoSaudeModel
@@ -138,7 +138,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="planoSaude"></param>
         /// <param name="_planoSaudeE"></param>
-        private static void Atribuir(PlanoSaudeModel planoSaude, PlanoSaudeE _planoSaudeE)
+        private static void Atribuir(PlanoSaudeModel planoSaude, tb_plano_saude _planoSaudeE)
         {
             _planoSaudeE.Nome = planoSaude.PlanoSaudeNome;
         }

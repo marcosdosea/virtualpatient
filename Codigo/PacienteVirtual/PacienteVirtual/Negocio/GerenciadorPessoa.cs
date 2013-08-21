@@ -31,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(PessoaModel pessoa)
         {
-            var repPessoa = new RepositorioGenerico<PessoaE>();
-            PessoaE _pessoaE = new PessoaE();
+            var repPessoa = new RepositorioGenerico<tb_pessoa>();
+            tb_pessoa _pessoaE = new tb_pessoa();
             try
             {
                 Atribuir(pessoa, _pessoaE);
@@ -57,8 +57,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repPessoa = new RepositorioGenerico<PessoaE>();
-                PessoaE _pessoaE = repPessoa.ObterEntidade(d => d.IdPessoa == pessoa.IdPessoa);
+                var repPessoa = new RepositorioGenerico<tb_pessoa>();
+                tb_pessoa _pessoaE = repPessoa.ObterEntidade(d => d.IdPessoa == pessoa.IdPessoa);
                 Atribuir(pessoa, _pessoaE);
 
                 repPessoa.SaveChanges();
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repPessoa = new RepositorioGenerico<PessoaE>();
+                var repPessoa = new RepositorioGenerico<tb_pessoa>();
                 repPessoa.Remover(d => d.IdPessoa == idPessoa);
                 repPessoa.SaveChanges();
             }
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<PessoaModel> GetQuery()
         {
-            var repPessoa = new RepositorioGenerico<PessoaE>();
+            var repPessoa = new RepositorioGenerico<tb_pessoa>();
             var pvEntities = (pvEntities)repPessoa.ObterContexto();
             var query = from pessoa in pvEntities.tb_pessoa
                         select new PessoaModel
@@ -138,7 +138,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="pessoa"></param>
         /// <param name="_pessoaE"></param>
-        private static void Atribuir(PessoaModel pessoa, PessoaE _pessoaE)
+        private static void Atribuir(PessoaModel pessoa, tb_pessoa _pessoaE)
         {
             _pessoaE.Nome = pessoa.Nome;
             

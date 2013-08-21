@@ -32,8 +32,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(SistemaModel sistema)
         {
-            var repSistema = new RepositorioGenerico<SistemaE>();
-            SistemaE _tb_sistema = new SistemaE();
+            var repSistema = new RepositorioGenerico<tb_sistema>();
+            tb_sistema _tb_sistema = new tb_sistema();
             try
             {
                 Atribuir(sistema, _tb_sistema);
@@ -58,8 +58,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repSistema = new RepositorioGenerico<SistemaE>();
-                SistemaE _tb_sistema = repSistema.ObterEntidade(d => d.IdSistema == sistema.IdSistema);
+                var repSistema = new RepositorioGenerico<tb_sistema>();
+                tb_sistema _tb_sistema = repSistema.ObterEntidade(d => d.IdSistema == sistema.IdSistema);
                 Atribuir(sistema, _tb_sistema);
 
                 repSistema.SaveChanges();
@@ -78,7 +78,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repSistema = new RepositorioGenerico<SistemaE>();
+                var repSistema = new RepositorioGenerico<tb_sistema>();
                 repSistema.Remover(d => d.IdSistema == idSistema);
                 repSistema.SaveChanges();
             }
@@ -94,7 +94,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<SistemaModel> GetQuery()
         {
-            var repSistema = new RepositorioGenerico<SistemaE>();
+            var repSistema = new RepositorioGenerico<tb_sistema>();
             var pvEntities = (pvEntities)repSistema.ObterContexto();
             var query = from sistema in pvEntities.tb_sistema
                         select new SistemaModel
@@ -139,7 +139,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="sistema"></param>
         /// <param name="_tb_sistema"></param>
-        private static void Atribuir(SistemaModel sistema, SistemaE _tb_sistema)
+        private static void Atribuir(SistemaModel sistema, tb_sistema _tb_sistema)
         {
             _tb_sistema.NomeSistema = sistema.NomeSistema;
         }

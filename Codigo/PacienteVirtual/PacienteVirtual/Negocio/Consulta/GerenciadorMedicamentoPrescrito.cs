@@ -29,16 +29,16 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(MedicamentoPrescritoModel medicamentoPrescritoModel)
         {
-            var repMedicamentoPrescrito = new RepositorioGenerico<MedicamentoPrescritoE>();
-            MedicamentoPrescritoE _MedicamentoPrescritoE = new MedicamentoPrescritoE();
+            var repMedicamentoPrescrito = new RepositorioGenerico<tb_medicamento_prescrito>();
+            tb_medicamento_prescrito _tb_medicamento_prescrito = new tb_medicamento_prescrito();
             try
             {
-                Atribuir(medicamentoPrescritoModel, _MedicamentoPrescritoE);
+                Atribuir(medicamentoPrescritoModel, _tb_medicamento_prescrito);
 
-                repMedicamentoPrescrito.Inserir(_MedicamentoPrescritoE);
+                repMedicamentoPrescrito.Inserir(_tb_medicamento_prescrito);
                 repMedicamentoPrescrito.SaveChanges();
 
-                return _MedicamentoPrescritoE.IdConsultaVariavel;
+                return _tb_medicamento_prescrito.IdConsultaVariavel;
             }
             catch (Exception e)
             {
@@ -54,9 +54,9 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repMedicamentoPrescrito = new RepositorioGenerico<MedicamentoPrescritoE>();
-                MedicamentoPrescritoE _MedicamentoPrescritoE = repMedicamentoPrescrito.ObterEntidade(dP => dP.IdConsultaVariavel == medicamentoPrescritoModel.IdConsultaVariavel);
-                Atribuir(medicamentoPrescritoModel, _MedicamentoPrescritoE);
+                var repMedicamentoPrescrito = new RepositorioGenerico<tb_medicamento_prescrito>();
+                tb_medicamento_prescrito _tb_medicamento_prescrito = repMedicamentoPrescrito.ObterEntidade(dP => dP.IdConsultaVariavel == medicamentoPrescritoModel.IdConsultaVariavel);
+                Atribuir(medicamentoPrescritoModel, _tb_medicamento_prescrito);
 
                 repMedicamentoPrescrito.SaveChanges();
             }
@@ -75,7 +75,7 @@ namespace PacienteVirtual.Negocio
             try
             {
 
-                var repMedicamentoPrescrito = new RepositorioGenerico<MedicamentoPrescritoE>();
+                var repMedicamentoPrescrito = new RepositorioGenerico<tb_medicamento_prescrito>();
                 repMedicamentoPrescrito.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel && dP.IdMedicamento == idMedicamento);
                 repMedicamentoPrescrito.SaveChanges();
             }
@@ -94,7 +94,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repMedicamentoPrescrito = new RepositorioGenerico<MedicamentoPrescritoE>();
+                var repMedicamentoPrescrito = new RepositorioGenerico<tb_medicamento_prescrito>();
                 repMedicamentoPrescrito.Remover(mP => mP.IdConsultaVariavel == idConsultaVariavel);
                 repMedicamentoPrescrito.SaveChanges();
             }
@@ -111,7 +111,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<MedicamentoPrescritoModel> GetQuery()
         {
-            var repMedicamentoPrescrito = new RepositorioGenerico<MedicamentoPrescritoE>();
+            var repMedicamentoPrescrito = new RepositorioGenerico<tb_medicamento_prescrito>();
             var pvEntities = (pvEntities)repMedicamentoPrescrito.ObterContexto();
             var query = from tb_medicamento_prescrito in pvEntities.tb_medicamento_prescrito
                         join tb_medicamentos in pvEntities.tb_medicamentos
@@ -163,16 +163,16 @@ namespace PacienteVirtual.Negocio
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="medicamentoPrescritoModel"></param>
-        /// <param name="_MedicamentoPrescritoE"></param>
-        private static void Atribuir(MedicamentoPrescritoModel medicamentoPrescritoModel, MedicamentoPrescritoE _MedicamentoPrescritoE)
+        /// <param name="_tb_medicamento_prescrito"></param>
+        private static void Atribuir(MedicamentoPrescritoModel medicamentoPrescritoModel, tb_medicamento_prescrito _tb_medicamento_prescrito)
         {
-            _MedicamentoPrescritoE.IdConsultaVariavel = medicamentoPrescritoModel.IdConsultaVariavel;
-            _MedicamentoPrescritoE.IdMedicamento = medicamentoPrescritoModel.IdMedicamento;
-            _MedicamentoPrescritoE.Fitoterapico = medicamentoPrescritoModel.Fitoterapico;
-            _MedicamentoPrescritoE.Dosagem = medicamentoPrescritoModel.Dosagem;
-            _MedicamentoPrescritoE.Posologia = medicamentoPrescritoModel.Posologia;
-            _MedicamentoPrescritoE.Prescritor = medicamentoPrescritoModel.Prescritor;
-            _MedicamentoPrescritoE.Especialidade = medicamentoPrescritoModel.Especialidade;
+            _tb_medicamento_prescrito.IdConsultaVariavel = medicamentoPrescritoModel.IdConsultaVariavel;
+            _tb_medicamento_prescrito.IdMedicamento = medicamentoPrescritoModel.IdMedicamento;
+            _tb_medicamento_prescrito.Fitoterapico = medicamentoPrescritoModel.Fitoterapico;
+            _tb_medicamento_prescrito.Dosagem = medicamentoPrescritoModel.Dosagem;
+            _tb_medicamento_prescrito.Posologia = medicamentoPrescritoModel.Posologia;
+            _tb_medicamento_prescrito.Prescritor = medicamentoPrescritoModel.Prescritor;
+            _tb_medicamento_prescrito.Especialidade = medicamentoPrescritoModel.Especialidade;
 
         }
 

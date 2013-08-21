@@ -30,8 +30,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(TurmaModel turma)
         {
-            var repCurso = new RepositorioGenerico<TurmaE>();
-            TurmaE _turmaE = new TurmaE();
+            var repCurso = new RepositorioGenerico<tb_turma>();
+            tb_turma _turmaE = new tb_turma();
             try
             {
                 Atribuir(turma, _turmaE);
@@ -56,8 +56,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repCurso = new RepositorioGenerico<TurmaE>();
-                TurmaE _turmaE = repCurso.ObterEntidade(t => t.IdTurma == turma.IdTurma);
+                var repCurso = new RepositorioGenerico<tb_turma>();
+                tb_turma _turmaE = repCurso.ObterEntidade(t => t.IdTurma == turma.IdTurma);
                 Atribuir(turma, _turmaE);
 
                 repCurso.SaveChanges();
@@ -76,7 +76,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repCurso = new RepositorioGenerico<TurmaE>();
+                var repCurso = new RepositorioGenerico<tb_turma>();
                 repCurso.Remover(t => t.IdTurma == idTurma);
                 repCurso.SaveChanges();
             }
@@ -92,7 +92,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<TurmaModel> GetQuery()
         {
-            var repTurma = new RepositorioGenerico<TurmaE>();
+            var repTurma = new RepositorioGenerico<tb_turma>();
             var pvEntities = (pvEntities) repTurma.ObterContexto();
             var query = from tb_turma in pvEntities.tb_turma
                         join tb_instituicao in pvEntities.tb_instituicao
@@ -148,7 +148,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="curso"></param>
         /// <param name="_cursoE"></param>
-        private static void Atribuir(TurmaModel turma, TurmaE _turmaE)
+        private static void Atribuir(TurmaModel turma, tb_turma _turmaE)
         {
             _turmaE.Codigo = turma.Codigo;
             _turmaE.Periodo = turma.Periodo;
