@@ -5,9 +5,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PacienteVirtual.Models.Data;
 using PacienteVirtual.Models;
-using PacienteVirtual.Models.Negocio;
+using PacienteVirtual.Models;
+using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual.Controllers
 { 

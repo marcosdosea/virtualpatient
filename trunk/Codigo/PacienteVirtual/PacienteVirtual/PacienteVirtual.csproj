@@ -104,8 +104,9 @@
     <Compile Include="Controllers\Cadastro\BebidaController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaFixoController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelQueixaController.cs" />
+    <Compile Include="Controllers\Consulta\SessionController.cs" />
     <Compile Include="Controllers\ErrosController.cs" />
-    <Compile Include="Controllers\Consulta\VMConsultaController.cs" />
+    <Compile Include="Controllers\Consulta\ConsultaController.cs" />
     <Compile Include="Controllers\Turma\CursoController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -258,7 +259,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Consulta\TurmaPessoaRelatoModel.cs" />
-    <Compile Include="Models\Consulta\VMConsulta.cs" />
+    <Compile Include="Models\Consulta\ConsultaModel.cs" />
     <Compile Include="Models\Consulta\VMPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -441,14 +442,19 @@
     <Content Include="Views\ConsultaFixo\Details.aspx" />
     <Content Include="Views\ConsultaFixo\Edit.aspx" />
     <Content Include="Views\ConsultaFixo\Index.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Create.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Delete.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Details.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Edit.aspx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Index.aspx" />
     <Content Include="Views\Erros\Index.aspx" />
     <Content Include="Views\Shared\NotFound.aspx" />
-    <Content Include="Views\VMConsulta\ListarQueixa.ascx" />
-    <Content Include="Views\VMConsulta\Queixa.ascx" />
-    <Content Include="Views\VMConsulta\MedicamentoNaoPrescrito.ascx" />
-    <Content Include="Views\VMConsulta\MedicamentoPrescrito.ascx" />
-    <Content Include="Views\VMConsulta\MedicamentosAnteriores.ascx" />
-    <Content Include="Views\VMConsulta\EstiloVida.ascx" />
+    <Content Include="Views\Consulta\ListarQueixa.ascx" />
+    <Content Include="Views\Consulta\Queixa.ascx" />
+    <Content Include="Views\Consulta\MedicamentoNaoPrescrito.ascx" />
+    <Content Include="Views\Consulta\MedicamentoPrescrito.ascx" />
+    <Content Include="Views\Consulta\MedicamentosAnteriores.ascx" />
+    <Content Include="Views\Consulta\EstiloVida.ascx" />
     <Content Include="Views\EstiloVida\Create.aspx" />
     <Content Include="Views\EstiloVida\Delete.aspx" />
     <Content Include="Views\EstiloVida\Details.aspx" />
@@ -470,12 +476,12 @@
     <Content Include="Views\MedicamentosAnteriores\Edit.aspx" />
     <Content Include="Views\MedicamentosAnteriores\Index.aspx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />
-    <Content Include="Views\VMConsulta\AdicionarAlterar.aspx" />
-    <Content Include="Views\VMConsulta\DemograficosAntropomedicos.ascx" />
-    <Content Include="Views\VMConsulta\DiarioPessoal.ascx" />
-    <Content Include="Views\VMConsulta\ExperienciaMedicamentos.ascx" />
-    <Content Include="Views\VMConsulta\Index.aspx" />
-    <Content Include="Views\VMConsulta\RelatoClinico.ascx" />
+    <Content Include="Views\Consulta\Edit.aspx" />
+    <Content Include="Views\DemograficosAntropomedicos\Edit.ascx" />
+    <Content Include="Views\Consulta\DiarioPessoal.ascx" />
+    <Content Include="Views\Consulta\ExperienciaMedicamentos.ascx" />
+    <Content Include="Views\Consulta\Index.aspx" />
+    <Content Include="Views\Consulta\RelatoClinico.ascx" />
     <Content Include="Views\VMPaciente\Curso.ascx" />
     <Content Include="Views\Curso\Create.aspx" />
     <Content Include="Views\Curso\Delete.aspx" />
@@ -502,11 +508,6 @@
     <Content Include="Views\Ocupacao\Details.aspx" />
     <Content Include="Views\Ocupacao\Edit.aspx" />
     <Content Include="Views\Ocupacao\Index.aspx" />
-    <Content Include="Views\DemograficosAntropomedicos\Create.aspx" />
-    <Content Include="Views\DemograficosAntropomedicos\Delete.aspx" />
-    <Content Include="Views\DemograficosAntropomedicos\Details.aspx" />
-    <Content Include="Views\DemograficosAntropomedicos\Edit.aspx" />
-    <Content Include="Views\DemograficosAntropomedicos\Index.aspx" />
     <Content Include="Views\Disciplina\Create.aspx" />
     <Content Include="Views\Disciplina\Delete.aspx" />
     <Content Include="Views\Disciplina\Details.aspx" />
@@ -584,7 +585,6 @@
     <Content Include="Views\Resposta\Details.aspx" />
     <Content Include="Views\Resposta\Edit.aspx" />
     <Content Include="Views\Resposta\Index.aspx" />
-    <Content Include="Views\Sample\Index.cshtml" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />

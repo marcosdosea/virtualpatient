@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace PacienteVirtual.Models.Data
+namespace PacienteVirtual.Models
 {
     public class LocalizarDisplayNomeAtributo : DisplayNameAttribute
     {

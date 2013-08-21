@@ -1,11 +1,11 @@
 ﻿using Persistence;
-using PacienteVirtual.Models.Data;
+using PacienteVirtual.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PacienteVirtual.Models.Negocio
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorConsultaVariavelQueixa
     {

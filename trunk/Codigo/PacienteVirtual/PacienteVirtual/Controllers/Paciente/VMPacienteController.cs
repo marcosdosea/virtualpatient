@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PacienteVirtual.Models.ViewModel;
-using PacienteVirtual.Models.Negocio;
+using PacienteVirtual.Negocio;
 using PacienteVirtual.Models;
 using System.Collections;
 
