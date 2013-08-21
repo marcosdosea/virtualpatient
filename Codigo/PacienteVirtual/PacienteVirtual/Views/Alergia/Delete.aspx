@@ -19,8 +19,8 @@
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>
-        <input type="submit" value="Delete" /> |
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <input type="submit" value=" <%: Resources.Mensagem.deletar %>" /> |
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index")%>
     </p>
 <% } %>
 
