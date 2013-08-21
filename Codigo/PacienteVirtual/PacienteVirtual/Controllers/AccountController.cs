@@ -8,7 +8,7 @@ using System.Web.Security;
 using PacienteVirtual.Models;
 using System.Data;
 using System.Data.Entity;
-using PacienteVirtual.Models.Data;
+using PacienteVirtual.Models;
 using System.Globalization;
 
 namespace PacienteVirtual.Controllers

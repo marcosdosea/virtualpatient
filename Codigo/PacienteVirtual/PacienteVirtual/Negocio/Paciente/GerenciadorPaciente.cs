@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PacienteVirtual.Models.Data;
+using PacienteVirtual.Models;
 using Persistence;
 using Negocio;
 using PacienteVirtual.Models.ViewModel;
 
-namespace PacienteVirtual.Models.Negocio
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorPaciente
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Persistence;
-using PacienteVirtual.Models.Data;
+using PacienteVirtual.Models;
 
-namespace PacienteVirtual.Models.Negocio
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorTurmaPessoaRelato
     {

@@ -5,9 +5,9 @@ using System.Text;
 using Persistence;
 using System.Data.Common;
 using PacienteVirtual.Models;
-using PacienteVirtual.Models.Data;
+using PacienteVirtual.Models;
 
-namespace PacienteVirtual.Models.Negocio
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorCurso
     {

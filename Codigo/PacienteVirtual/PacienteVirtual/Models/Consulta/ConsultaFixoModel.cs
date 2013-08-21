@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using PacienteVirtual.Models.Data;
+using PacienteVirtual.Models;
 using PacienteVirtual.App_GlobalResources;
 
 

@@ -185,7 +185,7 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="">
-                                <%: Html.ActionLink(Resources.Mensagem.consulta, "Index", "VMConsulta")%>
+                                <%: Html.ActionLink(Resources.Mensagem.consulta, "Index", "Consulta")%>
                             </li>
                         </ul>
                     </div>

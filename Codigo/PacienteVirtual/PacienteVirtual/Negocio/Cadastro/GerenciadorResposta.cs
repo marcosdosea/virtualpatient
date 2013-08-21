@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PacienteVirtual.Models.Data;
+using PacienteVirtual.Models;
 using Persistence;
 
-namespace PacienteVirtual.Models.Negocio
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorResposta
     {
