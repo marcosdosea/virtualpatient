@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Globalization;
 using System.Web.Mvc;
-using System.Web.Routing;
 using System.Web.Security;
 using PacienteVirtual.Models;
-using System.Data;
-using System.Data.Entity;
-using PacienteVirtual.Models;
-using System.Globalization;
 
 namespace PacienteVirtual.Controllers
 {
@@ -85,7 +78,7 @@ namespace PacienteVirtual.Controllers
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
-
+                // inserir pessoa
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);

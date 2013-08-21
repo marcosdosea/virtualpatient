@@ -1,12 +1,10 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using PacienteVirtual.Models;
 using PacienteVirtual.Models.ViewModel;
 using PacienteVirtual.Negocio;
-using PacienteVirtual.Models;
-using System.Collections;
 
 namespace PacienteVirtual.Controllers.ViewModelControllers
 {
