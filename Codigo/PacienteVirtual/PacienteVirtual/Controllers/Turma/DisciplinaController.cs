@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
-using PacienteVirtual.Models;
 using Negocio;
+using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
 { 
