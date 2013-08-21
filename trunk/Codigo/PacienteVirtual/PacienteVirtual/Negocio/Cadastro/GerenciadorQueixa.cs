@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(QueixaModel queixa)
         {
-            var repQueixa = new RepositorioGenerico<QueixaE>();
-            QueixaE _queixaE = new QueixaE();
+            var repQueixa = new RepositorioGenerico<tb_queixa>();
+            tb_queixa _queixaE = new tb_queixa();
             try
             {
                 Atribuir(queixa, _queixaE);
@@ -54,8 +54,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repQueixa = new RepositorioGenerico<QueixaE>();
-                QueixaE _queixaE = repQueixa.ObterEntidade(c => c.IdQueixa == queixa.IdQueixa);
+                var repQueixa = new RepositorioGenerico<tb_queixa>();
+                tb_queixa _queixaE = repQueixa.ObterEntidade(c => c.IdQueixa == queixa.IdQueixa);
                 Atribuir(queixa, _queixaE);
 
                 repQueixa.SaveChanges();
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repQueixa = new RepositorioGenerico<QueixaE>();
+                var repQueixa = new RepositorioGenerico<tb_queixa>();
                 repQueixa.Remover(c => c.IdQueixa == idQueixa);
                 repQueixa.SaveChanges();
             }
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<QueixaModel> GetQuery()
         {
-            var repQueixa = new RepositorioGenerico<QueixaE>();
+            var repQueixa = new RepositorioGenerico<tb_queixa>();
             var pvEntities = (pvEntities)repQueixa.ObterContexto();
             var query = from tb_queixa in pvEntities.tb_queixa
                         join tb_sistema in pvEntities.tb_sistema
@@ -139,7 +139,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="queixa"></param>
         /// <param name="_queixaE"></param>
-        private static void Atribuir(QueixaModel queixa, QueixaE _queixaE)
+        private static void Atribuir(QueixaModel queixa, tb_queixa _queixaE)
         {
             _queixaE.DescricaoQueixa = queixa.DescricaoQueixa;
             _queixaE.IdSistema = queixa.IdSistema;

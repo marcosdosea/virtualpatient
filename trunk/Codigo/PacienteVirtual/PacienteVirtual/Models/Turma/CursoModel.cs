@@ -16,14 +16,5 @@ namespace PacienteVirtual.Models
         [Display(Name = "curso", ResourceType = typeof(Mensagem))]
         public string NomeCurso { get; set; }
 
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
-        public int IdInstituicao { get; set; }
-
-        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
-        public string NomeInstituicao { get; set; }
-
-        public InstituicaoModel disciplinaModel { get; set; }
     }
 } 

@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(DemograficosAntropometricosModel demoAntrop)
         {
-            var repDemoAntrop = new RepositorioGenerico<DemograficosAntropometricosE>();
-            DemograficosAntropometricosE _demoAntropE = new DemograficosAntropometricosE();
+            var repDemoAntrop = new RepositorioGenerico<tb_demograficos_antropometricos>();
+            tb_demograficos_antropometricos _demoAntropE = new tb_demograficos_antropometricos();
             try
             {
                 Atribuir(demoAntrop, _demoAntropE);
@@ -53,8 +53,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repDemoAntrop = new RepositorioGenerico<DemograficosAntropometricosE>();
-                DemograficosAntropometricosE _demoAntropE = repDemoAntrop.ObterEntidade(da => da.IdConsultaFixo == demoAntrop.IdConsultaFixo);
+                var repDemoAntrop = new RepositorioGenerico<tb_demograficos_antropometricos>();
+                tb_demograficos_antropometricos _demoAntropE = repDemoAntrop.ObterEntidade(da => da.IdConsultaFixo == demoAntrop.IdConsultaFixo);
                 Atribuir(demoAntrop, _demoAntropE);
 
                 repDemoAntrop.SaveChanges();
@@ -74,8 +74,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                DemograficosAntropometricosE _demoAntropE = new DemograficosAntropometricosE();
-                var repDemoAntrop = new RepositorioGenerico<DemograficosAntropometricosE>();
+                tb_demograficos_antropometricos _demoAntropE = new tb_demograficos_antropometricos();
+                var repDemoAntrop = new RepositorioGenerico<tb_demograficos_antropometricos>();
 
                 if (demoAntrop.IdConsultaFixo == 0)//caso seja Inserção de novo registro
                 {
@@ -105,7 +105,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repDemoAntrop = new RepositorioGenerico<DemograficosAntropometricosE>();
+                var repDemoAntrop = new RepositorioGenerico<tb_demograficos_antropometricos>();
                 repDemoAntrop.Remover(da => da.IdConsultaFixo == idConsultaFixo);
                 repDemoAntrop.SaveChanges();
 
@@ -123,7 +123,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<DemograficosAntropometricosModel> GetQuery()
         {
-            var repDemoAntrop = new RepositorioGenerico<DemograficosAntropometricosE>();
+            var repDemoAntrop = new RepositorioGenerico<tb_demograficos_antropometricos>();
             var pvEntities = (pvEntities)repDemoAntrop.ObterContexto();
             var query = from demoAntrop in pvEntities.tb_demograficos_antropometricos
                         select new DemograficosAntropometricosModel
@@ -176,7 +176,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="demoAntrop"></param>
         /// <param name="_demoAntropE"></param>
-        private static void Atribuir(DemograficosAntropometricosModel demoAntrop, DemograficosAntropometricosE _demoAntropE)
+        private static void Atribuir(DemograficosAntropometricosModel demoAntrop, tb_demograficos_antropometricos _demoAntropE)
         {
 
             _demoAntropE.IdConsultaFixo = demoAntrop.IdConsultaFixo;

@@ -5,7 +5,6 @@ using System.Text;
 using Persistence;
 using System.Data.Common;
 using PacienteVirtual.Models;
-using PacienteVirtual.Models;
 using Negocio;
 
 namespace PacienteVirtual.Negocio
@@ -34,8 +33,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(InstituicaoModel instituicao)
         {
-            var repInstituicao = new RepositorioGenerico<InstituicaoE>();
-            InstituicaoE _tb_instituicao = new InstituicaoE();
+            var repInstituicao = new RepositorioGenerico<tb_instituicao>();
+            tb_instituicao _tb_instituicao = new tb_instituicao();
             try
             {
                 Atribuir(instituicao, _tb_instituicao);
@@ -60,8 +59,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repInstituicao = new RepositorioGenerico<InstituicaoE>();
-                InstituicaoE _tb_instituicao = repInstituicao.ObterEntidade(d => d.IdInstituicao == instituicao.IdInstituicao);
+                var repInstituicao = new RepositorioGenerico<tb_instituicao>();
+                tb_instituicao _tb_instituicao = repInstituicao.ObterEntidade(d => d.IdInstituicao == instituicao.IdInstituicao);
                 Atribuir(instituicao, _tb_instituicao);
 
                 repInstituicao.SaveChanges();
@@ -80,7 +79,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repInstituicao = new RepositorioGenerico<InstituicaoE>();
+                var repInstituicao = new RepositorioGenerico<tb_instituicao>();
                 repInstituicao.Remover(d => d.IdInstituicao == idInstituicao);
                 repInstituicao.SaveChanges();
             }
@@ -96,7 +95,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<InstituicaoModel> GetQuery()
         {
-            var repInstituicao = new RepositorioGenerico<InstituicaoE>();
+            var repInstituicao = new RepositorioGenerico<tb_instituicao>();
             var pvEntities = (pvEntities)repInstituicao.ObterContexto();
             var query = from instituicao in pvEntities.tb_instituicao
                         select new InstituicaoModel
@@ -142,7 +141,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="instituicao"></param>
         /// <param name="_tb_instituicao"></param>
-        private static void Atribuir(InstituicaoModel instituicao, InstituicaoE _tb_instituicao)
+        private static void Atribuir(InstituicaoModel instituicao, tb_instituicao _tb_instituicao)
         {
             _tb_instituicao.NomeInstituicao = instituicao.NomeInstituicao;
             _tb_instituicao.Sigla = instituicao.Sigla;

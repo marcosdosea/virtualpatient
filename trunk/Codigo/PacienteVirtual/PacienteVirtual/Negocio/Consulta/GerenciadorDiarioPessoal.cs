@@ -28,16 +28,16 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(DiarioPessoalModel DiarioPessoalModel)
         {
-            var repDiarioPessoal = new RepositorioGenerico<DiarioPessoalE>();
-            DiarioPessoalE _DiarioPessoalE = new DiarioPessoalE();
+            var repDiarioPessoal = new RepositorioGenerico<tb_diario_pessoal>();
+            tb_diario_pessoal _tb_diario_pessoal = new tb_diario_pessoal();
             try
             {
-                Atribuir(DiarioPessoalModel, _DiarioPessoalE);
+                Atribuir(DiarioPessoalModel, _tb_diario_pessoal);
 
-                repDiarioPessoal.Inserir(_DiarioPessoalE);
+                repDiarioPessoal.Inserir(_tb_diario_pessoal);
                 repDiarioPessoal.SaveChanges();
 
-                return _DiarioPessoalE.IdConsultaFixo;
+                return _tb_diario_pessoal.IdConsultaFixo;
             }
             catch (Exception e)
             {
@@ -53,9 +53,9 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repDiarioPessoal = new RepositorioGenerico<DiarioPessoalE>();
-                DiarioPessoalE _DiarioPessoalE = repDiarioPessoal.ObterEntidade(dP => dP.IdConsultaFixo == DiarioPessoalModel.IdConsultaFixo);
-                Atribuir(DiarioPessoalModel, _DiarioPessoalE);
+                var repDiarioPessoal = new RepositorioGenerico<tb_diario_pessoal>();
+                tb_diario_pessoal _tb_diario_pessoal = repDiarioPessoal.ObterEntidade(dP => dP.IdConsultaFixo == DiarioPessoalModel.IdConsultaFixo);
+                Atribuir(DiarioPessoalModel, _tb_diario_pessoal);
 
                 repDiarioPessoal.SaveChanges();
             }
@@ -69,12 +69,12 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do DiarioPessoalModel
         /// </summary>
         /// <param name="codDisciplina"></param>
-        public void Remover(long idConsultaFixo)
+        public void Remover(long idConsultaFixo, int idMedicamento)
         {
             try
             {
-                var repDiarioPessoal = new RepositorioGenerico<DiarioPessoalE>();
-                repDiarioPessoal.Remover(dP => dP.IdConsultaFixo == idConsultaFixo);
+                var repDiarioPessoal = new RepositorioGenerico<tb_diario_pessoal>();
+                repDiarioPessoal.Remover(dP => dP.IdConsultaFixo == idConsultaFixo && dP.IdMedicamento == idMedicamento);
                 repDiarioPessoal.SaveChanges();
             }
             catch (Exception e)
@@ -89,7 +89,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<DiarioPessoalModel> GetQuery()
         {
-            var repDiarioPessoal = new RepositorioGenerico<DiarioPessoalE>();
+            var repDiarioPessoal = new RepositorioGenerico<tb_diario_pessoal>();
             var pvEntities = (pvEntities)repDiarioPessoal.ObterContexto();
             var query = from tb_diario_pessoal in pvEntities.tb_diario_pessoal
                         select new DiarioPessoalModel
@@ -100,7 +100,6 @@ namespace PacienteVirtual.Negocio
                             Horario = tb_diario_pessoal.Horario,
                             Quantidade = tb_diario_pessoal.Quantidade,
                             IdBebida = tb_diario_pessoal.IdBebida,
-
                         };
             return query;
         }
@@ -118,9 +117,9 @@ namespace PacienteVirtual.Negocio
         /// Obtém DiarioPessoalModel com o código especificiado
         /// </summary>
         /// <returns></returns>
-        public DiarioPessoalModel Obter(long IdConsultaFixo)
+        public IEnumerable<DiarioPessoalModel> Obter(long IdConsultaFixo)
         {
-            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo);
         }
 
         /// <summary>
@@ -137,15 +136,15 @@ namespace PacienteVirtual.Negocio
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="DiarioPessoal"></param>
-        /// <param name="_DiarioPessoalE"></param>
-        private static void Atribuir(DiarioPessoalModel DiarioPessoalModel, DiarioPessoalE _DiarioPessoalE)
+        /// <param name="_tb_diario_pessoal"></param>
+        private static void Atribuir(DiarioPessoalModel DiarioPessoalModel, tb_diario_pessoal _tb_diario_pessoal)
         {
-            _DiarioPessoalE.IdConsultaFixo = DiarioPessoalModel.IdConsultaFixo;
-            _DiarioPessoalE.IdMedicamento = DiarioPessoalModel.IdMedicamento;
-            _DiarioPessoalE.Periodo = DiarioPessoalModel.Periodo;
-            _DiarioPessoalE.Horario = DiarioPessoalModel.Horario;
-            _DiarioPessoalE.Quantidade = DiarioPessoalModel.Quantidade;
-            _DiarioPessoalE.IdBebida = DiarioPessoalModel.IdBebida;
+            _tb_diario_pessoal.IdConsultaFixo = DiarioPessoalModel.IdConsultaFixo;
+            _tb_diario_pessoal.IdMedicamento = DiarioPessoalModel.IdMedicamento;
+            _tb_diario_pessoal.Periodo = DiarioPessoalModel.Periodo;
+            _tb_diario_pessoal.Horario = DiarioPessoalModel.Horario;
+            _tb_diario_pessoal.Quantidade = DiarioPessoalModel.Quantidade;
+            _tb_diario_pessoal.IdBebida = DiarioPessoalModel.IdBebida;
 
         }
 

@@ -32,8 +32,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(BebidaModel bebida)
         {
-            var repBebida = new RepositorioGenerico<BebidaE>();
-            BebidaE _tb_bebida = new BebidaE();
+            var repBebida = new RepositorioGenerico<tb_bebida>();
+            tb_bebida _tb_bebida = new tb_bebida();
             try
             {
                 Atribuir(bebida, _tb_bebida);
@@ -58,8 +58,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repBebida = new RepositorioGenerico<BebidaE>();
-                BebidaE _tb_bebida = repBebida.ObterEntidade(d => d.IdBebida == bebida.IdBebida);
+                var repBebida = new RepositorioGenerico<tb_bebida>();
+                tb_bebida _tb_bebida = repBebida.ObterEntidade(d => d.IdBebida == bebida.IdBebida);
                 Atribuir(bebida, _tb_bebida);
 
                 repBebida.SaveChanges();
@@ -78,7 +78,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repBebida = new RepositorioGenerico<BebidaE>();
+                var repBebida = new RepositorioGenerico<tb_bebida>();
                 repBebida.Remover(d => d.IdBebida == idBebida);
                 repBebida.SaveChanges();
             }
@@ -94,7 +94,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<BebidaModel> GetQuery()
         {
-            var repBebida = new RepositorioGenerico<BebidaE>();
+            var repBebida = new RepositorioGenerico<tb_bebida>();
             var pvEntities = (pvEntities)repBebida.ObterContexto();
             var query = from bebida in pvEntities.tb_bebida
                         select new BebidaModel
@@ -139,7 +139,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="bebida"></param>
         /// <param name="_tb_bebida"></param>
-        private static void Atribuir(BebidaModel bebida, BebidaE _tb_bebida)
+        private static void Atribuir(BebidaModel bebida, tb_bebida _tb_bebida)
         {
             _tb_bebida.Nome = bebida.NomeBebida;
         }

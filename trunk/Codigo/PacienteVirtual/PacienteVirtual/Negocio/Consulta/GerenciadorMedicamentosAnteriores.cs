@@ -29,16 +29,16 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(MedicamentosAnterioresModel medicamentosAnterioresModel)
         {
-            var repMedicamentosAnteriores = new RepositorioGenerico<MedicamentosAnterioresE>();
-            MedicamentosAnterioresE _MedicamentosAnterioresE = new MedicamentosAnterioresE();
+            var repMedicamentosAnteriores = new RepositorioGenerico<tb_medicamentos_anteriores>();
+            tb_medicamentos_anteriores _tb_medicamentos_anteriores = new tb_medicamentos_anteriores();
             try
             {
-                Atribuir(medicamentosAnterioresModel, _MedicamentosAnterioresE);
+                Atribuir(medicamentosAnterioresModel, _tb_medicamentos_anteriores);
 
-                repMedicamentosAnteriores.Inserir(_MedicamentosAnterioresE);
+                repMedicamentosAnteriores.Inserir(_tb_medicamentos_anteriores);
                 repMedicamentosAnteriores.SaveChanges();
 
-                return _MedicamentosAnterioresE.IdConsultaVariavel;
+                return _tb_medicamentos_anteriores.IdConsultaVariavel;
             }
             catch (Exception e)
             {
@@ -54,9 +54,9 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repMedicamentosAnteriores = new RepositorioGenerico<MedicamentosAnterioresE>();
-                MedicamentosAnterioresE _MedicamentosAnterioresE = repMedicamentosAnteriores.ObterEntidade(dP => dP.IdConsultaVariavel == medicamentosAnterioresModel.IdConsultaVariavel);
-                Atribuir(medicamentosAnterioresModel, _MedicamentosAnterioresE);
+                var repMedicamentosAnteriores = new RepositorioGenerico<tb_medicamentos_anteriores>();
+                tb_medicamentos_anteriores _tb_medicamentos_anteriores = repMedicamentosAnteriores.ObterEntidade(dP => dP.IdConsultaVariavel == medicamentosAnterioresModel.IdConsultaVariavel);
+                Atribuir(medicamentosAnterioresModel, _tb_medicamentos_anteriores);
 
                 repMedicamentosAnteriores.SaveChanges();
             }
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repMedicamentosAnteriores = new RepositorioGenerico<MedicamentosAnterioresE>();
+                var repMedicamentosAnteriores = new RepositorioGenerico<tb_medicamentos_anteriores>();
                 repMedicamentosAnteriores.Remover(mA => mA.IdConsultaVariavel == idConsultaVariavel
                     && mA.IdMedicamento == idMedicamento);
                 repMedicamentosAnteriores.SaveChanges();
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repMedicamentosAnteriores = new RepositorioGenerico<MedicamentosAnterioresE>();
+                var repMedicamentosAnteriores = new RepositorioGenerico<tb_medicamentos_anteriores>();
                 repMedicamentosAnteriores.Remover(mA => mA.IdConsultaVariavel == idConsultaVariavel);
                 repMedicamentosAnteriores.SaveChanges();
             }
@@ -109,7 +109,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<MedicamentosAnterioresModel> GetQuery()
         {
-            var repMedicamentosAnteriores = new RepositorioGenerico<MedicamentosAnterioresE>();
+            var repMedicamentosAnteriores = new RepositorioGenerico<tb_medicamentos_anteriores>();
             var pvEntities = (pvEntities)repMedicamentosAnteriores.ObterContexto();
             var query = from tb_medicamentos_anteriores in pvEntities.tb_medicamentos_anteriores
                         join tb_medicamentos in pvEntities.tb_medicamentos
@@ -159,14 +159,14 @@ namespace PacienteVirtual.Negocio
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="medicamentosAnterioresModel"></param>
-        /// <param name="_MedicamentosAnterioresE"></param>
-        private static void Atribuir(MedicamentosAnterioresModel medicamentosAnterioresModel, MedicamentosAnterioresE _MedicamentosAnterioresE)
+        /// <param name="_tb_medicamentos_anteriores"></param>
+        private static void Atribuir(MedicamentosAnterioresModel medicamentosAnterioresModel, tb_medicamentos_anteriores _tb_medicamentos_anteriores)
         {
-            _MedicamentosAnterioresE.IdConsultaVariavel = medicamentosAnterioresModel.IdConsultaVariavel;
-            _MedicamentosAnterioresE.IdMedicamento = medicamentosAnterioresModel.IdMedicamento;
-            _MedicamentosAnterioresE.Indicacao = medicamentosAnterioresModel.Indicacao;
-            _MedicamentosAnterioresE.Resposta = medicamentosAnterioresModel.Resposta;
-            _MedicamentosAnterioresE.Periodo = medicamentosAnterioresModel.Periodo;
+            _tb_medicamentos_anteriores.IdConsultaVariavel = medicamentosAnterioresModel.IdConsultaVariavel;
+            _tb_medicamentos_anteriores.IdMedicamento = medicamentosAnterioresModel.IdMedicamento;
+            _tb_medicamentos_anteriores.Indicacao = medicamentosAnterioresModel.Indicacao;
+            _tb_medicamentos_anteriores.Resposta = medicamentosAnterioresModel.Resposta;
+            _tb_medicamentos_anteriores.Periodo = medicamentosAnterioresModel.Periodo;
         }
     }
 }

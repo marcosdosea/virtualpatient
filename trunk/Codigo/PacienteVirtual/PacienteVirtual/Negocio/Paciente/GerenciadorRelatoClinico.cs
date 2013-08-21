@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(RelatoClinicoModel relato)
         {
-            var repRelato = new RepositorioGenerico<RelatoClinicoE>();
-            RelatoClinicoE _relatoE = new RelatoClinicoE();
+            var repRelato = new RepositorioGenerico<tb_relato_clinico>();
+            tb_relato_clinico _relatoE = new tb_relato_clinico();
             try
             {
                 Atribuir(relato, _relatoE);
@@ -54,8 +54,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repRelato = new RepositorioGenerico<RelatoClinicoE>();
-                RelatoClinicoE _relatoE = repRelato.ObterEntidade(c => c.IdRelato == relato.IdRelato);
+                var repRelato = new RepositorioGenerico<tb_relato_clinico>();
+                tb_relato_clinico _relatoE = repRelato.ObterEntidade(c => c.IdRelato == relato.IdRelato);
                 Atribuir(relato, _relatoE);
 
                 repRelato.SaveChanges();
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repRelato = new RepositorioGenerico<RelatoClinicoE>();
+                var repRelato = new RepositorioGenerico<tb_relato_clinico>();
                 repRelato.Remover(c => c.IdRelato == idCurso);
                 repRelato.SaveChanges();
             }
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<RelatoClinicoModel> GetQuery()
         {
-            var repRelato = new RepositorioGenerico<RelatoClinicoE>();
+            var repRelato = new RepositorioGenerico<tb_relato_clinico>();
             var pvEntities = (pvEntities)repRelato.ObterContexto();
             var query = from tb_relato_clinico in pvEntities.tb_relato_clinico
                         join tb_paciente in pvEntities.tb_paciente
@@ -151,7 +151,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="relato"></param>
         /// <param name="_relatoE"></param>
-        private static void Atribuir(RelatoClinicoModel relato, RelatoClinicoE _relatoE)
+        private static void Atribuir(RelatoClinicoModel relato, tb_relato_clinico _relatoE)
         {
             _relatoE.NivelDificuldade = relato.NivelDificuldade;
             _relatoE.IdPaciente = relato.IdPaciente;

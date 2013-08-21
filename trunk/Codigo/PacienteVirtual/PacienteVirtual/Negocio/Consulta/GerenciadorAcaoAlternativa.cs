@@ -31,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(AcaoAlternativaModel acaoAlternativa)
         {
-            var repAcaoAlternativa = new RepositorioGenerico<AcaoAlternativaE>();
-            AcaoAlternativaE _acaoAlternativaE = new AcaoAlternativaE();
+            var repAcaoAlternativa = new RepositorioGenerico<tb_acao_alternativa>();
+            tb_acao_alternativa _acaoAlternativaE = new tb_acao_alternativa();
             try
             {
                 Atribuir(acaoAlternativa, _acaoAlternativaE);
@@ -57,8 +57,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repAcaoAlternativa = new RepositorioGenerico<AcaoAlternativaE>();
-                AcaoAlternativaE _acaoAlternativaE = repAcaoAlternativa.ObterEntidade(d => d.IdAcaoAlternativa == acaoAlternativa.IdAcaoAlternativa);
+                var repAcaoAlternativa = new RepositorioGenerico<tb_acao_alternativa>();
+                tb_acao_alternativa _acaoAlternativaE = repAcaoAlternativa.ObterEntidade(d => d.IdAcaoAlternativa == acaoAlternativa.IdAcaoAlternativa);
                 Atribuir(acaoAlternativa, _acaoAlternativaE);
 
                 repAcaoAlternativa.SaveChanges();
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repAcaoAlternativa = new RepositorioGenerico<AcaoAlternativaE>();
+                var repAcaoAlternativa = new RepositorioGenerico<tb_acao_alternativa>();
                 repAcaoAlternativa.Remover(d => d.IdAcaoAlternativa == idAcaoAlternativa);
                 repAcaoAlternativa.SaveChanges();
             }
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<AcaoAlternativaModel> GetQuery()
         {
-            var repAcaoAlternativa = new RepositorioGenerico<AcaoAlternativaE>();
+            var repAcaoAlternativa = new RepositorioGenerico<tb_acao_alternativa>();
             var pvEntities = (pvEntities)repAcaoAlternativa.ObterContexto();
             var query = from acaoAlternativa in pvEntities.tb_acao_alternativa
                         select new AcaoAlternativaModel
@@ -138,7 +138,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="acaoAlternativa"></param>
         /// <param name="_acaoAlternativa"></param>
-        private static void Atribuir(AcaoAlternativaModel acaoAlternativa, AcaoAlternativaE _acaoAlternativaE)
+        private static void Atribuir(AcaoAlternativaModel acaoAlternativa, tb_acao_alternativa _acaoAlternativaE)
         {
             _acaoAlternativaE.DescricaoAcao = acaoAlternativa.DescricaoAcao;
         }

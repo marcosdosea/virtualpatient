@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(ConsultaVariavelModel consultaVariavel)
         {
-            var repConsultaVariavel = new RepositorioGenerico<ConsultaVariavelE>();
-            ConsultaVariavelE _consultaVariavelE = new ConsultaVariavelE();
+            var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel>();
+            tb_consulta_variavel _consultaVariavelE = new tb_consulta_variavel();
             try
             {
                 Atribuir(consultaVariavel, _consultaVariavelE);
@@ -54,8 +54,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repConsultaVariavel = new RepositorioGenerico<ConsultaVariavelE>();
-                ConsultaVariavelE _consultaVariavelE = repConsultaVariavel.ObterEntidade(cv => cv.IdConsultaVariavel == consultaVariavel.IdConsultaVariavel);
+                var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel>();
+                tb_consulta_variavel _consultaVariavelE = repConsultaVariavel.ObterEntidade(cv => cv.IdConsultaVariavel == consultaVariavel.IdConsultaVariavel);
                 Atribuir(consultaVariavel, _consultaVariavelE);
 
                 repConsultaVariavel.SaveChanges();
@@ -76,7 +76,7 @@ namespace PacienteVirtual.Negocio
             //    throw new NegocioException("A consultaVariavel não pode ser removido.");
             try
             {
-                var repConsultaVariavel = new RepositorioGenerico<ConsultaVariavelE>();
+                var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel>();
                 repConsultaVariavel.Remover(cv => cv.IdConsultaVariavel == idConsultaVariavel);
                 repConsultaVariavel.SaveChanges();
             }
@@ -92,7 +92,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<ConsultaVariavelModel> GetQuery()
         {
-            var repConsultaVariavel = new RepositorioGenerico<ConsultaVariavelE>();
+            var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel>();
             var pvEntities = (pvEntities)repConsultaVariavel.ObterContexto();
             var query = from tb_consulta_variavel in pvEntities.tb_consulta_variavel
                         //join tb_pessoa in pvEntities.tb_pessoa
@@ -158,7 +158,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="consultaVariavel"></param>
         /// <param name="_consultaVariavelE"></param>
-        private static void Atribuir(ConsultaVariavelModel consultaVariavel, ConsultaVariavelE _consultaVariavelE)
+        private static void Atribuir(ConsultaVariavelModel consultaVariavel, tb_consulta_variavel _consultaVariavelE)
         {
             _consultaVariavelE.IdConsultaVariavel = consultaVariavel.IdConsultaVariavel;
             _consultaVariavelE.IdConsultaFixo = consultaVariavel.IdConsultaFixo;

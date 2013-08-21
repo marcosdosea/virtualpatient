@@ -33,8 +33,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(PacienteModel paciente)
         {
-            var repPaciente = new RepositorioGenerico<PacienteE>();
-            PacienteE _tb_paciente = new PacienteE();
+            var repPaciente = new RepositorioGenerico<tb_paciente>();
+            tb_paciente _tb_paciente = new tb_paciente();
             try
             {
                 Atribuir(paciente, _tb_paciente);
@@ -59,8 +59,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repPaciente = new RepositorioGenerico<PacienteE>();
-                PacienteE _tb_paciente = repPaciente.ObterEntidade(d => d.IdPaciente == paciente.IdPaciente);
+                var repPaciente = new RepositorioGenerico<tb_paciente>();
+                tb_paciente _tb_paciente = repPaciente.ObterEntidade(d => d.IdPaciente == paciente.IdPaciente);
                 Atribuir(paciente, _tb_paciente);
 
                 repPaciente.SaveChanges();
@@ -79,7 +79,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repPaciente = new RepositorioGenerico<PacienteE>();
+                var repPaciente = new RepositorioGenerico<tb_paciente>();
                 repPaciente.Remover(d => d.IdPaciente == idPaciente);
                 repPaciente.SaveChanges();
             }
@@ -95,7 +95,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<PacienteModel> GetQuery()
         {
-            var repPaciente = new RepositorioGenerico<PacienteE>();
+            var repPaciente = new RepositorioGenerico<tb_paciente>();
             var pvEntities = (pvEntities)repPaciente.ObterContexto();
             var query = from paciente in pvEntities.tb_paciente
                         select new PacienteModel
@@ -113,7 +113,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         //private IQueryable<VMPaciente> GetQueryRelatos()
         //{
-        //    var repPaciente = new RepositorioGenerico<PacienteE>();
+        //    var repPaciente = new RepositorioGenerico<tb_paciente>();
         //    var pvEntities = (pvEntities)repPaciente.ObterContexto();
         //    var query = from pacient in pvEntities.tb_paciente
         //                join relatos in pvEntities.tb_relato_clinico
@@ -170,7 +170,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="paciente"></param>
         /// <param name="_tb_paciente"></param>
-        private static void Atribuir(PacienteModel paciente, PacienteE _tb_paciente)
+        private static void Atribuir(PacienteModel paciente, tb_paciente _tb_paciente)
         {
             //_tb_paciente.IdPaciente = paciente.IdPaciente;
             _tb_paciente.Nome = paciente.NomePaciente;

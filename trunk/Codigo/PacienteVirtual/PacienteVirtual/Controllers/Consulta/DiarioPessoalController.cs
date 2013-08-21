@@ -13,88 +13,47 @@ namespace PacienteVirtual.Controllers
 {
     public class DiarioPessoalController : Controller
     {
-        private pvEntities db = new pvEntities();
-
+   
         private GerenciadorDiarioPessoal gDiarioPessoal = GerenciadorDiarioPessoal.GetInstance();
+        
         //
         // GET: /DiarioPessoal/
-
         public ViewResult Index()
         {
-            return View(gDiarioPessoal.ObterTodos());
+            return View(gDiarioPessoal.Obter(SessionController.IdConsultaFixo));
         }
-
-        //
-        // GET: /DiarioPessoal/Details/5
-
-        public ViewResult Details(long id)
-        {
-
-            return View(gDiarioPessoal.Obter(id));
-        }
-
-        //
-        // GET: /DiarioPessoal/Create
 
         public ActionResult Create()
         {
-            return View();
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome");
+            ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "NomeBebida");
+            return PartialView();
         }
 
         //
         // POST: /DiarioPessoal/Create
-
         [HttpPost]
         public ActionResult Create(DiarioPessoalModel diarioPessoal)
         {
             if (ModelState.IsValid)
             {
-
-                diarioPessoal.IdConsultaFixo = gDiarioPessoal.Inserir(diarioPessoal);
-                return RedirectToAction("Index");
+                gDiarioPessoal.Inserir(diarioPessoal);
+                List<DiarioPessoalModel> listaDiarioPessoal = new List<DiarioPessoalModel>(SessionController.ListaDiarioPessoal);
+                listaDiarioPessoal.Add(diarioPessoal);
+                SessionController.ListaDiarioPessoal = listaDiarioPessoal;
+                return RedirectToAction("Edit", "Consulta");
             }
-
-            return View(diarioPessoal);
-        }
-
-        //
-        // GET: /DiarioPessoal/Edit/5
-
-        public ActionResult Edit(long id)
-        {
-            return View(gDiarioPessoal.Obter(id));
-        }
-
-        //
-        // POST: /DiarioPessoal/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(DiarioPessoalModel diarioPessoal)
-        {
-            if (ModelState.IsValid)
-            {
-                gDiarioPessoal.Atualizar(diarioPessoal);
-                return RedirectToAction("Index");
-            }
-            return View(diarioPessoal);
-        }
-
-        //
-        // GET: /DiarioPessoal/Delete/5
-
-        public ActionResult Delete(long id)
-        {
-            return View(gDiarioPessoal.Obter(id));
+            return PartialView(diarioPessoal);
         }
 
         //
         // POST: /DiarioPessoal/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(long id)
+        [HttpPost]
+        public ActionResult Delete(long idConsultaFixo, int idMedicamento)
         {
-            gDiarioPessoal.Remover(id);
-            return RedirectToAction("Index");
+            gDiarioPessoal.Remover(idConsultaFixo, idMedicamento);
+            SessionController.ListaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(idConsultaFixo);
+            return RedirectToAction("Edit", "Consulta");
         }
 
         protected override void Dispose(bool disposing)

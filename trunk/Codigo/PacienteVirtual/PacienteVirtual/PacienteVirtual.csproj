@@ -104,7 +104,7 @@
     <Compile Include="Controllers\Cadastro\BebidaController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaFixoController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelQueixaController.cs" />
-    <Compile Include="Controllers\Consulta\SessionController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\ErrosController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaController.cs" />
     <Compile Include="Controllers\Turma\CursoController.cs">
@@ -145,7 +145,6 @@
     <Compile Include="Controllers\Turma\TurmaController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\Turma\TurmaPessoaRelatoController.cs" />
     <Compile Include="Controllers\Paciente\VMPacienteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -478,7 +477,7 @@
     <Content Include="Views\RelatoClinico\Listar.aspx" />
     <Content Include="Views\Consulta\Edit.aspx" />
     <Content Include="Views\DemograficosAntropomedicos\Edit.ascx" />
-    <Content Include="Views\Consulta\DiarioPessoal.ascx" />
+    <Content Include="Views\DiarioPessoal\Create.ascx" />
     <Content Include="Views\Consulta\ExperienciaMedicamentos.ascx" />
     <Content Include="Views\Consulta\Index.aspx" />
     <Content Include="Views\Consulta\RelatoClinico.ascx" />
@@ -488,11 +487,6 @@
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
-    <Content Include="Views\DiarioPessoal\Create.aspx" />
-    <Content Include="Views\DiarioPessoal\Delete.aspx" />
-    <Content Include="Views\DiarioPessoal\Details.aspx" />
-    <Content Include="Views\DiarioPessoal\Edit.aspx" />
-    <Content Include="Views\DiarioPessoal\Index.aspx" />
     <Content Include="Views\Historico\Create.aspx" />
     <Content Include="Views\Historico\Delete.aspx" />
     <Content Include="Views\Historico\Details.aspx" />

@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(ExperienciaMedicamentosModel expMedicamentos)
         {
-            var repCurso = new RepositorioGenerico<ExperienciaMedicamentosE>();
-            ExperienciaMedicamentosE _expMedicamentosE = new ExperienciaMedicamentosE();
+            var repCurso = new RepositorioGenerico<tb_experiencia_medicamentos>();
+            tb_experiencia_medicamentos _expMedicamentosE = new tb_experiencia_medicamentos();
             try
             {
                 Atribuir(expMedicamentos, _expMedicamentosE);
@@ -54,8 +54,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repCurso = new RepositorioGenerico<ExperienciaMedicamentosE>();
-                ExperienciaMedicamentosE _expMedicamentosE = repCurso.ObterEntidade(c => c.IdConsultaFixo == expMedicamentos.IdConsultaFixo);
+                var repCurso = new RepositorioGenerico<tb_experiencia_medicamentos>();
+                tb_experiencia_medicamentos _expMedicamentosE = repCurso.ObterEntidade(c => c.IdConsultaFixo == expMedicamentos.IdConsultaFixo);
                 Atribuir(expMedicamentos, _expMedicamentosE);
 
                 repCurso.SaveChanges();
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repCurso = new RepositorioGenerico<ExperienciaMedicamentosE>();
+                var repCurso = new RepositorioGenerico<tb_experiencia_medicamentos>();
                 repCurso.Remover(c => c.IdConsultaFixo == idConsultaFixo);
                 repCurso.SaveChanges();
             }
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<ExperienciaMedicamentosModel> GetQuery()
         {
-            var repCurso = new RepositorioGenerico<ExperienciaMedicamentosE>();
+            var repCurso = new RepositorioGenerico<tb_experiencia_medicamentos>();
             var pvEntities = (pvEntities)repCurso.ObterContexto();
             var query = from expMedicamentos in pvEntities.tb_experiencia_medicamentos
                         select new ExperienciaMedicamentosModel
@@ -137,7 +137,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="expMedicamentos"></param>
         /// <param name="_expMedicamentosE"></param>
-        private static void Atribuir(ExperienciaMedicamentosModel expMedicamentos, ExperienciaMedicamentosE _expMedicamentosE)
+        private static void Atribuir(ExperienciaMedicamentosModel expMedicamentos, tb_experiencia_medicamentos _expMedicamentosE)
         {
 
             _expMedicamentosE.IdRespostaEsperaTratamento = expMedicamentos.IdRespostaEsperaTratamento;

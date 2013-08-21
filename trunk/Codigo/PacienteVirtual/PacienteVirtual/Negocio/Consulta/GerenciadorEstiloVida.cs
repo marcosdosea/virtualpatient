@@ -29,16 +29,16 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(EstiloVidaModel estiloVidaModel)
         {
-            var repEstiloVida = new RepositorioGenerico<EstiloVidaE>();
-            EstiloVidaE _EstiloVidaE = new EstiloVidaE();
+            var repEstiloVida = new RepositorioGenerico<tb_estilo_vida>();
+            tb_estilo_vida _tb_estilo_vida = new tb_estilo_vida();
             try
             {
-                Atribuir(estiloVidaModel, _EstiloVidaE);
+                Atribuir(estiloVidaModel, _tb_estilo_vida);
 
-                repEstiloVida.Inserir(_EstiloVidaE);
+                repEstiloVida.Inserir(_tb_estilo_vida);
                 repEstiloVida.SaveChanges();
 
-                return _EstiloVidaE.IdConsultaVariavel;
+                return _tb_estilo_vida.IdConsultaVariavel;
             }
             catch (Exception e)
             {
@@ -54,9 +54,9 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repEstiloVida = new RepositorioGenerico<EstiloVidaE>();
-                EstiloVidaE _EstiloVidaE = repEstiloVida.ObterEntidade(dP => dP.IdConsultaVariavel == estiloVidaModel.IdConsultaVariavel);
-                Atribuir(estiloVidaModel, _EstiloVidaE);
+                var repEstiloVida = new RepositorioGenerico<tb_estilo_vida>();
+                tb_estilo_vida _tb_estilo_vida = repEstiloVida.ObterEntidade(dP => dP.IdConsultaVariavel == estiloVidaModel.IdConsultaVariavel);
+                Atribuir(estiloVidaModel, _tb_estilo_vida);
 
                 repEstiloVida.SaveChanges();
             }
@@ -74,7 +74,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repEstiloVida = new RepositorioGenerico<EstiloVidaE>();
+                var repEstiloVida = new RepositorioGenerico<tb_estilo_vida>();
                 repEstiloVida.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel);
                 repEstiloVida.SaveChanges();
             }
@@ -90,7 +90,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<EstiloVidaModel> GetQuery()
         {
-            var repEstiloVida = new RepositorioGenerico<EstiloVidaE>();
+            var repEstiloVida = new RepositorioGenerico<tb_estilo_vida>();
             var pvEntities = (pvEntities)repEstiloVida.ObterContexto();
             var query = from tb_estilo_vida in pvEntities.tb_estilo_vida
                         select new EstiloVidaModel
@@ -142,20 +142,20 @@ namespace PacienteVirtual.Negocio
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="estiloVidaModel"></param>
-        /// <param name="_EstiloVidaE"></param>
-        private static void Atribuir(EstiloVidaModel estiloVidaModel, EstiloVidaE _EstiloVidaE)
+        /// <param name="_tb_estilo_vida"></param>
+        private static void Atribuir(EstiloVidaModel estiloVidaModel, tb_estilo_vida _tb_estilo_vida)
         {
-            _EstiloVidaE.IdConsultaVariavel = estiloVidaModel.IdConsultaVariavel;
-            _EstiloVidaE.TabacoConsumo = estiloVidaModel.TabacoConsumo;
-            _EstiloVidaE.TabacoUso = estiloVidaModel.TabacoUso;
-            _EstiloVidaE.TabacoParou = estiloVidaModel.TabacoParou;
-            _EstiloVidaE.CafeConsumo = estiloVidaModel.CafeConsumo;
-            _EstiloVidaE.CafeUso = estiloVidaModel.CafeUso;
-            _EstiloVidaE.CafeParou = estiloVidaModel.CafeParou;
-            _EstiloVidaE.AlcoolConsumo = estiloVidaModel.AlcoolConsumo;
-            _EstiloVidaE.AlcoolUso = estiloVidaModel.AlcoolUso;
-            _EstiloVidaE.AlcoolParou = estiloVidaModel.AlcoolParou;
-            _EstiloVidaE.AlcoolTipoBebida = estiloVidaModel.AlcoolTipoBebida;
+            _tb_estilo_vida.IdConsultaVariavel = estiloVidaModel.IdConsultaVariavel;
+            _tb_estilo_vida.TabacoConsumo = estiloVidaModel.TabacoConsumo;
+            _tb_estilo_vida.TabacoUso = estiloVidaModel.TabacoUso;
+            _tb_estilo_vida.TabacoParou = estiloVidaModel.TabacoParou;
+            _tb_estilo_vida.CafeConsumo = estiloVidaModel.CafeConsumo;
+            _tb_estilo_vida.CafeUso = estiloVidaModel.CafeUso;
+            _tb_estilo_vida.CafeParou = estiloVidaModel.CafeParou;
+            _tb_estilo_vida.AlcoolConsumo = estiloVidaModel.AlcoolConsumo;
+            _tb_estilo_vida.AlcoolUso = estiloVidaModel.AlcoolUso;
+            _tb_estilo_vida.AlcoolParou = estiloVidaModel.AlcoolParou;
+            _tb_estilo_vida.AlcoolTipoBebida = estiloVidaModel.AlcoolTipoBebida;
 
         }
 

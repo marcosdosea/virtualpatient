@@ -31,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(RazaoEncontroModel razaoEncontro)
         {
-            var repRazaoEncontro = new RepositorioGenerico<RazaoEncontroE>();
-            RazaoEncontroE _razaoEncontroE = new RazaoEncontroE();
+            var repRazaoEncontro = new RepositorioGenerico<tb_razao_encontro>();
+            tb_razao_encontro _razaoEncontroE = new tb_razao_encontro();
             try
             {
                 Atribuir(razaoEncontro, _razaoEncontroE);
@@ -57,8 +57,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repRazaoEncontro = new RepositorioGenerico<RazaoEncontroE>();
-                RazaoEncontroE _razaoEncontroE = repRazaoEncontro.ObterEntidade(d => d.IdRazaoEncontro == razaoEncontro.IdRazaoEncontro);
+                var repRazaoEncontro = new RepositorioGenerico<tb_razao_encontro>();
+                tb_razao_encontro _razaoEncontroE = repRazaoEncontro.ObterEntidade(d => d.IdRazaoEncontro == razaoEncontro.IdRazaoEncontro);
                 Atribuir(razaoEncontro, _razaoEncontroE);
 
                 repRazaoEncontro.SaveChanges();
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repRazaoEncontro = new RepositorioGenerico<RazaoEncontroE>();
+                var repRazaoEncontro = new RepositorioGenerico<tb_razao_encontro>();
                 repRazaoEncontro.Remover(d => d.IdRazaoEncontro == idRazaoEncontro);
                 repRazaoEncontro.SaveChanges();
             }
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<RazaoEncontroModel> GetQuery()
         {
-            var repRazaoEncontro = new RepositorioGenerico<RazaoEncontroE>();
+            var repRazaoEncontro = new RepositorioGenerico<tb_razao_encontro>();
             var pvEntities = (pvEntities)repRazaoEncontro.ObterContexto();
             var query = from razaoEncontro in pvEntities.tb_razao_encontro
                         select new RazaoEncontroModel
@@ -138,7 +138,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="razaoEncontro"></param>
         /// <param name="_razaoEncontroE"></param>
-        private static void Atribuir(RazaoEncontroModel razaoEncontro, RazaoEncontroE _razaoEncontroE)
+        private static void Atribuir(RazaoEncontroModel razaoEncontro, tb_razao_encontro _razaoEncontroE)
         {
             _razaoEncontroE.DescricaoRazao = razaoEncontro.DescricaoRazao;
         }

@@ -31,8 +31,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(MedicamentosModel medicamentos)
         {
-            var repMedicamentos = new RepositorioGenerico<MedicamentosE>();
-            MedicamentosE _medicamentosE = new MedicamentosE();
+            var repMedicamentos = new RepositorioGenerico<tb_medicamentos>();
+            tb_medicamentos _medicamentosE = new tb_medicamentos();
             try
             {
                 Atribuir(medicamentos, _medicamentosE);
@@ -57,8 +57,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repMedicamentos = new RepositorioGenerico<MedicamentosE>();
-                MedicamentosE _medicamentosE = repMedicamentos.ObterEntidade(d => d.IdMedicamento == medicamentos.IdMedicamento);
+                var repMedicamentos = new RepositorioGenerico<tb_medicamentos>();
+                tb_medicamentos _medicamentosE = repMedicamentos.ObterEntidade(d => d.IdMedicamento == medicamentos.IdMedicamento);
                 Atribuir(medicamentos, _medicamentosE);
 
                 repMedicamentos.SaveChanges();
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repMedicamentos = new RepositorioGenerico<MedicamentosE>();
+                var repMedicamentos = new RepositorioGenerico<tb_medicamentos>();
                 repMedicamentos.Remover(d => d.IdMedicamento == idMedicamentos);
                 repMedicamentos.SaveChanges();
             }
@@ -93,7 +93,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<MedicamentosModel> GetQuery()
         {
-            var repMedicamentos = new RepositorioGenerico<MedicamentosE>();
+            var repMedicamentos = new RepositorioGenerico<tb_medicamentos>();
             var pvEntities = (pvEntities)repMedicamentos.ObterContexto();
             var query = from medicamentos in pvEntities.tb_medicamentos
                         select new MedicamentosModel
@@ -138,7 +138,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="medicamentos"></param>
         /// <param name="_medicamentosE"></param>
-        private static void Atribuir(MedicamentosModel medicamentos, MedicamentosE _medicamentosE)
+        private static void Atribuir(MedicamentosModel medicamentos, tb_medicamentos _medicamentosE)
         {
             _medicamentosE.Nome = medicamentos.MedicamentoNome;
         }

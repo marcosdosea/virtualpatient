@@ -29,8 +29,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(HistoriaModel historia)
         {
-            var repHistoria = new RepositorioGenerico<HistoriaE>();
-            HistoriaE _historiaE = new HistoriaE();
+            var repHistoria = new RepositorioGenerico<tb_historia>();
+            tb_historia _historiaE = new tb_historia();
             try
             {
                 Atribuir(historia, _historiaE);
@@ -54,8 +54,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repHistoria = new RepositorioGenerico<HistoriaE>();
-                HistoriaE _historiaE = repHistoria.ObterEntidade(h => h.IdConsultaFixo == historia.IdConsultaFixo);
+                var repHistoria = new RepositorioGenerico<tb_historia>();
+                tb_historia _historiaE = repHistoria.ObterEntidade(h => h.IdConsultaFixo == historia.IdConsultaFixo);
                 Atribuir(historia, _historiaE);
 
                 repHistoria.SaveChanges();
@@ -76,7 +76,7 @@ namespace PacienteVirtual.Negocio
             //    throw new NegocioException("A historia não pode ser removido.");
             try
             {
-                var repHistoria = new RepositorioGenerico<HistoriaE>();
+                var repHistoria = new RepositorioGenerico<tb_historia>();
                 repHistoria.Remover(h => h.IdConsultaFixo == idConsultaFixo);
                 repHistoria.SaveChanges();
             }
@@ -92,7 +92,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<HistoriaModel> GetQuery()
         {
-            var repHistoria = new RepositorioGenerico<HistoriaE>();
+            var repHistoria = new RepositorioGenerico<tb_historia>();
             var pvEntities = (pvEntities)repHistoria.ObterContexto();
             var query = from historia in pvEntities.tb_historia
                         select new HistoriaModel
@@ -137,7 +137,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="historia"></param>
         /// <param name="_historiaE"></param>
-        private static void Atribuir(HistoriaModel historia, HistoriaE _historiaE)
+        private static void Atribuir(HistoriaModel historia, tb_historia _historiaE)
         {
             _historiaE.IdConsultaFixo = historia.IdConsultaFixo;
             _historiaE.HistoriaFamiliar = historia.HistoriaFamiliar;

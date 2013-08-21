@@ -5,7 +5,6 @@ using System.Text;
 using Persistence;
 using System.Data.Common;
 using PacienteVirtual.Models;
-using PacienteVirtual.Models;
 
 namespace Negocio
 {
@@ -34,8 +33,8 @@ namespace Negocio
         /// <returns></returns>
         public int Inserir(DisciplinaModel disciplina)
         {
-            var repDisciplina = new RepositorioGenerico<DisciplinaE>();
-            DisciplinaE _disciplinaE = new DisciplinaE();
+            var repDisciplina = new RepositorioGenerico<tb_disciplina>();
+            tb_disciplina _disciplinaE = new tb_disciplina();
             try
             {
                 Atribuir(disciplina, _disciplinaE);
@@ -60,8 +59,8 @@ namespace Negocio
         {
             try
             {
-                var repDisciplina = new RepositorioGenerico<DisciplinaE>();
-                DisciplinaE _disciplinaE = repDisciplina.ObterEntidade(d => d.IdDisciplina == disciplina.IdDisciplina);
+                var repDisciplina = new RepositorioGenerico<tb_disciplina>();
+                tb_disciplina _disciplinaE = repDisciplina.ObterEntidade(d => d.IdDisciplina == disciplina.IdDisciplina);
                 Atribuir(disciplina, _disciplinaE);
 
                 repDisciplina.SaveChanges();
@@ -80,7 +79,7 @@ namespace Negocio
         {
             try
             {
-                var repDisciplina = new RepositorioGenerico<DisciplinaE>();
+                var repDisciplina = new RepositorioGenerico<tb_disciplina>();
                 repDisciplina.Remover(d => d.IdDisciplina == idDisciplina);
                 repDisciplina.SaveChanges();
             }
@@ -96,7 +95,7 @@ namespace Negocio
         /// <returns></returns>
         private IQueryable<DisciplinaModel> GetQuery()
         {
-            var repDisciplina = new RepositorioGenerico<DisciplinaE>();
+            var repDisciplina = new RepositorioGenerico<tb_disciplina>();
             var pvEntities = (pvEntities)repDisciplina.ObterContexto();
             var query = from disciplina in pvEntities.tb_disciplina
                         select new DisciplinaModel
@@ -141,7 +140,7 @@ namespace Negocio
         /// </summary>
         /// <param name="disciplina"></param>
         /// <param name="_disciplinaE"></param>
-        private static void Atribuir(DisciplinaModel disciplina, DisciplinaE _disciplinaE)
+        private static void Atribuir(DisciplinaModel disciplina, tb_disciplina _disciplinaE)
         {
             _disciplinaE.NomeDisciplina = disciplina.NomeDisciplina;
         }

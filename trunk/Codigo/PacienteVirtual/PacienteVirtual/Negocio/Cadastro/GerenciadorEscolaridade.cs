@@ -32,8 +32,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int Inserir(EscolaridadeModel escolaridade)
         {
-            var repEscolaridade = new RepositorioGenerico<EscolaridadeE>();
-            EscolaridadeE _tb_escolaridade = new EscolaridadeE();
+            var repEscolaridade = new RepositorioGenerico<tb_escolaridade>();
+            tb_escolaridade _tb_escolaridade = new tb_escolaridade();
             try
             {
                 Atribuir(escolaridade, _tb_escolaridade);
@@ -58,8 +58,8 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repEscolaridade = new RepositorioGenerico<EscolaridadeE>();
-                EscolaridadeE _tb_escolaridade = repEscolaridade.ObterEntidade(d => d.IdEscolaridade == escolaridade.IdEscolaridade);
+                var repEscolaridade = new RepositorioGenerico<tb_escolaridade>();
+                tb_escolaridade _tb_escolaridade = repEscolaridade.ObterEntidade(d => d.IdEscolaridade == escolaridade.IdEscolaridade);
                 Atribuir(escolaridade, _tb_escolaridade);
 
                 repEscolaridade.SaveChanges();
@@ -78,7 +78,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-                var repEscolaridade = new RepositorioGenerico<EscolaridadeE>();
+                var repEscolaridade = new RepositorioGenerico<tb_escolaridade>();
                 repEscolaridade.Remover(d => d.IdEscolaridade == idEscolaridade);
                 repEscolaridade.SaveChanges();
             }
@@ -94,7 +94,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         private IQueryable<EscolaridadeModel> GetQuery()
         {
-            var repEscolaridade = new RepositorioGenerico<EscolaridadeE>();
+            var repEscolaridade = new RepositorioGenerico<tb_escolaridade>();
             var pvEntities = (pvEntities)repEscolaridade.ObterContexto();
             var query = from escolaridade in pvEntities.tb_escolaridade
                         select new EscolaridadeModel
@@ -139,7 +139,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="escolaridade"></param>
         /// <param name="_tb_escolaridade"></param>
-        private static void Atribuir(EscolaridadeModel escolaridade, EscolaridadeE _tb_escolaridade)
+        private static void Atribuir(EscolaridadeModel escolaridade, tb_escolaridade _tb_escolaridade)
         {
             _tb_escolaridade.Nivel = escolaridade.EscolaridadeNivel;
         }
