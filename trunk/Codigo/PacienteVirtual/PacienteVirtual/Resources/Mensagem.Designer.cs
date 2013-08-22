@@ -259,6 +259,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmar Senha.
+        /// </summary>
+        public static string confirme_senha {
+            get {
+                return ResourceManager.GetString("confirme_senha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consulta.
         /// </summary>
         public static string consulta {
@@ -318,6 +327,15 @@ namespace Resources {
         public static string consulta_variavel_codigo {
             get {
                 return ResourceManager.GetString("consulta_variavel_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cpf.
+        /// </summary>
+        public static string cpf {
+            get {
+                return ResourceManager.GetString("cpf", resourceCulture);
             }
         }
         
@@ -520,6 +538,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Endereço de E-mail .
+        /// </summary>
+        public static string endereco_email {
+            get {
+                return ResourceManager.GetString("endereco_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Escolaridade.
         /// </summary>
         public static string escolaridade {
@@ -615,6 +642,15 @@ namespace Resources {
         public static string fitoterapico {
             get {
                 return ResourceManager.GetString("fitoterapico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fone.
+        /// </summary>
+        public static string fone {
+            get {
+                return ResourceManager.GetString("fone", resourceCulture);
             }
         }
         
@@ -763,6 +799,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Informações da Conta.
+        /// </summary>
+        public static string informacao_conta {
+            get {
+                return ResourceManager.GetString("informacao_conta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Instituição.
         /// </summary>
         public static string instituicao {
@@ -790,6 +835,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lembrar-me.
+        /// </summary>
+        public static string lembrar_me {
+            get {
+                return ResourceManager.GetString("lembrar_me", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Listar.
         /// </summary>
         public static string listar {
@@ -804,6 +858,24 @@ namespace Resources {
         public static string listar_todos {
             get {
                 return ResourceManager.GetString("listar_todos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string login {
+            get {
+                return ResourceManager.GetString("login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matrícula.
+        /// </summary>
+        public static string matricula {
+            get {
+                return ResourceManager.GetString("matricula", resourceCulture);
             }
         }
         
@@ -930,6 +1002,15 @@ namespace Resources {
         public static string nome_sistema {
             get {
                 return ResourceManager.GetString("nome_sistema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome do Usuário.
+        /// </summary>
+        public static string nome_usuario {
+            get {
+                return ResourceManager.GetString("nome_usuario", resourceCulture);
             }
         }
         
@@ -1150,6 +1231,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registre - se.
+        /// </summary>
+        public static string registre_se {
+            get {
+                return ResourceManager.GetString("registre_se", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Relato Clínico.
         /// </summary>
         public static string relato_clinico {
@@ -1231,11 +1321,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to se você não tiver uma conta..
+        /// </summary>
+        public static string se_nao_tem_conta {
+            get {
+                return ResourceManager.GetString("se_nao_tem_conta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selecione.
         /// </summary>
         public static string selecione {
             get {
                 return ResourceManager.GetString("selecione", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Senha.
+        /// </summary>
+        public static string senha {
+            get {
+                return ResourceManager.GetString("senha", resourceCulture);
             }
         }
         

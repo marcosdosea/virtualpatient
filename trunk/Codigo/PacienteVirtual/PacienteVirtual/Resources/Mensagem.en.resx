@@ -555,4 +555,40 @@
   <data name="ativa" xml:space="preserve">
     <value>Active</value>
   </data>
+  <data name="confirme_senha" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="cpf" xml:space="preserve">
+    <value>Personal ID</value>
+  </data>
+  <data name="endereco_email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="fone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="informacao_conta" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="lembrar_me" xml:space="preserve">
+    <value>Remenber me</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="matricula" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="nome_usuario" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="registre_se" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="senha" xml:space="preserve">
+    <value>Passoword</value>
+  </data>
+  <data name="se_nao_tem_conta" xml:space="preserve">
+    <value>if you don't have an account.</value>
+  </data>
 </root>
