@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="campo_requerido" xml:space="preserve">
+    <value>*The field "{0}" is required.</value>
+  </data>
+  <data name="codigo" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="instituicao_codigo" xml:space="preserve">
+    <value>Institution Code</value>
+  </data>
+  <data name="consulta_dados_fixos" xml:space="preserve">
+    <value>Data Consultation Fixed </value>
+  </data>
+  <data name="criar" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="curso" xml:space="preserve">
+    <value>Course</value>
+  </data>
+  <data name="data_nascimento" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="deletar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="demografico_antropometricos" xml:space="preserve">
+    <value>Demographic and Anthropometric Data</value>
+  </data>
+  <data name="detalhes" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="disciplina" xml:space="preserve">
+    <value>Discipline</value>
+  </data>
+  <data name="editar" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="escolaridade" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="excluir" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="experiencia_medicamentos" xml:space="preserve">
+    <value>Experiment with Medications</value>
+  </data>
+  <data name="genero" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="historia" xml:space="preserve">
+    <value>Patient History</value>
+  </data>
+  <data name="instituicao" xml:space="preserve">
+    <value>Institution</value>
+  </data>
+  <data name="medicos_atendem" xml:space="preserve">
+    <value>Doctors Attending</value>
+  </data>
+  <data name="moradia_familia" xml:space="preserve">
+    <value>House Family</value>
+  </data>
+  <data name="nivel_escolaridade" xml:space="preserve">
+    <value>Level of Education</value>
+  </data>
+  <data name="ocupacao" xml:space="preserve">
+    <value>Occupation</value>
+  </data>
+  <data name="onde_adquire_medicamentos" xml:space="preserve">
+    <value>Where to get the medicines</value>
+  </data>
+  <data name="paciente_pessoa_turma" xml:space="preserve">
+    <value>Patient Person Class</value>
+  </data>
+  <data name="pergunta" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="pessoa" xml:space="preserve">
+    <value>Person</value>
+  </data>
+  <data name="plano_saude" xml:space="preserve">
+    <value>Health Plan</value>
+  </data>
+  <data name="remover" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="resposta" xml:space="preserve">
+    <value>Answers</value>
+  </data>
+  <data name="teste" xml:space="preserve">
+    <value>Test English</value>
+  </data>
+  <data name="turma" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="deletar_pergunta" xml:space="preserve">
+    <value>Are you sure you want to delete this data?</value>
+  </data>
+  <data name="comportamento" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="comportamento_atencao" xml:space="preserve">
+    <value>Caution - Behavior</value>
+  </data>
+  <data name="cultural" xml:space="preserve">
+    <value>Cultural</value>
+  </data>
+  <data name="cultural_atencao" xml:space="preserve">
+    <value>Caution - Cultural</value>
+  </data>
+  <data name="espera_tratamento" xml:space="preserve">
+    <value>Wait Treatment</value>
+  </data>
+  <data name="espera_tratamento_atencao" xml:space="preserve">
+    <value>Caution - Wait Treatment</value>
+  </data>
+  <data name="grau_entendimento" xml:space="preserve">
+    <value>Understanding Degree</value>
+  </data>
+  <data name="grau_entendimento_atencao" xml:space="preserve">
+    <value>Caution - Understanding Degree</value>
+  </data>
+  <data name="incorporado_plano" xml:space="preserve">
+    <value>Incorporated Plan</value>
+  </data>
+  <data name="incorporado_plano_atencao" xml:space="preserve">
+    <value>Caution - Incorporated Plan</value>
+  </data>
+  <data name="preocupacoes" xml:space="preserve">
+    <value>Concerns</value>
+  </data>
+  <data name="preocupacoes_atencao" xml:space="preserve">
+    <value>Caution - Concerns</value>
+  </data>
+  <data name="consulta" xml:space="preserve">
+    <value>Consultation</value>
+  </data>
+  <data name="eh_gabarito" xml:space="preserve">
+    <value>Is Feedback</value>
+  </data>
+  <data name="paciente" xml:space="preserve">
+    <value>Patient</value>
+  </data>
+  <data name="salvar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="selecione" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="historia_familiar" xml:space="preserve">
+    <value>Family History</value>
+  </data>
+  <data name="historia_medicamento_pregressa" xml:space="preserve">
+    <value>History of Medicines Previous</value>
+  </data>
+  <data name="consulta_dados_variaveis" xml:space="preserve">
+    <value>Data Consultation Variable</value>
+  </data>
+  <data name="descricao" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="estado_preenchimento" xml:space="preserve">
+    <value>State of Completion</value>
+  </data>
+  <data name="grupo_atividades" xml:space="preserve">
+    <value>Activities Groups</value>
+  </data>
+  <data name="sigla" xml:space="preserve">
+    <value>Abbreviation</value>
+  </data>
+  <data name="periodo" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="instituicao_nome" xml:space="preserve">
+    <value>Institution Name</value>
+  </data>
+  <data name="consulta_dados_fixos_codigo" xml:space="preserve">
+    <value>Data Consultation Fixed Code</value>
+  </data>
+  <data name="consulta_dados_variaveis_codigo" xml:space="preserve">
+    <value>Data Consultation Variable Code</value>
+  </data>
+  <data name="pergunta_codigo" xml:space="preserve">
+    <value>Code Question</value>
+  </data>
+  <data name="resposta_codigo" xml:space="preserve">
+    <value>Answers Code</value>
+  </data>
+  <data name="paciente_codigo" xml:space="preserve">
+    <value>Patient Code</value>
+  </data>
+  <data name="campo_MouF" xml:space="preserve">
+    <value>Field {0} only accepts "M" or "F"</value>
+  </data>
+  <data name="tutor_comentarios" xml:space="preserve">
+    <value>Reviews Tutor</value>
+  </data>
+  <data name="data_envio" xml:space="preserve">
+    <value>Ship Date</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="pessoa_codigo" xml:space="preserve">
+    <value>Code Person</value>
+  </data>
+  <data name="relato_codigo" xml:space="preserve">
+    <value>Report Code</value>
+  </data>
+  <data name="turma_codigo" xml:space="preserve">
+    <value>Class Code</value>
+  </data>
+  <data name="historia_medica_pregressa" xml:space="preserve">
+    <value>History  Medical Previous</value>
+  </data>
+  <data name="data_atualizacao" xml:space="preserve">
+    <value>Date of Update</value>
+  </data>
+  <data name="data_resposta" xml:space="preserve">
+    <value>Date of Response</value>
+  </data>
+  <data name="historico" xml:space="preserve">
+    <value>Historic</value>
+  </data>
+  <data name="tutor_codigo" xml:space="preserve">
+    <value>Tutor Code</value>
+  </data>
+  <data name="diario_pessoal" xml:space="preserve">
+    <value>Personal Diary</value>
+  </data>
+  <data name="horario" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="medicamento_codigo" xml:space="preserve">
+    <value>Medication Code</value>
+  </data>
+  <data name="quantidade" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="tipo_bebida" xml:space="preserve">
+    <value>Type of Drink</value>
+  </data>
+  <data name="comportamento_resposta_codigo" xml:space="preserve">
+    <value>Behavior Response Code</value>
+  </data>
+  <data name="cultural_resposta_codigo" xml:space="preserve">
+    <value>Response Cultural Codel</value>
+  </data>
+  <data name="espera_tratamento_resposta_codigo" xml:space="preserve">
+    <value>Wait Treatment Response Code</value>
+  </data>
+  <data name="grau_entendimento_reposta_codigo" xml:space="preserve">
+    <value>Response Code Degree Understanding</value>
+  </data>
+  <data name="incorporado_plano_resposta_codigo" xml:space="preserve">
+    <value>Response Plan Incorporated Code</value>
+  </data>
+  <data name="preocupacoes_resposta_codigo" xml:space="preserve">
+    <value>Response Concerns Code</value>
+  </data>
+  <data name="codigo_sistema" xml:space="preserve">
+    <value>System code</value>
+  </data>
+  <data name="descricao_acao" xml:space="preserve">
+    <value>Description of Action</value>
+  </data>
+  <data name="descricao_queixa" xml:space="preserve">
+    <value>Description of Complaint</value>
+  </data>
+  <data name="descricao_razao" xml:space="preserve">
+    <value>Description of Reason Meeting</value>
+  </data>
+  <data name="nome_sistema" xml:space="preserve">
+    <value>System Name</value>
+  </data>
+  <data name="parametro_clinico" xml:space="preserve">
+    <value>Clinical Parameter</value>
+  </data>
+  <data name="nome_medicamento" xml:space="preserve">
+    <value>Medication Name</value>
+  </data>
+  <data name="acao_alternativa" xml:space="preserve">
+    <value>Alternative action</value>
+  </data>
+  <data name="acao_queixa" xml:space="preserve">
+    <value>Complaint action</value>
+  </data>
+  <data name="medicamentos" xml:space="preserve">
+    <value>Medications</value>
+  </data>
+  <data name="queixa" xml:space="preserve">
+    <value>Complaint</value>
+  </data>
+  <data name="razao_encontro" xml:space="preserve">
+    <value>Reason for Encounter</value>
+  </data>
+  <data name="sistema" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="alergia" xml:space="preserve">
+    <value>Allergy</value>
+  </data>
+  <data name="foto" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="nivel_dificuldade" xml:space="preserve">
+    <value>Level of Difficulty</value>
+  </data>
+  <data name="ordem_cronologica" xml:space="preserve">
+    <value>Chronological Order</value>
+  </data>
+  <data name="relato_clinico" xml:space="preserve">
+    <value>Clinical Report</value>
+  </data>
+  <data name="relato_textual" xml:space="preserve">
+    <value>Report Textual</value>
+  </data>
+  <data name="nome" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="consulta_variavel_codigo" xml:space="preserve">
+    <value>Data Consultation Variable Code</value>
+  </data>
+  <data name="indicacao" xml:space="preserve">
+    <value>Indication</value>
+  </data>
+  <data name="alcool_consumo" xml:space="preserve">
+    <value>Alcohol consumption</value>
+  </data>
+  <data name="alcool_parou" xml:space="preserve">
+    <value>Stopped consumption of alcohol</value>
+  </data>
+  <data name="alcool_tipo_bebida" xml:space="preserve">
+    <value>Type of alcoholic beverage</value>
+  </data>
+  <data name="alcool_uso" xml:space="preserve">
+    <value>Consumption of alcohol</value>
+  </data>
+  <data name="cafe_consumo" xml:space="preserve">
+    <value>Consumption of coffee</value>
+  </data>
+  <data name="cafe_parou" xml:space="preserve">
+    <value>Stopped consumption of coffee</value>
+  </data>
+  <data name="cafe_uso" xml:space="preserve">
+    <value>Consumption of coffee</value>
+  </data>
+  <data name="dosagem" xml:space="preserve">
+    <value>Dosage</value>
+  </data>
+  <data name="especialidade" xml:space="preserve">
+    <value>Specialty</value>
+  </data>
+  <data name="fitoterapico" xml:space="preserve">
+    <value>Physiotherapy</value>
+  </data>
+  <data name="posologia" xml:space="preserve">
+    <value>Dosage</value>
+  </data>
+  <data name="prescritor" xml:space="preserve">
+    <value>Prescriber</value>
+  </data>
+  <data name="tabaco_consumo" xml:space="preserve">
+    <value>Tobacco Consumption</value>
+  </data>
+  <data name="tabaco_parou" xml:space="preserve">
+    <value>Stopped consumption of Tobacco</value>
+  </data>
+  <data name="tabaco_uso" xml:space="preserve">
+    <value>Consumption of Tobacco</value>
+  </data>
+  <data name="consulta_variavel" xml:space="preserve">
+    <value>Variable Consultation</value>
+  </data>
+  <data name="estilo_vida" xml:space="preserve">
+    <value>Lifestyle</value>
+  </data>
+  <data name="medicamentos_anteriores" xml:space="preserve">
+    <value>Previous Medications</value>
+  </data>
+  <data name="medicamento_nao_prescrito" xml:space="preserve">
+    <value>Medication not Prescribed</value>
+  </data>
+  <data name="medicamento_prescrito" xml:space="preserve">
+    <value>Medication Prescribed</value>
+  </data>
+  <data name="listar" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="sobre" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="cadastros" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="paciente_virtual" xml:space="preserve">
+    <value>Virtual Patient</value>
+  </data>
+  <data name="paciente_nome" xml:space="preserve">
+    <value>Patient's Name</value>
+  </data>
+  <data name="codigo_paciente" xml:space="preserve">
+    <value>Patient Code</value>
+  </data>
+  <data name="nome_paciente" xml:space="preserve">
+    <value>Patient Name</value>
+  </data>
+  <data name="relato_texto" xml:space="preserve">
+    <value>Narrative Text</value>
+  </data>
+  <data name="relato_video" xml:space="preserve">
+    <value>Relate in Video</value>
+  </data>
+  <data name="adicionar" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="medicamento" xml:space="preserve">
+    <value>Medicine</value>
+  </data>
+  <data name="bebida" xml:space="preserve">
+    <value>Drink</value>
+  </data>
+  <data name="listar_todos" xml:space="preserve">
+    <value>All List</value>
+  </data>
+  <data name="preencher" xml:space="preserve">
+    <value>Fill</value>
+  </data>
+  <data name="status_preenchimento" xml:space="preserve">
+    <value>Filling Status</value>
+  </data>
+</root>

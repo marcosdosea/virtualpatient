@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-using PacienteVirtual.App_GlobalResources;
+using Resources;
 
 namespace PacienteVirtual.Models
 {
     public class TurmaPessoaRelatoModel
     {
+        public const string AGUARDANDO_PREENCHIMENTO = "Aguardando Preenchimento";
+        public const string EM_PREENCHIMENTO = "Em Preenchimento";
+        public const string ENVIADO_PARA_CORRECAO = "Enviado para Correção";
+        public const string EM_CORRECAO = "Em Correção";
+        public const string FINALIZADO = "Finalizado";
+
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "turma_codigo", ResourceType = typeof(Mensagem))]
         public int IdTurma { get; set; }

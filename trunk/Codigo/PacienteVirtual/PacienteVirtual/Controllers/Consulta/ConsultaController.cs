@@ -11,7 +11,7 @@ namespace PacienteVirtual.Controllers
         public ViewResult Index()
         {
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
-            return View(GerenciadorRelatoClinico.GetInstance().ObterTodos());
+            return View(GerenciadorTurmaPessoaRelato.GetInstance().ObterTodos());
         }
 
         [HttpPost]

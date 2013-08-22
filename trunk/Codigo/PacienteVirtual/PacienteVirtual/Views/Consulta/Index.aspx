@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.TurmaPessoaRelato>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.TurmaPessoaRelatoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.consulta%>
@@ -35,6 +35,9 @@
                     <%: Resources.Mensagem.status_preenchimento %>
                 </th>
                 <th>
+                    <%: Resources.Mensagem.turma_codigo %>
+                </th>
+                <th>
                     <%: Resources.Mensagem.consulta %>
                 </th>
             </tr>
@@ -51,10 +54,12 @@
                 <td>
                     <%: Html.DisplayFor(modelItem => item.NivelDificuldade)%>
                 </td>
+                <td>
+                    <%: Html.DisplayFor(modelItem => item.IdTurma)%>
+                </td>
                 <td></td>
                 <td>
-                    <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idPaciente = item.IdPaciente, idRelato = item.IdRelato})%>
-                    |
+                    <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idPaciente = item.IdRelato, idRelato = item.IdConsultaFixo})%> 
                 </td>
             </tr>
             <% } %>
