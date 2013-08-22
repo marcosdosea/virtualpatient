@@ -15,7 +15,7 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>Editar Curso</legend>
+        <legend><%: Resources.Mensagem.curso %></legend>
 
         <%: Html.HiddenFor(model => model.IdCurso) %>
 
@@ -26,15 +26,6 @@
             <%: Html.EditorFor(model => model.NomeCurso) %>
             <%: Html.ValidationMessageFor(model => model.NomeCurso) %>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.NomeInstituicao) %>
-        </div>
-        <div class="editor-field">
-            <%= Html.DropDownList("IdInstituicao", Resources.Mensagem.selecione)%>
-            <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
-        </div>
-
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value=" <%: Resources.Mensagem.salvar %>" />
     </div>

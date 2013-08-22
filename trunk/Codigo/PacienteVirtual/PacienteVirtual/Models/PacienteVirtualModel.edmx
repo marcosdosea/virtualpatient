@@ -7,6 +7,7 @@
     <Schema Namespace="pvModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="pvModelStoreContainer">
           <EntitySet Name="my_aspnet_roles" EntityType="pvModel.Store.my_aspnet_roles" store:Type="Tables" Schema="pv1" />
+          <EntitySet Name="my_aspnet_users" EntityType="pvModel.Store.my_aspnet_users" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="tb_acao_alternativa" EntityType="pvModel.Store.tb_acao_alternativa" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="tb_acao_queixa" EntityType="pvModel.Store.tb_acao_queixa" store:Type="Tables" Schema="pv1" />
           <EntitySet Name="tb_alergia" EntityType="pvModel.Store.tb_alergia" store:Type="Tables" Schema="pv1" />
@@ -186,6 +187,10 @@
             <End Role="tb_medicamentos" EntitySet="tb_medicamentos" />
             <End Role="tb_medicamento_nao_prescrito" EntitySet="tb_medicamento_nao_prescrito" />
           </AssociationSet>
+          <AssociationSet Name="fk_tb_pessoa_my_aspnet_users1" Association="pvModel.Store.fk_tb_pessoa_my_aspnet_users1">
+            <End Role="my_aspnet_users" EntitySet="my_aspnet_users" />
+            <End Role="tb_pessoa" EntitySet="tb_pessoa" />
+          </AssociationSet>
           <AssociationSet Name="fk_tb_queixa_medicamentos_tb_acao_alternativa1" Association="pvModel.Store.fk_tb_queixa_medicamentos_tb_acao_alternativa1">
             <End Role="tb_acao_alternativa" EntitySet="tb_acao_alternativa" />
             <End Role="tb_queixa_medicamentos" EntitySet="tb_queixa_medicamentos" />
@@ -254,6 +259,16 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="applicationId" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="my_aspnet_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="applicationId" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="isAnonymous" Type="bool" Nullable="false" />
+          <Property Name="lastActivityDate" Type="datetime" />
         </EntityType>
         <EntityType Name="tb_acao_alternativa">
           <Key>
@@ -1073,6 +1088,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_tb_pessoa_my_aspnet_users1">
+          <End Role="my_aspnet_users" Type="pvModel.Store.my_aspnet_users" Multiplicity="1" />
+          <End Role="tb_pessoa" Type="pvModel.Store.tb_pessoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="my_aspnet_users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_pessoa">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_tb_queixa_medicamentos_tb_acao_alternativa1">
           <End Role="tb_acao_alternativa" Type="pvModel.Store.tb_acao_alternativa" Multiplicity="1" />
           <End Role="tb_queixa_medicamentos" Type="pvModel.Store.tb_queixa_medicamentos" Multiplicity="*" />
@@ -1495,6 +1522,11 @@
             <End Role="my_aspnet_roles" EntitySet="my_aspnet_roles" />
             <End Role="tb_turma_pessoa" EntitySet="tb_turma_pessoa" />
           </AssociationSet>
+          <EntitySet Name="my_aspnet_users" EntityType="pvModel.my_aspnet_users" />
+          <AssociationSet Name="fk_tb_pessoa_my_aspnet_users1" Association="pvModel.fk_tb_pessoa_my_aspnet_users1">
+            <End Role="my_aspnet_users" EntitySet="my_aspnet_users" />
+            <End Role="tb_pessoa" EntitySet="tb_pessoa" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tb_acao_alternativa">
           <Key>
@@ -1840,6 +1872,7 @@
           <NavigationProperty Name="tb_historico" Relationship="pvModel.fk_tb_historico_tb_pessoa1" FromRole="tb_pessoa" ToRole="tb_historico" />
           <NavigationProperty Name="tb_turma_pessoa" Relationship="pvModel.fk_tb_turma_has_tb_pessoa_tb_pessoa1" FromRole="tb_pessoa" ToRole="tb_turma_pessoa" />
           <Property Type="String" Name="Matricula" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="my_aspnet_users" Relationship="pvModel.fk_tb_pessoa_my_aspnet_users1" FromRole="tb_pessoa" ToRole="my_aspnet_users" />
         </EntityType>
         <EntityType Name="tb_plano_saude">
           <Key>
@@ -2571,6 +2604,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="my_aspnet_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="applicationId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="isAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="lastActivityDate" />
+          <NavigationProperty Name="tb_pessoa" Relationship="pvModel.fk_tb_pessoa_my_aspnet_users1" FromRole="my_aspnet_users" ToRole="tb_pessoa" />
+        </EntityType>
+        <Association Name="fk_tb_pessoa_my_aspnet_users1">
+          <End Type="pvModel.my_aspnet_users" Role="my_aspnet_users" Multiplicity="1" />
+          <End Type="pvModel.tb_pessoa" Role="tb_pessoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="my_aspnet_users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tb_pessoa">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3001,6 +3057,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_users">
+            <EntityTypeMapping TypeName="pvModel.my_aspnet_users">
+              <MappingFragment StoreEntitySet="my_aspnet_users">
+                <ScalarProperty Name="lastActivityDate" ColumnName="lastActivityDate" />
+                <ScalarProperty Name="isAnonymous" ColumnName="isAnonymous" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="applicationId" ColumnName="applicationId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -3124,14 +3191,12 @@
           <ConnectorPoint PointX="3" PointY="17.211253255208334" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_historia_tb_consulta_fixo1" >
-          <ConnectorPoint PointX="2.2257692307692305" PointY="23.624492187499982" />
-          <ConnectorPoint PointX="2.46760043858861" PointY="23.749192035347228" />
-          <ConnectorPoint PointX="2.7615662280780566" PointY="23.900774990881281" />
-          <ConnectorPoint PointX="2.7696837719219429" PointY="23.904960788452048" />
-          <ConnectorPoint PointX="2.9803162280780575" PointY="24.013573053474428" />
-          <ConnectorPoint PointX="3" PointY="24.023722956730751" />
+          <ConnectorPoint PointX="2.25" PointY="23.593337341346135" />
+          <ConnectorPoint PointX="2.4827411015677878" PointY="23.826078442913925" />
+          <ConnectorPoint PointX="2.6005922317655457" PointY="23.943929573111681" />
+          <ConnectorPoint PointX="2.65625" PointY="23.999587341346135" />
+          <ConnectorPoint PointX="2.65625" PointY="35.643992513020834" />
           <ConnectorPoint PointX="3" PointY="35.643992513020834" />
-          <ConnectorPoint PointX="3.375" PointY="35.643992513020834" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_turma_pessoa_relato_tb_consulta_fixo1" >
           <ConnectorPoint PointX="2.25" PointY="23.220225453234246" />
@@ -3232,8 +3297,6 @@
           <ConnectorPoint PointX="7.208333333333333" PointY="31.03125" />
           <ConnectorPoint PointX="7.229166666666667" PointY="31.03125" />
           <ConnectorPoint PointX="7.395833333333333" PointY="31.03125" />
-          <ConnectorPoint PointX="9.6979166666666661" PointY="31.03125" />
-          <ConnectorPoint PointX="9.8645833333333339" PointY="31.03125" />
           <ConnectorPoint PointX="10.166666666666666" PointY="31.03125" />
           <ConnectorPoint PointX="10.333333333333334" PointY="31.03125" />
           <ConnectorPoint PointX="10.5" PointY="31.03125" />
@@ -3321,18 +3384,16 @@
           <ConnectorPoint PointX="3" PointY="16.021563313802083" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_historico_tb_pessoa1" >
-          <ConnectorPoint PointX="2.8125025" PointY="39.125" />
-          <ConnectorPoint PointX="2.8125025" PointY="29.59375" />
-          <ConnectorPoint PointX="2.9166666666666665" PointY="29.59375" />
-          <ConnectorPoint PointX="3.0833333333333335" PointY="29.59375" />
+          <ConnectorPoint PointX="2.484375" PointY="39.125" />
+          <ConnectorPoint PointX="2.484375" PointY="29.59375" />
+          <ConnectorPoint PointX="2.5729166666666665" PointY="29.59375" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="29.59375" />
           <ConnectorPoint PointX="4.791666666666667" PointY="29.59375" />
           <ConnectorPoint PointX="4.958333333333333" PointY="29.59375" />
-          <ConnectorPoint PointX="6.322916666666667" PointY="29.59375" />
-          <ConnectorPoint PointX="6.489583333333333" PointY="29.59375" />
+          <ConnectorPoint PointX="6.2954646276556634" PointY="29.59375" />
+          <ConnectorPoint PointX="6.4621312943223295" PointY="29.59375" />
           <ConnectorPoint PointX="6.842520280849377" PointY="29.59375" />
           <ConnectorPoint PointX="7.208333333333333" PointY="29.59375" />
-          <ConnectorPoint PointX="9.6979166666666661" PointY="29.59375" />
-          <ConnectorPoint PointX="9.8645833333333339" PointY="29.59375" />
           <ConnectorPoint PointX="9.9166666666666661" PointY="29.59375" />
           <ConnectorPoint PointX="10.083333333333334" PointY="29.59375" />
           <ConnectorPoint PointX="12.182289166666665" PointY="29.59375" />
@@ -3380,8 +3441,6 @@
           <ConnectorPoint PointX="7.208333333333333" PointY="31.395907330729173" />
           <ConnectorPoint PointX="7.229166666666667" PointY="31.395907330729173" />
           <ConnectorPoint PointX="7.395833333333333" PointY="31.395907330729173" />
-          <ConnectorPoint PointX="9.6979166666666661" PointY="31.395907330729173" />
-          <ConnectorPoint PointX="9.8645833333333339" PointY="31.395907330729173" />
           <ConnectorPoint PointX="10.25" PointY="31.395907330729173" />
           <ConnectorPoint PointX="10.25" PointY="29.75" />
           <ConnectorPoint PointX="12.2656225" PointY="29.75" />
@@ -3389,14 +3448,12 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos1" >
           <ConnectorPoint PointX="5.25" PointY="30.835939999999994" />
-          <ConnectorPoint PointX="6.322916666666667" PointY="30.835939999999994" />
-          <ConnectorPoint PointX="6.489583333333333" PointY="30.835939999999994" />
+          <ConnectorPoint PointX="5.995137252587198" PointY="30.835939999999994" />
+          <ConnectorPoint PointX="6.1618039192538641" PointY="30.835939999999994" />
           <ConnectorPoint PointX="6.885416666666667" PointY="30.835939999999994" />
           <ConnectorPoint PointX="7.208333333333333" PointY="30.835939999999994" />
           <ConnectorPoint PointX="7.229166666666667" PointY="30.835939999999994" />
           <ConnectorPoint PointX="7.395833333333333" PointY="30.835939999999994" />
-          <ConnectorPoint PointX="9.6979166666666661" PointY="30.835939999999994" />
-          <ConnectorPoint PointX="9.8645833333333339" PointY="30.835939999999994" />
           <ConnectorPoint PointX="10" PointY="30.835939999999994" />
           <ConnectorPoint PointX="10" PointY="29.375" />
           <ConnectorPoint PointX="12.182289166666665" PointY="29.375" />
@@ -3453,14 +3510,18 @@
           <ConnectorPoint PointX="3" PointY="26.249746093749991" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_turma_has_tb_pessoa_tb_turma1" >
-          <ConnectorPoint PointX="1.5" PointY="45.567047526041677" />
-          <ConnectorPoint PointX="1.1249995" PointY="45.567047526041677" />
-          <ConnectorPoint PointX="1.1249995" PointY="38.432190755208332" />
+          <ConnectorPoint PointX="1.5" PointY="45.535795026041683" />
+          <ConnectorPoint PointX="1.0937475" PointY="45.535795026041683" />
+          <ConnectorPoint PointX="1.0937475" PointY="38.432190755208332" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1" >
           <ConnectorPoint PointX="2.2500000000000013" PointY="35.875" />
-          <ConnectorPoint PointX="2.625" PointY="35.5" />
-          <ConnectorPoint PointX="2.625" PointY="26.249746093749991" />
+          <ConnectorPoint PointX="2.4254494349011209" PointY="35.699550565098882" />
+          <ConnectorPoint PointX="2.5433005650988787" PointY="35.581699434901118" />
+          <ConnectorPoint PointX="2.5973244349011209" PointY="35.527675565098882" />
+          <ConnectorPoint PointX="2.7151755650988787" PointY="35.409824434901118" />
+          <ConnectorPoint PointX="2.75" PointY="35.375" />
+          <ConnectorPoint PointX="2.75" PointY="26.249746093749991" />
           <ConnectorPoint PointX="2.7604166666666665" PointY="26.249746093749991" />
           <ConnectorPoint PointX="2.9895833333333335" PointY="26.249746093749991" />
           <ConnectorPoint PointX="3" PointY="26.249746093749991" />
@@ -3476,6 +3537,11 @@
           <ConnectorPoint PointX="0.375" PointY="3.0379850260416674" />
           <ConnectorPoint PointX="0.375" PointY="35.5" />
           <ConnectorPoint PointX="0.75" PointY="35.875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="pvModel.my_aspnet_users" Width="1.5" PointX="5.625" PointY="39.375" Height="2.172587890624996" />
+        <AssociationConnector Association="pvModel.fk_tb_pessoa_my_aspnet_users1" >
+          <ConnectorPoint PointX="5.625" PointY="40.4612939453125" />
+          <ConnectorPoint PointX="3" PointY="40.4612939453125" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

@@ -11,7 +11,10 @@
     <h3> <%: Resources.Mensagem.deletar_pergunta %></h3>
     <fieldset>
         <legend> <%: Resources.Mensagem.turma %></legend>
-
+        <div class="display-label">  <%: Html.LabelFor(model => model.Ativa) %></div>
+        <div class="display-field">
+            <%: Html.DisplayFor(model => model.Ativa) %>
+        </div>
         <div class="display-label">  <%: Html.LabelFor(model => model.Codigo) %></div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.Codigo) %>
@@ -31,7 +34,10 @@
         <div class="display-field">
             <%: Html.DisplayFor(model => model.NomeInstituicao) %>
         </div>
-
+        <div class="display-label">  <%: Html.LabelFor(model => model.NomeCurso) %></div>
+        <div class="display-field">
+            <%: Html.DisplayFor(model => model.NomeCurso) %>
+        </div>
     </fieldset>
     <% using (Html.BeginForm())
        { %>
