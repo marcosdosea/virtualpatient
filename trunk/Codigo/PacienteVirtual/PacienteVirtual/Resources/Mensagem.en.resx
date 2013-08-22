@@ -552,4 +552,7 @@
   <data name="status_preenchimento" xml:space="preserve">
     <value>Filling Status</value>
   </data>
+  <data name="ativa" xml:space="preserve">
+    <value>Active</value>
+  </data>
 </root>
