@@ -37,6 +37,7 @@
                 <img class="media" id="PreviewDaImagem" src="<%: Url.Action("GetImage", "Paciente") %>/<%: ViewBag.fotoId %>"
                     alt="Definir Imagem Padrão" style="width: 200px; height: 200px;" />
             </div>
+            <br />
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.OrdemCronologica) %>
             </div>

@@ -19,7 +19,7 @@
         <th>
               <%: Resources.Mensagem.pergunta %>
         </th>
-        <th></th>
+        <th><%: Resources.Mensagem.opcoes %></th>
     </tr>
 
 <% foreach (var item in Model) { %>

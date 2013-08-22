@@ -38,7 +38,10 @@
                     <%: Resources.Mensagem.nivel_dificuldade %>
                 </th>
                 <th>
-                    video
+                    Video
+                </th>
+                <th>
+                    <%: Resources.Mensagem.opcoes %>
                 </th>
             </tr>
             <% if (Model != null)

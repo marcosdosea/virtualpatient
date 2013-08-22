@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.PacienteModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Edit
+    <%: Resources.Mensagem.editar %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Edit</h2>
+        <%: Resources.Mensagem.editar %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
@@ -26,7 +26,7 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>PacienteE</legend>
+        <legend><%: Resources.Mensagem.paciente %></legend>
         <%: Html.HiddenFor(model => model.IdPaciente) %>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.NomePaciente) %>
@@ -40,15 +40,15 @@
         <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" />
         <%: Html.ValidationMessageFor(model => model.Foto)%>
         <br />
-            
+        <br />  
         <img class="media" id="PreviewDaImagem" src="" alt="Definir Imagem Padrão" style="width: 250px;
             height: 250px;" />
     <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="Save" />
+        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>
     </fieldset>
     <% } %>
     <div>
-        <%: Html.ActionLink("Back to List", "Index")%>
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index")%>
     </div>
 </asp:Content>

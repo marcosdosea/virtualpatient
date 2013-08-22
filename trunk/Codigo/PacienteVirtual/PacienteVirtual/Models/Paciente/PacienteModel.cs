@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using Resources;
 
 namespace PacienteVirtual.Models
 {
@@ -17,16 +18,16 @@ namespace PacienteVirtual.Models
             QuantRelatos = quantRelatos;
         }
 
-        [Required]
-        [Display(Name = "Código: ")]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "codigo_paciente", ResourceType = typeof(Mensagem))]
         public int IdPaciente { get; set; }
 
-        [Required]
-        [Display(Name = "Nome do paciente: ")]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "nome_paciente", ResourceType = typeof(Mensagem))]
         public String NomePaciente { get; set; }
 
         // [Required]
-        [Display(Name = "Foto do paciente: ")]
+        [Display(Name = "foto", ResourceType = typeof(Mensagem))]
         public byte[] Foto { get; set; }
 
         public int QuantRelatos { get; set; }

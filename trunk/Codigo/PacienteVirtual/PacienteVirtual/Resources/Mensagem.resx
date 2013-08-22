@@ -424,7 +424,7 @@
     <value>Foto</value>
   </data>
   <data name="nivel_dificuldade" xml:space="preserve">
-    <value>Níve de Dificuldade</value>
+    <value>Nível de Dificuldade</value>
   </data>
   <data name="ordem_cronologica" xml:space="preserve">
     <value>Ordem Cronológica</value>
@@ -590,5 +590,8 @@
   </data>
   <data name="se_nao_tem_conta" xml:space="preserve">
     <value>se você não tiver uma conta.</value>
+  </data>
+  <data name="opcoes" xml:space="preserve">
+    <value>Opções</value>
   </data>
 </root>

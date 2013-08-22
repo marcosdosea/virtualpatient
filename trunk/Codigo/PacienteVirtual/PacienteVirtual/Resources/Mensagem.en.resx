@@ -591,4 +591,7 @@
   <data name="se_nao_tem_conta" xml:space="preserve">
     <value>if you don't have an account.</value>
   </data>
+  <data name="opcoes" xml:space="preserve">
+    <value>Options</value>
+  </data>
 </root>
