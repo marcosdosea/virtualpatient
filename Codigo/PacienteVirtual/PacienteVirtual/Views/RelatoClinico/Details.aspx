@@ -33,7 +33,7 @@
 </fieldset>
 <p>
 
-    <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = Model.IdRelato })%> |
+    <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = Model.IdRelato }) %> |
     <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
 </p>
 

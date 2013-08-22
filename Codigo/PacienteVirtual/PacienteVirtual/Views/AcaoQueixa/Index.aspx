@@ -16,7 +16,7 @@
         <th>
             <%: Resources.Mensagem.descricao_acao %>
         </th>
-        <th></th>
+        <th><%: Resources.Mensagem.opcoes %></th>
     </tr>
 
 <% foreach (var item in Model) { %>

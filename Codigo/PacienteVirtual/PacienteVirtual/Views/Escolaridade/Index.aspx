@@ -16,7 +16,7 @@
         <th>
             <%: Resources.Mensagem.nivel_escolaridade %>
         </th>
-        <th></th>
+        <th><%: Resources.Mensagem.opcoes %></th>
     </tr>
 
 <% foreach (var item in Model) { %>

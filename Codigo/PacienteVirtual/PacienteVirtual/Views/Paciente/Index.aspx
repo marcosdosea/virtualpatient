@@ -18,6 +18,9 @@
                 <th>
                     <%: Resources.Mensagem.foto %>
                 </th>
+                <th>
+                    <%: Resources.Mensagem.opcoes %>
+                </th>
             </tr>
 
             <tbody>

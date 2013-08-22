@@ -31,7 +31,7 @@
         <th>
             <%: Resources.Mensagem.curso %>
         </th>
-        <th colspan="3"> Opções </th>
+        <th colspan="3"> <%: Resources.Mensagem.opcoes %> </th>
     </tr>
 
 <% 

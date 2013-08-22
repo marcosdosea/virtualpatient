@@ -13,7 +13,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdRelato { get; set; }
 
-        //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo_paciente", ResourceType = typeof(Mensagem))]
         public int IdPaciente { get; set; }
 
@@ -22,7 +22,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "nome_paciente", ResourceType = typeof(Mensagem))]
         public String NomePaciente { get; set; }
 
-        //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ordem_cronologica", ResourceType = typeof(Mensagem))]
         public int OrdemCronologica { get; set; }
 
