@@ -133,6 +133,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ativa.
+        /// </summary>
+        public static string ativa {
+            get {
+                return ResourceManager.GetString("ativa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bebida.
         /// </summary>
         public static string bebida {
