@@ -8,7 +8,6 @@ namespace PacienteVirtual.Controllers
     public class CursoController : Controller
     {
         GerenciadorCurso gCurso = GerenciadorCurso.GetInstance();
-        GerenciadorInstituicao gInstituicao = GerenciadorInstituicao.GetInstance();
 
         //
         // GET: /Curso/
@@ -29,7 +28,6 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
             return View();
         }
 

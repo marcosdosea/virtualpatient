@@ -552,4 +552,55 @@
   <data name="status_preenchimento" xml:space="preserve">
     <value>Filling Status</value>
   </data>
+  <data name="ativa" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="confirme_senha" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="cpf" xml:space="preserve">
+    <value>Cpf</value>
+  </data>
+  <data name="criar_conta" xml:space="preserve">
+    <value>Create a New Account</value>
+  </data>
+  <data name="endereco_email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="fone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="informacao_conta" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="lembra_me" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="matricula" xml:space="preserve">
+    <value>Enrollment</value>
+  </data>
+  <data name="nome_pessoa" xml:space="preserve">
+    <value>Person Name</value>
+  </data>
+  <data name="nome_usuario" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="pede_efetuar_login" xml:space="preserve">
+    <value>Please enter your user name and password.</value>
+  </data>
+  <data name="registrar" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="registre_se" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="senha" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="se_nao_tem_conta" xml:space="preserve">
+    <value>, if you don't have an account.</value>
+  </data>
 </root>

@@ -14,6 +14,9 @@
 <div class="box-content"> <table class="table table-bordered table-striped">
     <tr>
         <th>
+            <%: Resources.Mensagem.ativa %>
+        </th>
+        <th>
             <%: Resources.Mensagem.codigo %>
         </th>
         <th>
@@ -25,6 +28,9 @@
         <th>
             <%: Resources.Mensagem.instituicao %>
         </th>
+        <th>
+            <%: Resources.Mensagem.curso %>
+        </th>
         <th colspan="3"> Opções </th>
     </tr>
 
@@ -32,6 +38,9 @@
     
 foreach (var item in Model) { %>
     <tr>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Ativa) %>
+        </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Codigo) %>
         </td>
@@ -43,6 +52,9 @@ foreach (var item in Model) { %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.NomeInstituicao) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.NomeCurso) %>
         </td>
         <td>
             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = item.IdTurma })%> |

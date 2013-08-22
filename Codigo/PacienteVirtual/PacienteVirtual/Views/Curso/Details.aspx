@@ -16,11 +16,6 @@
     <div class="display-field">
         <%: Html.DisplayFor(model => model.NomeCurso) %>
     </div>
-
-    <div class="display-label"><%: Html.LabelFor(model => model.NomeInstituicao) %></div>
-    <div class="display-field">
-         <%: Html.DisplayFor(model => model.NomeInstituicao) %>
-    </div>
 </fieldset>
 <p>
 

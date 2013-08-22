@@ -99,6 +99,8 @@ namespace PacienteVirtual.Negocio
                         on tb_turma.IdInstituicao equals tb_instituicao.IdInstituicao
                         join tb_disciplina in pvEntities.tb_disciplina
                         on tb_turma.IdDisciplina equals tb_disciplina.IdDisciplina
+                        join tb_curso in pvEntities.tb_curso
+                        on tb_turma.IdCurso equals tb_curso.IdCurso
                         select new TurmaModel
                         {
                             IdTurma = tb_turma.IdTurma,
@@ -106,9 +108,12 @@ namespace PacienteVirtual.Negocio
                             Periodo = tb_turma.Periodo,
                             IdDisciplina = tb_turma.IdDisciplina,
                             IdInstituicao = tb_turma.IdInstituicao,
+                            IdCurso = tb_turma.IdCurso,
+                            Ativa = tb_turma.Ativa,
 
                             NomeInstituicao = tb_instituicao.NomeInstituicao,
-                            NomeDisciplina = tb_disciplina.NomeDisciplina
+                            NomeDisciplina = tb_disciplina.NomeDisciplina,
+                            NomeCurso = tb_curso.NomeCurso
       
                         };
             return query;
@@ -154,6 +159,8 @@ namespace PacienteVirtual.Negocio
             _turmaE.Periodo = turma.Periodo;
             _turmaE.IdDisciplina = turma.IdDisciplina;
             _turmaE.IdInstituicao = turma.IdInstituicao;
+            _turmaE.IdCurso = turma.IdCurso;
+            _turmaE.Ativa = turma.Ativa;
         }
     }
 }

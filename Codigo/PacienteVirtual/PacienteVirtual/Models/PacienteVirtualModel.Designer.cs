@@ -68,6 +68,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_turma_pessoa), "tb_turma_pessoa_relato", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_turma_pessoa_relato), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_alergia_exames_fisicos", "tb_alergia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_alergia), "tb_exames_fisicos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_exames_fisicos))]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_pessoa_my_aspnet_roles1", "my_aspnet_roles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.my_aspnet_roles), "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_turma_pessoa), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_pessoa_my_aspnet_users1", "my_aspnet_users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.my_aspnet_users), "tb_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_pessoa), true)]
 
 #endregion
 
@@ -742,6 +743,22 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<my_aspnet_roles> _my_aspnet_roles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<my_aspnet_users> my_aspnet_users
+        {
+            get
+            {
+                if ((_my_aspnet_users == null))
+                {
+                    _my_aspnet_users = base.CreateObjectSet<my_aspnet_users>("my_aspnet_users");
+                }
+                return _my_aspnet_users;
+            }
+        }
+        private ObjectSet<my_aspnet_users> _my_aspnet_users;
 
         #endregion
 
@@ -1058,6 +1075,14 @@ namespace PacienteVirtual.Models
         {
             base.AddObject("my_aspnet_roles", my_aspnet_roles);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the my_aspnet_users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTomy_aspnet_users(my_aspnet_users my_aspnet_users)
+        {
+            base.AddObject("my_aspnet_users", my_aspnet_users);
+        }
 
         #endregion
 
@@ -1194,6 +1219,191 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_turma_pessoa>("pvModel.fk_tb_turma_pessoa_my_aspnet_roles1", "tb_turma_pessoa", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_users")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class my_aspnet_users : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new my_aspnet_users object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="applicationId">Initial value of the applicationId property.</param>
+        /// <param name="name">Initial value of the name property.</param>
+        /// <param name="isAnonymous">Initial value of the isAnonymous property.</param>
+        public static my_aspnet_users Createmy_aspnet_users(global::System.Int32 id, global::System.Int32 applicationId, global::System.String name, global::System.Boolean isAnonymous)
+        {
+            my_aspnet_users my_aspnet_users = new my_aspnet_users();
+            my_aspnet_users.id = id;
+            my_aspnet_users.applicationId = applicationId;
+            my_aspnet_users.name = name;
+            my_aspnet_users.isAnonymous = isAnonymous;
+            return my_aspnet_users;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 applicationId
+        {
+            get
+            {
+                return _applicationId;
+            }
+            set
+            {
+                OnapplicationIdChanging(value);
+                ReportPropertyChanging("applicationId");
+                _applicationId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("applicationId");
+                OnapplicationIdChanged();
+            }
+        }
+        private global::System.Int32 _applicationId;
+        partial void OnapplicationIdChanging(global::System.Int32 value);
+        partial void OnapplicationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                OnnameChanging(value);
+                ReportPropertyChanging("name");
+                _name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("name");
+                OnnameChanged();
+            }
+        }
+        private global::System.String _name;
+        partial void OnnameChanging(global::System.String value);
+        partial void OnnameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean isAnonymous
+        {
+            get
+            {
+                return _isAnonymous;
+            }
+            set
+            {
+                OnisAnonymousChanging(value);
+                ReportPropertyChanging("isAnonymous");
+                _isAnonymous = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("isAnonymous");
+                OnisAnonymousChanged();
+            }
+        }
+        private global::System.Boolean _isAnonymous;
+        partial void OnisAnonymousChanging(global::System.Boolean value);
+        partial void OnisAnonymousChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> lastActivityDate
+        {
+            get
+            {
+                return _lastActivityDate;
+            }
+            set
+            {
+                OnlastActivityDateChanging(value);
+                ReportPropertyChanging("lastActivityDate");
+                _lastActivityDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("lastActivityDate");
+                OnlastActivityDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _lastActivityDate;
+        partial void OnlastActivityDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnlastActivityDateChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_pessoa_my_aspnet_users1", "tb_pessoa")]
+        public EntityCollection<tb_pessoa> tb_pessoa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_pessoa>("pvModel.fk_tb_pessoa_my_aspnet_users1", "tb_pessoa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_pessoa>("pvModel.fk_tb_pessoa_my_aspnet_users1", "tb_pessoa", value);
                 }
             }
         }
@@ -7612,6 +7822,44 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_turma_pessoa>("pvModel.fk_tb_turma_has_tb_pessoa_tb_pessoa1", "tb_turma_pessoa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_pessoa_my_aspnet_users1", "my_aspnet_users")]
+        public my_aspnet_users my_aspnet_users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<my_aspnet_users>("pvModel.fk_tb_pessoa_my_aspnet_users1", "my_aspnet_users").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<my_aspnet_users>("pvModel.fk_tb_pessoa_my_aspnet_users1", "my_aspnet_users").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<my_aspnet_users> my_aspnet_usersReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<my_aspnet_users>("pvModel.fk_tb_pessoa_my_aspnet_users1", "my_aspnet_users");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<my_aspnet_users>("pvModel.fk_tb_pessoa_my_aspnet_users1", "my_aspnet_users", value);
                 }
             }
         }

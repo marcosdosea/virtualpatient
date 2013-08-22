@@ -14,6 +14,13 @@
     <fieldset>
         <legend><%: Resources.Mensagem.turma %></legend>
         <div class="editor-label">
+            <%: Html.LabelFor(model => model.Ativa) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Ativa) %>
+            <%: Html.ValidationMessageFor(model => model.Ativa) %>
+        </div>
+        <div class="editor-label">
             <%: Html.LabelFor(model => model.Codigo) %>
         </div>
         <div class="editor-field">
@@ -40,6 +47,13 @@
         <div class="editor-field">
             <%: Html.DropDownList("IdDisciplina", Resources.Mensagem.selecione)%>
             <%: Html.ValidationMessageFor(model => model.IdDisciplina) %>
+        </div>
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.NomeCurso) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.DropDownList("IdCurso", Resources.Mensagem.selecione)%>
+            <%: Html.ValidationMessageFor(model => model.IdCurso) %>
         </div>
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

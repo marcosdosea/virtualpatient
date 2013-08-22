@@ -16,9 +16,6 @@
         <th>
             <%: Resources.Mensagem.curso %>
         </th>
-        <th>
-            <%: Resources.Mensagem.instituicao %>
-        </th>
         <th></th>
     </tr>
 
@@ -26,9 +23,6 @@
     <tr>
         <td>
             <%: Html.DisplayFor(modelItem => item.NomeCurso) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.NomeInstituicao) %>
         </td>
         <td>
             <%: Html.ActionLink(Resources.Mensagem.editar , "Edit", new { id=item.IdCurso }) %> |

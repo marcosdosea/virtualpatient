@@ -16,16 +16,10 @@
     <div class="display-field">
         <%: Html.DisplayFor(model => model.NomeCurso) %>
     </div>
-
-    <div class="display-label"><%: Html.LabelFor(model => model.NomeInstituicao) %></div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.NomeInstituicao) %> 
-    </div>
-
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>
-        <input type="submit" value=" <%: Resources.Mensagem.salvar %>" />
+        <input type="submit" value=" <%: Resources.Mensagem.deletar %>" />
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </p>
 <% } %>

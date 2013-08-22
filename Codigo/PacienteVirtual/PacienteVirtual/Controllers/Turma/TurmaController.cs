@@ -11,6 +11,7 @@ namespace PacienteVirtual.Controllers
         GerenciadorTurma gTurma = GerenciadorTurma.GetInstance();
         GerenciadorInstituicao gInstituicao = GerenciadorInstituicao.GetInstance();
         GerenciadorDisciplina gDisciplina = GerenciadorDisciplina.GetInstance();
+        GerenciadorCurso gCurso = GerenciadorCurso.GetInstance();
 
         //
         // GET: /Turma/
@@ -33,6 +34,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.IdCurso = new SelectList(gCurso.ObterTodos().ToList(), "IdCurso", "NomeCurso");
             ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao");
             ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina");
             return View();
@@ -49,6 +51,7 @@ namespace PacienteVirtual.Controllers
                 turmaModel.IdTurma = gTurma.Inserir(turmaModel);
                 return RedirectToAction("Index");
             }
+            ViewBag.IdCurso = new SelectList(gCurso.ObterTodos().ToList(), "IdCurso", "NomeCurso", turmaModel.IdCurso);
             ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
             ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina", turmaModel.IdDisciplina); 
             return View(turmaModel);
@@ -60,6 +63,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(int id)
         {
             TurmaModel turmaModel = GerenciadorTurma.GetInstance().Obter(id);
+            ViewBag.IdCurso = new SelectList(gCurso.ObterTodos().ToList(), "IdCurso", "NomeCurso", turmaModel.IdCurso);
             ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
             ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina", turmaModel.IdDisciplina); 
             return View(turmaModel);
@@ -73,11 +77,10 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                
                 gTurma.Atualizar(turmaModel);
                 return RedirectToAction("Index");
             }
-
+            ViewBag.IdCurso = new SelectList(gCurso.ObterTodos().ToList(), "IdCurso", "NomeCurso", turmaModel.IdCurso);
             ViewBag.IdInstituicao = new SelectList(gInstituicao.ObterTodos().ToList(), "IdInstituicao", "NomeInstituicao", turmaModel.IdInstituicao);
             ViewBag.IdDisciplina = new SelectList(gDisciplina.ObterTodos().ToList(), "IdDisciplina", "NomeDisciplina", turmaModel.IdDisciplina);
             return View(turmaModel);
@@ -88,12 +91,10 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Delete(int id)
         {
-
             TurmaModel turmaModel = GerenciadorTurma.GetInstance().Obter(id);
-            
-            ViewBag.Instituicao = gInstituicao.Obter(turmaModel.IdInstituicao).NomeInstituicao;
-            ViewBag.Disciplinas = gDisciplina.Obter(turmaModel.IdDisciplina).NomeDisciplina;
-            
+            ViewBag.IdCurso = gCurso.Obter(turmaModel.IdCurso).NomeCurso;
+            ViewBag.IdInstituicao = gInstituicao.Obter(turmaModel.IdInstituicao).NomeInstituicao;
+            ViewBag.IdDisciplina = gDisciplina.Obter(turmaModel.IdDisciplina).NomeDisciplina;            
             return View(turmaModel);
         }
 
@@ -103,11 +104,9 @@ namespace PacienteVirtual.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
-        {
-          
+        {          
             gTurma.Remover(id);
             return RedirectToAction("Index");
-
         }
 
         protected override void Dispose(bool disposing)

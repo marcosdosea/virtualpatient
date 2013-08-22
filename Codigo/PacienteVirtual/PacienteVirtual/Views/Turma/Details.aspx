@@ -11,6 +11,11 @@
 <fieldset>
     <legend><%: Resources.Mensagem.turma %></legend>
 
+    <div class="display-label">  <%: Html.LabelFor(model => model.Ativa) %></div>
+    <div class="display-field">
+        <%: Html.DisplayFor(model => model.Ativa) %>
+    </div>
+
     <div class="display-label">  <%: Html.LabelFor(model => model.Codigo) %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Codigo) %>
@@ -30,9 +35,12 @@
     <div class="display-field">
         <%: Html.DisplayFor(model => model.NomeInstituicao) %>
     </div>
+    <div class="display-label">  <%: Html.LabelFor(model => model.NomeCurso) %> </div>
+    <div class="display-field">
+        <%: Html.DisplayFor(model => model.NomeCurso) %>
+    </div>
 </fieldset>
 <p>
-
     <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=Model.IdTurma }) %> |
     <%: Html.ActionLink(Resources.Mensagem.voltar, "Index")%>
 </p>
