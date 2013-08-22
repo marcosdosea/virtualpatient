@@ -14,7 +14,7 @@
 <div class="box-content"> <table class="table table-bordered table-striped">
     <tr>
         <th>
-            <%: Resources.Mensagem.criar%>
+            <%: Resources.Mensagem.alergia%>
         </th>
         <th></th>
     </tr>

@@ -22,10 +22,11 @@
         <div class="editor-field">
         <div class="controls">
             <%: Html.TextAreaFor(model => model.DescricaoQueixa) %>
-            </div>
             <%: Html.ValidationMessageFor(model => model.DescricaoQueixa) %>
+            </div>
+            
         </div>
-
+        <br />
         <div class="editor-label">
             <%: Html.LabelFor(model => model.NomeSistema) %>
         </div>

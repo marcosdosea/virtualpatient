@@ -27,7 +27,7 @@
         <td>
             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdBebida }) %> |
             <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = item.IdBebida })%> |
-            <%: Html.ActionLink(Resources.Mensagem.excluir, "Delete", new { id = item.IdBebida })%>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = item.IdBebida })%>
         </td>
     </tr>
 <% } %>
