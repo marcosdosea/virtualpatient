@@ -594,4 +594,7 @@
   <data name="opcoes" xml:space="preserve">
     <value>Opções</value>
   </data>
+  <data name="solicitar_matricula_turma" xml:space="preserve">
+    <value>Solicitar Matricula em Turma</value>
+  </data>
 </root>

@@ -94,9 +94,6 @@
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.medicamentos, "Index", "Medicamentos")%>
-                                        </li>
-                                        <li>
                                             <%: Html.ActionLink(Resources.Mensagem.pergunta, "Index", "Pergunta")%>
                                         </li>
                                         <li>
@@ -158,6 +155,9 @@
                                         </li>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.instituicao, "Index", "Instituicao")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
                                         </li>
                                     </ul>
                                 </li>

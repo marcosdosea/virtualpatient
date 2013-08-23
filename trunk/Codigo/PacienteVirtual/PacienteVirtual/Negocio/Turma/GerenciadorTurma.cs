@@ -143,9 +143,9 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public IEnumerable<TurmaModel> ObterPorNome(string Codigo)
+        public IEnumerable<TurmaModel> ObterPorId(int codigo)
         {
-            return GetQuery().Where(turma => turma.Codigo.StartsWith(Codigo)).ToList();
+            return GetQuery().Where(turma => turma.IdInstituicao == codigo).ToList();
         }
 
         /// <summary>
