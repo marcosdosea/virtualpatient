@@ -140,6 +140,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\SolicitarMatriculaTurmaController.cs" />
+    <Compile Include="Models\Turma\SolicitarMatriculaTurmaModel.cs" />
     <Compile Include="Resources\Mensagem.en.designer.cs">
       <DependentUpon>Mensagem.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -529,6 +531,7 @@
     <Content Include="Views\Consulta\ExperienciaMedicamentos.ascx" />
     <Content Include="Views\Consulta\Index.aspx" />
     <Content Include="Views\Consulta\RelatoClinico.ascx" />
+    <Content Include="Views\SolicitarMatriculaTurma\Index.aspx" />
     <Content Include="Views\VMPaciente\Curso.ascx" />
     <Content Include="Views\Curso\Create.aspx" />
     <Content Include="Views\Curso\Delete.aspx" />
