@@ -597,4 +597,13 @@
   <data name="solicitar_matricula_turma" xml:space="preserve">
     <value>Solicitar Matricula em Turma</value>
   </data>
+  <data name="criar_conta" xml:space="preserve">
+    <value>Criar Conta</value>
+  </data>
+  <data name="nome_pessoa" xml:space="preserve">
+    <value>Nome da Pessoa</value>
+  </data>
+  <data name="enviar_solicitacao_turma" xml:space="preserve">
+    <value>Enviar Solicitação de Matrícula</value>
+  </data>
 </root>

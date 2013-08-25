@@ -140,8 +140,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\SolicitarMatriculaTurmaController.cs" />
+    <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
     <Compile Include="Models\Turma\SolicitarMatriculaTurmaModel.cs" />
+    <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
+    <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Resources\Mensagem.en.designer.cs">
       <DependentUpon>Mensagem.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>

@@ -95,11 +95,19 @@ namespace PacienteVirtual.Negocio
         {
             var repPessoa = new RepositorioGenerico<tb_pessoa>();
             var pvEntities = (pvEntities)repPessoa.ObterContexto();
-            var query = from pessoa in pvEntities.tb_pessoa
+            var query = from tb_pessoa in pvEntities.tb_pessoa
+                        join my_aspnet_users in pvEntities.my_aspnet_users
+                        on tb_pessoa.idUser equals my_aspnet_users.id
                         select new PessoaModel
                         {
-                            IdPessoa = pessoa.IdPessoa,
-                            Nome = pessoa.Nome
+                            IdPessoa = tb_pessoa.IdPessoa,
+                            IdUser = tb_pessoa.idUser,
+                            Nome = tb_pessoa.Nome,
+                            Cpf = tb_pessoa.Cpf,
+                            Fone = tb_pessoa.Fone,
+                            Matricula = tb_pessoa.Matricula,
+
+                            UserName = my_aspnet_users.name
                         };
             return query;
         }
@@ -141,7 +149,10 @@ namespace PacienteVirtual.Negocio
         private static void Atribuir(PessoaModel pessoa, tb_pessoa _pessoaE)
         {
             _pessoaE.Nome = pessoa.Nome;
-            
+            _pessoaE.idUser = pessoa.IdUser;
+            _pessoaE.Cpf = pessoa.Cpf;
+            _pessoaE.Fone = pessoa.Fone;
+            _pessoaE.Matricula = pessoa.Matricula;
         }
     }
 }
