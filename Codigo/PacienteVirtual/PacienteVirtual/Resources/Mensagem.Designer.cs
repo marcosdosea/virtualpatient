@@ -349,6 +349,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Criar Conta.
+        /// </summary>
+        public static string criar_conta {
+            get {
+                return ResourceManager.GetString("criar_conta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cultural.
         /// </summary>
         public static string cultural {
@@ -543,6 +552,15 @@ namespace Resources {
         public static string endereco_email {
             get {
                 return ResourceManager.GetString("endereco_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enviar Solicitação de Matrícula.
+        /// </summary>
+        public static string enviar_solicitacao_turma {
+            get {
+                return ResourceManager.GetString("enviar_solicitacao_turma", resourceCulture);
             }
         }
         
@@ -993,6 +1011,15 @@ namespace Resources {
         public static string nome_paciente {
             get {
                 return ResourceManager.GetString("nome_paciente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome da Pessoa.
+        /// </summary>
+        public static string nome_pessoa {
+            get {
+                return ResourceManager.GetString("nome_pessoa", resourceCulture);
             }
         }
         

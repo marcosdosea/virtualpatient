@@ -65,7 +65,6 @@ namespace PacienteVirtual.Models
         /// parte da pessoa
         /// </summary>
 
-        /*
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nome_pessoa", ResourceType = typeof(Mensagem))]
         public string Nome { get; set; }
@@ -80,6 +79,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "matricula", ResourceType = typeof(Mensagem))]
-        public string Matricula { get; set; } */
+        public string Matricula { get; set; }
+
     }
 }

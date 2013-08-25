@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 using PacienteVirtual.Models;
+using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual.Controllers
 {
@@ -75,10 +76,35 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
+                // testando para ver se armazena a pessoa na base ....
+                /*
+                PessoaModel pessoaModel = new PessoaModel();
+                pessoaModel.IdUser = 2;
+                pessoaModel.Nome = model.Nome;
+                pessoaModel.Cpf = model.Cpf;
+                pessoaModel.Fone = model.Fone;
+                pessoaModel.Matricula = model.Matricula;
+                pessoaModel.IdPessoa = GerenciadorPessoa.GetInstance().Inserir(pessoaModel); */
+
+                // fim do testa armazena pessoa nan base
+
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, null, out createStatus);
                 // inserir pessoa
+
+                
+                PessoaModel pessoaModel = new PessoaModel();
+                pessoaModel.IdUser = 2;
+                pessoaModel.Nome = model.Nome;
+                pessoaModel.Cpf = model.Cpf;
+                pessoaModel.Fone = model.Fone;
+                pessoaModel.Matricula = model.Matricula;
+                pessoaModel.IdPessoa = GerenciadorPessoa.GetInstance().Inserir(pessoaModel);
+
+                
+                // fim do inserir pessoa
+
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
