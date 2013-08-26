@@ -142,6 +142,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ativar.
+        /// </summary>
+        public static string ativar {
+            get {
+                return ResourceManager.GetString("ativar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ativar Matrículas em Turma.
+        /// </summary>
+        public static string ativar_matriculas_turma {
+            get {
+                return ResourceManager.GetString("ativar_matriculas_turma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bebida.
         /// </summary>
         public static string bebida {
@@ -453,6 +471,15 @@ namespace Resources {
         public static string demografico_antropometricos {
             get {
                 return ResourceManager.GetString("demografico_antropometricos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desativar.
+        /// </summary>
+        public static string desativar {
+            get {
+                return ResourceManager.GetString("desativar", resourceCulture);
             }
         }
         

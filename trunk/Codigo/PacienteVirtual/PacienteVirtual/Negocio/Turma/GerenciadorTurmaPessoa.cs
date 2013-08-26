@@ -94,12 +94,16 @@ namespace PacienteVirtual.Negocio.Turma
             var repTurmaPessoa = new RepositorioGenerico<tb_turma_pessoa>();
             var pvEntities = (pvEntities)repTurmaPessoa.ObterContexto();
             var query = from tb_turma_pessoa in pvEntities.tb_turma_pessoa
+                        join tb_pessoa in pvEntities.tb_pessoa
+                        on tb_turma_pessoa.IdPessoa equals tb_pessoa.IdPessoa
                         select new TurmaPessoaModel
                         {
                             IdTurma = tb_turma_pessoa.IdTurma,
                             IdPessoa = tb_turma_pessoa.IdPessoa,
                             IdRole = tb_turma_pessoa.IdRole,
-                            Ativa = tb_turma_pessoa.Ativa
+                            Ativa = tb_turma_pessoa.Ativa,
+
+                            NomePessoa =  tb_pessoa.Nome
                         };
             return query;
         }
@@ -119,7 +123,17 @@ namespace PacienteVirtual.Negocio.Turma
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterPorTurma(int codTurma)
         {
-            return GetQuery().Where(tpr => tpr.IdTurma == codTurma).ToList();
+            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == false).ToList();
+        }
+
+        /// <summary>
+        /// Obtém turmaPessoa com o código especificiado
+        /// </summary>
+        /// <param name="codTurma"></param>
+        /// <returns></returns>
+        public TurmaPessoaModel Obter(int idTurmaPessoa)
+        {
+            return GetQuery().Where(turma => turma.IdTurma == idTurmaPessoa).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>

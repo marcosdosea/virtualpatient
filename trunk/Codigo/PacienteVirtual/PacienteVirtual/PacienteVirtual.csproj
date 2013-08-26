@@ -140,6 +140,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
     <Compile Include="Models\Turma\SolicitarMatriculaTurmaModel.cs" />
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
@@ -483,6 +484,9 @@
     <Content Include="Views\Alergia\Details.aspx" />
     <Content Include="Views\Alergia\Edit.aspx" />
     <Content Include="Views\Alergia\Index.aspx" />
+    <Content Include="Views\AtivarMatriculasTurma\Ativar.aspx" />
+    <Content Include="Views\AtivarMatriculasTurma\Desativar.aspx" />
+    <Content Include="Views\AtivarMatriculasTurma\Index.aspx" />
     <Content Include="Views\Bebida\Create.aspx" />
     <Content Include="Views\Bebida\Delete.aspx" />
     <Content Include="Views\Bebida\Details.aspx" />

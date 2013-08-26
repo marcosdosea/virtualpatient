@@ -606,4 +606,13 @@
   <data name="enviar_solicitacao_turma" xml:space="preserve">
     <value>Enviar Solicitação de Matrícula</value>
   </data>
+  <data name="ativar" xml:space="preserve">
+    <value>Ativar</value>
+  </data>
+  <data name="ativar_matriculas_turma" xml:space="preserve">
+    <value>Ativar Matrículas em Turma</value>
+  </data>
+  <data name="desativar" xml:space="preserve">
+    <value>Desativar</value>
+  </data>
 </root>
