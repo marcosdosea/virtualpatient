@@ -17,7 +17,7 @@
             <%: Resources.Mensagem.relato_clinico %></legend>
         <%: Html.HiddenFor(model => model.IdRelato) %>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdPaciente, "tb_paciente") %>
+            <%: Html.LabelFor(model => model.IdPaciente/*, "tb_paciente"*/) %>
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdPaciente", Resources.Mensagem.selecione)%>

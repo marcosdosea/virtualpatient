@@ -132,9 +132,9 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="codDisciplina"></param>
         /// <returns></returns>
-        public RelatoClinicoModel Obter(int idPaciente)
+        public RelatoClinicoModel Obter(int idRelato)
         {
-            return GetQuery().Where(relato => relato.IdPaciente == idPaciente).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(relato => relato.IdRelato == idRelato).ToList().ElementAtOrDefault(0);
         }
         /// <summary>
         /// Obtém relatos que iniciam com o relato em texto
