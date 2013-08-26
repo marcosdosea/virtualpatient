@@ -11,7 +11,7 @@ namespace PacienteVirtual.Models.Turma
     {
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
+        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public int IdInstituicao { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -19,7 +19,7 @@ namespace PacienteVirtual.Models.Turma
         public string NomeInstituicao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "IdTurma: ")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdTurma { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
