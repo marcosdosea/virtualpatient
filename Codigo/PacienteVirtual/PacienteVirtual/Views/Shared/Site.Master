@@ -159,6 +159,9 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
                                         </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
