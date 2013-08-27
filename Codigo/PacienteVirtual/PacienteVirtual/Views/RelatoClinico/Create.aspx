@@ -45,8 +45,12 @@
                 <%: Html.EditorFor(model => model.OrdemCronologica) %>
                 <%: Html.ValidationMessageFor(model => model.OrdemCronologica) %>
             </div>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.RelatoVideo) %>
+            </div>
             <div class="editor-field">
-                <input class="span4" type="file" name="Arquivo" value="Selecione o video" />
+                <%: Html.EditorFor(model => model.RelatoVideo) %>
+                <%: Html.ValidationMessageFor(model => model.RelatoVideo)%>
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.NivelDificuldade) %>
