@@ -37,20 +37,37 @@ namespace PacienteVirtual.Controllers.Turma
             return View();
         }
 
-        public ViewResult Ativar(int id)
+
+        public ActionResult Ativar(int id)
         {
-            TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().Obter(id);
-            tpm.Ativa = true;
-            GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
-            return View();
+            try
+            {
+                TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().Obter(id);
+                tpm.Ativa = true;
+                GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
+                return RedirectToAction("Index");
+            }
+            catch 
+            {
+                return View();
+            }
         }
 
-        public ViewResult Desativar(int id)
+        
+        public ActionResult Desativar(int id)
         {
-            TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().Obter(id);
-            tpm.Ativa = false;
-            GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
-            return View();
+            try
+            {
+                TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().Obter(id);
+                tpm.Ativa = false;
+                GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
+                return RedirectToAction("Index");
+            }
+            catch 
+            {
+                return View();
+            }
+            
         }
 
     }

@@ -30,13 +30,12 @@
                     <%: Html.DisplayFor(modelItem => item.NomePessoa) %>
                 </td>
                 <td>
-                    <%: Html.ActionLink(Resources.Mensagem.ativar, "Ativar", new { id=item.IdTurma }) %>
+                    <%: Html.ActionLink(Resources.Mensagem.ativar, "Ativar", new { id = item.IdTurma }, new { onclick = "alert('Matrícula Ativada!')" })%>
                     |
-                    <%: Html.ActionLink(Resources.Mensagem.desativar, "Desativar", new { id=item.IdTurma }) %>
+                    <%: Html.ActionLink(Resources.Mensagem.desativar, "Desativar", new { id = item.IdTurma }, new { onclick = "alert('Matrícula Desativada!')" })%>
                 </td>
             </tr>
             <% } %>
         </table>
     </div>
 </asp:Content>
-
