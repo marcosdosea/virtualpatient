@@ -94,7 +94,7 @@ namespace PacienteVirtual.Controllers
 
             if (relatoModel.IdPaciente > 0)
             {
-                ViewBag.teste = "passou pelo -1" + relatoModel.IdPaciente;
+                //ViewBag.teste = "passou pelo -1" + relatoModel.IdPaciente;
                 ViewBag.fotoId = relatoModel.IdPaciente;
                 ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
 
@@ -110,6 +110,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(int id)
         {
             RelatoClinicoModel relatoModel = gRelato.Obter(id);
+            ViewBag.fotoId = relatoModel.IdPaciente;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
             return View(relatoModel);
         }
@@ -122,9 +123,22 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                gRelato.Atualizar(relatoModel);
-                return RedirectToAction("Index");
+                bool salvar = true;
+                foreach (var ordem in gRelato.ObterRelatos(relatoModel.IdPaciente))
+                {
+                    if (ordem.OrdemCronologica == relatoModel.OrdemCronologica)
+                    {
+                         salvar = false;
+                         break;
+                    }
+                };
+                if (salvar)
+                {
+                    gRelato.Atualizar(relatoModel);
+                    return RedirectToAction("Index");
+                }
             }
+            ViewBag.fotoId = relatoModel.IdPaciente;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
             return View(relatoModel);
         }

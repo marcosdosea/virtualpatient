@@ -31,7 +31,7 @@ namespace PacienteVirtual.Controllers
             {
                 ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterPorId(-1), "IdTurma", "Codigo");
             }
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterPorId(IdInstituicao), "IdTurma", "Codigo");
+            //ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterPorId(IdInstituicao), "IdTurma", "Codigo");
             if (ModelState.IsValid)
             {
                 //TurmaPessoaModel tpm = new TurmaPessoaModel();
