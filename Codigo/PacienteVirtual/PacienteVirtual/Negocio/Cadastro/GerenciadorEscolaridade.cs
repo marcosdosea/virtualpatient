@@ -100,7 +100,7 @@ namespace PacienteVirtual.Negocio
                         select new EscolaridadeModel
                         {
                             IdEscolaridade = escolaridade.IdEscolaridade,
-                            EscolaridadeNivel = escolaridade.Nivel
+                            Nivel = escolaridade.Nivel
                         };
             return query;
         }
@@ -131,7 +131,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<EscolaridadeModel> ObterPorNome(string nivel)
         {
-            return GetQuery().Where(escolaridade => escolaridade.EscolaridadeNivel.StartsWith(nivel)).ToList();
+            return GetQuery().Where(escolaridade => escolaridade.Nivel.StartsWith(nivel)).ToList();
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace PacienteVirtual.Negocio
         /// <param name="_tb_escolaridade"></param>
         private static void Atribuir(EscolaridadeModel escolaridade, tb_escolaridade _tb_escolaridade)
         {
-            _tb_escolaridade.Nivel = escolaridade.EscolaridadeNivel;
+            _tb_escolaridade.Nivel = escolaridade.Nivel;
         }
     }
 }

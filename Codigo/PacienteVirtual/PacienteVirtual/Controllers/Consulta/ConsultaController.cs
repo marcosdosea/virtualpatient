@@ -7,7 +7,12 @@ namespace PacienteVirtual.Controllers
 {
     public class ConsultaController : Controller
     {
-      
+
+        GerenciadorEscolaridade gEscolaridade = GerenciadorEscolaridade.GetInstance();
+        GerenciadorPlanoSaude gPlanoSaude = GerenciadorPlanoSaude.GetInstance();
+        GerenciadorOcupacao gOcupacao = GerenciadorOcupacao.GetInstance();
+        GerenciadorResposta gResposta = GerenciadorResposta.GetInstance();
+
         public ViewResult Index()
         {
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
@@ -31,48 +36,47 @@ namespace PacienteVirtual.Controllers
         {
             int idPessoa = Global.ID_PESSOA;
             int idTurma = Global.ID_TURMA;
-            ConsultaModel vmConsulta = new ConsultaModel();
+            ConsultaModel consultaModel = new ConsultaModel();
 
-            ConsultaVariavelModel consultaV = GerenciadorConsultaVariavel.GetInstance().Obter(idTurma, idPessoa, idRelato);
+            SessionController.IdRelato = idRelato;
+            SessionController.IdConsultaFixo = idConsultaFixo;
 
-            if (consultaV == null)//caso a consulta nunca tenha sido feita para esse relato
-            {
-                ConsultaFixoModel consultaF = new ConsultaFixoModel();
+            
+            consultaModel.Paciente = SessionController.Paciente;
+            consultaModel.RelatoClinico = SessionController.RelatoClinico;
+            consultaModel.ConsultaFixo = SessionController.ConsultaFixo;
+            consultaModel.Historia = SessionController.Historia;
+            consultaModel.DemograficoAntropometrico = SessionController.DemograficosAntropometricos;
+            consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
+            consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
+            consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = idConsultaFixo };
+            
+            consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaFixo, idRelato);
+            consultaModel.EstiloVida = new EstiloVidaModel() { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.MedicamentoPrescrito = new MedicamentoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.MedicamentosAnteriores = new MedicamentosAnterioresModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
 
-                long idConsultaF = GerenciadorConsultaFixo.GetInstance().Inserir(consultaF);
-                //ainda em teste
-                //alimenta a tabela tb_turma_pessoa_relato 
-                TurmaPessoaRelatoModel tPR = new TurmaPessoaRelatoModel();
-                tPR.IdPessoa = idPessoa;
-                tPR.IdTurma = idTurma;
-                tPR.IdRelato = idRelato;
-                tPR.IdConsultaFixo = idConsultaF; //Default
-                tPR.EstadoPreenchimento = "A";
-                                
-                GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tPR);
-                
-                //Cria uma consulta Variavel caso não exista uma para as seguintes especificações
-                ConsultaVariavelModel consultaVM = new ConsultaVariavelModel();
-                consultaVM.IdPessoa = idPessoa;
-                consultaVM.IdTurma = idTurma;
-                consultaVM.IdRelato = idRelato;
-                consultaVM.IdConsultaFixo = idConsultaF;//Default
-                consultaVM.IdRazaoEncontro = 1;//Default
+            // Dados Demográficos
+            ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel", consultaModel.DemograficoAntropometrico.IdEscolaridade);
+            ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao", consultaModel.DemograficoAntropometrico.IdOcupacao);
+            ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome", consultaModel.DemograficoAntropometrico.IdPlanoSaude);
+            
+            //Experiência Medicamentos
+            ViewBag.IdRespostaEsperaTratamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaPreocupacoes = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaGrauEntendimento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaCultural = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaComportamento = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            ViewBag.IdRespostaIncorporadoPlano = new SelectList(gResposta.ObterTodos().ToList(), "IdResposta", "Resposta");
+            
+            // Diário Pessoal
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
+            ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
+            
 
-                long idConsultaV = GerenciadorConsultaVariavel.GetInstance().Inserir(consultaVM);
-
-                vmConsulta.idConsultaFixo = idConsultaF;
-                vmConsulta.idConsultaVariavel = idConsultaV;
-
-                return View(vmConsulta);
-            }
-
-            vmConsulta.idConsultaFixo = consultaV.IdConsultaFixo;
-            vmConsulta.idConsultaVariavel = consultaV.IdConsultaVariavel;
-            return View(vmConsulta);
+            return View(consultaModel);
         }
-
-        
 
         //Experiencia medicamentos
         public PartialViewResult ExperienciaMedicamentos(int id)

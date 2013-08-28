@@ -59,7 +59,7 @@
                 </td>
                 <td></td>
                 <td>
-                    <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idPaciente = item.IdRelato, idRelato = item.IdConsultaFixo})%> 
+                    <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idRelato = item.IdRelato, idConsultaFixo = item.IdConsultaFixo})%> 
                 </td>
             </tr>
             <% } %>

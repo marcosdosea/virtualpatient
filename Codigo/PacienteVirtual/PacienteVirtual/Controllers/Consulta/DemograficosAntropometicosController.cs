@@ -5,26 +5,26 @@ using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual.Controllers
 { 
-    public class ExperienciaMedicamentosController : Controller
+    public class DemograficosAntropometicosController : Controller
     {
+        private pvEntities db = new pvEntities();
 
-        GerenciadorExperienciaMedicamentos gExpMedicamento = GerenciadorExperienciaMedicamentos.GetInstance();
-        GerenciadorResposta gResposta = GerenciadorResposta.GetInstance();
-        
+        GerenciadorDemograficosAntropometricos gDemoAntrop = GerenciadorDemograficosAntropometricos.GetInstance();
         
         //
-        // POST: /ExperienciaMedicamentos/Edit/5
+        // POST: /DemograficosAntropomedicos/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ExperienciaMedicamentosModel expMedicamento)
+        public ActionResult Edit(DemograficosAntropometricosModel demoAntro)
         {
             if (ModelState.IsValid)
             {
-                gExpMedicamento.Atualizar(expMedicamento);
+                gDemoAntrop.Atualizar(demoAntro);
             }
             return RedirectToAction("Edit", "Consulta");
         }
 
+        
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

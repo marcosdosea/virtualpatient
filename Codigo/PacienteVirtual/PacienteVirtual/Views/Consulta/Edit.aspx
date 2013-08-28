@@ -31,7 +31,7 @@
             <div class="thumbnails center">
                 <div class="span2">
                     <div class="thumbnail">
-                        <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente",new { id = Model.paciente.IdPaciente}) %>"
+                        <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente",new { id = Model.Paciente.IdPaciente}) %>"
                             alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
                     </div>
                 </div>
@@ -66,17 +66,19 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../DemograficosAntropomedicos/Edit", Model.DemograficoAntropometrico);%>
+                                <% Html.RenderPartial("../DemograficosAntropometicos/Edit", Model.DemograficoAntropometrico);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-2">
                             <div class="thumbnail">
-                                <% Html.RenderAction("ExperienciaMedicamentos", "Consulta", new RouteValueDictionary(new { id = Model.idConsultaFixo }));%>
+                                <% Html.RenderPartial("../ExperienciaMedicamentos/Edit", Model.ExperienciaMedicamentos);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-3">
                             <div class="thumbnail">
-                                <% Html.RenderAction("DiarioPessoal", "Consulta", new RouteValueDictionary(new { id = Model.idConsultaFixo }));%>
+                                <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
+                                <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
+
                             </div>
                         </div>
                     </div>
@@ -100,28 +102,28 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
                             <div class="thumbnail">
-                                <% Html.RenderAction("EstiloVida", "Consulta", new RouteValueDictionary(new { id = Model.idConsultaVariavel }));%>
+                                <%  Html.RenderPartial("EstiloVida", Model.EstiloVida);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-2">
                             <div class="thumbnail">
-                                <% Html.RenderAction("MedicamentosAnteriores", "Consulta", new RouteValueDictionary(new { id = Model.idConsultaVariavel }));%>
+                                <% Html.RenderPartial("MedicamentosAnteriores", Model.MedicamentosAnteriores );%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-3">
                             <div class="thumbnail">
-                                <% Html.RenderAction("MedicamentoPrescrito", "Consulta", new RouteValueDictionary(new { id = Model.idConsultaVariavel }));%>
+                                <% Html.RenderPartial("MedicamentoPrescrito", Model.MedicamentoPrescrito );%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-4">
                             <div class="thumbnail">
-                                <% Html.RenderAction("MedicamentoNaoPrescrito", "Consulta", new RouteValueDictionary(new { id = Model.idConsultaVariavel }));%>
+                                <% Html.RenderPartial("MedicamentoNaoPrescrito", Model.MedicamentoNaoPrescrito);%>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="thumbnail">
-                    <% Html.RenderAction("Queixa", "Consulta", new RouteValueDictionary(new { id = Model.idQueixa }));%>
+                    <% Html.RenderAction("Queixa", "Consulta", new RouteValueDictionary(new { id = Model.IdQueixa }));%>
                     <% Html.RenderAction("ListarQueixa", "Consulta", new { id = 1 });%>
                 </div>
             </div>

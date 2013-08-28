@@ -11,20 +11,7 @@ namespace PacienteVirtual.Controllers
    
         private GerenciadorDiarioPessoal gDiarioPessoal = GerenciadorDiarioPessoal.GetInstance();
         
-        //
-        // GET: /DiarioPessoal/
-        public ViewResult Index()
-        {
-            return View(gDiarioPessoal.Obter(SessionController.IdConsultaFixo));
-        }
-
-        public ActionResult Create()
-        {
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome");
-            ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "NomeBebida");
-            return PartialView();
-        }
-
+       
         //
         // POST: /DiarioPessoal/Create
         [HttpPost]
