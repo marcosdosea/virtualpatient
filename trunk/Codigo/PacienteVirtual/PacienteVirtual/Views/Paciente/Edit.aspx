@@ -26,26 +26,33 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.paciente %></legend>
+        <legend>
+            <%: Resources.Mensagem.paciente %></legend>
         <%: Html.HiddenFor(model => model.IdPaciente) %>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.NomePaciente) %>
+            <%: Html.LabelFor(model => model.NomePaciente)%>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.NomePaciente) %>
-            <%: Html.ValidationMessageFor(model => model.NomePaciente) %>
+            <%: Html.EditorFor(model => model.NomePaciente)%>
+            <%: Html.ValidationMessageFor(model => model.NomePaciente)%>
         </div>
-        <img src='<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = Model.IdPaciente})) %>'
-            width="100" height="110" alt="<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = Model.IdPaciente})) %>" />
-        <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" />
-        <%: Html.ValidationMessageFor(model => model.Foto)%>
-        <br />
-        <br />  
-        <img class="media" id="PreviewDaImagem" src="" alt="Definir Imagem Padrão" style="width: 250px;
-            height: 250px;" />
-    <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
-    </div>
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.Foto)%>
+        </div>
+        <div class="editor-field">
+            <img class="media" id="PreviewDaImagem" src="<%: Url.Action("GetImage", "Paciente") %>/<%: ViewBag.fotoId %>"
+                alt="Definir Imagem Padrão" style="width: 250px; height: 250px;" />
+            <p>
+                <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" /></p>
+            <%: Html.ValidationMessageFor(model => model.Foto)%>
+        </div>
+        <div class="form-actions">
+            <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+        </div>
+        <div class="progress progress-info progress-striped active ">
+            <div class="bar" style="width: 100%">
+            </div>
+        </div>
     </fieldset>
     <% } %>
     <div>

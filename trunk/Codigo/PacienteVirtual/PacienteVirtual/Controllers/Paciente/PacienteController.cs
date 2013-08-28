@@ -73,7 +73,9 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Edit(int id)
         {
+
             PacienteModel pacienteModel = GerenciadorPaciente.GetInstance().Obter(id);
+            ViewBag.fotoId = pacienteModel.IdPaciente;
             return View(pacienteModel);
         }
 
