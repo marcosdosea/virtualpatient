@@ -99,7 +99,7 @@ namespace PacienteVirtual.Negocio
                         select new OcupacaoModel
                         {
                             IdOcupacao = ocupacao.IdOcupacao,
-                            OcupacaoDescricao = ocupacao.Descricao
+                            Descricao = ocupacao.Descricao
                         };
             return query;
         }
@@ -130,7 +130,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<OcupacaoModel> ObterPorNome(string descricao)
         {
-            return GetQuery().Where(ocupacao => ocupacao.OcupacaoDescricao.StartsWith(descricao)).ToList();
+            return GetQuery().Where(ocupacao => ocupacao.Descricao.StartsWith(descricao)).ToList();
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace PacienteVirtual.Negocio
         /// <param name="_ocupacaoE"></param>
         private static void Atribuir(OcupacaoModel ocupacao, tb_ocupacao _ocupacaoE)
         {
-            _ocupacaoE.Descricao = ocupacao.OcupacaoDescricao;
+            _ocupacaoE.Descricao = ocupacao.Descricao;
         }
     }
 }

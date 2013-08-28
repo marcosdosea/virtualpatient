@@ -139,7 +139,7 @@ namespace PacienteVirtual.Negocio
         /// <param name="_expMedicamentosE"></param>
         private static void Atribuir(ExperienciaMedicamentosModel expMedicamentos, tb_experiencia_medicamentos _expMedicamentosE)
         {
-
+            _expMedicamentosE.IdConsultaFixo = expMedicamentos.IdConsultaFixo;
             _expMedicamentosE.IdRespostaEsperaTratamento = expMedicamentos.IdRespostaEsperaTratamento;
             _expMedicamentosE.IdRespostaPreocupacoes = expMedicamentos.IdRespostaPreocupacoes;
             _expMedicamentosE.IdRespostaGrauEntendimento = expMedicamentos.IdRespostaGrauEntendimento;

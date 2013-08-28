@@ -100,7 +100,7 @@ namespace PacienteVirtual.Negocio
                         select new BebidaModel
                         {
                             IdBebida = bebida.IdBebida,
-                            NomeBebida = bebida.Nome
+                            Nome = bebida.Nome
                         };
             return query;
         }
@@ -131,7 +131,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<BebidaModel> ObterPorNome(string nome)
         {
-            return GetQuery().Where(bebida => bebida.NomeBebida.StartsWith(nome)).ToList();
+            return GetQuery().Where(bebida => bebida.Nome.StartsWith(nome)).ToList();
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace PacienteVirtual.Negocio
         /// <param name="_tb_bebida"></param>
         private static void Atribuir(BebidaModel bebida, tb_bebida _tb_bebida)
         {
-            _tb_bebida.Nome = bebida.NomeBebida;
+            _tb_bebida.Nome = bebida.Nome;
         }
     }
 }

@@ -20,18 +20,18 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-        public static int IdConsultaFixo
+        public static long IdConsultaFixo
         {
             get
             {
-                return (int)HttpContext.Current.Session["_IdConsultaFixo"];
+                return (long)HttpContext.Current.Session["_IdConsultaFixo"];
             }
             set
             {
                 HttpContext.Current.Session["_IdConsultaFixo"] = value;
             }
         }
-        public PacienteModel Paciente 
+        public static PacienteModel Paciente 
         {
             get
             {
@@ -48,7 +48,7 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_Paciente"] = value;
             }
         }
-        public RelatoClinicoModel RelatoClinico
+        public static RelatoClinicoModel RelatoClinico
         {
             get
             {
@@ -65,11 +65,29 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_RelatoClinico"] = value;
             }
         }
+
+        public static ConsultaFixoModel ConsultaFixo
+        {
+            get
+            {
+                ConsultaFixoModel consultaFixo = (ConsultaFixoModel)HttpContext.Current.Session["_ConsultaFixo"];
+                if (consultaFixo == null)
+                {
+                    consultaFixo = GerenciadorConsultaFixo.GetInstance().Obter(IdConsultaFixo);
+                    HttpContext.Current.Session["_ConsultaFixo"] = consultaFixo;
+                }
+                return consultaFixo;
+            }
+            set
+            {
+                HttpContext.Current.Session["_RelatoClinico"] = value;
+            }
+        }
         
 
         // Dados fixos e compartilhados entre consultas
         
-        public HistoriaModel Historia
+        public static HistoriaModel Historia
         {
             get
             {
@@ -87,7 +105,7 @@ namespace PacienteVirtual.Controllers
             }
         }
         
-        public DemograficosAntropometricosModel DemograficosAntropometricos
+        public static DemograficosAntropometricosModel DemograficosAntropometricos
         {
             get
             {
@@ -105,7 +123,7 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-        public ExperienciaMedicamentosModel ExperienciaMedicamentos
+        public static ExperienciaMedicamentosModel ExperienciaMedicamentos
         {
             get
             {
@@ -113,6 +131,18 @@ namespace PacienteVirtual.Controllers
                 if (experiencia == null)
                 {
                     experiencia = GerenciadorExperienciaMedicamentos.GetInstance().Obter(IdConsultaFixo);
+                    if (experiencia == null)
+                    {
+                        experiencia = new ExperienciaMedicamentosModel();
+                        experiencia.IdConsultaFixo = IdConsultaFixo;
+                        experiencia.IdRespostaComportamento = 1;
+                        experiencia.IdRespostaCultural = 1;
+                        experiencia.IdRespostaEsperaTratamento = 1;
+                        experiencia.IdRespostaGrauEntendimento = 1;
+                        experiencia.IdRespostaIncorporadoPlano = 1;
+                        experiencia.IdRespostaPreocupacoes = 1;
+                        GerenciadorExperienciaMedicamentos.GetInstance().Inserir(experiencia);
+                    }
                     HttpContext.Current.Session["_ExperienciaMedicamentos"] = experiencia;
                 }
                 return experiencia;
@@ -176,7 +206,5 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_listaMedicamentos"] = value;
             }
         }
-        
-
     }
 }

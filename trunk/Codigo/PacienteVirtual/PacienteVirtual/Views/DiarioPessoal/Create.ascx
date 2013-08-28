@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DiarioPessoalModel>" %>
-<h1>
-    <%:  ViewBag.situacao %></h1>
+
 <% using (Html.BeginForm())
    { %>
 <%: Html.ValidationSummary(true) %>

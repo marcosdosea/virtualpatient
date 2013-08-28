@@ -17,11 +17,11 @@
             <%: Resources.Mensagem.bebida %></legend>
         <%: Html.HiddenFor(model => model.IdBebida) %>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.NomeBebida) %>
+            <%: Html.LabelFor(model => model.Nome) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.NomeBebida) %>
-            <%: Html.ValidationMessageFor(model => model.NomeBebida) %>
+            <%: Html.EditorFor(model => model.Nome) %>
+            <%: Html.ValidationMessageFor(model => model.Nome) %>
         </div>
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

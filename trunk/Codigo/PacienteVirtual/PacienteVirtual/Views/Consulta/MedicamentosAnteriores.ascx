@@ -22,29 +22,7 @@
             <th>
             </th>
         </tr>
-        <% foreach (var item in ViewBag.MedicamentosAnteriores as List<PacienteVirtual.Models.MedicamentosAnterioresModel>)
-           { %>
-        <tr>
-            <td>
-                <%: Html.DisplayFor(items => item.MedicamentoNome)%>
-            </td>
-            <td>
-                <%: Html.DisplayFor(items => item.Indicacao)%>
-            </td>
-            <td>
-                <%: Html.DisplayFor(items => item.Resposta)%>
-            </td>
-            <td>
-                <%: Html.DisplayFor(items => item.Periodo)%>
-            </td>
-            <td>
-                <% using (Html.BeginForm())
-                   { %>
-                <%: Html.ActionLink(Resources.Mensagem.remover, "RemoverMedicamentosAnteriores", new { idConsultaV = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento })%>
-                <% } %>
-            </td>
-        </tr>
-        <% } %>
+       
     </table>
 </div>
 <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>

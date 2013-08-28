@@ -7,6 +7,10 @@ namespace PacienteVirtual.Models
 {
     public class ConsultaModel
     {
+        // Consultas
+        public long IdConsultaFixo { get; set; }
+        public int IdQueixa { get; set; }
+
         // Dados do paciente
         public PacienteModel Paciente { get; set; }
         public RelatoClinicoModel RelatoClinico { get; set; }
@@ -19,15 +23,13 @@ namespace PacienteVirtual.Models
         public DiarioPessoalModel DiarioPessoal { get; set; }
         public IEnumerable<DiarioPessoalModel> ListaDiarioPessoal { get; set; }
 
-        
+        // Dados Variáveis nas consultas
+        public ConsultaVariavelModel ConsultaVariavel { get; set; }
+        public EstiloVidaModel EstiloVida { get; set; }
+        public MedicamentoNaoPrescritoModel MedicamentoNaoPrescrito { get; set; }
+        public MedicamentoPrescritoModel MedicamentoPrescrito { get; set; }
+        public MedicamentosAnterioresModel MedicamentosAnteriores { get; set; }
+        //public QueixaModel Queixas
 
-        public long idConsultaFixo { get; set; }
-
-        public long idConsultaVariavel { get; set; }
-
-        public int idQueixa { get; set; }
-
-      
-       
     }
 }
