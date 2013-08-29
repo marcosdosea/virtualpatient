@@ -16,11 +16,11 @@
         <legend>
             <%: Resources.Mensagem.escolaridade %></legend>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.EscolaridadeNivel) %>
+            <%: Html.LabelFor(model => model.Nivel) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.EscolaridadeNivel) %>
-            <%: Html.ValidationMessageFor(model => model.EscolaridadeNivel) %>
+            <%: Html.EditorFor(model => model.Nivel) %>
+            <%: Html.ValidationMessageFor(model => model.Nivel) %>
         </div>
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
