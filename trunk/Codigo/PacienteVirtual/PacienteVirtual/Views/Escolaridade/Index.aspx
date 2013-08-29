@@ -22,7 +22,7 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <%: Html.DisplayFor(modelItem => item.EscolaridadeNivel) %>
+            <%: Html.DisplayFor(modelItem => item.Nivel) %>
         </td>
         <td>
             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdEscolaridade }) %> |

@@ -13,7 +13,7 @@
 
     <div class="display-label"><%: Resources.Mensagem.nivel_escolaridade %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.EscolaridadeNivel) %>
+        <%: Html.DisplayFor(model => model.Nivel) %>
     </div>
 </fieldset>
 <p>
