@@ -74,17 +74,19 @@ namespace PacienteVirtual.Negocio
         /// Remove dados da Bebida
         /// </summary>
         /// <param name="idBebida"></param>
-        public void Remover(int idBebida)
+        public bool Remover(int idBebida)
         {
             try
             {
                 var repBebida = new RepositorioGenerico<tb_bebida>();
                 repBebida.Remover(d => d.IdBebida == idBebida);
                 repBebida.SaveChanges();
+                return true;
             }
             catch (Exception e)
             {
-                throw new DadosException("Bebida", e.Message, e);
+                //throw new DadosException("Bebida", e.Message, e);
+                return false;
             }
         }
 

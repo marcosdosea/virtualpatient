@@ -11,6 +11,8 @@
 <h3><%: Resources.Mensagem.deletar_pergunta %></h3>
 <fieldset>
     <legend><%: Resources.Mensagem.escolaridade %></legend>
+    <p style="font-style: italic; color: Red; font-size: small;"><%= Html.Encode(TempData["MensagemErro"])%></p>
+    &nbsp
 
     <div class="display-label"><%: Resources.Mensagem.nivel_escolaridade %></div>
     <div class="display-field">

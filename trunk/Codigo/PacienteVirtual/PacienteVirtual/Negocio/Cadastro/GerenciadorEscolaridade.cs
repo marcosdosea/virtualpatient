@@ -74,17 +74,19 @@ namespace PacienteVirtual.Negocio
         /// Remove dados da Escolaridade
         /// </summary>
         /// <param name="idEscolaridade"></param>
-        public void Remover(int idEscolaridade)
+        public bool Remover(int idEscolaridade)
         {
             try
             {
                 var repEscolaridade = new RepositorioGenerico<tb_escolaridade>();
                 repEscolaridade.Remover(d => d.IdEscolaridade == idEscolaridade);
                 repEscolaridade.SaveChanges();
+                return true;
             }
             catch (Exception e)
             {
-                throw new DadosException("Escolaridade", e.Message, e);
+                //throw new DadosException("Escolaridade", e.Message, e);
+                return false;
             }
         }
 
