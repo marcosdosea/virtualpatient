@@ -128,6 +128,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém todos os relatos menos o relato relato com o id passado 
+        /// </summary>
+        /// <param name="codDisciplina"></param>
+        /// <returns></returns>
+        public IEnumerable<RelatoClinicoModel> ObterRelatosExcecaoDoPassado(int idPaciente, int idRelato)
+        {
+            return GetQuery().Where(relato => relato.IdPaciente == idPaciente && relato.IdRelato != idRelato).ToList();
+        }
+
+        /// <summary>
         /// Obtém relato com o código especificiado
         /// </summary>
         /// <param name="codDisciplina"></param>
@@ -136,6 +146,7 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(relato => relato.IdRelato == idRelato).ToList().ElementAtOrDefault(0);
         }
+
         /// <summary>
         /// Obtém relatos que iniciam com o relato em texto
         /// </summary>
