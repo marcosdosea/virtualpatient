@@ -85,11 +85,17 @@ namespace PacienteVirtual.Controllers
                          break;
                     }
                 };
-                if(salvar) {
-                relatoModel.IdRelato = gRelato.Inserir(relatoModel);
-                ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente",relatoModel.IdPaciente);
-                return View("Index", gRelato.ObterRelatos(relatoModel.IdPaciente));
+                if (salvar)
+                {
+                    relatoModel.IdRelato = gRelato.Inserir(relatoModel);
+                    ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
+                    return View("Index", gRelato.ObterRelatos(relatoModel.IdPaciente));
                 }
+                else
+                {
+                    TempData["MensagemErro"] = "•Não foi possível Criar um novo Relato Clínico, pois já existe um relato com a Ordem Cronológica especificada!";                  
+                }
+                
             }
 
             if (relatoModel.IdPaciente > 0)
@@ -124,7 +130,7 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 bool salvar = true;
-                foreach (var ordem in gRelato.ObterRelatos(relatoModel.IdPaciente))
+                foreach (var ordem in gRelato.ObterRelatosExcecaoDoPassado(relatoModel.IdPaciente, relatoModel.IdRelato))
                 {
                     if (ordem.OrdemCronologica == relatoModel.OrdemCronologica)
                     {
@@ -136,6 +142,10 @@ namespace PacienteVirtual.Controllers
                 {
                     gRelato.Atualizar(relatoModel);
                     return RedirectToAction("Index");
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "•Não foi possível editar o Relato Clínico, pois já existe um relato com a Ordem Cronológica especificada!";                  
                 }
             }
             ViewBag.fotoId = relatoModel.IdPaciente;

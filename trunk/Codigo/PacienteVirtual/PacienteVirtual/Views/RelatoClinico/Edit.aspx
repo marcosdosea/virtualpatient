@@ -15,6 +15,10 @@
     <fieldset>
         <legend>
             <%: Resources.Mensagem.relato_clinico %></legend>
+
+        <p style="font-style: italic; color: Red; font-size: small;"><%= Html.Encode(TempData["MensagemErro"])%></p>
+
+
         <%: Html.HiddenFor(model => model.IdRelato) %>
         <div class="span5">
             <div class="editor-label">
