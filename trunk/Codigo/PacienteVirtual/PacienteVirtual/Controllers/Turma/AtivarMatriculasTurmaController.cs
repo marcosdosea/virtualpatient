@@ -40,35 +40,47 @@ namespace PacienteVirtual.Controllers.Turma
 
         public ActionResult Ativar(int id)
         {
-            try
-            {
-                TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().Obter(id);
-                tpm.Ativa = true;
-                GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
-                return RedirectToAction("Index");
-            }
-            catch 
-            {
-                return View();
-            }
+            TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().Obter(id);
+            tpm.Ativa = true;
+            GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
+            return RedirectToAction("Index");
         }
 
-        
+
         public ActionResult Desativar(int id)
         {
-            try
-            {
-                TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().Obter(id);
-                tpm.Ativa = false;
-                GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
-                return RedirectToAction("Index");
-            }
-            catch 
-            {
-                return View();
-            }
-            
+            TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().Obter(id);
+            tpm.Ativa = false;
+            GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
+            return RedirectToAction("Index");
+
         }
 
+        private static bool ativadesativar;
+
+        public ActionResult AtivarDesativarTodos()
+        {
+            List<TurmaPessoaModel> listaPessoa =  GerenciadorTurmaPessoa.GetInstance().ObterTodos().ToList();
+            if (ativadesativar)
+            {
+                foreach (TurmaPessoaModel pessoa in listaPessoa)
+                {
+                    pessoa.Ativa = true;
+                    GerenciadorTurmaPessoa.GetInstance().Atualizar(pessoa);
+                }
+                ativadesativar = false ;
+            }
+            else
+            {
+                foreach (TurmaPessoaModel pessoa in listaPessoa)
+                {
+                    pessoa.Ativa = false;
+                    GerenciadorTurmaPessoa.GetInstance().Atualizar(pessoa);
+                }
+                ativadesativar = true;
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
