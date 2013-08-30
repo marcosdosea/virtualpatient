@@ -615,4 +615,10 @@
   <data name="desativar" xml:space="preserve">
     <value>Desativar</value>
   </data>
+  <data name="desativa" xml:space="preserve">
+    <value>Desativa</value>
+  </data>
+  <data name="ativar_desativar_todos" xml:space="preserve">
+    <value>Ativar/Desativar Todos</value>
+  </data>
 </root>
