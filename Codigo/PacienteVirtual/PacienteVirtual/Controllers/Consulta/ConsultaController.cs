@@ -30,16 +30,24 @@ namespace PacienteVirtual.Controllers
             return View();
         }
 
-        //
+         //
         // GET: /VMConsulta/Edit
-        public ActionResult Edit(int idRelato, long idConsultaFixo)
+        public ActionResult Edit(int? idRelato, long? idConsultaFixo)
         {
+            if (idRelato == null)
+            {
+                idRelato = SessionController.IdRelato;
+                idConsultaFixo = SessionController.IdConsultaFixo;
+            } else {
+                SessionController.IdRelato = (int) idRelato;
+                SessionController.IdConsultaFixo = (long) idConsultaFixo;
+            }
+            
             int idPessoa = Global.ID_PESSOA;
             int idTurma = Global.ID_TURMA;
             ConsultaModel consultaModel = new ConsultaModel();
 
-            SessionController.IdRelato = idRelato;
-            SessionController.IdConsultaFixo = idConsultaFixo;
+            
 
             
             consultaModel.Paciente = SessionController.Paciente;
@@ -49,9 +57,9 @@ namespace PacienteVirtual.Controllers
             consultaModel.DemograficoAntropometrico = SessionController.DemograficosAntropometricos;
             consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
             consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
-            consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = idConsultaFixo };
-            
-            consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaFixo, idRelato);
+            consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.IdConsultaFixo };
+
+            consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(SessionController.IdConsultaFixo, SessionController.IdRelato);
             consultaModel.EstiloVida = new EstiloVidaModel() { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentoPrescrito = new MedicamentoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
