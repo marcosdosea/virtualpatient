@@ -90,12 +90,12 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do MedicamentosPrescrito
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
-        public void Remover(long idConsultaVariavel)
+        public void Remover(long idConsultaVariavel, int idMedicamento)
         {
             try
             {
                 var repMedicamentoPrescrito = new RepositorioGenerico<tb_medicamento_prescrito>();
-                repMedicamentoPrescrito.Remover(mP => mP.IdConsultaVariavel == idConsultaVariavel);
+                repMedicamentoPrescrito.Remover(mP => mP.IdConsultaVariavel == idConsultaVariavel && mP.IdMedicamento == idMedicamento);
                 repMedicamentoPrescrito.SaveChanges();
             }
             catch (Exception e)
@@ -144,9 +144,9 @@ namespace PacienteVirtual.Negocio
         /// Obtém MedicamentoPrescritoModel com o código especificiado
         /// </summary>
         /// <returns></returns>
-        public MedicamentoPrescritoModel Obter(long idConsultaVariavel)
+        public IEnumerable<MedicamentoPrescritoModel> Obter(long idConsultaVariavel)
         {
-            return GetQuery().Where(MedicamentoPrescritoModel => MedicamentoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(MedicamentoPrescritoModel => MedicamentoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
 
         /// <summary>

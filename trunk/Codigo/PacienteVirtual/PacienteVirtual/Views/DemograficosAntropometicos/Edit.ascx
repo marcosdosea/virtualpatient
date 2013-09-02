@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DemograficosAntropometricosModel>" %>
 
-<% Html.BeginForm("Edit", "DemograficosAntropomedicos");%>
+<% Html.BeginForm("Edit", "DemograficosAntropometicos");%>
 
 <% using (Html.BeginForm()) 
    { %>

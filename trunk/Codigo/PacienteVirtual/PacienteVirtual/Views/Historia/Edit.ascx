@@ -1,22 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.HistoriaModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.HistoriaModel>" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.editar%>
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-<h2><%: Resources.Mensagem.editar%></h2>
-
+<script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
-<% using (Html.BeginForm()) { %>
+<% using (Html.BeginForm("Edit", "Historia"))
+   { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.historia%></legend>
+        <legend>HistoriaModel</legend>
 
-        <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.IdConsultaFixo) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.IdConsultaFixo) %>
+            <%: Html.ValidationMessageFor(model => model.IdConsultaFixo) %>
+        </div>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.HistoriaMedicaPregressa) %>
@@ -34,14 +34,12 @@
             <%: Html.ValidationMessageFor(model => model.HistoriaFamiliar) %>
         </div>
 
-    <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
-    </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
     </fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
+    <%: Html.ActionLink("Back to List", "Index") %>
 </div>
-
-</asp:Content>

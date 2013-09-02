@@ -20,6 +20,7 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 gDemoAntrop.Atualizar(demoAntro);
+                SessionController.DemograficosAntropometricos = demoAntro;
             }
             return RedirectToAction("Edit", "Consulta");
         }

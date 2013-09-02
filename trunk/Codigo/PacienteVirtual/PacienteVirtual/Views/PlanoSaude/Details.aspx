@@ -13,7 +13,7 @@
 
     <div class="display-label"><%: Resources.Mensagem.nome %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.PlanoSaudeNome)%>
+        <%: Html.DisplayFor(model => model.Nome)%>
     </div>
 </fieldset>
 <p>

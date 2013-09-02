@@ -34,11 +34,12 @@ namespace PacienteVirtual.Controllers
             //ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterPorId(IdInstituicao), "IdTurma", "Codigo");
             if (ModelState.IsValid)
             {
-                //TurmaPessoaModel tpm = new TurmaPessoaModel();
-                //tpm.IdTurma = smt.IdTurma;
-                //tpm.Ativa = false;
-                //tpm.IdRole = 2;
-                //GerenciadorTurmaPessoa.GetInstance().Inserir(tpm);
+                TurmaPessoaModel tpm = new TurmaPessoaModel();
+                tpm.IdTurma = smt.IdTurma;
+                tpm.Ativa = false;
+                tpm.IdRole = 2;
+                tpm.IdPessoa = SessionController.Pessoa.IdPessoa;
+                GerenciadorTurmaPessoa.GetInstance().Inserir(tpm);
                 return RedirectToAction("Index", "Home");
             }
             return View();

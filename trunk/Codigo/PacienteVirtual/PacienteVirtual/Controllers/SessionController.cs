@@ -31,6 +31,33 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_IdConsultaFixo"] = value;
             }
         }
+
+        public static long IdConsultaVariavel
+        {
+            get
+            {
+                return (long)HttpContext.Current.Session["_IdConsultaVariavel"];
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdConsultaVariavel"] = value;
+            }
+        }
+
+        public static PessoaModel Pessoa {
+            get
+            {
+                PessoaModel pessoa = (PessoaModel)HttpContext.Current.Session["_Pessoa"];
+                if (pessoa == null)
+                {
+                    // TODO : obter pessoa que está autenticada
+                    pessoa = GerenciadorPessoa.GetInstance().Obter(2);
+                    HttpContext.Current.Session["_Pessoa"] = pessoa;
+                }
+                return pessoa;
+            }
+        }
+
         public static PacienteModel Paciente 
         {
             get
@@ -95,6 +122,14 @@ namespace PacienteVirtual.Controllers
                 if (historia == null)
                 {
                     historia = GerenciadorHistoria.GetInstance().Obter(IdConsultaFixo);
+                    if (historia == null)
+                    {
+                        historia = new HistoriaModel();
+                        historia.HistoriaFamiliar = "";
+                        historia.HistoriaMedicaPregressa = "";
+                        historia.IdConsultaFixo = IdConsultaFixo;
+                        GerenciadorHistoria.GetInstance().Inserir(historia);
+                    }
                     HttpContext.Current.Session["_Historia"] = historia;
                 }
                 return historia;
@@ -204,6 +239,24 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_listaMedicamentos"] = value;
+            }
+        }
+
+        public static IEnumerable<MedicamentoPrescritoModel> ListaMedicamentosPrescritos
+        {
+            get
+            {
+                IEnumerable<MedicamentoPrescritoModel> listaMedicamentos = (IEnumerable<MedicamentoPrescritoModel>)HttpContext.Current.Session["_listaMedicamentosPrescritos"];
+                if (listaMedicamentos == null)
+                {
+                    listaMedicamentos = GerenciadorMedicamentoPrescrito.GetInstance().Obter(IdConsultaVariavel);
+                    HttpContext.Current.Session["_listaMedicamentosPrescritos"] = listaMedicamentos;
+                }
+                return listaMedicamentos;
+            }
+            set
+            {
+                HttpContext.Current.Session["_listaMedicamentosPrescritos"] = value;
             }
         }
     }
