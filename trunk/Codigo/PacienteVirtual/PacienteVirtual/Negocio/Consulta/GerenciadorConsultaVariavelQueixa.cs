@@ -95,19 +95,14 @@ namespace PacienteVirtual.Negocio
             var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel_queixa>();
             var pvEntities = (pvEntities)repConsultaVariavel.ObterContexto();
             var query = from tb_consulta_variavel_queixa in pvEntities.tb_consulta_variavel_queixa
-                        join tb_acao_queixa in pvEntities.tb_acao_queixa
-                        on tb_consulta_variavel_queixa.IdAcaoQueixa equals tb_acao_queixa.IdAcaoQueixa
-
+                       
                         select new ConsultaVariavelQueixaModel
                         {
                             IdConsultaVariavel = tb_consulta_variavel_queixa.IdConsultaVariavel,
                             IdQueixa = tb_consulta_variavel_queixa.IdQueixa,
-                            IdAcaoQueixa = tb_consulta_variavel_queixa.IdAcaoQueixa,
-                            Motivo = tb_consulta_variavel_queixa.Motivo,
+                            Tipo = tb_consulta_variavel_queixa.Tipo,
                             Desde = tb_consulta_variavel_queixa.Desde,
                             Prioridade = (int) tb_consulta_variavel_queixa.Prioridade,
-
-                            DescricaoAcao = tb_acao_queixa.DescricaoAcao,
                         };
             return query;
         }
@@ -150,8 +145,7 @@ namespace PacienteVirtual.Negocio
         {
             _consultaVariavelQueixaE.IdConsultaVariavel = consultaVariavelQueixa.IdConsultaVariavel;
             _consultaVariavelQueixaE.IdQueixa = consultaVariavelQueixa.IdQueixa;
-            _consultaVariavelQueixaE.IdAcaoQueixa = consultaVariavelQueixa.IdAcaoQueixa;
-            _consultaVariavelQueixaE.Motivo = consultaVariavelQueixa.Motivo;
+            _consultaVariavelQueixaE.Tipo = consultaVariavelQueixa.Tipo;
             _consultaVariavelQueixaE.Desde = consultaVariavelQueixa.Desde;
             _consultaVariavelQueixaE.Prioridade = consultaVariavelQueixa.Prioridade;
         }

@@ -16,7 +16,8 @@ namespace PacienteVirtual.Controllers
         public ViewResult Index()
         {
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
-            return View(GerenciadorTurmaPessoaRelato.GetInstance().ObterTodos());
+            // TODO: Obter por usuário autenticado
+            return View(GerenciadorConsultaVariavel.GetInstance().ObterTodos());
         }
 
         [HttpPost]
@@ -32,24 +33,13 @@ namespace PacienteVirtual.Controllers
 
          //
         // GET: /VMConsulta/Edit
-        public ActionResult Edit(int? idRelato, long? idConsultaFixo)
+        public ActionResult Edit(long idConsultaVariavel)
         {
-            if (idRelato == null)
-            {
-                idRelato = SessionController.IdRelato;
-                idConsultaFixo = SessionController.IdConsultaFixo;
-            } else {
-                SessionController.IdRelato = (int) idRelato;
-                SessionController.IdConsultaFixo = (long) idConsultaFixo;
-            }
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavel);
+            SessionController.ConsultaVariavel = consultaVariavelModel;
             
-            int idPessoa = Global.ID_PESSOA;
-            int idTurma = Global.ID_TURMA;
             ConsultaModel consultaModel = new ConsultaModel();
-
-            
-
-            
+            consultaModel.ConsultaVariavel = consultaVariavelModel;
             consultaModel.Paciente = SessionController.Paciente;
             consultaModel.RelatoClinico = SessionController.RelatoClinico;
             consultaModel.ConsultaFixo = SessionController.ConsultaFixo;
@@ -57,9 +47,10 @@ namespace PacienteVirtual.Controllers
             consultaModel.DemograficoAntropometrico = SessionController.DemograficosAntropometricos;
             consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
             consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
-            consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.IdConsultaFixo };
+            consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
+            consultaModel.ListaMedicamentoPrescrito = SessionController.ListaMedicamentosPrescritos;
 
-            consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(SessionController.IdConsultaFixo, SessionController.IdRelato);
+            //consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaFixo, SessionController.IdRelato);
             consultaModel.EstiloVida = new EstiloVidaModel() { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentoPrescrito = new MedicamentoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
