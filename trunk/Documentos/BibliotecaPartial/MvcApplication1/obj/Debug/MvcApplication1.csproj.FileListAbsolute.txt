@@ -1,7 +1,0 @@
-C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1\bin\MvcApplication1.dll
-C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1\bin\MvcApplication1.pdb
-C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1\bin\EntityFramework.dll
-C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1\bin\EntityFramework.xml
-C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.dll
-C:\Users\Marcos Dósea\Desktop\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.pdb
