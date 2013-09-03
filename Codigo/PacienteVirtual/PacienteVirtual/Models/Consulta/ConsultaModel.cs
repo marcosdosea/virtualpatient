@@ -7,10 +7,6 @@ namespace PacienteVirtual.Models
 {
     public class ConsultaModel
     {
-        // Consultas
-        public long IdConsultaFixo { get; set; }
-        public int IdQueixa { get; set; }
-
         // Dados do paciente
         public PacienteModel Paciente { get; set; }
         public RelatoClinicoModel RelatoClinico { get; set; }

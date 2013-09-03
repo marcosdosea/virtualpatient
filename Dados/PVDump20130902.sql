@@ -94,7 +94,8 @@ CREATE TABLE `tb_queixa` (
   `DescricaoQueixa` varchar(100) NOT NULL,
   `IdSistema` int(11) NOT NULL,
   PRIMARY KEY (`IdQueixa`),
-  KEY `fk_tb_queixa_tb_sistema1` (`IdSistema`)
+  KEY `fk_tb_queixa_tb_sistema1` (`IdSistema`),
+  CONSTRAINT `fk_tb_queixa_tb_sistema1` FOREIGN KEY (`IdSistema`) REFERENCES `tb_sistema` (`IdSistema`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -176,16 +177,13 @@ DROP TABLE IF EXISTS `tb_consulta_variavel_queixa`;
 CREATE TABLE `tb_consulta_variavel_queixa` (
   `IdConsultaVariavel` bigint(20) NOT NULL,
   `IdQueixa` int(11) NOT NULL,
-  `IdAcaoQueixa` int(11) NOT NULL,
-  `Motivo` char(1) NOT NULL,
+  `Tipo` char(1) NOT NULL,
   `Desde` varchar(40) DEFAULT NULL,
   `Prioridade` int(11) DEFAULT NULL,
   PRIMARY KEY (`IdConsultaVariavel`,`IdQueixa`),
   KEY `fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1` (`IdConsultaVariavel`),
   KEY `fk_tb_consulta_variavel_queixa_tb_queixa1` (`IdQueixa`),
-  KEY `fk_tb_consulta_variavel_queixa_tb_acao_queixa1` (`IdAcaoQueixa`),
   CONSTRAINT `fk_tb_consulta_variavel_has_tb_queixa_tb_consulta_variavel1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_acao_queixa1` FOREIGN KEY (`IdAcaoQueixa`) REFERENCES `tb_acao_queixa` (`IdAcaoQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_queixa1` FOREIGN KEY (`IdQueixa`) REFERENCES `tb_queixa` (`IdQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -327,7 +325,10 @@ CREATE TABLE `tb_turma_pessoa` (
   PRIMARY KEY (`IdTurma`,`IdPessoa`),
   KEY `fk_tb_turma_has_tb_pessoa_tb_pessoa1` (`IdPessoa`),
   KEY `fk_tb_turma_has_tb_pessoa_tb_turma1` (`IdTurma`),
-  KEY `fk_tb_turma_pessoa_my_aspnet_roles1` (`IdRole`)
+  KEY `fk_tb_turma_pessoa_my_aspnet_roles1` (`IdRole`),
+  CONSTRAINT `fk_tb_turma_has_tb_pessoa_tb_turma1` FOREIGN KEY (`IdTurma`) REFERENCES `tb_turma` (`IdTurma`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_turma_has_tb_pessoa_tb_pessoa1` FOREIGN KEY (`IdPessoa`) REFERENCES `tb_pessoa` (`IdPessoa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_turma_pessoa_my_aspnet_roles1` FOREIGN KEY (`IdRole`) REFERENCES `my_aspnet_roles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -364,6 +365,30 @@ LOCK TABLES `tb_medicamentos` WRITE;
 /*!40000 ALTER TABLE `tb_medicamentos` DISABLE KEYS */;
 INSERT INTO `tb_medicamentos` VALUES (1,'dipirona');
 /*!40000 ALTER TABLE `tb_medicamentos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_estado_consulta`
+--
+
+DROP TABLE IF EXISTS `tb_estado_consulta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_estado_consulta` (
+  `idEstadoConsulta` int(11) NOT NULL,
+  `DescricaoEstado` varchar(45) NOT NULL,
+  PRIMARY KEY (`idEstadoConsulta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_estado_consulta`
+--
+
+LOCK TABLES `tb_estado_consulta` WRITE;
+/*!40000 ALTER TABLE `tb_estado_consulta` DISABLE KEYS */;
+INSERT INTO `tb_estado_consulta` VALUES (1,'Aguardando Preenchimento');
+/*!40000 ALTER TABLE `tb_estado_consulta` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -453,21 +478,17 @@ CREATE TABLE `tb_queixa_medicamentos` (
   `IdConsultaVariavel` bigint(20) NOT NULL,
   `IdQueixa` int(11) NOT NULL,
   `IdMedicamento` int(11) NOT NULL,
-  `SuspeitaIdAcaoQueixa` int(11) NOT NULL,
   `Dose` varchar(20) DEFAULT NULL,
   `Desde` varchar(40) DEFAULT NULL,
   `Necessario` tinyint(1) NOT NULL,
   `Efetivo` tinyint(1) NOT NULL,
   `Seguro` tinyint(1) NOT NULL,
   `Cumprimento` tinyint(1) NOT NULL,
-  `IdAcaoAlternativa1` int(11) NOT NULL,
-  `IdAcaoAlternativa2` int(11) NOT NULL,
   PRIMARY KEY (`IdConsultaVariavel`,`IdQueixa`,`IdMedicamento`),
   KEY `fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1` (`IdMedicamento`),
   KEY `fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_consult1` (`IdConsultaVariavel`,`IdQueixa`),
-  KEY `fk_tb_queixa_medicamentos_tb_acao_queixa1` (`SuspeitaIdAcaoQueixa`),
-  KEY `fk_tb_queixa_medicamentos_tb_acao_alternativa1` (`IdAcaoAlternativa1`),
-  KEY `fk_tb_queixa_medicamentos_tb_acao_alternativa2` (`IdAcaoAlternativa2`)
+  CONSTRAINT `fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_consult1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel_queixa` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1` FOREIGN KEY (`IdMedicamento`) REFERENCES `tb_medicamentos` (`IdMedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -478,6 +499,35 @@ CREATE TABLE `tb_queixa_medicamentos` (
 LOCK TABLES `tb_queixa_medicamentos` WRITE;
 /*!40000 ALTER TABLE `tb_queixa_medicamentos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tb_queixa_medicamentos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_acao_queixa_medicamentos`
+--
+
+DROP TABLE IF EXISTS `tb_acao_queixa_medicamentos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_acao_queixa_medicamentos` (
+  `IdAcaoQueixa` int(11) NOT NULL,
+  `IdConsultaVariavel` bigint(20) NOT NULL,
+  `IdQueixa` int(11) NOT NULL,
+  `IdMedicamento` int(11) NOT NULL,
+  PRIMARY KEY (`IdAcaoQueixa`,`IdConsultaVariavel`,`IdQueixa`,`IdMedicamento`),
+  KEY `fk_tb_acao_medicamento_has_tb_queixa_medicamentos_tb_queixa_m1` (`IdConsultaVariavel`,`IdQueixa`,`IdMedicamento`),
+  KEY `fk_tb_acao_medicamento_has_tb_queixa_medicamentos_tb_acao_med1` (`IdAcaoQueixa`),
+  CONSTRAINT `fk_tb_acao_medicamento_has_tb_queixa_medicamentos_tb_acao_med1` FOREIGN KEY (`IdAcaoQueixa`) REFERENCES `tb_acao_queixa` (`IdAcaoQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_acao_medicamento_has_tb_queixa_medicamentos_tb_queixa_m1` FOREIGN KEY (`IdConsultaVariavel`, `IdQueixa`, `IdMedicamento`) REFERENCES `tb_queixa_medicamentos` (`IdConsultaVariavel`, `IdQueixa`, `IdMedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_acao_queixa_medicamentos`
+--
+
+LOCK TABLES `tb_acao_queixa_medicamentos` WRITE;
+/*!40000 ALTER TABLE `tb_acao_queixa_medicamentos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_acao_queixa_medicamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -732,7 +782,7 @@ CREATE TABLE `tb_historia` (
 
 LOCK TABLES `tb_historia` WRITE;
 /*!40000 ALTER TABLE `tb_historia` DISABLE KEYS */;
-INSERT INTO `tb_historia` VALUES (6,'medica','familiar');
+INSERT INTO `tb_historia` VALUES (6,'medica','familiar'),(7,'','');
 /*!40000 ALTER TABLE `tb_historia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -986,7 +1036,8 @@ CREATE TABLE `tb_resposta` (
   `Resposta` varchar(255) NOT NULL,
   `IdPergunta` int(11) NOT NULL,
   PRIMARY KEY (`IdResposta`),
-  KEY `fk_tb_resposta_tb_pergunta1` (`IdPergunta`)
+  KEY `fk_tb_resposta_tb_pergunta1` (`IdPergunta`),
+  CONSTRAINT `fk_tb_resposta_tb_pergunta1` FOREIGN KEY (`IdPergunta`) REFERENCES `tb_pergunta` (`IdPergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1012,13 +1063,12 @@ CREATE TABLE `tb_turma_pessoa_relato` (
   `IdPessoa` int(11) NOT NULL,
   `IdRelato` int(11) NOT NULL,
   `IdConsultaFixo` bigint(20) NOT NULL,
-  `EstadoPreencimento` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`IdTurma`,`IdPessoa`,`IdRelato`,`IdConsultaFixo`),
   KEY `fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1` (`IdRelato`),
   KEY `fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1` (`IdTurma`,`IdPessoa`),
   KEY `fk_tb_turma_pessoa_relato_tb_consulta_fixo1` (`IdConsultaFixo`),
-  CONSTRAINT `fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1` FOREIGN KEY (`IdRelato`) REFERENCES `tb_relato_clinico` (`IdRelato`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1` FOREIGN KEY (`IdTurma`, `IdPessoa`) REFERENCES `tb_turma_pessoa` (`IdTurma`, `IdPessoa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_turma_pessoa_has_tb_relato_clinico_tb_relato_clinico1` FOREIGN KEY (`IdRelato`) REFERENCES `tb_relato_clinico` (`IdRelato`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_turma_pessoa_relato_tb_consulta_fixo1` FOREIGN KEY (`IdConsultaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1029,7 +1079,7 @@ CREATE TABLE `tb_turma_pessoa_relato` (
 
 LOCK TABLES `tb_turma_pessoa_relato` WRITE;
 /*!40000 ALTER TABLE `tb_turma_pessoa_relato` DISABLE KEYS */;
-INSERT INTO `tb_turma_pessoa_relato` VALUES (1,1,1,5,'A'),(1,1,1,6,'A'),(1,1,2,7,'A');
+INSERT INTO `tb_turma_pessoa_relato` VALUES (1,1,1,5),(1,1,1,6),(1,1,2,7);
 /*!40000 ALTER TABLE `tb_turma_pessoa_relato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1047,12 +1097,15 @@ CREATE TABLE `tb_consulta_variavel` (
   `IdRelato` int(11) NOT NULL,
   `IdConsultaFixo` bigint(20) NOT NULL,
   `IdRazaoEncontro` int(11) NOT NULL,
+  `idEstadoConsulta` int(11) NOT NULL,
   `DataPreenchimento` datetime DEFAULT NULL,
   `Lembretes` text,
   `ComentariosTutor` text,
   PRIMARY KEY (`IdConsultaVariavel`),
   KEY `fk_tb_consulta_variavel_tb_razao_encontro1` (`IdRazaoEncontro`),
   KEY `fk_tb_consulta_variavel_tb_turma_pessoa_relato1` (`IdTurma`,`IdPessoa`,`IdRelato`,`IdConsultaFixo`),
+  KEY `fk_tb_consulta_variavel_tb_estado_consulta1` (`idEstadoConsulta`),
+  CONSTRAINT `fk_tb_consulta_variavel_tb_estado_consulta1` FOREIGN KEY (`idEstadoConsulta`) REFERENCES `tb_estado_consulta` (`idEstadoConsulta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_consulta_variavel_tb_razao_encontro1` FOREIGN KEY (`IdRazaoEncontro`) REFERENCES `tb_razao_encontro` (`IdRazaoEncontro`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_consulta_variavel_tb_turma_pessoa_relato1` FOREIGN KEY (`IdTurma`, `IdPessoa`, `IdRelato`, `IdConsultaFixo`) REFERENCES `tb_turma_pessoa_relato` (`IdTurma`, `IdPessoa`, `IdRelato`, `IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
@@ -1064,7 +1117,7 @@ CREATE TABLE `tb_consulta_variavel` (
 
 LOCK TABLES `tb_consulta_variavel` WRITE;
 /*!40000 ALTER TABLE `tb_consulta_variavel` DISABLE KEYS */;
-INSERT INTO `tb_consulta_variavel` VALUES (2,1,1,1,6,1,'0001-01-01 00:00:00',NULL,NULL),(3,1,1,2,7,1,'0001-01-01 00:00:00',NULL,NULL);
+INSERT INTO `tb_consulta_variavel` VALUES (2,1,1,1,6,1,1,'0001-01-01 00:00:00',NULL,NULL),(3,1,1,2,7,1,1,'0001-01-01 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `tb_consulta_variavel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1329,7 +1382,7 @@ CREATE TABLE `tb_experiencia_medicamentos` (
 
 LOCK TABLES `tb_experiencia_medicamentos` WRITE;
 /*!40000 ALTER TABLE `tb_experiencia_medicamentos` DISABLE KEYS */;
-INSERT INTO `tb_experiencia_medicamentos` VALUES (6,1,1,1,1,1,1,0,0,0,0,0);
+INSERT INTO `tb_experiencia_medicamentos` VALUES (6,1,1,1,1,1,1,0,0,0,0,0),(7,1,1,1,1,1,1,0,0,0,0,0);
 /*!40000 ALTER TABLE `tb_experiencia_medicamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1513,9 +1566,9 @@ CREATE TABLE `tb_diario_pessoal` (
   KEY `fk_tb_diario_pessoal_tb_medicamentos1` (`IdMedicamento`),
   KEY `fk_tb_diario_pessoal_tb_consulta_fixo1` (`IdConsultaFixo`),
   KEY `fk_tb_diario_pessoal_tb_bebida1` (`IdBebida`),
-  CONSTRAINT `fk_tb_diario_pessoal_tb_bebida1` FOREIGN KEY (`IdBebida`) REFERENCES `tb_bebida` (`IdBebida`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_diario_pessoal_tb_medicamentos1` FOREIGN KEY (`IdMedicamento`) REFERENCES `tb_medicamentos` (`IdMedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_diario_pessoal_tb_consulta_fixo1` FOREIGN KEY (`IdConsultaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tb_diario_pessoal_tb_medicamentos1` FOREIGN KEY (`IdMedicamento`) REFERENCES `tb_medicamentos` (`IdMedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tb_diario_pessoal_tb_bebida1` FOREIGN KEY (`IdBebida`) REFERENCES `tb_bebida` (`IdBebida`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1551,29 +1604,6 @@ LOCK TABLES `tb_razao_encontro` WRITE;
 /*!40000 ALTER TABLE `tb_razao_encontro` DISABLE KEYS */;
 INSERT INTO `tb_razao_encontro` VALUES (0,'Deseja cuidar mais da saúde e que a glicemia seja controlada'),(1,'-- nao definido --');
 /*!40000 ALTER TABLE `tb_razao_encontro` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tb_acao_alternativa`
---
-
-DROP TABLE IF EXISTS `tb_acao_alternativa`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tb_acao_alternativa` (
-  `IdAcaoAlternativa` int(11) NOT NULL,
-  `DescricaoAcao` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`IdAcaoAlternativa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tb_acao_alternativa`
---
-
-LOCK TABLES `tb_acao_alternativa` WRITE;
-/*!40000 ALTER TABLE `tb_acao_alternativa` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_acao_alternativa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1739,7 +1769,10 @@ CREATE TABLE `tb_turma` (
   PRIMARY KEY (`IdTurma`),
   KEY `fk_tb_turma_tb_disciplina1` (`IdDisciplina`),
   KEY `fk_tb_turma_tb_curso1` (`IdCurso`),
-  KEY `fk_tb_turma_tb_instituicao1` (`IdInstituicao`)
+  KEY `fk_tb_turma_tb_instituicao1` (`IdInstituicao`),
+  CONSTRAINT `fk_tb_turma_tb_disciplina1` FOREIGN KEY (`IdDisciplina`) REFERENCES `tb_disciplina` (`IdDisciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_turma_tb_curso1` FOREIGN KEY (`IdCurso`) REFERENCES `tb_curso` (`IdCurso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_turma_tb_instituicao1` FOREIGN KEY (`IdInstituicao`) REFERENCES `tb_instituicao` (`IdInstituicao`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1751,6 +1784,32 @@ LOCK TABLES `tb_turma` WRITE;
 /*!40000 ALTER TABLE `tb_turma` DISABLE KEYS */;
 INSERT INTO `tb_turma` VALUES (1,0,0,1,'a0','20131',1),(2,3,1,1,'FI','2013-1',0);
 /*!40000 ALTER TABLE `tb_turma` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_intervencao`
+--
+
+DROP TABLE IF EXISTS `tb_intervencao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_intervencao` (
+  `IdIntervencao` int(11) NOT NULL AUTO_INCREMENT,
+  `DescricaoIntervencao` varchar(40) NOT NULL,
+  `IdGrupoIntervencao` int(11) NOT NULL,
+  PRIMARY KEY (`IdIntervencao`),
+  KEY `fk_tb_intervencao_tb_grupo_intervencao1` (`IdGrupoIntervencao`),
+  CONSTRAINT `fk_tb_intervencao_tb_grupo_intervencao1` FOREIGN KEY (`IdGrupoIntervencao`) REFERENCES `tb_grupo_intervencao` (`IdGrupoIntervencao`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_intervencao`
+--
+
+LOCK TABLES `tb_intervencao` WRITE;
+/*!40000 ALTER TABLE `tb_intervencao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_intervencao` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1843,6 +1902,36 @@ CREATE TABLE `medicamentonaoprescrito` (
 LOCK TABLES `medicamentonaoprescrito` WRITE;
 /*!40000 ALTER TABLE `medicamentonaoprescrito` DISABLE KEYS */;
 /*!40000 ALTER TABLE `medicamentonaoprescrito` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_consulta_variavel_intervencao`
+--
+
+DROP TABLE IF EXISTS `tb_consulta_variavel_intervencao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_consulta_variavel_intervencao` (
+  `IdIntervencao` int(11) NOT NULL,
+  `IdConsultaVariavel` bigint(20) NOT NULL,
+  `comunicaPaciente` tinyint(1) NOT NULL DEFAULT '0',
+  `comunicaOutro` tinyint(1) NOT NULL DEFAULT '0',
+  `justificativa` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`IdIntervencao`,`IdConsultaVariavel`),
+  KEY `fk_tb_intervencao_has_tb_consulta_variavel_tb_consulta_variav1` (`IdConsultaVariavel`),
+  KEY `fk_tb_intervencao_has_tb_consulta_variavel_tb_intervencao1` (`IdIntervencao`),
+  CONSTRAINT `fk_tb_intervencao_has_tb_consulta_variavel_tb_intervencao1` FOREIGN KEY (`IdIntervencao`) REFERENCES `tb_intervencao` (`IdIntervencao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_intervencao_has_tb_consulta_variavel_tb_consulta_variav1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_consulta_variavel_intervencao`
+--
+
+LOCK TABLES `tb_consulta_variavel_intervencao` WRITE;
+/*!40000 ALTER TABLE `tb_consulta_variavel_intervencao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_consulta_variavel_intervencao` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -2066,7 +2155,8 @@ CREATE TABLE `tb_pessoa` (
   `Fone` varchar(11) NOT NULL,
   `Matricula` varchar(20) NOT NULL,
   PRIMARY KEY (`IdPessoa`),
-  KEY `fk_tb_pessoa_my_aspnet_users1` (`idUser`)
+  KEY `fk_tb_pessoa_my_aspnet_users1` (`idUser`),
+  CONSTRAINT `fk_tb_pessoa_my_aspnet_users1` FOREIGN KEY (`idUser`) REFERENCES `my_aspnet_users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2110,6 +2200,29 @@ LOCK TABLES `queixa` WRITE;
 /*!40000 ALTER TABLE `queixa` DISABLE KEYS */;
 /*!40000 ALTER TABLE `queixa` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_grupo_intervencao`
+--
+
+DROP TABLE IF EXISTS `tb_grupo_intervencao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_grupo_intervencao` (
+  `IdGrupoIntervencao` int(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` varchar(40) NOT NULL,
+  PRIMARY KEY (`IdGrupoIntervencao`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_grupo_intervencao`
+--
+
+LOCK TABLES `tb_grupo_intervencao` WRITE;
+/*!40000 ALTER TABLE `tb_grupo_intervencao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_grupo_intervencao` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -2120,4 +2233,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-09-02 21:53:42
+-- Dump completed on 2013-09-02 23:39:39

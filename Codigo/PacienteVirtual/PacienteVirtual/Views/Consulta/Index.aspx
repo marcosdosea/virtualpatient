@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.TurmaPessoaRelatoModel>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.ConsultaVariavelModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.consulta%>
@@ -55,11 +55,14 @@
                     <%: Html.DisplayFor(modelItem => item.NivelDificuldade)%>
                 </td>
                 <td>
+                    <%: Html.DisplayFor(modelItem => item.DescricaoEstadoConsulta)%>
+                </td>
+                <td>
                     <%: Html.DisplayFor(modelItem => item.IdTurma)%>
                 </td>
                 <td></td>
                 <td>
-                    <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idRelato = item.IdRelato, idConsultaFixo = item.IdConsultaFixo})%> 
+                    <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%> 
                 </td>
             </tr>
             <% } %>

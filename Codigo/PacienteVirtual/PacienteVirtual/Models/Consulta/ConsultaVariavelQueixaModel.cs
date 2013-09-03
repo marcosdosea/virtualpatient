@@ -11,14 +11,10 @@ namespace PacienteVirtual.Models
 
         public int IdQueixa { get; set; }
 
-        public int IdAcaoQueixa { get; set; }
-
-        public string Motivo { get; set; }
+        public string Tipo { get; set; }
 
         public string Desde { get; set; }
 
         public int Prioridade { get; set; }
-
-        public string DescricaoAcao { get; set; }
      }
 }

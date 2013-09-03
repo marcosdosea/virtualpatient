@@ -99,7 +99,6 @@ namespace PacienteVirtual.Negocio
                             IdPessoa = tb_turma_pessoa_relato.IdPessoa,
                             IdRelato = tb_turma_pessoa_relato.IdRelato,
                             IdConsultaFixo = tb_turma_pessoa_relato.IdConsultaFixo,
-                            EstadoPreenchimento = tb_turma_pessoa_relato.EstadoPreencimento,
                             OrdemCronologica = tb_turma_pessoa_relato.tb_relato_clinico.OrdemCronologia,
                             NivelDificuldade = tb_turma_pessoa_relato.tb_relato_clinico.NivelDificuldade,
                             NomePaciente = tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.Nome
@@ -136,7 +135,6 @@ namespace PacienteVirtual.Negocio
             _turmaPessoaRelatoE.IdPessoa = turmaPessoaRelato.IdPessoa;
             _turmaPessoaRelatoE.IdRelato = turmaPessoaRelato.IdRelato;
             _turmaPessoaRelatoE.IdConsultaFixo = turmaPessoaRelato.IdConsultaFixo;
-            _turmaPessoaRelatoE.EstadoPreencimento = turmaPessoaRelato.EstadoPreenchimento;
         }
     }
 }

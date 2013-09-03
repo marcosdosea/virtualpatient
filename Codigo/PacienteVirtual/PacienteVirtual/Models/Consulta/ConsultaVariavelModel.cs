@@ -26,6 +26,16 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         public int IdRazaoEncontro { get; set; }
 
+        public int IdEstadoConsulta { get; set; }
+        
+        public string DescricaoEstadoConsulta { get; set; }
+
+        public string NomePaciente { get; set; }
+
+        public int OrdemCronologica { get; set; }
+
+        public int NivelDificuldade { get; set; }
+
         public DateTime DataPreenchimento { get; set; }
 
         public string Lembretes { get; set; }

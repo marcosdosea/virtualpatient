@@ -95,9 +95,6 @@ namespace PacienteVirtual.Negocio
             var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel>();
             var pvEntities = (pvEntities)repConsultaVariavel.ObterContexto();
             var query = from tb_consulta_variavel in pvEntities.tb_consulta_variavel
-                        //join tb_pessoa in pvEntities.tb_pessoa
-                        //on tb_consulta_variavel.IdPessoa equals tb_pessoa.IdPessoa
-
                         select new ConsultaVariavelModel
                         {
                             IdConsultaVariavel = tb_consulta_variavel.IdConsultaVariavel,
@@ -105,11 +102,15 @@ namespace PacienteVirtual.Negocio
                             IdTurma = tb_consulta_variavel.IdTurma,
                             IdPessoa = tb_consulta_variavel.IdPessoa,
                             IdRelato = tb_consulta_variavel.IdRelato,
+                            IdEstadoConsulta = tb_consulta_variavel.idEstadoConsulta,
+                            DescricaoEstadoConsulta = tb_consulta_variavel.tb_estado_consulta.DescricaoEstado,
                             IdRazaoEncontro = tb_consulta_variavel.IdRazaoEncontro,
                             DataPreenchimento = (DateTime)tb_consulta_variavel.DataPreenchimento,
                             Lembretes = tb_consulta_variavel.Lembretes,
                             ComentariosTutor = tb_consulta_variavel.ComentariosTutor,
-
+                            NomePaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.Nome,
+                            NivelDificuldade = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.NivelDificuldade,
+                            OrdemCronologica = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.OrdemCronologia
                         };
             return query;
         }
@@ -176,6 +177,7 @@ namespace PacienteVirtual.Negocio
             _consultaVariavelE.IdPessoa = consultaVariavel.IdPessoa;
             _consultaVariavelE.IdRelato = consultaVariavel.IdRelato;
             _consultaVariavelE.IdRazaoEncontro = consultaVariavel.IdRazaoEncontro;
+            _consultaVariavelE.idEstadoConsulta = consultaVariavel.IdEstadoConsulta;
             _consultaVariavelE.DataPreenchimento = (DateTime)consultaVariavel.DataPreenchimento;
             _consultaVariavelE.Lembretes = consultaVariavel.Lembretes;
             _consultaVariavelE.ComentariosTutor = consultaVariavel.ComentariosTutor;

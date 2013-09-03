@@ -7,40 +7,15 @@ namespace PacienteVirtual.Controllers
 {
     public class SessionController
     {
-        // Dados do paciente
-        public static int IdRelato
+        public static ConsultaVariavelModel ConsultaVariavel
         {
             get
             {
-                return (int)HttpContext.Current.Session["_IdRelato"];
+                return (ConsultaVariavelModel)HttpContext.Current.Session["_ConsultaVariavel"];
             }
             set
             {
-                HttpContext.Current.Session["_IdRelato"] = value;
-            }
-        }
-
-        public static long IdConsultaFixo
-        {
-            get
-            {
-                return (long)HttpContext.Current.Session["_IdConsultaFixo"];
-            }
-            set
-            {
-                HttpContext.Current.Session["_IdConsultaFixo"] = value;
-            }
-        }
-
-        public static long IdConsultaVariavel
-        {
-            get
-            {
-                return (long)HttpContext.Current.Session["_IdConsultaVariavel"];
-            }
-            set
-            {
-                HttpContext.Current.Session["_IdConsultaVariavel"] = value;
+                HttpContext.Current.Session["_ConsultaVariavel"] = value;
             }
         }
 
@@ -82,7 +57,7 @@ namespace PacienteVirtual.Controllers
                 RelatoClinicoModel relatoClinico = (RelatoClinicoModel)HttpContext.Current.Session["_RelatoClinico"];
                 if (relatoClinico == null)
                 {
-                    relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(IdRelato);
+                    relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(ConsultaVariavel.IdRelato);
                     HttpContext.Current.Session["_RelatoClinico"] = relatoClinico;
                 }
                 return relatoClinico;
@@ -100,7 +75,7 @@ namespace PacienteVirtual.Controllers
                 ConsultaFixoModel consultaFixo = (ConsultaFixoModel)HttpContext.Current.Session["_ConsultaFixo"];
                 if (consultaFixo == null)
                 {
-                    consultaFixo = GerenciadorConsultaFixo.GetInstance().Obter(IdConsultaFixo);
+                    consultaFixo = GerenciadorConsultaFixo.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
                     HttpContext.Current.Session["_ConsultaFixo"] = consultaFixo;
                 }
                 return consultaFixo;
@@ -121,13 +96,13 @@ namespace PacienteVirtual.Controllers
                 HistoriaModel historia = (HistoriaModel)HttpContext.Current.Session["_Historia"];
                 if (historia == null)
                 {
-                    historia = GerenciadorHistoria.GetInstance().Obter(IdConsultaFixo);
+                    historia = GerenciadorHistoria.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
                     if (historia == null)
                     {
                         historia = new HistoriaModel();
                         historia.HistoriaFamiliar = "";
                         historia.HistoriaMedicaPregressa = "";
-                        historia.IdConsultaFixo = IdConsultaFixo;
+                        historia.IdConsultaFixo = ConsultaVariavel.IdConsultaFixo;
                         GerenciadorHistoria.GetInstance().Inserir(historia);
                     }
                     HttpContext.Current.Session["_Historia"] = historia;
@@ -147,7 +122,7 @@ namespace PacienteVirtual.Controllers
                 DemograficosAntropometricosModel demoAntro = (DemograficosAntropometricosModel)HttpContext.Current.Session["_DemograficosAntropometricos"];
                 if (demoAntro == null)
                 {
-                    demoAntro = GerenciadorDemograficosAntropometricos.GetInstance().Obter(IdConsultaFixo);
+                    demoAntro = GerenciadorDemograficosAntropometricos.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
                     HttpContext.Current.Session["_DemograficosAntropometricos"] = demoAntro;
                 }
                 return demoAntro;
@@ -165,11 +140,11 @@ namespace PacienteVirtual.Controllers
                 ExperienciaMedicamentosModel experiencia = (ExperienciaMedicamentosModel)HttpContext.Current.Session["_ExperienciaMedicamentos"];
                 if (experiencia == null)
                 {
-                    experiencia = GerenciadorExperienciaMedicamentos.GetInstance().Obter(IdConsultaFixo);
+                    experiencia = GerenciadorExperienciaMedicamentos.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
                     if (experiencia == null)
                     {
                         experiencia = new ExperienciaMedicamentosModel();
-                        experiencia.IdConsultaFixo = IdConsultaFixo;
+                        experiencia.IdConsultaFixo = ConsultaVariavel.IdConsultaFixo;
                         experiencia.IdRespostaComportamento = 1;
                         experiencia.IdRespostaCultural = 1;
                         experiencia.IdRespostaEsperaTratamento = 1;
@@ -195,7 +170,7 @@ namespace PacienteVirtual.Controllers
                 IEnumerable<DiarioPessoalModel> listaDiarioPessoal = (IEnumerable<DiarioPessoalModel>)HttpContext.Current.Session["_listaDiarioPessoal"];
                 if (listaDiarioPessoal == null)
                 {
-                    listaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(IdConsultaFixo);
+                    listaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
                     HttpContext.Current.Session["_listaDiarioPessoal"] = listaDiarioPessoal;
                 }
                 return listaDiarioPessoal;
@@ -249,7 +224,7 @@ namespace PacienteVirtual.Controllers
                 IEnumerable<MedicamentoPrescritoModel> listaMedicamentos = (IEnumerable<MedicamentoPrescritoModel>)HttpContext.Current.Session["_listaMedicamentosPrescritos"];
                 if (listaMedicamentos == null)
                 {
-                    listaMedicamentos = GerenciadorMedicamentoPrescrito.GetInstance().Obter(IdConsultaVariavel);
+                    listaMedicamentos = GerenciadorMedicamentoPrescrito.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
                     HttpContext.Current.Session["_listaMedicamentosPrescritos"] = listaMedicamentos;
                 }
                 return listaMedicamentos;

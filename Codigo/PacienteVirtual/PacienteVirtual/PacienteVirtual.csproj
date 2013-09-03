@@ -155,7 +155,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Mensagem.resx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\Consulta\AcaoAlternativaController.cs" />
     <Compile Include="Controllers\Consulta\AcaoQueixaController.cs" />
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
@@ -258,7 +257,6 @@
     <Compile Include="Negocio\Cadastro\GerenciadorAlergia.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorBebida.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaVariavel.cs" />
-    <Compile Include="Negocio\Consulta\GerenciadorAcaoAlternativa.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorAcaoQueixa.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaFixo.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaVariavelQueixa.cs" />
