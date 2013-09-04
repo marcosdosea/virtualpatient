@@ -28,7 +28,8 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                medicamentoPrescrito.IdConsultaVariavel = gMedicamentoPrescrito.Inserir(medicamentoPrescrito);
+                medicamentoPrescrito.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel; 
+                gMedicamentoPrescrito.Inserir(medicamentoPrescrito);
                 SessionController.ListaMedicamentosPrescritos = null;
             }
             return RedirectToAction("Edit", "Consulta");
