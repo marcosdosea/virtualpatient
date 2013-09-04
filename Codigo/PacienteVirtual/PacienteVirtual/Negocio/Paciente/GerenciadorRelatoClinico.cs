@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Persistence;
 using PacienteVirtual.Models;
+using Negocio;
 
 namespace PacienteVirtual.Negocio
 {
@@ -33,6 +34,8 @@ namespace PacienteVirtual.Negocio
             tb_relato_clinico _relatoE = new tb_relato_clinico();
             try
             {
+                VerificarRegrasNegocio(relato);
+
                 Atribuir(relato, _relatoE);
 
                 repRelato.Inserir(_relatoE);
@@ -46,6 +49,15 @@ namespace PacienteVirtual.Negocio
             }
         }
 
+        private static void VerificarRegrasNegocio(RelatoClinicoModel relato)
+        {
+            var listaRelatos = GerenciadorRelatoClinico.GetInstance().ObterPorPacienteOrdemCronologica(relato.IdPaciente, relato.OrdemCronologica);
+            if (listaRelatos.Count() > 0)
+            {
+                throw new NegocioException("Já existe um relato clínico com essa ordem cronológica. Favor atribuir outro valor a ordem cronológica do relato.");
+            }
+        }
+
         /// <summary>
         /// Atualiza dados do relato
         /// </summary>
@@ -54,6 +66,7 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
+                VerificarRegrasNegocio(relato);
                 var repRelato = new RepositorioGenerico<tb_relato_clinico>();
                 tb_relato_clinico _relatoE = repRelato.ObterEntidade(c => c.IdRelato == relato.IdRelato);
                 Atribuir(relato, _relatoE);
@@ -125,6 +138,16 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<RelatoClinicoModel> ObterRelatos(int idPaciente)
         {
             return GetQuery().Where(relato => relato.IdPaciente == idPaciente).ToList();
+        }
+
+        /// <summary>
+        /// Obtém relato com o código especificiado
+        /// </summary>
+        /// <param name="codDisciplina"></param>
+        /// <returns></returns>
+        public IEnumerable<RelatoClinicoModel> ObterPorPacienteOrdemCronologica(int idPaciente, int ordemCronologica)
+        {
+            return GetQuery().Where(relato => relato.IdPaciente == idPaciente && relato.OrdemCronologica == ordemCronologica).ToList();
         }
 
         /// <summary>

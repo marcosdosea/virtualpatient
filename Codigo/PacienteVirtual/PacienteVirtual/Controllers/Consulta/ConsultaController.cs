@@ -33,9 +33,10 @@ namespace PacienteVirtual.Controllers
 
          //
         // GET: /VMConsulta/Edit
-        public ActionResult Edit(long idConsultaVariavel)
+        public ActionResult Edit(long? idConsultaVariavel)
         {
-            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavel);
+            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
             SessionController.ConsultaVariavel = consultaVariavelModel;
             
             ConsultaModel consultaModel = new ConsultaModel();
