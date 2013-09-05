@@ -140,10 +140,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Cadastro\GrupoIntervencaoController.cs" />
+    <Compile Include="Controllers\Cadastro\IntervencaoController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
+    <Compile Include="Models\Cadastro\GrupoIntervencaoModel.cs" />
+    <Compile Include="Models\Cadastro\IntervencaoModel.cs" />
     <Compile Include="Models\Turma\SolicitarMatriculaTurmaModel.cs" />
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorGrupoIntervencao.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorIntervencao.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Resources\Mensagem.en.designer.cs">
       <DependentUpon>Mensagem.en.resx</DependentUpon>
@@ -482,7 +488,17 @@
     <Content Include="Views\Bebida\Index.aspx" />
     <Content Include="Views\DiarioPessoal\Index.ascx" />
     <Content Include="Views\Erros\Index.aspx" />
+    <Content Include="Views\GrupoIntervencao\Create.aspx" />
+    <Content Include="Views\GrupoIntervencao\Delete.aspx" />
+    <Content Include="Views\GrupoIntervencao\Details.aspx" />
+    <Content Include="Views\GrupoIntervencao\Edit.aspx" />
+    <Content Include="Views\GrupoIntervencao\Index.aspx" />
     <Content Include="Views\Historia\Edit.ascx" />
+    <Content Include="Views\Intervencao\Create.aspx" />
+    <Content Include="Views\Intervencao\Delete.aspx" />
+    <Content Include="Views\Intervencao\Details.aspx" />
+    <Content Include="Views\Intervencao\Edit.aspx" />
+    <Content Include="Views\Intervencao\Index.aspx" />
     <Content Include="Views\MedicamentoNaoPrescrito\Create.ascx" />
     <Content Include="Views\MedicamentoNaoPrescrito\Index.ascx" />
     <Content Include="Views\MedicamentoPrescrito\Create.ascx" />
