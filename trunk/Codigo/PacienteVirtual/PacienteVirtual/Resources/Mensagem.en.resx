@@ -621,4 +621,16 @@
   <data name="ativar_desativar_todos" xml:space="preserve">
     <value>Activate/Deactivate All</value>
   </data>
+  <data name="grupo_intervencao" xml:space="preserve">
+    <value>Intervention Group </value>
+  </data>
+  <data name="descricao_intervencao" xml:space="preserve">
+    <value>Description of Intervention</value>
+  </data>
+  <data name="nome_grupo_intervencao" xml:space="preserve">
+    <value>Name of Intervention Group</value>
+  </data>
+  <data name="intervencao" xml:space="preserve">
+    <value>Intervention</value>
+  </data>
 </root>

@@ -5927,6 +5927,10 @@ namespace PacienteVirtual.Models
 
         #endregion
 
+
+        public static string NomeGrupoIntervencao { get; set; }
+
+        public static string DescricaoGrupoIntervencao { get; set; }
     }
     
     /// <summary>

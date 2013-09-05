@@ -84,11 +84,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             string nivelEscolaridade = GerenciadorEscolaridade.GetInstance().Obter(id).Nivel;
-            if (!GerenciadorEscolaridade.GetInstance().Remover(id))
-            {
-                TempData["MensagemErro"] = "•Não foi possível remover o nível de escolaridade \"" + nivelEscolaridade + "\", pois existe um dado Demográfico Antropométrico associado!";
-                return View();
-            }
+            GerenciadorEscolaridade.GetInstance().Remover(id);   
             return RedirectToAction("Index");
         }
 
