@@ -139,9 +139,9 @@ namespace PacienteVirtual.Negocio
         /// Obtém MedicamentoNaoPrescritoModel com o código especificiado
         /// </summary>
         /// <returns></returns>
-        public MedicamentoNaoPrescritoModel Obter(long idConsultaVariavel)
+        public IEnumerable<MedicamentoNaoPrescritoModel> Obter(long idConsultaVariavel)
         {
-            return GetQuery().Where(MedicamentoNaoPrescritoModel => MedicamentoNaoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(MedicamentoNaoPrescritoModel => MedicamentoNaoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
 
         /// <summary>

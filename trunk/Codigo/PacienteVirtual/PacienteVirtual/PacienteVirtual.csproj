@@ -483,13 +483,15 @@
     <Content Include="Views\DiarioPessoal\Index.ascx" />
     <Content Include="Views\Erros\Index.aspx" />
     <Content Include="Views\Historia\Edit.ascx" />
+    <Content Include="Views\MedicamentoNaoPrescrito\Create.ascx" />
+    <Content Include="Views\MedicamentoNaoPrescrito\Index.ascx" />
     <Content Include="Views\MedicamentoPrescrito\Create.ascx" />
     <Content Include="Views\MedicamentoPrescrito\Index.ascx" />
+    <Content Include="Views\MedicamentosAnteriores\Create.ascx" />
+    <Content Include="Views\MedicamentosAnteriores\Index.ascx" />
     <Content Include="Views\Shared\NotFound.aspx" />
     <Content Include="Views\Consulta\ListarQueixa.ascx" />
     <Content Include="Views\Consulta\Queixa.ascx" />
-    <Content Include="Views\Consulta\MedicamentoNaoPrescrito.ascx" />
-    <Content Include="Views\Consulta\MedicamentosAnteriores.ascx" />
     <Content Include="Views\Consulta\EstiloVida.ascx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />
     <Content Include="Views\Consulta\Edit.aspx" />
@@ -641,8 +643,6 @@
     <Folder Include="bin\bin\en\" />
     <Folder Include="Views\EstiloVida\" />
     <Folder Include="Views\Historico\" />
-    <Folder Include="Views\MedicamentoNaoPrescrito\" />
-    <Folder Include="Views\MedicamentosAnteriores\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -665,7 +665,7 @@
   <ItemGroup>
     <EntityDeploy Include="Models\PacienteVirtualModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PacienteVirtualModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PacienteVirtualModel1.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>

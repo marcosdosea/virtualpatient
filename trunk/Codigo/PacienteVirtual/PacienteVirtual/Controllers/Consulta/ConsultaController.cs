@@ -49,13 +49,15 @@ namespace PacienteVirtual.Controllers
             consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
             consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
             consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
-            consultaModel.ListaMedicamentoPrescrito = SessionController.ListaMedicamentosPrescritos;
 
             //consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaFixo, SessionController.IdRelato);
             consultaModel.EstiloVida = new EstiloVidaModel() { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentoPrescrito = new MedicamentoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentosAnteriores = new MedicamentosAnterioresModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ListaMedicamentoPrescrito = SessionController.ListaMedicamentosPrescritos;
+            consultaModel.ListaMedicamentosAnteriores = SessionController.ListaMedicamentosAnteriores;
+            consultaModel.ListaMedicamentoNaoPrescrito = SessionController.ListaMedicamentoNaoPrescrito;
 
             // Dados Demográficos
             ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel", consultaModel.DemograficoAntropometrico.IdEscolaridade);
@@ -118,88 +120,7 @@ namespace PacienteVirtual.Controllers
         {
             return PartialView(model);
         }
-
-
-
-        // Medicamentos Anteriores
-        public PartialViewResult MedicamentosAnteriores(int id)
-        {
-            ViewBag.MedicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance().ObterTodos();
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-         
-            MedicamentosAnterioresModel medAnt = new MedicamentosAnterioresModel();
-            medAnt.IdConsultaVariavel = id;
-            return PartialView(medAnt);
-        }
-
-        // Medicamentos Anteriores
-        [HttpPost]
-        public PartialViewResult MedicamentosAnteriores(MedicamentosAnterioresModel medAnteriores)
-        {
-            if (ModelState.IsValid)
-            {
-                GerenciadorMedicamentosAnteriores.GetInstance().Inserir(medAnteriores);
-            }
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-            ViewBag.MedicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance().ObterTodos().ToList();
-            
-            return PartialView(medAnteriores);
-        }
-
-        // Medicamentos Anteriores
-        [HttpPost, ActionName("Delete")]
-        public PartialViewResult RemoverMedicamentosAnteriores(long idConsultaV, long idMedicamento)
-        {
-            GerenciadorMedicamentosAnteriores.GetInstance().Remover(idConsultaV, idMedicamento);
-
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-            ViewBag.medicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance().ObterTodos();
-
-
-            MedicamentosAnterioresModel medAnt = new MedicamentosAnterioresModel();
-            medAnt.IdConsultaVariavel = idConsultaV;
-            return PartialView(medAnt);
-        }
-
-        // Medicamento Prescrito
-        public PartialViewResult MedicamentoPrescrito(int id)
-        {
-            ViewBag.MedicamentosPrescrito = GerenciadorMedicamentoPrescrito.GetInstance().ObterTodos();
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-
-            MedicamentoPrescritoModel medPrescrito = new MedicamentoPrescritoModel();
-            medPrescrito.IdConsultaVariavel = id;
-            return PartialView(medPrescrito);
-        }
-
-        // Medicamento Prescrito
-        [HttpPost]
-        public PartialViewResult MedicamentoPrescrito(MedicamentoPrescritoModel medicamentosPrescritos)
-        {
-            if (ModelState.IsValid)
-            {
-                GerenciadorMedicamentoPrescrito.GetInstance().Inserir(medicamentosPrescritos);
-            }
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-            ViewBag.MedicamentosPrescrito = GerenciadorMedicamentoPrescrito.GetInstance().ObterTodos().ToList();
-
-            return PartialView(medicamentosPrescritos);
-        }
-
-        // Medicamentos prescrito
-        [HttpPost, ActionName("Delete")]
-        public PartialViewResult RemoverMedicamentosPrescritos(long idConsultaV, long idMedicamento)
-        {
-            GerenciadorMedicamentoPrescrito.GetInstance().Remover(idConsultaV, idMedicamento);
-
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-            ViewBag.MedicamentosPrescrito = GerenciadorMedicamentoPrescrito.GetInstance().ObterTodos();
-
-            MedicamentoPrescritoModel medPrescrito = new MedicamentoPrescritoModel();
-            medPrescrito.IdConsultaVariavel = idConsultaV;
-            return PartialView(medPrescrito);
-        }
-
+        
         /* Medicamento não prescrito*/
 
 

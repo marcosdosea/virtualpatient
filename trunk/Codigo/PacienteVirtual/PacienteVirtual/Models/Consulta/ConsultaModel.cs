@@ -22,9 +22,12 @@ namespace PacienteVirtual.Models
         // Dados Variáveis nas consultas
         public ConsultaVariavelModel ConsultaVariavel { get; set; }
         public EstiloVidaModel EstiloVida { get; set; }
+
         public MedicamentoNaoPrescritoModel MedicamentoNaoPrescrito { get; set; }
-        
+        public IEnumerable<MedicamentoNaoPrescritoModel> ListaMedicamentoNaoPrescrito { get; set; }
+
         public MedicamentosAnterioresModel MedicamentosAnteriores { get; set; }
+        public IEnumerable<MedicamentosAnterioresModel> ListaMedicamentosAnteriores { get; set; }
 
         public MedicamentoPrescritoModel MedicamentoPrescrito { get; set; }
         public IEnumerable<MedicamentoPrescritoModel> ListaMedicamentoPrescrito { get; set; }
