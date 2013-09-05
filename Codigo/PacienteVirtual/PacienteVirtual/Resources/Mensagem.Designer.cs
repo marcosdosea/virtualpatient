@@ -520,6 +520,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Descrição da Intervenção.
+        /// </summary>
+        public static string descricao_intervencao {
+            get {
+                return ResourceManager.GetString("descricao_intervencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Descrição da Queixa.
         /// </summary>
         public static string descricao_queixa {
@@ -772,6 +781,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Grupo Intervenção.
+        /// </summary>
+        public static string grupo_intervencao {
+            get {
+                return ResourceManager.GetString("grupo_intervencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to História do Paciente.
         /// </summary>
         public static string historia {
@@ -894,6 +912,15 @@ namespace Resources {
         public static string instituicao_nome {
             get {
                 return ResourceManager.GetString("instituicao_nome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Intervenção.
+        /// </summary>
+        public static string intervencao {
+            get {
+                return ResourceManager.GetString("intervencao", resourceCulture);
             }
         }
         
@@ -1038,6 +1065,15 @@ namespace Resources {
         public static string nome {
             get {
                 return ResourceManager.GetString("nome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome do Grupo de Intervenção.
+        /// </summary>
+        public static string nome_grupo_intervencao {
+            get {
+                return ResourceManager.GetString("nome_grupo_intervencao", resourceCulture);
             }
         }
         

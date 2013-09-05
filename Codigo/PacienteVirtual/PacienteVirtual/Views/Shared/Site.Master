@@ -132,6 +132,13 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ocupacao, "Index", "Ocupacao")%>
                                         </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.intervencao, "Index", "Intervencao")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.grupo_intervencao, "Index", "GrupoIntervencao")%>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
