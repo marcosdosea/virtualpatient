@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.MedicamentoPrescritoModel>>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.MedicamentoNaoPrescritoModel>>" %>
 <div class="box-content">
     <table class="table table-bordered table-striped">
         <tr>
@@ -13,12 +13,6 @@
             </th>
             <th>
                 <%: Resources.Mensagem.posologia %>
-            </th>
-            <th>
-                <%: Resources.Mensagem.prescritor %>
-            </th>
-            <th>
-                <%: Resources.Mensagem.especialidade %>
             </th>
             <th>
             </th>
@@ -37,12 +31,6 @@
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Posologia) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Prescritor) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Especialidade) %>
             </td>
             <td>
                 <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>

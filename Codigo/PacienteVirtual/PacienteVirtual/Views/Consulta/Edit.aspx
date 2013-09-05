@@ -114,7 +114,8 @@
                         </div>
                         <div class="tab-pane" id="tab2-2">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("MedicamentosAnteriores", Model.MedicamentosAnteriores );%>
+                                <% Html.RenderPartial("../MedicamentosAnteriores/Create", Model.MedicamentosAnteriores );%>
+                                <% Html.RenderPartial("../MedicamentosAnteriores/Index", Model.ListaMedicamentosAnteriores );%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-3">
@@ -125,7 +126,8 @@
                         </div>
                         <div class="tab-pane" id="tab2-4">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("MedicamentoNaoPrescrito", Model.MedicamentoNaoPrescrito);%>
+                                <% Html.RenderPartial("../MedicamentoNaoPrescrito/Create", Model.MedicamentoNaoPrescrito);%>
+                                <% Html.RenderPartial("../MedicamentoNaoPrescrito/Index", Model.ListaMedicamentoNaoPrescrito);%>
                             </div>
                         </div>
                     </div>

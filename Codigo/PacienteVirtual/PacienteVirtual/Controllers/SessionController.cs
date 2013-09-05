@@ -234,5 +234,42 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_listaMedicamentosPrescritos"] = value;
             }
         }
+
+        public static IEnumerable<MedicamentosAnterioresModel> ListaMedicamentosAnteriores
+        {
+            get
+            {
+                IEnumerable<MedicamentosAnterioresModel> listaMedicamentosAnteriores = (IEnumerable<MedicamentosAnterioresModel>)HttpContext.Current.Session["_listaMedicamentosAnteriores"];
+                if (listaMedicamentosAnteriores == null)
+                {
+                    listaMedicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_listaMedicamentosAnteriores"] = listaMedicamentosAnteriores;
+                }
+                return listaMedicamentosAnteriores;
+            }
+            set
+            {
+                HttpContext.Current.Session["_listaMedicamentosAnteriores"] = value;
+            }
+        }
+
+        public static IEnumerable<MedicamentoNaoPrescritoModel> ListaMedicamentoNaoPrescrito
+        {
+            get
+            {
+                IEnumerable<MedicamentoNaoPrescritoModel> listaMedicamentoNaoPrescrito = (IEnumerable<MedicamentoNaoPrescritoModel>)HttpContext.Current.Session["_listaMedicamentoNaoPrescrito"];
+                if (listaMedicamentoNaoPrescrito == null)
+                {
+                    listaMedicamentoNaoPrescrito = GerenciadorMedicamentoNaoPrescrito.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_listaMedicamentoNaoPrescrito"] = listaMedicamentoNaoPrescrito;
+                }
+                return listaMedicamentoNaoPrescrito;
+            }
+            set
+            {
+                HttpContext.Current.Session["_listaMedicamentoNaoPrescrito"] = value;
+            }
+        }
+
     }
 }

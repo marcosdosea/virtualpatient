@@ -35,7 +35,6 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit", "Consulta");
         }
 
-        
         //
         // POST: /MedicamentoPrescrito/Delete/5
         [HttpPost]
@@ -45,7 +44,6 @@ namespace PacienteVirtual.Controllers
             SessionController.ListaMedicamentosPrescritos = null;
             return RedirectToAction("Edit", "Consulta");
         }
-
       
         protected override void Dispose(bool disposing)
         {

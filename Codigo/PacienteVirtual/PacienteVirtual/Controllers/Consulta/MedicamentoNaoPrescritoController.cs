@@ -6,32 +6,14 @@ namespace PacienteVirtual.Controllers
 { 
     public class MedicamentoNaoPrescritoController : Controller
     {
-        private pvEntities db = new pvEntities();
-
+        
         private GerenciadorMedicamentoNaoPrescrito gMedicamentoNaoPrescrito = GerenciadorMedicamentoNaoPrescrito.GetInstance();
         //
         // GET: /MedicamentoNaoPrescrito/
 
         public ViewResult Index()
         {
-            return View(gMedicamentoNaoPrescrito.ObterTodos());
-        }
-
-        //
-        // GET: /MedicamentoNaoPrescrito/Details/5
-
-        public ViewResult Details(long id)
-        {
-
-            return View(gMedicamentoNaoPrescrito.Obter(id));
-        }
-
-        //
-        // GET: /MedicamentoNaoPrescrito/Create
-
-        public ActionResult Create()
-        {
-            return View();
+            return View(gMedicamentoNaoPrescrito.Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
         }
 
         //
@@ -43,41 +25,11 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
 
-                medicamentoNaoPrescrito.IdConsultaVariavel = gMedicamentoNaoPrescrito.Inserir(medicamentoNaoPrescrito);
-                return RedirectToAction("Index");
+                medicamentoNaoPrescrito.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
+                gMedicamentoNaoPrescrito.Inserir(medicamentoNaoPrescrito);
+                SessionController.ListaMedicamentoNaoPrescrito = null;
             }
-
-            return View(medicamentoNaoPrescrito);
-        }
-
-        //
-        // GET: /MedicamentoNaoPrescrito/Edit/5
-
-        public ActionResult Edit(long id)
-        {
-            return View(gMedicamentoNaoPrescrito.Obter(id));
-        }
-
-        //
-        // POST: /MedicamentoNaoPrescrito/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(MedicamentoNaoPrescritoModel medicamentoNaoPrescrito)
-        {
-            if (ModelState.IsValid)
-            {
-                gMedicamentoNaoPrescrito.Atualizar(medicamentoNaoPrescrito);
-                return RedirectToAction("Index");
-            }
-            return View(medicamentoNaoPrescrito);
-        }
-
-        //
-        // GET: /MedicamentoNaoPrescrito/Delete/5
-
-        public ActionResult Delete(long id)
-        {
-            return View(gMedicamentoNaoPrescrito.Obter(id));
+            return RedirectToAction("Edit", "Consulta");
         }
 
         //
@@ -87,7 +39,8 @@ namespace PacienteVirtual.Controllers
         public ActionResult DeleteConfirmed(long id)
         {
             gMedicamentoNaoPrescrito.Remover(id);
-            return RedirectToAction("Index");
+            SessionController.ListaMedicamentoNaoPrescrito = null;
+            return RedirectToAction("Edit", "Consulta");
         }
 
         protected override void Dispose(bool disposing)

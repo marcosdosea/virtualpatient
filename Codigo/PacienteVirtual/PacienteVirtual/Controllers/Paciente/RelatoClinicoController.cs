@@ -76,25 +76,9 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool salvar = true;
-                foreach (var ordem in gRelato.ObterRelatos(relatoModel.IdPaciente))
-                {
-                    if (ordem.OrdemCronologica == relatoModel.OrdemCronologica)
-                    {
-                         salvar = false;
-                         break;
-                    }
-                };
-                if (salvar)
-                {
                     relatoModel.IdRelato = gRelato.Inserir(relatoModel);
                     ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
                     return View("Index", gRelato.ObterRelatos(relatoModel.IdPaciente));
-                }
-                else
-                {
-                    TempData["MensagemErro"] = "•Não foi possível Criar um novo Relato Clínico, pois já existe um relato com a Ordem Cronológica especificada!";                  
-                }
                 
             }
 

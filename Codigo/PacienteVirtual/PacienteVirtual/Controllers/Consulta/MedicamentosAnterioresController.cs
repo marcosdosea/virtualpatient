@@ -6,7 +6,6 @@ namespace PacienteVirtual.Controllers
 { 
     public class MedicamentosAnterioresController : Controller
     {
-        private pvEntities db = new pvEntities();
 
         private GerenciadorMedicamentosAnteriores gMedicamentosAnteriores = GerenciadorMedicamentosAnteriores.GetInstance();
         //
@@ -14,24 +13,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
-            return View(gMedicamentosAnteriores.ObterTodos());
-        }
-
-        //
-        // GET: /MedicamentosAnteriores/Details/5
-
-        public ViewResult Details(long id)
-        {
-
-            return View(gMedicamentosAnteriores.Obter(id));
-        }
-
-        //
-        // GET: /MedicamentosAnteriores/Create
-
-        public ActionResult Create()
-        {
-            return View();
+            return View(gMedicamentosAnteriores.Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
         }
 
         //
@@ -43,41 +25,11 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
 
-                medicamentosAnterioresModel.IdConsultaVariavel = gMedicamentosAnteriores.Inserir(medicamentosAnterioresModel);
-                return RedirectToAction("Index");
+                medicamentosAnterioresModel.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
+                gMedicamentosAnteriores.Inserir(medicamentosAnterioresModel);
+                SessionController.ListaMedicamentosAnteriores = null;
             }
-
-            return View(medicamentosAnterioresModel);
-        }
-
-        //
-        // GET: /MedicamentosAnteriores/Edit/5
-
-        public ActionResult Edit(long id)
-        {
-            return View(gMedicamentosAnteriores.Obter(id));
-        }
-
-        //
-        // POST: /MedicamentosAnteriores/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(MedicamentosAnterioresModel medicamentosAnterioresModel)
-        {
-            if (ModelState.IsValid)
-            {
-                gMedicamentosAnteriores.Atualizar(medicamentosAnterioresModel);
-                return RedirectToAction("Index");
-            }
-            return View(medicamentosAnterioresModel);
-        }
-
-        //
-        // GET: /MedicamentosAnteriores/Delete/5
-
-        public ActionResult Delete(long id)
-        {
-            return View(gMedicamentosAnteriores.Obter(id));
+            return RedirectToAction("Edit", "Consulta");
         }
 
         //
@@ -87,7 +39,8 @@ namespace PacienteVirtual.Controllers
         public ActionResult DeleteConfirmed(long id)
         {
             gMedicamentosAnteriores.Remover(id);
-            return RedirectToAction("Index");
+            SessionController.ListaMedicamentosAnteriores = null;
+            return RedirectToAction("Edit", "Consulta");
         }
 
         protected override void Dispose(bool disposing)
