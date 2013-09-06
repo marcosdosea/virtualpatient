@@ -142,14 +142,17 @@
   <ItemGroup>
     <Compile Include="Controllers\Cadastro\GrupoIntervencaoController.cs" />
     <Compile Include="Controllers\Cadastro\IntervencaoController.cs" />
+    <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
     <Compile Include="Models\Cadastro\GrupoIntervencaoModel.cs" />
     <Compile Include="Models\Cadastro\IntervencaoModel.cs" />
+    <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
     <Compile Include="Models\Turma\SolicitarMatriculaTurmaModel.cs" />
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorGrupoIntervencao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorIntervencao.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Resources\Mensagem.en.designer.cs">
       <DependentUpon>Mensagem.en.resx</DependentUpon>
@@ -488,6 +491,8 @@
     <Content Include="Views\Bebida\Index.aspx" />
     <Content Include="Views\DiarioPessoal\Index.ascx" />
     <Content Include="Views\Erros\Index.aspx" />
+    <Content Include="Views\EstiloVida\Edit.ascx" />
+    <Content Include="Views\ExamesFisicos\Edit.ascx" />
     <Content Include="Views\GrupoIntervencao\Create.aspx" />
     <Content Include="Views\GrupoIntervencao\Delete.aspx" />
     <Content Include="Views\GrupoIntervencao\Details.aspx" />
@@ -508,7 +513,6 @@
     <Content Include="Views\Shared\NotFound.aspx" />
     <Content Include="Views\Consulta\ListarQueixa.ascx" />
     <Content Include="Views\Consulta\Queixa.ascx" />
-    <Content Include="Views\Consulta\EstiloVida.ascx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />
     <Content Include="Views\Consulta\Edit.aspx" />
     <Content Include="Views\DemograficosAntropometicos\Edit.ascx" />
@@ -657,7 +661,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="bin\bin\en\" />
-    <Folder Include="Views\EstiloVida\" />
     <Folder Include="Views\Historico\" />
   </ItemGroup>
   <ItemGroup>

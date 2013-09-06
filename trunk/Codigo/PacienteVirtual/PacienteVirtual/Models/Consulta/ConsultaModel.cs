@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PacienteVirtual.Models.Consulta;
 
 namespace PacienteVirtual.Models
 {
@@ -31,6 +32,8 @@ namespace PacienteVirtual.Models
 
         public MedicamentoPrescritoModel MedicamentoPrescrito { get; set; }
         public IEnumerable<MedicamentoPrescritoModel> ListaMedicamentoPrescrito { get; set; }
+
+        public ExamesFisicosModel ExamesFisicos { get; set; }
         //public QueixaModel Queixas
 
     }

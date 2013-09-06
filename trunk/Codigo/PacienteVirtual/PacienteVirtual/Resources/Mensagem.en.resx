@@ -633,4 +633,19 @@
   <data name="intervencao" xml:space="preserve">
     <value>Intervention</value>
   </data>
+  <data name="altura" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="glicemia" xml:space="preserve">
+    <value>Glycemia</value>
+  </data>
+  <data name="peso" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="pressao_diastolica" xml:space="preserve">
+    <value>Diastolic Pressure</value>
+  </data>
+  <data name="pressao_sistolica" xml:space="preserve">
+    <value>Systolic Pressure</value>
+  </data>
 </root>
