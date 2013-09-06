@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
+using PacienteVirtual.Models.Consulta;
 
 namespace PacienteVirtual.Controllers
 {
@@ -51,10 +52,11 @@ namespace PacienteVirtual.Controllers
             consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
 
             //consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaFixo, SessionController.IdRelato);
-            consultaModel.EstiloVida = new EstiloVidaModel() { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.EstiloVida = SessionController.EstiloVida;
             consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentoPrescrito = new MedicamentoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentosAnteriores = new MedicamentosAnterioresModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ExamesFisicos = SessionController.ExamesFisicos;
             consultaModel.ListaMedicamentoPrescrito = SessionController.ListaMedicamentosPrescritos;
             consultaModel.ListaMedicamentosAnteriores = SessionController.ListaMedicamentosAnteriores;
             consultaModel.ListaMedicamentoNaoPrescrito = SessionController.ListaMedicamentoNaoPrescrito;
@@ -86,83 +88,13 @@ namespace PacienteVirtual.Controllers
             return PartialView();
         }
 
-        //Estilo de Vida
-        public PartialViewResult EstiloVida(int id)
-        {
-            EstiloVidaModel estiloVida = GerenciadorEstiloVida.GetInstance().Obter(id);
-
-            if(estiloVida == null){
-
-                estiloVida = new EstiloVidaModel();
-                estiloVida.IdConsultaVariavel = id;
-
-                GerenciadorEstiloVida.GetInstance().Inserir(estiloVida);
-            }
-
-            return PartialView(estiloVida);
-        }
-
-        //Estilo de Vida
-        [HttpPost]
-        public PartialViewResult EstiloVida(EstiloVidaModel estiloVida)
-        {
-
-            if (ModelState.IsValid)
-            {
-                GerenciadorEstiloVida.GetInstance().Atualizar(estiloVida);
-            }
-
-            return PartialView(estiloVida);
-        }
-
         //Relato Clinico
         public PartialViewResult RelatoClinico(RelatoClinicoModel model)
         {
             return PartialView(model);
         }
         
-        /* Medicamento não prescrito*/
-
-
-        // Medicamento Nao Prescrito
-        public PartialViewResult MedicamentoNaoPrescrito(int id)
-        {
-            ViewBag.MedicamentoNaoPrescrito = GerenciadorMedicamentoNaoPrescrito.GetInstance().ObterTodos();
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-
-            MedicamentoNaoPrescritoModel medNaoPrescrito = new MedicamentoNaoPrescritoModel();
-            medNaoPrescrito.IdConsultaVariavel = id;
-            return PartialView(medNaoPrescrito);
-        }
-
-        // Medicamento Nao Prescrito
-        [HttpPost]
-        public PartialViewResult MedicamentoNaoPrescrito(MedicamentoNaoPrescritoModel medicamentoNaoPrescrito)
-        {
-            if (ModelState.IsValid)
-            {
-                GerenciadorMedicamentoNaoPrescrito.GetInstance().Inserir(medicamentoNaoPrescrito);
-            }
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-            ViewBag.MedicamentoNaoPrescrito = GerenciadorMedicamentoNaoPrescrito.GetInstance().ObterTodos().ToList();
-
-            return PartialView(medicamentoNaoPrescrito);
-        }
-
-        // Medicamentos não prescrito
-        [HttpPost, ActionName("Delete")]
-        public PartialViewResult RemoverMedicamentoNaoPrescrito(long idConsultaV, long idMedicamento)
-        {
-            GerenciadorMedicamentoNaoPrescrito.GetInstance().Remover(idConsultaV, idMedicamento);
-
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "MedicamentoNome", 0);
-            ViewBag.MedicamentoNaoPrescrito = GerenciadorMedicamentoNaoPrescrito.GetInstance().ObterTodos();
-
-            MedicamentoNaoPrescritoModel medNaoPrescrito = new MedicamentoNaoPrescritoModel();
-            medNaoPrescrito.IdConsultaVariavel = idConsultaV;
-            return PartialView(medNaoPrescrito);
-        }
-
+        
         public PartialViewResult Queixa(int id)
         {
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");

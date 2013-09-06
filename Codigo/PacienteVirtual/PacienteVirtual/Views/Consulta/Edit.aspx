@@ -105,11 +105,13 @@
                             <%: Resources.Mensagem.medicamento_prescrito %></a></li>
                         <li><a href="#tab2-4" data-toggle="tab">
                             <%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
+                        <li><a href="#tab2-5" data-toggle="tab">
+                            Exames Físicos</a></li>
                     </ul> 
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
                             <div class="thumbnail">
-                                <%  Html.RenderPartial("EstiloVida", Model.EstiloVida);%>
+                                <%  Html.RenderPartial("../EstiloVida/Edit", Model.EstiloVida);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-2">
@@ -128,6 +130,11 @@
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../MedicamentoNaoPrescrito/Create", Model.MedicamentoNaoPrescrito);%>
                                 <% Html.RenderPartial("../MedicamentoNaoPrescrito/Index", Model.ListaMedicamentoNaoPrescrito);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab2-5">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../ExamesFisicos/Edit", Model.ExamesFisicos);%>
                             </div>
                         </div>
                     </div>

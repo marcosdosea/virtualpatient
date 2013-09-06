@@ -2,6 +2,8 @@
 using System.Web;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
+using PacienteVirtual.Models.Consulta;
+using PacienteVirtual.Negocio.Consulta;
 
 namespace PacienteVirtual.Controllers 
 {
@@ -268,6 +270,70 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_listaMedicamentoNaoPrescrito"] = value;
+            }
+        }
+
+        
+        public static ExamesFisicosModel ExamesFisicos
+        {
+            get
+            {
+                ExamesFisicosModel examesFisicos = (ExamesFisicosModel)HttpContext.Current.Session["_ExamesFisicos"];
+                if (examesFisicos == null)
+                {
+                    examesFisicos = GerenciadorExamesFisicos.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (examesFisicos == null)
+                    {
+                        examesFisicos = new ExamesFisicosModel();
+                        examesFisicos.Peso = 0;
+                        examesFisicos.Altura = 0;
+                        examesFisicos.PressaoDiastolica = 0;
+                        examesFisicos.PressaoSistolica = 0;
+                        examesFisicos.Glicemia = 0;
+                        examesFisicos.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        GerenciadorExamesFisicos.GetInstance().Inserir(examesFisicos);
+                    }
+                    HttpContext.Current.Session["_ExamesFisicos"] = examesFisicos;
+                }
+                return examesFisicos;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ExamesFisicos"] = value;
+            }
+        }
+
+        public static EstiloVidaModel EstiloVida
+        {
+            get
+            {
+                EstiloVidaModel estiloVida = (EstiloVidaModel)HttpContext.Current.Session["_EstiloVida"];
+                if (estiloVida == null)
+                {
+                    estiloVida = GerenciadorEstiloVida.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (estiloVida == null)
+                    {
+                        estiloVida = new EstiloVidaModel();
+                        estiloVida.AlcoolConsumo = false;
+                        estiloVida.AlcoolParou = "";
+                        estiloVida.AlcoolTipoBebida = "";
+                        estiloVida.AlcoolUso = 0;
+                        estiloVida.CafeConsumo = false;
+                        estiloVida.CafeParou = "";
+                        estiloVida.CafeUso = 0;
+                        estiloVida.TabacoConsumo = false;
+                        estiloVida.TabacoParou = "";
+                        estiloVida.TabacoUso = 0;
+                        estiloVida.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        GerenciadorEstiloVida.GetInstance().Inserir(estiloVida);
+                    }
+                    HttpContext.Current.Session["_EstiloVida"] = estiloVida;
+                }
+                return estiloVida;
+            }
+            set
+            {
+                HttpContext.Current.Session["_EstiloVida"] = value;
             }
         }
 
