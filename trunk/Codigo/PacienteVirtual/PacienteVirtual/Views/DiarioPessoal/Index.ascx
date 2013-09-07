@@ -1,23 +1,22 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.DiarioPessoalModel>>" %>
-
-<table>
+    <table class="table table-bordered table-striped">
     <tr>
         <th>
-            Medicamento
+            <%: Resources.Mensagem.medicamento %>
         </th>
         <th>
-            Periodo
+            <%: Resources.Mensagem.periodo %>
         </th>
         <th>
-            Horario
+            <%: Resources.Mensagem.horario %>
         </th>
         <th>
-            Quantidade
+            <%: Resources.Mensagem.quantidade %>
         </th>
         <th>
-            NomeBebida
+            <%: Resources.Mensagem.bebida %>
         </th>
-        <th></th>
+        <th><%: Resources.Mensagem.opcoes %></th>
     </tr>
 
 <% foreach (var item in Model) { %>
@@ -38,7 +37,7 @@
             <%: Html.DisplayFor(modelItem => item.NomeBebida) %>
         </td>
         <td>
-            <%: Html.ActionLink("Delete", "Delete", new { idConsultaFixo=item.IdConsultaFixo, idMedicamento=item.IdMedicamento }) %>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { idConsultaFixo=item.IdConsultaFixo, idMedicamento=item.IdMedicamento }) %>
         </td>
     </tr>
 <% } %>
