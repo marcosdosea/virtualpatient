@@ -94,8 +94,8 @@ namespace PacienteVirtual.Negocio
             var query = from tb_diario_pessoal in pvEntities.tb_diario_pessoal
                         join tb_medicamentos in pvEntities.tb_medicamentos
                         on tb_diario_pessoal.IdMedicamento equals tb_medicamentos.IdMedicamento 
-                        /*join tb_bebida in pvEntities.tb_bebida
-                        on tb_diario_pessoal.IdBebida equals tb_bebida.Nome*/
+                        join tb_bebida in pvEntities.tb_bebida
+                        on tb_diario_pessoal.IdBebida equals tb_bebida.IdBebida
                         select new DiarioPessoalModel
                         {
                             IdConsultaFixo = tb_diario_pessoal.IdConsultaFixo,
@@ -105,8 +105,8 @@ namespace PacienteVirtual.Negocio
                             Quantidade = tb_diario_pessoal.Quantidade,
                             IdBebida = tb_diario_pessoal.IdBebida,
 
-                            Medicamento = tb_medicamentos.Nome
-                            //NomeBebida = tb_bebida.Nome
+                            Medicamento = tb_medicamentos.Nome,
+                            NomeBebida = tb_bebida.Nome
                         };
             return query;
         }
