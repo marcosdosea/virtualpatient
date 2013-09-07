@@ -10,7 +10,15 @@ namespace PacienteVirtual.Controllers
     {
    
         private GerenciadorDiarioPessoal gDiarioPessoal = GerenciadorDiarioPessoal.GetInstance();
-        
+
+        //
+        // GET: /DiarioPessoal/
+
+        public ViewResult Index()
+        {
+            return View(gDiarioPessoal.Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
+        }
+
        
         //
         // POST: /DiarioPessoal/Create
@@ -22,7 +30,7 @@ namespace PacienteVirtual.Controllers
                 gDiarioPessoal.Inserir(diarioPessoal);
                 List<DiarioPessoalModel> listaDiarioPessoal = new List<DiarioPessoalModel>(SessionController.ListaDiarioPessoal);
                 listaDiarioPessoal.Add(diarioPessoal);
-                SessionController.ListaDiarioPessoal = listaDiarioPessoal;
+                SessionController.ListaDiarioPessoal = null;
                 return RedirectToAction("Edit", "Consulta");
             }
             return PartialView(diarioPessoal);

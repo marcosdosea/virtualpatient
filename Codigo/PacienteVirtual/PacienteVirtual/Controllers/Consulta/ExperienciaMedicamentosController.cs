@@ -21,6 +21,7 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 gExpMedicamento.Atualizar(expMedicamento);
+                SessionController.ExperienciaMedicamentos = expMedicamento;
             }
             return RedirectToAction("Edit", "Consulta");
         }

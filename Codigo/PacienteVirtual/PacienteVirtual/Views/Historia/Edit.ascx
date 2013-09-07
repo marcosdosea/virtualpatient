@@ -11,11 +11,7 @@
         <legend>HistoriaModel</legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.IdConsultaFixo) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.IdConsultaFixo) %>
-            <%: Html.ValidationMessageFor(model => model.IdConsultaFixo) %>
+            <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
         </div>
 
         <div class="editor-label">
@@ -34,12 +30,8 @@
             <%: Html.ValidationMessageFor(model => model.HistoriaFamiliar) %>
         </div>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
+        <div class="form-actions">
+    <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+</div>
     </fieldset>
 <% } %>
-
-<div>
-    <%: Html.ActionLink("Back to List", "Index") %>
-</div>

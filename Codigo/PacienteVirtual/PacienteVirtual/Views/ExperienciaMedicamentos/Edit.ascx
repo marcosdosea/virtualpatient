@@ -1,51 +1,110 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.ExperienciaMedicamentosModel>" %>
-
-<% using (Html.BeginForm())
+<% using (Html.BeginForm("Edit", "ExperienciaMedicamentos"))
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <legend><%: Resources.Mensagem.experiencia_medicamentos %></legend>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.IdConsultaFixo) %>
+    <legend>
+        <%: Resources.Mensagem.experiencia_medicamentos %></legend>
+    <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.IdRespostaEsperaTratamento) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.IdRespostaEsperaTratamento) %>
+                <%: Html.ValidationMessageFor(model => model.IdRespostaEsperaTratamento) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.AtencaoEsperaTratamento) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.AtencaoEsperaTratamento) %>
+                <%: Html.ValidationMessageFor(model => model.AtencaoEsperaTratamento) %>
+            </div>
+        </div>
     </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.IdConsultaFixo) %>
-        <%: Html.ValidationMessageFor(model => model.IdConsultaFixo) %>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.IdRespostaPreocupacoes) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.IdRespostaPreocupacoes) %>
+                <%: Html.ValidationMessageFor(model => model.IdRespostaPreocupacoes) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.AtencaoPreocupacoes) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.AtencaoPreocupacoes) %>
+                <%: Html.ValidationMessageFor(model => model.AtencaoPreocupacoes) %>
+            </div>
+        </div>
     </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.IdRespostaEsperaTratamento) %>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.IdRespostaGrauEntendimento) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.IdRespostaGrauEntendimento) %>
+                <%: Html.ValidationMessageFor(model => model.IdRespostaGrauEntendimento) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.AtencaoGrauEntendimento) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.AtencaoGrauEntendimento) %>
+                <%: Html.ValidationMessageFor(model => model.AtencaoGrauEntendimento) %>
+            </div>
+        </div>
     </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.IdRespostaEsperaTratamento) %>
-        <%: Html.ValidationMessageFor(model => model.IdRespostaEsperaTratamento) %>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.IdRespostaCultural) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.IdRespostaCultural) %>
+                <%: Html.ValidationMessageFor(model => model.IdRespostaCultural) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.AtencaoCultural) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.AtencaoCultural) %>
+                <%: Html.ValidationMessageFor(model => model.AtencaoCultural) %>
+            </div>
+        </div>
     </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.IdRespostaPreocupacoes) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.IdRespostaPreocupacoes) %>
-        <%: Html.ValidationMessageFor(model => model.IdRespostaPreocupacoes) %>
-    </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.IdRespostaGrauEntendimento) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.IdRespostaGrauEntendimento) %>
-        <%: Html.ValidationMessageFor(model => model.IdRespostaGrauEntendimento) %>
-    </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.IdRespostaCultural) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.IdRespostaCultural) %>
-        <%: Html.ValidationMessageFor(model => model.IdRespostaCultural) %>
-    </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.IdRespostaComportamento) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.IdRespostaComportamento) %>
-        <%: Html.ValidationMessageFor(model => model.IdRespostaComportamento) %>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.IdRespostaComportamento) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.IdRespostaComportamento) %>
+                <%: Html.ValidationMessageFor(model => model.IdRespostaComportamento) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.AtencaoComportamento) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.AtencaoComportamento) %>
+                <%: Html.ValidationMessageFor(model => model.AtencaoComportamento) %>
+            </div>
+        </div>
     </div>
     <div class="editor-label">
         <%: Html.LabelFor(model => model.IdRespostaIncorporadoPlano) %>
@@ -53,41 +112,6 @@
     <div class="editor-field">
         <%: Html.EditorFor(model => model.IdRespostaIncorporadoPlano) %>
         <%: Html.ValidationMessageFor(model => model.IdRespostaIncorporadoPlano) %>
-    </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.AtencaoEsperaTratamento) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.AtencaoEsperaTratamento) %>
-        <%: Html.ValidationMessageFor(model => model.AtencaoEsperaTratamento) %>
-    </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.AtencaoPreocupacoes) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.AtencaoPreocupacoes) %>
-        <%: Html.ValidationMessageFor(model => model.AtencaoPreocupacoes) %>
-    </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.AtencaoGrauEntendimento) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.AtencaoGrauEntendimento) %>
-        <%: Html.ValidationMessageFor(model => model.AtencaoGrauEntendimento) %>
-    </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.AtencaoCultural) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.AtencaoCultural) %>
-        <%: Html.ValidationMessageFor(model => model.AtencaoCultural) %>
-    </div>
-    <div class="editor-label">
-        <%: Html.LabelFor(model => model.AtencaoComportamento) %>
-    </div>
-    <div class="editor-field">
-        <%: Html.EditorFor(model => model.AtencaoComportamento) %>
-        <%: Html.ValidationMessageFor(model => model.AtencaoComportamento) %>
     </div>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

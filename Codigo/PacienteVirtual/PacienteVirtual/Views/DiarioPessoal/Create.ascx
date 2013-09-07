@@ -1,12 +1,31 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DiarioPessoalModel>" %>
-
-<% using (Html.BeginForm())
+<% using (Html.BeginForm("Create", "DiarioPessoal"))
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
     <legend>
         <%: Resources.Mensagem.diario_pessoal %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
+    <div class="row-fluid">
+        <div class="span5">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Medicamento) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdMedicamento", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdMedicamento) %>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.NomeBebida) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdBebida", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdBebida)%>
+            </div>
+        </div>
+    </div>
     <div class="row-fluid">
         <div class="span4">
             <div class="editor-label">
@@ -38,28 +57,8 @@
             </div>
         </div>
     </div>
-    <div class="row-fluid">
-        <div class="span6">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Medicamento) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.DropDownList("IdMedicamento")%>
-                <%: Html.ValidationMessageFor(model => model.IdMedicamento) %>
-            </div>
-        </div>
-        <div class="span6">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.NomeBebida) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.DropDownList("IdBebida") %>
-                <%: Html.ValidationMessageFor(model => model.IdBebida)%>
-            </div>
-        </div>
-    </div>
     <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
     </div>
 </fieldset>
 <% } %>
