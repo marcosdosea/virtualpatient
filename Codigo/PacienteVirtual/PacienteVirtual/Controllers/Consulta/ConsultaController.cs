@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 using PacienteVirtual.Models.Consulta;
+using PacienteVirtual.Negocio.Consulta;
 
 namespace PacienteVirtual.Controllers
 {
@@ -56,10 +57,12 @@ namespace PacienteVirtual.Controllers
             consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentoPrescrito = new MedicamentoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.MedicamentosAnteriores = new MedicamentosAnterioresModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ConsultaParametro = new ConsultaParametroModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ExamesFisicos = SessionController.ExamesFisicos;
             consultaModel.ListaMedicamentoPrescrito = SessionController.ListaMedicamentosPrescritos;
             consultaModel.ListaMedicamentosAnteriores = SessionController.ListaMedicamentosAnteriores;
             consultaModel.ListaMedicamentoNaoPrescrito = SessionController.ListaMedicamentoNaoPrescrito;
+            consultaModel.ListaConsultaParametro = SessionController.ListaConsultaParametro;
 
             // Dados Demográficos
             ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel", consultaModel.DemograficoAntropometrico.IdEscolaridade);
@@ -78,6 +81,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
             ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
             
+            //Parâmetro Clínico
+            ViewBag.IdParametroClinico = new SelectList(SessionController.ListaParametroClinico, "IdParametroClinico", "ParametroClinico");
 
             return View(consultaModel);
         }
@@ -113,6 +118,13 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorMedicamentosAnteriores.GetInstance().Remover(idConsultaVariavel, idMedicamento);
             SessionController.ListaMedicamentosAnteriores = null;
+            return RedirectToAction("Edit", "Consulta");
+        }
+
+        public ActionResult RemoverConsultaParametro(long idConsultaVariavel, int idParametroClinico)
+        {
+            GerenciadorConsultaParametro.GetInstance().Remover(idConsultaVariavel, idParametroClinico);
+            SessionController.ListaConsultaParametro = null;
             return RedirectToAction("Edit", "Consulta");
         }
 

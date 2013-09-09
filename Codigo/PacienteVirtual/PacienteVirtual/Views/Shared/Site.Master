@@ -116,6 +116,9 @@
                                             <%: Html.ActionLink(Resources.Mensagem.razao_encontro, "Index", "RazaoEncontro")%>
                                         </li>
                                         <li>
+                                            <%: Html.ActionLink("ParametroClinico*", "Index", "ParametroClinico")%>
+                                        </li>
+                                        <li>
                                             <%: Html.ActionLink(Resources.Mensagem.escolaridade, "Index", "Escolaridade")%>
                                         </li>
                                         <li>

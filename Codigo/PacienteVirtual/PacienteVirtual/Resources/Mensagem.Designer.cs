@@ -1555,6 +1555,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Substância.
+        /// </summary>
+        public static string substancia {
+            get {
+                return ResourceManager.GetString("substancia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consumo de tabaco.
         /// </summary>
         public static string tabaco_consumo {
