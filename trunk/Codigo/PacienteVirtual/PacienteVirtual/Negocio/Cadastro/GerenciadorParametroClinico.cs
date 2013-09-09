@@ -45,7 +45,7 @@ namespace PacienteVirtual.Negocio
             }
             catch (Exception e)
             {
-                throw new NegocioException("ParamentoClinico", e.Message, e);
+                throw new NegocioException("ParametroClinico", e.Message, e);
             }
 
         }

@@ -648,4 +648,7 @@
   <data name="pressao_sistolica" xml:space="preserve">
     <value>Pressão Sistólica</value>
   </data>
+  <data name="substancia" xml:space="preserve">
+    <value>Substância</value>
+  </data>
 </root>

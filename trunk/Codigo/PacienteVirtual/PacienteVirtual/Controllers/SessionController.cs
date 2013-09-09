@@ -201,6 +201,24 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static IEnumerable<ParametroClinicoModel> ListaParametroClinico
+        {
+            get
+            {
+                IEnumerable<ParametroClinicoModel> listaParametroClinico = (IEnumerable<ParametroClinicoModel>)HttpContext.Current.Session["_listaParametroClinico"];
+                if (listaParametroClinico == null)
+                {
+                    listaParametroClinico = GerenciadorParametroClinico.GetInstance().ObterTodos();
+                    HttpContext.Current.Session["_listaParametroClinico"] = listaParametroClinico;
+                }
+                return listaParametroClinico;
+            }
+            set
+            {
+                HttpContext.Current.Session["_listaParametroClinico"] = value;
+            }
+        }
+
         public static IEnumerable<MedicamentosModel> ListaMedicamentos
         {
             get
@@ -273,6 +291,24 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+
+        public static IEnumerable<ConsultaParametroModel> ListaConsultaParametro
+        {
+            get
+            {
+                IEnumerable<ConsultaParametroModel> listaConsultaParametro = (IEnumerable<ConsultaParametroModel>)HttpContext.Current.Session["_ListaConsultaParametro"];
+                if (listaConsultaParametro == null)
+                {
+                    listaConsultaParametro = GerenciadorConsultaParametro.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_ListaConsultaParametro"] = listaConsultaParametro;
+                }
+                return listaConsultaParametro;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaConsultaParametro"] = value;
+            }
+        }
         
         public static ExamesFisicosModel ExamesFisicos
         {
