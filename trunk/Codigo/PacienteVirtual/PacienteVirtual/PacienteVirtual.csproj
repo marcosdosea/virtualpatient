@@ -205,7 +205,7 @@
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\Cadastro\PlanoSaudeController.cs" />
     <Compile Include="Controllers\Cadastro\QueixaController.cs" />
-    <Compile Include="Controllers\Consulta\RazaoEncontroController.cs" />
+    <Compile Include="Controllers\Cadastro\RazaoEncontroController.cs" />
     <Compile Include="Controllers\Paciente\RelatoClinicoController.cs" />
     <Compile Include="Controllers\Cadastro\RespostaController.cs" />
     <Compile Include="Controllers\Cadastro\SistemaController.cs" />
