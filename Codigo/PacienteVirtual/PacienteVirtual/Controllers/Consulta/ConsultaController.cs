@@ -88,6 +88,13 @@ namespace PacienteVirtual.Controllers
             return PartialView();
         }
 
+        public ActionResult RemoverDiarioPessoal(long idConsultaFixo, int idMedicamento)
+        {
+            GerenciadorDiarioPessoal.GetInstance().Remover(idConsultaFixo, idMedicamento);
+            SessionController.ListaDiarioPessoal = null;
+            return RedirectToAction("Edit", "Consulta");
+        }
+
         public ActionResult RemoverMedicamentoNaoPrescrito(long idConsultaVariavel, int idMedicamento) 
         {
             GerenciadorMedicamentoNaoPrescrito.GetInstance().Remover(idConsultaVariavel, idMedicamento);
