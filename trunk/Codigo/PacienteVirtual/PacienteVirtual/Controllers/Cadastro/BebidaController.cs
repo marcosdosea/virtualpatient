@@ -84,11 +84,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             string nomeBebida = GerenciadorBebida.GetInstance().Obter(id).Nome;
-            if (!GerenciadorBebida.GetInstance().Remover(id))
-            {
-                TempData["MensagemErro"] = "•Não foi possível remover a bebida \"" + nomeBebida + "\", pois existe um Diário Pessoal associado!";
-                return View();
-            }
+            GerenciadorBebida.GetInstance().Remover(id);
             return RedirectToAction("Index");
         }
 

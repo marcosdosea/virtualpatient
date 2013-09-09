@@ -8,7 +8,7 @@
    { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>HistoriaModel</legend>
+        <legend><%: Resources.Mensagem.historia %></legend>
 
         <div class="editor-label">
             <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
