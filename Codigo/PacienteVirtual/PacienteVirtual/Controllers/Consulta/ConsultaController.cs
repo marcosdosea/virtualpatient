@@ -88,6 +88,27 @@ namespace PacienteVirtual.Controllers
             return PartialView();
         }
 
+        public ActionResult RemoverMedicamentoNaoPrescrito(long idConsultaVariavel, int idMedicamento) 
+        {
+            GerenciadorMedicamentoNaoPrescrito.GetInstance().Remover(idConsultaVariavel, idMedicamento);
+            SessionController.ListaMedicamentoNaoPrescrito = null;
+            return RedirectToAction("Edit", "Consulta");
+        }
+
+        public ActionResult RemoverMedicamentoPrescrito(long idConsultaVariavel, int idMedicamento)
+        {
+            GerenciadorMedicamentoPrescrito.GetInstance().Remover(idConsultaVariavel, idMedicamento);
+            SessionController.ListaMedicamentosPrescritos = null;
+            return RedirectToAction("Edit", "Consulta");
+        }
+
+        public ActionResult RemoverMedicamentosAnteriores(long idConsultaVariavel, int idMedicamento)
+        {
+            GerenciadorMedicamentosAnteriores.GetInstance().Remover(idConsultaVariavel, idMedicamento);
+            SessionController.ListaMedicamentosAnteriores = null;
+            return RedirectToAction("Edit", "Consulta");
+        }
+
         //Relato Clinico
         public PartialViewResult RelatoClinico(RelatoClinicoModel model)
         {
@@ -106,5 +127,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");
             return PartialView();
         }
+
+
     }
 }

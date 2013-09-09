@@ -33,7 +33,7 @@
                 <%: Html.DisplayFor(modelItem => item.Periodo) %>
             </td>
             <td>
-                <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
+                <%: Html.ActionLink("Delete", "RemoverMedicamentosAnteriores", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento })%>
             </td>
         </tr>
         <% } %>

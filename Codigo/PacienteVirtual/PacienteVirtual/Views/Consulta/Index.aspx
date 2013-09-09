@@ -60,7 +60,6 @@
                 <td>
                     <%: Html.DisplayFor(modelItem => item.IdTurma)%>
                 </td>
-                <td></td>
                 <td>
                     <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%> 
                 </td>

@@ -45,7 +45,7 @@
                 <%: Html.DisplayFor(modelItem => item.Especialidade) %>
             </td>
             <td>
-                <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
+                <%: Html.ActionLink("Delete", "RemoverMedicamentoPrescrito", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento }) %>
             </td>
         </tr>
         <% } %>
