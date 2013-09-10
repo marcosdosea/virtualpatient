@@ -33,6 +33,10 @@ namespace PacienteVirtual.Controllers
                 }
                 return pessoa;
             }
+            set
+            {
+                HttpContext.Current.Session["_Pessoa"] = value;
+            }
         }
 
         public static PacienteModel Paciente 

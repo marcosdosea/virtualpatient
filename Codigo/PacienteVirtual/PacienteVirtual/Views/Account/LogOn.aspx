@@ -8,9 +8,8 @@
         <%: Resources.Mensagem.login %></h2>
     <p></p>
     <div>
-        <button class="btn">
             <%: Html.ActionLink(Resources.Mensagem.registre_se, "Register") %>
-        </button>
+       
         <%: Resources.Mensagem.se_nao_tem_conta %>
     </div>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
