@@ -7,7 +7,7 @@
 <% using (Html.BeginForm("Create", "MedicamentosAnteriores")) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>MedicamentosAnterioresModel</legend>
+        <legend><%: Resources.Mensagem.medicamentos_anteriores %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
 <div class="row-fluid">
     <div class="span2">

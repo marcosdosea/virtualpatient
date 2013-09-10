@@ -651,4 +651,28 @@
   <data name="substancia" xml:space="preserve">
     <value>Substância</value>
   </data>
+  <data name="alcool" xml:space="preserve">
+    <value>Alcóol</value>
+  </data>
+  <data name="cafe" xml:space="preserve">
+    <value>Café</value>
+  </data>
+  <data name="consumo" xml:space="preserve">
+    <value>Consumo</value>
+  </data>
+  <data name="historia_anterior_uso" xml:space="preserve">
+    <value>História Anterior de Uso</value>
+  </data>
+  <data name="historia_uso" xml:space="preserve">
+    <value>História de Uso</value>
+  </data>
+  <data name="quanto_tempo_parou" xml:space="preserve">
+    <value>Há Quanto Tempo Parou?</value>
+  </data>
+  <data name="tabaco" xml:space="preserve">
+    <value>Tabaco</value>
+  </data>
+  <data name="uso" xml:space="preserve">
+    <value>Uso</value>
+  </data>
 </root>

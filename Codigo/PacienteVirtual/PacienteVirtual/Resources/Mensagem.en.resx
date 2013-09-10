@@ -649,6 +649,30 @@
     <value>Systolic Pressure</value>
   </data>
   <data name="substancia" xml:space="preserve">
-    <value />
+    <value>Substance</value>
+  </data>
+  <data name="alcool" xml:space="preserve">
+    <value>Alcohol</value>
+  </data>
+  <data name="cafe" xml:space="preserve">
+    <value>Coffee</value>
+  </data>
+  <data name="consumo" xml:space="preserve">
+    <value>Consumption</value>
+  </data>
+  <data name="historia_anterior_uso" xml:space="preserve">
+    <value>Previous History of Use</value>
+  </data>
+  <data name="historia_uso" xml:space="preserve">
+    <value>History of Use</value>
+  </data>
+  <data name="quanto_tempo_parou" xml:space="preserve">
+    <value>How Long Stopped?</value>
+  </data>
+  <data name="tabaco" xml:space="preserve">
+    <value>Tobacco</value>
+  </data>
+  <data name="uso" xml:space="preserve">
+    <value>Use</value>
   </data>
 </root>

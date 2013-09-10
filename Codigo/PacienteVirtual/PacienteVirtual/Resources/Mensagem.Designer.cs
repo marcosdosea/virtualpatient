@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alcóol.
+        /// </summary>
+        public static string alcool {
+            get {
+                return ResourceManager.GetString("alcool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consumo de álcool.
         /// </summary>
         public static string alcool_consumo {
@@ -192,6 +201,15 @@ namespace Resources {
         public static string cadastros {
             get {
                 return ResourceManager.GetString("cadastros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Café.
+        /// </summary>
+        public static string cafe {
+            get {
+                return ResourceManager.GetString("cafe", resourceCulture);
             }
         }
         
@@ -363,6 +381,15 @@ namespace Resources {
         public static string consulta_variavel_codigo {
             get {
                 return ResourceManager.GetString("consulta_variavel_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consumo.
+        /// </summary>
+        public static string consumo {
+            get {
+                return ResourceManager.GetString("consumo", resourceCulture);
             }
         }
         
@@ -817,6 +844,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to História Anterior de Uso.
+        /// </summary>
+        public static string historia_anterior_uso {
+            get {
+                return ResourceManager.GetString("historia_anterior_uso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to História Familiar.
         /// </summary>
         public static string historia_familiar {
@@ -840,6 +876,15 @@ namespace Resources {
         public static string historia_medicamento_pregressa {
             get {
                 return ResourceManager.GetString("historia_medicamento_pregressa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to História de Uso.
+        /// </summary>
+        public static string historia_uso {
+            get {
+                return ResourceManager.GetString("historia_uso", resourceCulture);
             }
         }
         
@@ -1375,6 +1420,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Há Quanto Tempo Parou?.
+        /// </summary>
+        public static string quanto_tempo_parou {
+            get {
+                return ResourceManager.GetString("quanto_tempo_parou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Queixa.
         /// </summary>
         public static string queixa {
@@ -1564,6 +1618,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tabaco.
+        /// </summary>
+        public static string tabaco {
+            get {
+                return ResourceManager.GetString("tabaco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consumo de tabaco.
         /// </summary>
         public static string tabaco_consumo {
@@ -1641,6 +1704,15 @@ namespace Resources {
         public static string tutor_comentarios {
             get {
                 return ResourceManager.GetString("tutor_comentarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uso.
+        /// </summary>
+        public static string uso {
+            get {
+                return ResourceManager.GetString("uso", resourceCulture);
             }
         }
         
