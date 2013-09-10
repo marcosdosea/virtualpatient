@@ -101,6 +101,7 @@ namespace PacienteVirtual.Controllers
                 pessoaModel.Fone = model.Fone;
                 pessoaModel.Matricula = model.Matricula;
                 pessoaModel.IdPessoa = GerenciadorPessoa.GetInstance().Inserir(pessoaModel);
+                SessionController.Pessoa = pessoaModel;
 
                 
                 // fim do inserir pessoa

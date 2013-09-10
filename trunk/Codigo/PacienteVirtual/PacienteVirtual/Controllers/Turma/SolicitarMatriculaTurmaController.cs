@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using PacienteVirtual.Negocio;
 using PacienteVirtual.Models.Turma;
 using PacienteVirtual.Negocio.Turma;
+using System.Web.Security;
 
 namespace PacienteVirtual.Controllers
 {
@@ -38,6 +39,7 @@ namespace PacienteVirtual.Controllers
                 tpm.IdTurma = smt.IdTurma;
                 tpm.Ativa = false;
                 tpm.IdRole = 2;
+
                 tpm.IdPessoa = SessionController.Pessoa.IdPessoa;
                 GerenciadorTurmaPessoa.GetInstance().Inserir(tpm);
                 return RedirectToAction("Index", "Home");
