@@ -13,23 +13,23 @@
         <thead>
             <tr>
                 <th>
-                    Substancia
+                    <%: Resources.Mensagem.substancia %>
                 </th>
                 <th>
-                    Consumo
+                    <%: Resources.Mensagem.consumo %>
                 </th>
                 <th>
-                    História de Uso
+                    <%: Resources.Mensagem.historia_uso %>
                 </th>
                 <th>
-                    História Anterior de Uso
+                    <%: Resources.Mensagem.historia_anterior_uso %>
                 </th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>
-                    tabaco
+                    <%: Resources.Mensagem.tabaco %>
                 </td>
                 <td>
                     <div class="editor-field">
@@ -38,14 +38,14 @@
                     </div>
                 </td>
                 <td>
-                    Uso
+                    <%: Resources.Mensagem.uso %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.TabacoUso, new { @class = "textbox", style = "width:150px;" })%>
                         <%: Html.ValidationMessageFor(model => model.TabacoUso) %>
                     </div>
                 </td>
                 <td>
-                    Há quanto tempo parou?
+                    <%: Resources.Mensagem.quanto_tempo_parou %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.TabacoParou, new { @class = "textbox", style = "width:150px;" })%>
                         <%: Html.ValidationMessageFor(model => model.TabacoParou) %>
@@ -54,7 +54,7 @@
             </tr>
             <tr>
                 <td>
-                    café
+                    <%: Resources.Mensagem.cafe %>
                 </td>
                 <td>
                     <div class="editor-field">
@@ -63,14 +63,14 @@
                     </div>
                 </td>
                 <td>
-                    Uso
+                    <%: Resources.Mensagem.uso %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.CafeUso, new { @class = "textbox", style = "width:150px;" })%>
                         <%: Html.ValidationMessageFor(model => model.CafeUso) %>
                     </div>
                 </td>
                 <td>
-                    Há quanto tempo parou?
+                    <%: Resources.Mensagem.quanto_tempo_parou %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.CafeParou, new { @class = "textbox", style = "width:150px;" })%>
                         <%: Html.ValidationMessageFor(model => model.CafeParou) %>
@@ -79,7 +79,7 @@
             </tr>
             <tr>
                 <td>
-                    alcool
+                    <%: Resources.Mensagem.alcool %>
                 </td>
                 <td>
                     <div class="editor-field">
@@ -95,14 +95,14 @@
                         <%: Html.TextBoxFor(model => model.AlcoolTipoBebida, new { @class = "textbox", style = "width:150px;" })%>
                         <%: Html.ValidationMessageFor(model => model.AlcoolTipoBebida) %>
                     </div>
-                    Uso
+                    <%: Resources.Mensagem.uso %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.AlcoolUso, new { @class = "textbox", style = "width:150px;" })%>
                         <%: Html.ValidationMessageFor(model => model.AlcoolUso) %>
                     </div>
                 </td>
                 <td>
-                    Há quanto tempo parou?
+                    <%: Resources.Mensagem.quanto_tempo_parou %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.AlcoolParou, new { @class = "textbox", style = "width:150px;" })%>
                         <%: Html.ValidationMessageFor(model => model.AlcoolParou) %>

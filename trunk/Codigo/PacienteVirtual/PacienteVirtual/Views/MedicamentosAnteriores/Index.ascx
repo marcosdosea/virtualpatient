@@ -15,6 +15,7 @@
                 <%: Resources.Mensagem.periodo %>
             </th>
             <th>
+                <%: Resources.Mensagem.opcoes %>
             </th>
         </tr>
         <% foreach (var item in Model)
@@ -33,7 +34,7 @@
                 <%: Html.DisplayFor(modelItem => item.Periodo) %>
             </td>
             <td>
-                <%: Html.ActionLink("Delete", "RemoverMedicamentosAnteriores", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento })%>
+                <%: Html.ActionLink(Resources.Mensagem.remover, "RemoverMedicamentosAnteriores", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento })%>
             </td>
         </tr>
         <% } %>

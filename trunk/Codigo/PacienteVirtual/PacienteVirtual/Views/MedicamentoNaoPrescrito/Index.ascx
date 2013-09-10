@@ -15,6 +15,7 @@
                 <%: Resources.Mensagem.posologia %>
             </th>
             <th>
+                <%: Resources.Mensagem.opcoes %>
             </th>
         </tr>
         <% foreach (var item in Model)
@@ -33,7 +34,7 @@
                 <%: Html.DisplayFor(modelItem => item.Posologia) %>
             </td>
             <td>
-                <%: Html.ActionLink("Delete", "RemoverMedicamentoNaoPrescrito", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento })%>
+                <%: Html.ActionLink(Resources.Mensagem.remover, "RemoverMedicamentoNaoPrescrito", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento })%>
             </td>
         </tr>
         <% } %>
