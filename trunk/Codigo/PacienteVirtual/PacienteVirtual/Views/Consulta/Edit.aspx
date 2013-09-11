@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="thumbnail">
-                    <% Html.RenderAction("RelatoClinico", "Consulta", new RouteValueDictionary(new { model = Model.RelatoClinico }));%>
+                    <% Html.RenderAction("DetailsConsulta", "RelatoClinico", new RouteValueDictionary(new { model = Model.RelatoClinico }));%>
                 </div>
             </div>
         </div>

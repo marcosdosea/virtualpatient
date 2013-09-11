@@ -38,11 +38,11 @@ namespace PacienteVirtual.Controllers
 
         //
         // POST: /DiarioPessoal/Delete/5
-        [HttpPost]
+        //[HttpPost]
         public ActionResult Delete(long idConsultaFixo, int idMedicamento)
         {
             gDiarioPessoal.Remover(idConsultaFixo, idMedicamento);
-            SessionController.ListaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(idConsultaFixo);
+            SessionController.ListaDiarioPessoal = null;
             return RedirectToAction("Edit", "Consulta");
         }
 

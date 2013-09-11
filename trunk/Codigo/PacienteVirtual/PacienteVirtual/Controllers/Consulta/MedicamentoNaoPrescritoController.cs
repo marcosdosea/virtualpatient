@@ -34,9 +34,7 @@ namespace PacienteVirtual.Controllers
 
         //
         // POST: /MedicamentoNaoPrescrito/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(long idConsultaVariavel, int idMedicamento)
+        public ActionResult Delete(long idConsultaVariavel, int idMedicamento)
         {
             gMedicamentoNaoPrescrito.Remover(idConsultaVariavel, idMedicamento);
             SessionController.ListaMedicamentoNaoPrescrito = null;

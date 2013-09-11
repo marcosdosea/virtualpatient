@@ -35,7 +35,6 @@ namespace PacienteVirtual.Controllers
         //
         // POST: /MedicamentosAnteriores/Delete/5
 
-        [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(long id)
         {
             gMedicamentosAnteriores.Remover(id);

@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
+using System.Collections.Generic;
 
 namespace PacienteVirtual.Controllers
 {
@@ -33,6 +34,8 @@ namespace PacienteVirtual.Controllers
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
+                        PessoaModel pessoa = GerenciadorPessoa.GetInstance().ObterPorUserName(model.UserName);
+                        SessionController.Pessoa = pessoa;  
                         return Redirect(returnUrl);
                     }
                     else

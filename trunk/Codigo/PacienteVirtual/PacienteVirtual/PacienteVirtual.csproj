@@ -515,6 +515,11 @@
     <Content Include="Views\MedicamentoPrescrito\Index.ascx" />
     <Content Include="Views\MedicamentosAnteriores\Create.ascx" />
     <Content Include="Views\MedicamentosAnteriores\Index.ascx" />
+    <Content Include="Views\Queixa\Create.aspx" />
+    <Content Include="Views\Queixa\Delete.aspx" />
+    <Content Include="Views\Queixa\Details.aspx" />
+    <Content Include="Views\Queixa\Edit.aspx" />
+    <Content Include="Views\Queixa\Index.aspx" />
     <Content Include="Views\Shared\NotFound.aspx" />
     <Content Include="Views\Consulta\ListarQueixa.ascx" />
     <Content Include="Views\Consulta\Queixa.ascx" />
@@ -524,7 +529,7 @@
     <Content Include="Views\DiarioPessoal\Create.ascx" />
     <Content Include="Views\ExperienciaMedicamentos\Edit.ascx" />
     <Content Include="Views\Consulta\Index.aspx" />
-    <Content Include="Views\Consulta\RelatoClinico.ascx" />
+    <Content Include="Views\RelatoClinico\DetailsConsulta.ascx" />
     <Content Include="Views\SolicitarMatriculaTurma\Index.aspx" />
     <Content Include="Views\VMPaciente\Curso.ascx" />
     <Content Include="Views\Curso\Create.aspx" />
@@ -589,11 +594,6 @@
     <Content Include="Views\PlanoSaude\Details.aspx" />
     <Content Include="Views\PlanoSaude\Edit.aspx" />
     <Content Include="Views\PlanoSaude\Index.aspx" />
-    <Content Include="Views\Queixa\Create.aspx" />
-    <Content Include="Views\Queixa\Delete.aspx" />
-    <Content Include="Views\Queixa\Details.aspx" />
-    <Content Include="Views\Queixa\Edit.aspx" />
-    <Content Include="Views\Queixa\Index.aspx" />
     <Content Include="Views\RazaoEncontro\Create.aspx" />
     <Content Include="Views\RazaoEncontro\Delete.aspx" />
     <Content Include="Views\RazaoEncontro\Details.aspx" />
