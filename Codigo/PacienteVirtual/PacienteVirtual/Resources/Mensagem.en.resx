@@ -690,4 +690,25 @@
   <data name="valor_referencia" xml:space="preserve">
     <value>Reference Value</value>
   </data>
+  <data name="conta_sem_sucesso_tentar_novamente" xml:space="preserve">
+    <value>Account creation was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="minimo_senha_1" xml:space="preserve">
+    <value>Passwords are required to be a minimum of</value>
+  </data>
+  <data name="minimo_senha_2" xml:space="preserve">
+    <value>characters in length.</value>
+  </data>
+  <data name="mudar_senha" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="senha_alterada_sucesso" xml:space="preserve">
+    <value>Your password has been changed successfully.</value>
+  </data>
+  <data name="senha_sem_sucesso_tentar_novamente" xml:space="preserve">
+    <value>Password change was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="utilize_formulario_altera_senha" xml:space="preserve">
+    <value>Use the form below to change your password.</value>
+  </data>
 </root>

@@ -1,26 +1,26 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ChangePasswordModel>" %>
 
 <asp:Content ID="changePasswordTitle" ContentPlaceHolderID="TitleContent" runat="server">
-    Change Password
+    <%: Resources.Mensagem.mudar_senha %>
 </asp:Content>
 
 <asp:Content ID="changePasswordContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Change Password</h2>
+    <h2><%: Resources.Mensagem.mudar_senha %></h2>
     <p>
-        Use the form below to change your password. 
+        <%: Resources.Mensagem.utilize_formulario_altera_senha%>
     </p>
     <p>
-        New passwords are required to be a minimum of <%: Membership.MinRequiredPasswordLength %> characters in length.
+        <%: Resources.Mensagem.minimo_senha_1 %> <%: Membership.MinRequiredPasswordLength %> <%: Resources.Mensagem.minimo_senha_2 %>
     </p>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
     <% using (Html.BeginForm()) { %>
-        <%: Html.ValidationSummary(true, "Password change was unsuccessful. Please correct the errors and try again.") %>
+        <%: Html.ValidationSummary(true, Resources.Mensagem.senha_sem_sucesso_tentar_novamente) %>
         <div>
             <fieldset>
-                <legend>Account Information</legend>
+                <legend><%: Resources.Mensagem.informacao_conta %></legend>
                 
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.OldPassword) %>
@@ -47,7 +47,7 @@
                 </div>
                 
             <div class="form-actions">
-                <input class="btn btn-primary" type="submit" value="Change Password" />
+                <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.mudar_senha %>" />
             </div>
             </fieldset>
         </div>
