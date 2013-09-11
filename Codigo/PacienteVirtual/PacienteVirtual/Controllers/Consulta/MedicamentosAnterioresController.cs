@@ -35,9 +35,9 @@ namespace PacienteVirtual.Controllers
         //
         // POST: /MedicamentosAnteriores/Delete/5
 
-        public ActionResult DeleteConfirmed(long id)
+        public ActionResult Delete(long idConsultaVariavel, int idMedicamento)
         {
-            gMedicamentosAnteriores.Remover(id);
+            gMedicamentosAnteriores.Remover(idConsultaVariavel, idMedicamento);
             SessionController.ListaMedicamentosAnteriores = null;
             return RedirectToAction("Edit", "Consulta");
         }

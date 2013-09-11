@@ -39,7 +39,7 @@ namespace PacienteVirtual.Controllers.Consulta
 
         //
         // POST: /MedicamentoPrescrito/Delete/5
-        [HttpPost]
+        //[HttpPost]
         public ActionResult Delete(long idConsultaVariavel, int idParametroClinico)
         {
             GerenciadorConsultaParametro.GetInstance().Remover(idConsultaVariavel, idParametroClinico);
