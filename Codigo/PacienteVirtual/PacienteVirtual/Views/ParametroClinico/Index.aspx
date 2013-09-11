@@ -9,14 +9,14 @@
 <h2><%: Resources.Mensagem.parametro_clinico %></h2>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+    <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
 <div class="box-content"> <table class="table table-bordered table-striped">
     <tr>
-        <th>
-            <%: Resources.Mensagem.detalhes %>
+        <th style="width:600px">
+            <%: Resources.Mensagem.parametro_clinico %>
         </th>
-        <th></th>
+        <th><%: Resources.Mensagem.opcoes %></th>
     </tr>
 
 <% foreach (var item in Model) { %>

@@ -33,7 +33,7 @@
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
 </div>
 
 </asp:Content>
