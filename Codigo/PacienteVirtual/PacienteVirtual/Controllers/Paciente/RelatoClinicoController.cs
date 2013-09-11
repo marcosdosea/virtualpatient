@@ -42,6 +42,12 @@ namespace PacienteVirtual.Controllers
             return View(gRelato.ObterRelatos(id));
         }
 
+        //Relato Clinico
+        public PartialViewResult DetailsConsulta(RelatoClinicoModel model)
+        {
+            return PartialView(model);
+        }
+        
         //
         // GET: /RelatoClinico/Details/5
         public ViewResult Details(int id)

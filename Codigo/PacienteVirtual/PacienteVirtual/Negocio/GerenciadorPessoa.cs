@@ -141,6 +141,17 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(pessoa => pessoa.Nome.StartsWith(nome)).ToList();
         }
 
+
+        /// <summary>
+        /// Obtém pessoas que iniciam com o user_name
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public PessoaModel ObterPorUserName(string userName)
+        {
+            return GetQuery().Where(pessoa => pessoa.UserName.Equals(userName)).ElementAtOrDefault(0);
+        }
+
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>

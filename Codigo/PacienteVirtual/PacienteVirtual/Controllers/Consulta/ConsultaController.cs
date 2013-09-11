@@ -93,47 +93,6 @@ namespace PacienteVirtual.Controllers
             return PartialView();
         }
 
-        public ActionResult RemoverDiarioPessoal(long idConsultaFixo, int idMedicamento)
-        {
-            GerenciadorDiarioPessoal.GetInstance().Remover(idConsultaFixo, idMedicamento);
-            SessionController.ListaDiarioPessoal = null;
-            return RedirectToAction("Edit", "Consulta");
-        }
-
-        public ActionResult RemoverMedicamentoNaoPrescrito(long idConsultaVariavel, int idMedicamento) 
-        {
-            GerenciadorMedicamentoNaoPrescrito.GetInstance().Remover(idConsultaVariavel, idMedicamento);
-            SessionController.ListaMedicamentoNaoPrescrito = null;
-            return RedirectToAction("Edit", "Consulta");
-        }
-
-        public ActionResult RemoverMedicamentoPrescrito(long idConsultaVariavel, int idMedicamento)
-        {
-            GerenciadorMedicamentoPrescrito.GetInstance().Remover(idConsultaVariavel, idMedicamento);
-            SessionController.ListaMedicamentosPrescritos = null;
-            return RedirectToAction("Edit", "Consulta");
-        }
-
-        public ActionResult RemoverMedicamentosAnteriores(long idConsultaVariavel, int idMedicamento)
-        {
-            GerenciadorMedicamentosAnteriores.GetInstance().Remover(idConsultaVariavel, idMedicamento);
-            SessionController.ListaMedicamentosAnteriores = null;
-            return RedirectToAction("Edit", "Consulta");
-        }
-
-        public ActionResult RemoverConsultaParametro(long idConsultaVariavel, int idParametroClinico)
-        {
-            GerenciadorConsultaParametro.GetInstance().Remover(idConsultaVariavel, idParametroClinico);
-            SessionController.ListaConsultaParametro = null;
-            return RedirectToAction("Edit", "Consulta");
-        }
-
-        //Relato Clinico
-        public PartialViewResult RelatoClinico(RelatoClinicoModel model)
-        {
-            return PartialView(model);
-        }
-        
         
         public PartialViewResult Queixa(int id)
         {

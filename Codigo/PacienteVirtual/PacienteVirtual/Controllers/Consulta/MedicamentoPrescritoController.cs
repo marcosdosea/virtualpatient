@@ -4,7 +4,7 @@ using PacienteVirtual.Negocio;
 using System.Collections.Generic;
 
 namespace PacienteVirtual.Controllers
-{ 
+{                 
     public class MedicamentoPrescritoController : Controller
     {
         private pvEntities db = new pvEntities();
@@ -37,7 +37,7 @@ namespace PacienteVirtual.Controllers
 
         //
         // POST: /MedicamentoPrescrito/Delete/5
-        [HttpPost]
+        //[HttpPost]
         public ActionResult Delete(long idConsultaVariavel, int idMedicamento)
         {
             gMedicamentoPrescrito.Remover(idConsultaVariavel, idMedicamento);

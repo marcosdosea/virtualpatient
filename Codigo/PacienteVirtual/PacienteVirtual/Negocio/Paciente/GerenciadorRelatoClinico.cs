@@ -54,8 +54,12 @@ namespace PacienteVirtual.Negocio
             var listaRelatos = GerenciadorRelatoClinico.GetInstance().ObterPorPacienteOrdemCronologica(relato.IdPaciente, relato.OrdemCronologica);
             if (listaRelatos.Count() > 0)
             {
-                throw new NegocioException("Já existe um relato clínico com essa ordem cronológica. Favor atribuir outro valor a ordem cronológica do relato.");
-            }
+                bool ehMesmoRelato = listaRelatos.ElementAtOrDefault(0).IdRelato == relato.IdRelato;
+                if (!ehMesmoRelato)
+                {
+                    throw new NegocioException("Já existe um relato clínico com essa ordem cronológica. Favor atribuir outro valor a ordem cronológica do relato.");
+                }
+             }
         }
 
         /// <summary>

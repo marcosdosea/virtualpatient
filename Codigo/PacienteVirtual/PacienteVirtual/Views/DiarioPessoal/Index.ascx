@@ -37,7 +37,7 @@
             <%: Html.DisplayFor(modelItem => item.NomeBebida) %>
         </td>
         <td>
-            <%: Html.ActionLink(Resources.Mensagem.remover, "RemoverDiarioPessoal", new { idConsultaFixo = item.IdConsultaFixo, idMedicamento = item.IdMedicamento })%>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiarioPessoal", new { idConsultaFixo = item.IdConsultaFixo, idMedicamento = item.IdMedicamento }, null)%>
         </td>
     </tr>
 <% } %>
