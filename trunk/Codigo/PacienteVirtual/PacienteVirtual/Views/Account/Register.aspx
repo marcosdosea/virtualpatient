@@ -7,17 +7,17 @@
 <asp:Content ID="registerContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Resources.Mensagem.criar_conta %></h2>
     <p>
-        Use the form below to create a new account. 
+        <%: Resources.Mensagem.utilize_formulario_altera_senha %>
     </p>
     <p>
-        Passwords are required to be a minimum of <%: Membership.MinRequiredPasswordLength %> characters in length.
+        <%: Resources.Mensagem.minimo_senha_1 %> <%: Membership.MinRequiredPasswordLength %> <%: Resources.Mensagem.minimo_senha_2 %>
     </p>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
     <% using (Html.BeginForm()) { %>
-        <%: Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.") %>
+        <%: Html.ValidationSummary(true, Resources.Mensagem.conta_sem_sucesso_tentar_novamente) %>
         <div>
             <fieldset>
                 <legend><%: Resources.Mensagem.informacao_conta %></legend>
@@ -83,7 +83,7 @@
                     <%: Html.ValidationMessageFor(m => m.Matricula) %>
                 </div>    
             <div class="form-actions">
-                <input class="btn btn-primary" type="submit" value="Register" />
+                <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.registre_se %>" />
             </div>
             </fieldset>
         </div>
