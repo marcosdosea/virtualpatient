@@ -205,24 +205,6 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-        public static IEnumerable<ParametroClinicoModel> ListaParametroClinico
-        {
-            get
-            {
-                IEnumerable<ParametroClinicoModel> listaParametroClinico = (IEnumerable<ParametroClinicoModel>)HttpContext.Current.Session["_listaParametroClinico"];
-                if (listaParametroClinico == null)
-                {
-                    listaParametroClinico = GerenciadorParametroClinico.GetInstance().ObterTodos();
-                    HttpContext.Current.Session["_listaParametroClinico"] = listaParametroClinico;
-                }
-                return listaParametroClinico;
-            }
-            set
-            {
-                HttpContext.Current.Session["_listaParametroClinico"] = value;
-            }
-        }
-
         public static IEnumerable<MedicamentosModel> ListaMedicamentos
         {
             get

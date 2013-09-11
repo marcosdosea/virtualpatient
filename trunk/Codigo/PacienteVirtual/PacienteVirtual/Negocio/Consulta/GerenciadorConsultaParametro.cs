@@ -74,7 +74,6 @@ namespace PacienteVirtual.Negocio.Consulta
         {
             try
             {
-
                 var repConsultaParametro = new RepositorioGenerico<tb_consulta_parametro>();
                 repConsultaParametro.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel && dP.IdParametroClinico == idParametroClinico);
                 repConsultaParametro.SaveChanges();

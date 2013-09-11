@@ -675,4 +675,19 @@
   <data name="uso" xml:space="preserve">
     <value>Use</value>
   </data>
+  <data name="consulta_parametro" xml:space="preserve">
+    <value>Parameter Query</value>
+  </data>
+  <data name="exames_fisicos" xml:space="preserve">
+    <value>Physical Tests</value>
+  </data>
+  <data name="unidade" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="valor" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="valor_referencia" xml:space="preserve">
+    <value>Reference Value</value>
+  </data>
 </root>

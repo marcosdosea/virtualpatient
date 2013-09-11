@@ -105,6 +105,7 @@ namespace PacienteVirtual.Negocio
                             IdEstadoConsulta = tb_consulta_variavel.idEstadoConsulta,
                             DescricaoEstadoConsulta = tb_consulta_variavel.tb_estado_consulta.DescricaoEstado,
                             IdRazaoEncontro = tb_consulta_variavel.IdRazaoEncontro,
+                            DescricaoRazao = tb_consulta_variavel.tb_razao_encontro.DescricaoRazao, // meu teste
                             DataPreenchimento = (DateTime)tb_consulta_variavel.DataPreenchimento,
                             Lembretes = tb_consulta_variavel.Lembretes,
                             ComentariosTutor = tb_consulta_variavel.ComentariosTutor,

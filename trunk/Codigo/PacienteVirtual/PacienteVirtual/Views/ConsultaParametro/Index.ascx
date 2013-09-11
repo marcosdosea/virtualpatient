@@ -4,18 +4,18 @@
     <table class="table table-bordered table-striped">
     <tr>
         <th>
-            ParametroClinico
+            <%: Resources.Mensagem.parametro_clinico %>
         </th>
         <th>
-            Valor
+            <%: Resources.Mensagem.valor %>
         </th>
         <th>
-            ValorReferencia
+            <%: Resources.Mensagem.valor_referencia %>
         </th>
         <th>
-            Unidade
+            <%: Resources.Mensagem.unidade %>
         </th>
-        <th></th>
+        <th><%: Resources.Mensagem.opcoes %></th>
     </tr>
 
 <% foreach (var item in Model) { %>

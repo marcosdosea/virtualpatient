@@ -21,15 +21,15 @@ namespace PacienteVirtual.Models.Consulta
         public string ParametroClinico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "valor"/*, ResourceType = typeof(Mensagem)*/)]
+        [Display(Name = "valor", ResourceType = typeof(Mensagem))]
         public float Valor { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "valor_referencia"/*, ResourceType = typeof(Mensagem)*/)]
+        [Display(Name = "valor_referencia", ResourceType = typeof(Mensagem))]
         public float ValorReferencia { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "unidade"/*, ResourceType = typeof(Mensagem)*/)]
+        [Display(Name = "unidade", ResourceType = typeof(Mensagem))]
         public string Unidade { get; set; }
     }
 }

@@ -367,6 +367,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Consulta Parâmetro.
+        /// </summary>
+        public static string consulta_parametro {
+            get {
+                return ResourceManager.GetString("consulta_parametro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consulta Variável.
         /// </summary>
         public static string consulta_variavel {
@@ -723,6 +732,15 @@ namespace Resources {
         public static string estilo_vida {
             get {
                 return ResourceManager.GetString("estilo_vida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exames Físicos.
+        /// </summary>
+        public static string exames_fisicos {
+            get {
+                return ResourceManager.GetString("exames_fisicos", resourceCulture);
             }
         }
         
@@ -1708,6 +1726,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unidade.
+        /// </summary>
+        public static string unidade {
+            get {
+                return ResourceManager.GetString("unidade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uso.
         /// </summary>
         public static string uso {
@@ -1722,6 +1749,24 @@ namespace Resources {
         public static string usuario {
             get {
                 return ResourceManager.GetString("usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valor.
+        /// </summary>
+        public static string valor {
+            get {
+                return ResourceManager.GetString("valor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valor Referêcia.
+        /// </summary>
+        public static string valor_referencia {
+            get {
+                return ResourceManager.GetString("valor_referencia", resourceCulture);
             }
         }
         

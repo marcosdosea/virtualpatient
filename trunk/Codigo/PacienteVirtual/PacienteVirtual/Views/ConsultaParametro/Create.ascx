@@ -1,16 +1,11 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.Consulta.ConsultaParametroModel>" %>
-
-<script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-
 <% using (Html.BeginForm("Create", "ConsultaParametro")) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>ConsultaParametroModel</legend>
+        <legend><%: Resources.Mensagem.consulta_parametro %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <div class="row-fluid">
-        <div class="span2">
+        <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.ParametroClinico) %>
             </div>
@@ -23,7 +18,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span2">
+        <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Valor) %>
             </div>
@@ -36,7 +31,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span2">
+        <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.ValorReferencia) %>
             </div>
@@ -49,7 +44,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span2">
+        <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Unidade) %>
             </div>

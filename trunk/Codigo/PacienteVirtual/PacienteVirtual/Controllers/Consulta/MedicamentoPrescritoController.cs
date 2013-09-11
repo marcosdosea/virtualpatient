@@ -7,8 +7,7 @@ namespace PacienteVirtual.Controllers
 {                 
     public class MedicamentoPrescritoController : Controller
     {
-        private pvEntities db = new pvEntities();
-
+        
         private GerenciadorMedicamentoPrescrito gMedicamentoPrescrito = GerenciadorMedicamentoPrescrito.GetInstance();
         
         //
