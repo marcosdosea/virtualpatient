@@ -711,4 +711,31 @@
   <data name="utilize_formulario_altera_senha" xml:space="preserve">
     <value>Utilize o formulário abaixo para alterar sua senha.</value>
   </data>
+  <data name="login_sem_sucesso" xml:space="preserve">
+    <value>Não foi possível realizar o Login. Por favor, corrija os erros e tente novamente.</value>
+  </data>
+  <data name="nova_senha" xml:space="preserve">
+    <value>Nova Senha</value>
+  </data>
+  <data name="senha_atual" xml:space="preserve">
+    <value>Senha Atual</value>
+  </data>
+  <data name="feminino" xml:space="preserve">
+    <value>Feninimo</value>
+  </data>
+  <data name="masculino" xml:space="preserve">
+    <value>Masculino</value>
+  </data>
+  <data name="nao" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="senha_atual_incorreta" xml:space="preserve">
+    <value>A senha atual está incorreta ou a senha é inválida.</value>
+  </data>
+  <data name="sim" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="usuario_senha_incorretos" xml:space="preserve">
+    <value>O nome do usuário ou senha estão incorretos.</value>
+  </data>
 </root>

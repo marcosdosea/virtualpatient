@@ -45,7 +45,7 @@ namespace PacienteVirtual.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                    ModelState.AddModelError("", Resources.Mensagem.usuario_senha_incorretos);
                 }
             }
 
@@ -162,7 +162,7 @@ namespace PacienteVirtual.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
+                    ModelState.AddModelError("", Resources.Mensagem.senha_atual_incorreta);
                 }
             }
 

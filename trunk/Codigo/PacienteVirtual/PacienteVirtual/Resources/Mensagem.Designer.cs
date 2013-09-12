@@ -772,6 +772,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Feninimo.
+        /// </summary>
+        public static string feminino {
+            get {
+                return ResourceManager.GetString("feminino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fisioterápico.
         /// </summary>
         public static string fitoterapico {
@@ -1051,6 +1060,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Não foi possível realizar o Login. Por favor, corrija os erros e tente novamente..
+        /// </summary>
+        public static string login_sem_sucesso {
+            get {
+                return ResourceManager.GetString("login_sem_sucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Masculino.
+        /// </summary>
+        public static string masculino {
+            get {
+                return ResourceManager.GetString("masculino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Matrícula.
         /// </summary>
         public static string matricula {
@@ -1159,6 +1186,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Não.
+        /// </summary>
+        public static string nao {
+            get {
+                return ResourceManager.GetString("nao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nível de Dificuldade.
         /// </summary>
         public static string nivel_dificuldade {
@@ -1236,6 +1272,15 @@ namespace Resources {
         public static string nome_usuario {
             get {
                 return ResourceManager.GetString("nome_usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nova Senha.
+        /// </summary>
+        public static string nova_senha {
+            get {
+                return ResourceManager.GetString("nova_senha", resourceCulture);
             }
         }
         
@@ -1627,6 +1672,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Senha Atual.
+        /// </summary>
+        public static string senha_atual {
+            get {
+                return ResourceManager.GetString("senha_atual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A senha atual está incorreta ou a senha é inválida..
+        /// </summary>
+        public static string senha_atual_incorreta {
+            get {
+                return ResourceManager.GetString("senha_atual_incorreta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Senha alterada sem sucesso. Por favor, corrija os erros e tente novamente..
         /// </summary>
         public static string senha_sem_sucesso_tentar_novamente {
@@ -1641,6 +1704,15 @@ namespace Resources {
         public static string sigla {
             get {
                 return ResourceManager.GetString("sigla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sim.
+        /// </summary>
+        public static string sim {
+            get {
+                return ResourceManager.GetString("sim", resourceCulture);
             }
         }
         
@@ -1803,6 +1875,15 @@ namespace Resources {
         public static string usuario {
             get {
                 return ResourceManager.GetString("usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O nome do usuário ou senha estão incorretos..
+        /// </summary>
+        public static string usuario_senha_incorretos {
+            get {
+                return ResourceManager.GetString("usuario_senha_incorretos", resourceCulture);
             }
         }
         
