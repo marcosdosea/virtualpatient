@@ -17,7 +17,7 @@
         type="text/javascript"></script>
     <% using (Html.BeginForm())
        { %>
-    <%: Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.") %>
+    <%: Html.ValidationSummary(true, Resources.Mensagem.login_sem_sucesso) %>
     <div>
         <fieldset>
             <legend>

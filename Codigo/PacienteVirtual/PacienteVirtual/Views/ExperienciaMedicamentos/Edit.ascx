@@ -21,7 +21,10 @@
                 <%: Html.LabelFor(model => model.AtencaoEsperaTratamento) %>
             </div>
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.AtencaoEsperaTratamento) %>
+                <!--%: Html.EditorFor(model => model.AtencaoEsperaTratamento) %-->
+                <%= Html.RadioButtonFor(model => model.AtencaoEsperaTratamento, true) %> &nbsp <%: Resources.Mensagem.sim %>
+                &nbsp &nbsp &nbsp &nbsp
+                <%= Html.RadioButtonFor(model => model.AtencaoEsperaTratamento, false)%> &nbsp <%: Resources.Mensagem.nao %>
                 <%: Html.ValidationMessageFor(model => model.AtencaoEsperaTratamento) %>
             </div>
         </div>
@@ -41,7 +44,10 @@
                 <%: Html.LabelFor(model => model.AtencaoPreocupacoes) %>
             </div>
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.AtencaoPreocupacoes) %>
+                <!--%: Html.EditorFor(model => model.AtencaoPreocupacoes) % -->
+                <%= Html.RadioButtonFor(model => model.AtencaoPreocupacoes, true)%> &nbsp <%: Resources.Mensagem.sim %>
+                &nbsp &nbsp &nbsp &nbsp
+                <%= Html.RadioButtonFor(model => model.AtencaoPreocupacoes, false)%> &nbsp <%: Resources.Mensagem.nao %>
                 <%: Html.ValidationMessageFor(model => model.AtencaoPreocupacoes) %>
             </div>
         </div>
@@ -61,7 +67,10 @@
                 <%: Html.LabelFor(model => model.AtencaoGrauEntendimento) %>
             </div>
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.AtencaoGrauEntendimento) %>
+                <!--%: Html.EditorFor(model => model.AtencaoGrauEntendimento) % -->
+                <%= Html.RadioButtonFor(model => model.AtencaoGrauEntendimento, true)%> &nbsp <%: Resources.Mensagem.sim %>
+                &nbsp &nbsp &nbsp &nbsp
+                <%= Html.RadioButtonFor(model => model.AtencaoGrauEntendimento, false)%> &nbsp <%: Resources.Mensagem.nao %>
                 <%: Html.ValidationMessageFor(model => model.AtencaoGrauEntendimento) %>
             </div>
         </div>
@@ -81,7 +90,10 @@
                 <%: Html.LabelFor(model => model.AtencaoCultural) %>
             </div>
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.AtencaoCultural) %>
+                <!--%: Html.EditorFor(model => model.AtencaoCultural) % -->
+                <%= Html.RadioButtonFor(model => model.AtencaoCultural, true)%> &nbsp <%: Resources.Mensagem.sim %>
+                &nbsp &nbsp &nbsp &nbsp
+                <%= Html.RadioButtonFor(model => model.AtencaoCultural, false)%> &nbsp <%: Resources.Mensagem.nao %>
                 <%: Html.ValidationMessageFor(model => model.AtencaoCultural) %>
             </div>
         </div>
@@ -101,7 +113,10 @@
                 <%: Html.LabelFor(model => model.AtencaoComportamento) %>
             </div>
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.AtencaoComportamento) %>
+                <!--%: Html.EditorFor(model => model.AtencaoComportamento) % -->
+                <%= Html.RadioButtonFor(model => model.AtencaoComportamento, true)%> &nbsp <%: Resources.Mensagem.sim %>
+                &nbsp &nbsp &nbsp &nbsp
+                <%= Html.RadioButtonFor(model => model.AtencaoComportamento, false)%> &nbsp <%: Resources.Mensagem.nao %>
                 <%: Html.ValidationMessageFor(model => model.AtencaoComportamento) %>
             </div>
         </div>

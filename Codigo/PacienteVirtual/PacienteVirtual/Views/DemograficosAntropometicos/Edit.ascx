@@ -60,7 +60,9 @@
             </div>
             <div class="editor-field">
                 <!--%: Html.DropDownList("Valor", new SelectList(ViewBag.Sexo))% -->
-                <%: Html.TextBoxFor(model => model.Genero)%>
+                <!--%: Html.TextBoxFor(model => model.Genero)%-->
+                <%= Html.RadioButtonFor(model => model.Genero, "M" ) %> <%: Resources.Mensagem.masculino %>
+                <%= Html.RadioButtonFor(model => model.Genero, "F")%> <%: Resources.Mensagem.feminino %>
                 <%: Html.ValidationMessageFor(model => model.Genero) %>
             </div>
         </div>
