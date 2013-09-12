@@ -2,9 +2,6 @@
     <table class="table table-bordered table-striped">
     <tr>
         <th>
-            <%: Resources.Mensagem.medicamento %>
-        </th>
-        <th>
             <%: Resources.Mensagem.periodo %>
         </th>
         <th>
@@ -12,6 +9,9 @@
         </th>
         <th>
             <%: Resources.Mensagem.quantidade %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.medicamento %>
         </th>
         <th>
             <%: Resources.Mensagem.bebida %>
@@ -22,9 +22,6 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Medicamento) %>
-        </td>
-        <td>
             <%: Html.DisplayFor(modelItem => item.Periodo) %>
         </td>
         <td>
@@ -32,6 +29,9 @@
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Quantidade) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Medicamento) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.NomeBebida) %>
