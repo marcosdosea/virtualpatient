@@ -95,7 +95,6 @@ namespace PacienteVirtual.Negocio
             var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel_queixa>();
             var pvEntities = (pvEntities)repConsultaVariavel.ObterContexto();
             var query = from tb_consulta_variavel_queixa in pvEntities.tb_consulta_variavel_queixa
-                       
                         select new ConsultaVariavelQueixaModel
                         {
                             IdConsultaVariavel = tb_consulta_variavel_queixa.IdConsultaVariavel,
@@ -103,6 +102,8 @@ namespace PacienteVirtual.Negocio
                             Tipo = tb_consulta_variavel_queixa.Tipo,
                             Desde = tb_consulta_variavel_queixa.Desde,
                             Prioridade = (int) tb_consulta_variavel_queixa.Prioridade,
+
+                            DescricaoQueixa = tb_consulta_variavel_queixa.tb_queixa.DescricaoQueixa
                         };
             return query;
         }
@@ -120,10 +121,9 @@ namespace PacienteVirtual.Negocio
         /// Obtém consultaVariavelQueixa com o código especificiado
         /// </summary>
         /// <returns></returns>
-        public ConsultaVariavelQueixaModel Obter(long idConsultaVariavel, int idQueixa)
+        public IEnumerable<ConsultaVariavelQueixaModel> Obter(long idConsultaVariavel)
         {
-            return GetQuery().Where(consultaVariavelQueixa => consultaVariavelQueixa.IdConsultaVariavel == idConsultaVariavel
-                && consultaVariavelQueixa.IdQueixa == idQueixa ).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(consultaVariavelQueixa => consultaVariavelQueixa.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
 
         /// <summary>
