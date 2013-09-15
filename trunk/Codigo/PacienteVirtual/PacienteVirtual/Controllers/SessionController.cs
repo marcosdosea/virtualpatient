@@ -241,6 +241,42 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static IEnumerable<ConsultaVariavelQueixaModel> ListaConsultaVariavelQueixa
+        {
+            get
+            {
+                IEnumerable<ConsultaVariavelQueixaModel> listaConsultaVariavelQueixa = (IEnumerable<ConsultaVariavelQueixaModel>)HttpContext.Current.Session["_ListaConsultaVariavelQueixa"];
+                if (listaConsultaVariavelQueixa == null)
+                {
+                    listaConsultaVariavelQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_ListaConsultaVariavelQueixa"] = listaConsultaVariavelQueixa;
+                }
+                return listaConsultaVariavelQueixa;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaConsultaVariavelQueixa"] = value;
+            }
+        }
+
+        public static int Sistema
+        {
+            get
+            {
+                int idSistema = (int)HttpContext.Current.Session["_IdSistema"];
+                if (idSistema < 1)
+                {
+                    idSistema = 0;
+                    HttpContext.Current.Session["_IdSistema"] = idSistema;
+                }
+                return idSistema;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdSistema"] = value;
+            }
+        }
+
         public static IEnumerable<MedicamentosAnterioresModel> ListaMedicamentosAnteriores
         {
             get

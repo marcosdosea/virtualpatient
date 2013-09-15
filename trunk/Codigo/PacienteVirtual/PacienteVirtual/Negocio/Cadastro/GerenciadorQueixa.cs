@@ -129,9 +129,9 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="descricaoQueixa"></param>
         /// <returns></returns>
-        public IEnumerable<QueixaModel> ObterPorNome(string descricaoQueixa)
+        public IEnumerable<QueixaModel> ObterPorSistema(int idSistema)
         {
-            return GetQuery().Where(queixa => queixa.DescricaoQueixa.StartsWith(descricaoQueixa)).ToList();
+            return GetQuery().Where(queixa => queixa.IdSistema == idSistema).ToList();
         }
 
         /// <summary>

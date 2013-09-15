@@ -3,105 +3,47 @@ using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual.Controllers
-{ 
+{
     public class ConsultaVariavelQueixaController : Controller
     {
-
-       GerenciadorConsultaVariavelQueixa gConsultaVariavelQueixa = GerenciadorConsultaVariavelQueixa.GetInstance();
-       GerenciadorAcaoQueixa gAcaoQueixa = GerenciadorAcaoQueixa.GetInstance();
-       GerenciadorConsultaVariavel gConsultaVariavel = GerenciadorConsultaVariavel.GetInstance();
-       GerenciadorQueixa gQueixa = GerenciadorQueixa.GetInstance();
         //
-        // GET: /ConsultaVariavelQueixa/
+        // GET: /MedicamentoPrescrito/
 
         public ViewResult Index()
         {
-
-            return View(gConsultaVariavelQueixa.ObterTodos());
+            return View(GerenciadorConsultaVariavelQueixa.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
         }
 
         //
-        // GET: /ConsultaVariavelQueixa/Details/5
-
-        public ViewResult Details(long id, int idQueixa)
-        {
-            return View(gConsultaVariavelQueixa.Obter(id, idQueixa));
-        }
-
-        //
-        // GET: /ConsultaVariavelQueixa/Create
-
-        public ActionResult Create()
-        {
-            ViewBag.IdAcaoQueixa = new SelectList(gQueixa.ObterTodos(), "IdAcaoQueixa", "DescricaoAcao");
-            ViewBag.IdConsultaVariavel = new SelectList(gConsultaVariavel.ObterTodos(), "IdConsultaVariavel", "Lembretes");
-            ViewBag.IdQueixa = new SelectList(gQueixa.ObterTodos(), "IdQueixa", "DescricaoQueixa");
-            return View();
-        } 
-
-        //
-        // POST: /ConsultaVariavelQueixa/Create
+        // POST: /MedicamentoPrescrito/Create
 
         [HttpPost]
-        public ActionResult Create(ConsultaVariavelQueixaModel consultavariavelqueixamodel)
+        public ActionResult Create(ConsultaVariavelQueixaModel consultaVariavelQueixa)
         {
             if (ModelState.IsValid)
             {
-                gConsultaVariavelQueixa.Inserir(consultavariavelqueixamodel);
-                return RedirectToAction("Index");  
+                consultaVariavelQueixa.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
+                GerenciadorConsultaVariavelQueixa.GetInstance().Inserir(consultaVariavelQueixa);
+                SessionController.Sistema = 0;
+                SessionController.ListaConsultaVariavelQueixa = null;
+
             }
-
-            ViewBag.IdAcaoQueixa = new SelectList(gQueixa.ObterTodos(), "IdAcaoQueixa", "DescricaoAcao");
-            ViewBag.IdConsultaVariavel = new SelectList(gConsultaVariavel.ObterTodos(), "IdConsultaVariavel", "Lembretes");
-            ViewBag.IdQueixa = new SelectList(gQueixa.ObterTodos(), "IdQueixa", "DescricaoQueixa");
-            return View(consultavariavelqueixamodel);
-        }
-        
-        //
-        // GET: /ConsultaVariavelQueixa/Edit/5
- 
-        public ActionResult Edit(long id, int idQueixa)
-        {
-
-            ViewBag.IdAcaoQueixa = new SelectList(gQueixa.ObterTodos(), "IdAcaoQueixa", "DescricaoAcao");
-            ViewBag.IdConsultaVariavel = new SelectList(gConsultaVariavel.ObterTodos(), "IdConsultaVariavel", "Lembretes");
-            ViewBag.IdQueixa = new SelectList(gQueixa.ObterTodos(), "IdQueixa", "DescricaoQueixa");
-            return View(gConsultaVariavelQueixa.Obter(id, idQueixa));
-        }
-
-        //
-        // POST: /ConsultaVariavelQueixa/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(ConsultaVariavelQueixaModel consultavariavelqueixaModel)
-        {
-            if (ModelState.IsValid)
+            else
             {
-                gConsultaVariavelQueixa.Atualizar(consultavariavelqueixaModel);
-                return RedirectToAction("Index");
+                SessionController.Sistema = consultaVariavelQueixa.IdSistema;
             }
-            ViewBag.IdAcaoQueixa = new SelectList(gQueixa.ObterTodos(), "IdAcaoQueixa", "DescricaoAcao");
-            ViewBag.IdConsultaVariavel = new SelectList(gConsultaVariavel.ObterTodos(), "IdConsultaVariavel", "Lembretes");
-            ViewBag.IdQueixa = new SelectList(gQueixa.ObterTodos(), "IdQueixa", "DescricaoQueixa");
-            return View(consultavariavelqueixaModel);
-        }
-
-        //
-        // GET: /ConsultaVariavelQueixa/Delete/5
-
-        public ActionResult Delete(long id, int idQueixa)
-        {
-            return View(gConsultaVariavelQueixa.Obter(id, idQueixa));
+            return RedirectToAction("Edit", "Consulta");
         }
 
         //
         // POST: /ConsultaVariavelQueixa/Delete/5
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(long id, int idQueixa)
+        //[HttpPost, ActionName("Delete")]
+        public ActionResult Delete(long idConsultaVariavel, int idQueixa)
         {
-            gConsultaVariavelQueixa.Remover(id, idQueixa);
-            return RedirectToAction("Index");
+            GerenciadorConsultaVariavelQueixa.GetInstance().Remover(idConsultaVariavel, idQueixa);
+            SessionController.ListaConsultaVariavelQueixa = null;
+            return RedirectToAction("Edit", "Consulta");
         }
 
         protected override void Dispose(bool disposing)

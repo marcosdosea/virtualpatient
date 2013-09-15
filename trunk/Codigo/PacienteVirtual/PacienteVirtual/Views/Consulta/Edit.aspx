@@ -155,8 +155,8 @@
                     </div>
                 </div>
                 <div class="thumbnail">
-                    <!--% Html.RenderAction("Queixa", "Consulta", new RouteValueDictionary(new { id = Model.IdQueixa }));%-->
-                    <% Html.RenderAction("ListarQueixa", "Consulta", new { id = 1 });%>
+                    <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
+                    <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
                 </div>
             </div>
         </div>

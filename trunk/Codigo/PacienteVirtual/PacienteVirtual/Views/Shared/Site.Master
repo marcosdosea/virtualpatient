@@ -43,7 +43,7 @@
                         <!--style="width: 190px; height: 101px;"-->
                         <div class="bandeira-brasil">
                         </div>
-                        <img alt="logo" src="../../Content/themes/pv/img/logo.png" />
+                        <img alt="logo" src="../../Content/themes/pv/img/logo.png"/>
                         <!--h1>< %: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1-->
                     </a>
                     <!--

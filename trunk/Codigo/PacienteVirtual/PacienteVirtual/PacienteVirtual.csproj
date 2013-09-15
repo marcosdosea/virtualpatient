@@ -495,6 +495,8 @@
     <Content Include="Views\Bebida\Index.aspx" />
     <Content Include="Views\ConsultaParametro\Create.ascx" />
     <Content Include="Views\ConsultaParametro\Index.ascx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Create.ascx" />
+    <Content Include="Views\ConsultaVariavelQueixa\Index.ascx" />
     <Content Include="Views\ConsultaVariavel\Edit.ascx" />
     <Content Include="Views\DiarioPessoal\Index.ascx" />
     <Content Include="Views\Erros\Index.aspx" />

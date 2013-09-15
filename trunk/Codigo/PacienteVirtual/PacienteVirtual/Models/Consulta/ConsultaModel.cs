@@ -36,6 +36,10 @@ namespace PacienteVirtual.Models
         public ConsultaParametroModel ConsultaParametro { get; set; }
         public IEnumerable<ConsultaParametroModel> ListaConsultaParametro { get; set; }
 
+        public ConsultaVariavelQueixaModel ConsultaVariavelQueixa { get; set; }
+        public IEnumerable<ConsultaVariavelQueixaModel> ListaConsultaVariavelQueixa { get; set; }
+        public int IdSistema { get; set; }
+
         public ExamesFisicosModel ExamesFisicos { get; set; }
         //public QueixaModel Queixas
 

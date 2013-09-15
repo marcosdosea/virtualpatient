@@ -738,4 +738,19 @@
   <data name="usuario_senha_incorretos" xml:space="preserve">
     <value>O nome do usuário ou senha estão incorretos.</value>
   </data>
+  <data name="desde" xml:space="preserve">
+    <value>Desde</value>
+  </data>
+  <data name="prioridade" xml:space="preserve">
+    <value>Prioridade</value>
+  </data>
+  <data name="tipo" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="doenca_agrave" xml:space="preserve">
+    <value>Doença ou Agrave</value>
+  </data>
+  <data name="suspeita_rpm" xml:space="preserve">
+    <value>Suspeita de RPM</value>
+  </data>
 </root>
