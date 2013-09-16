@@ -126,6 +126,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém respostas de uma determinada pergunta
+        /// </summary>
+        /// <param name="codPergunta"></param>
+        /// <returns></returns>
+        public IEnumerable<RespostaModel> ObterPorPergunta(int idPergunta)
+        {
+            return GetQuery().Where(resposta => resposta.IdPergunta == idPergunta).ToList();
+        }
+
+        /// <summary>
         /// Obtém respostas que iniciam com nome
         /// </summary>
         /// <param name="nome"></param>

@@ -10,6 +10,8 @@ namespace PacienteVirtual.Controllers
     public class ConsultaController : Controller
     {
 
+        const int PERGUNTA_ESPERA_TRATAMENTO = 2;
+
         GerenciadorEscolaridade gEscolaridade = GerenciadorEscolaridade.GetInstance();
         GerenciadorPlanoSaude gPlanoSaude = GerenciadorPlanoSaude.GetInstance();
         GerenciadorOcupacao gOcupacao = GerenciadorOcupacao.GetInstance();
@@ -95,6 +97,11 @@ namespace PacienteVirtual.Controllers
             // Consulta Queixa
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema",consultaModel.IdSistema);
             ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema),"IdQueixa", "DescricaoQueixa");
+
+            // Preencher perguntas e respostas do eperiência Medicamentos
+            ViewBag.PerguntaEsperaTratamento = SessionController.ObterPergunta(PERGUNTA_ESPERA_TRATAMENTO);
+            ViewBag.RespostasEsperaTratamento = SessionController.ObterRespostas(PERGUNTA_ESPERA_TRATAMENTO);
+
 
             return View(consultaModel);
         }

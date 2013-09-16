@@ -395,5 +395,28 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static PerguntaModel ObterPergunta(int codPergunta)
+        {
+           string perguntaSession = "_Pergunta"+codPergunta;
+           PerguntaModel pergunta = (PerguntaModel) HttpContext.Current.Session[perguntaSession];
+           if (pergunta == null)
+           {
+               pergunta = GerenciadorPergunta.GetInstance().Obter(codPergunta);
+               HttpContext.Current.Session[perguntaSession] = pergunta;
+           }
+           return pergunta;  
+        }
+
+        public static IEnumerable<RespostaModel> ObterRespostas(int codPergunta)
+        {
+            string respostasSession = "_Respostas" + codPergunta;
+            IEnumerable<RespostaModel> respostas = (IEnumerable<RespostaModel>)HttpContext.Current.Session[respostasSession];
+            if (respostasSession == null)
+            {
+                respostas = GerenciadorResposta.GetInstance().ObterPorPergunta(codPergunta);
+                HttpContext.Current.Session[respostasSession] = respostas;
+            }
+            return respostas;
+        }
     }
 }

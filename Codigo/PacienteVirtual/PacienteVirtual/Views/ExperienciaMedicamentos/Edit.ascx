@@ -9,7 +9,7 @@
     <div class="row-fluid">
         <div class="span6">
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.IdRespostaEsperaTratamento) %>
+                <%: ViewBag.PerguntaEsperaTratamento %>
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.IdRespostaEsperaTratamento) %>
