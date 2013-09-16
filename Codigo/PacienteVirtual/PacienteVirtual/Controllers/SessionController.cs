@@ -411,7 +411,7 @@ namespace PacienteVirtual.Controllers
         {
             string respostasSession = "_Respostas" + codPergunta;
             IEnumerable<RespostaModel> respostas = (IEnumerable<RespostaModel>)HttpContext.Current.Session[respostasSession];
-            if (respostasSession == null)
+            if (respostas == null)
             {
                 respostas = GerenciadorResposta.GetInstance().ObterPorPergunta(codPergunta);
                 HttpContext.Current.Session[respostasSession] = respostas;
