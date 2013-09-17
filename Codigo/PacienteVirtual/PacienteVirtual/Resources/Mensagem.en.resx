@@ -699,7 +699,7 @@
   <data name="minimo_senha_2" xml:space="preserve">
     <value>characters in length.</value>
   </data>
-  <data name="mudar_senha" xml:space="preserve">
+  <data name="alterar_senha" xml:space="preserve">
     <value>Change Password</value>
   </data>
   <data name="senha_alterada_sucesso" xml:space="preserve">
@@ -755,5 +755,20 @@
   </data>
   <data name="necessidade_atencao" xml:space="preserve">
     <value>Need for Attention</value>
+  </data>
+  <data name="manha" xml:space="preserve">
+    <value>Morning</value>
+  </data>
+  <data name="noite" xml:space="preserve">
+    <value>Night</value>
+  </data>
+  <data name="tarde" xml:space="preserve">
+    <value>Afternoon</value>
+  </data>
+  <data name="senha_confSenha_nao_coincidem" xml:space="preserve">
+    <value>The new password and confirmation password do not match.</value>
+  </data>
+  <data name="senha_curta" xml:space="preserve">
+    <value>This password is very short.</value>
   </data>
 </root>

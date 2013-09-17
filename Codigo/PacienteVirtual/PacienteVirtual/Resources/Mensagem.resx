@@ -699,8 +699,8 @@
   <data name="minimo_senha_2" xml:space="preserve">
     <value>caracteres para validar a Senha.</value>
   </data>
-  <data name="mudar_senha" xml:space="preserve">
-    <value>Mudar Senha</value>
+  <data name="alterar_senha" xml:space="preserve">
+    <value>Alterar Senha</value>
   </data>
   <data name="senha_alterada_sucesso" xml:space="preserve">
     <value>Sua senha foi alterada com sucesso.</value>
@@ -755,5 +755,20 @@
   </data>
   <data name="necessidade_atencao" xml:space="preserve">
     <value>Necessita Atenção</value>
+  </data>
+  <data name="manha" xml:space="preserve">
+    <value>Manhã</value>
+  </data>
+  <data name="noite" xml:space="preserve">
+    <value>Noite</value>
+  </data>
+  <data name="tarde" xml:space="preserve">
+    <value>Tarde</value>
+  </data>
+  <data name="senha_confSenha_nao_coincidem" xml:space="preserve">
+    <value>Senha e Confirmar Senha não coincidem.</value>
+  </data>
+  <data name="senha_curta" xml:space="preserve">
+    <value>Esta senha está muito curta.</value>
   </data>
 </root>

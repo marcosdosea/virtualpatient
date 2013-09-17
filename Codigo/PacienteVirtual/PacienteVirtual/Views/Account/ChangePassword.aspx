@@ -1,11 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ChangePasswordModel>" %>
 
 <asp:Content ID="changePasswordTitle" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.mudar_senha %>
+    <%: Resources.Mensagem.alterar_senha %>
 </asp:Content>
 
 <asp:Content ID="changePasswordContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Resources.Mensagem.mudar_senha %></h2>
+    <h2><%: Resources.Mensagem.alterar_senha%></h2>
     <p>
         <%: Resources.Mensagem.utilize_formulario_altera_senha%>
     </p>
@@ -47,7 +47,7 @@
                 </div>
                 
             <div class="form-actions">
-                <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.mudar_senha %>" />
+                <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.alterar_senha %>" />
             </div>
             </fieldset>
         </div>
