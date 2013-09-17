@@ -72,9 +72,9 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaMedicamentoNaoPrescrito = SessionController.ListaMedicamentoNaoPrescrito;
             consultaModel.ListaConsultaParametro = SessionController.ListaConsultaParametro;
 
-            consultaModel.ConsultaVariavelQueixa = new ConsultaVariavelQueixaModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
-            consultaModel.IdSistema = SessionController.Sistema;
+            //consultaModel.ConsultaVariavelQueixa = new ConsultaVariavelQueixaModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            //consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
+            //consultaModel.IdSistema = SessionController.Sistema;
 
             // teste com razão encontro
             ViewBag.IdRazaoEncontro = new SelectList(GerenciadorRazaoEncontro.GetInstance().ObterTodos().ToList(), "IdRazaoEncontro", "DescricaoRazao", consultaModel.ConsultaVariavel.IdRazaoEncontro);
@@ -92,8 +92,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdParametroClinico = new SelectList(GerenciadorParametroClinico.GetInstance().ObterTodos().ToList(), "IdParametroClinico", "ParametroClinico");
 
             // Consulta Queixa
-            ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema",consultaModel.IdSistema);
-            ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema),"IdQueixa", "DescricaoQueixa");
+            //ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema",consultaModel.IdSistema);
+            //ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema),"IdQueixa", "DescricaoQueixa");
 
             // Preencher perguntas e respostas do eperiência Medicamentos
             ViewBag.PerguntaEsperaTratamento = SessionController.ObterPergunta(PERGUNTA_ESPERA_TRATAMENTO).Pergunta;
@@ -117,20 +117,6 @@ namespace PacienteVirtual.Controllers
         {
             return PartialView();
         }
-
-        
-        public PartialViewResult Queixa(int id)
-        {
-            ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");
-            return PartialView();
-        }
-
-        public PartialViewResult ListarQueixa(int id)
-        {
-            ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos().ToList(), "IdSistema", "NomeSistema");
-            return PartialView();
-        }
-
 
     }
 }

@@ -26,13 +26,12 @@ namespace PacienteVirtual.Controllers
                 GerenciadorConsultaVariavelQueixa.GetInstance().Inserir(consultaVariavelQueixa);
                 SessionController.Sistema = 0;
                 SessionController.ListaConsultaVariavelQueixa = null;
-
             }
             else
             {
                 SessionController.Sistema = consultaVariavelQueixa.IdSistema;
             }
-            return RedirectToAction("Edit", "Consulta");
+            return RedirectToAction("Edit", "Consulta2");
         }
 
         //
@@ -43,7 +42,7 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorConsultaVariavelQueixa.GetInstance().Remover(idConsultaVariavel, idQueixa);
             SessionController.ListaConsultaVariavelQueixa = null;
-            return RedirectToAction("Edit", "Consulta");
+            return RedirectToAction("Edit", "Consulta2");
         }
 
         protected override void Dispose(bool disposing)
