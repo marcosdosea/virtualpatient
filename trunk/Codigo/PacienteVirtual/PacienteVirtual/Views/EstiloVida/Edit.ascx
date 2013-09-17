@@ -7,7 +7,8 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <legend><%: Resources.Mensagem.estilo_vida %></legend>
+    <legend>
+        <%: Resources.Mensagem.estilo_vida %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <table class="table table-striped">
         <thead>
@@ -38,9 +39,16 @@
                     </div>
                 </td>
                 <td>
-                    <%: Resources.Mensagem.uso %>
                     <div class="editor-field">
-                        <%: Html.TextBoxFor(model => model.TabacoUso, new { @class = "textbox", style = "width:150px;" })%>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.TabacoUso, 1) %> &nbsp <%: Resources.Mensagem.cigarros_dia_0_10 %> &nbsp &nbsp
+                        </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.TabacoUso, 2) %> &nbsp <%: Resources.Mensagem.cigarros_dia_10_20 %> &nbsp &nbsp
+                        </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.TabacoUso, 3) %> &nbsp <%: Resources.Mensagem.cigarros_dia_20_mais %> 
+                        </div>
                         <%: Html.ValidationMessageFor(model => model.TabacoUso) %>
                     </div>
                 </td>
@@ -63,9 +71,16 @@
                     </div>
                 </td>
                 <td>
-                    <%: Resources.Mensagem.uso %>
                     <div class="editor-field">
-                        <%: Html.TextBoxFor(model => model.CafeUso, new { @class = "textbox", style = "width:150px;" })%>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.CafeUso, 1) %> &nbsp <%: Resources.Mensagem.xicaras_dia_2_menos %> &nbsp &nbsp
+                        </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.CafeUso, 2)%> &nbsp <%: Resources.Mensagem.xicaras_dia_2_6 %> &nbsp &nbsp
+                        </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.CafeUso, 3)%> &nbsp <%: Resources.Mensagem.xicaras_dias_6_mais %> 
+                        </div>
                         <%: Html.ValidationMessageFor(model => model.CafeUso) %>
                     </div>
                 </td>
@@ -95,9 +110,16 @@
                         <%: Html.TextBoxFor(model => model.AlcoolTipoBebida, new { @class = "textbox", style = "width:150px;" })%>
                         <%: Html.ValidationMessageFor(model => model.AlcoolTipoBebida) %>
                     </div>
-                    <%: Resources.Mensagem.uso %>
                     <div class="editor-field">
-                        <%: Html.TextBoxFor(model => model.AlcoolUso, new { @class = "textbox", style = "width:150px;" })%>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.AlcoolUso, 1)%> &nbsp <%: Resources.Mensagem.copos_dia_2_menos %> &nbsp &nbsp
+                        </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.AlcoolUso, 2)%> &nbsp <%: Resources.Mensagem.copos_dia_2_6 %> &nbsp &nbsp
+                        </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.AlcoolUso, 3)%> &nbsp <%: Resources.Mensagem.copos_dia_6_mais %> 
+                        </div>
                         <%: Html.ValidationMessageFor(model => model.AlcoolUso) %>
                     </div>
                 </td>

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MaintainScrollPositionOnPostback="true" MasterPageFile="~/Views/Shared/Site.Master"
-    Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ConsultaModel>" %>
+    Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.Consulta.Consulta2Model>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.consulta %>
@@ -19,14 +19,7 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>VMPaciente</legend>
-        <!--div class="editor-label">
-            < %: Html.LabelFor(model => model.quantRelatos) %>
-        </div>
-        <div class="editor-field">
-            < %: Html.EditorFor(model => model.quantRelatos) %>
-            < %: Html.ValidationMessageFor(model => model.quantRelatos) %>
-        </div-->
+        <legend>Consulta 2</legend>
         <div class="span5">
             <div class="thumbnails center">
                 <div class="span2">
@@ -52,112 +45,112 @@
                 </div>
             </div>
         </div>
-        <div class="span6">
+        <!--div class="span6">
             <div class="thumbnails">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1-1" data-toggle="tab">
                              História</a></li>
                         <li><a href="#tab1-2" data-toggle="tab">
-                            <%: Resources.Mensagem.demografico_antropometricos %></a></li>
+                            < %: Resources.Mensagem.demografico_antropometricos %></a></li>
                         <li><a href="#tab1-3" data-toggle="tab">
-                            <%: Resources.Mensagem.experiencia_medicamentos %></a></li>
+                            < %: Resources.Mensagem.experiencia_medicamentos %></a></li>
                         <li><a href="#tab1-4" data-toggle="tab">
-                            <%: Resources.Mensagem.diario_pessoal %></a></li>
+                            < %: Resources.Mensagem.diario_pessoal %></a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../Historia/Edit", Model.Historia);%>
+                                < % Html.RenderPartial("../Historia/Edit", Model.Historia);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-2">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../DemograficosAntropometicos/Edit", Model.DemograficoAntropometrico);%>
+                                < % Html.RenderPartial("../DemograficosAntropometicos/Edit", Model.DemograficoAntropometrico);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-3">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../ExperienciaMedicamentos/Edit", Model.ExperienciaMedicamentos);%>
+                                < % Html.RenderPartial("../ExperienciaMedicamentos/Edit", Model.ExperienciaMedicamentos);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-4">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
-                                <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
+                                < % Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
+                                < % Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div-->
         <div class="span6">
             <div class="thumbnails">
-                <div class="tabbable">
-                    <!-- Only required for left/right tabs -->
+                <!--div class="tabbable">
+                    <!-- Only required for left/right tabs >
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab2-1" data-toggle="tab">
-                            <%: Resources.Mensagem.estilo_vida %></a></li>
+                            < %: Resources.Mensagem.estilo_vida %></a></li>
                         <li><a href="#tab2-2" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamentos_anteriores %></a></li>
+                            < %: Resources.Mensagem.medicamentos_anteriores %></a></li>
                         <li><a href="#tab2-3" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamento_prescrito %></a></li>
+                            < %: Resources.Mensagem.medicamento_prescrito %></a></li>
                         <li><a href="#tab2-4" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
+                            < %: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
                         <li><a href="#tab2-5" data-toggle="tab">
-                            <%: Resources.Mensagem.exames_fisicos %></a></li>
+                            < %: Resources.Mensagem.exames_fisicos %></a></li>
                         <li><a href="#tab2-6" data-toggle="tab">
-                            <%: Resources.Mensagem.consulta_parametro %></a></li>
+                            < %: Resources.Mensagem.consulta_parametro %></a></li>
                         <li><a href="#tab2-7" data-toggle="tab">
-                            <%: Resources.Mensagem.razao_encontro %></a></li>
+                            < %: Resources.Mensagem.razao_encontro %></a></li>
                     </ul> 
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
                             <div class="thumbnail">
-                                <%  Html.RenderPartial("../EstiloVida/Edit", Model.EstiloVida);%>
+                                < %  Html.RenderPartial("../EstiloVida/Edit", Model.EstiloVida);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-2">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../MedicamentosAnteriores/Create", Model.MedicamentosAnteriores );%>
-                                <% Html.RenderPartial("../MedicamentosAnteriores/Index", Model.ListaMedicamentosAnteriores );%>
+                                < % Html.RenderPartial("../MedicamentosAnteriores/Create", Model.MedicamentosAnteriores );%>
+                                < % Html.RenderPartial("../MedicamentosAnteriores/Index", Model.ListaMedicamentosAnteriores );%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-3">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../MedicamentoPrescrito/Create", Model.MedicamentoPrescrito);%>
-                                <% Html.RenderPartial("../MedicamentoPrescrito/Index", Model.ListaMedicamentoPrescrito);%>
+                                < % Html.RenderPartial("../MedicamentoPrescrito/Create", Model.MedicamentoPrescrito);%>
+                                < % Html.RenderPartial("../MedicamentoPrescrito/Index", Model.ListaMedicamentoPrescrito);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-4">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../MedicamentoNaoPrescrito/Create", Model.MedicamentoNaoPrescrito);%>
-                                <% Html.RenderPartial("../MedicamentoNaoPrescrito/Index", Model.ListaMedicamentoNaoPrescrito);%>
+                                < % Html.RenderPartial("../MedicamentoNaoPrescrito/Create", Model.MedicamentoNaoPrescrito);%>
+                                < % Html.RenderPartial("../MedicamentoNaoPrescrito/Index", Model.ListaMedicamentoNaoPrescrito);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-5">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../ExamesFisicos/Edit", Model.ExamesFisicos);%>
+                                < % Html.RenderPartial("../ExamesFisicos/Edit", Model.ExamesFisicos);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-6">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../ConsultaParametro/Create", Model.ConsultaParametro);%>
-                                <% Html.RenderPartial("../ConsultaParametro/Index", Model.ListaConsultaParametro);%>
+                                < % Html.RenderPartial("../ConsultaParametro/Create", Model.ConsultaParametro);%>
+                                < % Html.RenderPartial("../ConsultaParametro/Index", Model.ListaConsultaParametro);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-7">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../ConsultaVariavel/Edit", Model.ConsultaVariavel);%>
+                                < % Html.RenderPartial("../ConsultaVariavel/Edit", Model.ConsultaVariavel);%>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--div class="thumbnail">
-                    < % Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
-                    < % Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
                 </div -->
+                <div class="thumbnail">
+                    <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
+                    <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
+                </div>
             </div>
         </div>
         <!--div class="span3 bottom">
@@ -168,9 +161,9 @@
     </fieldset>
     <% } %>
     <div>
-        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", null, null) %>
     </div>
     <div>
-        <%: Html.ActionLink(Resources.Mensagem.proximo,"Edit", "Consulta2", null, null) %>
+        <%: Html.ActionLink(Resources.Mensagem.remover,"Edit", "Consulta2", null, null) %>
     </div>
 </asp:Content>

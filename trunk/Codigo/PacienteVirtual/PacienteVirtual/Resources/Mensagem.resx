@@ -771,4 +771,34 @@
   <data name="senha_curta" xml:space="preserve">
     <value>Esta senha está muito curta.</value>
   </data>
+  <data name="cigarros_dia_0_10" xml:space="preserve">
+    <value>0-10 Cigarros/Dia</value>
+  </data>
+  <data name="cigarros_dia_10_20" xml:space="preserve">
+    <value>10-20 Cigarros/Dia</value>
+  </data>
+  <data name="cigarros_dia_20_mais" xml:space="preserve">
+    <value>&gt; 20 Cigarros/Dia</value>
+  </data>
+  <data name="copos_dia_2_6" xml:space="preserve">
+    <value>2-6 Copos/Dia</value>
+  </data>
+  <data name="copos_dia_2_menos" xml:space="preserve">
+    <value>&lt; 2 Copos/Dia</value>
+  </data>
+  <data name="copos_dia_6_mais" xml:space="preserve">
+    <value>&gt; 6 Copos/Dia</value>
+  </data>
+  <data name="proximo" xml:space="preserve">
+    <value>Próximo</value>
+  </data>
+  <data name="xicaras_dias_6_mais" xml:space="preserve">
+    <value>&gt; 6 Xícaras/Dia</value>
+  </data>
+  <data name="xicaras_dia_2_6" xml:space="preserve">
+    <value>2-6 Xícaras/Dia</value>
+  </data>
+  <data name="xicaras_dia_2_menos" xml:space="preserve">
+    <value>&lt; 2 Xícaras/Dia</value>
+  </data>
 </root>

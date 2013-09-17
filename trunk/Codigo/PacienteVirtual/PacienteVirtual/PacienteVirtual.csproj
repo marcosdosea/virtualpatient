@@ -142,6 +142,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Cadastro\GrupoIntervencaoController.cs" />
     <Compile Include="Controllers\Cadastro\IntervencaoController.cs" />
+    <Compile Include="Controllers\Consulta\Consulta2Controller.cs" />
     <Compile Include="Controllers\Consulta\ConsultaParametroController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
@@ -149,12 +150,15 @@
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
     <Compile Include="Models\Cadastro\GrupoIntervencaoModel.cs" />
     <Compile Include="Models\Cadastro\IntervencaoModel.cs" />
+    <Compile Include="Models\Consulta\AlergiaExamesFisicosModel.cs" />
+    <Compile Include="Models\Consulta\Consulta2Model.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
     <Compile Include="Models\Turma\SolicitarMatriculaTurmaModel.cs" />
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorGrupoIntervencao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorIntervencao.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorAlergiaExamesFisicos.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
@@ -493,6 +497,7 @@
     <Content Include="Views\Bebida\Details.aspx" />
     <Content Include="Views\Bebida\Edit.aspx" />
     <Content Include="Views\Bebida\Index.aspx" />
+    <Content Include="Views\Consulta2\Edit.aspx" />
     <Content Include="Views\ConsultaParametro\Create.ascx" />
     <Content Include="Views\ConsultaParametro\Index.ascx" />
     <Content Include="Views\ConsultaVariavelQueixa\Create.ascx" />
