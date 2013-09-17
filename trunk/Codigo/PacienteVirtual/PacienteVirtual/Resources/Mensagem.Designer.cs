@@ -142,6 +142,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alterar Senha.
+        /// </summary>
+        public static string alterar_senha {
+            get {
+                return ResourceManager.GetString("alterar_senha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Altura.
         /// </summary>
         public static string altura {
@@ -1087,6 +1096,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manhã.
+        /// </summary>
+        public static string manha {
+            get {
+                return ResourceManager.GetString("manha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Masculino.
         /// </summary>
         public static string masculino {
@@ -1195,15 +1213,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mudar Senha.
-        /// </summary>
-        public static string mudar_senha {
-            get {
-                return ResourceManager.GetString("mudar_senha", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Não.
         /// </summary>
         public static string nao {
@@ -1236,6 +1245,15 @@ namespace Resources {
         public static string nivel_escolaridade {
             get {
                 return ResourceManager.GetString("nivel_escolaridade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Noite.
+        /// </summary>
+        public static string noite {
+            get {
+                return ResourceManager.GetString("noite", resourceCulture);
             }
         }
         
@@ -1726,6 +1744,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Senha e Confirmar Senha não coincidem..
+        /// </summary>
+        public static string senha_confSenha_nao_coincidem {
+            get {
+                return ResourceManager.GetString("senha_confSenha_nao_coincidem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esta senha está muito curta..
+        /// </summary>
+        public static string senha_curta {
+            get {
+                return ResourceManager.GetString("senha_curta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Senha alterada sem sucesso. Por favor, corrija os erros e tente novamente..
         /// </summary>
         public static string senha_sem_sucesso_tentar_novamente {
@@ -1839,6 +1875,15 @@ namespace Resources {
         public static string tabaco_uso {
             get {
                 return ResourceManager.GetString("tabaco_uso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tarde.
+        /// </summary>
+        public static string tarde {
+            get {
+                return ResourceManager.GetString("tarde", resourceCulture);
             }
         }
         
