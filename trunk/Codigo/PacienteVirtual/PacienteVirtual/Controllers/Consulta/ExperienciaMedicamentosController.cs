@@ -7,6 +7,12 @@ namespace PacienteVirtual.Controllers
 { 
     public class ExperienciaMedicamentosController : Controller
     {
+        const int PERGUNTA_ESPERA_TRATAMENTO = 2;
+        const int PERGUNTA_PREOCUPACOES = 3;
+        const int PERGUNTA_GRAU_ENTENDIMENTO = 4;
+        const int PERGUNTA_CULTURAL = 5;
+        const int PERGUNTA_COMPORTAMENTO = 6;
+        const int PERGUNTA_INCORPORADO_PLANO = 7;
 
         GerenciadorExperienciaMedicamentos gExpMedicamento = GerenciadorExperienciaMedicamentos.GetInstance();
         GerenciadorResposta gResposta = GerenciadorResposta.GetInstance();
