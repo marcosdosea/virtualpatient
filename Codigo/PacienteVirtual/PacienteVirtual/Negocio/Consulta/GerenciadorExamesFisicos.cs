@@ -86,6 +86,74 @@ namespace PacienteVirtual.Negocio.Consulta
         }
 
         /// <summary>
+        /// Insere uma alergia em um exame físico
+        /// </summary>
+        /// <param name="examesFisicosModel"></param>
+        /// <param name="alergiaModel"></param>
+        public void InserirAlergia(ExamesFisicosModel examesFisicosModel, int idAlergia)
+        {
+            try
+            {
+                var repExamesFisicos = new RepositorioGenerico<tb_exames_fisicos>();
+                var repAlergia = new RepositorioGenerico<tb_alergia>();
+                
+                tb_exames_fisicos _tb_exames_fisicos = repExamesFisicos.ObterEntidade(dP => dP.IdConsultaVariavel == examesFisicosModel.IdConsultaVariavel);
+                tb_alergia _tb_alergia = repAlergia.ObterEntidade(al => al.IdAlergia == idAlergia);
+
+                _tb_exames_fisicos.tb_alergia.Add(_tb_alergia);
+
+                repExamesFisicos.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ExamesFisicos", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Insere uma alergia em um exame físico
+        /// </summary>
+        /// <param name="examesFisicosModel"></param>
+        /// <param name="alergiaModel"></param>
+        public void RemoverAlergia(ExamesFisicosModel examesFisicosModel, int idAlergia)
+        {
+            try
+            {
+                var repExamesFisicos = new RepositorioGenerico<tb_exames_fisicos>();
+                var repAlergia = new RepositorioGenerico<tb_alergia>();
+
+                tb_exames_fisicos _tb_exames_fisicos = repExamesFisicos.ObterEntidade(dP => dP.IdConsultaVariavel == examesFisicosModel.IdConsultaVariavel);
+                tb_alergia _tb_alergia = new tb_alergia() { IdAlergia = idAlergia };
+
+                _tb_exames_fisicos.tb_alergia.Remove(_tb_alergia);
+
+                repExamesFisicos.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ExamesFisicos", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Obtém todas as alergias relacionadas a consulta
+        /// </summary>
+        /// <param name="examesFisicosModel"></param>
+        /// <param name="alergiaModel"></param>
+        public IEnumerable<AlergiaModel> ObterAlergias(long idConsultaVariavel)
+        {
+            var repExamesFisicos = new RepositorioGenerico<tb_exames_fisicos>();
+            tb_exames_fisicos _tb_exames_fisicos = repExamesFisicos.ObterEntidade(ef => ef.IdConsultaVariavel == idConsultaVariavel);
+            var query = from alergias in _tb_exames_fisicos.tb_alergia
+                        select new AlergiaModel
+                        {
+                            IdAlergia = alergias.IdAlergia,
+                            Alergia = alergias.Alergia
+                        };
+            return query;
+        }
+
+        /// <summary>
         /// Consulta para retornar dados da entidade
         /// </summary>
         /// <returns></returns>
