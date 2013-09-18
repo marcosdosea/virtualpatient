@@ -12,7 +12,7 @@
                 <%: Html.LabelFor(model => model.Periodo)%>
             </div>
         </div>
-        <div class="span6">
+        <div class="span9">
             <div class="editor-field">
                 <!--%: Html.DropDownListFor(Model => Model.Periodo, (SelectList)ViewBag.Periodo)% -->
                 <%= Html.RadioButtonFor(model => model.Periodo, "M")%> <%: Resources.Mensagem.manha %>

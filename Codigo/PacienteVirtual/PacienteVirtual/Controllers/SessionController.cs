@@ -4,6 +4,8 @@ using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 using PacienteVirtual.Models.Consulta;
 using PacienteVirtual.Negocio.Consulta;
+using System.Collections;
+using System.Linq;
 
 namespace PacienteVirtual.Controllers 
 {
@@ -415,6 +417,133 @@ namespace PacienteVirtual.Controllers
             {
                 respostas = GerenciadorResposta.GetInstance().ObterPorPergunta(codPergunta);
                 HttpContext.Current.Session[respostasSession] = respostas;
+            }
+
+            //Metodos para vir da sessão
+            List<RespostaModel> listaResp = respostas.ToList();
+            int respCod = -1;
+            switch (codPergunta)
+            {
+                case 2:
+                    respCod = SessionController.ExperienciaMedicamentos.IdRespostaEsperaTratamento;
+                    for (int i = 0; i < listaResp.Count; i++)
+                    {
+                        if (listaResp[i].IdResposta == respCod)
+                        {
+                            RespostaModel respostaExibida = listaResp[i];
+                            listaResp.RemoveAt(i);
+                            List<RespostaModel> listaFinal = new List<RespostaModel>();
+                            listaFinal.Add(respostaExibida);
+                            foreach (RespostaModel resposta in listaResp)
+                            {
+                                listaFinal.Add(resposta);
+                            }
+
+                            respostas = (IEnumerable<RespostaModel>)listaFinal;
+                            break;
+                        }
+                    }
+                    break;
+                case 3:
+                    respCod = SessionController.ExperienciaMedicamentos.IdRespostaPreocupacoes;
+                    for (int i = 0; i < listaResp.Count; i++)
+                    {
+                        if (listaResp[i].IdResposta == respCod)
+                        {
+                            RespostaModel respostaExibida = listaResp[i];
+                            listaResp.RemoveAt(i);
+                            List<RespostaModel> listaFinal = new List<RespostaModel>();
+                            listaFinal.Add(respostaExibida);
+                            foreach (RespostaModel resposta in listaResp)
+                            {
+                                listaFinal.Add(resposta);
+                            }
+
+                            respostas = (IEnumerable<RespostaModel>)listaFinal;
+                            break;
+                        }
+                    }
+                    break;
+                case 4:
+                    respCod = SessionController.ExperienciaMedicamentos.IdRespostaGrauEntendimento;
+                    for (int i = 0; i < listaResp.Count; i++)
+                    {
+                        if (listaResp[i].IdResposta == respCod)
+                        {
+                            RespostaModel respostaExibida = listaResp[i];
+                            listaResp.RemoveAt(i);
+                            List<RespostaModel> listaFinal = new List<RespostaModel>();
+                            listaFinal.Add(respostaExibida);
+                            foreach (RespostaModel resposta in listaResp)
+                            {
+                                listaFinal.Add(resposta);
+                            }
+
+                            respostas = (IEnumerable<RespostaModel>)listaFinal;
+                            break;
+                        }
+                    }
+                    break;
+                case 5:
+                    respCod = SessionController.ExperienciaMedicamentos.IdRespostaCultural;
+                    for (int i = 0; i < listaResp.Count; i++)
+                    {
+                        if (listaResp[i].IdResposta == respCod)
+                        {
+                            RespostaModel respostaExibida = listaResp[i];
+                            listaResp.RemoveAt(i);
+                            List<RespostaModel> listaFinal = new List<RespostaModel>();
+                            listaFinal.Add(respostaExibida);
+                            foreach (RespostaModel resposta in listaResp)
+                            {
+                                listaFinal.Add(resposta);
+                            }
+
+                            respostas = (IEnumerable<RespostaModel>)listaFinal;
+                            break;
+                        }
+                    }
+                    break;
+                case 6:
+                    respCod = SessionController.ExperienciaMedicamentos.IdRespostaComportamento;
+                    for (int i = 0; i < listaResp.Count; i++)
+                    {
+                        if (listaResp[i].IdResposta == respCod)
+                        {
+                            RespostaModel respostaExibida = listaResp[i];
+                            listaResp.RemoveAt(i);
+                            List<RespostaModel> listaFinal = new List<RespostaModel>();
+                            listaFinal.Add(respostaExibida);
+                            foreach (RespostaModel resposta in listaResp)
+                            {
+                                listaFinal.Add(resposta);
+                            }
+
+                            respostas = (IEnumerable<RespostaModel>)listaFinal;
+                            break;
+                        }
+                    }
+                    break;
+                case 7:
+                    respCod = SessionController.ExperienciaMedicamentos.IdRespostaIncorporadoPlano;
+                    for (int i = 0; i < listaResp.Count; i++)
+                    {
+                        if (listaResp[i].IdResposta == respCod)
+                        {
+                            RespostaModel respostaExibida = listaResp[i];
+                            listaResp.RemoveAt(i);
+                            List<RespostaModel> listaFinal = new List<RespostaModel>();
+                            listaFinal.Add(respostaExibida);
+                            foreach (RespostaModel resposta in listaResp)
+                            {
+                                listaFinal.Add(resposta);
+                            }
+
+                            respostas = (IEnumerable<RespostaModel>)listaFinal;
+                            break;
+                        }
+                    }
+                    break;
             }
             return respostas;
         }
