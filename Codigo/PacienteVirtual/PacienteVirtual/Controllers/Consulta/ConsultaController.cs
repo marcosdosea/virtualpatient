@@ -26,7 +26,29 @@ namespace PacienteVirtual.Controllers
         {
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
             // TODO: Obter por usuário autenticado
+            
+            // zerando sessão para ir no banco ir pegar os dados com o devido IdVariavel
             SessionController.Sistema = 0;
+            SessionController.ConsultaFixo = null;
+            SessionController.ConsultaVariavel = null;
+            SessionController.DemograficosAntropometricos = null;
+            SessionController.EstiloVida = null;
+            SessionController.ExamesFisicos = null;
+            SessionController.ExperienciaMedicamentos = null;
+            SessionController.Historia = null;
+            SessionController.ListaBebidas = null;
+            SessionController.ListaConsultaParametro = null;
+            SessionController.ListaConsultaVariavelQueixa = null;
+            SessionController.ListaDiarioPessoal = null;
+            SessionController.ListaMedicamentoNaoPrescrito = null;
+            SessionController.ListaMedicamentos = null;
+            SessionController.ListaMedicamentosAnteriores = null;
+            SessionController.ListaMedicamentosPrescritos = null;
+            SessionController.Paciente = null;
+            SessionController.Pessoa = null;
+            SessionController.RelatoClinico = null;
+            /////////////////////////////////////////////////////////////////
+
             return View(GerenciadorConsultaVariavel.GetInstance().ObterTodos());
         }
 
@@ -110,6 +132,31 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdRespostaIncorporadoPlano = new SelectList(SessionController.ObterRespostas(PERGUNTA_INCORPORADO_PLANO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaIncorporadoPlano);
 
             return View(consultaModel);
+        }
+
+        //
+        // GET: /Consulta2/
+        public ActionResult Edit2(long? idConsultaVariavel)
+        {
+            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            SessionController.ConsultaVariavel = consultaVariavelModel;
+
+            Consulta2Model consulta2Model = new Consulta2Model();
+            consulta2Model.ConsultaVariavel = consultaVariavelModel;
+            consulta2Model.Paciente = SessionController.Paciente;
+            consulta2Model.RelatoClinico = SessionController.RelatoClinico;
+
+
+            consulta2Model.ConsultaVariavelQueixa = new ConsultaVariavelQueixaModel { IdConsultaVariavel = consulta2Model.ConsultaVariavel.IdConsultaVariavel };
+            consulta2Model.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
+            consulta2Model.IdSistema = SessionController.Sistema;
+
+            // Consulta Queixa
+            ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consulta2Model.IdSistema);
+            ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consulta2Model.IdSistema), "IdQueixa", "DescricaoQueixa");
+
+            return View(consulta2Model);
         }
 
         //Experiencia medicamentos

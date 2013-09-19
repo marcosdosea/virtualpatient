@@ -171,6 +171,6 @@
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </div>
     <div>
-        <%: Html.ActionLink(Resources.Mensagem.proximo,"Edit", "Consulta2", null, null) %>
+        <%: Html.ActionLink(Resources.Mensagem.proximo,"Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, null) %>
     </div>
 </asp:Content>
