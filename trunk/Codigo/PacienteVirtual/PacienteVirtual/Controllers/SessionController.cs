@@ -189,6 +189,24 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static IEnumerable<AlergiaModel> ListaAlergia
+        {
+            get
+            {
+                IEnumerable<AlergiaModel> listaAlergia = (IEnumerable<AlergiaModel>)HttpContext.Current.Session["_ListaAlergia"];
+                if (listaAlergia == null)
+                {
+                    listaAlergia = GerenciadorExamesFisicos.GetInstance().ObterAlergias(SessionController.ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_ListaAlergia"] = listaAlergia;
+                }
+                return listaAlergia;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaAlergia"] = value;
+            }
+        }
+
         public static IEnumerable<BebidaModel> ListaBebidas
         {
             get

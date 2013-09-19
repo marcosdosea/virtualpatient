@@ -9,7 +9,7 @@ using PacienteVirtual.Models.Turma;
 
 namespace PacienteVirtual.Controllers.Turma
 {
-    public class AtivarMatriculasTurmaController : Controller
+    public class AtivarTutorTurmaController : Controller
     {
         //
         // GET: /AtivarMatriculasTurma/
@@ -17,7 +17,7 @@ namespace PacienteVirtual.Controllers.Turma
         public ActionResult Index()
         {
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodos());
+            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
         }
 
         [HttpPost]
@@ -28,11 +28,11 @@ namespace PacienteVirtual.Controllers.Turma
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
             if (IdTurma != -1)
             {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaNaoAtivado(IdTurma).ToList());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaAtivados(IdTurma).ToList());
             }
             if (IdTurma == -1)
             {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodos());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
             }
             return View();
         }
@@ -41,7 +41,7 @@ namespace PacienteVirtual.Controllers.Turma
         public ActionResult Ativar(int idTurma, int idPessoa)
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
-            tpm.Ativa = true;
+            tpm.IdRole = 3;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index");
         }
@@ -50,37 +50,11 @@ namespace PacienteVirtual.Controllers.Turma
         public ActionResult Desativar(int idTurma, int idPessoa)
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
-            tpm.Ativa = false;
+            tpm.IdRole = 2;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index");
 
         }
 
-        private static bool ativadesativar;
-
-        public ActionResult AtivarDesativarTodos()
-        {
-            List<TurmaPessoaModel> listaPessoa =  GerenciadorTurmaPessoa.GetInstance().ObterTodos().ToList();
-            if (ativadesativar)
-            {
-                foreach (TurmaPessoaModel pessoa in listaPessoa)
-                {
-                    pessoa.Ativa = true;
-                    GerenciadorTurmaPessoa.GetInstance().Atualizar(pessoa);
-                }
-                ativadesativar = false ;
-            }
-            else
-            {
-                foreach (TurmaPessoaModel pessoa in listaPessoa)
-                {
-                    pessoa.Ativa = false;
-                    GerenciadorTurmaPessoa.GetInstance().Atualizar(pessoa);
-                }
-                ativadesativar = true;
-            }
-
-            return RedirectToAction("Index");
-        }
     }
 }
