@@ -139,6 +139,8 @@
                         <div class="tab-pane" id="tab2-5">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ExamesFisicos/Edit", Model.ExamesFisicos);%>
+                                <% Html.RenderPartial("../ExamesFisicos/AdicionarAlergia", Model.AlergiaExamesFisicos);%> 
+                                <% Html.RenderPartial("../ExamesFisicos/ListaAlergias", Model.ListaAlergia);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-6">

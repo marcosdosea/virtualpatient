@@ -172,6 +172,9 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
                                         </li>
+                                        <li>
+                                            <%: Html.ActionLink("AtivarTutorTurma", "Index", "AtivarTutorTurma")%>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>

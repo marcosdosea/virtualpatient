@@ -28,6 +28,35 @@ namespace PacienteVirtual.Controllers.Consulta
             return RedirectToAction("Edit", "Consulta");
         }
 
+        [HttpPost]
+        public ActionResult AdicionarAlergia(AlergiaExamesFisicosModel alergiaExamesFisicosModel)
+        {
+            /*if(ModelState.IsValid)
+            {
+                ExamesFisicosModel efm = GerenciadorExamesFisicos.GetInstance().Obter(alergiaExamesFisicosModel.IdConsultaVariavel);
+                GerenciadorExamesFisicos.GetInstance().InserirAlergia(efm, alergiaExamesFisicosModel.IdAlergia);
+                SessionController.ListaAlergia = null;
+            }*/
+            return RedirectToAction("Edit", "Consulta");
+        }
+
+        public ViewResult ListaAlergias()
+        {
+            return View(GerenciadorExamesFisicos.GetInstance().ObterAlergias(SessionController.ConsultaVariavel.IdConsultaVariavel));
+        }
+
+
+        public ActionResult Delete(int idAlergia)
+        {
+            /*
+            ExamesFisicosModel efm = GerenciadorExamesFisicos.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaVariavel);
+            GerenciadorExamesFisicos.GetInstance().RemoverAlergia(efm, idAlergia);
+            SessionController.ListaAlergia = null;
+            */
+            return RedirectToAction("Edit", "Consulta");
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

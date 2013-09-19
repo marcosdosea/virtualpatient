@@ -56,7 +56,7 @@ namespace PacienteVirtual.Negocio.Turma
             try
             {
                 var repTurmaPessoa = new RepositorioGenerico<tb_turma_pessoa>();
-                tb_turma_pessoa _turmaPessoa = repTurmaPessoa.ObterEntidade(c => c.IdTurma == turmaPessoa.IdTurma);
+                tb_turma_pessoa _turmaPessoa = repTurmaPessoa.ObterEntidade(c => c.IdTurma == turmaPessoa.IdTurma && c.IdPessoa == turmaPessoa.IdPessoa);
                 Atribuir(turmaPessoa, _turmaPessoa);
 
                 repTurmaPessoa.SaveChanges();
@@ -118,31 +118,41 @@ namespace PacienteVirtual.Negocio.Turma
         }
 
         /// <summary>
-        /// Obtém todos as pessoas de uma determinada turma 
+        /// Obtém todos as pessoas de uma determinada turma qe ainda não estão ativados 
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterPorTurma(int codTurma)
+        public IEnumerable<TurmaPessoaModel> ObterPorTurmaNaoAtivado(int codTurma)
         {
             return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == false).ToList();
         }
 
         /// <summary>
-        /// Obtém todos as turmas de uma determinada pessoa
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterPorPessoa(long codPessoa)
-        {
-            return GetQuery().Where(tpr => tpr.IdPessoa == codPessoa && tpr.Ativa == true).ToList();
-        }
-
-        /// <summary>
-        /// Obtém turmaPessoa com o código especificiado
+        /// Obtem todos os alunos de determinada turma matriculada na mesma
         /// </summary>
         /// <param name="codTurma"></param>
         /// <returns></returns>
-        public TurmaPessoaModel Obter(int idTurmaPessoa)
+        public IEnumerable<TurmaPessoaModel> ObterPorTurmaAtivados(int codTurma)
         {
-            return GetQuery().Where(turma => turma.IdTurma == idTurmaPessoa).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == true).ToList();
+        }
+
+        /// <summary>
+        /// Obtem todos os alunos Ativados
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TurmaPessoaModel> ObterTodosAtivados()
+        {
+            return GetQuery().Where(tpr => tpr.Ativa == true).ToList();
+        }
+
+        /// <summary>
+        /// Obtém turmaPessoa com o idTurma e idPessoa
+        /// </summary>
+        /// <param name="codTurma"></param>
+        /// <returns></returns>
+        public TurmaPessoaModel ObterPorTurmaPessoa(int idTurmaPessoa, int idPessoa)
+        {
+            return GetQuery().Where(turma => turma.IdTurma == idTurmaPessoa && turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
