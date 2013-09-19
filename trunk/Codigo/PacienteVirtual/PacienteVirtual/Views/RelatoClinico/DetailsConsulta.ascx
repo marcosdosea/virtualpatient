@@ -17,8 +17,8 @@
         <%: Html.ValidationMessageFor(model => model.RelatoTextual) %>
         <%: Html.TextAreaFor(model => model.RelatoTextual, new { @class = "span4", @cols = "40", @rows = "28", @readonly = "true", style = "background-color:#fff;" })%>
     </div>
-    <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
-    </div>
+    <!--div class="form-actions">
+        <input class="btn btn-primary" type="submit" value="< %: Resources.Mensagem.salvar %>" />
+    </div-->
 </fieldset>
 <% } %>
