@@ -3,7 +3,7 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <legend>Adicionar Alergia</legend>
+    <legend><%: Resources.Mensagem.adicionar_alergia %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <div class="row-fluid">
         <div class="span3">
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="span2">
-            <input type="submit" value="Create" />
+            <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar_alergia %>" />
         </div>
     </div>
 </fieldset>

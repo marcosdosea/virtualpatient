@@ -7,10 +7,9 @@
     <div class="span9">
         <h2>
             <%: Resources.Mensagem.consulta %></h2>
-        <% using (Html.BeginForm("Index", "VMConsulta", FormMethod.Post, null))
+        <% using (Html.BeginForm("Index", "Consulta", FormMethod.Post, null))
            { %>
         <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
-        <!-- %: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { @onchange = "this.form.action = Index = 1;" })%-->
         <% } %>
     </div>
     <div class="span2">

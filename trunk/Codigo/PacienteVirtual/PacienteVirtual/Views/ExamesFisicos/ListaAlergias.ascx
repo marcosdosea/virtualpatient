@@ -3,7 +3,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                Alergia
+                <%: Resources.Mensagem.alergia %>
             </th>
             <th>
             </th>

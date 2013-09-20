@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adicionar Alergia.
+        /// </summary>
+        public static string adicionar_alergia {
+            get {
+                return ResourceManager.GetString("adicionar_alergia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alcóol.
         /// </summary>
         public static string alcool {
@@ -192,6 +201,15 @@ namespace Resources {
         public static string ativar_matriculas_turma {
             get {
                 return ResourceManager.GetString("ativar_matriculas_turma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ativar Tutor na Turma.
+        /// </summary>
+        public static string ativar_tutor_turma {
+            get {
+                return ResourceManager.GetString("ativar_tutor_turma", resourceCulture);
             }
         }
         
@@ -426,6 +444,15 @@ namespace Resources {
         public static string consulta_variavel_codigo {
             get {
                 return ResourceManager.GetString("consulta_variavel_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consulta 2.
+        /// </summary>
+        public static string consulta2 {
+            get {
+                return ResourceManager.GetString("consulta2", resourceCulture);
             }
         }
         
@@ -1105,6 +1132,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kg.
+        /// </summary>
+        public static string kg {
+            get {
+                return ResourceManager.GetString("kg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lembrar-me.
         /// </summary>
         public static string lembrar_me {
@@ -1146,6 +1182,15 @@ namespace Resources {
         public static string login_sem_sucesso {
             get {
                 return ResourceManager.GetString("login_sem_sucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M.
+        /// </summary>
+        public static string m {
+            get {
+                return ResourceManager.GetString("m", resourceCulture);
             }
         }
         
@@ -1240,6 +1285,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mg/dl.
+        /// </summary>
+        public static string mg_dl {
+            get {
+                return ResourceManager.GetString("mg_dl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to É necessário no mínimo .
         /// </summary>
         public static string minimo_senha_1 {
@@ -1254,6 +1308,15 @@ namespace Resources {
         public static string minimo_senha_2 {
             get {
                 return ResourceManager.GetString("minimo_senha_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MnHg.
+        /// </summary>
+        public static string mmHg {
+            get {
+                return ResourceManager.GetString("mmHg", resourceCulture);
             }
         }
         
@@ -1591,6 +1654,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pressão Arterial.
+        /// </summary>
+        public static string pressao_arterial {
+            get {
+                return ResourceManager.GetString("pressao_arterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pressão Diastólica.
         /// </summary>
         public static string pressao_diastolica {
@@ -1879,6 +1951,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string status {
+            get {
+                return ResourceManager.GetString("status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status do Preenchimento.
         /// </summary>
         public static string status_preenchimento {
@@ -2082,6 +2163,15 @@ namespace Resources {
         public static string voltar {
             get {
                 return ResourceManager.GetString("voltar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X.
+        /// </summary>
+        public static string x {
+            get {
+                return ResourceManager.GetString("x", resourceCulture);
             }
         }
         

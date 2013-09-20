@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.Turma.TurmaPessoaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Ativar tutor turma
+    <%: Resources.Mensagem.ativar_tutor_turma %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
     <div class="span9">
-        <h2> Ativar tutor turma
+        <h2> <%: Resources.Mensagem.ativar_tutor_turma %>
             </h2>
         <% using (Html.BeginForm("Index", "AtivarTutorTurma", FormMethod.Post, null))
            { %>
@@ -20,7 +20,7 @@
                     <%: Resources.Mensagem.nome_pessoa %>
                 </th>
                 <th class="input-medium" style="width: 158px">
-                    Status
+                    <%: Resources.Mensagem.status %>
                 </th>
                 <th>
                     <%: Resources.Mensagem.opcoes %>

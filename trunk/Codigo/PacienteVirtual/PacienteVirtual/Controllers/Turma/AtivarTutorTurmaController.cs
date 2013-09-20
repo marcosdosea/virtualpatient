@@ -43,7 +43,7 @@ namespace PacienteVirtual.Controllers.Turma
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
             tpm.IdRole = 3;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", idTurma);
         }
 
 
@@ -52,7 +52,7 @@ namespace PacienteVirtual.Controllers.Turma
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
             tpm.IdRole = 2;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", idTurma);
 
         }
 
