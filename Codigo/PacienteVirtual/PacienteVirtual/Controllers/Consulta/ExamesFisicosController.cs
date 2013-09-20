@@ -31,12 +31,12 @@ namespace PacienteVirtual.Controllers.Consulta
         [HttpPost]
         public ActionResult AdicionarAlergia(AlergiaExamesFisicosModel alergiaExamesFisicosModel)
         {
-            /*if(ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 ExamesFisicosModel efm = GerenciadorExamesFisicos.GetInstance().Obter(alergiaExamesFisicosModel.IdConsultaVariavel);
                 GerenciadorExamesFisicos.GetInstance().InserirAlergia(efm, alergiaExamesFisicosModel.IdAlergia);
                 SessionController.ListaAlergia = null;
-            }*/
+            }
             return RedirectToAction("Edit", "Consulta");
         }
 
