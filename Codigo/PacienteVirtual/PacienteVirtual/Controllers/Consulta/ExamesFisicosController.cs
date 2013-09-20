@@ -48,11 +48,9 @@ namespace PacienteVirtual.Controllers.Consulta
 
         public ActionResult Delete(int idAlergia)
         {
-            /*
             ExamesFisicosModel efm = GerenciadorExamesFisicos.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaVariavel);
             GerenciadorExamesFisicos.GetInstance().RemoverAlergia(efm, idAlergia);
             SessionController.ListaAlergia = null;
-            */
             return RedirectToAction("Edit", "Consulta");
         }
 

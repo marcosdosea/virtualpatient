@@ -21,7 +21,7 @@
                 <%: Html.ValidationMessageFor(model => model.Peso) %>
             </div>
         </div>
-        <div class="span1">KG</div>
+        <div class="span1"><%: Resources.Mensagem.kg %></div>
     </div>
     <div class="row-fluid">
         <div class="span2">
@@ -35,12 +35,12 @@
                 <%: Html.ValidationMessageFor(model => model.Altura) %>
             </div>
         </div>
-        <div class="span1">M</div>
+        <div class="span1"><%: Resources.Mensagem.m %></div>
     </div>
     <div class="row-fluid">
         <div class="span2">
             <div class="editor-label">
-                Pressão Arterial
+                <%: Resources.Mensagem.pressao_arterial %>
             </div>
         </div>
         <div class="span2">
@@ -49,14 +49,14 @@
                 <%: Html.ValidationMessageFor(model => model.PressaoDiastolica) %>
             </div>
         </div>
-        <div class="span1">X</div>
+        <div class="span1"><%: Resources.Mensagem.x %></div>
         <div class="span2">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.PressaoSistolica, new { @class = "textbox", style = "width:50px;" })%>
                 <%: Html.ValidationMessageFor(model => model.PressaoSistolica) %>
             </div>
         </div>
-        <div class="span1">mmHg</div>
+        <div class="span1"><%: Resources.Mensagem.mmHg %></div>
     </div>
     <div class="row-fluid">
         <div class="span2">
@@ -70,7 +70,7 @@
                 <%: Html.ValidationMessageFor(model => model.Glicemia) %>
             </div>
         </div>
-        <div class="span1">mg/dl</div>
+        <div class="span1"><%: Resources.Mensagem.mg_dl%></div>
     </div>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

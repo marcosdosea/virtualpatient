@@ -123,7 +123,7 @@ namespace PacienteVirtual.Negocio.Consulta
                 var repAlergia = new RepositorioGenerico<tb_alergia>(repExamesFisicos.ObterContexto());
 
                 tb_exames_fisicos _tb_exames_fisicos = repExamesFisicos.ObterEntidade(dP => dP.IdConsultaVariavel == examesFisicosModel.IdConsultaVariavel);
-                tb_alergia _tb_alergia = new tb_alergia() { IdAlergia = idAlergia };
+                tb_alergia _tb_alergia = repAlergia.ObterEntidade(al => al.IdAlergia == idAlergia);
 
                 _tb_exames_fisicos.tb_alergia.Remove(_tb_alergia);
 

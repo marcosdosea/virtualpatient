@@ -8,10 +8,10 @@
     <!-- Arquivo necessário para as View partial -->
     <script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
+        type="text/javascript"></script>
     <h2>
-        <%: Resources.Mensagem.consulta %></h2>
+        <%: Resources.Mensagem.consulta2 %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
@@ -19,7 +19,8 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>Consulta 2</legend>
+        <legend>
+            <%: Resources.Mensagem.consulta2 %></legend>
         <div class="span5">
             <div class="thumbnails center">
                 <div class="span2">

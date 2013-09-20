@@ -801,4 +801,34 @@
   <data name="xicaras_dia_2_menos" xml:space="preserve">
     <value>&lt; 2 Cups/Day</value>
   </data>
+  <data name="adicionar_alergia" xml:space="preserve">
+    <value>Add Allergy</value>
+  </data>
+  <data name="ativar_tutor_turma" xml:space="preserve">
+    <value>Enable Tutor in Class</value>
+  </data>
+  <data name="consulta2" xml:space="preserve">
+    <value>Consultation 2</value>
+  </data>
+  <data name="kg" xml:space="preserve">
+    <value>Kg</value>
+  </data>
+  <data name="m" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="mg_dl" xml:space="preserve">
+    <value>Mg/dl</value>
+  </data>
+  <data name="mmHg" xml:space="preserve">
+    <value>MmHg</value>
+  </data>
+  <data name="pressao_arterial" xml:space="preserve">
+    <value>Blood Pressure</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="x" xml:space="preserve">
+    <value>X</value>
+  </data>
 </root>

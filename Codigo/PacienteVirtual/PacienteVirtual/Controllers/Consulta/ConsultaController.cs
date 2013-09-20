@@ -25,6 +25,7 @@ namespace PacienteVirtual.Controllers
         public ViewResult Index()
         {
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
+            ViewBag.Codigo = -1;
             // TODO: Obter por usuário autenticado
             
             // zerando sessão para ir no banco ir pegar os dados com o devido IdVariavel
@@ -58,9 +59,15 @@ namespace PacienteVirtual.Controllers
         {
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             if (IdPaciente != -1)
+            {
+                ViewBag.Codigo = IdPaciente;
                 return View(GerenciadorRelatoClinico.GetInstance().ObterRelatos(IdPaciente));
+            }
             if (IdPaciente == -1)
+            {
+                ViewBag.Codigo = -1;
                 return View(GerenciadorRelatoClinico.GetInstance().ObterTodos());
+            }
             return View();
         }
 
@@ -95,14 +102,9 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaMedicamentoNaoPrescrito = SessionController.ListaMedicamentoNaoPrescrito;
             consultaModel.ListaConsultaParametro = SessionController.ListaConsultaParametro;
 
-
-
-
             consultaModel.AlergiaExamesFisicos = new AlergiaExamesFisicosModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel }; ;
             consultaModel.ListaAlergia = SessionController.ListaAlergia;
 
-            
-            
             // Exames Fisicos
             ViewBag.IdAlergia = new SelectList(GerenciadorAlergia.GetInstance().ObterTodos().ToList(), "IdAlergia", "Alergia");
 
@@ -160,12 +162,6 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema), "IdQueixa", "DescricaoQueixa");
 
             return View(consultaModel);
-        }
-
-        //Experiencia medicamentos
-        public PartialViewResult ExperienciaMedicamentos(int id)
-        {
-            return PartialView();
         }
 
     }
