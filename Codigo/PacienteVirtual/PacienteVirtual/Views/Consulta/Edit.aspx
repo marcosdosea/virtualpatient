@@ -8,8 +8,8 @@
     <!-- Arquivo necessário para as View partial -->
     <script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
+        type="text/javascript"></script>
     <h2>
         <%: Resources.Mensagem.consulta %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
@@ -19,7 +19,8 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>VMPaciente</legend>
+        <legend>
+            <%: Resources.Mensagem.consulta %></legend>
         <!--div class="editor-label">
             < %: Html.LabelFor(model => model.quantRelatos) %>
         </div>
@@ -56,8 +57,7 @@
             <div class="thumbnails">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1-1" data-toggle="tab">
-                             História</a></li>
+                        <li class="active"><a href="#tab1-1" data-toggle="tab">História</a></li>
                         <li><a href="#tab1-2" data-toggle="tab">
                             <%: Resources.Mensagem.demografico_antropometricos %></a></li>
                         <li><a href="#tab1-3" data-toggle="tab">
@@ -85,7 +85,6 @@
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
                                 <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
-
                             </div>
                         </div>
                     </div>
@@ -111,7 +110,7 @@
                             <%: Resources.Mensagem.consulta_parametro %></a></li>
                         <li><a href="#tab2-7" data-toggle="tab">
                             <%: Resources.Mensagem.razao_encontro %></a></li>
-                    </ul> 
+                    </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
                             <div class="thumbnail">
@@ -120,8 +119,8 @@
                         </div>
                         <div class="tab-pane" id="tab2-2">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../MedicamentosAnteriores/Create", Model.MedicamentosAnteriores );%>
-                                <% Html.RenderPartial("../MedicamentosAnteriores/Index", Model.ListaMedicamentosAnteriores );%>
+                                <% Html.RenderPartial("../MedicamentosAnteriores/Create", Model.MedicamentosAnteriores);%>
+                                <% Html.RenderPartial("../MedicamentosAnteriores/Index", Model.ListaMedicamentosAnteriores);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-3">
@@ -139,7 +138,7 @@
                         <div class="tab-pane" id="tab2-5">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ExamesFisicos/Edit", Model.ExamesFisicos);%>
-                                <% Html.RenderPartial("../ExamesFisicos/AdicionarAlergia", Model.AlergiaExamesFisicos);%> 
+                                <% Html.RenderPartial("../ExamesFisicos/AdicionarAlergia", Model.AlergiaExamesFisicos);%>
                                 <% Html.RenderPartial("../ExamesFisicos/ListaAlergias", Model.ListaAlergia);%>
                             </div>
                         </div>
@@ -156,23 +155,24 @@
                         </div>
                     </div>
                 </div>
-                <!--div class="thumbnail">
-                    < % Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
-                    < % Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
-                </div -->
             </div>
         </div>
-        <!--div class="span3 bottom">
-            <p>
-                   <div class="form-actions"><input class="btn btn-primary" type="submit" value="Salvar" /> </div>
-            </p>
-        </div-->
     </fieldset>
     <% } %>
-    <div>
-        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
+    <style type="text/css">
+            #botaopos
+            {
+                position: relative;
+                left: 96%;
+                top: 80%;
+                margin-left: -110px;
+                margin-top: -40px;
+            }
+        </style>
+    <div class="btn btn-large btn-primary">
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
     </div>
-    <div>
-        <%: Html.ActionLink(Resources.Mensagem.proximo,"Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, null) %>
+    <div class="btn btn-large btn-primary" id="botaopos">
+        <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
     </div>
 </asp:Content>
