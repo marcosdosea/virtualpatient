@@ -6,6 +6,7 @@
                 <%: Resources.Mensagem.alergia %>
             </th>
             <th>
+                <%: Resources.Mensagem.opcoes %>
             </th>
         </tr>
         <% foreach (var item in Model)
