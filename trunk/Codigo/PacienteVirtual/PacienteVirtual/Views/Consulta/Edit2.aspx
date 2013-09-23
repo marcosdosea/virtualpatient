@@ -56,7 +56,7 @@
         </div>
     </fieldset>
     <% } %>
-    <div>
-        <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, null) %>
+    <div class="btn btn-large btn-primary">
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
     </div>
 </asp:Content>
