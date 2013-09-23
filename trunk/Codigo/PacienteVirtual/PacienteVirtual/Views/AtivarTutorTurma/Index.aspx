@@ -55,16 +55,6 @@
             </tr>
             <% } %>
         </table>
-        <style type="text/css">
-            #botaopos
-            {
-                position: relative;
-                left: 87%;
-                top: 80%;
-                margin-left: -110px;
-                margin-top: -40px;
-            }
-        </style>
     </div>
     </form>
 </asp:Content>
