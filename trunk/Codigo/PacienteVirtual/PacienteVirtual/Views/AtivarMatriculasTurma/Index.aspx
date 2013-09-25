@@ -20,7 +20,7 @@
                     <%: Resources.Mensagem.nome_pessoa %>
                 </th>
                 <th class="input-medium" style="width: 158px">
-                    Status
+                    <%: Resources.Mensagem.status %>
                 </th>
                 <th>
                     <%: Resources.Mensagem.opcoes %>
