@@ -18,8 +18,9 @@
                 <%: Resources.Mensagem.opcoes %>
             </th>
         </tr>
-        <% foreach (var item in Model)
-           { %>
+        <% if (Model != null)
+               foreach (var item in Model)
+               { %>
         <tr>
             <td>
                 <%: Html.DisplayFor(modelItem => item.DescricaoQueixa) %>
@@ -35,6 +36,11 @@
             </td>
             <td>
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
+                <% if (item.Tipo == "S")
+                   { %>
+                |
+                <%: Html.ActionLink("Novo PRM", "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
+                <% } %>
             </td>
         </tr>
         <% } %>
