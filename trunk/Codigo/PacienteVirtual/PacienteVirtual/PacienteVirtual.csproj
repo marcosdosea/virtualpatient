@@ -153,6 +153,11 @@
     <Compile Include="Models\Consulta\AlergiaExamesFisicosModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
+    <Compile Include="Models\PacienteVirtualModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PacienteVirtualModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Turma\SolicitarMatriculaTurmaModel.cs" />
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorGrupoIntervencao.cs" />
@@ -242,11 +247,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Persistence\LocalizarDisplayNomeAtributo.cs" />
-    <Compile Include="Models\PacienteVirtualModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PacienteVirtualModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Persistence\RepositorioGenerico.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -693,13 +693,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\PacienteVirtualModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PacienteVirtualModel1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <EntityDeploy Include="Models\PacienteVirtualModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PacienteVirtualModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
