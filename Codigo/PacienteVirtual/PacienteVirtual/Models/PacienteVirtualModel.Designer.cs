@@ -70,6 +70,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_turma_pessoa), "tb_turma_pessoa_relato", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_turma_pessoa_relato), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_acao_queixa_medicamentos", "tb_acao_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_acao_queixa), "tb_queixa_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_queixa_medicamentos))]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_alergia_exames_fisicos", "tb_alergia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_alergia), "tb_exames_fisicos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_exames_fisicos))]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_suspeita_prm", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_suspeita_prm), "tb_queixa_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_queixa_medicamentos), true)]
 
 #endregion
 
@@ -808,6 +809,22 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<tb_turma_pessoa_relato> _tb_turma_pessoa_relato;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_suspeita_prm> tb_suspeita_prm
+        {
+            get
+            {
+                if ((_tb_suspeita_prm == null))
+                {
+                    _tb_suspeita_prm = base.CreateObjectSet<tb_suspeita_prm>("tb_suspeita_prm");
+                }
+                return _tb_suspeita_prm;
+            }
+        }
+        private ObjectSet<tb_suspeita_prm> _tb_suspeita_prm;
 
         #endregion
 
@@ -1155,6 +1172,14 @@ namespace PacienteVirtual.Models
         public void AddTotb_turma_pessoa_relato(tb_turma_pessoa_relato tb_turma_pessoa_relato)
         {
             base.AddObject("tb_turma_pessoa_relato", tb_turma_pessoa_relato);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_suspeita_prm EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_suspeita_prm(tb_suspeita_prm tb_suspeita_prm)
+        {
+            base.AddObject("tb_suspeita_prm", tb_suspeita_prm);
         }
 
         #endregion
@@ -5927,10 +5952,6 @@ namespace PacienteVirtual.Models
 
         #endregion
 
-
-        public static string NomeGrupoIntervencao { get; set; }
-
-        public static string DescricaoGrupoIntervencao { get; set; }
     }
     
     /// <summary>
@@ -8751,7 +8772,8 @@ namespace PacienteVirtual.Models
         /// <param name="efetivo">Initial value of the Efetivo property.</param>
         /// <param name="seguro">Initial value of the Seguro property.</param>
         /// <param name="cumprimento">Initial value of the Cumprimento property.</param>
-        public static tb_queixa_medicamentos Createtb_queixa_medicamentos(global::System.Int64 idConsultaVariavel, global::System.Int32 idQueixa, global::System.Int32 idMedicamento, global::System.Boolean necessario, global::System.Boolean efetivo, global::System.Boolean seguro, global::System.Boolean cumprimento)
+        /// <param name="idSuspeitaPRM">Initial value of the IdSuspeitaPRM property.</param>
+        public static tb_queixa_medicamentos Createtb_queixa_medicamentos(global::System.Int64 idConsultaVariavel, global::System.Int32 idQueixa, global::System.Int32 idMedicamento, global::System.Boolean necessario, global::System.Boolean efetivo, global::System.Boolean seguro, global::System.Boolean cumprimento, global::System.Int32 idSuspeitaPRM)
         {
             tb_queixa_medicamentos tb_queixa_medicamentos = new tb_queixa_medicamentos();
             tb_queixa_medicamentos.IdConsultaVariavel = idConsultaVariavel;
@@ -8761,6 +8783,7 @@ namespace PacienteVirtual.Models
             tb_queixa_medicamentos.Efetivo = efetivo;
             tb_queixa_medicamentos.Seguro = seguro;
             tb_queixa_medicamentos.Cumprimento = cumprimento;
+            tb_queixa_medicamentos.IdSuspeitaPRM = idSuspeitaPRM;
             return tb_queixa_medicamentos;
         }
 
@@ -8992,6 +9015,30 @@ namespace PacienteVirtual.Models
         private global::System.Boolean _Cumprimento;
         partial void OnCumprimentoChanging(global::System.Boolean value);
         partial void OnCumprimentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdSuspeitaPRM
+        {
+            get
+            {
+                return _IdSuspeitaPRM;
+            }
+            set
+            {
+                OnIdSuspeitaPRMChanging(value);
+                ReportPropertyChanging("IdSuspeitaPRM");
+                _IdSuspeitaPRM = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdSuspeitaPRM");
+                OnIdSuspeitaPRMChanged();
+            }
+        }
+        private global::System.Int32 _IdSuspeitaPRM;
+        partial void OnIdSuspeitaPRMChanging(global::System.Int32 value);
+        partial void OnIdSuspeitaPRMChanged();
 
         #endregion
 
@@ -9054,6 +9101,44 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_acao_queixa>("pvModel.tb_acao_queixa_medicamentos", "tb_acao_queixa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_suspeita_prm")]
+        public tb_suspeita_prm tb_suspeita_prm
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_suspeita_prm>("pvModel.fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_suspeita_prm").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_suspeita_prm>("pvModel.fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_suspeita_prm").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_suspeita_prm> tb_suspeita_prmReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_suspeita_prm>("pvModel.fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_suspeita_prm");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_suspeita_prm>("pvModel.fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_suspeita_prm", value);
                 }
             }
         }
@@ -9826,6 +9911,113 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_queixa>("pvModel.fk_tb_queixa_tb_sistema1", "tb_queixa", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_suspeita_prm")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tb_suspeita_prm : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new tb_suspeita_prm object.
+        /// </summary>
+        /// <param name="idSuspeitaPRM">Initial value of the IdSuspeitaPRM property.</param>
+        public static tb_suspeita_prm Createtb_suspeita_prm(global::System.Int32 idSuspeitaPRM)
+        {
+            tb_suspeita_prm tb_suspeita_prm = new tb_suspeita_prm();
+            tb_suspeita_prm.IdSuspeitaPRM = idSuspeitaPRM;
+            return tb_suspeita_prm;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdSuspeitaPRM
+        {
+            get
+            {
+                return _IdSuspeitaPRM;
+            }
+            set
+            {
+                if (_IdSuspeitaPRM != value)
+                {
+                    OnIdSuspeitaPRMChanging(value);
+                    ReportPropertyChanging("IdSuspeitaPRM");
+                    _IdSuspeitaPRM = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdSuspeitaPRM");
+                    OnIdSuspeitaPRMChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdSuspeitaPRM;
+        partial void OnIdSuspeitaPRMChanging(global::System.Int32 value);
+        partial void OnIdSuspeitaPRMChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Descricao
+        {
+            get
+            {
+                return _Descricao;
+            }
+            set
+            {
+                OnDescricaoChanging(value);
+                ReportPropertyChanging("Descricao");
+                _Descricao = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Descricao");
+                OnDescricaoChanged();
+            }
+        }
+        private global::System.String _Descricao;
+        partial void OnDescricaoChanging(global::System.String value);
+        partial void OnDescricaoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_queixa_medicamentos")]
+        public EntityCollection<tb_queixa_medicamentos> tb_queixa_medicamentos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_queixa_medicamentos>("pvModel.fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_queixa_medicamentos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_queixa_medicamentos>("pvModel.fk_tb_queixa_medicamentos_tb_suspeita_prm1", "tb_queixa_medicamentos", value);
                 }
             }
         }

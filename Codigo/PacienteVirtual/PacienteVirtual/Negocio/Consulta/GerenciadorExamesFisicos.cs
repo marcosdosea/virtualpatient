@@ -74,7 +74,6 @@ namespace PacienteVirtual.Negocio.Consulta
         {
             try
             {
-
                 var repExamesFisicos = new RepositorioGenerico<tb_exames_fisicos>();
                 repExamesFisicos.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel);
                 repExamesFisicos.SaveChanges();
