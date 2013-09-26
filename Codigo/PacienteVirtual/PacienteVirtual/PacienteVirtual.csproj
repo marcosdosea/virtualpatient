@@ -142,6 +142,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Cadastro\GrupoIntervencaoController.cs" />
     <Compile Include="Controllers\Cadastro\IntervencaoController.cs" />
+    <Compile Include="Controllers\Cadastro\SuspeitaPrmController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaParametroController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
     <Compile Include="Models\Cadastro\GrupoIntervencaoModel.cs" />
     <Compile Include="Models\Cadastro\IntervencaoModel.cs" />
+    <Compile Include="Models\Cadastro\SuspeitaPrmModel.cs" />
     <Compile Include="Models\Consulta\AlergiaExamesFisicosModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
@@ -162,6 +164,7 @@
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorGrupoIntervencao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorIntervencao.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorSuspeitaPrm.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
@@ -537,6 +540,11 @@
     <Content Include="Views\Consulta\Index.aspx" />
     <Content Include="Views\RelatoClinico\DetailsConsulta.ascx" />
     <Content Include="Views\SolicitarMatriculaTurma\Index.aspx" />
+    <Content Include="Views\SuspeitaPrm\Create.aspx" />
+    <Content Include="Views\SuspeitaPrm\Delete.aspx" />
+    <Content Include="Views\SuspeitaPrm\Details.aspx" />
+    <Content Include="Views\SuspeitaPrm\Edit.aspx" />
+    <Content Include="Views\SuspeitaPrm\Index.aspx" />
     <Content Include="Views\VMPaciente\Curso.ascx" />
     <Content Include="Views\Curso\Create.aspx" />
     <Content Include="Views\Curso\Delete.aspx" />

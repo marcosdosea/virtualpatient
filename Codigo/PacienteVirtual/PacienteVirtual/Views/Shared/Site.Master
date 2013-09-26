@@ -142,6 +142,10 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.grupo_intervencao, "Index", "GrupoIntervencao")%>
                                         </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.suspeita_prm, "Index", "SuspeitaPrm")%>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>

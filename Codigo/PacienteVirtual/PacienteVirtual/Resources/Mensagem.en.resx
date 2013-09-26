@@ -750,9 +750,6 @@
   <data name="doenca_agrave" xml:space="preserve">
     <value>falta</value>
   </data>
-  <data name="suspeita_rpm" xml:space="preserve">
-    <value>falta</value>
-  </data>
   <data name="necessidade_atencao" xml:space="preserve">
     <value>Need for Attention</value>
   </data>
@@ -830,5 +827,8 @@
   </data>
   <data name="x" xml:space="preserve">
     <value>X</value>
+  </data>
+  <data name="suspeita_prm" xml:space="preserve">
+    <value>PRM Suspicion</value>
   </data>
 </root>
