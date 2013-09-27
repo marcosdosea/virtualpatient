@@ -49,6 +49,7 @@ namespace PacienteVirtual.Controllers
             SessionController.Pessoa = null;
             SessionController.RelatoClinico = null;
             SessionController.ListaAlergia = null;
+            SessionController.ListaQueixaMedicamento = null;
             /////////////////////////////////////////////////////////////////
 
             return View(GerenciadorConsultaVariavel.GetInstance().ObterTodos());
@@ -156,10 +157,17 @@ namespace PacienteVirtual.Controllers
             consultaModel.ConsultaVariavelQueixa = new ConsultaVariavelQueixaModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
             consultaModel.IdSistema = SessionController.Sistema;
+            consultaModel.QueixaMedicamento = new QueixaMedicamentoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ListaQueixaMedicamento = SessionController.ListaQueixaMedicamento;
+
 
             // Consulta Queixa
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
             ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema), "IdQueixa", "DescricaoQueixa");
+
+            // queixa medicamentos
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
+            //ViewBag.IdSuspeitaPrm = new SelectList(gerenciador);
 
             return View(consultaModel);
         }

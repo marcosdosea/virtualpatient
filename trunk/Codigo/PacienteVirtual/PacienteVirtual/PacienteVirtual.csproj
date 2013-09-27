@@ -146,6 +146,7 @@
     <Compile Include="Controllers\Consulta\ConsultaParametroController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
+    <Compile Include="Controllers\QueixaMedicamentoController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\AtivarTutorTurmaController.cs" />
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Models\Consulta\AlergiaExamesFisicosModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
+    <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
     <Compile Include="Models\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -167,6 +169,7 @@
     <Compile Include="Negocio\Cadastro\GerenciadorSuspeitaPrm.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Resources\Mensagem.en.designer.cs">
       <DependentUpon>Mensagem.en.resx</DependentUpon>
@@ -469,6 +472,8 @@
     <Content Include="Content\themes\pv\js\jquery.validate.js" />
     <Content Include="Content\themes\pv\js\jquery.validate.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\partial.view.reload.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
@@ -526,6 +531,7 @@
     <Content Include="Views\MedicamentoPrescrito\Index.ascx" />
     <Content Include="Views\MedicamentosAnteriores\Create.ascx" />
     <Content Include="Views\MedicamentosAnteriores\Index.ascx" />
+    <Content Include="Views\QueixaMedicamento\Index.ascx" />
     <Content Include="Views\Queixa\Create.aspx" />
     <Content Include="Views\Queixa\Delete.aspx" />
     <Content Include="Views\Queixa\Details.aspx" />

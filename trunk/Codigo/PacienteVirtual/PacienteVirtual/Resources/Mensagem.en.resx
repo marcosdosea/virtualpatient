@@ -831,4 +831,19 @@
   <data name="suspeita_prm" xml:space="preserve">
     <value>PRM Suspicion</value>
   </data>
+  <data name="cumprimento" xml:space="preserve">
+    <value>Fulfillment</value>
+  </data>
+  <data name="dose" xml:space="preserve">
+    <value>Shot</value>
+  </data>
+  <data name="efetivo" xml:space="preserve">
+    <value>Effective</value>
+  </data>
+  <data name="necessario" xml:space="preserve">
+    <value>Necessary</value>
+  </data>
+  <data name="seguro" xml:space="preserve">
+    <value>Insurance</value>
+  </data>
 </root>
