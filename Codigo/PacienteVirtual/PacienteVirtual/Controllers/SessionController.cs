@@ -261,6 +261,24 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static IEnumerable<QueixaMedicamentoModel> ListaQueixaMedicamento
+        {
+            get
+            {
+                IEnumerable<QueixaMedicamentoModel> listaQueixaMedicamentos = (IEnumerable<QueixaMedicamentoModel>)HttpContext.Current.Session["_listaQueixaMedicamento"];
+                if (listaQueixaMedicamentos == null)
+                {
+                    listaQueixaMedicamentos = GerenciadorQueixaMedicamento.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_listaQueixaMedicamento"] = listaQueixaMedicamentos;
+                }
+                return listaQueixaMedicamentos;
+            }
+            set
+            {
+                HttpContext.Current.Session["_listaQueixaMedicamento"] = value;
+            }
+        }
+
         public static IEnumerable<ConsultaVariavelQueixaModel> ListaConsultaVariavelQueixa
         {
             get

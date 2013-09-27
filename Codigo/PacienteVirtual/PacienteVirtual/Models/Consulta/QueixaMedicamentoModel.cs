@@ -15,21 +15,21 @@ namespace PacienteVirtual.Models.Consulta
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        public Int32 IdQueixa { get; set; }
+        public int IdQueixa { get; set; }
 
         [Display(Name = "queixa", ResourceType = typeof(Mensagem))]
         public string Queixa { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        public Int32 IdMedicamento { get; set; }
+        public int IdMedicamento { get; set; }
 
         [Display(Name = "nome_medicamento", ResourceType = typeof(Mensagem))]
         public string NomeMedicamento { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        public Int32 IdSuspeitaPRM { get; set; }
+        public int IdSuspeitaPRM { get; set; }
 
         [Display(Name = "suspeita_prm", ResourceType = typeof(Mensagem))]
         public string SuspeitaPRM { get; set; }

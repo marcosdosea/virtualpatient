@@ -1,0 +1,68 @@
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.Consulta.QueixaMedicamentoModel>>" %>
+
+<div class="box-content">
+    <table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            <%: Resources.Mensagem.nome_medicamento %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.suspeita_prm %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.dose %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.desde %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.necessario %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.seguro %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.efetivo %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.cumprimento %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.opcoes %>        
+        </th>
+    </tr>
+
+<% foreach (var item in Model) { %>
+    <tr>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.NomeMedicamento) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.SuspeitaPRM) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Dose) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Desde) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Necessario) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Seguro) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Efetivo) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Cumprimento) %>
+        </td>
+        <td>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { /* id=item.PrimaryKey */ }) %>
+        </td>
+    </tr>
+<% } %>
+
+</table>
+</div>
