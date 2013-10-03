@@ -377,6 +377,9 @@
     <Content Include="Content\themes\pv\css\colorpicker.css" />
     <Content Include="Content\themes\pv\css\datepicker.css" />
     <Content Include="Content\themes\pv\css\imperio.css" />
+    <Content Include="Content\themes\pv\css\jquery-ui.css" />
+    <Content Include="Content\themes\pv\img\icons\calendar3.png" />
+    <Content Include="Content\themes\pv\img\icons\calendar2.png" />
     <Content Include="Content\themes\pv\img\icons\Flag_of_Brazil.png" />
     <Content Include="Content\themes\pv\img\icons\United_Kingdom_Flag.png" />
     <Content Include="Content\themes\pv\img\caduceus.png" />
@@ -458,6 +461,8 @@
     <Content Include="Content\themes\pv\js\imperio.forms.js" />
     <Content Include="Content\themes\pv\js\imperio.general.js" />
     <Content Include="Content\themes\pv\js\imperio.tables.js" />
+    <Content Include="Content\themes\pv\js\jquery-1.9.1.js" />
+    <Content Include="Content\themes\pv\js\jquery-ui.js" />
     <Content Include="Content\themes\pv\js\jquery.dataTables.js" />
     <Content Include="Content\themes\pv\js\jquery.dataTables.min.js" />
     <Content Include="Content\themes\pv\js\jquery.flot.js" />
@@ -737,7 +742,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49844</DevelopmentServerPort>
+          <DevelopmentServerPort>28459</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
