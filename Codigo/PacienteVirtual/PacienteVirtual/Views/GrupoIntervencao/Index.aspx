@@ -15,7 +15,7 @@
                 <th>
                     <%: Resources.Mensagem.grupo_intervencao %>
                 </th>
-                <th>
+                <th style="width:270px;">
                     <%: Resources.Mensagem.opcoes %>
                 </th>
             </tr>

@@ -20,7 +20,7 @@
             <%: Html.LabelFor(model => model.NomeInstituicao) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.NomeInstituicao) %>
+            <%: Html.TextBoxFor(model => model.NomeInstituicao, new { style = "width:350px;", MaxLength = 45 })%>
             <%: Html.ValidationMessageFor(model => model.NomeInstituicao) %>
         </div>
 
@@ -28,7 +28,7 @@
             <%: Html.LabelFor(model => model.Sigla) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Sigla) %>
+            <%: Html.TextBoxFor(model => model.Sigla, new { style = "width:90px;", MaxLength = 10 })%>
             <%: Html.ValidationMessageFor(model => model.Sigla) %>
         </div>
 

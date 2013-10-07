@@ -128,9 +128,6 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.queixa, "Index", "Queixa")%>
                                         </li>
-                                        <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.acao_queixa, "Index", "AcaoQueixa")%>
-                                        </li>
                                         <li class="divider"></li>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ocupacao, "Index", "Ocupacao")%>

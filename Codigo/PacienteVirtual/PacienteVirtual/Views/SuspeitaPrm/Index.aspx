@@ -14,7 +14,7 @@
             <th>
                 <%: Resources.Mensagem.descricao %>
             </th>
-            <th style="width: 290px;">
+            <th style="width: 270px;">
                 <%: Resources.Mensagem.opcoes %>
             </th>
         </tr>

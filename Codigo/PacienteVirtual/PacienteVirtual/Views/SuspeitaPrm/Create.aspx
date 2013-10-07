@@ -20,7 +20,7 @@
             <%: Html.LabelFor(model => model.Descricao) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Descricao) %>
+            <%: Html.TextBoxFor(model => model.Descricao, new { style = "width:350px;", MaxLength = 45 })%>
             <%: Html.ValidationMessageFor(model => model.Descricao) %>
         </div>
         <div class="form-actions">

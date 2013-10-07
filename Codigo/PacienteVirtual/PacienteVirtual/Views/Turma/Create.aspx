@@ -24,14 +24,14 @@
             <%: Html.LabelFor(model => model.Codigo) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Codigo) %>
+            <%: Html.TextBoxFor(model => model.Codigo, new { MaxLength = 2 })%>
             <%: Html.ValidationMessageFor(model => model.Codigo) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Periodo) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Periodo) %>
+            <%: Html.TextBoxFor(model => model.Periodo, new { MaxLength = 6 })%>
             <%: Html.ValidationMessageFor(model => model.Periodo) %>
         </div>
         <div class="editor-label">

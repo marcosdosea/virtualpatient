@@ -19,7 +19,7 @@
             <%: Html.LabelFor(model => model.Nivel) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Nivel) %>
+            <%: Html.TextBoxFor(model => model.Nivel, new { style = "width:350px;", MaxLength = 100 })%>
             <%: Html.ValidationMessageFor(model => model.Nivel) %>
         </div>
         <div class="form-actions">
