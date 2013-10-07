@@ -156,14 +156,14 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
+        /// obtem todos os relatos com o paciente definido
         /// </summary>
-        /// <param name="nome"></param>
+        /// <param name="IdPaciente"></param>
         /// <returns></returns>
-        // public IEnumerable<ConsultaVariavelModel> ObterPorNome(int IdPaciente)
-        //{
-        //    return GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == IdPaciente).ToList();
-        //}
+        public IEnumerable<ConsultaVariavelModel> ObterPorPaciente(int IdPaciente)
+        {
+            return GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == IdPaciente).ToList();
+        }
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência

@@ -62,7 +62,7 @@ namespace PacienteVirtual.Controllers
             if (IdPaciente != -1)
             {
                 ViewBag.Codigo = IdPaciente;
-                return View(GerenciadorRelatoClinico.GetInstance().ObterRelatos(IdPaciente));
+                return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPaciente(IdPaciente));
             }
             if (IdPaciente == -1)
             {
