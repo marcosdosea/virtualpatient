@@ -16,7 +16,7 @@
         <th style="width:600px">
             <%: Resources.Mensagem.parametro_clinico %>
         </th>
-        <th><%: Resources.Mensagem.opcoes %></th>
+        <th style="width:270px;"><%: Resources.Mensagem.opcoes %></th>
     </tr>
 
 <% foreach (var item in Model) { %>

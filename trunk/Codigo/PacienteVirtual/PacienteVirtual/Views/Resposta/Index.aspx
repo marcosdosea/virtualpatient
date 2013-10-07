@@ -33,7 +33,7 @@
         <td>
             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdResposta }) %> |
             <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdResposta }) %> |
-            <%: Html.ActionLink(Resources.Mensagem.deletar, "Delete", new { id=item.IdResposta }) %>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdResposta }) %>
         </td>
     </tr>
 <% } %>

@@ -18,7 +18,7 @@
                 <th>
                     <%: Resources.Mensagem.foto %>
                 </th>
-                <th>
+                <th style="width:270px;">
                     <%: Resources.Mensagem.opcoes %>
                 </th>
             </tr>

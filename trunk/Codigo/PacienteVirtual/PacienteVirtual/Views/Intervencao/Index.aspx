@@ -19,7 +19,7 @@
         <th>
             <%: Resources.Mensagem.grupo_intervencao %></h2>
         </th>
-        <th><%: Resources.Mensagem.opcoes %></h2></th>
+        <th style="width:270px;"><%: Resources.Mensagem.opcoes %></h2></th>
     </tr>
 
 <% foreach (var item in Model) { %>
@@ -27,7 +27,7 @@
         <td>
             <%: Html.DisplayFor(modelItem => item.DescricaoIntervencao) %>
         </td>
-        <td>
+        <td style="text-align: center">
             <%: Html.DisplayFor(modelItem => item.DescricaoGrupoIntervencao) %>
         </td>
         <td>

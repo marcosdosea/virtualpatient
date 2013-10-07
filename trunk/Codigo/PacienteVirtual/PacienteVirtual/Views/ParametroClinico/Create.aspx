@@ -20,7 +20,7 @@
             <%: Html.LabelFor(model => model.ParametroClinico) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.ParametroClinico) %>
+            <%: Html.TextBoxFor(model => model.ParametroClinico, new { style = "width:350px;", MaxLength = 100 })%>
             <%: Html.ValidationMessageFor(model => model.ParametroClinico) %>
         </div>
 

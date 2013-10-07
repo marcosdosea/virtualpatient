@@ -59,7 +59,7 @@ foreach (var item in Model) { %>
         <td>
             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = item.IdTurma })%> |
             <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdTurma }) %> |
-            <%: Html.ActionLink(Resources.Mensagem.deletar, "Delete", new { id=item.IdTurma }) %>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdTurma }) %>
         </td>
     </tr>
 <% } %>

@@ -47,7 +47,7 @@
                         <%: Resources.Mensagem.desativa %></p>
                     <% } %>
                 </td>
-                <td>
+                <td style="text-align: center">
                     <%: Html.ActionLink(Resources.Mensagem.ativar, "Ativar", new { idTurma = item.IdTurma, idPessoa = item.IdPessoa }, new { onclick = "alert('Matrícula Ativada!')" })%>
                     |
                     <%: Html.ActionLink(Resources.Mensagem.desativar, "Desativar", new { idTurma = item.IdTurma, idPessoa= item.IdPessoa }, new { onclick = "alert('Matrícula Desativada!')" })%>

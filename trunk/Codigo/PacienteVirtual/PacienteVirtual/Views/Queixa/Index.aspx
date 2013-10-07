@@ -19,7 +19,7 @@
         <th>
             <%: Resources.Mensagem.nome_sistema %>
         </th>
-        <th><%: Resources.Mensagem.opcoes %></th>
+        <th style="width:270px;"><%: Resources.Mensagem.opcoes %></th>
     </tr>
 
 <% foreach (var item in Model) { %>
