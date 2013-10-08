@@ -846,4 +846,13 @@
   <data name="seguro" xml:space="preserve">
     <value>Seguro</value>
   </data>
+  <data name="queixa_medicamento" xml:space="preserve">
+    <value>Queixa Medicamento</value>
+  </data>
+  <data name="novo_prm" xml:space="preserve">
+    <value>Novo Prm</value>
+  </data>
+  <data name="medicamentos_queixa_suspeita_prm" xml:space="preserve">
+    <value>Medicamentos relacionados a queixa com suspeita de PRM</value>
+  </data>
 </root>
