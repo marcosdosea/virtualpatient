@@ -25,9 +25,9 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 GerenciadorQueixaMedicamento.GetInstance().Inserir(queixaMedicamento);
-                SessionController.ListaMedicamentosPrescritos = null;
+                SessionController.ListaQueixaMedicamento = null;
             }
-            return RedirectToAction("Edit", "Consulta");
+            return RedirectToAction("Edit2", "Consulta");
         }
 
         //
