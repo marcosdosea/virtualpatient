@@ -47,8 +47,7 @@
                 <% if (item.Tipo == "S")
                    { %>
                 |
-                <div class="botaoMostrar"><%: Resources.Mensagem.suspeita_prm %></div>
-                
+                <div class="botaoMostrar"><%: Resources.Mensagem.novo_prm %></div>
                 <% } %>
             </td>
         </tr>

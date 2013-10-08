@@ -4,6 +4,7 @@ using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 using PacienteVirtual.Models.Consulta;
 using PacienteVirtual.Negocio.Consulta;
+using PacienteVirtual.Negocio.Cadastro;
 
 namespace PacienteVirtual.Controllers
 {
@@ -167,7 +168,7 @@ namespace PacienteVirtual.Controllers
 
             // queixa medicamentos
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
-            //ViewBag.IdSuspeitaPrm = new SelectList(gerenciador);
+            ViewBag.IdSuspeitaPrm = new SelectList(GerenciadorSuspeitaPrm.GetInstance().ObterTodos().ToList(), "IdSuspeitaPrm", "Descricao");
 
             return View(consultaModel);
         }

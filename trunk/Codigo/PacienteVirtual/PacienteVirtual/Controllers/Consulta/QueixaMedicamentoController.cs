@@ -33,11 +33,11 @@ namespace PacienteVirtual.Controllers
         //
         // POST: /MedicamentoPrescrito/Delete/5
         //[HttpPost]
-        public ActionResult Delete(long idConsultaVariavel, int idMedicamento)
+        public ActionResult Delete(long idConsultaVariavel, int idMedicamento, int idQueixa)
         {
-            //gMedicamentoPrescrito.Remover(idConsultaVariavel, idMedicamento);
-            SessionController.ListaMedicamentosPrescritos = null;
-            return RedirectToAction("Edit", "Consulta");
+            GerenciadorQueixaMedicamento.GetInstance().Remover(idConsultaVariavel, idMedicamento, idQueixa);
+            SessionController.ListaQueixaMedicamento = null;
+            return RedirectToAction("Edit2", "Consulta");
         }
 
         protected override void Dispose(bool disposing)

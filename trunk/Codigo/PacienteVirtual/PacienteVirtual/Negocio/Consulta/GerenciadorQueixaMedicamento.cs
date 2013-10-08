@@ -70,13 +70,12 @@ namespace PacienteVirtual.Negocio.Consulta
         /// Remove dados do QueixaMedicamento
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
-        public void Remover(long idConsultaVariavel, long idMedicamento)
+        public void Remover(long idConsultaVariavel, int idMedicamento, int idQueixa)
         {
             try
             {
-
                 var repQueixaMedicamento = new RepositorioGenerico<tb_queixa_medicamentos>();
-                repQueixaMedicamento.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel && dP.IdMedicamento == idMedicamento);
+                repQueixaMedicamento.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel && dP.IdMedicamento == idMedicamento && dP.IdQueixa == idQueixa);
                 repQueixaMedicamento.SaveChanges();
             }
             catch (Exception e)

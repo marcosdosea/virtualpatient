@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.Consulta.QueixaMedicamentoModel>>" %>
-
+<h3><%: Resources.Mensagem.medicamentos_queixa_suspeita_prm %></h3>
 <div class="box-content">
     <table class="table table-bordered table-striped">
     <tr>
@@ -59,7 +59,7 @@
             <%: Html.DisplayFor(modelItem => item.Cumprimento) %>
         </td>
         <td>
-            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { /* id=item.PrimaryKey */ }) %>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "QueixaMedicamento", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento, idQueixa = item.IdQueixa }, null)%>
         </td>
     </tr>
 <% } %>
