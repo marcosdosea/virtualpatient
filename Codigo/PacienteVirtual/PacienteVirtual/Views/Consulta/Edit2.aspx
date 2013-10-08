@@ -15,6 +15,21 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".botaoMostrar").click(function () {
+            $(".mostrarQueixa").slideToggle(1200);
+        });
+    });
+</script>
+        <style type="text/css"> 
+            .mostrarQueixa
+            {
+                display:none;
+            }
+            </style>
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
@@ -51,6 +66,9 @@
                 <div class="thumbnail">
                     <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
                     <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
+                    <div class="mostrarQueixa">
+                        <% Html.RenderPartial("../QueixaMedicamento/Create", Model.QueixaMedicamento);%>
+                    </div>
                     <% Html.RenderPartial("../QueixaMedicamento/Index", Model.ListaQueixaMedicamento);%>
                 </div>
             </div>

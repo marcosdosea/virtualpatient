@@ -1,5 +1,12 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.ConsultaVariavelQueixaModel>>" %>
 
+<style type="text/css"> 
+            .botaoMostrar
+            {
+                color:Blue;
+            }
+            </style>
+
 <div class="box-content">
     <table class="table table-bordered table-striped">
         <tr>
@@ -40,7 +47,8 @@
                 <% if (item.Tipo == "S")
                    { %>
                 |
-                <%: Html.ActionLink("Novo PRM", "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
+                <div class="botaoMostrar"><%: Resources.Mensagem.suspeita_prm %></div>
+                
                 <% } %>
             </td>
         </tr>

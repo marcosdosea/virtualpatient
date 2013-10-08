@@ -536,6 +536,7 @@
     <Content Include="Views\MedicamentoPrescrito\Index.ascx" />
     <Content Include="Views\MedicamentosAnteriores\Create.ascx" />
     <Content Include="Views\MedicamentosAnteriores\Index.ascx" />
+    <Content Include="Views\QueixaMedicamento\Create.ascx" />
     <Content Include="Views\QueixaMedicamento\Index.ascx" />
     <Content Include="Views\Queixa\Create.aspx" />
     <Content Include="Views\Queixa\Delete.aspx" />
