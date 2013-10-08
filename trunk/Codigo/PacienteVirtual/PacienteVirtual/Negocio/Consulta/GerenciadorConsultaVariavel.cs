@@ -111,7 +111,9 @@ namespace PacienteVirtual.Negocio
                             ComentariosTutor = tb_consulta_variavel.ComentariosTutor,
                             NomePaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.Nome,
                             NivelDificuldade = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.NivelDificuldade,
-                            OrdemCronologica = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.OrdemCronologia
+                            OrdemCronologica = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.OrdemCronologia,
+
+                            IdPaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.IdPaciente
                         };
             return query;
         }
@@ -162,7 +164,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<ConsultaVariavelModel> ObterPorPaciente(int IdPaciente)
         {
-            return GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == IdPaciente).ToList();
+            
+            return GetQuery().Where(consultaVariavel => consultaVariavel.IdPaciente == IdPaciente).ToList();
         }
 
         /// <summary>

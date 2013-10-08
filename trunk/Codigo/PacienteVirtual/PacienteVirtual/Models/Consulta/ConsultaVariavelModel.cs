@@ -35,6 +35,8 @@ namespace PacienteVirtual.Models
 
         public string NomePaciente { get; set; }
 
+        public int IdPaciente { get; set; }
+
         public int OrdemCronologica { get; set; }
 
         public int NivelDificuldade { get; set; }
