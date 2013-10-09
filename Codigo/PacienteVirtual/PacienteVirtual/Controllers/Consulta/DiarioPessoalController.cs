@@ -31,7 +31,7 @@ namespace PacienteVirtual.Controllers
                 List<DiarioPessoalModel> listaDiarioPessoal = new List<DiarioPessoalModel>(SessionController.ListaDiarioPessoal);
                 listaDiarioPessoal.Add(diarioPessoal);
                 SessionController.ListaDiarioPessoal = null;
-                return RedirectToAction("Edit", "Consulta");
+                return RedirectToAction("Edit2", "Consulta");
             }
             return PartialView(diarioPessoal);
         }
@@ -43,7 +43,7 @@ namespace PacienteVirtual.Controllers
         {
             gDiarioPessoal.Remover(idConsultaFixo, idMedicamento);
             SessionController.ListaDiarioPessoal = null;
-            return RedirectToAction("Edit", "Consulta");
+            return RedirectToAction("Edit2", "Consulta");
         }
 
         protected override void Dispose(bool disposing)

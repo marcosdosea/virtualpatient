@@ -89,9 +89,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.Historia = SessionController.Historia;
             consultaModel.DemograficoAntropometrico = SessionController.DemograficosAntropometricos;
             consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
-            consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
-            consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
-
+            
             //consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaFixo, SessionController.IdRelato);
             consultaModel.EstiloVida = SessionController.EstiloVida;
             consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
@@ -118,9 +116,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao", consultaModel.DemograficoAntropometrico.IdOcupacao);
             ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome", consultaModel.DemograficoAntropometrico.IdPlanoSaude);
             
-            // Diário Pessoal
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
-            ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
             
             //Parâmetro Clínico
             ViewBag.IdParametroClinico = new SelectList(GerenciadorParametroClinico.GetInstance().ObterTodos().ToList(), "IdParametroClinico", "ParametroClinico");
@@ -155,6 +151,10 @@ namespace PacienteVirtual.Controllers
             consultaModel.Paciente = SessionController.Paciente;
             consultaModel.RelatoClinico = SessionController.RelatoClinico;
 
+            // diario pessoal
+            consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
+            consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
+
             consultaModel.ConsultaVariavelQueixa = new ConsultaVariavelQueixaModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
             consultaModel.IdSistema = SessionController.Sistema;
@@ -166,9 +166,9 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
             ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema), "IdQueixa", "DescricaoQueixa");
 
-            // queixa medicamentos
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
             ViewBag.IdSuspeitaPrm = new SelectList(GerenciadorSuspeitaPrm.GetInstance().ObterTodos().ToList(), "IdSuspeitaPrm", "Descricao");
+            ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
 
             return View(consultaModel);
         }

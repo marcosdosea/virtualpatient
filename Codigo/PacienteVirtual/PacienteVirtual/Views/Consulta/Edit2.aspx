@@ -76,6 +76,10 @@
         <div class="span6">
             <div class="thumbnails">
                 <div class="thumbnail">
+                    <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
+                    <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
+                </div>
+                <div class="thumbnail">
                     <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
                     <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
                     <div class="mostrarQueixa">
