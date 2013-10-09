@@ -3,7 +3,8 @@
 <style type="text/css"> 
             .botaoMostrar
             {
-                color:Blue;
+                color:#2E8AE6;
+                cursor:pointer;
             }
             </style>
 

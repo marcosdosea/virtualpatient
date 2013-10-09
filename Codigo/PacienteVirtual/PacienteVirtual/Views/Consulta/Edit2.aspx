@@ -24,6 +24,18 @@
         });
     });
 </script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".botaoMostrar").mouseover(function () {
+            $(this).css("color", "#2162A3");
+        }),
+  $(".botaoMostrar").mouseout(function () {
+      $(this).css("color", "#2E8AE6");
+  });
+    });
+</script>
         <style type="text/css"> 
             .mostrarQueixa
             {
