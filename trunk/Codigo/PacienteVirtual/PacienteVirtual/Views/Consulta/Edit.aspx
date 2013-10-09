@@ -63,8 +63,6 @@
                             <%: Resources.Mensagem.demografico_antropometricos %></a></li>
                         <li><a href="#tab1-3" data-toggle="tab">
                             <%: Resources.Mensagem.experiencia_medicamentos %></a></li>
-                        <li><a href="#tab1-4" data-toggle="tab">
-                            <%: Resources.Mensagem.diario_pessoal %></a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
@@ -80,12 +78,6 @@
                         <div class="tab-pane" id="tab1-3">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ExperienciaMedicamentos/Edit", Model.ExperienciaMedicamentos);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-4">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
-                                <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
                             </div>
                         </div>
                     </div>
