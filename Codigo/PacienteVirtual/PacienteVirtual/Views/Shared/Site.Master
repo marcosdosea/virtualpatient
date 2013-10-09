@@ -94,13 +94,6 @@
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.pergunta, "Index", "Pergunta")%>
-                                        </li>
-                                        <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.resposta, "Index", "Resposta")%>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
                                             <%: Html.ActionLink(Resources.Mensagem.alergia, "Index", "Alergia")%>
                                         </li>
                                         <li>
@@ -110,7 +103,7 @@
                                             <%: Html.ActionLink(Resources.Mensagem.plano_saude, "Index", "PlanoSaude")%>
                                         </li>
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.sistema, "Index", "Sistema")%>
+                                            <%: Html.ActionLink(Resources.Mensagem.sistemas_corpo_humano, "Index", "Sistema")%>
                                         </li>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.razao_encontro, "Index", "RazaoEncontro")%>
@@ -142,6 +135,13 @@
                                         <li class="divider"></li>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.suspeita_prm, "Index", "SuspeitaPrm")%>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.pergunta, "Index", "Pergunta")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.resposta, "Index", "Resposta")%>
                                         </li>
                                     </ul>
                                 </li>
