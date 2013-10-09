@@ -175,7 +175,7 @@
     <value>Doctors Attending</value>
   </data>
   <data name="moradia_familia" xml:space="preserve">
-    <value>House Family</value>
+    <value>House/Family</value>
   </data>
   <data name="nivel_escolaridade" xml:space="preserve">
     <value>Level of Education</value>
@@ -854,5 +854,8 @@
   </data>
   <data name="medicamentos_queixa_suspeita_prm" xml:space="preserve">
     <value>Medicines related complaint with suspected PRM.</value>
+  </data>
+  <data name="sistemas_corpo_humano" xml:space="preserve">
+    <value>Systems of the Human Body</value>
   </data>
 </root>

@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2><%: Resources.Mensagem.sistema %></h2>
+<h2><%: Resources.Mensagem.sistemas_corpo_humano %></h2>
 
 <p>
     <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
