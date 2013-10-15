@@ -6,7 +6,6 @@
     <legend>
         <%: Resources.Mensagem.queixa_medicamento %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
-    <%: Html.HiddenFor(model => model.IdQueixa) %>
     <div class="row-fluid">
         <div class="span6">
             <div class="editor-label">
