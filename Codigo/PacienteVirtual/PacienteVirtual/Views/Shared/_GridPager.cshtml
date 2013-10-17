@@ -26,7 +26,7 @@
         {
             if (i == Model.CurrentPage)
             {
-            <li class="active"><span>@i</span></li>
+            <li class="active"><a href="@Model.GetLinkForPage(i)">@i</a></li>
             }
             else
             {
