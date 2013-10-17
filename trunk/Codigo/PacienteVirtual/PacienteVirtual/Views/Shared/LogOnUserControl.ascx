@@ -3,6 +3,7 @@
     if (Request.IsAuthenticated) {
 %>
         Welcome <strong><%: Page.User.Identity.Name %></strong>!
+        [ <%: Html.ActionLink(Resources.Mensagem.alterar_senha, "ChangePassword", "Account")%> ]
         [ <%: Html.ActionLink("Log Off", "LogOff", "Account") %> ]
 <%
     }
