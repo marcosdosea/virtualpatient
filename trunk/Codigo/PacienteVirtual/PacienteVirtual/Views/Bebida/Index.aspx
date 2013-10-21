@@ -51,29 +51,4 @@
     }).WithPaging(5).Sortable().ToHtmlString()%>
 
 </div>
-
-
-<!-- div class="box-content"> <table class="table table-bordered table-striped">
-    <tr>
-        <th>
-            < %: Resources.Mensagem.bebida %>
-        </th>
-        <th style="width:270px;">< %: Resources.Mensagem.opcoes %></th>
-    </tr>
-
-< % foreach (var item in Model) { %>
-    <tr>
-        <td>
-            < %: Html.DisplayFor(modelItem => item.Nome) %>
-        </td>
-        <td>
-            < %: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdBebida }) %> |
-            < %: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = item.IdBebida })%> |
-            < %: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = item.IdBebida })%>
-        </td>
-    </tr>
-< % } %>
-
-</table></div-->
-
 </asp:Content>

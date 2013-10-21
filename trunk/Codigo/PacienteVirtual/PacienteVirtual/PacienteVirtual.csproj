@@ -152,6 +152,7 @@
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\AtivarTutorTurmaController.cs" />
+    <Compile Include="Controllers\Turma\SelecionarTurmaController.cs" />
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
     <Compile Include="Models\Cadastro\GrupoIntervencaoModel.cs" />
     <Compile Include="Models\Cadastro\IntervencaoModel.cs" />
@@ -550,6 +551,7 @@
     <Content Include="Views\Queixa\Details.aspx" />
     <Content Include="Views\Queixa\Edit.aspx" />
     <Content Include="Views\Queixa\Index.aspx" />
+    <Content Include="Views\SelecionarTurma\Index.aspx" />
     <Content Include="Views\Shared\NotFound.aspx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />
     <Content Include="Views\Consulta\Edit.aspx" />
@@ -702,7 +704,7 @@
     <Folder Include="Views\Historico\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="Views\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Mensagem.en.resx">

@@ -40,7 +40,9 @@ namespace PacienteVirtual.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        PessoaModel pessoa = GerenciadorPessoa.GetInstance().ObterPorUserName(model.UserName);
+                        SessionController.Pessoa = pessoa;
+                        return RedirectToAction("Index", "SelecionarTurma");
                     }
                 }
                 else
@@ -79,18 +81,6 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                // testando para ver se armazena a pessoa na base ....
-                /*
-                PessoaModel pessoaModel = new PessoaModel();
-                pessoaModel.IdUser = 2;
-                pessoaModel.Nome = model.Nome;
-                pessoaModel.Cpf = model.Cpf;
-                pessoaModel.Fone = model.Fone;
-                pessoaModel.Matricula = model.Matricula;
-                pessoaModel.IdPessoa = GerenciadorPessoa.GetInstance().Inserir(pessoaModel); */
-
-                // fim do testa armazena pessoa nan base
-
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, null, out createStatus);
@@ -98,7 +88,7 @@ namespace PacienteVirtual.Controllers
 
                 
                 PessoaModel pessoaModel = new PessoaModel();
-                pessoaModel.IdUser = 2;
+                pessoaModel.IdUser = GerenciadorPessoa.GetInstance().ObterQuantidadePessoa()+1;
                 pessoaModel.Nome = model.Nome;
                 pessoaModel.Cpf = model.Cpf;
                 pessoaModel.Fone = model.Fone;

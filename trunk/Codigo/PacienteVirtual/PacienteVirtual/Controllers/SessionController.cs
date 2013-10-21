@@ -6,11 +6,26 @@ using PacienteVirtual.Models.Consulta;
 using PacienteVirtual.Negocio.Consulta;
 using System.Collections;
 using System.Linq;
+using PacienteVirtual.Models.Turma;
 
-namespace PacienteVirtual.Controllers 
+namespace PacienteVirtual.Controllers
 {
     public class SessionController
     {
+
+        public static TurmaPessoaModel DadosTurmaPessoa
+        {
+            get
+            {
+                return (TurmaPessoaModel)HttpContext.Current.Session["_DadosTurmaPessoa"];
+            }
+            set
+            {
+                HttpContext.Current.Session["_DadosTurmaPessoa"] = value;
+            }
+        }
+
+
         public static ConsultaVariavelModel ConsultaVariavel
         {
             get
@@ -23,14 +38,14 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-        public static PessoaModel Pessoa {
+        public static PessoaModel Pessoa
+        {
             get
             {
                 PessoaModel pessoa = (PessoaModel)HttpContext.Current.Session["_Pessoa"];
                 if (pessoa == null)
                 {
-                    // TODO : obter pessoa que está autenticada
-                    pessoa = GerenciadorPessoa.GetInstance().Obter(2);
+                    pessoa = GerenciadorPessoa.GetInstance().Obter(Pessoa.IdPessoa);
                     HttpContext.Current.Session["_Pessoa"] = pessoa;
                 }
                 return pessoa;
@@ -41,7 +56,7 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-        public static PacienteModel Paciente 
+        public static PacienteModel Paciente
         {
             get
             {
@@ -93,10 +108,10 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_RelatoClinico"] = value;
             }
         }
-        
+
 
         // Dados fixos e compartilhados entre consultas
-        
+
         public static HistoriaModel Historia
         {
             get
@@ -122,7 +137,7 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_Historia"] = value;
             }
         }
-        
+
         public static DemograficosAntropometricosModel DemograficosAntropometricos
         {
             get
@@ -170,7 +185,7 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_ExperienciaMedicamentos"] = value;
             }
         }
-        
+
         public static IEnumerable<DiarioPessoalModel> ListaDiarioPessoal
         {
             get
@@ -369,7 +384,7 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_ListaConsultaParametro"] = value;
             }
         }
-        
+
         public static ExamesFisicosModel ExamesFisicos
         {
             get
@@ -435,14 +450,14 @@ namespace PacienteVirtual.Controllers
 
         public static PerguntaModel ObterPergunta(int codPergunta)
         {
-           string perguntaSession = "_Pergunta"+codPergunta;
-           PerguntaModel pergunta = (PerguntaModel) HttpContext.Current.Session[perguntaSession];
-           if (pergunta == null)
-           {
-               pergunta = GerenciadorPergunta.GetInstance().Obter(codPergunta);
-               HttpContext.Current.Session[perguntaSession] = pergunta;
-           }
-           return pergunta;  
+            string perguntaSession = "_Pergunta" + codPergunta;
+            PerguntaModel pergunta = (PerguntaModel)HttpContext.Current.Session[perguntaSession];
+            if (pergunta == null)
+            {
+                pergunta = GerenciadorPergunta.GetInstance().Obter(codPergunta);
+                HttpContext.Current.Session[perguntaSession] = pergunta;
+            }
+            return pergunta;
         }
 
         public static IEnumerable<RespostaModel> ObterRespostas(int codPergunta)
