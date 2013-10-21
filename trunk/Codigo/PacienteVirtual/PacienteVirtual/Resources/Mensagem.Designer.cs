@@ -1591,6 +1591,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Perfil.
+        /// </summary>
+        public static string perfil {
+            get {
+                return ResourceManager.GetString("perfil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pergunta.
         /// </summary>
         public static string pergunta {

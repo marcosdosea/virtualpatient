@@ -61,7 +61,8 @@ namespace PacienteVirtual.Controllers
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
-
+            SessionController.Pessoa = null;
+            SessionController.DadosTurmaPessoa = null;
             return RedirectToAction("Index", "Home");
         }
 
