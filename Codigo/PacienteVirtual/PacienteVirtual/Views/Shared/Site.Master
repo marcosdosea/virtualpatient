@@ -75,6 +75,9 @@
             <div id="logindisplay">
                 <% Html.RenderPartial("LogOnUserControl"); %>
             </div>
+            <div>
+                <% Html.RenderAction("DadosTurma", "SelecionarTurma"); %>
+            </div>
         </header>
         <div class="container">
             <div class="navbar">

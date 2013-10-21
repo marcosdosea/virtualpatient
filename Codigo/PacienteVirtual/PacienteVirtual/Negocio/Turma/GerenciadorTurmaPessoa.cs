@@ -102,7 +102,9 @@ namespace PacienteVirtual.Negocio.Turma
                             IdPessoa = tb_turma_pessoa.IdPessoa,
                             IdRole = tb_turma_pessoa.IdRole,
                             Ativa = tb_turma_pessoa.Ativa,
+
                             NomeTurma = tb_turma_pessoa.tb_turma.Codigo,
+                            NomeRole = tb_turma_pessoa.my_aspnet_roles.name,
 
                             NomePessoa =  tb_pessoa.Nome
                         };

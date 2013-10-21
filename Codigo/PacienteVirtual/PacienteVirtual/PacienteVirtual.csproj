@@ -551,6 +551,7 @@
     <Content Include="Views\Queixa\Details.aspx" />
     <Content Include="Views\Queixa\Edit.aspx" />
     <Content Include="Views\Queixa\Index.aspx" />
+    <Content Include="Views\SelecionarTurma\DadosTurma.ascx" />
     <Content Include="Views\SelecionarTurma\Index.aspx" />
     <Content Include="Views\Shared\NotFound.aspx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />

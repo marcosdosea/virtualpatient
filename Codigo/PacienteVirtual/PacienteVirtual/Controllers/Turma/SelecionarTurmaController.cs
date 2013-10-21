@@ -17,6 +17,11 @@ namespace PacienteVirtual.Controllers.Turma
             return View();
         }
 
+        public ActionResult DadosTurma()
+        {
+            return View(SessionController.DadosTurmaPessoa);
+        }
+
         [HttpPost]
         public ActionResult Create(TurmaPessoaModel tpm)
         {
