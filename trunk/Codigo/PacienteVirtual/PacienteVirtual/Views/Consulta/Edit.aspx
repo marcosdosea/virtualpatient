@@ -16,6 +16,53 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
+
+    <!-- Solução das abas até o momento com jquery -->
+    <input type="hidden" value="<%: ViewBag.Abas1 %>" id="abas1" />
+    <script type="text/javascript">
+        var abas1 = document.getElementById('abas1').value;
+        if (abas1 == 1) {
+            $(document).ready(function () {
+                $("#li1").addClass("active");
+                $("#li2").removeClass("active");
+                $("#li3").removeClass("active");
+
+                $("#tab1-1").removeClass("tab-pane");
+                $("#tab1-1").addClass("tab-pane active");
+                $("#tab1-2").removeClass("tab-pane active");
+                $("#tab1-2").addClass("tab-pane");
+                $("#tab1-3").removeClass("tab-pane active");
+                $("#tab1-3").addClass("tab-pane");
+            });
+        } else if (abas1 == 2) {
+        $(document).ready(function () {
+            $("#li1").removeClass("active");
+            $("#li2").addClass("active");
+            $("#li3").removeClass("active");
+
+            $("#tab1-1").removeClass("tab-pane active");
+            $("#tab1-1").addClass("tab-pane");
+            $("#tab1-2").removeClass("tab-pane");
+            $("#tab1-2").addClass("tab-pane active");
+            $("#tab1-3").removeClass("tab-pane active");
+            $("#tab1-3").addClass("tab-pane");
+        });
+        } else if (abas1 == 3) {
+            $(document).ready(function () {
+                $("#li1").removeClass("active");
+                $("#li2").removeClass("active");
+                $("#li3").addClass("active");
+
+                $("#tab1-1").removeClass("tab-pane active");
+                $("#tab1-1").addClass("tab-pane");
+                $("#tab1-2").removeClass("tab-pane active");
+                $("#tab1-2").addClass("tab-pane");
+                $("#tab1-3").removeClass("tab-pane");
+                $("#tab1-3").addClass("tab-pane active");
+            });
+        }
+    </script>
+
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
@@ -58,10 +105,10 @@
             <div class="thumbnails">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1-1" data-toggle="tab">História</a></li>
-                        <li><a href="#tab1-2" data-toggle="tab">
+                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab">História</a></li>
+                        <li id="li2"><a href="#tab1-2" data-toggle="tab">
                             <%: Resources.Mensagem.demografico_antropometricos %></a></li>
-                        <li><a href="#tab1-3" data-toggle="tab">
+                        <li id="li3"><a href="#tab1-3" data-toggle="tab">
                             <%: Resources.Mensagem.experiencia_medicamentos %></a></li>
                     </ul>
                     <div class="tab-content">

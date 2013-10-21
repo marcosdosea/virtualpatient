@@ -24,6 +24,7 @@ namespace PacienteVirtual.Controllers
                 SessionController.Historia = historiaModel;
                 
             }
+            SessionController.Abas1 = 1;
             return RedirectToAction("Edit", "Consulta");
         }
 
