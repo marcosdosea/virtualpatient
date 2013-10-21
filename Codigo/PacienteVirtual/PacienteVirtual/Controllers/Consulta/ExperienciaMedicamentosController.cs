@@ -29,6 +29,7 @@ namespace PacienteVirtual.Controllers
                 gExpMedicamento.Atualizar(expMedicamento);
                 SessionController.ExperienciaMedicamentos = expMedicamento;
             }
+            SessionController.Abas1 = 3;
             return RedirectToAction("Edit", "Consulta");
         }
 

@@ -22,6 +22,7 @@ namespace PacienteVirtual.Controllers
                 gDemoAntrop.Atualizar(demoAntro);
                 SessionController.DemograficosAntropometricos = demoAntro;
             }
+            SessionController.Abas1 = 2;
             return RedirectToAction("Edit", "Consulta");
         }
 
