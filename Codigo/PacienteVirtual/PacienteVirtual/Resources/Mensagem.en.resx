@@ -861,4 +861,10 @@
   <data name="perfil" xml:space="preserve">
     <value>Profile</value>
   </data>
+  <data name="alterar_turma" xml:space="preserve">
+    <value>Alter Class</value>
+  </data>
+  <data name="selecionar_turma" xml:space="preserve">
+    <value>Select Class</value>
+  </data>
 </root>
