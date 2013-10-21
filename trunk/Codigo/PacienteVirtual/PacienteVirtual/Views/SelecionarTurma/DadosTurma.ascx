@@ -1,15 +1,43 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.Turma.TurmaPessoaModel>" %>
-
 <% if (Model != null)
    { %>
-   <%: Resources.Mensagem.turma %> <%: Model.NomeTurma %>
-   <p></p>
-   <%: Resources.Mensagem.perfil %> <%: Model.NomeRole %>
-   <p></p>
-   <div class="btn btn-primary">
-        <%: Html.ActionLink("alterarturma", "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small;"}) %>
-    </div>
-    <p></p>
-    <p></p>
+<div>
+    <p class="cabecalho"><%: Resources.Mensagem.turma %>:</p>
+    <p class="conteudo"><%: Model.NomeTurma %></p>
+</div>
+<div>
+    <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
+    <p class="conteudo"><%: Model.NomeRole %></p>
+</div>
+<div class="btn btn-primary">
+    <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small;"}) %>
+</div>
+<br />
+<br />
 <% } %>
 
+<style>
+    .cabecalho, conteudo
+    {
+        display: block;
+        float: left;
+    }
+    .cabecalho
+    {
+        font-size: medium;
+        font-family: Tahoma;
+        font-weight: bold;
+    }
+    .conteudo
+    {
+        position:relative;
+        left: 15px;
+        font-size: small;
+        font-family: Tahoma;
+        text-transform:capitalize;
+    }
+    .br
+    {
+        clear: left;
+    }
+</style>
