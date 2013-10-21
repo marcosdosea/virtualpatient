@@ -149,7 +149,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public PessoaModel ObterPorUserName(string userName)
         {
-            return GetQuery().Where(pessoa => pessoa.UserName.Equals(userName)).ElementAtOrDefault(0);
+            return GetQuery().Where(pessoa => string.Compare(userName, pessoa.UserName, true) == 0).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
@@ -164,6 +164,11 @@ namespace PacienteVirtual.Negocio
             _pessoaE.Cpf = pessoa.Cpf;
             _pessoaE.Fone = pessoa.Fone;
             _pessoaE.Matricula = pessoa.Matricula;
+        }
+
+        public int ObterQuantidadePessoa()
+        {
+            return GerenciadorPessoa.GetInstance().ObterTodos().Count();
         }
     }
 }

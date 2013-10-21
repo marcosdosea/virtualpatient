@@ -102,6 +102,7 @@ namespace PacienteVirtual.Negocio.Turma
                             IdPessoa = tb_turma_pessoa.IdPessoa,
                             IdRole = tb_turma_pessoa.IdRole,
                             Ativa = tb_turma_pessoa.Ativa,
+                            NomeTurma = tb_turma_pessoa.tb_turma.Codigo,
 
                             NomePessoa =  tb_pessoa.Nome
                         };
@@ -124,6 +125,11 @@ namespace PacienteVirtual.Negocio.Turma
         public IEnumerable<TurmaPessoaModel> ObterPorTurmaNaoAtivado(int codTurma)
         {
             return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == false).ToList();
+        }
+
+        public IEnumerable<TurmaPessoaModel> ObterTurmasPorPessoa(int idPessoa)
+        {
+            return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa).ToList();
         }
 
         /// <summary>
@@ -150,9 +156,9 @@ namespace PacienteVirtual.Negocio.Turma
         /// </summary>
         /// <param name="codTurma"></param>
         /// <returns></returns>
-        public TurmaPessoaModel ObterPorTurmaPessoa(int idTurmaPessoa, int idPessoa)
+        public TurmaPessoaModel ObterPorTurmaPessoa(int idTurma, int idPessoa)
         {
-            return GetQuery().Where(turma => turma.IdTurma == idTurmaPessoa && turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(turma => turma.IdTurma == idTurma && turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>

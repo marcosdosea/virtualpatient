@@ -47,7 +47,6 @@ namespace PacienteVirtual.Controllers
             SessionController.ListaMedicamentosAnteriores = null;
             SessionController.ListaMedicamentosPrescritos = null;
             SessionController.Paciente = null;
-            SessionController.Pessoa = null;
             SessionController.RelatoClinico = null;
             SessionController.ListaAlergia = null;
             SessionController.ListaQueixaMedicamento = null;

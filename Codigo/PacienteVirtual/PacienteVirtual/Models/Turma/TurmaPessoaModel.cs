@@ -14,8 +14,8 @@ namespace PacienteVirtual.Models.Turma
         public int IdTurma { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "nome_turma", ResourceType = typeof(Mensagem))]
-        public string NomeCurso { get; set; }
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
+        public string NomeTurma { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
