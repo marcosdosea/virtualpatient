@@ -867,4 +867,7 @@
   <data name="selecionar_turma" xml:space="preserve">
     <value>Select Class</value>
   </data>
+  <data name="bem_vindo" xml:space="preserve">
+    <value>Welcome,  </value>
+  </data>
 </root>

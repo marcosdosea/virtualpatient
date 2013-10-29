@@ -232,6 +232,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bem-Vindo,  .
+        /// </summary>
+        public static string bem_vindo {
+            get {
+                return ResourceManager.GetString("bem_vindo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cadastros.
         /// </summary>
         public static string cadastros {

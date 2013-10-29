@@ -1,22 +1,28 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.Turma.TurmaPessoaModel>" %>
 <% if (Model != null)
    { %>
-<div>
-    <p class="cabecalho"><%: Resources.Mensagem.turma %>:</p>
-    <p class="conteudo"><%: Model.NomeTurma %></p>
+<div class="direita">
+    <div>
+        <p class="cabecalho"><%: Resources.Mensagem.turma %>:</p>
+        <p class="conteudo"><%: Model.NomeTurma %></p>
+    </div>
+    <div>
+        <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
+        <p class="conteudo"><%: Model.NomeRole %></p>
+    </div>
+    <div class="btn btn-primary" id="botao">
+        <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small; "}) %>
+    </div>
+    <br />
+    <br />
 </div>
-<div>
-    <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
-    <p class="conteudo"><%: Model.NomeRole %></p>
-</div>
-<div class="btn btn-primary">
-    <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small;"}) %>
-</div>
-<br />
-<br />
 <% } %>
 
 <style>
+    #botao
+    {
+        float: right;
+    }
     .cabecalho, conteudo
     {
         display: block;
@@ -39,5 +45,12 @@
     .br
     {
         clear: left;
+    }
+    .direita
+    {
+        float: right;
+        text-align: right;
+        position: relative;
+        right: 20px;
     }
 </style>
