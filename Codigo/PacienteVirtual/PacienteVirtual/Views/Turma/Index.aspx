@@ -11,59 +11,75 @@
 <p>
     <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
 </p>
-<div class="box-content"> <table class="table table-bordered table-striped">
-    <tr>
-        <th>
-            <%: Resources.Mensagem.ativa %>
-        </th>
-        <th>
-            <%: Resources.Mensagem.codigo %>
-        </th>
-        <th>
-            <%: Resources.Mensagem.periodo %>
-        </th>
-        <th>
-            <%: Resources.Mensagem.disciplina %>
-        </th>
-        <th>
-            <%: Resources.Mensagem.instituicao %>
-        </th>
-        <th>
-            <%: Resources.Mensagem.curso %>
-        </th>
-        <th colspan="3"> <%: Resources.Mensagem.opcoes %> </th>
-    </tr>
 
-<% 
-    
-foreach (var item in Model) { %>
-    <tr>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Ativa) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Codigo) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Periodo) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.NomeDisciplina) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.NomeInstituicao) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.NomeCurso) %>
-        </td>
-        <td>
-            <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = item.IdTurma })%> |
-            <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdTurma }) %> |
-            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdTurma }) %>
-        </td>
-    </tr>
-<% } %>
+<%@ Import Namespace="GridMvc.Html" %>
+<%@ Import Namespace="GridMvc.Sorting" %>
 
-</table></div>
+<div class="box-content">
+
+<%= Html.Grid(Model).Columns(columns =>
+    {
+        
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.Ativa)
+                .Titled(Resources.Mensagem.ativa)
+                .ThenSortByDescending(o => o.Ativa)
+                .Filterable(true);
+
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.Codigo)
+                .Titled(Resources.Mensagem.codigo)
+                .ThenSortByDescending(o => o.Codigo)
+                .Filterable(true);
+
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.Periodo)
+                .Titled(Resources.Mensagem.periodo)
+                .ThenSortByDescending(o => o.Periodo)
+                .Filterable(true);
+
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.NomeDisciplina)
+                .Titled(Resources.Mensagem.disciplina)
+                .ThenSortByDescending(o => o.NomeDisciplina)
+                .Filterable(true);
+
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.NomeInstituicao)
+                .Titled(Resources.Mensagem.instituicao)
+                .ThenSortByDescending(o => o.NomeInstituicao)
+                .Filterable(true);
+
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.NomeCurso)
+                .Titled(Resources.Mensagem.curso)
+                .ThenSortByDescending(o => o.NomeCurso)
+                .Filterable(true);
+
+        /* Adding not mapped column, that renders body, using inline Razor html helper */
+        columns.Add()
+                .Titled(Resources.Mensagem.editar)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = o.IdTurma }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.detalhes)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = o.IdTurma }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.remover)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = o.IdTurma }, new { @class = "modal-link" }));
+
+    }).WithPaging(5).Sortable().ToHtmlString()%>
+
+</div>
 
 </asp:Content>

@@ -12,27 +12,44 @@
     <%: Html.ActionLink(Resources.Mensagem.criar, "Create")%>
 </p>
 
-<div class="box-content"> <table class="table table-bordered table-striped">
-    <tr>
-        <th>
-            <%: Resources.Mensagem.alergia%>
-        </th>
-        <th><%: Resources.Mensagem.opcoes %></th>
-    </tr>
+<%@ Import Namespace="GridMvc.Html" %>
+<%@ Import Namespace="GridMvc.Sorting" %>
 
-<% foreach (var item in Model) { %>
-    <tr>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Alergia) %>
-        </td>
-        <td>
-            <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = item.IdAlergia })%> |
-            <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = item.IdAlergia })%> |
-            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = item.IdAlergia })%>
-        </td>
-    </tr>
-<% } %>
+<div class="box-content">
 
-</table></div>
+<%= Html.Grid(Model).Columns(columns =>
+    {
+        
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.Alergia)
+                .Titled(Resources.Mensagem.alergia)
+                .ThenSortByDescending(o => o.Alergia)
+                .Filterable(true);
+
+        /* Adding not mapped column, that renders body, using inline Razor html helper */
+        columns.Add()
+                .Titled(Resources.Mensagem.editar)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = o.IdAlergia }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.detalhes)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = o.IdAlergia }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.remover)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = o.IdAlergia }, new { @class = "modal-link" }));
+
+    }).WithPaging(5).Sortable().ToHtmlString()%>
+
+</div>
 
 </asp:Content>
