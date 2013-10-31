@@ -28,17 +28,11 @@
                 .Titled(Resources.Mensagem.status)
                 .ThenSortByDescending(o => o.Ativa)
                 .Filterable(true)
+                .SetWidth(230)
+                
                 .RenderValueAs(o => o.Ativa == true ? Resources.Mensagem.ativa : Resources.Mensagem.desativa);
-
         
         /* Adding not mapped column, that renders body, using inline Razor html helper */
-        columns.Add()
-                .Titled(Resources.Mensagem.desativar)
-                .Encoded(false)
-                .Sanitized(false)
-                .SetWidth(30)
-                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.desativar, "Desativar", new { idTurma = o.IdTurma, idPessoa = o.IdPessoa }, new { onclick = "alert('Matrícula Desativada!')" }));
-
         columns.Add()
                 .Titled(Resources.Mensagem.ativar)
                 .Encoded(false)
@@ -46,17 +40,22 @@
                 .SetWidth(30)
                 .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.ativar, "Ativar", new { idTurma = o.IdTurma, idPessoa = o.IdPessoa }, new { onclick = "alert('Matrícula Ativada!')" }));
 
+        
+        columns.Add()
+                .Titled(Resources.Mensagem.desativar)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.desativar, "Desativar", new { idTurma = o.IdTurma, idPessoa = o.IdPessoa }, new { onclick = "alert('Matrícula Desativada!')" }));
+
+        
     }).WithPaging(5).Sortable().ToHtmlString()%>
     </div>
     <div class="box-content">
         <style type="text/css">
             #botaopos
             {
-                position: relative;
-                left: 87%;
-                top: 80%;
-                margin-left: -110px;
-                margin-top: -40px;
+                float: right;
             }
         </style>
         <p class="btn btn-primary" id="botaopos">
