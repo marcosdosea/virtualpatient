@@ -56,7 +56,7 @@ namespace PacienteVirtual.Controllers.Turma
 
         }
 
-        private static bool ativadesativar;
+        private static bool ativadesativar = true;
 
         public ActionResult AtivarDesativarTodos()
         {
