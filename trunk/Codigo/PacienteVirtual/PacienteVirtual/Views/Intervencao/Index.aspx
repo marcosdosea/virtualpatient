@@ -11,33 +11,51 @@
 <p>
     <%: Html.ActionLink(Resources.Mensagem.criar, "Create")%>
 </p>
-<div class="box-content"> <table class="table table-bordered table-striped">
-    <tr>
-        <th>
-            <%: Resources.Mensagem.descricao_intervencao %>
-        </th>
-        <th>
-            <%: Resources.Mensagem.grupo_intervencao %></h2>
-        </th>
-        <th style="width:270px;"><%: Resources.Mensagem.opcoes %></h2></th>
-    </tr>
 
-<% foreach (var item in Model) { %>
-    <tr>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.DescricaoIntervencao) %>
-        </td>
-        <td style="text-align: center">
-            <%: Html.DisplayFor(modelItem => item.DescricaoGrupoIntervencao) %>
-        </td>
-        <td>
-            <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = item.IdIntervencao })%> |
-            <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = item.IdIntervencao })%> |
-            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = item.IdIntervencao })%>
-        </td>
-    </tr>
-<% } %>
+<%@ Import Namespace="GridMvc.Html" %>
+<%@ Import Namespace="GridMvc.Sorting" %>
 
-</table></div>
+<div class="box-content">
+
+<%= Html.Grid(Model).Columns(columns =>
+    {
+        
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.DescricaoIntervencao)
+                .Titled(Resources.Mensagem.descricao_intervencao)
+                .ThenSortByDescending(o => o.DescricaoIntervencao)
+                .Filterable(true);
+
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.DescricaoGrupoIntervencao)
+                .Titled(Resources.Mensagem.grupo_intervencao)
+                .ThenSortByDescending(o => o.DescricaoGrupoIntervencao)
+                .Filterable(true);
+
+        /* Adding not mapped column, that renders body, using inline Razor html helper */
+        columns.Add()
+                .Titled(Resources.Mensagem.editar)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = o.IdIntervencao }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.detalhes)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = o.IdIntervencao }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.remover)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = o.IdIntervencao }, new { @class = "modal-link" }));
+
+    }).WithPaging(5).Sortable().ToHtmlString()%>
+
+</div>
 
 </asp:Content>
