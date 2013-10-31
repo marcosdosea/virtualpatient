@@ -4,7 +4,6 @@
     <%: Resources.Mensagem.ativar_matriculas_turma %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
     <div class="span9">
         <h2>
             <%: Resources.Mensagem.ativar_matriculas_turma %></h2>
@@ -13,48 +12,43 @@
         <%: Html.DropDownList("IdTurma", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
         <% } %>
     </div>
+    <%@ import namespace="GridMvc.Html" %>
+    <%@ import namespace="GridMvc.Sorting" %>
     <div class="box-content">
-        <table class="table table-bordered table-striped">
-            <tr>
-                <th style="width: 519px">
-                    <%: Resources.Mensagem.nome_pessoa %>
-                </th>
-                <th class="input-medium" style="width: 158px">
-                    <%: Resources.Mensagem.status %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.opcoes %>
-                </th>
-            </tr>
-            <% if (Model != null)
-                   foreach (var item in Model)
-                   { %>
-            <tr>
-                <td style="width: 519px">
-                    <%: Html.DisplayFor(modelItem => item.NomePessoa) %>
-                </td>
-                <td class="input-medium" style="width: 158px; text-align: center">
-                    <%
-                       if (item.Ativa)
-                       {%>
-                    <p style="color: Blue">
-                        <%: Resources.Mensagem.ativa %></p>
-                    <% }
-                       else
-                       {
-                    %>
-                    <p style="color: Red">
-                        <%: Resources.Mensagem.desativa %></p>
-                    <% } %>
-                </td>
-                <td style="text-align: center">
-                    <%: Html.ActionLink(Resources.Mensagem.ativar, "Ativar", new { idTurma = item.IdTurma, idPessoa = item.IdPessoa }, new { onclick = "alert('Matrícula Ativada!')" })%>
-                    |
-                    <%: Html.ActionLink(Resources.Mensagem.desativar, "Desativar", new { idTurma = item.IdTurma, idPessoa= item.IdPessoa }, new { onclick = "alert('Matrícula Desativada!')" })%>
-                </td>
-            </tr>
-            <% } %>
-        </table>
+        <%= Html.Grid(Model).Columns(columns =>
+    {
+        
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.NomePessoa)
+                .Titled(Resources.Mensagem.nome)
+                .ThenSortByDescending(o => o.NomePessoa)
+                .Filterable(true);
+
+        columns.Add(o => o.Ativa)
+                .Titled(Resources.Mensagem.status)
+                .ThenSortByDescending(o => o.Ativa)
+                .Filterable(true)
+                .RenderValueAs(o => o.Ativa == true ? Resources.Mensagem.ativa : Resources.Mensagem.desativa);
+
+        
+        /* Adding not mapped column, that renders body, using inline Razor html helper */
+        columns.Add()
+                .Titled(Resources.Mensagem.desativar)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.desativar, "Desativar", new { idTurma = o.IdTurma, idPessoa = o.IdPessoa }, new { onclick = "alert('Matrícula Desativada!')" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.ativar)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.ativar, "Ativar", new { idTurma = o.IdTurma, idPessoa = o.IdPessoa }, new { onclick = "alert('Matrícula Ativada!')" }));
+
+    }).WithPaging(5).Sortable().ToHtmlString()%>
+    </div>
+    <div class="box-content">
         <style type="text/css">
             #botaopos
             {
@@ -69,5 +63,4 @@
             <%: Html.ActionLink(Resources.Mensagem.ativar_desativar_todos, "AtivarDesativarTodos", null, new { @style = "color:White; font-size:small;", onclick = "alert('Todas as Matrículas foram Ativada/Desativada!')" })%>
         </p>
     </div>
-    </form>
 </asp:Content>
