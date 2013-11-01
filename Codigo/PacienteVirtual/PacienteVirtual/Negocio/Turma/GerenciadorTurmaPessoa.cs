@@ -106,7 +106,13 @@ namespace PacienteVirtual.Negocio.Turma
                             NomeTurma = tb_turma_pessoa.tb_turma.Codigo,
                             NomeRole = tb_turma_pessoa.my_aspnet_roles.name,
 
-                            NomePessoa =  tb_pessoa.Nome
+                            NomePessoa =  tb_pessoa.Nome,
+
+                            // dados tela selecionarTurma
+                            Instituicao = tb_turma_pessoa.tb_turma.tb_instituicao.NomeInstituicao,
+                            Curso = tb_turma_pessoa.tb_turma.tb_curso.NomeCurso,
+                            Disciplina = tb_turma_pessoa.tb_turma.tb_disciplina.NomeDisciplina,
+                            Periodo = tb_turma_pessoa.tb_turma.Periodo
                         };
             return query;
         }
@@ -162,6 +168,28 @@ namespace PacienteVirtual.Negocio.Turma
         {
             return GetQuery().Where(turma => turma.IdTurma == idTurma && turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
         }
+
+
+        /// <summary>
+        /// Obtém uma TurmaPessoa com o idPessoa
+        /// </summary>
+        /// <param name="codTurma"></param>
+        /// <returns></returns>
+        public TurmaPessoaModel ObterPorPessoaUmaTurmaPessoa(int idPessoa)
+        {
+            return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtem quantidade de turmaPessoa a partir de uma pessoa
+        /// </summary>
+        /// <param name="idPessoa"></param>
+        /// <returns></returns>
+        public int ObterQuantidadePorPessoa(int idPessoa)
+        {
+            return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().Count;
+        }
+
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência

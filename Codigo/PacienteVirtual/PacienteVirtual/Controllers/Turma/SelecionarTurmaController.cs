@@ -13,8 +13,12 @@ namespace PacienteVirtual.Controllers.Turma
         
         public ActionResult Index()
         {
-            ViewBag.IdTurma = new SelectList(GerenciadorTurmaPessoa.GetInstance().ObterTurmasPorPessoa(SessionController.Pessoa.IdPessoa), "IdTurma", "NomeTurma");
-            return View();
+            if (GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoa(SessionController.Pessoa.IdPessoa) > 1)
+            {
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterTurmasPorPessoa(SessionController.Pessoa.IdPessoa));
+            }
+            SessionController.DadosTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorPessoaUmaTurmaPessoa(SessionController.Pessoa.IdPessoa);
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult DadosTurma()
@@ -22,16 +26,15 @@ namespace PacienteVirtual.Controllers.Turma
             return View(SessionController.DadosTurmaPessoa);
         }
 
-        [HttpPost]
-        public ActionResult Create(TurmaPessoaModel tpm)
+        //[HttpPost]
+        public ActionResult Create(int id)
         {
-            if(tpm.IdTurma > 0)
+            if(id > 0)
             {
-                SessionController.DadosTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(tpm.IdTurma, SessionController.Pessoa.IdPessoa);
+                SessionController.DadosTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(id, SessionController.Pessoa.IdPessoa);
                 return RedirectToAction("Index", "Home");
             }
-            ViewBag.IdTurma = new SelectList(GerenciadorTurmaPessoa.GetInstance().ObterTurmasPorPessoa(SessionController.Pessoa.IdPessoa), "IdTurma", "NomeTurma");
-            return RedirectToAction("Index", "SelecionarTurma");
+            return RedirectToAction("Index", "SelecionarTurma", GerenciadorTurmaPessoa.GetInstance().ObterTurmasPorPessoa(SessionController.Pessoa.IdPessoa));
         }
 
     }
