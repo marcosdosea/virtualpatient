@@ -25,6 +25,7 @@ namespace PacienteVirtual.Controllers.Consulta
                 GerenciadorExamesFisicos.GetInstance().Atualizar(examesFisicosModel);
                 SessionController.ExamesFisicos = examesFisicosModel;
             }
+            SessionController.Abas2 = 5;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -37,6 +38,7 @@ namespace PacienteVirtual.Controllers.Consulta
                 GerenciadorExamesFisicos.GetInstance().InserirAlergia(efm, alergiaExamesFisicosModel.IdAlergia);
                 SessionController.ListaAlergia = null;
             }
+            SessionController.Abas2 = 5;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -51,6 +53,7 @@ namespace PacienteVirtual.Controllers.Consulta
             ExamesFisicosModel efm = GerenciadorExamesFisicos.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaVariavel);
             GerenciadorExamesFisicos.GetInstance().RemoverAlergia(efm, idAlergia);
             SessionController.ListaAlergia = null;
+            SessionController.Abas2 = 5;
             return RedirectToAction("Edit", "Consulta");
         }
 

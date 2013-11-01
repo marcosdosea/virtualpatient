@@ -34,6 +34,7 @@ namespace PacienteVirtual.Controllers.Consulta
                 GerenciadorConsultaParametro.GetInstance().Inserir(consultaParametroModel);
                 SessionController.ListaConsultaParametro = null;
             }
+            SessionController.Abas2 = 6;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -44,6 +45,7 @@ namespace PacienteVirtual.Controllers.Consulta
         {
             GerenciadorConsultaParametro.GetInstance().Remover(idConsultaVariavel, idParametroClinico);
             SessionController.ListaConsultaParametro = null;
+            SessionController.Abas2 = 6;
             return RedirectToAction("Edit", "Consulta");
         }
 

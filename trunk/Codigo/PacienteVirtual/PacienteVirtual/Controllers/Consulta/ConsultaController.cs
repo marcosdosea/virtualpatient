@@ -51,6 +51,7 @@ namespace PacienteVirtual.Controllers
             SessionController.ListaAlergia = null;
             SessionController.ListaQueixaMedicamento = null;
             SessionController.Abas1 = 0;
+            SessionController.Abas2 = 0;
             /////////////////////////////////////////////////////////////////
 
             return View(GerenciadorConsultaVariavel.GetInstance().ObterTodos());
@@ -136,6 +137,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdRespostaIncorporadoPlano = new SelectList(SessionController.ObterRespostas(PERGUNTA_INCORPORADO_PLANO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaIncorporadoPlano);
 
             ViewBag.Abas1 = SessionController.Abas1;
+            ViewBag.Abas2 = SessionController.Abas2;
 
             return View(consultaModel);
         }

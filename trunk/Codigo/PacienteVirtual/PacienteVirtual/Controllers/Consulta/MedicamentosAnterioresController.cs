@@ -29,6 +29,7 @@ namespace PacienteVirtual.Controllers
                 gMedicamentosAnteriores.Inserir(medicamentosAnterioresModel);
                 SessionController.ListaMedicamentosAnteriores = null;
             }
+            SessionController.Abas2 = 2;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -39,6 +40,7 @@ namespace PacienteVirtual.Controllers
         {
             gMedicamentosAnteriores.Remover(idConsultaVariavel, idMedicamento);
             SessionController.ListaMedicamentosAnteriores = null;
+            SessionController.Abas2 = 2;
             return RedirectToAction("Edit", "Consulta");
         }
 

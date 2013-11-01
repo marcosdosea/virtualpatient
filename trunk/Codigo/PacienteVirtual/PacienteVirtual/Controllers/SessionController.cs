@@ -616,5 +616,23 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_NumeroAba1"] = value;
             }
         }
+
+        public static int Abas2
+        {
+            get
+            {
+                int numeroAba2 = (int)HttpContext.Current.Session["_NumeroAba2"];
+                if (numeroAba2 == 0)
+                {
+                    numeroAba2 = 1;
+                    HttpContext.Current.Session["_NumeroAba2"] = numeroAba2;
+                }
+                return numeroAba2;
+            }
+            set
+            {
+                HttpContext.Current.Session["_NumeroAba2"] = value;
+            }
+        }
     }
 }
