@@ -36,5 +36,18 @@ namespace PacienteVirtual.Models.Turma
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ativa", ResourceType = typeof(Mensagem))]
         public bool Ativa { get; set; }
+
+        // dados da tela selecionar turma
+        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
+        public String Instituicao { get; set; }
+
+        [Display(Name = "curso", ResourceType = typeof(Mensagem))]
+        public String Curso { get; set; }
+
+        [Display(Name = "disciplina", ResourceType = typeof(Mensagem))]
+        public String Disciplina { get; set; }
+
+        [Display(Name = "periodo", ResourceType = typeof(Mensagem))]
+        public String Periodo { get; set; }
     }
 }
