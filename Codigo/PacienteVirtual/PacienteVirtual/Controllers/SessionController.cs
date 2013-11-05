@@ -622,9 +622,9 @@ namespace PacienteVirtual.Controllers
             get
             {
                 int numeroAba2 = (int)HttpContext.Current.Session["_NumeroAba2"];
-                if (numeroAba2 == 0)
+                if (numeroAba2 == -1)
                 {
-                    numeroAba2 = 1;
+                    numeroAba2 = 0;
                     HttpContext.Current.Session["_NumeroAba2"] = numeroAba2;
                 }
                 return numeroAba2;

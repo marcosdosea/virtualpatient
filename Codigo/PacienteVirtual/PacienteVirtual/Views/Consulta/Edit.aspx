@@ -245,6 +245,13 @@
         }
     </script>
 
+    <script type="text/javascript">
+        var abas2 = document.getElementById('abas2').value;
+        if (abas2 > 0) {
+            location.href = "#ancora";
+        }
+    </script>
+
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
@@ -334,6 +341,7 @@
                             <%: Resources.Mensagem.consulta_parametro %></a></li>
                         <li id="li27"><a href="#tab2-7" data-toggle="tab">
                             <%: Resources.Mensagem.razao_encontro %></a></li>
+                        <a name="ancora" />
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab2-1">
