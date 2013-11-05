@@ -51,7 +51,7 @@ namespace PacienteVirtual.Controllers
             SessionController.ListaAlergia = null;
             SessionController.ListaQueixaMedicamento = null;
             SessionController.Abas1 = 0;
-            SessionController.Abas2 = 0;
+            SessionController.Abas2 = -1;
             /////////////////////////////////////////////////////////////////
 
             return View(GerenciadorConsultaVariavel.GetInstance().ObterTodos());

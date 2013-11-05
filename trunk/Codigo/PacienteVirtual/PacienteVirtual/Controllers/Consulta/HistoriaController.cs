@@ -25,6 +25,7 @@ namespace PacienteVirtual.Controllers
                 
             }
             SessionController.Abas1 = 1;
+            SessionController.Abas2 = 0;
             return RedirectToAction("Edit", "Consulta");
         }
 

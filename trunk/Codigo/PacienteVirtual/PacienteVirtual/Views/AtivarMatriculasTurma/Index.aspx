@@ -29,7 +29,6 @@
                 .ThenSortByDescending(o => o.Ativa)
                 .Filterable(true)
                 .SetWidth(230)
-                
                 .RenderValueAs(o => o.Ativa == true ? Resources.Mensagem.ativa : Resources.Mensagem.desativa);
         
         /* Adding not mapped column, that renders body, using inline Razor html helper */
