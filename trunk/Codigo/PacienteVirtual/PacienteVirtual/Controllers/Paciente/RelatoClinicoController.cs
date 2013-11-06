@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
+using PacienteVirtual.Negocio.Turma;
 
 namespace PacienteVirtual.Controllers
 {
@@ -10,6 +11,27 @@ namespace PacienteVirtual.Controllers
         GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
         GerenciadorPaciente gPaciente = GerenciadorPaciente.GetInstance();
 
+
+        //
+        // GET: /RelatoClinico/Atribuir/5
+        public ViewResult Atribuir(int idRelato,int idPaciente)
+        {
+            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
+            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
+        }
+
+
+        [HttpPost]
+        public ActionResult Atribuir(int IdTurma = -1)
+        {
+            ViewBag.codigo = IdTurma;
+            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
+            if (IdTurma != -1)
+            {
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaAtivados(IdTurma).ToList());
+            }
+            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
+        }
 
         // GET: /RelatoClinico/
         public ViewResult Index()
