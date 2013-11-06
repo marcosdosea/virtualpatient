@@ -870,4 +870,7 @@
   <data name="bem_vindo" xml:space="preserve">
     <value>Welcome,  </value>
   </data>
+  <data name="atribuir" xml:space="preserve">
+    <value>Assign</value>
+  </data>
 </root>

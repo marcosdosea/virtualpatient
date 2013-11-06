@@ -42,13 +42,7 @@ namespace PacienteVirtual.Controllers
         {
             get
             {
-                PessoaModel pessoa = (PessoaModel)HttpContext.Current.Session["_Pessoa"];
-                if (pessoa == null)
-                {
-                    pessoa = GerenciadorPessoa.GetInstance().Obter(Pessoa.IdPessoa);
-                    HttpContext.Current.Session["_Pessoa"] = pessoa;
-                }
-                return pessoa;
+                return (PessoaModel)HttpContext.Current.Session["_Pessoa"];
             }
             set
             {
@@ -60,13 +54,7 @@ namespace PacienteVirtual.Controllers
         {
             get
             {
-                PacienteModel paciente = (PacienteModel)HttpContext.Current.Session["_Paciente"];
-                if (paciente == null)
-                {
-                    paciente = GerenciadorPaciente.GetInstance().Obter(RelatoClinico.IdPaciente);
-                    HttpContext.Current.Session["_Paciente"] = paciente;
-                }
-                return paciente;
+                return (PacienteModel)HttpContext.Current.Session["_Paciente"];
             }
             set
             {

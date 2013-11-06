@@ -13,7 +13,6 @@
         <% using (Html.BeginForm("Index", "RelatoClinico", FormMethod.Post, null))
            { %>
         <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
-        <!-- %: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { @onchange = "this.form.action = Index = 1;" })%-->
         <% } %>
     </div>
     <div class="span2">
@@ -69,6 +68,8 @@
                     <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdRelato }) %>
                     |
                     <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdRelato }) %>
+                    |
+                    <%: Html.ActionLink(Resources.Mensagem.atribuir, "Atribuir", new { idRelato = item.IdRelato, idPaciente = item.IdPaciente }) %>
                 </td>
             </tr>
             <% } %>

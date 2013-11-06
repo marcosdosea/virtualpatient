@@ -136,6 +136,10 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(consultaVariavel => consultaVariavel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
         }
 
+        public IEnumerable<ConsultaVariavelModel> ObterConsultasPorTurmaPessoa(int idTurma, int idPessoa)
+        {
+            return GetQuery().Where(cv => cv.IdTurma == idTurma && cv.IdPessoa == idPessoa).ToList();
+        }
 
         /// <summary>
         /// Obtém consultaVariavel com o código da Turma, Pessoa e Relato especificiado
