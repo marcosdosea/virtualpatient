@@ -66,7 +66,13 @@ namespace PacienteVirtual.Controllers
         {
             get
             {
-                return (PacienteModel)HttpContext.Current.Session["_Paciente"];
+                PacienteModel paciente = (PacienteModel)HttpContext.Current.Session["_Paciente"];
+                if (paciente == null)
+                {
+                    paciente  = GerenciadorPaciente.GetInstance().Obter(ConsultaVariavel.IdPaciente);
+                    HttpContext.Current.Session["_Paciente"] = paciente;
+                }
+                return paciente;
             }
             set
             {
@@ -145,7 +151,7 @@ namespace PacienteVirtual.Controllers
                 DemograficosAntropometricosModel demoAntro = (DemograficosAntropometricosModel)HttpContext.Current.Session["_DemograficosAntropometricos"];
                 if (demoAntro == null)
                 {
-                    demoAntro = GerenciadorDemograficosAntropometricos.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
+                    demoAntro = new DemograficosAntropometricosModel();
                     HttpContext.Current.Session["_DemograficosAntropometricos"] = demoAntro;
                 }
                 return demoAntro;
