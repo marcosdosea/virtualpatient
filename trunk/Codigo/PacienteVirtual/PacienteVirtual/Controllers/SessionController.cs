@@ -13,6 +13,18 @@ namespace PacienteVirtual.Controllers
     public class SessionController
     {
 
+        public static int IdRelato
+        {
+            get
+            {
+                return (int)HttpContext.Current.Session["_IdRelato"];
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdRelato"] = value;
+            }
+        }
+
         public static TurmaPessoaModel DadosTurmaPessoa
         {
             get

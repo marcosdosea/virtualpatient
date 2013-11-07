@@ -14,10 +14,37 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /RelatoClinico/Atribuir/5
-        public ViewResult Atribuir(int idRelato,int idPaciente)
+        public ViewResult Atribuir(int idRelato, int idPaciente)
         {
+            SessionController.IdRelato = idRelato;
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
             return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
+        }
+
+        //
+        // GET: /RelatoClinico/AtribuirRelato/5
+        public ActionResult AtribuirRelato(int idTurma, int idPessoa)
+        {
+            ConsultaFixoModel cfm = new ConsultaFixoModel();
+            GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
+            ConsultaVariavelModel cvm = new ConsultaVariavelModel();
+            TurmaPessoaRelatoModel tprm = new TurmaPessoaRelatoModel();
+            cfm = GerenciadorConsultaFixo.GetInstance().TotalConsultasFixas();
+            // dados consulta variavel
+            cvm.IdConsultaFixo = cfm.IdConsultaFixo;
+            cvm.IdEstadoConsulta = 1;
+            cvm.IdPessoa = idPessoa;
+            cvm.IdTurma = idTurma;
+            cvm.IdRelato = SessionController.IdRelato;
+            // dados turma pessoa relato
+            tprm.IdConsultaFixo = cfm.IdConsultaFixo;
+            tprm.IdPessoa = idPessoa;
+            tprm.IdTurma = idTurma;
+            tprm.IdRelato = SessionController.IdRelato;
+            GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tprm);   
+            GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
+            SessionController.IdRelato = 0;
+            return RedirectToAction("Index", "RelatoClinico");
         }
 
 
@@ -49,8 +76,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             if (IdPaciente != -1)
             {
-                    return View(gRelato.ObterRelatos(IdPaciente).ToList());
-            } 
+                return View(gRelato.ObterRelatos(IdPaciente).ToList());
+            }
             if (IdPaciente == -1)
             {
                 return View(gRelato.ObterTodos());
@@ -69,7 +96,7 @@ namespace PacienteVirtual.Controllers
         {
             return PartialView(model);
         }
-        
+
         //
         // GET: /RelatoClinico/Details/5
         public ViewResult Details(int id)
@@ -88,8 +115,8 @@ namespace PacienteVirtual.Controllers
             byte[] byt = System.IO.File.ReadAllBytes(Server.MapPath("~/Content/themes/pv/img/default-avatar.png"));
             return File(byt, "image/jpg");
         }
-        // GET: /RelatoClinico/Create
 
+        // GET: /RelatoClinico/Create
         public ActionResult Create()
         {
             ViewBag.fotoId = -1;
@@ -104,10 +131,10 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                    relatoModel.IdRelato = gRelato.Inserir(relatoModel);
-                    ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
-                    return View("Index", gRelato.ObterRelatos(relatoModel.IdPaciente));
-                
+                relatoModel.IdRelato = gRelato.Inserir(relatoModel);
+                ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
+                return View("Index", gRelato.ObterRelatos(relatoModel.IdPaciente));
+
             }
 
             if (relatoModel.IdPaciente > 0)
@@ -146,8 +173,8 @@ namespace PacienteVirtual.Controllers
                 {
                     if (ordem.OrdemCronologica == relatoModel.OrdemCronologica)
                     {
-                         salvar = false;
-                         break;
+                        salvar = false;
+                        break;
                     }
                 };
                 if (salvar)
@@ -157,7 +184,7 @@ namespace PacienteVirtual.Controllers
                 }
                 else
                 {
-                    TempData["MensagemErro"] = "•Não foi possível editar o Relato Clínico, pois já existe um relato com a Ordem Cronológica especificada!";                  
+                    TempData["MensagemErro"] = "•Não foi possível editar o Relato Clínico, pois já existe um relato com a Ordem Cronológica especificada!";
                 }
             }
             ViewBag.fotoId = relatoModel.IdPaciente;

@@ -28,7 +28,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
             ViewBag.Codigo = -1;
             // TODO: Obter por usuário autenticado
-            
+
             // zerando sessão para ir no banco ir pegar os dados com o devido IdVariavel
             SessionController.Sistema = 0;
             SessionController.ConsultaFixo = null;
@@ -53,35 +53,41 @@ namespace PacienteVirtual.Controllers
             SessionController.Abas1 = 0;
             SessionController.Abas2 = -1;
             /////////////////////////////////////////////////////////////////
-
-            return View(GerenciadorConsultaVariavel.GetInstance().ObterTodos());
+            if (SessionController.DadosTurmaPessoa == null || SessionController.Pessoa == null)
+            {
+                return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(0, 0));
+            }
+            return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
         }
 
         [HttpPost]
         public ActionResult Index(int IdPaciente = -1)
         {
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos().ToList(), "IdPaciente", "NomePaciente");
+
+            if (SessionController.DadosTurmaPessoa == null || SessionController.Pessoa == null)
+            {
+                ViewBag.Codigo = IdPaciente;
+                return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(0, 0));
+            }
+
             if (IdPaciente != -1)
             {
                 ViewBag.Codigo = IdPaciente;
-                return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPaciente(IdPaciente));
+                return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPacienteTurmaPessoa(IdPaciente, SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
             }
-            if (IdPaciente == -1)
-            {
-                ViewBag.Codigo = -1;
-                return View(GerenciadorConsultaVariavel.GetInstance().ObterTodos());
-            }
-            return View();
+            ViewBag.Codigo = -1;
+            return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
         }
 
-         //
+        //
         // GET: /VMConsulta/Edit
         public ActionResult Edit(long? idConsultaVariavel)
         {
             long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
             SessionController.ConsultaVariavel = consultaVariavelModel;
-            
+
             ConsultaModel consultaModel = new ConsultaModel();
             consultaModel.ConsultaVariavel = consultaVariavelModel;
             consultaModel.Paciente = SessionController.Paciente;
@@ -90,7 +96,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.Historia = SessionController.Historia;
             consultaModel.DemograficoAntropometrico = SessionController.DemograficosAntropometricos;
             consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
-            
+
             //consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaFixo, SessionController.IdRelato);
             consultaModel.EstiloVida = SessionController.EstiloVida;
             consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
@@ -116,9 +122,9 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos().ToList(), "IdEscolaridade", "Nivel", consultaModel.DemograficoAntropometrico.IdEscolaridade);
             ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos().ToList(), "IdOcupacao", "Descricao", consultaModel.DemograficoAntropometrico.IdOcupacao);
             ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos().ToList(), "IdPlanoSaude", "Nome", consultaModel.DemograficoAntropometrico.IdPlanoSaude);
-            
+
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
-            
+
             //Parâmetro Clínico
             ViewBag.IdParametroClinico = new SelectList(GerenciadorParametroClinico.GetInstance().ObterTodos().ToList(), "IdParametroClinico", "ParametroClinico");
 
