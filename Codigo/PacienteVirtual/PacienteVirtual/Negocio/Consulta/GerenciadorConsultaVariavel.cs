@@ -168,8 +168,17 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<ConsultaVariavelModel> ObterPorPaciente(int IdPaciente)
         {
-            
             return GetQuery().Where(consultaVariavel => consultaVariavel.IdPaciente == IdPaciente).ToList();
+        }
+
+        /// <summary>
+        /// obtem todos os relatos com o paciente, turma e pessoa definido
+        /// </summary>
+        /// <param name="IdPaciente"></param>
+        /// <returns></returns>
+        public IEnumerable<ConsultaVariavelModel> ObterPorPacienteTurmaPessoa(int idPaciente, int idTurma, int idPessoa)
+        {
+            return GetQuery().Where(cv => cv.IdPaciente == idPaciente && cv.IdTurma == idTurma && cv.IdPessoa == idPessoa).ToList();
         }
 
         /// <summary>

@@ -144,5 +144,10 @@ namespace PacienteVirtual.Negocio
             _consultaFixoE.ComentariosTutor = consultaFixo.ComentariosTutor;
 
         }
+
+        public ConsultaFixoModel TotalConsultasFixas()
+        {
+            return ObterTodos().ToList().OrderByDescending(o => o.IdConsultaFixo).ElementAtOrDefault(0);
+        }
     }
 }

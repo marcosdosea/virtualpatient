@@ -31,11 +31,18 @@
 
         /* Adding not mapped column, that renders body, using inline Razor html helper */
         columns.Add()
-                .Titled(Resources.Mensagem.atribuir)
+                .Titled(Resources.Mensagem.selecione)
                 .Encoded(false)
                 .Sanitized(false)
                 .SetWidth(30)
                 .RenderValueAs(o => Html.CheckBox("checked", false));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.atribuir)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.atribuir, "AtribuirRelato", "RelatoClinico", new { idTurma = o.IdTurma, idPessoa = o.IdPessoa }, null));
                 
     }).WithPaging(5).Sortable().ToHtmlString()%>
     </div>
