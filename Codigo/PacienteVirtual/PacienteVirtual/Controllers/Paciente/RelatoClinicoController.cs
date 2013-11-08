@@ -29,7 +29,7 @@ namespace PacienteVirtual.Controllers
             GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
             ConsultaVariavelModel cvm = new ConsultaVariavelModel();
             TurmaPessoaRelatoModel tprm = new TurmaPessoaRelatoModel();
-            cfm = GerenciadorConsultaFixo.GetInstance().TotalConsultasFixas();
+            cfm = GerenciadorConsultaFixo.GetInstance().RetornaConsultaComMaiorId();
             // dados consulta variavel
             cvm.IdConsultaFixo = cfm.IdConsultaFixo;
             cvm.IdEstadoConsulta = 1;

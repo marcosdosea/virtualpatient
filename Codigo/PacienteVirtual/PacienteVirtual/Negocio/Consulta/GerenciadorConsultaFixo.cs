@@ -145,7 +145,7 @@ namespace PacienteVirtual.Negocio
 
         }
 
-        public ConsultaFixoModel TotalConsultasFixas()
+        public ConsultaFixoModel RetornaConsultaComMaiorId()
         {
             return ObterTodos().ToList().OrderByDescending(o => o.IdConsultaFixo).ElementAtOrDefault(0);
         }
