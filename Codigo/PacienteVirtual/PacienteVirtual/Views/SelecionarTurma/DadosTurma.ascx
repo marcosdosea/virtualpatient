@@ -10,9 +10,16 @@
         <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
         <p class="conteudo"><%: Model.NomeRole %></p>
     </div>
-    <div class="btn btn-primary" id="botao">
-        <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small; "}) %>
-    </div>
+    <% if (ViewBag.QtdTurmaPessoa > 1)
+       { %>
+           <div class="btn btn-primary" id="botao">
+                <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small; "}) %>
+            </div>
+            <br />
+            <br />
+            <br />
+      <% } %>
+    
     <br />
     <br />
 </div>
@@ -36,8 +43,10 @@
     }
     .conteudo
     {
-        position:relative;
-        left: 15px;
+        float: left;
+        position: relative;
+        left: 35px;
+        text-align: right;
         font-size: small;
         font-family: Tahoma;
         text-transform:capitalize;
@@ -51,6 +60,6 @@
         float: right;
         text-align: right;
         position: relative;
-        right: 20px;
+        right: 35px;
     }
 </style>
