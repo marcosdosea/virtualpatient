@@ -37,8 +37,6 @@ namespace PacienteVirtual.Models.Turma
         [Display(Name = "ativa", ResourceType = typeof(Mensagem))]
         public bool Ativa { get; set; }
 
-        public bool Selecionar { get; set; }
-
         // dados da tela selecionar turma
         [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public String Instituicao { get; set; }
