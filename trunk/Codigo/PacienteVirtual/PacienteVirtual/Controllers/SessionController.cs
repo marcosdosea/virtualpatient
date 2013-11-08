@@ -151,7 +151,21 @@ namespace PacienteVirtual.Controllers
                 DemograficosAntropometricosModel demoAntro = (DemograficosAntropometricosModel)HttpContext.Current.Session["_DemograficosAntropometricos"];
                 if (demoAntro == null)
                 {
-                    demoAntro = new DemograficosAntropometricosModel();
+                    demoAntro = GerenciadorDemograficosAntropometricos.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
+                    if (demoAntro == null)
+                    {
+                        demoAntro = new DemograficosAntropometricosModel();
+                        demoAntro.IdConsultaFixo = ConsultaVariavel.IdConsultaFixo;
+                        demoAntro.Genero = "A";
+                        demoAntro.Nome = "";
+                        demoAntro.MedicosAtendem = "";
+                        demoAntro.MoradiaFamilia = "";
+                        demoAntro.OndeAdquireMedicamentos = "";
+                        demoAntro.IdEscolaridade = 1;
+                        demoAntro.IdOcupacao = 1;
+                        demoAntro.IdPlanoSaude = 1;
+                        GerenciadorDemograficosAntropometricos.GetInstance().Inserir(demoAntro);
+                    }
                     HttpContext.Current.Session["_DemograficosAntropometricos"] = demoAntro;
                 }
                 return demoAntro;

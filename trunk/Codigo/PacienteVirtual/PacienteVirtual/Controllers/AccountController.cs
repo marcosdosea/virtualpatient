@@ -87,9 +87,10 @@ namespace PacienteVirtual.Controllers
                 Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, null, out createStatus);
                 // inserir pessoa
 
+                MembershipUser usuario = string.IsNullOrEmpty(model.UserName) ? null : Membership.GetUser(model.UserName);
                 
                 PessoaModel pessoaModel = new PessoaModel();
-                pessoaModel.IdUser = GerenciadorPessoa.GetInstance().ObterQuantidadePessoa()+1;
+                pessoaModel.IdUser = (int) usuario.ProviderUserKey;
                 pessoaModel.Nome = model.Nome;
                 pessoaModel.Cpf = model.Cpf;
                 pessoaModel.Fone = model.Fone;
