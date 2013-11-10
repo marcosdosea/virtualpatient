@@ -15,33 +15,32 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".botaoMostrar").click(function () {
-            $(".mostrarQueixa").slideToggle(1200);
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".botaoMostrar").click(function () {
+                $(".mostrarQueixa").slideToggle(1200);
+            });
         });
-    });
-</script>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".botaoMostrar").mouseover(function () {
-            $(this).css("color", "#2162A3");
-        }),
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".botaoMostrar").mouseover(function () {
+                $(this).css("color", "#2162A3");
+            }),
   $(".botaoMostrar").mouseout(function () {
       $(this).css("color", "#2E8AE6");
   });
-    });
-</script>
-        <style type="text/css"> 
-            .mostrarQueixa
-            {
-                display:none;
-            }
-            </style>
+        });
+    </script>
+    <style type="text/css">
+        .mostrarQueixa
+        {
+            display: none;
+        }
+    </style>
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
@@ -93,5 +92,11 @@
     <% } %>
     <div class="btn btn-large btn-primary">
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
+    </div>
+    <p>
+    <br/><br/>
+    </p>
+    <div class="btn btn-large btn-primary" id="Div1">
+        <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
     </div>
 </asp:Content>

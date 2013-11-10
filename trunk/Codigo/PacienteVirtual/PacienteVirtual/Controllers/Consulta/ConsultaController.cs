@@ -86,6 +86,8 @@ namespace PacienteVirtual.Controllers
         {
             long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            consultaVariavelModel.IdEstadoConsulta = Global.EmPreenchimento;
+            GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
             ConsultaModel consultaModel = new ConsultaModel();
@@ -181,6 +183,25 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
 
             return View(consultaModel);
+        }
+
+        public ActionResult Concluir(long? idConsultaVariavel)
+        {
+            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Usuario)
+            {
+                consultaVariavelModel.IdEstadoConsulta = Global.AguardandoCorrecao;
+            }
+            else
+            {
+                if(SessionController.DadosTurmaPessoa.IdRole == Global.Tutor) 
+                {
+                    consultaVariavelModel.IdEstadoConsulta = Global.GabaritoDisponivel;
+                }
+            }
+            GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
+            return RedirectToAction("Index", "Home");
         }
 
     }

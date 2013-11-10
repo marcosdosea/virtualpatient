@@ -11,7 +11,6 @@ namespace PacienteVirtual.Controllers
         GerenciadorRelatoClinico gRelato = GerenciadorRelatoClinico.GetInstance();
         GerenciadorPaciente gPaciente = GerenciadorPaciente.GetInstance();
 
-
         //
         // GET: /RelatoClinico/Atribuir/5
         public ViewResult Atribuir(int idRelato, int idPaciente)
@@ -32,7 +31,7 @@ namespace PacienteVirtual.Controllers
             cfm = GerenciadorConsultaFixo.GetInstance().RetornaConsultaComMaiorId();
             // dados consulta variavel
             cvm.IdConsultaFixo = cfm.IdConsultaFixo;
-            cvm.IdEstadoConsulta = 1;
+            cvm.IdEstadoConsulta = Global.AguardandoPreenchimento;
             cvm.IdPessoa = idPessoa;
             cvm.IdTurma = idTurma;
             cvm.IdRelato = SessionController.IdRelato;
@@ -41,7 +40,7 @@ namespace PacienteVirtual.Controllers
             tprm.IdPessoa = idPessoa;
             tprm.IdTurma = idTurma;
             tprm.IdRelato = SessionController.IdRelato;
-            GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tprm);   
+            GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tprm);
             GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
             SessionController.IdRelato = 0;
             return RedirectToAction("Index", "RelatoClinico");

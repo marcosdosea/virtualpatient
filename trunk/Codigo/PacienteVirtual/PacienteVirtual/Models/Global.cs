@@ -14,6 +14,18 @@ namespace PacienteVirtual.Models
         public const int ID_TURMA = 1;
         public const int ID_PESSOA = 1;
         public const int IDRELATO = 1;
+
+        public const int AguardandoPreenchimento = 1;
+        public const int EmPreenchimento = 2;
+        public const int AguardandoCorrecao = 3;
+        public const int GabaritoDisponivel = 4;
+
+        // roles
+        public const int Administrador = 1;
+        public const int Usuario = 2;
+        public const int Tutor = 3;
+
+
     }
         
 }

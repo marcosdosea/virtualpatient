@@ -394,6 +394,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Concluir.
+        /// </summary>
+        public static string concluir {
+            get {
+                return ResourceManager.GetString("concluir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmar Senha.
         /// </summary>
         public static string confirme_senha {

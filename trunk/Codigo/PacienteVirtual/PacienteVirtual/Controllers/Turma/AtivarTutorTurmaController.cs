@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using PacienteVirtual.Negocio;
 using PacienteVirtual.Negocio.Turma;
 using PacienteVirtual.Models.Turma;
+using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers.Turma
 {
@@ -41,7 +42,7 @@ namespace PacienteVirtual.Controllers.Turma
         public ActionResult Ativar(int idTurma, int idPessoa)
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
-            tpm.IdRole = 3;
+            tpm.IdRole = Global.Tutor;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index", idTurma);
         }
@@ -50,7 +51,7 @@ namespace PacienteVirtual.Controllers.Turma
         public ActionResult Desativar(int idTurma, int idPessoa)
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
-            tpm.IdRole = 2;
+            tpm.IdRole = Global.Usuario;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index", idTurma);
 

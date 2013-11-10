@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MaintainScrollPositionOnPostback="true" MasterPageFile="~/Views/Shared/Site.Master"
     Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ConsultaModel>" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.consulta %>
 </asp:Content>
@@ -16,7 +15,6 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
-
     <!-- Solução das abas 1 com jquery -->
     <input type="hidden" value="<%: ViewBag.Abas1 %>" id="abas1" />
     <script type="text/javascript">
@@ -35,18 +33,18 @@
                 $("#tab1-3").addClass("tab-pane");
             });
         } else if (abas1 == 2) {
-        $(document).ready(function () {
-            $("#li1").removeClass("active");
-            $("#li2").addClass("active");
-            $("#li3").removeClass("active");
+            $(document).ready(function () {
+                $("#li1").removeClass("active");
+                $("#li2").addClass("active");
+                $("#li3").removeClass("active");
 
-            $("#tab1-1").removeClass("tab-pane active");
-            $("#tab1-1").addClass("tab-pane");
-            $("#tab1-2").removeClass("tab-pane");
-            $("#tab1-2").addClass("tab-pane active");
-            $("#tab1-3").removeClass("tab-pane active");
-            $("#tab1-3").addClass("tab-pane");
-        });
+                $("#tab1-1").removeClass("tab-pane active");
+                $("#tab1-1").addClass("tab-pane");
+                $("#tab1-2").removeClass("tab-pane");
+                $("#tab1-2").addClass("tab-pane active");
+                $("#tab1-3").removeClass("tab-pane active");
+                $("#tab1-3").addClass("tab-pane");
+            });
         } else if (abas1 == 3) {
             $(document).ready(function () {
                 $("#li1").removeClass("active");
@@ -62,7 +60,6 @@
             });
         }
     </script>
-
     <!-- Solução das abas 2 com jquery -->
     <input type="hidden" value="<%: ViewBag.Abas2 %>" id="abas2" />
     <script type="text/javascript">
@@ -244,14 +241,12 @@
             });
         }
     </script>
-
     <script type="text/javascript">
         var abas2 = document.getElementById('abas2').value;
         if (abas2 > 0) {
             location.href = "#ancora";
         }
     </script>
-
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
@@ -291,7 +286,6 @@
             </div>
         </div>
         <div class="span6">
-            
             <div class="thumbnails">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
@@ -300,7 +294,6 @@
                             <%: Resources.Mensagem.demografico_antropometricos %></a></li>
                         <li id="li3"><a href="#tab1-3" data-toggle="tab">
                             <%: Resources.Mensagem.experiencia_medicamentos %></a></li>
-                        
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
@@ -327,7 +320,7 @@
                 <div class="tabbable">
                     <!-- Only required for left/right tabs -->
                     <ul class="nav nav-tabs">
-                        <li id="li21" class="active"><a href="#tab2-1" data-toggle="tab" >
+                        <li id="li21" class="active"><a href="#tab2-1" data-toggle="tab">
                             <%: Resources.Mensagem.estilo_vida %></a></li>
                         <li id="li22"><a href="#tab2-2" data-toggle="tab">
                             <%: Resources.Mensagem.medicamentos_anteriores %></a></li>
@@ -391,47 +384,48 @@
         </div>
     </fieldset>
     <% } %>
-
-
     <style type="text/css">
-            #botaopos
-            {
-                position: relative;
-                left: 96%;
-                top: 80%;
-                margin-left: -110px;
-                margin-top: -40px;
-            }
-        </style>
+        #botaopos
+        {
+            position: relative;
+            left: 96%;
+            top: 80%;
+            margin-left: -110px;
+            margin-top: -40px;
+        }
+    </style>
     <div class="btn btn-large btn-primary">
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
     </div>
     <div class="btn btn-large btn-primary" id="botaopos">
         <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
     </div>
-
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $("#calendario").datepicker({
-            dateFormat: 'dd/mm/yy',
-            dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
-            dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-            dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-            monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-            monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-            changeMonth: true,
-            changeYear: true,
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            showOn: "button",
-            buttonImage: "../../Content/themes/pv/img/icons/calendar3.png",
-            buttonImageOnly: true
+    <p>
+    <br/><br/>
+    </p>
+    <div class="btn btn-large btn-primary" id="Div1">
+        <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
+    </div>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#calendario").datepicker({
+                dateFormat: 'dd/mm/yy',
+                dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+                dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+                dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                changeMonth: true,
+                changeYear: true,
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                showOn: "button",
+                buttonImage: "../../Content/themes/pv/img/icons/calendar3.png",
+                buttonImageOnly: true
+            });
         });
-    });
-</script>
-
+    </script>
 </asp:Content>
-
