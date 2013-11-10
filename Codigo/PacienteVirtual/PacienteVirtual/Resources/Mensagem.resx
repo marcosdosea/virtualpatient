@@ -873,4 +873,7 @@
   <data name="atribuir" xml:space="preserve">
     <value>Atribuir</value>
   </data>
+  <data name="concluir" xml:space="preserve">
+    <value>Concluir</value>
+  </data>
 </root>
