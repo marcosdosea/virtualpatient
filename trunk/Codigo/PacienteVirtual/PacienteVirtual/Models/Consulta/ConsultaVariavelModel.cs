@@ -47,5 +47,9 @@ namespace PacienteVirtual.Models
 
         public string ComentariosTutor { get; set; }
 
+        public string NomePessoa { get; set; }
+
+        public string NomeTurma { get; set; }
+
     }
 }
