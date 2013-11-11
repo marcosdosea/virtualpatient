@@ -201,7 +201,7 @@ namespace PacienteVirtual.Controllers
                 }
             }
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Consulta");
         }
 
     }

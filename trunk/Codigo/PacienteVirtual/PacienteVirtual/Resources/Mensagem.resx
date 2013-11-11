@@ -876,4 +876,13 @@
   <data name="concluir" xml:space="preserve">
     <value>Concluir</value>
   </data>
+  <data name="consultas" xml:space="preserve">
+    <value>Consultas</value>
+  </data>
+  <data name="consultas_alunos" xml:space="preserve">
+    <value>Consultas dos Alunos</value>
+  </data>
+  <data name="corrigir" xml:space="preserve">
+    <value>Corrigir</value>
+  </data>
 </root>

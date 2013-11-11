@@ -19,9 +19,15 @@ namespace PacienteVirtual.Models
         [Display(Name = "turma_codigo", ResourceType = typeof(Mensagem))]
         public int IdTurma { get; set; }
 
+        [Display(Name = "turma", ResourceType = typeof(Mensagem))]
+        public string NomeTurma { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "pessoa_codigo", ResourceType = typeof(Mensagem))]
         public int IdPessoa { get; set; }
+
+        [Display(Name = "nome_pessoa", ResourceType = typeof(Mensagem))]
+        public string NomePessoa { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "relato_codigo", ResourceType = typeof(Mensagem))]
