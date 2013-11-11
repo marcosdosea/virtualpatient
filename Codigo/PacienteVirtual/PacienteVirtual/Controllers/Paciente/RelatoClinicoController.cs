@@ -25,21 +25,23 @@ namespace PacienteVirtual.Controllers
         public ActionResult AtribuirRelato(int idTurma, int idPessoa)
         {
             ConsultaFixoModel cfm = new ConsultaFixoModel();
-            GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
+            long idConsultaFixo = GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
+            
             ConsultaVariavelModel cvm = new ConsultaVariavelModel();
             TurmaPessoaRelatoModel tprm = new TurmaPessoaRelatoModel();
-            cfm = GerenciadorConsultaFixo.GetInstance().RetornaConsultaComMaiorId();
+            
             // dados consulta variavel
-            cvm.IdConsultaFixo = cfm.IdConsultaFixo;
+            cvm.IdConsultaFixo = idConsultaFixo;
             cvm.IdEstadoConsulta = Global.AguardandoPreenchimento;
             cvm.IdPessoa = idPessoa;
             cvm.IdTurma = idTurma;
             cvm.IdRelato = SessionController.IdRelato;
             // dados turma pessoa relato
-            tprm.IdConsultaFixo = cfm.IdConsultaFixo;
+            tprm.IdConsultaFixo = idConsultaFixo;
             tprm.IdPessoa = idPessoa;
             tprm.IdTurma = idTurma;
             tprm.IdRelato = SessionController.IdRelato;
+            
             GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tprm);
             GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
             SessionController.IdRelato = 0;
