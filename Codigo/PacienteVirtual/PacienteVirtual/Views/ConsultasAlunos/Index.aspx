@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.TurmaPessoaRelatoModel>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.ConsultaVariavelModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.consultas_alunos %>
@@ -29,9 +29,9 @@
                 .Filterable(true);
 
         /* Adding "CompanyName" column: */
-        columns.Add(o => o.EstadoPreenchimento)
+        columns.Add(o => o.DescricaoEstadoConsulta)
                 .Titled(Resources.Mensagem.estado_preenchimento)
-                .ThenSortByDescending(o => o.EstadoPreenchimento)
+                .ThenSortByDescending(o => o.DescricaoEstadoConsulta)
                 .Filterable(true);
 
         /* Adding "CompanyName" column: */
@@ -53,7 +53,7 @@
                 .Encoded(false)
                 .Sanitized(false)
                 .SetWidth(30)
-                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.remover, "Delete", null, new { @class = "modal-link" }));
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.remover, "Delete", new { idConsultaVariavel = o.IdConsultaVariavel, idEstadoConsulta = o.IdEstadoConsulta }, new { @class = "modal-link" }));
 
     }).WithPaging(5).Sortable().ToHtmlString()%>
 

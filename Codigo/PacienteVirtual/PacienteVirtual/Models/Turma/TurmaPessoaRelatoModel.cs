@@ -19,15 +19,9 @@ namespace PacienteVirtual.Models
         [Display(Name = "turma_codigo", ResourceType = typeof(Mensagem))]
         public int IdTurma { get; set; }
 
-        [Display(Name = "turma", ResourceType = typeof(Mensagem))]
-        public string NomeTurma { get; set; }
-
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "pessoa_codigo", ResourceType = typeof(Mensagem))]
         public int IdPessoa { get; set; }
-
-        [Display(Name = "nome_pessoa", ResourceType = typeof(Mensagem))]
-        public string NomePessoa { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "relato_codigo", ResourceType = typeof(Mensagem))]
@@ -36,10 +30,6 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "consulta_dados_fixos_codigo", ResourceType = typeof(Mensagem))]
         public long IdConsultaFixo { get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "estado_preenchimento", ResourceType = typeof(Mensagem))]
-        public string EstadoPreenchimento { get; set; }
 
         [Display(Name = "ordem_cronologica", ResourceType = typeof(Mensagem))]
         public int OrdemCronologica { get; set; }

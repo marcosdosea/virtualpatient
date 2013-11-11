@@ -113,7 +113,9 @@ namespace PacienteVirtual.Negocio
                             NivelDificuldade = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.NivelDificuldade,
                             OrdemCronologica = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.OrdemCronologia,
 
-                            IdPaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.IdPaciente
+                            IdPaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.IdPaciente,
+                            NomePessoa = tb_consulta_variavel.tb_turma_pessoa_relato.tb_turma_pessoa.tb_pessoa.Nome,
+                            NomeTurma = tb_consulta_variavel.tb_turma_pessoa_relato.tb_turma_pessoa.tb_turma.Codigo
                         };
             return query;
         }
