@@ -4,19 +4,19 @@
 window.GridMvc = window.GridMvc || {};
 window.GridMvc.lang = window.GridMvc.lang || {};
 GridMvc.lang.ru = {
-    filterTypeLabel: "Тип фильтра: ",
-    filterValueLabel: "Значение:",
-    applyFilterButtonText: "Применить",
+    filterTypeLabel: "Tipo: ",
+    filterValueLabel: "Valor:",
+    applyFilterButtonText: "Confirmar",
     filterSelectTypes: {
-        Equals: "Равно",
-        StartsWith: "Начинается с",
-        Contains: "Содержит",
-        EndsWith: "Оканчивается",
-        GreaterThan: "Больше",
-        LessThan: "Меньше"
+        Equals: "Exatamente",
+        StartsWith: "Começa com",
+        Contains: "Contém",
+        EndsWith: "Fim com",
+        GreaterThan: "Mais",
+        LessThan: "Menos"
     },
     code: 'ru',
-    boolTrueLabel: "Да",
-    boolFalseLabel: "Нет",
-    clearFilterLabel: "Очистить фильтр"
+    boolTrueLabel: "Sim",
+    boolFalseLabel: "Não",
+    clearFilterLabel: "Limpar Filtro"
 };

@@ -40,8 +40,9 @@ GridMvc = (function ($) {
     gridMvc.prototype.init = function () {
         //load current lang options:
         this.lang = GridMvc.lang[this.options.lang];
-        if (typeof (this.lang) == 'undefined')
+        if (typeof (this.lang) == 'undefined') {
             this.lang = GridMvc.lang.en;
+        }
         this.events = [];
         if (this.options.selectable)
             this.initGridRowsEvents();
@@ -383,21 +384,21 @@ GridMvc = (function ($) {
 if (typeof (GridMvc.lang) == 'undefined')
     GridMvc.lang = {};
 GridMvc.lang.en = {
-    filterTypeLabel: "Type: ",
-    filterValueLabel: "Value:",
-    applyFilterButtonText: "Apply",
+    filterTypeLabel: "Tipo: ",
+    filterValueLabel: "Valor:",
+    applyFilterButtonText: "Confirmar",
     filterSelectTypes: {
-        Equals: "Equals",
-        StartsWith: "StartsWith",
-        Contains: "Contains",
-        EndsWith: "EndsWith",
-        GreaterThan: "Greater than",
-        LessThan: "Less than"
+        Equals: "Exatamente",
+        StartsWith: "Começa com",
+        Contains: "Contém",
+        EndsWith: "Fim com",
+        GreaterThan: "Mais",
+        LessThan: "Menos"
     },
     code: 'en',
-    boolTrueLabel: "Yes",
-    boolFalseLabel: "No",
-    clearFilterLabel: "Clear filter"
+    boolTrueLabel: "Sim",
+    boolFalseLabel: "Não",
+    clearFilterLabel: "Limpar Filtro"
 };
 /***
 * ============= FILTER WIDGETS =============
