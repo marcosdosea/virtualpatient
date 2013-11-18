@@ -107,7 +107,7 @@ namespace PacienteVirtual.Negocio
                             IdRazaoEncontro = tb_consulta_variavel.IdRazaoEncontro,
                             DescricaoRazao = tb_consulta_variavel.tb_razao_encontro.DescricaoRazao, // meu teste
                             DataPreenchimento = (DateTime)tb_consulta_variavel.DataPreenchimento,
-                            Lembretes = tb_consulta_variavel.Lembretes,
+                            ResumoPlanoCuidados = tb_consulta_variavel.ResumoPlanoCuidados,
                             ComentariosTutor = tb_consulta_variavel.ComentariosTutor,
                             NomePaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.Nome,
                             NivelDificuldade = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.NivelDificuldade,
@@ -198,7 +198,7 @@ namespace PacienteVirtual.Negocio
             _consultaVariavelE.IdRazaoEncontro = consultaVariavel.IdRazaoEncontro;
             _consultaVariavelE.idEstadoConsulta = consultaVariavel.IdEstadoConsulta;
             _consultaVariavelE.DataPreenchimento = (DateTime)consultaVariavel.DataPreenchimento;
-            _consultaVariavelE.Lembretes = consultaVariavel.Lembretes;
+            _consultaVariavelE.ResumoPlanoCuidados = consultaVariavel.ResumoPlanoCuidados;
             _consultaVariavelE.ComentariosTutor = consultaVariavel.ComentariosTutor;
         }
     }
