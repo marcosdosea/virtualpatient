@@ -43,7 +43,7 @@ namespace PacienteVirtual.Models
 
         public DateTime DataPreenchimento { get; set; }
 
-        public string Lembretes { get; set; }
+        public string ResumoPlanoCuidados { get; set; }
 
         public string ComentariosTutor { get; set; }
 
