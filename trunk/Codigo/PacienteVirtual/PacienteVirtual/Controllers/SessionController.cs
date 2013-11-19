@@ -188,12 +188,12 @@ namespace PacienteVirtual.Controllers
                     {
                         experiencia = new ExperienciaMedicamentosModel();
                         experiencia.IdConsultaFixo = ConsultaVariavel.IdConsultaFixo;
-                        experiencia.IdRespostaComportamento = 1;
-                        experiencia.IdRespostaCultural = 1;
-                        experiencia.IdRespostaEsperaTratamento = 1;
-                        experiencia.IdRespostaGrauEntendimento = 1;
-                        experiencia.IdRespostaIncorporadoPlano = 1;
-                        experiencia.IdRespostaPreocupacoes = 1;
+                        experiencia.IdRespostaComportamento = 3;
+                        experiencia.IdRespostaCultural = 3;
+                        experiencia.IdRespostaEsperaTratamento = 3;
+                        experiencia.IdRespostaGrauEntendimento = 3;
+                        experiencia.IdRespostaIncorporadoPlano = 3;
+                        experiencia.IdRespostaPreocupacoes = 3;
                         GerenciadorExperienciaMedicamentos.GetInstance().Inserir(experiencia);
                     }
                     HttpContext.Current.Session["_ExperienciaMedicamentos"] = experiencia;

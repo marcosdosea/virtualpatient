@@ -112,6 +112,7 @@ namespace PacienteVirtual.Negocio
                             NomePaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.Nome,
                             NivelDificuldade = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.NivelDificuldade,
                             OrdemCronologica = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.OrdemCronologia,
+                            NotaAluno = tb_consulta_variavel.NotaAluno,
 
                             IdPaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.IdPaciente,
                             NomePessoa = tb_consulta_variavel.tb_turma_pessoa_relato.tb_turma_pessoa.tb_pessoa.Nome,

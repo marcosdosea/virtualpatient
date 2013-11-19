@@ -10,8 +10,9 @@
         <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
         <%: Html.HiddenFor(model => model.IdEstadoConsulta) %>
         <%: Html.HiddenFor(model => model.DataPreenchimento) %>
-        <%: Html.HiddenFor(model => model.Lembretes) %>
+        <%: Html.HiddenFor(model => model.ResumoPlanoCuidados) %>
         <%: Html.HiddenFor(model => model.ComentariosTutor) %>
+        <%: Html.HiddenFor(model => model.NotaAluno) %>
         <div class="row-fluid">
         <div class="span6">
             <div class="editor-field" >

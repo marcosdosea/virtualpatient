@@ -51,5 +51,7 @@ namespace PacienteVirtual.Models
 
         public string NomeTurma { get; set; }
 
+        public decimal NotaAluno { get; set; }
+
     }
 }
