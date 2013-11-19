@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DesktopBuildPackageLocation>C:\Users\Marcos Dósea\Desktop\pv\PacienteVirtual.zip</DesktopBuildPackageLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -473,7 +474,6 @@
     <Content Include="Content\themes\pv\js\imperio.forms.js" />
     <Content Include="Content\themes\pv\js\imperio.general.js" />
     <Content Include="Content\themes\pv\js\imperio.tables.js" />
-    <Content Include="Content\themes\pv\js\jquery-1.9.1.js" />
     <Content Include="Content\themes\pv\js\jquery-ui.js" />
     <Content Include="Content\themes\pv\js\jquery.dataTables.js" />
     <Content Include="Content\themes\pv\js\jquery.dataTables.min.js" />
