@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.ConsultaVariavelModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.consultas_alunos %>
+    <%: Resources.Mensagem.consultas_correcao %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2><%: Resources.Mensagem.consultas_alunos %></h2>
+<h2><%: Resources.Mensagem.consultas_correcao%></h2>
 
 <%@ Import Namespace="GridMvc.Html" %>
 <%@ Import Namespace="GridMvc.Sorting" %>

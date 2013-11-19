@@ -879,10 +879,16 @@
   <data name="consultas" xml:space="preserve">
     <value>Consultas</value>
   </data>
-  <data name="consultas_alunos" xml:space="preserve">
-    <value>Consultas dos Alunos</value>
+  <data name="consultas_correcao" xml:space="preserve">
+    <value>Correção das Consultas</value>
   </data>
   <data name="corrigir" xml:space="preserve">
     <value>Corrigir</value>
+  </data>
+  <data name="justificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="outro" xml:space="preserve">
+    <value>Outro</value>
   </data>
 </root>

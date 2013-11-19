@@ -23,7 +23,7 @@
         /* Adding "CompanyName" column: */
         columns.Add(o => o.Descricao)
                 .Titled(Resources.Mensagem.ocupacao)
-                .ThenSortByDescending(o => o.DescricaoAlergia)
+                .ThenSortByDescending(o => o.Descricao)
                 .Filterable(true);
 
         /* Adding not mapped column, that renders body, using inline Razor html helper */

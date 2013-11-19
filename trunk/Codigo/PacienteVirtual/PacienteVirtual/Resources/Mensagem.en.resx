@@ -127,7 +127,7 @@
     <value>Institution Code</value>
   </data>
   <data name="consulta_dados_fixos" xml:space="preserve">
-    <value>Data Consultation Fixed </value>
+    <value>Data Query Fixed </value>
   </data>
   <data name="criar" xml:space="preserve">
     <value>Create</value>
@@ -253,7 +253,7 @@
     <value>Caution - Concerns</value>
   </data>
   <data name="consulta" xml:space="preserve">
-    <value>Consultation</value>
+    <value>Query</value>
   </data>
   <data name="eh_gabarito" xml:space="preserve">
     <value>Is Feedback</value>
@@ -274,7 +274,7 @@
     <value>History of Medicines Previous</value>
   </data>
   <data name="consulta_dados_variaveis" xml:space="preserve">
-    <value>Data Consultation Variable</value>
+    <value>Data Query Variable</value>
   </data>
   <data name="descricao" xml:space="preserve">
     <value>Description</value>
@@ -295,10 +295,10 @@
     <value>Institution Name</value>
   </data>
   <data name="consulta_dados_fixos_codigo" xml:space="preserve">
-    <value>Data Consultation Fixed Code</value>
+    <value>Data Query Fixed Code</value>
   </data>
   <data name="consulta_dados_variaveis_codigo" xml:space="preserve">
-    <value>Data Consultation Variable Code</value>
+    <value>Data Query Variable Code</value>
   </data>
   <data name="pergunta_codigo" xml:space="preserve">
     <value>Code Question</value>
@@ -439,7 +439,7 @@
     <value>Name</value>
   </data>
   <data name="consulta_variavel_codigo" xml:space="preserve">
-    <value>Data Consultation Variable Code</value>
+    <value>Data Query Variable Code</value>
   </data>
   <data name="indicacao" xml:space="preserve">
     <value>Indication</value>
@@ -490,7 +490,7 @@
     <value>Consumption of Tobacco</value>
   </data>
   <data name="consulta_variavel" xml:space="preserve">
-    <value>Variable Consultation</value>
+    <value>Variable Query</value>
   </data>
   <data name="estilo_vida" xml:space="preserve">
     <value>Lifestyle</value>
@@ -805,7 +805,7 @@
     <value>Enable Tutor in Class</value>
   </data>
   <data name="consulta2" xml:space="preserve">
-    <value>Consultation 2</value>
+    <value>Query 2</value>
   </data>
   <data name="kg" xml:space="preserve">
     <value>Kg</value>
@@ -877,12 +877,18 @@
     <value>Complete</value>
   </data>
   <data name="consultas" xml:space="preserve">
-    <value>Consultations</value>
+    <value>Queries</value>
   </data>
-  <data name="consultas_alunos" xml:space="preserve">
-    <value>Student's Consultation</value>
+  <data name="consultas_correcao" xml:space="preserve">
+    <value>Correct Query</value>
   </data>
   <data name="corrigir" xml:space="preserve">
     <value>To correct</value>
+  </data>
+  <data name="justificativa" xml:space="preserve">
+    <value>Justification</value>
+  </data>
+  <data name="outro" xml:space="preserve">
+    <value>Other</value>
   </data>
 </root>
