@@ -15,6 +15,12 @@
                 <%: Resources.Mensagem.descricao_queixa %>
             </th>
             <th>
+                <%: Resources.Mensagem.descricao_situacao %>
+            </th>
+            <th>
+                <%: Resources.Mensagem.descricao_objetivo_terapeutico %>
+            </th>
+            <th>
                 <%: Resources.Mensagem.tipo %>
             </th>
             <th>
@@ -33,6 +39,12 @@
         <tr>
             <td>
                 <%: Html.DisplayFor(modelItem => item.DescricaoQueixa) %>
+            </td>
+            <td>
+                <%: Html.DisplayFor(modelItem => item.DescricaoSituacao) %>
+            </td>
+            <td>
+                <%: Html.DisplayFor(modelItem => item.DescricaoObjetivoTerapeutico) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Tipo) %>

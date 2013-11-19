@@ -75,6 +75,32 @@
             </div>
         </div>
     </div>
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.DescricaoObjetivoTerapeutico) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-field">
+                <%: Html.DropDownList("IdObjetivoTerapeutico", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdObjetivoTerapeutico) %>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.DescricaoSituacao) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-field">
+                <%: Html.DropDownList("IdSituacaoQueixa", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdSituacaoQueixa) %>
+            </div>
+        </div>
+    </div>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>

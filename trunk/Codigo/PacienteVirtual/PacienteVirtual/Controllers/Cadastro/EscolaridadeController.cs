@@ -83,7 +83,6 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            string nivelEscolaridade = GerenciadorEscolaridade.GetInstance().Obter(id).Nivel;
             GerenciadorEscolaridade.GetInstance().Remover(id);   
             return RedirectToAction("Index");
         }
