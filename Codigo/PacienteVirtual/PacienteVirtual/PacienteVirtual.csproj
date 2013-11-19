@@ -145,6 +145,8 @@
   <ItemGroup>
     <Compile Include="Controllers\Cadastro\GrupoIntervencaoController.cs" />
     <Compile Include="Controllers\Cadastro\IntervencaoController.cs" />
+    <Compile Include="Controllers\Cadastro\ObjetivoTerapeuticoController.cs" />
+    <Compile Include="Controllers\Cadastro\SituacaoQueixaController.cs" />
     <Compile Include="Controllers\Cadastro\SuspeitaPrmController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaParametroController.cs" />
     <Compile Include="Controllers\Consulta\ConsultasAlunosController.cs" />
@@ -157,11 +159,12 @@
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
     <Compile Include="Models\Cadastro\GrupoIntervencaoModel.cs" />
     <Compile Include="Models\Cadastro\IntervencaoModel.cs" />
+    <Compile Include="Models\Cadastro\ObjetivoTerapeuticoModel.cs" />
+    <Compile Include="Models\Cadastro\SituacaoQueixaModel.cs" />
     <Compile Include="Models\Cadastro\SuspeitaPrmModel.cs" />
     <Compile Include="Models\Consulta\AlergiaExamesFisicosModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
-    <Compile Include="Models\Consulta\IntervencaoFarmaceuticaModel.cs" />
     <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
     <Compile Include="Models\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -172,6 +175,8 @@
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorGrupoIntervencao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorIntervencao.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorObjetivoTerapeutico.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorSituacaoQueixa.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorSuspeitaPrm.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
@@ -548,6 +553,11 @@
     <Content Include="Views\MedicamentoPrescrito\Index.ascx" />
     <Content Include="Views\MedicamentosAnteriores\Create.ascx" />
     <Content Include="Views\MedicamentosAnteriores\Index.ascx" />
+    <Content Include="Views\ObjetivoTerapeutico\Create.aspx" />
+    <Content Include="Views\ObjetivoTerapeutico\Delete.aspx" />
+    <Content Include="Views\ObjetivoTerapeutico\Details.aspx" />
+    <Content Include="Views\ObjetivoTerapeutico\Edit.aspx" />
+    <Content Include="Views\ObjetivoTerapeutico\Index.aspx" />
     <Content Include="Views\QueixaMedicamento\Create.ascx" />
     <Content Include="Views\QueixaMedicamento\Index.ascx" />
     <Content Include="Views\Queixa\Create.aspx" />
@@ -566,6 +576,11 @@
     <Content Include="Views\ExperienciaMedicamentos\Edit.ascx" />
     <Content Include="Views\Consulta\Index.aspx" />
     <Content Include="Views\RelatoClinico\DetailsConsulta.ascx" />
+    <Content Include="Views\SituacaoQueixa\Create.aspx" />
+    <Content Include="Views\SituacaoQueixa\Delete.aspx" />
+    <Content Include="Views\SituacaoQueixa\Details.aspx" />
+    <Content Include="Views\SituacaoQueixa\Edit.aspx" />
+    <Content Include="Views\SituacaoQueixa\Index.aspx" />
     <Content Include="Views\SolicitarMatriculaTurma\Index.aspx" />
     <Content Include="Views\SuspeitaPrm\Create.aspx" />
     <Content Include="Views\SuspeitaPrm\Delete.aspx" />

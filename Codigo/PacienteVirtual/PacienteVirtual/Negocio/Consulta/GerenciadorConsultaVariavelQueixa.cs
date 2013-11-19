@@ -99,10 +99,14 @@ namespace PacienteVirtual.Negocio
                         {
                             IdConsultaVariavel = tb_consulta_variavel_queixa.IdConsultaVariavel,
                             IdQueixa = tb_consulta_variavel_queixa.IdQueixa,
+                            IdObjetivoTerapeutico = tb_consulta_variavel_queixa.IdObjetivoTerapeutico,
+                            IdSituacaoQueixa = tb_consulta_variavel_queixa.IdSituacaoQueixa,
                             Tipo = tb_consulta_variavel_queixa.Tipo,
                             Desde = tb_consulta_variavel_queixa.Desde,
                             Prioridade = (int) tb_consulta_variavel_queixa.Prioridade,
 
+                            DescricaoSituacao = tb_consulta_variavel_queixa.tb_situacao_queixa.Descricao,
+                            DescricaoObjetivoTerapeutico = tb_consulta_variavel_queixa.tb_objetivo_terapeutico.Descricao,
                             DescricaoQueixa = tb_consulta_variavel_queixa.tb_queixa.DescricaoQueixa
                         };
             return query;
@@ -145,6 +149,8 @@ namespace PacienteVirtual.Negocio
         {
             _consultaVariavelQueixaE.IdConsultaVariavel = consultaVariavelQueixa.IdConsultaVariavel;
             _consultaVariavelQueixaE.IdQueixa = consultaVariavelQueixa.IdQueixa;
+            _consultaVariavelQueixaE.IdObjetivoTerapeutico = consultaVariavelQueixa.IdObjetivoTerapeutico;
+            _consultaVariavelQueixaE.IdSituacaoQueixa = consultaVariavelQueixa.IdSituacaoQueixa;
             _consultaVariavelQueixaE.Tipo = consultaVariavelQueixa.Tipo;
             _consultaVariavelQueixaE.Desde = consultaVariavelQueixa.Desde;
             _consultaVariavelQueixaE.Prioridade = consultaVariavelQueixa.Prioridade;

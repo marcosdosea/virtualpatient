@@ -891,4 +891,16 @@
   <data name="outro" xml:space="preserve">
     <value>Outro</value>
   </data>
+  <data name="descricao_objetivo_terapeutico" xml:space="preserve">
+    <value>Descrição do Objetivo Terapeutico</value>
+  </data>
+  <data name="descricao_situacao" xml:space="preserve">
+    <value>Descrição da Situação</value>
+  </data>
+  <data name="objetivo_terapeutico" xml:space="preserve">
+    <value>Objetivo Terapeutico</value>
+  </data>
+  <data name="situacao_queixa" xml:space="preserve">
+    <value>Situação Queixa</value>
+  </data>
 </root>

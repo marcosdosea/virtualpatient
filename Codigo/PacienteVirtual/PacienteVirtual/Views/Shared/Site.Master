@@ -149,6 +149,13 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.resposta, "Index", "Resposta")%>
                                         </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.objetivo_terapeutico, "Index", "ObjetivoTerapeutico")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.situacao_queixa, "Index", "SituacaoQueixa")%>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
