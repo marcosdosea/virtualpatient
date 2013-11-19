@@ -502,11 +502,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consultas dos Alunos.
+        ///   Looks up a localized string similar to Correção das Consultas.
         /// </summary>
-        public static string consultas_alunos {
+        public static string consultas_correcao {
             get {
-                return ResourceManager.GetString("consultas_alunos", resourceCulture);
+                return ResourceManager.GetString("consultas_correcao", resourceCulture);
             }
         }
         
@@ -1222,6 +1222,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Justificativa.
+        /// </summary>
+        public static string justificativa {
+            get {
+                return ResourceManager.GetString("justificativa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kg.
         /// </summary>
         public static string kg {
@@ -1596,6 +1605,15 @@ namespace Resources {
         public static string ordem_cronologica {
             get {
                 return ResourceManager.GetString("ordem_cronologica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outro.
+        /// </summary>
+        public static string outro {
+            get {
+                return ResourceManager.GetString("outro", resourceCulture);
             }
         }
         

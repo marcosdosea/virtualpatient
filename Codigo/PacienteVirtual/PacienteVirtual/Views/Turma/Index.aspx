@@ -23,8 +23,11 @@
         /* Adding "CompanyName" column: */
         columns.Add(o => o.Ativa)
                 .Titled(Resources.Mensagem.ativa)
-                .ThenSortByDescending(o => o.Ativa)
-                .Filterable(true);
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .Filterable(true)
+                .RenderValueAs(o => Html.CheckBox("checked", o.Ativa));
 
         /* Adding "CompanyName" column: */
         columns.Add(o => o.Codigo)

@@ -216,7 +216,7 @@
                                             <%: Html.ActionLink(Resources.Mensagem.consulta, "Index", "Consulta")%>
                                         </li>
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.consultas_alunos, "Index", "ConsultasAlunos")%>
+                                            <%: Html.ActionLink(Resources.Mensagem.consultas_correcao, "Index", "ConsultasCorrecao")%>
                                         </li>
                                     </ul>
                                 </li>
