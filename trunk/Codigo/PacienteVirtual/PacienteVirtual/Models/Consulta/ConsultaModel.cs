@@ -43,6 +43,9 @@ namespace PacienteVirtual.Models
         public AlergiaExamesFisicosModel AlergiaExamesFisicos { get; set; }
         public ExamesFisicosModel ExamesFisicos { get; set; }
         public IEnumerable<AlergiaModel> ListaAlergia { get; set; }
+
+        public IntervencaoConsultaModel IntervencaoConsulta { get; set; }
+        public IEnumerable<IntervencaoConsultaModel> ListaIntervencaoConsulta { get; set; }
         //public QueixaModel Queixas
 
         // medicamento relacionados a queixa

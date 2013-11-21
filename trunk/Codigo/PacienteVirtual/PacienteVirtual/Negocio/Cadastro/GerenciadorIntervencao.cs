@@ -145,5 +145,10 @@ namespace PacienteVirtual.Negocio.Cadastro
             _intervencaoE.DescricaoIntervencao = intervencao.DescricaoIntervencao;
             _intervencaoE.IdGrupoIntervencao = intervencao.IdGrupoIntervencao;
         }
+
+        public IEnumerable<IntervencaoModel> ObterPorGrupoIntervencao(int idGrupoIntervencao)
+        {
+            return GetQuery().Where(intervencao => intervencao.IdGrupoIntervencao == idGrupoIntervencao).ToList();
+        }
     }
 }

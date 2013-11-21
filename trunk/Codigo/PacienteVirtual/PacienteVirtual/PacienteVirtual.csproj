@@ -154,6 +154,7 @@
     <Compile Include="Controllers\Consulta\ConsultasAlunosController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
+    <Compile Include="Controllers\Consulta\IntervencaoConsultaController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\AtivarTutorTurmaController.cs" />
@@ -166,8 +167,10 @@
     <Compile Include="Models\Cadastro\SituacaoQueixaModel.cs" />
     <Compile Include="Models\Cadastro\SuspeitaPrmModel.cs" />
     <Compile Include="Models\Consulta\AlergiaExamesFisicosModel.cs" />
+    <Compile Include="Models\Consulta\CartaModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
+    <Compile Include="Models\Consulta\IntervencaoConsultaModel.cs" />
     <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
     <Compile Include="Models\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -184,6 +187,7 @@
     <Compile Include="Negocio\Cadastro\GerenciadorSuspeitaPrm.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorIntervencaoConsulta.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Resources\Mensagem.en.designer.cs">
@@ -546,12 +550,13 @@
     <Content Include="Views\GrupoIntervencao\Edit.aspx" />
     <Content Include="Views\GrupoIntervencao\Index.aspx" />
     <Content Include="Views\Historia\Edit.ascx" />
+    <Content Include="Views\IntervencaoConsulta\Create.ascx" />
+    <Content Include="Views\IntervencaoConsulta\Index.ascx" />
     <Content Include="Views\Intervencao\Create.aspx" />
     <Content Include="Views\Intervencao\Delete.aspx" />
     <Content Include="Views\Intervencao\Details.aspx" />
     <Content Include="Views\Intervencao\Edit.aspx" />
     <Content Include="Views\Intervencao\Index.aspx" />
-    <Content Include="Views\Intervencao\EditConsulta.ascx" />
     <Content Include="Views\MedicamentoNaoPrescrito\Create.ascx" />
     <Content Include="Views\MedicamentoNaoPrescrito\Index.ascx" />
     <Content Include="Views\MedicamentoPrescrito\Create.ascx" />

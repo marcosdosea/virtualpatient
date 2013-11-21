@@ -2,39 +2,54 @@
 <% if (Model != null)
    { %>
 <div class="direita">
-    <div>
-        <p class="cabecalho"><%: Resources.Mensagem.turma %>:</p>
-        <p class="conteudo"><%: Model.NomeTurma %></p>
+    <div class="row-fluid">
+        <% if (Model.NomeRole == ("administrador"))
+       { %>
+           <div class="span4">
+       <% } else { %>
+           <div class="span6">
+       <% } %>
+            <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.turma %>:</p>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="editor-label">
+                <p class="conteudo"><%: Model.NomeTurma %></p>
+            </div>
+        </div>
     </div>
-    <div>
-        <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
-        <p class="conteudo"><%: Model.NomeRole %></p>
+    <div class="row-fluid">
+    <% if (Model.NomeRole == ("usuario"))
+       { %>
+           <div class="span6">
+       <% } else { %>
+           <div class="span5">
+       <% } %>
+            <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <p class="conteudo"><%: Model.NomeRole %></p>
+            </div>
+        </div>
     </div>
     <% if (ViewBag.QtdTurmaPessoa > 1)
        { %>
-           <div class="btn btn-primary" id="botao">
-                <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small; "}) %>
+       <div class="row-fluid">
+            <div class="span12">
+               <div class="btn btn-primary">
+                    <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small; "}) %>
+                </div>
             </div>
-            <br />
-            <br />
-            <br />
+        </div>
       <% } %>
-    
-    <br />
-    <br />
 </div>
 <% } %>
 
 <style>
-    #botao
-    {
-        float: right;
-    }
-    .cabecalho, conteudo
-    {
-        display: block;
-        float: left;
-    }
     .cabecalho
     {
         font-size: medium;
@@ -43,9 +58,6 @@
     }
     .conteudo
     {
-        float: left;
-        position: relative;
-        left: 35px;
         text-align: right;
         font-size: small;
         font-family: Tahoma;
@@ -59,7 +71,5 @@
     {
         float: right;
         text-align: right;
-        position: relative;
-        right: 35px;
     }
 </style>

@@ -654,5 +654,41 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_NumeroAba2"] = value;
             }
         }
+
+        public static IEnumerable<IntervencaoConsultaModel> ListaIntervencaoConsulta
+        {
+            get
+            {
+                IEnumerable<IntervencaoConsultaModel> listaIntervencaoConsulta = (IEnumerable<IntervencaoConsultaModel>)HttpContext.Current.Session["_listaIntervencaoConsulta"];
+                if (listaIntervencaoConsulta == null)
+                {
+                    listaIntervencaoConsulta = GerenciadorIntervencaoConsulta.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_listaIntervencaoConsulta"] = listaIntervencaoConsulta;
+                }
+                return listaIntervencaoConsulta;
+            }
+            set
+            {
+                HttpContext.Current.Session["_listaIntervencaoConsulta"] = value;
+            }
+        }
+
+        public static int IdGrupoIntervencao
+        {
+            get
+            {
+                int idGrupoIntervencao = (int)HttpContext.Current.Session["_IdGrupoIntervencao"];
+                if (idGrupoIntervencao < 1)
+                {
+                    idGrupoIntervencao = 0;
+                    HttpContext.Current.Session["_IdGrupoIntervencao"] = idGrupoIntervencao;
+                }
+                return idGrupoIntervencao;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdGrupoIntervencao"] = value;
+            }
+        }
     }
 }
