@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tempo de Geração: 21/11/2013 às 08h32min
+-- Tempo de Geração: 21/11/2013 às 08h39min
 -- Versão do Servidor: 5.1.56
 -- Versão do PHP: 5.3.8
 
@@ -855,8 +855,8 @@ CREATE TABLE IF NOT EXISTS `tb_consulta_variavel` (
 --
 
 INSERT INTO `tb_consulta_variavel` (`IdConsultaVariavel`, `IdTurma`, `IdPessoa`, `IdRelato`, `IdConsultaFixo`, `IdRazaoEncontro`, `idEstadoConsulta`, `DataPreenchimento`, `ResumoPlanoCuidados`, `ComentariosTutor`, `NotaAluno`) VALUES
-(2, 1, 1, 1, 6, 1, 0, '0001-01-01 00:00:00', NULL, NULL, '0'),
-(3, 1, 1, 2, 7, 1, 0, '0001-01-01 00:00:00', NULL, NULL, '0');
+(2, 1, 1, 1, 6, 1, 1, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(3, 1, 1, 2, 7, 1, 1, '0001-01-01 00:00:00', NULL, NULL, '0');
 
 -- --------------------------------------------------------
 
