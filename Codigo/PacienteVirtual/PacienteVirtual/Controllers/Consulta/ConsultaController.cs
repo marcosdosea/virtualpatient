@@ -31,6 +31,7 @@ namespace PacienteVirtual.Controllers
 
             // zerando sessão para ir no banco ir pegar os dados com o devido IdVariavel
             SessionController.Sistema = 0;
+            SessionController.IdGrupoIntervencao = 0;
             SessionController.ConsultaFixo = null;
             SessionController.ConsultaVariavel = null;
             SessionController.DemograficosAntropometricos = null;
@@ -50,6 +51,7 @@ namespace PacienteVirtual.Controllers
             SessionController.RelatoClinico = null;
             SessionController.ListaAlergia = null;
             SessionController.ListaQueixaMedicamento = null;
+            SessionController.ListaIntervencaoConsulta = null;
             SessionController.Abas1 = 0;
             SessionController.Abas2 = -1;
             /////////////////////////////////////////////////////////////////
@@ -185,6 +187,10 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdSituacaoQueixa = new SelectList(GerenciadorSituacaoQueixa.GetInstance().ObterTodos().ToList(), "IdSituacaoQueixa", "DescricaoSituacao");
             ViewBag.IdAcaoQueixa = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos().ToList(), "IdAcaoQueixa", "DescricaoAcao");
             ViewBag.IdQueixasMedicamentosSuspeitasPRM = new SelectList(GerenciadorConsultaVariavelQueixa.GetInstance().ObterPorConsultaVariavelTodosSuspeitaPRM(SessionController.ConsultaVariavel.IdConsultaVariavel).ToList(), "IdQueixa", "DescricaoQueixa");
+
+
+            ViewBag.IdGrupoIntervencao = new SelectList(GerenciadorGrupoIntervencao.GetInstance().ObterTodos().ToList(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", SessionController.IdGrupoIntervencao);
+            ViewBag.IdIntervencao = new SelectList(GerenciadorIntervencao.GetInstance().ObterPorGrupoIntervencao(SessionController.IdGrupoIntervencao), "IdIntervencao", "DescricaoIntervencao");
 
             return View(consultaModel);
         }

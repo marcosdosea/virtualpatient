@@ -86,6 +86,10 @@
                     </div>
                     <% Html.RenderPartial("../QueixaMedicamento/Index", Model.ListaQueixaMedicamento);%>
                 </div>
+                <div class="thumbnail">
+                    <% Html.RenderPartial("../IntervencaoConsulta/Create", Model.IntervencaoConsulta);%>
+                    <% Html.RenderPartial("../IntervencaoConsulta/Index", Model.ListaIntervencaoConsulta);%>
+                </div>
             </div>
         </div>
     </fieldset>
