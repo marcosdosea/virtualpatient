@@ -4,15 +4,16 @@
     <%: Resources.Mensagem.ativar_tutor_turma %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
+
     <div class="span9">
         <h2> <%: Resources.Mensagem.ativar_tutor_turma %>
             </h2>
         <% using (Html.BeginForm("Index", "AtivarTutorTurma", FormMethod.Post, null))
-           { %>
+            { %>
         <%: Html.DropDownList("IdTurma", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
         <% } %>
     </div>
+    
      <%@ import namespace="GridMvc.Html" %>
     <%@ import namespace="GridMvc.Sorting" %>
     <div class="box-content">
@@ -52,5 +53,5 @@
     }).WithPaging(5).Sortable().ToHtmlString()%>
     </div>
 
-    </form>
+
 </asp:Content>
