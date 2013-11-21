@@ -11,9 +11,6 @@ namespace PacienteVirtual.Controllers
     public class QueixaMedicamentoController : Controller
     {
 
-        public static String Descricao { get; set; }
-        public static int Id { get; set; }
-
         public ViewResult Index()
         {
             return View(GerenciadorQueixaMedicamento.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
@@ -26,7 +23,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(QueixaMedicamentoModel queixaMedicamento)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && queixaMedicamento.IdQueixa > 0)
             {
                 GerenciadorQueixaMedicamento.GetInstance().Inserir(queixaMedicamento);
                 SessionController.ListaQueixaMedicamento = null;
@@ -42,13 +39,6 @@ namespace PacienteVirtual.Controllers
             GerenciadorQueixaMedicamento.GetInstance().Remover(idConsultaVariavel, idMedicamento, idQueixa);
             SessionController.ListaQueixaMedicamento = null;
             return RedirectToAction("Edit2", "Consulta");
-        }
-
-        public void Teste(int idQueixa, String descricao)
-        {
-            Descricao = descricao;
-            Id = idQueixa;
-            return;
         }
 
         protected override void Dispose(bool disposing)

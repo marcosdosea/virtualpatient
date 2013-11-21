@@ -134,6 +134,9 @@
                                             <%: Html.ActionLink(Resources.Mensagem.situacao_queixa, "Index", "SituacaoQueixa")%>
                                         </li>
                                         <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.acao_queixa, "Index", "AcaoQueixa")%>
+                                        </li>
+                                        <li>
                                             <%: Html.ActionLink(Resources.Mensagem.objetivo_terapeutico, "Index", "ObjetivoTerapeutico")%>
                                         </li>
                                         <li>

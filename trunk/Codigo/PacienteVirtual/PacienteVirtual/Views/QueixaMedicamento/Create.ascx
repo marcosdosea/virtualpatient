@@ -12,8 +12,8 @@
                 <%: Html.LabelFor(model => model.Queixa) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Queixa, new { @class = "textbox", style = "width:276px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Queixa) %>
+                <%: Html.DropDownList("IdQueixasMedicamentosSuspeitasPRM", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdQueixa) %>
             </div>
         </div>
         <div class="span6">
@@ -48,7 +48,6 @@
                 <%: Html.LabelFor(model => model.SuspeitaPRM) %>
             </div>
         </div>
-
     </div>
     <div class="row-fluid">
         <div class="span2">
@@ -74,8 +73,6 @@
                 <%: Html.ValidationMessageFor(model => model.IdSuspeitaPRM) %>
             </div>
         </div>
-
-
     </div>
     <div class="row-fluid">
         <div class="span2">
@@ -111,6 +108,39 @@
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Desde, new { @class = "textbox", style = "width:127px;" })%>
                 <%: Html.ValidationMessageFor(model => model.Desde) %>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Resolvido) %>
+            </div>
+        </div>
+        <div class="span1">
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.Resolvido) %>
+                <%: Html.ValidationMessageFor(model => model.Resolvido) %>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.DescricaoAcaoQueixa1) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdAcaoQueixa", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdAcaoQueixa1) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.DescricaoAcaoQueixa2) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdAcaoQueixa", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdAcaoQueixa2) %>
             </div>
         </div>
     </div>

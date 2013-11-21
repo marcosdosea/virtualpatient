@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PacienteVirtual.Models;
 using Persistence;
+using Negocio;
+using PacienteVirtual.Models;
+using PacienteVirtual.Models.Cadastro;
 
-namespace PacienteVirtual.Negocio
+namespace PacienteVirtual.Negocio.Cadastro
 {
     public class GerenciadorAcaoQueixa
     {
-        private static GerenciadorAcaoQueixa gAcaoQueixa;
+        public static GerenciadorAcaoQueixa gAcaoQueixa;
 
         private GerenciadorAcaoQueixa()
         {
@@ -25,32 +27,32 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Insere dados do AcaoQueixa
+        /// inserir dados da acaoQueixa
         /// </summary>
         /// <param name="acaoQueixa"></param>
         /// <returns></returns>
         public int Inserir(AcaoQueixaModel acaoQueixa)
         {
             var repAcaoQueixa = new RepositorioGenerico<tb_acao_queixa>();
-            tb_acao_queixa _acaoQueixaE = new tb_acao_queixa();
+            tb_acao_queixa _tb_acao_queixa = new tb_acao_queixa();
             try
             {
-                Atribuir(acaoQueixa, _acaoQueixaE);
+                Atribuir(acaoQueixa, _tb_acao_queixa);
 
-                repAcaoQueixa.Inserir(_acaoQueixaE);
+                repAcaoQueixa.Inserir(_tb_acao_queixa);
                 repAcaoQueixa.SaveChanges();
 
-                return _acaoQueixaE.IdAcaoQueixa;
+                return _tb_acao_queixa.IdAcaoQueixa;
             }
             catch (Exception e)
             {
-                throw new DadosException("AcaoQueixa", e.Message, e);
+                throw new NegocioException("AcaoQueixa", e.Message, e);
             }
 
         }
 
         /// <summary>
-        /// Atualiza dados do acaoQueixa
+        /// Atualiza dados da AcaoQueixa
         /// </summary>
         /// <param name="acaoQueixa"></param>
         public void Atualizar(AcaoQueixaModel acaoQueixa)
@@ -58,8 +60,8 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repAcaoQueixa = new RepositorioGenerico<tb_acao_queixa>();
-                tb_acao_queixa _acaoQueixaE = repAcaoQueixa.ObterEntidade(d => d.IdAcaoQueixa == acaoQueixa.IdAcaoQueixa);
-                Atribuir(acaoQueixa, _acaoQueixaE);
+                tb_acao_queixa _tb_acao_queixa = repAcaoQueixa.ObterEntidade(d => d.IdAcaoQueixa == acaoQueixa.IdAcaoQueixa);
+                Atribuir(acaoQueixa, _tb_acao_queixa);
 
                 repAcaoQueixa.SaveChanges();
             }
@@ -70,9 +72,9 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Remove dados do AcaoQueixa
+        /// Remove dados da AcaoQueixa
         /// </summary>
-        /// <param name="idAcaoAlternativa"></param>
+        /// <param name="idAcaoQueixa"></param>
         public void Remover(int idAcaoQueixa)
         {
             try
@@ -95,17 +97,17 @@ namespace PacienteVirtual.Negocio
         {
             var repAcaoQueixa = new RepositorioGenerico<tb_acao_queixa>();
             var pvEntities = (pvEntities)repAcaoQueixa.ObterContexto();
-            var query = from acaoQueixa in pvEntities.tb_acao_queixa
+            var query = from tb_acao_queixa in pvEntities.tb_acao_queixa
                         select new AcaoQueixaModel
                         {
-                            IdAcaoQueixa = acaoQueixa.IdAcaoQueixa,
-                            DescricaoAcao = acaoQueixa.DescricaoAcao
+                            IdAcaoQueixa = tb_acao_queixa.IdAcaoQueixa,
+                            DescricaoAcao = tb_acao_queixa.DescricaoAcao
                         };
             return query;
         }
 
         /// <summary>
-        /// Obtém todos os acaoQueixa cadastrados
+        /// Obtém todos as ações queixas cadastradas
         /// </summary>
         /// <returns></returns>
         public IEnumerable<AcaoQueixaModel> ObterTodos()
@@ -114,33 +116,33 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém acaoQueixa com o código especificiado
+        /// Obtém AcaoQueixa com o código especificiado
         /// </summary>
         /// <param name="idAcaoQueixa"></param>
         /// <returns></returns>
         public AcaoQueixaModel Obter(int idAcaoQueixa)
         {
-            return GetQuery().Where(acaoQueixa => acaoQueixa.IdAcaoQueixa == idAcaoQueixa).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(aq => aq.IdAcaoQueixa == idAcaoQueixa).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
-        /// Obtém acaoQueixa que iniciam com o descricaoAcao
+        /// Obtém a partir da descricção
         /// </summary>
-        /// <param name="descricaoAcao"></param>
+        /// <param name="descricao"></param>
         /// <returns></returns>
-        public IEnumerable<AcaoQueixaModel> ObterPorNome(string descricaoAcao)
+        public IEnumerable<AcaoQueixaModel> ObterPorNome(string descricao)
         {
-            return GetQuery().Where(acaoQueixa => acaoQueixa.DescricaoAcao.StartsWith(descricaoAcao)).ToList();
+            return GetQuery().Where(aq => aq.DescricaoAcao.StartsWith(descricao)).ToList();
         }
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="acaoQueixa"></param>
-        /// <param name="_acaoQueixaE"></param>
-        private static void Atribuir(AcaoQueixaModel acaoQueixa, tb_acao_queixa _acaoQueixaE)
+        /// <param name="_tb_acao_queixa"></param>
+        private static void Atribuir(AcaoQueixaModel acaoQueixa, tb_acao_queixa _tb_acao_queixa)
         {
-            _acaoQueixaE.DescricaoAcao = acaoQueixa.DescricaoAcao;
+            _tb_acao_queixa.DescricaoAcao = acaoQueixa.DescricaoAcao;
         }
     }
 }

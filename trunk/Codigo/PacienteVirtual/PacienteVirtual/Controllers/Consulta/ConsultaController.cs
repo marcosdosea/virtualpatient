@@ -183,6 +183,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
             ViewBag.IdObjetivoTerapeutico = new SelectList(GerenciadorObjetivoTerapeutico.GetInstance().ObterTodos().ToList(), "IdObjetivoTerapeutico", "DescricaoObjetivoTerapeutico");
             ViewBag.IdSituacaoQueixa = new SelectList(GerenciadorSituacaoQueixa.GetInstance().ObterTodos().ToList(), "IdSituacaoQueixa", "DescricaoSituacao");
+            ViewBag.IdAcaoQueixa = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos().ToList(), "IdAcaoQueixa", "DescricaoAcao");
+            ViewBag.IdQueixasMedicamentosSuspeitasPRM = new SelectList(GerenciadorConsultaVariavelQueixa.GetInstance().ObterPorConsultaVariavelTodosSuspeitaPRM(SessionController.ConsultaVariavel.IdConsultaVariavel).ToList(), "IdQueixa", "DescricaoQueixa");
 
             return View(consultaModel);
         }
