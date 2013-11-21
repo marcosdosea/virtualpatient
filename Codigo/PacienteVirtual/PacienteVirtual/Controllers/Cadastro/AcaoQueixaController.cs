@@ -1,8 +1,14 @@
-﻿using System.Web.Mvc;
-using PacienteVirtual.Models;
-using PacienteVirtual.Negocio;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using PacienteVirtual.Negocio.Cadastro;
+using PacienteVirtual.Models.Cadastro;
 
-namespace PacienteVirtual.Controllers
+namespace PacienteVirtual.Controllers.Cadastro
 { 
     public class AcaoQueixaController : Controller
     {
@@ -34,17 +40,15 @@ namespace PacienteVirtual.Controllers
         // POST: /AcaoQueixa/Create
 
         [HttpPost]
-        public ActionResult Create(AcaoQueixaModel acaoQueixaModel)
+        public ActionResult Create(AcaoQueixaModel acaoQueixa)
         {
             if (ModelState.IsValid)
             {
-
-                acaoQueixaModel.IdAcaoQueixa = GerenciadorAcaoQueixa.GetInstance().Inserir(acaoQueixaModel);
-
+                GerenciadorAcaoQueixa.GetInstance().Inserir(acaoQueixa);
                 return RedirectToAction("Index");
             }
 
-            return View(acaoQueixaModel);
+            return View(acaoQueixa);
         }
 
         //
@@ -52,22 +56,22 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Edit(int id)
         {
-            AcaoQueixaModel acaoQueixaModel = GerenciadorAcaoQueixa.GetInstance().Obter(id);
-            return View(acaoQueixaModel);
+            AcaoQueixaModel acaoQueixa = GerenciadorAcaoQueixa.GetInstance().Obter(id);
+            return View(acaoQueixa);
         }
 
         //
         // POST: /AcaoQueixa/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(AcaoQueixaModel acaoQueixaModel)
+        public ActionResult Edit(AcaoQueixaModel acaoQueixa)
         {
             if (ModelState.IsValid)
             {
-                GerenciadorAcaoQueixa.GetInstance().Atualizar(acaoQueixaModel);
+                GerenciadorAcaoQueixa.GetInstance().Atualizar(acaoQueixa);
                 return RedirectToAction("Index");
             }
-            return View(acaoQueixaModel);
+            return View(acaoQueixa);
         }
 
         //
@@ -75,8 +79,8 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Delete(int id)
         {
-            AcaoQueixaModel acaoQueixaModel = GerenciadorAcaoQueixa.GetInstance().Obter(id);
-            return View(acaoQueixaModel);
+            AcaoQueixaModel acaoQueixa = GerenciadorAcaoQueixa.GetInstance().Obter(id);
+            return View(acaoQueixa);
         }
 
         //

@@ -135,10 +135,10 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        // public IEnumerable<ConsultaVariavelQueixaModel> ObterPorNome(int IdPaciente)
-        //{
-        //    return GetQuery().Where(consultaVariavelQueixa => consultaVariavelQueixa.IdPessoa == IdPaciente).ToList();
-        //}
+         public IEnumerable<ConsultaVariavelQueixaModel> ObterPorConsultaVariavelTodosSuspeitaPRM(long idConsultaVariavel)
+        {
+            return GetQuery().Where(cv => cv.IdConsultaVariavel == idConsultaVariavel && cv.Tipo.Equals("S")).ToList();
+        }
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência

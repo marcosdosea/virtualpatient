@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using Resources;
 
-namespace PacienteVirtual.Models
+namespace PacienteVirtual.Models.Cadastro
 {
     public class AcaoQueixaModel
     {
@@ -16,6 +16,5 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "descricao_acao", ResourceType = typeof(Mensagem))]
         public String DescricaoAcao { get; set; }
-
     }
 }

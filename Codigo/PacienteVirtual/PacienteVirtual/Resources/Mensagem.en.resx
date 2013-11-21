@@ -903,4 +903,13 @@
   <data name="situacao_queixa" xml:space="preserve">
     <value>Abuse Situation</value>
   </data>
+  <data name="descricao_queixa_1" xml:space="preserve">
+    <value>Description of the Complaint 1</value>
+  </data>
+  <data name="descricao_queixa_2" xml:space="preserve">
+    <value>Description of the Complaint 2</value>
+  </data>
+  <data name="resolvido" xml:space="preserve">
+    <value>Resolved</value>
+  </data>
 </root>

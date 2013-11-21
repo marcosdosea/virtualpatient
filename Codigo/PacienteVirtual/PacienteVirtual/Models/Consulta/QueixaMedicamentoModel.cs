@@ -57,5 +57,23 @@ namespace PacienteVirtual.Models.Consulta
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "cumprimento", ResourceType = typeof(Mensagem))]
         public bool Cumprimento { get; set; }
+        
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
+        public int IdAcaoQueixa1 { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
+        public int IdAcaoQueixa2 { get; set; }
+
+        [Display(Name = "descricao_queixa_1", ResourceType = typeof(Mensagem))]
+        public string DescricaoAcaoQueixa1 { get; set; }
+
+        [Display(Name = "descricao_queixa_2", ResourceType = typeof(Mensagem))]
+        public string DescricaoAcaoQueixa2 { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "resolvido", ResourceType = typeof(Mensagem))]
+        public bool Resolvido { get; set; }
     }
 }

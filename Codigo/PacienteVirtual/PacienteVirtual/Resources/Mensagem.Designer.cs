@@ -763,6 +763,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Descrição da Queixa 1.
+        /// </summary>
+        public static string descricao_queixa_1 {
+            get {
+                return ResourceManager.GetString("descricao_queixa_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descrição da Queixa 2.
+        /// </summary>
+        public static string descricao_queixa_2 {
+            get {
+                return ResourceManager.GetString("descricao_queixa_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Descrição da Razão do Encontro.
         /// </summary>
         public static string descricao_razao {
@@ -1974,6 +1992,15 @@ namespace Resources {
         public static string remover {
             get {
                 return ResourceManager.GetString("remover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resolvido.
+        /// </summary>
+        public static string resolvido {
+            get {
+                return ResourceManager.GetString("resolvido", resourceCulture);
             }
         }
         
