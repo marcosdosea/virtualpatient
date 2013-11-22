@@ -26,12 +26,12 @@
                 .ThenSortByDescending(o => o.NomePessoa)
                 .Filterable(true);
 
-        columns.Add(o => o.Ativa)
+        columns.Add(o => o.IdRole)
                 .Titled(Resources.Mensagem.status)
                 .ThenSortByDescending(o => o.Ativa)
                 .Filterable(true)
                 .SetWidth(230)
-                .RenderValueAs(o => o.Ativa == true ? Resources.Mensagem.ativa : Resources.Mensagem.desativa);
+                .RenderValueAs(o => o.IdRole == 3 ? Resources.Mensagem.ativa : Resources.Mensagem.desativa);
         
         /* Adding not mapped column, that renders body, using inline Razor html helper */
         columns.Add()
