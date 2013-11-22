@@ -912,4 +912,7 @@
   <data name="resolvido" xml:space="preserve">
     <value>Resolved</value>
   </data>
+  <data name="comunicacao" xml:space="preserve">
+    <value>Comunication</value>
+  </data>
 </root>

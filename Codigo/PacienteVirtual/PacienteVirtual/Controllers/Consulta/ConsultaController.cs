@@ -175,6 +175,8 @@ namespace PacienteVirtual.Controllers
             consultaModel.QueixaMedicamento = new QueixaMedicamentoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaQueixaMedicamento = SessionController.ListaQueixaMedicamento;
 
+            consultaModel.IntervencaoConsulta = new IntervencaoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ListaIntervencaoConsulta = SessionController.ListaIntervencaoConsulta;
 
             // Consulta Queixa
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
