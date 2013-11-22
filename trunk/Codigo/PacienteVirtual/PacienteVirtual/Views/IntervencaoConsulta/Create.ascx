@@ -40,10 +40,10 @@
     <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
-                <%: Resources.Mensagem.comunicacao %>
+                <%: Html.Label(Resources.Mensagem.comunicacao) %>
             </div>
         </div>
-        <div class="span2">
+        <div class="span3">
             <div class="editor-field">
                 <%: Html.LabelFor(model => model.Paciente) %>
             </div>

@@ -169,15 +169,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alternativas.
-        /// </summary>
-        public static string alternativas {
-            get {
-                return ResourceManager.GetString("alternativas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Altura.
         /// </summary>
         public static string altura {
@@ -318,15 +309,6 @@ namespace Resources {
         public static string campo_requerido {
             get {
                 return ResourceManager.GetString("campo_requerido", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Carta.
-        /// </summary>
-        public static string carta {
-            get {
-                return ResourceManager.GetString("carta", resourceCulture);
             }
         }
         
@@ -1033,15 +1015,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Druggist.
-        /// </summary>
-        public static string farmaceutico {
-            get {
-                return ResourceManager.GetString("farmaceutico", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Feninimo.
         /// </summary>
         public static string feminino {
@@ -1510,15 +1483,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Motivo Referência Consulta.
-        /// </summary>
-        public static string motivo_referencia_consulta {
-            get {
-                return ResourceManager.GetString("motivo_referencia_consulta", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Não.
         /// </summary>
         public static string nao {
@@ -1618,15 +1582,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nome do Profissional.
-        /// </summary>
-        public static string nome_profissional {
-            get {
-                return ResourceManager.GetString("nome_profissional", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Nome do Sistema.
         /// </summary>
         public static string nome_sistema {
@@ -1663,7 +1618,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Objetivo Terapêutico.
+        ///   Looks up a localized string similar to Objetivo Terapeutico.
         /// </summary>
         public static string objetivo_terapeutico {
             get {
