@@ -17,7 +17,6 @@ namespace PacienteVirtual.Models.Consulta
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdIntervencao { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "intervencao", ResourceType = typeof(Mensagem))]
         public string DescricaoIntervencao { get; set; }
 
@@ -25,8 +24,8 @@ namespace PacienteVirtual.Models.Consulta
         [Display(Name = "nome_grupo_intervencao", ResourceType = typeof(Mensagem))]
         public int IdGrupoIntervencao { get; set; }
 
-        [Display(Name = "grupo_intervencao", ResourceType = typeof(Mensagem))]
-        public string DescricaoGrupoIntervencao { get; set; }
+        [Display(Name = "descricao", ResourceType = typeof(Mensagem))]
+        public String DescricaoGrupoIntervencao { get; set; }
 
         [Display(Name = "paciente", ResourceType = typeof(Mensagem))]
         public bool Paciente { get; set; }

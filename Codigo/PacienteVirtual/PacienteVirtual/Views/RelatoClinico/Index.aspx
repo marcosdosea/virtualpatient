@@ -4,6 +4,7 @@
     <%: Resources.Mensagem.relato_clinico %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
     <div class="span9">
         <h2>
             <%: Resources.Mensagem.relato_clinico %></h2>
@@ -75,4 +76,7 @@
             <% } %>
         </table>
     </div>
+
+
 </asp:Content>
+

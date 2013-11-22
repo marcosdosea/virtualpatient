@@ -9,7 +9,10 @@
                 <%: Resources.Mensagem.intervencao %>
             </th>
             <th>
-                <%: Resources.Mensagem.comunicacao %>
+                <%: Resources.Mensagem.paciente %>
+            </th>
+            <th>
+                <%: Resources.Mensagem.outro %>
             </th>
             <th>
                 <%: Resources.Mensagem.justificativa %>

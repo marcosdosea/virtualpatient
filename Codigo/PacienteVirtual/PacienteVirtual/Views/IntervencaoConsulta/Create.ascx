@@ -5,7 +5,6 @@
     <fieldset>
         <legend><%: Resources.Mensagem.intervencao %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
-        <%: Html.HiddenFor(model => model.IdIntervencao) %>
         <% using (Html.BeginForm("Create", "IntervencaoConsulta", FormMethod.Post, null))
        { %>
     <div class="row-fluid">
