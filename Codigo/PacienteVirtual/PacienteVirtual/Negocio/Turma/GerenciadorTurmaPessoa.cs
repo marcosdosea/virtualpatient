@@ -190,6 +190,16 @@ namespace PacienteVirtual.Negocio.Turma
             return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().Count;
         }
 
+        /// <summary>
+        /// obtem o id do perfil da pessoa pelo id pessoa
+        /// </summary>
+        /// <param name="idPessoa"></param>
+        /// <returns></returns>
+        public int ObterRolePorPessoa(int idPessoa)
+        {
+            return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0).IdRole;
+        }
+
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência

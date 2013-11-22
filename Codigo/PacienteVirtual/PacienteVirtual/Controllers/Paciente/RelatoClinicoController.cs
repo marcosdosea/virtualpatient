@@ -13,8 +13,23 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /RelatoClinico/Atribuir/5
-        public ViewResult Atribuir(int idRelato, int idPaciente)
+        public ActionResult Atribuir(int idRelato, int idPaciente)
         {
+            if (SessionController.DadosTurmaPessoa != null)
+            {
+                if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
+                {
+                    return RedirectToAction("Index", "RelatoClinico");
+                }
+            }
+            else
+            {
+                if (GerenciadorTurmaPessoa.GetInstance().ObterRolePorPessoa(SessionController.Pessoa.IdPessoa) == Global.Administrador)
+                {
+                    return RedirectToAction("Index", "RelatoClinico");
+                }
+            }
+
             SessionController.IdRelato = idRelato;
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
             return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
