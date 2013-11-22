@@ -29,7 +29,6 @@ namespace PacienteVirtual.Controllers
                     return RedirectToAction("Index", "RelatoClinico");
                 }
             }
-
             SessionController.IdRelato = idRelato;
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
             return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
