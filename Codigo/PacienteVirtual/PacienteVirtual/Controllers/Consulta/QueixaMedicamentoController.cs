@@ -23,7 +23,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(QueixaMedicamentoModel queixaMedicamento)
         {
-            if (ModelState.IsValid && queixaMedicamento.IdQueixa > 0)
+            if (ModelState.IsValid)
             {
                 GerenciadorQueixaMedicamento.GetInstance().Inserir(queixaMedicamento);
                 SessionController.ListaQueixaMedicamento = null;
