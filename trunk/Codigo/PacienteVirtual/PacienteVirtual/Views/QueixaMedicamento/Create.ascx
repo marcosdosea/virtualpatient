@@ -12,8 +12,8 @@
                 <%: Html.LabelFor(model => model.Queixa) %>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownList("IdQueixasMedicamentosSuspeitasPRM", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdQueixa) %>
+                <%: Html.DropDownList("IdQueixaMedicamento", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdQueixaMedicamento) %>
             </div>
         </div>
         <div class="span6">
@@ -130,7 +130,7 @@
                 <%: Html.LabelFor(model => model.DescricaoAcaoQueixa1) %>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownList("IdAcaoQueixa", Resources.Mensagem.selecione)%>
+                <%: Html.DropDownList("IdAcaoQueixa1", Resources.Mensagem.selecione)%>
                 <%: Html.ValidationMessageFor(model => model.IdAcaoQueixa1) %>
             </div>
         </div>
@@ -139,7 +139,7 @@
                 <%: Html.LabelFor(model => model.DescricaoAcaoQueixa2) %>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownList("IdAcaoQueixa", Resources.Mensagem.selecione)%>
+                <%: Html.DropDownList("IdAcaoQueixa2", Resources.Mensagem.selecione)%>
                 <%: Html.ValidationMessageFor(model => model.IdAcaoQueixa2) %>
             </div>
         </div>

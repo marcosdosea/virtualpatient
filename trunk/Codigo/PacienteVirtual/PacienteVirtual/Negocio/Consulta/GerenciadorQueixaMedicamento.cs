@@ -100,7 +100,7 @@ namespace PacienteVirtual.Negocio.Consulta
                         {
                             IdConsultaVariavel = tb_queixa_medicamentos.IdConsultaVariavel,
                             IdMedicamento = tb_queixa_medicamentos.IdMedicamento,
-                            IdQueixa = tb_queixa_medicamentos.IdQueixa,
+                            IdQueixaMedicamento = tb_queixa_medicamentos.IdQueixa,
                             IdSuspeitaPRM = tb_queixa_medicamentos.IdSuspeitaPRM,
                             IdAcaoQueixa1 = tb_queixa_medicamentos.IdAcaoQueixa1,
                             IdAcaoQueixa2 = tb_queixa_medicamentos.IdAcaoQueixa2,
@@ -116,7 +116,8 @@ namespace PacienteVirtual.Negocio.Consulta
                             NomeMedicamento = tb_medicamentos.Nome,
                             SuspeitaPRM = tb_queixa_medicamentos.tb_suspeita_prm.Descricao,
                             DescricaoAcaoQueixa1 = tb_queixa_medicamentos.tb_acao_queixa.DescricaoAcao,
-                            DescricaoAcaoQueixa2= tb_queixa_medicamentos.tb_acao_queixa1.DescricaoAcao
+                            DescricaoAcaoQueixa2 = tb_queixa_medicamentos.tb_acao_queixa1.DescricaoAcao,
+                            Queixa = tb_queixa_medicamentos.tb_consulta_variavel_queixa.tb_queixa.DescricaoQueixa
                             
                         };
             return query;
@@ -149,7 +150,7 @@ namespace PacienteVirtual.Negocio.Consulta
         {
             _tb_queixa_medicamentos.IdConsultaVariavel = queixaMedicamentoModel.IdConsultaVariavel;
             _tb_queixa_medicamentos.IdMedicamento = queixaMedicamentoModel.IdMedicamento;
-            _tb_queixa_medicamentos.IdQueixa = queixaMedicamentoModel.IdQueixa;
+            _tb_queixa_medicamentos.IdQueixa = queixaMedicamentoModel.IdQueixaMedicamento;
             _tb_queixa_medicamentos.IdSuspeitaPRM = queixaMedicamentoModel.IdSuspeitaPRM;
             _tb_queixa_medicamentos.IdAcaoQueixa1 = queixaMedicamentoModel.IdAcaoQueixa1;
             _tb_queixa_medicamentos.IdAcaoQueixa2 = queixaMedicamentoModel.IdAcaoQueixa2;

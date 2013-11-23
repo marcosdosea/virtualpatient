@@ -12,10 +12,10 @@ namespace PacienteVirtual.Models.Consulta
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "consulta_variavel_codigo", ResourceType = typeof(Mensagem))]
         public Int64 IdConsultaVariavel { get; set; }
-
+        
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        public int IdQueixa { get; set; }
+        public int IdQueixaMedicamento { get; set; }
 
         [Display(Name = "queixa", ResourceType = typeof(Mensagem))]
         public string Queixa { get; set; }
