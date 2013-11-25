@@ -17,6 +17,19 @@
         type="text/javascript"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
+
+    <input type="hidden" value="<%: ViewBag.AncoraEdit2 %>" id="ancoraEdit2" />
+        <script type="text/javascript">
+            var ancoraEdit2 = document.getElementById('ancoraEdit2').value;
+            if (ancoraEdit2 == 1) {
+                location.href = "#ancora1";
+            } else if (ancoraEdit2 == 2) {
+                location.href = "#ancora2";
+            } else if (ancoraEdit2 == 3) {
+                location.href = "#ancora3";
+            }
+        </script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             $(".botaoMostrar").click(function () {
@@ -30,9 +43,9 @@
             $(".botaoMostrar").mouseover(function () {
                 $(this).css("color", "#2162A3");
             }),
-  $(".botaoMostrar").mouseout(function () {
-      $(this).css("color", "#2E8AE6");
-  });
+          $(".botaoMostrar").mouseout(function () {
+              $(this).css("color", "#2E8AE6");
+          });
         });
     </script>
     <style type="text/css">
@@ -78,6 +91,7 @@
                     <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
                     <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
                 </div>
+                <a name="ancora1" />
                 <div class="thumbnail">
                     <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
                     <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
@@ -86,9 +100,15 @@
                     </div>
                     <% Html.RenderPartial("../QueixaMedicamento/Index", Model.ListaQueixaMedicamento);%>
                 </div>
+                <a name="ancora2" />
                 <div class="thumbnail">
                     <% Html.RenderPartial("../IntervencaoConsulta/Create", Model.IntervencaoConsulta);%>
                     <% Html.RenderPartial("../IntervencaoConsulta/Index", Model.ListaIntervencaoConsulta);%>
+                </div>
+                <a name="ancora3" />
+                <div class="thumbnail">
+                    <% Html.RenderPartial("../Carta/Create", Model.Carta);%>
+                    <% Html.RenderPartial("../Carta/Index", Model.ListaCarta);%>
                 </div>
             </div>
         </div>
@@ -103,4 +123,27 @@
     <div class="btn btn-large btn-primary" id="Div1">
         <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
     </div>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#calendario").datepicker({
+                dateFormat: 'dd/mm/yy',
+                dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+                dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+                dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                changeMonth: true,
+                changeYear: true,
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                showOn: "button",
+                buttonImage: "../../Content/themes/pv/img/icons/calendar3.png",
+                buttonImageOnly: true
+            });
+        });
+    </script>
 </asp:Content>

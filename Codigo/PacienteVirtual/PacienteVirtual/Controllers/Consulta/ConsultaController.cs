@@ -49,8 +49,10 @@ namespace PacienteVirtual.Controllers
             SessionController.ListaAlergia = null;
             SessionController.ListaQueixaMedicamento = null;
             SessionController.ListaIntervencaoConsulta = null;
+            SessionController.ListaCarta = null;
             SessionController.Abas1 = 0;
             SessionController.Abas2 = -1;
+            SessionController.AncoraEdit2 = -1;
             /////////////////////////////////////////////////////////////////
             if (SessionController.DadosTurmaPessoa == null || SessionController.Pessoa == null)
             {
@@ -143,8 +145,10 @@ namespace PacienteVirtual.Controllers
             ViewBag.PerguntaIncorporadoPlano = SessionController.ObterPergunta(PERGUNTA_INCORPORADO_PLANO).Pergunta;
             ViewBag.IdRespostaIncorporadoPlano = new SelectList(SessionController.ObterRespostas(PERGUNTA_INCORPORADO_PLANO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaIncorporadoPlano);
 
+
             ViewBag.Abas1 = SessionController.Abas1;
             ViewBag.Abas2 = SessionController.Abas2;
+            SessionController.AncoraEdit2 = -1;
 
             return View(consultaModel);
         }
@@ -175,6 +179,9 @@ namespace PacienteVirtual.Controllers
             consultaModel.IntervencaoConsulta = new IntervencaoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaIntervencaoConsulta = SessionController.ListaIntervencaoConsulta;
 
+            consultaModel.Carta = new CartaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ListaCarta = SessionController.ListaCarta;
+
             // Consulta Queixa
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
             ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema), "IdQueixa", "DescricaoQueixa");
@@ -190,8 +197,14 @@ namespace PacienteVirtual.Controllers
             
             ViewBag.IdQueixaMedicamento = new SelectList(GerenciadorConsultaVariavelQueixa.GetInstance().ObterPorConsultaVariavelTodosSuspeitaPRM(SessionController.ConsultaVariavel.IdConsultaVariavel).ToList(), "IdQueixa", "DescricaoQueixa");
 
+            //Demais Consultas
             ViewBag.IdGrupoIntervencao = new SelectList(GerenciadorGrupoIntervencao.GetInstance().ObterTodos().ToList(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", SessionController.IdGrupoIntervencao);
             ViewBag.IdIntervencao = new SelectList(GerenciadorIntervencao.GetInstance().ObterPorGrupoIntervencao(SessionController.IdGrupoIntervencao), "IdIntervencao", "DescricaoIntervencao");
+
+            ViewBag.IdCarta = new SelectList(GerenciadorCarta.GetInstance().ObterTodos(), "IdCarta", "NomePaciente");
+            ViewBag.IdCurso = new SelectList(GerenciadorCurso.GetInstance().ObterTodos(), "IdCurso", "NomeCurso");
+
+            ViewBag.AncoraEdit2 = SessionController.AncoraEdit2;
 
             return View(consultaModel);
         }

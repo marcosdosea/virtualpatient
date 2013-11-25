@@ -28,35 +28,32 @@ namespace PacienteVirtual.Models
         public DateTime DataNascimento { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "fone", ResourceType = typeof(Mensagem))]
-        public string Telefone { get; set; }
+        [Display(Name = "telefone", ResourceType = typeof(Mensagem))]
+        public string TelefonePaciente { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "motivo_referencia_consulta", ResourceType = typeof(Mensagem))]
         public string MotivoReferenciaConsulta { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "alternativas", ResourceType = typeof(Mensagem))]
         public string Alternativas { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "farmaceutico", ResourceType = typeof(Mensagem))]
         public string Farmaceutico { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
+        [Display(Name = "crfuf", ResourceType = typeof(Mensagem))]
         public string CRFUF { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "fone", ResourceType = typeof(Mensagem))]
+        [Display(Name = "telefone", ResourceType = typeof(Mensagem))]
         public string TelefoneFarmaceutico { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "valor_referencia", ResourceType = typeof(Mensagem))]
         public string Referências { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "curso", ResourceType = typeof(Mensagem))]
         public int IdCurso { get; set; }
+
+        [Display(Name = "curso", ResourceType = typeof(Mensagem))]
+        public string NomeCurso { get; set; }
     }
 }
