@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using Persistence;
-using Negocio;
 using PacienteVirtual.Models;
 using PacienteVirtual.Models.Cadastro;
+using Persistence;
 
 namespace PacienteVirtual.Negocio.Cadastro
 {

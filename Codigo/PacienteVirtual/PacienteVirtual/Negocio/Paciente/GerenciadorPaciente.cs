@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
-using Negocio;
-using PacienteVirtual.Models.ViewModel;
 
 namespace PacienteVirtual.Negocio
 {

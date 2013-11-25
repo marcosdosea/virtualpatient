@@ -6,7 +6,7 @@ using PacienteVirtual.Models.Turma;
 using PacienteVirtual.Models;
 using Persistence;
 
-namespace PacienteVirtual.Negocio.Turma
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorTurmaPessoa
     {

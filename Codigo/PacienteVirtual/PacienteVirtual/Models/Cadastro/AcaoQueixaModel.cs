@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using Resources;
 
-namespace PacienteVirtual.Models.Cadastro
+namespace PacienteVirtual.Models
 {
     public class AcaoQueixaModel
     {

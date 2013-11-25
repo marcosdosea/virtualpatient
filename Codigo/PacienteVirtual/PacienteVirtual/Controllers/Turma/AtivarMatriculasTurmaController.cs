@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using PacienteVirtual.Negocio;
-using PacienteVirtual.Negocio.Turma;
-using PacienteVirtual.Models.Turma;
+using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers.Turma
 {
