@@ -915,4 +915,25 @@
   <data name="comunicacao" xml:space="preserve">
     <value>Comunicação</value>
   </data>
+  <data name="alternativas" xml:space="preserve">
+    <value>Alternativas</value>
+  </data>
+  <data name="carta" xml:space="preserve">
+    <value>Carta</value>
+  </data>
+  <data name="farmaceutico" xml:space="preserve">
+    <value>Farmacêutico</value>
+  </data>
+  <data name="motivo_referencia_consulta" xml:space="preserve">
+    <value>Motivo Referência Consulta</value>
+  </data>
+  <data name="nome_profissional" xml:space="preserve">
+    <value>Nome do Profissional</value>
+  </data>
+  <data name="crfuf" xml:space="preserve">
+    <value>CRFUF</value>
+  </data>
+  <data name="telefone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
 </root>

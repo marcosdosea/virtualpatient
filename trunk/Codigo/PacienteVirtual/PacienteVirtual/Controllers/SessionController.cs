@@ -652,6 +652,24 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static int AncoraEdit2
+        {
+            get
+            {
+                int numeroAncora = (int)HttpContext.Current.Session["_NumeroAncora"];
+                if (numeroAncora == -1)
+                {
+                    numeroAncora = 0;
+                    HttpContext.Current.Session["_NumeroAncora"] = numeroAncora;
+                }
+                return numeroAncora;
+            }
+            set
+            {
+                HttpContext.Current.Session["_NumeroAncora"] = value;
+            }
+        }
+
         public static IEnumerable<IntervencaoConsultaModel> ListaIntervencaoConsulta
         {
             get
@@ -685,6 +703,24 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_IdGrupoIntervencao"] = value;
+            }
+        }
+
+        public static IEnumerable<CartaModel> ListaCarta
+        {
+            get
+            {
+                IEnumerable<CartaModel> ListaCarta = (IEnumerable<CartaModel>)HttpContext.Current.Session["_listaCarta"];
+                if (ListaCarta == null)
+                {
+                    ListaCarta = GerenciadorCarta.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_listaCarta"] = ListaCarta;
+                }
+                return ListaCarta;
+            }
+            set
+            {
+                HttpContext.Current.Session["_listaCarta"] = value;
             }
         }
     }

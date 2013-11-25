@@ -42,6 +42,9 @@ namespace PacienteVirtual.Models
 
         public IntervencaoConsultaModel IntervencaoConsulta { get; set; }
         public IEnumerable<IntervencaoConsultaModel> ListaIntervencaoConsulta { get; set; }
+
+        public CartaModel Carta { get; set; }
+        public IEnumerable<CartaModel> ListaCarta { get; set; }
         //public QueixaModel Queixas
 
         // medicamento relacionados a queixa

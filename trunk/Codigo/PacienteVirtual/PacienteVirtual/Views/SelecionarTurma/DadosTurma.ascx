@@ -3,21 +3,19 @@
    { %>
 <div class="direita">
     <div class="row-fluid">
-        <% if (Model.NomeRole == ("administrador"))
-       { %>
-           <div class="span4">
-       <% } else { %>
+        <% if (Model.NomeRole != ("administrador"))
+           { %>
            <div class="span6">
-       <% } %>
             <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.turma %>:</p>
+                <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
             </div>
         </div>
         <div class="span4">
             <div class="editor-label">
-                <p class="conteudo"><%: Model.NomeTurma %></p>
+                <p class="conteudo"><%: Model.NomeTurma%></p>
             </div>
         </div>
+        <% } %>
     </div>
     <div class="row-fluid">
     <% if (Model.NomeRole == ("usuario"))

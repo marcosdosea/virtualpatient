@@ -119,9 +119,10 @@ namespace PacienteVirtual.Negocio
                             IdConsultaVariavel = tb_consulta_variavel_intervencao.IdConsultaVariavel,
                             IdIntervencao = tb_consulta_variavel_intervencao.IdIntervencao,
                             Paciente = (bool) tb_consulta_variavel_intervencao.comunicaPaciente,
-                            Outro = tb_consulta_variavel_intervencao.comunicaOutro,
+                            Outro = (bool) tb_consulta_variavel_intervencao.comunicaOutro,
                             Justificativa = tb_consulta_variavel_intervencao.justificativa,
 
+                            DescricaoGrupoIntervencao = tb_consulta_variavel_intervencao.tb_intervencao.tb_grupo_intervencao.Descricao,
                             DescricaoIntervencao = tb_intervencao.DescricaoIntervencao
                         };
             return query;

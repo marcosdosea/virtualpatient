@@ -31,6 +31,7 @@ namespace PacienteVirtual.Controllers
             {
                 SessionController.Sistema = consultaVariavelQueixa.IdSistema;
             }
+            SessionController.AncoraEdit2 = 1;//Valor Fixo para Âncora
             return RedirectToAction("Edit2", "Consulta");
         }
 
@@ -42,6 +43,7 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorConsultaVariavelQueixa.GetInstance().Remover(idConsultaVariavel, idQueixa);
             SessionController.ListaConsultaVariavelQueixa = null;
+            SessionController.AncoraEdit2 = 1;//Valor Fixo Para Âncora
             return RedirectToAction("Edit2", "Consulta");
         }
 
