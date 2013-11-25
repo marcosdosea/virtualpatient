@@ -4,7 +4,6 @@ using System.Web.Mvc;
 using System.Web.Security;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
-using System.Collections.Generic;
 
 namespace PacienteVirtual.Controllers
 {

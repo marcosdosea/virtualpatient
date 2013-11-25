@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using PacienteVirtual.Models.Cadastro;
-using Persistence;
 using PacienteVirtual.Models;
+using Persistence;
 
-namespace PacienteVirtual.Negocio.Cadastro
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorSuspeitaPrm
     {

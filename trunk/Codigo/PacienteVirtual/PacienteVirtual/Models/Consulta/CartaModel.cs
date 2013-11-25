@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 using Resources;
 
-namespace PacienteVirtual.Models.Consulta
+namespace PacienteVirtual.Models
 {
     public class CartaModel
     {

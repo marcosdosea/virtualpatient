@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using PacienteVirtual.Models;
-using PacienteVirtual.Negocio.Cadastro;
-using PacienteVirtual.Models.Cadastro;
+using PacienteVirtual.Negocio;
 
-namespace PacienteVirtual.Controllers.Cadastro
+namespace PacienteVirtual.Controllers
 { 
     public class IntervencaoController : Controller
     {
@@ -35,7 +28,7 @@ namespace PacienteVirtual.Controllers.Cadastro
 
         public ActionResult Create()
         {
-            ViewBag.IdGrupoIntervencao = new SelectList(gGrupoIntervencao.ObterTodos().ToList(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao");
+            ViewBag.IdGrupoIntervencao = new SelectList(gGrupoIntervencao.ObterTodos(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao");
             return View();
         }
 
@@ -49,7 +42,7 @@ namespace PacienteVirtual.Controllers.Cadastro
                 intervencaoModel.IdGrupoIntervencao = gIntervencao.Inserir(intervencaoModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdGrupoIntervencao = new SelectList(gGrupoIntervencao.ObterTodos().ToList(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", intervencaoModel.IdGrupoIntervencao);
+            ViewBag.IdGrupoIntervencao = new SelectList(gGrupoIntervencao.ObterTodos(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", intervencaoModel.IdGrupoIntervencao);
             return View(intervencaoModel);
         }
 
@@ -58,7 +51,7 @@ namespace PacienteVirtual.Controllers.Cadastro
         public ActionResult Edit(int id)
         {
             IntervencaoModel intervencaoModel = gIntervencao.Obter(id);
-            ViewBag.IdGrupoIntervencao = new SelectList(gGrupoIntervencao.ObterTodos().ToList(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", intervencaoModel.IdGrupoIntervencao);
+            ViewBag.IdGrupoIntervencao = new SelectList(gGrupoIntervencao.ObterTodos(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", intervencaoModel.IdGrupoIntervencao);
             return View(intervencaoModel);
         }
 
@@ -73,7 +66,7 @@ namespace PacienteVirtual.Controllers.Cadastro
                 gIntervencao.Atualizar(intervencaoModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdGrupoIntervencao = new SelectList(gGrupoIntervencao.ObterTodos().ToList(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", intervencaoModel.IdGrupoIntervencao);
+            ViewBag.IdGrupoIntervencao = new SelectList(gGrupoIntervencao.ObterTodos(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", intervencaoModel.IdGrupoIntervencao);
             return View(intervencaoModel);
         }
 

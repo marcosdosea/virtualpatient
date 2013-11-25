@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using PacienteVirtual.Negocio;
 using PacienteVirtual.Models;
+using PacienteVirtual.Negocio;
 
-namespace PacienteVirtual.Controllers.Turma
+namespace PacienteVirtual.Controllers
 {
     public class AtivarMatriculasTurmaController : Controller
     {

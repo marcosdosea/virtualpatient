@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using PacienteVirtual.Negocio.Cadastro;
-using PacienteVirtual.Models.Cadastro;
+﻿using System.Web.Mvc;
+using PacienteVirtual.Negocio;
+using PacienteVirtual.Models;
 
-namespace PacienteVirtual.Controllers.Cadastro
+namespace PacienteVirtual.Controllers
 { 
     public class AcaoQueixaController : Controller
     {

@@ -6,8 +6,6 @@ namespace PacienteVirtual.Controllers
 { 
     public class HistoricoController : Controller
     {
-        private pvEntities db = new pvEntities();
-
         GerenciadorHistorico gHistorico = GerenciadorHistorico.GetInstance();
         //
         // GET: /Historico/

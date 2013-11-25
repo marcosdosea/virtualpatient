@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.Consulta.IntervencaoConsultaModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.IntervencaoConsultaModel>" %>
 
 <% using (Html.BeginForm("Create", "IntervencaoConsulta")) { %>
     <%: Html.ValidationSummary(true) %>

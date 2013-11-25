@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
-using PacienteVirtual.Negocio.Cadastro;
-using PacienteVirtual.Models.Cadastro;
 
 namespace PacienteVirtual.Controllers
 { 
