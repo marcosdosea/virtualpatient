@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Persistence;
-using System.Data.Common;
 using PacienteVirtual.Models;
+using Persistence;
 
 namespace PacienteVirtual.Negocio
 {

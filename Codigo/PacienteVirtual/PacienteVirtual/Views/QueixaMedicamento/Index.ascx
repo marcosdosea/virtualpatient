@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.Consulta.QueixaMedicamentoModel>>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.QueixaMedicamentoModel>>" %>
 <h3>
     <%: Resources.Mensagem.medicamentos_queixa_suspeita_prm %></h3>
 <div class="box-content">

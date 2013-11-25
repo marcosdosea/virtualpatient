@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using PacienteVirtual.Negocio;
 
-namespace PacienteVirtual.Controllers.Turma
+namespace PacienteVirtual.Controllers
 {
     public class SelecionarTurmaController : Controller
     {

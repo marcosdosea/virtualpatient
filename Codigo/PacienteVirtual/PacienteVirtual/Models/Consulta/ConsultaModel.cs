@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using PacienteVirtual.Models.Consulta;
+﻿using System.Collections.Generic;
 
 namespace PacienteVirtual.Models
 {

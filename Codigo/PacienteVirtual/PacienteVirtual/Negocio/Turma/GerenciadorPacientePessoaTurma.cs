@@ -1,10 +1,4 @@
-﻿using Persistence;
-using PacienteVirtual.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿
 namespace PacienteVirtual.Negocio
 {
     public class GerenciadorPacientePessoaTurma

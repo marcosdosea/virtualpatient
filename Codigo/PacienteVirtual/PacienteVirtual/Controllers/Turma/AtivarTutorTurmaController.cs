@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 
-namespace PacienteVirtual.Controllers.Turma
+namespace PacienteVirtual.Controllers
 {
     public class AtivarTutorTurmaController : Controller
     {
