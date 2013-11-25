@@ -2,7 +2,6 @@
 using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
-using PacienteVirtual.Negocio.Turma;
 
 namespace PacienteVirtual.Controllers
 {

@@ -6,7 +6,7 @@ using Persistence;
 using System.Data.Common;
 using PacienteVirtual.Models;
 
-namespace Negocio
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorDisciplina
     {

@@ -29,6 +29,13 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(ConsultaVariavelModel consultaVariavel)
         {
+            TurmaPessoaModel turmaPessoaModel = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(consultaVariavel.IdTurma, consultaVariavel.IdPessoa);
+
+            if (turmaPessoaModel.IdRole.Equals(Global.Administrador))
+            {
+                throw new NegocioException("O usuário administrador não pode gravar novas consultas. Favor autenticar com um usuário.");
+            }
+
             var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel>();
             tb_consulta_variavel _consultaVariavelE = new tb_consulta_variavel();
             try

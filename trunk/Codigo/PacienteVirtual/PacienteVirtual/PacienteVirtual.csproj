@@ -732,7 +732,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="bin\bin\en\" />
-    <Folder Include="Views\Historico\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\packages.config" />
