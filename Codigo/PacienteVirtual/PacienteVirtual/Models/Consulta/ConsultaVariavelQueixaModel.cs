@@ -46,7 +46,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdSituacaoQueixa { get; set; }
 
-        [Display(Name = "descricao_situacao", ResourceType = typeof(Mensagem))]
+        [Display(Name = "situacao_queixa", ResourceType = typeof(Mensagem))]
         public string DescricaoSituacao { get; set; }
      }
 }

@@ -936,4 +936,10 @@
   <data name="telefone" xml:space="preserve">
     <value>Phone Number</value>
   </data>
+  <data name="dados_paciente" xml:space="preserve">
+    <value>Patient Data</value>
+  </data>
+  <data name="recomendacoes" xml:space="preserve">
+    <value>Recommendations</value>
+  </data>
 </root>
