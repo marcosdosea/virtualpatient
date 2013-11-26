@@ -70,7 +70,7 @@
                     |
                     <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdRelato }) %>
                     |
-                    <%: Html.ActionLink(Resources.Mensagem.atribuir, "Atribuir", new { idRelato = item.IdRelato, idPaciente = item.IdPaciente }) %>
+                    <%: Html.ActionLink(Resources.Mensagem.atribuir, "Atribuir", new { idRelato = item.IdRelato, idPaciente = item.IdPaciente, ordemCronologica = item.OrdemCronologica }) %>
                 </td>
             </tr>
             <% } %>

@@ -6,12 +6,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         <%: Resources.Mensagem.atribuir %></h2>
-    <div class="span9">
-        <% using (Html.BeginForm("Atribuir", "RelatoClinico", FormMethod.Post, null))
-           { %>
-        <%: Html.DropDownList("IdTurma", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
-        <% } %>
-    </div>
+        <div>
+        <%: Resources.Mensagem.nome_paciente %>: <%: ViewBag.NomePaciente %>
+        <br>
+        <%: Resources.Mensagem.ordem_cronologica %>: <%: ViewBag.OrdemCronologica %>
+        </div>
     <%@ import namespace="GridMvc.Html" %>
     <%@ import namespace="GridMvc.Sorting" %>
     <div class="box-content">

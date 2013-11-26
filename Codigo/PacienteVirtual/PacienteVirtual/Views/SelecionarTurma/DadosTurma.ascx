@@ -10,7 +10,7 @@
                 <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
             </div>
         </div>
-        <div class="span4">
+        <div class="span5">
             <div class="editor-label">
                 <p class="conteudo"><%: Model.NomeTurma%></p>
             </div>
@@ -22,7 +22,7 @@
        { %>
            <div class="span6">
        <% } else { %>
-           <div class="span5">
+           <div class="span6">
        <% } %>
             <div class="editor-label">
                 <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
