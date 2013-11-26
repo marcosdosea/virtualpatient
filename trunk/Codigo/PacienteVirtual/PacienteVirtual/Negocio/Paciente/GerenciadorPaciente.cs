@@ -128,15 +128,6 @@ namespace PacienteVirtual.Negocio
         /// Obtém todos os pacientes cadastradas
         /// </summary>
         /// <returns></returns>
-        //public IEnumerable<VMPaciente> ObterTodosVM()
-        //{
-        //    return GetQueryRelatos().ToList();
-        //}
-
-        /// <summary>
-        /// Obtém todos os pacientes cadastradas
-        /// </summary>
-        /// <returns></returns>
         public IEnumerable<PacienteModel> ObterTodos()
         {
             return GetQuery().ToList();
@@ -150,6 +141,16 @@ namespace PacienteVirtual.Negocio
         public PacienteModel Obter(int idPaciente)
         {
             return GetQuery().Where(paciente => paciente.IdPaciente == idPaciente).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtém nome do paciente a partir do id
+        /// </summary>
+        /// <param name="idPaciente"></param>
+        /// <returns></returns>
+        public string ObterNomePorId(int idPaciente)
+        {
+            return GetQuery().Where(paciente => paciente.IdPaciente == idPaciente).ToList().ElementAtOrDefault(0).NomePaciente;
         }
 
         /// <summary>

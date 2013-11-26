@@ -12,7 +12,7 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /RelatoClinico/Atribuir/5
-        public ActionResult Atribuir(int idRelato, int idPaciente)
+        public ActionResult Atribuir(int idRelato, int idPaciente, int ordemCronologica)
         {
             if (SessionController.DadosTurmaPessoa != null)
             {
@@ -21,16 +21,10 @@ namespace PacienteVirtual.Controllers
                     return RedirectToAction("Index", "RelatoClinico");
                 }
             }
-            else
-            {
-                if (GerenciadorTurmaPessoa.GetInstance().ObterRolePorPessoa(SessionController.Pessoa.IdPessoa) == Global.Administrador)
-                {
-                    return RedirectToAction("Index", "RelatoClinico");
-                }
-            }
             SessionController.IdRelato = idRelato;
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
+            ViewBag.NomePaciente = GerenciadorPaciente.GetInstance().ObterNomePorId(idPaciente);
+            ViewBag.OrdemCronologica = ordemCronologica;
+            return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
         }
 
         //
@@ -59,19 +53,6 @@ namespace PacienteVirtual.Controllers
             GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
             SessionController.IdRelato = 0;
             return RedirectToAction("Index", "RelatoClinico");
-        }
-
-
-        [HttpPost]
-        public ActionResult Atribuir(int IdTurma = -1)
-        {
-            ViewBag.codigo = IdTurma;
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
-            if (IdTurma != -1)
-            {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaAtivados(IdTurma).ToList());
-            }
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
         }
 
         // GET: /RelatoClinico/

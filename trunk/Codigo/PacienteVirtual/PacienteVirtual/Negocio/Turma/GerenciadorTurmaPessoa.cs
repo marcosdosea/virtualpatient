@@ -133,6 +133,11 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == false).ToList();
         }
 
+        /// <summary>
+        /// Obtem turmas por pessoa
+        /// </summary>
+        /// <param name="idPessoa"></param>
+        /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterTurmasPorPessoa(int idPessoa)
         {
             return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa).ToList();
@@ -176,6 +181,15 @@ namespace PacienteVirtual.Negocio
         public TurmaPessoaModel ObterPorPessoaUmaTurmaPessoa(int idPessoa)
         {
             return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtem todas as pessoas que estão na turma passada
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TurmaPessoaModel> ObterPorTurma(int idTurma)
+        {
+            return GetQuery().Where(tpr => tpr.IdTurma == idTurma && tpr.Ativa == true).ToList();
         }
 
         /// <summary>
