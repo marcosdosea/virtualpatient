@@ -34,15 +34,28 @@ namespace PacienteVirtual.Controllers
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
                         PessoaModel pessoa = GerenciadorPessoa.GetInstance().ObterPorUserName(model.UserName);
-                        SessionController.Pessoa = pessoa;  
+                        SessionController.Pessoa = pessoa;
                         return Redirect(returnUrl);
                     }
                     else
                     {
                         PessoaModel pessoa = GerenciadorPessoa.GetInstance().ObterPorUserName(model.UserName);
                         SessionController.Pessoa = pessoa;
+                        switch (GerenciadorTurmaPessoa.GetInstance().ObterRolePorPessoa(pessoa.IdPessoa))
+                        {
+                            case Global.Usuario:
+                                SessionController.Roles = "usuario";
+                                break;
+                            case Global.Tutor:
+                                SessionController.Roles = "tutor";
+                                break;
+                            case Global.Administrador:
+                                SessionController.Roles = "administrador";
+                                break;
+                        }
                         return RedirectToAction("Index", "SelecionarTurma");
                     }
+
                 }
                 else
                 {
@@ -62,6 +75,7 @@ namespace PacienteVirtual.Controllers
             FormsAuthentication.SignOut();
             SessionController.Pessoa = null;
             SessionController.DadosTurmaPessoa = null;
+            SessionController.Roles = null;
             return RedirectToAction("Index", "Home");
         }
 

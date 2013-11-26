@@ -673,6 +673,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dados do Paciente.
+        /// </summary>
+        public static string dados_paciente {
+            get {
+                return ResourceManager.GetString("dados_paciente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data de Atualização.
         /// </summary>
         public static string data_atualizacao {
@@ -1992,6 +2001,15 @@ namespace Resources {
         public static string razao_encontro {
             get {
                 return ResourceManager.GetString("razao_encontro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recomendações.
+        /// </summary>
+        public static string recomendacoes {
+            get {
+                return ResourceManager.GetString("recomendacoes", resourceCulture);
             }
         }
         

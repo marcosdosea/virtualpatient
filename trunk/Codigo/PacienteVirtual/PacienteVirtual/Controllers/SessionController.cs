@@ -723,5 +723,13 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_listaCarta"] = value;
             }
         }
+
+        public static string Roles
+        {
+            set
+            {
+                HttpContext.Current.Session["_Roles"] = value;
+            }
+        }
     }
 }
