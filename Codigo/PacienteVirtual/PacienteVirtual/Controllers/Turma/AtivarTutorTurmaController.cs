@@ -38,6 +38,18 @@ namespace PacienteVirtual.Controllers
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
             tpm.IdRole = Global.Tutor;
+            switch (tpm.IdRole)
+            {
+                case Global.Usuario:
+                    tpm.NomeRole = "usuario";
+                    break;
+                case Global.Tutor:
+                    tpm.NomeRole = "tutor";
+                    break;
+                case Global.Administrador:
+                    tpm.NomeRole = "administrador";
+                    break;
+            }
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index", idTurma);
         }
@@ -47,6 +59,18 @@ namespace PacienteVirtual.Controllers
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
             tpm.IdRole = Global.Usuario;
+            switch (tpm.IdRole)
+            {
+                case Global.Usuario:
+                    tpm.NomeRole = "usuario";
+                    break;
+                case Global.Tutor:
+                    tpm.NomeRole = "tutor";
+                    break;
+                case Global.Administrador:
+                    tpm.NomeRole = "administrador";
+                    break;
+            }
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index", idTurma);
 

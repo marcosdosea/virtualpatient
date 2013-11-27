@@ -92,11 +92,15 @@
                             <!-- < %: Html.ActionLink("Paciente Virtual", "Index", "Home")%>-->
                         </a>
                     </div>
+                    <% if (HttpContext.Current.Request.IsAuthenticated)
+                       { %>
+                       <% if (Session["_Roles"] != "administrador")
+                          { %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">
                             <ul class="nav" role="menu">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <%= Resources.Mensagem.cadastros %>
+                                    <%= Resources.Mensagem.cadastros%>
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
@@ -160,14 +164,17 @@
                                 </li>
                             </ul>
                         </nav>
-                    </div>   
+                    </div>
+                        <% } %>   
                     <div class="nav-collapse collapse">
                         <nav class="nav">
                             <ul class="nav" role="menu">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <%: Resources.Mensagem.turma %>
+                                    <%: Resources.Mensagem.turma%>
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
+                                        <% if (Session["_Roles"] != "administrador")
+                                           { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.turma, "Index", "Turma")%>
                                         </li>
@@ -187,18 +194,28 @@
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
                                         </li>
                                         <li>
+                                             <%: Html.ActionLink(Resources.Mensagem.ativar_tutor_turma, "Index", "AtivarTutorTurma")%>
+                                        </li>
+                                        <li>
+                                             <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
+                                        </li>
+                                        <% }else{ %>
+                                            <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_tutor_turma, "Index", "AtivarTutorTurma")%>
                                         </li>
+                                        <% } %>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
                     </div>
+                    <% if (Session["_Roles"] != "administrador")
+                       { %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">
                             <ul class="nav" role="menu">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <%: Resources.Mensagem.paciente %>
+                                    <%: Resources.Mensagem.paciente%>
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
@@ -212,24 +229,31 @@
                             </ul>
                         </nav>
                     </div>
+                    <% } %>
+                    <% if (Session["_Roles"] != "administrador")
+                       { %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">
                             <ul class="nav" role="menu">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <%: Resources.Mensagem.consultas %>
+                                    <%: Resources.Mensagem.consultas%>
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.consulta, "Index", "Consulta")%>
                                         </li>
+                                        <% if (Session["_Roles"] != "usuario") { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.consultas_correcao, "Index", "ConsultasCorrecao")%>
                                         </li>
+                                        <% } %>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
                     </div>
+                    <% } %>
+                    <% } %>
                 </div>
             </div>
         </div>

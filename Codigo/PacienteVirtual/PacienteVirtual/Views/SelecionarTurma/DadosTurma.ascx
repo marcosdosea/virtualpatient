@@ -21,8 +21,13 @@
     <% if (Model.NomeRole == ("usuario"))
        { %>
            <div class="span6">
-       <% } else { %>
+       <% }
+       else if (Model.NomeRole == ("administrador"))
+       { %>
            <div class="span6">
+       <% } else
+       { %>
+            <div class="span5">
        <% } %>
             <div class="editor-label">
                 <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
