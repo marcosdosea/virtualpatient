@@ -59,7 +59,7 @@
                     <%: Html.DisplayFor(modelItem => item.DescricaoEstadoConsulta)%>
                 </td>
                 <td>
-                    <%: Html.DisplayFor(modelItem => item.IdTurma)%>
+                    <%: Html.DisplayFor(modelItem => item.NomeTurma)%>
                 </td>
                 <td>
                     <% if (item.IdEstadoConsulta == 1 || item.IdEstadoConsulta == 2)
