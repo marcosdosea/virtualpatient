@@ -43,6 +43,7 @@ namespace PacienteVirtual.Controllers
             cvm.IdPessoa = idPessoa;
             cvm.IdTurma = idTurma;
             cvm.IdRelato = SessionController.IdRelato;
+            cvm.IdRazaoEncontro = Global.IdRazaoEncontro;
             // dados turma pessoa relato
             tprm.IdConsultaFixo = idConsultaFixo;
             tprm.IdPessoa = idPessoa;
