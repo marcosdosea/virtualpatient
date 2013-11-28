@@ -506,6 +506,7 @@
           <Property Name="PressaoDiastolica" Type="float" />
           <Property Name="PressaoSistolica" Type="float" />
           <Property Name="Glicemia" Type="float" />
+          <Property Name="IndiceMassaCorporea" Type="float" />
         </EntityType>
         <EntityType Name="tb_experiencia_medicamentos">
           <Key>
@@ -698,7 +699,7 @@
           <Key>
             <PropertyRef Name="IdRazaoEncontro" />
           </Key>
-          <Property Name="IdRazaoEncontro" Type="int" Nullable="false" />
+          <Property Name="IdRazaoEncontro" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DescricaoRazao" Type="varchar" Nullable="false" MaxLength="100" />
         </EntityType>
         <EntityType Name="tb_relato_clinico">
@@ -2034,6 +2035,7 @@
           <Property Type="Single" Name="Glicemia" />
           <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" FromRole="tb_exames_fisicos" ToRole="tb_consulta_variavel" />
           <NavigationProperty Name="tb_alergia" Relationship="pvModel.tb_alergia_exames_fisicos" FromRole="tb_exames_fisicos" ToRole="tb_alergia" />
+          <Property Type="Single" Name="IndiceMassaCorporea" />
         </EntityType>
         <EntityType Name="tb_experiencia_medicamentos">
           <Key>
@@ -3287,6 +3289,7 @@
           <EntitySetMapping Name="tb_exames_fisicos">
             <EntityTypeMapping TypeName="pvModel.tb_exames_fisicos">
               <MappingFragment StoreEntitySet="tb_exames_fisicos">
+                <ScalarProperty Name="IndiceMassaCorporea" ColumnName="IndiceMassaCorporea" />
                 <ScalarProperty Name="Glicemia" ColumnName="Glicemia" />
                 <ScalarProperty Name="PressaoSistolica" ColumnName="PressaoSistolica" />
                 <ScalarProperty Name="PressaoDiastolica" ColumnName="PressaoDiastolica" />

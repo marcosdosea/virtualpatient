@@ -6025,6 +6025,30 @@ namespace PacienteVirtual.Models
         private Nullable<global::System.Single> _Glicemia;
         partial void OnGlicemiaChanging(Nullable<global::System.Single> value);
         partial void OnGlicemiaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> IndiceMassaCorporea
+        {
+            get
+            {
+                return _IndiceMassaCorporea;
+            }
+            set
+            {
+                OnIndiceMassaCorporeaChanging(value);
+                ReportPropertyChanging("IndiceMassaCorporea");
+                _IndiceMassaCorporea = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IndiceMassaCorporea");
+                OnIndiceMassaCorporeaChanged();
+            }
+        }
+        private Nullable<global::System.Single> _IndiceMassaCorporea;
+        partial void OnIndiceMassaCorporeaChanging(Nullable<global::System.Single> value);
+        partial void OnIndiceMassaCorporeaChanged();
 
         #endregion
 

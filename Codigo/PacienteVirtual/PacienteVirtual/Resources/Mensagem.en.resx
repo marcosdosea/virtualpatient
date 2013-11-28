@@ -942,4 +942,7 @@
   <data name="recomendacoes" xml:space="preserve">
     <value>Recommendations</value>
   </data>
+  <data name="indice_massa_corporea" xml:space="preserve">
+    <value>IMC</value>
+  </data>
 </root>

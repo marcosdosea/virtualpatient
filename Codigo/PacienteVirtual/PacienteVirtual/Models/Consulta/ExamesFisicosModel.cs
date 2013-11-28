@@ -29,5 +29,9 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "glicemia", ResourceType = typeof(Mensagem))]
         public float Glicemia { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "indice_massa_corporea", ResourceType = typeof(Mensagem))]
+        public float IndiceMassaCorporea { get; set; }
     }
 }
