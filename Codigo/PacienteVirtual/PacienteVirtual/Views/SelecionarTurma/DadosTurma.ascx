@@ -18,17 +18,7 @@
         <% } %>
     </div>
     <div class="row-fluid">
-    <% if (Model.NomeRole == ("usuario"))
-       { %>
-           <div class="span6">
-       <% }
-       else if (Model.NomeRole == ("administrador"))
-       { %>
-           <div class="span6">
-       <% } else
-       { %>
-            <div class="span5">
-       <% } %>
+        <div class="span6">
             <div class="editor-label">
                 <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
             </div>
