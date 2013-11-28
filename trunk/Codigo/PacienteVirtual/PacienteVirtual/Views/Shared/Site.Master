@@ -187,28 +187,25 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.instituicao, "Index", "Instituicao")%>
                                         </li>
-                                        <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
-                                        </li>
                                         <% } %>
-
                                         <% if (Session["_Roles"].Equals("usuario") || Session["_Roles"].Equals("tutor"))
                                            { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
                                         </li>
                                         <% } %>
-                                        
-                                        <% if (Session["_Roles"].Equals("administrador") || Session["_Roles"].Equals("tutor"))
+                                        <% if (Session["_Roles"].Equals("administrador"))
                                            { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_tutor_turma, "Index", "AtivarTutorTurma")%>
                                         </li>
+                                        <% } %>
+                                        <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("administrador"))
+                                           { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
                                         </li>
                                         <% } %>
-
                                     </ul>
                                 </li>
                             </ul>
