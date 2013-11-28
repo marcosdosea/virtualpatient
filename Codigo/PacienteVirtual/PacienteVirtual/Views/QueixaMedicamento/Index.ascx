@@ -35,10 +35,10 @@
                 <%: Resources.Mensagem.resolvido %>
             </th>
             <th>
-                <%: Resources.Mensagem.descricao_queixa_1 %>
+                <%: Resources.Mensagem.intervencao_1 %>
             </th>
             <th>
-                <%: Resources.Mensagem.descricao_queixa_2 %>
+                <%: Resources.Mensagem.intervencao_2 %>
             </th>
             <th>
                 <%: Resources.Mensagem.opcoes %>

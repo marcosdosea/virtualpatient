@@ -10,7 +10,7 @@
         <%: Resources.Mensagem.utilize_formulario_altera_senha %>
     </p>
     <p>
-        <%: Resources.Mensagem.minimo_senha_1 %> <%: Membership.MinRequiredPasswordLength %> <%: Resources.Mensagem.minimo_senha_2 %>
+        <%: Resources.Mensagem.minimo_senha_1 %> 3 <%: Resources.Mensagem.minimo_senha_2 %>
     </p>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
