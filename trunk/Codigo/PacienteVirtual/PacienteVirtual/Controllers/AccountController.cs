@@ -111,7 +111,11 @@ namespace PacienteVirtual.Controllers
                 pessoaModel.IdPessoa = GerenciadorPessoa.GetInstance().Inserir(pessoaModel);
                 SessionController.Pessoa = pessoaModel;
 
+
+                // usado para esconder as telas
+                SessionController.Roles = "usuario";
                 
+
                 // fim do inserir pessoa
 
                 if (createStatus == MembershipCreateStatus.Success)

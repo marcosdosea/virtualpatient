@@ -94,8 +94,8 @@
                     </div>
                     <% if (HttpContext.Current.Request.IsAuthenticated)
                        { %>
-                       <% if (Session["_Roles"] != "administrador")
-                          { %>
+                    <% if (Session["_Roles"].Equals("tutor"))
+                       { %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">
                             <ul class="nav" role="menu">
@@ -165,7 +165,7 @@
                             </ul>
                         </nav>
                     </div>
-                        <% } %>   
+                    <% } %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">
                             <ul class="nav" role="menu">
@@ -173,7 +173,7 @@
                                     <%: Resources.Mensagem.turma%>
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <% if (Session["_Roles"] != "administrador")
+                                        <% if (Session["_Roles"].Equals("tutor"))
                                            { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.turma, "Index", "Turma")%>
@@ -188,28 +188,33 @@
                                             <%: Html.ActionLink(Resources.Mensagem.instituicao, "Index", "Instituicao")%>
                                         </li>
                                         <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
+                                        </li>
+                                        <% } %>
+
+                                        <% if (Session["_Roles"].Equals("usuario"))
+                                           { %>
+                                        <li>
                                             <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
+                                        </li>
+                                        <% } %>
+                                        
+                                        <% if (Session["_Roles"].Equals("administrador") || Session["_Roles"].Equals("tutor"))
+                                           { %>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.ativar_tutor_turma, "Index", "AtivarTutorTurma")%>
                                         </li>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
                                         </li>
-                                        <li>
-                                             <%: Html.ActionLink(Resources.Mensagem.ativar_tutor_turma, "Index", "AtivarTutorTurma")%>
-                                        </li>
-                                        <li>
-                                             <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
-                                        </li>
-                                        <% }else{ %>
-                                            <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.ativar_tutor_turma, "Index", "AtivarTutorTurma")%>
-                                        </li>
                                         <% } %>
+
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
                     </div>
-                    <% if (Session["_Roles"] != "administrador")
+                    <% if (Session["_Roles"].Equals("tutor"))
                        { %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">
@@ -230,7 +235,7 @@
                         </nav>
                     </div>
                     <% } %>
-                    <% if (Session["_Roles"] != "administrador")
+                    <% if (!Session["_Roles"].Equals("administrador"))
                        { %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">
@@ -242,7 +247,8 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.consulta, "Index", "Consulta")%>
                                         </li>
-                                        <% if (Session["_Roles"] != "usuario") { %>
+                                        <% if (Session["_Roles"].Equals("tutor"))
+                                           { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.consultas_correcao, "Index", "ConsultasCorrecao")%>
                                         </li>
@@ -257,10 +263,10 @@
                 </div>
             </div>
         </div>
-    <!-- /.navbar -->
-    <div class="container">
-        <section id="main">
-            <!--input type="submit" class="btn btn-primary" rel="tooltip" value="Tema botão não funciona" title="O Css não funciona" />
+        <!-- /.navbar -->
+        <div class="container">
+            <section id="main">
+                <!--input type="submit" class="btn btn-primary" rel="tooltip" value="Tema botão não funciona" title="O Css não funciona" />
            <script type="text/javascript">
                $('tooltip2').tooltip('show');
 
@@ -272,39 +278,39 @@
                    console.log("jimmy");
                });
             </script-->
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-        </section>
-    </div>
-    <div class="container">
-        <footer class="footer">
-            <div class="container">
-                <div class="span11">
-                    <div class="span3">
-                        <!--img alt="imagem" width="" src="../../Content/themes/pv/img/icons/!.png" /-->
-                        <p>
-                            <br />
-                            <br />
-                            <img alt="imagem" src="../../Content/themes/pv/img/simbolo_farmacia.png" />
-                        </p>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </section>
+        </div>
+        <div class="container">
+            <footer class="footer">
+                <div class="container">
+                    <div class="span11">
+                        <div class="span3">
+                            <!--img alt="imagem" width="" src="../../Content/themes/pv/img/icons/!.png" /-->
+                            <p>
+                                <br />
+                                <br />
+                                <img alt="imagem" src="../../Content/themes/pv/img/simbolo_farmacia.png" />
+                            </p>
+                        </div>
+                        <br />
+                        <div class="span4">
+                            <a href="http://www.ufs.br">
+                                <img alt="imagem" src="../../Content/themes/pv/img/ufs2.png" />
+                            </a>
+                            <p>
+                                Universidade Federal</p>
+                            <p>
+                                de Sergipe</p>
+                        </div>
+                        <br />
+                        <div class="span3">
+                            <img alt="imagem" width="100px" height="86px" src="../../Content/themes/pv/img/caduceus.png" />
+                        </div>
                     </div>
-                    <br />
-                    <div class="span4">
-                        <a href="http://www.ufs.br">
-                            <img alt="imagem" src="../../Content/themes/pv/img/ufs2.png" />
-                        </a>
-                        <p>
-                            Universidade Federal</p>
-                        <p>
-                            de Sergipe</p>
-                    </div>
-                    <br />
-                    <div class="span3">
-                        <img alt="imagem" width="100px" height="86px" src="../../Content/themes/pv/img/caduceus.png" />
-                    </div>
+                    <img alt="imagem" width="" src="../../Content/themes/pv/img/icons/c.png" />
                 </div>
-                <img alt="imagem" width="" src="../../Content/themes/pv/img/icons/c.png" />
-            </div>
-        </footer>
-    </div>
+            </footer>
+        </div>
 </body>
 </html>
