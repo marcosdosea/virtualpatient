@@ -25,6 +25,7 @@ namespace PacienteVirtual.Models
         public const int Usuario = 2;
         public const int Tutor = 3;
 
+        public const int IdRazaoEncontro = 1;
 
     }
         
