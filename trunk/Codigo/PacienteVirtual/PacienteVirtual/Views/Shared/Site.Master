@@ -192,7 +192,7 @@
                                         </li>
                                         <% } %>
 
-                                        <% if (Session["_Roles"].Equals("usuario"))
+                                        <% if (Session["_Roles"].Equals("usuario") || Session["_Roles"].Equals("tutor"))
                                            { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
