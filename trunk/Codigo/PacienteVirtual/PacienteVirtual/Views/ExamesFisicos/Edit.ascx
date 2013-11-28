@@ -40,6 +40,19 @@
     <div class="row-fluid">
         <div class="span1">
             <div class="editor-label">
+                <%: Html.LabelFor(model => model.IndiceMassaCorporea) %>
+            </div>
+        </div>
+        <div class="span2">
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.IndiceMassaCorporea, new { @class = "textbox", style = "width:50px;" })%>
+                <%: Html.ValidationMessageFor(model => model.IndiceMassaCorporea) %>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span1">
+            <div class="editor-label">
                 <%: Resources.Mensagem.pressao_arterial %>
             </div>
         </div>

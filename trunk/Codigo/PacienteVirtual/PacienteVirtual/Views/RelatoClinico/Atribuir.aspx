@@ -29,12 +29,12 @@
                 .Filterable(true);
 
         /* Adding not mapped column, that renders body, using inline Razor html helper */
-        columns.Add()
+        /*columns.Add()
                 .Titled(Resources.Mensagem.selecione)
                 .Encoded(false)
                 .Sanitized(false)
                 .SetWidth(30)
-                .RenderValueAs(o => Html.CheckBox("checked", false));
+                .RenderValueAs(o => Html.CheckBox("checked", false));*/
 
         columns.Add()
                 .Titled(Resources.Mensagem.atribuir)
