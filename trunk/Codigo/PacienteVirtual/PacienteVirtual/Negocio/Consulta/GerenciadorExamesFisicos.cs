@@ -166,7 +166,8 @@ namespace PacienteVirtual.Negocio
                             Altura = (float)tb_exames_fisicos.Altura,
                             PressaoDiastolica = (float)tb_exames_fisicos.PressaoDiastolica,
                             PressaoSistolica = (float)tb_exames_fisicos.PressaoSistolica,
-                            Glicemia = (float)tb_exames_fisicos.Glicemia
+                            Glicemia = (float)tb_exames_fisicos.Glicemia,
+                            IndiceMassaCorporea = (float) tb_exames_fisicos.IndiceMassaCorporea
                         };
             return query;
         }
@@ -202,6 +203,7 @@ namespace PacienteVirtual.Negocio
             _tb_exames_fisicos.PressaoDiastolica = examesFisicosModel.PressaoDiastolica;
             _tb_exames_fisicos.PressaoSistolica = examesFisicosModel.PressaoSistolica;
             _tb_exames_fisicos.Glicemia = examesFisicosModel.Glicemia;
+            _tb_exames_fisicos.IndiceMassaCorporea = examesFisicosModel.IndiceMassaCorporea;
         }
     }
 }
