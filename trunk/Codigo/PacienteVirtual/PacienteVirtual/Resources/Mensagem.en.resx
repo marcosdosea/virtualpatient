@@ -769,7 +769,7 @@
     <value>This password is very short.</value>
   </data>
   <data name="cigarros_dia_0_10" xml:space="preserve">
-    <value>0-10 Cigarettes/Day</value>
+    <value>1-10 Cigarettes/Day</value>
   </data>
   <data name="cigarros_dia_10_20" xml:space="preserve">
     <value>10-20 Cigarettes/Day</value>
@@ -811,13 +811,13 @@
     <value>Kg</value>
   </data>
   <data name="m" xml:space="preserve">
-    <value>M</value>
+    <value>m</value>
   </data>
   <data name="mg_dl" xml:space="preserve">
-    <value>Mg/dl</value>
+    <value>mg/dl</value>
   </data>
   <data name="mmHg" xml:space="preserve">
-    <value>MmHg</value>
+    <value>mmHg</value>
   </data>
   <data name="pressao_arterial" xml:space="preserve">
     <value>Blood Pressure</value>
@@ -903,11 +903,11 @@
   <data name="situacao_queixa" xml:space="preserve">
     <value>Abuse Situation</value>
   </data>
-  <data name="descricao_queixa_1" xml:space="preserve">
-    <value>Description of the Complaint 1</value>
+  <data name="intervencao_1" xml:space="preserve">
+    <value>Intervention of the Complaint 1</value>
   </data>
-  <data name="descricao_queixa_2" xml:space="preserve">
-    <value>Description of the Complaint 2</value>
+  <data name="intervencao_2" xml:space="preserve">
+    <value>Intervention of the Complaint 2</value>
   </data>
   <data name="resolvido" xml:space="preserve">
     <value>Resolved</value>

@@ -63,10 +63,10 @@ namespace PacienteVirtual.Models
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdAcaoQueixa2 { get; set; }
 
-        [Display(Name = "descricao_queixa_1", ResourceType = typeof(Mensagem))]
+        [Display(Name = "intervencao_1", ResourceType = typeof(Mensagem))]
         public string DescricaoAcaoQueixa1 { get; set; }
 
-        [Display(Name = "descricao_queixa_2", ResourceType = typeof(Mensagem))]
+        [Display(Name = "intervencao_2", ResourceType = typeof(Mensagem))]
         public string DescricaoAcaoQueixa2 { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

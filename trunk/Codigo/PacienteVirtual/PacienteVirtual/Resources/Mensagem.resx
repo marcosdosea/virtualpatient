@@ -472,7 +472,7 @@
     <value>Especialidade</value>
   </data>
   <data name="fitoterapico" xml:space="preserve">
-    <value>Fisioterápico</value>
+    <value>Fitoterápico</value>
   </data>
   <data name="posologia" xml:space="preserve">
     <value>Posologia</value>
@@ -496,13 +496,13 @@
     <value>Estilo de vida</value>
   </data>
   <data name="medicamentos_anteriores" xml:space="preserve">
-    <value>Medicamentos anteriores</value>
+    <value>Medicamentos Anteriores</value>
   </data>
   <data name="medicamento_nao_prescrito" xml:space="preserve">
-    <value>Medicamento não prescrito</value>
+    <value>Medicamentos Não Prescritos</value>
   </data>
   <data name="medicamento_prescrito" xml:space="preserve">
-    <value>Medicamentos prescrito</value>
+    <value>Medicamentos Prescritos</value>
   </data>
   <data name="listar" xml:space="preserve">
     <value>Listar</value>
@@ -748,7 +748,7 @@
     <value>Tipo</value>
   </data>
   <data name="doenca_agrave" xml:space="preserve">
-    <value>Doença ou Agrave</value>
+    <value>Doença ou Agravo</value>
   </data>
   <data name="necessidade_atencao" xml:space="preserve">
     <value>Necessita Atenção</value>
@@ -769,7 +769,7 @@
     <value>Esta senha está muito curta.</value>
   </data>
   <data name="cigarros_dia_0_10" xml:space="preserve">
-    <value>0-10 Cigarros/Dia</value>
+    <value>1-10 Cigarros/Dia</value>
   </data>
   <data name="cigarros_dia_10_20" xml:space="preserve">
     <value>10-20 Cigarros/Dia</value>
@@ -811,13 +811,13 @@
     <value>Kg</value>
   </data>
   <data name="m" xml:space="preserve">
-    <value>M</value>
+    <value>m</value>
   </data>
   <data name="mg_dl" xml:space="preserve">
-    <value>Mg/dl</value>
+    <value>mg/dl</value>
   </data>
   <data name="mmHg" xml:space="preserve">
-    <value>MnHg</value>
+    <value>mnHg</value>
   </data>
   <data name="pressao_arterial" xml:space="preserve">
     <value>Pressão Arterial</value>
@@ -829,7 +829,7 @@
     <value>X</value>
   </data>
   <data name="suspeita_prm" xml:space="preserve">
-    <value>Suspeita Prm</value>
+    <value>Suspeita PRM</value>
   </data>
   <data name="cumprimento" xml:space="preserve">
     <value>Cumprimento</value>
@@ -903,11 +903,11 @@
   <data name="situacao_queixa" xml:space="preserve">
     <value>Situação Queixa</value>
   </data>
-  <data name="descricao_queixa_1" xml:space="preserve">
-    <value>Descrição da Queixa 1</value>
+  <data name="intervencao_1" xml:space="preserve">
+    <value>Intervenção da Queixa 1</value>
   </data>
-  <data name="descricao_queixa_2" xml:space="preserve">
-    <value>Descrição da Queixa 2</value>
+  <data name="intervencao_2" xml:space="preserve">
+    <value>Intervenção da Queixa 2</value>
   </data>
   <data name="resolvido" xml:space="preserve">
     <value>Resolvido</value>

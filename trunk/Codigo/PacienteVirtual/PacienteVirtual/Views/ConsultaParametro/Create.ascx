@@ -2,7 +2,7 @@
 <% using (Html.BeginForm("Create", "ConsultaParametro")) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.consulta_parametro %></legend>
+        <legend><%: Resources.Mensagem.parametro_clinico %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <div class="row-fluid">
         <div class="span3">
@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
     </div>
     </fieldset>
 <% } %>

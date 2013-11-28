@@ -331,7 +331,7 @@
                         <li id="li25"><a href="#tab2-5" data-toggle="tab">
                             <%: Resources.Mensagem.exames_fisicos %></a></li>
                         <li id="li26"><a href="#tab2-6" data-toggle="tab">
-                            <%: Resources.Mensagem.consulta_parametro %></a></li>
+                            <%: Resources.Mensagem.parametro_clinico %></a></li>
                         <li id="li27"><a href="#tab2-7" data-toggle="tab">
                             <%: Resources.Mensagem.razao_encontro %></a></li>
                         <a name="ancora" />

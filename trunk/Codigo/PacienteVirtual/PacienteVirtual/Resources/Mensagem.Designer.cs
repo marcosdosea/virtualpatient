@@ -331,7 +331,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0-10 Cigarros/Dia.
+        ///   Looks up a localized string similar to 1-10 Cigarros/Dia.
         /// </summary>
         public static string cigarros_dia_0_10 {
             get {
@@ -808,24 +808,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Descrição da Queixa 1.
-        /// </summary>
-        public static string descricao_queixa_1 {
-            get {
-                return ResourceManager.GetString("descricao_queixa_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Descrição da Queixa 2.
-        /// </summary>
-        public static string descricao_queixa_2 {
-            get {
-                return ResourceManager.GetString("descricao_queixa_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Descrição da Razão do Encontro.
         /// </summary>
         public static string descricao_razao {
@@ -880,7 +862,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Doença ou Agrave.
+        ///   Looks up a localized string similar to Doença ou Agravo.
         /// </summary>
         public static string doenca_agrave {
             get {
@@ -1069,7 +1051,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fisioterápico.
+        ///   Looks up a localized string similar to Fitoterápico.
         /// </summary>
         public static string fitoterapico {
             get {
@@ -1321,6 +1303,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Intervenção da Queixa 1.
+        /// </summary>
+        public static string intervencao_1 {
+            get {
+                return ResourceManager.GetString("intervencao_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Intervenção da Queixa 2.
+        /// </summary>
+        public static string intervencao_2 {
+            get {
+                return ResourceManager.GetString("intervencao_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Justificativa.
         /// </summary>
         public static string justificativa {
@@ -1384,7 +1384,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M.
+        ///   Looks up a localized string similar to m.
         /// </summary>
         public static string m {
             get {
@@ -1438,7 +1438,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medicamento não prescrito.
+        ///   Looks up a localized string similar to Medicamentos Não Prescritos.
         /// </summary>
         public static string medicamento_nao_prescrito {
             get {
@@ -1447,7 +1447,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medicamentos prescrito.
+        ///   Looks up a localized string similar to Medicamentos Prescritos.
         /// </summary>
         public static string medicamento_prescrito {
             get {
@@ -1465,7 +1465,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medicamentos anteriores.
+        ///   Looks up a localized string similar to Medicamentos Anteriores.
         /// </summary>
         public static string medicamentos_anteriores {
             get {
@@ -1492,7 +1492,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mg/dl.
+        ///   Looks up a localized string similar to mg/dl.
         /// </summary>
         public static string mg_dl {
             get {
@@ -1519,7 +1519,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MnHg.
+        ///   Looks up a localized string similar to mnHg.
         /// </summary>
         public static string mmHg {
             get {
@@ -2311,7 +2311,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suspeita Prm.
+        ///   Looks up a localized string similar to Suspeita PRM.
         /// </summary>
         public static string suspeita_prm {
             get {
