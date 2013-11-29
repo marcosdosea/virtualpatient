@@ -113,7 +113,6 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaConsultaParametro = SessionController.ListaConsultaParametro;
 
             consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
-            consultaModel.ListaQueixaMedicamento = SessionController.ListaQueixaMedicamento;
 
             consultaModel.AlergiaExamesFisicos = new AlergiaExamesFisicosModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel }; ;
             consultaModel.ListaAlergia = SessionController.ListaAlergia;
