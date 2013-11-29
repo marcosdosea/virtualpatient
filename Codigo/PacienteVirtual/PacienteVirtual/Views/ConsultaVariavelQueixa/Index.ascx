@@ -7,7 +7,8 @@
                 cursor:pointer;
             }
             </style>
-
+            <h3>
+    <%: Resources.Mensagem.queixa %></h3>
 <div class="box-content">
     <table class="table table-bordered table-striped">
         <tr>

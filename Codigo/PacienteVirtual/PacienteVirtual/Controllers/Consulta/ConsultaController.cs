@@ -112,6 +112,9 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaMedicamentoNaoPrescrito = SessionController.ListaMedicamentoNaoPrescrito;
             consultaModel.ListaConsultaParametro = SessionController.ListaConsultaParametro;
 
+            consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
+            consultaModel.ListaQueixaMedicamento = SessionController.ListaQueixaMedicamento;
+
             consultaModel.AlergiaExamesFisicos = new AlergiaExamesFisicosModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel }; ;
             consultaModel.ListaAlergia = SessionController.ListaAlergia;
 
