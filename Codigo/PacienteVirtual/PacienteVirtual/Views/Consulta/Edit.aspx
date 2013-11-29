@@ -381,8 +381,6 @@
                     </div>
                     <div class="thumbnail">
                     <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
-                    <br />
-                    <% Html.RenderPartial("../QueixaMedicamento/Index", Model.ListaQueixaMedicamento);%>
                 </div>
                 </div>
             </div>
