@@ -52,6 +52,9 @@ namespace PacienteVirtual.Controllers
                             case Global.Administrador:
                                 SessionController.Roles = "administrador";
                                 break;
+                            default:
+                                SessionController.Roles = "usuario";
+                                return RedirectToAction("Index", "SolicitarMatriculaTurma");
                         }
                         return RedirectToAction("Index", "SelecionarTurma");
                     }
