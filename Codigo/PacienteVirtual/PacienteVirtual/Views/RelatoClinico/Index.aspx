@@ -22,61 +22,63 @@
                 alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
         </div>
     </div>
-    <div class="box-content">
-        <table class="table table-bordered table-striped">
-            <tr>
-                <th>
-                    <%: Resources.Mensagem.relato_clinico %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.ordem_cronologica %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.relato_textual %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.nivel_dificuldade %>
-                </th>
-                <th>
-                    Video
-                </th>
-                <th>
-                    <%: Resources.Mensagem.opcoes %>
-                </th>
-            </tr>
-            <% if (Model != null)
-                   foreach (var item in Model)
-                   { %>
-            <tr>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.NomePaciente) %>
-                </td>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.OrdemCronologica) %>
-                </td>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.RelatoTextual) %>
-                </td>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.NivelDificuldade) %>
-                </td>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.RelatoVideo) %>
-                </td>
-                <td>
-                    <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id=item.IdRelato }) %>
-                    |
-                    <%: Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id=item.IdRelato }) %>
-                    |
-                    <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id=item.IdRelato }) %>
-                    |
-                    <%: Html.ActionLink(Resources.Mensagem.atribuir, "Atribuir", new { idRelato = item.IdRelato, idPaciente = item.IdPaciente, ordemCronologica = item.OrdemCronologica }) %>
-                </td>
-            </tr>
-            <% } %>
-        </table>
-    </div>
+    
+    <%@ Import Namespace="GridMvc.Html" %>
+    <%@ Import Namespace="GridMvc.Sorting" %>
 
+<div class="box-content">
+
+<%= Html.Grid(Model).Columns(columns =>
+    {
+        
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.NomePaciente)
+                .Titled(Resources.Mensagem.relato_clinico)
+                .ThenSortByDescending(o => o.NomePaciente)
+                .Filterable(true);
+
+        columns.Add(o => o.OrdemCronologica)
+                .Titled(Resources.Mensagem.ordem_cronologica)
+                .ThenSortByDescending(o => o.OrdemCronologica)
+                .Filterable(true);
+
+        columns.Add(o => o.RelatoTextual)
+                .Titled(Resources.Mensagem.relato_textual);
+
+        columns.Add(o => o.NivelDificuldade)
+                .Titled(Resources.Mensagem.nivel_dificuldade)
+                .ThenSortByDescending(o => o.NivelDificuldade)
+                .Filterable(true);
+
+
+        /* Adding not mapped column, that renders body, using inline Razor html helper */
+        columns.Add()
+                .Titled(Resources.Mensagem.editar)
+                .Encoded(false)
+                .Sanitized(false)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = o.IdRelato }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.detalhes)
+                .Encoded(false)
+                .Sanitized(false)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = o.IdRelato }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.remover)
+                .Encoded(false)
+                .Sanitized(false)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = o.IdRelato }, new { @class = "modal-link" }));
+
+        columns.Add()
+                .Titled(Resources.Mensagem.atribuir)
+                .Encoded(false)
+                .Sanitized(false)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.atribuir, "Atribuir", new { idRelato = o.IdRelato, idPaciente = o.IdPaciente, ordemCronologica = o.OrdemCronologica }, new { @class = "modal-link" }));
+
+    }).WithPaging(5).Sortable().ToHtmlString()%>
+
+</div>
 
 </asp:Content>
 
