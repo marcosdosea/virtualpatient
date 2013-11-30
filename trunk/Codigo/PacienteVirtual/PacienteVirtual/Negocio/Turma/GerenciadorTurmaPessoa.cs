@@ -209,7 +209,15 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public int ObterRolePorPessoa(int idPessoa)
         {
-            return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0).IdRole;
+            TurmaPessoaModel tpm = GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
+            if (tpm == null)
+            {
+                return -1;
+            }
+            else
+            {
+                return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0).IdRole;
+            }
         }
 
 
