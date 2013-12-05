@@ -518,6 +518,7 @@
     <Content Include="Views\AcaoQueixa\Index.aspx" />
     <Content Include="Views\Account\ChangePassword.aspx" />
     <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\AlterarDadosUsuario.aspx" />
     <Content Include="Views\Account\LogOn.aspx" />
     <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Account\Registro.aspx" />

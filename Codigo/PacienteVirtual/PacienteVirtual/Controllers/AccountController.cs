@@ -240,6 +240,45 @@ namespace PacienteVirtual.Controllers
 
         }
 
+
+        [Authorize]
+        public ActionResult AlterarDadosUsuario(AlterarDadosUsuarioModel model)
+        {
+            MembershipUser currentUser = Membership.GetUser(User.Identity.Name, true /* userIsOnline */);
+            PessoaModel pessoa = GerenciadorPessoa.GetInstance().ObterPorUserName(currentUser.UserName);
+            model.UserName = pessoa.UserName;
+            model.Nome = pessoa.Nome;
+            model.Cpf = pessoa.Cpf;
+            model.Fone = pessoa.Fone;
+            model.Matricula = pessoa.Matricula;
+            model.Email = currentUser.Email;
+            return View(model);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult AlterarDadosUsuario(AlterarDadosUsuarioModel model, string nada)
+        {
+            if (ModelState.IsValid)
+            {
+                MembershipUser currentUser = Membership.GetUser(User.Identity.Name, true /* userIsOnline */);
+                PessoaModel pessoaModel = new PessoaModel();
+                pessoaModel.IdUser = SessionController.Pessoa.IdUser;
+                pessoaModel.IdPessoa = SessionController.Pessoa.IdPessoa;
+                pessoaModel.Nome = model.Nome;
+                pessoaModel.Cpf = model.Cpf;
+                pessoaModel.Fone = model.Fone;
+                pessoaModel.Matricula = model.Matricula;
+                pessoaModel.UserName = model.UserName;
+                currentUser.Email = model.Email;
+                Membership.UpdateUser(currentUser);
+                GerenciadorPessoa.GetInstance().Atualizar(pessoaModel);
+                SessionController.Pessoa = pessoaModel;
+                return RedirectToAction("Index", "Home");
+            }
+            
+            return View(model);
+        }
     }
 
 }

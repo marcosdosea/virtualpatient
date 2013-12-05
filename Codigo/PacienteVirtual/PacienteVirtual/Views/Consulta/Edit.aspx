@@ -423,12 +423,15 @@
                 monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
                 changeMonth: true,
                 changeYear: true,
+                yearRange: "-100:+0",
                 showOtherMonths: true,
                 selectOtherMonths: true,
                 showOn: "button",
                 buttonImage: "../../Content/themes/pv/img/icons/calendar3.png",
-                buttonImageOnly: true
-            });
+                buttonImageOnly: true,
+                nextText: 'Próximo',
+                prevText: 'Anterior'
+            }).datepicker('setDate', 'today');
         });
     </script>
 </asp:Content>

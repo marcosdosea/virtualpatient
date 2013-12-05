@@ -945,4 +945,7 @@
   <data name="indice_massa_corporea" xml:space="preserve">
     <value>IMC</value>
   </data>
+  <data name="alterar_dados_usuario" xml:space="preserve">
+    <value>Alterar Dados do Usuário</value>
+  </data>
 </root>

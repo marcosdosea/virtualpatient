@@ -14,8 +14,27 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
+            ViewBag.codigo = -1;
+            ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
             return View(GerenciadorPaciente.GetInstance().ObterTodos());
         }
+
+        [HttpPost]
+        public ActionResult Index(int IdPaciente = -1)
+        {
+            ViewBag.codigo = IdPaciente;
+            ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
+            if (IdPaciente != -1)
+            {
+                return View(GerenciadorPaciente.GetInstance().ObterPorID(IdPaciente));
+            }
+            if (IdPaciente == -1)
+            {
+                return View(GerenciadorPaciente.GetInstance().ObterTodos());
+            }
+            return View();
+        }
+
 
         //
         // GET: /Paciente/Details/5

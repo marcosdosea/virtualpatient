@@ -82,4 +82,38 @@ namespace PacienteVirtual.Models
         public string Matricula { get; set; }
 
     }
+
+    public class AlterarDadosUsuarioModel
+    {
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "nome_usuario", ResourceType = typeof(Mensagem))]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "endereco_email", ResourceType = typeof(Mensagem))]
+        public string Email { get; set; }
+
+
+        /// <summary>
+        /// parte da pessoa
+        /// </summary>
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "nome_pessoa", ResourceType = typeof(Mensagem))]
+        public string Nome { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "cpf", ResourceType = typeof(Mensagem))]
+        public string Cpf { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "fone", ResourceType = typeof(Mensagem))]
+        public string Fone { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "matricula", ResourceType = typeof(Mensagem))]
+        public string Matricula { get; set; }
+
+    }
 }
