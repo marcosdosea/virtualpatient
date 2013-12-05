@@ -143,6 +143,11 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(paciente => paciente.IdPaciente == idPaciente).ToList().ElementAtOrDefault(0);
         }
 
+        public IEnumerable<PacienteModel> ObterPorID(int idPaciente)
+        {
+            return GetQuery().Where(paciente => paciente.IdPaciente == idPaciente);
+        }
+
         /// <summary>
         /// Obtém nome do paciente a partir do id
         /// </summary>

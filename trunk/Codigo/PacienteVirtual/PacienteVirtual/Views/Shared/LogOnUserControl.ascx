@@ -7,6 +7,7 @@
 %>
         <p class="bem_vindo"><%: Page.User.Identity.Name %>!</p><p class="nome"><%: Resources.Mensagem.bem_vindo %></p>
         [ <%: Html.ActionLink(Resources.Mensagem.alterar_senha, "ChangePassword", "Account")%> ]
+        [ <%: Html.ActionLink(Resources.Mensagem.alterar_dados_usuario, "AlterarDadosUsuario", "Account")%> ]
         [ <%: Html.ActionLink("Log Off", "LogOff", "Account") %> ]
 <%
     }
