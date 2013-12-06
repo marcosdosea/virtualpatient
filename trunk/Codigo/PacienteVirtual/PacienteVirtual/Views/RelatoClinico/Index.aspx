@@ -35,15 +35,13 @@
         columns.Add(o => o.NomePaciente)
                 .Titled(Resources.Mensagem.relato_clinico)
                 .ThenSortByDescending(o => o.NomePaciente)
-                .Filterable(true);
+                .Filterable(true)
+                .SetWidth(380);
 
         columns.Add(o => o.OrdemCronologica)
                 .Titled(Resources.Mensagem.ordem_cronologica)
                 .ThenSortByDescending(o => o.OrdemCronologica)
                 .Filterable(true);
-
-        columns.Add(o => o.RelatoTextual)
-                .Titled(Resources.Mensagem.relato_textual);
 
         columns.Add(o => o.NivelDificuldade)
                 .Titled(Resources.Mensagem.nivel_dificuldade)

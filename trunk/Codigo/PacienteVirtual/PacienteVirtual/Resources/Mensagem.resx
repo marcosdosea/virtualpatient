@@ -631,7 +631,7 @@
     <value>Nome do Grupo de Intervenção</value>
   </data>
   <data name="intervencao" xml:space="preserve">
-    <value>Intervenção</value>
+    <value>Intervenção Farmacêutica</value>
   </data>
   <data name="altura" xml:space="preserve">
     <value>Altura</value>
@@ -817,7 +817,7 @@
     <value>mg/dl</value>
   </data>
   <data name="mmHg" xml:space="preserve">
-    <value>mnHg</value>
+    <value>mmHg</value>
   </data>
   <data name="pressao_arterial" xml:space="preserve">
     <value>Pressão Arterial</value>

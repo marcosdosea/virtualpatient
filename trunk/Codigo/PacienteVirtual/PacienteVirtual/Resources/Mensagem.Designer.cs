@@ -1303,7 +1303,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Intervenção.
+        ///   Looks up a localized string similar to Intervenção Farmacêutica.
         /// </summary>
         public static string intervencao {
             get {
@@ -1528,7 +1528,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mnHg.
+        ///   Looks up a localized string similar to mmHg.
         /// </summary>
         public static string mmHg {
             get {
