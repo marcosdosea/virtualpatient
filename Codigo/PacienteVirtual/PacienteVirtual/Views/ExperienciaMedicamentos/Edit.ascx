@@ -12,7 +12,7 @@
                 <%: ViewBag.PerguntaEsperaTratamento %>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownList("IdRespostaEsperaTratamento", (SelectList)ViewBag.IdRespostaEsperaTratamento, new { style = "width:400px;" })%>
+                <%: Html.DropDownList("IdRespostaEsperaTratamento", null, Resources.Mensagem.selecione, new { style = "width:400px;" })%>
                 <%: Html.ValidationMessageFor(model => model.IdRespostaEsperaTratamento) %>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 <%: ViewBag.PerguntaPreocupacoes %>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownList("IdRespostaPreocupacoes", (SelectList)ViewBag.IdRespostaPreocupacoes, new { style = "width:400px;" })%>
+                <%: Html.DropDownList("IdRespostaPreocupacoes", null, Resources.Mensagem.selecione, new { style = "width:400px;" })%>
                 <%: Html.ValidationMessageFor(model => model.IdRespostaPreocupacoes) %>
             </div>
         </div>
@@ -59,7 +59,7 @@
                 <%: ViewBag.PerguntaGrauEntendimento %>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownList("IdRespostaGrauEntendimento", (SelectList)ViewBag.IdRespostaGrauEntendimento, new { style = "width:400px;" })%>
+                <%: Html.DropDownList("IdRespostaGrauEntendimento", null, Resources.Mensagem.selecione, new { style = "width:400px;" })%>
                 <%: Html.ValidationMessageFor(model => model.IdRespostaGrauEntendimento) %>
             </div>
         </div>
@@ -82,7 +82,7 @@
                 <%: ViewBag.PerguntaCultural %>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownList("IdRespostaCultural", (SelectList)ViewBag.IdRespostaCultural, new { style = "width:400px;" })%>
+                <%: Html.DropDownList("IdRespostaCultural", null, Resources.Mensagem.selecione, new { style = "width:400px;" })%>
                 <%: Html.ValidationMessageFor(model => model.IdRespostaCultural) %>
             </div>
         </div>
@@ -105,7 +105,7 @@
                 <%: ViewBag.PerguntaComportamento%>
             </div>
             <div class="editor-field">
-                <%: Html.DropDownList("IdRespostaComportamento", (SelectList)ViewBag.IdRespostaComportamento, new { style = "width:400px;" })%>
+                <%: Html.DropDownList("IdRespostaComportamento", null, Resources.Mensagem.selecione, new { style = "width:400px;" })%>
                 <%: Html.ValidationMessageFor(model => model.IdRespostaComportamento) %>
             </div>
         </div>
@@ -126,7 +126,7 @@
         <%: ViewBag.PerguntaIncorporadoPlano %>
     </div>
     <div class="editor-field">
-        <%: Html.DropDownList("IdRespostaIncorporadoPlano", (SelectList)ViewBag.IdRespostaIncorporadoPlano, new { style = "width:400px;" })%>
+        <%: Html.DropDownList("IdRespostaIncorporadoPlano", null, Resources.Mensagem.selecione, new { style = "width:400px;" })%>
         <%: Html.ValidationMessageFor(model => model.IdRespostaIncorporadoPlano) %>
     </div>
     <div class="form-actions">

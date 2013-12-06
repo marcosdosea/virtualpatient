@@ -19,7 +19,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "tabaco_uso", ResourceType = typeof(Mensagem))]
         public short TabacoUso { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "tabaco_parou", ResourceType = typeof(Mensagem))]
         public string TabacoParou { get; set; }
 
@@ -31,7 +30,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "cafe_uso", ResourceType = typeof(Mensagem))]
         public short CafeUso { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "cafe_parou", ResourceType = typeof(Mensagem))]
         public string CafeParou { get; set; }
 
@@ -47,7 +45,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "alcool_tipo_bebida", ResourceType = typeof(Mensagem))]
         public string AlcoolTipoBebida { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "alcool_parou", ResourceType = typeof(Mensagem))]
         public string AlcoolParou { get; set; }
 
