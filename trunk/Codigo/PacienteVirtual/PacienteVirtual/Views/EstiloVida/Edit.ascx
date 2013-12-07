@@ -34,7 +34,8 @@
                 </td>
                 <td>
                     <div class="editor-field">
-                        <%: Html.EditorFor(model => model.TabacoConsumo) %>
+                        <%: Html.RadioButtonFor(model => model.TabacoConsumo, true) %>  <%: Resources.Mensagem.sim %>&nbsp &nbsp
+                        <%: Html.RadioButtonFor(model => model.TabacoConsumo, false) %>  <%: Resources.Mensagem.nao %>
                         <%: Html.ValidationMessageFor(model => model.TabacoConsumo) %>
                     </div>
                 </td>
@@ -66,7 +67,8 @@
                 </td>
                 <td>
                     <div class="editor-field">
-                        <%: Html.EditorFor(model => model.CafeConsumo) %>
+                        <%: Html.RadioButtonFor(model => model.CafeConsumo, true) %>  <%: Resources.Mensagem.sim %>&nbsp &nbsp
+                        <%: Html.RadioButtonFor(model => model.CafeConsumo, false) %>  <%: Resources.Mensagem.nao %>
                         <%: Html.ValidationMessageFor(model => model.CafeConsumo) %>
                     </div>
                 </td>
@@ -98,7 +100,8 @@
                 </td>
                 <td>
                     <div class="editor-field">
-                        <%: Html.EditorFor(model => model.AlcoolConsumo) %>
+                        <%: Html.RadioButtonFor(model => model.AlcoolConsumo, true) %>  <%: Resources.Mensagem.sim %>&nbsp &nbsp
+                        <%: Html.RadioButtonFor(model => model.AlcoolConsumo, false) %>  <%: Resources.Mensagem.nao %>
                         <%: Html.ValidationMessageFor(model => model.AlcoolConsumo) %>
                     </div>
                 </td>
