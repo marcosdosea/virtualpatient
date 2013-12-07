@@ -401,14 +401,15 @@
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
     </div>
     <div class="btn btn-large btn-primary" id="botaopos">
-        <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
+        <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
     </div>
     <p>
     <br/><br/>
     </p>
     <div class="btn btn-large btn-primary" id="Div1">
-        <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
+        <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
     </div>
+
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
