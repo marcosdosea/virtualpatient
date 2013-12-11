@@ -556,7 +556,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Conta criada sem sucesso. Por favor, corrija os erros e tente novamente..
+        ///   Looks up a localized string similar to Não foi possível criar sua conta. Por favor, corrija os erros e tente novamente..
         /// </summary>
         public static string conta_sem_sucesso_tentar_novamente {
             get {
@@ -934,7 +934,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-mail Inválido..
+        ///   Looks up a localized string similar to *O E-mail está Inválido. (Exemplo: paciente@virtual.com).
         /// </summary>
         public static string email_invalido {
             get {
@@ -1569,6 +1569,51 @@ namespace Resources {
         public static string motivo_referencia_consulta {
             get {
                 return ResourceManager.GetString("motivo_referencia_consulta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Já existe um &quot;Endereço de E-mail&quot; para este Usuário. Digite um &quot;Endereço de E-mail&quot; diferente..
+        /// </summary>
+        public static string msgErro_DuplicateEmail {
+            get {
+                return ResourceManager.GetString("msgErro_DuplicateEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O &quot;Nome do Usuário&quot; já existe. Por favor, digite um &quot;Nome de Usuário&quot; diferente..
+        /// </summary>
+        public static string msgErro_DuplicateUserName {
+            get {
+                return ResourceManager.GetString("msgErro_DuplicateUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O &quot;E-mail&quot; está inválido. Redigite seu e-mail..
+        /// </summary>
+        public static string msgErro_InvalidEmail {
+            get {
+                return ResourceManager.GetString("msgErro_InvalidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A &quot;Senha&quot; está inválida. Redigite sua Senha..
+        /// </summary>
+        public static string msgErro_InvalidPassword {
+            get {
+                return ResourceManager.GetString("msgErro_InvalidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O &quot;Nome de Usuário&quot; está inválido. Verifique e redigite seu Nome de Usuário novamente..
+        /// </summary>
+        public static string msgErro_InvalidUserName {
+            get {
+                return ResourceManager.GetString("msgErro_InvalidUserName", resourceCulture);
             }
         }
         

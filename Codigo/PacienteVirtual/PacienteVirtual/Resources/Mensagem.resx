@@ -691,7 +691,7 @@
     <value>Valor Referêcia</value>
   </data>
   <data name="conta_sem_sucesso_tentar_novamente" xml:space="preserve">
-    <value>Conta criada sem sucesso. Por favor, corrija os erros e tente novamente.</value>
+    <value>Não foi possível criar sua conta. Por favor, corrija os erros e tente novamente.</value>
   </data>
   <data name="minimo_senha_1" xml:space="preserve">
     <value>É necessário no mínimo </value>
@@ -952,9 +952,24 @@
     <value>CPF Inválido.</value>
   </data>
   <data name="email_invalido" xml:space="preserve">
-    <value>E-mail Inválido.</value>
+    <value>*O E-mail está Inválido. (Exemplo: paciente@virtual.com)</value>
   </data>
   <data name="revisao_sistemas" xml:space="preserve">
     <value>Revisão dos Sistemas</value>
+  </data>
+  <data name="msgErro_DuplicateEmail" xml:space="preserve">
+    <value>Já existe um "Endereço de E-mail" para este Usuário. Digite um "Endereço de E-mail" diferente.</value>
+  </data>
+  <data name="msgErro_DuplicateUserName" xml:space="preserve">
+    <value>O "Nome do Usuário" já existe. Por favor, digite um "Nome de Usuário" diferente.</value>
+  </data>
+  <data name="msgErro_InvalidEmail" xml:space="preserve">
+    <value>O "E-mail" está inválido. Redigite seu e-mail.</value>
+  </data>
+  <data name="msgErro_InvalidPassword" xml:space="preserve">
+    <value>A "Senha" está inválida. Redigite sua Senha.</value>
+  </data>
+  <data name="msgErro_InvalidUserName" xml:space="preserve">
+    <value>O "Nome de Usuário" está inválido. Verifique e redigite seu Nome de Usuário novamente.</value>
   </data>
 </root>

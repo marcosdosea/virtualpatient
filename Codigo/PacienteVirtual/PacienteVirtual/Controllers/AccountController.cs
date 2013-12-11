@@ -98,6 +98,10 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Retirando Máscara do CPF para inserir no banco
+                model.Cpf = model.Cpf.Replace(".", "");
+                model.Cpf = model.Cpf.Replace("-", "");
+
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, null, out createStatus);
@@ -198,16 +202,16 @@ namespace PacienteVirtual.Controllers
             switch (createStatus)
             {
                 case MembershipCreateStatus.DuplicateUserName:
-                    return "User name already exists. Please enter a different user name.";
+                    return Resources.Mensagem.msgErro_DuplicateUserName;
 
                 case MembershipCreateStatus.DuplicateEmail:
-                    return "A user name for that e-mail address already exists. Please enter a different e-mail address.";
+                    return Resources.Mensagem.msgErro_DuplicateEmail;
 
                 case MembershipCreateStatus.InvalidPassword:
-                    return "The password provided is invalid. Please enter a valid password value.";
+                    return Resources.Mensagem.msgErro_InvalidPassword;
 
                 case MembershipCreateStatus.InvalidEmail:
-                    return "The e-mail address provided is invalid. Please check the value and try again.";
+                    return Resources.Mensagem.msgErro_InvalidEmail;
 
                 case MembershipCreateStatus.InvalidAnswer:
                     return "The password retrieval answer provided is invalid. Please check the value and try again.";
@@ -216,7 +220,7 @@ namespace PacienteVirtual.Controllers
                     return "The password retrieval question provided is invalid. Please check the value and try again.";
 
                 case MembershipCreateStatus.InvalidUserName:
-                    return "The user name provided is invalid. Please check the value and try again.";
+                    return Resources.Mensagem.msgErro_InvalidUserName;
 
                 case MembershipCreateStatus.ProviderError:
                     return "The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
