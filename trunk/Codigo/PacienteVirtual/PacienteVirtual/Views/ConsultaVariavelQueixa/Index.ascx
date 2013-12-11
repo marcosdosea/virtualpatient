@@ -8,7 +8,7 @@
             }
             </style>
             <h3>
-    <%: Resources.Mensagem.queixa %></h3>
+    <%: Resources.Mensagem.revisao_sistemas %></h3>
 <div class="box-content">
     <table class="table table-bordered table-striped">
         <tr>
@@ -58,11 +58,9 @@
             </td>
             <td>
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
-                <% if (item.Tipo == "S")
-                   { %>
+                
                 |
                 <div class="botaoMostrar"><%: Resources.Mensagem.novo_prm %></div>
-                <% } %>
             </td>
         </tr>
         <% } %>

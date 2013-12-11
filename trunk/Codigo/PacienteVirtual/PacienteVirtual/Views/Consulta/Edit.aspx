@@ -21,230 +21,48 @@
         var abas1 = document.getElementById('abas1').value;
         if (abas1 == 1) {
             $(document).ready(function () {
-                $("#li1").addClass("active");
-                $("#li2").removeClass("active");
-                $("#li3").removeClass("active");
-
-                $("#tab1-1").removeClass("tab-pane");
-                $("#tab1-1").addClass("tab-pane active");
-                $("#tab1-2").removeClass("tab-pane active");
-                $("#tab1-2").addClass("tab-pane");
-                $("#tab1-3").removeClass("tab-pane active");
-                $("#tab1-3").addClass("tab-pane");
+                $("#li1").addClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane"); $("#tab1-1").addClass("tab-pane active"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");  
             });
         } else if (abas1 == 2) {
             $(document).ready(function () {
-                $("#li1").removeClass("active");
-                $("#li2").addClass("active");
-                $("#li3").removeClass("active");
-
-                $("#tab1-1").removeClass("tab-pane active");
-                $("#tab1-1").addClass("tab-pane");
-                $("#tab1-2").removeClass("tab-pane");
-                $("#tab1-2").addClass("tab-pane active");
-                $("#tab1-3").removeClass("tab-pane active");
-                $("#tab1-3").addClass("tab-pane");
+                $("#li1").removeClass("active"); $("#li2").addClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane"); $("#tab1-2").addClass("tab-pane active"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");    
             });
         } else if (abas1 == 3) {
             $(document).ready(function () {
-                $("#li1").removeClass("active");
-                $("#li2").removeClass("active");
-                $("#li3").addClass("active");
-
-                $("#tab1-1").removeClass("tab-pane active");
-                $("#tab1-1").addClass("tab-pane");
-                $("#tab1-2").removeClass("tab-pane active");
-                $("#tab1-2").addClass("tab-pane");
-                $("#tab1-3").removeClass("tab-pane");
-                $("#tab1-3").addClass("tab-pane active");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").addClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane"); $("#tab1-3").addClass("tab-pane active"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");      
             });
-        }
-    </script>
-    <!-- Solução das abas 2 com jquery -->
-    <input type="hidden" value="<%: ViewBag.Abas2 %>" id="abas2" />
-    <script type="text/javascript">
-        var abas2 = document.getElementById('abas2').value;
-        if (abas2 == 1) {
+        } else if (abas1 == 4) {
             $(document).ready(function () {
-                $("#li21").addClass("active");
-                $("#li22").removeClass("active");
-                $("#li23").removeClass("active");
-                $("#li24").removeClass("active");
-                $("#li25").removeClass("active");
-                $("#li26").removeClass("active");
-                $("#li27").removeClass("active");
-
-                $("#tab2-1").removeClass("tab-pane");
-                $("#tab2-1").addClass("tab-pane active");
-                $("#tab2-2").removeClass("tab-pane active");
-                $("#tab2-2").addClass("tab-pane");
-                $("#tab2-3").removeClass("tab-pane active");
-                $("#tab2-3").addClass("tab-pane");
-                $("#tab2-4").removeClass("tab-pane active");
-                $("#tab2-4").addClass("tab-pane");
-                $("#tab2-5").removeClass("tab-pane active");
-                $("#tab2-5").addClass("tab-pane");
-                $("#tab2-6").removeClass("tab-pane active");
-                $("#tab2-6").addClass("tab-pane");
-                $("#tab2-7").removeClass("tab-pane active");
-                $("#tab2-7").addClass("tab-pane");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").addClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane"); $("#tab1-4").addClass("tab-pane active"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");        
             });
-        } else if (abas2 == 2) {
+        } else if (abas1 == 5) {
             $(document).ready(function () {
-                $("#li21").removeClass("active");
-                $("#li22").addClass("active");
-                $("#li23").removeClass("active");
-                $("#li24").removeClass("active");
-                $("#li25").removeClass("active");
-                $("#li26").removeClass("active");
-                $("#li27").removeClass("active");
-
-                $("#tab2-1").removeClass("tab-pane active");
-                $("#tab2-1").addClass("tab-pane");
-                $("#tab2-2").removeClass("tab-pane");
-                $("#tab2-2").addClass("tab-pane active");
-                $("#tab2-3").removeClass("tab-pane active");
-                $("#tab2-3").addClass("tab-pane");
-                $("#tab2-4").removeClass("tab-pane active");
-                $("#tab2-4").addClass("tab-pane");
-                $("#tab2-5").removeClass("tab-pane active");
-                $("#tab2-5").addClass("tab-pane");
-                $("#tab2-6").removeClass("tab-pane active");
-                $("#tab2-6").addClass("tab-pane");
-                $("#tab2-7").removeClass("tab-pane active");
-                $("#tab2-7").addClass("tab-pane");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").addClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane"); $("#tab1-5").addClass("tab-pane active"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");           
             });
-        } else if (abas2 == 3) {
+        } else if (abas1 == 6) {
             $(document).ready(function () {
-                $("#li21").removeClass("active");
-                $("#li22").removeClass("active");
-                $("#li23").addClass("active");
-                $("#li24").removeClass("active");
-                $("#li25").removeClass("active");
-                $("#li26").removeClass("active");
-                $("#li27").removeClass("active");
-
-                $("#tab2-1").removeClass("tab-pane active");
-                $("#tab2-1").addClass("tab-pane");
-                $("#tab2-2").removeClass("tab-pane active");
-                $("#tab2-2").addClass("tab-pane");
-                $("#tab2-3").removeClass("tab-pane");
-                $("#tab2-3").addClass("tab-pane active");
-                $("#tab2-4").removeClass("tab-pane active");
-                $("#tab2-4").addClass("tab-pane");
-                $("#tab2-5").removeClass("tab-pane active");
-                $("#tab2-5").addClass("tab-pane");
-                $("#tab2-6").removeClass("tab-pane active");
-                $("#tab2-6").addClass("tab-pane");
-                $("#tab2-7").removeClass("tab-pane active");
-                $("#tab2-7").addClass("tab-pane");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").addClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane"); $("#tab1-6").addClass("tab-pane active"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");  
             });
-        } else if (abas2 == 4) {
+        } else if (abas1 == 7) {
             $(document).ready(function () {
-                $("#li21").removeClass("active");
-                $("#li22").removeClass("active");
-                $("#li23").removeClass("active");
-                $("#li24").addClass("active");
-                $("#li25").removeClass("active");
-                $("#li26").removeClass("active");
-                $("#li27").removeClass("active");
-
-                $("#tab2-1").removeClass("tab-pane active");
-                $("#tab2-1").addClass("tab-pane");
-                $("#tab2-2").removeClass("tab-pane active");
-                $("#tab2-2").addClass("tab-pane");
-                $("#tab2-3").removeClass("tab-pane active");
-                $("#tab2-3").addClass("tab-pane");
-                $("#tab2-4").removeClass("tab-pane");
-                $("#tab2-4").addClass("tab-pane active");
-                $("#tab2-5").removeClass("tab-pane active");
-                $("#tab2-5").addClass("tab-pane");
-                $("#tab2-6").removeClass("tab-pane active");
-                $("#tab2-6").addClass("tab-pane");
-                $("#tab2-7").removeClass("tab-pane active");
-                $("#tab2-7").addClass("tab-pane");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").addClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane"); $("#tab1-7").addClass("tab-pane active"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");  
             });
-        } else if (abas2 == 5) {
+        } else if (abas1 == 8) {
             $(document).ready(function () {
-                $("#li21").removeClass("active");
-                $("#li22").removeClass("active");
-                $("#li23").removeClass("active");
-                $("#li24").removeClass("active");
-                $("#li25").addClass("active");
-                $("#li26").removeClass("active");
-                $("#li27").removeClass("active");
-
-                $("#tab2-1").removeClass("tab-pane active");
-                $("#tab2-1").addClass("tab-pane");
-                $("#tab2-2").removeClass("tab-pane active");
-                $("#tab2-2").addClass("tab-pane");
-                $("#tab2-3").removeClass("tab-pane active");
-                $("#tab2-3").addClass("tab-pane");
-                $("#tab2-4").removeClass("tab-pane active");
-                $("#tab2-4").addClass("tab-pane");
-                $("#tab2-5").removeClass("tab-pane");
-                $("#tab2-5").addClass("tab-pane active");
-                $("#tab2-6").removeClass("tab-pane active");
-                $("#tab2-6").addClass("tab-pane");
-                $("#tab2-7").removeClass("tab-pane active");
-                $("#tab2-7").addClass("tab-pane");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").addClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane"); $("#tab1-8").addClass("tab-pane active"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");  
             });
-        } else if (abas2 == 6) {
+        } else if (abas1 == 9) {
             $(document).ready(function () {
-                $("#li21").removeClass("active");
-                $("#li22").removeClass("active");
-                $("#li23").removeClass("active");
-                $("#li24").removeClass("active");
-                $("#li25").removeClass("active");
-                $("#li26").addClass("active");
-                $("#li27").removeClass("active");
-
-                $("#tab2-1").removeClass("tab-pane active");
-                $("#tab2-1").addClass("tab-pane");
-                $("#tab2-2").removeClass("tab-pane active");
-                $("#tab2-2").addClass("tab-pane");
-                $("#tab2-3").removeClass("tab-pane active");
-                $("#tab2-3").addClass("tab-pane");
-                $("#tab2-4").removeClass("tab-pane active");
-                $("#tab2-4").addClass("tab-pane");
-                $("#tab2-5").removeClass("tab-pane active");
-                $("#tab2-5").addClass("tab-pane");
-                $("#tab2-6").removeClass("tab-pane");
-                $("#tab2-6").addClass("tab-pane active");
-                $("#tab2-7").removeClass("tab-pane active");
-                $("#tab2-7").addClass("tab-pane");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").addClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane"); $("#tab1-9").addClass("tab-pane active"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");  
             });
-        } else if (abas2 == 7) {
+        } else if (abas1 == 10) {
             $(document).ready(function () {
-                $("#li21").removeClass("active");
-                $("#li22").removeClass("active");
-                $("#li23").removeClass("active");
-                $("#li24").removeClass("active");
-                $("#li25").removeClass("active");
-                $("#li26").removeClass("active");
-                $("#li27").addClass("active");
-
-                $("#tab2-1").removeClass("tab-pane active");
-                $("#tab2-1").addClass("tab-pane");
-                $("#tab2-2").removeClass("tab-pane active");
-                $("#tab2-2").addClass("tab-pane");
-                $("#tab2-3").removeClass("tab-pane active");
-                $("#tab2-3").addClass("tab-pane");
-                $("#tab2-4").removeClass("tab-pane active");
-                $("#tab2-4").addClass("tab-pane");
-                $("#tab2-5").removeClass("tab-pane active");
-                $("#tab2-5").addClass("tab-pane");
-                $("#tab2-6").removeClass("tab-pane active");
-                $("#tab2-6").addClass("tab-pane");
-                $("#tab2-7").removeClass("tab-pane");
-                $("#tab2-7").addClass("tab-pane active");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").addClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane"); $("#tab1-10").addClass("tab-pane active"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");  
             });
-        }
-    </script>
-    <script type="text/javascript">
-        var abas2 = document.getElementById('abas2').value;
-        if (abas2 > 0) {
-            location.href = "#ancora";
+        } else if (abas1 == 11) {
+            $(document).ready(function () {
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").addClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane"); $("#tab1-11").addClass("tab-pane active");  
+            });
         }
     </script>
     <% using (Html.BeginForm())
@@ -289,37 +107,39 @@
             <div class="thumbnails">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
-                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab">História</a></li>
+                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.demografico_antropometricos %></a></li>
                         <li id="li2"><a href="#tab1-2" data-toggle="tab">
-                            <%: Resources.Mensagem.demografico_antropometricos %></a></li>
+                            <%: Resources.Mensagem.razao_encontro %></a></li>
                         <li id="li3"><a href="#tab1-3" data-toggle="tab">
                             <%: Resources.Mensagem.experiencia_medicamentos %></a></li>
-                        <li id="li4"><a href="#tab2-1" data-toggle="tab">
+                        <li id="li4"><a href="#tab1-4" data-toggle="tab">
                             <%: Resources.Mensagem.estilo_vida %></a></li>
-                        <li id="li5"><a href="#tab2-2" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamentos_anteriores %></a></li>
-                        <li id="li6"><a href="#tab2-3" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamento_prescrito %></a></li>
-                        <li id="li7"><a href="#tab2-4" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
-                        <li id="li8"><a href="#tab2-5" data-toggle="tab">
-                            <%: Resources.Mensagem.exames_fisicos %></a></li>
-                        <li id="li9"><a href="#tab2-6" data-toggle="tab">
-                            <%: Resources.Mensagem.parametro_clinico %></a></li>
-                        <li id="li10"><a href="#tab2-7" data-toggle="tab">
-                            <%: Resources.Mensagem.razao_encontro %></a></li>
-                            <li id="li11"><a href="#tab2-8" data-toggle="tab">
+                        <li id="li5"><a href="#tab1-5" data-toggle="tab">
                             <%: Resources.Mensagem.alergia %></a></li>
+                        <li id="li6"><a href="#tab1-6" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamento_prescrito %></a></li>
+                        <li id="li7"><a href="#tab1-7" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
+                        <li id="li8"><a href="#tab1-8" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamentos_anteriores %></a></li>
+                        <li id="li9"><a href="#tab1-9" data-toggle="tab">
+                            <%: Resources.Mensagem.historia %></a></li>
+                        <li id="li10"><a href="#tab1-10" data-toggle="tab">
+                            <%: Resources.Mensagem.exames_fisicos %></a></li>
+                            <li id="li11"><a href="#tab1-11" data-toggle="tab">
+                            <%: Resources.Mensagem.parametro_clinico %></a></li>
+                            <li id="li12"><a href="#tab1-12" data-toggle="tab">
+                            <%: Resources.Mensagem.revisao_sistemas %></a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../Historia/Edit", Model.Historia);%>
+                                <% Html.RenderPartial("../DemograficosAntropometicos/Edit", Model.DemograficoAntropometrico);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-2">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../DemograficosAntropometicos/Edit", Model.DemograficoAntropometrico);%>
+                                <% Html.RenderPartial("../ConsultaVariavel/Edit", Model.ConsultaVariavel);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-3">
@@ -327,52 +147,52 @@
                                 <% Html.RenderPartial("../ExperienciaMedicamentos/Edit", Model.ExperienciaMedicamentos);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab2-1">
+                        <div class="tab-pane" id="tab1-4">
                             <div class="thumbnail">
                                 <%  Html.RenderPartial("../EstiloVida/Edit", Model.EstiloVida);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab2-2">
+                        <div class="tab-pane" id="tab1-5">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../MedicamentosAnteriores/Create", Model.MedicamentosAnteriores);%>
-                                <% Html.RenderPartial("../MedicamentosAnteriores/Index", Model.ListaMedicamentosAnteriores);%>
+                                <% Html.RenderPartial("../ExamesFisicos/AdicionarAlergia", Model.AlergiaExamesFisicos);%>
+                                <% Html.RenderPartial("../ExamesFisicos/ListaAlergias", Model.ListaAlergia);%>
+                                
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab2-3">
+                        <div class="tab-pane" id="tab1-6">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../MedicamentoPrescrito/Create", Model.MedicamentoPrescrito);%>
                                 <% Html.RenderPartial("../MedicamentoPrescrito/Index", Model.ListaMedicamentoPrescrito);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab2-4">
+                        <div class="tab-pane" id="tab1-7">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../MedicamentoNaoPrescrito/Create", Model.MedicamentoNaoPrescrito);%>
                                 <% Html.RenderPartial("../MedicamentoNaoPrescrito/Index", Model.ListaMedicamentoNaoPrescrito);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab2-5">
+                        <div class="tab-pane" id="tab1-8">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../MedicamentosAnteriores/Create", Model.MedicamentosAnteriores);%>
+                                <% Html.RenderPartial("../MedicamentosAnteriores/Index", Model.ListaMedicamentosAnteriores);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-9">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Historia/Edit", Model.Historia);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-10">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ExamesFisicos/Edit", Model.ExamesFisicos);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab2-6">
+                        <div class="tab-pane" id="tab1-11">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ConsultaParametro/Create", Model.ConsultaParametro);%>
                                 <% Html.RenderPartial("../ConsultaParametro/Index", Model.ListaConsultaParametro);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab2-7">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../ConsultaVariavel/Edit", Model.ConsultaVariavel);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab2-8">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../ExamesFisicos/AdicionarAlergia", Model.AlergiaExamesFisicos);%>
-                                <% Html.RenderPartial("../ExamesFisicos/ListaAlergias", Model.ListaAlergia);%>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -423,7 +243,7 @@
                 buttonImageOnly: true,
                 nextText: 'Próximo',
                 prevText: 'Anterior'
-            }).datepicker('setDate', 'today');
+            });//.datepicker('setDate', 'today');
         });
     </script>
 </asp:Content>
