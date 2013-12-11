@@ -146,7 +146,7 @@
                 buttonImageOnly: true,
                 nextText: 'Próximo',
                 prevText: 'Anterior'
-            }).datepicker('setDate', 'today');
+            });//.datepicker('setDate', 'today');
         });
     </script>
 </asp:Content>

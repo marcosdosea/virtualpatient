@@ -397,6 +397,7 @@
     <Content Include="Content\themes\pv\css\datepicker.css" />
     <Content Include="Content\themes\pv\css\imperio.css" />
     <Content Include="Content\themes\pv\css\jquery-ui.css" />
+    <Content Include="Content\themes\pv\img\ajax-loader.gif" />
     <Content Include="Content\themes\pv\img\icons\calendar3.png" />
     <Content Include="Content\themes\pv\img\icons\calendar2.png" />
     <Content Include="Content\themes\pv\img\icons\Flag_of_Brazil.png" />

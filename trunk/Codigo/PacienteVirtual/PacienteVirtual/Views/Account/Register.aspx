@@ -4,7 +4,9 @@
     <%: Resources.Mensagem.registre_se %>
 </asp:Content>
 
+
 <asp:Content ID="registerContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div id="pagCarregamento" ></div>
     <h2><%: Resources.Mensagem.criar_conta %></h2>
     <p>
         <%: Resources.Mensagem.utilize_formulario_altera_senha %>
@@ -85,7 +87,7 @@
                     <%: Html.ValidationMessageFor(m => m.Matricula) %>
                 </div>    
             <div class="form-actions">
-                <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.registre_se %>" />
+                <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.registre_se %>" id="registrar" />
             </div>
             </fieldset>
         </div>
@@ -108,8 +110,40 @@
                     campo.value = vr.substr(0, 3) + '.' + vr.substr(3, 3) + '.' + vr.substr(7, 3) + '-' + vr.substr(11, 2);
             }
         }
+    </script>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js "></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#registrar").click(function () {
+                $("#pagCarregamento").addClass("jquery-waiting-base-container").text("Aguarde o carregamento da página...");
+            });
+        });
+    </script>
 
-</script>
+    <style>
+        .jquery-waiting-base-container {
+            position: absolute;
+            left: 0px;
+            top:0px;
+            margin:0px;
+            width: 100%;
+            height: 100%;
+            display:block;
+            z-index: 9999997;
+            opacity: 0.65;
+            -moz-opacity: 0.65;
+            filter: alpha(opacity = 65);
+            background: black;
+            background-image: url("../Content/themes/pv/img/ajax-loader.gif");
+            background-repeat: no-repeat;
+            background-position:50% 50%;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            color: white;
+            padding-top: 25%;
+        }
+    </style>
 </asp:Content>
-
 
