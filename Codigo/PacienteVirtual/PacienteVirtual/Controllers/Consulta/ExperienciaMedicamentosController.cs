@@ -29,7 +29,6 @@ namespace PacienteVirtual.Controllers
                 SessionController.ExperienciaMedicamentos = expMedicamento;
             }
             SessionController.Abas1 = 3;
-            SessionController.Abas2 = 0;
             return RedirectToAction("Edit", "Consulta");
         }
 

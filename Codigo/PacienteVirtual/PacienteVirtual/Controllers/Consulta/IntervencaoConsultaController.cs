@@ -33,7 +33,6 @@ namespace PacienteVirtual.Controllers
             {
                 SessionController.IdGrupoIntervencao = intervencaoConsulta.IdGrupoIntervencao;
             }
-            SessionController.AncoraEdit2 = 2;//Valor Fixo Para Âncora
 
             return RedirectToAction("Edit2", "Consulta");
         }
@@ -45,7 +44,6 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorIntervencaoConsulta.GetInstance().Remover(idConsultaVariavel, idIntervencao);
             SessionController.ListaIntervencaoConsulta = null;
-            SessionController.AncoraEdit2 = 2;//Valor Fixo Para Âncora
             return RedirectToAction("Edit2", "Consulta");
         }
 

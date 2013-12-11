@@ -1717,7 +1717,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Objetivo Terapeutico.
+        ///   Looks up a localized string similar to Objetivo Terapéutico.
         /// </summary>
         public static string objetivo_terapeutico {
             get {
@@ -2136,6 +2136,15 @@ namespace Resources {
         public static string resposta_codigo {
             get {
                 return ResourceManager.GetString("resposta_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revisão dos Sistemas.
+        /// </summary>
+        public static string revisao_sistemas {
+            get {
+                return ResourceManager.GetString("revisao_sistemas", resourceCulture);
             }
         }
         

@@ -526,24 +526,6 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-        public static int AncoraEdit2
-        {
-            get
-            {
-                int numeroAncora = (int)HttpContext.Current.Session["_NumeroAncora"];
-                if (numeroAncora == -1)
-                {
-                    numeroAncora = 0;
-                    HttpContext.Current.Session["_NumeroAncora"] = numeroAncora;
-                }
-                return numeroAncora;
-            }
-            set
-            {
-                HttpContext.Current.Session["_NumeroAncora"] = value;
-            }
-        }
-
         public static IEnumerable<IntervencaoConsultaModel> ListaIntervencaoConsulta
         {
             get

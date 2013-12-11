@@ -26,7 +26,6 @@ namespace PacienteVirtual.Controllers
                 carta.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
                 GerenciadorCarta.GetInstance().Inserir(carta);
                 SessionController.ListaCarta = null;
-                SessionController.AncoraEdit2 = 3;//Valor Fixo Para Âncora
             }
             return RedirectToAction("Edit2", "Consulta");
         }
@@ -38,7 +37,6 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorCarta.GetInstance().Remover(idConsultaVariavel, idCarta);
             SessionController.ListaCarta = null;
-            SessionController.AncoraEdit2 = 3;//Valor Fixo Para Âncora
             return RedirectToAction("Edit2", "Consulta");
         }
 

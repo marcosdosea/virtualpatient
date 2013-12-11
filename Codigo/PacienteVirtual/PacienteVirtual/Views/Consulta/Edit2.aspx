@@ -18,7 +18,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
 
-    <input type="hidden" value="<%: ViewBag.AncoraEdit2 %>" id="ancoraEdit2" />
+    <!--input type="hidden" value="<%: ViewBag.AncoraEdit2 %>" id="ancoraEdit2" />
         <script type="text/javascript">
             var ancoraEdit2 = document.getElementById('ancoraEdit2').value;
             if (ancoraEdit2 == 1) {
@@ -28,7 +28,7 @@
             } else if (ancoraEdit2 == 3) {
                 location.href = "#ancora3";
             }
-        </script>
+        </script-->
 
     <script type="text/javascript">
         $(document).ready(function () {

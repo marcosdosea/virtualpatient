@@ -29,7 +29,7 @@ namespace PacienteVirtual.Controllers
                 gMedicamentoNaoPrescrito.Inserir(medicamentoNaoPrescrito);
                 SessionController.ListaMedicamentoNaoPrescrito = null;
             }
-            SessionController.Abas2 = 4;
+            SessionController.Abas1 = 7;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -39,7 +39,7 @@ namespace PacienteVirtual.Controllers
         {
             gMedicamentoNaoPrescrito.Remover(idConsultaVariavel, idMedicamento);
             SessionController.ListaMedicamentoNaoPrescrito = null;
-            SessionController.Abas2 = 4;
+            SessionController.Abas1 = 7;
             return RedirectToAction("Edit", "Consulta");
         }
 

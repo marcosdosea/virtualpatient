@@ -18,7 +18,7 @@ namespace PacienteVirtual.Controllers
                 GerenciadorEstiloVida.GetInstance().Atualizar(estiloVidaModel);
                 SessionController.EstiloVida = estiloVidaModel;
             }
-            SessionController.Abas2 = 1;
+            SessionController.Abas1 = 4;
             return RedirectToAction("Edit", "Consulta");
         }
 
