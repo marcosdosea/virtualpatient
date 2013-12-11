@@ -68,7 +68,7 @@
         <div class="span2">
             <div class="editor-label">
                 <!--%: Html.LabelFor(model => model.NomeBebida) % -->
-                <%: Resources.Mensagem.bebida %>
+                <%: Resources.Mensagem.tipo_bebida %>
             </div>
         </div>
         <div class="span6">

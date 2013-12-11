@@ -39,7 +39,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdObjetivoTerapeutico { get; set; }
 
-        [Display(Name = "descricao_objetivo_terapeutico", ResourceType = typeof(Mensagem))]
+        [Display(Name = "objetivo_terapeutico", ResourceType = typeof(Mensagem))]
         public string DescricaoObjetivoTerapeutico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

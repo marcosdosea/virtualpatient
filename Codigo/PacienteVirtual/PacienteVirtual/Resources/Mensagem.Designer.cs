@@ -610,6 +610,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CPF Inválido..
+        /// </summary>
+        public static string cpf_invalido {
+            get {
+                return ResourceManager.GetString("cpf_invalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CRFUF.
         /// </summary>
         public static string crfuf {
@@ -921,6 +930,15 @@ namespace Resources {
         public static string eh_gabarito {
             get {
                 return ResourceManager.GetString("eh_gabarito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail Inválido..
+        /// </summary>
+        public static string email_invalido {
+            get {
+                return ResourceManager.GetString("email_invalido", resourceCulture);
             }
         }
         

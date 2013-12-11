@@ -948,4 +948,13 @@
   <data name="alterar_dados_usuario" xml:space="preserve">
     <value>Change User Datas</value>
   </data>
+  <data name="cpf_invalido" xml:space="preserve">
+    <value>Invalid CPF.</value>
+  </data>
+  <data name="email_invalido" xml:space="preserve">
+    <value>Invalid Email.</value>
+  </data>
+  <data name="revisao_sistemas" xml:space="preserve">
+    <value>Systems Review</value>
+  </data>
 </root>
