@@ -46,6 +46,7 @@ namespace PacienteVirtual.Models
         public string UserName { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessageResourceType = typeof(Mensagem) ,ErrorMessageResourceName = "email_invalido")]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "endereco_email", ResourceType = typeof(Mensagem))]
         public string Email { get; set; }

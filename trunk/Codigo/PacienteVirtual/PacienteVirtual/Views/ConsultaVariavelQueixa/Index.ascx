@@ -19,7 +19,7 @@
                 <%: Resources.Mensagem.descricao_situacao %>
             </th>
             <th>
-                <%: Resources.Mensagem.descricao_objetivo_terapeutico %>
+                <%: Resources.Mensagem.objetivo_terapeutico %>
             </th>
             <th>
                 <%: Resources.Mensagem.tipo %>

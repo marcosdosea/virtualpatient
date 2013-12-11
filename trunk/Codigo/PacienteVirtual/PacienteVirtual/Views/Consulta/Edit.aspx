@@ -294,6 +294,22 @@
                             <%: Resources.Mensagem.demografico_antropometricos %></a></li>
                         <li id="li3"><a href="#tab1-3" data-toggle="tab">
                             <%: Resources.Mensagem.experiencia_medicamentos %></a></li>
+                        <li id="li4"><a href="#tab2-1" data-toggle="tab">
+                            <%: Resources.Mensagem.estilo_vida %></a></li>
+                        <li id="li5"><a href="#tab2-2" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamentos_anteriores %></a></li>
+                        <li id="li6"><a href="#tab2-3" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamento_prescrito %></a></li>
+                        <li id="li7"><a href="#tab2-4" data-toggle="tab">
+                            <%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
+                        <li id="li8"><a href="#tab2-5" data-toggle="tab">
+                            <%: Resources.Mensagem.exames_fisicos %></a></li>
+                        <li id="li9"><a href="#tab2-6" data-toggle="tab">
+                            <%: Resources.Mensagem.parametro_clinico %></a></li>
+                        <li id="li10"><a href="#tab2-7" data-toggle="tab">
+                            <%: Resources.Mensagem.razao_encontro %></a></li>
+                            <li id="li11"><a href="#tab2-8" data-toggle="tab">
+                            <%: Resources.Mensagem.alergia %></a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
@@ -311,33 +327,7 @@
                                 <% Html.RenderPartial("../ExperienciaMedicamentos/Edit", Model.ExperienciaMedicamentos);%>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="span6">
-            <div class="thumbnails">
-                <div class="tabbable">
-                    <!-- Only required for left/right tabs -->
-                    <ul class="nav nav-tabs">
-                        <li id="li21" class="active"><a href="#tab2-1" data-toggle="tab">
-                            <%: Resources.Mensagem.estilo_vida %></a></li>
-                        <li id="li22"><a href="#tab2-2" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamentos_anteriores %></a></li>
-                        <li id="li23"><a href="#tab2-3" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamento_prescrito %></a></li>
-                        <li id="li24"><a href="#tab2-4" data-toggle="tab">
-                            <%: Resources.Mensagem.medicamento_nao_prescrito %></a></li>
-                        <li id="li25"><a href="#tab2-5" data-toggle="tab">
-                            <%: Resources.Mensagem.exames_fisicos %></a></li>
-                        <li id="li26"><a href="#tab2-6" data-toggle="tab">
-                            <%: Resources.Mensagem.parametro_clinico %></a></li>
-                        <li id="li27"><a href="#tab2-7" data-toggle="tab">
-                            <%: Resources.Mensagem.razao_encontro %></a></li>
-                        <a name="ancora" />
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab2-1">
+                        <div class="tab-pane" id="tab2-1">
                             <div class="thumbnail">
                                 <%  Html.RenderPartial("../EstiloVida/Edit", Model.EstiloVida);%>
                             </div>
@@ -363,8 +353,6 @@
                         <div class="tab-pane" id="tab2-5">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ExamesFisicos/Edit", Model.ExamesFisicos);%>
-                                <% Html.RenderPartial("../ExamesFisicos/AdicionarAlergia", Model.AlergiaExamesFisicos);%>
-                                <% Html.RenderPartial("../ExamesFisicos/ListaAlergias", Model.ListaAlergia);%>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2-6">
@@ -378,10 +366,13 @@
                                 <% Html.RenderPartial("../ConsultaVariavel/Edit", Model.ConsultaVariavel);%>
                             </div>
                         </div>
+                        <div class="tab-pane" id="tab2-8">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../ExamesFisicos/AdicionarAlergia", Model.AlergiaExamesFisicos);%>
+                                <% Html.RenderPartial("../ExamesFisicos/ListaAlergias", Model.ListaAlergia);%>
+                            </div>
+                        </div>
                     </div>
-                    <div class="thumbnail">
-                    <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
-                </div>
                 </div>
             </div>
         </div>

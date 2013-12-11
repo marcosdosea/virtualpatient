@@ -948,4 +948,10 @@
   <data name="alterar_dados_usuario" xml:space="preserve">
     <value>Alterar Dados do Usuário</value>
   </data>
+  <data name="cpf_invalido" xml:space="preserve">
+    <value>CPF Inválido.</value>
+  </data>
+  <data name="email_invalido" xml:space="preserve">
+    <value>E-mail Inválido.</value>
+  </data>
 </root>

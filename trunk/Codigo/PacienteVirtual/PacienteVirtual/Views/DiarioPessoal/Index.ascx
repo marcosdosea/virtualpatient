@@ -14,7 +14,7 @@
             <%: Resources.Mensagem.medicamento %>
         </th>
         <th>
-            <%: Resources.Mensagem.bebida %>
+            <%: Resources.Mensagem.tipo_bebida %>
         </th>
         <th><%: Resources.Mensagem.opcoes %></th>
     </tr>
