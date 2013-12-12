@@ -17,7 +17,7 @@
             <%: Html.LabelFor(model => model.DescricaoAcao) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoAcao , new { style = "width:350px;", MaxLength = 100 })%>
+            <%: Html.TextAreaFor(model => model.DescricaoAcao , new { style = "width:350px;", MaxLength = 150 })%>
             <%: Html.ValidationMessageFor(model => model.DescricaoAcao) %>
         </div>
         <div class="form-actions">
