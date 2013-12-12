@@ -17,14 +17,14 @@
             <%: Html.LabelFor(model => model.Ativa) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Ativa) %>
+            <%: Html.EditorFor(model => model.Ativa)%>
             <%: Html.ValidationMessageFor(model => model.Ativa) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Codigo) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Codigo, new { MaxLength = 2 })%>
+            <%: Html.TextBoxFor(model => model.Codigo, new { MaxLength = 20 })%>
             <%: Html.ValidationMessageFor(model => model.Codigo) %>
         </div>
         <div class="editor-label">

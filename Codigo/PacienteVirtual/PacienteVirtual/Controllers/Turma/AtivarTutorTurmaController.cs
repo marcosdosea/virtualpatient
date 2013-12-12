@@ -13,7 +13,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Index()
         {
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
+            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodos());
         }
 
         [HttpPost]
