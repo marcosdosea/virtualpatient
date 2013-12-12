@@ -18,7 +18,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
 
-    <!--input type="hidden" value="<%: ViewBag.AncoraEdit2 %>" id="ancoraEdit2" />
+    <!--input type="hidden" value="<!--%: ViewBag.AncoraEdit2 %>" id="ancoraEdit2" />
         <script type="text/javascript">
             var ancoraEdit2 = document.getElementById('ancoraEdit2').value;
             if (ancoraEdit2 == 1) {
@@ -87,28 +87,46 @@
         </div>
         <div class="span6">
             <div class="thumbnails">
-                <div class="thumbnail">
-                    <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
-                    <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
-                </div>
-                <a name="ancora1" />
-                <div class="thumbnail">
-                    <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
-                    <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
-                    <div class="mostrarQueixa">
-                        <% Html.RenderPartial("../QueixaMedicamento/Create", Model.QueixaMedicamento);%>
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.diario_pessoal %></a></li>
+                        <li id="li2"><a href="#tab1-2" data-toggle="tab">
+                            <%: Resources.Mensagem.revisao_sistemas %></a></li>
+                        <li id="li3"><a href="#tab1-3" data-toggle="tab">
+                            <%: Resources.Mensagem.intervencao %></a></li>
+                        <li id="li4"><a href="#tab1-4" data-toggle="tab">
+                            <%: Resources.Mensagem.carta %></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1-1">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
+                                <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-2">
+                            <div class="thumbnail">
+                            <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
+                            <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
+                            <div class="mostrarQueixa">
+                                <% Html.RenderPartial("../QueixaMedicamento/Create", Model.QueixaMedicamento);%>
+                            </div>
+                            <% Html.RenderPartial("../QueixaMedicamento/Index", Model.ListaQueixaMedicamento);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-3">
+                            <div class="thumbnail">
+                            <% Html.RenderPartial("../IntervencaoConsulta/Create", Model.IntervencaoConsulta);%>
+                            <% Html.RenderPartial("../IntervencaoConsulta/Index", Model.ListaIntervencaoConsulta);%>
+                        </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-4">
+                            <div class="thumbnail">
+                            <% Html.RenderPartial("../Carta/Create", Model.Carta);%>
+                            <% Html.RenderPartial("../Carta/Index", Model.ListaCarta);%>
+                            </div>
+                        </div>
                     </div>
-                    <% Html.RenderPartial("../QueixaMedicamento/Index", Model.ListaQueixaMedicamento);%>
-                </div>
-                <a name="ancora2" />
-                <div class="thumbnail">
-                    <% Html.RenderPartial("../IntervencaoConsulta/Create", Model.IntervencaoConsulta);%>
-                    <% Html.RenderPartial("../IntervencaoConsulta/Index", Model.ListaIntervencaoConsulta);%>
-                </div>
-                <a name="ancora3" />
-                <div class="thumbnail">
-                    <% Html.RenderPartial("../Carta/Create", Model.Carta);%>
-                    <% Html.RenderPartial("../Carta/Index", Model.ListaCarta);%>
                 </div>
             </div>
         </div>
