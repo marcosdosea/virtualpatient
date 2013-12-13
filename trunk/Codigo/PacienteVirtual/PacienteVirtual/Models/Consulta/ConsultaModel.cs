@@ -6,7 +6,7 @@ namespace PacienteVirtual.Models
     {
         // Dados do paciente
         public PacienteModel Paciente { get; set; }
-        public RelatoClinicoModel RelatoClinico { get; set; }
+        public IEnumerable<RelatoClinicoModel> RelatoClinico { get; set; }
         
         // Dados fixos e compartilhados entre consultas
         public ConsultaFixoModel ConsultaFixo { get; set; }

@@ -76,14 +76,14 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_Paciente"] = value;
             }
         }
-        public static RelatoClinicoModel RelatoClinico
+        public static IEnumerable<RelatoClinicoModel> RelatoClinico
         {
             get
             {
-                RelatoClinicoModel relatoClinico = (RelatoClinicoModel)HttpContext.Current.Session["_RelatoClinico"];
+                IEnumerable<RelatoClinicoModel> relatoClinico = (IEnumerable<RelatoClinicoModel>)HttpContext.Current.Session["_RelatoClinico"];
                 if (relatoClinico == null)
                 {
-                    relatoClinico = GerenciadorRelatoClinico.GetInstance().Obter(ConsultaVariavel.IdRelato);
+                    relatoClinico = GerenciadorRelatoClinico.GetInstance().ObterRelatosComConsultasAnteriores(ConsultaVariavel.IdRelato);
                     HttpContext.Current.Session["_RelatoClinico"] = relatoClinico;
                 }
                 return relatoClinico;

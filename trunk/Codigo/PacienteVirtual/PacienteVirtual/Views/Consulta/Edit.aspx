@@ -98,9 +98,35 @@
                         </blockquote>
                     </div>
                 </div>
-                <div class="thumbnail">
-                    <% Html.RenderAction("DetailsConsulta", "RelatoClinico", new RouteValueDictionary(new { model = Model.RelatoClinico }));%>
+
+                <!-- Mudar aqui para aceitar abas -->
+                <div class="thumbnail">   
+                    <% foreach(var item in Model.RelatoClinico) { %>
+                    <div class="tabbable">
+                      
+                    <ul class="nav nav-tabs">
+                    <% var a = item.OrdemCronologica; %>
+                        <% if (a == 1)
+                           { %>
+                        <li class="active"><a href="#ab1-<%: a %>" data-toggle="tab"> <%: Resources.Mensagem.relato_clinico%> <%: a%> </a></li>
+                        <% }
+                           else
+                           { %>
+                           <li><a href="#ab1-<%: a %>" data-toggle="tab"> <%: Resources.Mensagem.relato_clinico%> <%: a%> </a></li>
+                        <% } %>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="ab1-<%: a %>">
+                            <div class="thumbnail">
+                                <% Html.RenderAction("DetailsConsulta", "RelatoClinico", new RouteValueDictionary(new { model = item }));%>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <% } %>
                 </div>
+
+
             </div>
         </div>
         <div class="span6">
@@ -195,6 +221,7 @@
                         </div>
                 </div>
             </div>
+        </div>
         </div>
     </fieldset>
     <% } %>
