@@ -18,7 +18,7 @@ namespace PacienteVirtual.Controllers
                 GerenciadorExamesFisicos.GetInstance().Atualizar(examesFisicosModel);
                 SessionController.ExamesFisicos = examesFisicosModel;
             }
-            SessionController.Abas2 = 10;
+            SessionController.Abas1 = 10;
             return RedirectToAction("Edit", "Consulta");
         }
 
