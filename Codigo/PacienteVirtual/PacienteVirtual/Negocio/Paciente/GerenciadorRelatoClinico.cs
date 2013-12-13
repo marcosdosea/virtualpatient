@@ -173,6 +173,17 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém relato com o código especificiado e seus relatos anteriores
+        /// </summary>
+        /// <param name="codDisciplina"></param>
+        /// <returns></returns>
+        public IEnumerable<RelatoClinicoModel> ObterRelatosComConsultasAnteriores(int idRelato)
+        {
+            var a = GetQuery().Where(relato => relato.IdRelato == idRelato).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(relato => relato.IdPaciente == a.IdPaciente && relato.OrdemCronologica <= a.OrdemCronologica);
+        }
+
+        /// <summary>
         /// Obtém relatos que iniciam com o relato em texto
         /// </summary>
         /// <param name="relatoTexto"></param>
