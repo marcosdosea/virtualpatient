@@ -31,7 +31,7 @@ namespace PacienteVirtual.Controllers
             {
                 SessionController.Sistema = consultaVariavelQueixa.IdSistema;
             }
-            return RedirectToAction("Edit2", "Consulta");
+            return RedirectToAction("Edit", "Consulta");
         }
 
         //
