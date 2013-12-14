@@ -219,6 +219,12 @@
                                 <% Html.RenderPartial("../ConsultaParametro/Index", Model.ListaConsultaParametro);%>
                             </div>
                         </div>
+                        
+                        <div class="tab-pane" id="tab1-12">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

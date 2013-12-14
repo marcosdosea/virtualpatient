@@ -106,7 +106,6 @@
                         </div>
                         <div class="tab-pane" id="tab1-2">
                             <div class="thumbnail">
-                            <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
                             <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
                             <div class="mostrarQueixa">
                                 <% Html.RenderPartial("../QueixaMedicamento/Create", Model.QueixaMedicamento);%>
