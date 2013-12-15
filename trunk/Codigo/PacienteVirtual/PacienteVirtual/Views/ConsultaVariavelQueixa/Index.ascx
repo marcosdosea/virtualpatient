@@ -16,19 +16,19 @@
                 <%: Resources.Mensagem.descricao_queixa %>
             </th>
             <th>
-                <%: Resources.Mensagem.descricao_situacao %>
-            </th>
-            <th>
-                <%: Resources.Mensagem.objetivo_terapeutico %>
+                <%: Resources.Mensagem.desde %>
             </th>
             <th>
                 <%: Resources.Mensagem.tipo %>
             </th>
             <th>
-                <%: Resources.Mensagem.desde %>
+                <%: Resources.Mensagem.objetivo_terapeutico %>
             </th>
             <th>
                 <%: Resources.Mensagem.prioridade %>
+            </th>
+            <th>
+                <%: Resources.Mensagem.descricao_situacao %>
             </th>
             <th>
                 <%: Resources.Mensagem.opcoes %>
@@ -42,23 +42,22 @@
                 <%: Html.DisplayFor(modelItem => item.DescricaoQueixa) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.DescricaoSituacao) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.DescricaoObjetivoTerapeutico) %>
+                <%: Html.DisplayFor(modelItem => item.Desde) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Tipo) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Desde) %>
+                <%: Html.DisplayFor(modelItem => item.DescricaoObjetivoTerapeutico) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Prioridade) %>
             </td>
             <td>
+                <%: Html.DisplayFor(modelItem => item.DescricaoSituacao) %>
+            </td>
+            <td>
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
-                
                 |
                 <div class="botaoMostrar"><%: Resources.Mensagem.novo_prm %></div>
             </td>
