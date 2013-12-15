@@ -159,6 +159,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.Abas1 = SessionController.Abas1;
             ViewBag.Abas2 = SessionController.Abas2;
 
+            ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
+
             return View(consultaModel);
         }
 
@@ -206,6 +208,8 @@ namespace PacienteVirtual.Controllers
 
             ViewBag.IdCarta = new SelectList(GerenciadorCarta.GetInstance().ObterTodos(), "IdCarta", "NomePaciente");
             ViewBag.IdCurso = new SelectList(GerenciadorCurso.GetInstance().ObterTodos(), "IdCurso", "NomeCurso");
+
+            ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
 
             return View(consultaModel);
         }

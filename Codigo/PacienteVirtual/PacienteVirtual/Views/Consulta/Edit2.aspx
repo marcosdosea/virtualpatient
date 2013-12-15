@@ -80,8 +80,31 @@
                         </blockquote>
                     </div>
                 </div>
+                <legend></legend>
                 <div class="thumbnail">
-                    <% Html.RenderAction("DetailsConsulta", "RelatoClinico", new RouteValueDictionary(new { model = Model.RelatoClinico }));%>
+                    <div class="tabbable">
+                        <ul class="nav nav-tabs">
+                        <% foreach(var item in Model.RelatoClinico) { %>
+                        <% var a = item.OrdemCronologica; %>
+                            <% if (a == 1)
+                               { %>
+                            <li id="li0<%: a %>" class="active"><a href="#ab1-<%: a %>" data-toggle="tab"> <%: Resources.Mensagem.relato_clinico%> <%: a%> </a></li>
+                            <% }else{ %>
+                               <li id="li0<%: a %>"><a href="#ab1-<%: a %>" data-toggle="tab"> <%: Resources.Mensagem.relato_clinico%> <%: a%> </a></li>
+                            <% } %>
+                        <% } %>
+                        </ul>
+                        <div class="tab-content">
+                            <% foreach(var item in Model.RelatoClinico) { %>
+                            <% var a = item.OrdemCronologica; %>
+                            <div class="tab-pane active" id="ab1-<%: a %>">
+                                <div class="thumbnail">
+                                    <% Html.RenderAction("DetailsConsulta", "RelatoClinico", new RouteValueDictionary(new { model = item }));%>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,6 +163,25 @@
     <div class="btn btn-large btn-primary" id="Div1">
         <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
     </div>
+
+    <!-- Abas dos Relatos -->
+    <input type="hidden" value="<%: ViewBag.AbasRelato %>" id="abasRelato" />
+    <script type="text/javascript">
+        var abasRelato = document.getElementById('abasRelato').value;
+        if (abasRelato == 2) {
+            $(document).ready(function () {
+                $("#li01").removeClass("active"); $("#li02").addClass("active"); $("#li03").removeClass("active"); $("#li04").removeClass("active"); $("#ab1-1").removeClass("tab-pane active"); $("#ab1-1").addClass("tab-pane"); $("#ab1-2").removeClass("tab-pane"); $("#ab1-2").addClass("tab-pane active"); $("#ab1-3").removeClass("tab-pane active"); $("#ab1-3").addClass("tab-pane"); $("#ab1-4").removeClass("tab-pane active"); $("#ab1-4").addClass("tab-pane");
+            });
+        } else if (abasRelato == 3) {
+            $(document).ready(function () {
+                $("#li01").removeClass("active"); $("#li02").removeClass("active"); $("#li03").addClass("active"); $("#li04").removeClass("active"); $("#ab1-1").removeClass("tab-pane active"); $("#ab1-1").addClass("tab-pane"); $("#ab1-2").removeClass("tab-pane active"); $("#ab1-2").addClass("tab-pane"); $("#ab1-3").removeClass("tab-pane"); $("#ab1-3").addClass("tab-pane active"); $("#ab1-4").removeClass("tab-pane active"); $("#ab1-4").addClass("tab-pane");
+            });
+        } else if (abasRelato == 4) {
+            $(document).ready(function () {
+                $("#li01").removeClass("active"); $("#li02").removeClass("active"); $("#li03").removeClass("active"); $("#li04").addClass("active"); $("#ab1-1").removeClass("tab-pane active"); $("#ab1-1").addClass("tab-pane"); $("#ab1-2").removeClass("tab-pane active"); $("#ab1-2").addClass("tab-pane"); $("#ab1-3").removeClass("tab-pane active"); $("#ab1-3").addClass("tab-pane"); $("#ab1-4").removeClass("tab-pane"); $("#ab1-4").addClass("tab-pane active");
+            });
+        }
+    </script>
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
