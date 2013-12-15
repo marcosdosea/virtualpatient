@@ -11,9 +11,6 @@
                 <%: Resources.Mensagem.nome_medicamento %>
             </th>
             <th>
-                <%: Resources.Mensagem.suspeita_prm %>
-            </th>
-            <th>
                 <%: Resources.Mensagem.dose %>
             </th>
             <th>
@@ -23,22 +20,25 @@
                 <%: Resources.Mensagem.necessario %>
             </th>
             <th>
-                <%: Resources.Mensagem.seguro %>
+                <%: Resources.Mensagem.efetivo %>
             </th>
             <th>
-                <%: Resources.Mensagem.efetivo %>
+                <%: Resources.Mensagem.seguro %>
             </th>
             <th>
                 <%: Resources.Mensagem.cumprimento %>
             </th>
             <th>
-                <%: Resources.Mensagem.resolvido %>
+                <%: Resources.Mensagem.suspeita_prm %>
             </th>
             <th>
                 <%: Resources.Mensagem.intervencao_1 %>
             </th>
             <th>
                 <%: Resources.Mensagem.intervencao_2 %>
+            </th>
+            <th>
+                <%: Resources.Mensagem.resolvido %>
             </th>
             <th>
                 <%: Resources.Mensagem.opcoes %>
@@ -54,9 +54,6 @@
                 <%: Html.DisplayFor(modelItem => item.NomeMedicamento) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.SuspeitaPRM) %>
-            </td>
-            <td>
                 <%: Html.DisplayFor(modelItem => item.Dose) %>
             </td>
             <td>
@@ -66,22 +63,25 @@
                 <%: Html.DisplayFor(modelItem => item.Necessario) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Seguro) %>
+                <%: Html.DisplayFor(modelItem => item.Efetivo) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Efetivo) %>
+                <%: Html.DisplayFor(modelItem => item.Seguro) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Cumprimento) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Resolvido) %>
+                <%: Html.DisplayFor(modelItem => item.SuspeitaPRM) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.DescricaoAcaoQueixa1) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.DescricaoAcaoQueixa2) %>
+            </td>
+            <td>
+                <%: Html.DisplayFor(modelItem => item.Resolvido) %>
             </td>
             <td>
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "QueixaMedicamento", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento, idQueixa = item.IdQueixaMedicamento }, null)%>

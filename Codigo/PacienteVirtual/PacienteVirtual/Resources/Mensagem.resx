@@ -972,4 +972,13 @@
   <data name="msgErro_InvalidUserName" xml:space="preserve">
     <value>O "Nome de Usuário" está inválido. Verifique e redigite seu Nome de Usuário novamente.</value>
   </data>
+  <data name="classificacao_de_prm" xml:space="preserve">
+    <value>Classificação de PRM</value>
+  </data>
+  <data name="diario_pessoal_medicamentos" xml:space="preserve">
+    <value>Diário Pessoal de medicamentos</value>
+  </data>
+  <data name="intervencoes" xml:space="preserve">
+    <value>Intervenções</value>
+  </data>
 </root>
