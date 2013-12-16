@@ -11,7 +11,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.situacao_queixa %></legend>
+        <legend><%: Resources.Mensagem.estado_situacao %></legend>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.DescricaoSituacao) %>

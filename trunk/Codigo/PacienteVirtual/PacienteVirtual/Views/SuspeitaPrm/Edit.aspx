@@ -14,7 +14,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.suspeita_prm %></legend>
+        <legend><%: Resources.Mensagem.classificao_prm %></legend>
 
         <%: Html.HiddenFor(model => model.IdSuspeitaPrm) %>
 

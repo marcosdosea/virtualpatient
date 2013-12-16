@@ -135,7 +135,7 @@
                                             <%: Html.ActionLink(Resources.Mensagem.queixa, "Index", "Queixa")%>
                                         </li>
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.situacao_queixa, "Index", "SituacaoQueixa")%>
+                                            <%: Html.ActionLink(Resources.Mensagem.estado_situacao, "Index", "SituacaoQueixa")%>
                                         </li>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.acao_queixa, "Index", "AcaoQueixa")%>
@@ -144,7 +144,7 @@
                                             <%: Html.ActionLink(Resources.Mensagem.objetivo_terapeutico, "Index", "ObjetivoTerapeutico")%>
                                         </li>
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.suspeita_prm, "Index", "SuspeitaPrm")%>
+                                            <%: Html.ActionLink(Resources.Mensagem.classificao_prm, "Index", "SuspeitaPrm")%>
                                         </li>
                                         <li class="divider"></li>
                                         <li>

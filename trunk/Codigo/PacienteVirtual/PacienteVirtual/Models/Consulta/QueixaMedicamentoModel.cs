@@ -28,7 +28,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdSuspeitaPRM { get; set; }
 
-        [Display(Name = "suspeita_prm", ResourceType = typeof(Mensagem))]
+        [Display(Name = "classificao_prm", ResourceType = typeof(Mensagem))]
         public string SuspeitaPRM { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

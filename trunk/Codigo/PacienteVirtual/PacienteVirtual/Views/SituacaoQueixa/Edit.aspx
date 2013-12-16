@@ -11,7 +11,7 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>
-            <%: Resources.Mensagem.situacao_queixa %></legend>
+            <%: Resources.Mensagem.estado_situacao %></legend>
         <%: Html.HiddenFor(model => model.IdSituacaoQueixa) %>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.DescricaoSituacao) %>

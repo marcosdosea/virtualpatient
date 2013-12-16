@@ -13,7 +13,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                <%: Resources.Mensagem.descricao_queixa %>
+                <%: Resources.Mensagem.alternativas_intervencao %>
             </th>
             <th>
                 <%: Resources.Mensagem.desde %>

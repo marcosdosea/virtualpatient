@@ -42,7 +42,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%= Html.RadioButtonFor(model => model.Tipo, "S" ) %> <%: Resources.Mensagem.suspeita_prm %>
+                <%= Html.RadioButtonFor(model => model.Tipo, "S" ) %> <%: Resources.Mensagem.classificao_prm %>
                 &nbsp &nbsp 
                 <%= Html.RadioButtonFor(model => model.Tipo, "D")%> <%: Resources.Mensagem.doenca_agrave %>
                 <%: Html.ValidationMessageFor(model => model.Tipo) %>

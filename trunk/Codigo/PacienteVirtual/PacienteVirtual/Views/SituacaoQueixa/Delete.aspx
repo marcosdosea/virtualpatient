@@ -10,9 +10,9 @@
 
 <h3><%: Resources.Mensagem.deletar_pergunta %></h3>
 <fieldset>
-    <legend><%: Resources.Mensagem.situacao_queixa %></legend>
+    <legend><%: Resources.Mensagem.estado_situacao %></legend>
 
-    <div class="display-label"><%: Resources.Mensagem.situacao_queixa %></div>
+    <div class="display-label"><%: Resources.Mensagem.estado_situacao %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.DescricaoSituacao) %>
     </div>
