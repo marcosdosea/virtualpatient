@@ -139,6 +139,17 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(cv => cv.IdConsultaVariavel == idConsultaVariavel && cv.Tipo.Equals("S")).ToList();
         }
 
+
+        /// <summary>
+        /// Obtém consultaVariavelQueixa por consulta e por Queixa
+        /// </summary>
+        /// <returns></returns>
+        public ConsultaVariavelQueixaModel ObterPorConcultaQueixa(long idConsultaVariavel, int idQueixa)
+        {
+            return GetQuery().Where(cvq => cvq.IdConsultaVariavel == idConsultaVariavel && cvq.IdQueixa == idQueixa).ToList().ElementAtOrDefault(0);
+        }
+
+
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>

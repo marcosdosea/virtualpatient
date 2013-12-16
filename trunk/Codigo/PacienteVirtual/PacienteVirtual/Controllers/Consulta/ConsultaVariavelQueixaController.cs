@@ -18,18 +18,23 @@ namespace PacienteVirtual.Controllers
         // POST: /MedicamentoPrescrito/Create
 
         [HttpPost]
-        public ActionResult Create(ConsultaVariavelQueixaModel consultaVariavelQueixa)
+        public ActionResult Create(ConsultaVariavelQueixaModel cvq)
         {
-            if (ModelState.IsValid)
+            if (cvq.IdSistema > 0 && cvq.IdQueixa > 0)
             {
-                consultaVariavelQueixa.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
-                GerenciadorConsultaVariavelQueixa.GetInstance().Inserir(consultaVariavelQueixa);
+                cvq.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
+                cvq.IdObjetivoTerapeutico = 1;
+                cvq.IdSituacaoQueixa = 1;
+                cvq.Tipo = " ";
+                cvq.Desde = "";
+                cvq.Prioridade = 0;
+                GerenciadorConsultaVariavelQueixa.GetInstance().Inserir(cvq);
                 SessionController.Sistema = 0;
                 SessionController.ListaConsultaVariavelQueixa = null;
             }
             else
             {
-                SessionController.Sistema = consultaVariavelQueixa.IdSistema;
+                SessionController.Sistema = cvq.IdSistema;
             }
             SessionController.Abas1 = 12;
             return RedirectToAction("Edit", "Consulta");
@@ -44,6 +49,33 @@ namespace PacienteVirtual.Controllers
             GerenciadorConsultaVariavelQueixa.GetInstance().Remover(idConsultaVariavel, idQueixa);
             SessionController.ListaConsultaVariavelQueixa = null;
             return RedirectToAction("Edit2", "Consulta");
+        }
+
+        // GET: /Escolaridade/Edit/5
+
+        public ActionResult Edit(long idConsultaVariavel, int idQueixa)
+        {
+            ConsultaVariavelQueixaModel cvq = GerenciadorConsultaVariavelQueixa.GetInstance().ObterPorConcultaQueixa(idConsultaVariavel, idQueixa);
+            ViewBag.IdObjetivoTerapeutico = new SelectList(GerenciadorObjetivoTerapeutico.GetInstance().ObterTodos(), "IdObjetivoTerapeutico", "DescricaoObjetivoTerapeutico");
+            ViewBag.IdSituacaoQueixa = new SelectList(GerenciadorSituacaoQueixa.GetInstance().ObterTodos(), "IdSituacaoQueixa", "DescricaoSituacao");
+            return View(cvq);
+        }
+
+        //
+        // POST: /Escolaridade/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(ConsultaVariavelQueixaModel cvq)
+        {
+            if (ModelState.IsValid)
+            {
+                GerenciadorConsultaVariavelQueixa.GetInstance().Atualizar(cvq);
+                SessionController.ListaConsultaVariavelQueixa = null;
+                return RedirectToAction("Edit2", "Consulta");
+            }
+            ViewBag.IdObjetivoTerapeutico = new SelectList(GerenciadorObjetivoTerapeutico.GetInstance().ObterTodos(), "IdObjetivoTerapeutico", "DescricaoObjetivoTerapeutico");
+            ViewBag.IdSituacaoQueixa = new SelectList(GerenciadorSituacaoQueixa.GetInstance().ObterTodos(), "IdSituacaoQueixa", "DescricaoSituacao");
+            return View(cvq);
         }
 
         protected override void Dispose(bool disposing)
