@@ -165,20 +165,27 @@
     <!-- Abas dos Relatos -->
     <input type="hidden" value="<%: ViewBag.AbasRelato %>" id="abasRelato" />
     <script type="text/javascript">
-        var abasRelato = document.getElementById('abasRelato').value;
-        if (abasRelato == 2) {
-            $(document).ready(function () {
-                $("#li01").removeClass("active"); $("#li02").addClass("active"); $("#li03").removeClass("active"); $("#li04").removeClass("active"); $("#ab1-1").removeClass("tab-pane active"); $("#ab1-1").addClass("tab-pane"); $("#ab1-2").removeClass("tab-pane"); $("#ab1-2").addClass("tab-pane active"); $("#ab1-3").removeClass("tab-pane active"); $("#ab1-3").addClass("tab-pane"); $("#ab1-4").removeClass("tab-pane active"); $("#ab1-4").addClass("tab-pane");
-            });
-        } else if (abasRelato == 3) {
-            $(document).ready(function () {
-                $("#li01").removeClass("active"); $("#li02").removeClass("active"); $("#li03").addClass("active"); $("#li04").removeClass("active"); $("#ab1-1").removeClass("tab-pane active"); $("#ab1-1").addClass("tab-pane"); $("#ab1-2").removeClass("tab-pane active"); $("#ab1-2").addClass("tab-pane"); $("#ab1-3").removeClass("tab-pane"); $("#ab1-3").addClass("tab-pane active"); $("#ab1-4").removeClass("tab-pane active"); $("#ab1-4").addClass("tab-pane");
-            });
-        } else if (abasRelato == 4) {
-            $(document).ready(function () {
-                $("#li01").removeClass("active"); $("#li02").removeClass("active"); $("#li03").removeClass("active"); $("#li04").addClass("active"); $("#ab1-1").removeClass("tab-pane active"); $("#ab1-1").addClass("tab-pane"); $("#ab1-2").removeClass("tab-pane active"); $("#ab1-2").addClass("tab-pane"); $("#ab1-3").removeClass("tab-pane active"); $("#ab1-3").addClass("tab-pane"); $("#ab1-4").removeClass("tab-pane"); $("#ab1-4").addClass("tab-pane active");
-            });
-        }
+        var abasRelato = document.getElementById('abasRelato').value
+        $(document).ready(function () {
+            if (abasRelato != 1) {
+                var abaLI1 = "#li0";
+                var contLI1 = "#ab1-";
+                for (var i = 1; i < abasRelato; i++) {
+                    var resultAbaLI = abaLI1.concat(i);
+                    var resultContLI = contLI1.concat(i);
+
+                    $(resultAbaLI).removeClass("active");
+                    $(resultContLI).removeClass("tab-pane active");
+                    $(resultContLI).addClass("tab-pane");
+
+                }
+                var resultAbaLI = abaLI1.concat(abasRelato);
+                var resultContLI = contLI1.concat(abasRelato);
+                $(resultAbaLI).addClass("active");
+                $(resultContLI).addClass("tab-pane active");
+                $(resultContLI).removeClass("tab-pane");
+            }
+        });
     </script>
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
