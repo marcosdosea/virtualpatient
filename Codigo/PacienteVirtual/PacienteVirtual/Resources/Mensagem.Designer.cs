@@ -187,6 +187,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alternativas de Intervenção.
+        /// </summary>
+        public static string alternativas_intervencao {
+            get {
+                return ResourceManager.GetString("alternativas_intervencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Altura.
         /// </summary>
         public static string altura {
@@ -372,6 +381,15 @@ namespace Resources {
         public static string classificacao_de_prm {
             get {
                 return ResourceManager.GetString("classificacao_de_prm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Classificação de PRM.
+        /// </summary>
+        public static string classificao_prm {
+            get {
+                return ResourceManager.GetString("classificao_prm", resourceCulture);
             }
         }
         
@@ -1038,6 +1056,15 @@ namespace Resources {
         public static string estado_preenchimento {
             get {
                 return ResourceManager.GetString("estado_preenchimento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estado de Situação.
+        /// </summary>
+        public static string estado_situacao {
+            get {
+                return ResourceManager.GetString("estado_situacao", resourceCulture);
             }
         }
         

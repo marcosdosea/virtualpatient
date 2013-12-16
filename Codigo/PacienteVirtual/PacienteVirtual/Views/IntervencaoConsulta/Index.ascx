@@ -3,7 +3,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                <%: Resources.Mensagem.grupo_intervencao %>
+                <%: Resources.Mensagem.descricao_intervencao %>
             </th>
             <th>
                 <%: Resources.Mensagem.intervencao %>

@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.SituacaoQueixaModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.situacao_queixa %>
+    <%: Resources.Mensagem.estado_situacao %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2><%: Resources.Mensagem.situacao_queixa %></h2>
+<h2><%: Resources.Mensagem.estado_situacao %></h2>
 
 <p>
     <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
@@ -22,7 +22,7 @@
         
         /* Adding "CompanyName" column: */
         columns.Add(o => o.DescricaoSituacao)
-                .Titled(Resources.Mensagem.situacao_queixa)
+                .Titled(Resources.Mensagem.estado_situacao)
                 .ThenSortByDescending(o => o.DescricaoSituacao)
                 .Filterable(true);
 

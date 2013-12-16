@@ -21,7 +21,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "nome_grupo_intervencao", ResourceType = typeof(Mensagem))]
         public int IdGrupoIntervencao { get; set; }
 
-        [Display(Name = "descricao", ResourceType = typeof(Mensagem))]
+        [Display(Name = "descricao_intervencao", ResourceType = typeof(Mensagem))]
         public String DescricaoGrupoIntervencao { get; set; }
 
         [Display(Name = "paciente", ResourceType = typeof(Mensagem))]

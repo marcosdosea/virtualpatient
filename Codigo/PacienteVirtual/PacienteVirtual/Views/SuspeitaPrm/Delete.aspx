@@ -10,7 +10,7 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend><%: Resources.Mensagem.suspeita_prm %></legend>
+    <legend><%: Resources.Mensagem.classificao_prm %></legend>
 
     <div class="display-label"><%: Resources.Mensagem.descricao %></div>
     <div class="display-field">

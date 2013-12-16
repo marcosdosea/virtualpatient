@@ -9,7 +9,7 @@
 <h2><%: Resources.Mensagem.detalhes %></h2>
 
 <fieldset>
-    <legend><%: Resources.Mensagem.suspeita_prm %></legend>
+    <legend><%: Resources.Mensagem.classificao_prm %></legend>
 
     <div class="display-label"><%: Resources.Mensagem.descricao %></div>
     <div class="display-field">

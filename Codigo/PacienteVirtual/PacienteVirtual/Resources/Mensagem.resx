@@ -981,4 +981,13 @@
   <data name="intervencoes" xml:space="preserve">
     <value>Intervenções</value>
   </data>
+  <data name="alternativas_intervencao" xml:space="preserve">
+    <value>Alternativas de Intervenção</value>
+  </data>
+  <data name="classificao_prm" xml:space="preserve">
+    <value>Classificação de PRM</value>
+  </data>
+  <data name="estado_situacao" xml:space="preserve">
+    <value>Estado de Situação</value>
+  </data>
 </root>

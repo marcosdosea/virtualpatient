@@ -5,7 +5,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                <%: Resources.Mensagem.descricao_queixa %>
+                <%: Resources.Mensagem.alternativas_intervencao %>
             </th>
             <th>
                 <%: Resources.Mensagem.nome_medicamento %>
@@ -29,7 +29,7 @@
                 <%: Resources.Mensagem.cumprimento %>
             </th>
             <th>
-                <%: Resources.Mensagem.suspeita_prm %>
+                <%: Resources.Mensagem.classificao_prm %>
             </th>
             <th>
                 <%: Resources.Mensagem.intervencao_1 %>

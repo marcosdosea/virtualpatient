@@ -14,7 +14,6 @@
         </div>
         <div class="span9">
             <div class="editor-field">
-                <!--%: Html.DropDownListFor(Model => Model.Periodo, (SelectList)ViewBag.Periodo)% -->
                 <%= Html.RadioButtonFor(model => model.Periodo, "M")%> <%: Resources.Mensagem.manha %>
                 &nbsp &nbsp 
                 <%= Html.RadioButtonFor(model => model.Periodo, "T")%> <%: Resources.Mensagem.tarde %>

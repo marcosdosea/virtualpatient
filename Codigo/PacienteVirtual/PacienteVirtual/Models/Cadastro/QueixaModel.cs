@@ -10,7 +10,7 @@ namespace PacienteVirtual.Models
         public int IdQueixa { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "descricao_queixa", ResourceType = typeof(Mensagem))]
+        [Display(Name = "alternativas_intervencao", ResourceType = typeof(Mensagem))]
         public string DescricaoQueixa { get; set; }
 
 

@@ -9,7 +9,7 @@
 <h2><%: Resources.Mensagem.detalhes %></h2>
 
 <fieldset>
-    <legend><%: Resources.Mensagem.situacao_queixa %></legend>
+    <legend><%: Resources.Mensagem.estado_situacao %></legend>
 
     <div class="display-label"><%: Resources.Mensagem.descricao_situacao %></div>
     <div class="display-field">
