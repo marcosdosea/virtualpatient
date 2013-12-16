@@ -123,8 +123,6 @@ namespace PacienteVirtual.Controllers
             // Consulta Queixa
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
             ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema), "IdQueixa", "DescricaoQueixa");
-            ViewBag.IdObjetivoTerapeutico = new SelectList(GerenciadorObjetivoTerapeutico.GetInstance().ObterTodos().ToList(), "IdObjetivoTerapeutico", "DescricaoObjetivoTerapeutico");
-            ViewBag.IdSituacaoQueixa = new SelectList(GerenciadorSituacaoQueixa.GetInstance().ObterTodos().ToList(), "IdSituacaoQueixa", "DescricaoSituacao");
             
             // Exames Fisicos
             ViewBag.IdAlergia = new SelectList(GerenciadorAlergia.GetInstance().ObterTodos().ToList(), "IdAlergia", "Alergia");
