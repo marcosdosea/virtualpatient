@@ -10,7 +10,7 @@
                 <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
             </div>
         </div>
-        <div class="span5">
+        <div class="span6">
             <div class="editor-label">
                 <p class="conteudo"><%: Model.NomeTurma%></p>
             </div>
@@ -26,6 +26,18 @@
         <div class="span6">
             <div class="editor-label">
                 <p class="conteudo"><%: Model.NomeRole %></p>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.curso %>:</p>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <p class="conteudo"><%: Model.Curso %></p>
             </div>
         </div>
     </div>

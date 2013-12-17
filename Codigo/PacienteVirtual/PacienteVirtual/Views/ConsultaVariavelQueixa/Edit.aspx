@@ -15,6 +15,18 @@
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
         <%: Html.HiddenFor(model => model.IdQueixa) %>
         <div class="row-fluid">
+            <div class="span3">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.DescricaoQueixa) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-field">
+                    <%: Html.TextBoxFor(model => model.DescricaoQueixa, new { id = "textbox" })%>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Tipo) %>
@@ -90,5 +102,9 @@
 <div class="btn btn-primary">
     <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit2", "Consulta", Model.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
 </div>
+
+<script type="text/javascript">
+    document.getElementById('textbox').disabled = true;
+</script>
 
 </asp:Content>
