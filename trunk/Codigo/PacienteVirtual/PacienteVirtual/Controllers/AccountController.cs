@@ -104,7 +104,7 @@ namespace PacienteVirtual.Controllers
 
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, null, out createStatus);
+                Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, "1234", out createStatus);
                 // inserir pessoa
 
                 MembershipUser usuario = string.IsNullOrEmpty(model.UserName) ? null : Membership.GetUser(model.UserName);

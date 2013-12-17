@@ -33,12 +33,9 @@
         O erro foi reportado ao Administrador.</h3>
     <% } %>
 
-    <% using (Html.BeginForm("EnviarErro", "Erros", FormMethod.Post, new { emailModel1 = new PacienteVirtual.Models.EmailErroModel(Model.Exception.Message) }))
-       { %>
-    <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="Enviar email para o desenvolvedor" />
-    </div>
-    <% } %>
-    <a href="<%: Url.Action("EnviarErro", "Erros", new { emailModel1 = new PacienteVirtual.Models.EmailErroModel("foi") })%>">
-        Enviar Mensagem</a>
+    <% using (Html.BeginForm()) { %>
+    <p>
+         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
+    </p>
+<% } %>
 </asp:Content>
