@@ -11,7 +11,7 @@
     </div>
     <div class="editor-field">
         <%: Html.ValidationMessageFor(model => model.RelatoTextual) %>
-        <%: Html.TextAreaFor(model => model.RelatoTextual, new { @class = "span5", @cols = "40", @rows = "25", @readonly = "true", style = "background-color:#fff;" })%>
+        <%: Html.TextAreaFor(model => model.RelatoTextual, new { @class = "span5", @cols = "40", @rows = "25", @readonly = "true", style = "background-color:#fff;"})%>
     </div>
     <div class="thumbnail center">
         <iframe width="435px" height="425px" src="http://www.youtube.com/embed/f9EkBo8Wdkg">
