@@ -158,8 +158,9 @@
                             <%: Resources.Mensagem.parametro_clinico %></a></li>
                             <li id="li12"><a href="#tab1-12" data-toggle="tab">
                             <%: Resources.Mensagem.revisao_sistemas %></a></li>
+                            <%  %>
                     </ul>
-                    <div class="tab-content">
+                    <div class="tab-content" id="desabilitar">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../DemograficosAntropometicos/Edit", Model.DemograficoAntropometrico);%>
@@ -233,6 +234,14 @@
         </div>
     </fieldset>
     <% } %>
+    <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
+    <script type="text/javascript">
+        var perfil = document.getElementById('perfil').value
+        if (perfil == "tutor") {
+            $("#desabilitar *").attr("disabled", "disabled").off('click');
+        }
+    </script>
+
     <style type="text/css">
         #botaopos
         {

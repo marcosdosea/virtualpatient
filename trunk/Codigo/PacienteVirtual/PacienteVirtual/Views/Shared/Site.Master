@@ -232,8 +232,6 @@
                         </nav>
                     </div>
                     <% } %>
-                    <% if (!Session["_Roles"].Equals("administrador"))
-                       { %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">
                             <ul class="nav" role="menu">
@@ -244,7 +242,7 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.consulta, "Index", "Consulta")%>
                                         </li>
-                                        <% if (Session["_Roles"].Equals("tutor"))
+                                        <% if (Session["_Roles"].Equals("administrador"))
                                            { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.consultas_correcao, "Index", "ConsultasCorrecao")%>
@@ -255,7 +253,6 @@
                             </ul>
                         </nav>
                     </div>
-                    <% } %>
                     <% } %>
                 </div>
             </div>
