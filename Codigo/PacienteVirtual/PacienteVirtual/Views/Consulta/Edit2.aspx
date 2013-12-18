@@ -118,7 +118,7 @@
                         <li id="li3"><a href="#tab1-3" data-toggle="tab">
                             <%: Resources.Mensagem.diario_pessoal_medicamentos %></a></li>
                     </ul>
-                    <div class="tab-content">
+                    <div class="tab-content" id="desabilitar">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
@@ -161,6 +161,14 @@
     <div class="btn btn-large btn-primary" id="Div1">
         <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
     </div>
+
+    <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
+    <script type="text/javascript">
+        var perfil = document.getElementById('perfil').value
+        if (perfil == "tutor") {
+            $("#desabilitar *").attr("disabled", "disabled").off('click');
+        }
+    </script>
 
     <!-- Abas dos Relatos -->
     <input type="hidden" value="<%: ViewBag.AbasRelato %>" id="abasRelato" />
