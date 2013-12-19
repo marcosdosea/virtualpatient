@@ -178,7 +178,7 @@
             if (abasRelato != 1) {
                 var abaLI1 = "#li0";
                 var contLI1 = "#ab1-";
-                for (var i = 1; i < abasRelato; i++) {
+                for (var i = 1; i <= abasRelato; i++) {
                     var resultAbaLI = abaLI1.concat(i);
                     var resultContLI = contLI1.concat(i);
 
@@ -195,6 +195,26 @@
             }
         });
     </script>
+    <script type="text/javascript">
+        var abasRelato = document.getElementById('abasRelato').value
+        $(document).ready(function () {
+            var abaLI2 = "#li0";
+            var contLI2 = "#ab1-";
+            for (var i = 0; i < abasRelato; i++) {
+                var resultAbaLI2 = abaLI2.concat(i);
+                $(resultAbaLI2).click(function () {
+                    var resultContLI2 = contLI2.concat(abasRelato);
+                    $(resultContLI2).hide();
+                });
+            }
+            var resultAbaAtual2 = abaLI2.concat(abasRelato);
+            $(resultAbaAtual2).click(function () {
+                var resultContAba2 = contLI2.concat(abasRelato);
+                $(resultContAba2).show();
+            });
+        });
+    </script>
+    <!-- FIM das Abas dos Relatos -->
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
