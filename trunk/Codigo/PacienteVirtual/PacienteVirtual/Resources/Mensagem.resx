@@ -990,4 +990,10 @@
   <data name="estado_situacao" xml:space="preserve">
     <value>Estado de Situação</value>
   </data>
+  <data name="preencher_gabarito" xml:space="preserve">
+    <value>Preencher Gabarito</value>
+  </data>
+  <data name="visualizar" xml:space="preserve">
+    <value>Visualizar</value>
+  </data>
 </root>

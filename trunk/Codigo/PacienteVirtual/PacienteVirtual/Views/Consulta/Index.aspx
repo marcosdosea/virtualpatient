@@ -64,7 +64,13 @@
                 <td>
                     <% if (item.IdEstadoConsulta == 1 || item.IdEstadoConsulta == 2)
                        { %>
-                        <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%> 
+                        <% if (Session["_Roles"].Equals("tutor")){ %>
+                            <%: Html.ActionLink(Resources.Mensagem.visualizar, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%>    
+                        <%} else if (Session["_Roles"].Equals("usuario")) { %>
+                            <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%> 
+                        <% } else { %>
+                            <%: Html.ActionLink(Resources.Mensagem.preencher_gabarito, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%> 
+                        <% } %>
                     <% } %>
                 </td>
             </tr>
