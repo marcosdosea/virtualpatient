@@ -220,12 +220,9 @@ namespace PacienteVirtual.Controllers
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.AguardandoCorrecao;
             }
-            else
+            else if(SessionController.DadosTurmaPessoa.IdRole == Global.Administrador) 
             {
-                if(SessionController.DadosTurmaPessoa.IdRole == Global.Tutor) 
-                {
-                    consultaVariavelModel.IdEstadoConsulta = Global.GabaritoDisponivel;
-                }
+                consultaVariavelModel.IdEstadoConsulta = Global.GabaritoDisponivel;
             }
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             return RedirectToAction("Index", "Consulta");

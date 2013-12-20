@@ -10,49 +10,12 @@
         <%: Html.ActionLink(Resources.Mensagem.criar, "Create") %>
     </p>
 
-    <div id="pesq"><p id="pp">Pesquisar Paciente</p>
-        <div id="drop">
+    <div>
          <% using (Html.BeginForm("Index", "Paciente", FormMethod.Post, null))
                { %>
             <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
             <% } %>
-        </div>
     </div>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-    </script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#pp").click(function () {
-                $("#drop").fadeToggle(3000);
-            });
-        });
-        $(document).ready(function () {
-            $("#pp").mouseover(function () {
-                $(this).css("color", "#2162A3");
-            }),
-          $("#pp").mouseout(function () {
-              $(this).css("color", "#2E8AE6");
-          });
-        });
-    </script>
-    <style>
-        #drop
-        {
-            display: none;
-        }
-        #pesq
-        {
-            float: right;
-        }
-        #pp
-        {
-            float: right;
-            cursor: pointer;
-            color: #2E8AE6;
-        }
-    </style>
 
     <div class="box-content">
         <table class="table table-bordered table-striped">
