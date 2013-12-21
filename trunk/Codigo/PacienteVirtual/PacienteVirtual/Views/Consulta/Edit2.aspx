@@ -155,11 +155,9 @@
     <div class="btn btn-large btn-primary">
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
     </div>
-    <p>
-    <br/><br/>
-    </p>
-    <div class="btn btn-large btn-primary" id="Div1">
-        <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
+    &nbsp;
+    <div class="btn btn-large btn-primary">
+        <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
     </div>
 
     <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />

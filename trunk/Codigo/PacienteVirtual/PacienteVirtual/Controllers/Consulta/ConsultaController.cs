@@ -113,6 +113,7 @@ namespace PacienteVirtual.Controllers
 
             // create consulta veriavel queixa
             consultaModel.ConsultaVariavelQueixa = new ConsultaVariavelQueixaModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
             consultaModel.IdSistema = SessionController.Sistema;
 
             // alergia
@@ -123,6 +124,7 @@ namespace PacienteVirtual.Controllers
             // Consulta Queixa
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
             ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema), "IdQueixa", "DescricaoQueixa");
+            ViewBag.EscondeLinks = false;
             
             // Exames Fisicos
             ViewBag.IdAlergia = new SelectList(GerenciadorAlergia.GetInstance().ObterTodos().ToList(), "IdAlergia", "Alergia");
@@ -208,6 +210,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdCurso = new SelectList(GerenciadorCurso.GetInstance().ObterTodos(), "IdCurso", "NomeCurso");
 
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
+            ViewBag.EscondeLinks = true;
 
             return View(consultaModel);
         }
