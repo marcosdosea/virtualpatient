@@ -39,43 +39,28 @@
             </div>
         </noscript>
         <header class="container">
-            <div id="title">
+            <!--div id="title"-->
                 <br />
-                <div class="span9">
-                    <a href="<%: Url.Action("Index", "Home")%>">
-                        <!--style="width: 190px; height: 101px;"-->
-                        <div class="bandeira-brasil">
-                        </div>
-                        <img alt="logo" src="../../Content/themes/pv/img/logo.png" />
-                        <!--h1>< %: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1-->
-                    </a>
-                    <!--
-                        <img  alt="logo" src="../../Content/themes/pv/img/logo2.png" />
-                        <img  alt="logo" src="../../Content/themes/pv/img/logo3.png" />
-                        <img  alt="logo" src="../../Content/themes/pv/img/logo4.png" />
-                        <img  alt="logo" src="../../Content/themes/pv/img/logo5.png" />
-                    -->
-                </div>
-                <div class="span2">
-                    <!--%: Html.ActionLink("Brasil", "ChangeCulture", "Account", new { lang = "pt-br", returnUrl = this.Request.RawUrl }, new { @class = "bandeira" })%-->
-                    <!--%: Html.ActionLink("Ingaterra", "ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl }, new { @class = "bandeira-brasil" })%-->
+                <div>
                     <a href="<%: Url.Action("ChangeCulture", "Account", new { lang = "pt-br", returnUrl = this.Request.RawUrl })%>">
-                        <img src="../../Content/themes/pv/img/icons/Flag_of_Brazil.png" alt="imagem" />
-                    </a>&nbsp&nbsp&nbsp <a href="<%: Url.Action("ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl })%>">
-                        <img src="../../Content/themes/pv/img/icons/United_Kingdom_Flag.png" alt="imagem" />
-                    </a>
+                        <img src="../../Content/themes/pv/img/icons/Flag_of_Brazil.png" alt="imagem" /></a>
+                        &nbsp&nbsp&nbsp 
+                    <a href="<%: Url.Action("ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl })%>">
+                        <img src="../../Content/themes/pv/img/icons/United_Kingdom_Flag.png" alt="imagem" /></a>
+                    <div id="logindisplay">
+                        <% Html.RenderPartial("LogOnUserControl"); %>
+                    </div>
                 </div>
-            </div>
-            <br />
-            <br />
-            <br />
-            <div id="logindisplay">
-                <% Html.RenderPartial("LogOnUserControl"); %>
-            </div>
+            <!--/div-->
             <div>
+                <a href="<%: Url.Action("Index", "Home")%>">
+                    <img alt="logo" src="../../Content/themes/pv/img/logo.png" />
+                </a>
                 <% Html.RenderAction("DadosTurma", "SelecionarTurma"); %>
             </div>
         </header>
+        <br />
+        <br />
         <div class="container">
             <div class="navbar">
                 <!--navbar-static-top" id="nav" data-spy="affix" data-offset-top="120"-->

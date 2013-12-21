@@ -226,6 +226,7 @@
                         <div class="tab-pane" id="tab1-12">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
+                                <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
                             </div>
                         </div>
                 </div>
@@ -255,14 +256,13 @@
     <div class="btn btn-large btn-primary">
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
     </div>
-    <div class="btn btn-large btn-primary" id="botaopos">
+    &nbsp;
+    <div class="btn btn-large btn-primary">
         <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
     </div>
-    <p>
-    <br/><br/>
-    </p>
-    <div class="btn btn-large btn-primary" id="Div1">
-        <%: Html.ActionLink(Resources.Mensagem.concluir, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
+    &nbsp;
+    <div class="btn btn-large btn-primary">
+        <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
     </div>
 
     <!-- Abas dos Relatos -->

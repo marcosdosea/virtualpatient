@@ -1,13 +1,12 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.ConsultaVariavelQueixaModel>>" %>
-
-<style type="text/css"> 
-            .botaoMostrar
-            {
-                color:#2E8AE6;
-                cursor:pointer;
-            }
-            </style>
-            <h3>
+<style type="text/css">
+    .botaoMostrar
+    {
+        color: #2E8AE6;
+        cursor: pointer;
+    }
+</style>
+<h3>
     <%: Resources.Mensagem.revisao_sistemas %></h3>
 <div class="box-content">
     <table class="table table-bordered table-striped">
@@ -58,10 +57,14 @@
             </td>
             <td>
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
+                <% if (ViewBag.EscondeLinks == true)
+                   { %>
                 |
-                <div class="botaoMostrar"><%: Resources.Mensagem.novo_prm %></div>
+                <div class="botaoMostrar">
+                    <%: Resources.Mensagem.novo_prm %></div>
                 |
                 <%: Html.ActionLink(Resources.Mensagem.intervencao, "Edit", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
+                <% } %>
             </td>
         </tr>
         <% } %>
