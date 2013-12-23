@@ -19,7 +19,7 @@
     <script src="../../Scripts/gridmvc.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="../../Content/themes/pv/js/jquery.min.js"> </script>
     <script type="text/javascript" src="../../Content/themes/pv/js/bootstrap.min.js"></script>
-    <!--script type="text/javascript" src="../../Content/themes/pv/js/bootstrap.js"></script-->
+    <script type="text/javascript" src="../../Content/themes/pv/js/bootstrap.js"></script>
     <!-- Explorer canvas, for IE6-8 support of canvas elements -->
     <!--[if lt IE 9]>
             <script src="js/excanvas.min.js"></script>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../Content/themes/pv/js/imperio.general.js"></script>
 </head>
 <body>
-    <div>
         <noscript>
             <div>
                 <h2>
@@ -39,28 +38,70 @@
             </div>
         </noscript>
         <header class="container">
-            <!--div id="title"-->
+            <div id="title">
                 <br />
-                <div>
-                    <a href="<%: Url.Action("ChangeCulture", "Account", new { lang = "pt-br", returnUrl = this.Request.RawUrl })%>">
-                        <img src="../../Content/themes/pv/img/icons/Flag_of_Brazil.png" alt="imagem" /></a>
-                        &nbsp&nbsp&nbsp 
-                    <a href="<%: Url.Action("ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl })%>">
-                        <img src="../../Content/themes/pv/img/icons/United_Kingdom_Flag.png" alt="imagem" /></a>
-                    <div id="logindisplay">
-                        <% Html.RenderPartial("LogOnUserControl"); %>
-                    </div>
+                <div class="span3">
+                    <a href="<%: Url.Action("Index", "Home")%>">
+                        <!--style="width: 190px; height: 101px;"-->
+                        <div class="bandeira-brasil">
+                        </div>
+                        <img alt="logo" src="../../Content/themes/pv/img/logo.png" width="190px" />
+                        <!--h1>< %: Html.ActionLink("Paciente Virtual", "Index", "Home")%></h1-->
+                    </a>
+                    <!--
+                        <img  alt="logo" src="../../Content/themes/pv/img/logo2.png" />
+                        <img  alt="logo" src="../../Content/themes/pv/img/logo3.png" />
+                        <img  alt="logo" src="../../Content/themes/pv/img/logo4.png" />
+                        <img  alt="logo" src="../../Content/themes/pv/img/logo5.png" />
+                    -->
                 </div>
-            <!--/div-->
-            <div>
-                <a href="<%: Url.Action("Index", "Home")%>">
-                    <img alt="logo" src="../../Content/themes/pv/img/logo.png" />
-                </a>
-                <% Html.RenderAction("DadosTurma", "SelecionarTurma"); %>
+                <div class="span5">
+                    <% if (HttpContext.Current.Request.IsAuthenticated)
+                       { %>
+                    <div class="legend1"><%: Resources.Mensagem.dados_usuario %></div>
+                    <fieldset id="fieldset">
+                        <br />
+                        <% Html.RenderAction("DadosTurma", "SelecionarTurma"); %>
+                    </fieldset>
+                    <% } %>
+                </div>
+                <div id="logindisplay">
+                    <div>
+                    <a href="<%: Url.Action("ChangeCulture", "Account", new { lang = "pt-br", returnUrl = this.Request.RawUrl })%>">
+                        <img src="../../Content/themes/pv/img/icons/Flag_of_Brazil.png" alt="imagem" width="45px" />
+                    </a>&nbsp&nbsp&nbsp <a href="<%: Url.Action("ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl })%>">
+                        <img src="../../Content/themes/pv/img/icons/United_Kingdom_Flag.png" alt="imagem" width="45px" />
+                    </a>
+                    </div>
+                    <br />
+                    <% Html.RenderPartial("LogOnUserControl"); %>
+                </div>
+                <!--div class="span2">
+                    <!--%: Html.ActionLink("Brasil", "ChangeCulture", "Account", new { lang = "pt-br", returnUrl = this.Request.RawUrl }, new { @class = "bandeira" })%-->
+                    <!--%: Html.ActionLink("Ingaterra", "ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl }, new { @class = "bandeira-brasil" })%-->
+                 </div-->
+                <style>
+                    #logindisplay
+                    {
+                        float: right;
+                    }
+                </style>
             </div>
+            <br />
+            <br />
+        <style>
+            #fieldset {
+                border: 1px solid #ddd;
+                padding: 0 1.4em 1.4em 1.4em;
+                margin: 0 0 1.5em 0;
+            }
+
+            .legend1 {
+                font-size: medium;
+                font-weight: bold;
+            }         
+        </style>
         </header>
-        <br />
-        <br />
         <div class="container">
             <div class="navbar">
                 <!--navbar-static-top" id="nav" data-spy="affix" data-offset-top="120"-->
