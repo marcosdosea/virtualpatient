@@ -996,7 +996,7 @@
   <data name="visualizar" xml:space="preserve">
     <value>Show</value>
   </data>
-  <data name="encerrar_consulta" xml:space="preserve">
-    <value>Quit Consultation</value>
+  <data name="dados_usuario" xml:space="preserve">
+    <value>User Data</value>
   </data>
 </root>

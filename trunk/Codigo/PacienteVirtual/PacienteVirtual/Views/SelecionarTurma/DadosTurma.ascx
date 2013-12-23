@@ -3,47 +3,45 @@
    { %>
 <div class="row-fluid">
         <% if (Model.NomeRole != ("administrador")) { %>
-        <div class="span1">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
-            </div>
-        </div>
         <div class="span2">
             <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
                 <p class="conteudo"><%: Model.NomeTurma%></p>
             </div>
         </div>
         <% } %>
-        <div class="span1">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
-            </div>
-        </div>
+        <% if (Model.NomeRole != ("administrador")) { %>
         <div class="span2">
             <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
                 <p class="conteudo"><%: Model.NomeRole %></p>
             </div>
         </div>
-        <div class="span1">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.curso %>:</p>
-            </div>
-        </div>
+        <% } %>
+        <% if (Model.NomeRole == ("administrador")) { %>
         <div class="span3">
             <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
+                <p class="conteudo"><%: Model.NomeRole %></p>
+            </div>
+        </div>  
+        <% } %>
+        <div class="span5">
+            <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.curso %>:</p>
                 <p class="conteudo"><%: Model.Curso %></p>
             </div>
         </div>
         <% if (ViewBag.QtdTurmaPessoa > 1)
        { %>
-        <div class="span2">
+            <div>
+            <br />
             <div class="btn btn-primary">
                 <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small; "}) %>
             </div>
-        </div>
+            </div>
       <% } %>
     </div>
-</div>
 <% } %>
 
 <style>
@@ -55,6 +53,8 @@
     }
     .conteudo
     {
+        float: left;
+        text-align: right;
         font-size: small;
         font-family: Tahoma;
         text-transform:capitalize;
@@ -63,4 +63,5 @@
     {
         clear: left;
     }
+    
 </style>

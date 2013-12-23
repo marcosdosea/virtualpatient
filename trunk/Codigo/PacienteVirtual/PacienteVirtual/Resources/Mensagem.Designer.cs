@@ -727,6 +727,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dados do Usuário.
+        /// </summary>
+        public static string dados_usuario {
+            get {
+                return ResourceManager.GetString("dados_usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data de Atualização.
         /// </summary>
         public static string data_atualizacao {
