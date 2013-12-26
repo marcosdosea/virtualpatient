@@ -108,7 +108,7 @@ namespace PacienteVirtual.Negocio
                             IdTurma = tb_consulta_variavel.IdTurma,
                             IdPessoa = tb_consulta_variavel.IdPessoa,
                             IdRelato = tb_consulta_variavel.IdRelato,
-                            IdEstadoConsulta = tb_consulta_variavel.idEstadoConsulta,
+                            IdEstadoConsulta = tb_consulta_variavel.IdEstadoConsulta,
                             DescricaoEstadoConsulta = tb_consulta_variavel.tb_estado_consulta.DescricaoEstado,
                             IdRazaoEncontro = tb_consulta_variavel.IdRazaoEncontro,
                             DescricaoRazao = tb_consulta_variavel.tb_razao_encontro.DescricaoRazao, // meu teste
@@ -203,7 +203,7 @@ namespace PacienteVirtual.Negocio
             _consultaVariavelE.IdPessoa = consultaVariavel.IdPessoa;
             _consultaVariavelE.IdRelato = consultaVariavel.IdRelato;
             _consultaVariavelE.IdRazaoEncontro = consultaVariavel.IdRazaoEncontro;
-            _consultaVariavelE.idEstadoConsulta = consultaVariavel.IdEstadoConsulta;
+            _consultaVariavelE.IdEstadoConsulta = consultaVariavel.IdEstadoConsulta;
             _consultaVariavelE.DataPreenchimento = (DateTime)consultaVariavel.DataPreenchimento;
             _consultaVariavelE.ResumoPlanoCuidados = consultaVariavel.ResumoPlanoCuidados;
             _consultaVariavelE.ComentariosTutor = consultaVariavel.ComentariosTutor;
