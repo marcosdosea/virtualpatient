@@ -999,4 +999,7 @@
   <data name="dados_usuario" xml:space="preserve">
     <value>Dados do Usuário</value>
   </data>
+  <data name="encerrar_consulta" xml:space="preserve">
+    <value>Encerrar Consulta</value>
+  </data>
 </root>
