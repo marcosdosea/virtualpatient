@@ -161,6 +161,8 @@ namespace PacienteVirtual.Controllers
 
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
 
+            ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
+
             return View(consultaModel);
         }
 
@@ -211,6 +213,8 @@ namespace PacienteVirtual.Controllers
 
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
             ViewBag.EscondeLinks = true;
+
+            ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
 
             return View(consultaModel);
         }

@@ -110,13 +110,15 @@
         </div>
         <div class="span6">
             <div class="thumbnails">
+                <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia"))
+                           { %>
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
-                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.classificacao_de_prm %></a></li>
+                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.classificacao_de_prm%></a></li>
                         <li id="li2"><a href="#tab1-2" data-toggle="tab">
-                            <%: Resources.Mensagem.intervencoes %></a></li>
+                            <%: Resources.Mensagem.intervencoes%></a></li>
                         <li id="li3"><a href="#tab1-3" data-toggle="tab">
-                            <%: Resources.Mensagem.diario_pessoal_medicamentos %></a></li>
+                            <%: Resources.Mensagem.diario_pessoal_medicamentos%></a></li>
                     </ul>
                     <div class="tab-content" id="desabilitar">
                         <div class="tab-pane active" id="tab1-1">
@@ -148,6 +150,7 @@
                         </div>
                     </div>
                 </div>
+                                            <% } %>
             </div>
         </div>
     </fieldset>

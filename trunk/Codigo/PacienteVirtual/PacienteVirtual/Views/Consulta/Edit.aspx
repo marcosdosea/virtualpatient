@@ -135,7 +135,12 @@
             <div class="thumbnails">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
-                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.demografico_antropometricos %></a></li>
+                        <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia") || ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                           { %>
+                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.demografico_antropometricos%></a></li>
+                        <% } %>
+                        <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia"))
+                           { %>
                         <li id="li2"><a href="#tab1-2" data-toggle="tab">
                             <%: Resources.Mensagem.razao_encontro %></a></li>
                         <li id="li3"><a href="#tab1-3" data-toggle="tab">
@@ -158,14 +163,19 @@
                             <%: Resources.Mensagem.parametro_clinico %></a></li>
                             <li id="li12"><a href="#tab1-12" data-toggle="tab">
                             <%: Resources.Mensagem.revisao_sistemas %></a></li>
-                            <%  %>
+                                    <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
+                        <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia") || ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                           { %>
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../DemograficosAntropometicos/Edit", Model.DemograficoAntropometrico);%>
                             </div>
                         </div>
+                        <% } %>
+                        <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia"))
+                           { %>
                         <div class="tab-pane" id="tab1-2">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ConsultaVariavel/Edit", Model.ConsultaVariavel);%>
@@ -229,6 +239,7 @@
                                 <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
                             </div>
                         </div>
+                        <% } %>
                 </div>
             </div>
         </div>
