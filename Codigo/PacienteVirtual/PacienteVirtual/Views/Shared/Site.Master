@@ -234,7 +234,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <% if (Session["_Roles"].Equals("tutor"))
+                    <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("administrador"))
                        { %>
                     <div class="nav-collapse collapse">
                         <nav class="nav">

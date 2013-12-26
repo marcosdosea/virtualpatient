@@ -13,7 +13,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Index()
         {
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodos());
+            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm());
         }
 
         [HttpPost]
@@ -24,11 +24,11 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
             if (IdTurma != -1)
             {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaAtivados(IdTurma).ToList());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaAtivadosExcecaoAdm(IdTurma).ToList());
             }
             if (IdTurma == -1)
             {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosAtivados());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm());
             }
             return View();
         }
