@@ -125,12 +125,21 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém todos os turmaPessoa cadastrados com excecao dos Administradores
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TurmaPessoaModel> ObterTodosExcecaoAdm()
+        {
+            return GetQuery().Where(tpr => tpr.IdRole != Global.Administrador).ToList();
+        }
+
+        /// <summary>
         /// Obtém todos as pessoas de uma determinada turma qe ainda não estão ativados 
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterPorTurmaNaoAtivado(int codTurma)
+        public IEnumerable<TurmaPessoaModel> ObterPorTurmaNaoAtivadoExececaoAdm(int codTurma)
         {
-            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == false).ToList();
+            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == false && tpr.IdRole != Global.Administrador).ToList();
         }
 
         /// <summary>
@@ -148,9 +157,9 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="codTurma"></param>
         /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterPorTurmaAtivados(int codTurma)
+        public IEnumerable<TurmaPessoaModel> ObterPorTurmaAtivadosExcecaoAdm(int codTurma)
         {
-            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == true).ToList();
+            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == true && tpr.IdRole == Global.Administrador).ToList();
         }
 
         /// <summary>
@@ -170,6 +179,16 @@ namespace PacienteVirtual.Negocio
         public TurmaPessoaModel ObterPorTurmaPessoa(int idTurma, int idPessoa)
         {
             return GetQuery().Where(turma => turma.IdTurma == idTurma && turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtém turmaPessoa com o perfil de administrador
+        /// </summary>
+        /// <param name="codTurma"></param>
+        /// <returns></returns>
+        public IEnumerable<TurmaPessoaModel> ObterPorPerfil(int idRole)
+        {
+            return GetQuery().Where(turma => turma.IdRole == idRole).ToList();
         }
 
 

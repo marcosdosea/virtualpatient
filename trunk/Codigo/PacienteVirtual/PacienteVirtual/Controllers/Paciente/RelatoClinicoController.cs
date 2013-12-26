@@ -14,16 +14,16 @@ namespace PacienteVirtual.Controllers
         // GET: /RelatoClinico/Atribuir/5
         public ActionResult Atribuir(int idRelato, int idPaciente, int ordemCronologica)
         {
+            SessionController.IdRelato = idRelato;
+            ViewBag.NomePaciente = GerenciadorPaciente.GetInstance().ObterNomePorId(idPaciente);
+            ViewBag.OrdemCronologica = ordemCronologica;
             if (SessionController.DadosTurmaPessoa != null)
             {
                 if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
                 {
-                    return RedirectToAction("Index", "RelatoClinico");
+                    return View(GerenciadorTurmaPessoa.GetInstance().ObterPorPerfil(SessionController.DadosTurmaPessoa.IdRole));
                 }
             }
-            SessionController.IdRelato = idRelato;
-            ViewBag.NomePaciente = GerenciadorPaciente.GetInstance().ObterNomePorId(idPaciente);
-            ViewBag.OrdemCronologica = ordemCronologica;
             return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
         }
 
