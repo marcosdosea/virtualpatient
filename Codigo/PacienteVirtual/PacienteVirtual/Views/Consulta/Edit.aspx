@@ -264,17 +264,26 @@
             margin-top: -40px;
         }
     </style>
-    <div class="btn btn-large btn-primary">
-        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
+    <div id="botoes">
+        <div class="btn btn-large btn-primary">
+            <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
+        </div>
+        &nbsp;
+        <div class="btn btn-large btn-primary">
+            <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
+        </div>
+        &nbsp;
+        <div class="btn btn-large btn-primary">
+            <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
+        </div>
     </div>
-    &nbsp;
-    <div class="btn btn-large btn-primary">
-        <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
-    </div>
-    &nbsp;
-    <div class="btn btn-large btn-primary">
-        <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
-    </div>
+    <style>
+        #botoes
+        {
+            position: relative;
+            margin-left: 35%;
+        }
+    </style>
 
     <!-- Abas dos Relatos -->
     <input type="hidden" value="<%: ViewBag.AbasRelato %>" id="abasRelato" />

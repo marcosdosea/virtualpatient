@@ -155,13 +155,22 @@
         </div>
     </fieldset>
     <% } %>
-    <div class="btn btn-large btn-primary">
-        <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
+    <div id="botoesRodape">
+        <div class="btn btn-large btn-primary">
+            <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
+        </div>
+        &nbsp;
+        <div class="btn btn-large btn-primary">
+            <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
+        </div>
     </div>
-    &nbsp;
-    <div class="btn btn-large btn-primary">
-        <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Concluir esta Consulta?')") })%>
-    </div>
+    <style>
+        #botoesRodape
+        {
+            position: relative;
+            margin-left: 35%;
+        }
+    </style>
 
     <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
     <script type="text/javascript">

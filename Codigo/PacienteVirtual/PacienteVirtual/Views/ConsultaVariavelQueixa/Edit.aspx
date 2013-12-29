@@ -14,10 +14,11 @@
         <legend><%: Resources.Mensagem.intervencao %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
         <%: Html.HiddenFor(model => model.IdQueixa) %>
+        <%: Html.HiddenFor(model => model.IdSistema) %>
         <div class="row-fluid">
             <div class="span3">
                 <div class="editor-label">
-                    <%: Html.LabelFor(model => model.DescricaoQueixa) %>
+                    <%: Html.Label(Resources.Mensagem.problema_saude) %>
                 </div>
             </div>
             <div class="span6">

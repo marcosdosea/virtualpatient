@@ -56,15 +56,15 @@
                 <%: Html.DisplayFor(modelItem => item.DescricaoSituacao) %>
             </td>
             <td>
-                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
                 <% if (ViewBag.EscondeLinks == true)
                    { %>
+                <%: Html.ActionLink(Resources.Mensagem.avaliacao_farmaceutica, "Edit", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
                 |
                 <div class="botaoMostrar">
-                    <%: Resources.Mensagem.novo_prm %></div>
-                |
-                <%: Html.ActionLink(Resources.Mensagem.intervencao, "Edit", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
+                    <%: Resources.Mensagem.identificacao_prm %></div>
                 <% } %>
+                |
+                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
             </td>
         </tr>
         <% } %>
