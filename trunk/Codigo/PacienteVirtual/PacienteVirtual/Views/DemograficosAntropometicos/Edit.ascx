@@ -152,7 +152,7 @@
                 <%: Html.LabelFor(model => model.Procedencia) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Procedencia, new { @class = "textbox", style = "width:176px;", MaxLength = 100 })%>
+                <%: Html.TextBoxFor(model => model.Procedencia, new { @class = "textbox", style = "width:210px;", MaxLength = 100 })%>
                 <%: Html.ValidationMessageFor(model => model.Procedencia)%>
             </div>
         </div>
@@ -163,7 +163,7 @@
                 <%: Html.LabelFor(model => model.Endereco) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Endereco, new { @class = "textbox", style = "width:176px;", MaxLength = 100 })%>
+                <%: Html.TextBoxFor(model => model.Endereco, new { @class = "textbox", style = "width:579px;", MaxLength = 100 })%>
                 <%: Html.ValidationMessageFor(model => model.Endereco)%>
             </div>
         </div>
