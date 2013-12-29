@@ -1023,4 +1023,13 @@
   <data name="rg" xml:space="preserve">
     <value>RG</value>
   </data>
+  <data name="avaliacao_farmaceutica" xml:space="preserve">
+    <value>Avaliação Farmacêutica</value>
+  </data>
+  <data name="identificacao_prm" xml:space="preserve">
+    <value>Identificação de PRM</value>
+  </data>
+  <data name="problema_saude" xml:space="preserve">
+    <value>Problema de Saúde</value>
+  </data>
 </root>
