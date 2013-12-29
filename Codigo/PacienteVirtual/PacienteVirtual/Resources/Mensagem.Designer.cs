@@ -205,6 +205,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Área de Atuação.
+        /// </summary>
+        public static string area_atuacao {
+            get {
+                return ResourceManager.GetString("area_atuacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ativa.
         /// </summary>
         public static string ativa {
@@ -997,6 +1006,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Endereço.
+        /// </summary>
+        public static string endereco {
+            get {
+                return ResourceManager.GetString("endereco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Endereço de E-mail .
         /// </summary>
         public static string endereco_email {
@@ -1065,6 +1083,15 @@ namespace Resources {
         public static string estado {
             get {
                 return ResourceManager.GetString("estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estado Civil.
+        /// </summary>
+        public static string estado_civil {
+            get {
+                return ResourceManager.GetString("estado_civil", resourceCulture);
             }
         }
         
@@ -1699,6 +1726,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Naturalidade.
+        /// </summary>
+        public static string naturalidade {
+            get {
+                return ResourceManager.GetString("naturalidade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Necessário.
         /// </summary>
         public static string necessario {
@@ -2113,6 +2149,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Procedência.
+        /// </summary>
+        public static string procedencia {
+            get {
+                return ResourceManager.GetString("procedencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Próximo.
         /// </summary>
         public static string proximo {
@@ -2230,6 +2275,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Religião.
+        /// </summary>
+        public static string religiao {
+            get {
+                return ResourceManager.GetString("religiao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remover.
         /// </summary>
         public static string remover {
@@ -2271,6 +2325,15 @@ namespace Resources {
         public static string revisao_sistemas {
             get {
                 return ResourceManager.GetString("revisao_sistemas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RG.
+        /// </summary>
+        public static string rg {
+            get {
+                return ResourceManager.GetString("rg", resourceCulture);
             }
         }
         

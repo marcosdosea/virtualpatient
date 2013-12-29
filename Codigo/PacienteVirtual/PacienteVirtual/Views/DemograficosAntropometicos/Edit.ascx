@@ -1,7 +1,5 @@
-﻿
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DemograficosAntropometricosModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DemograficosAntropometricosModel>" %>
 <% Html.BeginForm("Edit", "DemograficosAntropometicos");%>
-
 <% using (Html.BeginForm())
    { %>
 <%: Html.ValidationSummary(true) %>
@@ -82,6 +80,26 @@
     <div class="row-fluid">
         <div class="span6">
             <div class="editor-label">
+                <%: Html.LabelFor(model => model.EstadoCivil) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdEstadoCivil", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdEstadoCivil)%>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.RG) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.RG, new { @class = "textbox", style = "width:176px;", MaxLength = 20 })%>
+                <%: Html.ValidationMessageFor(model => model.RG)%>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
                 <%: Html.LabelFor(model => model.EscolaridadeNivel) %>
             </div>
             <div class="editor-field">
@@ -102,11 +120,51 @@
     <div class="row-fluid">
         <div class="span6">
             <div class="editor-label">
+                <%: Html.LabelFor(model => model.Religiao) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdReligiao", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdReligiao) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
                 <%: Html.LabelFor(model => model.PlanoSaudeNome) %>
             </div>
             <div class="editor-field">
                 <%: Html.DropDownList("IdPlanoSaude", Resources.Mensagem.selecione)%>
                 <%: Html.ValidationMessageFor(model => model.IdPlanoSaude) %>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Naturalidade) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdNaturalidade", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdNaturalidade) %>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Procedencia) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Procedencia, new { @class = "textbox", style = "width:176px;", MaxLength = 100 })%>
+                <%: Html.ValidationMessageFor(model => model.Procedencia)%>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Endereco) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Endereco, new { @class = "textbox", style = "width:176px;", MaxLength = 100 })%>
+                <%: Html.ValidationMessageFor(model => model.Endereco)%>
             </div>
         </div>
     </div>

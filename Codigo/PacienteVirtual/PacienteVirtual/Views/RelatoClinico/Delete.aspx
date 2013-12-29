@@ -17,6 +17,11 @@
         <%: Html.DisplayFor(model => model.NomePaciente) %>
     </div>
 
+    <div class="display-label"><%: Resources.Mensagem.area_atuacao%></div>
+    <div class="display-field">
+        <%: Html.DisplayFor(model => model.AreaAtuacao) %>
+    </div>
+
     <div class="display-label"><%: Resources.Mensagem.ordem_cronologica %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.OrdemCronologica) %>

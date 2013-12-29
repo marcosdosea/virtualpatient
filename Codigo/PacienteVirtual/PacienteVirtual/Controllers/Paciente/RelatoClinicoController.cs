@@ -117,6 +117,7 @@ namespace PacienteVirtual.Controllers
         {
             ViewBag.fotoId = -1;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
+            ViewBag.IdAreaAtuacao = new SelectList(GerenciadorAreaAtuacao.GetInstance().ObterTodos(), "IdAreaAtuacao", "AreaAtuacao");
             return View();
         }
 
@@ -138,11 +139,12 @@ namespace PacienteVirtual.Controllers
                 //ViewBag.teste = "passou pelo -1" + relatoModel.IdPaciente;
                 ViewBag.fotoId = relatoModel.IdPaciente;
                 ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
-
+                ViewBag.IdAreaAtuacao = new SelectList(GerenciadorAreaAtuacao.GetInstance().ObterTodos(), "IdAreaAtuacao", "AreaAtuacao");
                 return View(relatoModel);
             }
             ViewBag.fotoId = -1;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
+            ViewBag.IdAreaAtuacao = new SelectList(GerenciadorAreaAtuacao.GetInstance().ObterTodos(), "IdAreaAtuacao", "AreaAtuacao");
             return View(relatoModel);
         }
 
@@ -153,6 +155,7 @@ namespace PacienteVirtual.Controllers
             RelatoClinicoModel relatoModel = gRelato.Obter(id);
             ViewBag.fotoId = relatoModel.IdPaciente;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
+            ViewBag.IdAreaAtuacao = new SelectList(GerenciadorAreaAtuacao.GetInstance().ObterTodos(), "IdAreaAtuacao", "AreaAtuacao", relatoModel.IdAreaAtuacao);
             return View(relatoModel);
         }
 
@@ -185,6 +188,7 @@ namespace PacienteVirtual.Controllers
             }
             ViewBag.fotoId = relatoModel.IdPaciente;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);
+            ViewBag.IdAreaAtuacao = new SelectList(GerenciadorAreaAtuacao.GetInstance().ObterTodos(), "IdAreaAtuacao", "AreaAtuacao", relatoModel.IdAreaAtuacao);
             return View(relatoModel);
         }
 

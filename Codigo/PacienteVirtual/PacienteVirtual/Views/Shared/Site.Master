@@ -130,6 +130,9 @@
                                             <%: Html.ActionLink(Resources.Mensagem.alergia, "Index", "Alergia")%>
                                         </li>
                                         <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.area_atuacao, "Index", "AreaAtuacao")%>
+                                        </li>
+                                        <li>
                                             <%: Html.ActionLink(Resources.Mensagem.medicamentos, "Index", "Medicamentos")%>
                                         </li>
                                         <li>
@@ -182,6 +185,16 @@
                                         </li>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.resposta, "Index", "Resposta")%>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.estado_civil, "Index", "EstadoCivil")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.naturalidade, "Index", "Naturalidade")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.religiao, "Index", "Religiao")%>
                                         </li>
                                     </ul>
                                 </li>
