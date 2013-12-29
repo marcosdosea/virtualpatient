@@ -1002,4 +1002,25 @@
   <data name="encerrar_consulta" xml:space="preserve">
     <value>Close Consultation</value>
   </data>
+  <data name="area_atuacao" xml:space="preserve">
+    <value>Area of Expertise</value>
+  </data>
+  <data name="estado_civil" xml:space="preserve">
+    <value>Marital Status</value>
+  </data>
+  <data name="nacionalidade" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="religiao" xml:space="preserve">
+    <value>Religion</value>
+  </data>
+  <data name="endereco" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="procedencia" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="rg" xml:space="preserve">
+    <value>RG</value>
+  </data>
 </root>

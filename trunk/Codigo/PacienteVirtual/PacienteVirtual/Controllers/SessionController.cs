@@ -161,6 +161,12 @@ namespace PacienteVirtual.Controllers
                         demoAntro.IdEscolaridade = 1;
                         demoAntro.IdOcupacao = 1;
                         demoAntro.IdPlanoSaude = 1;
+                        demoAntro.IdEstadoCivil = 1;
+                        demoAntro.IdNaturalidade = 1;
+                        demoAntro.IdReligiao = 1;
+                        demoAntro.RG = "";
+                        demoAntro.Procedencia = "";
+                        demoAntro.Endereco = "";
                         GerenciadorDemograficosAntropometricos.GetInstance().Inserir(demoAntro);
                     }
                     HttpContext.Current.Session["_DemograficosAntropometricos"] = demoAntro;

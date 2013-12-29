@@ -25,9 +25,15 @@
                 <%: Html.LabelFor(model => model.NomePaciente) %>
             </div>
             <div class="editor-field">
-                <!--%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { @onchange = "Create = (model => model);" })%-->
                 <%: Html.DropDownList("IdPaciente", null, new { onchange = "this.form.action = 'Create'; this.form.submit();" })%>
                 <%: Html.ValidationMessageFor(model => model.IdPaciente) %>
+            </div>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.AreaAtuacao) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdAreaAtuacao", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdAreaAtuacao) %>
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.RelatoTextual) %>

@@ -47,7 +47,11 @@
                 .Titled(Resources.Mensagem.nivel_dificuldade)
                 .ThenSortByDescending(o => o.NivelDificuldade)
                 .Filterable(true);
-
+        
+        columns.Add(o => o.AreaAtuacao)
+                .Titled(Resources.Mensagem.area_atuacao)
+                .ThenSortByDescending(o => o.AreaAtuacao)
+                .Filterable(true);
 
         /* Adding not mapped column, that renders body, using inline Razor html helper */
         columns.Add()

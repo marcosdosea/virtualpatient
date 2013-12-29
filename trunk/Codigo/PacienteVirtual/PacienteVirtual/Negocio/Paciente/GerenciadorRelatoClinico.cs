@@ -85,12 +85,12 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do relato
         /// </summary>
         /// <param name="codDisciplina"></param>
-        public void Remover(int idCurso)
+        public void Remover(int idRelato)
         {
             try
             {
                 var repRelato = new RepositorioGenerico<tb_relato_clinico>();
-                repRelato.Remover(c => c.IdRelato == idCurso);
+                repRelato.Remover(c => c.IdRelato == idRelato);
                 repRelato.SaveChanges();
             }
             catch (Exception e)
@@ -114,6 +114,8 @@ namespace PacienteVirtual.Negocio
                         {
                             IdRelato = tb_relato_clinico.IdRelato,
                             IdPaciente = tb_relato_clinico.IdPaciente,
+                            IdAreaAtuacao = tb_relato_clinico.tb_area_atuacao.IdAreaAtuacao,
+                            AreaAtuacao = tb_relato_clinico.tb_area_atuacao.Descricao,
                             NomePaciente = tb_paciente.Nome,
                             NivelDificuldade = tb_relato_clinico.NivelDificuldade,
                             OrdemCronologica = tb_relato_clinico.OrdemCronologia,
@@ -205,6 +207,7 @@ namespace PacienteVirtual.Negocio
             _relatoE.OrdemCronologia = relato.OrdemCronologica;
             _relatoE.RelatoVideo = relato.RelatoVideo;
             _relatoE.RelatoTextual = relato.RelatoTextual;
+            _relatoE.idAreaAtuacao = relato.IdAreaAtuacao;
         }
     }
 }

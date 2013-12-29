@@ -1002,4 +1002,25 @@
   <data name="encerrar_consulta" xml:space="preserve">
     <value>Encerrar Consulta</value>
   </data>
+  <data name="area_atuacao" xml:space="preserve">
+    <value>Área de Atuação</value>
+  </data>
+  <data name="estado_civil" xml:space="preserve">
+    <value>Estado Civil</value>
+  </data>
+  <data name="naturalidade" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="religiao" xml:space="preserve">
+    <value>Religião</value>
+  </data>
+  <data name="endereco" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="procedencia" xml:space="preserve">
+    <value>Procedência</value>
+  </data>
+  <data name="rg" xml:space="preserve">
+    <value>RG</value>
+  </data>
 </root>

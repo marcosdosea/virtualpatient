@@ -34,6 +34,14 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nivel_dificuldade", ResourceType = typeof(Mensagem))]
         public int NivelDificuldade { get; set; }
+        
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
+        public int IdAreaAtuacao { get; set; }
+
+        //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "area_atuacao", ResourceType = typeof(Mensagem))]
+        public string AreaAtuacao { get; set; }
 
     }
 }

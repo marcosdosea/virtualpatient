@@ -134,10 +134,16 @@ namespace PacienteVirtual.Negocio
                             MedicosAtendem = demoAntrop.MedicosAtendem,
                             MoradiaFamilia = demoAntrop.MoradiaFamilia,
                             OndeAdquireMedicamentos = demoAntrop.OndeAdquireMedicamentos,
+                            RG = demoAntrop.RG,
+                            Procedencia = demoAntrop.Procedencia,
+                            Endereco = demoAntrop.Endereco,
 
                             IdEscolaridade = demoAntrop.IdEscolaridade,
                             IdOcupacao = demoAntrop.IdOcupacao,
-                            IdPlanoSaude = demoAntrop.IdPlanoSaude
+                            IdPlanoSaude = demoAntrop.IdPlanoSaude,
+                            IdEstadoCivil = demoAntrop.IdEstadoCivil,
+                            IdNaturalidade = demoAntrop.IdNaturalidade,
+                            IdReligiao = demoAntrop.IdReligiao
                         };
             return query;
         }
@@ -189,6 +195,12 @@ namespace PacienteVirtual.Negocio
             _demoAntropE.IdOcupacao = demoAntrop.IdOcupacao;
             _demoAntropE.IdPlanoSaude = demoAntrop.IdPlanoSaude;
 
+            _demoAntropE.IdEstadoCivil = demoAntrop.IdEstadoCivil;
+            _demoAntropE.IdReligiao = demoAntrop.IdReligiao;
+            _demoAntropE.IdNaturalidade = demoAntrop.IdNaturalidade;
+            _demoAntropE.RG = demoAntrop.RG;
+            _demoAntropE.Procedencia = demoAntrop.Procedencia;
+            _demoAntropE.Endereco = demoAntrop.Endereco;
         }
 
     }
