@@ -1032,4 +1032,7 @@
   <data name="problema_saude" xml:space="preserve">
     <value>Health Problem</value>
   </data>
+  <data name="editar_gabarito" xml:space="preserve">
+    <value>Edit Template</value>
+  </data>
 </root>
