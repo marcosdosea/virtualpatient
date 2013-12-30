@@ -1035,4 +1035,7 @@
   <data name="editar_gabarito" xml:space="preserve">
     <value>Edit Template</value>
   </data>
+  <data name="referencia_utilizadas" xml:space="preserve">
+    <value>References Used</value>
+  </data>
 </root>

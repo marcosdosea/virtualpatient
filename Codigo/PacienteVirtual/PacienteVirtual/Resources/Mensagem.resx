@@ -1035,4 +1035,7 @@
   <data name="editar_gabarito" xml:space="preserve">
     <value>Editar Gabarito</value>
   </data>
+  <data name="referencia_utilizadas" xml:space="preserve">
+    <value>Referências Utilizadas</value>
+  </data>
 </root>
