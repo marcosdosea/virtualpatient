@@ -136,7 +136,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
          public IEnumerable<ConsultaVariavelQueixaModel> ObterPorConsultaVariavelTodosSuspeitaPRM(long idConsultaVariavel)
         {
-            return GetQuery().Where(cv => cv.IdConsultaVariavel == idConsultaVariavel && cv.Tipo.Equals("S")).ToList();
+            return GetQuery().Where(cv => cv.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
 
 

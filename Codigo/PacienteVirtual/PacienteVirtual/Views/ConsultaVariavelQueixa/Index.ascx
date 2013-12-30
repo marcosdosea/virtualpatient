@@ -62,8 +62,8 @@
                 |
                 <div class="botaoMostrar">
                     <%: Resources.Mensagem.identificacao_prm %></div>
+                    |
                 <% } %>
-                |
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
             </td>
         </tr>
