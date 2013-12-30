@@ -46,7 +46,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "telefone", ResourceType = typeof(Mensagem))]
         public string TelefoneFarmaceutico { get; set; }
 
-        [Display(Name = "valor_referencia", ResourceType = typeof(Mensagem))]
+        [Display(Name = "referencia_utilizadas", ResourceType = typeof(Mensagem))]
         public string Referências { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
