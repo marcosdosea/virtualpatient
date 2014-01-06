@@ -62,8 +62,6 @@
                     <%: Html.DisplayFor(modelItem => item.NomeTurma)%>
                 </td>
                 <td>
-                    <% if (item.IdEstadoConsulta == 1 || item.IdEstadoConsulta == 2)
-                       { %>
                         <% if (Session["_Roles"].Equals("tutor"))
                            { %>
                             <%: Html.ActionLink(Resources.Mensagem.visualizar, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%>    
@@ -76,11 +74,6 @@
                            { %>
                             <%: Html.ActionLink(Resources.Mensagem.preencher_gabarito, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%> 
                         <% } %>
-                    <% }
-                       else if(item.IdEstadoConsulta == 4)
-                       { %>
-                       <%: Html.ActionLink(Resources.Mensagem.editar_gabarito, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%>
-                    <% } %>
                 </td>
             </tr>
             <% } %>
