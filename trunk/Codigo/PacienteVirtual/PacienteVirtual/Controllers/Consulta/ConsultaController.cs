@@ -86,7 +86,10 @@ namespace PacienteVirtual.Controllers
         {
             long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
-            consultaVariavelModel.IdEstadoConsulta = Global.EmPreenchimento;
+            if (SessionController.DadosTurmaPessoa.IdRole != Global.Tutor &&  consultaVariavelModel.IdEstadoConsulta == Global.AguardandoPreenchimento)
+            {
+                consultaVariavelModel.IdEstadoConsulta = Global.EmPreenchimento;
+            }
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
