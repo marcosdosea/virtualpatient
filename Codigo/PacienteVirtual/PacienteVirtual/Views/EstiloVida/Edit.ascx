@@ -45,6 +45,9 @@
                         <div>
                         <%= Html.RadioButtonFor(model => model.TabacoUso, 3) %> &nbsp <%: Resources.Mensagem.cigarros_dia_20_mais %> 
                         </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.TabacoUso, 4) %> &nbsp <%: Resources.Mensagem.nao_se_aplica %> 
+                        </div>
                     </div>
                 </td>
                 <td>
@@ -74,6 +77,9 @@
                         </div>
                         <div>
                         <%= Html.RadioButtonFor(model => model.CafeUso, 3)%> &nbsp <%: Resources.Mensagem.xicaras_dias_6_mais %> 
+                        </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.CafeUso, 4) %> &nbsp <%: Resources.Mensagem.nao_se_aplica %> 
                         </div>
                     </div>
                 </td>
@@ -110,6 +116,9 @@
                         </div>
                         <div>
                         <%= Html.RadioButtonFor(model => model.AlcoolUso, 3)%> &nbsp <%: Resources.Mensagem.copos_dia_6_mais %> 
+                        </div>
+                        <div>
+                        <%= Html.RadioButtonFor(model => model.AlcoolUso, 4) %> &nbsp <%: Resources.Mensagem.nao_se_aplica %> 
                         </div>
                     </div>
                 </td>

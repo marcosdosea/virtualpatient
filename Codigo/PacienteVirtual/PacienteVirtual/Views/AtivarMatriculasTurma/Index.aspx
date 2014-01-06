@@ -24,12 +24,17 @@
                 .ThenSortByDescending(o => o.NomePessoa)
                 .Filterable(true);
 
+        columns.Add(o => o.NomeTurma)
+                .Titled(Resources.Mensagem.turma)
+                .ThenSortByDescending(o => o.NomeTurma)
+                .Filterable(true);
+        
         columns.Add(o => o.Ativa)
                 .Titled(Resources.Mensagem.status)
                 .ThenSortByDescending(o => o.Ativa)
                 .Filterable(true)
                 .SetWidth(230)
-                .RenderValueAs(o => o.Ativa == true ? Resources.Mensagem.ativa : Resources.Mensagem.desativa);
+                .RenderValueAs(o => o.Ativa == true && o.IdRole == 2 ? Resources.Mensagem.ativa : Resources.Mensagem.desativa);
         
         /* Adding not mapped column, that renders body, using inline Razor html helper */
         columns.Add()

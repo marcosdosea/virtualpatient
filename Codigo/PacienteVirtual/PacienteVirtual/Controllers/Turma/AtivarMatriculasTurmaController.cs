@@ -25,7 +25,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
             if (IdTurma != -1)
             {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaNaoAtivadoExececaoAdm(IdTurma).ToList());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(IdTurma).ToList());
             }
             if (IdTurma == -1)
             {
@@ -39,6 +39,7 @@ namespace PacienteVirtual.Controllers
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
             tpm.Ativa = true;
+            tpm.IdRole = Global.Usuario;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index");
         }
@@ -48,6 +49,7 @@ namespace PacienteVirtual.Controllers
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
             tpm.Ativa = false;
+            tpm.IdRole = Global.Usuario;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index");
 
@@ -63,6 +65,7 @@ namespace PacienteVirtual.Controllers
                 foreach (TurmaPessoaModel pessoa in listaPessoa)
                 {
                     pessoa.Ativa = true;
+                    pessoa.IdRole = Global.Usuario;
                     GerenciadorTurmaPessoa.GetInstance().Atualizar(pessoa);
                 }
                 ativadesativar = false ;
@@ -72,6 +75,7 @@ namespace PacienteVirtual.Controllers
                 foreach (TurmaPessoaModel pessoa in listaPessoa)
                 {
                     pessoa.Ativa = false;
+                    pessoa.IdRole = Global.Usuario;
                     GerenciadorTurmaPessoa.GetInstance().Atualizar(pessoa);
                 }
                 ativadesativar = true;

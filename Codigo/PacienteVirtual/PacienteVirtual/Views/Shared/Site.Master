@@ -209,7 +209,7 @@
                                     <%: Resources.Mensagem.turma%>
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <% if (Session["_Roles"].Equals("tutor"))
+                                        <% if (Session["_Roles"].Equals("administrador"))
                                            { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.turma, "Index", "Turma")%>
