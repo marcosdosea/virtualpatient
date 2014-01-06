@@ -137,9 +137,9 @@ namespace PacienteVirtual.Negocio
         /// Obtém todos as pessoas de uma determinada turma qe ainda não estão ativados 
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterPorTurmaNaoAtivadoExececaoAdm(int codTurma)
+        public IEnumerable<TurmaPessoaModel> ObterPorTurmaExcecaoAdm(int codTurma)
         {
-            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == false && tpr.IdRole != Global.Administrador).ToList();
+            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.IdRole != Global.Administrador).ToList();
         }
 
         /// <summary>
@@ -150,16 +150,6 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<TurmaPessoaModel> ObterTurmasPorPessoa(int idPessoa)
         {
             return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa).ToList();
-        }
-
-        /// <summary>
-        /// Obtem todos os alunos de determinada turma matriculada na mesma
-        /// </summary>
-        /// <param name="codTurma"></param>
-        /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterPorTurmaAtivadosExcecaoAdm(int codTurma)
-        {
-            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.Ativa == true && tpr.IdRole == Global.Administrador).ToList();
         }
 
         /// <summary>

@@ -1038,4 +1038,7 @@
   <data name="referencia_utilizadas" xml:space="preserve">
     <value>Referências Utilizadas</value>
   </data>
+  <data name="nao_se_aplica" xml:space="preserve">
+    <value>Não se Aplica</value>
+  </data>
 </root>
