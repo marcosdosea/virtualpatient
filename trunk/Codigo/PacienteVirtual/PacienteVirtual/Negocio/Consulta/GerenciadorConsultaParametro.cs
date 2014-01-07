@@ -100,7 +100,7 @@ namespace PacienteVirtual.Negocio
                             IdParametroClinico = tb_consulta_parametro.IdParametroClinico,
                             Unidade = tb_consulta_parametro.Unidade,
                             Valor = (float)tb_consulta_parametro.Valor,
-                            ValorReferencia = (float)tb_consulta_parametro.ValorReferencia,
+                            ValorReferencia = tb_consulta_parametro.ValorReferencia,
 
                             ParametroClinico = tb_parametro_clinico.ParametroClinico
                         };
