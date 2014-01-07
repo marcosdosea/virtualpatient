@@ -139,10 +139,10 @@
     <value>Data de Nascimento</value>
   </data>
   <data name="deletar" xml:space="preserve">
-    <value>Deletar</value>
+    <value>Excluir</value>
   </data>
   <data name="demografico_antropometricos" xml:space="preserve">
-    <value>Dados Demograficos e Antropometricos</value>
+    <value>Dados Demográficos e Antropométricos</value>
   </data>
   <data name="detalhes" xml:space="preserve">
     <value>Detalhes</value>
@@ -721,7 +721,7 @@
     <value>Senha Atual</value>
   </data>
   <data name="feminino" xml:space="preserve">
-    <value>Feninimo</value>
+    <value>Feminimo</value>
   </data>
   <data name="masculino" xml:space="preserve">
     <value>Masculino</value>

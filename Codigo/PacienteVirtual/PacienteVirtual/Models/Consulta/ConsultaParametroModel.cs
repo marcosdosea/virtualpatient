@@ -23,7 +23,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "valor_referencia", ResourceType = typeof(Mensagem))]
-        public float ValorReferencia { get; set; }
+        public string ValorReferencia { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "unidade", ResourceType = typeof(Mensagem))]
