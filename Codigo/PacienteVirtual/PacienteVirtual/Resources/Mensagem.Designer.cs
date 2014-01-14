@@ -1906,7 +1906,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Objetivo Terapéutico.
+        ///   Looks up a localized string similar to Objetivo Terapêutico.
         /// </summary>
         public static string objetivo_terapeutico {
             get {

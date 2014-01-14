@@ -162,7 +162,7 @@ namespace PacienteVirtual.Negocio
                         select new ExamesFisicosModel
                         {
                             IdConsultaVariavel = tb_exames_fisicos.IdConsultaVariavel,
-                            Peso = (float)tb_exames_fisicos.Peso,
+                            Peso = (float) tb_exames_fisicos.Peso,
                             Altura = (float)tb_exames_fisicos.Altura,
                             PressaoDiastolica = (float)tb_exames_fisicos.PressaoDiastolica,
                             PressaoSistolica = (float)tb_exames_fisicos.PressaoSistolica,
