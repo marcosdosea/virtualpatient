@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Globalization;
 using System.Threading;
+using PacienteVirtual.Models;
 
 namespace PacienteVirtual
 {
@@ -35,21 +36,14 @@ namespace PacienteVirtual
         {
             AreaRegistration.RegisterAllAreas();
 
+            //ModelBinders.Binders.Add(typeof(float), new FloatModelBinder());
+            //ModelBinders.Binders.Add(typeof(float?), new FloatModelBinder());
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }
 
-        //protected void Application_AcquireRequestState(object sender, EventArgs e)
-        //{
 
-        //    //Create culture info object 
-
-        //    CultureInfo ci = new CultureInfo("pt-br");
-
-        //    System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
-
-        //    System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
-        //}
+            
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
@@ -67,7 +61,7 @@ namespace PacienteVirtual
                 {
                     //Sets default culture to english invariant
 
-                    string langName = "en";
+                    string langName = "pt-BR";
 
                     //Try to get values from Accept lang HTTP header
 
@@ -83,13 +77,19 @@ namespace PacienteVirtual
                     this.Session["Culture"] = ci;
 
                 }
+                
 
-                //Finally setting culture for each request
-
+                if (ci.Name.Equals("pt"))
+                {
+                    ci = new CultureInfo("pt-BR");
+                }
+                
+                //Deixar o ponto como separador padrão de decimais independente da lingua
+                ci.NumberFormat.NumberDecimalSeparator = ".";
+                ci.NumberFormat.NumberGroupSeparator = ",";
+                
                 Thread.CurrentThread.CurrentUICulture = ci;
-
-                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
-
+                Thread.CurrentThread.CurrentCulture = ci; 
             }
         }
     }
