@@ -378,6 +378,7 @@
     <Compile Include="Models\Consulta\ConsultaModel.cs" />
     <Compile Include="Models\Consulta\VMPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator\GabaritoRazaoEncontro.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\en\PacienteVirtual.resources.dll" />
