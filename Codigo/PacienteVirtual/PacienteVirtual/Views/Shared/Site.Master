@@ -39,8 +39,7 @@
         </noscript>
         <header class="container">
             <div id="title">
-                <br />
-                <div class="span3">
+                <div id="title1" class="span3">
                     <a href="<%: Url.Action("Index", "Home")%>">
                         <!--style="width: 190px; height: 101px;"-->
                         <div class="bandeira-brasil">
@@ -55,12 +54,11 @@
                         <img  alt="logo" src="../../Content/themes/pv/img/logo5.png" />
                     -->
                 </div>
-                <div class="span5">
+                <div class="span5" id="title1">
                     <% if (HttpContext.Current.Request.IsAuthenticated)
                        { %>
                     <div class="legend1"><%: Resources.Mensagem.dados_usuario %></div>
                     <fieldset id="fieldset">
-                        <br />
                         <% Html.RenderAction("DadosTurma", "SelecionarTurma"); %>
                     </fieldset>
                     <% } %>
@@ -73,27 +71,23 @@
                         <img src="../../Content/themes/pv/img/icons/United_Kingdom_Flag.png" alt="imagem" width="45px" />
                     </a>
                     </div>
-                    <br />
                     <% Html.RenderPartial("LogOnUserControl"); %>
-                </div>
-                <!--div class="span2">
-                    <!--%: Html.ActionLink("Brasil", "ChangeCulture", "Account", new { lang = "pt-br", returnUrl = this.Request.RawUrl }, new { @class = "bandeira" })%-->
-                    <!--%: Html.ActionLink("Ingaterra", "ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl }, new { @class = "bandeira-brasil" })%-->
-                 </div-->
                 <style>
                     #logindisplay
                     {
                         float: right;
                     }
+                    #title1
+                    {
+                        margin-top: 10px;
+                    }
                 </style>
             </div>
-            <br />
-            <br />
         <style>
             #fieldset {
                 border: 1px solid #ddd;
-                padding: 0 1.4em 1.4em 1.4em;
-                margin: 0 0 1.5em 0;
+                padding: 0.4em 1em 0.4em 1.4em;
+                margin: 0 0 0.5em 0;
             }
 
             .legend1 {
@@ -305,36 +299,39 @@
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </section>
         </div>
-        <div class="container">
+        <div class="container" >
             <footer class="footer">
-                <div class="container">
+                <div class="container" id="rodape">
                     <div class="span11">
                         <div class="span3">
                             <!--img alt="imagem" width="" src="../../Content/themes/pv/img/icons/!.png" /-->
                             <p>
                                 <br />
-                                <br />
-                                <img alt="imagem" src="../../Content/themes/pv/img/simbolo_farmacia.png" />
+                                <img alt="imagem" width="50px" height="35px" src="../../Content/themes/pv/img/simbolo_farmacia.png" />
                             </p>
                         </div>
-                        <br />
                         <div class="span4">
                             <a href="http://www.ufs.br">
-                                <img alt="imagem" src="../../Content/themes/pv/img/ufs2.png" />
+                                <img alt="imagem" width="45px" height="40px" src="../../Content/themes/pv/img/ufs2.png" />
                             </a>
                             <p>
-                                Universidade Federal</p>
-                            <p>
+                                Universidade Federal<br />
                                 de Sergipe</p>
                         </div>
                         <br />
                         <div class="span3">
-                            <img alt="imagem" width="100px" height="86px" src="../../Content/themes/pv/img/caduceus.png" />
+                            <img alt="imagem" width="50px" height="35px" src="../../Content/themes/pv/img/caduceus.png" />
                         </div>
                     </div>
                     <img alt="imagem" width="" src="../../Content/themes/pv/img/icons/c.png" />
                 </div>
             </footer>
         </div>
+        <style>
+            #rodape
+            {
+                height: 70px;
+            }
+        </style>
 </body>
 </html>
