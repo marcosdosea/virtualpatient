@@ -10,6 +10,18 @@ namespace PacienteVirtual.Controllers
     public class SessionController
     {
 
+        public static bool EmCorrecao
+        {
+            get
+            {
+                return (bool)HttpContext.Current.Session["_EmCorrecao"];
+            }
+            set
+            {
+                HttpContext.Current.Session["_EmCorrecao"] = value;
+            }
+        }
+
         public static int IdRelato
         {
             get
