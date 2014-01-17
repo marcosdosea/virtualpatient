@@ -51,7 +51,70 @@ namespace PacienteVirtual.Controllers
             tprm.IdRelato = SessionController.IdRelato;
             
             GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tprm);
-            GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
+            long idConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
+
+            RelatoClinicoModel relato = GerenciadorRelatoClinico.GetInstance().Obter(SessionController.IdRelato);
+
+            if (relato.OrdemCronologica != 1)
+            {
+                ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
+                    relato.IdPaciente, relato.OrdemCronologica);
+                
+                SessionController.ConsultaVariavel = consultaVariavelModel;
+
+                EstiloVidaModel evm = SessionController.EstiloVida;
+                evm.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorEstiloVida.GetInstance().Inserir(evm);
+
+                ExamesFisicosModel efm = SessionController.ExamesFisicos;
+                efm.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorExamesFisicos.GetInstance().Inserir(efm);
+
+                foreach (var a in GerenciadorExamesFisicos.GetInstance().ObterAlergias(consultaVariavelModel.IdConsultaVariavel)) {
+                    GerenciadorExamesFisicos.GetInstance().InserirAlergia(efm, a.IdAlergia);
+                }
+                
+                foreach (var mp in SessionController.ListaMedicamentosPrescritos) {
+                    mp.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorMedicamentoPrescrito.GetInstance().Inserir(mp);
+                }
+
+                foreach (var ma in SessionController.ListaMedicamentosAnteriores) {
+                    ma.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorMedicamentosAnteriores.GetInstance().Inserir(ma);
+                }
+
+                foreach (var mnp in SessionController.ListaMedicamentoNaoPrescrito) {
+                    mnp.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorMedicamentoNaoPrescrito.GetInstance().Inserir(mnp);
+                }
+
+                foreach (var cp in SessionController.ListaConsultaParametro) {
+                    cp.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorConsultaParametro.GetInstance().Inserir(cp);
+                }
+                
+                foreach (var cvq in SessionController.ListaConsultaVariavelQueixa) {
+                    cvq.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorConsultaVariavelQueixa.GetInstance().Inserir(cvq);
+                }
+                
+                foreach (var qm in SessionController.ListaQueixaMedicamento) {
+                    qm.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorQueixaMedicamento.GetInstance().Inserir(qm);
+                }
+
+                foreach (var ic in SessionController.ListaIntervencaoConsulta) {
+                    ic.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorIntervencaoConsulta.GetInstance().Inserir(ic);
+                }
+
+                foreach (var c in SessionController.ListaCarta) {
+                    c.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorCarta.GetInstance().Inserir(c);
+                }
+            }
+            
             SessionController.IdRelato = 0;
             return RedirectToAction("Index", "RelatoClinico");
         }
@@ -214,5 +277,6 @@ namespace PacienteVirtual.Controllers
         {
             base.Dispose(disposing);
         }
+
     }
 }

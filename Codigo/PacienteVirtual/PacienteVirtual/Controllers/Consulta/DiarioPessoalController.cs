@@ -26,6 +26,9 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
+                ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(SessionController.Pessoa.IdPessoa
+                    , SessionController.DadosTurmaPessoa.IdTurma, SessionController.Paciente.IdPaciente);
+                diarioPessoal.IdConsultaFixo = consultaOrdem1.IdConsultaFixo;
                 gDiarioPessoal.Inserir(diarioPessoal);
                 List<DiarioPessoalModel> listaDiarioPessoal = new List<DiarioPessoalModel>(SessionController.ListaDiarioPessoal);
                 listaDiarioPessoal.Add(diarioPessoal);
