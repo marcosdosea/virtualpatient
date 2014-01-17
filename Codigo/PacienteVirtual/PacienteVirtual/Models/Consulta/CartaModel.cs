@@ -50,10 +50,10 @@ namespace PacienteVirtual.Models
         public string Referências { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "curso", ResourceType = typeof(Mensagem))]
-        public int IdCurso { get; set; }
+        [Display(Name = "especialidade", ResourceType = typeof(Mensagem))]
+        public int IdEspecialidade { get; set; }
 
-        [Display(Name = "curso", ResourceType = typeof(Mensagem))]
-        public string NomeCurso { get; set; }
+        [Display(Name = "especialidade", ResourceType = typeof(Mensagem))]
+        public string Especialidade { get; set; }
     }
 }

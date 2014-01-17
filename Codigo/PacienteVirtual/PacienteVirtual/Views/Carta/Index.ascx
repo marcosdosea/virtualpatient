@@ -21,7 +21,7 @@
                 <%: Resources.Mensagem.farmaceutico %>
             </th>
             <th>
-                <%: Resources.Mensagem.curso %>
+                <%: Resources.Mensagem.especialidade %>
             </th>
             <th>
                 <%: Resources.Mensagem.opcoes %>
@@ -49,7 +49,7 @@
                 <%: Html.DisplayFor(modelItem => item.Farmaceutico) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.NomeCurso) %>
+                <%: Html.DisplayFor(modelItem => item.Especialidade) %>
             </td>
             <td>
                 <%: Html.ActionLink(Resources.Mensagem.remover,"Delete", "Carta", new { idConsultaVariavel = item.IdConsultaVariavel, idCarta = item.IdCarta }, null) %>

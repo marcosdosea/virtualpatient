@@ -2,7 +2,6 @@
     Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ConsultaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.consulta %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Arquivo necessário para as View partial -->
@@ -10,8 +9,6 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
-    <h2>
-        <%: Resources.Mensagem.consulta2 %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
@@ -53,12 +50,16 @@
         {
             display: none;
         }
+        #nomeConsulta
+        {
+            font-size: small;
+        }
     </style>
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>
+        <legend id="nomeConsulta">
             <%: Resources.Mensagem.consulta2 %></legend>
         <div class="span5">
             <div class="thumbnails center">
@@ -154,6 +155,7 @@
             </div>
         </div>
     </fieldset>
+
     <% } %>
     <div id="botoesRodape">
         <div class="btn btn-large btn-primary">

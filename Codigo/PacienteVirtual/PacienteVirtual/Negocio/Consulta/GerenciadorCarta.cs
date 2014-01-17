@@ -112,6 +112,8 @@ namespace PacienteVirtual.Negocio
             var repCarta = new RepositorioGenerico<tb_carta>();
             var pvEntities = (pvEntities)repCarta.ObterContexto();
             var query = from tb_carta in pvEntities.tb_carta
+                        join tb_especialidade in pvEntities.tb_especialidade
+                        on tb_carta.IdEspecialidade equals tb_especialidade.IdEspecialidade
                         select new CartaModel
                         {
                             IdConsultaVariavel = tb_carta.IdConsultaVariavel,
@@ -127,7 +129,8 @@ namespace PacienteVirtual.Negocio
                             TelefoneFarmaceutico = tb_carta.TelefoneFarmaceutico,
                             Referências = tb_carta.Referencias,
 
-                            
+                            IdEspecialidade = tb_especialidade.IdEspecialidade,
+                            Especialidade = tb_especialidade.Descricao
                         };
             return query;
         }
@@ -179,8 +182,7 @@ namespace PacienteVirtual.Negocio
             _tb_carta.CRFUF = CartaModel.CRFUF;
             _tb_carta.TelefoneFarmaceutico = CartaModel.TelefoneFarmaceutico;
             _tb_carta.Referencias = CartaModel.Referências;
-            //_tb_carta.IdCursoProfissionalEncaminhado = CartaModel.IdCurso;
-
+            _tb_carta.IdEspecialidade = CartaModel.IdEspecialidade;
         }
     }
 }
