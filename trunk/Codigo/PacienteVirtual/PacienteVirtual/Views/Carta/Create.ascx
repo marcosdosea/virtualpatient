@@ -126,11 +126,11 @@
         <div class="row-fluid">
             <div class="span3">
                  <div class="editor-label">
-                    <%: Html.LabelFor(model => model.IdCurso) %>
+                    <%: Html.LabelFor(model => model.IdEspecialidade) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.DropDownList("IdCurso", Resources.Mensagem.selecione)%>
-                    <%: Html.ValidationMessageFor(model => model.IdCurso) %>
+                    <%: Html.DropDownList("IdEspecialidade", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdEspecialidade) %>
                 </div>
             </div>
         </div>

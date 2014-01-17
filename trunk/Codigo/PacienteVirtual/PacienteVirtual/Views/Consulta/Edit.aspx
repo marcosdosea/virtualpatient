@@ -2,7 +2,6 @@
     Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ConsultaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.consulta %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Arquivo necessário para as View partial -->
@@ -10,8 +9,6 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
-    <h2>
-        <%: Resources.Mensagem.consulta %></h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
@@ -74,7 +71,7 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>
+        <legend id="nomeConsulta">
             <%: Resources.Mensagem.consulta %></legend>
         <!--div class="editor-label">
             < %: Html.LabelFor(model => model.quantRelatos) %>
@@ -262,6 +259,10 @@
             top: 80%;
             margin-left: -110px;
             margin-top: -40px;
+        }
+        #nomeConsulta
+        {
+            font-size: small;
         }
     </style>
     <div id="botoes">
