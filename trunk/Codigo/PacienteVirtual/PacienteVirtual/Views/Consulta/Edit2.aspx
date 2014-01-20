@@ -53,6 +53,7 @@
         #nomeConsulta
         {
             font-size: small;
+            font-weight: bolder;
         }
     </style>
     <% using (Html.BeginForm())

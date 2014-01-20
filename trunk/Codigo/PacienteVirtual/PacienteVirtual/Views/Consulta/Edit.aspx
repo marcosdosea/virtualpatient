@@ -263,6 +263,7 @@
         #nomeConsulta
         {
             font-size: small;
+            font-weight: bolder;
         }
     </style>
     <div id="botoes">
