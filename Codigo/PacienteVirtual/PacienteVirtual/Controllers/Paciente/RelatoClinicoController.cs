@@ -31,6 +31,13 @@ namespace PacienteVirtual.Controllers
         // GET: /RelatoClinico/AtribuirRelato/5
         public ActionResult AtribuirRelato(int idTurma, int idPessoa)
         {
+            RelatoClinicoModel relato = GerenciadorRelatoClinico.GetInstance().Obter(SessionController.IdRelato);
+
+            if (GerenciadorConsultaVariavel.GetInstance().consultaAtribuida(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica))
+            {
+                throw new NegocioException("Essa consulta já foi atribuída.");
+            } 
+
             ConsultaFixoModel cfm = new ConsultaFixoModel();
             long idConsultaFixo = GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
             
@@ -52,8 +59,6 @@ namespace PacienteVirtual.Controllers
             
             GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tprm);
             long idConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
-
-            RelatoClinicoModel relato = GerenciadorRelatoClinico.GetInstance().Obter(SessionController.IdRelato);
 
             if (relato.OrdemCronologica != 1)
             {
