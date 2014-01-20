@@ -159,6 +159,20 @@ namespace PacienteVirtual.Negocio
         /// Obtém consultaVariavel anterior do paciente
         /// </summary>
         /// <returns></returns>
+        public bool consultaAtribuida(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
+        {
+            if (GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
+                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Obtém consultaVariavel anterior do paciente
+        /// </summary>
+        /// <returns></returns>
         public ConsultaVariavelModel ObterPrimeiraConsulta(int idPessoa, int idTurma, int idPaciente)
         {
             return GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
