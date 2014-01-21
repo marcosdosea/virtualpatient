@@ -125,6 +125,14 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obter por Turma Pessoa Relato
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TurmaPessoaRelatoModel> ObterPorTurmaPessoaRelato(int idPessoa, int idTurma, int idRelato)
+        {
+            return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa && tpr.IdTurma == idTurma && tpr.IdRelato == idRelato).ToList();
+        }
+        /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="turmaPessoaRelato"></param>

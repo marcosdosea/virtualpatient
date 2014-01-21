@@ -36,11 +36,22 @@ namespace PacienteVirtual.Controllers
             if (GerenciadorConsultaVariavel.GetInstance().consultaAtribuida(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica))
             {
                 throw new NegocioException("Essa consulta já foi atribuída.");
-            } 
+            }
+           
+            long idConsultaFixo = 0;
+            ConsultaVariavelModel consultaVariavelAnteriorModel = null;
 
-            ConsultaFixoModel cfm = new ConsultaFixoModel();
-            long idConsultaFixo = GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
-            
+            if (relato.OrdemCronologica == 1)
+            {
+                ConsultaFixoModel cfm = new ConsultaFixoModel();
+                idConsultaFixo = GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
+            }
+            else
+            {
+                consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
+                    relato.IdPaciente, relato.OrdemCronologica);
+                idConsultaFixo = consultaVariavelAnteriorModel.IdConsultaFixo;
+            }
             ConsultaVariavelModel cvm = new ConsultaVariavelModel();
             TurmaPessoaRelatoModel tprm = new TurmaPessoaRelatoModel();
             
@@ -62,13 +73,11 @@ namespace PacienteVirtual.Controllers
 
             if (relato.OrdemCronologica != 1)
             {
-                ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
-                    relato.IdPaciente, relato.OrdemCronologica);
-
-                cvm.IdRazaoEncontro = consultaVariavelModel.IdRazaoEncontro;
+                
+                cvm.IdRazaoEncontro = consultaVariavelAnteriorModel.IdRazaoEncontro;
                 GerenciadorConsultaVariavel.GetInstance().Atualizar(cvm);
 
-                SessionController.ConsultaVariavel = consultaVariavelModel;
+                SessionController.ConsultaVariavel = consultaVariavelAnteriorModel;
 
                 EstiloVidaModel evm = SessionController.EstiloVida;
                 evm.IdConsultaVariavel = idConsultaVariavel;
@@ -78,7 +87,7 @@ namespace PacienteVirtual.Controllers
                 efm.IdConsultaVariavel = idConsultaVariavel;
                 GerenciadorExamesFisicos.GetInstance().Inserir(efm);
 
-                foreach (var a in GerenciadorExamesFisicos.GetInstance().ObterAlergias(consultaVariavelModel.IdConsultaVariavel)) {
+                foreach (var a in GerenciadorExamesFisicos.GetInstance().ObterAlergias(consultaVariavelAnteriorModel.IdConsultaVariavel)) {
                     GerenciadorExamesFisicos.GetInstance().InserirAlergia(efm, a.IdAlergia);
                 }
                 
