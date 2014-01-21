@@ -64,7 +64,10 @@ namespace PacienteVirtual.Controllers
             {
                 ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
                     relato.IdPaciente, relato.OrdemCronologica);
-                
+
+                cvm.IdRazaoEncontro = consultaVariavelModel.IdRazaoEncontro;
+                GerenciadorConsultaVariavel.GetInstance().Atualizar(cvm);
+
                 SessionController.ConsultaVariavel = consultaVariavelModel;
 
                 EstiloVidaModel evm = SessionController.EstiloVida;
