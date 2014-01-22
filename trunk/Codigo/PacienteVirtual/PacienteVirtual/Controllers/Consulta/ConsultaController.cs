@@ -173,7 +173,6 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdRespostaIncorporadoPlano = new SelectList(SessionController.ObterRespostas(PERGUNTA_INCORPORADO_PLANO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaIncorporadoPlano);
 
             ViewBag.Abas1 = SessionController.Abas1;
-            ViewBag.Abas2 = SessionController.Abas2;
 
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
 
@@ -239,6 +238,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.EscondeLinks = true;
 
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
+
+            ViewBag.Abas2 = SessionController.Abas2;
 
             return View(consultaModel);
         }

@@ -24,6 +24,7 @@ namespace PacienteVirtual.Controllers
                 GerenciadorQueixaMedicamento.GetInstance().Inserir(queixaMedicamento);
                 SessionController.ListaQueixaMedicamento = null;
             }
+            SessionController.Abas2 = 1;
             return RedirectToAction("Edit2", "Consulta");
         }
 
@@ -34,6 +35,7 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorQueixaMedicamento.GetInstance().Remover(idConsultaVariavel, idMedicamento, idQueixa);
             SessionController.ListaQueixaMedicamento = null;
+            SessionController.Abas2 = 1;
             return RedirectToAction("Edit2", "Consulta");
         }
 
