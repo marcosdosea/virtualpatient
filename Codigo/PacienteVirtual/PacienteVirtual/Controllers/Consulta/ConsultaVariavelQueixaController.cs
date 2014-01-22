@@ -48,6 +48,7 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorConsultaVariavelQueixa.GetInstance().Remover(idConsultaVariavel, idQueixa);
             SessionController.ListaConsultaVariavelQueixa = null;
+            SessionController.Abas2 = 1;
             return RedirectToAction("Edit2", "Consulta");
         }
 
@@ -58,6 +59,7 @@ namespace PacienteVirtual.Controllers
             ConsultaVariavelQueixaModel cvq = GerenciadorConsultaVariavelQueixa.GetInstance().ObterPorConcultaQueixa(idConsultaVariavel, idQueixa);
             ViewBag.IdObjetivoTerapeutico = new SelectList(GerenciadorObjetivoTerapeutico.GetInstance().ObterTodos(), "IdObjetivoTerapeutico", "DescricaoObjetivoTerapeutico");
             ViewBag.IdSituacaoQueixa = new SelectList(GerenciadorSituacaoQueixa.GetInstance().ObterTodos(), "IdSituacaoQueixa", "DescricaoSituacao");
+            SessionController.Abas2 = 1;
             return View(cvq);
         }
 
@@ -71,10 +73,12 @@ namespace PacienteVirtual.Controllers
             {
                 GerenciadorConsultaVariavelQueixa.GetInstance().Atualizar(cvq);
                 SessionController.ListaConsultaVariavelQueixa = null;
+                SessionController.Abas2 = 1;
                 return RedirectToAction("Edit2", "Consulta");
             }
             ViewBag.IdObjetivoTerapeutico = new SelectList(GerenciadorObjetivoTerapeutico.GetInstance().ObterTodos(), "IdObjetivoTerapeutico", "DescricaoObjetivoTerapeutico");
             ViewBag.IdSituacaoQueixa = new SelectList(GerenciadorSituacaoQueixa.GetInstance().ObterTodos(), "IdSituacaoQueixa", "DescricaoSituacao");
+            SessionController.Abas2 = 1;
             return View(cvq);
         }
 

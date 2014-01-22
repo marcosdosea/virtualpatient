@@ -15,6 +15,25 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
 
+    <!-- Solução das abas 2 com jquery -->
+    <input type="hidden" value="<%: ViewBag.Abas2 %>" id="abas2" />
+    <script type="text/javascript">
+        var abas2 = document.getElementById('abas2').value;
+        if (abas2 == 1) {
+            $(document).ready(function () {
+                $("#li1").addClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active");$("#tab1-1").removeClass("tab-pane"); $("#tab1-1").addClass("tab-pane active"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane");
+            });
+        } else if (abas2 == 2) {
+            $(document).ready(function () {
+                $("#li1").removeClass("active"); $("#li2").addClass("active"); $("#li3").removeClass("active");$("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane"); $("#tab1-2").addClass("tab-pane active"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane");
+            });
+        } else if (abas2 == 3) {
+            $(document).ready(function () {
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").addClass("active");$("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane"); $("#tab1-3").addClass("tab-pane active");
+            });
+        }
+    </script>
+
     <!--input type="hidden" value="<!--%: ViewBag.AncoraEdit2 %>" id="ancoraEdit2" />
         <script type="text/javascript">
             var ancoraEdit2 = document.getElementById('ancoraEdit2').value;
@@ -175,6 +194,7 @@
         }
     </style>
 
+    <!-- Metodo Javascript para desabilitar todos os campos do formulario caso seja tutor -->
     <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
     <script type="text/javascript">
         var perfil = document.getElementById('perfil').value
