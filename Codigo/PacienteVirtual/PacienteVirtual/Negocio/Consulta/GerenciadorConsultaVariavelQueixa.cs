@@ -54,7 +54,7 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel_queixa>();
-                tb_consulta_variavel_queixa _consultaVariavelQueixaE = repConsultaVariavel.ObterEntidade(cvq => cvq.IdConsultaVariavel == consultaVariavelQueixa.IdConsultaVariavel);
+                tb_consulta_variavel_queixa _consultaVariavelQueixaE = repConsultaVariavel.ObterEntidade(cvq => cvq.IdConsultaVariavel == consultaVariavelQueixa.IdConsultaVariavel && cvq.IdQueixa == consultaVariavelQueixa.IdQueixa);
                 Atribuir(consultaVariavelQueixa, _consultaVariavelQueixaE);
 
                 repConsultaVariavel.SaveChanges();
