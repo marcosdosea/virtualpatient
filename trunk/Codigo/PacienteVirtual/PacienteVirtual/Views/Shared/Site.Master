@@ -221,10 +221,10 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.instituicao, "Index", "Instituicao")%>
                                         </li>
+                                        <% } %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
                                         </li>
-                                        <% } %>
                                         <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("administrador"))
                                            { %>
                                         <li>
