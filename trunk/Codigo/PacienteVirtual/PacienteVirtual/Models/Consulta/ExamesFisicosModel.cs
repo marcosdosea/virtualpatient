@@ -33,5 +33,9 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "indice_massa_corporea", ResourceType = typeof(Mensagem))]
         public float IndiceMassaCorporea { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "circunferencia_abdominal", ResourceType = typeof(Mensagem))]
+        public float CircunferenciaAbdominal { get; set; }
     }
 }

@@ -555,6 +555,7 @@
           <Property Name="PressaoSistolica" Type="float" />
           <Property Name="Glicemia" Type="float" />
           <Property Name="IndiceMassaCorporea" Type="float" />
+          <Property Name="CircunferenciaAbdominal" Type="float" />
         </EntityType>
         <EntityType Name="tb_experiencia_medicamentos">
           <Key>
@@ -2107,6 +2108,7 @@
           <NavigationProperty Name="tb_alergia" Relationship="pvModel.tb_alergia_exames_fisicos" FromRole="tb_exames_fisicos" ToRole="tb_alergia" />
           <Property Type="Single" Name="IndiceMassaCorporea" />
           <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" FromRole="tb_exames_fisicos" ToRole="tb_consulta_variavel" />
+          <Property Type="Single" Name="CircunferenciaAbdominal" />
         </EntityType>
         <EntityType Name="tb_experiencia_medicamentos">
           <Key>
@@ -3470,6 +3472,7 @@
           <EntitySetMapping Name="tb_exames_fisicos">
             <EntityTypeMapping TypeName="pvModel.tb_exames_fisicos">
               <MappingFragment StoreEntitySet="tb_exames_fisicos">
+                <ScalarProperty Name="CircunferenciaAbdominal" ColumnName="CircunferenciaAbdominal" />
                 <ScalarProperty Name="IndiceMassaCorporea" ColumnName="IndiceMassaCorporea" />
                 <ScalarProperty Name="Glicemia" ColumnName="Glicemia" />
                 <ScalarProperty Name="PressaoSistolica" ColumnName="PressaoSistolica" />
