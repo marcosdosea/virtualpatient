@@ -394,6 +394,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Circunferência Abdominal.
+        /// </summary>
+        public static string circunferencia_abdominal {
+            get {
+                return ResourceManager.GetString("circunferencia_abdominal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Classificação de PRM.
         /// </summary>
         public static string classificacao_de_prm {

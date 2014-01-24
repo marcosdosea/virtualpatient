@@ -6742,6 +6742,30 @@ namespace PacienteVirtual.Models
         private Nullable<global::System.Single> _IndiceMassaCorporea;
         partial void OnIndiceMassaCorporeaChanging(Nullable<global::System.Single> value);
         partial void OnIndiceMassaCorporeaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> CircunferenciaAbdominal
+        {
+            get
+            {
+                return _CircunferenciaAbdominal;
+            }
+            set
+            {
+                OnCircunferenciaAbdominalChanging(value);
+                ReportPropertyChanging("CircunferenciaAbdominal");
+                _CircunferenciaAbdominal = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CircunferenciaAbdominal");
+                OnCircunferenciaAbdominalChanged();
+            }
+        }
+        private Nullable<global::System.Single> _CircunferenciaAbdominal;
+        partial void OnCircunferenciaAbdominalChanging(Nullable<global::System.Single> value);
+        partial void OnCircunferenciaAbdominalChanged();
 
         #endregion
 

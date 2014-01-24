@@ -1041,4 +1041,7 @@
   <data name="nao_se_aplica" xml:space="preserve">
     <value>Não se Aplica</value>
   </data>
+  <data name="circunferencia_abdominal" xml:space="preserve">
+    <value>Circunferência Abdominal</value>
+  </data>
 </root>
