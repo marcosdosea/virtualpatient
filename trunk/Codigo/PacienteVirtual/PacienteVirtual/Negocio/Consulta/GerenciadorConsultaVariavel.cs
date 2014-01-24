@@ -179,9 +179,25 @@ namespace PacienteVirtual.Negocio
                 consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == 1).ToList().ElementAtOrDefault(0);
         }
 
+        /// <summary>
+        /// Obtem consultas por turma e pessoa
+        /// </summary>
+        /// <param name="idTurma"></param>
+        /// <param name="idPessoa"></param>
+        /// <returns></returns>
         public IEnumerable<ConsultaVariavelModel> ObterConsultasPorTurmaPessoa(int idTurma, int idPessoa)
         {
             return GetQuery().Where(cv => cv.IdTurma == idTurma && cv.IdPessoa == idPessoa).ToList();
+        }
+
+        /// <summary>
+        /// obtem todas a consultas de determinada turma
+        /// </summary>
+        /// <param name="idTurma"></param>
+        /// <returns></returns>
+        public IEnumerable<ConsultaVariavelModel> ObterConsultasPorTurma(int idTurma)
+        {
+            return GetQuery().Where(cv => cv.IdTurma == idTurma).ToList();
         }
 
         /// <summary>
@@ -222,6 +238,17 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<ConsultaVariavelModel> ObterPorPacienteTurmaPessoa(int idPaciente, int idTurma, int idPessoa)
         {
             return GetQuery().Where(cv => cv.IdPaciente == idPaciente && cv.IdTurma == idTurma && cv.IdPessoa == idPessoa).ToList();
+        }
+
+        /// <summary>
+        /// Obtem por turma paciente
+        /// </summary>
+        /// <param name="idPaciente"></param>
+        /// <param name="idTurma"></param>
+        /// <returns></returns>
+        public IEnumerable<ConsultaVariavelModel> ObterPorPacienteTurma(int idPaciente, int idTurma)
+        {
+            return GetQuery().Where(cv => cv.IdPaciente == idPaciente && cv.IdTurma == idTurma).ToList();
         }
 
         /// <summary>

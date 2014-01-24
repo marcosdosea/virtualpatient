@@ -198,7 +198,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterPorTurma(int idTurma)
         {
-            return GetQuery().Where(tpr => tpr.IdTurma == idTurma && tpr.Ativa == true).ToList();
+            return GetQuery().Where(tpr => tpr.IdTurma == idTurma && tpr.Ativa == true && tpr.IdRole != Global.Tutor).ToList();
         }
 
         /// <summary>
