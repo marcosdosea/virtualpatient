@@ -10,7 +10,7 @@
     <legend><%: Resources.Mensagem.exames_fisicos %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <div class="row-fluid">
-        <div class="span1">
+        <div class="span2">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Peso) %>
             </div>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span1">
+        <div class="span2">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Altura) %>
             </div>
@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span1">
+        <div class="span2">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.IndiceMassaCorporea) %>
             </div>
@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span1">
+        <div class="span2">
             <div class="editor-label">
                 <%: Resources.Mensagem.pressao_arterial %>
             </div>
@@ -68,7 +68,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span1">
+        <div class="span2">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Glicemia) %>
             </div>
@@ -78,6 +78,19 @@
                 <%: Html.TextBoxFor(model => model.Glicemia, new { @class = "textbox", style = "width:50px;" })%>
                 <%: Html.ValidationMessageFor(model => model.Glicemia) %>
                 <%: Resources.Mensagem.mg_dl%>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.CircunferenciaAbdominal) %>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.CircunferenciaAbdominal, new { @class = "textbox", style = "width:50px;" })%>
+                <%: Html.ValidationMessageFor(model => model.CircunferenciaAbdominal) %>
             </div>
         </div>
     </div>

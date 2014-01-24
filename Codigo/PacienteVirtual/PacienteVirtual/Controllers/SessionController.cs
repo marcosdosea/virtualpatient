@@ -436,6 +436,7 @@ namespace PacienteVirtual.Controllers
                         examesFisicos.PressaoDiastolica = 0;
                         examesFisicos.PressaoSistolica = 0;
                         examesFisicos.Glicemia = 0;
+                        examesFisicos.CircunferenciaAbdominal = 0;
                         examesFisicos.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
                         GerenciadorExamesFisicos.GetInstance().Inserir(examesFisicos);
                     }

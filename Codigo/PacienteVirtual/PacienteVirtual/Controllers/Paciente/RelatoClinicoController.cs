@@ -23,8 +23,16 @@ namespace PacienteVirtual.Controllers
                 {
                     return View(GerenciadorTurmaPessoa.GetInstance().ObterPorPerfil(SessionController.DadosTurmaPessoa.IdRole));
                 }
+                else
+                {
+                    return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
+                }
             }
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
+            else
+            {
+                throw new NegocioException("Selecione uma turma.");
+            }
+            
         }
 
         //

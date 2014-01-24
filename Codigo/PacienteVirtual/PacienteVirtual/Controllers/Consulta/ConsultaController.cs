@@ -57,6 +57,10 @@ namespace PacienteVirtual.Controllers
             {
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(0, 0));
             }
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor)
+            {
+                return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
+            }
             return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
         }
 
@@ -74,9 +78,16 @@ namespace PacienteVirtual.Controllers
             if (IdPaciente != -1)
             {
                 ViewBag.Codigo = IdPaciente;
+                if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor) {
+                    return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPacienteTurma(IdPaciente, SessionController.DadosTurmaPessoa.IdTurma));
+                }
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPacienteTurmaPessoa(IdPaciente, SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
             }
             ViewBag.Codigo = -1;
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor)
+            {
+                return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
+            }
             return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
         }
 
