@@ -339,6 +339,10 @@
             {
                 font-size: smaller;
             }
+            .styleValidation
+            {
+                color: Red;
+            }
         </style>
 </body>
 </html>
