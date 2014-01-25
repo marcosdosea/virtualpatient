@@ -33,6 +33,34 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit", "Consulta");
         }
 
+        // GET: /MedicamentosAnteriores/Edit/5
+
+        public ActionResult Edit(long idConsultaVariavel, int idMedicamento)
+        {
+            MedicamentosAnterioresModel ma = GerenciadorMedicamentosAnteriores.GetInstance().ObterPorConsultaMedicamento(idConsultaVariavel, idMedicamento);
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos(), "IdMedicamento", "Nome", idMedicamento);
+            SessionController.Abas1 = 8;
+            return View(ma);
+        }
+
+        //
+        // POST: /MedicamentosNaoPrescritos/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(MedicamentosAnterioresModel ma)
+        {
+            if (ModelState.IsValid)
+            {
+                GerenciadorMedicamentosAnteriores.GetInstance().Atualizar(ma);
+                SessionController.ListaMedicamentosAnteriores = null;
+                SessionController.Abas1 = 8;
+                return RedirectToAction("Edit", "Consulta");
+            }
+            SessionController.Abas1 = 8;
+            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos(), "IdMedicamento", "Nome", ma.IdMedicamento);
+            return View(ma);
+        }
+
         //
         // POST: /MedicamentosAnteriores/Delete/5
 

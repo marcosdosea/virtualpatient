@@ -35,6 +35,8 @@
             </td>
             <td>
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "MedicamentosAnteriores", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento }, null)%>
+                |
+                <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "MedicamentosAnteriores", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento }, null)%>
             </td>
         </tr>
         <% } %>
