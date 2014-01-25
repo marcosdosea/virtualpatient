@@ -53,7 +53,8 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repMedicamentoNaoPrescrito = new RepositorioGenerico<tb_medicamento_nao_prescrito>();
-                tb_medicamento_nao_prescrito _tb_medicamento_nao_prescrito = repMedicamentoNaoPrescrito.ObterEntidade(dP => dP.IdConsultaVariavel == medicamentoNaoPrescritoModel.IdConsultaVariavel);
+                tb_medicamento_nao_prescrito _tb_medicamento_nao_prescrito = repMedicamentoNaoPrescrito.ObterEntidade(dP => dP.IdConsultaVariavel == medicamentoNaoPrescritoModel.IdConsultaVariavel 
+                    && dP.IdMedicamento == medicamentoNaoPrescritoModel.IdMedicamento);
                 Atribuir(medicamentoNaoPrescritoModel, _tb_medicamento_nao_prescrito);
 
                 repMedicamentoNaoPrescrito.SaveChanges();
@@ -141,6 +142,18 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<MedicamentoNaoPrescritoModel> Obter(long idConsultaVariavel)
         {
             return GetQuery().Where(MedicamentoNaoPrescritoModel => MedicamentoNaoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList();
+        }
+
+        /// <summary>
+        /// obtem por consulta medicamento
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        /// <param name="idMedicamento"></param>
+        /// <returns></returns>
+        public MedicamentoNaoPrescritoModel ObterPorConsultaMedicamento(long idConsultaVariavel, int idMedicamento)
+        {
+            return GetQuery().Where(MedicamentoNaoPrescritoModel => MedicamentoNaoPrescritoModel.IdConsultaVariavel == idConsultaVariavel && 
+                MedicamentoNaoPrescritoModel.IdMedicamento == idMedicamento).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>

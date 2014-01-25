@@ -54,7 +54,8 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repMedicamentosAnteriores = new RepositorioGenerico<tb_medicamentos_anteriores>();
-                tb_medicamentos_anteriores _tb_medicamentos_anteriores = repMedicamentosAnteriores.ObterEntidade(dP => dP.IdConsultaVariavel == medicamentosAnterioresModel.IdConsultaVariavel);
+                tb_medicamentos_anteriores _tb_medicamentos_anteriores = repMedicamentosAnteriores.ObterEntidade(dP => dP.IdConsultaVariavel == medicamentosAnterioresModel.IdConsultaVariavel
+                    && dP.IdMedicamento == medicamentosAnterioresModel.IdMedicamento);
                 Atribuir(medicamentosAnterioresModel, _tb_medicamentos_anteriores);
 
                 repMedicamentosAnteriores.SaveChanges();
@@ -142,6 +143,13 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<MedicamentosAnterioresModel> Obter(long idConsultaVariavel)
         {
             return GetQuery().Where(MedicamentosAnterioresModel => MedicamentosAnterioresModel.IdConsultaVariavel == idConsultaVariavel);
+        }
+
+
+        public MedicamentosAnterioresModel ObterPorConsultaMedicamento(long idConsultaVariavel, int idMedicamento)
+        {
+            return GetQuery().Where(MedicamentosAnterioresModel => MedicamentosAnterioresModel.IdConsultaVariavel == idConsultaVariavel &&
+                MedicamentosAnterioresModel.IdMedicamento == idMedicamento).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>

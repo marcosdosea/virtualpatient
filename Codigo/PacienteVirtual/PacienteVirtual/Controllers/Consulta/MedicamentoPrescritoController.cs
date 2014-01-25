@@ -49,6 +49,7 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 GerenciadorMedicamentoPrescrito.GetInstance().Atualizar(medicamentoPrescrito);
+                SessionController.ListaMedicamentosPrescritos = null;
                 SessionController.Abas1 = 6;
                 return RedirectToAction("Edit", "Consulta");
             }

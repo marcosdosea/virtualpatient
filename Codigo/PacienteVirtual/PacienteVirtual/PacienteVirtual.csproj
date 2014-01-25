@@ -248,7 +248,7 @@
     <Compile Include="Controllers\Consulta\MedicamentosAnterioresController.cs" />
     <Compile Include="Controllers\Cadastro\MedicamentosController.cs" />
     <Compile Include="Controllers\Cadastro\OcupacaoController.cs" />
-    <Compile Include="Controllers\Consulta\DemograficosAntropometicosController.cs" />
+    <Compile Include="Views\DemograficosAntropometicosController.cs" />
     <Compile Include="Controllers\Turma\DisciplinaController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -589,7 +589,9 @@
     <Content Include="Views\EstadoCivil\Details.aspx" />
     <Content Include="Views\EstadoCivil\Edit.aspx" />
     <Content Include="Views\EstadoCivil\Index.aspx" />
+    <Content Include="Views\MedicamentoNaoPrescrito\Edit.aspx" />
     <Content Include="Views\MedicamentoPrescrito\Edit.aspx" />
+    <Content Include="Views\MedicamentosAnteriores\Edit.aspx" />
     <Content Include="Views\Naturalidade\Create.aspx" />
     <Content Include="Views\Naturalidade\Delete.aspx" />
     <Content Include="Views\Naturalidade\Details.aspx" />

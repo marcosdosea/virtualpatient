@@ -52,7 +52,7 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit2", "Consulta");
         }
 
-        // GET: /Escolaridade/Edit/5
+        // GET: /ConsultaVariavelQueixa/Edit/5
 
         public ActionResult Edit(long idConsultaVariavel, int idQueixa)
         {
@@ -64,7 +64,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /Escolaridade/Edit/5
+        // POST: /ConsultaVariavelQueixa/Edit/5
 
         [HttpPost]
         public ActionResult Edit(ConsultaVariavelQueixaModel cvq)
