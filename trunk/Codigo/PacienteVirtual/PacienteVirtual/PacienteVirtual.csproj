@@ -589,6 +589,7 @@
     <Content Include="Views\EstadoCivil\Details.aspx" />
     <Content Include="Views\EstadoCivil\Edit.aspx" />
     <Content Include="Views\EstadoCivil\Index.aspx" />
+    <Content Include="Views\MedicamentoPrescrito\Edit.aspx" />
     <Content Include="Views\Naturalidade\Create.aspx" />
     <Content Include="Views\Naturalidade\Delete.aspx" />
     <Content Include="Views\Naturalidade\Details.aspx" />
