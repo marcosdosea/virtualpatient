@@ -21,8 +21,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.DropDownList("IdMedicamento", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdMedicamento) %>
+                <%: Html.TextBoxFor(model => model.MedicamentoNome, new { id = "textbox" })%>
             </div>
         </div>
     </div>
@@ -75,4 +74,7 @@
     <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
 </div>
 
+<script type="text/javascript">
+    document.getElementById('textbox').disabled = true;
+</script>
 </asp:Content>
