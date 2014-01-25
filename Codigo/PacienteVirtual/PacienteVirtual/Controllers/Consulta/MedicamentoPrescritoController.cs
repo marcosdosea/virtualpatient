@@ -34,6 +34,28 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit", "Consulta");
         }
 
+        public ActionResult Edit(long idConsultaVariavel, int idMedicamento)
+        {
+            MedicamentoPrescritoModel medicamentoPrescritoModel = GerenciadorMedicamentoPrescrito.GetInstance().ObterPorMedicamento(idConsultaVariavel, idMedicamento);
+            SessionController.Abas1 = 6;
+            return View(medicamentoPrescritoModel);
+        }
+
+        // POST: /Escolaridade/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(MedicamentoPrescritoModel medicamentoPrescrito)
+        {
+            if (ModelState.IsValid)
+            {
+                GerenciadorMedicamentoPrescrito.GetInstance().Atualizar(medicamentoPrescrito);
+                SessionController.Abas1 = 6;
+                return RedirectToAction("Edit", "Consulta");
+            }
+            SessionController.Abas1 = 6;
+            return View(medicamentoPrescrito);
+        }
+
         //
         // POST: /MedicamentoPrescrito/Delete/5
         //[HttpPost]
