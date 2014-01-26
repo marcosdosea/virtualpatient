@@ -38,7 +38,6 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(long idConsultaVariavel, int idMedicamento)
         {
             MedicamentosAnterioresModel ma = GerenciadorMedicamentosAnteriores.GetInstance().ObterPorConsultaMedicamento(idConsultaVariavel, idMedicamento);
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos(), "IdMedicamento", "Nome", idMedicamento);
             SessionController.Abas1 = 8;
             return View(ma);
         }
@@ -57,7 +56,6 @@ namespace PacienteVirtual.Controllers
                 return RedirectToAction("Edit", "Consulta");
             }
             SessionController.Abas1 = 8;
-            ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos(), "IdMedicamento", "Nome", ma.IdMedicamento);
             return View(ma);
         }
 
