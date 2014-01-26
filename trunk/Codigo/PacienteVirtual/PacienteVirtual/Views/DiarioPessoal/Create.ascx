@@ -19,7 +19,7 @@
                 <%= Html.RadioButtonFor(model => model.Periodo, "T")%> <%: Resources.Mensagem.tarde %>
                  &nbsp &nbsp 
                 <%= Html.RadioButtonFor(model => model.Periodo, "N")%> <%: Resources.Mensagem.noite %>
-                <%: Html.ValidationMessageFor(model => model.Periodo) %>
+                <%: Html.ValidationMessageFor(model => model.Periodo, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Horario, new { @class = "textbox", style = "width:479px;" })%>
                 <!--span class="add-on"><i class="icon-time"></i></span -->
-                <%: Html.ValidationMessageFor(model => model.Horario) %>
+                <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Quantidade, new { @class = "textbox", style = "width:479px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Quantidade) %>
+                <%: Html.ValidationMessageFor(model => model.Quantidade, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -59,7 +59,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdMedicamento", null, Resources.Mensagem.selecione, new { style = "width:488px;" })%>
-                <%: Html.ValidationMessageFor(model => model.IdMedicamento) %>
+                <%: Html.ValidationMessageFor(model => model.IdMedicamento, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdBebida",null, Resources.Mensagem.selecione, new { style = "width:488px;" })%>
-                <%: Html.ValidationMessageFor(model => model.IdBebida)%>
+                <%: Html.ValidationMessageFor(model => model.IdBebida, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>

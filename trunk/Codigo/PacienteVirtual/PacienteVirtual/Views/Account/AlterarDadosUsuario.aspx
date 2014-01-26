@@ -21,7 +21,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.UserName) %>
-            <%: Html.ValidationMessageFor(model => model.UserName) %>
+            <%: Html.ValidationMessageFor(model => model.UserName, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -29,7 +29,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Email) %>
-            <%: Html.ValidationMessageFor(model => model.Email) %>
+            <%: Html.ValidationMessageFor(model => model.Email, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -37,7 +37,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Nome) %>
-            <%: Html.ValidationMessageFor(model => model.Nome) %>
+            <%: Html.ValidationMessageFor(model => model.Nome, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -45,7 +45,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Cpf) %>
-            <%: Html.ValidationMessageFor(model => model.Cpf) %>
+            <%: Html.ValidationMessageFor(model => model.Cpf, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -53,7 +53,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Fone) %>
-            <%: Html.ValidationMessageFor(model => model.Fone) %>
+            <%: Html.ValidationMessageFor(model => model.Fone, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -61,7 +61,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Matricula) %>
-            <%: Html.ValidationMessageFor(model => model.Matricula) %>
+            <%: Html.ValidationMessageFor(model => model.Matricula, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="form-actions">

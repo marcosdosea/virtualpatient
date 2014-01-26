@@ -16,7 +16,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdSistema", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
-                <%: Html.ValidationMessageFor(model => model.IdSistema) %>
+                <%: Html.ValidationMessageFor(model => model.IdSistema, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdQueixa", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdQueixa) %>
+                <%: Html.ValidationMessageFor(model => model.IdQueixa, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>

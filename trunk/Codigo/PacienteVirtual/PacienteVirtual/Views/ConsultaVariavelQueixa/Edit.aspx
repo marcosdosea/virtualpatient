@@ -38,7 +38,7 @@
                 <%= Html.RadioButtonFor(model => model.Tipo, "S" ) %> <%: Resources.Mensagem.classificao_prm %>
                 &nbsp &nbsp 
                 <%= Html.RadioButtonFor(model => model.Tipo, "D")%> <%: Resources.Mensagem.doenca_agrave %>
-                <%: Html.ValidationMessageFor(model => model.Tipo) %>
+                <%: Html.ValidationMessageFor(model => model.Tipo, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.Desde) %>
-                <%: Html.ValidationMessageFor(model => model.Desde) %>
+                <%: Html.ValidationMessageFor(model => model.Desde, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.Prioridade) %>
-                <%: Html.ValidationMessageFor(model => model.Prioridade) %>
+                <%: Html.ValidationMessageFor(model => model.Prioridade, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -77,7 +77,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdObjetivoTerapeutico", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdObjetivoTerapeutico) %>
+                <%: Html.ValidationMessageFor(model => model.IdObjetivoTerapeutico, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -90,7 +90,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdSituacaoQueixa", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdSituacaoQueixa) %>
+                <%: Html.ValidationMessageFor(model => model.IdSituacaoQueixa, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
