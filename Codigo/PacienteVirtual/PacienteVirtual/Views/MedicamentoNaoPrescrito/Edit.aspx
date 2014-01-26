@@ -13,6 +13,7 @@
     <fieldset>
         <legend><%: Resources.Mensagem.medicamento_nao_prescrito %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
+        <%: Html.HiddenFor(model => model.IdMedicamento) %>
         <div class="row-fluid">
         <div class="span2">
             <div class="editor-label">
