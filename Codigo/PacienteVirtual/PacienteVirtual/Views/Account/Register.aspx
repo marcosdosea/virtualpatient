@@ -31,7 +31,7 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.TextBoxFor(m => m.UserName) %>
-                    <%: Html.ValidationMessageFor(m => m.UserName) %>
+                    <%: Html.ValidationMessageFor(m => m.UserName, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 
                 <div class="editor-label">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.TextBoxFor(m => m.Email) %>
-                    <%: Html.ValidationMessageFor(m => m.Email) %>
+                    <%: Html.ValidationMessageFor(m => m.Email, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 
                 <div class="editor-label">
@@ -47,21 +47,21 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.PasswordFor(m => m.Password) %>
-                    <%: Html.ValidationMessageFor(m => m.Password) %>
+                    <%: Html.ValidationMessageFor(m => m.Password, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.ConfirmPassword) %>
                 </div>
                 <div class="editor-field">
                     <%: Html.PasswordFor(m => m.ConfirmPassword) %>
-                    <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
+                    <%: Html.ValidationMessageFor(m => m.ConfirmPassword, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.Nome) %>
                 </div>
                 <div class="editor-field">
                     <%: Html.TextBoxFor(m => m.Nome) %>
-                    <%: Html.ValidationMessageFor(m => m.Nome) %>
+                    <%: Html.ValidationMessageFor(m => m.Nome, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 
                 <div class="editor-label">
@@ -69,14 +69,14 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.TextBoxFor(m => m.Cpf, new { id = "cpf", onkeyup = "FormataCpf(this,event);", MaxLength = 14 })%>
-                    <%: Html.ValidationMessageFor(m => m.Cpf) %>
+                    <%: Html.ValidationMessageFor(m => m.Cpf, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.Fone) %>
                 </div>
                 <div class="editor-field">
                     <%: Html.TextBoxFor(m => m.Fone) %>
-                    <%: Html.ValidationMessageFor(m => m.Fone) %>
+                    <%: Html.ValidationMessageFor(m => m.Fone, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 
                 <div class="editor-label">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.TextBoxFor(m => m.Matricula) %>
-                    <%: Html.ValidationMessageFor(m => m.Matricula) %>
+                    <%: Html.ValidationMessageFor(m => m.Matricula, string.Empty, new { @class = "styleValidation" })%>
                 </div>    
             <div class="form-actions">
                 <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.registre_se %>" id="registrar" />

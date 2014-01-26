@@ -27,7 +27,7 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.PasswordFor(m => m.OldPassword) %>
-                    <%: Html.ValidationMessageFor(m => m.OldPassword) %>
+                    <%: Html.ValidationMessageFor(m => m.OldPassword, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 
                 <div class="editor-label">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.PasswordFor(m => m.NewPassword) %>
-                    <%: Html.ValidationMessageFor(m => m.NewPassword) %>
+                    <%: Html.ValidationMessageFor(m => m.NewPassword, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 
                 <div class="editor-label">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.PasswordFor(m => m.ConfirmPassword) %>
-                    <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
+                    <%: Html.ValidationMessageFor(m => m.ConfirmPassword, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 
             <div class="form-actions">

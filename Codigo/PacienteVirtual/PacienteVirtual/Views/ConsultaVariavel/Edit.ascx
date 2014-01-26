@@ -17,7 +17,7 @@
         <div class="span6">
             <div class="editor-field" >
                 <%: Html.DropDownList("IdRazaoEncontro", null, Resources.Mensagem.selecione, new { style = "width:550px;" })%>
-                <%: Html.ValidationMessageFor(model => model.IdRazaoEncontro)%>
+                <%: Html.ValidationMessageFor(model => model.IdRazaoEncontro, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>

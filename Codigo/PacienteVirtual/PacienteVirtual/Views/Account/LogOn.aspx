@@ -27,14 +27,14 @@
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(m => m.UserName) %>
-                <%: Html.ValidationMessageFor(m => m.UserName) %>
+                <%: Html.ValidationMessageFor(m => m.UserName, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(m => m.Password) %>
             </div>
             <div class="editor-field">
                 <%: Html.PasswordFor(m => m.Password) %>
-                <%: Html.ValidationMessageFor(m => m.Password) %>
+                <%: Html.ValidationMessageFor(m => m.Password, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="editor-label">
                 <%: Html.CheckBoxFor(m => m.RememberMe) %>
