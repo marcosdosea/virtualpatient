@@ -18,7 +18,7 @@
         <div class="span2">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Peso, new { @class = "textbox", style = "width:50px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Peso) %>
+                <%: Html.ValidationMessageFor(model => model.Peso, string.Empty, new { @class = "styleValidation" })%>
                 <%: Resources.Mensagem.kg %>
             </div>
         </div>
@@ -46,7 +46,7 @@
         <div class="span2">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.IndiceMassaCorporea, new { @class = "textbox", style = "width:50px;" })%>
-                <%: Html.ValidationMessageFor(model => model.IndiceMassaCorporea) %>
+                <%: Html.ValidationMessageFor(model => model.IndiceMassaCorporea, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -59,10 +59,10 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.PressaoDiastolica, new { @class = "textbox", style = "width:50px;" })%>
-                <%: Html.ValidationMessageFor(model => model.PressaoDiastolica) %>
+                <%: Html.ValidationMessageFor(model => model.PressaoDiastolica, string.Empty, new { @class = "styleValidation" })%>
                 <%: Resources.Mensagem.x %>
                 <%: Html.TextBoxFor(model => model.PressaoSistolica, new { @class = "textbox", style = "width:50px;" })%>
-                <%: Html.ValidationMessageFor(model => model.PressaoSistolica) %>
+                <%: Html.ValidationMessageFor(model => model.PressaoSistolica, string.Empty, new { @class = "styleValidation" })%>
                 <%: Resources.Mensagem.mmHg %>
             </div>
         </div>
@@ -76,7 +76,7 @@
         <div class="span4">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Glicemia, new { @class = "textbox", style = "width:50px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Glicemia) %>
+                <%: Html.ValidationMessageFor(model => model.Glicemia, string.Empty, new { @class = "styleValidation" })%>
                 <%: Resources.Mensagem.mg_dl%>
             </div>
         </div>
@@ -90,7 +90,7 @@
         <div class="span4">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.CircunferenciaAbdominal, new { @class = "textbox", style = "width:50px;" })%>
-                <%: Html.ValidationMessageFor(model => model.CircunferenciaAbdominal) %> cm
+                <%: Html.ValidationMessageFor(model => model.CircunferenciaAbdominal, string.Empty, new { @class = "styleValidation" })%> cm
             </div>
         </div>
     </div>

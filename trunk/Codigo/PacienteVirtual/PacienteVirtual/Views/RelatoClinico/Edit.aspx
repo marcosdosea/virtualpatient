@@ -26,14 +26,14 @@
             </div>
             <div class="editor-field">
                 <%: Html.DropDownList("IdPaciente", null, new { onchange = "this.form.action = 'Create'; this.form.submit();" })%>
-                <%: Html.ValidationMessageFor(model => model.IdPaciente) %>
+                <%: Html.ValidationMessageFor(model => model.IdPaciente, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.AreaAtuacao) %>
             </div>
             <div class="editor-field">
                 <%: Html.DropDownList("IdAreaAtuacao", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdAreaAtuacao) %>
+                <%: Html.ValidationMessageFor(model => model.IdAreaAtuacao, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.RelatoTextual) %>
@@ -54,21 +54,21 @@
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.OrdemCronologica) %>
-                <%: Html.ValidationMessageFor(model => model.OrdemCronologica) %>
+                <%: Html.ValidationMessageFor(model => model.OrdemCronologica, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.RelatoVideo) %>
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.RelatoVideo) %>
-                <%: Html.ValidationMessageFor(model => model.RelatoVideo)%>
+                <%: Html.ValidationMessageFor(model => model.RelatoVideo, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.NivelDificuldade) %>
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.NivelDificuldade) %>
-                <%: Html.ValidationMessageFor(model => model.NivelDificuldade) %>
+                <%: Html.ValidationMessageFor(model => model.NivelDificuldade, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="form-actions">
                 <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

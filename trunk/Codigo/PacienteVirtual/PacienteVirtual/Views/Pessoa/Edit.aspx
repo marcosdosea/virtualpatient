@@ -23,7 +23,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Nome) %>
-            <%: Html.ValidationMessageFor(model => model.Nome) %>
+            <%: Html.ValidationMessageFor(model => model.Nome, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
     <div class="form-actions">

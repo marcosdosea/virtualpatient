@@ -21,7 +21,7 @@
         </div>
         <div class="editor-field">
             <%: Html.TextBoxFor(model => model.NomeInstituicao, new { style = "width:350px;", MaxLength = 45 })%>
-            <%: Html.ValidationMessageFor(model => model.NomeInstituicao) %>
+            <%: Html.ValidationMessageFor(model => model.NomeInstituicao, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -29,7 +29,7 @@
         </div>
         <div class="editor-field">
             <%: Html.TextBoxFor(model => model.Sigla, new { style = "width:90px;", MaxLength = 10 })%>
-            <%: Html.ValidationMessageFor(model => model.Sigla) %>
+            <%: Html.ValidationMessageFor(model => model.Sigla, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
     <div class="form-actions">

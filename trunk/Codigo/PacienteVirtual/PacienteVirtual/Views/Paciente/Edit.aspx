@@ -34,7 +34,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.NomePaciente)%>
-            <%: Html.ValidationMessageFor(model => model.NomePaciente)%>
+            <%: Html.ValidationMessageFor(model => model.NomePaciente, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Foto)%>
@@ -44,7 +44,7 @@
                 alt="Definir Imagem Padrão" style="width: 250px; height: 250px;" />
             <p>
                 <input type="file" name="Arquivo" value="Selecione a imagem" onchange="readURL(this);" /></p>
-            <%: Html.ValidationMessageFor(model => model.Foto)%>
+            <%: Html.ValidationMessageFor(model => model.Foto, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

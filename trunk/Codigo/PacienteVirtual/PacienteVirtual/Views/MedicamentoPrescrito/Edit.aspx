@@ -30,7 +30,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Fitoterapico) %>
-            <%: Html.ValidationMessageFor(model => model.Fitoterapico) %>
+            <%: Html.ValidationMessageFor(model => model.Fitoterapico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -38,7 +38,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Dosagem) %>
-            <%: Html.ValidationMessageFor(model => model.Dosagem) %>
+            <%: Html.ValidationMessageFor(model => model.Dosagem, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -46,7 +46,7 @@
         </div>
         <div class="editor-field">
             <%: Html.TextBoxFor(model => model.Posologia, new { @class = "textbox", style = "width:276px;", MaxLength = 100 })%>
-            <%: Html.ValidationMessageFor(model => model.Posologia) %>
+            <%: Html.ValidationMessageFor(model => model.Posologia, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -54,7 +54,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Prescritor) %>
-            <%: Html.ValidationMessageFor(model => model.Prescritor) %>
+            <%: Html.ValidationMessageFor(model => model.Prescritor, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -62,7 +62,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Especialidade) %>
-            <%: Html.ValidationMessageFor(model => model.Especialidade) %>
+            <%: Html.ValidationMessageFor(model => model.Especialidade, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="form-actions">

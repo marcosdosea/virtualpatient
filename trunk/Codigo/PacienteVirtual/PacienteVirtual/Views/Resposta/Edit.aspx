@@ -21,14 +21,14 @@
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdPergunta", Resources.Mensagem.selecione) %>
-            <%: Html.ValidationMessageFor(model => model.IdPergunta) %>
+            <%: Html.ValidationMessageFor(model => model.IdPergunta, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Resposta) %>
         </div>
         <div class="editor-field">
             <%: Html.TextBoxFor(model => model.Resposta, new { style = "width:850px;", MaxLength = 255 })%>
-            <%: Html.ValidationMessageFor(model => model.Resposta) %>
+            <%: Html.ValidationMessageFor(model => model.Resposta, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="  <%: Resources.Mensagem.salvar %>" />

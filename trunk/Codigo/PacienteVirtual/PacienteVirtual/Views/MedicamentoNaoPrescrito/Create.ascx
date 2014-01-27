@@ -19,7 +19,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdMedicamento", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdMedicamento) %>
+                <%: Html.ValidationMessageFor(model => model.IdMedicamento, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.Fitoterapico) %>
-                <%: Html.ValidationMessageFor(model => model.Fitoterapico) %>
+                <%: Html.ValidationMessageFor(model => model.Fitoterapico, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Dosagem, new { @class = "textbox", style = "width:276px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Dosagem) %>
+                <%: Html.ValidationMessageFor(model => model.Dosagem, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Posologia, new { @class = "textbox", style = "width:276px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Posologia) %>
+                <%: Html.ValidationMessageFor(model => model.Posologia, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
