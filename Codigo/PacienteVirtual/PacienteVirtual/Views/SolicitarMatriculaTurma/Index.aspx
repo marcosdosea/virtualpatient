@@ -16,7 +16,7 @@
             <%: Html.LabelFor(model => model.NomeInstituicao) %>
         </div>
         <%: Html.DropDownList("IdInstituicao", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
-        <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
+        <%: Html.ValidationMessageFor(model => model.IdInstituicao, string.Empty, new { @class = "styleValidation" })%>
         <!-- %: Html.DropDownList("IdPaciente", null, Resources.Mensagem.selecione, new { @onchange = "this.form.action = Index = 1;" })%-->
         <% } %>
         <div class="editor-label">
@@ -24,7 +24,7 @@
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdTurma", Resources.Mensagem.selecione)%>
-            <%: Html.ValidationMessageFor(model => model.IdTurma) %>
+            <%: Html.ValidationMessageFor(model => model.IdTurma, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <!-- botao salvar-->
         <div class="form-actions">
