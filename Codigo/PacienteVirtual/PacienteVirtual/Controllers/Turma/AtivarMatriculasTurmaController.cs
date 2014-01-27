@@ -14,6 +14,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Index()
         {
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
+            SessionController.IdTurmaAtribuirMatriculaTutor = -1;
             return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm());
         }
 
@@ -25,13 +26,14 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
             if (IdTurma != -1)
             {
+                SessionController.IdTurmaAtribuirMatriculaTutor = IdTurma;
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(IdTurma).ToList());
             }
-            if (IdTurma == -1)
+            else
             {
+                SessionController.IdTurmaAtribuirMatriculaTutor = -1;
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm());
             }
-            return View();
         }
 
 
@@ -56,17 +58,16 @@ namespace PacienteVirtual.Controllers
         }
 
         private static bool ativadesativar = true;
-        [HttpPost]
-        public ActionResult AtivarDesativarTodos(int IdTurma = -1)
+        public ActionResult AtivarDesativarTodos()
         {
             List<TurmaPessoaModel> listaPessoa;
-            if (IdTurma == -1)
+            if (SessionController.IdTurmaAtribuirMatriculaTutor == -1)
             {
                 listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm().ToList();
             }
             else
             {
-                listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(IdTurma).ToList();
+                listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(SessionController.IdTurmaAtribuirMatriculaTutor).ToList();
             }
             if (ativadesativar)
             {
