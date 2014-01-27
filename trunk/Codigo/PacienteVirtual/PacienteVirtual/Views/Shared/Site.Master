@@ -270,10 +270,10 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.consulta, "Index", "Consulta")%>
                                         </li>
-                                        <% if (Session["_Roles"].Equals("administrador"))
+                                        <% if (Session["_Roles"].Equals("tutor"))
                                            { %>
                                         <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.consultas_correcao, "Index", "ConsultasCorrecao")%>
+                                            <%: Html.ActionLink(Resources.Mensagem.corrigir_consultas, "Index", "CorrigirConsultas")%>
                                         </li>
                                         <% } %>
                                     </ul>

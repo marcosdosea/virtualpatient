@@ -31,6 +31,11 @@
                 .ThenSortByDescending(o => o.NomeTurma)
                 .Filterable(true);
         
+        columns.Add(o => o.NomeRole)
+                .Titled(Resources.Mensagem.perfil)
+                .ThenSortByDescending(o => o.NomeRole)
+                .Filterable(true);
+        
         columns.Add(o => o.IdRole)
                 .Titled(Resources.Mensagem.status)
                 .ThenSortByDescending(o => o.Ativa)
