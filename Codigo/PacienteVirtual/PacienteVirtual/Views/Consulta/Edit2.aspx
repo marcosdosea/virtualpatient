@@ -184,9 +184,14 @@
         &nbsp;
         <% if (!Session["_Roles"].Equals("tutor") ) { %>
         <div class="btn btn-large btn-primary">
-            <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
+            <% if (Session["_Roles"].Equals("usuario") && (ViewBag.IdEstadoConsulta == 3 || ViewBag.IdEstadoConsulta == 4 || ViewBag.IdEstadoConsulta == 5 || ViewBag.IdEstadoConsulta == 7))
+               { %>
+                <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Index", "Consulta", new { @style = "color:White; font-size:small;", onclick = ("alert('Não é possível ENCERRAR esta consulta, pois ela está sendo corrigida por um TUTOR.')") })%>
+            <% }else { %>
+                <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
+            <% } %>
         </div>
-<% } %>
+        <% } %>
     </div>
     <style>
         #botoesRodape
@@ -198,9 +203,14 @@
 
     <!-- Metodo Javascript para desabilitar todos os campos do formulario caso seja tutor -->
     <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
+    <input type="hidden" value="<%: ViewBag.IdEstadoConsulta %>" id="IdEstadoConsulta" />
     <script type="text/javascript">
-        var perfil = document.getElementById('perfil').value
+        var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
+        var perfil = document.getElementById('perfil').value;
         if (perfil == "tutor") {
+            $("#desabilitar *").attr("disabled", "disabled").off('click');
+        }
+        if (perfil == "usuario" && (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7)) {
             $("#desabilitar *").attr("disabled", "disabled").off('click');
         }
     </script>
