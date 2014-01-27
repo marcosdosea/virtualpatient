@@ -275,9 +275,11 @@
             <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
         </div>
         &nbsp;
+        <% if (!Session["_Roles"].Equals("tutor") ) { %>
         <div class="btn btn-large btn-primary">
             <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
         </div>
+        <% } %>
     </div>
     <style>
         #botoes
