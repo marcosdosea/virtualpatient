@@ -20,64 +20,149 @@
                 alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
         </div>
     </div>
-    <div class="box-content">
-        <table class="table table-bordered table-striped">
-            <tr>
-                <th>
-                    <%: Resources.Mensagem.paciente %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.ordem_cronologica %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.nivel_dificuldade %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.status_preenchimento %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.turma_codigo %>
-                </th>
-                <th>
-                    <%: Resources.Mensagem.consulta %>
-                </th>
-            </tr>
-            <% if (Model != null)
-                   foreach (var item in Model)
-                   { %>
-            <tr>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.NomePaciente) %>
-                </td>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.OrdemCronologica)%>
-                </td>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.NivelDificuldade)%>
-                </td>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.DescricaoEstadoConsulta)%>
-                </td>
-                <td>
-                    <%: Html.DisplayFor(modelItem => item.NomeTurma)%>
-                </td>
-                <td>
-                        <% if (Session["_Roles"].Equals("tutor"))
-                           { %>
-                            <%: Html.ActionLink(Resources.Mensagem.visualizar, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%>    
-                        <% }
-                           else if (Session["_Roles"].Equals("usuario"))
-                           { %>
-                            <%: Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%> 
-                        <% }
-                           else
-                           { %>
-                            <%: Html.ActionLink(Resources.Mensagem.preencher_gabarito, "Edit", new { idConsultaVariavel = item.IdConsultaVariavel })%> 
-                        <% } %>
-                </td>
-            </tr>
-            <% } %>
-        </table>
-    </div>
+
+<%@ Import Namespace="GridMvc.Html" %>
+<%@ Import Namespace="GridMvc.Sorting" %>
+
+<% if (Session["_Roles"].Equals("tutor")) { %>
+<div class="box-content">
+
+<%= Html.Grid(Model).Columns(columns =>
+    {
+        
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.NomePaciente)
+                .Titled(Resources.Mensagem.paciente);
+
+        columns.Add(o => o.NomePessoa)
+            .Titled(Resources.Mensagem.usuario)
+            .ThenSortByDescending(o => o.NomePessoa)
+            .Filterable(true);
+        
+        columns.Add(o => o.OrdemCronologica)
+            .Titled(Resources.Mensagem.ordem_cronologica)
+            .ThenSortByDescending(o => o.OrdemCronologica)
+            .Filterable(true);
+        
+        columns.Add(o => o.NivelDificuldade)
+            .Titled(Resources.Mensagem.nivel_dificuldade)
+            .ThenSortByDescending(o => o.NivelDificuldade)
+            .Filterable(true);
+
+        columns.Add(o => o.DescricaoEstadoConsulta)
+            .Titled(Resources.Mensagem.status_preenchimento)
+            .ThenSortByDescending(o => o.DescricaoEstadoConsulta)
+            .Filterable(true);
+
+        columns.Add(o => o.NomeTurma)
+            .Titled(Resources.Mensagem.turma)
+            .ThenSortByDescending(o => o.NomeTurma)
+            .Filterable(true);
+        
+        /* Adding not mapped column, that renders body, using inline Razor html helper */
+        columns.Add()
+                .Titled(Resources.Mensagem.opcoes)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.visualizar, "Edit", new { idConsultaVariavel = o.IdConsultaVariavel }));
+                
+    }).WithPaging(5).Sortable().ToHtmlString()%>
+
+</div>
+<% } else if (Session["_Roles"].Equals("usuario")) { %>
+<div class="box-content">
+<%= Html.Grid(Model).Columns(columns =>
+    {
+        
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.NomePaciente)
+                .Titled(Resources.Mensagem.paciente);
+
+        columns.Add(o => o.NomePessoa)
+            .Titled(Resources.Mensagem.usuario)
+            .ThenSortByDescending(o => o.NomePessoa)
+            .Filterable(true);
+        
+        columns.Add(o => o.OrdemCronologica)
+            .Titled(Resources.Mensagem.ordem_cronologica)
+            .ThenSortByDescending(o => o.OrdemCronologica)
+            .Filterable(true);
+        
+        columns.Add(o => o.NivelDificuldade)
+            .Titled(Resources.Mensagem.nivel_dificuldade)
+            .ThenSortByDescending(o => o.NivelDificuldade)
+            .Filterable(true);
+
+        columns.Add(o => o.DescricaoEstadoConsulta)
+            .Titled(Resources.Mensagem.status_preenchimento)
+            .ThenSortByDescending(o => o.DescricaoEstadoConsulta)
+            .Filterable(true);
+
+        columns.Add(o => o.NomeTurma)
+            .Titled(Resources.Mensagem.turma)
+            .ThenSortByDescending(o => o.NomeTurma)
+            .Filterable(true);
+        
+        /* Adding not mapped column, that renders body, using inline Razor html helper */
+        columns.Add()
+                .Titled(Resources.Mensagem.opcoes)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idConsultaVariavel = o.IdConsultaVariavel }));
+                
+    }).WithPaging(5).Sortable().ToHtmlString()%>
+
+</div>
+<% } else { %>
+<div class="box-content">
+<%= Html.Grid(Model).Columns(columns =>
+    {
+        
+        /* Adding "CompanyName" column: */
+        columns.Add(o => o.NomePaciente)
+                .Titled(Resources.Mensagem.paciente);
+
+        columns.Add(o => o.NomePessoa)
+            .Titled(Resources.Mensagem.usuario)
+            .ThenSortByDescending(o => o.NomePessoa)
+            .Filterable(true);
+        
+        columns.Add(o => o.OrdemCronologica)
+            .Titled(Resources.Mensagem.ordem_cronologica)
+            .ThenSortByDescending(o => o.OrdemCronologica)
+            .Filterable(true);
+        
+        columns.Add(o => o.NivelDificuldade)
+            .Titled(Resources.Mensagem.nivel_dificuldade)
+            .ThenSortByDescending(o => o.NivelDificuldade)
+            .Filterable(true);
+
+        columns.Add(o => o.DescricaoEstadoConsulta)
+            .Titled(Resources.Mensagem.status_preenchimento)
+            .ThenSortByDescending(o => o.DescricaoEstadoConsulta)
+            .Filterable(true);
+
+        columns.Add(o => o.NomeTurma)
+            .Titled(Resources.Mensagem.turma)
+            .ThenSortByDescending(o => o.NomeTurma)
+            .Filterable(true);
+        
+        /* Adding not mapped column, that renders body, using inline Razor html helper */
+        columns.Add()
+                .Titled(Resources.Mensagem.opcoes)
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(30)
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.preencher_gabarito, "Edit", new { idConsultaVariavel = o.IdConsultaVariavel }));
+                
+    }).WithPaging(5).Sortable().ToHtmlString()%>
+
+</div>
+<% } %>
+
+
+    
 
 </asp:Content>

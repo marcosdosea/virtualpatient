@@ -56,10 +56,18 @@ namespace PacienteVirtual.Controllers
         }
 
         private static bool ativadesativar = true;
-
-        public ActionResult AtivarDesativarTodos()
+        [HttpPost]
+        public ActionResult AtivarDesativarTodos(int IdTurma = -1)
         {
-            List<TurmaPessoaModel> listaPessoa =  GerenciadorTurmaPessoa.GetInstance().ObterTodos().ToList();
+            List<TurmaPessoaModel> listaPessoa;
+            if (IdTurma == -1)
+            {
+                listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm().ToList();
+            }
+            else
+            {
+                listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(IdTurma).ToList();
+            }
             if (ativadesativar)
             {
                 foreach (TurmaPessoaModel pessoa in listaPessoa)
@@ -68,7 +76,7 @@ namespace PacienteVirtual.Controllers
                     pessoa.IdRole = Global.Usuario;
                     GerenciadorTurmaPessoa.GetInstance().Atualizar(pessoa);
                 }
-                ativadesativar = false ;
+                ativadesativar = false;
             }
             else
             {

@@ -159,6 +159,7 @@
     <Compile Include="Controllers\Consulta\ConsultaParametroController.cs" />
     <Compile Include="Controllers\Consulta\ConsultasAlunosController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelController.cs" />
+    <Compile Include="Controllers\Consulta\DemograficosAntropometicosController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
     <Compile Include="Controllers\Consulta\IntervencaoConsultaController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
@@ -248,7 +249,6 @@
     <Compile Include="Controllers\Consulta\MedicamentosAnterioresController.cs" />
     <Compile Include="Controllers\Cadastro\MedicamentosController.cs" />
     <Compile Include="Controllers\Cadastro\OcupacaoController.cs" />
-    <Compile Include="Views\DemograficosAntropometicosController.cs" />
     <Compile Include="Controllers\Turma\DisciplinaController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -522,6 +522,7 @@
     <Content Include="Content\themes\pv\js\jquery.validate.js" />
     <Content Include="Content\themes\pv\js\jquery.validate.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="PacienteVirtual.Publish.xml" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
