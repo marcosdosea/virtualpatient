@@ -62,8 +62,8 @@
                 float: right;
             }
         </style>
-        <!--p class="btn btn-primary" id="botaopos">
+        <p class="btn btn-primary" id="botaopos">
             <%: Html.ActionLink(Resources.Mensagem.ativar_desativar_todos, "AtivarDesativarTodos", null, new { @style = "color:White; font-size:small;", onclick = "alert('Todas as Matrículas foram Ativada/Desativada!')" })%>
-        </p-->
+        </p>
     </div>
 </asp:Content>

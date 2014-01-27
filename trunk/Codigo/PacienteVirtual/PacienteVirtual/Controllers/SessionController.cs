@@ -347,6 +347,19 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static int IdTurmaAtribuirMatriculaTutor
+        {
+            get
+            {
+                int idTurmaAtribuirRelatos = (int)HttpContext.Current.Session["_IdTurmaAtribuirRelatos"];
+                return idTurmaAtribuirRelatos;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdTurmaAtribuirRelatos"] = value;
+            }
+        }
+
         public static int Sistema
         {
             get
