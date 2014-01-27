@@ -21,7 +21,7 @@
         </div>
         <div class="editor-field">
             <%: Html.TextBoxFor(model => model.DescricaoGrupoIntervencao, new { style = "width:350px;", MaxLength = 40 })%>
-            <%: Html.ValidationMessageFor(model => model.DescricaoGrupoIntervencao) %>
+            <%: Html.ValidationMessageFor(model => model.DescricaoGrupoIntervencao, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="form-actions">

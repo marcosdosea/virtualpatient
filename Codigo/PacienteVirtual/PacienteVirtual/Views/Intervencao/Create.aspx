@@ -21,7 +21,7 @@
         </div>
         <div class="editor-field">
             <%: Html.TextBoxFor(model => model.DescricaoIntervencao, new { style = "width:350px;", MaxLength = 40  })%>
-            <%: Html.ValidationMessageFor(model => model.DescricaoIntervencao) %>
+            <%: Html.ValidationMessageFor(model => model.DescricaoIntervencao, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -29,7 +29,7 @@
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdGrupoIntervencao", Resources.Mensagem.selecione)%>
-            <%: Html.ValidationMessageFor(model => model.IdGrupoIntervencao)%>
+            <%: Html.ValidationMessageFor(model => model.IdGrupoIntervencao, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

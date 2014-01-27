@@ -23,7 +23,7 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.DescricaoQueixa) %>
-            <%: Html.ValidationMessageFor(model => model.DescricaoQueixa) %>
+            <%: Html.ValidationMessageFor(model => model.DescricaoQueixa, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
@@ -31,7 +31,7 @@
         </div>
         <div class="editor-field">
             <%= Html.DropDownList("IdSistema", Resources.Mensagem.selecione)%>
-            <%: Html.ValidationMessageFor(model => model.IdSistema) %>
+            <%: Html.ValidationMessageFor(model => model.IdSistema, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
     <div class="form-actions">

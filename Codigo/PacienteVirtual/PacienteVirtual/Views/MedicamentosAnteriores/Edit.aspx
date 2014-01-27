@@ -35,7 +35,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Indicacao, new { @class = "textbox", style = "width:276px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Indicacao) %>
+                <%: Html.ValidationMessageFor(model => model.Indicacao, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Periodo, new { @class = "textbox", style = "width:276px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Periodo) %>
+                <%: Html.ValidationMessageFor(model => model.Periodo, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>

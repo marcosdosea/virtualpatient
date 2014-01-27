@@ -13,7 +13,7 @@
             </div>
             <div class="editor-field">
                 <%: Html.DropDownList("IdQueixaMedicamento", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdQueixaMedicamento) %>
+                <%: Html.ValidationMessageFor(model => model.IdQueixaMedicamento, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
             </div>
             <div class="editor-field">
                 <%: Html.DropDownList("IdMedicamento", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdMedicamento) %>
+                <%: Html.ValidationMessageFor(model => model.IdMedicamento, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
         <div class="span3">
@@ -34,7 +34,7 @@
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Dose, new { @class = "textbox", style = "width:127px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Dose) %>
+                <%: Html.ValidationMessageFor(model => model.Dose, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
         <div class="span3">
@@ -43,7 +43,7 @@
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Desde, new { @class = "textbox", style = "width:127px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Desde) %>
+                <%: Html.ValidationMessageFor(model => model.Desde, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
                 <%= Html.RadioButtonFor(model => model.Necessario, true)%> <%: Resources.Mensagem.sim %>
                 &nbsp &nbsp 
                 <%= Html.RadioButtonFor(model => model.Necessario, false)%> <%: Resources.Mensagem.nao %>
-                <%: Html.ValidationMessageFor(model => model.Necessario) %>
+                <%: Html.ValidationMessageFor(model => model.Necessario, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
         <div class="span3">

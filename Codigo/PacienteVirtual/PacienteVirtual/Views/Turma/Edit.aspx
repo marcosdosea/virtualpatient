@@ -23,42 +23,42 @@
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Ativa) %>
-            <%: Html.ValidationMessageFor(model => model.Ativa) %>
+            <%: Html.ValidationMessageFor(model => model.Ativa, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Codigo) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Codigo) %>
-            <%: Html.ValidationMessageFor(model => model.Codigo) %>
+            <%: Html.ValidationMessageFor(model => model.Codigo, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Periodo) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Periodo) %>
-            <%: Html.ValidationMessageFor(model => model.Periodo) %>
+            <%: Html.ValidationMessageFor(model => model.Periodo, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.NomeInstituicao) %>
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdInstituicao", Resources.Mensagem.selecione) %>
-            <%: Html.ValidationMessageFor(model => model.IdInstituicao) %>
+            <%: Html.ValidationMessageFor(model => model.IdInstituicao, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
                <%: Html.LabelFor(model => model.NomeDisciplina) %>
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdDisciplina", Resources.Mensagem.selecione) %>
-            <%: Html.ValidationMessageFor(model => model.IdDisciplina) %>
+            <%: Html.ValidationMessageFor(model => model.IdDisciplina, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
                <%: Html.LabelFor(model => model.NomeCurso) %>
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdCurso", Resources.Mensagem.selecione) %>
-            <%: Html.ValidationMessageFor(model => model.IdCurso) %>
+            <%: Html.ValidationMessageFor(model => model.IdCurso, string.Empty, new { @class = "styleValidation" })%>
         </div>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

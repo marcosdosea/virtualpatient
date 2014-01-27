@@ -21,7 +21,7 @@
         </div>
         <div class="editor-field">
             <%: Html.TextBoxFor(model => model.Especialidade, new { style = "width:350px;", MaxLength = 100 })%>
-            <%: Html.ValidationMessageFor(model => model.Especialidade) %>
+            <%: Html.ValidationMessageFor(model => model.Especialidade, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

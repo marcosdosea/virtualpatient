@@ -16,7 +16,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdGrupoIntervencao", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
-                <%: Html.ValidationMessageFor(model => model.IdGrupoIntervencao) %>
+                <%: Html.ValidationMessageFor(model => model.IdGrupoIntervencao, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.DropDownList("IdIntervencao", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdIntervencao) %>
+                <%: Html.ValidationMessageFor(model => model.IdIntervencao, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.Paciente) %>
-                <%: Html.ValidationMessageFor(model => model.Paciente) %>
+                <%: Html.ValidationMessageFor(model => model.Paciente, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
         <div class="span3">
@@ -57,7 +57,7 @@
             </div>
             <div class="editor-field">
                 <%: Html.EditorFor(model => model.Outro) %>
-                <%: Html.ValidationMessageFor(model => model.Outro) %>
+                <%: Html.ValidationMessageFor(model => model.Outro, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -71,7 +71,7 @@
         <div class="span6">
             <div class="editor-field">
                 <%: Html.TextAreaFor(model => model.Justificativa, new { MaxLength = 200 })%>
-                <%: Html.ValidationMessageFor(model => model.Justificativa) %>
+                <%: Html.ValidationMessageFor(model => model.Justificativa, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>

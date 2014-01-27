@@ -31,7 +31,7 @@
                     <div class="editor-field">
                         <%: Html.RadioButtonFor(model => model.TabacoConsumo, true) %>  <%: Resources.Mensagem.sim %>&nbsp &nbsp
                         <%: Html.RadioButtonFor(model => model.TabacoConsumo, false) %>  <%: Resources.Mensagem.nao %>
-                        <%: Html.ValidationMessageFor(model => model.TabacoConsumo) %>
+                        <%: Html.ValidationMessageFor(model => model.TabacoConsumo, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
                 <td>

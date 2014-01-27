@@ -17,7 +17,7 @@
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.HistoriaMedicaPregressa, new { style = "width:579px;" })%>
-                <%: Html.ValidationMessageFor(model => model.HistoriaMedicaPregressa) %>
+                <%: Html.ValidationMessageFor(model => model.HistoriaMedicaPregressa, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
     </div>
     <div class="editor-field">
         <%: Html.TextBoxFor(model => model.HistoriaFamiliar, new { @class = "textbox", style = "width:579px;" })%>
-        <%: Html.ValidationMessageFor(model => model.HistoriaFamiliar) %>
+        <%: Html.ValidationMessageFor(model => model.HistoriaFamiliar, string.Empty, new { @class = "styleValidation" })%>
     </div>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
