@@ -90,7 +90,7 @@
         <div class="span4">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.CircunferenciaAbdominal, new { @class = "textbox", style = "width:50px;" })%>
-                <%: Html.ValidationMessageFor(model => model.CircunferenciaAbdominal) %>
+                <%: Html.ValidationMessageFor(model => model.CircunferenciaAbdominal) %> cm
             </div>
         </div>
     </div>
