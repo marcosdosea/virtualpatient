@@ -1044,4 +1044,7 @@
   <data name="circunferencia_abdominal" xml:space="preserve">
     <value>Circunferência Abdominal</value>
   </data>
+  <data name="corrigir_consultas" xml:space="preserve">
+    <value>Fix Queries</value>
+  </data>
 </root>

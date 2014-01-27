@@ -137,6 +137,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém todas as consultas quem estão em correção ou foram enviadas para correção de determinada turma
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<ConsultaVariavelModel> ObterParaCorreção(int idTurma)
+        {
+            return GetQuery().Where(cv => (cv.IdEstadoConsulta == Global.EmCorrecaoPeloTutor || cv.IdEstadoConsulta == Global.EnviadoParaCorrecao)
+                && cv.IdTurma == idTurma).ToList();
+        }
+        
+        /// <summary>
         /// Obtém consultaVariavel com o código especificiado
         /// </summary>
         /// <returns></returns>

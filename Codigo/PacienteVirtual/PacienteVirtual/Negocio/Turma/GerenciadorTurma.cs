@@ -128,6 +128,15 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém todas as turmas ativadas
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TurmaModel> ObterTodosAtivos()
+        {
+            return GetQuery().Where(turma => turma.Ativa == true).ToList();
+        }
+
+        /// <summary>
         /// Obtém turma com o código especificiado
         /// </summary>
         /// <param name="codTurma"></param>
@@ -138,13 +147,13 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém turmas que iniciam com o nome
+        /// Obtém turmas de determinada instituicao ativas
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public IEnumerable<TurmaModel> ObterPorId(int codigo)
+        public IEnumerable<TurmaModel> ObterPorIdAtivados(int idInstituicao)
         {
-            return GetQuery().Where(turma => turma.IdInstituicao == codigo).ToList();
+            return GetQuery().Where(turma => turma.IdInstituicao == idInstituicao && turma.Ativa == true).ToList();
         }
 
         /// <summary>
