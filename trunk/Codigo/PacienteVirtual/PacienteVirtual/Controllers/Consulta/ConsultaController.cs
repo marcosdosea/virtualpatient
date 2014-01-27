@@ -190,6 +190,8 @@ namespace PacienteVirtual.Controllers
 
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
 
+            ViewBag.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
+
             return View(consultaModel);
         }
 
@@ -253,6 +255,8 @@ namespace PacienteVirtual.Controllers
 
             ViewBag.Abas2 = SessionController.Abas2;
 
+            ViewBag.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
+
             return View(consultaModel);
         }
 
@@ -262,7 +266,7 @@ namespace PacienteVirtual.Controllers
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
             if (SessionController.DadosTurmaPessoa.IdRole == Global.Usuario)
             {
-                consultaVariavelModel.IdEstadoConsulta = Global.AguardandoCorrecao;
+                consultaVariavelModel.IdEstadoConsulta = Global.EnviadoParaCorrecao;
             }
             else if(SessionController.DadosTurmaPessoa.IdRole == Global.Administrador) 
             {
