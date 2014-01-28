@@ -1060,6 +1060,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enviar para Correção.
+        /// </summary>
+        public static string enviar_para_correcao {
+            get {
+                return ResourceManager.GetString("enviar_para_correcao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enviar Solicitação de Matrícula.
         /// </summary>
         public static string enviar_solicitacao_turma {
@@ -1200,6 +1209,15 @@ namespace Resources {
         public static string feminino {
             get {
                 return ResourceManager.GetString("feminino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finalizar Correção.
+        /// </summary>
+        public static string finalizar_correcao {
+            get {
+                return ResourceManager.GetString("finalizar_correcao", resourceCulture);
             }
         }
         

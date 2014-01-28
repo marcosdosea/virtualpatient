@@ -1047,4 +1047,10 @@
   <data name="corrigir_consultas" xml:space="preserve">
     <value>Fix Queries</value>
   </data>
+  <data name="enviar_para_correcao" xml:space="preserve">
+    <value>Send a Correction</value>
+  </data>
+  <data name="finalizar_correcao" xml:space="preserve">
+    <value>Complete Correction</value>
+  </data>
 </root>

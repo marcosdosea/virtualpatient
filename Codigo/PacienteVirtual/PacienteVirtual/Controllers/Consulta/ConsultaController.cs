@@ -26,33 +26,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.Codigo = -1;
             // TODO: Obter por usuário autenticado
 
-            // zerando sessão para ir no banco ir pegar os dados com o devido IdVariavel
-            SessionController.Sistema = 0;
-            SessionController.IdGrupoIntervencao = 0;
-            SessionController.ConsultaFixo = null;
-            SessionController.ConsultaVariavel = null;
-            SessionController.DemograficosAntropometricos = null;
-            SessionController.EstiloVida = null;
-            SessionController.ExamesFisicos = null;
-            SessionController.ExperienciaMedicamentos = null;
-            SessionController.Historia = null;
-            SessionController.ListaBebidas = null;
-            SessionController.ListaConsultaParametro = null;
-            SessionController.ListaConsultaVariavelQueixa = null;
-            SessionController.ListaDiarioPessoal = null;
-            SessionController.ListaMedicamentoNaoPrescrito = null;
-            SessionController.ListaMedicamentos = null;
-            SessionController.ListaMedicamentosAnteriores = null;
-            SessionController.ListaMedicamentosPrescritos = null;
-            SessionController.Paciente = null;
-            SessionController.RelatoClinico = null;
-            SessionController.ListaAlergia = null;
-            SessionController.ListaQueixaMedicamento = null;
-            SessionController.ListaIntervencaoConsulta = null;
-            SessionController.ListaCarta = null;
-            SessionController.Abas1 = 0;
-            SessionController.Abas2 = -1;
-            /////////////////////////////////////////////////////////////////
+            Global.ZeraSessaoConsulta();
             
             if (SessionController.DadosTurmaPessoa == null || SessionController.Pessoa == null)
             {
@@ -101,6 +75,10 @@ namespace PacienteVirtual.Controllers
             if (SessionController.DadosTurmaPessoa.IdRole != Global.Tutor &&  consultaVariavelModel.IdEstadoConsulta == Global.AguardandoPreenchimento)
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EmPreenchimento;
+            } 
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor && consultaVariavelModel.IdEstadoConsulta == Global.EnviadoParaCorrecao)
+            {
+                consultaVariavelModel.IdEstadoConsulta = Global.EmCorrecaoPeloTutor;
             }
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             SessionController.ConsultaVariavel = consultaVariavelModel;
