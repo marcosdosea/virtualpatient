@@ -189,10 +189,8 @@
         &nbsp;
         <% if (!Session["_Roles"].Equals("tutor") ) { %>
         <div class="btn btn-large btn-primary">
-            <% if (Session["_Roles"].Equals("usuario") && (ViewBag.IdEstadoConsulta == 3 || ViewBag.IdEstadoConsulta == 4 || ViewBag.IdEstadoConsulta == 5 || ViewBag.IdEstadoConsulta == 7))
+            <% if (!(Session["_Roles"].Equals("usuario") && (ViewBag.IdEstadoConsulta == 3 || ViewBag.IdEstadoConsulta == 4 || ViewBag.IdEstadoConsulta == 5 || ViewBag.IdEstadoConsulta == 7)))
                { %>
-                <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Index", "Consulta", new { @style = "color:White; font-size:small;", onclick = ("alert('Não é possível ENCERRAR esta consulta, pois ela está sendo corrigida por um TUTOR.')") })%>
-            <% }else { %>
                 <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
             <% } %>
         </div>
