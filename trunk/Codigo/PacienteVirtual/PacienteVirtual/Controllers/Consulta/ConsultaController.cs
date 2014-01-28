@@ -92,8 +92,8 @@ namespace PacienteVirtual.Controllers
             // aponta para consulta 1
             if (consultaVariavelModel.OrdemCronologica != 1)
             {
-                ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(SessionController.Pessoa.IdPessoa
-                    , SessionController.DadosTurmaPessoa.IdTurma, SessionController.Paciente.IdPaciente);
+                ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
+                    , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
                 SessionController.Historia = GerenciadorHistoria.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
                 SessionController.DemograficosAntropometricos = GerenciadorDemograficosAntropometricos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
                 SessionController.ExperienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
