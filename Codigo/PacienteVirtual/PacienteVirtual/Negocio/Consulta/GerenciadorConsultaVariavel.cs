@@ -169,14 +169,29 @@ namespace PacienteVirtual.Negocio
         /// Obtém consultaVariavel anterior do paciente
         /// </summary>
         /// <returns></returns>
-        public bool consultaAtribuida(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
+        public void consultaAtribuida(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
         {
             if (GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
                 consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count() > 0)
             {
-                return true;
+                throw new NegocioException("Essa consulta já foi atribuída.");
             }
-            return false;
+        }
+
+        public void ConsultaAnteriorFinalizada(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
+        {
+            ConsultaVariavelModel cvm = ObterConsultaAnterior(idPessoa, idTurma, idPaciente, ordemCronologica);
+            if (cvm == null)
+            {
+                throw new NegocioException("A consulta anterior ainda não foi atribuída.");
+            }
+            else
+            {
+                if (cvm.IdEstadoConsulta != Global.Finalizado && cvm.IdEstadoConsulta != Global.GabaritoDisponivel)
+                {
+                    throw new NegocioException("A consulta anterior ainda não foi finalizada.");
+                }
+            }
         }
 
         /// <summary>
