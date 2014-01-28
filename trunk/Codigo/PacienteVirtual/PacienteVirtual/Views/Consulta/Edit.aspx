@@ -126,6 +126,15 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="tab-content">
+                    <div class="thumbnail">
+                        <% Html.RenderPartial("../CorrigirConsultas/ComentariosTutor", Model.ConsultaVariavel);%>
+                    </div>
+                </div>
+
+
             </div>
         </div>
         <div class="span6">
@@ -274,6 +283,17 @@
                 <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
             <% } %>
         </div>
+        <% } %>
+        <% if (Session["_Roles"].Equals("tutor"))
+           { %>
+           &nbsp;
+           <div class="btn btn-large btn-primary">
+               <%: Html.ActionLink(Resources.Mensagem.enviar_para_correcao, "EnviarParaCorrecao", "CorrigirConsultas", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
+           </div>
+           &nbsp;
+           <div class="btn btn-large btn-primary">
+               <%: Html.ActionLink(Resources.Mensagem.finalizar_correcao, "FinalizarCorrecao", "CorrigirConsultas", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
+           </div>
         <% } %>
     </div>
     <style>
