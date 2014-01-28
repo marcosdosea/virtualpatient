@@ -195,7 +195,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém consultaVariavel anterior do paciente
+        /// Obtém primeira consulta do paciente
         /// </summary>
         /// <returns></returns>
         public ConsultaVariavelModel ObterPrimeiraConsulta(int idPessoa, int idTurma, int idPaciente)
