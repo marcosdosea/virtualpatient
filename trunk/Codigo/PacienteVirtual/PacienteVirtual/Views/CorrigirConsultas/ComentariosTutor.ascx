@@ -14,9 +14,9 @@
         <%: Html.HiddenFor(model => model.IdRazaoEncontro) %>
         <%: Html.HiddenFor(model => model.NotaAluno) %>
         <div class="row-fluid">
-            <div class="span6">
-                 <div class="editor-label">
-                    <%: Html.LabelFor(model => model.ComentariosTutor) %>
+            <div class="span2">
+                 <div id="label-field">
+                    <%: Html.Label(Resources.Mensagem.descricao) %>
                 </div>
                 <div class="editor-field">
                     <%: Html.TextAreaFor(model => model.ComentariosTutor, new { style = "width:479px;" })%>

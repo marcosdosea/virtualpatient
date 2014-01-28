@@ -187,23 +187,24 @@
             <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
         </div>
         &nbsp;
-        <% if (!Session["_Roles"].Equals("tutor") ) { %>
-        <div class="btn btn-large btn-primary">
+        <% if (!Session["_Roles"].Equals("tutor"))
+           { %>   
             <% if (!(Session["_Roles"].Equals("usuario") && (ViewBag.IdEstadoConsulta == 3 || ViewBag.IdEstadoConsulta == 4 || ViewBag.IdEstadoConsulta == 5 || ViewBag.IdEstadoConsulta == 7)))
-               { %>
+           { %>
+            <div class="btn btn-large btn-primary">
                 <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
+            </div>
             <% } %>
-        </div>
         <% } %>
         <% if (Session["_Roles"].Equals("tutor") && ViewBag.IdEstadoConsulta == 5)
            { %>
            &nbsp;
            <div class="btn btn-large btn-primary">
-               <%: Html.ActionLink(Resources.Mensagem.enviar_para_correcao, "EnviarParaCorrecao", "CorrigirConsultas", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
+               <%: Html.ActionLink(Resources.Mensagem.enviar_para_correcao, "EnviarParaCorrecao", "CorrigirConsultas", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Enviar esta Consulta para CORREÇÃO do Aluno?')") })%>
            </div>
            &nbsp;
            <div class="btn btn-large btn-primary">
-               <%: Html.ActionLink(Resources.Mensagem.finalizar_correcao, "FinalizarCorrecao", "CorrigirConsultas", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
+               <%: Html.ActionLink(Resources.Mensagem.finalizar_correcao, "FinalizarCorrecao", "CorrigirConsultas", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Finalizar esta consulta?')") })%>
            </div>
         <% } %>
     </div>
@@ -224,15 +225,21 @@
         if (perfil == "tutor") {
             //habilitar para tutor corrigir e comentarios do tutor
             $("#desabilitar *").attr("disabled", "disabled").off('click');
-            if (!(idEstadoConsulta == 5)) {
-                $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
-            }
-        } else {
-            if (perfil == "usuario" && (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7)) {
+        } else if (perfil == "usuario") {
+            if (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7) {
                 $("#desabilitar *").attr("disabled", "disabled").off('click');
             }
         }
-        
+    </script>
+    <script type="text/javascript">
+        //desabilitar comentarios do tutor
+        var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
+        var perfil = document.getElementById('perfil').value;
+        if (!(perfil == "tutor" && idEstadoConsulta == 5)) {
+            $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
+        } else if (perfil == "usuario") {
+            $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
+        }
     </script>
 
     <!-- Abas dos Relatos -->
