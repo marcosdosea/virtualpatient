@@ -126,9 +126,7 @@
                         </div>
                     </div>
                 </div>
-
-
-                <div class="tab-content">
+                <div class="tab-content" id="desabilitarComentariosTutor">
                     <div class="thumbnail">
                         <% Html.RenderPartial("../CorrigirConsultas/ComentariosTutor", Model.ConsultaVariavel);%>
                     </div>
@@ -252,17 +250,24 @@
         </div>
     </fieldset>
     <% } %>
+    <!-- Metodo Javascript para desabilitar todos os campos do formulario caso seja tutor -->
     <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
     <input type="hidden" value="<%: ViewBag.IdEstadoConsulta %>" id="IdEstadoConsulta" />
     <script type="text/javascript">
         var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
         var perfil = document.getElementById('perfil').value;
         if (perfil == "tutor") {
+            //habilitar para tutor corrigir e comentarios do tutor
             $("#desabilitar *").attr("disabled", "disabled").off('click');
+            if (!(idEstadoConsulta == 5)) {
+                $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
+            }
+        } else {
+            if (perfil == "usuario" && (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7)) {
+                $("#desabilitar *").attr("disabled", "disabled").off('click');
+            }
         }
-        if (perfil == "usuario" && (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7)) {
-            $("#desabilitar *").attr("disabled", "disabled").off('click');
-        }
+        
     </script>
 
     <div id="botoes">
@@ -284,7 +289,7 @@
             <% } %>
         </div>
         <% } %>
-        <% if (Session["_Roles"].Equals("tutor"))
+        <% if (Session["_Roles"].Equals("tutor") && ViewBag.IdEstadoConsulta == 5)
            { %>
            &nbsp;
            <div class="btn btn-large btn-primary">
