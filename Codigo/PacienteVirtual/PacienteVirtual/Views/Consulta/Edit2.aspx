@@ -126,10 +126,7 @@
                             <% } %>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="tab-content">
+                </div><div class="tab-content" id="desabilitarComentariosTutor">
                     <div class="thumbnail">
                         <% Html.RenderPartial("../CorrigirConsultas/ComentariosTutor", Model.ConsultaVariavel);%>
                     </div>
@@ -200,7 +197,7 @@
             <% } %>
         </div>
         <% } %>
-        <% if (Session["_Roles"].Equals("tutor"))
+        <% if (Session["_Roles"].Equals("tutor") && ViewBag.IdEstadoConsulta == 5)
            { %>
            &nbsp;
            <div class="btn btn-large btn-primary">
@@ -227,11 +224,17 @@
         var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
         var perfil = document.getElementById('perfil').value;
         if (perfil == "tutor") {
+            //habilitar para tutor corrigir e comentarios do tutor
             $("#desabilitar *").attr("disabled", "disabled").off('click');
+            if (!(idEstadoConsulta == 5)) {
+                $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
+            }
+        } else {
+            if (perfil == "usuario" && (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7)) {
+                $("#desabilitar *").attr("disabled", "disabled").off('click');
+            }
         }
-        if (perfil == "usuario" && (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7)) {
-            $("#desabilitar *").attr("disabled", "disabled").off('click');
-        }
+        
     </script>
 
     <!-- Abas dos Relatos -->
