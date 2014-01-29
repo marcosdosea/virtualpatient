@@ -27,7 +27,7 @@
                 .Sanitized(false)
                 .SetWidth(30)
                 .Filterable(true)
-                .RenderValueAs(o => Html.CheckBox("checked", o.Ativa));
+                .RenderValueAs(o => o.Ativa == true ? Resources.Mensagem.sim : Resources.Mensagem.nao);
 
         /* Adding "CompanyName" column: */
         columns.Add(o => o.Codigo)

@@ -63,7 +63,7 @@
         
     }).WithPaging(5).Sortable().ToHtmlString()%>
     </div>
-    <div class="box-content">
+    <!--div class="box-content">
         <style type="text/css">
             #botaopos
             {
@@ -73,5 +73,5 @@
         <p class="btn btn-primary" id="botaopos">
             <%: Html.ActionLink(Resources.Mensagem.ativar_desativar_todos, "AtivarDesativarTodos", null, new { @style = "color:White; font-size:small;", onclick = "alert('Todas as Matrículas foram Ativada/Desativada!')" })%>
         </p>
-    </div>
+    </div-->
 </asp:Content>
