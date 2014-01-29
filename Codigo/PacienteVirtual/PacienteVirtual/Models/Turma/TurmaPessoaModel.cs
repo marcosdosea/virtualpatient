@@ -46,5 +46,9 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "periodo", ResourceType = typeof(Mensagem))]
         public String Periodo { get; set; }
+
+        //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "ativa", ResourceType = typeof(Mensagem))]
+        public bool TurmaAtiva { get; set; }
     }
 }

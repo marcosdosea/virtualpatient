@@ -13,15 +13,25 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
-            SessionController.IdTurmaAtribuirMatriculaTutor = -1;
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm());
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
+            {
+                ViewBag.SelecionaTurma = true;
+                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
+                SessionController.IdTurmaAtribuirMatriculaTutor = -1;
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas());
+            }
+            else
+            {
+                ViewBag.SelecionaTurma = false;
+                SessionController.IdTurmaAtribuirMatriculaTutor = SessionController.DadosTurmaPessoa.IdTurma;
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(SessionController.DadosTurmaPessoa.IdTurma));
+            }
         }
 
         [HttpPost]
         public ActionResult Index(int IdTurma = -1)
         {
-
+            ViewBag.SelecionaTurma = true;
             ViewBag.codigo = IdTurma;
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
             if (IdTurma != -1)
@@ -32,7 +42,7 @@ namespace PacienteVirtual.Controllers
             else
             {
                 SessionController.IdTurmaAtribuirMatriculaTutor = -1;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas());
             }
         }
 
@@ -63,7 +73,7 @@ namespace PacienteVirtual.Controllers
             List<TurmaPessoaModel> listaPessoa;
             if (SessionController.IdTurmaAtribuirMatriculaTutor == -1)
             {
-                listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm().ToList();
+                listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas().ToList();
             }
             else
             {

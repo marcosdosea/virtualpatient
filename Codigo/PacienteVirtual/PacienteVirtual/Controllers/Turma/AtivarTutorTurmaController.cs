@@ -12,25 +12,33 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm());
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
+            {
+                ViewBag.SelecionaTurma = true;
+                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas());
+            }
+            else
+            {
+                ViewBag.SelecionaTurma = false;
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(SessionController.DadosTurmaPessoa.IdTurma));
+            }
         }
 
         [HttpPost]
         public ActionResult Index(int IdTurma = -1)
         {
-
             ViewBag.codigo = IdTurma;
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodos().ToList(), "IdTurma", "Codigo");
+            ViewBag.SelecionaTurma = true;
+            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
             if (IdTurma != -1)
             {
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(IdTurma).ToList());
             }
-            if (IdTurma == -1)
+            else
             {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdm());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas());
             }
-            return View();
         }
 
 
