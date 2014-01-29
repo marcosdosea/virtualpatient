@@ -110,7 +110,9 @@ namespace PacienteVirtual.Negocio
                             Instituicao = tb_turma_pessoa.tb_turma.tb_instituicao.NomeInstituicao,
                             Curso = tb_turma_pessoa.tb_turma.tb_curso.NomeCurso,
                             Disciplina = tb_turma_pessoa.tb_turma.tb_disciplina.NomeDisciplina,
-                            Periodo = tb_turma_pessoa.tb_turma.Periodo
+                            Periodo = tb_turma_pessoa.tb_turma.Periodo,
+
+                            TurmaAtiva = tb_turma_pessoa.tb_turma.Ativa
                         };
             return query;
         }
@@ -125,12 +127,12 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém todos os turmaPessoa cadastrados com excecao dos Administradores
+        /// Obtém todos os turmaPessoa cadastrados com excecao dos Administradores e turmas desativadas
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterTodosExcecaoAdm()
+        public IEnumerable<TurmaPessoaModel> ObterTodosExcecaoAdmTurmasAtivas()
         {
-            return GetQuery().Where(tpr => tpr.IdRole != Global.Administrador).ToList();
+            return GetQuery().Where(tpr => tpr.IdRole != Global.Administrador && tpr.TurmaAtiva == true).ToList();
         }
 
         /// <summary>
