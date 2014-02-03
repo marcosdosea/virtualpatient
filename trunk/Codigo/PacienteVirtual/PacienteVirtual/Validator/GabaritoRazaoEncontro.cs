@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using PacienteVirtual.Controllers;
+using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Validator
 {
@@ -17,6 +18,8 @@ namespace PacienteVirtual.Validator
         {
             if (SessionController.EmCorrecao)
             {
+                ConsultaVariavelModel consultaGabarito = SessionController.ConsultaGabarito;
+                ConsultaVariavelModel consulta = SessionController.ConsultaVariavel;
                 if (!value.Equals(1)) // pega valor do gabarito disponível na sessão
                     return new ValidationResult(this.FormatErrorMessage(validationContext.DisplayName));
             }
