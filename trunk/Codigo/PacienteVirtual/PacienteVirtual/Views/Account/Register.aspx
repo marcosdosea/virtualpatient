@@ -68,7 +68,7 @@
                     <%: Html.LabelFor(m => m.Cpf) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(m => m.Cpf, new { id = "cpf", onkeyup = "FormataCpf(this,event);", MaxLength = 14 })%>
+                    <%: Html.TextBoxFor(m => m.Cpf, new { id = "cpf", onkeyup = "FormataCpf(this,event);", onkeypress = "return SomenteNumero(event)" ,MaxLength = 14 })%>
                     <%: Html.ValidationMessageFor(m => m.Cpf, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="editor-label">
@@ -93,6 +93,14 @@
         </div>
     <% } %>
 
+    <input type="hidden" value="<%: ViewBag.CpfExistente %>" id="existeCPF" />
+    <script type="text/javascript">
+        var cpf = document.getElementById('existeCPF').value;
+        if (cpf == 1) {
+            alert('Este CPF já foi cadastrado anteriormente.');
+        }
+    </script>
+
     <script type="text/javascript">
         function FormataCpf(campo, teclapres) {
             var tecla = teclapres.keyCode;
@@ -110,8 +118,16 @@
                     campo.value = vr.substr(0, 3) + '.' + vr.substr(3, 3) + '.' + vr.substr(7, 3) + '-' + vr.substr(11, 2);
             }
         }
+        function SomenteNumero(e) {
+            var tecla = (window.event) ? event.keyCode : e.which;
+            if ((tecla > 47 && tecla < 58)) return true;
+            else {
+                if (tecla == 8 || tecla == 0) return true;
+                else return false;
+            }
+        }
     </script>
-    
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js "></script>
     <script type="text/javascript">
         $(document).ready(function () {
