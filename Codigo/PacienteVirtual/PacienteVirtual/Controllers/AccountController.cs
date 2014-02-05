@@ -87,6 +87,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Register()
         {
+            ViewBag.CpfExistente = 0;
             return View();
         }
 
@@ -102,14 +103,26 @@ namespace PacienteVirtual.Controllers
                 model.Cpf = model.Cpf.Replace(".", "");
                 model.Cpf = model.Cpf.Replace("-", "");
 
+                PessoaModel pessoaModel = new PessoaModel();
+                pessoaModel = GerenciadorPessoa.GetInstance().ObterPorCPF(model.Cpf);
+                if (pessoaModel != null)
+                {
+                    model.Cpf = "";
+                    ViewBag.CpfExistente = 1;
+                    return View(model);
+                }else{
+                    ViewBag.CpfExistente = 0;
+                }
+                
+
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, "1234", out createStatus);
                 // inserir pessoa
 
                 MembershipUser usuario = string.IsNullOrEmpty(model.UserName) ? null : Membership.GetUser(model.UserName);
-                
-                PessoaModel pessoaModel = new PessoaModel();
+
+                pessoaModel = new PessoaModel();
                 pessoaModel.IdUser = (int) usuario.ProviderUserKey;
                 pessoaModel.Nome = model.Nome;
                 pessoaModel.Cpf = model.Cpf;
@@ -135,7 +148,7 @@ namespace PacienteVirtual.Controllers
                     ModelState.AddModelError("", ErrorCodeToString(createStatus));
                 }
             }
-
+            ViewBag.CpfExistente = 0;
             // If we got this far, something failed, redisplay form
             return View(model);
         }

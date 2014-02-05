@@ -130,6 +130,11 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(pessoa => pessoa.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
         }
 
+        public PessoaModel ObterPorCPF(string CPF)
+        {
+            return GetQuery().Where(pessoa => pessoa.Cpf == CPF).ToList().ElementAtOrDefault(0);
+        }
+
         /// <summary>
         /// Obtém pessoas que iniciam com o nome
         /// </summary>
