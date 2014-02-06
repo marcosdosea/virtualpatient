@@ -96,14 +96,14 @@
         <text>Selecione</text>
       </controlProperties>
     </control>
-    <control controlID="20" controlTypeID="com.balsamiq.mockups::CheckBox" x="258" y="256" w="-1" h="-1" measuredW="46" measuredH="22" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::CheckBox" x="258" y="256" w="-1" h="-1" measuredW="72" measuredH="22" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Fem</text>
+        <text>Feminino</text>
       </controlProperties>
     </control>
-    <control controlID="21" controlTypeID="com.balsamiq.mockups::CheckBox" x="359" y="257" w="-1" h="-1" measuredW="45" measuredH="22" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::CheckBox" x="359" y="257" w="-1" h="-1" measuredW="79" measuredH="22" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Mas</text>
+        <text>Masculino</text>
       </controlProperties>
     </control>
     <control controlID="22" controlTypeID="com.balsamiq.mockups::ComboBox" x="258" y="290" w="370" h="-1" measuredW="88" measuredH="24" zOrder="21" locked="false" isInGroup="-1">
@@ -136,14 +136,14 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="28" controlTypeID="com.balsamiq.mockups::NumericStepper" x="853" y="290" w="54" h="-1" measuredW="41" measuredH="24" zOrder="27" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>0</text>
-      </controlProperties>
-    </control>
-    <control controlID="29" controlTypeID="com.balsamiq.mockups::Button" x="582" y="521" w="203" h="27" measuredW="60" measuredH="27" zOrder="28" locked="false" isInGroup="-1">
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Button" x="582" y="521" w="203" h="27" measuredW="60" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Salvar</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::TextInput" x="853" y="294" w="-1" h="-1" measuredW="79" measuredH="26" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
       </controlProperties>
     </control>
   </controls>

@@ -36,19 +36,36 @@
         <text>Selecione</text>
       </controlProperties>
     </control>
-    <control controlID="26" controlTypeID="com.balsamiq.mockups::TextInput" x="397" y="218" w="788" h="-1" measuredW="79" measuredH="26" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::TextInput" x="397" y="218" w="420" h="-1" measuredW="79" measuredH="26" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="27" controlTypeID="com.balsamiq.mockups::TextInput" x="397" y="254" w="788" h="-1" measuredW="79" measuredH="26" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::TextInput" x="397" y="254" w="420" h="-1" measuredW="79" measuredH="26" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Button" x="621" y="401" w="225" h="27" measuredW="60" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Button" x="662" y="518" w="225" h="27" measuredW="60" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Salvar</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::DataGrid" x="397" y="367" w="420" h="73" measuredW="194" measuredH="47" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <rowHeight>26</rowHeight>
+        <text>Queixas%20%5E%2C%20Remover%0ADescri%E7%E3o%20Queixa%201%0A%7B30L%2C%207L%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Link" x="742" y="394" w="-1" h="-1" measuredW="53" measuredH="19" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Remover</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Button" x="397" y="323" w="89" h="27" measuredW="77" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Adicionar</text>
       </controlProperties>
     </control>
   </controls>
