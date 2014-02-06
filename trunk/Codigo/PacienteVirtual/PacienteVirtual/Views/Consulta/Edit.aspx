@@ -72,7 +72,7 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend id="nomeConsulta">
-            <%: Resources.Mensagem.consulta %></legend>
+            <%: Resources.Mensagem.consulta %> - <%: Resources.Mensagem.usuario %>: <%: Model.ConsultaVariavel.NomePessoa %></legend>
         <!--div class="editor-label">
             < %: Html.LabelFor(model => model.quantRelatos) %>
         </div>

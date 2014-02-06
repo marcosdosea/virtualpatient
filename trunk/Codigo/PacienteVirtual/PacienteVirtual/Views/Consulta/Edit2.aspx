@@ -80,7 +80,7 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend id="nomeConsulta">
-            <%: Resources.Mensagem.consulta2 %></legend>
+            <%: Resources.Mensagem.consulta2 %> - <%: Resources.Mensagem.usuario %>: <%: Model.ConsultaVariavel.NomePessoa %></legend>
         <div class="span5">
             <div class="thumbnails center">
                 <div class="span2">
