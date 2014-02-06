@@ -42,8 +42,10 @@ namespace PacienteVirtual
             RegisterRoutes(RouteTable.Routes);
         }
 
-
-            
+        void Session_Start(object sender, EventArgs e)
+        {
+            Session.Timeout = 20;
+        }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {

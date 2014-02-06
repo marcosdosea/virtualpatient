@@ -18,7 +18,7 @@ namespace PacienteVirtual.Validator
         {
             if (SessionController.EmCorrecao)
             {
-                ConsultaVariavelModel consultaGabarito = SessionController.ConsultaGabarito;
+                //ConsultaVariavelModel consultaGabarito = SessionController.ConsultaGabarito;
                 ConsultaVariavelModel consulta = SessionController.ConsultaVariavel;
                 if (!value.Equals(1)) // pega valor do gabarito disponível na sessão
                     return new ValidationResult(this.FormatErrorMessage(validationContext.DisplayName));
