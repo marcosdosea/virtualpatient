@@ -225,11 +225,14 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
                                         </li>
-                                        <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("administrador"))
+                                        <% if (Session["_Roles"].Equals("administrador"))
                                            { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_tutor_turma, "Index", "AtivarTutorTurma")%>
                                         </li>
+                                        <%}%>
+                                        <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("administrador"))
+                                           { %> 
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
                                         </li>
