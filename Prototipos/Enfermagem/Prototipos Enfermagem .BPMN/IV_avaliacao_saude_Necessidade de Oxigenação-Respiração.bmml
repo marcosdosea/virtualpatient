@@ -1,0 +1,421 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1386" measuredH="1129" mockupW="1354" mockupH="1122">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="32" y="7" w="1354" h="1122" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//PV</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="45" y="104" w="1304" h="983" measuredW="1278" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>DADOS%20DE%20IDENTIFICA%C7%C3O%2C%20DADOS%20CL%CDNICOS%20/%20INTERNA%C7%C3O%2C%20PERCEP%C7%C3O%20E%20EXPECTATIVAS%20DO%20PACIENTE%2C%20AVALIA%C7%C3O%20DE%20SA%DADE%2C%20OUTROS%20ACHADOS%2C%20DADOS%20COMPLEMENTARES%20IMPORTANTES</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="162" y="145" w="1054" h="-1" measuredW="1046" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>NECESSIDADES%20PSICOBIOL%D3GICAS%20%28PB%29%20/%20PSICOSSOCIAIS%20%28PS%29%20/%20PSICOESPIRITUAIS%20%28PE%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::TabBar" x="60" y="181" w="1258" h="884" measuredW="1200" measuredH="100" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Necessidade%20de%20Oxig%EAncio/Respira%E7%E3o%28PB%29%2C%20Necessidade%20de%20Circula%E7%E3o%28PB%29%2C%20Necessidade%20de%20Higiene%28PB%29%2C%20Necessidade%20de%20Integridade%20Tecidual%28PB%29%2C%20Necessidade%20de%20Nutri%E7%E3o/Hidrata%E7%E3o%28PB%29</text>
+        <value>2</value>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="111" y="250" w="23" h="-1" measuredW="35" measuredH="28" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>FR%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Label" x="508" y="255" w="178" h="-1" measuredW="170" measuredH="28" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Inspe%E7%E3o%20Tor%E1cica</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Label" x="499" y="293" w="111" h="-1" measuredW="105" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Simetria%20Tor%E1cica</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::CheckBox" x="499" y="329" w="72" h="24" measuredW="51" measuredH="22" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Barril</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::CheckBox" x="598" y="329" w="114" h="24" measuredW="111" measuredH="22" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Peito%20de%20pombo</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::ComboBox" x="616" y="295" w="163" h="-1" measuredW="87" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sim%E9trico</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::CheckBox" x="499" y="368" w="90" h="27" measuredW="68" measuredH="22" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lordose</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::CheckBox" x="598" y="368" w="114" h="27" measuredW="58" measuredH="22" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cifose</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::CheckBox" x="499" y="410" w="156" h="24" measuredW="135" measuredH="22" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tiragem%20Intercostal</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::CheckBox" x="727" y="369" w="129" h="24" measuredW="77" measuredH="22" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Escaliose</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::CheckBox" x="727" y="329" w="72" h="24" measuredW="47" measuredH="22" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Funil</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::FieldSet" x="96" y="235" w="372" h="256" measuredW="200" measuredH="170" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Label" x="111" y="293" w="111" h="-1" measuredW="111" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ritmo%20Respirat%F3rio%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::CheckBox" x="111" y="329" w="72" h="24" measuredW="72" measuredH="22" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dispn%E9ia</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::CheckBox" x="217" y="329" w="72" h="24" measuredW="85" measuredH="22" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Taquipn%E9ia</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::CheckBox" x="324" y="329" w="90" h="24" measuredW="90" measuredH="22" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brandipn%E9ia</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::ComboBox" x="243" y="291" w="163" h="-1" measuredW="78" measuredH="24" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Regular</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::CheckBox" x="111" y="368" w="90" h="27" measuredW="77" measuredH="22" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kussmaul</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::CheckBox" x="210" y="368" w="114" h="27" measuredW="109" measuredH="22" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cheyne-stokes</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::CheckBox" x="111" y="449" w="132" h="27" measuredW="119" measuredH="22" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Desvio%20de%20Septo</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::CheckBox" x="111" y="410" w="72" h="24" measuredW="72" measuredH="22" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Epistaxe</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::CheckBox" x="210" y="410" w="129" h="24" measuredW="120" measuredH="22" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Obstru%E7%E3o%20Nasal</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::CheckBox" x="346" y="410" w="90" h="24" measuredW="59" measuredH="22" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Coriza</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::CheckBox" x="246" y="450" w="72" h="24" measuredW="63" measuredH="22" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Palidez</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::CheckBox" x="343" y="450" w="124" h="24" measuredW="108" measuredH="22" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>L%E1bil%20Cian%F3tico</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::FieldSet" x="484" y="235" w="353" h="256" measuredW="200" measuredH="170" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::CheckBox" x="364" y="588" w="96" h="27" measuredW="88" measuredH="22" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Espor%E1dica</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::CheckBox" x="197" y="588" w="90" h="27" measuredW="82" measuredH="22" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Frequ%EAnte</text>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::CheckBox" x="283" y="588" w="75" h="27" measuredW="67" measuredH="22" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Noturna</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Label" x="111" y="564" w="70" h="-1" measuredW="59" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>H%E1%20Tosse%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::RadioButton" x="197" y="564" w="-1" h="-1" measuredW="38" measuredH="22" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sim</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::RadioButton" x="243" y="564" w="-1" h="-1" measuredW="40" measuredH="22" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>N%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::Label" x="111" y="591" w="-1" h="-1" measuredW="70" measuredH="21" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Frequ%EAncia%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::Label" x="111" y="621" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tipo%20de%20Tosse%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::CheckBox" x="210" y="618" w="90" h="27" measuredW="51" measuredH="22" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Seca</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::CheckBox" x="283" y="618" w="75" h="27" measuredW="75" measuredH="22" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Produtiva</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::FieldSet" x="96" y="519" w="372" h="256" measuredW="200" measuredH="170" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Label" x="111" y="533" w="178" h="-1" measuredW="55" measuredH="28" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Tosse</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::CheckBox" x="111" y="677" w="90" h="27" measuredW="86" measuredH="22" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cateter%20O%B2</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::CheckBox" x="201" y="677" w="136" h="27" measuredW="135" measuredH="22" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>M%E1scara%20de%20Venturi</text>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::CheckBox" x="339" y="677" w="135" h="27" measuredW="123" measuredH="22" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tubo%20Orotraqueal</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Label" x="111" y="648" w="-1" h="-1" measuredW="129" measuredH="21" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Aspecto%20de%20secre%E7%E3o%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Label" x="111" y="704" w="-1" h="-1" measuredW="16" measuredH="21" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>n%BA%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Label" x="210" y="704" w="-1" h="-1" measuredW="43" measuredH="21" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tempo%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::TextInput" x="250" y="647" w="201" h="-1" measuredW="79" measuredH="26" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::TextInput" x="140" y="701" w="44" h="-1" measuredW="79" measuredH="26" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::TextInput" x="260" y="701" w="44" h="-1" measuredW="79" measuredH="26" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::CheckBox" x="111" y="733" w="136" h="27" measuredW="111" measuredH="22" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vent.%20Mec%E2nica</text>
+      </controlProperties>
+    </control>
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::CheckBox" x="235" y="733" w="136" h="27" measuredW="115" measuredH="22" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tranqueostomia</text>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::FieldSet" x="484" y="519" w="353" h="256" measuredW="200" measuredH="170" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Label" x="499" y="536" w="178" h="-1" measuredW="91" measuredH="28" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Percurs%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::Label" x="499" y="579" w="90" h="-1" measuredW="86" measuredH="21" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tipos%20de%20sons%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::Label" x="499" y="633" w="178" h="-1" measuredW="179" measuredH="28" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Palpa%E7%E7%E3o%20G%E2nglios</text>
+      </controlProperties>
+    </control>
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::CheckBox" x="508" y="669" w="114" h="24" measuredW="76" measuredH="22" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Palp%E1veis</text>
+      </controlProperties>
+    </control>
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::CheckBox" x="598" y="669" w="114" h="24" measuredW="78" measuredH="22" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dolorosos</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Label" x="508" y="704" w="-1" h="-1" measuredW="58" measuredH="21" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Localizar%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::TextInput" x="589" y="701" w="210" h="-1" measuredW="79" measuredH="26" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="121" controlTypeID="com.balsamiq.mockups::ComboBox" x="598" y="577" w="201" h="-1" measuredW="45" measuredH="24" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ar</text>
+      </controlProperties>
+    </control>
+    <control controlID="122" controlTypeID="com.balsamiq.mockups::FieldSet" x="96" y="789" w="372" h="256" measuredW="200" measuredH="170" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="123" controlTypeID="com.balsamiq.mockups::Label" x="111" y="815" w="178" h="-1" measuredW="105" measuredH="28" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Palpaca%E7%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="124" controlTypeID="com.balsamiq.mockups::Label" x="133" y="853" w="111" h="-1" measuredW="95" measuredH="21" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Expansibilidade%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="125" controlTypeID="com.balsamiq.mockups::CheckBox" x="133" y="889" w="148" h="24" measuredW="148" measuredH="22" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Enfizema%20subcut%E2neo</text>
+      </controlProperties>
+    </control>
+    <control controlID="126" controlTypeID="com.balsamiq.mockups::CheckBox" x="133" y="927" w="150" h="24" measuredW="144" measuredH="22" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Presen%E7a%20de%20Fr%EAmito</text>
+      </controlProperties>
+    </control>
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::ComboBox" x="244" y="851" w="163" h="-1" measuredW="98" measuredH="24" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Preservada</text>
+      </controlProperties>
+    </control>
+    <control controlID="128" controlTypeID="com.balsamiq.mockups::FieldSet" x="484" y="789" w="353" h="256" measuredW="200" measuredH="170" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="129" controlTypeID="com.balsamiq.mockups::Label" x="500" y="812" w="192" h="-1" measuredW="169" measuredH="28" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Ausculta%20pulmonar</text>
+      </controlProperties>
+    </control>
+    <control controlID="130" controlTypeID="com.balsamiq.mockups::CheckBox" x="626" y="852" w="90" h="27" measuredW="74" measuredH="22" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Presente</text>
+      </controlProperties>
+    </control>
+    <control controlID="131" controlTypeID="com.balsamiq.mockups::CheckBox" x="707" y="852" w="75" h="27" measuredW="76" measuredH="22" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Diminu%EDdo</text>
+      </controlProperties>
+    </control>
+    <control controlID="132" controlTypeID="com.balsamiq.mockups::Label" x="500" y="852" w="-1" h="-1" measuredW="106" measuredH="21" zOrder="72" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>M%FAmuro%20vesicular%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="133" controlTypeID="com.balsamiq.mockups::CheckBox" x="626" y="910" w="90" h="27" measuredW="64" measuredH="22" zOrder="73" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Roncos</text>
+      </controlProperties>
+    </control>
+    <control controlID="134" controlTypeID="com.balsamiq.mockups::CheckBox" x="707" y="910" w="75" h="27" measuredW="83" measuredH="22" zOrder="74" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Estertores</text>
+      </controlProperties>
+    </control>
+    <control controlID="135" controlTypeID="com.balsamiq.mockups::CheckBox" x="626" y="882" w="166" h="27" measuredW="160" measuredH="22" zOrder="75" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sons%20broncovesiculares</text>
+      </controlProperties>
+    </control>
+    <control controlID="136" controlTypeID="com.balsamiq.mockups::CheckBox" x="626" y="937" w="75" h="27" measuredW="59" measuredH="22" zOrder="76" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sibilos</text>
+      </controlProperties>
+    </control>
+    <control controlID="137" controlTypeID="com.balsamiq.mockups::CheckBox" x="626" y="961" w="171" h="27" measuredW="178" measuredH="22" zOrder="77" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Necessidade%20de%20aspira%E7%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="138" controlTypeID="com.balsamiq.mockups::Label" x="500" y="1003" w="-1" h="-1" measuredW="58" measuredH="21" zOrder="78" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Localizar%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="139" controlTypeID="com.balsamiq.mockups::TextInput" x="584" y="1000" w="210" h="-1" measuredW="79" measuredH="26" zOrder="79" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -41,11 +41,5 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="116" y="443" w="-1" h="-1" measuredW="31" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Data%3A</text>
-      </controlProperties>
-    </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::DateChooser" x="190" y="441" w="204" h="-1" measuredW="90" measuredH="25" zOrder="9" locked="false" isInGroup="-1"/>
   </controls>
 </mockup>
