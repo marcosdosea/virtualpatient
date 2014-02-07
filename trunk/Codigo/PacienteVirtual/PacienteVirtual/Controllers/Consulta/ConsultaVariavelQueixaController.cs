@@ -23,7 +23,7 @@ namespace PacienteVirtual.Controllers
             if (cvq.IdSistema > 0 && cvq.IdQueixa > 0)
             {
                 cvq.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
-                cvq.IdObjetivoTerapeutico = 1;
+                cvq.IdObjetivoTerapeutico = 8;
                 cvq.IdSituacaoQueixa = 1;
                 cvq.Tipo = " ";
                 cvq.Desde = "";
