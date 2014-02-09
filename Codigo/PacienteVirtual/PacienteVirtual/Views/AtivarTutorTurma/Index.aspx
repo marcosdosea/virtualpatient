@@ -6,15 +6,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <h2> <%: Resources.Mensagem.ativar_tutor_turma%>
             </h2>
-    <% if (ViewBag.SelecionaTurma == true)
-       { %>
     <div class="span9">
         <% using (Html.BeginForm("Index", "AtivarTutorTurma", FormMethod.Post, null))
            { %>
         <%: Html.DropDownList("IdTurma", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
         <% } %>
     </div>
-    <% } %>
     
     <%@ import namespace="GridMvc.Html" %>
     <%@ import namespace="GridMvc.Sorting" %>
@@ -28,6 +25,16 @@
                 .ThenSortByDescending(o => o.NomePessoa)
                 .Filterable(true);
 
+        columns.Add(o => o.Instituicao)
+                .Titled(Resources.Mensagem.instituicao)
+                .ThenSortByDescending(o => o.Instituicao)
+                .Filterable(true);
+        
+        columns.Add(o => o.Curso)
+                .Titled(Resources.Mensagem.curso)
+                .ThenSortByDescending(o => o.Curso)
+                .Filterable(true);
+        
         columns.Add(o => o.NomeTurma)
                 .Titled(Resources.Mensagem.turma)
                 .ThenSortByDescending(o => o.NomeTurma)

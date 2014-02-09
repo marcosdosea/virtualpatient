@@ -18,13 +18,13 @@ namespace PacienteVirtual.Controllers
                 ViewBag.SelecionaTurma = true;
                 ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
                 SessionController.IdTurmaAtribuirMatriculaTutor = -1;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTurmasAtivas());
             }
             else
             {
                 ViewBag.SelecionaTurma = false;
                 SessionController.IdTurmaAtribuirMatriculaTutor = SessionController.DadosTurmaPessoa.IdTurma;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(SessionController.DadosTurmaPessoa.IdTurma));
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
         }
 
@@ -37,12 +37,12 @@ namespace PacienteVirtual.Controllers
             if (IdTurma != -1)
             {
                 SessionController.IdTurmaAtribuirMatriculaTutor = IdTurma;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(IdTurma).ToList());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosPorTurma(IdTurma).ToList());
             }
             else
             {
                 SessionController.IdTurmaAtribuirMatriculaTutor = -1;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTurmasAtivas());
             }
         }
 
@@ -70,14 +70,14 @@ namespace PacienteVirtual.Controllers
         private static bool ativadesativar = true;
         public ActionResult AtivarDesativarTodos()
         {
-            List<TurmaPessoaModel> listaPessoa;
+            List<TurmaPessoaModel> listaPessoa = null; // quando for usar tirar o null
             if (SessionController.IdTurmaAtribuirMatriculaTutor == -1)
             {
-                listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas().ToList();
+                //listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas().ToList();
             }
             else
             {
-                listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(SessionController.IdTurmaAtribuirMatriculaTutor).ToList();
+                //listaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(SessionController.IdTurmaAtribuirMatriculaTutor).ToList();
             }
             if (ativadesativar)
             {

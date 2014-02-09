@@ -12,32 +12,33 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Index()
         {
-            if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
+            /*if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
             {
                 ViewBag.SelecionaTurma = true;
-                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas());
-            }
+              */
+            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
+            return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresTurmasAtivas());
+            /*}
             else
             {
                 ViewBag.SelecionaTurma = false;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(SessionController.DadosTurmaPessoa.IdTurma));
-            }
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
+            }*/
         }
 
         [HttpPost]
         public ActionResult Index(int IdTurma = -1)
         {
             ViewBag.codigo = IdTurma;
-            ViewBag.SelecionaTurma = true;
+            //ViewBag.SelecionaTurma = true;
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
             if (IdTurma != -1)
             {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaExcecaoAdm(IdTurma).ToList());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresPorTurma(IdTurma).ToList());
             }
             else
             {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterTodosExcecaoAdmTurmasAtivas());
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresTurmasAtivas());
             }
         }
 
