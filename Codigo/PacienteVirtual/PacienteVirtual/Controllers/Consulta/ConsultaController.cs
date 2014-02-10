@@ -27,6 +27,7 @@ namespace PacienteVirtual.Controllers
             // TODO: Obter por usuário autenticado
 
             Global.ZeraSessaoConsulta();
+            SessionController.TutorVisualizaConsultaPeloCorrigirConsultas = false;
             
             if (SessionController.DadosTurmaPessoa == null || SessionController.Pessoa == null)
             {

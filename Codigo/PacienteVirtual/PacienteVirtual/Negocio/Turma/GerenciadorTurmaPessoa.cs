@@ -32,6 +32,10 @@ namespace PacienteVirtual.Negocio
             tb_turma_pessoa _turmaPessoa = new tb_turma_pessoa();
             try
             {
+                if (QuantidadeSolicitacoes(turmaPessoa.IdPessoa, turmaPessoa.IdTurma) > 0)
+                {
+                    throw new NegocioException("Já foi solicitada uma matrícula nesta turma. Contate um Tutor desta turma para ativá-la.");
+                }
                 Atribuir(turmaPessoa, _turmaPessoa);
 
                 repTurmaPessoa.Inserir(_turmaPessoa);
@@ -126,6 +130,14 @@ namespace PacienteVirtual.Negocio
             return GetQuery().ToList();
         }
 
+        /// <summary>
+        /// Obtém a quantidade das solicitações realizadas por uma pessoa
+        /// </summary>
+        /// <returns></returns>
+        public int QuantidadeSolicitacoes(int idPessoa, int idTurma)
+        {
+            return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa && tpr.IdTurma == idTurma).Count();
+        }
         /// <summary>
         /// Obtém todos os turmaPessoa cadastrados com excecao dos Administradores e turmas desativadas
         /// </summary>
