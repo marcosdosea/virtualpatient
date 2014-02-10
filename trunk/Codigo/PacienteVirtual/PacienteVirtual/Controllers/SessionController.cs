@@ -643,5 +643,18 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_Roles"] = value;
             }
         }
+
+        public static bool TutorVisualizaConsultaPeloCorrigirConsultas
+        {
+            get
+            {
+                bool acessou = (bool)HttpContext.Current.Session["_TutorVisualizaConsultas"];
+                return acessou;
+            }
+            set
+            {
+                HttpContext.Current.Session["_TutorVisualizaConsultas"] = value;
+            }
+        }
     }
 }

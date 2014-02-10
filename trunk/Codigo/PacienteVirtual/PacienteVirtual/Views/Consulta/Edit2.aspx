@@ -196,7 +196,7 @@
             </div>
             <% } %>
         <% } %>
-        <% if (Session["_Roles"].Equals("tutor") && ViewBag.IdEstadoConsulta == 5)
+        <% if (Session["_Roles"].Equals("tutor") && Session["_TutorVisualizaConsultas"].Equals(true))
            { %>
            &nbsp;
            <div class="btn btn-large btn-primary">

@@ -12,6 +12,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Index()
         {
             Global.ZeraSessaoConsulta();
+            SessionController.TutorVisualizaConsultaPeloCorrigirConsultas = true;
             if (SessionController.DadosTurmaPessoa != null)
             {
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterParaCorreção(SessionController.DadosTurmaPessoa.IdTurma));
