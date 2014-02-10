@@ -8,7 +8,7 @@ namespace PacienteVirtual.Controllers
         
         public ActionResult Index()
         {
-            if (GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoa(SessionController.Pessoa.IdPessoa) > 1)
+            if (GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoaEmTurmasAtivas(SessionController.Pessoa.IdPessoa) > 1)
             {
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterTurmasPorPessoa(SessionController.Pessoa.IdPessoa));
             }
@@ -21,7 +21,7 @@ namespace PacienteVirtual.Controllers
         {
             if (SessionController.Pessoa != null)
             {
-                ViewBag.QtdTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoa(SessionController.Pessoa.IdPessoa);
+                ViewBag.QtdTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoaEmTurmasAtivas(SessionController.Pessoa.IdPessoa);
             }
             return View(SessionController.DadosTurmaPessoa);
         }
