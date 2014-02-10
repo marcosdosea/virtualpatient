@@ -15,15 +15,15 @@ namespace PacienteVirtual.Controllers
         {
             if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
             {
-                ViewBag.SelecionaTurma = true;
-                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
-                SessionController.IdTurmaAtribuirMatriculaTutor = -1;
+                //ViewBag.SelecionaTurma = true;
+                //ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
+                //SessionController.IdTurmaAtribuirMatriculaTutor = -1;
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTurmasAtivas());
             }
             else
             {
-                ViewBag.SelecionaTurma = false;
-                SessionController.IdTurmaAtribuirMatriculaTutor = SessionController.DadosTurmaPessoa.IdTurma;
+                //ViewBag.SelecionaTurma = false;
+                //SessionController.IdTurmaAtribuirMatriculaTutor = SessionController.DadosTurmaPessoa.IdTurma;
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
         }
