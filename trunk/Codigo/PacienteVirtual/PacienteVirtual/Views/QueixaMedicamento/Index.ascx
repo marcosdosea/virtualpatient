@@ -84,7 +84,10 @@
                 <%: Html.DisplayFor(modelItem => item.Resolvido) %>
             </td>
             <td>
+            <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
+               { %>
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "QueixaMedicamento", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento, idQueixa = item.IdQueixaMedicamento }, null)%>
+            <% } %>
             </td>
         </tr>
         <% } %>

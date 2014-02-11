@@ -61,15 +61,18 @@
             </td>
             <% } %>
             <td>
+                <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
+                   { %>
                 <% if (ViewBag.EscondeLinks == true)
                    { %>
-                <%: Html.ActionLink(Resources.Mensagem.avaliacao_farmaceutica, "Edit", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
+                <%: Html.ActionLink(Resources.Mensagem.avaliacao_farmaceutica, "Edit", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null)%>
                 |
                 <div class="botaoMostrar">
-                    <%: Resources.Mensagem.identificacao_prm %></div>
+                    <%: Resources.Mensagem.identificacao_prm%></div>
                     |
                 <% } %>
-                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null) %>
+                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, null)%>
+                <% } %>
             </td>
         </tr>
         <% } %>

@@ -109,7 +109,7 @@
                             <!-- < %: Html.ActionLink("Paciente Virtual", "Index", "Home")%>-->
                         </a>
                     </div>
-                    <% if (HttpContext.Current.Request.IsAuthenticated)
+                    <% if (HttpContext.Current.Request.IsAuthenticated && Session["_DadosTurmaPessoa"] != null)
                        { %>
                     <% if (Session["_Roles"].Equals("administrador"))
                        { %>

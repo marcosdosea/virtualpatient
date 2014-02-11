@@ -648,8 +648,7 @@ namespace PacienteVirtual.Controllers
         {
             get
             {
-                bool acessou = (bool)HttpContext.Current.Session["_TutorVisualizaConsultas"];
-                return acessou;
+                return (bool)HttpContext.Current.Session["_TutorVisualizaConsultas"];
             }
             set
             {
@@ -661,8 +660,7 @@ namespace PacienteVirtual.Controllers
         {
             get
             {
-                bool numeroTela = (bool)HttpContext.Current.Session["_PrimeiraTelaConsulta"];
-                return numeroTela;
+                return (bool)HttpContext.Current.Session["_PrimeiraTelaConsulta"];
             }
             set
             {
@@ -670,5 +668,16 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static int IdEstadoConsulta
+        {
+            get
+            {
+                return (int)HttpContext.Current.Session["_IdEstadoConsulta"];
+            }
+            set
+            {
+                HttpContext.Current.Session["_Roles"] = value;
+            }
+        }
     }
 }

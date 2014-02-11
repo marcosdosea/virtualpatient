@@ -33,7 +33,10 @@
             <%: Html.DisplayFor(modelItem => item.Unidade) %>
         </td>
         <td>
+        <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
+           { %>
             <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaParametro", new { idConsultaVariavel = item.IdConsultaVariavel, idParametroClinico = item.IdParametroClinico }, null)%>
+        <% } %>
         </td>
     </tr>
 <% } %>

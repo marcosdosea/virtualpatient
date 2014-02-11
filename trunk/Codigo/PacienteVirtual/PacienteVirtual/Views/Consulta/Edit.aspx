@@ -199,7 +199,6 @@
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ExamesFisicos/AdicionarAlergia", Model.AlergiaExamesFisicos);%>
                                 <% Html.RenderPartial("../ExamesFisicos/ListaAlergias", Model.ListaAlergia);%>
-                                
                             </div>
                         </div>
                         <div class="tab-pane" id="tab1-6">
@@ -252,7 +251,7 @@
     <% } %>
     <!-- Metodo Javascript para desabilitar todos os campos do formulario caso seja tutor -->
     <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
-    <input type="hidden" value="<%: ViewBag.IdEstadoConsulta %>" id="IdEstadoConsulta" />
+    <input type="hidden" value="<%: Session["_IdEstadoConsulta"] %>" id="IdEstadoConsulta" />
     <script type="text/javascript">
         var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
         var perfil = document.getElementById('perfil').value;
@@ -287,7 +286,7 @@
         &nbsp;
          <% if (!Session["_Roles"].Equals("tutor"))
            { %>   
-            <% if (!(Session["_Roles"].Equals("usuario") && (ViewBag.IdEstadoConsulta == 3 || ViewBag.IdEstadoConsulta == 4 || ViewBag.IdEstadoConsulta == 5 || ViewBag.IdEstadoConsulta == 7)))
+            <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
            { %>
             <div class="btn btn-large btn-primary">
                 <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
@@ -298,7 +297,7 @@
            { %>
            &nbsp;
            <div class="btn btn-large btn-primary">
-               <%: Html.ActionLink(Resources.Mensagem.enviar_para_correcao, "EnviarParaCorrecao", "CorrigirConsultas", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Enviar esta Consulta para CORREÇÃO do Aluno?')") })%>
+               <%: Html.ActionLink(Resources.Mensagem.enviar_para_correcao_do_aluno, "EnviarParaCorrecao", "CorrigirConsultas", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Enviar esta Consulta para CORREÇÃO do Aluno?')") })%>
            </div>
            &nbsp;
            <div class="btn btn-large btn-primary">
