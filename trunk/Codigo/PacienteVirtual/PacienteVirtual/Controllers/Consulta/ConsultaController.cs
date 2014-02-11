@@ -77,7 +77,7 @@ namespace PacienteVirtual.Controllers
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EmPreenchimento;
             } 
-            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor && consultaVariavelModel.IdEstadoConsulta == Global.EnviadoParaCorrecao)
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor && (consultaVariavelModel.IdEstadoConsulta == Global.EmCorrecaoPeloTutor || consultaVariavelModel.IdEstadoConsulta == Global.EnviadoParaCorrecao))
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EmCorrecaoPeloTutor;
                 SessionController.EmCorrecao = true;
@@ -167,6 +167,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.Abas1 = SessionController.Abas1;
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
+
             SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
             
             SessionController.PrimeiraTelaConsulta = true;

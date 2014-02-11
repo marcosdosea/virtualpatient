@@ -676,7 +676,7 @@ namespace PacienteVirtual.Controllers
             }
             set
             {
-                HttpContext.Current.Session["_Roles"] = value;
+                HttpContext.Current.Session["_IdEstadoConsulta"] = value;
             }
         }
     }
