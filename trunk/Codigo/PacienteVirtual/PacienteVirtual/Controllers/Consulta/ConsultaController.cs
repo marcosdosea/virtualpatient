@@ -80,6 +80,7 @@ namespace PacienteVirtual.Controllers
             if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor && consultaVariavelModel.IdEstadoConsulta == Global.EnviadoParaCorrecao)
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EmCorrecaoPeloTutor;
+                SessionController.EmCorrecao = true;
             }
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             SessionController.ConsultaVariavel = consultaVariavelModel;
@@ -167,7 +168,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
-
+            
             SessionController.PrimeiraTelaConsulta = true;
 
             return View(consultaModel);
