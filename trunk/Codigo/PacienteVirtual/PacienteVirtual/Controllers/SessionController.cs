@@ -656,5 +656,19 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_TutorVisualizaConsultas"] = value;
             }
         }
+
+        public static bool PrimeiraTelaConsulta
+        {
+            get
+            {
+                bool numeroTela = (bool)HttpContext.Current.Session["_PrimeiraTelaConsulta"];
+                return numeroTela;
+            }
+            set
+            {
+                HttpContext.Current.Session["_PrimeiraTelaConsulta"] = value;
+            }
+        }
+
     }
 }

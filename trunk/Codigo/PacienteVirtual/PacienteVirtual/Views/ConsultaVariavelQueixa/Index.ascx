@@ -14,6 +14,13 @@
             <th>
                 <%: Resources.Mensagem.alternativas_intervencao %>
             </th>
+            <% if (Session["_PrimeiraTelaConsulta"].Equals(false)) { %>
+            <th>
+                <%: Resources.Mensagem.objetivo_terapeutico %>
+            </th>
+            <th>
+                <%: Resources.Mensagem.descricao_situacao %>
+            </th>
             <th>
                 <%: Resources.Mensagem.desde %>
             </th>
@@ -21,14 +28,9 @@
                 <%: Resources.Mensagem.tipo %>
             </th>
             <th>
-                <%: Resources.Mensagem.objetivo_terapeutico %>
-            </th>
-            <th>
                 <%: Resources.Mensagem.prioridade %>
             </th>
-            <th>
-                <%: Resources.Mensagem.descricao_situacao %>
-            </th>
+            <% } %>
             <th>
                 <%: Resources.Mensagem.opcoes %>
             </th>
@@ -40,21 +42,24 @@
             <td>
                 <%: Html.DisplayFor(modelItem => item.DescricaoQueixa) %>
             </td>
+            <% if (Session["_PrimeiraTelaConsulta"].Equals(false))
+               { %>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Desde) %>
+                <%: Html.DisplayFor(modelItem => item.DescricaoObjetivoTerapeutico)%>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Tipo) %>
+                <%: Html.DisplayFor(modelItem => item.DescricaoSituacao)%>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.DescricaoObjetivoTerapeutico) %>
+                <%: Html.DisplayFor(modelItem => item.Desde)%>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Prioridade) %>
+                <%: Html.DisplayFor(modelItem => item.Tipo)%>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.DescricaoSituacao) %>
+                <%: Html.DisplayFor(modelItem => item.Prioridade)%>
             </td>
+            <% } %>
             <td>
                 <% if (ViewBag.EscondeLinks == true)
                    { %>
