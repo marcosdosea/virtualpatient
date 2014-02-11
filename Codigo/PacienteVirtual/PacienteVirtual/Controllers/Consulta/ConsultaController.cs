@@ -167,7 +167,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.Abas1 = SessionController.Abas1;
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
-            ViewBag.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
+            SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
             
             SessionController.PrimeiraTelaConsulta = true;
 
@@ -231,7 +231,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.EscondeLinks = true;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
-            ViewBag.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
+            SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
 
             SessionController.PrimeiraTelaConsulta = false;
             

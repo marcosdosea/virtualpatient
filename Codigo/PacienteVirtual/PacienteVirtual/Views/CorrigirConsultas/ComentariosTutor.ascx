@@ -19,13 +19,16 @@
                     <%: Html.Label(Resources.Mensagem.descricao) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextAreaFor(model => model.ComentariosTutor, new { style = "width:479px;" })%>
+                    <%: Html.TextAreaFor(model => model.ComentariosTutor, new { style = "width:479px;height:420px" })%>
                     <%: Html.ValidationMessageFor(model => model.ComentariosTutor, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
         </div>
+    <% if (!Session["_Roles"].Equals("usuario"))
+       { %>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>"/>
     </div>
+       <% } %>
     </fieldset>
 <% } %>

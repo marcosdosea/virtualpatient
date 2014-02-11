@@ -9,8 +9,6 @@
                 <p class="conteudo"><%: Model.NomeTurma%></p>
             </div>
         </div>
-        <% } %>
-        <% if (Model.NomeRole != ("administrador")) { %>
         <div class="span2">
             <div class="editor-label">
                 <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>

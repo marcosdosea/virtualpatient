@@ -604,7 +604,7 @@
     <value>Person Name</value>
   </data>
   <data name="enviar_solicitacao_turma" xml:space="preserve">
-    <value>Send Request Tuition</value>
+    <value>Send Request Class</value>
   </data>
   <data name="ativar" xml:space="preserve">
     <value>Activate</value>
@@ -1047,8 +1047,8 @@
   <data name="corrigir_consultas" xml:space="preserve">
     <value>Fix Queries</value>
   </data>
-  <data name="enviar_para_correcao" xml:space="preserve">
-    <value>Send a Correction</value>
+  <data name="enviar_para_correcao_do_aluno" xml:space="preserve">
+    <value>Send to Correction for Student</value>
   </data>
   <data name="finalizar_correcao" xml:space="preserve">
     <value>Complete Correction</value>

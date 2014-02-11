@@ -1047,8 +1047,8 @@
   <data name="corrigir_consultas" xml:space="preserve">
     <value>Corrigir Consultas</value>
   </data>
-  <data name="enviar_para_correcao" xml:space="preserve">
-    <value>Enviar para Correção</value>
+  <data name="enviar_para_correcao_do_aluno" xml:space="preserve">
+    <value>Enviar para Correção do Aluno</value>
   </data>
   <data name="finalizar_correcao" xml:space="preserve">
     <value>Finalizar Correção</value>
