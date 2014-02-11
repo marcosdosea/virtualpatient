@@ -38,6 +38,7 @@ namespace PacienteVirtual.Controllers
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
             consultaVariavelModel.IdEstadoConsulta = Global.AguardandoCorrecaoDoAluno;
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
+            SessionController.EmCorrecao = false;
             return RedirectToAction("Index", "CorrigirConsultas");
         }
 
@@ -47,6 +48,7 @@ namespace PacienteVirtual.Controllers
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
             consultaVariavelModel.IdEstadoConsulta = Global.Finalizado;
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
+            SessionController.EmCorrecao = false;
             return RedirectToAction("Index", "CorrigirConsultas");
         }
 

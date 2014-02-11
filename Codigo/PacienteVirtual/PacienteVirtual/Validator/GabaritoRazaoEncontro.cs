@@ -20,8 +20,14 @@ namespace PacienteVirtual.Validator
             {
                 //ConsultaVariavelModel consultaGabarito = SessionController.ConsultaGabarito;
                 ConsultaVariavelModel consulta = SessionController.ConsultaVariavel;
-                if (!value.Equals(1)) // pega valor do gabarito disponível na sessão
-                    return new ValidationResult(this.FormatErrorMessage(validationContext.DisplayName));
+                
+                var model = (RazaoEncontroModel) validationContext.ObjectInstance;
+                if (model.IdRazaoEncontro != 1) // aqui iria comparar com o gabarito
+                {
+                    return new ValidationResult("Resposta incorreta. No gabarito consta o valor ....", new List<string>(){"IdRazaoEncontro"});
+                }
+                return ValidationResult.Success;
+
             }
             return null;
         }
