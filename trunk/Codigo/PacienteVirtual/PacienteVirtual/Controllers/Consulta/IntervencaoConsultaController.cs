@@ -39,6 +39,31 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit2", "Consulta");
         }
 
+
+        public ActionResult Edit(long idConsultaVariavel, int idIntervencao)
+        {
+            IntervencaoConsultaModel icm = GerenciadorIntervencaoConsulta.GetInstance().ObterPorConsultaIntervencao(idConsultaVariavel, idIntervencao);
+            SessionController.Abas2 = 2;
+            return View(icm);
+        }
+
+        //
+        // POST: /IntervencaoConsulta/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(IntervencaoConsultaModel icm)
+        {
+            if (ModelState.IsValid)
+            {
+                GerenciadorIntervencaoConsulta.GetInstance().Atualizar(icm);
+                SessionController.ListaIntervencaoConsulta = null;
+                SessionController.Abas2 = 2;
+                return RedirectToAction("Edit2", "Consulta");
+            }
+            SessionController.Abas2 = 2;
+            return View(icm);
+        }
+
         //
         // POST: /intervencaoConsulta/Delete/5
         //[HttpPost]

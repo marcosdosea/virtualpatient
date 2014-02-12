@@ -28,6 +28,35 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit2", "Consulta");
         }
 
+        public ActionResult Edit(long idConsultaVariavel, int idMedicamento, int idQueixa)
+        {
+            QueixaMedicamentoModel qmm = GerenciadorQueixaMedicamento.GetInstance().ObterPorConsultaQueixaMedicamento(idConsultaVariavel, idMedicamento, idQueixa);
+            SessionController.Abas2 = 1;
+            ViewBag.IdSuspeitaPrm = new SelectList(GerenciadorSuspeitaPrm.GetInstance().ObterTodos(), "IdSuspeitaPrm", "Descricao", qmm.IdSuspeitaPRM);
+            ViewBag.IdAcaoQueixa1 = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos(), "IdAcaoQueixa", "DescricaoAcao", qmm.IdAcaoQueixa1);
+            ViewBag.IdAcaoQueixa2 = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos(), "IdAcaoQueixa", "DescricaoAcao", qmm.IdAcaoQueixa2);
+            return View(qmm);
+        }
+
+        //
+        // POST: /QueixaMedicamento/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(QueixaMedicamentoModel qmm)
+        {
+            SessionController.Abas2 = 1;
+            if (ModelState.IsValid)
+            {
+                GerenciadorQueixaMedicamento.GetInstance().Atualizar(qmm);
+                SessionController.ListaQueixaMedicamento = null;
+                return RedirectToAction("Edit2", "Consulta");
+            }
+            ViewBag.IdSuspeitaPrm = new SelectList(GerenciadorSuspeitaPrm.GetInstance().ObterTodos(), "IdSuspeitaPrm", "Descricao", qmm.IdSuspeitaPRM);
+            ViewBag.IdAcaoQueixa1 = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos(), "IdAcaoQueixa", "DescricaoAcao", qmm.IdAcaoQueixa1);
+            ViewBag.IdAcaoQueixa2 = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos(), "IdAcaoQueixa", "DescricaoAcao", qmm.IdAcaoQueixa2);
+            return View(qmm);
+        }
+
         //
         // POST: /MedicamentoPrescrito/Delete/5
         //[HttpPost]
