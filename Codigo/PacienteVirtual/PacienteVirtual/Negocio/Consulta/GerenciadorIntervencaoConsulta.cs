@@ -53,7 +53,8 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repIntervencaoConsulta = new RepositorioGenerico<tb_consulta_variavel_intervencao>();
-                tb_consulta_variavel_intervencao _tb_consulta_variavel_intervencao = repIntervencaoConsulta.ObterEntidade(iC => iC.IdConsultaVariavel == IntervencaoConsultaModel.IdConsultaVariavel);
+                tb_consulta_variavel_intervencao _tb_consulta_variavel_intervencao = repIntervencaoConsulta.ObterEntidade(iC => iC.IdConsultaVariavel 
+                    == IntervencaoConsultaModel.IdConsultaVariavel && iC.IdIntervencao == IntervencaoConsultaModel.IdIntervencao);
                 Atribuir(IntervencaoConsultaModel, _tb_consulta_variavel_intervencao);
 
                 repIntervencaoConsulta.SaveChanges();
@@ -144,6 +145,18 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<IntervencaoConsultaModel> Obter(long idConsultaVariavel)
         {
             return GetQuery().Where(IntervencaoConsultaModel => IntervencaoConsultaModel.IdConsultaVariavel == idConsultaVariavel).ToList();
+        }
+
+        /// <summary>
+        /// Obtem consulta intervencao por consulta e intervencao
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        /// <param name="idIntervencao"></param>
+        /// <returns></returns>
+        public IntervencaoConsultaModel ObterPorConsultaIntervencao(long idConsultaVariavel, int idIntervencao)
+        {
+            return GetQuery().Where(IntervencaoConsultaModel => IntervencaoConsultaModel.IdConsultaVariavel == idConsultaVariavel
+                && IntervencaoConsultaModel.IdIntervencao == idIntervencao).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>

@@ -591,6 +591,7 @@
     <Content Include="Views\EstadoCivil\Details.aspx" />
     <Content Include="Views\EstadoCivil\Edit.aspx" />
     <Content Include="Views\EstadoCivil\Index.aspx" />
+    <Content Include="Views\IntervencaoConsulta\Edit.aspx" />
     <Content Include="Views\MedicamentoNaoPrescrito\Edit.aspx" />
     <Content Include="Views\MedicamentoPrescrito\Edit.aspx" />
     <Content Include="Views\MedicamentosAnteriores\Edit.aspx" />
@@ -599,6 +600,7 @@
     <Content Include="Views\Naturalidade\Details.aspx" />
     <Content Include="Views\Naturalidade\Edit.aspx" />
     <Content Include="Views\Naturalidade\Index.aspx" />
+    <Content Include="Views\QueixaMedicamento\Edit.aspx" />
     <Content Include="Views\Religiao\Create.aspx" />
     <Content Include="Views\Religiao\Delete.aspx" />
     <Content Include="Views\Religiao\Details.aspx" />

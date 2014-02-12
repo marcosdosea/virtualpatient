@@ -53,7 +53,8 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repQueixaMedicamento = new RepositorioGenerico<tb_queixa_medicamentos>();
-                tb_queixa_medicamentos _tb_queixa_medicamentos = repQueixaMedicamento.ObterEntidade(dP => dP.IdConsultaVariavel == queixaMedicamentoModel.IdConsultaVariavel);
+                tb_queixa_medicamentos _tb_queixa_medicamentos = repQueixaMedicamento.ObterEntidade(dP => dP.IdConsultaVariavel == queixaMedicamentoModel.IdConsultaVariavel
+                    && dP.IdQueixa == queixaMedicamentoModel.IdQueixaMedicamento && dP.IdMedicamento == queixaMedicamentoModel.IdMedicamento);
                 Atribuir(queixaMedicamentoModel, _tb_queixa_medicamentos);
 
                 repQueixaMedicamento.SaveChanges();
@@ -137,6 +138,19 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<QueixaMedicamentoModel> Obter(long idConsultaVariavel)
         {
             return GetQuery().Where(QueixaMedicamentoModel => QueixaMedicamentoModel.IdConsultaVariavel == idConsultaVariavel).ToList();
+        }
+
+        /// <summary>
+        /// obtem queixa medocamento por consulta, queixa e medicamento
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        /// <param name="idQueixa"></param>
+        /// <param name="idMedicamento"></param>
+        /// <returns></returns>
+        public QueixaMedicamentoModel ObterPorConsultaQueixaMedicamento(long idConsultaVariavel, int idMedicamento, int idQueixa)
+        {
+            return GetQuery().Where(qmm => qmm.IdConsultaVariavel == idConsultaVariavel && qmm.IdQueixaMedicamento == idQueixa
+                && qmm.IdMedicamento == idMedicamento).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
