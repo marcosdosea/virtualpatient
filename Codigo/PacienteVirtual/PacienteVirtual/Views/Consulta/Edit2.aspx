@@ -21,15 +21,19 @@
         var abas2 = document.getElementById('abas2').value;
         if (abas2 == 1) {
             $(document).ready(function () {
-                $("#li1").addClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active");$("#tab1-1").removeClass("tab-pane"); $("#tab1-1").addClass("tab-pane active"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane");
+                $("#li1").addClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#tab1-1").removeClass("tab-pane"); $("#tab1-1").addClass("tab-pane active"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); 
             });
         } else if (abas2 == 2) {
             $(document).ready(function () {
-                $("#li1").removeClass("active"); $("#li2").addClass("active"); $("#li3").removeClass("active");$("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane"); $("#tab1-2").addClass("tab-pane active"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane");
+                $("#li1").removeClass("active"); $("#li2").addClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane"); $("#tab1-2").addClass("tab-pane active"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane");
             });
         } else if (abas2 == 3) {
             $(document).ready(function () {
-                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").addClass("active");$("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane"); $("#tab1-3").addClass("tab-pane active");
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").addClass("active"); $("#li4").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane"); $("#tab1-3").addClass("tab-pane active"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane");
+            });
+        } else if (abas2 == 4) {
+            $(document).ready(function () {
+                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").addClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane"); $("#tab1-4").addClass("tab-pane active");
             });
         }
     </script>
@@ -144,6 +148,8 @@
                         <li id="li2"><a href="#tab1-2" data-toggle="tab">
                             <%: Resources.Mensagem.intervencoes%></a></li>
                         <li id="li3"><a href="#tab1-3" data-toggle="tab">
+                            <%: Resources.Mensagem.carta%></a></li>
+                        <li id="li4"><a href="#tab1-4" data-toggle="tab">
                             <%: Resources.Mensagem.diario_pessoal_medicamentos%></a></li>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -163,12 +169,14 @@
                                 <% Html.RenderPartial("../IntervencaoConsulta/Create", Model.IntervencaoConsulta);%>
                                 <% Html.RenderPartial("../IntervencaoConsulta/Index", Model.ListaIntervencaoConsulta);%>
                             </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-3">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../Carta/Create", Model.Carta);%>
                                 <% Html.RenderPartial("../Carta/Index", Model.ListaCarta);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab1-3">
+                        <div class="tab-pane" id="tab1-4">
                             <div class="thumbnail">
                             <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
                             <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>

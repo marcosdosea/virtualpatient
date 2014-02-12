@@ -1384,6 +1384,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Horário/Observação.
+        /// </summary>
+        public static string horario_observacao {
+            get {
+                return ResourceManager.GetString("horario_observacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Identificação de PRM.
         /// </summary>
         public static string identificacao_prm {
