@@ -34,11 +34,35 @@ namespace PacienteVirtual.Controllers
                 listaDiarioPessoal.Add(diarioPessoal);
                 SessionController.ListaDiarioPessoal = null;
 
-                SessionController.Abas2 = 3;
+                SessionController.Abas2 = 4;
                 return RedirectToAction("Edit2", "Consulta");
             }
-            SessionController.Abas2 = 3;
+            SessionController.Abas2 = 4;
             return PartialView(diarioPessoal);
+        }
+
+        public ActionResult Edit(long idConsultaFixo, int idMedicamento)
+        {
+            DiarioPessoalModel diarioPessoal = GerenciadorDiarioPessoal.GetInstance().ObterPorMedicamento(idConsultaFixo, idMedicamento);
+            ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
+            SessionController.Abas2 = 4;
+            return View(diarioPessoal);
+        }
+
+        // POST: /Escolaridade/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(DiarioPessoalModel diarioPessoal)
+        {
+            if (ModelState.IsValid)
+            {
+                GerenciadorDiarioPessoal.GetInstance().Atualizar(diarioPessoal);
+                SessionController.ListaDiarioPessoal = null;
+                SessionController.Abas2 = 4;
+                return RedirectToAction("Edit2", "Consulta");
+            }
+            SessionController.Abas2 = 4;
+            return View(diarioPessoal);
         }
 
         //
@@ -49,7 +73,7 @@ namespace PacienteVirtual.Controllers
             gDiarioPessoal.Remover(idConsultaFixo, idMedicamento);
             SessionController.ListaDiarioPessoal = null;
 
-            SessionController.Abas2 = 3;
+            SessionController.Abas2 = 4;
             return RedirectToAction("Edit2", "Consulta");
         }
 

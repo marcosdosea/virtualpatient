@@ -1053,4 +1053,7 @@
   <data name="finalizar_correcao" xml:space="preserve">
     <value>Complete Correction</value>
   </data>
+  <data name="horario_observacao" xml:space="preserve">
+    <value>Hour/Note</value>
+  </data>
 </root>

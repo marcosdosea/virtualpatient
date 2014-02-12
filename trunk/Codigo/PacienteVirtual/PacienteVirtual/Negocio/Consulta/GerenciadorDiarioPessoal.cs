@@ -53,7 +53,7 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repDiarioPessoal = new RepositorioGenerico<tb_diario_pessoal>();
-                tb_diario_pessoal _tb_diario_pessoal = repDiarioPessoal.ObterEntidade(dP => dP.IdConsultaFixo == DiarioPessoalModel.IdConsultaFixo);
+                tb_diario_pessoal _tb_diario_pessoal = repDiarioPessoal.ObterEntidade(dP => dP.IdConsultaFixo == DiarioPessoalModel.IdConsultaFixo && dP.IdMedicamento == DiarioPessoalModel.IdMedicamento);
                 Atribuir(DiarioPessoalModel, _tb_diario_pessoal);
 
                 repDiarioPessoal.SaveChanges();
@@ -125,7 +125,12 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<DiarioPessoalModel> Obter(long IdConsultaFixo)
         {
-            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Periodo);
+            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Horario).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Periodo);
+        }
+
+        public DiarioPessoalModel ObterPorMedicamento(long idConsultaFixo, int idMendicamento)
+        {
+            return GetQuery().Where(dp => dp.IdConsultaFixo == idConsultaFixo && dp.IdMedicamento == idMendicamento).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>

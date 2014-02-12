@@ -16,7 +16,7 @@
         <%: Html.HiddenFor(model => model.IdQueixaMedicamento) %>
         <%: Html.HiddenFor(model => model.IdMedicamento) %>
         <div class="row-fluid">
-        <div class="span6">
+        <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Queixa) %>
             </div>
@@ -24,12 +24,12 @@
                 <%: Html.TextBoxFor(model => model.Queixa, new { id = "textbox" })%>
             </div>
         </div>
-        <div class="span6">
+        <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.NomeMedicamento) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.NomeMedicamento, new { id = "textbox" })%>
+                <%: Html.TextBoxFor(model => model.NomeMedicamento, new { id = "textbox2" })%>
             </div>
         </div>
     </div>
@@ -77,6 +77,9 @@
                 <%: Html.ValidationMessageFor(model => model.Efetivo) %>
             </div>
         </div>
+        </div>
+        <br />
+        <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Seguro) %>
@@ -88,7 +91,7 @@
                 <%: Html.ValidationMessageFor(model => model.Seguro) %>
             </div>
         </div>
-        <div class="span3">
+        <div class="span2">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Cumprimento) %>
             </div>
@@ -99,19 +102,8 @@
                 <%: Html.ValidationMessageFor(model => model.Cumprimento) %>
             </div>
         </div>
-    </div>
-    <p></p>
-    <div class="row-fluid">
-        <div class="span6">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.SuspeitaPRM) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.DropDownList("IdSuspeitaPrm", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdSuspeitaPRM) %>
-            </div>
-        </div>
-        <div class="span3">
+        <div class="row-fluid">
+            <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Resolvido) %>
             </div>
@@ -122,10 +114,23 @@
                 <%: Html.ValidationMessageFor(model => model.Resolvido) %>
             </div>
         </div>
+        </div>
     </div>
     <p></p>
     <div class="row-fluid">
-        <div class="span6">
+        <div class="span3">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.SuspeitaPRM) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdSuspeitaPrm", Resources.Mensagem.selecione)%>
+                <%: Html.ValidationMessageFor(model => model.IdSuspeitaPRM) %>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="row-fluid">
+        <div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.DescricaoAcaoQueixa1) %>
             </div>
@@ -156,6 +161,7 @@
 
 <script type="text/javascript">
     document.getElementById('textbox').disabled = true;
+    document.getElementById('textbox2').disabled = true;
 </script>
 
 </asp:Content>

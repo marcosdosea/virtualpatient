@@ -5,13 +5,13 @@
             <%: Resources.Mensagem.periodo %>
         </th>
         <th>
-            <%: Resources.Mensagem.horario %>
-        </th>
-        <th>
-            <%: Resources.Mensagem.quantidade %>
+            <%: Resources.Mensagem.horario_observacao %>
         </th>
         <th>
             <%: Resources.Mensagem.medicamento %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.quantidade %>
         </th>
         <th>
             <%: Resources.Mensagem.tipo_bebida %>
@@ -28,10 +28,10 @@
             <%: Html.DisplayFor(modelItem => item.Horario) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Quantidade) %>
+            <%: Html.DisplayFor(modelItem => item.Medicamento) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Medicamento) %>
+            <%: Html.DisplayFor(modelItem => item.Quantidade) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.NomeBebida) %>
@@ -39,6 +39,7 @@
         <td>
         <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
            { %>
+            <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "DiarioPessoal", new { idConsultaFixo = item.IdConsultaFixo, idMedicamento = item.IdMedicamento }, null)%>|
             <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiarioPessoal", new { idConsultaFixo = item.IdConsultaFixo, idMedicamento = item.IdMedicamento }, null)%>
         <% } %>
         </td>
