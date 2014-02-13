@@ -76,7 +76,8 @@ namespace PacienteVirtual.Controllers
             if (SessionController.DadosTurmaPessoa.IdRole != Global.Tutor &&  consultaVariavelModel.IdEstadoConsulta == Global.AguardandoPreenchimento)
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EmPreenchimento;
-            } 
+            }
+            SessionController.EmCorrecao = false;
             if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor && (consultaVariavelModel.IdEstadoConsulta == Global.EmCorrecaoPeloTutor || consultaVariavelModel.IdEstadoConsulta == Global.EnviadoParaCorrecao))
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EmCorrecaoPeloTutor;
@@ -171,6 +172,11 @@ namespace PacienteVirtual.Controllers
             SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
             
             SessionController.PrimeiraTelaConsulta = true;
+            if (SessionController.EmCorrecao)
+            {
+                TryValidateModel(SessionController.DemograficosAntropometricos);
+                //TryValidateModel(SessionController.ConsultaVariavel.
+            }
 
             return View(consultaModel);
         }

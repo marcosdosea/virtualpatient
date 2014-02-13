@@ -24,7 +24,6 @@ namespace PacienteVirtual.Validator
                 var model = (RazaoEncontroModel) validationContext.ObjectInstance;
                 if (model.IdRazaoEncontro != 1) // aqui iria comparar com o gabarito
                 {
-                    return new ValidationResult("Resposta incorreta. No gabarito consta o valor ....", new List<string>(){"IdRazaoEncontro"});
                 }
                 return ValidationResult.Success;
 
