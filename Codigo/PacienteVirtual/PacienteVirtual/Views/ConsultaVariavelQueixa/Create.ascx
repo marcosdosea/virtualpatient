@@ -3,7 +3,7 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <legend><%: Resources.Mensagem.revisao_sistemas %></legend>
+    <legend><%: Resources.Mensagem.classificacao_de_prm %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <% using (Html.BeginForm("Create", "ConsultaVariavelQueixa", FormMethod.Post, null))
        { %>

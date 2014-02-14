@@ -11,7 +11,7 @@
 <fieldset>
     <legend><%: Resources.Mensagem.queixa %></legend>
 
-    <div class="display-label"><%: Resources.Mensagem.alternativas_intervencao %></div>
+    <div class="display-label"><%: Resources.Mensagem.problema_saude %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.DescricaoQueixa) %>
     </div>

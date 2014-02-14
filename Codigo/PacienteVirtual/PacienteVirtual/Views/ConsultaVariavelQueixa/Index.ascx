@@ -12,7 +12,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                <%: Resources.Mensagem.alternativas_intervencao %>
+                <%: Resources.Mensagem.problema_saude %>
             </th>
             <% if (Session["_PrimeiraTelaConsulta"].Equals(false)) { %>
             <th>
@@ -54,7 +54,11 @@
                 <%: Html.DisplayFor(modelItem => item.Desde)%>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Tipo)%>
+                <% if (item.Tipo == "S") { %>
+                   <%: Html.Label("PRM") %>    
+                <% }else{ %>
+                   <%: Html.Label(Resources.Mensagem.doenca_agrave) %>
+                <% } %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Prioridade)%>

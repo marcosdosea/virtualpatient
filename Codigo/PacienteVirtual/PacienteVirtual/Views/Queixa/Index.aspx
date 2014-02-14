@@ -22,7 +22,7 @@
         
         /* Adding "CompanyName" column: */
         columns.Add(o => o.DescricaoQueixa)
-                .Titled(Resources.Mensagem.alternativas_intervencao)
+                .Titled(Resources.Mensagem.problema_saude)
                 .ThenSortByDescending(o => o.DescricaoQueixa)
                 .Filterable(true);
 
