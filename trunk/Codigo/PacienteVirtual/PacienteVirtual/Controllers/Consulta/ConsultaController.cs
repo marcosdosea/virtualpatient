@@ -174,7 +174,7 @@ namespace PacienteVirtual.Controllers
             SessionController.PrimeiraTelaConsulta = true;
             if (SessionController.EmCorrecao)
             {
-                // Obter gabarito
+                // Obter gabarito nesse ponto se o gabarito da sessão for referente a um relato diferente do que será corrigido.
                 DemograficosAntropometricosModel demograficoGabarito = new DemograficosAntropometricosModel() { Nome = "Marcos", MedicosAtendem = "Sr. José" };
                 GerenciadorDemograficosAntropometricos.GetInstance().CorrigirRespostas(SessionController.DemograficosAntropometricos, demograficoGabarito, ModelState);
                 TryValidateModel(SessionController.DemograficosAntropometricos);
