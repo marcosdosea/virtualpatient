@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -115,6 +116,25 @@ namespace PacienteVirtual.Negocio
                 throw new DadosException("DemograficosAntropometricos", e.Message, e);
             }
         }
+
+        /// <summary>
+        /// Realiza a correção de acordo com as respostas do gabarito
+        /// </summary>
+        /// <param name="demoAntrop"></param>
+        /// <param name="demoAntropGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostas(DemograficosAntropometricosModel demoAntrop, DemograficosAntropometricosModel demoAntropGabarito, ModelStateDictionary modelState)
+        {
+         
+            if (!demoAntrop.Nome.Equals(demoAntropGabarito.Nome)) {
+                modelState.AddModelError("Nome", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Nome + ".");
+            }
+            if (!demoAntrop.MedicosAtendem.Equals(demoAntropGabarito.MedicosAtendem))
+            {
+                modelState.AddModelError("MedicosAtendem", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.MedicosAtendem + ".");
+            }
+        }
+
 
         /// <summary>
         /// Consulta para retornar dados da entidade
