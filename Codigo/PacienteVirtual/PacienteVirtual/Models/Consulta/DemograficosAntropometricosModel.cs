@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Resources;
-using PacienteVirtual.Validator;
 
 namespace PacienteVirtual.Models
 {
@@ -12,13 +11,11 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nome", ResourceType = typeof(Mensagem))]
-        //[GabaritoDemograficoAntropometrico]
         public string Nome { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [RegularExpression("M|F", ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_MouF")]
         [Display(Name = "genero", ResourceType = typeof(Mensagem))]
-        //[GabaritoDemograficoAntropometrico]
         public string Genero { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

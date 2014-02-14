@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Resources;
-using PacienteVirtual.Validator;
 
 namespace PacienteVirtual.Models
 {
@@ -9,7 +8,6 @@ namespace PacienteVirtual.Models
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        [GabaritoRazaoEncontro]
         public int IdRazaoEncontro { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

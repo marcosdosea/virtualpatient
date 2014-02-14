@@ -174,8 +174,10 @@ namespace PacienteVirtual.Controllers
             SessionController.PrimeiraTelaConsulta = true;
             if (SessionController.EmCorrecao)
             {
+                // Obter gabarito
+                DemograficosAntropometricosModel demograficoGabarito = new DemograficosAntropometricosModel() { Nome = "Marcos", MedicosAtendem = "Sr. José" };
+                GerenciadorDemograficosAntropometricos.GetInstance().CorrigirRespostas(SessionController.DemograficosAntropometricos, demograficoGabarito, ModelState);
                 TryValidateModel(SessionController.DemograficosAntropometricos);
-                //TryValidateModel(SessionController.ConsultaVariavel.
             }
 
             return View(consultaModel);
