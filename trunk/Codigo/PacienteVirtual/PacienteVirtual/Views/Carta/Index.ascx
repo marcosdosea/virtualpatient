@@ -24,6 +24,9 @@
                 <%: Resources.Mensagem.especialidade %>
             </th>
             <th>
+                <%: Resources.Mensagem.referencia_utilizadas %>
+            </th>
+            <th>
                 <%: Resources.Mensagem.opcoes %>
             </th>
         </tr>
@@ -50,6 +53,9 @@
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Especialidade) %>
+            </td>
+            <td>
+                <%: Html.DisplayFor(modelItem => item.Referências) %>
             </td>
             <td>
                 <%: Html.ActionLink(Resources.Mensagem.remover,"Delete", "Carta", new { idConsultaVariavel = item.IdConsultaVariavel, idCarta = item.IdCarta }, null) %>
