@@ -166,6 +166,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém o gabarito da consultaVariavel
+        /// </summary>
+        /// <returns></returns>
+        public ConsultaVariavelModel ObterConsultaGabarito(int idPaciente, int ordemCronologica)
+        {
+            return GetQuery().Where(cv => cv.IdPaciente == idPaciente && cv.OrdemCronologica == ordemCronologica && 
+                cv.IdEstadoConsulta == Global.GabaritoDisponivel).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
         /// Obtém consultaVariavel anterior do paciente
         /// </summary>
         /// <returns></returns>

@@ -29,10 +29,6 @@ namespace PacienteVirtual.Controllers
             Global.ZeraSessaoConsulta();
             SessionController.TutorVisualizaConsultaPeloCorrigirConsultas = false;
             
-            if (SessionController.DadosTurmaPessoa == null || SessionController.Pessoa == null)
-            {
-                return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(0, 0));
-            }
             if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor)
             {
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
@@ -44,12 +40,6 @@ namespace PacienteVirtual.Controllers
         public ActionResult Index(int IdPaciente = -1)
         {
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos().ToList(), "IdPaciente", "NomePaciente");
-
-            if (SessionController.DadosTurmaPessoa == null || SessionController.Pessoa == null)
-            {
-                ViewBag.Codigo = IdPaciente;
-                return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(0, 0));
-            }
 
             if (IdPaciente != -1)
             {
@@ -73,6 +63,7 @@ namespace PacienteVirtual.Controllers
         {
             long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            
             if (SessionController.DadosTurmaPessoa.IdRole != Global.Tutor &&  consultaVariavelModel.IdEstadoConsulta == Global.AguardandoPreenchimento)
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EmPreenchimento;
@@ -83,50 +74,11 @@ namespace PacienteVirtual.Controllers
                 consultaVariavelModel.IdEstadoConsulta = Global.EmCorrecaoPeloTutor;
                 SessionController.EmCorrecao = true;
             }
+            
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
-            ConsultaModel consultaModel = new ConsultaModel();
-            consultaModel.ConsultaVariavel = consultaVariavelModel;
-            consultaModel.Paciente = SessionController.Paciente;
-            consultaModel.RelatoClinico = SessionController.RelatoClinico;
-            consultaModel.ConsultaFixo = SessionController.ConsultaFixo;
-
-            // aponta para consulta 1
-            if (consultaVariavelModel.OrdemCronologica != 1)
-            {
-                ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
-                    , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
-                SessionController.Historia = GerenciadorHistoria.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
-                SessionController.DemograficosAntropometricos = GerenciadorDemograficosAntropometricos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
-                SessionController.ExperienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
-            }
-
-            consultaModel.Historia = SessionController.Historia;
-            consultaModel.DemograficoAntropometrico = SessionController.DemograficosAntropometricos;
-            consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
-
-            //consultaModel.ConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaFixo, SessionController.IdRelato);
-            consultaModel.EstiloVida = SessionController.EstiloVida;
-            consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.MedicamentoPrescrito = new MedicamentoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.MedicamentosAnteriores = new MedicamentosAnterioresModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.ConsultaParametro = new ConsultaParametroModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.ExamesFisicos = SessionController.ExamesFisicos;
-            consultaModel.ListaMedicamentoPrescrito = SessionController.ListaMedicamentosPrescritos;
-            consultaModel.ListaMedicamentosAnteriores = SessionController.ListaMedicamentosAnteriores;
-            consultaModel.ListaMedicamentoNaoPrescrito = SessionController.ListaMedicamentoNaoPrescrito;
-            consultaModel.ListaConsultaParametro = SessionController.ListaConsultaParametro;
-
-            // create consulta veriavel queixa
-            consultaModel.ConsultaVariavelQueixa = new ConsultaVariavelQueixaModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
-            consultaModel.IdSistema = SessionController.Sistema;
-
-            // alergia
-            consultaModel.AlergiaExamesFisicos = new AlergiaExamesFisicosModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel }; ;
-            consultaModel.ListaAlergia = SessionController.ListaAlergia;
-
+            ConsultaModel consultaModel = ConsultaSelecionada(consultaVariavelModel, true);
 
             // Consulta Queixa
             ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
@@ -164,7 +116,6 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdRespostaComportamento = new SelectList(SessionController.ObterRespostas(PERGUNTA_COMPORTAMENTO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaComportamento);
             ViewBag.PerguntaIncorporadoPlano = SessionController.ObterPergunta(PERGUNTA_INCORPORADO_PLANO).Pergunta;
             ViewBag.IdRespostaIncorporadoPlano = new SelectList(SessionController.ObterRespostas(PERGUNTA_INCORPORADO_PLANO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaIncorporadoPlano);
-
             ViewBag.Abas1 = SessionController.Abas1;
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
@@ -174,10 +125,7 @@ namespace PacienteVirtual.Controllers
             SessionController.PrimeiraTelaConsulta = true;
             if (SessionController.EmCorrecao)
             {
-                // Obter gabarito nesse ponto se o gabarito da sessão for referente a um relato diferente do que será corrigido.
-                DemograficosAntropometricosModel demograficoGabarito = new DemograficosAntropometricosModel() { Nome = "Marcos", MedicosAtendem = "Sr. José" };
-                //GerenciadorDemograficosAntropometricos.GetInstance().CorrigirRespostas(SessionController.DemograficosAntropometricos, demograficoGabarito, ModelState);
-                //TryValidateModel(SessionController.DemograficosAntropometricos);
+                //corrigir(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica);
             }
 
             return View(consultaModel);
@@ -191,57 +139,24 @@ namespace PacienteVirtual.Controllers
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
-            ConsultaModel consultaModel = new ConsultaModel();
-            consultaModel.ConsultaVariavel = consultaVariavelModel;
-            consultaModel.Paciente = SessionController.Paciente;
-            consultaModel.RelatoClinico = SessionController.RelatoClinico;
+            ConsultaModel consultaModel = ConsultaSelecionada(consultaVariavelModel, false);
 
-            // aponta para consulta 1 
-            if (consultaVariavelModel.OrdemCronologica != 1)
-            {
-                ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
-                    , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
-                SessionController.ListaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
-            }
-
-            // diario pessoal
-            consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
-            consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
-
-            consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
-            
-            consultaModel.QueixaMedicamento = new QueixaMedicamentoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.ListaQueixaMedicamento = SessionController.ListaQueixaMedicamento;
-
-            consultaModel.IntervencaoConsulta = new IntervencaoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.ListaIntervencaoConsulta = SessionController.ListaIntervencaoConsulta;
-
-            consultaModel.Carta = new CartaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.ListaCarta = SessionController.ListaCarta;
-
-            
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
             ViewBag.IdSuspeitaPrm = new SelectList(GerenciadorSuspeitaPrm.GetInstance().ObterTodos().ToList(), "IdSuspeitaPrm", "Descricao");
             ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
-            
             ViewBag.IdAcaoQueixa1 = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos().ToList(), "IdAcaoQueixa", "DescricaoAcao");
             ViewBag.IdAcaoQueixa2 = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos().ToList(), "IdAcaoQueixa", "DescricaoAcao");
-            
             ViewBag.IdQueixaMedicamento = new SelectList(GerenciadorConsultaVariavelQueixa.GetInstance().ObterPorConsultaVariavelTodosSuspeitaPRM(SessionController.ConsultaVariavel.IdConsultaVariavel).ToList(), "IdQueixa", "DescricaoQueixa");
-
-            //Demais Consultas
             ViewBag.IdGrupoIntervencao = new SelectList(GerenciadorGrupoIntervencao.GetInstance().ObterTodos().ToList(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", SessionController.IdGrupoIntervencao);
             ViewBag.IdIntervencao = new SelectList(GerenciadorIntervencao.GetInstance().ObterPorGrupoIntervencao(SessionController.IdGrupoIntervencao), "IdIntervencao", "DescricaoIntervencao");
-
             ViewBag.IdCarta = new SelectList(GerenciadorCarta.GetInstance().ObterTodos(), "IdCarta", "NomePaciente");
             ViewBag.IdEspecialidade = new SelectList(GerenciadorEspecialidade.GetInstance().ObterTodos(), "IdEspecialidade", "Especialidade");
-
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
             ViewBag.EscondeLinks = true;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
+            
             SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
-
             SessionController.PrimeiraTelaConsulta = false;
             
             return View(consultaModel);
@@ -261,6 +176,76 @@ namespace PacienteVirtual.Controllers
             }
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             return RedirectToAction("Index", "Consulta");
+        }
+
+        public ConsultaModel ConsultaSelecionada(ConsultaVariavelModel consultaVariavelModel, bool primeiraTela)
+        {
+            ConsultaModel consultaModel = new ConsultaModel();
+            consultaModel.ConsultaVariavel = consultaVariavelModel;
+            consultaModel.Paciente = SessionController.Paciente;
+            consultaModel.RelatoClinico = SessionController.RelatoClinico;
+            consultaModel.ConsultaFixo = SessionController.ConsultaFixo;
+
+            // aponta para consulta 1
+            if (consultaVariavelModel.OrdemCronologica != 1)
+            {
+                ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
+                    , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
+                if (primeiraTela)
+                {
+                    SessionController.Historia = GerenciadorHistoria.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
+                    SessionController.DemograficosAntropometricos = GerenciadorDemograficosAntropometricos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
+                    SessionController.ExperienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
+                }
+                else
+                {
+                    SessionController.ListaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
+                }
+            }
+
+            if (primeiraTela)
+            {
+                consultaModel.Historia = SessionController.Historia;
+                consultaModel.DemograficoAntropometrico = SessionController.DemograficosAntropometricos;
+                consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
+                consultaModel.EstiloVida = SessionController.EstiloVida;
+                consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+                consultaModel.MedicamentoPrescrito = new MedicamentoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+                consultaModel.MedicamentosAnteriores = new MedicamentosAnterioresModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+                consultaModel.ConsultaParametro = new ConsultaParametroModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+                consultaModel.ExamesFisicos = SessionController.ExamesFisicos;
+                consultaModel.ListaMedicamentoPrescrito = SessionController.ListaMedicamentosPrescritos;
+                consultaModel.ListaMedicamentosAnteriores = SessionController.ListaMedicamentosAnteriores;
+                consultaModel.ListaMedicamentoNaoPrescrito = SessionController.ListaMedicamentoNaoPrescrito;
+                consultaModel.ListaConsultaParametro = SessionController.ListaConsultaParametro;
+                consultaModel.ConsultaVariavelQueixa = new ConsultaVariavelQueixaModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+                consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
+                consultaModel.IdSistema = SessionController.Sistema;
+                consultaModel.AlergiaExamesFisicos = new AlergiaExamesFisicosModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel }; ;
+                consultaModel.ListaAlergia = SessionController.ListaAlergia;
+            }
+            else
+            {
+                consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
+                consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
+                consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
+                consultaModel.QueixaMedicamento = new QueixaMedicamentoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
+                consultaModel.ListaQueixaMedicamento = SessionController.ListaQueixaMedicamento;
+                consultaModel.IntervencaoConsulta = new IntervencaoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
+                consultaModel.ListaIntervencaoConsulta = SessionController.ListaIntervencaoConsulta;
+                consultaModel.Carta = new CartaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
+                consultaModel.ListaCarta = SessionController.ListaCarta;
+            }
+            return consultaModel;
+        }
+
+        public void corrigir(int idPaciente, int ordemCronologica)
+        {
+            ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
+            // Obter gabarito nesse ponto se o gabarito da sessão for referente a um relato diferente do que será corrigido.
+            DemograficosAntropometricosModel demograficoGabarito = GerenciadorDemograficosAntropometricos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
+            GerenciadorDemograficosAntropometricos.GetInstance().CorrigirRespostas(SessionController.DemograficosAntropometricos, demograficoGabarito, ModelState);
+            TryValidateModel(SessionController.DemograficosAntropometricos);
         }
 
     }
