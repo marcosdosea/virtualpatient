@@ -133,6 +133,58 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("MedicosAtendem", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.MedicosAtendem + ".");
             }
+            if (!demoAntrop.Genero.Equals(demoAntropGabarito.Genero))
+            {
+                modelState.AddModelError("Genero", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Genero + ".");
+            }
+            if (!demoAntrop.DataNascimento.Equals(demoAntropGabarito.DataNascimento))
+            {
+                modelState.AddModelError("DataNascimento", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.DataNascimento + ".");
+            }
+            if (!demoAntrop.MoradiaFamilia.Equals(demoAntropGabarito.MoradiaFamilia))
+            {
+                modelState.AddModelError("MoradiaFamilia", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.MoradiaFamilia + ".");
+            }
+            if (!demoAntrop.OndeAdquireMedicamentos.Equals(demoAntropGabarito.OndeAdquireMedicamentos))
+            {
+                modelState.AddModelError("OndeAdquiremMedicamento", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.OndeAdquireMedicamentos + ".");
+            }
+            /*if (!demoAntrop.RG.Equals(demoAntropGabarito.RG))
+            {
+                modelState.AddModelError("RG", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.RG + ".");
+            }
+            if (!demoAntrop.Procedencia.Equals(demoAntropGabarito.Procedencia))
+            {
+                modelState.AddModelError("Procedencia", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Procedencia + ".");
+            }
+            if (!demoAntrop.Endereco.Equals(demoAntropGabarito.Endereco))
+            {
+                modelState.AddModelError("Endereco", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Endereco + ".");
+            }*/
+            if (!demoAntrop.IdEscolaridade.Equals(demoAntropGabarito.IdEscolaridade))
+            {
+                modelState.AddModelError("IdEscolaridade", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.EscolaridadeNivel + ".");
+            }               
+            if (!demoAntrop.IdOcupacao.Equals(demoAntropGabarito.IdOcupacao))
+            {
+                modelState.AddModelError("IdOcupacao", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.OcupacaoDescricao + ".");
+            }
+            if (!demoAntrop.IdPlanoSaude.Equals(demoAntropGabarito.IdPlanoSaude))
+            {
+                modelState.AddModelError("IdPlanoSaude", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.PlanoSaudeNome + ".");
+            }
+            if (!demoAntrop.IdEstadoCivil.Equals(demoAntropGabarito.IdEstadoCivil))
+            {
+                modelState.AddModelError("IdEstadoCivil", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.EstadoCivil + ".");
+            }
+            if (!demoAntrop.IdNaturalidade.Equals(demoAntropGabarito.IdNaturalidade))
+            {
+                modelState.AddModelError("IdNaturalidade", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Naturalidade + ".");
+            }
+            if (!demoAntrop.IdReligiao.Equals(demoAntropGabarito.IdReligiao))
+            {
+                modelState.AddModelError("IdReligiao", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Religiao + ".");
+            }
         }
 
 
@@ -163,7 +215,14 @@ namespace PacienteVirtual.Negocio
                             IdPlanoSaude = demoAntrop.IdPlanoSaude,
                             IdEstadoCivil = demoAntrop.IdEstadoCivil,
                             IdNaturalidade = demoAntrop.IdNaturalidade,
-                            IdReligiao = demoAntrop.IdReligiao
+                            IdReligiao = demoAntrop.IdReligiao,
+
+                            EscolaridadeNivel = demoAntrop.tb_escolaridade.Nivel,
+                            OcupacaoDescricao = demoAntrop.tb_ocupacao.Descricao,
+                            PlanoSaudeNome = demoAntrop.tb_plano_saude.Nome,
+                            EstadoCivil = demoAntrop.tb_estado_civil.Descricao,
+                            Naturalidade = demoAntrop.tb_naturalidade.Descricao,
+                            Religiao = demoAntrop.tb_religiao.Descricao
                         };
             return query;
         }
