@@ -125,7 +125,7 @@ namespace PacienteVirtual.Controllers
             SessionController.PrimeiraTelaConsulta = true;
             if (SessionController.EmCorrecao)
             {
-                //corrigir(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica);
+                corrigir(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica);
             }
 
             return View(consultaModel);
@@ -241,12 +241,32 @@ namespace PacienteVirtual.Controllers
 
         public void corrigir(int idPaciente, int ordemCronologica)
         {
+            // Gabarito da consulta
             ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
-            // Obter gabarito nesse ponto se o gabarito da sessão for referente a um relato diferente do que será corrigido.
+            // Demograficos Antropomedicos
             DemograficosAntropometricosModel demograficoGabarito = GerenciadorDemograficosAntropometricos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorDemograficosAntropometricos.GetInstance().CorrigirRespostas(SessionController.DemograficosAntropometricos, demograficoGabarito, ModelState);
             TryValidateModel(SessionController.DemograficosAntropometricos);
+            // Exames Físicos
+            ExamesFisicosModel examesFisicosGabarito = GerenciadorExamesFisicos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorExamesFisicos.GetInstance().CorrigirRespostas(SessionController.ExamesFisicos, examesFisicosGabarito, ModelState);
+            TryValidateModel(SessionController.ExamesFisicos);
+            // Estilo de Vida
+            EstiloVidaModel estiloVidaGabarito = GerenciadorEstiloVida.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorEstiloVida.GetInstance().CorrigirRespostas(SessionController.EstiloVida, estiloVidaGabarito, ModelState);
+            TryValidateModel(SessionController.EstiloVida);
+            // Historia
+            HistoriaModel historiaGabarito = GerenciadorHistoria.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
+            GerenciadorHistoria.GetInstance().CorrigirRespostas(SessionController.Historia, historiaGabarito, ModelState);
+            TryValidateModel(SessionController.Historia);
+            // Razão do encontro
+            GerenciadorConsultaVariavel.GetInstance().CorrigirRespostasRazaoEncontro(SessionController.ConsultaVariavel, gabaritoConsultaSelecionada, ModelState);
+            TryValidateModel(SessionController.ConsultaVariavel);
+            // Experiencia com Medicamentos
+            ExperienciaMedicamentosModel experienciaMedicamentosGabarito = GerenciadorExperienciaMedicamentos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
+            GerenciadorExperienciaMedicamentos.GetInstance().CorrigirRespostas(SessionController.ExperienciaMedicamentos, experienciaMedicamentosGabarito, ModelState);
+            TryValidateModel(SessionController.ExperienciaMedicamentos);
         }
-
+        
     }
 }

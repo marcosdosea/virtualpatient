@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -19,6 +20,15 @@ namespace PacienteVirtual.Negocio
                 gConsultaFixo = new GerenciadorConsultaVariavel();
             }
             return gConsultaFixo;
+        }
+
+        public void CorrigirRespostasRazaoEncontro(ConsultaVariavelModel consultaVariavel, ConsultaVariavelModel consultaVariavelGabarito, ModelStateDictionary modelState)
+        {
+            if (consultaVariavel.IdRazaoEncontro != consultaVariavelGabarito.IdRazaoEncontro)
+            {
+                modelState.AddModelError("IdRazaoEncontro", "Divergência com o gabarito. A resposta do gabarito é " + consultaVariavelGabarito.DescricaoRazao + ".");
+            }
+            
         }
 
         /// <summary>

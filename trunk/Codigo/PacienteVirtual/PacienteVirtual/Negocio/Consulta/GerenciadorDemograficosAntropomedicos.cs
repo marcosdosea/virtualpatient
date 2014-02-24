@@ -129,9 +129,19 @@ namespace PacienteVirtual.Negocio
             if (!demoAntrop.Nome.Equals(demoAntropGabarito.Nome)) {
                 modelState.AddModelError("Nome", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Nome + ".");
             }
-            if (!demoAntrop.MedicosAtendem.Equals(demoAntropGabarito.MedicosAtendem))
+            if (demoAntrop.MedicosAtendem != null)
             {
-                modelState.AddModelError("MedicosAtendem", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.MedicosAtendem + ".");
+                if (!demoAntrop.MedicosAtendem.Equals(demoAntropGabarito.MedicosAtendem))
+                {
+                    modelState.AddModelError("MedicosAtendem", "Divergência com o gabarito. A resposta do gabarito é " + (demoAntropGabarito.MedicosAtendem == null ? "Esse campo deve permanecer vazio" : demoAntropGabarito.MedicosAtendem) + ".");
+                }
+            }
+            else
+            {
+                if (demoAntropGabarito.MedicosAtendem != null)
+                {
+                    modelState.AddModelError("MedicosAtendem", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.MedicosAtendem + ".");
+                }
             }
             if (!demoAntrop.Genero.Equals(demoAntropGabarito.Genero))
             {
@@ -141,26 +151,72 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("DataNascimento", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.DataNascimento + ".");
             }
-            if (!demoAntrop.MoradiaFamilia.Equals(demoAntropGabarito.MoradiaFamilia))
+            if (demoAntrop.MoradiaFamilia != null)
             {
-                modelState.AddModelError("MoradiaFamilia", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.MoradiaFamilia + ".");
+                if (!demoAntrop.MoradiaFamilia.Equals(demoAntropGabarito.MoradiaFamilia))
+                {
+                    modelState.AddModelError("MoradiaFamilia", "Divergência com o gabarito. A resposta do gabarito é " + (demoAntropGabarito.MoradiaFamilia == null ? "Esse campo deve permanecer vazio" : demoAntropGabarito.MoradiaFamilia) + ".");
+                }
             }
-            if (!demoAntrop.OndeAdquireMedicamentos.Equals(demoAntropGabarito.OndeAdquireMedicamentos))
+            else
             {
-                modelState.AddModelError("OndeAdquiremMedicamento", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.OndeAdquireMedicamentos + ".");
+                if (demoAntropGabarito.MoradiaFamilia != null)
+                {
+                    modelState.AddModelError("MoradiaFamilia", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.MoradiaFamilia + ".");
+                }
             }
-            /*if (!demoAntrop.RG.Equals(demoAntropGabarito.RG))
+            if (demoAntrop.OndeAdquireMedicamentos != null)
             {
-                modelState.AddModelError("RG", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.RG + ".");
+                if (!demoAntrop.OndeAdquireMedicamentos.Equals(demoAntropGabarito.OndeAdquireMedicamentos))
+                {
+                    modelState.AddModelError("OndeAdquireMedicamentos", "Divergência com o gabarito. A resposta do gabarito é " + (demoAntropGabarito.OndeAdquireMedicamentos == null ? "Esse campo deve permanecer vazio" : demoAntropGabarito.OndeAdquireMedicamentos) + ".");
+                }
             }
-            if (!demoAntrop.Procedencia.Equals(demoAntropGabarito.Procedencia))
+            else
             {
-                modelState.AddModelError("Procedencia", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Procedencia + ".");
+                if (demoAntropGabarito.OndeAdquireMedicamentos != null)
+                {
+                    modelState.AddModelError("OndeAdquireMedicamentos", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.OndeAdquireMedicamentos + ".");
+                }
             }
-            if (!demoAntrop.Endereco.Equals(demoAntropGabarito.Endereco))
+            if (demoAntrop.RG != null) {
+                if (!demoAntrop.RG.Equals(demoAntropGabarito.RG)) {
+                    modelState.AddModelError("RG", "Divergência com o gabarito. A resposta do gabarito é " + (demoAntropGabarito.RG == null? "Esse campo deve permanecer vazio" : demoAntropGabarito.RG) + ".");
+                }
+            }
+            else {
+                if (demoAntropGabarito.RG != null) {
+                    modelState.AddModelError("RG", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.RG + ".");
+                }
+            }
+            if (demoAntrop.Procedencia != null)
             {
-                modelState.AddModelError("Endereco", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Endereco + ".");
-            }*/
+                if (!demoAntrop.Procedencia.Equals(demoAntropGabarito.Procedencia))
+                {
+                    modelState.AddModelError("Procedencia", "Divergência com o gabarito. A resposta do gabarito é " + (demoAntropGabarito.Procedencia == null ? "Esse campo deve permanecer vazio" : demoAntropGabarito.Procedencia) + ".");
+                }
+            }
+            else
+            {
+                if (demoAntropGabarito.Procedencia != null)
+                {
+                    modelState.AddModelError("Procedencia", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Procedencia + ".");
+                }
+            }
+            if (demoAntrop.Endereco != null)
+            {
+                if (!demoAntrop.Endereco.Equals(demoAntropGabarito.Endereco))
+                {
+                    modelState.AddModelError("Endereco", "Divergência com o gabarito. A resposta do gabarito é " + (demoAntropGabarito.Endereco == null ? "Esse campo deve permanecer vazio" : demoAntropGabarito.Endereco) + ".");
+                }
+            }
+            else
+            {
+                if (demoAntropGabarito.Endereco != null)
+                {
+                    modelState.AddModelError("Endereco", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.Endereco + ".");
+                }
+            }
             if (!demoAntrop.IdEscolaridade.Equals(demoAntropGabarito.IdEscolaridade))
             {
                 modelState.AddModelError("IdEscolaridade", "Divergência com o gabarito. A resposta do gabarito é " + demoAntropGabarito.EscolaridadeNivel + ".");
