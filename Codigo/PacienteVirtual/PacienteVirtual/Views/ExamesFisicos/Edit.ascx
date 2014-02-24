@@ -32,7 +32,7 @@
         <div class="span2">
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Altura, new { @class = "textbox", style = "width:50px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Altura) %>
+                <%: Html.ValidationMessageFor(model => model.Altura, string.Empty, new { @class = "styleValidation" })%>
                 <%: Resources.Mensagem.m %>
             </div>
         </div>

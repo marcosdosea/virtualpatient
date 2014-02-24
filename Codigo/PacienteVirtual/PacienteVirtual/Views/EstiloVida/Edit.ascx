@@ -48,12 +48,14 @@
                         <div>
                         <%= Html.RadioButtonFor(model => model.TabacoUso, 4) %> &nbsp <%: Resources.Mensagem.nao_se_aplica %> 
                         </div>
+                        <%: Html.ValidationMessageFor(model => model.TabacoUso, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
                 <td>
                     <%: Resources.Mensagem.quanto_tempo_parou %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.TabacoParou, new { @class = "textbox", style = "width:150px;" })%>
+                        <%: Html.ValidationMessageFor(model => model.TabacoParou, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
             </tr>
@@ -65,6 +67,7 @@
                     <div class="editor-field">
                         <%: Html.RadioButtonFor(model => model.CafeConsumo, true) %>  <%: Resources.Mensagem.sim %>&nbsp &nbsp
                         <%: Html.RadioButtonFor(model => model.CafeConsumo, false) %>  <%: Resources.Mensagem.nao %>
+                        <%: Html.ValidationMessageFor(model => model.CafeConsumo, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
                 <td>
@@ -81,12 +84,14 @@
                         <div>
                         <%= Html.RadioButtonFor(model => model.CafeUso, 4) %> &nbsp <%: Resources.Mensagem.nao_se_aplica %> 
                         </div>
+                        <%: Html.ValidationMessageFor(model => model.CafeUso, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
                 <td>
                     <%: Resources.Mensagem.quanto_tempo_parou %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.CafeParou, new { @class = "textbox", style = "width:150px;" })%>
+                        <%: Html.ValidationMessageFor(model => model.CafeParou, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
             </tr>
@@ -98,6 +103,7 @@
                     <div class="editor-field">
                         <%: Html.RadioButtonFor(model => model.AlcoolConsumo, true) %>  <%: Resources.Mensagem.sim %>&nbsp &nbsp
                         <%: Html.RadioButtonFor(model => model.AlcoolConsumo, false) %>  <%: Resources.Mensagem.nao %>
+                        <%: Html.ValidationMessageFor(model => model.AlcoolConsumo, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
                 <td>
@@ -106,6 +112,7 @@
                     </div>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.AlcoolTipoBebida, new { @class = "textbox", style = "width:150px;" })%>
+                        <%: Html.ValidationMessageFor(model => model.AlcoolTipoBebida, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                     <div class="editor-field">
                         <div>
@@ -120,12 +127,14 @@
                         <div>
                         <%= Html.RadioButtonFor(model => model.AlcoolUso, 4) %> &nbsp <%: Resources.Mensagem.nao_se_aplica %> 
                         </div>
+                        <%: Html.ValidationMessageFor(model => model.AlcoolUso, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
                 <td>
                     <%: Resources.Mensagem.quanto_tempo_parou %>
                     <div class="editor-field">
                         <%: Html.TextBoxFor(model => model.AlcoolParou, new { @class = "textbox", style = "width:150px;" })%>
+                        <%: Html.ValidationMessageFor(model => model.AlcoolParou, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </td>
             </tr>

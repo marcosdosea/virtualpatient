@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -19,6 +20,18 @@ namespace PacienteVirtual.Negocio
                 gHistoria = new GerenciadorHistoria();
             }
             return gHistoria;
+        }
+
+        public void CorrigirRespostas(HistoriaModel historia, HistoriaModel historiaGabarito, ModelStateDictionary modelState)
+        {
+            if (!historia.HistoriaFamiliar.Equals(historiaGabarito.HistoriaFamiliar))
+            {
+                modelState.AddModelError("HistoriaFamiliar", "Divergência com o gabarito. A resposta do gabarito é " + historiaGabarito.HistoriaFamiliar + ".");
+            }
+            if (!historia.HistoriaMedicaPregressa.Equals(historiaGabarito.HistoriaMedicaPregressa))
+            {
+                modelState.AddModelError("HistoriaMedicaPregressa", "Divergência com o gabarito. A resposta do gabarito é " + historiaGabarito.HistoriaMedicaPregressa + ".");
+            }
         }
 
         /// <summary>

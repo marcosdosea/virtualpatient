@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -190,6 +191,40 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(ExamesFisicosModel => ExamesFisicosModel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
         }
+
+
+        public void CorrigirRespostas(ExamesFisicosModel examesFisicos, ExamesFisicosModel examesFisicosGabarito, ModelStateDictionary modelState)
+        {
+            if (examesFisicos.Altura != examesFisicosGabarito.Altura)
+            {
+                modelState.AddModelError("Altura", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.Altura + ".");
+            }
+            if (examesFisicos.Peso != examesFisicosGabarito.Peso)
+            {
+                modelState.AddModelError("Peso", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.Peso + ".");
+            }
+            if (examesFisicos.PressaoDiastolica != examesFisicosGabarito.PressaoDiastolica)
+            {
+                modelState.AddModelError("PressaoDiastolica", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.PressaoDiastolica + ".");
+            }
+            if (examesFisicos.PressaoSistolica != examesFisicosGabarito.PressaoSistolica)
+            {
+                modelState.AddModelError("PressaoSistolica", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.PressaoSistolica + ".");
+            }
+            if (examesFisicos.Glicemia != examesFisicosGabarito.Glicemia)
+            {
+                modelState.AddModelError("Glicemia", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.Glicemia + ".");
+            }
+            if (examesFisicos.IndiceMassaCorporea != examesFisicosGabarito.IndiceMassaCorporea)
+            {
+                modelState.AddModelError("IndiceMassaCorporea", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.IndiceMassaCorporea + ".");
+            }
+            if (examesFisicos.CircunferenciaAbdominal != examesFisicosGabarito.CircunferenciaAbdominal)
+            {
+                modelState.AddModelError("CircunferenciaAbdominal", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.CircunferenciaAbdominal + ".");
+            }
+        }
+
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -19,6 +20,54 @@ namespace PacienteVirtual.Negocio
                 gExpMedicamentos = new GerenciadorExperienciaMedicamentos();
             }
             return gExpMedicamentos;
+        }
+
+        public void CorrigirRespostas(ExperienciaMedicamentosModel experienciaMedicamentos, ExperienciaMedicamentosModel epGabarito, ModelStateDictionary modelState)
+        {
+            if (experienciaMedicamentos.IdRespostaEsperaTratamento != epGabarito.IdRespostaEsperaTratamento)
+            {
+                modelState.AddModelError("IdRespostaEsperaTratamento", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaEsperaTratamento).Resposta + ".");
+            }
+            if (experienciaMedicamentos.IdRespostaPreocupacoes != epGabarito.IdRespostaPreocupacoes)
+            {
+                modelState.AddModelError("IdRespostaPreocupacoes", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaPreocupacoes).Resposta + ".");
+            }
+            if (experienciaMedicamentos.IdRespostaGrauEntendimento != epGabarito.IdRespostaGrauEntendimento)
+            {
+                modelState.AddModelError("IdRespostaGrauEntendimento", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaGrauEntendimento).Resposta + ".");
+            }
+            if (experienciaMedicamentos.IdRespostaCultural != epGabarito.IdRespostaCultural)
+            {
+                modelState.AddModelError("IdRespostaCultural", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaCultural).Resposta + ".");
+            }
+            if (experienciaMedicamentos.IdRespostaComportamento != epGabarito.IdRespostaComportamento)
+            {
+                modelState.AddModelError("IdRespostaComportamento", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaComportamento).Resposta + ".");
+            }
+            if (experienciaMedicamentos.IdRespostaIncorporadoPlano != epGabarito.IdRespostaIncorporadoPlano)
+            {
+                modelState.AddModelError("IdRespostaIncorporadoPlano", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaIncorporadoPlano).Resposta + ".");
+            }
+            if (experienciaMedicamentos.AtencaoPreocupacoes != epGabarito.AtencaoPreocupacoes)
+            {
+                modelState.AddModelError("AtencaoPreocupacoes", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoPreocupacoes == true ? "Sim" : "Não") + ".");
+            }
+            if (experienciaMedicamentos.AtencaoComportamento != epGabarito.AtencaoComportamento)
+            {
+                modelState.AddModelError("AtencaoComportamento", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoComportamento == true ? "Sim" : "Não") + ".");
+            }
+            if (experienciaMedicamentos.AtencaoCultural != epGabarito.AtencaoCultural)
+            {
+                modelState.AddModelError("AtencaoCultural", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoCultural == true? "Sim" : "Não") + ".");
+            }
+            if (experienciaMedicamentos.AtencaoEsperaTratamento != epGabarito.AtencaoEsperaTratamento)
+            {
+                modelState.AddModelError("AtencaoEsperaTratamento", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoEsperaTratamento == true ? "Sim" : "Não") + ".");
+            }
+            if (experienciaMedicamentos.AtencaoGrauEntendimento != epGabarito.AtencaoGrauEntendimento)
+            {
+                modelState.AddModelError("AtencaoGrauEntendimento", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoGrauEntendimento == true? "Sim" : "Não") + ".");
+            }
         }
 
         /// <summary>
