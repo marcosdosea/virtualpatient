@@ -31,6 +31,30 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit2", "Consulta");
         }
 
+        public ActionResult Edit(long idConsultaVariavel, int idCarta)
+        {
+            CartaModel carta = GerenciadorCarta.GetInstance().ObterPorIdConsultaEIdCarta(idConsultaVariavel, idCarta);
+            ViewBag.IdEspecialidade = new SelectList(GerenciadorEspecialidade.GetInstance().ObterTodos(), "IdEspecialidade", "Especialidade");
+            SessionController.Abas2 = 3;
+            return View(carta);
+        }
+
+        // POST: /Escolaridade/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(CartaModel carta)
+        {
+            if (ModelState.IsValid)
+            {
+                GerenciadorCarta.GetInstance().Atualizar(carta);
+                SessionController.ListaCarta = null;
+                SessionController.Abas2 = 3;
+                return RedirectToAction("Edit2", "Consulta");
+            }
+            SessionController.Abas2 = 3;
+            return View(carta);
+        }
+
         //
         // POST: /intervencaoConsulta/Delete/5
         //[HttpPost]

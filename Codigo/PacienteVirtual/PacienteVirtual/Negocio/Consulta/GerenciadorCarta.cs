@@ -154,6 +154,15 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém CartaModel com o idConsulta e IdCarta
+        /// </summary>
+        /// <returns></returns>
+        public CartaModel ObterPorIdConsultaEIdCarta(long idConsultaVariavel, long idCarta)
+        {
+            return GetQuery().Where(cm => cm.IdConsultaVariavel == idConsultaVariavel && cm.IdCarta == idCarta).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
         /// Obtém Carta que iniciam com o nome
         /// </summary>
         /// <param name="nome"></param>

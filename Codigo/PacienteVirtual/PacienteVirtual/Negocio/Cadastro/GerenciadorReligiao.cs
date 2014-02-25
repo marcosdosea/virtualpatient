@@ -110,7 +110,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<ReligiaoModel> ObterTodos()
         {
-            return GetQuery().ToList();
+            return GetQuery().ToList().OrderBy(rel => rel.Religiao);
         }
 
         /// <summary>

@@ -130,7 +130,7 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.DropDownList("IdEspecialidade", Resources.Mensagem.selecione)%>
-                <%: Html.ValidationMessageFor(model => model.IdEspecialidade, string.Empty, new { @class = "styleValidation" })%>
+                    <%: Html.ValidationMessageFor(model => model.IdEspecialidade, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
         </div>
