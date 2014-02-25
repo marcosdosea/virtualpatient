@@ -68,9 +68,9 @@ namespace PacienteVirtual.Controllers
         //
         // POST: /DiarioPessoal/Delete/5
         //[HttpPost]
-        public ActionResult Delete(long idConsultaFixo, int idMedicamento)
+        public ActionResult Delete(long idConsultaFixo, int idMedicamento, string horario, string quantidade)
         {
-            gDiarioPessoal.Remover(idConsultaFixo, idMedicamento);
+            gDiarioPessoal.Remover(idConsultaFixo, idMedicamento, horario, quantidade);
             SessionController.ListaDiarioPessoal = null;
 
             SessionController.Abas2 = 4;
