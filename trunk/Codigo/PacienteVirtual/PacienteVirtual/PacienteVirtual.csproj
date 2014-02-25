@@ -568,6 +568,7 @@
     <Content Include="Views\Bebida\Edit.aspx" />
     <Content Include="Views\Bebida\Index.aspx" />
     <Content Include="Views\Carta\Create.ascx" />
+    <Content Include="Views\Carta\Edit.aspx" />
     <Content Include="Views\Carta\Index.ascx" />
     <Content Include="Views\CorrigirConsultas\ComentariosTutor.ascx" />
     <Content Include="Views\CorrigirConsultas\Index.aspx" />

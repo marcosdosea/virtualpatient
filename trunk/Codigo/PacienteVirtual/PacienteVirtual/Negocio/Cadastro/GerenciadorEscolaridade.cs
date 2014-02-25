@@ -109,7 +109,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<EscolaridadeModel> ObterTodos()
         {
-            return GetQuery().ToList();
+            return GetQuery().ToList().OrderBy(eM => eM.Nivel);
         }
 
         /// <summary>

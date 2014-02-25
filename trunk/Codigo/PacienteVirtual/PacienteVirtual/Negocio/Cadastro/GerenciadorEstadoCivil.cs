@@ -110,7 +110,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<EstadoCivilModel> ObterTodos()
         {
-            return GetQuery().ToList();
+            return GetQuery().ToList().OrderBy(ec => ec.EstadoCivil);
         }
 
         /// <summary>

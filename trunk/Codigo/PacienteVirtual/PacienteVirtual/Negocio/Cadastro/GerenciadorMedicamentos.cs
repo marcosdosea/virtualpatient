@@ -109,7 +109,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<MedicamentosModel> ObterTodos()
         {
-            return GetQuery().ToList();
+            return GetQuery().ToList().OrderBy(med => med.Nome);
         }
 
         /// <summary>
