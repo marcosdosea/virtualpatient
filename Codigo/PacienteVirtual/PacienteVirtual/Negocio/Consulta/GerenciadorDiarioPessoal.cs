@@ -68,12 +68,12 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do DiarioPessoalModel
         /// </summary>
         /// <param name="codDisciplina"></param>
-        public void Remover(long idConsultaFixo, int idMedicamento)
+        public void Remover(long idConsultaFixo, int idMedicamento, string horario, string quantidade)
         {
             try
             {
                 var repDiarioPessoal = new RepositorioGenerico<tb_diario_pessoal>();
-                repDiarioPessoal.Remover(dP => dP.IdConsultaFixo == idConsultaFixo && dP.IdMedicamento == idMedicamento);
+                repDiarioPessoal.Remover(dP => dP.IdConsultaFixo == idConsultaFixo && dP.IdMedicamento == idMedicamento && dP.Horario == horario && dP.Quantidade == quantidade);
                 repDiarioPessoal.SaveChanges();
             }
             catch (Exception e)
@@ -125,7 +125,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<DiarioPessoalModel> Obter(long IdConsultaFixo)
         {
-            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Periodo).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Horario).ToList();
+            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Periodo).ToList();
         }
 
         public DiarioPessoalModel ObterPorMedicamento(long idConsultaFixo, int idMendicamento)

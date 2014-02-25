@@ -45,6 +45,8 @@
                 <%= Html.RadioButtonFor(model => model.Periodo, "T")%> <%: Resources.Mensagem.tarde %>
                  &nbsp &nbsp 
                 <%= Html.RadioButtonFor(model => model.Periodo, "N")%> <%: Resources.Mensagem.noite %>
+                &nbsp &nbsp 
+                <%= Html.RadioButtonFor(model => model.Periodo, "S")%> <%: Resources.Mensagem.necessario %>
                 <%: Html.ValidationMessageFor(model => model.Periodo, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
