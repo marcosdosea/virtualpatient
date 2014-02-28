@@ -36,5 +36,11 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "tipo_bebida", ResourceType = typeof(Mensagem))]
         public String NomeBebida { get; set; }
+
+        [Display(Name = "dose", ResourceType = typeof(Mensagem))]
+        public string Dose { get; set; }
+
+        [Display(Name = "horario_complemento", ResourceType = typeof(Mensagem))]
+        public string HorarioComplemento { get; set; }
     }
 }

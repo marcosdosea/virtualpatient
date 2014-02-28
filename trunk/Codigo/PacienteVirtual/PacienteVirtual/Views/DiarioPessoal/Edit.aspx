@@ -16,17 +16,29 @@
         <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
 
         <div class="row-fluid">
-        <div class="span2">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Medicamento) %>
+            <div class="span2">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.Medicamento) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-field">
+                    <%: Html.TextBoxFor(model => model.Medicamento, new { id = "textbox", style = "width:312px;" })%>
+                </div>
             </div>
         </div>
-        <div class="span6">
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Medicamento, new { id = "textbox", style = "width:312px;" })%>
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.Dose) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-field">
+                    <%: Html.TextBoxFor(model => model.Dose, new { style = "width:312px;", MaxLegth = 20 })%>
+                </div>
             </div>
         </div>
-    </div>
         <div class="row-fluid">
         <div class="span2">
             <div class="editor-label">
@@ -35,7 +47,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Quantidade, new { @class = "textbox", style = "width:312px;" })%>
+                <%: Html.TextBoxFor(model => model.Quantidade, new { @class = "textbox", style = "width:312px;", MaxLegth = 20 })%>
                 <%: Html.ValidationMessageFor(model => model.Quantidade, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -53,6 +65,8 @@
                 <%= Html.RadioButtonFor(model => model.Periodo, "T")%> <%: Resources.Mensagem.tarde %>
                  &nbsp &nbsp 
                 <%= Html.RadioButtonFor(model => model.Periodo, "N")%> <%: Resources.Mensagem.noite %>
+                 &nbsp &nbsp 
+                <%= Html.RadioButtonFor(model => model.Periodo, "S")%> <%: Resources.Mensagem.se_necessario %>
                 <%: Html.ValidationMessageFor(model => model.Periodo, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -71,6 +85,18 @@
             </div>
         </div>
     </div>
+    <div class="row-fluid">
+            <div class="span2">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.HorarioComplemento) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-field">
+                    <%: Html.TextBoxFor(model => model.HorarioComplemento, new { style = "width:312px;", MaxLegth = 60 })%>
+                </div>
+            </div>
+        </div>
     <div class="row-fluid">
         <div class="span2">
             <div class="editor-label">

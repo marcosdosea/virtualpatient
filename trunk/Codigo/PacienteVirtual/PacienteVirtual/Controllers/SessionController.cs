@@ -229,30 +229,30 @@ namespace PacienteVirtual.Controllers
                 if (listaDiarioPessoal == null)
                 {
                     listaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
-                    List<DiarioPessoalModel> listaAuxiliar = new List<DiarioPessoalModel>();
-                    List<DiarioPessoalModel> listaDP = new List<DiarioPessoalModel>();
-                    foreach (DiarioPessoalModel diario in listaDiarioPessoal.ToList())
-                    {
-                        switch (diario.Periodo)
-                        {
-                            case "M":
-                                listaDP.Add(diario);
-                                break;
-                            case "N":
-                                listaAuxiliar.Add(diario);
-                                break;
-                            case "T":
-                                listaDP.Add(diario);
-                                break;
-                        }
-                    }
-                    foreach (DiarioPessoalModel diario in listaAuxiliar)
-                    {
-                        listaDP.Add(diario);
-                    }
-                    listaAuxiliar = null;
-                    listaDiarioPessoal = (IEnumerable<DiarioPessoalModel>)listaDP;
-                    listaDP = null;
+                    //List<DiarioPessoalModel> listaAuxiliar = new List<DiarioPessoalModel>();
+                    //List<DiarioPessoalModel> listaDP = new List<DiarioPessoalModel>();
+                    //foreach (DiarioPessoalModel diario in listaDiarioPessoal.ToList())
+                    //{
+                    //    switch (diario.Periodo)
+                    //    {
+                    //        case "M":
+                    //            listaDP.Add(diario);
+                    //            break;
+                    //        case "N":
+                    //            listaAuxiliar.Add(diario);
+                    //            break;
+                    //        case "T":
+                    //            listaDP.Add(diario);
+                    //            break;
+                    //    }
+                    //}
+                    //foreach (DiarioPessoalModel diario in listaAuxiliar)
+                    //{
+                    //    listaDP.Add(diario);
+                    //}
+                    //listaAuxiliar = null;
+                    //listaDiarioPessoal = (IEnumerable<DiarioPessoalModel>)listaDP;
+                    //listaDP = null;
                     HttpContext.Current.Session["_listaDiarioPessoal"] = listaDiarioPessoal;
                 }
                 return listaDiarioPessoal;

@@ -5,10 +5,16 @@
             <%: Resources.Mensagem.periodo %>
         </th>
         <th>
-            <%: Resources.Mensagem.horario_observacao %>
+            <%: Resources.Mensagem.horario %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.horario_complemento %>
         </th>
         <th>
             <%: Resources.Mensagem.medicamento %>
+        </th>
+        <th>
+            <%: Resources.Mensagem.dose %>
         </th>
         <th>
             <%: Resources.Mensagem.quantidade %>
@@ -28,7 +34,13 @@
             <%: Html.DisplayFor(modelItem => item.Horario) %>
         </td>
         <td>
+            <%: Html.DisplayFor(modelItem => item.HorarioComplemento) %>
+        </td>
+        <td>
             <%: Html.DisplayFor(modelItem => item.Medicamento) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.Dose) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Quantidade) %>

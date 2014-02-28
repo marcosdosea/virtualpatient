@@ -1056,4 +1056,10 @@
   <data name="horario_observacao" xml:space="preserve">
     <value>Hour/Note</value>
   </data>
+  <data name="horario_complemento" xml:space="preserve">
+    <value>Hour Supplement</value>
+  </data>
+  <data name="se_necessario" xml:space="preserve">
+    <value>If Necessary</value>
+  </data>
 </root>
