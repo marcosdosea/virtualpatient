@@ -22,6 +22,19 @@
     <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
+                <%: Html.Label(Resources.Mensagem.dose)%>
+            </div>
+        </div>
+        <div class="span9">
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.Dose, new { @class = "textbox", style = "width:312px;", MaxLength = 20 })%>
+                <%: Html.ValidationMessageFor(model => model.Dose, string.Empty, new { @class = "styleValidation" })%>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="editor-label">
                 <%: Html.LabelFor(model => model.Quantidade)%>
             </div>
         </div>
@@ -46,7 +59,7 @@
                  &nbsp &nbsp 
                 <%= Html.RadioButtonFor(model => model.Periodo, "N")%> <%: Resources.Mensagem.noite %>
                 &nbsp &nbsp 
-                <%= Html.RadioButtonFor(model => model.Periodo, "S")%> <%: Resources.Mensagem.necessario %>
+                <%= Html.RadioButtonFor(model => model.Periodo, "S")%> <%: Resources.Mensagem.se_necessario %>
                 <%: Html.ValidationMessageFor(model => model.Periodo, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -54,14 +67,27 @@
     <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
-                <%: Html.Label(Resources.Mensagem.horario_observacao)%>
+                <%: Html.Label(Resources.Mensagem.horario)%>
             </div>
         </div>
-        <div class="span6">
+        <div class="span9">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Horario, new { @class = "textbox", style = "width:312px;", MaxLength = 20 })%>
-                <!--span class="add-on"><i class="icon-time"></i></span -->
+                <%: Html.TextBoxFor(model => model.Horario, new { @class = "textbox", style = "width:70px;", MaxLength = 20 })%>
                 <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
+                hrs
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="editor-label">
+                <%: Html.Label(Resources.Mensagem.horario_complemento)%>
+            </div>
+        </div>
+        <div class="span9">
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.HorarioComplemento, new { @class = "textbox", style = "width:312px;", MaxLength = 60 })%>
+                <%: Html.ValidationMessageFor(model => model.HorarioComplemento, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
