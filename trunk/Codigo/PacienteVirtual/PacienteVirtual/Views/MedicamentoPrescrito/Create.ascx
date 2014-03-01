@@ -86,6 +86,9 @@
     </div>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
-    </div>
+    </div> 
 </fieldset>
+<div class="span5">
+    <%: Html.ValidationMessageFor(model => model.IdConsultaVariavel, string.Empty, new { @class = "styleValidation" })%>
+</div>
 <% } %>

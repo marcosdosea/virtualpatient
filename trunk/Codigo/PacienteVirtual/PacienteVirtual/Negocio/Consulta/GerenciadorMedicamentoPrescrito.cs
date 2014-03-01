@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -19,6 +20,59 @@ namespace PacienteVirtual.Negocio
                 gMedicamentoPrescrito = new GerenciadorMedicamentoPrescrito();
             }
             return gMedicamentoPrescrito;
+        }
+
+        /// <summary>
+        /// Realiza a correção de acordo com as respostas do gabarito
+        /// </summary>
+        /// <param name="demoAntrop"></param>
+        /// <param name="demoAntropGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostas(IEnumerable<MedicamentoPrescritoModel> ListaMedPresc, IEnumerable<MedicamentoPrescritoModel> listaMedPrescGabarito, ModelStateDictionary modelState)
+        {
+            MedicamentoPrescritoModel a = listaMedPrescGabarito.ElementAtOrDefault(0);
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var med in ListaMedPresc)
+            {
+                contem = false;
+                foreach (var medGabarito in listaMedPrescGabarito)
+                {
+                    if (med.IdMedicamento == medGabarito.IdMedicamento)
+                    {
+                        contem = true;
+                        if (med.Fitoterapico != medGabarito.Fitoterapico || !med.Dosagem.Equals(medGabarito.Dosagem) || !med.Posologia.Equals(medGabarito.Posologia) || !med.Prescritor.Equals(medGabarito.Prescritor) || !med.Especialidade.Equals(medGabarito.Especialidade))
+                        {
+                            erroRespostas = erroRespostas + "Gabarito Medicamento " + med.MedicamentoNome + ": " + (medGabarito.Fitoterapico == true ? "Sim" : "Não") + ", " + medGabarito.Dosagem + ", " + medGabarito.Posologia + ", " + medGabarito.Prescritor + " e " + medGabarito.Especialidade + ". \r\n"; 
+                        }
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + med.MedicamentoNome + ".\r\n";
+                }
+            }
+            foreach (var medGabarito in listaMedPrescGabarito)
+            {
+                contem = false;
+                foreach (var med in ListaMedPresc)
+                {
+                    if (med.IdMedicamento == medGabarito.IdMedicamento)
+                    {
+                        contem = true;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome +". "+ Environment.NewLine;
+                }
+            }
+            if (erroNaoContemNoGabarito.Length != 0 || erroRespostas.Length != 0 || erroContemGabaritoNaoContemResposta.Length != 0)
+            {
+                modelState.AddModelError("IdConsultaVariavel", "Medicamentos que não "+Environment.NewLine +"contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine + erroRespostas + Environment.NewLine +"Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta);
+            }
         }
 
         /// <summary>

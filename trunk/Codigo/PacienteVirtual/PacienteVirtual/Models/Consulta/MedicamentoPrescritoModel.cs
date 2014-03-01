@@ -37,5 +37,6 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "especialidade", ResourceType = typeof(Mensagem))]
         public string Especialidade { get; set; }
+
     }
 }
