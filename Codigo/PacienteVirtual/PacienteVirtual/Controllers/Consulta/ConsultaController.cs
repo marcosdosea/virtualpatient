@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
+using System.Collections.Generic;
 
 namespace PacienteVirtual.Controllers
 {
@@ -266,6 +267,10 @@ namespace PacienteVirtual.Controllers
             ExperienciaMedicamentosModel experienciaMedicamentosGabarito = GerenciadorExperienciaMedicamentos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorExperienciaMedicamentos.GetInstance().CorrigirRespostas(SessionController.ExperienciaMedicamentos, experienciaMedicamentosGabarito, ModelState);
             TryValidateModel(SessionController.ExperienciaMedicamentos);
+            // Medicamentos Prescristos
+            IEnumerable<MedicamentoPrescritoModel> ListaMedPrescGabarito = GerenciadorMedicamentoPrescrito.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorMedicamentoPrescrito.GetInstance().CorrigirRespostas(SessionController.ListaMedicamentosPrescritos, ListaMedPrescGabarito, ModelState);
+            TryValidateModel(new MedicamentoPrescritoModel());
         }
         
     }
