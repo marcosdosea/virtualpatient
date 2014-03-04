@@ -79,9 +79,10 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Horario, new { @class = "textbox", style = "width:312px;", MaxLength = 20 })%>
+                <%: Html.TextBoxFor(model => model.Horario, new { @class = "textbox", style = "width:70px;", MaxLength = 20 })%>
                 <!--span class="add-on"><i class="icon-time"></i></span -->
                 <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
+                hrs (Ex: 07:00)
             </div>
         </div>
     </div>

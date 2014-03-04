@@ -24,13 +24,13 @@ namespace PacienteVirtual.Negocio
 
         public void CorrigirRespostas(HistoriaModel historia, HistoriaModel historiaGabarito, ModelStateDictionary modelState)
         {
-            if (!historia.HistoriaFamiliar.Equals(historiaGabarito.HistoriaFamiliar))
+            if (!Global.RemoverAcentuacao(historia.HistoriaFamiliar.ToLower()).Equals(Global.RemoverAcentuacao(historiaGabarito.HistoriaFamiliar.ToLower())))
             {
-                modelState.AddModelError("HistoriaFamiliar", "Divergência com o gabarito. A resposta do gabarito é " + historiaGabarito.HistoriaFamiliar + ".");
+                modelState.AddModelError("HistoriaFamiliar", "Gabarito: \"" + historiaGabarito.HistoriaFamiliar + "\"");
             }
-            if (!historia.HistoriaMedicaPregressa.Equals(historiaGabarito.HistoriaMedicaPregressa))
+            if (!Global.RemoverAcentuacao(historia.HistoriaMedicaPregressa.ToLower()).Equals(Global.RemoverAcentuacao(historiaGabarito.HistoriaMedicaPregressa.ToLower())))
             {
-                modelState.AddModelError("HistoriaMedicaPregressa", "Divergência com o gabarito. A resposta do gabarito é " + historiaGabarito.HistoriaMedicaPregressa + ".");
+                modelState.AddModelError("HistoriaMedicaPregressa", "Gabarito: \"" + historiaGabarito.HistoriaMedicaPregressa + "\"");
             }
         }
 

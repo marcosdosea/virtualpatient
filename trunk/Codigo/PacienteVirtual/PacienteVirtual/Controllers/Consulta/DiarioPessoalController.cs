@@ -30,8 +30,6 @@ namespace PacienteVirtual.Controllers
                     , SessionController.DadosTurmaPessoa.IdTurma, SessionController.Paciente.IdPaciente);
                 diarioPessoal.IdConsultaFixo = consultaOrdem1.IdConsultaFixo;
                 gDiarioPessoal.Inserir(diarioPessoal);
-                //List<DiarioPessoalModel> listaDiarioPessoal = new List<DiarioPessoalModel>(SessionController.ListaDiarioPessoal);
-                //listaDiarioPessoal.Add(diarioPessoal);
                 SessionController.ListaDiarioPessoal = null;
 
                 SessionController.Abas2 = 4;

@@ -74,7 +74,7 @@
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Horario, new { @class = "textbox", style = "width:70px;", MaxLength = 20 })%>
                 <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
-                hrs
+                hrs (Ex: 07:00)
             </div>
         </div>
     </div>

@@ -197,31 +197,31 @@ namespace PacienteVirtual.Negocio
         {
             if (examesFisicos.Altura != examesFisicosGabarito.Altura)
             {
-                modelState.AddModelError("Altura", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.Altura + ".");
+                modelState.AddModelError("Altura", "Gabarito: " + examesFisicosGabarito.Altura + ".");
             }
             if (examesFisicos.Peso != examesFisicosGabarito.Peso)
             {
-                modelState.AddModelError("Peso", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.Peso + ".");
+                modelState.AddModelError("Peso", "Gabarito: " + examesFisicosGabarito.Peso + ".");
             }
             if (examesFisicos.PressaoDiastolica != examesFisicosGabarito.PressaoDiastolica)
             {
-                modelState.AddModelError("PressaoDiastolica", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.PressaoDiastolica + ".");
+                modelState.AddModelError("PressaoDiastolica", "Gabarito: " + examesFisicosGabarito.PressaoDiastolica + ".");
             }
             if (examesFisicos.PressaoSistolica != examesFisicosGabarito.PressaoSistolica)
             {
-                modelState.AddModelError("PressaoSistolica", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.PressaoSistolica + ".");
+                modelState.AddModelError("PressaoSistolica", "Gabarito: " + examesFisicosGabarito.PressaoSistolica + ".");
             }
             if (examesFisicos.Glicemia != examesFisicosGabarito.Glicemia)
             {
-                modelState.AddModelError("Glicemia", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.Glicemia + ".");
+                modelState.AddModelError("Glicemia", "Gabarito: " + examesFisicosGabarito.Glicemia + ".");
             }
             if (examesFisicos.IndiceMassaCorporea != examesFisicosGabarito.IndiceMassaCorporea)
             {
-                modelState.AddModelError("IndiceMassaCorporea", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.IndiceMassaCorporea + ".");
+                modelState.AddModelError("IndiceMassaCorporea", "Gabarito: " + examesFisicosGabarito.IndiceMassaCorporea + ".");
             }
             if (examesFisicos.CircunferenciaAbdominal != examesFisicosGabarito.CircunferenciaAbdominal)
             {
-                modelState.AddModelError("CircunferenciaAbdominal", "Divergência com o gabarito. A resposta do gabarito é " + examesFisicosGabarito.CircunferenciaAbdominal + ".");
+                modelState.AddModelError("CircunferenciaAbdominal", "Gabarito: " + examesFisicosGabarito.CircunferenciaAbdominal + ".");
             }
         }
 

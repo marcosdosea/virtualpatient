@@ -26,7 +26,7 @@ namespace PacienteVirtual.Negocio
         {
             if (consultaVariavel.IdRazaoEncontro != consultaVariavelGabarito.IdRazaoEncontro)
             {
-                modelState.AddModelError("IdRazaoEncontro", "Divergência com o gabarito. A resposta do gabarito é " + consultaVariavelGabarito.DescricaoRazao + ".");
+                modelState.AddModelError("IdRazaoEncontro", "Gabarito: \"" + consultaVariavelGabarito.DescricaoRazao + "\"");
             }
             
         }
