@@ -126,7 +126,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<DiarioPessoalModel> Obter(long IdConsultaFixo)
         {
-            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Periodo).ToList();
+            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Horario).ToList();
         }
 
         public DiarioPessoalModel ObterPorMedicamento(long idConsultaFixo, int idMendicamento)

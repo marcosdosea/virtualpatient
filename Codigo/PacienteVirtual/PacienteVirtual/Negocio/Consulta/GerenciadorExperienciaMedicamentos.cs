@@ -26,47 +26,47 @@ namespace PacienteVirtual.Negocio
         {
             if (experienciaMedicamentos.IdRespostaEsperaTratamento != epGabarito.IdRespostaEsperaTratamento)
             {
-                modelState.AddModelError("IdRespostaEsperaTratamento", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaEsperaTratamento).Resposta + ".");
+                modelState.AddModelError("IdRespostaEsperaTratamento", "Gabarito: \"" + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaEsperaTratamento).Resposta + "\"");
             }
             if (experienciaMedicamentos.IdRespostaPreocupacoes != epGabarito.IdRespostaPreocupacoes)
             {
-                modelState.AddModelError("IdRespostaPreocupacoes", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaPreocupacoes).Resposta + ".");
+                modelState.AddModelError("IdRespostaPreocupacoes", "Gabarito: \"" + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaPreocupacoes).Resposta + "\"");
             }
             if (experienciaMedicamentos.IdRespostaGrauEntendimento != epGabarito.IdRespostaGrauEntendimento)
             {
-                modelState.AddModelError("IdRespostaGrauEntendimento", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaGrauEntendimento).Resposta + ".");
+                modelState.AddModelError("IdRespostaGrauEntendimento", "Gabarito: \"" + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaGrauEntendimento).Resposta + "\"");
             }
             if (experienciaMedicamentos.IdRespostaCultural != epGabarito.IdRespostaCultural)
             {
-                modelState.AddModelError("IdRespostaCultural", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaCultural).Resposta + ".");
+                modelState.AddModelError("IdRespostaCultural", "Gabarito: \"" + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaCultural).Resposta + "\"");
             }
             if (experienciaMedicamentos.IdRespostaComportamento != epGabarito.IdRespostaComportamento)
             {
-                modelState.AddModelError("IdRespostaComportamento", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaComportamento).Resposta + ".");
+                modelState.AddModelError("IdRespostaComportamento", "Gabarito: \"" + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaComportamento).Resposta + "\"");
             }
             if (experienciaMedicamentos.IdRespostaIncorporadoPlano != epGabarito.IdRespostaIncorporadoPlano)
             {
-                modelState.AddModelError("IdRespostaIncorporadoPlano", "Divergência com o gabarito. A resposta do gabarito é " + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaIncorporadoPlano).Resposta + ".");
+                modelState.AddModelError("IdRespostaIncorporadoPlano", "Gabarito: \"" + GerenciadorResposta.GetInstance().Obter(epGabarito.IdRespostaIncorporadoPlano).Resposta + "\"");
             }
             if (experienciaMedicamentos.AtencaoPreocupacoes != epGabarito.AtencaoPreocupacoes)
             {
-                modelState.AddModelError("AtencaoPreocupacoes", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoPreocupacoes == true ? "Sim" : "Não") + ".");
+                modelState.AddModelError("AtencaoPreocupacoes", "Gabarito: \"" + (epGabarito.AtencaoPreocupacoes == true ? "Sim" : "Não") + "\"");
             }
             if (experienciaMedicamentos.AtencaoComportamento != epGabarito.AtencaoComportamento)
             {
-                modelState.AddModelError("AtencaoComportamento", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoComportamento == true ? "Sim" : "Não") + ".");
+                modelState.AddModelError("AtencaoComportamento", "Gabarito: \"" + (epGabarito.AtencaoComportamento == true ? "Sim" : "Não") + "\"");
             }
             if (experienciaMedicamentos.AtencaoCultural != epGabarito.AtencaoCultural)
             {
-                modelState.AddModelError("AtencaoCultural", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoCultural == true? "Sim" : "Não") + ".");
+                modelState.AddModelError("AtencaoCultural", "Gabarito: \"" + (epGabarito.AtencaoCultural == true ? "Sim" : "Não") + "\"");
             }
             if (experienciaMedicamentos.AtencaoEsperaTratamento != epGabarito.AtencaoEsperaTratamento)
             {
-                modelState.AddModelError("AtencaoEsperaTratamento", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoEsperaTratamento == true ? "Sim" : "Não") + ".");
+                modelState.AddModelError("AtencaoEsperaTratamento", "Gabarito: \"" + (epGabarito.AtencaoEsperaTratamento == true ? "Sim" : "Não") + "\"");
             }
             if (experienciaMedicamentos.AtencaoGrauEntendimento != epGabarito.AtencaoGrauEntendimento)
             {
-                modelState.AddModelError("AtencaoGrauEntendimento", "Divergência com o gabarito. A resposta do gabarito é " + (epGabarito.AtencaoGrauEntendimento == true? "Sim" : "Não") + ".");
+                modelState.AddModelError("AtencaoGrauEntendimento", "Gabarito: \"" + (epGabarito.AtencaoGrauEntendimento == true ? "Sim" : "Não") + "\"");
             }
         }
 

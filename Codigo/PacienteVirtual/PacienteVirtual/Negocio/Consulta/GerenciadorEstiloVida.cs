@@ -26,82 +26,82 @@ namespace PacienteVirtual.Negocio
         {
             if (estiloVida.TabacoConsumo != estiloVidaGabarito.TabacoConsumo)
             {
-                modelState.AddModelError("TabacoConsumo", "Divergência com o gabarito. A resposta do gabarito é " + (estiloVidaGabarito.TabacoConsumo == true? "Sim" : "Não") + ".");
+                modelState.AddModelError("TabacoConsumo", "Gabarito: \"" + (estiloVidaGabarito.TabacoConsumo == true ? "Sim" : "Não") + "\"");
             }
             if (estiloVida.TabacoUso != estiloVidaGabarito.TabacoUso)
             {
-                modelState.AddModelError("TabacoUso", "Divergência com o gabarito. A resposta do gabarito é a " + estiloVidaGabarito.TabacoUso + "ª Opção.");
+                modelState.AddModelError("TabacoUso", "Gabarito: " + estiloVidaGabarito.TabacoUso + "ª Opção.");
             }
             if (estiloVida.TabacoParou != null)
             {
-                if (!estiloVida.TabacoParou.Equals(estiloVidaGabarito.TabacoParou))
+                if (!Global.RemoverAcentuacao(estiloVida.TabacoParou.ToLower()).Equals(Global.RemoverAcentuacao(estiloVidaGabarito.TabacoParou.ToLower())))
                 {
-                    modelState.AddModelError("TabacoParou", "Divergência com o gabarito. A resposta do gabarito é " + (estiloVidaGabarito.TabacoParou == null ? "Esse campo deve permanecer vazio" : estiloVidaGabarito.TabacoParou) + ".");
+                    modelState.AddModelError("TabacoParou", (estiloVidaGabarito.TabacoParou == null ? "Esse campo deve permanecer vazio" : "Gabarito: \"" + estiloVidaGabarito.TabacoParou + "\""));
                 }
             }
             else
             {
                 if (estiloVidaGabarito.TabacoParou != null)
                 {
-                    modelState.AddModelError("TabacoParou", "Divergência com o gabarito. A resposta do gabarito é " + estiloVidaGabarito.TabacoParou + ".");
+                    modelState.AddModelError("TabacoParou", "Gabarito: " + estiloVidaGabarito.TabacoParou + ".");
                 }
             }
             if (estiloVida.CafeConsumo != estiloVidaGabarito.CafeConsumo)
             {
-                modelState.AddModelError("CafeConsumo", "Divergência com o gabarito. A resposta do gabarito é " + (estiloVidaGabarito.CafeConsumo == true ? "Sim" : "Não") + ".");
+                modelState.AddModelError("CafeConsumo", "Gabarito: \"" + (estiloVidaGabarito.CafeConsumo == true ? "Sim" : "Não") + "\"");
             }
             if (estiloVida.CafeUso != estiloVidaGabarito.CafeUso)
             {
-                modelState.AddModelError("CafeUso", "Divergência com o gabarito. A resposta do gabarito é a " + estiloVidaGabarito.CafeUso + "ª Opção.");
+                modelState.AddModelError("CafeUso", "Gabarito: " + estiloVidaGabarito.CafeUso + "ª Opção.");
             }
             if (estiloVida.CafeParou != null)
             {
-                if (!estiloVida.CafeParou.Equals(estiloVidaGabarito.CafeParou))
+                if (!Global.RemoverAcentuacao(estiloVida.CafeParou.ToLower()).Equals(Global.RemoverAcentuacao(estiloVidaGabarito.CafeParou.ToLower())))
                 {
-                    modelState.AddModelError("CafeParou", "Divergência com o gabarito. A resposta do gabarito é " + (estiloVidaGabarito.CafeParou == null ? "Esse campo deve permanecer vazio" : estiloVidaGabarito.CafeParou) + ".");
+                    modelState.AddModelError("CafeParou", (estiloVidaGabarito.CafeParou == null ? "Esse campo deve permanecer vazio" : "Gabarito: \"" + estiloVidaGabarito.CafeParou + "\""));
                 }
             }
             else
             {
                 if (estiloVidaGabarito.CafeParou != null)
                 {
-                    modelState.AddModelError("CafeParou", "Divergência com o gabarito. A resposta do gabarito é " + estiloVidaGabarito.CafeParou + ".");
+                    modelState.AddModelError("CafeParou", "Gabarito: \"" + estiloVidaGabarito.CafeParou + "\"");
                 }
             }
             if (estiloVida.AlcoolConsumo != estiloVidaGabarito.AlcoolConsumo)
             {
-                modelState.AddModelError("AlcoolConsumo", "Divergência com o gabarito. A resposta do gabarito é " + (estiloVidaGabarito.AlcoolConsumo == true ? "Sim" : "Não") + ".");
+                modelState.AddModelError("AlcoolConsumo", "Gabarito: \"" + (estiloVidaGabarito.AlcoolConsumo == true ? "Sim" : "Não") + "\"");
             }
             if (estiloVida.AlcoolUso != estiloVidaGabarito.AlcoolUso)
             {
-                modelState.AddModelError("AlcoolUso", "Divergência com o gabarito. A resposta do gabarito é a " + estiloVidaGabarito.AlcoolUso + "ª Opção.");
+                modelState.AddModelError("AlcoolUso", "Gabarito: " + estiloVidaGabarito.AlcoolUso + "ª Opção.");
             }
             if (estiloVida.AlcoolParou != null)
             {
-                if (!estiloVida.AlcoolParou.Equals(estiloVidaGabarito.AlcoolParou))
+                if (!Global.RemoverAcentuacao(estiloVida.AlcoolParou.ToLower()).Equals(Global.RemoverAcentuacao(estiloVidaGabarito.AlcoolParou.ToLower())))
                 {
-                    modelState.AddModelError("AlcoolParou", "Divergência com o gabarito. A resposta do gabarito é " + (estiloVidaGabarito.AlcoolParou == null ? "Esse campo deve permanecer vazio" : estiloVidaGabarito.AlcoolParou) + ".");
+                    modelState.AddModelError("AlcoolParou", (estiloVidaGabarito.AlcoolParou == null ? "Esse campo deve permanecer vazio" : "Gabarito: \"" + estiloVidaGabarito.AlcoolParou + "\""));
                 }
             }
             else
             {
                 if (estiloVidaGabarito.AlcoolParou != null)
                 {
-                    modelState.AddModelError("AlcoolParou", "Divergência com o gabarito. A resposta do gabarito é " + estiloVidaGabarito.AlcoolParou + ".");
+                    modelState.AddModelError("AlcoolParou", "Gabarito: \"" + estiloVidaGabarito.AlcoolParou + "\"");
                 }
             }
             if (estiloVida.AlcoolTipoBebida != null)
             {
                 if (!estiloVida.AlcoolTipoBebida.Equals(estiloVidaGabarito.AlcoolTipoBebida))
                 {
-                    modelState.AddModelError("AlcoolTipoBebida", "Divergência com o gabarito. A resposta do gabarito é " + (estiloVidaGabarito.AlcoolTipoBebida == null ? "Esse campo deve permanecer vazio" : estiloVidaGabarito.AlcoolTipoBebida) + ".");
+                    modelState.AddModelError("AlcoolTipoBebida", "Gabarito: \"" + (estiloVidaGabarito.AlcoolTipoBebida == null ? "Esse campo deve permanecer vazio" : estiloVidaGabarito.AlcoolTipoBebida) + "\"");
                 }
             }
             else
             {
                 if (estiloVidaGabarito.AlcoolTipoBebida != null)
                 {
-                    modelState.AddModelError("AlcoolTipoBebida", "Divergência com o gabarito. A resposta do gabarito é " + estiloVidaGabarito.AlcoolTipoBebida + ".");
+                    modelState.AddModelError("AlcoolTipoBebida", "Gabarito: \"" + estiloVidaGabarito.AlcoolTipoBebida + "\"");
                 }
             }
         }

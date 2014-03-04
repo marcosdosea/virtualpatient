@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span10">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.MedicosAtendem)%>
             </div>
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span10">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.OndeAdquireMedicamentos)%>
             </div>
