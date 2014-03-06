@@ -28,5 +28,7 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "unidade", ResourceType = typeof(Mensagem))]
         public string Unidade { get; set; }
+
+        public string ErroParametroClinico { get; set; }
     }
 }
