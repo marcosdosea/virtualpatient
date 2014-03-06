@@ -949,7 +949,7 @@
     <value>Change User Datas</value>
   </data>
   <data name="cpf_invalido" xml:space="preserve">
-    <value>Invalid CPF.</value>
+    <value>Invalid Personal ID.</value>
   </data>
   <data name="email_invalido" xml:space="preserve">
     <value>Invalid Email.</value>
@@ -1061,5 +1061,11 @@
   </data>
   <data name="se_necessario" xml:space="preserve">
     <value>If Necessary</value>
+  </data>
+  <data name="cpf_erro" xml:space="preserve">
+    <value>The Personal ID is invalid or doesn't exist.</value>
+  </data>
+  <data name="cpf_ja_cadastrado" xml:space="preserve">
+    <value>This Personal ID has been previously registered</value>
   </data>
 </root>

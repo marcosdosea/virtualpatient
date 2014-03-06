@@ -93,14 +93,6 @@
         </div>
     <% } %>
 
-    <input type="hidden" value="<%: ViewBag.CpfExistente %>" id="existeCPF" />
-    <script type="text/javascript">
-        var cpf = document.getElementById('existeCPF').value;
-        if (cpf == 1) {
-            alert('Este CPF já foi cadastrado anteriormente.');
-        }
-    </script>
-
     <script type="text/javascript">
         function FormataCpf(campo, teclapres) {
             var tecla = teclapres.keyCode;

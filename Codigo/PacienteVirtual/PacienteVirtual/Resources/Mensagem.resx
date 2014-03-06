@@ -1062,4 +1062,10 @@
   <data name="se_necessario" xml:space="preserve">
     <value>Se Necessário</value>
   </data>
+  <data name="cpf_erro" xml:space="preserve">
+    <value>O CPF está inválido ou não existe.</value>
+  </data>
+  <data name="cpf_ja_cadastrado" xml:space="preserve">
+    <value>Este CPF já foi cadastrado anteriormente.</value>
+  </data>
 </root>
