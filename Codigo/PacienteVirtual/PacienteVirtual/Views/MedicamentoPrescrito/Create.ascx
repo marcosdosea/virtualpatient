@@ -89,6 +89,6 @@
     </div> 
 </fieldset>
 <div class="span5">
-    <%: Html.ValidationMessageFor(model => model.IdConsultaVariavel, string.Empty, new { @class = "styleValidation" })%>
+    <%: Html.ValidationMessageFor(model => model.ErroMedPresc, string.Empty, new { @class = "styleValidation" })%>
 </div>
 <% } %>

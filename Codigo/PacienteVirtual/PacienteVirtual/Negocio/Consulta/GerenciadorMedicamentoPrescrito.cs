@@ -30,7 +30,6 @@ namespace PacienteVirtual.Negocio
         /// <param name="modelState"></param>
         public void CorrigirRespostas(IEnumerable<MedicamentoPrescritoModel> ListaMedPresc, IEnumerable<MedicamentoPrescritoModel> listaMedPrescGabarito, ModelStateDictionary modelState)
         {
-            MedicamentoPrescritoModel a = listaMedPrescGabarito.ElementAtOrDefault(0);
             string erroNaoContemNoGabarito = "";
             string erroContemGabaritoNaoContemResposta = "";
             string erroRespostas = "";
@@ -45,13 +44,14 @@ namespace PacienteVirtual.Negocio
                         contem = true;
                         if (med.Fitoterapico != medGabarito.Fitoterapico || !med.Dosagem.Equals(medGabarito.Dosagem) || !med.Posologia.Equals(medGabarito.Posologia) || !med.Prescritor.Equals(medGabarito.Prescritor) || !med.Especialidade.Equals(medGabarito.Especialidade))
                         {
-                            erroRespostas = erroRespostas + "Gabarito Medicamento " + med.MedicamentoNome + ": " + (medGabarito.Fitoterapico == true ? "Sim" : "Não") + ", " + medGabarito.Dosagem + ", " + medGabarito.Posologia + ", " + medGabarito.Prescritor + " e " + medGabarito.Especialidade + ". \r\n"; 
+                            erroRespostas = erroRespostas + "Gabarito do Medicamento: " + med.MedicamentoNome + ": " + (medGabarito.Fitoterapico == true ? "Sim" : "Não") + ", " + medGabarito.Dosagem + ", " + medGabarito.Posologia + ", " + medGabarito.Prescritor + " e " + medGabarito.Especialidade + "; " + Environment.NewLine; 
                         }
+                        break;
                     }
                 }
                 if (!contem)
                 {
-                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + med.MedicamentoNome + ".\r\n";
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + med.MedicamentoNome + "; " + Environment.NewLine;
                 }
             }
             foreach (var medGabarito in listaMedPrescGabarito)
@@ -62,17 +62,17 @@ namespace PacienteVirtual.Negocio
                     if (med.IdMedicamento == medGabarito.IdMedicamento)
                     {
                         contem = true;
+                        break;
                     }
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome +". "+ Environment.NewLine;
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome +"; "+ Environment.NewLine;
                 }
             }
-            if (erroNaoContemNoGabarito.Length != 0 || erroRespostas.Length != 0 || erroContemGabaritoNaoContemResposta.Length != 0)
-            {
-                modelState.AddModelError("IdConsultaVariavel", "Medicamentos que não "+Environment.NewLine +"contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine + erroRespostas + Environment.NewLine +"Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta);
-            }
+            modelState.AddModelError("ErroMedPresc", (erroRespostas.Equals("") ? "" : erroRespostas + Environment.NewLine) +
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine) +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));   
         }
 
         /// <summary>

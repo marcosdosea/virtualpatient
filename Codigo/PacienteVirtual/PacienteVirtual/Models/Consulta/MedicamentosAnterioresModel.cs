@@ -30,5 +30,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "periodo", ResourceType = typeof(Mensagem))]
         public string Periodo { get; set; }
 
+        public string ErroMedAnt { get; set; }
     }
 }

@@ -130,19 +130,18 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("Nome", "Gabarito: \"" + demoAntropGabarito.Nome + "\"");
             }
-            if (demoAntrop.MedicosAtendem != null)
+            if (demoAntropGabarito.MedicosAtendem == null || demoAntropGabarito.MedicosAtendem.Equals(""))
             {
-                string teste = Global.RemoverAcentuacao(demoAntrop.MedicosAtendem.ToLower());
-                if (!Global.RemoverAcentuacao(demoAntrop.MedicosAtendem.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.MedicosAtendem.ToLower())))
+                if (demoAntrop.MedicosAtendem != null && !demoAntrop.MedicosAtendem.Equals(""))
                 {
-                    modelState.AddModelError("MedicosAtendem", (demoAntropGabarito.MedicosAtendem == null ? "Esse campo deve permanecer vazio" : "Gabarito: \"" + demoAntropGabarito.MedicosAtendem) + "\"");
+                    modelState.AddModelError("MedicosAtendem", "Gabarito: \"Esse campo deve permanecer vazio\"");
                 }
             }
             else
             {
-                if (demoAntropGabarito.MedicosAtendem != null)
+                if (!Global.RemoverAcentuacao(demoAntrop.MedicosAtendem.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.MedicosAtendem.ToLower())))
                 {
-                    modelState.AddModelError("MedicosAtendem", "Gabarito: \'" + demoAntropGabarito.MedicosAtendem + "\'");
+                    modelState.AddModelError("MedicosAtendem", "Gabarito: \"" + demoAntropGabarito.MedicosAtendem + "\"");
                 }
             }
             if (!demoAntrop.Genero.ToLower().Equals(demoAntropGabarito.Genero.ToLower()))
@@ -153,68 +152,72 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("DataNascimento", "Gabarito: \"" + demoAntropGabarito.DataNascimento + "\"");
             }
-            if (demoAntrop.MoradiaFamilia != null)
+            if (demoAntropGabarito.MoradiaFamilia == null || demoAntropGabarito.MoradiaFamilia.Equals(""))
             {
-                if (!Global.RemoverAcentuacao(demoAntrop.MoradiaFamilia.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.MoradiaFamilia.ToLower())))
+                if (demoAntrop.MoradiaFamilia != null && !demoAntrop.MoradiaFamilia.Equals(""))
                 {
-                    modelState.AddModelError("MoradiaFamilia", (demoAntropGabarito.MoradiaFamilia == null ? "Esse campo deve permanecer vazio" : "Gabarito: " + demoAntropGabarito.MoradiaFamilia + "\""));
+                    modelState.AddModelError("MoradiaFamilia", "Gabarito: \"Esse campo deve permanecer vazio\"");
                 }
             }
             else
             {
-                if (demoAntropGabarito.MoradiaFamilia != null)
+                if (!Global.RemoverAcentuacao(demoAntrop.MoradiaFamilia.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.MoradiaFamilia.ToLower())))
                 {
                     modelState.AddModelError("MoradiaFamilia", "Gabarito: \"" + demoAntropGabarito.MoradiaFamilia + "\"");
                 }
             }
-            if (demoAntrop.OndeAdquireMedicamentos != null)
+            if (demoAntropGabarito.OndeAdquireMedicamentos == null || demoAntropGabarito.OndeAdquireMedicamentos.Equals(""))
             {
-                if (!Global.RemoverAcentuacao(demoAntrop.OndeAdquireMedicamentos.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.OndeAdquireMedicamentos.ToLower())))
+                if (demoAntrop.OndeAdquireMedicamentos != null && !demoAntrop.OndeAdquireMedicamentos.Equals(""))
                 {
-                    modelState.AddModelError("OndeAdquireMedicamentos", (demoAntropGabarito.OndeAdquireMedicamentos == null ? "Esse campo deve permanecer vazio" : "Gabarito: \"" + demoAntropGabarito.OndeAdquireMedicamentos) + "\"");
+                    modelState.AddModelError("OndeAdquireMedicamentos", "Gabarito: \"Esse campo deve permanecer vazio\"");
                 }
             }
             else
             {
-                if (demoAntropGabarito.OndeAdquireMedicamentos != null)
+                if (!Global.RemoverAcentuacao(demoAntrop.OndeAdquireMedicamentos.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.OndeAdquireMedicamentos.ToLower())))
                 {
                     modelState.AddModelError("OndeAdquireMedicamentos", "Gabarito: \"" + demoAntropGabarito.OndeAdquireMedicamentos + "\"");
                 }
             }
-            if (demoAntrop.RG != null) {
-                if (!demoAntrop.RG.Equals(demoAntropGabarito.RG)) {
-                    modelState.AddModelError("RG", (demoAntropGabarito.RG == null ? "Esse campo deve permanecer vazio" : "Gabarito: " + demoAntropGabarito.RG + "\""));
-                }
-            }
-            else {
-                if (demoAntropGabarito.RG != null) {
-                    modelState.AddModelError("RG", "Gabarito: \"" + demoAntropGabarito.RG + "\"");
-                }
-            }
-            if (demoAntrop.Procedencia != null)
+            if (demoAntropGabarito.RG == null || demoAntropGabarito.RG.Equals(""))
             {
-                if (!Global.RemoverAcentuacao(demoAntrop.Procedencia.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.Procedencia.ToLower())))
+                if (demoAntrop.RG != null && !demoAntrop.RG.Equals(""))
                 {
-                    modelState.AddModelError("Procedencia", (demoAntropGabarito.Procedencia == null ? "Esse campo deve permanecer vazio" : "Gabarito: \"" + demoAntropGabarito.Procedencia + "\""));
+                    modelState.AddModelError("RG", "Gabarito: \"Esse campo deve permanecer vazio\"");
                 }
             }
             else
             {
-                if (demoAntropGabarito.Procedencia != null)
+                if (!Global.RemoverAcentuacao(demoAntrop.RG.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.RG.ToLower())))
+                {
+                    modelState.AddModelError("RG", "Gabarito: \"" + demoAntropGabarito.RG + "\"");
+                }
+            }
+            if (demoAntropGabarito.Procedencia == null || demoAntropGabarito.Procedencia.Equals(""))
+            {
+                if (demoAntrop.Procedencia != null && !demoAntrop.Procedencia.Equals(""))
+                {
+                    modelState.AddModelError("Procedencia", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(demoAntrop.Procedencia.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.Procedencia.ToLower())))
                 {
                     modelState.AddModelError("Procedencia", "Gabarito: \"" + demoAntropGabarito.Procedencia + "\"");
                 }
             }
-            if (demoAntrop.Endereco != null)
+            if (demoAntropGabarito.Endereco == null || demoAntropGabarito.Endereco.Equals(""))
             {
-                if (!demoAntrop.Endereco.Equals(demoAntropGabarito.Endereco))
+                if (demoAntrop.Endereco != null && !demoAntrop.Endereco.Equals(""))
                 {
-                    modelState.AddModelError("Endereco", (demoAntropGabarito.Endereco == null ? "Esse campo deve permanecer vazio" : "Gabarito: \"" + demoAntropGabarito.Endereco) + "\"");
+                    modelState.AddModelError("Endereco", "Gabarito: \"Esse campo deve permanecer vazio\"");
                 }
             }
             else
             {
-                if (demoAntropGabarito.Endereco != null)
+                if (!Global.RemoverAcentuacao(demoAntrop.Endereco.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.Endereco.ToLower())))
                 {
                     modelState.AddModelError("Endereco", "Gabarito: \"" + demoAntropGabarito.Endereco + "\"");
                 }

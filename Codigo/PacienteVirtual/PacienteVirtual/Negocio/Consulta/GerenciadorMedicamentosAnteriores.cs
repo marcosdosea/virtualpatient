@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -19,6 +20,53 @@ namespace PacienteVirtual.Negocio
                 gMedicamentosAnteriores = new GerenciadorMedicamentosAnteriores();
             }
             return gMedicamentosAnteriores;
+        }
+
+        public void CorrigirRespostas(IEnumerable<MedicamentosAnterioresModel> ListaMedAnt, IEnumerable<MedicamentosAnterioresModel> listaMedAntGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var med in ListaMedAnt)
+            {
+                contem = false;
+                foreach (var medGabarito in listaMedAntGabarito)
+                {
+                    if (med.IdMedicamento == medGabarito.IdMedicamento)
+                    {
+                        contem = true;
+                        if (!med.Indicacao.Equals(medGabarito.Indicacao) || !med.Resposta.Equals(medGabarito.Resposta) || !med.Periodo.Equals(medGabarito.Periodo))
+                        {
+                            erroRespostas = erroRespostas + "Gabarito do Medicamento: " + med.MedicamentoNome + ": " + medGabarito.Indicacao + ", " + medGabarito.Resposta + " e " + medGabarito.Periodo + "; " + Environment.NewLine;
+                        }
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + med.MedicamentoNome + "; " + Environment.NewLine;
+                }
+            }
+            foreach (var medGabarito in listaMedAntGabarito)
+            {
+                contem = false;
+                foreach (var med in ListaMedAnt)
+                {
+                    if (med.IdMedicamento == medGabarito.IdMedicamento)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome + "; " + Environment.NewLine;
+                }
+            }
+            modelState.AddModelError("ErroMedAnt", (erroRespostas.Equals("") ? "" : erroRespostas + Environment.NewLine) +
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine) +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>

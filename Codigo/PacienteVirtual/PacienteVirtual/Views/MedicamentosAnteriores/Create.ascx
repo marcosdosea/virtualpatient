@@ -66,4 +66,7 @@
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
     </div>
 </fieldset>
+<div class="span5">
+    <%: Html.ValidationMessageFor(model => model.ErroMedAnt, string.Empty, new { @class = "styleValidation" })%>
+</div>
 <% } %>
