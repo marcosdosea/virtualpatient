@@ -673,11 +673,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O CPF está inválido ou não existe..
+        /// </summary>
+        public static string cpf_erro {
+            get {
+                return ResourceManager.GetString("cpf_erro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CPF Inválido..
         /// </summary>
         public static string cpf_invalido {
             get {
                 return ResourceManager.GetString("cpf_invalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Este CPF já foi cadastrado anteriormente..
+        /// </summary>
+        public static string cpf_ja_cadastrado {
+            get {
+                return ResourceManager.GetString("cpf_ja_cadastrado", resourceCulture);
             }
         }
         

@@ -103,49 +103,56 @@ namespace PacienteVirtual.Controllers
                 model.Cpf = model.Cpf.Replace(".", "");
                 model.Cpf = model.Cpf.Replace("-", "");
 
-                PessoaModel pessoaModel = new PessoaModel();
-                pessoaModel = GerenciadorPessoa.GetInstance().ObterPorCPF(model.Cpf);
-                if (pessoaModel != null)
+                if (Global.validarCPF(model.Cpf))
                 {
-                    model.Cpf = "";
-                    ViewBag.CpfExistente = 1;
-                    return View(model);
-                }else{
-                    ViewBag.CpfExistente = 0;
-                }
-                
 
-                // Attempt to register the user
-                MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, "1234", out createStatus);
-                // inserir pessoa
-
-                MembershipUser usuario = string.IsNullOrEmpty(model.UserName) ? null : Membership.GetUser(model.UserName);
-
-                pessoaModel = new PessoaModel();
-                pessoaModel.IdUser = (int) usuario.ProviderUserKey;
-                pessoaModel.Nome = model.Nome;
-                pessoaModel.Cpf = model.Cpf;
-                pessoaModel.Fone = model.Fone;
-                pessoaModel.Matricula = model.Matricula;
-                pessoaModel.IdPessoa = GerenciadorPessoa.GetInstance().Inserir(pessoaModel);
-                SessionController.Pessoa = pessoaModel;
+                    PessoaModel pessoaModel = new PessoaModel();
+                    pessoaModel = GerenciadorPessoa.GetInstance().ObterPorCPF(model.Cpf);
+                    if (pessoaModel != null)
+                    {
+                        model.Cpf = "";
+                        ModelState.AddModelError("CPF", "*"+ Resources.Mensagem.cpf_ja_cadastrado);
+                        return View(model);
+                    }
 
 
-                // usado para esconder as telas
-                SessionController.Roles = "usuario";
-                
+                    // Attempt to register the user
+                    MembershipCreateStatus createStatus;
+                    Membership.CreateUser(model.UserName, model.Password, model.Email, "Pergunta", "Resposta", true, "1234", out createStatus);
+                    // inserir pessoa
 
-                // fim do inserir pessoa
+                    MembershipUser usuario = string.IsNullOrEmpty(model.UserName) ? null : Membership.GetUser(model.UserName);
 
-                if (createStatus == MembershipCreateStatus.Success)
-                {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "SolicitarMatriculaTurma");
+                    pessoaModel = new PessoaModel();
+                    pessoaModel.IdUser = (int)usuario.ProviderUserKey;
+                    pessoaModel.Nome = model.Nome;
+                    pessoaModel.Cpf = model.Cpf;
+                    pessoaModel.Fone = model.Fone;
+                    pessoaModel.Matricula = model.Matricula;
+                    pessoaModel.IdPessoa = GerenciadorPessoa.GetInstance().Inserir(pessoaModel);
+                    SessionController.Pessoa = pessoaModel;
+
+
+                    // usado para esconder as telas
+                    SessionController.Roles = "usuario";
+
+
+                    // fim do inserir pessoa
+
+                    if (createStatus == MembershipCreateStatus.Success)
+                    {
+                        FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                        return RedirectToAction("Index", "SolicitarMatriculaTurma");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                    }
+
                 }
                 else
                 {
-                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                    ModelState.AddModelError("CPF", "*" + Resources.Mensagem.cpf_erro);
                 }
             }
             ViewBag.CpfExistente = 0;
