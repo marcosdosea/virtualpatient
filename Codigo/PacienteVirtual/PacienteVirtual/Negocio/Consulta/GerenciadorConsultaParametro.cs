@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -18,6 +19,53 @@ namespace PacienteVirtual.Negocio
                 gConsultaParametro = new GerenciadorConsultaParametro();
             }
             return gConsultaParametro;
+        }
+
+        public void CorrigirRespostas(IEnumerable<ConsultaParametroModel> ListaParametro, IEnumerable<ConsultaParametroModel> listaParametroGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var parametro in ListaParametro)
+            {
+                contem = false;
+                foreach (var parametroGabarito in listaParametroGabarito)
+                {
+                    if (parametro.IdParametroClinico == parametroGabarito.IdParametroClinico)
+                    {
+                        contem = true;
+                        if (parametro.Valor != parametroGabarito.Valor || !parametro.ValorReferencia.Equals(parametroGabarito.ValorReferencia) || !parametro.Unidade.Equals(parametroGabarito.Unidade))
+                        {
+                            erroRespostas = erroRespostas + "Gabarito do Parâmetro Clínico: " + parametro.ParametroClinico + ": " + parametroGabarito.Valor + ", " + parametroGabarito.ValorReferencia + " e " + parametroGabarito.Unidade + "; " + Environment.NewLine;
+                        }
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + parametro.ParametroClinico + "; " + Environment.NewLine;
+                }
+            }
+            foreach (var parametroGabarito in listaParametroGabarito)
+            {
+                contem = false;
+                foreach (var parametro in ListaParametro)
+                {
+                    if (parametro.IdParametroClinico == parametroGabarito.IdParametroClinico)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + parametroGabarito.ParametroClinico + "; " + Environment.NewLine;
+                }
+            }
+            modelState.AddModelError("ErroParametroClinico", (erroRespostas.Equals("") ? "" : erroRespostas + Environment.NewLine) +
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Parâmetros Clínicos que não contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine) +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Parâmetros Clínicos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>

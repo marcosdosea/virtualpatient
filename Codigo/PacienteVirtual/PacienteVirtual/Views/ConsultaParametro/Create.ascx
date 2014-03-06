@@ -1,9 +1,11 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.ConsultaParametroModel>" %>
-<% using (Html.BeginForm("Create", "ConsultaParametro")) { %>
-    <%: Html.ValidationSummary(true) %>
-    <fieldset>
-        <legend><%: Resources.Mensagem.parametro_clinico %></legend>
-        <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
+<% using (Html.BeginForm("Create", "ConsultaParametro"))
+   { %>
+<%: Html.ValidationSummary(true) %>
+<fieldset>
+    <legend>
+        <%: Resources.Mensagem.parametro_clinico %></legend>
+    <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
@@ -59,5 +61,8 @@
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
     </div>
-    </fieldset>
+</fieldset>
+<div class="span5">
+    <%: Html.ValidationMessageFor(model => model.ErroParametroClinico, string.Empty, new { @class = "styleValidation" })%>
+</div>
 <% } %>

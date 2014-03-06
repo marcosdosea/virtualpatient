@@ -22,4 +22,7 @@
         </div>
     </div>
 </fieldset>
+<div class="span5">
+    <%: Html.ValidationMessageFor(model => model.ErroAlergia, string.Empty, new { @class = "styleValidation" })%>
+</div>
 <% } %>

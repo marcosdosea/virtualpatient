@@ -21,6 +21,47 @@ namespace PacienteVirtual.Negocio
             return gExamesFisicos;
         }
 
+        public void CorrigirRespostasAlergias(IEnumerable<AlergiaModel> listaAlergia, IEnumerable<AlergiaModel> listaAlergiaGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            bool contem;
+            foreach (var alergia in listaAlergia)
+            {
+                contem = false;
+                foreach (var alergiaGabarito in listaAlergiaGabarito)
+                {
+                    if (alergia.IdAlergia == alergiaGabarito.IdAlergia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + alergia.Alergia + "; " + Environment.NewLine;
+                }
+            }
+            foreach (var alergiaGabarito in listaAlergiaGabarito)
+            {
+                contem = false;
+                foreach (var alergia in listaAlergia)
+                {
+                    if (alergia.IdAlergia == alergiaGabarito.IdAlergia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + alergiaGabarito.Alergia + "; " + Environment.NewLine;
+                }
+            }
+            modelState.AddModelError("ErroParametroClinico", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine) +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Alergias que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+        }
+
         /// <summary>
         /// Insere dados do ExamesFisicos
         /// </summary>
