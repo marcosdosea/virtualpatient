@@ -30,5 +30,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "posologia", ResourceType = typeof(Mensagem))]
         public string Posologia { get; set; }
 
+        public string ErroListaMedNaoPresc { get; set; }
     }
 }
