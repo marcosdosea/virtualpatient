@@ -150,7 +150,7 @@ namespace PacienteVirtual.Negocio
             }
             if (!demoAntrop.DataNascimento.Equals(demoAntropGabarito.DataNascimento))
             {
-                modelState.AddModelError("DataNascimento", "Gabarito: \"" + demoAntropGabarito.DataNascimento + "\"");
+                modelState.AddModelError("DataNascimento", "Gabarito: \"" + demoAntropGabarito.DataNascimento.ToShortDateString() + "\"");
             }
             if (demoAntropGabarito.MoradiaFamilia == null || demoAntropGabarito.MoradiaFamilia.Equals(""))
             {
@@ -161,9 +161,12 @@ namespace PacienteVirtual.Negocio
             }
             else
             {
-                if (!Global.RemoverAcentuacao(demoAntrop.MoradiaFamilia.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.MoradiaFamilia.ToLower())))
+                if (demoAntrop.MoradiaFamilia != null)
                 {
-                    modelState.AddModelError("MoradiaFamilia", "Gabarito: \"" + demoAntropGabarito.MoradiaFamilia + "\"");
+                    if (!Global.RemoverAcentuacao(demoAntrop.MoradiaFamilia.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.MoradiaFamilia.ToLower())))
+                    {
+                        modelState.AddModelError("MoradiaFamilia", "Gabarito: \"" + demoAntropGabarito.MoradiaFamilia + "\"");
+                    }   
                 }
             }
             if (demoAntropGabarito.OndeAdquireMedicamentos == null || demoAntropGabarito.OndeAdquireMedicamentos.Equals(""))

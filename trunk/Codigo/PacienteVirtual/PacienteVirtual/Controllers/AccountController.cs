@@ -111,7 +111,7 @@ namespace PacienteVirtual.Controllers
                     if (pessoaModel != null)
                     {
                         model.Cpf = "";
-                        ModelState.AddModelError("CPF", "*"+ Resources.Mensagem.cpf_ja_cadastrado);
+                        ModelState.AddModelError("CPF", "*" + Resources.Mensagem.cpf_ja_cadastrado );
                         return View(model);
                     }
 
@@ -152,7 +152,7 @@ namespace PacienteVirtual.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("CPF", "*" + Resources.Mensagem.cpf_erro);
+                    ModelState.AddModelError("CPF", "*" + Resources.Mensagem.cpf_erro + "<br>" + "Mais texto.");
                 }
             }
             ViewBag.CpfExistente = 0;
