@@ -119,7 +119,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém todos os curso cadastrados
+        /// Obtém todos os Turmas cadastrados
         /// </summary>
         /// <returns></returns>
         public IEnumerable<TurmaModel> ObterTodos()
@@ -151,7 +151,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public IEnumerable<TurmaModel> ObterPorIdAtivados(int idInstituicao)
+        public IEnumerable<TurmaModel> ObterTurmasAtivadasPorInstituicoes(int idInstituicao)
         {
             return GetQuery().Where(turma => turma.IdInstituicao == idInstituicao && turma.Ativa == true).ToList();
         }
