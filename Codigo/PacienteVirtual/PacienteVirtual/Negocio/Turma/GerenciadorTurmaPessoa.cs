@@ -109,8 +109,7 @@ namespace PacienteVirtual.Negocio
                             NomeRole = tb_turma_pessoa.my_aspnet_roles.name,
 
                             NomePessoa =  tb_pessoa.Nome,
-
-                            // dados tela selecionarTurma
+                            
                             Instituicao = tb_turma_pessoa.tb_turma.tb_instituicao.NomeInstituicao,
                             Curso = tb_turma_pessoa.tb_turma.tb_curso.NomeCurso,
                             Disciplina = tb_turma_pessoa.tb_turma.tb_disciplina.NomeDisciplina,
@@ -138,6 +137,7 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa && tpr.IdTurma == idTurma).Count();
         }
+
         /// <summary>
         /// Obtém todos os turmaPessoa cadastrados com excecao dos Administradores e turmas desativadas
         /// </summary>
@@ -147,20 +147,30 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(tpr => tpr.IdRole == Global.Usuario && tpr.TurmaAtiva == true).ToList();
         }
 
+        /// <summary>
+        /// Obtem os alunos e tutores de todas as turmas ativas
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterAlunosTutoresTurmasAtivas()
         {
             return GetQuery().Where(tpr => tpr.IdRole != Global.Administrador && tpr.TurmaAtiva == true).ToList();
         }
 
         /// <summary>
-        /// Obtém todos as pessoas de uma determinada turma qe ainda não estão ativados 
+        /// Obtem alunos de uma determinada turma
         /// </summary>
+        /// <param name="codTurma"></param>
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterAlunosPorTurma(int codTurma)
         {
             return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.IdRole == Global.Usuario).ToList();
         }
 
+        /// <summary>
+        /// Obtem alunos e tutores de uma turma
+        /// </summary>
+        /// <param name="codTurma"></param>
+        /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterAlunosTutoresPorTurma(int codTurma)
         {
             return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.IdRole != Global.Administrador).ToList();
@@ -177,15 +187,6 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtem todos os alunos Ativados
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterTodosAtivados()
-        {
-            return GetQuery().Where(tpr => tpr.Ativa == true).ToList();
-        }
-
-        /// <summary>
         /// Obtém turmaPessoa com o idTurma e idPessoa
         /// </summary>
         /// <param name="codTurma"></param>
@@ -196,7 +197,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém turmaPessoa com o perfil de administrador
+        /// Obtém turmaPessoas a partir do pefil
         /// </summary>
         /// <param name="codTurma"></param>
         /// <returns></returns>
@@ -204,7 +205,6 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(turma => turma.IdRole == idRole).ToList();
         }
-
 
         /// <summary>
         /// Obtém uma TurmaPessoa com o idPessoa
@@ -217,7 +217,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtem todas as pessoas que estão na turma passada
+        /// Obtem todas as pessoas que estão na turma passada Ativa com excecao de tutorea
         /// </summary>
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterPorTurma(int idTurma)
@@ -262,7 +262,6 @@ namespace PacienteVirtual.Negocio
                 return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0).IdRole;
             }
         }
-
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência

@@ -132,6 +132,7 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa && tpr.IdTurma == idTurma && tpr.IdRelato == idRelato).ToList();
         }
+        
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>

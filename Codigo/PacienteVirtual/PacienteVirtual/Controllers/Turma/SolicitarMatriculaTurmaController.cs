@@ -11,7 +11,7 @@ namespace PacienteVirtual.Controllers
         public ViewResult Index()
         {
             ViewBag.IdInstituicao = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos(), "IdInstituicao", "NomeInstituicao");
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterPorIdAtivados(Global.NaoSelecionado), "IdTurma", "Codigo");
+            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTurmasAtivadasPorInstituicoes(Global.NaoSelecionado), "IdTurma", "Codigo");
             return View();
         }
 
@@ -22,11 +22,11 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdInstituicao = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos(), "IdInstituicao", "NomeInstituicao");
             if (IdInstituicao != Global.NaoSelecionado)
             {
-                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterPorIdAtivados(IdInstituicao), "IdTurma", "Codigo");
+                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTurmasAtivadasPorInstituicoes(IdInstituicao), "IdTurma", "Codigo");
             }
             else 
             {
-                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterPorIdAtivados(Global.NaoSelecionado), "IdTurma", "Codigo");
+                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTurmasAtivadasPorInstituicoes(Global.NaoSelecionado), "IdTurma", "Codigo");
             }
             if (ModelState.IsValid)
             {
