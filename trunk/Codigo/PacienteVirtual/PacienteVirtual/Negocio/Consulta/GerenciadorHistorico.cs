@@ -127,16 +127,6 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<HistoricoModel> ObterPorIdHistorico(long IdHistorico)
-        {
-            return GetQuery().Where(Historico => Historico.IdHistorico == IdHistorico).ToList();
-        }
-
-        /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="Historico"></param>

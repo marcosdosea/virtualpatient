@@ -17,22 +17,14 @@ namespace PacienteVirtual.Controllers
             SessionController.IdRelato = idRelato;
             ViewBag.NomePaciente = GerenciadorPaciente.GetInstance().ObterNomePorId(idPaciente);
             ViewBag.OrdemCronologica = ordemCronologica;
-            if (SessionController.DadosTurmaPessoa != null)
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
             {
-                if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
-                {
-                    return View(GerenciadorTurmaPessoa.GetInstance().ObterPorPerfil(SessionController.DadosTurmaPessoa.IdRole));
-                }
-                else
-                {
-                    return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
-                }
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorPerfil(SessionController.DadosTurmaPessoa.IdRole));
             }
             else
             {
-                throw new NegocioException("Selecione uma turma.");
+                return View(GerenciadorTurmaPessoa.GetInstance().ObterPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
-            
         }
 
         //
@@ -40,140 +32,167 @@ namespace PacienteVirtual.Controllers
         public ActionResult AtribuirRelato(int idTurma, int idPessoa)
         {
             RelatoClinicoModel relato = GerenciadorRelatoClinico.GetInstance().Obter(SessionController.IdRelato);
-
-            // verifica se consulta já foi atribuida
-            GerenciadorConsultaVariavel.GetInstance().consultaAtribuida(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica);
+            GerenciadorConsultaVariavel.GetInstance().VerificaSeConsultaFoiAtribuida(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica);
 
             long idConsultaFixo = 0;
             ConsultaVariavelModel consultaVariavelAnteriorModel = null;
+            CriaConsultaFixaOuApontaParaPrimeira(idTurma, idPessoa, relato, ref idConsultaFixo, ref consultaVariavelAnteriorModel);
 
-            if (relato.OrdemCronologica == 1)
+            ConsultaVariavelModel cvm;
+            long idConsultaVariavel;
+            InserirConsultaVariavelTurmaPessoaRelato(idTurma, idPessoa, idConsultaFixo, out cvm, out idConsultaVariavel);
+
+            if (relato.OrdemCronologica != Global.ValorInicial)
+            {
+                InserirDadosConsultaAnterior(consultaVariavelAnteriorModel, cvm, idConsultaVariavel);
+            }
+            SessionController.IdRelato = 0;
+            return RedirectToAction("Index", "RelatoClinico");
+        }
+
+        /// <summary>
+        /// cria uma nova consulta Fixa ou faz apontar para os dados fixos da primeira consulta do paciente
+        /// </summary>
+        /// <param name="idTurma"></param>
+        /// <param name="idPessoa"></param>
+        /// <param name="relato"></param>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="consultaVariavelAnteriorModel"></param>
+        private static void CriaConsultaFixaOuApontaParaPrimeira(int idTurma, int idPessoa, RelatoClinicoModel relato, ref long idConsultaFixo, ref ConsultaVariavelModel consultaVariavelAnteriorModel)
+        {
+            if (relato.OrdemCronologica == Global.ValorInicial)
             {
                 ConsultaFixoModel cfm = new ConsultaFixoModel();
                 idConsultaFixo = GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
             }
             else
             {
-                // valida a atribuição de relato
                 GerenciadorConsultaVariavel.GetInstance().ConsultaAnteriorFinalizada(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica);
-                
+
                 consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
                     relato.IdPaciente, relato.OrdemCronologica);
                 idConsultaFixo = consultaVariavelAnteriorModel.IdConsultaFixo;
             }
-            ConsultaVariavelModel cvm = new ConsultaVariavelModel();
+        }
+
+        /// <summary>
+        /// Cria e insere os dados de uma nova ConsultaVariavel e de uma TurmaPessoaRelato 
+        /// </summary>
+        /// <param name="idTurma"></param>
+        /// <param name="idPessoa"></param>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="cvm"></param>
+        /// <param name="idConsultaVariavel"></param>
+        private static void InserirConsultaVariavelTurmaPessoaRelato(int idTurma, int idPessoa, long idConsultaFixo, out ConsultaVariavelModel cvm, out long idConsultaVariavel)
+        {
+            cvm = new ConsultaVariavelModel();
             TurmaPessoaRelatoModel tprm = new TurmaPessoaRelatoModel();
-            
-            // dados consulta variavel
             cvm.IdConsultaFixo = idConsultaFixo;
             cvm.IdEstadoConsulta = Global.AguardandoPreenchimento;
             cvm.IdPessoa = idPessoa;
             cvm.IdTurma = idTurma;
             cvm.IdRelato = SessionController.IdRelato;
             cvm.IdRazaoEncontro = Global.IdRazaoEncontro;
-            // dados turma pessoa relato
+
             tprm.IdConsultaFixo = idConsultaFixo;
             tprm.IdPessoa = idPessoa;
             tprm.IdTurma = idTurma;
             tprm.IdRelato = SessionController.IdRelato;
-            
             GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tprm);
-            long idConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
+            idConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
+        }
 
-            if (relato.OrdemCronologica != 1)
+        /// <summary>
+        /// Insere os dados não fixos da consulta anterior do paciente
+        /// </summary>
+        /// <param name="consultaVariavelAnteriorModel"></param>
+        /// <param name="cvm"></param>
+        /// <param name="idConsultaVariavel"></param>
+        private static void InserirDadosConsultaAnterior(ConsultaVariavelModel consultaVariavelAnteriorModel, ConsultaVariavelModel cvm, long idConsultaVariavel)
+        {
+            cvm.IdRazaoEncontro = consultaVariavelAnteriorModel.IdRazaoEncontro;
+            cvm.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorConsultaVariavel.GetInstance().Atualizar(cvm);
+            SessionController.ConsultaVariavel = consultaVariavelAnteriorModel;
+            EstiloVidaModel evm = SessionController.EstiloVida;
+            evm.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorEstiloVida.GetInstance().Inserir(evm);
+            ExamesFisicosModel efm = SessionController.ExamesFisicos;
+            efm.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorExamesFisicos.GetInstance().Inserir(efm);
+
+            foreach (var a in GerenciadorExamesFisicos.GetInstance().ObterAlergias(consultaVariavelAnteriorModel.IdConsultaVariavel))
             {
-                
-                cvm.IdRazaoEncontro = consultaVariavelAnteriorModel.IdRazaoEncontro;
-                cvm.IdConsultaVariavel = idConsultaVariavel;
-                GerenciadorConsultaVariavel.GetInstance().Atualizar(cvm);
-
-                SessionController.ConsultaVariavel = consultaVariavelAnteriorModel;
-
-                EstiloVidaModel evm = SessionController.EstiloVida;
-                evm.IdConsultaVariavel = idConsultaVariavel;
-                GerenciadorEstiloVida.GetInstance().Inserir(evm);
-
-                ExamesFisicosModel efm = SessionController.ExamesFisicos;
-                efm.IdConsultaVariavel = idConsultaVariavel;
-                GerenciadorExamesFisicos.GetInstance().Inserir(efm);
-
-                foreach (var a in GerenciadorExamesFisicos.GetInstance().ObterAlergias(consultaVariavelAnteriorModel.IdConsultaVariavel)) {
-                    GerenciadorExamesFisicos.GetInstance().InserirAlergia(efm, a.IdAlergia);
-                }
-                
-                foreach (var mp in SessionController.ListaMedicamentosPrescritos) {
-                    mp.IdConsultaVariavel = idConsultaVariavel;
-                    GerenciadorMedicamentoPrescrito.GetInstance().Inserir(mp);
-                }
-
-                foreach (var ma in SessionController.ListaMedicamentosAnteriores) {
-                    ma.IdConsultaVariavel = idConsultaVariavel;
-                    GerenciadorMedicamentosAnteriores.GetInstance().Inserir(ma);
-                }
-
-                foreach (var mnp in SessionController.ListaMedicamentoNaoPrescrito) {
-                    mnp.IdConsultaVariavel = idConsultaVariavel;
-                    GerenciadorMedicamentoNaoPrescrito.GetInstance().Inserir(mnp);
-                }
-
-                foreach (var cp in SessionController.ListaConsultaParametro) {
-                    cp.IdConsultaVariavel = idConsultaVariavel;
-                    GerenciadorConsultaParametro.GetInstance().Inserir(cp);
-                }
-                
-                foreach (var cvq in SessionController.ListaConsultaVariavelQueixa) {
-                    cvq.IdConsultaVariavel = idConsultaVariavel;
-                    GerenciadorConsultaVariavelQueixa.GetInstance().Inserir(cvq);
-                }
-                
-                foreach (var qm in SessionController.ListaQueixaMedicamento) {
-                    qm.IdConsultaVariavel = idConsultaVariavel;
-                    GerenciadorQueixaMedicamento.GetInstance().Inserir(qm);
-                }
-
-                foreach (var ic in SessionController.ListaIntervencaoConsulta) {
-                    ic.IdConsultaVariavel = idConsultaVariavel;
-                    GerenciadorIntervencaoConsulta.GetInstance().Inserir(ic);
-                }
-
-                foreach (var c in SessionController.ListaCarta) {
-                    c.IdConsultaVariavel = idConsultaVariavel;
-                    GerenciadorCarta.GetInstance().Inserir(c);
-                }
+                GerenciadorExamesFisicos.GetInstance().InserirAlergia(efm, a.IdAlergia);
             }
-            
-            SessionController.IdRelato = 0;
-            return RedirectToAction("Index", "RelatoClinico");
+            foreach (var mp in SessionController.ListaMedicamentosPrescritos)
+            {
+                mp.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorMedicamentoPrescrito.GetInstance().Inserir(mp);
+            }
+            foreach (var ma in SessionController.ListaMedicamentosAnteriores)
+            {
+                ma.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorMedicamentosAnteriores.GetInstance().Inserir(ma);
+            }
+            foreach (var mnp in SessionController.ListaMedicamentoNaoPrescrito)
+            {
+                mnp.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorMedicamentoNaoPrescrito.GetInstance().Inserir(mnp);
+            }
+            foreach (var cp in SessionController.ListaConsultaParametro)
+            {
+                cp.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorConsultaParametro.GetInstance().Inserir(cp);
+            }
+            foreach (var cvq in SessionController.ListaConsultaVariavelQueixa)
+            {
+                cvq.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorConsultaVariavelQueixa.GetInstance().Inserir(cvq);
+            }
+            foreach (var qm in SessionController.ListaQueixaMedicamento)
+            {
+                qm.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorQueixaMedicamento.GetInstance().Inserir(qm);
+            }
+            foreach (var ic in SessionController.ListaIntervencaoConsulta)
+            {
+                ic.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorIntervencaoConsulta.GetInstance().Inserir(ic);
+            }
+            foreach (var c in SessionController.ListaCarta)
+            {
+                c.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorCarta.GetInstance().Inserir(c);
+            }
         }
 
         // GET: /RelatoClinico/
         public ViewResult Index()
         {
-            ViewBag.codigo = -1;
+            ViewBag.codigo = Global.NaoSelecionado;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             return View(gRelato.ObterTodos());
         }
 
         [HttpPost]
-        public ActionResult Index(int IdPaciente = -1)
+        public ActionResult Index(int IdPaciente = Global.NaoSelecionado)
         {
-
             ViewBag.codigo = IdPaciente;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
-            if (IdPaciente != -1)
+            if (IdPaciente != Global.NaoSelecionado)
             {
                 return View(gRelato.ObterRelatos(IdPaciente).ToList());
             }
-            if (IdPaciente == -1)
+            else
             {
                 return View(gRelato.ObterTodos());
             }
-            return View();
         }
 
+        // Listar
         public ViewResult Listar(int id)
         {
-
             return View(gRelato.ObterRelatos(id));
         }
 
@@ -192,7 +211,7 @@ namespace PacienteVirtual.Controllers
 
         public FileContentResult GetImage(int id)
         {
-            if (id != -1)
+            if (id != Global.NaoSelecionado)
             {
                 var imageData = GerenciadorPaciente.GetInstance().Obter(id).Foto;
                 if (imageData != null)
@@ -205,7 +224,7 @@ namespace PacienteVirtual.Controllers
         // GET: /RelatoClinico/Create
         public ActionResult Create()
         {
-            ViewBag.fotoId = -1;
+            ViewBag.fotoId = Global.NaoSelecionado;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             ViewBag.IdAreaAtuacao = new SelectList(GerenciadorAreaAtuacao.GetInstance().ObterTodos(), "IdAreaAtuacao", "AreaAtuacao");
             return View();
@@ -223,16 +242,11 @@ namespace PacienteVirtual.Controllers
                 return View("Index", gRelato.ObterRelatos(relatoModel.IdPaciente));
 
             }
-
-            if (relatoModel.IdPaciente > 0)
+            ViewBag.fotoId = Global.NaoSelecionado;
+            if (relatoModel.IdPaciente > Global.ValorInteiroNulo)
             {
-                //ViewBag.teste = "passou pelo -1" + relatoModel.IdPaciente;
                 ViewBag.fotoId = relatoModel.IdPaciente;
-                ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
-                ViewBag.IdAreaAtuacao = new SelectList(GerenciadorAreaAtuacao.GetInstance().ObterTodos(), "IdAreaAtuacao", "AreaAtuacao");
-                return View(relatoModel);
             }
-            ViewBag.fotoId = -1;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             ViewBag.IdAreaAtuacao = new SelectList(GerenciadorAreaAtuacao.GetInstance().ObterTodos(), "IdAreaAtuacao", "AreaAtuacao");
             return View(relatoModel);
@@ -257,24 +271,8 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool salvar = true;
-                foreach (var ordem in gRelato.ObterRelatosExcecaoDoPassado(relatoModel.IdPaciente, relatoModel.IdRelato))
-                {
-                    if (ordem.OrdemCronologica == relatoModel.OrdemCronologica)
-                    {
-                        salvar = false;
-                        break;
-                    }
-                };
-                if (salvar)
-                {
-                    gRelato.Atualizar(relatoModel);
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    TempData["MensagemErro"] = "•Não foi possível editar o Relato Clínico, pois já existe um relato com a Ordem Cronológica especificada!";
-                }
+                gRelato.AtualizarRelatoSemOrdemCronologicaRepetida(relatoModel);
+                return RedirectToAction("Index");
             }
             ViewBag.fotoId = relatoModel.IdPaciente;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente", relatoModel.IdPaciente);

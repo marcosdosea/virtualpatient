@@ -23,7 +23,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Realiza a correção de acordo com as respostas do gabarito
+        /// Realiza a correção do medicamento prescrito de acordo com as respostas do gabarito
         /// </summary>
         /// <param name="demoAntrop"></param>
         /// <param name="demoAntropGabarito"></param>
@@ -138,26 +138,6 @@ namespace PacienteVirtual.Negocio
             }
         }
 
-
-        /// <summary>
-        /// Remove dados do MedicamentosPrescrito
-        /// </summary>
-        /// <param name="idConsultaVariavel"></param>
-        public void Remover(long idConsultaVariavel, int idMedicamento)
-        {
-            try
-            {
-                var repMedicamentoPrescrito = new RepositorioGenerico<tb_medicamento_prescrito>();
-                repMedicamentoPrescrito.Remover(mP => mP.IdConsultaVariavel == idConsultaVariavel && mP.IdMedicamento == idMedicamento);
-                repMedicamentoPrescrito.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                throw new DadosException("MedicamentoPrescrito", e.Message, e);
-            }
-        }
-
-
         /// <summary>
         /// Consulta para retornar dados da entidade
         /// </summary>
@@ -194,7 +174,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém MedicamentoPrescritoModel com o código especificiado
+        /// Obtém MedicamentoPrescritoModel com o código da consulta variavel especificiado
         /// </summary>
         /// <returns></returns>
         public IEnumerable<MedicamentoPrescritoModel> Obter(long idConsultaVariavel)
@@ -203,15 +183,11 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém medicamentoPrescrito que iniciam com o nome
+        /// Obtem MedicamentoPrescristo pela consulta e por medicamento
         /// </summary>
-        /// <param name="nome"></param>
+        /// <param name="idConsultaVariavel"></param>
+        /// <param name="idMendicamento"></param>
         /// <returns></returns>
-        public IEnumerable<MedicamentoPrescritoModel> ObterPorIdHistorico(long idConsultaVariavel)
-        {
-            return GetQuery().Where(MedicamentoPrescritoModel => MedicamentoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList();
-        }
-
         public MedicamentoPrescritoModel ObterPorMedicamento(long idConsultaVariavel, int idMendicamento)
         {
             return GetQuery().Where(cvq => cvq.IdConsultaVariavel == idConsultaVariavel && cvq.IdMedicamento == idMendicamento).ToList().ElementAtOrDefault(0);

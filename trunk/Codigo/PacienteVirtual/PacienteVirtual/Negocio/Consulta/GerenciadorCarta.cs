@@ -68,26 +68,6 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do Carta
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
-        public void Remover(long idConsultaVariavel, long idCarta)
-        {
-            try
-            {
-
-                var repCarta = new RepositorioGenerico<tb_carta>();
-                repCarta.Remover(c => c.IdConsultaVariavel == idConsultaVariavel && c.IdCarta == idCarta);
-                repCarta.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                throw new DadosException("Carta", e.Message, e);
-            }
-        }
-
-
-        /// <summary>
-        /// Remove dados do Carta
-        /// </summary>
-        /// <param name="idConsultaVariavel"></param>
         public void Remover(long idConsultaVariavel, int idCarta)
         {
             try
@@ -145,7 +125,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém CartaModel com o código especificiado
+        /// Obtém Cartas com o código da consulta variavel especificiado
         /// </summary>
         /// <returns></returns>
         public IEnumerable<CartaModel> Obter(long idConsultaVariavel)
@@ -154,7 +134,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém CartaModel com o idConsulta e IdCarta
+        /// Obtém Carta com o idConsulta e IdCarta
         /// </summary>
         /// <returns></returns>
         public CartaModel ObterPorIdConsultaEIdCarta(long idConsultaVariavel, long idCarta)
@@ -163,7 +143,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém Carta que iniciam com o nome
+        /// Obtém Cartas que iniciam com o nome
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>

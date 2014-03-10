@@ -12,27 +12,15 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Index()
         {
-            /*if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
-            {
-                ViewBag.SelecionaTurma = true;
-              */
-            //ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
             return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresTurmasAtivas());
-            /*}
-            else
-            {
-                ViewBag.SelecionaTurma = false;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
-            }*/
         }
 
         [HttpPost]
-        public ActionResult Index(int IdTurma = -1)
+        public ActionResult Index(int IdTurma = Global.NaoSelecionado)
         {
             ViewBag.codigo = IdTurma;
-            //ViewBag.SelecionaTurma = true;
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
-            if (IdTurma != -1)
+            if (IdTurma != Global.NaoSelecionado)
             {
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresPorTurma(IdTurma).ToList());
             }
@@ -42,7 +30,7 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-
+        // Ativar
         public ActionResult Ativar(int idTurma, int idPessoa)
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
@@ -50,20 +38,20 @@ namespace PacienteVirtual.Controllers
             switch (tpm.IdRole)
             {
                 case Global.Usuario:
-                    tpm.NomeRole = "usuario";
+                    tpm.NomeRole = Global.stringUsuarioRole;
                     break;
                 case Global.Tutor:
-                    tpm.NomeRole = "tutor";
+                    tpm.NomeRole = Global.stringTutorRole;
                     break;
                 case Global.Administrador:
-                    tpm.NomeRole = "administrador";
+                    tpm.NomeRole = Global.stringAdministradorRole;
                     break;
             }
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index", idTurma);
         }
 
-
+        // Desativar
         public ActionResult Desativar(int idTurma, int idPessoa)
         {
             TurmaPessoaModel tpm = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(idTurma, idPessoa);
@@ -71,13 +59,13 @@ namespace PacienteVirtual.Controllers
             switch (tpm.IdRole)
             {
                 case Global.Usuario:
-                    tpm.NomeRole = "usuario";
+                    tpm.NomeRole = Global.stringUsuarioRole;
                     break;
                 case Global.Tutor:
-                    tpm.NomeRole = "tutor";
+                    tpm.NomeRole = Global.stringTutorRole;
                     break;
                 case Global.Administrador:
-                    tpm.NomeRole = "administrador";
+                    tpm.NomeRole = Global.stringAdministradorRole;
                     break;
             }
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);

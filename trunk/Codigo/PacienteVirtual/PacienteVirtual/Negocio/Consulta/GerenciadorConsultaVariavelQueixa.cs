@@ -71,8 +71,6 @@ namespace PacienteVirtual.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(long idConsultaVariavel, int idQueixa)
         {
-            //if (idConsultaVariavel == 1)
-            //    throw new NegocioException("A consultaVariavelQueixa não pode ser removido.");
             try
             {
                 var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel_queixa>();
@@ -121,8 +119,9 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém consultaVariavelQueixa com o código especificiado
+        /// Obtém consultaVariavelQueixa a partir da consulta
         /// </summary>
+        /// <param name="idConsultaVariavel"></param>
         /// <returns></returns>
         public IEnumerable<ConsultaVariavelQueixaModel> Obter(long idConsultaVariavel)
         {
@@ -130,19 +129,10 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-         public IEnumerable<ConsultaVariavelQueixaModel> ObterPorConsultaVariavelTodosSuspeitaPRM(long idConsultaVariavel)
-        {
-            return GetQuery().Where(cv => cv.IdConsultaVariavel == idConsultaVariavel).ToList();
-        }
-
-
-        /// <summary>
         /// Obtém consultaVariavelQueixa por consulta e por Queixa
         /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        /// <param name="idQueixa"></param>
         /// <returns></returns>
         public ConsultaVariavelQueixaModel ObterPorConcultaQueixa(long idConsultaVariavel, int idQueixa)
         {

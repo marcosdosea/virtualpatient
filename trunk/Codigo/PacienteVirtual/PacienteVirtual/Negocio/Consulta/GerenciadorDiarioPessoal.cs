@@ -65,9 +65,12 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Remove dados do DiarioPessoalModel
+        /// Remove dados do diario pessoal especificando: consulta fixo, medicamento, horario e quantidade
         /// </summary>
-        /// <param name="codDisciplina"></param>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idMedicamento"></param>
+        /// <param name="horario"></param>
+        /// <param name="quantidade"></param>
         public void Remover(long idConsultaFixo, int idMedicamento, string horario, string quantidade)
         {
             try
@@ -121,27 +124,24 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém DiarioPessoalModel com o código especificiado
+        /// Obtém DiarioPessoalModel com o código da consulta fixa especificicado
         /// </summary>
+        /// <param name="IdConsultaFixo"></param>
         /// <returns></returns>
         public IEnumerable<DiarioPessoalModel> Obter(long IdConsultaFixo)
         {
             return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).OrderBy(DiarioPessoalModel => DiarioPessoalModel.Horario).ToList();
         }
 
+        /// <summary>
+        /// Obtem o diario pessoal especificando a consulta fixa e o medicamento
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idMendicamento"></param>
+        /// <returns></returns>
         public DiarioPessoalModel ObterPorMedicamento(long idConsultaFixo, int idMendicamento)
         {
             return GetQuery().Where(dp => dp.IdConsultaFixo == idConsultaFixo && dp.IdMedicamento == idMendicamento).ToList().ElementAtOrDefault(0);
-        }
-
-        /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<DiarioPessoalModel> ObterPorIdHistorico(long IdConsultaFixo)
-        {
-            return GetQuery().Where(DiarioPessoalModel => DiarioPessoalModel.IdConsultaFixo == IdConsultaFixo).ToList();
         }
 
         /// <summary>

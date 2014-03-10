@@ -69,11 +69,11 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do IntervencaoConsulta
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
+        /// <param name="idIntervencao"></param>
         public void Remover(long idConsultaVariavel, long idIntervencao)
         {
             try
             {
-
                 var repIntervencaoConsulta = new RepositorioGenerico<tb_consulta_variavel_intervencao>();
                 repIntervencaoConsulta.Remover(iC => iC.IdConsultaVariavel == idConsultaVariavel && iC.IdIntervencao == idIntervencao);
                 repIntervencaoConsulta.SaveChanges();
@@ -86,7 +86,7 @@ namespace PacienteVirtual.Negocio
 
 
         /// <summary>
-        /// Remove dados do MedicamentosPrescrito
+        /// Remove dados do Intervencao da consulta
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
         public void Remover(long idConsultaVariavel, int idIntervencao)
@@ -139,8 +139,9 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém IntervencaoConsultaModel com o código especificiado
+        /// Obtém IntervencaoConsultaModel com o código da consulta variavel especificiado
         /// </summary>
+        /// <param name="idConsultaVariavel"></param>
         /// <returns></returns>
         public IEnumerable<IntervencaoConsultaModel> Obter(long idConsultaVariavel)
         {
@@ -157,16 +158,6 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(IntervencaoConsultaModel => IntervencaoConsultaModel.IdConsultaVariavel == idConsultaVariavel
                 && IntervencaoConsultaModel.IdIntervencao == idIntervencao).ToList().ElementAtOrDefault(0);
-        }
-
-        /// <summary>
-        /// Obtém IntervencaoConsulta que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<IntervencaoConsultaModel> ObterPorIdHistorico(long idConsultaVariavel)
-        {
-            return GetQuery().Where(IntervencaoConsultaModel => IntervencaoConsultaModel.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
 
         /// <summary>

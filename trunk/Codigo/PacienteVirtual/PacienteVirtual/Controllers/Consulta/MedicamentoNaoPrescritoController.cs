@@ -24,12 +24,11 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 medicamentoNaoPrescrito.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
                 gMedicamentoNaoPrescrito.Inserir(medicamentoNaoPrescrito);
                 SessionController.ListaMedicamentoNaoPrescrito = null;
             }
-            SessionController.Abas1 = 7;
+            SessionController.Abas1 = Global.abaMedNaoPresc;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -39,7 +38,7 @@ namespace PacienteVirtual.Controllers
         {
             MedicamentoNaoPrescritoModel mnp = GerenciadorMedicamentoNaoPrescrito.GetInstance().ObterPorConsultaMedicamento(idConsultaVariavel, idMedicamento);
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos(), "IdMedicamento", "Nome", idMedicamento);
-            SessionController.Abas1 = 7;
+            SessionController.Abas1 = Global.abaMedNaoPresc;
             return View(mnp);
         }
 
@@ -49,14 +48,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(MedicamentoNaoPrescritoModel mnp)
         {
+            SessionController.Abas1 = Global.abaMedNaoPresc;
             if (ModelState.IsValid)
             {
                 GerenciadorMedicamentoNaoPrescrito.GetInstance().Atualizar(mnp);
                 SessionController.ListaMedicamentoNaoPrescrito = null;
-                SessionController.Abas1 = 7;
                 return RedirectToAction("Edit", "Consulta");
             }
-            SessionController.Abas1 = 7;
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos(), "IdMedicamento", "Nome", mnp.IdMedicamento);
             return View(mnp);
         }
@@ -67,7 +65,7 @@ namespace PacienteVirtual.Controllers
         {
             gMedicamentoNaoPrescrito.Remover(idConsultaVariavel, idMedicamento);
             SessionController.ListaMedicamentoNaoPrescrito = null;
-            SessionController.Abas1 = 7;
+            SessionController.Abas1 = Global.abaMedNaoPresc;
             return RedirectToAction("Edit", "Consulta");
         }
 

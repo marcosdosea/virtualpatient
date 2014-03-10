@@ -24,14 +24,14 @@ namespace PacienteVirtual.Controllers
                 GerenciadorQueixaMedicamento.GetInstance().Inserir(queixaMedicamento);
                 SessionController.ListaQueixaMedicamento = null;
             }
-            SessionController.Abas2 = 1;
+            SessionController.Abas2 = Global.abaClassificacaoPRM;
             return RedirectToAction("Edit2", "Consulta");
         }
 
         public ActionResult Edit(long idConsultaVariavel, int idMedicamento, int idQueixa)
         {
             QueixaMedicamentoModel qmm = GerenciadorQueixaMedicamento.GetInstance().ObterPorConsultaQueixaMedicamento(idConsultaVariavel, idMedicamento, idQueixa);
-            SessionController.Abas2 = 1;
+            SessionController.Abas2 = Global.abaClassificacaoPRM;
             ViewBag.IdSuspeitaPrm = new SelectList(GerenciadorSuspeitaPrm.GetInstance().ObterTodos(), "IdSuspeitaPrm", "Descricao", qmm.IdSuspeitaPRM);
             ViewBag.IdAcaoQueixa1 = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos(), "IdAcaoQueixa", "DescricaoAcao", qmm.IdAcaoQueixa1);
             ViewBag.IdAcaoQueixa2 = new SelectList(GerenciadorAcaoQueixa.GetInstance().ObterTodos(), "IdAcaoQueixa", "DescricaoAcao", qmm.IdAcaoQueixa2);
@@ -44,7 +44,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(QueixaMedicamentoModel qmm)
         {
-            SessionController.Abas2 = 1;
+            SessionController.Abas2 = Global.abaClassificacaoPRM;
             if (ModelState.IsValid)
             {
                 GerenciadorQueixaMedicamento.GetInstance().Atualizar(qmm);
@@ -64,7 +64,7 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorQueixaMedicamento.GetInstance().Remover(idConsultaVariavel, idMedicamento, idQueixa);
             SessionController.ListaQueixaMedicamento = null;
-            SessionController.Abas2 = 1;
+            SessionController.Abas2 = Global.abaClassificacaoPRM;
             return RedirectToAction("Edit2", "Consulta");
         }
 

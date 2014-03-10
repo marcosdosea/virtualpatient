@@ -22,6 +22,31 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Atualiza os dados de um relato clinico quando não tem nenhum Relato do mesmo Paciente com a mesma OrdemCronologica
+        /// </summary>
+        /// <param name="relatoModel"></param>
+        public void AtualizarRelatoSemOrdemCronologicaRepetida(RelatoClinicoModel relatoModel)
+        {
+            bool salvar = true;
+            foreach (var ordem in gRelato.ObterRelatosExcecaoDoPassado(relatoModel.IdPaciente, relatoModel.IdRelato))
+            {
+                if (ordem.OrdemCronologica == relatoModel.OrdemCronologica)
+                {
+                    salvar = false;
+                    break;
+                }
+            };
+            if (salvar)
+            {
+                gRelato.Atualizar(relatoModel);
+            }
+            else
+            {
+                throw new NegocioException("Não foi possível editar o Relato Clínico, pois já existe um relato com a Ordem Cronológica especificada!");
+            }
+        }
+
+        /// <summary>
         /// Insere dados do relato
         /// </summary>
         /// <param name="relato"></param>
@@ -47,6 +72,10 @@ namespace PacienteVirtual.Negocio
             }
         }
 
+        /// <summary>
+        /// Verifica se já existe um relato com a mesma ordem cronologica
+        /// </summary>
+        /// <param name="relato"></param>
         private static void VerificarRegrasNegocio(RelatoClinicoModel relato)
         {
             var listaRelatos = GerenciadorRelatoClinico.GetInstance().ObterPorPacienteOrdemCronologica(relato.IdPaciente, relato.OrdemCronologica);
@@ -135,7 +164,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém relato com o código especificiado
+        /// Obtém relato com o código do paciente especificiado
         /// </summary>
         /// <param name="codDisciplina"></param>
         /// <returns></returns>
@@ -145,9 +174,10 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém relato com o código especificiado
+        /// Obtém relato com o código especificiado do paciente e a ordem cronologica especificada
         /// </summary>
-        /// <param name="codDisciplina"></param>
+        /// <param name="idPaciente"></param>
+        /// <param name="ordemCronologica"></param>
         /// <returns></returns>
         public IEnumerable<RelatoClinicoModel> ObterPorPacienteOrdemCronologica(int idPaciente, int ordemCronologica)
         {
@@ -155,9 +185,10 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém todos os relatos menos o relato relato com o id passado 
+        /// Obtém todos os relatos menos o relato relato com o id passado
         /// </summary>
-        /// <param name="codDisciplina"></param>
+        /// <param name="idPaciente"></param>
+        /// <param name="idRelato"></param>
         /// <returns></returns>
         public IEnumerable<RelatoClinicoModel> ObterRelatosExcecaoDoPassado(int idPaciente, int idRelato)
         {
@@ -165,7 +196,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém relato com o código especificiado
+        /// Obtém relato com o código especificiado do relato
         /// </summary>
         /// <param name="codDisciplina"></param>
         /// <returns></returns>
@@ -177,22 +208,12 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Obtém relato com o código especificiado e seus relatos anteriores
         /// </summary>
-        /// <param name="codDisciplina"></param>
+        /// <param name="idRelato"></param>
         /// <returns></returns>
         public IEnumerable<RelatoClinicoModel> ObterRelatosComConsultasAnteriores(int idRelato)
         {
             var a = GetQuery().Where(relato => relato.IdRelato == idRelato).ToList().ElementAtOrDefault(0);
             return GetQuery().Where(relato => relato.IdPaciente == a.IdPaciente && relato.OrdemCronologica <= a.OrdemCronologica);
-        }
-
-        /// <summary>
-        /// Obtém relatos que iniciam com o relato em texto
-        /// </summary>
-        /// <param name="relatoTexto"></param>
-        /// <returns></returns>
-        public IEnumerable<RelatoClinicoModel> ObterPorNome(string relatoTexto)
-        {
-            return GetQuery().Where(relato => relato.RelatoTextual.StartsWith(relatoTexto)).ToList();
         }
 
         /// <summary>

@@ -105,26 +105,6 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Consulta para retornar dados da entidade paciente com seus relatos
-        /// </summary>
-        /// <returns></returns>
-        //private IQueryable<VMPaciente> GetQueryRelatos()
-        //{
-        //    var repPaciente = new RepositorioGenerico<tb_paciente>();
-        //    var pvEntities = (pvEntities)repPaciente.ObterContexto();
-        //    var query = from pacient in pvEntities.tb_paciente
-        //                join relatos in pvEntities.tb_relato_clinico
-        //               on pacient.IdPaciente equals relatos.IdPaciente 
-        //                select new VMPaciente
-        //                {
-        //                    paciente = pacient,
-        //                    relatosClinico = orderGroup as List<RelatoClinicoModel>
-   
-        //                };
-        //    return query;
-        //}
-
-        /// <summary>
         /// Obtém todos os pacientes cadastradas
         /// </summary>
         /// <returns></returns>
@@ -134,7 +114,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém Paciente com o código especificiado
+        /// Obtém Paciente com o código do paciente especificiado
         /// </summary>
         /// <param name="idPaciente"></param>
         /// <returns></returns>
@@ -143,9 +123,14 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(paciente => paciente.IdPaciente == idPaciente).ToList().ElementAtOrDefault(0);
         }
 
+        /// <summary>
+        /// Obtem paciente de acordo com o Id retornando lista
+        /// </summary>
+        /// <param name="idPaciente"></param>
+        /// <returns></returns>
         public IEnumerable<PacienteModel> ObterPorID(int idPaciente)
         {
-            return GetQuery().Where(paciente => paciente.IdPaciente == idPaciente);
+            return GetQuery().Where(paciente => paciente.IdPaciente == idPaciente).ToList();
         }
 
         /// <summary>
@@ -159,23 +144,12 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém a partir do nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<PacienteModel> ObterPorNome(string nome)
-        {
-            return GetQuery().Where(paciente => paciente.NomePaciente.StartsWith(nome)).ToList();
-        }
-
-        /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="paciente"></param>
         /// <param name="_tb_paciente"></param>
         private static void Atribuir(PacienteModel paciente, tb_paciente _tb_paciente)
         {
-            //_tb_paciente.IdPaciente = paciente.IdPaciente;
             _tb_paciente.Nome = paciente.NomePaciente;
             _tb_paciente.Foto = paciente.Foto;
         }

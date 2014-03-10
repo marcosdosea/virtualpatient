@@ -1,14 +1,16 @@
 ﻿using System.Web.Mvc;
 using PacienteVirtual.Negocio;
+using PacienteVirtual.Models;
 
 namespace PacienteVirtual.Controllers
 {
     public class SelecionarTurmaController : Controller
     {
         
+        // GET/Index
         public ActionResult Index()
         {
-            if (GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoaEmTurmasAtivas(SessionController.Pessoa.IdPessoa) > 1)
+            if (GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoaEmTurmasAtivas(SessionController.Pessoa.IdPessoa) > Global.ValorInicial)
             {
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterTurmasPorPessoa(SessionController.Pessoa.IdPessoa));
             }
@@ -17,6 +19,7 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        // DadosTurma
         public ActionResult DadosTurma()
         {
             if (SessionController.Pessoa != null)
@@ -29,7 +32,7 @@ namespace PacienteVirtual.Controllers
         //[HttpPost]
         public ActionResult Create(int id)
         {
-            if(id > 0)
+            if(id > Global.ValorInteiroNulo)
             {
                 SessionController.DadosTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(id, SessionController.Pessoa.IdPessoa);
                 ViewBag.QtdTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoa(SessionController.Pessoa.IdPessoa);

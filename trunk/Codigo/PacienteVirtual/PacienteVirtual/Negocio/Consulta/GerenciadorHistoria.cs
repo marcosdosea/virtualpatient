@@ -22,6 +22,12 @@ namespace PacienteVirtual.Negocio
             return gHistoria;
         }
 
+        /// <summary>
+        /// Faz correção do historia de uma consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="historia"></param>
+        /// <param name="historiaGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostas(HistoriaModel historia, HistoriaModel historiaGabarito, ModelStateDictionary modelState)
         {
             if (!Global.RemoverAcentuacao(historia.HistoriaFamiliar.ToLower()).Equals(Global.RemoverAcentuacao(historiaGabarito.HistoriaFamiliar.ToLower())))
@@ -79,13 +85,11 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Remove dados do historia
+        /// Remove dados do historia especificando a consulta fixa
         /// </summary>
-        /// <param name="codDisciplina"></param>
+        /// <param name="idConsultaFixo"></param>
         public void Remover(long idConsultaFixo)
         {
-            //if (idConsultaFixo == 1)
-            //    throw new NegocioException("A historia não pode ser removido.");
             try
             {
                 var repHistoria = new RepositorioGenerico<tb_historia>();
@@ -126,22 +130,12 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém historia com o código especificiado
+        /// Obtém historia com o código da consulta fixa especificiado
         /// </summary>
         /// <returns></returns>
         public HistoriaModel Obter(long idConsultaFixo)
         {
             return GetQuery().Where(historia => historia.IdConsultaFixo == idConsultaFixo).ToList().ElementAtOrDefault(0);
-        }
-
-        /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<HistoriaModel> ObterPorIdCursoFixo(long IdConsultaFixo)
-        {
-            return GetQuery().Where(historia => historia.IdConsultaFixo == IdConsultaFixo).ToList();
         }
 
         /// <summary>
@@ -155,8 +149,5 @@ namespace PacienteVirtual.Negocio
             _historiaE.HistoriaFamiliar = historia.HistoriaFamiliar;
             _historiaE.HistoriaMedicaPregressa = historia.HistoriaMedicaPregressa;
         }
-
-
-
     }
 }

@@ -130,21 +130,15 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(pessoa => pessoa.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
         }
 
+        /// <summary>
+        /// obtem pessoa por CPF
+        /// </summary>
+        /// <param name="CPF"></param>
+        /// <returns></returns>
         public PessoaModel ObterPorCPF(string CPF)
         {
             return GetQuery().Where(pessoa => pessoa.Cpf == CPF).ToList().ElementAtOrDefault(0);
         }
-
-        /// <summary>
-        /// Obtém pessoas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<PessoaModel> ObterPorNome(string nome)
-        {
-            return GetQuery().Where(pessoa => pessoa.Nome.StartsWith(nome)).ToList();
-        }
-
 
         /// <summary>
         /// Obtém pessoas que iniciam com o user_name
@@ -170,9 +164,5 @@ namespace PacienteVirtual.Negocio
             _pessoaE.Matricula = pessoa.Matricula;
         }
 
-        public int ObterQuantidadePessoa()
-        {
-            return GerenciadorPessoa.GetInstance().ObterTodos().Count();
-        }
     }
 }

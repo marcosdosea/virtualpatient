@@ -124,7 +124,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém a partir do estadoCivil
+        /// Obtém a partir da descricao do estadoCivil
         /// </summary>
         /// <param name="estadoCivil"></param>
         /// <returns></returns>

@@ -21,6 +21,12 @@ namespace PacienteVirtual.Negocio
             return gConsultaParametro;
         }
 
+        /// <summary>
+        /// Faz correcao do ParamentroConsulta de uma consulta
+        /// </summary>
+        /// <param name="ListaParametro"></param>
+        /// <param name="listaParametroGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostas(IEnumerable<ConsultaParametroModel> ListaParametro, IEnumerable<ConsultaParametroModel> listaParametroGabarito, ModelStateDictionary modelState)
         {
             string erroNaoContemNoGabarito = "";

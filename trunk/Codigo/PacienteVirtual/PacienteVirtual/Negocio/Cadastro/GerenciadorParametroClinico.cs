@@ -104,7 +104,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém todos os niveis cadastradas
+        /// Obtém todos os ParametrosClinicos cadastradas
         /// </summary>
         /// <returns></returns>
         public IEnumerable<ParametroClinicoModel> ObterTodos()

@@ -144,6 +144,11 @@ namespace PacienteVirtual.Negocio
             _intervencaoE.IdGrupoIntervencao = intervencao.IdGrupoIntervencao;
         }
 
+        /// <summary>
+        /// Obtem intervencoes pelo GrupoIntervenção
+        /// </summary>
+        /// <param name="idGrupoIntervencao"></param>
+        /// <returns></returns>
         public IEnumerable<IntervencaoModel> ObterPorGrupoIntervencao(int idGrupoIntervencao)
         {
             return GetQuery().Where(intervencao => intervencao.IdGrupoIntervencao == idGrupoIntervencao).ToList();

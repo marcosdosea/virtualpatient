@@ -22,6 +22,12 @@ namespace PacienteVirtual.Negocio
             return gEstiloVida;
         }
 
+        /// <summary>
+        /// Faz correção do estilo de vida da consulta de acrdo com o gabarito
+        /// </summary>
+        /// <param name="estiloVida"></param>
+        /// <param name="estiloVidaGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostas(EstiloVidaModel estiloVida, EstiloVidaModel estiloVidaGabarito, ModelStateDictionary modelState)
         {
             if (estiloVida.TabacoConsumo != estiloVidaGabarito.TabacoConsumo)
@@ -205,22 +211,12 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém EstiloVidaModel com o código especificiado
+        /// Obtém EstiloVidaModel com o código da consulta variavel especificiado
         /// </summary>
         /// <returns></returns>
         public EstiloVidaModel Obter(long idConsultaVariavel)
         {
             return GetQuery().Where(EstiloVidaModel => EstiloVidaModel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
-        }
-
-        /// <summary>
-        /// Obtém estilovida que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<EstiloVidaModel> ObterPorIdHistorico(long idConsultaVariavel)
-        {
-            return GetQuery().Where(EstiloVidaModel => EstiloVidaModel.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
 
         /// <summary>

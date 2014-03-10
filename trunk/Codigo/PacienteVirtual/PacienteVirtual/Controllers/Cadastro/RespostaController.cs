@@ -11,21 +11,21 @@ namespace PacienteVirtual.Controllers
         GerenciadorPergunta gPergunta = GerenciadorPergunta.GetInstance();
 
         //
-        // GET: /Curso/
+        // GET: /Re/sposta
         public ViewResult Index()
         {
             return View(gResposta.ObterTodos());
         }
 
         //
-        // GET: /Curso/Details/5
+        // GET: /Resposta/Details/5
         public ViewResult Details(int id)
         {
             return View(gResposta.Obter(id));
         }
 
         //
-        // GET: /Curso/Create
+        // GET: /Respota/Create
 
         public ActionResult Create()
         {
@@ -34,7 +34,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /Curso/Create
+        // POST: /Resposta/Create
         [HttpPost]
         public ActionResult Create(RespostaModel respostaModel)
         {
@@ -48,7 +48,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // GET: /Curso/Edit/5
+        // GET: /Resposta/Edit/5
         public ActionResult Edit(int id)
         {
             RespostaModel respostaModel = gResposta.Obter(id);
@@ -57,7 +57,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /Curso/Edit/5
+        // POST: /Resposta/Edit/5
 
         [HttpPost]
         public ActionResult Edit(RespostaModel respostaModel)
@@ -72,7 +72,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // GET: /Curso/Delete/5
+        // GET: /Resposta/Delete/5
 
         public ActionResult Delete(int id)
         {
@@ -80,7 +80,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /Curso/Delete/5
+        // POST: /Resposta/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)

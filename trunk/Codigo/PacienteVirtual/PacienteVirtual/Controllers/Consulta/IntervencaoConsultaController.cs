@@ -27,15 +27,13 @@ namespace PacienteVirtual.Controllers
                 intervencaoConsulta.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
                 GerenciadorIntervencaoConsulta.GetInstance().Inserir(intervencaoConsulta);
                 SessionController.ListaIntervencaoConsulta = null;
-                SessionController.IdGrupoIntervencao = 0;
+                SessionController.IdGrupoIntervencao = Global.ValorInteiroNulo;
             }
             else
             {
                 SessionController.IdGrupoIntervencao = intervencaoConsulta.IdGrupoIntervencao;
             }
-
-            SessionController.Abas2 = 2;
-
+            SessionController.Abas2 = Global.abaIntervencao;
             return RedirectToAction("Edit2", "Consulta");
         }
 
@@ -43,7 +41,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(long idConsultaVariavel, int idIntervencao)
         {
             IntervencaoConsultaModel icm = GerenciadorIntervencaoConsulta.GetInstance().ObterPorConsultaIntervencao(idConsultaVariavel, idIntervencao);
-            SessionController.Abas2 = 2;
+            SessionController.Abas2 = Global.abaIntervencao;
             return View(icm);
         }
 
@@ -53,14 +51,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(IntervencaoConsultaModel icm)
         {
+            SessionController.Abas2 = Global.abaIntervencao;
             if (ModelState.IsValid)
             {
                 GerenciadorIntervencaoConsulta.GetInstance().Atualizar(icm);
                 SessionController.ListaIntervencaoConsulta = null;
-                SessionController.Abas2 = 2;
                 return RedirectToAction("Edit2", "Consulta");
             }
-            SessionController.Abas2 = 2;
             return View(icm);
         }
 
@@ -71,7 +68,7 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorIntervencaoConsulta.GetInstance().Remover(idConsultaVariavel, idIntervencao);
             SessionController.ListaIntervencaoConsulta = null;
-            SessionController.Abas2 = 2;
+            SessionController.Abas2 = Global.abaIntervencao;
             return RedirectToAction("Edit2", "Consulta");
         }
 

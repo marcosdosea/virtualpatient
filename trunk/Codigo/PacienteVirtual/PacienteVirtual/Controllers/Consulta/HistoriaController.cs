@@ -6,8 +6,6 @@ namespace PacienteVirtual.Controllers
 { 
     public class HistoriaController : Controller
     {
-        private pvEntities db = new pvEntities();
-
         GerenciadorHistoria gHistoria = GerenciadorHistoria.GetInstance();
         GerenciadorConsultaFixo gConsultaFixo = GerenciadorConsultaFixo.GetInstance();
 
@@ -21,9 +19,8 @@ namespace PacienteVirtual.Controllers
             {
                 gHistoria.Atualizar(historiaModel);
                 SessionController.Historia = historiaModel;
-                
             }
-            SessionController.Abas1 = 9;
+            SessionController.Abas1 = Global.abaHistoria;
             return RedirectToAction("Edit", "Consulta");
         }
 
