@@ -301,8 +301,9 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém demoAntrop com o código especificiado
+        /// Obtém demoAntrop com o código da consulta fixa especificado
         /// </summary>
+        /// <param name="idConsultaFixo"></param>
         /// <returns></returns>
         public DemograficosAntropometricosModel Obter(long idConsultaFixo)
         {
@@ -310,7 +311,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
+        /// Obtém dados demograficos antropomedicos que iniciam com o nome
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
@@ -326,7 +327,6 @@ namespace PacienteVirtual.Negocio
         /// <param name="_demoAntropE"></param>
         private static void Atribuir(DemograficosAntropometricosModel demoAntrop, tb_demograficos_antropometricos _demoAntropE)
         {
-
             _demoAntropE.IdConsultaFixo = demoAntrop.IdConsultaFixo;
             _demoAntropE.Nome = demoAntrop.Nome;
             _demoAntropE.Genero = demoAntrop.Genero;

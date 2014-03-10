@@ -13,14 +13,7 @@ namespace PacienteVirtual.Controllers
         {
             Global.ZeraSessaoConsulta();
             SessionController.TutorVisualizaConsultaPeloCorrigirConsultas = true;
-            if (SessionController.DadosTurmaPessoa != null)
-            {
-                return View(GerenciadorConsultaVariavel.GetInstance().ObterParaCorreção(SessionController.DadosTurmaPessoa.IdTurma));
-            }
-            else
-            {
-                throw new NegocioException("Selecione uma turma.");
-            }
+            return View(GerenciadorConsultaVariavel.GetInstance().ObterParaCorreção(SessionController.DadosTurmaPessoa.IdTurma));
         }
 
         public ActionResult ComentariosTutor(ConsultaVariavelModel cvm)

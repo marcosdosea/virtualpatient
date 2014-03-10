@@ -22,6 +22,12 @@ namespace PacienteVirtual.Negocio
             return gMedicamentosAnteriores;
         }
 
+        /// <summary>
+        /// Faz a correção dos MedicamentosAnteriores de acordo com o gabarito
+        /// </summary>
+        /// <param name="ListaMedAnt"></param>
+        /// <param name="listaMedAntGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostas(IEnumerable<MedicamentosAnterioresModel> ListaMedAnt, IEnumerable<MedicamentosAnterioresModel> listaMedAntGabarito, ModelStateDictionary modelState)
         {
             string erroNaoContemNoGabarito = "";
@@ -118,6 +124,7 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do MedicamentosAnteriores
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
+        /// <param name="idMedicamento"></param>
         public void Remover(long idConsultaVariavel, long idMedicamento)
         {
             try
@@ -125,24 +132,6 @@ namespace PacienteVirtual.Negocio
                 var repMedicamentosAnteriores = new RepositorioGenerico<tb_medicamentos_anteriores>();
                 repMedicamentosAnteriores.Remover(mA => mA.IdConsultaVariavel == idConsultaVariavel
                     && mA.IdMedicamento == idMedicamento);
-                repMedicamentosAnteriores.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                throw new DadosException("MedicamentosAnteriores", e.Message, e);
-            }
-        }
-
-        /// <summary>
-        /// Remove dados do MedicamentosAnteriores
-        /// </summary>
-        /// <param name="idConsultaVariavel"></param>
-        public void Remover(long idConsultaVariavel)
-        {
-            try
-            {
-                var repMedicamentosAnteriores = new RepositorioGenerico<tb_medicamentos_anteriores>();
-                repMedicamentosAnteriores.Remover(mA => mA.IdConsultaVariavel == idConsultaVariavel);
                 repMedicamentosAnteriores.SaveChanges();
             }
             catch (Exception e)
@@ -185,7 +174,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém MedicamentosAnteriores com o código especificiado
+        /// Obtém MedicamentosAnteriores com o código da consulta variavel especificiado
         /// </summary>
         /// <returns></returns>
         public IEnumerable<MedicamentosAnterioresModel> Obter(long idConsultaVariavel)
@@ -193,21 +182,16 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(MedicamentosAnterioresModel => MedicamentosAnterioresModel.IdConsultaVariavel == idConsultaVariavel);
         }
 
-
+        /// <summary>
+        /// Obtem medicamentoAnterior de acordo com a consulta e com o medicamento
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        /// <param name="idMedicamento"></param>
+        /// <returns></returns>
         public MedicamentosAnterioresModel ObterPorConsultaMedicamento(long idConsultaVariavel, int idMedicamento)
         {
             return GetQuery().Where(MedicamentosAnterioresModel => MedicamentosAnterioresModel.IdConsultaVariavel == idConsultaVariavel &&
                 MedicamentosAnterioresModel.IdMedicamento == idMedicamento).ToList().ElementAtOrDefault(0);
-        }
-
-        /// <summary>
-        /// Obtém MedicamentosAnteriores que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<MedicamentosAnterioresModel> ObterPorIdHistorico(long idConsultaVariavel)
-        {
-            return GetQuery().Where(MedicamentosAnterioresModel => MedicamentosAnterioresModel.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
 
         /// <summary>

@@ -39,7 +39,6 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 historicoModel.IdHistorico = gHistorico.Inserir(historicoModel);
                 return RedirectToAction("Index");  
             }

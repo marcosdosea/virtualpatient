@@ -30,14 +30,14 @@ namespace PacienteVirtual.Controllers
                 gMedicamentoPrescrito.Inserir(medicamentoPrescrito);
                 SessionController.ListaMedicamentosPrescritos = null;
             }
-            SessionController.Abas1 = 6;
+            SessionController.Abas1 = Global.abaMedPresc;
             return RedirectToAction("Edit", "Consulta");
         }
 
         public ActionResult Edit(long idConsultaVariavel, int idMedicamento)
         {
             MedicamentoPrescritoModel medicamentoPrescritoModel = GerenciadorMedicamentoPrescrito.GetInstance().ObterPorMedicamento(idConsultaVariavel, idMedicamento);
-            SessionController.Abas1 = 6;
+            SessionController.Abas1 = Global.abaMedPresc;
             return View(medicamentoPrescritoModel);
         }
 
@@ -46,14 +46,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(MedicamentoPrescritoModel medicamentoPrescrito)
         {
+            SessionController.Abas1 = Global.abaMedPresc;
             if (ModelState.IsValid)
             {
                 GerenciadorMedicamentoPrescrito.GetInstance().Atualizar(medicamentoPrescrito);
                 SessionController.ListaMedicamentosPrescritos = null;
-                SessionController.Abas1 = 6;
                 return RedirectToAction("Edit", "Consulta");
             }
-            SessionController.Abas1 = 6;
             return View(medicamentoPrescrito);
         }
 
@@ -64,7 +63,7 @@ namespace PacienteVirtual.Controllers
         {
             gMedicamentoPrescrito.Remover(idConsultaVariavel, idMedicamento);
             SessionController.ListaMedicamentosPrescritos = null;
-            SessionController.Abas1 = 6;
+            SessionController.Abas1 = Global.abaMedPresc;
             return RedirectToAction("Edit", "Consulta");
         }
       

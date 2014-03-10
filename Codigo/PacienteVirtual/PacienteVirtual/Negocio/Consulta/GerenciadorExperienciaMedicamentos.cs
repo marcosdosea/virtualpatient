@@ -22,6 +22,12 @@ namespace PacienteVirtual.Negocio
             return gExpMedicamentos;
         }
 
+        /// <summary>
+        /// Faz correção da experiencia com medicamentos de uma consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="experienciaMedicamentos"></param>
+        /// <param name="epGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostas(ExperienciaMedicamentosModel experienciaMedicamentos, ExperienciaMedicamentosModel epGabarito, ModelStateDictionary modelState)
         {
             if (experienciaMedicamentos.IdRespostaEsperaTratamento != epGabarito.IdRespostaEsperaTratamento)
@@ -171,7 +177,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém expMedicamentos com o código especificiado
+        /// Obtém expMedicamentos com o código da consulta fixa especificiado
         /// </summary>
         /// <param name="codDisciplina"></param>
         /// <returns></returns>

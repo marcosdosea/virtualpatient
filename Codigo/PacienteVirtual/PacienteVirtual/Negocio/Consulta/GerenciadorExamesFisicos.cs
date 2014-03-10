@@ -21,6 +21,12 @@ namespace PacienteVirtual.Negocio
             return gExamesFisicos;
         }
 
+        /// <summary>
+        /// Faz correção das Alergias da consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="listaAlergia"></param>
+        /// <param name="listaAlergiaGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostasAlergias(IEnumerable<AlergiaModel> listaAlergia, IEnumerable<AlergiaModel> listaAlergiaGabarito, ModelStateDictionary modelState)
         {
             string erroNaoContemNoGabarito = "";
@@ -150,7 +156,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Insere uma alergia em um exame físico
+        /// Remove uma alergia em um exame físico
         /// </summary>
         /// <param name="examesFisicosModel"></param>
         /// <param name="alergiaModel"></param>
@@ -225,7 +231,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém ExamesFisicosModel com o código especificiado
+        /// Obtém ExamesFisicosModel com o código da consulta variavel especificiado
         /// </summary>
         /// <returns></returns>
         public ExamesFisicosModel Obter(long idConsultaVariavel)
@@ -233,7 +239,12 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(ExamesFisicosModel => ExamesFisicosModel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
         }
 
-
+        /// <summary>
+        /// Faz a correção do ExameFisico de uma consulta de acordo com o gabarito 
+        /// </summary>
+        /// <param name="examesFisicos"></param>
+        /// <param name="examesFisicosGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostas(ExamesFisicosModel examesFisicos, ExamesFisicosModel examesFisicosGabarito, ModelStateDictionary modelState)
         {
             if (examesFisicos.Altura != examesFisicosGabarito.Altura)

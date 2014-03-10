@@ -10,6 +10,33 @@ namespace PacienteVirtual.Models
 {
     public class Global
     {
+        public const int abaCarta = 3;
+        public const int abaConsultaParametro = 11;
+        public const int abaRazaoEncontro = 2;
+        public const int abaRevisaoSistema = 12;
+        public const int abaClassificacaoPRM = 1;
+        public const int abaDemoAntrop = 1;
+        public const int abaDiarioPessoal = 4;
+        public const int abaEstiloVida = 4;
+        public const int abaExamesFisicos = 10;
+        public const int abaAlergia = 5;
+        public const int abaExpMed = 3;
+        public const int abaHistoria = 9;
+        public const int abaIntervencao = 2;
+        public const int abaMedNaoPresc = 7;
+        public const int abaMedPresc = 6;
+        public const int abaMedAnte = 8;
+
+        public const int NaoSelecionado = -1;
+        public const int ValorInteiroNulo = 0;
+        public const int ValorInicial = 1;
+        public const string stringVazia = "";
+        public const string CharVazia = " ";
+        public const int ValorInicialDadosExpMed = 3;
+
+        public const string stringUsuarioRole = "usuario";
+        public const string stringAdministradorRole = "administrador";
+        public const string stringTutorRole = "tutor";
 
         public static void ZeraSessaoConsulta()
         {

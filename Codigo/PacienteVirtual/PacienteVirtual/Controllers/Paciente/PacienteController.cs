@@ -14,31 +14,29 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
-            ViewBag.codigo = -1;
+            ViewBag.codigo = Global.NaoSelecionado;
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
             return View(GerenciadorPaciente.GetInstance().ObterTodos());
         }
 
         [HttpPost]
-        public ActionResult Index(int IdPaciente = -1)
+        public ActionResult Index(int IdPaciente = Global.NaoSelecionado)
         {
             ViewBag.codigo = IdPaciente;
             ViewBag.IdPaciente = new SelectList(GerenciadorPaciente.GetInstance().ObterTodos(), "IdPaciente", "NomePaciente");
-            if (IdPaciente != -1)
+            if (IdPaciente != Global.NaoSelecionado)
             {
                 return View(GerenciadorPaciente.GetInstance().ObterPorID(IdPaciente));
             }
-            if (IdPaciente == -1)
+            else
             {
                 return View(GerenciadorPaciente.GetInstance().ObterTodos());
             }
-            return View();
         }
 
 
         //
         // GET: /Paciente/Details/5
-
         public ViewResult Details(int id)
         {
             return View(GerenciadorPaciente.GetInstance().Obter(id));
@@ -46,27 +44,25 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /Paciente/Create
-
         public ActionResult Create()
         {
             return View();
         }
 
+        /*
         protected void btnPreview_Click(object sender, EventArgs e)
         {
             Button btnSomeButton = sender as Button;
             btnSomeButton.Text = "I was clicked!";
-        }
+        } */
 
         //
         // POST: /Paciente/Create
-
         [HttpPost]
         public ActionResult Create(PacienteModel pacienteModel)
         {
             if (ModelState.IsValid)
             {
-
                 int tamanho = (int)Request.Files[0].InputStream.Length;
                 if (tamanho == 0)
                     pacienteModel.Foto = null;
@@ -75,14 +71,11 @@ namespace PacienteVirtual.Controllers
                     byte[] arq = new byte[tamanho];
                     Request.Files[0].InputStream.Read(arq, 0, tamanho);
                     byte[] arqUp = arq;
-
                     pacienteModel.Foto = arqUp;
                 }
                 GerenciadorPaciente.GetInstance().Inserir(pacienteModel);
-
                 return RedirectToAction("Index");
             }
-
             return View(pacienteModel);
         }
 
@@ -92,7 +85,6 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Edit(int id)
         {
-
             PacienteModel pacienteModel = GerenciadorPaciente.GetInstance().Obter(id);
             ViewBag.fotoId = pacienteModel.IdPaciente;
             return View(pacienteModel);
@@ -100,7 +92,7 @@ namespace PacienteVirtual.Controllers
 
         public FileContentResult GetImage(int id)
         {
-            if (id != -1)
+            if (id != Global.NaoSelecionado)
             {
                 var imageData = GerenciadorPaciente.GetInstance().Obter(id).Foto;
                 if (imageData != null)
@@ -117,7 +109,6 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 int tamanho = (int)Request.Files[0].InputStream.Length;
                 if (tamanho == 0)
                     pacienteModel.Foto = GerenciadorPaciente.GetInstance().Obter(pacienteModel.IdPaciente).Foto;
@@ -129,7 +120,6 @@ namespace PacienteVirtual.Controllers
 
                     pacienteModel.Foto = arqUp;
                 }
-
                 GerenciadorPaciente.GetInstance().Atualizar(pacienteModel);
                 return RedirectToAction("Index");
             }
@@ -147,7 +137,6 @@ namespace PacienteVirtual.Controllers
 
         //
         // POST: /Paciente/Delete/5
-
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {

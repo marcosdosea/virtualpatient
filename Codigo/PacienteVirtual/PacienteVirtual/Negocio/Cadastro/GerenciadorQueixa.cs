@@ -105,7 +105,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém todos os curso cadastrados
+        /// Obtém todos os queixas cadastrados
         /// </summary>
         /// <returns></returns>
         public IEnumerable<QueixaModel> ObterTodos()

@@ -24,6 +24,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(DiarioPessoalModel diarioPessoal)
         {
+            SessionController.Abas2 = Global.abaDiarioPessoal;
             if (ModelState.IsValid)
             {
                 ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(SessionController.Pessoa.IdPessoa
@@ -31,11 +32,8 @@ namespace PacienteVirtual.Controllers
                 diarioPessoal.IdConsultaFixo = consultaOrdem1.IdConsultaFixo;
                 gDiarioPessoal.Inserir(diarioPessoal);
                 SessionController.ListaDiarioPessoal = null;
-
-                SessionController.Abas2 = 4;
                 return RedirectToAction("Edit2", "Consulta");
             }
-            SessionController.Abas2 = 4;
             return PartialView(diarioPessoal);
         }
 
@@ -43,7 +41,7 @@ namespace PacienteVirtual.Controllers
         {
             DiarioPessoalModel diarioPessoal = GerenciadorDiarioPessoal.GetInstance().ObterPorMedicamento(idConsultaFixo, idMedicamento);
             ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
-            SessionController.Abas2 = 4;
+            SessionController.Abas2 = Global.abaDiarioPessoal;
             return View(diarioPessoal);
         }
 
@@ -52,14 +50,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(DiarioPessoalModel diarioPessoal)
         {
+            SessionController.Abas2 = Global.abaDiarioPessoal;
             if (ModelState.IsValid)
             {
                 GerenciadorDiarioPessoal.GetInstance().Atualizar(diarioPessoal);
                 SessionController.ListaDiarioPessoal = null;
-                SessionController.Abas2 = 4;
                 return RedirectToAction("Edit2", "Consulta");
             }
-            SessionController.Abas2 = 4;
             return View(diarioPessoal);
         }
 
@@ -70,8 +67,7 @@ namespace PacienteVirtual.Controllers
         {
             gDiarioPessoal.Remover(idConsultaFixo, idMedicamento, horario, quantidade);
             SessionController.ListaDiarioPessoal = null;
-
-            SessionController.Abas2 = 4;
+            SessionController.Abas2 = Global.abaDiarioPessoal;
             return RedirectToAction("Edit2", "Consulta");
         }
 

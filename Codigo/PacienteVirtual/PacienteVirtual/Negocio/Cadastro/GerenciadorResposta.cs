@@ -127,7 +127,7 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Obtém respostas de uma determinada pergunta
         /// </summary>
-        /// <param name="codPergunta"></param>
+        /// <param name="idPergunta"></param>
         /// <returns></returns>
         public IEnumerable<RespostaModel> ObterPorPergunta(int idPergunta)
         {

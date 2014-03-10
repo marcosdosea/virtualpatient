@@ -14,7 +14,7 @@ namespace PacienteVirtual.Controllers
                 GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
                 SessionController.ConsultaVariavel = consultaVariavelModel;
             }
-            SessionController.Abas1 = 2;
+            SessionController.Abas1 = Global.abaRazaoEncontro;
             return RedirectToAction("Edit", "Consulta");
         }
 

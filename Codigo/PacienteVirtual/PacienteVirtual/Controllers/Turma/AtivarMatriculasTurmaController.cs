@@ -15,33 +15,28 @@ namespace PacienteVirtual.Controllers
         {
             if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
             {
-                //ViewBag.SelecionaTurma = true;
-                //ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
-                //SessionController.IdTurmaAtribuirMatriculaTutor = -1;
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTurmasAtivas());
             }
             else
             {
-                //ViewBag.SelecionaTurma = false;
-                //SessionController.IdTurmaAtribuirMatriculaTutor = SessionController.DadosTurmaPessoa.IdTurma;
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
         }
 
         [HttpPost]
-        public ActionResult Index(int IdTurma = -1)
+        public ActionResult Index(int IdTurma = Global.NaoSelecionado)
         {
             ViewBag.SelecionaTurma = true;
             ViewBag.codigo = IdTurma;
             ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
-            if (IdTurma != -1)
+            if (IdTurma != Global.NaoSelecionado)
             {
                 SessionController.IdTurmaAtribuirMatriculaTutor = IdTurma;
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosPorTurma(IdTurma).ToList());
             }
             else
             {
-                SessionController.IdTurmaAtribuirMatriculaTutor = -1;
+                SessionController.IdTurmaAtribuirMatriculaTutor = Global.NaoSelecionado;
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTurmasAtivas());
             }
         }
@@ -67,6 +62,7 @@ namespace PacienteVirtual.Controllers
 
         }
 
+        /*
         private static bool ativadesativar = true;
         public ActionResult AtivarDesativarTodos()
         {
@@ -102,5 +98,6 @@ namespace PacienteVirtual.Controllers
 
             return RedirectToAction("Index");
         }
+        */
     }
 }

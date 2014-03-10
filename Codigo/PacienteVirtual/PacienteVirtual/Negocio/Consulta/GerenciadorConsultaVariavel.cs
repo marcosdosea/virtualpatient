@@ -4,6 +4,7 @@ using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
 using System.Web.Mvc;
+using PacienteVirtual.Controllers;
 
 namespace PacienteVirtual.Negocio
 {
@@ -22,6 +23,12 @@ namespace PacienteVirtual.Negocio
             return gConsultaFixo;
         }
 
+        /// <summary>
+        /// Faz a correção da Razão encontro da consulta
+        /// </summary>
+        /// <param name="consultaVariavel"></param>
+        /// <param name="consultaVariavelGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostasRazaoEncontro(ConsultaVariavelModel consultaVariavel, ConsultaVariavelModel consultaVariavelGabarito, ModelStateDictionary modelState)
         {
             if (consultaVariavel.IdRazaoEncontro != consultaVariavelGabarito.IdRazaoEncontro)
@@ -40,11 +47,6 @@ namespace PacienteVirtual.Negocio
         {
             TurmaPessoaModel turmaPessoaModel = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(consultaVariavel.IdTurma, consultaVariavel.IdPessoa);
 
-            /*if (turmaPessoaModel.IdRole.Equals(Global.Administrador))
-            {
-                throw new NegocioException("O usuário administrador não pode gravar novas consultas. Favor autenticar com um usuário.");
-            } */
-
             var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel>();
             tb_consulta_variavel _consultaVariavelE = new tb_consulta_variavel();
             try
@@ -60,6 +62,25 @@ namespace PacienteVirtual.Negocio
             {
                 throw new DadosException("ConsultaVariavel", e.Message, e);
             }
+        }
+
+        /// <summary>
+        /// Conclui o preenchimento de uma consulta
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        public void Concluir(long? idConsultaVariavel)
+        {
+            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Usuario)
+            {
+                consultaVariavelModel.IdEstadoConsulta = Global.EnviadoParaCorrecao;
+            }
+            else if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
+            {
+                consultaVariavelModel.IdEstadoConsulta = Global.GabaritoDisponivel;
+            }
+            GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
         }
 
         /// <summary>
@@ -88,8 +109,6 @@ namespace PacienteVirtual.Negocio
         /// <param name="codDisciplina"></param>
         public void Remover(long idConsultaVariavel)
         {
-            //if (idConsultaVariavel == 1)
-            //    throw new NegocioException("A consultaVariavel não pode ser removido.");
             try
             {
                 var repConsultaVariavel = new RepositorioGenerico<tb_consulta_variavel>();
@@ -176,7 +195,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém o gabarito da consultaVariavel
+        /// Obtém o gabarito de uma consulta
         /// </summary>
         /// <returns></returns>
         public ConsultaVariavelModel ObterConsultaGabarito(int idPaciente, int ordemCronologica)
@@ -186,10 +205,10 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém consultaVariavel anterior do paciente
+        /// Verifica se a consulta já foi atribuida para a pessoa
         /// </summary>
         /// <returns></returns>
-        public void consultaAtribuida(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
+        public void VerificaSeConsultaFoiAtribuida(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
         {
             if (GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
                 consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count() > 0)
@@ -198,6 +217,14 @@ namespace PacienteVirtual.Negocio
             }
         }
 
+
+        /// <summary>
+        /// Verifica se a consulta anterior já foi atribuida e finalizada.
+        /// </summary>
+        /// <param name="idPessoa"></param>
+        /// <param name="idTurma"></param>
+        /// <param name="idPaciente"></param>
+        /// <param name="ordemCronologica"></param>
         public void ConsultaAnteriorFinalizada(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
         {
             ConsultaVariavelModel cvm = ObterConsultaAnterior(idPessoa, idTurma, idPaciente, ordemCronologica);
@@ -221,7 +248,7 @@ namespace PacienteVirtual.Negocio
         public ConsultaVariavelModel ObterPrimeiraConsulta(int idPessoa, int idTurma, int idPaciente)
         {
             return GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
-                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == 1).ToList().ElementAtOrDefault(0);
+                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == Global.ValorInicial).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
@@ -249,24 +276,26 @@ namespace PacienteVirtual.Negocio
         /// Obtém consultaVariavel com o código da Turma, Pessoa e Relato especificiado
         /// </summary>
         /// <returns></returns>
-        public ConsultaVariavelModel Obter(int idTurma, int idPessoa, int idRelato)
+        public ConsultaVariavelModel ObterPorTurmaPessoaRelato(int idTurma, int idPessoa, int idRelato)
         {
             return GetQuery().Where(consultaVariavel => consultaVariavel.IdTurma == idTurma
                 && consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdRelato == idRelato).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
-        /// Obtém consultaVariavel com o código da Turma, Pessoa e Relato especificiado
+        /// Obtem consulta pela idFixo e pelo Relato
         /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idRelato"></param>
         /// <returns></returns>
-        public ConsultaVariavelModel Obter(long idConsultaFixo, long idRelato)
+        public ConsultaVariavelModel ObterPorConsultaFixoRelato(long idConsultaFixo, long idRelato)
         {
             return GetQuery().Where(consultaVariavel => consultaVariavel.IdConsultaFixo == idConsultaFixo 
                 && consultaVariavel.IdRelato == idRelato).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
-        /// obtem todos os relatos com o paciente definido
+        /// obtem todos os relatos de determinado paciente
         /// </summary>
         /// <param name="IdPaciente"></param>
         /// <returns></returns>
@@ -276,9 +305,11 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// obtem todos os relatos com o paciente, turma e pessoa definido
+        /// Obtem consultas por paciente, por turma e pessoa
         /// </summary>
-        /// <param name="IdPaciente"></param>
+        /// <param name="idPaciente"></param>
+        /// <param name="idTurma"></param>
+        /// <param name="idPessoa"></param>
         /// <returns></returns>
         public IEnumerable<ConsultaVariavelModel> ObterPorPacienteTurmaPessoa(int idPaciente, int idTurma, int idPessoa)
         {
@@ -286,7 +317,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtem por turma paciente
+        /// Obtem consultas por paciente e turma
         /// </summary>
         /// <param name="idPaciente"></param>
         /// <param name="idTurma"></param>

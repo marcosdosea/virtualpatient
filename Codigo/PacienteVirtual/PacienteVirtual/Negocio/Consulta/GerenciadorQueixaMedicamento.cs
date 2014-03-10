@@ -69,6 +69,8 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do QueixaMedicamento
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
+        /// <param name="idMedicamento"></param>
+        /// <param name="idQueixa"></param>
         public void Remover(long idConsultaVariavel, int idMedicamento, int idQueixa)
         {
             try
@@ -132,7 +134,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém QueixaMedicamentoModel com o código especificiado
+        /// Obtém QueixaMedicamentoModel com o código da consulta variavel especificiado
         /// </summary>
         /// <returns></returns>
         public IEnumerable<QueixaMedicamentoModel> Obter(long idConsultaVariavel)
@@ -141,7 +143,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// obtem queixa medocamento por consulta, queixa e medicamento
+        /// obtem queixa medicamento por consulta, queixa e medicamento
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
         /// <param name="idQueixa"></param>

@@ -120,16 +120,7 @@ namespace PacienteVirtual.Negocio
             return GetQuery().Where(consultaFixo => consultaFixo.IdConsultaFixo == idConsultaFixo).ToList().ElementAtOrDefault(0);
         }
 
-        /// <summary>
-        /// Obtém disciplinas que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-       // public IEnumerable<ConsultaFixoModel> ObterPorNome(int IdPaciente)
-        //{
-        //    return GetQuery().Where(consultaFixo => consultaFixo.IdPessoa == IdPaciente).ToList();
-        //}
-
+        
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
@@ -142,11 +133,6 @@ namespace PacienteVirtual.Negocio
             _consultaFixoE.DataAtualizacao = (DateTime)consultaFixo.DataAtualizacao;
             _consultaFixoE.ComentariosTutor = consultaFixo.ComentariosTutor;
 
-        }
-
-        public ConsultaFixoModel RetornaConsultaComMaiorId()
-        {
-            return ObterTodos().ToList().OrderByDescending(o => o.IdConsultaFixo).ElementAtOrDefault(0);
         }
     }
 }

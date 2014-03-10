@@ -44,16 +44,16 @@ namespace PacienteVirtual.Controllers
                         switch (GerenciadorTurmaPessoa.GetInstance().ObterRolePorPessoa(pessoa.IdPessoa))
                         {
                             case Global.Usuario:
-                                SessionController.Roles = "usuario";
+                                SessionController.Roles = Global.stringUsuarioRole;
                                 break;
                             case Global.Tutor:
-                                SessionController.Roles = "tutor";
+                                SessionController.Roles = Global.stringTutorRole;
                                 break;
                             case Global.Administrador:
-                                SessionController.Roles = "administrador";
+                                SessionController.Roles = Global.stringAdministradorRole;
                                 break;
                             default:
-                                SessionController.Roles = "usuario";
+                                SessionController.Roles = Global.stringUsuarioRole;
                                 return RedirectToAction("Index", "SolicitarMatriculaTurma");
                         }
                         return RedirectToAction("Index", "SelecionarTurma");

@@ -138,8 +138,8 @@ namespace PacienteVirtual.Controllers
                     if (historia == null)
                     {
                         historia = new HistoriaModel();
-                        historia.HistoriaFamiliar = "";
-                        historia.HistoriaMedicaPregressa = "";
+                        historia.HistoriaFamiliar = Global.stringVazia;
+                        historia.HistoriaMedicaPregressa = Global.stringVazia;
                         historia.IdConsultaFixo = ConsultaVariavel.IdConsultaFixo;
                         GerenciadorHistoria.GetInstance().Inserir(historia);
                     }
@@ -165,20 +165,20 @@ namespace PacienteVirtual.Controllers
                     {
                         demoAntro = new DemograficosAntropometricosModel();
                         demoAntro.IdConsultaFixo = ConsultaVariavel.IdConsultaFixo;
-                        demoAntro.Genero = "A";
-                        demoAntro.Nome = "";
-                        demoAntro.MedicosAtendem = "";
-                        demoAntro.MoradiaFamilia = "";
-                        demoAntro.OndeAdquireMedicamentos = "";
-                        demoAntro.IdEscolaridade = 1;
-                        demoAntro.IdOcupacao = 1;
-                        demoAntro.IdPlanoSaude = 1;
-                        demoAntro.IdEstadoCivil = 1;
-                        demoAntro.IdNaturalidade = 1;
-                        demoAntro.IdReligiao = 1;
-                        demoAntro.RG = "";
-                        demoAntro.Procedencia = "";
-                        demoAntro.Endereco = "";
+                        demoAntro.Genero = Global.CharVazia;
+                        demoAntro.Nome = Global.stringVazia;
+                        demoAntro.MedicosAtendem = Global.stringVazia;
+                        demoAntro.MoradiaFamilia = Global.stringVazia;
+                        demoAntro.OndeAdquireMedicamentos = Global.stringVazia;
+                        demoAntro.IdEscolaridade = Global.ValorInicial;
+                        demoAntro.IdOcupacao = Global.ValorInicial;
+                        demoAntro.IdPlanoSaude = Global.ValorInicial;
+                        demoAntro.IdEstadoCivil = Global.ValorInicial;
+                        demoAntro.IdNaturalidade = Global.ValorInicial;
+                        demoAntro.IdReligiao = Global.ValorInicial;
+                        demoAntro.RG = Global.stringVazia;
+                        demoAntro.Procedencia = Global.stringVazia;
+                        demoAntro.Endereco = Global.stringVazia;
                         GerenciadorDemograficosAntropometricos.GetInstance().Inserir(demoAntro);
                     }
                     HttpContext.Current.Session["_DemograficosAntropometricos"] = demoAntro;
@@ -203,12 +203,12 @@ namespace PacienteVirtual.Controllers
                     {
                         experiencia = new ExperienciaMedicamentosModel();
                         experiencia.IdConsultaFixo = ConsultaVariavel.IdConsultaFixo;
-                        experiencia.IdRespostaComportamento = 3;
-                        experiencia.IdRespostaCultural = 3;
-                        experiencia.IdRespostaEsperaTratamento = 3;
-                        experiencia.IdRespostaGrauEntendimento = 3;
-                        experiencia.IdRespostaIncorporadoPlano = 3;
-                        experiencia.IdRespostaPreocupacoes = 3;
+                        experiencia.IdRespostaComportamento = Global.ValorInicialDadosExpMed;
+                        experiencia.IdRespostaCultural = Global.ValorInicialDadosExpMed;
+                        experiencia.IdRespostaEsperaTratamento = Global.ValorInicialDadosExpMed;
+                        experiencia.IdRespostaGrauEntendimento = Global.ValorInicialDadosExpMed;
+                        experiencia.IdRespostaIncorporadoPlano = Global.ValorInicialDadosExpMed;
+                        experiencia.IdRespostaPreocupacoes = Global.ValorInicialDadosExpMed;
                         GerenciadorExperienciaMedicamentos.GetInstance().Inserir(experiencia);
                     }
                     HttpContext.Current.Session["_ExperienciaMedicamentos"] = experiencia;
@@ -365,9 +365,9 @@ namespace PacienteVirtual.Controllers
             get
             {
                 int idSistema = (int)HttpContext.Current.Session["_IdSistema"];
-                if (idSistema < 1)
+                if (idSistema < Global.ValorInicial)
                 {
-                    idSistema = 0;
+                    idSistema = Global.ValorInteiroNulo;
                     HttpContext.Current.Session["_IdSistema"] = idSistema;
                 }
                 return idSistema;
@@ -444,12 +444,12 @@ namespace PacienteVirtual.Controllers
                     if (examesFisicos == null)
                     {
                         examesFisicos = new ExamesFisicosModel();
-                        examesFisicos.Peso = 0;
-                        examesFisicos.Altura = 0;
-                        examesFisicos.PressaoDiastolica = 0;
-                        examesFisicos.PressaoSistolica = 0;
-                        examesFisicos.Glicemia = 0;
-                        examesFisicos.CircunferenciaAbdominal = 0;
+                        examesFisicos.Peso = Global.ValorInteiroNulo;
+                        examesFisicos.Altura = Global.ValorInteiroNulo;
+                        examesFisicos.PressaoDiastolica = Global.ValorInteiroNulo;
+                        examesFisicos.PressaoSistolica = Global.ValorInteiroNulo;
+                        examesFisicos.Glicemia = Global.ValorInteiroNulo;
+                        examesFisicos.CircunferenciaAbdominal = Global.ValorInteiroNulo;
                         examesFisicos.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
                         GerenciadorExamesFisicos.GetInstance().Inserir(examesFisicos);
                     }
@@ -475,15 +475,15 @@ namespace PacienteVirtual.Controllers
                     {
                         estiloVida = new EstiloVidaModel();
                         estiloVida.AlcoolConsumo = false;
-                        estiloVida.AlcoolParou = "";
-                        estiloVida.AlcoolTipoBebida = "";
-                        estiloVida.AlcoolUso = 0;
+                        estiloVida.AlcoolParou = Global.stringVazia;
+                        estiloVida.AlcoolTipoBebida = Global.stringVazia;
+                        estiloVida.AlcoolUso = Global.ValorInteiroNulo;
                         estiloVida.CafeConsumo = false;
-                        estiloVida.CafeParou = "";
-                        estiloVida.CafeUso = 0;
+                        estiloVida.CafeParou = Global.stringVazia;
+                        estiloVida.CafeUso = Global.ValorInteiroNulo;
                         estiloVida.TabacoConsumo = false;
-                        estiloVida.TabacoParou = "";
-                        estiloVida.TabacoUso = 0;
+                        estiloVida.TabacoParou = Global.stringVazia;
+                        estiloVida.TabacoUso = Global.ValorInteiroNulo;
                         estiloVida.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
                         GerenciadorEstiloVida.GetInstance().Inserir(estiloVida);
                     }
@@ -527,9 +527,9 @@ namespace PacienteVirtual.Controllers
             get
             {
                 int numeroAba1 = (int)HttpContext.Current.Session["_NumeroAba1"];
-                if (numeroAba1 == 0)
+                if (numeroAba1 == Global.ValorInteiroNulo)
                 {
-                    numeroAba1 = 1;
+                    numeroAba1 = Global.ValorInicial;
                     HttpContext.Current.Session["_NumeroAba1"] = numeroAba1;
                 }
                 return numeroAba1;
@@ -545,9 +545,9 @@ namespace PacienteVirtual.Controllers
             get
             {
                 int numeroAba2 = (int)HttpContext.Current.Session["_NumeroAba2"];
-                if (numeroAba2 == -1)
+                if (numeroAba2 == Global.NaoSelecionado)
                 {
-                    numeroAba2 = 0;
+                    numeroAba2 = Global.ValorInteiroNulo;
                     HttpContext.Current.Session["_NumeroAba2"] = numeroAba2;
                 }
                 return numeroAba2;
@@ -581,9 +581,9 @@ namespace PacienteVirtual.Controllers
             get
             {
                 int idGrupoIntervencao = (int)HttpContext.Current.Session["_IdGrupoIntervencao"];
-                if (idGrupoIntervencao < 1)
+                if (idGrupoIntervencao < Global.ValorInicial)
                 {
-                    idGrupoIntervencao = 0;
+                    idGrupoIntervencao = Global.ValorInteiroNulo;
                     HttpContext.Current.Session["_IdGrupoIntervencao"] = idGrupoIntervencao;
                 }
                 return idGrupoIntervencao;

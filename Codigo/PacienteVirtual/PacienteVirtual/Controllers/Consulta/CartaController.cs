@@ -27,42 +27,42 @@ namespace PacienteVirtual.Controllers
                 GerenciadorCarta.GetInstance().Inserir(carta);
                 SessionController.ListaCarta = null;
             }
-            SessionController.Abas2 = 3;
+            SessionController.Abas2 = Global.abaCarta;
             return RedirectToAction("Edit2", "Consulta");
         }
 
+        // POST: /Carta/Edit
         public ActionResult Edit(long idConsultaVariavel, int idCarta)
         {
             CartaModel carta = GerenciadorCarta.GetInstance().ObterPorIdConsultaEIdCarta(idConsultaVariavel, idCarta);
             ViewBag.IdEspecialidade = new SelectList(GerenciadorEspecialidade.GetInstance().ObterTodos(), "IdEspecialidade", "Especialidade");
-            SessionController.Abas2 = 3;
+            SessionController.Abas2 = Global.abaCarta;
             return View(carta);
         }
 
-        // POST: /Escolaridade/Edit/5
+        // POST: /Carta/Edit/5
 
         [HttpPost]
         public ActionResult Edit(CartaModel carta)
         {
+            SessionController.Abas2 = Global.abaCarta;
             if (ModelState.IsValid)
             {
                 GerenciadorCarta.GetInstance().Atualizar(carta);
                 SessionController.ListaCarta = null;
-                SessionController.Abas2 = 3;
                 return RedirectToAction("Edit2", "Consulta");
             }
-            SessionController.Abas2 = 3;
             return View(carta);
         }
 
         //
-        // POST: /intervencaoConsulta/Delete/5
+        // POST: /Carta/Delete/5
         //[HttpPost]
         public ActionResult Delete(long idConsultaVariavel, int idCarta)
         {
             GerenciadorCarta.GetInstance().Remover(idConsultaVariavel, idCarta);
             SessionController.ListaCarta = null;
-            SessionController.Abas2 = 3;
+            SessionController.Abas2 = Global.abaCarta;
             return RedirectToAction("Edit2", "Consulta");
         }
 

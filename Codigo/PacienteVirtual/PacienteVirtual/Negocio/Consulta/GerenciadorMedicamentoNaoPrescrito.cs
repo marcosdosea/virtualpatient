@@ -21,6 +21,12 @@ namespace PacienteVirtual.Negocio
             return gMedicamentoNaoPrescrito;
         }
 
+        /// <summary>
+        /// Faz a correção do medicamentoNaoPrescristo de uma consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="ListaMedNaoPresc"></param>
+        /// <param name="listaMedNaoPrescGabarito"></param>
+        /// <param name="modelState"></param>
         public void CorrigirRespostas(IEnumerable<MedicamentoNaoPrescritoModel> ListaMedNaoPresc, IEnumerable<MedicamentoNaoPrescritoModel> listaMedNaoPrescGabarito, ModelStateDictionary modelState)
         {
             string erroNaoContemNoGabarito = "";
@@ -121,7 +127,6 @@ namespace PacienteVirtual.Negocio
         {
             try
             {
-
                 var repMedicamentoNaoPrescrito = new RepositorioGenerico<tb_medicamento_nao_prescrito>();
                 repMedicamentoNaoPrescrito.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel && dP.IdMedicamento == idMedicamento);
                 repMedicamentoNaoPrescrito.SaveChanges();
@@ -132,23 +137,6 @@ namespace PacienteVirtual.Negocio
             }
         }
 
-        /// <summary>
-        /// Remove dados do MedicamentoNaoPrescrito
-        /// </summary>
-        /// <param name="idConsultaVariavel"></param>
-        public void Remover(long idConsultaVariavel)
-        {
-            try
-            {
-                var repMedicamentoNaoPrescrito = new RepositorioGenerico<tb_medicamento_nao_prescrito>();
-                repMedicamentoNaoPrescrito.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel);
-                repMedicamentoNaoPrescrito.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                throw new DadosException("MedicamentoNaoPrescrito", e.Message, e);
-            }
-        }
 
         /// <summary>
         /// Consulta para retornar dados da entidade
@@ -184,7 +172,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém MedicamentoNaoPrescritoModel com o código especificiado
+        /// Obtém MedicamentoNaoPrescritoModel com o código da consulta variavel especificiado
         /// </summary>
         /// <returns></returns>
         public IEnumerable<MedicamentoNaoPrescritoModel> Obter(long idConsultaVariavel)
@@ -193,7 +181,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// obtem por consulta medicamento
+        /// obtem medicamentosNaoPrescritos por consulta e  medicamento
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
         /// <param name="idMedicamento"></param>
@@ -202,16 +190,6 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(MedicamentoNaoPrescritoModel => MedicamentoNaoPrescritoModel.IdConsultaVariavel == idConsultaVariavel && 
                 MedicamentoNaoPrescritoModel.IdMedicamento == idMedicamento).ToList().ElementAtOrDefault(0);
-        }
-
-        /// <summary>
-        /// Obtém medicamentoNaoPrescrito que iniciam com o nome
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        public IEnumerable<MedicamentoNaoPrescritoModel> ObterPorIdHistorico(long idConsultaVariavel)
-        {
-            return GetQuery().Where(MedicamentoNaoPrescritoModel => MedicamentoNaoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
 
         /// <summary>

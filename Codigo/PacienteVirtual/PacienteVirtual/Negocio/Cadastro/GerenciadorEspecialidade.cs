@@ -25,7 +25,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// inserir dados da alergia
+        /// inserir dados da Especialidade
         /// </summary>
         /// <param name="alergia"></param>
         /// <returns></returns>
@@ -50,7 +50,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Atualiza dados da Alergia
+        /// Atualiza dados da Especialidade
         /// </summary>
         /// <param name="alergia"></param>
         public void Atualizar(EspecialidadeModel especialidade)
@@ -70,7 +70,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Remove dados da Alergia
+        /// Remove dados da Especialidade
         /// </summary>
         /// <param name="idEspecialidade"></param>
         public void Remover(int idEspecialidade)
@@ -105,7 +105,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém todos os alergias cadastradas
+        /// Obtém todos as Especialidades cadastradas
         /// </summary>
         /// <returns></returns>
         public IEnumerable<EspecialidadeModel> ObterTodos()
@@ -124,7 +124,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém a partir do alergia
+        /// Obtém a partir do especialidade
         /// </summary>
         /// <param name="alergia"></param>
         /// <returns></returns>
