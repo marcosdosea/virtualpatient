@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.MedicamentoPrescritoModel>" %>
+<%@ Import Namespace = "PacienteVirtual.Helpers" %>
+
 <% using (Html.BeginForm("Create", "MedicamentoPrescrito"))
    { %>
 <%: Html.ValidationSummary(true) %>
@@ -88,7 +90,7 @@
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
     </div> 
 </fieldset>
-<div class="span5">
-    <%: Html.ValidationMessageFor(model => model.ErroMedPresc, string.Empty, new { @class = "styleValidation" })%>
+<div class="styleValidation">
+    <%: Html.QuebraLinhaFor(model => model.ErroMedPresc) %>
 </div>
 <% } %>
