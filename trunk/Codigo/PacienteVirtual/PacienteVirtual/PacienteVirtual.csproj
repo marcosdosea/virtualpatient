@@ -167,6 +167,7 @@
     <Compile Include="Controllers\Turma\AtivarTutorTurmaController.cs" />
     <Compile Include="Controllers\Turma\SelecionarTurmaController.cs" />
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
+    <Compile Include="Helpers\HelperQuebraLinha.cs" />
     <Compile Include="Models\Cadastro\AcaoQueixaModel.cs" />
     <Compile Include="Models\Cadastro\AreaAtuacaoModel.cs" />
     <Compile Include="Models\Cadastro\EspecialidadeModel.cs" />

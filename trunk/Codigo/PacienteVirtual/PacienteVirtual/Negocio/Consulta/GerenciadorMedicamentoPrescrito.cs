@@ -44,14 +44,14 @@ namespace PacienteVirtual.Negocio
                         contem = true;
                         if (med.Fitoterapico != medGabarito.Fitoterapico || !med.Dosagem.Equals(medGabarito.Dosagem) || !med.Posologia.Equals(medGabarito.Posologia) || !med.Prescritor.Equals(medGabarito.Prescritor) || !med.Especialidade.Equals(medGabarito.Especialidade))
                         {
-                            erroRespostas = erroRespostas + "Gabarito do Medicamento: " + med.MedicamentoNome + ": " + (medGabarito.Fitoterapico == true ? "Sim" : "Não") + ", " + medGabarito.Dosagem + ", " + medGabarito.Posologia + ", " + medGabarito.Prescritor + " e " + medGabarito.Especialidade + "; " + Environment.NewLine; 
+                            erroRespostas = erroRespostas + "Gabarito do Medicamento: " + med.MedicamentoNome + ": " + (medGabarito.Fitoterapico == true ? "Sim" : "Não") + ", " + medGabarito.Dosagem + ", " + medGabarito.Posologia + ", " + medGabarito.Prescritor + " e " + medGabarito.Especialidade + "; " + "<br>"; 
                         }
                         break;
                     }
                 }
                 if (!contem)
                 {
-                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + med.MedicamentoNome + "; " + Environment.NewLine;
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + med.MedicamentoNome + "; " + "<br>";
                 }
             }
             foreach (var medGabarito in listaMedPrescGabarito)
@@ -67,12 +67,12 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome +"; "+ Environment.NewLine;
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome +"; "+ "<br>";
                 }
             }
-            modelState.AddModelError("ErroMedPresc", (erroRespostas.Equals("") ? "" : erroRespostas + Environment.NewLine) +
-                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine) +
-                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));   
+            modelState.AddModelError("ErroMedPresc", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: <br>" + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: <br>" + erroContemGabaritoNaoContemResposta));   
         }
 
         /// <summary>
