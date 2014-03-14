@@ -614,6 +614,10 @@ namespace PacienteVirtual.Controllers
 
         public static string Roles
         {
+            get 
+            { 
+                return (string)HttpContext.Current.Session["_Roles"]; 
+            }
             set
             {
                 HttpContext.Current.Session["_Roles"] = value;
