@@ -13,10 +13,12 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
     <!-- Solução das abas 1 com jquery -->
+    <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
     <input type="hidden" value="<%: ViewBag.Abas1 %>" id="abas1" />
     <script type="text/javascript">
         var abas1 = document.getElementById('abas1').value;
         if (abas1 == 1) {
+            //função que adiciona ou remove a classe que ativa as abas
             $(document).ready(function () {
                 $("#li1").addClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#li5").removeClass("active"); $("#li6").removeClass("active"); $("#li7").removeClass("active"); $("#li8").removeClass("active"); $("#li9").removeClass("active"); $("#li10").removeClass("active"); $("#li11").removeClass("active"); $("#tab1-1").removeClass("tab-pane"); $("#tab1-1").addClass("tab-pane active"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); $("#tab1-5").removeClass("tab-pane active"); $("#tab1-5").addClass("tab-pane"); $("#tab1-6").removeClass("tab-pane active"); $("#tab1-6").addClass("tab-pane"); $("#tab1-7").removeClass("tab-pane active"); $("#tab1-7").addClass("tab-pane"); $("#tab1-8").removeClass("tab-pane active"); $("#tab1-8").addClass("tab-pane"); $("#tab1-9").removeClass("tab-pane active"); $("#tab1-9").addClass("tab-pane"); $("#tab1-10").removeClass("tab-pane active"); $("#tab1-10").addClass("tab-pane"); $("#tab1-11").removeClass("tab-pane active"); $("#tab1-11").addClass("tab-pane");  
             });
@@ -104,7 +106,9 @@
                 <div class="thumbnail">
                     <div class="tabbable">
                         <ul class="nav nav-tabs">
+                        <!-- Solução das abas dos relatos -->
                         <% foreach(var item in Model.RelatoClinico) { %>
+                        <!-- Adicionando ou removendo a classe que ativa as abas nos relatos de acordo com a ordem cronologica. Este método é complementado com um código javascript no final deste código. -->
                         <% var a = item.OrdemCronologica; %>
                             <% if (a == 1)
                                { %>
@@ -249,23 +253,25 @@
         </div>
     </fieldset>
     <% } %>
-    <!-- Metodo Javascript para desabilitar todos os campos do formulario caso seja tutor -->
+    <!-- Código Javascript para desabilitar todos os campos do formulario caso seja tutor -->
+    <!-- Passando o perfil do usuario e o id do estado da consulta, da viewbag para dentro do código javascript através do id -->
     <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
     <input type="hidden" value="<%: Session["_IdEstadoConsulta"] %>" id="IdEstadoConsulta" />
     <script type="text/javascript">
         var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
         var perfil = document.getElementById('perfil').value;
         if (perfil == "tutor") {
-            //habilitar para tutor corrigir e comentarios do tutor
+            //método que habilita para tutor corrigir e comentarios do tutor
             $("#desabilitar *").attr("disabled", "disabled").off('click');
         } else if (perfil == "usuario") {
+            //Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs
             if (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7) {
                 $("#desabilitar *").attr("disabled", "disabled").off('click');
             }
         }
     </script>
+    <!-- Código Javascript para desabilitar o campo de comentários, caso seja tutor -->
     <script type="text/javascript">
-        //desabilitar comentarios do tutor
         var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
         var perfil = document.getElementById('perfil').value;
         if (!(perfil == "tutor" && idEstadoConsulta == 5)) {
@@ -284,8 +290,10 @@
             <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
         </div>
         &nbsp;
+        <!-- Escondendo botões de acordo com o perfil do usuário. A Session[_Roles] contém uma string com o perfil do usuário. -->
          <% if (!Session["_Roles"].Equals("tutor"))
            { %>   
+            <!-- Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs -->
             <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
            { %>
             <div class="btn btn-large btn-primary">
@@ -305,6 +313,8 @@
            </div>
         <% } %>
     </div>
+
+    <!-- Posicionamento e estilos dos botões desta página. -->
     <style>
         #botoes
         {
@@ -326,10 +336,12 @@
         }
     </style>
 
-    <!-- Abas dos Relatos -->
+    <!-- Código javascript para as Abas dos Relatos -->
+    <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
     <input type="hidden" value="<%: ViewBag.AbasRelato %>" id="abasRelato" />
     <script type="text/javascript">
         var abasRelato = document.getElementById('abasRelato').value
+        //método que concatena os nomes das abas para adicionar ou remover classes que ativam e desativam as abas
         $(document).ready(function () {
             if (abasRelato != 1) {
                 var abaLI1 = "#li0";
@@ -370,9 +382,9 @@
             });
         });
     </script>
-    <!-- FIM das Abas dos Relatos -->
+    <!-- FIM do Código javascript para as Abas dos Relatos -->
 
-
+    <!-- script para os campos que tem calendário -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>

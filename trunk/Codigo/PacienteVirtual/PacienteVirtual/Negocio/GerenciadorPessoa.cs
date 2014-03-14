@@ -151,6 +151,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém pessoas que iniciam com o nome
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public PessoaModel ObterPorNome(string nomePessoa)
+        {
+            return GetQuery().Where(pessoa => pessoa.Nome == nomePessoa).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="pessoa"></param>
@@ -163,6 +173,7 @@ namespace PacienteVirtual.Negocio
             _pessoaE.Fone = pessoa.Fone;
             _pessoaE.Matricula = pessoa.Matricula;
         }
+
 
     }
 }

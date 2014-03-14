@@ -16,10 +16,12 @@
     </script>
 
     <!-- Solução das abas 2 com jquery -->
+    <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
     <input type="hidden" value="<%: ViewBag.Abas2 %>" id="abas2" />
     <script type="text/javascript">
         var abas2 = document.getElementById('abas2').value;
         if (abas2 == 1) {
+            //função que adiciona ou remove a classe que ativa as abas
             $(document).ready(function () {
                 $("#li1").addClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#tab1-1").removeClass("tab-pane"); $("#tab1-1").addClass("tab-pane active"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); 
             });
@@ -38,6 +40,7 @@
         }
     </script>
 
+    <!-- Solução para âncoras no código -->
     <!--input type="hidden" value="<!--%: ViewBag.AncoraEdit2 %>" id="ancoraEdit2" />
         <script type="text/javascript">
             var ancoraEdit2 = document.getElementById('ancoraEdit2').value;
@@ -50,6 +53,7 @@
             }
         </script-->
 
+    <!-- código javascript com função para mostrar div escondida com a class="mostrarQueixa" -->
     <script type="text/javascript">
         $(document).ready(function () {
             $(".botaoMostrar").click(function () {
@@ -109,7 +113,9 @@
                 <div class="thumbnail">
                     <div class="tabbable">
                         <ul class="nav nav-tabs">
+                        <!-- Solução das abas dos relatos -->
                         <% foreach(var item in Model.RelatoClinico) { %>
+                        <!-- Adicionando ou removendo a classe que ativa as abas nos relatos de acordo com a ordem cronologica. Este método é complementado com um código javascript no final deste código. -->
                         <% var a = item.OrdemCronologica; %>
                             <% if (a == 1)
                                { %>
@@ -195,8 +201,10 @@
             <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.ConsultaVariavel.IdConsultaVariavel, new { @style = "color:White; font-size:small;" })%>
         </div>
         &nbsp;
+        <!-- Escondendo botões de acordo com o perfil do usuário. A Session[_Roles] contém uma string com o perfil do usuário. -->
         <% if (!Session["_Roles"].Equals("tutor"))
            { %>   
+           <!-- Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs -->
             <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
            { %>
             <div class="btn btn-large btn-primary">

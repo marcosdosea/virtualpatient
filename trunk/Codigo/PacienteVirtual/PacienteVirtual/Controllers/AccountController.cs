@@ -85,9 +85,10 @@ namespace PacienteVirtual.Controllers
         //
         // GET: /Account/Register
 
+
         public ActionResult Register()
         {
-            ViewBag.CpfExistente = 0;
+            ViewBag.Erro = "";
             return View();
         }
 
@@ -111,7 +112,7 @@ namespace PacienteVirtual.Controllers
                     if (pessoaModel != null)
                     {
                         model.Cpf = "";
-                        ModelState.AddModelError("CPF", "*" + Resources.Mensagem.cpf_ja_cadastrado );
+                        ModelState.AddModelError("CPF", "*" + Resources.Mensagem.cpf_ja_cadastrado);
                         return View(model);
                     }
 
@@ -152,10 +153,9 @@ namespace PacienteVirtual.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("CPF", "*" + Resources.Mensagem.cpf_erro + "<br>" + "Mais texto.");
+                    ModelState.AddModelError("CPF", "*" + Resources.Mensagem.cpf_erro);
                 }
             }
-            ViewBag.CpfExistente = 0;
             // If we got this far, something failed, redisplay form
             return View(model);
         }
