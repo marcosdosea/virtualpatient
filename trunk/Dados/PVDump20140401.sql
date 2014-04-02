@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tempo de Geração: 21/11/2013 às 08h39min
+-- Tempo de Geração: 01/04/2014 às 21h58min
 -- Versão do Servidor: 5.1.56
 -- Versão do PHP: 5.3.8
 
@@ -318,8 +318,16 @@ CREATE TABLE IF NOT EXISTS `my_aspnet_membership` (
 --
 
 INSERT INTO `my_aspnet_membership` (`userId`, `Email`, `Comment`, `Password`, `PasswordKey`, `PasswordFormat`, `PasswordQuestion`, `PasswordAnswer`, `IsApproved`, `LastActivityDate`, `LastLoginDate`, `LastPasswordChangedDate`, `CreationDate`, `IsLockedOut`, `LastLockedOutDate`, `FailedPasswordAttemptCount`, `FailedPasswordAttemptWindowStart`, `FailedPasswordAnswerAttemptCount`, `FailedPasswordAnswerAttemptWindowStart`) VALUES
-(1, 'marcosdosea@yahoo.com.br', '', 'LEYqfv4+20Hq7nme6TC+K8E9k3uW4nIp3uS1weNW4JY=', 'A0903aZDxeEcCtPOqPMgGg==', 1, NULL, NULL, 1, '2013-07-23 11:31:57', '2013-07-23 11:31:57', '2013-07-23 11:15:39', '2013-07-23 11:15:39', 0, '2013-07-23 11:15:39', 1, '2013-08-22 00:27:38', 0, '2013-07-23 11:15:39'),
-(2, 'aluno@ufs.br', '', '9UZXsv0b0mRYrpIvrqyWdFhaWJ2v7IP28EQWsGRG0BY=', 'qSfOmA/JSmbsgLC5niTPzQ==', 1, NULL, NULL, 1, '2013-07-23 11:25:20', '2013-07-23 11:25:20', '2013-07-23 11:17:45', '2013-07-23 11:17:45', 0, '2013-07-23 11:17:45', 0, '2013-07-23 11:17:45', 0, '2013-07-23 11:17:45');
+(1, 'marcosdosea@yahoo.com.br', '', 'paciente', 'A0903aZDxeEcCtPOqPMgGg==', 0, 'Pergunta', 'Resposta', 1, '2014-03-31 10:11:52', '2014-03-31 10:11:52', '2013-07-23 11:15:39', '2013-07-23 11:15:39', 0, '2014-02-06 16:04:17', 2, '2014-02-11 16:07:29', 0, '2013-07-23 11:15:39'),
+(5, 'alessandra_pharmacia@hotmail.com', '', 'monet', 'jhvDPAZdKgKsLsTeh5kbYg==', 0, 'Pergunta', 'Resposta', 1, '2014-03-31 10:01:51', '2014-03-31 10:01:51', '2013-11-29 10:59:33', '2013-11-29 10:59:33', 0, '2013-11-29 10:59:33', 1, '2014-02-11 14:07:07', 0, '2013-11-29 10:59:33'),
+(6, 'elielmasa@yahoo.com.br', '', 'paciente', 'Y/+MDq+W6VoBN6EvVAPvDw==', 0, 'Pergunta', 'Resposta', 1, '2014-01-16 22:31:55', '2014-01-16 22:31:55', '2013-11-29 18:11:23', '2013-11-29 18:11:23', 0, '2013-11-29 18:11:23', 0, '2013-11-29 18:11:23', 0, '2013-11-29 18:11:23'),
+(8, 'werlisouza@yahoo.com.br', '', 'doutorado', 'S+0JmgdteChjghmFqwfxgA==', 0, 'Pergunta', 'Resposta', 1, '2014-02-25 14:59:21', '2014-02-25 14:59:21', '2013-12-02 20:54:20', '2013-12-02 20:54:20', 0, '2013-12-02 20:54:20', 1, '2014-02-25 13:03:58', 0, '2013-12-02 20:54:20'),
+(9, 'alunoteste@hotmail.com', '', 'teste', 'lmvrqsY4Se1O13u02CVpCg==', 0, 'Pergunta', 'Resposta', 1, '2014-02-18 13:49:28', '2014-02-18 13:49:28', '2013-12-03 07:53:42', '2013-12-03 07:53:42', 0, '2013-12-03 07:53:42', 0, '2013-12-03 07:53:42', 0, '2013-12-03 07:53:42'),
+(10, 'clevertonmaggot@gmail.com', '', '123456', 'n5mwkXzcqIaORmk9lTrrew==', 0, 'Pergunta', 'Resposta', 1, '2014-02-25 07:32:25', '2014-02-25 07:32:25', '2013-12-03 13:33:21', '2013-12-03 13:33:21', 0, '2013-12-03 13:33:21', 0, '2013-12-03 13:33:21', 0, '2013-12-03 13:33:21'),
+(12, 'roseane.sam@hotmail.com', '', '2013', 'MNvqVOSWElZX4gg+qE4HaQ==', 0, 'Pergunta', 'Resposta', 1, '2014-02-25 13:16:59', '2014-02-25 13:16:59', '2014-01-31 19:51:23', '2014-01-31 19:51:23', 0, '2014-01-31 19:51:23', 1, '2014-02-25 13:14:15', 0, '2014-01-31 19:51:23'),
+(13, 'caioitalofarma@hotmail.com', '', 'farmacia', 'oqYyEF+agkyozSNy0NowUw==', 0, 'Pergunta', 'Resposta', 1, '2014-02-25 13:43:48', '2014-02-25 13:43:48', '2014-02-01 00:40:17', '2014-02-01 00:40:17', 0, '2014-02-01 00:40:17', 2, '2014-02-09 17:06:06', 0, '2014-02-01 00:40:17'),
+(14, 'fabiolouzada20@hotmail.com', '', 'ufs2014', 'mP1ZZHDe6kI6LwOvHvx+Dw==', 0, 'Pergunta', 'Resposta', 1, '2014-02-25 14:40:54', '2014-02-25 14:40:54', '2014-02-03 19:57:40', '2014-02-03 19:57:40', 0, '2014-02-03 19:57:40', 1, '2014-02-19 21:16:33', 0, '2014-02-03 19:57:40'),
+(15, 'larissa@yahoo.com.br', '', 'paciente', 'H/CcJbPx1dfIqTgUd8ZFqQ==', 0, 'Pergunta', 'Resposta', 1, '2014-02-20 15:21:57', '2014-02-20 15:20:57', '2014-02-06 21:52:53', '2014-02-06 21:52:53', 0, '2014-02-06 21:52:53', 1, '2014-02-06 23:33:23', 0, '2014-02-06 21:52:53');
 
 -- --------------------------------------------------------
 
@@ -421,15 +429,24 @@ CREATE TABLE IF NOT EXISTS `my_aspnet_users` (
   `isAnonymous` tinyint(1) NOT NULL DEFAULT '1',
   `lastActivityDate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Extraindo dados da tabela `my_aspnet_users`
 --
 
 INSERT INTO `my_aspnet_users` (`id`, `applicationId`, `name`, `isAnonymous`, `lastActivityDate`) VALUES
-(1, 1, 'marcosdosea', 0, '2013-07-23 11:31:57'),
-(2, 1, 'aluno', 0, '2013-07-23 11:25:20');
+(1, 1, 'admin', 0, '2014-03-31 10:11:52'),
+(5, 1, 'Alessandra', 0, '2014-03-31 10:01:51'),
+(6, 1, 'elielmasa', 0, '2014-01-16 22:31:55'),
+(8, 1, 'werlisouza', 0, '2014-02-25 14:59:21'),
+(9, 1, 'teste', 0, '2014-02-18 13:49:28'),
+(10, 1, 'cleverton', 0, '2014-02-25 07:32:25'),
+(11, 1, 'marcosdosea', 0, '2013-12-11 10:44:14'),
+(12, 1, 'atenfar2013', 0, '2014-02-25 13:16:59'),
+(13, 1, 'atenfarma', 0, '2014-02-25 13:43:48'),
+(14, 1, 'farmaciaufs2014', 0, '2014-02-25 14:40:54'),
+(15, 1, 'larissa', 0, '2014-02-20 15:21:57');
 
 -- --------------------------------------------------------
 
@@ -683,16 +700,23 @@ CREATE TABLE IF NOT EXISTS `respostaterceira` (
 
 CREATE TABLE IF NOT EXISTS `tb_acao_queixa` (
   `IdAcaoQueixa` int(11) NOT NULL AUTO_INCREMENT,
-  `DescricaoAcao` varchar(100) NOT NULL,
+  `DescricaoAcao` varchar(150) NOT NULL,
   PRIMARY KEY (`IdAcaoQueixa`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Extraindo dados da tabela `tb_acao_queixa`
 --
 
 INSERT INTO `tb_acao_queixa` (`IdAcaoQueixa`, `DescricaoAcao`) VALUES
-(2, 'enviar médico');
+(2, 'Encaminhamento ao médico'),
+(3, 'Intervenção educativa'),
+(4, 'Realizar atividade física e controlar a alimentação'),
+(5, 'Controlar a alimentação'),
+(6, 'Realizar atividade física'),
+(7, 'Encaminhamento ao Nutricionista'),
+(8, 'Encaminhamento ao psicólogo'),
+(9, 'Encaminhamento ao odontólogo');
 
 -- --------------------------------------------------------
 
@@ -720,7 +744,7 @@ INSERT INTO `tb_alergia` (`IdAlergia`, `Alergia`) VALUES
 (7, 'Alergia a antibióticos '),
 (8, 'Alergia à penicilina '),
 (9, 'Alergia a camarão, azeitona, salsicha e inseticida '),
-(10, 'Alergia a Buscopan® '),
+(10, 'Alergia ao medicamento Buscopan® '),
 (11, 'Alergia a detergente '),
 (12, 'Alergia a poeira, ácaro e fungos ');
 
@@ -737,6 +761,74 @@ CREATE TABLE IF NOT EXISTS `tb_alergia_exames_fisicos` (
   KEY `fk_tb_alergia_has_tb_exames_fisicos_tb_exames_fisicos1_idx` (`IdConsultaVariavel`),
   KEY `fk_tb_alergia_has_tb_exames_fisicos_tb_alergia1_idx` (`IdAlergia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_alergia_exames_fisicos`
+--
+
+INSERT INTO `tb_alergia_exames_fisicos` (`IdAlergia`, `IdConsultaVariavel`) VALUES
+(1, 16),
+(1, 23),
+(1, 34),
+(2, 18),
+(2, 19),
+(2, 24),
+(2, 27),
+(2, 30),
+(2, 31),
+(2, 32),
+(2, 36),
+(2, 37),
+(2, 40),
+(2, 41),
+(2, 42),
+(2, 47),
+(2, 48),
+(2, 53),
+(2, 55),
+(3, 4),
+(3, 14),
+(3, 15),
+(3, 29),
+(3, 38),
+(3, 44),
+(3, 45),
+(3, 50),
+(3, 51),
+(3, 56),
+(4, 17),
+(4, 35),
+(4, 39),
+(4, 43),
+(4, 46),
+(4, 49),
+(4, 52),
+(4, 54),
+(6, 21),
+(7, 22),
+(8, 25),
+(8, 26),
+(9, 28);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_area_atuacao`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_area_atuacao` (
+  `IdAreaAtuacao` int(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` varchar(50) NOT NULL,
+  PRIMARY KEY (`IdAreaAtuacao`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `tb_area_atuacao`
+--
+
+INSERT INTO `tb_area_atuacao` (`IdAreaAtuacao`, `Descricao`) VALUES
+(1, 'Saúde Pública'),
+(2, 'Hospitalar');
 
 -- --------------------------------------------------------
 
@@ -766,6 +858,7 @@ INSERT INTO `tb_bebida` (`IdBebida`, `Nome`) VALUES
 CREATE TABLE IF NOT EXISTS `tb_carta` (
   `IdCarta` int(11) NOT NULL AUTO_INCREMENT,
   `IdConsultaVariavel` bigint(20) NOT NULL,
+  `IdEspecialidade` int(11) NOT NULL,
   `NomeProfissional` varchar(45) NOT NULL,
   `NomePaciente` varchar(45) NOT NULL,
   `DataNascimento` datetime DEFAULT NULL,
@@ -776,11 +869,27 @@ CREATE TABLE IF NOT EXISTS `tb_carta` (
   `CRFUF` varchar(45) DEFAULT NULL,
   `TelefoneFarmaceutico` varchar(15) DEFAULT NULL,
   `Referencias` text,
-  `IdCursoProfissionalEncaminhado` int(11) NOT NULL,
   PRIMARY KEY (`IdCarta`),
-  KEY `fk_tb_carta_tb_curso1_idx` (`IdCursoProfissionalEncaminhado`),
-  KEY `fk_tb_carta_tb_consulta_variavel1_idx` (`IdConsultaVariavel`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `fk_tb_carta_tb_consulta_variavel1_idx` (`IdConsultaVariavel`),
+  KEY `fk_tb_carta_tb_especialidade1_idx` (`IdEspecialidade`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Extraindo dados da tabela `tb_carta`
+--
+
+INSERT INTO `tb_carta` (`IdCarta`, `IdConsultaVariavel`, `IdEspecialidade`, `NomeProfissional`, `NomePaciente`, `DataNascimento`, `TelefonePaciente`, `MotivoReferenciaConsulta`, `Alternativas`, `Farmaceutico`, `CRFUF`, `TelefoneFarmaceutico`, `Referencias`) VALUES
+(1, 45, 2, 'Exmo(a). Sr(a) Dr(a) S.', 'A.C.S.', '1946-07-08 00:00:00', 'XXXX-XXXX', 'O Sr. A.C.S. é portador de Hipertensão Arterial Sistêmica e Diabetes Mellittus tipo II há 10 anos. Durante a avaliação inicial no serviço de Atenção Farmacêutica foram consideradas relevantes para o acompanhamento farmacoterapêutico os seguintes dados: o paciente suspendeu o uso do medicamento Sinvastatina sem averiguar o controle dos níveis lipêmicos. \r\nObs: Segue em anexo o diário pessoal dos medicamentos utilizados pelo paciente.\r\n', 'Correlacionar com exames clínicos e laboratoriais e avaliar o risco-benefício de adicionar um hipolipemiante de sua escolha, segundo as V Diretrizes Brasileiras sobre Dislipidemias e Prevenção da Arterosclerose.', 'XXXXX', 'XXX', 'XXXX-XXXX', 'Sociedade Brasileira de Cardiologia. V Diretrizes Brasileiras sobre Dislipidemias e Prevenção da Arterosclerose. Departamento de Arterosclerose da Sociedade Brasileira de Cardiologia.'),
+(2, 46, 2, 'Exmo(a). Sr(a) Dr(a) L.A.S', 'E.V.', '1943-05-12 00:00:00', 'XXXX-XXXX', 'A paciente Sr. E.V. é portadora de Hipertensão Arterial Sistêmica e Diabetes Mellitus tipo II há 13 anos. Durante a avaliação inicial no Serviço de atenção Farmacêutica foram consideradas relevantes para o acompanhamento farmacoterapêutico os seguintes dados: a paciente não tolera o efeito colateral do medicamento Hidroclotiazida (aumento da diurese). De acordo com as Diretrizes Brasileiras de Hipertensão, a paciente possui Hipertensão Arterial Sistêmica estágio I controlada.  Obs: Segue em anexo o diário pessoal dos medicamentos utilizados pelo paciente.', 'Correlacionar com exames clínicos e laboratoriais e avaliar o risco-benefício de descontinuar o uso deste medicamento, visto que os níveis pressóricos da paciente permanecem estáveis e controlados, mesmo sem a utilização da Hidroclorotiazida, segundo as Diretrizes Brasileiras de Hipertensão.', 'XXXXXX', 'XXXX', 'XXXX-XXXX', 'Sociedade Brasileira de Cardiologia. VI Diretrizes Brasileiras de Hipertensão, 2010.'),
+(3, 47, 1, 'Exmo(a). Sr(a) Dr(a) P.', 'F.B.O.', '1945-01-03 00:00:00', 'XXXX-XXXX', 'O paciente Sr. F.B.O. é portador de Diabetes Mellitus tipo II há 30 anos. Durante a avaliação inicial no Serviço de atenção Farmacêutica foram consideradas relevantes para o acompanhamento farmacoterapêutico os seguintes dados: o paciente apresentou crise hipoglicêmica ao adicionar o medicamento Glimepirida ao seu tratamento. Analisando por meio da base de dados Micromedex 2.0 foi encontrada uma frequência de 4% a 19.7% de ocorrência de hipoglicemia em adultos durante o uso de Glimepirida. Além disso, foi relatado pelo paciente a presença de sintomas de constipação. Foi analisado na mesma base de dados que o medicamento Tylex, composto por paracetamol e codeína, utilizado pelo paciente para o tratamento de neuropatia diabética, pode causar constipação, porém não foi relatada a frequência de ocorrência de tal efeito adverso. \r\n\r\nObs: Segue em anexo o diário pessoal dos medicamentos utilizados pelo paciente.', '- Avaliar o risco-benefício de suspender o medicamento Glimepirida, visto que os níveis glicêmicos do paciente permanecem dentro dos valores de referência com o uso apenas da metformina, segundo as Diretrizes da Sociedade Brasileira de Endocrinologia e Metabolismo.\r\n', 'XXXXX', 'XXX', 'XXXX-XXXX', 'Sociedade Brasileira de Diabetes. V Diretrizes Brasileiras de Diabetes. SBD 2009'),
+(5, 49, 2, 'Dr. L.A.S', 'E.V', '1943-05-12 00:00:00', '3240-0001', 'Prezado Dr. L.A.S, Bom dia.\r\nA Paciente E.V é portadora de diabetes Mellitus tipo II e Hipertensão arterial sistêmica há 13 anos e recebeu prescrição com os seguintes medicamentos: Enalapril 10mg, Propranolol 40mg e Hidroclorotiazida 25mg.\r\nA paciente vem sendo acompanhada por este serviço a 3 meses onde periodicamente estão sendo avaliados seus parâmetros clínicos e sua farmacoterapia. Neste ínterim, verifiquei que a paciente não adere ao tratamento com o medicamento hidroclorotiazida desde que o mesmo foi prescrito relatando preferir não utilizá-lo pelo incômodo de ir muitas vezes ao banheiro. Apesar disso os níveis pressóricos continuam normalizados desde então, levando-me a crer que tal medicamento seja desnecessário.\r\nEncaminho esta carta para que o Sr. avalie juntamente com a paciente esta situação e caso julgue necessário tomar devidas providências.    \r\n', 'Caso após consulta com a paciente achar desnecessário, sugiro a descontinuação da prescrição da Hidroclorotiazida, já que a mesma pode ser usada para outros fins que não o tratamento da paciente.', 'Thiago Willian Andrade Lima', '1000SE', '3333-3333', NULL),
+(6, 48, 3, 'Dr. P (endocrinologista)', 'FBO', '1945-01-03 00:00:00', '79000000000', 'Paciente apresenta constipação a qual incomoda muito; Além disso não adere ao tratamento com a Glimepiridina (diabetes) pois relata causar crise hipoglicêmica.', 'Após a análise da situação do paciente, identificamos que a constipação pode estar  sendo provocada pelo Tylex (paracetamol+codeína) sobretudo a codeína ,pois a mesma apresenta constipação como reação adversa comum .Diante disso sugiro a troca da medicação .\r\nJá a crise hipoglicêmica pode está sendo provocado pela alta dosagem da Glimepiridina ,sugiro a diminuição da dose para 2 mg.\r\n', 'Caio Ítalo P.Silva', '850', '7900000000', 'micromedex.com;\r\nwww.drugs.com'),
+(9, 51, 2, 'Exmo(a). Sr(a) Dr(a) S.', 'A.C.S.', '1946-07-08 00:00:00', 'XXXX-XXXX', 'O Sr. A.C.S. é portador de Hipertensão Arterial Sistêmica e Diabetes Mellittus tipo II há 10 anos. Durante a avaliação inicial no serviço de Atenção Farmacêutica foram consideradas relevantes para o acompanhamento farmacoterapêutico os seguintes dados: o paciente suspendeu o uso do medicamento Sinvastatina sem averiguar o controle dos níveis lipêmicos. \r\nObs: Segue em anexo o diário pessoal dos medicamentos utilizados pelo paciente.\r\n', 'Correlacionar com exames clínicos e laboratoriais e avaliar o risco-benefício de adicionar um hipolipemiante de sua escolha, segundo as V Diretrizes Brasileiras sobre Dislipidemias e Prevenção da Arterosclerose.', 'XXXXX', 'XXX', 'XXXX-XXXX', 'Sociedade Brasileira de Cardiologia. V Diretrizes Brasileiras sobre Dislipidemias e Prevenção da Arterosclerose. Departamento de Arterosclerose da Sociedade Brasileira de Cardiologia.'),
+(10, 52, 2, 'Exmo(a). Sr(a) Dr(a) L.A.S', 'E.V.', '1943-05-12 00:00:00', 'XXXX-XXXX', 'A paciente Sr. E.V. é portadora de Hipertensão Arterial Sistêmica e Diabetes Mellitus tipo II há 13 anos. Durante a avaliação inicial no Serviço de atenção Farmacêutica foram consideradas relevantes para o acompanhamento farmacoterapêutico os seguintes dados: a paciente não tolera o efeito colateral do medicamento Hidroclotiazida (aumento da diurese). De acordo com as Diretrizes Brasileiras de Hipertensão, a paciente possui Hipertensão Arterial Sistêmica estágio I controlada.  Obs: Segue em anexo o diário pessoal dos medicamentos utilizados pelo paciente.', 'Correlacionar com exames clínicos e laboratoriais e avaliar o risco-benefício de descontinuar o uso deste medicamento, visto que os níveis pressóricos da paciente permanecem estáveis e controlados, mesmo sem a utilização da Hidroclorotiazida, segundo as Diretrizes Brasileiras de Hipertensão.', 'XXXXXX', 'XXXX', 'XXXX-XXXX', 'Sociedade Brasileira de Cardiologia. VI Diretrizes Brasileiras de Hipertensão, 2010.'),
+(11, 53, 1, 'Exmo(a). Sr(a) Dr(a) P.', 'F.B.O.', '1945-01-03 00:00:00', 'XXXX-XXXX', 'O paciente Sr. F.B.O. é portador de Diabetes Mellitus tipo II há 30 anos. Durante a avaliação inicial no Serviço de atenção Farmacêutica foram consideradas relevantes para o acompanhamento farmacoterapêutico os seguintes dados: o paciente apresentou crise hipoglicêmica ao adicionar o medicamento Glimepirida ao seu tratamento. Analisando por meio da base de dados Micromedex 2.0 foi encontrada uma frequência de 4% a 19.7% de ocorrência de hipoglicemia em adultos durante o uso de Glimepirida. Além disso, foi relatado pelo paciente a presença de sintomas de constipação. Foi analisado na mesma base de dados que o medicamento Tylex, composto por paracetamol e codeína, utilizado pelo paciente para o tratamento de neuropatia diabética, pode causar constipação, porém não foi relatada a frequência de ocorrência de tal efeito adverso. \r\n\r\nObs: Segue em anexo o diário pessoal dos medicamentos utilizados pelo paciente.', '- Avaliar o risco-benefício de suspender o medicamento Glimepirida, visto que os níveis glicêmicos do paciente permanecem dentro dos valores de referência com o uso apenas da metformina, segundo as Diretrizes da Sociedade Brasileira de Endocrinologia e Metabolismo.\r\n', 'XXXXX', 'XXX', 'XXXX-XXXX', 'Sociedade Brasileira de Diabetes. V Diretrizes Brasileiras de Diabetes. SBD 2009'),
+(13, 55, 3, 'Dr. P (endocrinologista)', 'FBO', '1945-01-03 00:00:00', '79000000000', 'Paciente apresenta constipação a qual incomoda muito; Além disso não adere ao tratamento com a Glimepiridina (diabetes) pois relata causar crise hipoglicêmica.', 'Após a análise da situação do paciente, identificamos que a constipação pode estar  sendo provocada pelo Tylex (paracetamol+codeína) sobretudo a codeína ,pois a mesma apresenta constipação como reação adversa comum .Diante disso sugiro a troca da medicação .\r\nJá a crise hipoglicêmica pode está sendo provocado pela alta dosagem da Glimepiridina ,sugiro a diminuição da dose para 2 mg.\r\n', 'Caio Ítalo P.Silva', '850', '7900000000', 'micromedex.com;\r\nwww.drugs.com'),
+(14, 50, 4, 'Dr. S', 'A.C.S.', '1946-07-08 00:00:00', 'Não relatou', 'O Sr A.C. S é hipertenso, diabético e está com os níveis de colesterol elevados e deixou de tomar o medicamento prescrito pelo seu medico Dr. S. O medicamento prescrito foi Sinvastatina. Por ser um paciente obeso que não segue dieta nem atividades físicas isso se torna um agravante para seu quadro clínico. Além do que não retornou ao médico para averiguar os índices de colesterol.', 'Sugiro que o Senhor avalie a situação do paciente, e que tome uma decisão sobre a farmacoterapia necessária para o mesmo. Tendo em vista em que a hiperdislipidemia está relacionado com os altos índices de colesterol e triglicérides no sangue, o que poderia agravar os seus demais problemas, como a hipertensão e diabetes, Sugiro também a realização de novos exames clínicos para verificar os parâmetros dislipidêmicos do Sr. A. C.S.', 'Fábio Rodolfo ', '123/SE', '79 9975 5929', 'www.medline.com.br'),
+(15, 56, 4, 'Dr. S', 'A.C.S.', '1946-07-08 00:00:00', 'Não relatou', 'O Sr A.C. S é hipertenso, diabético e está com os níveis de colesterol elevados e deixou de tomar o medicamento prescrito pelo seu medico Dr. S. O medicamento prescrito foi Sinvastatina. Por ser um paciente obeso que não segue dieta nem atividades físicas isso se torna um agravante para seu quadro clínico. Além do que não retornou ao médico para averiguar os índices de colesterol.', 'Sugiro que o Senhor avalie a situação do paciente, e que tome uma decisão sobre a farmacoterapia necessária para o mesmo. Tendo em vista em que a hiperdislipidemia está relacionado com os altos índices de colesterol e triglicérides no sangue, o que poderia agravar os seus demais problemas, como a hipertensão e diabetes, Sugiro também a realização de novos exames clínicos para verificar os parâmetros dislipidêmicos do Sr. A. C.S.', 'Fábio Rodolfo ', '123/SE', '79 9975 5929', 'www.medline.com.br');
 
 -- --------------------------------------------------------
 
@@ -794,7 +903,7 @@ CREATE TABLE IF NOT EXISTS `tb_consulta_fixo` (
   `DataAtualizacao` datetime DEFAULT NULL,
   `ComentariosTutor` text,
   PRIMARY KEY (`IdConsultaFixo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
 -- Extraindo dados da tabela `tb_consulta_fixo`
@@ -807,7 +916,42 @@ INSERT INTO `tb_consulta_fixo` (`IdConsultaFixo`, `EhGabarito`, `DataAtualizacao
 (4, 0, '0001-01-01 00:00:00', NULL),
 (5, 0, '0001-01-01 00:00:00', NULL),
 (6, 0, '0001-01-01 00:00:00', NULL),
-(7, 0, '0001-01-01 00:00:00', NULL);
+(7, 0, '0001-01-01 00:00:00', NULL),
+(8, 0, '0001-01-01 00:00:00', NULL),
+(9, 0, '0001-01-01 00:00:00', NULL),
+(10, 0, '0001-01-01 00:00:00', NULL),
+(11, 0, '0001-01-01 00:00:00', NULL),
+(12, 0, '0001-01-01 00:00:00', NULL),
+(13, 0, '0001-01-01 00:00:00', NULL),
+(14, 0, '0001-01-01 00:00:00', NULL),
+(15, 0, '0001-01-01 00:00:00', NULL),
+(16, 0, '0001-01-01 00:00:00', NULL),
+(17, 0, '0001-01-01 00:00:00', NULL),
+(18, 0, '0001-01-01 00:00:00', NULL),
+(19, 0, '0001-01-01 00:00:00', NULL),
+(20, 0, '0001-01-01 00:00:00', NULL),
+(21, 0, '0001-01-01 00:00:00', NULL),
+(22, 0, '0001-01-01 00:00:00', NULL),
+(23, 0, '0001-01-01 00:00:00', NULL),
+(24, 0, '0001-01-01 00:00:00', NULL),
+(25, 0, '0001-01-01 00:00:00', NULL),
+(26, 0, '0001-01-01 00:00:00', NULL),
+(27, 0, '0001-01-01 00:00:00', NULL),
+(28, 0, '0001-01-01 00:00:00', NULL),
+(29, 0, '0001-01-01 00:00:00', NULL),
+(30, 0, '0001-01-01 00:00:00', NULL),
+(31, 0, '0001-01-01 00:00:00', NULL),
+(32, 0, '0001-01-01 00:00:00', NULL),
+(33, 0, '0001-01-01 00:00:00', NULL),
+(34, 0, '0001-01-01 00:00:00', NULL),
+(35, 0, '0001-01-01 00:00:00', NULL),
+(36, 0, '0001-01-01 00:00:00', NULL),
+(37, 0, '0001-01-01 00:00:00', NULL),
+(38, 0, '0001-01-01 00:00:00', NULL),
+(39, 0, '0001-01-01 00:00:00', NULL),
+(40, 0, '0001-01-01 00:00:00', NULL),
+(41, 0, '0001-01-01 00:00:00', NULL),
+(42, 0, '0001-01-01 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -819,12 +963,136 @@ CREATE TABLE IF NOT EXISTS `tb_consulta_parametro` (
   `IdConsultaVariavel` bigint(20) NOT NULL,
   `IdParametroClinico` int(11) NOT NULL,
   `Valor` float DEFAULT NULL,
-  `ValorReferencia` float DEFAULT NULL,
+  `ValorReferencia` varchar(20) DEFAULT NULL,
   `Unidade` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`IdConsultaVariavel`,`IdParametroClinico`),
   KEY `fk_tb_consulta_parametro_tb_consulta_variavel1_idx` (`IdConsultaVariavel`),
   KEY `fk_tb_consulta_parametro_tb_parametro_clinico1_idx` (`IdParametroClinico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_consulta_parametro`
+--
+
+INSERT INTO `tb_consulta_parametro` (`IdConsultaVariavel`, `IdParametroClinico`, `Valor`, `ValorReferencia`, `Unidade`) VALUES
+(10, 3, 2, '2.5', 'ml'),
+(14, 1, 228, '70 a 100', 'mg/dl'),
+(14, 3, 12.4, '6.5', '%'),
+(15, 1, 228, '140', 'mg/dl'),
+(16, 1, 274, '70 a 100', 'mg/dl'),
+(16, 2, 273, 'até 200', 'mg/dl'),
+(16, 3, 13, '6.5', '%'),
+(17, 1, 129, '70 a 100', 'mg/dl'),
+(17, 2, 177, 'até 200', 'mg/dl'),
+(17, 3, 8.8, '6.5', '%'),
+(17, 4, 212, 'até 140', 'mg/dl'),
+(18, 1, 133, '70 a 100', 'mg/dl'),
+(18, 3, 6.5, '6.5', '%'),
+(18, 4, 131, 'até 140', 'mg/dl'),
+(19, 1, 280, '70 a 100', 'mg/dl'),
+(19, 2, 254, 'até 200', 'mg/dl'),
+(19, 3, 10.5, '6.5', '%'),
+(19, 8, 302, 'até 150', 'mg/dl'),
+(20, 3, 11, '6.5', '%'),
+(21, 3, 8, '6.5', '%'),
+(22, 1, 119, '70 a 100', 'mg/dl'),
+(22, 2, 298, 'até 200', 'mg/dl'),
+(23, 3, 7.5, '6.5', '%'),
+(24, 1, 106, '70 a 100', 'mg/dl'),
+(24, 3, 7.82, '6.5', '%'),
+(24, 4, 133, 'até 140', 'mg/dl'),
+(25, 1, 103, '70 a 100', 'mg/dl'),
+(25, 2, 291, 'até 200', 'mg/dl'),
+(25, 6, 223, '< 100', 'mg/dl'),
+(25, 7, 50, '= ou > 60', 'mg/dl'),
+(25, 8, 103, 'até 150', 'mg/dl'),
+(26, 1, 170, '70 a 100', 'mg/dl'),
+(26, 3, 9.9, '6.5', '%'),
+(27, 2, 266, 'até 200', 'mg/dl'),
+(28, 2, 133, 'até 200', 'mg/dl'),
+(28, 3, 10.2, '6.5', '%'),
+(30, 1, 140, '70 a 100', 'mg/dl'),
+(30, 2, 220, 'até 200', 'mg/dl'),
+(30, 3, 10.7, '6.5', '%'),
+(30, 4, 200, 'até 140', 'mg/dl'),
+(31, 1, 292, '70 a 100', 'mg/dl'),
+(31, 3, 11.8, '6.5', '%'),
+(31, 4, 314, 'até 140', 'mg/dl'),
+(31, 9, 1.69, '0.34 a 5.60', 'mUI/L'),
+(31, 10, 133.91, '0', 'Ug/dL'),
+(31, 11, 9.1, '0', 'Ug/dL'),
+(31, 12, 41, '41 a 65', 'mg/dl'),
+(31, 14, 1.9, '0', 'mg/dL'),
+(32, 2, 220, 'até 200', 'mg/dl'),
+(32, 6, 130, '< 100', 'mg/dl'),
+(32, 7, 46, '= ou > 60', 'mg/dl'),
+(32, 13, 44, 'até 40', 'mg/dl'),
+(34, 1, 228, '140', 'mg/dl'),
+(34, 2, 273, 'até 200', 'mg/dl'),
+(34, 3, 13, '6.5', '%'),
+(35, 1, 129, '70 a 100', 'mg/dl'),
+(35, 2, 177, 'até 200', 'mg/dl'),
+(35, 3, 8.8, '6.5', '%'),
+(35, 4, 212, 'até 140', 'mg/dl'),
+(36, 1, 133, '70 a 100', 'mg/dl'),
+(36, 3, 6.5, '6.5', '%'),
+(36, 4, 131, 'até 140', 'mg/dl'),
+(37, 1, 280, '70 a 100', 'mg/dl'),
+(37, 2, 254, 'até 200', 'mg/dl'),
+(37, 3, 10.5, '6.5', '%'),
+(37, 8, 302, 'até 150', 'mg/dl'),
+(38, 1, 228, '70 mg/dl e 99 mg/dl ', '%'),
+(38, 3, 12.4, 'abaixo de 7%', '%'),
+(39, 1, 129, '70 a 100', 'mg/dl'),
+(39, 2, 177, ' menor que 200', 'mg/dl'),
+(39, 3, 8.8, 'Maior ou igual a 6.5', '%'),
+(39, 4, 212, 'menor que 140', 'mg/dl'),
+(40, 1, 133, '70 a 100', 'mg/dL'),
+(40, 3, 6.5, 'Abaixo de 7%', '%'),
+(40, 4, 131, 'abaixo 140', 'mg/dL'),
+(42, 1, 133, '70 a 100', 'mg/dL'),
+(42, 3, 6.5, 'Abaixo de 7%', '%'),
+(42, 4, 131, 'abaixo 140', 'mg/dL'),
+(43, 1, 129, '70 a 100', 'mg/dl'),
+(43, 2, 177, ' menor que 200', 'mg/dl'),
+(43, 3, 8.8, 'Maior ou igual a 6.5', '%'),
+(43, 4, 212, 'menor que 140', 'mg/dl'),
+(44, 1, 228, '70 mg/dl e 99 mg/dl ', '%'),
+(44, 3, 12.4, 'abaixo de 7%', '%'),
+(45, 1, 228, '140', 'mg/dl'),
+(46, 1, 129, '70 a 100', 'mg/dl'),
+(46, 2, 177, 'até 200', 'mg/dl'),
+(46, 3, 8.8, '6.5', '%'),
+(46, 4, 212, 'até 140', 'mg/dl'),
+(47, 1, 133, '70 a 100', 'mg/dl'),
+(47, 3, 6.5, '6.5', '%'),
+(47, 4, 131, 'até 140', 'mg/dl'),
+(48, 1, 133, '70 a 100', 'mg/dL'),
+(48, 3, 6.5, 'Abaixo de 7%', '%'),
+(48, 4, 131, 'abaixo 140', 'mg/dL'),
+(49, 1, 129, '70 a 100', 'mg/dl'),
+(49, 2, 177, ' menor que 200', 'mg/dl'),
+(49, 3, 8.8, 'Maior ou igual a 6.5', '%'),
+(49, 4, 212, 'menor que 140', 'mg/dl'),
+(50, 1, 228, '70 mg/dl e 99 mg/dl ', '%'),
+(50, 3, 12.4, 'abaixo de 7%', '%'),
+(51, 1, 228, '140', 'mg/dl'),
+(52, 1, 129, '70 a 100', 'mg/dl'),
+(52, 2, 177, 'até 200', 'mg/dl'),
+(52, 3, 8.8, '6.5', '%'),
+(52, 4, 212, 'até 140', 'mg/dl'),
+(53, 1, 133, '70 a 100', 'mg/dl'),
+(53, 3, 6.5, '6.5', '%'),
+(53, 4, 131, 'até 140', 'mg/dl'),
+(54, 1, 129, '70 a 100', 'mg/dl'),
+(54, 2, 177, ' menor que 200', 'mg/dl'),
+(54, 3, 8.8, 'Maior ou igual a 6.5', '%'),
+(54, 4, 212, 'menor que 140', 'mg/dl'),
+(55, 1, 133, '70 a 100', 'mg/dL'),
+(55, 3, 6.5, 'Abaixo de 7%', '%'),
+(55, 4, 131, 'abaixo 140', 'mg/dL'),
+(56, 1, 228, '70 mg/dl e 99 mg/dl ', '%'),
+(56, 3, 12.4, 'abaixo de 7%', '%');
 
 -- --------------------------------------------------------
 
@@ -839,7 +1107,7 @@ CREATE TABLE IF NOT EXISTS `tb_consulta_variavel` (
   `IdRelato` int(11) NOT NULL,
   `IdConsultaFixo` bigint(20) NOT NULL,
   `IdRazaoEncontro` int(11) NOT NULL,
-  `idEstadoConsulta` int(11) NOT NULL,
+  `IdEstadoConsulta` int(11) NOT NULL,
   `DataPreenchimento` datetime DEFAULT NULL,
   `ResumoPlanoCuidados` text,
   `ComentariosTutor` text,
@@ -847,16 +1115,67 @@ CREATE TABLE IF NOT EXISTS `tb_consulta_variavel` (
   PRIMARY KEY (`IdConsultaVariavel`),
   KEY `fk_tb_consulta_variavel_tb_razao_encontro1_idx` (`IdRazaoEncontro`),
   KEY `fk_tb_consulta_variavel_tb_turma_pessoa_relato1_idx` (`IdTurma`,`IdPessoa`,`IdRelato`,`IdConsultaFixo`),
-  KEY `fk_tb_consulta_variavel_tb_estado_consulta1_idx` (`idEstadoConsulta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  KEY `fk_tb_consulta_variavel_tb_estado_consulta1_idx` (`IdEstadoConsulta`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Extraindo dados da tabela `tb_consulta_variavel`
 --
 
-INSERT INTO `tb_consulta_variavel` (`IdConsultaVariavel`, `IdTurma`, `IdPessoa`, `IdRelato`, `IdConsultaFixo`, `IdRazaoEncontro`, `idEstadoConsulta`, `DataPreenchimento`, `ResumoPlanoCuidados`, `ComentariosTutor`, `NotaAluno`) VALUES
-(2, 1, 1, 1, 6, 1, 1, '0001-01-01 00:00:00', NULL, NULL, '0'),
-(3, 1, 1, 2, 7, 1, 1, '0001-01-01 00:00:00', NULL, NULL, '0');
+INSERT INTO `tb_consulta_variavel` (`IdConsultaVariavel`, `IdTurma`, `IdPessoa`, `IdRelato`, `IdConsultaFixo`, `IdRazaoEncontro`, `IdEstadoConsulta`, `DataPreenchimento`, `ResumoPlanoCuidados`, `ComentariosTutor`, `NotaAluno`) VALUES
+(2, 1, 1, 1, 6, 3, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(3, 1, 1, 2, 7, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(4, 3, 5, 5, 8, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(5, 3, 5, 9, 9, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(6, 1, 9, 5, 11, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(7, 1, 10, 2, 12, 1, 1, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(8, 1, 10, 5, 13, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(10, 1, 10, 5, 15, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(11, 1, 10, 14, 16, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(12, 1, 12, 5, 17, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(13, 3, 5, 14, 18, 1, 2, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(14, 1, 1, 5, 19, 6, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(15, 1, 1, 6, 20, 6, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(16, 1, 1, 9, 21, 14, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(17, 1, 1, 14, 22, 3, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(18, 1, 1, 18, 23, 18, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(19, 1, 1, 22, 24, 9, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(20, 1, 1, 26, 25, 4, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(21, 1, 1, 30, 26, 7, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(22, 1, 1, 34, 27, 11, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(23, 1, 1, 38, 28, 11, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(24, 1, 1, 42, 29, 8, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(25, 1, 1, 46, 30, 6, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(26, 1, 1, 50, 31, 7, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(27, 1, 1, 54, 32, 7, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(28, 1, 1, 58, 33, 3, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(29, 1, 1, 62, 34, 7, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(30, 1, 1, 66, 35, 6, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(31, 1, 1, 70, 36, 6, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(32, 1, 1, 74, 37, 16, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(34, 1, 1, 11, 21, 14, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(35, 1, 1, 15, 22, 3, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(36, 1, 1, 19, 23, 18, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(37, 1, 1, 23, 24, 9, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(38, 1, 15, 5, 39, 6, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(39, 1, 13, 14, 40, 13, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(40, 1, 14, 18, 41, 18, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(41, 1, 10, 54, 42, 5, 6, '0001-01-01 00:00:00', NULL, 'Comentários', '0'),
+(42, 1, 14, 19, 41, 18, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(43, 1, 13, 15, 40, 13, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(44, 1, 15, 6, 39, 6, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(45, 1, 1, 7, 20, 6, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(46, 1, 1, 17, 22, 3, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(47, 1, 1, 20, 23, 18, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(48, 1, 14, 20, 41, 18, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(49, 1, 13, 17, 40, 13, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(50, 1, 15, 7, 39, 6, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(51, 1, 1, 8, 20, 6, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(52, 1, 1, 16, 22, 3, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(53, 1, 1, 21, 23, 18, 4, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(54, 1, 13, 16, 40, 13, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(55, 1, 14, 21, 41, 18, 7, '0001-01-01 00:00:00', NULL, NULL, '0'),
+(56, 1, 15, 8, 39, 6, 5, '0001-01-01 00:00:00', NULL, NULL, '0');
 
 -- --------------------------------------------------------
 
@@ -874,6 +1193,122 @@ CREATE TABLE IF NOT EXISTS `tb_consulta_variavel_intervencao` (
   KEY `fk_tb_intervencao_has_tb_consulta_variavel_tb_consulta_vari_idx` (`IdConsultaVariavel`),
   KEY `fk_tb_intervencao_has_tb_consulta_variavel_tb_intervencao1_idx` (`IdIntervencao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_consulta_variavel_intervencao`
+--
+
+INSERT INTO `tb_consulta_variavel_intervencao` (`IdIntervencao`, `IdConsultaVariavel`, `comunicaPaciente`, `comunicaOutro`, `justificativa`) VALUES
+(1, 15, 1, 1, 'Comunicar ao paciente e ao medico a necessidade de iniciar a farmacoterapia para o tratamento da hiperlipidemia.'),
+(1, 34, 1, 1, 'Informar ao paciente e ao médico a necessidade de adicionar um medicamento para queimação no estomago'),
+(1, 37, 1, 1, 'Comunicar ao paciente e ao medico a necessidade de iniciar a farmacoterapia para o tratamento da hiperlipidemia.'),
+(1, 44, 0, 1, 'Passar a orientação sobre o uso da medicação furosemida a outro integrante da casa, para reforçar o uso.'),
+(1, 45, 1, 1, 'Comunicar ao paciente e ao medico a necessidade de iniciar a farmacoterapia para o tratamento da hiperlipidemia.'),
+(1, 50, 0, 1, 'Passar a orientação sobre o uso da medicação furosemida a outro integrante da casa, para reforçar o uso.'),
+(1, 51, 1, 1, 'Comunicar ao paciente e ao medico a necessidade de iniciar a farmacoterapia para o tratamento da hiperlipidemia.'),
+(1, 56, 0, 1, 'Passar a orientação sobre o uso da medicação furosemida a outro integrante da casa, para reforçar o uso.'),
+(3, 34, 1, 1, 'Encaminhar o paciente ao medicamento solicitando a troca do medicamento sinvastatina que não está sendo efetivo.'),
+(3, 42, 1, 1, 'Tilex (paracetamol+codeina) apresenta reação adversa:constipação ,como a principal causadora suspeita a codeina .'),
+(3, 48, 1, 1, 'Tilex (paracetamol+codeina) apresenta reação adversa:constipação ,como a principal causadora suspeita a codeina .'),
+(3, 55, 1, 1, 'Tilex (paracetamol+codeina) apresenta reação adversa:constipação ,como a principal causadora suspeita a codeina .'),
+(4, 2, 1, 0, NULL),
+(4, 42, 1, 1, 'Dose alta da glimepiridina ,causando hipoglicemia.'),
+(4, 48, 1, 1, 'Dose alta da glimepiridina ,causando hipoglicemia.'),
+(4, 55, 1, 1, 'Dose alta da glimepiridina ,causando hipoglicemia.'),
+(6, 15, 1, 0, 'Comunicar ao paciente a importância de alterar o horário de do medicamento Captopril, para que o mesmo seja efetivo para o tratamento da Hipertensão.'),
+(6, 36, 1, 1, 'Baseando-se no fato do medicamento Tylex  estar provocando a reação adversa Constipação é necessário a redução da dose.'),
+(6, 45, 1, 0, 'Comunicar ao paciente a importância de alterar o horário de do medicamento Captopril, para que o mesmo seja efetivo para o tratamento da Hipertensão.'),
+(6, 47, 1, 1, 'Baseando-se no fato do medicamento Tylex  estar provocando a reação adversa Constipação é necessário a redução da dose.'),
+(6, 51, 1, 0, 'Comunicar ao paciente a importância de alterar o horário de do medicamento Captopril, para que o mesmo seja efetivo para o tratamento da Hipertensão.'),
+(6, 53, 1, 1, 'Baseando-se no fato do medicamento Tylex  estar provocando a reação adversa Constipação é necessário a redução da dose.'),
+(7, 35, 1, 1, 'Informar ao médico o desconforto do paciente com o uso do medicamento Hidroclorotiazida, que leva inclusive a não adesão. Avaliar se o medicamento é realmente ncessário'),
+(7, 36, 1, 1, 'Solicitar ao médico a avaliação da necessidade do uso do medicamento Glimepirida, tendo em vista que o paciente não se sente bem ao tomá-la.'),
+(7, 43, 1, 1, 'Retirar o medicamento Hidroclorotiazida, pois é desnecessário, visto que a paciente não aderiu e a pressão permanece controlada.'),
+(7, 46, 1, 1, 'Informar ao médico o desconforto do paciente com o uso do medicamento Hidroclorotiazida, que leva inclusive a não adesão. Avaliar se o medicamento é realmente ncessário'),
+(7, 47, 1, 1, 'Solicitar ao médico a avaliação da necessidade do uso do medicamento Glimepirida, tendo em vista que o paciente não se sente bem ao tomá-la.'),
+(7, 49, 1, 1, 'Retirar o medicamento Hidroclorotiazida, pois é desnecessário, visto que a paciente não aderiu e a pressão permanece controlada.'),
+(7, 52, 1, 1, 'Informar ao médico o desconforto do paciente com o uso do medicamento Hidroclorotiazida, que leva inclusive a não adesão. Avaliar se o medicamento é realmente ncessário'),
+(7, 53, 1, 1, 'Solicitar ao médico a avaliação da necessidade do uso do medicamento Glimepirida, tendo em vista que o paciente não se sente bem ao tomá-la.'),
+(7, 54, 1, 1, 'Retirar o medicamento Hidroclorotiazida, pois é desnecessário, visto que a paciente não aderiu e a pressão permanece controlada.'),
+(9, 3, 1, 0, NULL),
+(9, 15, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 34, 1, 0, 'Educar o paciente sobre a importância do uso dos medicamentos para o controle dos problemas de saúde. Principalmente a Diabetes.'),
+(9, 35, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 36, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 37, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica, com vista à adesão ao tratamento.'),
+(9, 42, 1, 0, 'elaborar uma tabela dos horários  dos medicamentos afim de orientar a tomada dos medicamentos corretamente ,em especial a metformina.'),
+(9, 43, 1, 0, 'A paciente precisa ser educada sobre a importância do medicamento metformina para o controle do seu problema de saúde.'),
+(9, 44, 1, 0, 'Fazer uso do captopril antes das refeições e não junto a elas'),
+(9, 45, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 46, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 47, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 48, 1, 0, 'elaborar uma tabela dos horários  dos medicamentos afim de orientar a tomada dos medicamentos corretamente ,em especial a metformina.'),
+(9, 49, 1, 0, 'A paciente precisa ser educada sobre a importância do medicamento metformina para o controle do seu problema de saúde.'),
+(9, 50, 1, 0, 'Fazer uso do captopril antes das refeições e não junto a elas'),
+(9, 51, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 52, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 53, 1, 0, 'Sobre a importância de utilizar os medicamentos conforme a prescrição médica.'),
+(9, 54, 1, 0, 'A paciente precisa ser educada sobre a importância do medicamento metformina para o controle do seu problema de saúde.'),
+(9, 55, 1, 0, 'elaborar uma tabela dos horários  dos medicamentos afim de orientar a tomada dos medicamentos corretamente ,em especial a metformina.'),
+(9, 56, 1, 0, 'Fazer uso do captopril antes das refeições e não junto a elas'),
+(10, 3, 1, 0, NULL),
+(10, 15, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 35, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 36, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 37, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 43, 1, 0, 'a paciente relata que não adere a farmacoterapia porque não entende a doença.'),
+(10, 45, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 46, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 47, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 49, 1, 0, 'a paciente relata que não adere a farmacoterapia porque não entende a doença.'),
+(10, 51, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 52, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 53, 1, 0, 'Promover ações educativas visando o entendimento do paciente sobre os problemas de saúde apresentados.'),
+(10, 54, 1, 0, 'a paciente relata que não adere a farmacoterapia porque não entende a doença.'),
+(12, 44, 1, 0, 'Exames laboratoriais a respeito dos níveis de colesterol'),
+(12, 50, 1, 0, 'Exames laboratoriais a respeito dos níveis de colesterol'),
+(12, 56, 1, 0, 'Exames laboratoriais a respeito dos níveis de colesterol'),
+(13, 43, 1, 0, 'Perguntar ao paciente a quanto tempo observa a diminuição da audição e a quanto tempo toma Enalapril.'),
+(13, 49, 1, 0, 'Perguntar ao paciente a quanto tempo observa a diminuição da audição e a quanto tempo toma Enalapril.'),
+(13, 54, 1, 0, 'Perguntar ao paciente a quanto tempo observa a diminuição da audição e a quanto tempo toma Enalapril.'),
+(14, 15, 1, 0, 'Informar ao paciente a importância de ser acompanhado por um profissional que o ajude a controlar a alimentação.'),
+(14, 35, 1, 1, 'Encaminhar ao nutricionista, pela alimentação inadequada. Informar ao paciente a importância de ser acompanhado por um profissional que o ajude a controlar a alimentação.'),
+(14, 37, 1, 1, 'Encaminhar ao nutricionista para controle da alimentação. Informar ao paciente a importância de ser acompanhado por um profissional que o ajude a controlar a alimentação.'),
+(14, 43, 1, 1, 'Abusa da alimentação desregrada.'),
+(14, 44, 1, 0, 'melhorar alimentação'),
+(14, 45, 1, 0, 'Informar ao paciente a importância de ser acompanhado por um profissional que o ajude a controlar a alimentação.'),
+(14, 46, 1, 1, 'Encaminhar ao nutricionista, pela alimentação inadequada. Informar ao paciente a importância de ser acompanhado por um profissional que o ajude a controlar a alimentação.'),
+(14, 49, 1, 1, 'Abusa da alimentação desregrada.'),
+(14, 50, 1, 0, 'melhorar alimentação'),
+(14, 51, 1, 0, 'Informar ao paciente a importância de ser acompanhado por um profissional que o ajude a controlar a alimentação.'),
+(14, 52, 1, 1, 'Encaminhar ao nutricionista, pela alimentação inadequada. Informar ao paciente a importância de ser acompanhado por um profissional que o ajude a controlar a alimentação.'),
+(14, 54, 1, 1, 'Abusa da alimentação desregrada.'),
+(14, 56, 1, 0, 'melhorar alimentação'),
+(15, 15, 1, 0, 'Informar ao paciente a importância de ser acompanhado por um profissional que o ajude na prática da atividade física'),
+(15, 43, 1, 1, 'Não quer fazer atividade física.'),
+(15, 44, 1, 0, 'praticar atividades físicas regularmente'),
+(15, 45, 1, 0, 'Informar ao paciente a importância de ser acompanhado por um profissional que o ajude na prática da atividade física'),
+(15, 49, 1, 1, 'Não quer fazer atividade física.'),
+(15, 50, 1, 0, 'praticar atividades físicas regularmente'),
+(15, 51, 1, 0, 'Informar ao paciente a importância de ser acompanhado por um profissional que o ajude na prática da atividade física'),
+(15, 54, 1, 1, 'Não quer fazer atividade física.'),
+(15, 56, 1, 0, 'praticar atividades físicas regularmente'),
+(16, 15, 1, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamentos.'),
+(16, 35, 1, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamento, com vistas à adesão ao tratamento.'),
+(16, 36, 0, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamentos, com vistas a melhora da adesão.'),
+(16, 37, 1, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamentos.'),
+(16, 43, 1, 0, 'A paciente precisa organizar os horários de tomada dos medicamentos.'),
+(16, 44, 1, 0, 'fazer tabela com horarios de todos medicamentos que ele usa'),
+(16, 45, 1, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamentos.'),
+(16, 46, 1, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamento, com vistas à adesão ao tratamento.'),
+(16, 47, 0, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamentos, com vistas a melhora da adesão.'),
+(16, 49, 1, 0, 'A paciente precisa organizar os horários de tomada dos medicamentos.'),
+(16, 50, 1, 0, 'fazer tabela com horarios de todos medicamentos que ele usa'),
+(16, 51, 1, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamentos.'),
+(16, 52, 1, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamento, com vistas à adesão ao tratamento.'),
+(16, 53, 0, 0, 'Confeccionar, junto ao paciente uma tabela de horário de utilização dos medicamentos, com vistas a melhora da adesão.'),
+(16, 54, 1, 0, 'A paciente precisa organizar os horários de tomada dos medicamentos.'),
+(16, 56, 1, 0, 'fazer tabela com horarios de todos medicamentos que ele usa');
 
 -- --------------------------------------------------------
 
@@ -895,6 +1330,241 @@ CREATE TABLE IF NOT EXISTS `tb_consulta_variavel_queixa` (
   KEY `fk_tb_consulta_variavel_queixa_tb_situacao_queixa1_idx` (`IdSituacaoQueixa`),
   KEY `fk_tb_consulta_variavel_queixa_tb_consulta_variavel1_idx` (`IdConsultaVariavel`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_consulta_variavel_queixa`
+--
+
+INSERT INTO `tb_consulta_variavel_queixa` (`IdConsultaVariavel`, `IdQueixa`, `Tipo`, `Desde`, `Prioridade`, `IdObjetivoTerapeutico`, `IdSituacaoQueixa`) VALUES
+(2, 19, '', '', 0, 1, 1),
+(3, 17, 'S', '2005', 1, 6, 1),
+(12, 4, 'D', '12', 2, 3, 1),
+(12, 28, 'S', '2', 1, 3, 1),
+(14, 9, '', '', 0, 1, 1),
+(14, 12, '', '', 0, 1, 1),
+(14, 13, '', '', 0, 1, 1),
+(14, 16, '', '', 0, 1, 1),
+(14, 17, '', '', 0, 1, 1),
+(14, 22, '', '', 0, 1, 1),
+(14, 27, '', '', 0, 1, 1),
+(14, 43, '', '', 0, 1, 1),
+(14, 44, '', '', 0, 1, 1),
+(14, 55, '', '', 0, 1, 1),
+(14, 58, '', '', 0, 1, 1),
+(15, 9, 'D', 'Não Relatou', 0, 8, 1),
+(15, 12, 'D', 'Não Relatou', 0, 8, 1),
+(15, 13, 'D', 'Não Relatou', 0, 8, 1),
+(15, 16, 'D', 'Não Relatou', 3, 6, 1),
+(15, 17, 'D', '10 anos', 1, 4, 1),
+(15, 22, 'D', 'Não Relatou', 0, 8, 1),
+(15, 27, 'D', '10 anos', 2, 4, 1),
+(15, 43, 'D', 'Não Relatou', 0, 8, 1),
+(15, 44, 'D', 'Não Relatou', 0, 8, 1),
+(15, 55, 'D', 'Não Relatou', 0, 8, 1),
+(15, 58, 'D', 'Não Relatou', 0, 8, 1),
+(15, 75, '', '', 0, 1, 1),
+(16, 16, '', '', 0, 1, 1),
+(16, 27, '', '', 0, 1, 1),
+(17, 9, '', '', 0, 1, 1),
+(17, 17, '', '', 0, 1, 1),
+(17, 27, '', '', 0, 1, 1),
+(18, 5, '', '', 0, 1, 1),
+(18, 26, '', '', 0, 1, 1),
+(18, 27, '', '', 0, 1, 1),
+(19, 16, '', '', 0, 1, 1),
+(19, 27, '', '', 0, 1, 1),
+(20, 27, '', '', 0, 1, 1),
+(20, 60, '', '', 0, 1, 1),
+(21, 5, '', '', 0, 1, 1),
+(21, 17, '', '', 0, 1, 1),
+(21, 27, '', '', 0, 1, 1),
+(21, 74, '', '', 0, 1, 1),
+(22, 16, '', '', 0, 1, 1),
+(22, 17, '', '', 0, 1, 1),
+(23, 17, '', '', 0, 1, 1),
+(23, 27, '', '', 0, 1, 1),
+(24, 17, '', '', 0, 1, 1),
+(24, 27, '', '', 0, 1, 1),
+(25, 16, '', '', 0, 1, 1),
+(25, 17, '', '', 0, 1, 1),
+(25, 27, '', '', 0, 1, 1),
+(26, 17, '', '', 0, 1, 1),
+(26, 27, '', '', 0, 1, 1),
+(27, 16, '', '', 0, 1, 1),
+(27, 17, '', '', 0, 1, 1),
+(27, 40, '', '', 0, 1, 1),
+(27, 76, '', '', 0, 8, 1),
+(28, 17, '', '', 0, 1, 1),
+(28, 27, '', '', 0, 1, 1),
+(29, 4, '', '', 0, 1, 1),
+(29, 5, '', '', 0, 1, 1),
+(29, 6, '', '', 0, 1, 1),
+(29, 10, '', '', 0, 1, 1),
+(29, 12, '', '', 0, 1, 1),
+(29, 17, '', '', 0, 1, 1),
+(29, 20, '', '', 0, 1, 1),
+(29, 23, '', '', 0, 1, 1),
+(29, 27, '', '', 0, 1, 1),
+(29, 40, '', '', 0, 1, 1),
+(29, 44, '', '', 0, 1, 1),
+(29, 53, '', '', 0, 1, 1),
+(29, 56, '', '', 0, 1, 1),
+(29, 66, '', '', 0, 1, 1),
+(30, 4, '', '', 0, 1, 1),
+(30, 8, '', '', 0, 1, 1),
+(30, 10, '', '', 0, 1, 1),
+(30, 15, '', '', 0, 1, 1),
+(30, 17, '', '', 0, 1, 1),
+(30, 27, '', '', 0, 1, 1),
+(30, 53, '', '', 0, 1, 1),
+(30, 57, '', '', 0, 1, 1),
+(30, 60, '', '', 0, 1, 1),
+(30, 66, '', '', 0, 1, 1),
+(31, 5, '', '', 0, 1, 1),
+(31, 8, '', '', 0, 1, 1),
+(31, 16, '', '', 0, 1, 1),
+(31, 27, '', '', 0, 1, 1),
+(31, 47, '', '', 0, 1, 1),
+(31, 55, '', '', 0, 1, 1),
+(31, 57, '', '', 0, 1, 1),
+(32, 3, '', '', 0, 1, 1),
+(32, 5, '', '', 0, 1, 1),
+(32, 8, '', '', 0, 1, 1),
+(32, 9, '', '', 0, 1, 1),
+(32, 16, '', '', 0, 1, 1),
+(32, 17, '', '', 0, 1, 1),
+(32, 23, '', '', 0, 1, 1),
+(32, 26, '', '', 0, 1, 1),
+(32, 27, '', '', 0, 1, 1),
+(32, 40, '', '', 0, 1, 1),
+(32, 44, '', '', 0, 1, 1),
+(32, 53, '', '', 0, 1, 1),
+(32, 57, '', '', 0, 1, 1),
+(34, 16, '', '', 0, 1, 1),
+(34, 17, '', '', 0, 1, 1),
+(34, 22, '', '', 0, 1, 1),
+(34, 27, '', '', 0, 1, 1),
+(35, 9, 'D', 'Não Relatou', 0, 8, 1),
+(35, 17, 'D', '13 anos', 2, 4, 1),
+(35, 27, 'D', '13 anos', 1, 4, 1),
+(36, 5, 'D', 'Não Relatou', 3, 3, 1),
+(36, 26, 'S', 'Não Relatou', 2, 3, 1),
+(36, 27, 'D', '30 anos', 1, 4, 1),
+(37, 16, 'D', 'Não Relatou', 2, 6, 1),
+(37, 27, 'D', 'há 2 anos', 1, 4, 1),
+(38, 8, '', '', 0, 1, 1),
+(38, 9, '', '', 0, 1, 1),
+(38, 12, '', '', 0, 1, 1),
+(38, 13, '', '', 0, 1, 1),
+(38, 16, '', '', 0, 1, 1),
+(38, 17, '', '', 0, 1, 1),
+(38, 22, '', '', 0, 1, 1),
+(38, 27, '', '', 0, 1, 1),
+(38, 43, '', '', 0, 1, 1),
+(38, 44, '', '', 0, 8, 1),
+(38, 55, '', '', 0, 1, 1),
+(38, 58, '', '', 0, 1, 1),
+(38, 75, '', '', 0, 1, 1),
+(39, 9, '', '', 0, 1, 1),
+(39, 17, '', '', 0, 1, 1),
+(39, 27, '', '', 0, 1, 1),
+(40, 5, '', '', 0, 1, 1),
+(40, 26, '', '', 0, 1, 1),
+(40, 27, '', '', 0, 1, 1),
+(41, 5, 'S', 'ontem', 1, 4, 2),
+(42, 5, 'D', 'Não relatou quando iniciou as dores.', 2, 3, 1),
+(42, 26, 'S', 'não relatou  o tempo que iniciou o incom', 1, 3, 1),
+(42, 27, 'D', 'há 30 anos', 3, 4, 1),
+(43, 9, 'S', 'não relatado', 2, 3, 1),
+(43, 17, 'D', 'há 13 anos', 3, 4, 1),
+(43, 27, 'D', 'há 13 anos', 1, 4, 1),
+(44, 8, '', '', 0, 1, 1),
+(44, 9, '', '', 0, 1, 1),
+(44, 12, '', '', 0, 1, 1),
+(44, 13, '', '', 0, 1, 1),
+(44, 16, 'D', 'nao relatou', 3, 6, 1),
+(44, 17, 'S', 'ha dez anos', 2, 4, 1),
+(44, 22, '', '', 0, 1, 1),
+(44, 27, 'D', 'ha dez anos', 1, 4, 1),
+(44, 43, '', '', 0, 1, 1),
+(44, 44, '', '', 0, 8, 1),
+(44, 55, '', '', 0, 1, 1),
+(44, 58, '', '', 0, 1, 1),
+(44, 75, '', '', 0, 1, 1),
+(45, 9, 'D', 'Não Relatou', 0, 8, 1),
+(45, 12, 'D', 'Não Relatou', 0, 8, 1),
+(45, 13, 'D', 'Não Relatou', 0, 8, 1),
+(45, 16, 'D', 'Não Relatou', 3, 6, 1),
+(45, 17, 'D', '10 anos', 1, 4, 1),
+(45, 22, 'D', 'Não Relatou', 0, 8, 1),
+(45, 27, 'D', '10 anos', 2, 4, 1),
+(45, 43, 'D', 'Não Relatou', 0, 8, 1),
+(45, 44, 'D', 'Não Relatou', 0, 8, 1),
+(45, 55, 'D', 'Não Relatou', 0, 8, 1),
+(45, 58, 'D', 'Não Relatou', 0, 8, 1),
+(45, 75, '', '', 0, 1, 1),
+(46, 9, 'D', 'Não Relatou', 0, 3, 1),
+(46, 17, 'D', '13 anos', 2, 4, 4),
+(46, 27, 'D', '13 anos', 1, 4, 5),
+(47, 5, 'D', 'Não Relatou', 3, 3, 1),
+(47, 26, 'S', 'Não Relatou', 2, 3, 1),
+(47, 27, 'D', '30 anos', 1, 4, 1),
+(48, 5, 'D', 'Não relatou quando iniciou as dores.', 2, 3, 1),
+(48, 26, 'S', 'não relatou  o tempo que iniciou o incom', 1, 3, 1),
+(48, 27, 'D', 'há 30 anos', 3, 4, 1),
+(49, 9, 'S', 'não relatado', 2, 3, 1),
+(49, 17, 'D', 'há 13 anos', 3, 4, 1),
+(49, 27, 'D', 'há 13 anos', 1, 4, 1),
+(50, 8, '', '', 0, 1, 1),
+(50, 9, '', '', 0, 1, 1),
+(50, 12, '', '', 0, 1, 1),
+(50, 13, '', '', 0, 1, 1),
+(50, 16, 'D', 'nao relatou', 3, 6, 1),
+(50, 17, 'S', 'ha dez anos', 2, 4, 1),
+(50, 22, '', '', 0, 1, 1),
+(50, 27, 'D', 'ha dez anos', 1, 4, 1),
+(50, 43, '', '', 0, 1, 1),
+(50, 44, '', '', 0, 8, 1),
+(50, 55, '', '', 0, 1, 1),
+(50, 58, '', '', 0, 1, 1),
+(50, 75, '', '', 0, 1, 1),
+(51, 9, 'D', 'Não Relatou', 0, 8, 1),
+(51, 12, 'D', 'Não Relatou', 0, 8, 1),
+(51, 13, 'D', 'Não Relatou', 0, 8, 1),
+(51, 16, 'D', 'Não Relatou', 3, 6, 2),
+(51, 17, 'D', '10 anos', 1, 6, 5),
+(51, 22, 'D', 'Não Relatou', 0, 8, 1),
+(51, 27, 'D', '10 anos', 2, 6, 5),
+(51, 43, 'D', 'Não Relatou', 0, 8, 1),
+(51, 44, 'D', 'Não Relatou', 0, 8, 1),
+(51, 55, 'D', 'Não Relatou', 0, 8, 1),
+(51, 58, 'D', 'Não Relatou', 0, 8, 1),
+(51, 75, '', '', 0, 1, 1),
+(52, 9, 'D', 'Não Relatou', 0, 8, 1),
+(52, 17, 'D', '13 anos', 2, 4, 1),
+(52, 27, 'D', '13 anos', 1, 4, 1),
+(53, 5, 'D', 'Não Relatou', 3, 3, 5),
+(53, 26, 'S', 'Não Relatou', 2, 3, 3),
+(53, 27, 'D', '30 anos', 1, 6, 6),
+(54, 9, 'D', '1 ano', 2, 3, 1),
+(54, 17, 'D', 'há 13 anos', 3, 4, 4),
+(54, 27, 'D', 'há 13 anos', 1, 4, 5),
+(55, 5, 'D', 'Não relatou quando iniciou as dores.', 2, 3, 6),
+(55, 26, 'S', 'não relatou  o tempo que iniciou o incom', 1, 3, 3),
+(55, 27, 'D', 'há 30 anos', 3, 4, 6),
+(56, 8, '', '', 0, 1, 1),
+(56, 9, '', '', 0, 1, 1),
+(56, 12, '', '', 0, 1, 1),
+(56, 13, '', '', 0, 1, 1),
+(56, 16, 'D', 'nao relatou', 3, 6, 1),
+(56, 17, 'D', 'ha dez anos', 2, 4, 6),
+(56, 22, '', '', 0, 1, 1),
+(56, 27, 'D', 'ha dez anos', 1, 4, 5),
+(56, 43, '', '', 0, 1, 1),
+(56, 44, '', '', 0, 8, 1),
+(56, 55, '', '', 0, 1, 1),
+(56, 58, '', '', 0, 1, 1),
+(56, 75, '', '', 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -934,19 +1604,60 @@ CREATE TABLE IF NOT EXISTS `tb_demograficos_antropometricos` (
   `IdEscolaridade` int(11) NOT NULL,
   `IdOcupacao` int(11) NOT NULL,
   `IdPlanoSaude` int(11) NOT NULL,
+  `IdEstadoCivil` int(11) NOT NULL,
+  `IdReligiao` int(11) NOT NULL DEFAULT '1',
+  `RG` varchar(20) DEFAULT NULL,
+  `Procedencia` varchar(100) DEFAULT NULL,
+  `Endereco` varchar(100) DEFAULT NULL,
+  `IdNaturalidade` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`IdConsultaFixo`),
   KEY `fk_tb_demograficos_antropometricos_tb_escolaridade1_idx` (`IdEscolaridade`),
   KEY `fk_tb_demograficos_antropometricos_tb_ocupacao1_idx` (`IdOcupacao`),
-  KEY `fk_tb_demograficos_antropometricos_tb_plano_saude1_idx` (`IdPlanoSaude`)
+  KEY `fk_tb_demograficos_antropometricos_tb_plano_saude1_idx` (`IdPlanoSaude`),
+  KEY `fk_tb_demograficos_antropometricos_tb_estado_civil1_idx` (`IdEstadoCivil`),
+  KEY `fk_tb_demograficos_antropometricos_tb_religiao1_idx` (`IdReligiao`),
+  KEY `fk_tb_demograficos_antropometricos_tb_naturalidade1_idx` (`IdNaturalidade`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_demograficos_antropometricos`
 --
 
-INSERT INTO `tb_demograficos_antropometricos` (`IdConsultaFixo`, `Nome`, `Genero`, `DataNascimento`, `MedicosAtendem`, `MoradiaFamilia`, `OndeAdquireMedicamentos`, `IdEscolaridade`, `IdOcupacao`, `IdPlanoSaude`) VALUES
-(6, 'MARCOS BARBOSA DOSEA', 'M', '0001-01-01 00:00:00', 'ddd', 'teste', 'teste', 2, 2, 2),
-(7, '', 'M', '0001-01-01 00:00:00', NULL, NULL, NULL, 1, 1, 1);
+INSERT INTO `tb_demograficos_antropometricos` (`IdConsultaFixo`, `Nome`, `Genero`, `DataNascimento`, `MedicosAtendem`, `MoradiaFamilia`, `OndeAdquireMedicamentos`, `IdEscolaridade`, `IdOcupacao`, `IdPlanoSaude`, `IdEstadoCivil`, `IdReligiao`, `RG`, `Procedencia`, `Endereco`, `IdNaturalidade`) VALUES
+(6, 'MARCOS BARBOSA DOSEA', 'M', '0001-01-01 00:00:00', 'ddd', 'teste familia', 'teste', 2, 2, 2, 1, 1, NULL, NULL, NULL, 1),
+(7, '', 'M', '0001-01-01 00:00:00', NULL, NULL, NULL, 1, 1, 1, 1, 1, NULL, NULL, NULL, 1),
+(8, 'ACS', 'M', '1946-07-08 00:00:00', 'Clinico Geral, Endocrinologista', 'Mora com 5 filhos', 'Farmácia Popular', 6, 15, 1, 1, 1, NULL, NULL, NULL, 1),
+(9, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, NULL, NULL, NULL, 1),
+(11, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, NULL, NULL, NULL, 1),
+(13, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, NULL, NULL, NULL, 1),
+(14, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, NULL, NULL, NULL, 1),
+(15, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, '', '', '', 1),
+(16, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, '', '', '', 1),
+(17, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, NULL, NULL, NULL, 1),
+(19, 'A.C.S.', 'M', '1946-07-08 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com a família', 'Farmácia Popular do Brasil', 6, 19, 1, 3, 4, NULL, NULL, NULL, 1),
+(20, 'A.C.S.', 'M', '1946-07-08 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com a família', 'Farmácia Popular do Brasil', 6, 1, 1, 1, 1, NULL, NULL, NULL, 1),
+(21, 'E.B.R.', 'F', '1946-08-29 00:00:00', 'Endocrinologista (V.C.) e Cardiologista (J.B.R)', 'Mora com o marido', 'Farmácia Popular do Brasil, farmácias comunitárias e no CASE', 8, 11, 6, 3, 1, NULL, NULL, NULL, 1),
+(22, 'E.V.', 'F', '1943-05-12 00:00:00', 'Clinico Geral (L.C), Cardiologista (L.A.S.)', 'Mora com uma filha, duas netas e uma bisneta', 'Farmácia Popular do Brasil e Unidade Básica de Saúde', 10, 19, 4, 4, 4, NULL, 'Aracaju', NULL, 1),
+(23, 'F.B.O.', 'M', '1945-01-03 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com a esposa e um filho', 'Não relatou', 6, 19, 6, 3, 1, NULL, 'Aracaju', NULL, 1),
+(24, 'G.G.', 'F', '1941-09-23 00:00:00', 'Clinico Geral, Endocrinologista', 'Duas moradias: com o esposo e com o neto', 'Farmácia Popular do Brasil', 6, 19, 5, 3, 4, NULL, NULL, NULL, 1),
+(25, 'I.G.R.', 'F', '1935-06-03 00:00:00', 'Clinico Geral (S.), Endocrinologista (P.)', 'Mora com a filha', 'Farmácia Popular do Brasil e farmácias comunitárias', 6, 19, 2, 3, 2, NULL, 'Aracaju', NULL, 1),
+(26, 'J.C.A.', 'M', '1946-02-14 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora sozinho', 'Farmácia Popular do Brasil e farmácias comunitárias', 11, 19, 4, 1, 1, NULL, 'Aracaju', NULL, 1),
+(27, 'J.J.', 'M', '1935-03-19 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com a filha', 'Farmácia Popular do Brasil e farmácias comunitárias', 8, 19, 5, 5, 1, NULL, 'Aracaju', NULL, 1),
+(28, 'J.R.', 'M', '1949-09-08 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com 3 filhos', 'Farmácia Popular do Brasil, Unidade Básica de Saúde e Farmácias de Manipulação', 11, 19, 1, 5, 1, NULL, 'Aracaju', NULL, 1),
+(29, 'J.V.S.C.', 'F', '1943-07-04 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com o esposo e dois filhos', 'Farmácia Popular do Brasil e Unidade Básica de Saúde', 6, 19, 4, 3, 2, NULL, 'Aracaju', NULL, 1),
+(30, 'J.F.C', 'M', '1946-05-17 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com um filho', 'Farmácias Comunitárias e Unidade Básica de Saúde', 6, 19, 1, 3, 4, NULL, 'Aracaju', NULL, 1),
+(31, 'J.F.S.', 'M', '1942-08-16 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com a esposa, a sogra e o filho', 'Farmácia Popular do Brasil', 6, 19, 1, 3, 2, NULL, 'Aracaju', NULL, 1),
+(32, 'M.A.O', 'M', '1947-07-10 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Cardiologista)', 'Mora com a esposa', 'Farmácia Popular do Brasil e farmácias comunitárias', 11, 19, 10, 3, 1, NULL, 'Aracaju', NULL, 1),
+(33, 'M.A,S.A.', 'F', '1954-06-20 00:00:00', 'Dra S. (Clínica Geral) Dr. P. (Endocrinologista)', 'Mora com um irmão', 'Farmácia Popular do Brasil e farmácias comunitárias', 11, 19, 1, 2, 2, NULL, NULL, NULL, 1),
+(34, 'M.C.B.S.', 'F', '1948-01-11 00:00:00', 'Clínicos Geral (J.F.A e F.M.N.)', 'Mora com o esposo', 'Farmácia Popular do Brasil, farmácias comunitárias e Unidade Básica de Saúde', 10, 19, 1, 3, 2, NULL, 'Aracaju', NULL, 1),
+(35, 'M.D.O.', 'F', '1933-09-22 00:00:00', 'Clínico Geral (G.R.F.)', 'Mora com o ex marido', 'Farmácia Popular do Brasil e Unidade Básica de Saúde', 8, 19, 1, 4, 1, '-', NULL, NULL, 1),
+(36, 'M.I.S.O.', 'F', '1943-09-15 00:00:00', 'Endocrinologista (M.), Cardiologista (D.), Ortopedista (S), Ginecologista (S)', 'Mora com o esposo e um filho', 'Farmácia Popular do Brasil e farmácias comunitárias', 7, 19, 2, 3, 2, NULL, 'Aracaju', NULL, 1),
+(37, 'M.J.S.', 'F', '1948-04-16 00:00:00', 'Clínico Geral (H.R.F.); Cardiologista (S.L.P.)', 'Mora com o esposo, a filha e a neta', 'Farmácia Popular do Brasil e farmácias comunitárias', 7, 19, 1, 4, 1, NULL, 'Aracaju', NULL, 1),
+(38, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, '', '', '', 1),
+(39, 'A.C.S', 'M', '1946-07-08 00:00:00', 'DRA. S. clinico geral E DR. P. endocrinologista', 'MORA COM A ESPOSA E TEM CINCO FILHOS QUE NAO MORAM COM ELE', 'FARMACIA POPULAR DO BRASIL', 6, 19, 1, 3, 1, NULL, 'ARACAJU', NULL, 1),
+(40, 'E.V', 'F', '1943-05-12 00:00:00', 'cardiologista (L.A.S) e clínico geral (L.C.)', 'filha duas netas e uma bisneta', 'Farmácia popular e SUS (Sistema Único de Saúde)', 10, 19, 1, 4, 4, NULL, 'Aracaju', NULL, 1),
+(41, 'F.B.O', 'M', '1945-01-03 00:00:00', 'Dra. S. (Clínica Geral) e o Dr. P. (Endocrinologista)', 'Mora com sua esposa e um filho. Porem tem três filhos', 'Não informou. Apenas declarou que plano tem de saúde da Petrobrás', 6, 19, 6, 3, 1, NULL, 'Aracaju', NULL, 1),
+(42, '', 'A', '0001-01-01 00:00:00', '', '', '', 1, 1, 1, 1, 1, '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -961,7 +1672,7 @@ CREATE TABLE IF NOT EXISTS `tb_diario_pessoal` (
   `Horario` varchar(20) DEFAULT NULL,
   `Quantidade` varchar(20) DEFAULT NULL,
   `IdBebida` int(11) NOT NULL,
-  PRIMARY KEY (`IdConsultaFixo`,`IdMedicamento`),
+  PRIMARY KEY (`IdConsultaFixo`,`IdMedicamento`,`Periodo`),
   KEY `fk_tb_diario_pessoal_tb_medicamentos1_idx` (`IdMedicamento`),
   KEY `fk_tb_diario_pessoal_tb_consulta_fixo1_idx` (`IdConsultaFixo`),
   KEY `fk_tb_diario_pessoal_tb_bebida1_idx` (`IdBebida`)
@@ -973,7 +1684,57 @@ CREATE TABLE IF NOT EXISTS `tb_diario_pessoal` (
 
 INSERT INTO `tb_diario_pessoal` (`IdConsultaFixo`, `IdMedicamento`, `Periodo`, `Horario`, `Quantidade`, `IdBebida`) VALUES
 (6, 1, '1', '7h', '01 comprimido', 1),
-(7, 1, 'M', NULL, NULL, 1);
+(6, 3, 'M', '12:00', '2', 1),
+(6, 3, 'T', '9:00', '1', 1),
+(7, 1, 'M', NULL, NULL, 1),
+(8, 88, 'M', '9 horas', '1 comprimido', 1),
+(16, 4, 'N', '19 horas', '1 cpr', 1),
+(16, 7, 'M', '7 horas', '2 cpr', 1),
+(19, 4, 'T', '13 horas', '1 comprimido', 1),
+(19, 19, 'M', '5 horas', '1 comprimido', 1),
+(19, 19, 'N', '22 horas', '1 comprimido', 1),
+(19, 19, 'T', '14 horas', '1 comprimido', 1),
+(19, 35, 'M', '9 horas', '1 comprimido', 1),
+(19, 36, 'M', '7 horas', '1 comprimido', 1),
+(19, 36, 'T', '12 horas', '1 comprimido', 1),
+(19, 48, 'N', '19 horas', '1 comprimido', 1),
+(19, 48, 'T', '12 horas', '1 comprimido', 1),
+(19, 49, 'M', '7 horas', '1 comprimido', 1),
+(19, 49, 'N', '19 horas', '1 comprimido', 1),
+(22, 33, 'M', '9 horas', '1 comprimido', 1),
+(22, 36, 'M', 'antes do café', '1 comprimido', 1),
+(22, 36, 'N', 'antes do jantar', '1 comprimido', 1),
+(22, 48, 'M', 'antes do café', '1 comprimido', 1),
+(22, 48, 'N', 'antes do jantar', '1 comprimido', 1),
+(22, 48, 'T', 'antes do almoço', '1 comprimido', 1),
+(22, 53, 'M', '8 horas', '1 comprimido', 1),
+(22, 53, 'N', '20 horas', '1 comprimido', 1),
+(23, 48, 'M', '7 h antes do café', '1 comprimido', 1),
+(23, 48, 'N', '7 h antes do jantar', '1 comprimido', 1),
+(23, 91, 'T', 'qdo sentir dor', '1 comprimido', 1),
+(39, 4, 'T', '13:00', '1 comprimido', 1),
+(39, 19, 'M', '6:00', '2 comprimidos', 1),
+(39, 19, 'N', '18:00', '2 comprimidos', 1),
+(39, 19, 'T', '11:00/antes almoço', '2 comprimidos', 1),
+(39, 35, 'M', '9:00', '1 comprimido', 1),
+(39, 36, 'M', '7:00/ no café manhã', '1 comprimido', 1),
+(39, 36, 'T', '12:00/antes almoço', '1 comprimido', 1),
+(39, 48, 'N', '19:30', '1 comprimido', 1),
+(39, 48, 'T', '12:30', '1 comprimido', 1),
+(39, 49, 'M', '9:00', '1 comprimido', 1),
+(39, 49, 'T', '14:00', '1 comprimido', 1),
+(40, 33, 'M', '09:00h', '1 comprimido; 10mg', 1),
+(40, 36, 'M', 'antes do café', '1 comprimido 5mg', 1),
+(40, 36, 'N', 'antes do jantar', '1 comprimido 5mg', 1),
+(40, 48, 'M', 'antes do café', '1 comprimido 850mg', 1),
+(40, 48, 'N', 'antes do jantar', '1 comprimido 850mg', 1),
+(40, 48, 'T', 'antes do almoço', '1 comprimido 850mg', 1),
+(40, 53, 'M', '08:00', '1 comprimido; 40mg', 1),
+(40, 53, 'N', '20:00h', '1 comprimido; 40mg', 1),
+(41, 48, 'M', 'Antes do almoço', '1 comprimido', 1),
+(41, 48, 'N', 'Antes o jantar', '1 comprimido', 1),
+(41, 91, 'M', 'quando sentir dor', '1 comprimido', 1),
+(42, 6, 'M', '8 horas', '1 cpr', 1);
 
 -- --------------------------------------------------------
 
@@ -1027,25 +1788,75 @@ INSERT INTO `tb_escolaridade` (`IdEscolaridade`, `Nivel`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `tb_especialidade`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_especialidade` (
+  `IdEspecialidade` int(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` varchar(100) NOT NULL,
+  PRIMARY KEY (`IdEspecialidade`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Extraindo dados da tabela `tb_especialidade`
+--
+
+INSERT INTO `tb_especialidade` (`IdEspecialidade`, `Descricao`) VALUES
+(1, 'Nutricionista'),
+(2, 'Cardiologia'),
+(3, 'Endocrinologista'),
+(4, 'Clínico Geral'),
+(5, 'Oftalmologista'),
+(6, 'Geriatra'),
+(7, 'Educador Físico');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_estado_civil`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_estado_civil` (
+  `IdEstadoCivil` int(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` varchar(45) NOT NULL,
+  PRIMARY KEY (`IdEstadoCivil`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `tb_estado_civil`
+--
+
+INSERT INTO `tb_estado_civil` (`IdEstadoCivil`, `Descricao`) VALUES
+(1, 'Não Definido'),
+(2, 'Solteiro'),
+(3, 'Casado'),
+(4, 'Divorciado'),
+(5, 'Viúvo(a)');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `tb_estado_consulta`
 --
 
 CREATE TABLE IF NOT EXISTS `tb_estado_consulta` (
-  `idEstadoConsulta` int(11) NOT NULL,
+  `IdEstadoConsulta` int(11) NOT NULL,
   `DescricaoEstado` varchar(45) NOT NULL,
-  PRIMARY KEY (`idEstadoConsulta`)
+  PRIMARY KEY (`IdEstadoConsulta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_estado_consulta`
 --
 
-INSERT INTO `tb_estado_consulta` (`idEstadoConsulta`, `DescricaoEstado`) VALUES
+INSERT INTO `tb_estado_consulta` (`IdEstadoConsulta`, `DescricaoEstado`) VALUES
 (1, 'Aguardando Preenchimento'),
 (2, 'Em Preenchimento'),
 (3, 'Enviado para Correção'),
 (4, 'Gabarito Disponível'),
-(5, 'Em Correção pelo Tutor');
+(5, 'Em Correção pelo Tutor'),
+(6, 'Aguardando Correção do Aluno'),
+(7, 'Finalizado');
 
 -- --------------------------------------------------------
 
@@ -1074,7 +1885,56 @@ CREATE TABLE IF NOT EXISTS `tb_estilo_vida` (
 
 INSERT INTO `tb_estilo_vida` (`IdConsultaVariavel`, `TabacoConsumo`, `TabacoUso`, `TabacoParou`, `CafeConsumo`, `CafeUso`, `CafeParou`, `AlcoolConsumo`, `AlcoolUso`, `AlcoolTipoBebida`, `AlcoolParou`) VALUES
 (2, 0, 0, NULL, 0, 0, NULL, 0, 0, NULL, NULL),
-(3, 0, 0, NULL, 0, 0, NULL, 0, 0, NULL, NULL);
+(3, 0, 0, NULL, 0, 0, NULL, 0, 0, NULL, NULL),
+(4, 0, 0, '', 0, 0, '', 0, 0, '', ''),
+(5, 0, 0, '', 0, 0, '', 0, 0, '', ''),
+(6, 0, 0, '', 0, 0, '', 0, 0, '', ''),
+(8, 0, 0, '', 0, 0, '', 0, 0, '', ''),
+(10, 0, 0, '', 0, 0, '', 0, 0, '', ''),
+(11, 0, 0, '', 0, 0, '', 0, 0, '', ''),
+(12, 0, 0, '', 0, 0, '', 0, 0, '', ''),
+(14, 0, 4, '12 anos', 1, 2, NULL, 0, 4, '-', '12 anos'),
+(15, 0, 1, '12 naos', 1, 2, NULL, 0, 1, 'cerveja', '12 anos'),
+(16, 0, 4, '20 anos', 1, 1, NULL, 0, 4, '0', '5 anos'),
+(17, 0, 4, 'Não relatou', 1, 2, NULL, 0, 4, '-', '15 anos'),
+(18, 1, 2, NULL, 1, 2, NULL, 0, 4, '-', '2 anos'),
+(19, 0, 4, '-', 1, 2, NULL, 0, 4, '-', '-'),
+(20, 0, 4, 'Não relatou', 1, 1, NULL, 0, 4, '-', 'Não relatou'),
+(21, 0, 4, '30 anos', 1, 2, NULL, 1, 1, 'Cerveja', NULL),
+(22, 0, 4, 'Não relatou', 1, 1, NULL, 0, 4, '-', 'Não relatou'),
+(23, 0, 4, '-', 1, 2, NULL, 1, 1, 'Cerveja', NULL),
+(24, 0, 4, '-', 1, 2, NULL, 0, 4, '-', '-'),
+(25, 0, 4, '1 ano', 1, 2, NULL, 0, 4, '-', NULL),
+(26, 0, 4, NULL, 1, 2, NULL, 0, 4, '-', '10 anos'),
+(27, 0, 4, '-', 1, 2, NULL, 1, 1, NULL, NULL),
+(28, 0, 4, '-', 1, 2, '-', 0, 4, '-', '-'),
+(29, 0, 4, 'Não relatou', 1, 2, NULL, 1, 1, 'cerveja', NULL),
+(30, 0, 4, '20 anos', 1, 2, NULL, 1, 1, 'em festas', NULL),
+(31, 0, 4, '-', 1, 1, NULL, 1, 1, 'cerveja', NULL),
+(32, 0, 4, 'Mais de 20 anos', 1, 2, NULL, 0, 4, '-', '-'),
+(34, 0, 1, '12 naos', 1, 2, NULL, 0, 1, 'cerveja', '12 anos'),
+(35, 0, 4, 'Não relatou', 1, 2, NULL, 0, 4, '-', '15 anos'),
+(36, 1, 2, NULL, 1, 2, NULL, 0, 4, '-', '2 anos'),
+(37, 0, 4, '-', 1, 2, NULL, 0, 4, '-', '-'),
+(38, 0, 4, '12 anos', 1, 2, NULL, 0, 4, NULL, '12 anos'),
+(39, 0, 4, NULL, 1, 2, NULL, 0, 4, NULL, '15 anos'),
+(40, 1, 2, NULL, 1, 2, NULL, 0, 4, NULL, '2 anos'),
+(41, 0, 0, '', 0, 0, '', 0, 0, '', ''),
+(42, 1, 2, NULL, 1, 2, NULL, 0, 4, NULL, '2 anos'),
+(43, 0, 4, NULL, 1, 2, NULL, 0, 4, NULL, '15 anos'),
+(44, 0, 4, '12 anos', 1, 2, NULL, 0, 4, NULL, '12 anos'),
+(45, 0, 1, '12 naos', 1, 2, NULL, 0, 1, 'cerveja', '12 anos'),
+(46, 0, 4, 'Não relatou', 1, 2, NULL, 0, 4, '-', '15 anos'),
+(47, 1, 2, NULL, 1, 2, NULL, 0, 4, '-', '2 anos'),
+(48, 1, 2, NULL, 1, 2, NULL, 0, 4, NULL, '2 anos'),
+(49, 0, 4, NULL, 1, 2, NULL, 0, 4, NULL, '15 anos'),
+(50, 0, 4, '12 anos', 1, 2, NULL, 0, 4, NULL, '12 anos'),
+(51, 0, 1, '12 naos', 1, 2, NULL, 0, 1, 'cerveja', '12 anos'),
+(52, 0, 4, 'Não relatou', 1, 2, NULL, 0, 4, '-', '15 anos'),
+(53, 1, 2, NULL, 1, 2, NULL, 0, 4, '-', '2 anos'),
+(54, 0, 4, NULL, 1, 2, NULL, 0, 4, NULL, '15 anos'),
+(55, 1, 2, NULL, 1, 2, NULL, 0, 4, NULL, '2 anos'),
+(56, 0, 4, '12 anos', 1, 2, NULL, 0, 4, NULL, '12 anos');
 
 -- --------------------------------------------------------
 
@@ -1089,8 +1949,67 @@ CREATE TABLE IF NOT EXISTS `tb_exames_fisicos` (
   `PressaoDiastolica` float DEFAULT NULL,
   `PressaoSistolica` float DEFAULT NULL,
   `Glicemia` float DEFAULT NULL,
+  `IndiceMassaCorporea` float DEFAULT NULL,
+  `CircunferenciaAbdominal` float DEFAULT NULL,
   PRIMARY KEY (`IdConsultaVariavel`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_exames_fisicos`
+--
+
+INSERT INTO `tb_exames_fisicos` (`IdConsultaVariavel`, `Peso`, `Altura`, `PressaoDiastolica`, `PressaoSistolica`, `Glicemia`, `IndiceMassaCorporea`, `CircunferenciaAbdominal`) VALUES
+(2, 0, 0, 0, 0, 0, 0, 12.1),
+(3, 2.3, 2.7, 22, 3.5, 12.7, 4.5, 0),
+(4, 0, 0, 0, 0, 0, 0, 0),
+(5, 0, 0, 0, 0, 0, 0, 0),
+(6, 0, 0, 0, 0, 0, 0, 0),
+(8, 0, 0, 0, 0, 0, 0, 0),
+(10, 0, 0, 0, 0, 0, 0, 0),
+(11, 0, 0, 0, 0, 0, 0, 0),
+(12, 0, 0, 0, 0, 0, 0, 0),
+(14, 74.75, 1.65, 180, 110, 291, 27.45, 0),
+(15, 0, 0, 0, 0, 0, 0, 0),
+(16, 99.4, 1.63, 120, 70, 252, 37.41, 0),
+(17, 58.4, 1.49, 135, 75, 310, 26.3, 0),
+(18, 62, 1.64, 130, 80, 220, 23.05, 0),
+(19, 75.55, 1.6, 130, 70, 276, 29.51, 0),
+(20, 66.4, 1.59, 120, 80, 355, 26.26, 0),
+(21, 56, 1.56, 140, 85, 252, 23.01, 0),
+(22, 53.3, 1.51, 140, 80, 128, 23.37, 0),
+(23, 58.2, 1.56, 126, 72, 128, 23.91, 0),
+(24, 61.3, 1.5, 143, 79, 353, 27.24, 0),
+(25, 71, 1.72, 144, 88, 231, 23.99, 0),
+(26, 65, 1.6, 154, 90, 255, 25.39, 0),
+(27, 61.5, 1.56, 136, 80, 126, 25.27, 0),
+(28, 59, 1.45, 144, 81, 256, 28.06, 0),
+(29, 90, 1.54, 147, 81, 355, 37.94, 0),
+(30, 56.65, 1.48, 156, 74, 450, 25.86, 0),
+(31, 75.1, 1.68, 140, 80, 284, 26.6, 0),
+(32, 60.85, 1.49, 123, 90, 243, 27.4, 0),
+(34, 99.4, 1.63, 120, 70, 252, 37.41, 0),
+(35, 58.4, 1.49, 135, 75, 310, 26.3, 0),
+(36, 62, 1.64, 130, 80, 220, 23.05, 0),
+(37, 75.55, 1.6, 130, 70, 276, 29.51, 0),
+(38, 74.75, 1.65, 180, 110, 291, 27.45, 97),
+(39, 58.4, 1.49, 135, 75, 310, 26.3, 90),
+(40, 62, 1.64, 130, 80, 220, 23, 81),
+(41, 0, 0, 0, 0, 0, 0, 0),
+(42, 62, 1.64, 130, 80, 220, 23, 81),
+(43, 58.4, 1.49, 135, 75, 310, 26.3, 90),
+(44, 74.75, 1.65, 180, 110, 291, 27.45, 97),
+(45, 0, 0, 0, 0, 0, 0, 0),
+(46, 58.4, 1.49, 135, 75, 310, 26.3, 0),
+(47, 62, 1.64, 130, 80, 220, 23.05, 0),
+(48, 62, 1.64, 130, 80, 220, 23, 81),
+(49, 58.4, 1.49, 135, 75, 310, 26.3, 90),
+(50, 74.75, 1.65, 180, 110, 291, 27.45, 97),
+(51, 0, 0, 0, 0, 0, 0, 0),
+(52, 58.4, 1.49, 135, 75, 310, 26.3, 0),
+(53, 62, 1.64, 130, 80, 220, 23.05, 0),
+(54, 58.4, 1.49, 135, 75, 310, 26.3, 90),
+(55, 62, 1.64, 130, 80, 220, 23, 81),
+(56, 74.75, 1.65, 180, 110, 291, 27.45, 97);
 
 -- --------------------------------------------------------
 
@@ -1120,6 +2039,46 @@ CREATE TABLE IF NOT EXISTS `tb_experiencia_medicamentos` (
   KEY `fk_tb_experiencia_medicamentos_tb_resposta6_idx` (`IdRespostaIncorporadoPlano`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `tb_experiencia_medicamentos`
+--
+
+INSERT INTO `tb_experiencia_medicamentos` (`IdConsultaFixo`, `IdRespostaEsperaTratamento`, `IdRespostaPreocupacoes`, `IdRespostaGrauEntendimento`, `IdRespostaCultural`, `IdRespostaComportamento`, `IdRespostaIncorporadoPlano`, `AtencaoEsperaTratamento`, `AtencaoPreocupacoes`, `AtencaoGrauEntendimento`, `AtencaoCultural`, `AtencaoComportamento`) VALUES
+(6, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(7, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(8, 10, 16, 4, 31, 41, 7, 0, 0, 0, 0, 0),
+(9, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(11, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(13, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(14, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(15, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(16, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(17, 8, 16, 4, 30, 6, 7, 0, 0, 0, 0, 0),
+(19, 10, 16, 4, 31, 41, 7, 1, 0, 0, 0, 1),
+(20, 10, 16, 4, 31, 41, 7, 1, 0, 0, 0, 1),
+(21, 8, 3, 4, 30, 41, 7, 0, 1, 0, 0, 1),
+(22, 11, 18, 26, 30, 41, 7, 1, 1, 1, 0, 1),
+(23, 12, 15, 28, 33, 6, 44, 0, 0, 0, 0, 0),
+(24, 10, 16, 28, 5, 6, 44, 0, 0, 0, 0, 0),
+(25, 10, 3, 27, 39, 6, 43, 0, 1, 0, 0, 0),
+(26, 8, 19, 4, 36, 42, 44, 0, 1, 0, 0, 0),
+(27, 10, 16, 4, 30, 42, 43, 1, 0, 0, 0, 1),
+(28, 47, 3, 4, 30, 41, 48, 0, 0, 0, 0, 0),
+(29, 10, 16, 27, 39, 41, 7, 0, 0, 0, 0, 0),
+(30, 8, 15, 49, 37, 41, 7, 0, 0, 0, 0, 0),
+(31, 12, 19, 4, 32, 6, 44, 1, 1, 0, 0, 0),
+(32, 10, 3, 4, 30, 6, 44, 1, 1, 0, 0, 0),
+(33, 11, 20, 27, 38, 42, 44, 1, 1, 0, 0, 0),
+(34, 13, 21, 4, 39, 42, 44, 1, 1, 0, 0, 0),
+(35, 10, 3, 27, 30, 6, 44, 1, 1, 0, 0, 0),
+(36, 10, 19, 26, 32, 6, 44, 1, 1, 1, 0, 0),
+(37, 10, 16, 28, 30, 41, 44, 1, 0, 1, 0, 1),
+(38, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0),
+(39, 11, 3, 49, 31, 41, 7, 1, 1, 1, 1, 1),
+(40, 11, 20, 26, 30, 41, 7, 1, 1, 1, 0, 1),
+(41, 12, 15, 28, 33, 6, 44, 1, 1, 1, 0, 1),
+(42, 12, 20, 27, 30, 6, 44, 1, 1, 0, 1, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -1130,7 +2089,19 @@ CREATE TABLE IF NOT EXISTS `tb_grupo_intervencao` (
   `IdGrupoIntervencao` int(11) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(40) NOT NULL,
   PRIMARY KEY (`IdGrupoIntervencao`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Extraindo dados da tabela `tb_grupo_intervencao`
+--
+
+INSERT INTO `tb_grupo_intervencao` (`IdGrupoIntervencao`, `Descricao`) VALUES
+(1, 'Iniciar Medicamento'),
+(2, 'Modificar Farmacoterapia'),
+(3, 'Descontinuar Farmacoterapia'),
+(4, 'Educação'),
+(5, 'Monitorização'),
+(6, 'Outras Intervenções');
 
 -- --------------------------------------------------------
 
@@ -1144,6 +2115,46 @@ CREATE TABLE IF NOT EXISTS `tb_historia` (
   `HistoriaFamiliar` varchar(255) NOT NULL,
   PRIMARY KEY (`IdConsultaFixo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_historia`
+--
+
+INSERT INTO `tb_historia` (`IdConsultaFixo`, `HistoriaMedicaPregressa`, `HistoriaFamiliar`) VALUES
+(6, '', ''),
+(7, '', ''),
+(8, 'Nenhuma história médica que tenha influência sobre o estado atual', 'Pai e Mãe - portadores de Diabetes Mellitus'),
+(9, '', ''),
+(11, '', ''),
+(13, '', ''),
+(14, '', ''),
+(15, '', ''),
+(16, '', ''),
+(17, '', ''),
+(19, 'Nenhuma história médica que tenha influência sobre o estado atual', 'Pai e Mãe - portadores de Diabetes Mellitus'),
+(20, 'Nenhuma história médica que tenha influência sobre o estado atual', 'Pai e Mãe - portadores de Diabetes Mellitus'),
+(21, 'Não relatou', 'Pais e irmão: portadores de Diabetes Mellitus '),
+(22, 'Retirou o útero aos 45 anos e retirou as amígdalas aos 12 anos.', 'Mãe: portadora de Diabetes Mellitus. Pai: portador de Hipertensão Arterial Sistêmica '),
+(23, 'Nenhuma história médica que tenha influência sobre o estado atual', 'Pai, irmão e avô: portador de Diabetes Mellitus. '),
+(24, 'Fez uma cirurgia de suspensão do útero há cinco anos', 'Mãe portadora de diabetes e Pai portador de Hipertensão Arterial sistêmica'),
+(25, 'Retirou o útero e uma mama há 20 anos.', 'Pai portador de diabetes, mãe portadora de câncer, filha portadora de hipertensão'),
+(26, 'Colocou prótese no olho há 40 anos, fez biópsia da próstata há 5 anos, fez angioplastia e dois cateterismos há dois anos, passou por coma alcoólico 4 vezes', 'Tio, primo e irmã: portadores de Diabetes Mellitus '),
+(27, 'Não relatou', 'Mãe e irmãos: portadores de Hipertensão Arterial Sistêmica '),
+(28, 'Não relatou', 'Pais e irmãos: portadores de Hipertensão Arterial Sistêmica '),
+(29, '', ''),
+(30, 'Realizou três pontos de safena há 10 anos.', 'Pai: portador de Diabetes Mellitus e Hipertensão Arterial Sistêmica '),
+(31, 'Fez cirurgia nos olhos por complicações do diabetes; foi hospitalizado duas vezes por crise de hipertensão', 'Mãe portadora de Hipertensão Arterial sistêmica'),
+(32, 'Paciente foi hospitalizado três vezes por crise de refluxo ', 'Pais e irmãos: portadores de Hipertensão Arterial Sistêmica '),
+(33, 'Paciente foi hospitalizada por 11 dias em 2008 devido a crises de HAS e Diabetes ', 'Não Relatou'),
+(34, 'Fez uma cirurgia para a retirada do útero há 13 anos.', 'Mãe portadora de Hipertensão Arterial sistêmica; faleceu por infarto'),
+(35, 'Não relatou', 'A mãe faleceu com infarto agudo do miocárdio'),
+(36, 'Fez cirurgia de redução de mama, cirurgia de mioma há mais de 20 anos.', 'Pai e irmãos: portadores de Hipertensão Arterial Sistêmica '),
+(37, 'Fez cirurgia para retirada da vesícula há 33 anos; Teve oito filhos por partos normais', 'Mãe: portadora de Diabetes Mellitus e Hiperlipidemia '),
+(38, '', ''),
+(39, 'ele fumava , ingeria bebidas alcoólicas e tomava entre duas a seis xícaras de café por dia , é hipertenso e diabetico', 'pais diabeticos'),
+(40, 'Retirou o Útero aos 45 anos e as Amígdalas aos 12', 'A mãe faleceu aos 72 anos de Enfisema Pulmonar e tinha Diabetes Mellitus e o pai faleceu aos 73 anos de infarto e tinha hipertensão arterial sistêmica.'),
+(41, 'informou ter Diabetes Mellitus tipo II há 30 anos; Vacina-se contra gripe todos os anos ; ', 'Um dos seus cinco irmãos faleceu em decorrência do diabetes. O seu pai e o seu avô tambèm tinham diabetes'),
+(42, '', '');
 
 -- --------------------------------------------------------
 
@@ -1178,15 +2189,16 @@ CREATE TABLE IF NOT EXISTS `tb_instituicao` (
   `NomeInstituicao` varchar(45) NOT NULL,
   `Sigla` varchar(10) NOT NULL DEFAULT '',
   PRIMARY KEY (`IdInstituicao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `tb_instituicao`
 --
 
 INSERT INTO `tb_instituicao` (`IdInstituicao`, `NomeInstituicao`, `Sigla`) VALUES
-(1, 'Universidade Federal de Sergipe - Campus São ', 'UFS'),
-(3, 'Universidade Tiradentes', 'UNIT');
+(1, 'Univ Fed de Sergipe - Campus São Cristovão', 'UFS-São Cr'),
+(3, 'Universidade Tiradentes', 'UNIT'),
+(4, 'Univ Fed de Sergipe - Campus Lagarto', 'UFS-Lagart');
 
 -- --------------------------------------------------------
 
@@ -1200,7 +2212,29 @@ CREATE TABLE IF NOT EXISTS `tb_intervencao` (
   `IdGrupoIntervencao` int(11) NOT NULL,
   PRIMARY KEY (`IdIntervencao`),
   KEY `fk_tb_intervencao_tb_grupo_intervencao1_idx` (`IdGrupoIntervencao`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+
+--
+-- Extraindo dados da tabela `tb_intervencao`
+--
+
+INSERT INTO `tb_intervencao` (`IdIntervencao`, `DescricaoIntervencao`, `IdGrupoIntervencao`) VALUES
+(1, 'Sob prescrição', 1),
+(2, 'Venda Livre', 1),
+(3, 'Alterar produto', 2),
+(4, 'Alterar dose', 2),
+(5, 'Alterar forma farmacêutica', 2),
+(6, 'Alterar intervalo', 2),
+(7, 'Medicamento descontinuado', 3),
+(8, 'Substituição por genérico', 3),
+(9, 'Sobre medicamentos', 4),
+(10, 'Sobre problemas de saúde', 4),
+(11, 'Sobre dispositivos médicos', 4),
+(12, 'Iniciar monitorização laboratorial', 5),
+(13, 'Iniciar outro tipo de monitorização', 5),
+(14, 'Encaminhamento ao Nutricionista', 6),
+(15, 'Encaminhamento ao Educador Físico', 6),
+(16, 'Tabela de Medicamentos', 6);
 
 -- --------------------------------------------------------
 
@@ -1218,6 +2252,34 @@ CREATE TABLE IF NOT EXISTS `tb_medicamento_nao_prescrito` (
   KEY `fk_tb_medicamento_prescrito_tb_medicamentos1_idx` (`IdMedicamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `tb_medicamento_nao_prescrito`
+--
+
+INSERT INTO `tb_medicamento_nao_prescrito` (`IdConsultaVariavel`, `IdMedicamento`, `Fitoterapico`, `Dosagem`, `Posologia`) VALUES
+(14, 93, 0, '-', '-'),
+(16, 93, 0, '-', '-'),
+(18, 93, 0, 'xx', 'xx'),
+(19, 93, 0, '-', '-'),
+(20, 93, 0, '-', '-'),
+(21, 93, 0, '-', '-'),
+(22, 93, 0, '-', '-'),
+(23, 93, 0, '-', '-'),
+(24, 93, 0, '-', '-'),
+(25, 93, 0, '-', '-'),
+(26, 93, 0, '-', '-'),
+(27, 93, 0, '-', '-'),
+(28, 93, 0, '-', '-'),
+(29, 93, 0, '-', '-'),
+(30, 93, 0, '-', '-'),
+(31, 93, 0, '-', '-'),
+(32, 93, 0, '-', '-'),
+(34, 93, 0, '-', '-'),
+(36, 93, 0, 'xx', 'xx'),
+(37, 93, 0, '-', '-'),
+(47, 93, 0, 'xx', 'xx'),
+(53, 93, 0, 'xx', 'xx');
+
 -- --------------------------------------------------------
 
 --
@@ -1229,13 +2291,189 @@ CREATE TABLE IF NOT EXISTS `tb_medicamento_prescrito` (
   `IdMedicamento` int(11) NOT NULL,
   `Fitoterapico` tinyint(1) DEFAULT NULL,
   `Dosagem` varchar(50) DEFAULT NULL,
-  `Posologia` varchar(50) DEFAULT NULL,
+  `Posologia` varchar(100) DEFAULT NULL,
   `Prescritor` varchar(50) DEFAULT NULL,
   `Especialidade` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`IdConsultaVariavel`,`IdMedicamento`),
   KEY `fk_tb_consulta_variavel_has_tb_medicamentos_tb_medicamentos_idx` (`IdMedicamento`),
   KEY `fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_var_idx` (`IdConsultaVariavel`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_medicamento_prescrito`
+--
+
+INSERT INTO `tb_medicamento_prescrito` (`IdConsultaVariavel`, `IdMedicamento`, `Fitoterapico`, `Dosagem`, `Posologia`, `Prescritor`, `Especialidade`) VALUES
+(10, 63, 1, '40 mg', '1 comprimido às 7 horas e 1 comprimido às 12 horas', 'Dr. P', 'Clínico Geral'),
+(14, 4, 0, '100 mg', '1 comprimido às 13h', 'Dr. S', 'Clínico Geral'),
+(14, 19, 0, '25 mg', '2 comprimido às 5h, 14h e as 22h', 'Dr. S', 'Clínico Geral'),
+(14, 35, 0, '40 mg', '1 comprimido às 9h', 'Dr. S', 'Clínico Geral'),
+(14, 36, 0, '5 mg', '1 comprimido às 7 horas e 1 comprimido às 12 horas', 'Dr. P', 'Endocrinologista'),
+(14, 48, 0, '850 mg', '1 comprimido as 12:30h e 1 comprimido as 19:30h', 'Dr. S', 'Clínico Geral'),
+(14, 49, 0, '20mg', '1 comprimido às 7 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(15, 4, 0, '100 mg', '1 comprimido às 13h', 'Dr. S', 'Clínico Geral'),
+(15, 19, 0, '25mg', '1 comprimido às 5h, 1 às 14h e 1 às 22 h', 'Dr. S', 'Clínico Geral'),
+(15, 35, 0, '40 mg', '1 comprimido às 9h', 'Dr. S', 'Clínico Geral'),
+(15, 36, 0, '5 mg', '1 comprimido às 7 horas e 1 comprimido às 12 horas', 'Dr. P', 'Endocrinologista'),
+(15, 48, 0, '850mg', '1 comprimido às 12 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(15, 49, 0, '20mg', '1 comprimido às 7 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(16, 42, 0, '2 a 12 U', 'de acordo com esquema', 'Dr. V.C.', 'Endocrinologista'),
+(16, 54, 0, '40 mg', '1 comprimido após o jantar', 'Dr. J.B.R.', 'Cardiologista'),
+(16, 56, 0, '50/850 mg', '1 comprimido 30 min antes do café e 1 comprimido 30 min antes do jantar', 'Dr. V.C.', 'Endocrinologista'),
+(17, 33, 0, '10 mg', '1 comprimido às 9h', 'Dr. L.A.S', 'Cardiologista'),
+(17, 36, 0, '5 mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. L.C.', 'Clínico Geral'),
+(17, 39, 0, '25mg', '1 comprimido às 8:30h', 'Dr. L.A.S', 'Cardiologista'),
+(17, 48, 0, '850mg', '1 comprimido, três vezes ao dia (antes do café, do', 'Dr. L.C.', 'Clínico Geral'),
+(17, 53, 0, '40 mg', '1 comprimido às 8 horas e 1 comprimido às 20 horas', 'Dr. L.A.S', 'Cardiologista'),
+(18, 38, 0, '4 mg', '1 comprimido antes do jantar', 'Dr. P', 'Endocrinologista'),
+(18, 48, 0, '850mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. P', 'Endocrinologista'),
+(18, 91, 0, '7,5', '1 comprimido a cada 4 horas', 'Dr. S', 'Clínico Geral'),
+(19, 36, 0, '5 mg', '1 comprimido antes do café', 'Dr. P', 'Endocrinologista'),
+(19, 48, 0, '850mg', '1 comprimido após o café da manhã', 'Dr. P', 'Endocrinologista'),
+(20, 38, 0, '4 mg', '1 comprimido antes do café', 'Dr. P', 'Endocrinologista'),
+(20, 48, 0, '850mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. P', 'Endocrinologista'),
+(21, 41, 0, '2 mg', '1 comprimido ao deitar', 'Não relatou', 'Não relatou'),
+(21, 48, 0, '850mg', '1 comprimido, três vezes ao dia (antes do café, do', 'Dr. P', 'Endocrinologista'),
+(21, 53, 0, '40 mg', '1 comprimido, duas vezes ao dia', 'Dr. S', 'Clínico Geral'),
+(22, 11, 0, '25mg', '1 comprimido às 12 horas', 'Dr. S', 'Clínico Geral'),
+(22, 33, 0, '10 mg', '1 comprimido de 12/12 horas', 'Dr. S', 'Clínico Geral'),
+(23, 44, 0, '50 mg', '1 comprimido de 12/12 horas', 'Dr. S', 'Clínico Geral'),
+(23, 48, 0, '850mg', '1 comprimido após o almoço', 'Dr. P', 'Endocrinologista'),
+(24, 19, 0, '25mg', '1 comprimido antes das refeições', 'Dr. S', 'Clínico Geral'),
+(24, 36, 0, '5 mg', '2 comprimidos antes do café e 2 comprimidos antes ', 'Dr. P''', 'Endocrinologista'),
+(24, 48, 0, '850mg', '1 comprimido três vezes ao dia (antes do café, almoço e jantar)', 'Dr. P', 'Endocrinologista'),
+(25, 38, 0, '5 mg', '1 comprimido antes do café', 'Dr. P', 'Endocrinologista'),
+(25, 43, 0, '10 U', 'aplicar às 17 horas', 'Dr. P', 'Endocrinologista'),
+(25, 49, 0, '20 mg', '1 comprimido as 8h e 1 comprimido as 20h', 'Dr. S', 'Clínico Geral'),
+(26, 48, 0, '850mg', '1 comprimido após o almoço', 'Dr. P', 'Endocrinologista'),
+(26, 87, 0, '20mg', '1 comprimido às 10 horas', 'Dr. S', 'Clínico Geral'),
+(26, 89, 0, 'Não relatou', '1 gota em cada olho às 7 horas e às 19 horas', 'Não relatou', 'Não relatou'),
+(27, 47, 0, '20mg/10mg', '1 comprimido após o jantar', 'Dr. P', 'Cardiologista'),
+(27, 51, 0, '40 mg', '1 comprimido em jejum', 'Dr. S', 'Clínico Geral'),
+(27, 88, 0, '5 mg', '1 comprimido às 8 horas e 1 comprimido às 20 horas', 'Dr. P', 'Cardiologista'),
+(28, 19, 0, '25mg', '1 comprimido, três vezes ao dia', 'Dr. S', 'Clínico Geral'),
+(28, 36, 0, '5 mg', '1 comprimido, duas vezes ao dia', 'Dr. P', 'Endocrinologista'),
+(28, 48, 0, '850mg', '1 comprimido antes das refeições', 'Dr. P', 'Endocrinologista'),
+(29, 19, 0, '50 mg', '2 comprimidos ao dia', 'Não relatou', 'Clínico Geral'),
+(29, 36, 0, '5 mg', '1 comprimido antes do café', 'Não relatou', 'Clínico Geral'),
+(29, 48, 0, '850mg', '1 comprimido, duas vezes ao dia (no almoço e no ja', 'Não relatou', 'Clínico Geral'),
+(29, 50, 0, '20mg', '1 comprimido em jejum, todos os dias', 'Não relatou', 'Clínico Geral'),
+(30, 19, 0, '25mg', '1 comprimido de 12/12 horas', 'Dr. G.R.F.', 'Clínico Geral'),
+(30, 36, 0, '5 mg', '2 comprimidos em jejum', 'Dr. G.R.F.', 'Clínico Geral'),
+(30, 48, 0, '850 mg', '1 cpr depois do café, do almoço e do jantar', 'Dr. G.R.F.', 'Clínico Geral'),
+(30, 54, 0, '20mg', '1 comprimido antes de dormir', 'Dr. G.R.F.', 'Clínico Geral'),
+(31, 4, 0, '100 mg', '1 comprimido após o almoço', 'Dr. D.', 'Cardiologista'),
+(31, 38, 0, '4 mg', '1 comprimido antes do almoço', 'Dr. M.', 'Endocrinologista'),
+(31, 54, 0, '20mg', '1 comprimido após o jantar', 'Dr. D.', 'Cardiologista'),
+(31, 56, 0, '100/850 mg', '1 comprimido, duas vezes ao dia (após o café e apó', 'Dr. M.', 'Endocrinologista'),
+(31, 86, 0, '300 mg', '1 comprimido, duas vezes ao dia (após o café e após o jantar)', 'Dr. M.', 'Endocrinologista'),
+(32, 4, 0, '100 mg', '1 comprimido durante o almoço', 'Dr. S.L.P.', 'Cardiologista'),
+(32, 19, 0, '25mg', '1 comprimido de 8/8 horas', 'Dr. S.L.P.', 'Cardiologista'),
+(32, 30, 0, '20mg', '1 comprimido durante o jantar', 'Dr. H.R.F.', 'Clínico Geral'),
+(32, 39, 0, '25mg', '2 comprimidos ao dia, pela manhã', 'Dr. S.L.P.', 'Cardiologista'),
+(32, 48, 0, '850mg', '1 comprimido às 8 horas e 1 comprimido às 14 horas', 'Dr. S.L.P.', 'Cardiologista'),
+(32, 94, 0, '500mg', '1 comprimido às 8 horas e 1 comprimido às 14 horas', 'Dr. H.R.F.', 'Clínico Geral'),
+(34, 4, 0, '100 mg', '1 comprimido às 13h', 'Dr. S', 'Clínico Geral'),
+(34, 19, 0, '25mg', '1 comprimido às 5h, 1 às 14h e 1 às 22 h', 'Dr. S', 'Clínico Geral'),
+(34, 35, 0, '40 mg', '1 comprimido às 9h', 'Dr. S', 'Clínico Geral'),
+(34, 36, 0, '5 mg', '1 comprimido às 7 horas e 1 comprimido às 12 horas', 'Dr. P', 'Endocrinologista'),
+(34, 48, 0, '850mg', '1 comprimido às 12 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(34, 49, 0, '20mg', '1 comprimido às 7 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(35, 33, 0, '10 mg', '1 comprimido às 9h', 'Dr. L.A.S', 'Cardiologista'),
+(35, 36, 0, '5 mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. L.C.', 'Clínico Geral'),
+(35, 39, 0, '25mg', '1 comprimido às 8:30h', 'Dr. L.A.S', 'Cardiologista'),
+(35, 48, 0, '850mg', '1 comprimido, três vezes ao dia (antes do café, do', 'Dr. L.C.', 'Clínico Geral'),
+(35, 53, 0, '40 mg', '1 comprimido às 8 horas e 1 comprimido às 20 horas', 'Dr. L.A.S', 'Cardiologista'),
+(36, 38, 0, '4 mg', '1 comprimido antes do jantar', 'Dr. P', 'Endocrinologista'),
+(36, 48, 0, '850mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. P', 'Endocrinologista'),
+(36, 91, 0, '7,5', '1 comprimido a cada 4 horas', 'Dr. S', 'Clínico Geral'),
+(37, 36, 0, '5 mg', '1 comprimido antes do café', 'Dr. P', 'Endocrinologista'),
+(37, 48, 0, '850mg', '1 comprimido após o café da manhã', 'Dr. P', 'Endocrinologista'),
+(38, 4, 0, '100mg', '1 comprimido as 13 horas', 'Dr. S', 'clinico geral'),
+(38, 19, 0, '25 mg', '2 comprimidos as 5 horas , as 14:00 horas e as 22:00 horas', 'Dr. S', 'clinico geral'),
+(38, 35, 0, '40 mg', '1 comprimido as 9 horas', 'Dr. S', 'clinico geral'),
+(38, 36, 0, '5 mg', '1 comprimido as 7 horas e as 12 hs ', 'Dr. P', 'endocrinologista'),
+(38, 48, 0, '850 mg', '1 comprimido as 12:30 hs horas e as 19:30 horas', 'Dr. S', 'clinico geral'),
+(38, 49, 0, '20 mg', '1 comprimido as 7 e as 19 horas', 'Dr. S', 'clinico geral'),
+(39, 33, 0, '10mg', '1 comprimido as 09:00', 'L.A.S', 'Cardiologista'),
+(39, 36, 0, '5mg', '1 comprimido antes do café e um antes do jantar', 'L.C', 'clínico geral'),
+(39, 39, 0, '25mg', '1 comprimido as 08:30', 'L.A.S', 'Cardiologista'),
+(39, 48, 0, '850mg', '1 comprimido antes do café, alomoço e jantar', 'L.C', 'Clínico geral'),
+(39, 53, 0, '40mg', '1 comprimido as 08:0 e as 20:00', 'L.A.S', 'Cardiologista'),
+(40, 38, 0, '4mg', '1 comprimido antes do jantar', 'Dr. P. ', '(Endocrinologista)'),
+(40, 48, 0, '850mg', '1 comprimido antes do almoço e 1 antes do jantar', 'Dr. P. ', '(Endocrinologista)'),
+(40, 91, 0, '7,5mg', '1 comprimido a cada 4 horas', 'Dra. S.', 'Clínico Geral'),
+(41, 6, 1, '40 mg', '1 comprimido às 7 horas e 1 comprimido às 12 horas', 'Dr. P', 'Clínico Geral'),
+(42, 38, 0, '4mg', '1 comprimido antes do jantar', 'Dr. P. ', '(Endocrinologista)'),
+(42, 48, 0, '850mg', '1 comprimido antes do almoço e 1 antes do jantar', 'Dr. P. ', '(Endocrinologista)'),
+(42, 91, 0, '7,5mg', '1 comprimido a cada 4 horas', 'Dra. S.', 'Clínico Geral'),
+(43, 33, 0, '10mg', '1 comprimido as 09:00', 'L.A.S', 'Cardiologista'),
+(43, 36, 0, '5mg', '1 comprimido antes do café e um antes do jantar', 'L.C', 'clínico geral'),
+(43, 39, 0, '25mg', '1 comprimido as 08:30', 'L.A.S', 'Cardiologista'),
+(43, 48, 0, '850mg', '1 comprimido antes do café, alomoço e jantar', 'L.C', 'Clínico geral'),
+(43, 53, 0, '40mg', '1 comprimido as 08:0 e as 20:00', 'L.A.S', 'Cardiologista'),
+(44, 4, 0, '100mg', '1 comprimido as 13 horas', 'Dr. S', 'clinico geral'),
+(44, 19, 0, '25 mg', '2 comprimidos as 5 horas , as 14:00 horas e as 22:00 horas', 'Dr. S', 'clinico geral'),
+(44, 35, 0, '40 mg', '1 comprimido as 9 horas', 'Dr. S', 'clinico geral'),
+(44, 36, 0, '5 mg', '1 comprimido as 7 horas e as 12 hs ', 'Dr. P', 'endocrinologista'),
+(44, 48, 0, '850 mg', '1 comprimido as 12:30 hs horas e as 19:30 horas', 'Dr. S', 'clinico geral'),
+(44, 49, 0, '20 mg', '1 comprimido as 7 e as 19 horas', 'Dr. S', 'clinico geral'),
+(45, 4, 0, '100 mg', '1 comprimido às 13h', 'Dr. S', 'Clínico Geral'),
+(45, 19, 0, '25mg', '1 comprimido às 5h, 1 às 14h e 1 às 22 h', 'Dr. S', 'Clínico Geral'),
+(45, 35, 0, '40 mg', '1 comprimido às 9h', 'Dr. S', 'Clínico Geral'),
+(45, 36, 0, '5 mg', '1 comprimido às 7 horas e 1 comprimido às 12 horas', 'Dr. P', 'Endocrinologista'),
+(45, 48, 0, '850mg', '1 comprimido às 12 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(45, 49, 0, '20mg', '1 comprimido às 7 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(46, 33, 0, '10 mg', '1 comprimido às 9h', 'Dr. L.A.S', 'Cardiologista'),
+(46, 36, 0, '5 mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. L.C.', 'Clínico Geral'),
+(46, 39, 0, '25mg', '1 comprimido às 8:30h', 'Dr. L.A.S', 'Cardiologista'),
+(46, 48, 0, '850mg', '1 comprimido, três vezes ao dia (antes do café, do', 'Dr. L.C.', 'Clínico Geral'),
+(46, 53, 0, '40 mg', '1 comprimido às 8 horas e 1 comprimido às 20 horas', 'Dr. L.A.S', 'Cardiologista'),
+(47, 38, 0, '4 mg', '1 comprimido antes do jantar', 'Dr. P', 'Endocrinologista'),
+(47, 48, 0, '850mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. P', 'Endocrinologista'),
+(47, 91, 0, '7,5', '1 comprimido a cada 4 horas', 'Dr. S', 'Clínico Geral'),
+(48, 38, 0, '4mg', '1 comprimido antes do jantar', 'Dr. P. ', '(Endocrinologista)'),
+(48, 48, 0, '850mg', '1 comprimido antes do almoço e 1 antes do jantar', 'Dr. P. ', '(Endocrinologista)'),
+(48, 91, 0, '7,5mg', '1 comprimido a cada 4 horas', 'Dra. S.', 'Clínico Geral'),
+(49, 33, 0, '10mg', '1 comprimido as 09:00', 'L.A.S', 'Cardiologista'),
+(49, 36, 0, '5mg', '1 comprimido antes do café e um antes do jantar', 'L.C', 'clínico geral'),
+(49, 39, 0, '25mg', '1 comprimido as 08:30', 'L.A.S', 'Cardiologista'),
+(49, 48, 0, '850mg', '1 comprimido antes do café, alomoço e jantar', 'L.C', 'Clínico geral'),
+(49, 53, 0, '40mg', '1 comprimido as 08:0 e as 20:00', 'L.A.S', 'Cardiologista'),
+(50, 4, 0, '100mg', '1 comprimido as 13 horas', 'Dr. S', 'clinico geral'),
+(50, 19, 0, '25 mg', '2 comprimidos as 5 horas , as 14:00 horas e as 22:00 horas', 'Dr. S', 'clinico geral'),
+(50, 35, 0, '40 mg', '1 comprimido as 9 horas', 'Dr. S', 'clinico geral'),
+(50, 36, 0, '5 mg', '1 comprimido as 7 horas e as 12 hs ', 'Dr. P', 'endocrinologista'),
+(50, 48, 0, '850 mg', '1 comprimido as 12:30 hs horas e as 19:30 horas', 'Dr. S', 'clinico geral'),
+(50, 49, 0, '20 mg', '1 comprimido as 7 e as 19 horas', 'Dr. S', 'clinico geral'),
+(51, 4, 0, '100 mg', '1 comprimido às 13h', 'Dr. S', 'Clínico Geral'),
+(51, 19, 0, '25mg', '1 comprimido às 5h, 1 às 14h e 1 às 22 h', 'Dr. S', 'Clínico Geral'),
+(51, 35, 0, '40 mg', '1 comprimido às 9h', 'Dr. S', 'Clínico Geral'),
+(51, 36, 0, '5 mg', '1 comprimido às 7 horas e 1 comprimido às 12 horas', 'Dr. P', 'Endocrinologista'),
+(51, 48, 0, '850mg', '1 comprimido às 12 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(51, 49, 0, '20mg', '1 comprimido às 7 h e 1 comprimido às 19 h', 'Dr. S', 'Clínico Geral'),
+(52, 33, 0, '10 mg', '1 comprimido às 9h', 'Dr. L.A.S', 'Cardiologista'),
+(52, 36, 0, '5 mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. L.C.', 'Clínico Geral'),
+(52, 39, 0, '25mg', '1 comprimido às 8:30h', 'Dr. L.A.S', 'Cardiologista'),
+(52, 48, 0, '850mg', '1 comprimido, três vezes ao dia (antes do café, do', 'Dr. L.C.', 'Clínico Geral'),
+(52, 53, 0, '40 mg', '1 comprimido às 8 horas e 1 comprimido às 20 horas', 'Dr. L.A.S', 'Cardiologista'),
+(53, 38, 0, '4 mg', '1 comprimido antes do jantar', 'Dr. P', 'Endocrinologista'),
+(53, 48, 0, '850mg', '1 comprimido antes do café e 1 comprimido antes do', 'Dr. P', 'Endocrinologista'),
+(53, 91, 0, '7,5', '1 comprimido a cada 4 horas', 'Dr. S', 'Clínico Geral'),
+(54, 33, 0, '10mg', '1 comprimido as 09:00', 'L.A.S', 'Cardiologista'),
+(54, 36, 0, '5mg', '1 comprimido antes do café e um antes do jantar', 'L.C', 'clínico geral'),
+(54, 39, 0, '25mg', '1 comprimido as 08:30', 'L.A.S', 'Cardiologista'),
+(54, 48, 0, '850mg', '1 comprimido antes do café, alomoço e jantar', 'L.C', 'Clínico geral'),
+(54, 53, 0, '40mg', '1 comprimido as 08:0 e as 20:00', 'L.A.S', 'Cardiologista'),
+(55, 38, 0, '4mg', '1 comprimido antes do jantar', 'Dr. P. ', '(Endocrinologista)'),
+(55, 48, 0, '850mg', '1 comprimido antes do almoço e 1 antes do jantar', 'Dr. P. ', '(Endocrinologista)'),
+(55, 91, 0, '7,5mg', '1 comprimido a cada 4 horas', 'Dra. S.', 'Clínico Geral'),
+(56, 4, 0, '100mg', '1 comprimido as 13 horas', 'Dr. S', 'clinico geral'),
+(56, 19, 0, '25 mg', '2 comprimidos as 5 horas , as 14:00 horas e as 22:00 horas', 'Dr. S', 'clinico geral'),
+(56, 35, 0, '40 mg', '1 comprimido as 9 horas', 'Dr. S', 'clinico geral'),
+(56, 36, 0, '5 mg', '1 comprimido as 7 horas e as 12 hs ', 'Dr. P', 'endocrinologista'),
+(56, 48, 0, '850 mg', '1 comprimido as 12:30 hs horas e as 19:30 horas', 'Dr. S', 'clinico geral'),
+(56, 49, 0, '20 mg', '1 comprimido as 7 e as 19 horas', 'Dr. S', 'clinico geral');
 
 -- --------------------------------------------------------
 
@@ -1248,14 +2486,13 @@ CREATE TABLE IF NOT EXISTS `tb_medicamentos` (
   `Nome` varchar(100) NOT NULL,
   PRIMARY KEY (`IdMedicamento`),
   UNIQUE KEY `Nome_UNIQUE` (`Nome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=95 ;
 
 --
 -- Extraindo dados da tabela `tb_medicamentos`
 --
 
 INSERT INTO `tb_medicamentos` (`IdMedicamento`, `Nome`) VALUES
-(2, 'Acetato de Medroxiprogesterona'),
 (3, 'Aciclovir'),
 (4, 'Acido Acetilsalicílico'),
 (5, 'Ácido Fólico'),
@@ -1264,21 +2501,87 @@ INSERT INTO `tb_medicamentos` (`IdMedicamento`, `Nome`) VALUES
 (8, 'Amiodarona'),
 (9, 'Amitriptilina'),
 (10, 'Amoxicilina'),
+(88, 'Anlodipino'),
 (11, 'Atenolol'),
+(30, 'Atorvastatina'),
 (12, 'Azatioprina'),
 (13, 'Azitromicina'),
+(31, 'Benzilpenicilina Benzatina'),
 (15, 'Benzilpenicilina Procaína + Potássica'),
+(57, 'Benzoato de Benzila'),
 (17, 'Biperideno'),
+(89, 'Brimonidina + Timolol'),
 (18, 'Brometo de n-butilescopalamina'),
 (19, 'Captopril'),
 (20, 'Carbamazepina'),
 (21, 'Carbidopa + Levodopa'),
 (22, 'Cefalexina'),
+(32, 'Centrum®'),
 (23, 'Cetoconazol'),
 (28, 'Cetoprofeno'),
 (24, 'Ciprofloxacino'),
 (27, 'Clorpromazina'),
-(1, 'Dipirona');
+(92, 'Codeína'),
+(91, 'Codeina + paracetamol'),
+(58, 'Dexametasona'),
+(1, 'Dipirona'),
+(59, 'Doxicilina'),
+(85, 'Dudasterina'),
+(33, 'Enalapril'),
+(60, 'Eritromicina'),
+(61, 'Etinilestradiol + Levonorgestrel'),
+(62, 'Fenitoína'),
+(63, 'Fenobarbital'),
+(64, 'Fluconazol'),
+(34, 'Fluoxetina'),
+(35, 'Furosemida'),
+(36, 'Glibenclamida'),
+(37, 'Gliclazida'),
+(38, 'Glimepirida'),
+(65, 'Haloperidol'),
+(39, 'Hidroclorotiazida'),
+(40, 'Hidroclorotiazida/Amilorida'),
+(41, 'Hidroxizina'),
+(66, 'Ibuprofeno'),
+(42, 'Insulina Aspart'),
+(43, 'Insulina NPH'),
+(67, 'Levonorgestrel'),
+(44, 'Losartana'),
+(45, 'Losartana/Hidroclorotiazida'),
+(46, 'Manipulado: Losartana, Atenolol, Anlodipino, Hidroclorotiazida'),
+(47, 'Manipulado: Sinvastatina, Ezetimiba'),
+(68, 'Mebendazol'),
+(2, 'Medroxiprogesterona (Acetato de)'),
+(48, 'Metformina'),
+(69, 'Metildopa'),
+(70, 'Metoclopramida'),
+(71, 'Metronidazol'),
+(72, 'Miconazol'),
+(93, 'Não relatou'),
+(49, 'Nifedipino'),
+(73, 'Nistatina'),
+(87, 'Olmesartana'),
+(50, 'Omeprazol'),
+(51, 'Pantoprazol'),
+(74, 'Paracetamol'),
+(90, 'Passiflorine'),
+(52, 'Politivamínico'),
+(75, 'Prednisona'),
+(76, 'Prometazina'),
+(53, 'Propranolol'),
+(77, 'Ranitidina'),
+(78, 'Sais para reidratação oral'),
+(79, 'Salbutamol'),
+(54, 'Sinvastatina'),
+(80, 'Sulfametoxazol + Trimetoprima'),
+(81, 'Sulfasalazina'),
+(82, 'Sulfato Ferroso'),
+(83, 'Tiabendazol'),
+(94, 'Triformin®'),
+(84, 'Valproato de sódio'),
+(55, 'Valsartana'),
+(56, 'Vildagliptina/Metformina'),
+(86, 'Vitamina B1 (Tiamina)');
 
 -- --------------------------------------------------------
 
@@ -1302,7 +2605,77 @@ CREATE TABLE IF NOT EXISTS `tb_medicamentos_anteriores` (
 --
 
 INSERT INTO `tb_medicamentos_anteriores` (`IdConsultaVariavel`, `IdMedicamento`, `Indicacao`, `Resposta`, `Periodo`) VALUES
-(2, 1, '1', '11', '1');
+(2, 1, '1', '11', '1'),
+(10, 1, '1', '2', 'Tarde'),
+(12, 5, 'tste', 'perdeu', '11'),
+(14, 39, 'Hipertensão Arterial Sistêmica', 'Perdeu o efeito', '2 anos'),
+(15, 39, 'Hipertensão Arterial Sistêmica', 'Perdeu o efeito', '2 anos'),
+(16, 93, '-', '-', '-'),
+(17, 19, 'Hipertensão Arterial Sistêmica', 'Apresentou Arritmia', 'Não Relatou'),
+(17, 43, 'Hiperglicemia', 'Foi efetivo', 'Uma única vez'),
+(18, 93, 'xx', 'xx', 'xx'),
+(19, 93, '-', '-', '-'),
+(20, 93, '-', '-', '-'),
+(21, 93, '-', '-', '-'),
+(22, 4, 'Não relatou', 'Suspeita de sangramento', 'Não Relatou'),
+(23, 19, 'Hipertensão Arterial Sistêmica', 'Sensação de desmaio', 'Não Relatou'),
+(23, 39, 'Hipertensão Arterial Sistêmica', 'Sensação de desmaio', 'Não Relatou'),
+(23, 53, 'Hipertensão Arterial Sistêmica', 'Sensação de desmaio', 'Não Relatou'),
+(24, 93, '-', '-', '-'),
+(25, 93, '-', '-', '-'),
+(26, 19, 'Hipertensão Arterial Sistêmica', 'Não fazia efeito', 'Não relatou'),
+(26, 39, 'Hipertensão Arterial Sistêmica', 'Não fazia efeito', 'Não relatou'),
+(27, 19, 'Hipertensão Arterial Sistêmica', 'Perdeu o efeito', 'Não Relatou'),
+(28, 39, 'Hipertensão Arterial Sistêmica', 'Não fazia efeito', 'Não relatou'),
+(28, 93, '-', '-', '-'),
+(29, 93, '-', '-', '-'),
+(30, 93, '-', '-', '-'),
+(31, 72, '-', '-', '-'),
+(32, 93, '-', '-', '-'),
+(34, 39, 'Hipertensão Arterial Sistêmica', 'Perdeu o efeito', '2 anos'),
+(35, 19, 'Hipertensão Arterial Sistêmica', 'Apresentou Arritmia', 'Não Relatou'),
+(35, 43, 'Hiperglicemia', 'Foi efetivo', 'Uma única vez'),
+(36, 93, 'xx', 'xx', 'xx'),
+(37, 93, '-', '-', '-'),
+(38, 39, 'hipertensão', 'hipertensão', 'dois anos'),
+(39, 19, 'Hipertensão', 'arritmia', 'não relatou'),
+(39, 43, 'Diabetes', 'melhora', 'uma única vez'),
+(43, 19, 'Hipertensão', 'arritmia', 'não relatou'),
+(43, 43, 'Diabetes', 'melhora', 'uma única vez'),
+(44, 39, 'hipertensão', 'hipertensão', 'dois anos'),
+(45, 39, 'Hipertensão Arterial Sistêmica', 'Perdeu o efeito', '2 anos'),
+(46, 19, 'Hipertensão Arterial Sistêmica', 'Apresentou Arritmia', 'Não Relatou'),
+(46, 43, 'Hiperglicemia', 'Foi efetivo', 'Uma única vez'),
+(47, 93, 'xx', 'xx', 'xx'),
+(49, 19, 'Hipertensão', 'arritmia', 'não relatou'),
+(49, 43, 'Diabetes', 'melhora', 'uma única vez'),
+(50, 39, 'hipertensão', 'hipertensão', 'dois anos'),
+(51, 39, 'Hipertensão Arterial Sistêmica', 'Perdeu o efeito', '2 anos'),
+(52, 19, 'Hipertensão Arterial Sistêmica', 'Apresentou Arritmia', 'Não Relatou'),
+(52, 43, 'Hiperglicemia', 'Foi efetivo', 'Uma única vez'),
+(53, 93, 'xx', 'xx', 'xx'),
+(54, 19, 'Hipertensão', 'arritmia', 'não relatou'),
+(54, 43, 'Diabetes', 'melhora', 'uma única vez'),
+(56, 39, 'hipertensão', 'hipertensão', 'dois anos');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_naturalidade`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_naturalidade` (
+  `IdNaturalidade` int(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` varchar(45) NOT NULL,
+  PRIMARY KEY (`IdNaturalidade`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `tb_naturalidade`
+--
+
+INSERT INTO `tb_naturalidade` (`IdNaturalidade`, `Descricao`) VALUES
+(1, 'Brasileiro');
 
 -- --------------------------------------------------------
 
@@ -1312,9 +2685,22 @@ INSERT INTO `tb_medicamentos_anteriores` (`IdConsultaVariavel`, `IdMedicamento`,
 
 CREATE TABLE IF NOT EXISTS `tb_objetivo_terapeutico` (
   `IdObjetivoTerapeutico` int(11) NOT NULL AUTO_INCREMENT,
-  `Descricao` varchar(45) NOT NULL,
+  `Descricao` varchar(150) NOT NULL,
   PRIMARY KEY (`IdObjetivoTerapeutico`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Extraindo dados da tabela `tb_objetivo_terapeutico`
+--
+
+INSERT INTO `tb_objetivo_terapeutico` (`IdObjetivoTerapeutico`, `Descricao`) VALUES
+(1, 'Cura de uma doença'),
+(3, 'Redução ou eliminação de sinais e/ou sintomas'),
+(4, 'Redução ou interrupção da progressão de uma doença'),
+(5, 'Prevenção de uma Doença'),
+(6, 'Normalização de Exames Laboratoriais'),
+(7, 'Auxiliar no processo diagnóstico'),
+(8, 'Não determinado até o momento');
 
 -- --------------------------------------------------------
 
@@ -1326,7 +2712,7 @@ CREATE TABLE IF NOT EXISTS `tb_ocupacao` (
   `IdOcupacao` int(11) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(100) NOT NULL,
   PRIMARY KEY (`IdOcupacao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Extraindo dados da tabela `tb_ocupacao`
@@ -1335,8 +2721,21 @@ CREATE TABLE IF NOT EXISTS `tb_ocupacao` (
 INSERT INTO `tb_ocupacao` (`IdOcupacao`, `Descricao`) VALUES
 (1, 'Autônomo'),
 (2, 'Pedreiro'),
-(3, 'Professor'),
-(4, 'Estudante');
+(3, 'Professor(a)'),
+(5, 'Secretária'),
+(6, 'Funcionário da Petrobrás'),
+(7, 'Técnico de Contabilidade'),
+(9, 'Motorista'),
+(10, 'Caminhoneiro'),
+(11, 'Dona de Casa'),
+(12, 'Técnica de Dentista'),
+(13, 'Administrador'),
+(14, 'Representante comercial'),
+(15, 'Manutenção de equipamentos'),
+(16, 'Operador de Telecomunicações'),
+(17, 'Técnico em eletrônica'),
+(18, 'Técnica em Enfermagem'),
+(19, 'Aposentado(a)');
 
 -- --------------------------------------------------------
 
@@ -1409,7 +2808,27 @@ CREATE TABLE IF NOT EXISTS `tb_parametro_clinico` (
   `IdParametroClinico` int(11) NOT NULL AUTO_INCREMENT,
   `ParametroClinico` varchar(100) NOT NULL,
   PRIMARY KEY (`IdParametroClinico`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Extraindo dados da tabela `tb_parametro_clinico`
+--
+
+INSERT INTO `tb_parametro_clinico` (`IdParametroClinico`, `ParametroClinico`) VALUES
+(1, 'Glicemia de Jejum'),
+(2, 'Colesterol Total'),
+(3, 'Hemoglobina Glicada'),
+(4, 'Glicemia Pós-prandial'),
+(5, 'Glicemia Casual'),
+(6, 'LDL'),
+(7, 'HDL'),
+(8, 'Triglicerídios'),
+(9, 'TSH'),
+(10, 'T3'),
+(11, 'T4'),
+(12, 'Ureia'),
+(13, 'VLDL'),
+(14, 'Magnésio');
 
 -- --------------------------------------------------------
 
@@ -1450,14 +2869,24 @@ CREATE TABLE IF NOT EXISTS `tb_pessoa` (
   `Matricula` varchar(20) NOT NULL,
   PRIMARY KEY (`IdPessoa`),
   KEY `fk_tb_pessoa_my_aspnet_users1_idx` (`idUser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Extraindo dados da tabela `tb_pessoa`
 --
 
 INSERT INTO `tb_pessoa` (`IdPessoa`, `idUser`, `Nome`, `Cpf`, `Fone`, `Matricula`) VALUES
-(1, 1, 'marcos', '99687844515', '', '');
+(1, 1, 'Admin', '99687844515', '', ''),
+(5, 5, 'ALESSANDRA REZENDE MESQUITA', '02547710501', '91447866', '200043233'),
+(6, 6, 'Elielma Alves de Sá', '00119821424', '79881986689', '3605036'),
+(9, 8, 'Werlissandra', 'xxxxx', '99644383', '201111005300'),
+(10, 9, 'Aluno teste', '02423432423', '32495949', '20132222'),
+(11, 10, 'Cleverton', '12345678', '99283155', '12344321'),
+(12, 11, 'Marcos Dosea', '99687844515', '7999002378', '3605036'),
+(13, 12, 'roseane', '96940085572', '99846026', '10022636'),
+(14, 13, 'caio italo', '03523856507', '7998991127', '200910011264'),
+(15, 14, 'Fabio/Rodolfo', '98994204504', '88524460/99', '201120004646/2010100'),
+(16, 15, 'larissa de sa dosea', '00119821524', '7999002378', '123456');
 
 -- --------------------------------------------------------
 
@@ -1469,7 +2898,7 @@ CREATE TABLE IF NOT EXISTS `tb_plano_saude` (
   `IdPlanoSaude` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(100) NOT NULL,
   PRIMARY KEY (`IdPlanoSaude`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Extraindo dados da tabela `tb_plano_saude`
@@ -1479,7 +2908,13 @@ INSERT INTO `tb_plano_saude` (`IdPlanoSaude`, `Nome`) VALUES
 (1, 'SUS'),
 (2, 'Unimed'),
 (3, 'Plamed'),
-(4, 'Não Relatou');
+(4, 'Não Relatou'),
+(5, 'GEAP'),
+(6, 'Petrobrás'),
+(7, 'Hapvida'),
+(8, 'Amil'),
+(9, 'Cassi'),
+(10, 'Capes saúde');
 
 -- --------------------------------------------------------
 
@@ -1493,15 +2928,86 @@ CREATE TABLE IF NOT EXISTS `tb_queixa` (
   `IdSistema` int(11) NOT NULL,
   PRIMARY KEY (`IdQueixa`),
   KEY `fk_tb_queixa_tb_sistema1_idx` (`IdSistema`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
 
 --
 -- Extraindo dados da tabela `tb_queixa`
 --
 
 INSERT INTO `tb_queixa` (`IdQueixa`, `DescricaoQueixa`, `IdSistema`) VALUES
-(1, 'Alergia', 2),
-(2, 'Dor de Barriga', 2);
+(3, 'Perda de Apetite', 3),
+(4, 'Alteração de peso', 3),
+(5, 'Dor', 3),
+(6, 'Tonteira (vertigem)', 3),
+(8, 'Alterações Visuais', 4),
+(9, 'Diminuição da Audição', 4),
+(10, 'Zumbido no Ouvido', 4),
+(11, 'Epistaxe (Sangramento Nasal)', 4),
+(12, 'Rinite alérgica', 4),
+(13, 'Glaucoma', 4),
+(14, 'Hemoptise', 4),
+(15, 'Dor no Peito', 2),
+(16, 'Hiperlipidemia', 2),
+(17, 'Hipertensão', 2),
+(18, 'Infarto do Miocárdio', 2),
+(19, 'Asma', 1),
+(20, 'Falta de Ar', 1),
+(21, 'Chiado', 1),
+(22, 'Azia/Queimação', 5),
+(23, 'Dor Abdominal', 5),
+(24, 'Diarreia', 5),
+(25, 'Náusea', 5),
+(26, 'Constipação', 5),
+(27, 'Diabetes', 6),
+(28, 'Hipotireodismo', 6),
+(29, 'Sintomas da Menopausa', 6),
+(30, 'Dismenorreia/Hemorragia Menstrual', 8),
+(31, 'Dor de Cabeça', 3),
+(32, 'Hipotensão Ortostática', 2),
+(33, 'Vômito', 5),
+(34, 'Eczema/Psoríase', 12),
+(35, 'Prurido', 12),
+(36, 'Rash', 12),
+(37, 'Cirrose', 14),
+(38, 'Hepatite', 14),
+(39, 'Desidratação', 15),
+(40, 'Edema', 15),
+(41, 'Deficiência de Potássio', 15),
+(42, 'Incontinência', 8),
+(43, 'Impotência', 8),
+(44, 'Diminuição do Desejo Sexual', 8),
+(45, 'Corrimento ou Prurido Vaginal', 8),
+(46, 'Ondas de Calor', 8),
+(47, 'Alteração da Frequência Urinária', 16),
+(48, 'Hematúria', 16),
+(49, 'Disfunção Renal', 16),
+(50, 'Formação excessiva de Hematomas', 9),
+(51, 'Hemorragia', 9),
+(52, 'Anemia', 9),
+(53, 'Dor nas Costas', 10),
+(54, 'Artrite (osteo/reunmatóide)', 10),
+(55, 'Tendinites', 10),
+(56, 'Dor muscular', 10),
+(57, 'Parestesia', 17),
+(58, 'Tremor', 17),
+(59, 'Perda de Equilíbrio', 17),
+(60, 'Depressão', 17),
+(61, 'Tentativa de Suicídio', 17),
+(62, 'Ansiedade/Nervosismo', 17),
+(63, 'Incapacidade de Concentração', 17),
+(64, 'Apreensão', 17),
+(65, 'Acidente Vascular Cerebral (AVC)', 17),
+(66, 'Perda de Memória', 17),
+(67, 'HIV/AIDS', 13),
+(68, 'Malária', 13),
+(69, 'Sífilis', 13),
+(70, 'Gonorreia', 13),
+(71, 'Herpes', 13),
+(72, 'Clamídia', 13),
+(73, 'Tuberculose', 13),
+(74, 'Insônia', 3),
+(75, 'Aumento de apetite', 3),
+(76, 'Refluxo', 5);
 
 -- --------------------------------------------------------
 
@@ -1531,6 +3037,74 @@ CREATE TABLE IF NOT EXISTS `tb_queixa_medicamentos` (
   KEY `fk_tb_queixa_medicamentos_tb_acao_queixa2_idx` (`IdAcaoQueixa2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `tb_queixa_medicamentos`
+--
+
+INSERT INTO `tb_queixa_medicamentos` (`IdMedicamento`, `IdConsultaVariavel`, `IdQueixa`, `Dose`, `Desde`, `Necessario`, `Efetivo`, `Seguro`, `Cumprimento`, `Resolvido`, `IdSuspeitaPRM`, `IdAcaoQueixa1`, `IdAcaoQueixa2`) VALUES
+(4, 12, 28, '1', '1', 1, 1, 1, 1, 1, 2, 2, 2),
+(8, 41, 5, '50 mg', '2005', 1, 1, 0, 0, 0, 4, 2, 3),
+(11, 3, 17, '50', '2005', 1, 1, 1, 0, 0, 7, 2, 2),
+(19, 15, 17, '25 mg', 'Não Relatou', 1, 0, 0, 0, 0, 4, 2, 4),
+(19, 44, 17, '25 mg', 'nao relatou', 1, 0, 0, 0, 0, 7, 2, 3),
+(19, 45, 17, '25 mg', 'Não Relatou', 1, 0, 0, 0, 0, 4, 2, 4),
+(19, 50, 17, '25 mg', 'nao relatou', 1, 0, 0, 0, 0, 7, 2, 3),
+(19, 51, 17, '25 mg', 'Não Relatou', 1, 1, 1, 1, 1, 4, 2, 4),
+(19, 56, 17, '25 mg', 'nao relatou', 1, 0, 0, 0, 0, 7, 2, 3),
+(33, 43, 9, '10mg', 'não relatado', 1, 1, 0, 0, 0, 5, 2, 3),
+(33, 49, 9, '10mg', 'não relatado', 1, 1, 0, 0, 0, 5, 2, 3),
+(35, 15, 17, '40 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(35, 45, 17, '40 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(35, 51, 17, '40 mg', 'Não Relatou', 1, 1, 1, 1, 1, 7, 3, 4),
+(36, 44, 27, '5 mg', 'nao relatou', 1, 1, 1, 1, 0, 2, 5, 6),
+(36, 50, 27, '5 mg', 'nao relatou', 1, 1, 1, 1, 0, 2, 5, 6),
+(36, 56, 27, '5mg', 'não relatou', 1, 1, 1, 0, 1, 7, 2, 3),
+(38, 36, 27, '4 mg', 'Não Relatou', 0, 0, 0, 0, 0, 1, 2, 4),
+(38, 42, 27, '4mg', 'há 30 anos', 1, 1, 0, 0, 0, 6, 2, 4),
+(38, 47, 27, '4 mg', 'Não Relatou', 0, 0, 0, 0, 0, 1, 2, 4),
+(38, 48, 27, '4mg', 'há 30 anos', 1, 1, 0, 0, 0, 6, 2, 4),
+(39, 35, 17, '25 mg', 'Não Relatou', 0, 0, 0, 0, 0, 1, 2, 4),
+(39, 43, 17, '25mg', 'não relatado', 0, 0, 0, 0, 0, 1, 2, 3),
+(39, 46, 17, '25 mg', 'Não Relatou', 0, 0, 0, 0, 1, 1, 2, 4),
+(39, 49, 17, '25mg', 'não relatado', 0, 0, 0, 0, 0, 1, 2, 3),
+(39, 52, 17, '25 mg', 'não relatou', 0, 0, 0, 0, 0, 1, 2, 4),
+(39, 54, 17, '25mg', 'não relatado', 0, 0, 0, 0, 1, 1, 2, 3),
+(42, 34, 27, '2 a 12 UI', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 15, 27, '850 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 35, 27, '850 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 36, 27, '850 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 37, 27, '850 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 42, 27, '850mg', 'Há 30 anos', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 43, 27, '850mg', 'não relatado', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 44, 27, '850 mg', 'nao relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 45, 27, '850 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 46, 27, '850 mg', 'Não Relatou', 1, 1, 1, 0, 1, 7, 3, 4),
+(48, 47, 27, '850 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 48, 27, '850mg', 'Há 30 anos', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 49, 27, '850mg', 'não relatado', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 50, 27, '850 mg', 'nao relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 51, 27, '850 mg', 'Não Relatou', 1, 1, 1, 1, 1, 7, 3, 4),
+(48, 52, 27, '850 mg', 'Não Relatou', 1, 1, 1, 0, 0, 7, 3, 4),
+(48, 53, 27, '850 mg', 'Não Relatou', 1, 1, 1, 1, 1, 7, 3, 4),
+(48, 54, 27, '850mg', 'não relatado', 1, 1, 1, 0, 1, 7, 3, 4),
+(48, 55, 27, '850mg', 'Há 30 anos', 1, 1, 1, 1, 1, 7, 3, 4),
+(48, 56, 27, '850 mg', 'nao relatou', 1, 1, 1, 1, 1, 7, 3, 4),
+(54, 34, 16, '40 mg', 'Não Relatou', 1, 0, 0, 0, 0, 3, 2, 4),
+(54, 44, 16, 'nao relatou', 'nao relatou', 1, 0, 0, 0, 0, 7, 2, 3),
+(54, 50, 16, 'nao relatou', 'nao relatou', 1, 0, 0, 0, 0, 7, 2, 3),
+(54, 51, 16, 'Não relatou', 'Não Relatou', 1, 0, 0, 0, 1, 2, 4, 4),
+(54, 56, 16, 'nao relatou', 'nao relatou', 1, 0, 0, 0, 0, 2, 2, 3),
+(91, 36, 26, '7,5 mg', 'Não Relatou', 1, 1, 0, 0, 0, 5, 2, 5),
+(91, 42, 5, '7.5mg', 'não relatou', 1, 1, 0, 0, 0, 5, 2, 7),
+(91, 47, 26, '7,5 mg', 'Não Relatou', 1, 1, 0, 0, 0, 5, 2, 5),
+(91, 48, 5, '7.5mg', 'não relatou', 1, 1, 0, 0, 0, 5, 2, 7),
+(91, 53, 26, '7,5 mg', 'Não Relatou', 1, 1, 1, 1, 1, 5, 2, 5),
+(91, 55, 5, '7.5mg', 'não relatou', 1, 1, 1, 1, 1, 5, 2, 7),
+(93, 15, 16, '-', '-', 1, 0, 0, 0, 0, 2, 2, 4),
+(93, 34, 22, '-', '-', 1, 1, 1, 1, 0, 2, 2, 5),
+(93, 37, 16, '-', '-', 0, 0, 0, 0, 0, 2, 2, 4),
+(93, 45, 16, '-', '-', 1, 0, 0, 0, 0, 2, 2, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -1538,18 +3112,36 @@ CREATE TABLE IF NOT EXISTS `tb_queixa_medicamentos` (
 --
 
 CREATE TABLE IF NOT EXISTS `tb_razao_encontro` (
-  `IdRazaoEncontro` int(11) NOT NULL,
+  `IdRazaoEncontro` int(11) NOT NULL AUTO_INCREMENT,
   `DescricaoRazao` varchar(100) NOT NULL,
   PRIMARY KEY (`IdRazaoEncontro`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Extraindo dados da tabela `tb_razao_encontro`
 --
 
 INSERT INTO `tb_razao_encontro` (`IdRazaoEncontro`, `DescricaoRazao`) VALUES
-(0, 'Deseja cuidar mais da saúde e que a glicemia seja controlada'),
-(1, '-- nao definido --');
+(1, '-- nao definido --'),
+(3, 'Paciente sente medo de usar vários medicamentos '),
+(4, 'Paciente sente necessidade de conversar sobre seus problemas '),
+(5, 'Paciente acredita que adicionar medicamento significa fracasso '),
+(6, 'Paciente questiona a necessidade de usar medicamentos '),
+(7, 'Paciente questiona os efeitos dos medicamentos '),
+(8, 'Paciente prefere não tomar o medicamento quando se sente bem '),
+(9, 'Paciente desconhece para que servem os medicamentos '),
+(10, 'Paciente tem baixo de nível de conhecimento sobre doença e sobre os medicamentos '),
+(11, 'Paciente não tolera o efeito colateral dos medicamentos '),
+(12, 'Paciente não exerce o controle sobre sua farmacoterapia '),
+(13, 'Paciente tem medo das possíveis reações adversas do medicamento'),
+(14, 'Paciente se sente confusa com os horários dos medicamentos '),
+(15, 'Paciente apresenta um problema de saúde que não está diretamente ligado à farmacoterapia '),
+(16, 'Paciente deseja entender a farmacoterapia '),
+(17, 'Paciente não consegue pagar pelo medicamento '),
+(18, 'Paciente deseja cuidar mais da saúde e entender a farmacoterapia'),
+(19, 'Paciente deseja cuidar mais da saúde e que a glicemia seja controlada'),
+(20, 'Paciente deseja controlar  seus problemas de saúde e compreender seu tratamento medicamentoso.'),
+(21, 'Paciente deseja controlar e compreender seu tratamento medicamentoso');
 
 -- --------------------------------------------------------
 
@@ -1564,102 +3156,127 @@ CREATE TABLE IF NOT EXISTS `tb_relato_clinico` (
   `RelatoTextual` text NOT NULL,
   `RelatoVideo` varchar(200) DEFAULT NULL,
   `NivelDificuldade` int(11) NOT NULL DEFAULT '0',
+  `idAreaAtuacao` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`IdRelato`),
-  KEY `fk_tb_relato_clinico_tb_paciente1_idx` (`IdPaciente`)
+  KEY `fk_tb_relato_clinico_tb_paciente1_idx` (`IdPaciente`),
+  KEY `fk_tb_relato_clinico_tb_area_atuacao1_idx` (`idAreaAtuacao`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=90 ;
 
 --
 -- Extraindo dados da tabela `tb_relato_clinico`
 --
 
-INSERT INTO `tb_relato_clinico` (`IdRelato`, `IdPaciente`, `OrdemCronologia`, `RelatoTextual`, `RelatoVideo`, `NivelDificuldade`) VALUES
-(1, 1, 1, 'teste 1', NULL, 1),
-(2, 1, 2, 'evolucao 1', NULL, 1),
-(5, 3, 1, 'A.C.S, homem, branco, data de nascimento 08/07/1946, casado, mora com a esposa e tem 5 filhos que não moram com ele. É aposentado, trabalhava fazendo manutenção de ar condicionado. Cursou o ensino fundamental completo. Tem acesso ao sistema de saúde pelo SUS. Adquire seus medicamentos na Farmácia Popular do Brasil. Os médicos que o acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista), ambos atendem na Unidade Básica de Saúde do seu bairro. Altura = 1,65 m, Peso = 74,75 Kg, Circunferência abdominal = 97 cm. Parou de fumar e ingerir bebidas alcóolicas há 12 anos e toma entre duas a seis xícaras de café por dia. O paciente é portador de Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 10 anos. Na revisão dos sistemas e da história pessoal informou ter: aumento do apetite, diminuição da audição, rinite alérgica, glaucoma, hiperlipidemia, queimação, principalmente quando come farinha, impotência sexual, diminuição do desejo sexual, tendinite e leve tremor. Além disso, certa vez ocorreu uma hemorragia numa extração dentária. Utilizou Hidroclorotiazida no passado, por dois anos, parou porque perdeu o efeito. Quanto às suas enfermidades, o paciente expressa o desejo de melhorar, mas questiona a necessidade de usar medicamentos. O Sr. A.C.S. possui uma tabela com os horários de tomada dos medicamentos que utiliza, no entanto a mesma está desatualizada. É evangélico e freqüenta assiduamente a igreja. A partir do momento em que foi convidado para o programa de Atenção Farmacêutica, o paciente relata que modificou o comportamento na tomada dos medicamentos e começou a aderir ao tratamento. Antes do convite, ele não tomava nenhum dos medicamentos prescritos pelo médico. Não possui alergia a medicamentos e relata que nunca apresentou reações adversas aos mesmos. Possui alergia a mofo. O seu oftalmologista prescreveu que usasse óculos, mas por achar que não precisa, ele não o utiliza. Já teve um acidente automobilístico aos 42 anos e levou 138 pontos na cabeça. Relatou que seu pai e sua mãe faleceram por causa de diabetes descontrolada, há 12 e 2 anos, respectivamente. Alegou que sua comida é sem sal, não gosta de chá e que se vacina contra a gripe todos os anos. No dia do primeiro atendimento farmacêutico, o Sr. A.C.S. apresentou PA (mmHg): 180/110 e Glicemia capilar 291 mg/dL.', NULL, 1),
-(6, 3, 2, 'O paciente relatou que está há alguns dias sem tomar a metformina. Jamais utilizou a furosemida prescrita pelo médico. Além disso, finalizou o tratamento com a sinvastatina e não retornou ao médico para averiguar os índices de colesterol. Não faz atividade física. Há um ano não vai a uma consulta médica. Houve aumento de peso. Costuma tomar o captopril junto com o café da manhã. ', NULL, 1),
-(7, 3, 3, 'O paciente aceitou realizar 30 minutos de caminhada por dia e está apto para controlar a alimentação. Ele expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela. Além disso, o Sr. A.C.S. retornou ao médico e está de acordo em aderir ao tratamento e adequar os seus horários. Ele irá realizar exames laboratoriais para avaliar a necessidade da Sinvastatina. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 140/100; Glicemia capilar casual = 128 mg/dl; Peso = 76,20 kg; Circunferência Abdominal = 96 cm. ', NULL, 1),
-(8, 3, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(9, 4, 1, 'E.B.R., mulher, branca, data de nascimento - 29/08/1946, casada, mãe de três filhos que não moram mais com ela, reside com o marido, dona de casa, cursou o ensino médio completo. Dispõe do plano de saúde da Petrobrás. Adquire os medicamentos na Farmácia Popular do Brasil, farmácias comunitárias e no CASE. Os médicos que a acompanham são: Endocrinologista (V.C.) e Cardiologista (J.B.R.) todos atendem em clínicas particulares. Altura 1,63 m, Peso 99,4 Kg, Circunferência abdominal 115 cm, não fuma (parou há 20 anos), bebe café, menos de duas xícaras por dia, não faz consumo de bebida alcoólica (parou há cinco anos). Na revisão dos sistemas e da história pessoal, informou ter: A paciente apresenta Diabetes e Hiperlipidemia. Relata que se sente confusa com os horários dos medicamentos. Realiza hidroginástica todos os dias. Na alimentação: usa adoçante, frutas (banana, manga), pouco sal, pouca gordura, verduras, alimenta-se seis vezes por dia, usa chá de camomila, chá verde e cidreira. Diz seguir a prescrição médica, mas quando está fora de casa deixa de tomar a insulina. Tem dificuldade para caminhar, usa bengala. Relata ter usado vários tipos de insulina e não tem efeito, segundo a paciente “no começo tem efeito depois perde”. O pai e a mãe faleceram por complicações do diabetes. No dia do primeiro atendimento farmacêutico, A Srª. E.B.R. apresentou PA (mmHg): 120/70 e Glicemia capilar 252 mg/dL.', NULL, 1),
-(11, 4, 2, 'Paciente relata está com muita dor de estômago, por isso sente-se indisposta e interrompeu a hidroginástica. Em seus exames laboratoriais, os níveis de colesterol estão acima dos limites de referência. Está fazendo aulas de dança uma vez por semana. Médica prescreveu Insulina Aspart® (ultrarrápida), se preciso antes do café, almoço e jantar de acordo com o esquema: \r\nCaso a glicemia casual estiver < 140 = não precisa utilizar;\r\nSe estiver entre 140 – 200 mg/dL = utilizar 2 U da insulina;\r\nSe estiver entre 201 – 250 mg/dL = utilizar 4 U;\r\nSe estiver entre 251 – 300 mg/dL = utilizar 6 U;\r\nSe estiver entre 301 – 350 mg/dL = utilizar 8 U;\r\nSe estiver entre 351 – 400 mg/dL = utilizar 10 U;\r\nSe estiver acima > 400 mg/dL = utilizar 12 U.\r\nA paciente relata que se sente confusa com tantos medicamentos e horários diferentes. Segundo ela, acredita que “toma tudo errado”, principalmente a insulina.\r\n', NULL, 1),
-(12, 4, 3, 'A paciente se sente melhor quanto à dor no estômago depois de iniciar o tratamento com o Omeprazol. Retomou a hidroginástica. A Sra. E.B.R. está sendo acompanhada pelo nutricionista, mas mesmo assim, continua ganhando peso. No entanto, está muito feliz com o controle da sua glicemia = 105 mg/dl. Na última consulta, o médico substituiu a Sinvastatina de 40 mg por Atorvastatina 20 mg. Ela expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 110/70; Peso = 105, 75 kg; Circunferência Abdominal = 115 cm. ', NULL, 1),
-(13, 4, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(14, 5, 1, 'E.V., mulher, branca, data de nascimento 12/05/1943, separada, evangélica, mora com uma filha, duas netas e uma bisneta, cursou o ensino superior completo, aposentada e trabalhava como secretária. Adquire os medicamentos na farmácia popular e no posto de saúde. Os médicos que a acompanha são: clínico geral (L.C), cardiologista (L.A.S.). Altura 1,49 m, Peso 58,40 Kg, Circunferência da cintura 90 cm. Não fuma, deixou de consumir bebida alcoólica há 15 anos, bebe entre duas a seis xícaras de café por dia. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos; diminuição da audição. Espera reduzir o número de medicamentos que toma e reduzir a glicemia. Reclama da elevada quantidade de medicamentos que ingere e expressa medo das reações adversas que estes podem causar. Ela diz que entende a farmacoterapia prescrita, mas não adere porque não entende a doença. Às vezes esquece-se de tomar os medicamentos. Possui alergia a Profenid, mofo e poeira e tem arritmia quando toma captopril. Tomou insulina uma única vez, quando teve uma crise de hiperglicemia (370 mg/dl). Retirou o útero aos 45 anos e retirou as amígdalas aos 12 anos. A mãe faleceu aos 72 anos de enfisema pulmonar e tinha DM e o pai faleceu aos 73 anos de infarto e tinha  HAS.  Come de três em três horas, adora doces, come doce diet, come gordura, não faz caminhada e cansa rápido ao fazer exercícios. Não tem hábito de tomar chá. Vacina-se todos os anos contra a gripe. No dia do primeiro atendimento farmacêutico, a Sra. E.V. apresentou PA (mmHg): 135/75 e Glicemia capilar 310 mg/dL.', NULL, 1),
-(15, 5, 2, 'A paciente relata que não toma hidroclorotiazida desde que foi prescrita, acredita que este medicamento não seja necessário, além de preferir não utilizá-lo pelo incômodo de ir muitas vezes ao banheiro. Os níveis pressóricos continuam normalizados. Adere aos outros anti-hipertensivos. Não quer fazer atividade física, abusa da alimentação desregrada. Não adere à Metformina porque não compreende para que serve tantos medicamentos. Além disso, relata que os horários de tomada dos medicamentos são muito confusos. ', NULL, 1),
-(16, 5, 3, 'Após as intervenções educativas, a paciente diz que compreendeu a importância da adesão ao tratamento. Ficou muito feliz e grata ao farmacêutico que a auxiliou a diminuir o número de medicamentos que utilizava. O médico concordou em suspender o uso da Hidroclorotiazida. Marcou uma consulta com a nutricionista. Expressou o desejo de ter os horários dos medicamentos organizados em uma tabela. Está realizando caminhadas em dias alternados, durante 20 minutos. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 128 mg/dl; Peso = 58 kg; Circunferência Abdominal = 90 cm. ', NULL, 1),
-(17, 5, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.\r\n', NULL, 1),
-(18, 6, 1, 'F.B.O, homem, branco, data de nascimento 03/01/1945, casado, mora com a esposa e tem três filhos, apenas um mora com ele. É aposentado, trabalhava com sonda de perfuração na Petrobrás. Cursou o ensino fundamental completo e um curso técnico. Tem acesso ao sistema de saúde pelo plano de saúde da Petrobrás. O médico que o acompanha são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,64 m, Peso 62 Kg, Circunferência abdominal 81 cm. Fuma de 10 a 20 cigarros por dia, bebe entre duas a seis xícaras de café por dia.  Parou de ingerir bebida alcoólica há dois anos. Na revisão dos sistemas e da história pessoal informou ter: Diabetes Mellitus tipo II há 30 anos, dores nos pés e constipação. Não tem alimentação adequada, usa adoçante, gosta de mamão, abacaxi, banana e laranja, não toma chás. Não realiza atividades físicas. Vacina-se contra a gripe todos os anos. Relata que deseja melhorar a saúde e espera que os medicamentos o ajudem. Não apresenta preocupação quanto à farmacoterapia, porém reclama que não a compreende muito bem e isso o incomoda muito. Acredita em Deus, mas não segue nenhuma religião. Nunca apresentou alergia e reações adversas aos medicamentos. Quando tinha 28 anos teve um acidente no trabalho e perdeu dois dedos. Tem cinco irmãos, um tinha diabetes e faleceu. O pai e o avô também tinham diabetes. No dia do atendimento, apresentou PA (em mmHg): 130/80, Glicemia capilar 220 mg/dL.', NULL, 1),
-(19, 6, 2, 'O paciente relata ficar muito confuso com os horários de tomada dos medicamentos. Às vezes esquece-se de tomar a Metformina, mas não é frequente. Não utiliza a Glimepirida desde que “passou mal com ela”, o paciente questiona a necessidade deste medicamento. Teve uma crise de hipoglicemia na última vez que a utilizou, durante a madrugada. Reclama que a constipação o incomoda muito. A dor nos pés melhorou depois que iniciou o tratamento com Tilex®. ', NULL, 1),
-(20, 6, 3, 'O médico concordou em alterar a posologia do medicamento Tilex® (tomar apenas quando sentir dor). Desse modo, a constipação desapareceu e a dor nos pés não o incomoda mais. Está fazendo caminhada entre três a quatro vezes por semana, durante uma hora. Reduziu os cigarros e concordou com uma meta de 10 cigarros por dia. Com as intervenções educativas, compreendeu a farmacoterapia e importância de aderir à Metformina. O médico concordou em suspender o uso da Glimepirida. Expressou o desejo de ter o horário dos seus medicamentos organizados em uma tabela. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 101 mg/dl; Peso = 67 kg; Circunferência Abdominal = 82 cm. ', NULL, 1),
-(21, 6, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(22, 7, 1, 'G.G, mulher, branca, data de nascimento 23/09/1941, casada, alterna em duas moradias: com o esposo em uma cidade do interior e com o neto na capital. É aposentada. Tem acesso ao sistema de saúde pelo GEAP e pelo SUS. Cursou o ensino fundamental incompleto. Adquire seus medicamentos na Farmácia Popular do Brasil. Os médicos que a acompanham são: Clínico Geral e um Endocrinologista. Altura 1,60 m, Peso 75,55 Kg, Circunferência da cintura 102 cm. Não fuma, não ingere álcool e bebe entre duas a seis xícaras de café por dia. A paciente relata que comete alguns exageros como utilizar açúcar misturado com adoçante. Gosta de jaca, manga e pinha. Não tem restrições com sal e gordura. Não utiliza chás e não faz exercícios físicos. Na revisão dos sistemas e da história pessoal informou ter: Diabetes Mellitus tipo II diagnosticada há dois anos e hiperlipidemia. A paciente utilizou um hipoglicemiante para tratar uma crise de hipoglicemia (paciente desconhece para que servem os medicamentos). Expressa o desejo de cuidar mais da saúde e que a glicemia seja controlada. É evangélica e acredita que Jesus vai curá-la de tudo. Não apresenta alergia aos medicamentos. Nunca apresentou reações adversas aos medicamentos que utilizou no passado. Fez uma cirurgia de suspensão do útero há cinco anos. Possui cinco filhos, quatro de parto normal e um cesária. A mãe é portadora de Diabetes e o pai faleceu por complicações da Hipertensão Arterial Sistêmica. No dia do atendimento, apresentou PA (em mmHg): 130/70, Glicemia capilar 276 mg/dL.', NULL, 1),
-(23, 7, 2, 'A Sra. G.G. diz que às vezes troca o horário da Metformina, por não conseguir entender a prescrição médica. A paciente relata que exagera na comida, mas está tentando melhorar. A paciente está preocupada com o aumento dos seus níveis de colesterolemia, seus exames sugeriram o aparecimento de esteatose hepática (a confirmar).  Teve crise de hipoglicemia e tomou a metformina pensando que isso iria melhorá-la. Está preocupada com o neto que está passando por problemas. Passou um tempo sem tomar a metformina por estar “sem cabeça para pensar nela”.  ', NULL, 1),
-(24, 7, 3, 'A paciente relata que começou a caminhar durante 20 min por dia e iniciou o tratamento para a esteatose hepática com sinvastatina (20mg, 1 comprimido antes de dormir), prescrita pelo médico. De acordo com ela, após as intervenções educativas, entendeu a importância da adesão e a função de cada medicamento. Além disso, a Srª G.G. concordou em buscar um nutricionista e está muito grata por todo o apoio físico e emocional que tem recebido no programa de Atenção Farmacêutica. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/70; Glicemia capilar casual = 163 mg/dl; Peso = 75 kg; Circunferência Abdominal = 94 cm.', NULL, 1),
-(25, 7, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(26, 8, 1, 'I.G.R, mulher, negra,data de nascimento 03/06/1935, casada, católica, mora com a filha, é aposentada e dona de casa, estudou até o ensino fundamental completo e possui nove filhos, um deles faleceu. Adquire os medicamentos na farmácia popular e em farmácias comerciais e possui o plano da UNIMED. Os médicos que a acompanha são: clínico geral (S.) e endocrinologista (P.). Altura 1,59 m, Peso 66,40 Kg, Circunferência da cintura 99 cm, não fuma, não consome bebida alcoólica, bebe menos de duas xícaras de café por dia. Na revisão dos sistemas e da história pessoal informou ter: Diabetes Mellitus tipo II há 13 anos e Depressão. Relata que ser atendida pelo programa de Atenção Farmacêutica é bom porque é uma atividade, uma distração e pode desabafar. Paciente sente necessidade de conversar sobre seus problemas. Espera ficar bem com o tratamento medicamentoso. Ela diz que entende a farmacoterapia prescrita. Teve nove partos normais, retirou o útero e uma mama há 20 anos. O pai tinha diabetes e a mãe câncer, ambos faleceram. Não come açúcar e, segundo ela, a alimentação é moderada. Uma das suas filhas tem hipertensão. Relata que toma chá de mastruz, pois acredita que esse chá curou sua pneumonia no passado. Além desse, toma chá de sambacaitá, carqueja, erva doce, capim santo e pata de vaca. Não está fazendo atividade física. Não se vacinou contra a gripe ano passado. No dia do primeiro atendimento farmacêutico, a Sra. I.G.R apresentou PA (mmHg): 120/80 e Glicemia capilar 355 mg/dL.', NULL, 1),
-(27, 8, 2, 'A Srª I.G.R. reclama muito de insônia, sente-se muito deprimida e isso a desestimula a se cuidar. Sente náuseas e às vezes, vomita quando toma o Glifage®, por isso não adere ao tratamento. O médico a diagnosticou com catarata nos olhos, mas não realizou a cirurgia, porque a Diabetes está descontrolada. Para conseguir engolir o comprimido de Glifage®, a paciente o partia ao meio. Deixou de utilizá-lo por não tolerar as reações adversas. Não realiza atividades físicas.', NULL, 1),
-(28, 8, 3, 'Após ser encaminhada ao médico, que lhe prescreveu um antidepressivo (Donaren® 50mg 1 comprimido às 21h), a paciente diz sentir-se mais disposta e está se cuidando melhor. A Srª I.G.R. está muito feliz porque conseguiu controlar sua Diabetes com a troca do seu hipoglicemiante (Médico substituiu o Glifage® por Acarbose, 50 mg, 1 comprimido antes do café da manhã e do jantar). Além disso, esse novo medicamento para a Diabetes não lhe causa mais náuseas e agora ela poderá marcar a cirurgia de catarata.   Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 152 mg/dl; Peso = 68 kg; Circunferência Abdominal = 98 cm. ', NULL, 1),
-(29, 8, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(30, 9, 1, 'J.C.A., homem, branco, data de nascimento 14/02/1946, aposentado, trabalhava como técnico de contabilidade, mora sozinho e não tem filhos, cursou o ensino superior incompleto (Direito). Adquire os medicamentos na farmácia popular e em farmácias comunitárias. Os médicos que o acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,56 m, Peso 56,00 Kg, Circunferência da cintura 89 cm, há 30 anos deixou de fumar, consome bebida alcoólica em festas, menos de dois copos por semana, geralmente cerveja, bebe de duas a seis xícaras de café por dia. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial e Diabetes Mellitus tipo II há 13 anos, dor de dente (cáries frequentes) e insônia. Relata que usa muitos medicamentos e eles não surtem efeitos. Paciente questiona os efeitos dos medicamentos. Lê muito sobre o universo/religião. Diz que toma os medicamentos no horário certo. Possui alergia ao naproxeno (coceiras, feridas no corpo). Colocou prótese no olho há 40 anos, fez biópsia da próstata há cinco anos, angioplastia e dois cateterismos há dois anos e passou por coma alcoólico quatro vezes. Tio, primo e irmã são portadores de Diabetes. A alimentação é com “quentinhas’, biscoitos e frutas (geralmente janta o que sobrou da “quentinha” do almoço). Toma chá de camomila e mulungu. Vacina-se contra a gripe todos os anos. No dia do primeiro atendimento farmacêutico, a Sra. J.C.A. apresentou PA (mmHg): 140/85 e Glicemia capilar 252 mg/dL.', NULL, 1),
-(31, 9, 2, 'O paciente relata que uma médica lhe prescreveu o medicamento Hidroxizina há 10 anos e ele o utiliza até hoje porque este medicamento o ajuda a dormir bem. O paciente suspendeu o uso da Metformina e está tomando chá de insulina, acredita que assim conseguirá controlar os seus níveis glicêmicos. Questiona o efeito dos medicamentos, por não utiliza o Propranolol.', NULL, 1),
-(32, 9, 3, 'Após intervenções educativas, o paciente compreendeu que não poderia continuar utilizando a Hidroxizina e ficou muito impressionado ao saber que este medicamento contribuía com o aparecimento das suas cáries. Concordou em substituí-lo por um fitoterápico (Passiflorine, 1 colher de sopa ao deitar) e está muito grato ao farmacêutico. Passou a dormir melhor com a ajuda do fitoterápico e depois que iniciou as atividades físicas. Além disso, relatou compreender a importância da adesão aos medicamentos e os riscos de substituir a Metformina pelo chá de insulina. Marcou consulta com a nutricionista e com o dentista. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 110/60; Glicemia capilar casual = 128 mg/dl; Peso = 56 kg; Circunferência Abdominal = 83 cm.', NULL, 1),
-(33, 9, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(34, 10, 1, 'J.J. homem, branco, data de nascimento 19/03/1935, casado, viúvo, tem 2 filhos, mora com uma filha, é aposentado como operador de telecomunicação. Cursou o ensino médio completo. Tem acesso ao sistema de saúde pela GEAP. Adquire os medicamentos na Farmácia Popular do Brasil e farmácias comunitárias. Os médicos que o acompanham são Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,51 m, Peso 53,3 Kg, Circunferência abdominal 81 cm. O paciente não ingere bebida alcoólica, não fuma, bebe menos que duas xícaras de café por dia. Na revisão dos sistemas e da história pessoal, informou ter: Hiperlipidemia e Hipertensão Arterial Sistêmica (HAS) diagnosticadas há 15 anos. Paciente não tolera o efeito colateral de alguns medicamentos, isso o incomoda muito. Paciente diz aderir ao tratamento. Relata que não utiliza medicamentos por conta própria e “tem esperança de controlar as suas doenças”. Refere alergia aos antibióticos (desmaio). Reação adversa ao AAS (suspeita de sangramento). Sua mãe morreu por conseqüências da HAS, tem 12 irmãos, todos portadores de HAS. Relata que reduziu bastante a quantidade de sal na alimentação, consome pouca gordura, gosta de jaca, manga e mamão. Não gosta de verduras, mas ingere por saber fazer bem à saúde. Faz caminhadas cerca de três a quatro vezes na semana. Gosta de chá de cidreira, boldo, capim-santo. No dia do atendimento, apresentou PA (em mmHg): 140/80, Glicemia capilar casual = 128 mg/dl.', NULL, 1),
-(35, 10, 2, 'O Sr. J.J. sente-se indisposto para realizar atividade física. O paciente sente que o Enalapril lhe causa desconforto gastrointestinal, constipação e garganta seca. Relata que não tolera esses efeitos colaterais. Toma o Atenolol junto com o almoço, segundo ele, é mais fácil para lembrar. No último final de semana, o paciente foi ao aniversário do seu melhor amigo e abusou nas frituras que foram servidas no evento. Os níveis de colesterol estão elevados.', NULL, 1),
-(36, 10, 3, 'Com as intervenções educativas, o paciente entendeu a importância e as peculiaridades da sua farmacoterapia, em especial a interação fármaco-alimento do Atenolol. O paciente concordou em realizar 30 minutos de caminhada por dia e está apto para controlar a alimentação. Ele expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela. Após intervenção farmacêutica, o médico prescreveu um hipolipemiante (Sinvastatina 20mg, 1 comprimido antes de dormir) e concordou em trocar o Enalapril por outro medicamento (Hidroclorotiazida 25mg, 1 vez ao dia) que não cause ao Sr. J.J. os referidos efeitos colaterais. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 128 mg/dl; Peso = 54 kg; Circunferência Abdominal = 81,5 cm. ', NULL, 1),
-(37, 10, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(38, 11, 1, 'J.R. homem, branco, data de nascimento 08/09/1949, casado, viúvo, tem cinco filhos, mora com três deles, é aposentado, técnico em eletrônica, cursou ensino superior incompleto em Engenharia Química. O paciente é usuário do SUS, adquire os medicamentos na Unidade Básica de Saúde, na Farmácia Popular do Brasil e em farmácias de manipulação. Os médicos que o acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,56 m, Peso 58,2 Kg, Circunferência abdominal 90 cm, não fuma, bebe café de 2-6 xícaras por dia e ingere bebida alcoólica, menos de dois copos de cerveja por semana. Na revisão dos sistemas e da história pessoal, informou ter: Hipertensão Arterial Sistêmica (HAS) diagnosticada há 35 anos e Diabetes Mellitus tipo II desde 2008. Anda de bicicleta por 15 minutos/ duas vezes na semana. Na alimentação, reduziu o sal e a gordura. Relata que às vezes sente-se mal quando toma o anti-hipertensivo (tontura, sudorese, sensação de desmaio, fraqueza, tremor), por isso não adere completamente a este medicamento. Paciente não tolera o efeito colateral dos medicamentos. Não gosta que corte alimentos da sua dieta, prefere reduzir e moderar na alimentação diária. Relata que no passado teve reação adversa ao Captopril, Hidroclorotiazida e o Propranolol, sentia sensação de desmaio. Os pais são hipertensos, assim como todos os irmãos (10). No dia do primeiro atendimento farmacêutico, o Sr. J.R. apresentou PA (mmHg): 126/72; Glicemia capilar casual = 128 mg/dl.', NULL, 1),
-(39, 11, 2, 'Paciente relata que viajou no final de semana e esqueceu-se de levar o anti-hipertensivo. Desse modo, a PA atingiu 170/10 mmHg. Está andando de bicicleta 40 minutos/ 3 vezes por semana. Às vezes deixa de tomar o medicamento Losartana por apresentar crises de hipoglicemia, mas não é frequente. Paciente não tolera este efeito colateral. Quando se sente bem, deixa de tomar o hipoglicemiante. ', NULL, 1),
-(40, 11, 3, 'O Sr. J.R. retornou ao médico e está de acordo em utilizar outro medicamento (Valsartana, 80mg, 1 comprimido uma vez ao dia) que mantenha o controle da PA e não lhe cause os referidos efeitos colaterais. Ele expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela, comprometendo-se em aderir ao tratamento. Após intervenções educativas, compreendeu que é portador de doenças crônicas e não deve deixar de tomar os medicamentos quando se sente bem. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 120/70; Glicemia capilar casual = 128 mg/dl; Altura 1,56 m, Peso 55,2 Kg, Circunferência abdominal 87 cm. ', NULL, 1),
-(41, 11, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(42, 12, 1, 'J.V.S.C., mulher, negra, data de nascimento 04/07/1943, casada, católica, mora com o esposo e dois filhos, é aposentada e dona de casa, estudou até o ensino fundamental completo, possui cinco filhos e cinco netos. Adquire os medicamentos na farmácia popular e no posto de saúde. É acompanhada pelo Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,50 m, Peso 61,30 Kg, Circunferência abdominal 98 cm, não fuma, não consome bebida alcoólica, bebe café entre duas a seis xícaras por dia. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos. Espera melhorar com o tratamento medicamentoso. Ela diz que entende a farmacoterapia prescrita e confessa que exagera na alimentação. Acredita que não precisa utilizar o medicamento para a HAS, porque a mesma está controlada. Paciente prefere não tomar o medicamento quando se sente bem. Não possui alergias. Teve os filhos por partos normais. Não fuma, não bebe e toma entre 2 a 6 xícaras de café por dia. Alimenta-se mal: come muito cuscuz, exagera no adoçante, ingere muito sal e gordura. Usa chás de boldo, camomila, cidreira, limão, capim santo. Tentou realizar atividade física, mas sentiu-se muito cansada e desistiu (tentou uma hora de caminhada).  No dia do primeiro atendimento farmacêutico, a Sra. J.V.S.C apresentou PA (mmHg): 143/79 e Glicemia capilar 353 mg/dL.', NULL, 1),
-(43, 12, 2, 'A Srª J.V.S.C. relata que tem catarata, mas não pode operar devido a Diabetes Mellitus descontrolada. Apresenta tosse seca quando utiliza o captopril e isso a incomoda muito. Deixa de tomar o anti-hipertensivo quando sente que a HAS está controlada. Paciente prefere não tomar o medicamento quando se sente bem. Esquece-se de tomar a metformina e a substituiu por conta própria, na última semana, por cápsulas de “pata de vaca” indicadas por uma vendedora porta-a-porta. ', NULL, 1),
-(44, 12, 3, 'A paciente concordou em realizar 15 minutos de caminhada por dia e ir aumentando esse tempo gradativamente. Marcou uma consulta com a nutricionista. Relatou que o novo medicamento para a HAS (Nifedipino 5mg, 1 vez ao dia) não lhe causa mais tosse e ela está muito aliviada. Após as intervenções educativas, compreendeu a importância de aderir ao tratamento e a importância de não substituir a Metformina por conta própria. Sente-se estimulada a marcar a cirurgia de catarata, pois “até que enfim, controlei essa bendita Diabetes!”. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 121 mg/dl; Peso = 65 kg; Circunferência Abdominal = 97 cm.', NULL, 1),
-(45, 12, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(46, 13, 1, 'J.F.C., homem, branco, data de nascimento 17/05/1946, casado, tem quatro filhos e apenas um mora com ele. Trabalhava como motorista, mas hoje é aposentado. Cursou o ensino fundamental completo Tem acesso ao sistema de saúde pelo SUS. Adquire seus medicamentos no posto da saúde e em farmácias comerciais. Os médicos que fazem o seu acompanhamento são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura = 1,72 cm, Peso= 71 kg, Circunferência Abdominal= 91 cm. Parou de fumar há um ano, nunca fez uso de álcool e toma mais de duas xícaras de café por dia. Na revisão de sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 10 anos e hiperlipidemia. Realizou três pontos de safena há 10 anos Quanto ao seu tratamento, o paciente relata não ter nenhuma preocupação, pois é “amigo do medicamento”. O paciente disse que tem uma tabela com o horário de tomada dos medicamentos, mas questiona a necessidade de usá-los todos os dias. Frequenta uma igreja evangélica há dois anos. Possui alergia à penicilina e a derivados. Sua mãe faleceu por causa de uma rejeição a uma prótese de platina na perna, seu pai sofria de Hipertensão Arterial Sistêmica e de Diabetes Mellitus. Alegou que consome pequenas quantidades de gorduras, massas e sal, que faz caminhada de 15 a 20 min por dia, toma chá de cidreira toda noite e se vacinou contra a gripe. No dia do primeiro atendimento farmacêutico, o Sr. J.F.C. apresentou PA (mmHg): 144/88 e Glicemia capilar 231 mg/dL.\r\n', NULL, 1),
-(47, 13, 2, 'No 2º atendimento, a Sra. V.C. estava presente e relatou que o Sr. J.F.C. não realizava caminhada e não tomava utilizava o medicamento Nifedipino. Os níveis de colesterol do paciente estão acima dos limites de referência, ainda assim ele não faz uso de nenhum hipolipemiante. O paciente apresenta resistência em aumentar o número de medicamentos que ingere, por isso reluta em retornar ao médico. ', NULL, 1),
-(48, 13, 3, 'Após intervenções educativas, o paciente concordou em retornar ao o médico e em utilizar mais um medicamento (Atorvastatina 40mg, 1 comprimido antes de dormir) para o tratamento da hiperlipidemia. Marcou consulta com uma nutricionista e começou a realizar atividade física. O Sr. J.F.C. comentou que compreendeu a importância adesão ao tratamento e expressou a necessidade de organizar seus horários de medicamentos em uma tabela. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 140/80; Glicemia capilar casual = 144 mg/dl; Peso = 71,30 kg; Circunferência Abdominal = 88 cm. ', NULL, 1),
-(49, 13, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(50, 14, 1, 'J.F.S, homem, branco, data de nascimento 16/08/1942, casado, mora com a esposa, a sogra e o filho. É caminhoneiro aposentado. Estudou até o ensino fundamental. Tem acesso ao sistema de saúde pelo SUS. Adquire seus medicamentos na Farmácia Popular do Brasil. O médico que o acompanha é o Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista), atende em clínicas particulares. Altura 1,60 m, Peso 65 Kg, Circunferência da cintura 91 cm. Não fuma, ingere entre duas a seis xícaras de café por dia. Parou de beber bebidas alcoólicas há 10 anos. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há nove anos. Expressa o desejo de controlar e compreender seu tratamento medicamentoso. Ele não acredita que os medicamentos possam controlar a HAS, a glicemia e os triglicerídeos. Paciente questiona os efeitos dos medicamentos. É católico praticante. Tem alergia à penicilina. Utiliza óculos. Fez cirurgia a laser nos olhos por complicações na retina causada pelo diabetes. Já foi hospitalizado duas vezes por causa da pressão descontrolada e frisa que nunca foi para a emergência por causa do diabetes. A mãe teve HAS. A alimentação é exagerada, mas diz que “come tudo e nada o faz mal”. Tem sempre “garrafadas em casa”. Toma chá de “pata de vaca” quase todos os dias e come amora de vez em quando, acredita que seja terapêutica. Já utilizou captopril e hidroclorotiazida, parou porque não fazia mais efeito. Vacina-se todos os anos. Faz 30 min de caminhada entre duas a três vezes na semana. No dia do atendimento, apresentou PA (em mmHg): 154/90, Glicemia capilar 255 mg/dL.', NULL, 1),
-(51, 14, 2, 'O paciente reclama que o medicamento Dimefor® 850mg provoca muita dor no estômago, quando isso acontece, ele deixa de utilizá-lo por alguns dias. Desse modo, gostaria de substituí-lo. Informa que começou a trabalhar na roça e por isso, muitas vezes esquece-se de tomar o Benicar® por ser no meio da manhã (às 10 horas) e também por acreditar que este medicamento não faça efeito. Expressa o desejo de ter o horário dos seus medicamentos mais organizado. Está há dois anos sem procurar um oftalmologista e utiliza o mesmo colírio prescrito para retinopatia diabética na última consulta. ', NULL, 1),
-(52, 14, 3, 'O Sr. J.F.S. relata que compreendeu a importância de controlar sua alimentação. Expressou a necessidade de buscar uma ajuda profissional para esse controle. Segundo o mesmo, a tabela de horário facilitará a organização e adesão aos medicamentos. Após as intervenções educativas, o paciente compreendeu o efeito dos medicamentos e comprometeu-se a testar esse efeito, aderindo ao tratamento nos próximos três meses. A médica trocou a Metformina por Glibenclamida (5mg, duas vezes ao dia, antes do café da manhã e jantar) e suspendeu o uso do colírio, a retinopatia mostrou-se estável. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 150/90; Glicemia capilar casual = 90 mg/dl; Peso = 62 kg; Circunferência Abdominal = 90 cm. ', NULL, 1),
-(53, 14, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(54, 15, 1, 'M.A.O., homem, branco, data de nascimento 10/07/1947, casado, mora com a esposa, aposentado pela Fundação Nacional de Saúde, cursou um ano de graduação em ciências contábeis. Tem acesso ao sistema de saúde pelo Plano Capes Saúde. Adquire os medicamentos na Farmácia Popular do Brasil e farmácias comunitárias. Os médicos que o acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Cardiologista). Altura 1,56 m, Peso 61,5 Kg, Circunferência da cintura 90 cm, não fuma, bebe café de 2-6 xícaras por dia, toma chá de cidreira e boldo, bebe cerveja no final de semana. Na revisão dos sistemas e da história pessoal, informou ter: Hiperlipidemia e Hipertensão Arterial Sistêmica (HAS) diagnosticada há dois anos, refluxo e edema periférico. Faz caminhada durante 50 minutos/ 3 vezes por semana. Na alimentação, reduz o sal e carnes vermelhas, gosta de frutas, verduras (cebola, tomate, cenoura, beterraba). Relata não ter alergia a medicamento. Espera que o tratamento medicamentoso ajude a controlar suas doenças, mas às vezes não sente que está melhorando. Paciente questiona os efeitos dos medicamentos. Já foi para a urgência três vezes por causa do refluxo, por isso iniciou o tratamento com o Pantoprazol e sente-se melhor. O médico substituiu o Captopril por Anlodipino há um mês, porque “perdeu o efeito”. Dizem que seu pai morreu de problema no coração, não o conheceu, todos os irmãos (5) tem HAS. No dia do primeiro atendimento farmacêutico, o Sr. M.A.O. apresentou PA (mmHg): 136/80 e Glicemia capilar = 126 mg/dl', NULL, 1),
-(55, 15, 2, 'O Sr. M.A.O. relata que às vezes esquece de o medicamento para a Hiperlipidemia. Ele não acredita no efeito dos seus medicamentos. Parou de fazer atividade física porque está no período chuvoso, sente-se mais ansioso desde que parou de caminhar. O inchaço nas suas pernas tem piorado nos último mês.', NULL, 1),
-(56, 15, 3, 'O paciente voltou a realizar 30 minutos de caminhada por dia e sente-se mais relaxado. Ele expressou o desejo de ter o horário do dos medicamentos organizados em uma tabela. Após as intervenções educativas, o Sr. M.A.O. se comprometeu em aderir ao tratamento. O médico substituiu o medicamento Anlodipino por Losartana (50mg por dia), o inchaço nas pernas diminuiu. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 125/70; Peso = 61,5 kg; Glicemia capilar = 126 mg/dl; Circunferência Abdominal = 90 cm. ', NULL, 1),
-(57, 15, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(58, 16, 1, 'M.A.S.A., mulher, branca, data de nascimento 20/06/1954, solteira, aposentada, mora com um irmão e é técnica de enfermagem, cursou o ensino superior incompleto. Tem acesso ao sistema de saúde pelo SUS. Adquire seus medicamentos na Farmácia Popular do Brasil e farmácias comunitárias. Os médicos que a acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,45 m, Peso 59 Kg, Circunferência da cintura 97 cm, não fuma, não consome bebida alcoólica, bebe café entre duas a seis xícaras por dia. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos. Relata que deseja “ficar boa”. Expressa preocupação com a grande quantidade de medicamentos que ingere. Paciente sente medo de usar vários medicamentos. Relata entender sobre a sua farmacoterapia e aderir ao tratamento. A paciente elaborou por conta própria, uma tabela de horários para os seus medicamentos. Tem alergia a camarão, azeitona, salsicha e inseticida. Ficou internada 12/2008 por 11 dias devido a crises de HAS e Diabetes. Relata que toma “muito cuidado com a alimentação”, não come açúcar, ingere pouco sal e gordura. Usa chás todos os dias: abacate e boldo. Faz 45 minutos de caminhada em dias alternados e participa do grupo de canto da pastoral na igreja. Tem o plano OSAF “pra não dá trabalho a ninguém”. No dia do primeiro atendimento farmacêutico, a Srª. M.A.S.A. apresentou PA (mmHg): 144/81 e Glicemia capilar 256 mg/dL.', NULL, 1),
-(59, 16, 2, 'A paciente reclama que o Captopril esteja lhe causando uma tosse seca, por isso deixou de utilizá-lo há alguns meses. Confessou utilizar a Glibenclamida apenas uma vez por dia, acredita que usa muitos medicamentos e que a redução de uma dose não irá lhe trazer prejuízos. Paciente sente medo de usar vários medicamentos.', NULL, 1),
-(60, 16, 3, 'Paciente relata que o médico substituiu o Captopril por Atenolol (50mg, 1 vez ao dia), a tosse seca desapareceu e a Srª M.A.S.A. sente-se muito aliviada porque diminuiu o número de tomadas de medicamentos por dia. Após as intervenções educativas, a paciente relata que entendeu a importância da adesão aos medicamentos e está tomando a Glibenclamida conforme a prescrição. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 128 mg/dl; Peso = 59 kg; Circunferência Abdominal = 97 cm. ', NULL, 1),
-(61, 16, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(62, 17, 1, 'M.C.B.S., mulher, branca, data de nascimento 11/01/1948, casada, católica, mora com o esposo, é aposentada e trabalhava como professora, formada em pedagogia. Possui dois filhos adotados. Adquire os medicamentos na Farmácia Popular, farmácias comunitárias e no posto de saúde. É usuária do SUS. Os médicos que a acompanham são dois clínicos geral (J.F.A e F.M.N). Altura 1,54 m, Peso 90,00 Kg, Circunferência da cintura 116 cm, não fuma, bebe menos de dois copos de cerveja por semana, ingere entre duas a seis xícaras de café por dia. A paciente apresenta Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos. Na revisão dos sistemas e da história pessoal informou ter: aumento de peso, dor, tonteira, edema no pé, zumbido no ouvido, rinite alérgica com crises matinais, falta de ar, dor abdominal, diminuição do desejo sexual, dores nas costas, dor muscular e perda de memória. Relata que “quer se ver livre da diabetes”. Espera melhorar com o tratamento medicamentoso, mas duvida que o anti-hipertensivo faça efeito. Acha que os medicamentos fazem mal ao fígado e aos rins. Usa os medicamentos conforme a receita médica. Possui alergia a mofo. Usa óculos e sente a visão turva, às vezes. Passou por uma cirurgia para a retirada do útero há 13 anos. Sua mãe faleceu por infarto (HAS) aos 75 anos de idade. Tem muitas dúvidas sobre a alimentação adequada. A paciente confessa que gosta muito de comer pirão e rabada, pão e manga. Usa chás de capim santo. Quando vai para o interior, realiza caminhadas por 20 minutos. No dia do primeiro atendimento farmacêutico, a Sra. M.C.B.S apresentou PA (mmHg): 147/81 e Glicemia capilar 355 mg/dL.', NULL, 1);
-INSERT INTO `tb_relato_clinico` (`IdRelato`, `IdPaciente`, `OrdemCronologia`, `RelatoTextual`, `RelatoVideo`, `NivelDificuldade`) VALUES
-(63, 17, 2, 'A paciente não faz exame preventivo ginecológico há 13 anos. Segundo ela, o anti-hipertensivo captopril não está sendo efetivo por isso, às vezes, não toma este medicamento: “tomando ou não tomando, a minha pressão arterial fica do mesmo jeito, já fiz o teste”. Não usa o omeprazol prescrito porque teme que ele “atrapalhe os outros medicamentos”. Adere aos hipoglicemiantes.  ', NULL, 1),
-(64, 17, 3, 'A Srª M.C.B.S marcou uma consulta com a ginecologista do Posto de Saúde, outra consulta com a nutricionista e com o oftalmologista do Hospital Universitário. Expressa felicidade por enfim, conseguir controlar a sua HAS com os novos medicamentos: “enfim, alguém acreditou em mim... viu como eu estava certa?! Aquele remédio não servia mais mesmo!”. Por outro lado, ficou se sentindo fracassada porque teve que aumentar a dose dos hipoglicemiantes. Após intervenções educativas, compreendeu os efeitos do Omeprazol. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 200 mg/dl; Peso = 86,95 kg; Circunferência Abdominal = 115 cm. ', NULL, 1),
-(65, 17, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(66, 18, 1, 'M.D.O., mulher, negra, data de nascimento 22/09/1933, divorciada, aposentada, dona de casa, mora com o ex marido, estudou até o primeiro ano do ensino médio. Possui 10 filhos, dois faleceram. Adquire os medicamentos na farmácia popular e no posto de saúde. O médico que a acompanha é um clínico geral (G.R.F.). Altura 1,48 m, Peso 56,65 Kg, Circunferência da cintura 92 cm, deixou de fumar aos 60 anos, só consome bebida alcoólica em festas, bebe de duas a seis xícaras de café por dia. A paciente apresenta Hipertensão arterial e Diabetes Mellitus tipo II há 13 anos.  Na revisão dos sistemas e da história pessoal informou ter: diminuição do peso, alterações visuais,  zumbido no ouvido, dor no peito, dor nas costas, parestesia, depressão e perda de memória. Espera ficar bem com o tratamento medicamentoso, mas questiona a necessidade de usar medicamentos. Ela diz que entende a farmacoterapia prescrita. Não possui alergias.   A mãe faleceu aos 100 anos por infarto agudo do miocárdio, não tinha HAS e DM. Come cuscuz, pão, batata, gosta de gordura, gosta de sal, mas esta tentando diminuir, não faz atividade física. Toma chás todos os dias: quebra pedra e pata de vaca. Vacina-se contra a gripe todos os anos. No dia do primeiro atendimento farmacêutico, a Sra. M.D.O. apresentou PA (mmHg): 156/74 e Glicemia capilar 450 mg/dL.', NULL, 1),
-(67, 18, 2, 'A paciente guarda seus medicamentos na cozinha e o captopril fora da embalagem. Esquece-se de tomar os medicamentos porque acha que “não são tão importantes assim, afinal não sente nada”. Diz que muitas vezes se pergunta “o que esses remédios estão fazendo por mim?”. Embora divida a casa com o marido, os dois não se falam e isso a deixa muito triste. A Srª M.D.O. relata estar sempre muito ocupada com seus afazeres e com os problemas dos filhos, tudo isso a deixa “sem cabeça para lembrar dos meus remédios”.', NULL, 1),
-(68, 18, 3, 'Após as intervenções educativas, a paciente diz que ficou impressionada com os riscos que corria ao não armazenar seus medicamentos da forma adequada: “na minha cidade tem um monte de farmácias e nunca ninguém me disse essas coisas!”. Marcou uma consulta com a nutricionista e comprometeu-se a seguir a “tabela de horário”.  Foi ao oftalmologista que a diagnosticou com uma leve retinopatia. Esse fato, mais as intervenções educativas, fizeram-na compreender como a doença age silenciosamente em seu organismo e a importância de aderir ao tratamento. Ainda não está disposta a realizar atividade física. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 128 mg/dl; Peso = 59 kg; Circunferência Abdominal = 97 cm. ', NULL, 1),
-(69, 18, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(70, 19, 1, 'M.I.S.O, mulher, negra, data de nascimento 15/09/1943, casada, tem dois filhos, mora com o marido e um filho, é técnica de dentista, aposentada, formação ensino médio incompleto. Utiliza o plano de saúde UNIMED. Adquire os medicamentos na Farmácia Popular do Brasil e em farmácias comunitárias. Os médicos que a acompanham são: Endocrinologista (M.), Cardiologista (D.), Ortopedista (S), Ginecologista (S). Altura 1,68m, Peso 75,10 Kg, Circunferência abdominal 103 cm, não fuma, ingere menos de duas xícaras de café por dia e menos de dois copos de cerveja por semana. A paciente apresenta Diabetes Mellitus tipo II há 23 anos e Hiperlipidemia. Na revisão dos sistemas e da história pessoal, informou ter: dor nos pés, alterações visuais, já apresentou incontinência urinária, tendinite e parestesia. Relatou que seu pai e irmãos foram portadores de Hipertensão Arterial Sistêmica. Já fez cirurgia de redução de mama, cirurgia de mioma há mais de 20 anos. Na alimentação não utiliza açúcar, não tem restrições com comidas gordurosas e salgadas, e não come verdura. Come frutas, principalmente pêra, faz quatro refeições diárias. Sempre toma chá de camomila e cidreira. Faz 30 minutos de caminhada e hidroginástica de terça a sexta. Toma vacina da gripe todos os anos e faz curso de pintura. A paciente deseja melhorar com o tratamento medicamentoso, mas se preocupa por acreditar que alguns medicamentos não funcionam. Paciente questiona a necessidade de usar medicamentos. É católica praticante. Não possui alergia a medicamentos. No dia do atendimento, apresentou PA (em mmHg): 140/80, Glicemia capilar 284 mg/dL.', NULL, 1),
-(71, 19, 2, 'A paciente diz que quando toma Galvus® sente uma tontura, um suor frio e acredita que isso significa que o medicamento está fazendo efeito. Não adere à Metformina e às vezes deixa de tomar a Glimepirida, pois não acredita que seja necessária. Segundo ela, sua Diabetes é “de fundo emocional”. A paciente teme precisar tomar insulina: “Deus me livre de insulina!”. ', NULL, 1),
-(72, 19, 3, 'Após a tabela de horário, a paciente diz que ficou mais organizada aos medicamentos e compreendeu. Marcou consulta com uma nutricionista. A Srª MISO concordou em utilizar a insulina ao saber que a mesma seria disponibilizada gratuitamente e que ela não teria mais que gastar com os hipoglicemiantes.  Além disso, sentiu-se aliviada com a redução da quantidade de medicamentos e doses que tinha que tomar todos os dias. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 120/80; Glicemia capilar casual = 130 mg/dl; Peso = 76 kg; Circunferência Abdominal = 101  cm. ', NULL, 1),
-(73, 19, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(74, 20, 1, 'M.J.S., mulher, branca, data de nascimento 16/04/1948, divorciada, aposentada, dona de casa mora com a neta, o marido e a filha, estudou até a terceira série do ensino fundamental. Possui oito filhos. Adquire os medicamentos na farmácia popular e farmácias comunitárias, é usuária do SUS. Os médicos que a acompanham são: clínico geral (H.R.F.), cardiologista (S.L.P). Altura 1,49 m, Peso 60,85 Kg, Circunferência abdominal = 97 cm, deixou de fumar há mais de 20 anos, não consome bebida alcoólica, bebe de duas a seis xícaras de café por dia. A paciente apresenta Hipertensão Arterial Sistêmica e Diabetes Mellitus tipo II há 13 anos.  Na revisão dos sistemas e da história pessoal informou ter: perda de apetite, dor, edema nas pernas, alterações visuais, diminuição da audição, hiperlipidemia, dor abdominal, constipação, diminuição do desejo sexual, dor nas costas e parestesia no braço direito. Relata que tem muitos problemas de saúde e deseja entender a farmacoterapia. Espera ficar bem com o tratamento medicamentoso. Ela diz que às vezes esquece-se de tomar os medicamentos. Não possui alergias. Fez cirurgia para retirada da vesícula há 33 anos. Teve 8 filhos de parto normal. A mãe faleceu aos 72 anos e tinha diabetes e hiperlipidemia.  Come pouca gordura e pouco sal. Toma chá de erva cidreira e de boldo. Faz atividade física uma vez por semana. Vacinou-se contra a gripe há 4 anos. No dia do primeiro atendimento farmacêutico, a Sra. M.J.S. apresentou PA (mmHg): 123/90 e Glicemia capilar 243 mg/dL.', NULL, 1),
-(75, 20, 2, 'A paciente relata que no posto de saúde não tem o “medicamento branco grande” (Metformina) na dosagem prescrita pelo médico (500mg), então seu médico a orientou que utilizasse apenas metade do comprimido de Metformina 850mg. Tem se sentido mal desde que começou a utilizar mais um medicamento, o Triformin® 500mg, que seu outro médico prescreveu para a Diabetes (visão turva, sudorese, tontura, palpitações) chegando a desmaiar na última semana. Não esta tomando o Lipitor® por ser um medicamento de alto custo. ', NULL, 1),
-(76, 20, 3, 'Após intervenção farmacêutica, o médico suspendeu o Triformin®. A paciente relata que suspeitava que os “remédios não estavam certos, mas tinha medo de falar e levar bronca!”.  Com as intervenções educativas, compreendeu a importância de não partir os comprimidos e agora está adquirindo os seus medicamentos na dosagem de 500mg pela Farmácia Popular do Brasil. As crises de hipoglicemia desapareceram e ela está muito aliviada. Concordou em realizar atividade física. Além disso, o médico aceitou substituir o Lipitor® pela Sinvastatina, entregue gratuitamente no posto de saúde. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 110/70; Glicemia capilar casual = 198 mg/dl; Peso = 57 kg; Circunferência Abdominal = 94 cm. ', NULL, 1),
-(77, 20, 4, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(78, 21, 1, 'M.M.S., homem, branco, data de nascimento 03/08/1945, casado, mora com a esposa e com duas filhas. Formado em administração, aposentado. Adquire os medicamentos na farmácia popular e outras farmácias comunitárias. Possui o plano de saúde Unimed. Os médicos que o acompanha são: oftalmologista (B.L.), cardiologista (C.A.S.), angiologista (W.C.), endocrinologista (W.B.L.) e reumatologista (A.C.R.B). Altura 1,57 m, Peso 67,70 Kg, Circunferência abdominal 97 cm, deixou de fumar há seis anos, bebe entre dois a seis copos de bebida alcoólica por semana, bebe menos de duas xícaras de café por dia. O paciente apresenta Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos. Na revisão dos sistemas e da história pessoal informou ter: alterações visuais, rinite alérgica, glaucoma, queimação, impotência, diminuição do desejo sexual, artrite, tendinites, parestesia, ansiedade. Ressalta que não acredita que os medicamentos façam efeito. Espera melhorar com o tratamento medicamentoso e deseja compreender a farmacoterapia. Não possui alergia. A mãe tinha artrite, artrose e osteoporose. Faz caminhada todos os dias há um mês. Toma chá de coassa ou alumã. Vacina-se todos os anos contra a gripe. No dia do primeiro atendimento farmacêutico, a Sr. M.S.S. apresentou PA (mmHg): 129/76 e Glicemia capilar 367 mg/dL.', NULL, 1),
-(79, 21, 2, 'O paciente não toma os hipoglicemiantes na hora certa. Quando toma o Glifage® sente dor no estômago. Acredita que os medicamentos não fazem efeito, em especial o enalapril. Parou de tomar o Acarbose por conta própria. Segundo o Sr. M.M.S., troca os horários dos medicamentos porque não entende a prescrição. Não faz restrições com a alimentação e ingere bebida alcoólica todos os finais de semana.', NULL, 1),
-(80, 21, 3, 'O paciente sente-se aliviado por ter seus medicamentos organizados em uma tabela de horários. Após intervenções educativas, compreendeu a importância de aderir ao tratamento. O médico concordou em suspender uma das sulfoniluréias. Depois que passou a tomar a metformina após o almoço, a dor no estômago desapareceu. Compreendeu os efeitos do álcool no seu organismo e aceitou ingerir apenas os limites toleráveis a pacientes portadores do Diabetes e HAS. Recusa-se a procurar uma nutricionista. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 115/80; Glicemia capilar casual = 238 mg/dl; Peso = 59 kg; Circunferência Abdominal = 97 cm. ', NULL, 1),
-(81, 21, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(82, 22, 1, 'M.M.V., homem, branco, data de nascimento 20/12/1946, casado, católico, mora com a atual esposa e três filhos, é aposentado, cursou o ensino fundamental e possui 15 filhos. Adquire os medicamentos na farmácia popular e no posto de saúde. O médico que o acompanha é endocrinologista (C.A.). Altura 1,67 m, Peso 62 Kg, Circunferência abdominal 87 cm, não fuma, bebe menos de duas xícaras de café por dia e menos de dois copos de cerveja por semana. O paciente apresenta Diabetes Mellitus tipo II há 13 anos. Na revisão dos sistemas e da história pessoal informou ter: perda de apetite, diminuição do peso, dor no joelho, tonteira, alterações visuais, dor no peito, dor nas costas, artrite, parestesia, tremor, pensamentos de suicídio, depressão, ansiedade, perda de memória, prurido e gonorreia no passado. Relatou que desejou se matar na noite anterior. Espera melhorar com o tratamento medicamentoso. Paciente tem baixo de nível de conhecimento sobre doença e sobre os medicamentos. Não adere ao tratamento porque desconhece que o Diabetes é uma doença crônica. Possui alergia a Buscopan®. A mãe faleceu por complicações com o Diabetes, antes disso havia amputado uma perna. Alimentação inadequada e não faz atividade física. Não usa chá. No dia do primeiro atendimento farmacêutico, a Sr. M.M.V. apresentou PA (mmHg): 120/70 e Glicemia capilar 355 mg/dL.\r\n', NULL, 1),
-(83, 22, 2, 'O paciente relata que já passou por várias crises de hipoglicemia. Sente dores no estômago, principalmente à noite. Reclama que vai muito ao banheiro durante a noite para urinar, isso o atrapalha dormir. Está sentindo muita coceira no corpo desde que voltou a tomar a Metformina, por isso parou de utilizá-lo novamente. Sente-se bastante deprimido e nervoso.', NULL, 1),
-(84, 22, 3, 'O paciente aceitou realizar 30 minutos de caminhada por dia e está apto para controlar a alimentação. Ele expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela. Além disso, o Sr. M.M.V. retornou ao médico e está utilizando outro hipoglicemiante que não lhe causa reações adversas e está aderindo ao tratamento. Após intervenções educativas, ele compreendeu a doença. Diminui a freqüência urinária noturna e está muito aliviado porque consegue dormir bem. O paciente diz que está sentindo-se melhor, menos deprimido e nervoso. Marcou uma consulta com o psicólogo. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 110/70; Glicemia capilar casual = 124 mg/dl; Peso = 69,80 kg; Circunferência Abdominal = 93 cm. ', NULL, 1),
-(85, 22, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1),
-(86, 23, 1, 'M.F.F, homem, branco, data de nascimento 14/07/1947, divorciado, mora com a esposa (2° casamento) e o filho. Tem dois filhos É aposentado, era representante comercial. Tem curso técnico em contabilidade. Tem acesso ao sistema de saúde pelo SUS e tem o plano Hapvida. Os médicos que o acompanham são: Endocrinologista (M.L), Cardiologista (J.B) e Ortopedista (A.C). Altura 1,68 m, Peso 81,40 Kg, Circunferência abdominal 104 cm. Não fuma e bebe entre duas a seis xícaras de café por dia. Bebe menos de dois copos de cerveja sem álcool por semana. O paciente é portador de Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus Tipo II há 15 anos. Na revisão dos sistemas e da história pessoal informou ter: aumento de apetite, dor, edema, queimação, poliúria, impotência sexual, diminuição do desejo sexual, dor muscular, tremor no braço esquerdo, muita perda de memória, fibromialgia, problemas na próstata. Sua principal expectativa é que o Diovan® controle a pressão arterial e a insulina controle o diabetes. Foi diagnosticado com Hiperplasia Prostática, mas não usa o medicamento porque acredita que ele lhe cause impotência. Paciente não tolera o efeito colateral dos medicamentos. É católico não praticante. Às vezes esquece-se de tomar os medicamentos. O pai e um dos sete irmãos tem Diabetes e HAS. Evita comer sal e gordura. Come carne grelhada, usa adoçante e gosta de frutas. Toma vacina todos os anos. No dia do atendimento, apresentou PA (mmHg): 130/80, Glicemia capilar 221mg/dL.', NULL, 1),
-(87, 23, 2, 'O paciente toma Centrum® por conta própria por achar que necessita de suplementos de vitaminas. O cardiologista proibiu atividade física. O Sr. M.F.F. confessou se esquecer de tomar a Metformina, porque geralmente está fora de casa. Além disso, informou que come biscoitos que contém açúcar na sua composição. O médico prescreveu Avodart® para ser tomado durante três meses, mas o paciente reclama que este medicamento está causando diminuição da libido e impotência sexual. ', NULL, 1),
-(88, 23, 3, 'O Sr. M.F.F. marcou uma ultrassonografia para reavaliar a Hiperplasia Prostática e o uso do Avodart®. Após as intervenções educativas, o paciente compreendeu que não deve usar medicamentos por conta própria e entendeu a importância da adesão ao tratamento. Além disso, concordou em marcar uma consulta com a nutricionista para ajudá-lo com seus hábitos alimentares. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 199 mg/dl; Peso = 85 kg; Circunferência Abdominal = 103 cm. ', NULL, 1),
-(89, 23, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1);
+INSERT INTO `tb_relato_clinico` (`IdRelato`, `IdPaciente`, `OrdemCronologia`, `RelatoTextual`, `RelatoVideo`, `NivelDificuldade`, `idAreaAtuacao`) VALUES
+(1, 1, 1, 'teste 1', NULL, 1, 1),
+(2, 1, 2, 'evolucao 1', NULL, 1, 1),
+(5, 3, 1, 'A.C.S, homem, branco, data de nascimento 08/07/1946, casado, mora com a esposa e tem 5 filhos que não moram com ele. É aposentado, trabalhava fazendo manutenção de ar condicionado. Cursou o ensino fundamental completo. Tem acesso ao sistema de saúde pelo SUS. Adquire seus medicamentos na Farmácia Popular do Brasil. Os médicos que o acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista), ambos atendem na Unidade Básica de Saúde do seu bairro. Altura = 1,65 m, Peso = 74,75 Kg, Circunferência abdominal = 97 cm. Parou de fumar e ingerir bebidas alcóolicas há 12 anos e toma entre duas a seis xícaras de café por dia. O paciente é portador de Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 10 anos. Na revisão dos sistemas e da história pessoal informou ter: aumento do apetite, diminuição da audição, rinite alérgica, glaucoma, hiperlipidemia, queimação, principalmente quando come farinha, impotência sexual, diminuição do desejo sexual, tendinite e leve tremor. Além disso, certa vez ocorreu uma hemorragia numa extração dentária. Utilizou Hidroclorotiazida no passado, por dois anos, parou porque perdeu o efeito. Quanto às suas enfermidades, o paciente expressa o desejo de melhorar, mas questiona a necessidade de usar medicamentos. O Sr. A.C.S. possui uma tabela com os horários de tomada dos medicamentos que utiliza, no entanto a mesma está desatualizada. A partir do momento em que foi convidado para o programa de Atenção Farmacêutica, o paciente relata que modificou o comportamento na tomada dos medicamentos e começou a aderir ao tratamento. Antes do convite, ele não tomava nenhum dos medicamentos prescritos pelo médico. Não possui alergia a medicamentos e relata que nunca apresentou reações adversas aos mesmos. Possui alergia a mofo. O seu oftalmologista prescreveu que usasse óculos, mas por achar que não precisa, ele não o utiliza. É evangélico e frequenta assiduamente a igreja. Já teve um acidente automobilístico aos 42 anos e levou 138 pontos na cabeça. Relatou que seu pai e sua mãe faleceram por causa de diabetes descontrolada, há 12 e 2 anos, respectivamente. Alegou que sua comida é sem sal, não gosta de chá e que se vacina contra a gripe todos os anos. Nos últimos exames apresentou Hemoglobina glicada 12.4% e Glicemia de jejum 228 mg/dl. Atualmente o Sr. A.C.S. utiliza os medicamentos Glibenclamida 5mg, 1 comprimido as 7 horas e as 12 horas (prescrita pelo Dr. P.) e prescritos pelo Dr. S.: Captopril 25mg, 2 comprimidos as 5 horas, as 14 horas e as 22 horas; Nifedipino 20mg, 1 comprimido as 7 horas e as 19 horas; Furosemida 40mg, 1 comprimido as 9 horas; Metformina 850mg, 1 comprimido as 12:30 horas e as 19:30 horas; Ácido Acetil Salicílico 100mg, 1 comprimido as 13 horas. No dia do primeiro atendimento farmacêutico, o Sr. A.C.S. apresentou PA (mmHg): 180/110 e Glicemia capilar 291 mg/dL.', NULL, 1, 1),
+(6, 3, 2, 'O paciente relatou que está há alguns dias sem tomar a metformina e que jamais utilizou a furosemida prescrita pelo médico. O Sr. A.C.S. informou também que finalizou o tratamento com o medicamento Sinvastatina e não retornou ao médico para averiguar os índices de colesterol. Não faz atividade física. Há um ano não vai a uma consulta médica. Houve aumento de peso. Costuma tomar o captopril junto com o café da manhã. ', NULL, 1, 1),
+(7, 3, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(8, 3, 4, 'O paciente compreendeu a importância da atividade física e da alimentação adequada no controle de seus problemas de saúde, aceitou realizar 30 minutos de caminhada por dia e está apto para controlar a alimentação. Ele expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela. Além disso, o Sr. A.C.S. retornou ao médico e está de acordo em aderir ao tratamento e adequar os seus horários. Ele irá realizar exames laboratoriais para avaliar a necessidade da Sinvastatina. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 140/100; Glicemia capilar casual = 128 mg/dl; Peso = 76,20 kg; Circunferência Abdominal = 96 cm. ', NULL, 1, 1),
+(9, 4, 1, 'E.B.R., mulher, branca, data de nascimento - 29/08/1946, casada, mãe de três filhos que não moram mais com ela, reside com o marido, dona de casa, cursou o ensino médio completo. Dispõe do plano de saúde da Petrobrás. Adquire os medicamentos na Farmácia Popular do Brasil, farmácias comunitárias e no CASE. Os médicos que a acompanham são: Endocrinologista (V.C.) e Cardiologista (J.B.R.) todos atendem em clínicas particulares. Altura 1,63 m, Peso 99,4 Kg, Circunferência abdominal 115 cm, não fuma (parou há 20 anos), bebe café, menos de duas xícaras por dia, não faz consumo de bebida alcoólica (parou há cinco anos). Na revisão dos sistemas e da história pessoal, informou ter: Diabetes e Hiperlipidemia. Relata que se sente confusa com os horários dos medicamentos. Realiza hidroginástica todos os dias. Na alimentação: usa adoçante, frutas (banana, manga), pouco sal, pouca gordura, verduras, alimenta-se seis vezes por dia, usa chá de camomila, chá verde e cidreira. Diz seguir a prescrição médica, mas quando está fora de casa deixa de tomar a insulina. Tem dificuldade para caminhar, usa bengala. Relata ter usado vários tipos de insulina e não tem efeito, segundo a paciente “no começo tem efeito depois perde”. O pai e a mãe faleceram por complicações do diabetes. Nos últimos exames apresentou Hemoglobina glicada 13%, Glicemia de jejum 274 mg/dl e Colesterol total 273 mg/dl. Atualmente utiliza os medicamentos Sinvastatina 40 mg, 1 comprimido no jantar jantar (prescrita pelo cardiologista); Vildagliptina/Metformina 50/850 mg, 1 comprimido de cada, 30 minutos antes do café e 30 minutos antes do jantar (prescrito a 4 anos); Insulina Aspart de 2 a 12 U, de acordo com esquema; este dois últimos prescritos pelo endocrinologista. No dia do primeiro atendimento farmacêutico, A Srª. E.B.R. apresentou PA (mmHg): 120/70 e Glicemia capilar 252 mg/dL.', NULL, 1, 1),
+(11, 4, 2, 'Paciente relata estar com muita dor de estômago, por isso sente-se indisposta e interrompeu a hidroginástica. Em seus exames laboratoriais, os níveis de colesterol estão acima dos limites de referência. Está fazendo aulas de dança uma vez por semana. Médica prescreveu Insulina Aspart® (ultra-rápida), se preciso antes do café, almoço e jantar de acordo com o esquema: \r\nCaso a glicemia casual estiver < 140 ? não precisa utilizar\r\nSe estiver entre 140 – 200 mg/dL ? utilizar 2 U da insulina\r\nSe estiver entre 201 – 250 mg/dL ? utilizar 4 U\r\nSe estiver entre 251 – 300 mg/dL ? utilizar 6 U\r\nSe estiver entre 301 – 350 mg/dL ? utilizar 8 U\r\nSe estiver entre 351 – 400 mg/dL ? utilizar 10 U\r\nSe estiver acima > 400 mg/dL ? utilizar 12 U\r\nA paciente relata que se sente confusa com tantos medicamentos e horários diferentes. Segundo ela, acredita que “toma tudo errado”, principalmente a insulina.\r\n', NULL, 1, 1),
+(12, 4, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(13, 4, 4, 'A paciente se sente melhor quanto à dor no estômago depois de iniciar o tratamento com o Omeprazol. Retomou a hidroginástica. A Sra. E.B.R. está sendo acompanhada pelo nutricionista, mas mesmo assim, continua ganhando peso. No entanto, está muito feliz com o controle da sua glicemia = 105 mg/dl. Na última consulta, o médico substituiu a Sinvastatina de 40 mg por Atorvastatina 20 mg. Ela expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 110/70; Peso = 105, 75 kg; Circunferência Abdominal = 115 cm. ', NULL, 1, 1),
+(14, 5, 1, 'E.V., mulher, branca, data de nascimento 12/05/1943, separada, evangélica, mora com uma filha, duas netas e uma bisneta, cursou o ensino superior completo, aposentada e trabalhava como secretária. Adquire os medicamentos na farmácia popular e no posto de saúde. Os médicos que a acompanha são: clínico geral (L.C), cardiologista (L.A.S.). Altura 1,49 m, Peso 58,40 Kg, Circunferência da cintura 90 cm, não fuma, deixou de consumir bebida alcoólica há 15 anos, bebe entre duas a seis xícaras de café por dia. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos e diminuição da audição. Espera reduzir o número de medicamentos que toma e reduzir a glicemia. Reclama da elevada quantidade de medicamentos que ingere e expressa medo das reações adversas que estes podem causar. Ela diz que entende a farmacoterapia prescrita, mas não adere porque não entende a doença. Às vezes esquece-se de tomar os medicamentos. Possui alergia a profenid, mofo e poeira e tem arritmia quando toma captopril. Tomou insulina uma única vez, quando teve uma crise de hiperglicemia (370 mg/dl) e obteve melhora do quadro. Retirou o útero aos 45 anos e retirou as amígdalas aos 12 anos. A mãe faleceu aos 72 anos de enfisema pulmonar e tinha DM, e o pai faleceu aos 73 anos de infarto e tinha  HAS.  Come de três em três horas, adora doces, come doce diet, come gordura, não faz caminhada e cansa rápido ao fazer exercícios. Não tem hábito de tomar chá. Vacina-se todos os anos contra a gripe. Nos últimos exames apresentou Hemoglobina glicada 8,8% e Glicemia de jejum 129 mg/dl, Glicemia Pós-prandial 212 mg/dL e Colesterol total 177 mg/dl. Atualmente utiliza os medicamentos Enalapril 10mg, 1comprimido às 09 horas; Propanolol 40mg, 1 comprimido as 08 horas e as 20 horas; Hidroclorotiazida 25mg, 1 comprimido as 08:30 (os três prescritos pelo cardiologista); Metformina 850 mg, 1 comprimido três vezes ao dia (antes do café, do almoço e do jantar); Glibenclamida 5 mg, 1 comprimido antes do café e um antes do jantar (prescritos pelo clínico geral). No dia do primeiro atendimento farmacêutico, a Sra. E.V. apresentou PA (mmHg): 135/75 e Glicemia capilar 310mg/dL.', NULL, 1, 1),
+(15, 5, 2, 'A paciente relata que não toma hidroclorotiazida desde que foi prescrita, acredita que este medicamento não seja necessário, além de preferir não utilizá-lo pelo incômodo de ir muitas vezes ao banheiro. Os níveis pressóricos continuam normalizados. Adere aos outros anti-hipertensivos. Não quer fazer atividade física, abusa da alimentação desregrada. Não adere à Metformina porque não compreende para que serve tantos medicamentos. Além disso, relata que os horários de tomada dos medicamentos são muito confusos. ', NULL, 1, 1),
+(16, 5, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.\r\n', NULL, 1, 1),
+(17, 5, 4, 'Após as intervenções educativas, a paciente diz que compreendeu a importância da adesão ao tratamento. O médico concordou em suspender o uso da Hidroclorotiazida. Ficou muito feliz e grata ao farmacêutico que a auxiliou a diminuir o número de medicamentos que utilizava. Marcou uma consulta com a nutricionista. Expressou o desejo de ter os horários dos medicamentos organizados em uma tabela. Informou que utiliza o medicamento Enalapril há cinco anos. Está realizando caminhadas em dias alternados, durante 20 minutos. A diminuição da audição, que surgiu há um ano, ainda a incomoda um pouco. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 128 mg/dl; Peso = 58 kg; Circunferência Abdominal = 90 cm. \r\n', NULL, 1, 1),
+(18, 6, 1, 'F.B.O, homem, branco, data de nascimento 03/01/1945, casado, mora com a esposa e tem três filhos, apenas um mora com ele. É aposentado, trabalhava com sonda de perfuração na Petrobrás. Cursou o ensino fundamental completo e um curso técnico. Tem acesso ao sistema de saúde pelo plano de saúde da Petrobrás. Os médicos que o acompanham são: Dra. S. (Clínica Geral) e Dr. P. (Endocrinologista). Altura 1,64 m, Peso 62 Kg, Circunferência abdominal 81 cm. Fuma de 10 a 20 cigarros por dia, bebe entre duas a seis xícaras de café por dia. Parou de ingerir bebida alcoólica há dois anos. Na revisão dos sistemas e da história pessoal informou ter: Diabetes Mellitus tipo II há 30 anos, dores nos pés e constipação. Não tem alimentação adequada, usa adoçante, gosta de mamão, abacaxi, banana e laranja, não toma chás. Não realiza atividades físicas. Vacina-se contra a gripe todos os anos. Relata que deseja melhorar a saúde e espera que os medicamentos o ajudem. Não apresenta preocupação quanto à farmacoterapia, porém reclama que não a compreende muito bem e isso o incomoda muito. Acredita em Deus, mas não segue nenhuma religião. Nunca apresentou alergia e reações adversas aos medicamentos. Quando tinha 28 anos teve um acidente no trabalho e perdeu dois dedos. Tem cinco irmãos, um tinha diabetes e faleceu. O pai e o avô também tinham diabetes. Nos últimos exames apresentou Hemoglobina Glicada 6,5%; Glicemia pós prandial: 131 mg/dL e Glicemia de jejum: 133 mg/dL. Atualmente utiliza os medicamentos Glimepirida 4mg, 1 comprimido antes jantar; Metformina 850mg 1 comprimido antes do almoço e 1 antes do jantar (os dois prescritos pelo Dr. P.);  Tylex® 7,5 mg, 01 comprimido a cada 4 horas (prescrito pelo clínico geral).  No dia do atendimento, apresentou PA (em mmHg): 130/80, Glicemia capilar 220 mg/dL.', NULL, 1, 1),
+(19, 6, 2, 'O paciente relata ficar muito confuso com os horários de tomada dos medicamentos. Às vezes esquece-se de tomar a Metformina, mas não é frequente. Não utiliza a Glimepirida desde que “passou mal com ela”, o paciente questiona a necessidade deste medicamento. Teve uma crise de hipoglicemia na última vez que a utilizou, durante a madrugada. Reclama que a constipação o incomoda muito. A dor nos pés melhorou depois que iniciou o tratamento com Tylex®. ', NULL, 1, 1),
+(20, 6, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(21, 6, 4, 'Ao retornar ao médico, este optou por alterar a posologia do medicamento Tilex® (tomar apenas quando sentir dor), associar a medidas não farmacológicas e monitorar o problema da constipação. O paciente está fazendo caminhada entre três a quatro vezes por semana, durante uma hora.  Sente que a constipação desapareceu e a dor nos pés não o incomoda tanto mais. Reduziu os cigarros e concordou com uma meta de 10 cigarros por dia. Com as intervenções educativas, compreendeu a farmacoterapia e importância de aderir à Metformina. O médico suspendeu o uso da Glimepirida. O Sr. F.B.O. expressou o desejo de ter o horário dos seus medicamentos organizados em uma tabela. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 101 mg/dl; Peso = 67 kg; Circunferência Abdominal = 82 cm. ', NULL, 1, 1),
+(22, 7, 1, 'G.G, mulher, branca, data de nascimento 23/09/1941, casada, alterna em duas moradias: com o esposo em uma cidade do interior e com o neto na capital. É aposentada. Tem acesso ao sistema de saúde pelo GEAP e pelo SUS. Cursou o ensino fundamental incompleto. Adquire seus medicamentos na Farmácia Popular do Brasil. Os médicos que a acompanham são: Clínico Geral e um Endocrinologista. Altura 1,60 m, Peso 75,55 Kg, Circunferência da cintura 102 cm. Não fuma, não ingere álcool e bebe entre duas a seis xícaras de café por dia. A paciente relata que comete alguns exageros como utilizar açúcar misturado com adoçante. Gosta de jaca, manga e pinha. Não tem restrições com sal e gordura. Não utiliza chás e não faz exercícios físicos. Na revisão dos sistemas e da história pessoal informou ter: Diabetes Mellitus tipo II diagnosticada há dois anos e hiperlipidemia. A paciente utilizou um hipoglicemiante para tratar uma crise de hipoglicemia (paciente desconhece para que servem os medicamentos). Expressa o desejo de cuidar mais da saúde e que a glicemia seja controlada. É evangélica e acredita que Jesus vai curá-la de tudo. Não apresenta alergia aos medicamentos. Nunca apresentou reações adversas aos medicamentos que utilizou no passado. Fez uma cirurgia de suspensão do útero há cinco anos. Possui cinco filhos, quatro de parto normal e uma cesariana. A mãe é portadora de Diabetes e o pai faleceu por complicações da Hipertensão Arterial Sistêmica. Nos últimos exames apresentou Glicemia de jejeum: 280 mg/dL; Colesterol total: 254 mg/dL; Triglicerídeos: 302 mg/dL e Hemoglobina glicada: 10,5%. Atualmente utiliza os medicamentos Glibenclamida 5mg, 1 comprimido antes do café da manhã e 1 antes do jantar; Metformina 850mg, 1 comprimido após o café da manhã; os dois prescritos pelo Dr. P. No dia do atendimento, apresentou PA (em mmHg): 130/70, Glicemia capilar 276 mg/dL.', NULL, 1, 1),
+(23, 7, 2, 'A Sra. G.G. diz que às vezes troca o horário da Metformina, por não conseguir entender a prescrição médica. A paciente relata que exagera na comida, mas está tentando melhorar. A paciente está preocupada com o aumento dos seus níveis de colesterolemia, seus exames sugeriram o aparecimento de esteatose hepática (a confirmar).  Teve crise de hipoglicemia e tomou a metformina pensando que isso iria melhorá-la. Está preocupada com o neto que está passando por problemas. Passou um tempo sem tomar a metformina por estar “sem cabeça para pensar nela”.  ', NULL, 1, 1),
+(24, 7, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(25, 7, 4, 'A paciente relata que começou a caminhar durante 20 min por dia e iniciou o tratamento para a esteatose hepática com sinvastatina (20mg, 1 comprimido antes de dormir), prescrita pelo médico. De acordo com ela, após as intervenções educativas, entendeu a importância da adesão e a função de cada medicamento. Além disso, a Srª G.G. concordou em buscar um nutricionista e está muito grata por todo o apoio físico e emocional que tem recebido no programa de Atenção Farmacêutica. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/70; Glicemia capilar casual = 163 mg/dl; Peso = 75 kg; Circunferência Abdominal = 94 cm.', NULL, 1, 1),
+(26, 8, 1, 'I.G.R, mulher, negra,data de nascimento 03/06/1935, casada, católica, mora com a filha, é aposentada e dona de casa, estudou até o ensino fundamental completo e possui nove filhos, um deles faleceu. Adquire os medicamentos na farmácia popular e em farmácias comerciais e possui o plano da UNIMED. Os médicos que a acompanha são: clínico geral (S.) e endocrinologista (P.). Altura 1,59 m, Peso 66,40 Kg, Circunferência da cintura 99 cm, não fuma, não consome bebida alcoólica, bebe menos de duas xícaras de café por dia. Na revisão dos sistemas e da história pessoal informou ter: Diabetes Mellitus tipo II há 13 anos e Depressão. Relata que ser atendida pelo programa de Atenção Farmacêutica é bom porque é uma atividade, uma distração e pode desabafar. Paciente sente necessidade de conversar sobre seus problemas. Espera ficar bem com o tratamento medicamentoso. Ela diz que entende a farmacoterapia prescrita. Teve nove partos normais, retirou o útero e uma mama há 20 anos. O pai tinha diabetes e a mãe câncer, ambos faleceram. Não come açúcar e, segundo ela, a alimentação é moderada. Uma das suas filhas tem hipertensão. Relata que toma chá de mastruz, pois acredita que esse chá curou sua pneumonia no passado. Além desse, toma chá de sambacaitá, carqueja, erva doce, capim santo e pata de vaca. Não está fazendo atividade física. Não se vacinou contra a gripe ano passado. Nos últimos exames apresentou Hemoglobina Glicada de 11%. Atualmente utiliza os medicamentos Glimepirida 4 mg, 1 comprimido antes do café e Glifage® 850 mg, 1 comprimido antes do café e jantar, os dois prescritos pelo endocrinologista. No dia do primeiro atendimento farmacêutico, a Sra. I.G.R apresentou PA (mmHg): 120/80 e Glicemia capilar 355 mg/dL.', NULL, 1, 1),
+(27, 8, 2, 'A Srª I.G.R. reclama muito de insônia, sente-se muito deprimida e isso a desestimula a se cuidar. Sente náuseas e às vezes, vomita quando toma o Glifage®, por isso não adere ao tratamento. O médico a diagnosticou com catarata nos olhos, mas não realizou a cirurgia, porque a Diabetes está descontrolada. Para conseguir engolir o comprimido de Glifage®, a paciente o partia ao meio. Deixou de utilizá-lo por não tolerar as reações adversas. Não realiza atividades físicas.', NULL, 1, 1),
+(28, 8, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(29, 8, 4, 'Após ser encaminhada ao médico, que lhe prescreveu um antidepressivo (Donaren® 50mg 1 comprimido às 21h), a paciente diz sentir-se mais disposta e está se cuidando melhor. A Srª I.G.R. está muito feliz porque conseguiu controlar sua Diabetes com a troca do seu hipoglicemiante (Médico substituiu o Glifage® por Acarbose, 50 mg, 1 comprimido antes do café da manhã e do jantar). Além disso, esse novo medicamento para a Diabetes não lhe causa mais náuseas e agora ela poderá marcar a cirurgia de catarata.  Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 152 mg/dl; Peso = 68 kg; Circunferência Abdominal = 98 cm. ', NULL, 1, 1),
+(30, 9, 1, 'J.C.A., homem, branco, data de nascimento 14/02/1946, aposentado, trabalhava como técnico de contabilidade, mora sozinho e não tem filhos, cursou o ensino superior incompleto (Direito). Adquire os medicamentos na farmácia popular e em farmácias comunitárias. Os médicos que o acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,56 m, Peso 56,00 Kg, Circunferência da cintura 89 cm, há 30 anos deixou de fumar, consome bebida alcoólica em festas, menos de dois copos por semana, geralmente cerveja, bebe de duas a seis xícaras de café por dia. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial e Diabetes Mellitus tipo II há 13 anos, dor de dente (cáries frequentes) e insônia. Relata que usa muitos medicamentos e eles não surtem efeitos. Paciente questiona os efeitos dos medicamentos. Lê muito sobre o universo/religião. Diz que toma os medicamentos no horário certo. Possui alergia ao naproxeno (coceiras, feridas no corpo). Colocou prótese no olho há 40 anos, fez biópsia da próstata há cinco anos, angioplastia e dois cateterismos há dois anos e passou por coma alcoólico quatro vezes. Tio, primo e irmã são portadores de Diabetes. A alimentação é com “quentinhas’, biscoitos e frutas (geralmente janta o que sobrou da “quentinha” do almoço). Toma chá de camomila e mulungu. Vacina-se contra a gripe todos os anos. Nos últimos exames apresentou Hemoglobina Glicada de 8%. Atualmente utiliza os medicamentos Propanolol 40 mg 1 comprimido duas vezes ao dia (prescrito pelo Dr. S.); Metformina 850 mg: 1 comprimido antes do café, do almoço e do jantar (prescrito pelo Dr. P.) e Hidroxizina 2 mg 1 comprimido ao deitar. No dia do primeiro atendimento farmacêutico, a Sra. J.C.A. apresentou PA (mmHg): 140/85 e Glicemia capilar 252 mg/dL.', NULL, 1, 1),
+(31, 9, 2, 'O paciente relata que uma médica lhe prescreveu o medicamento Hidroxizina há 10 anos e ele o utiliza até hoje porque este medicamento o ajuda a dormir bem. O paciente suspendeu o uso da Metformina e está tomando chá de insulina, acredita que assim conseguirá controlar os seus níveis glicêmicos. Questiona o efeito dos medicamentos, por não utiliza o Propranolol.', NULL, 1, 1),
+(32, 9, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(33, 9, 4, 'Após intervenções educativas, o paciente compreendeu que não poderia continuar utilizando a Hidroxizina e ficou muito impressionado ao saber que este medicamento contribuía com o aparecimento das suas cáries. Concordou em substituí-lo por um fitoterápico (Passiflorine, 1 colher de sopa ao deitar) e está muito grato ao farmacêutico. Passou a dormir melhor com a ajuda do fitoterápico e depois que iniciou as atividades físicas. Além disso, relatou compreender a importância da adesão aos medicamentos e os riscos de substituir a Metformina pelo chá de insulina. Marcou consulta com a nutricionista e com o dentista. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 110/60; Glicemia capilar casual = 128 mg/dl; Peso = 56 kg; Circunferência Abdominal = 83 cm.', NULL, 1, 1),
+(34, 10, 1, 'J.J. homem, branco, data de nascimento 19/03/1935, casado, viúvo, tem 2 filhos, mora com uma filha, é aposentado como operador de telecomunicação. Cursou o ensino médio completo. Tem acesso ao sistema de saúde pela GEAP. Adquire os medicamentos na Farmácia Popular do Brasil e farmácias comunitárias. Os médicos que o acompanham são Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,51 m, Peso 53,3 Kg, Circunferência abdominal 81 cm. O paciente não ingere bebida alcoólica, não fuma, bebe menos que duas xícaras de café por dia. Na revisão dos sistemas e da história pessoal, informou ter: Hiperlipidemia e Hipertensão Arterial Sistêmica (HAS), diagnosticadas há 15 anos. Paciente não tolera o efeito colateral de alguns medicamentos, isso o incomoda muito. Paciente diz aderir ao tratamento. Relata que não utiliza medicamentos por conta própria e “tem esperança de controlar as suas doenças”. Refere alergia aos antibióticos (desmaio). Reação adversa ao AAS (suspeita de sangramento). Sua mãe morreu por conseqüências da HAS, tem 12 irmãos, todos portadores de HAS. Relata que reduziu bastante a quantidade de sal na alimentação, consome pouca gordura, gosta de jaca, manga e mamão. Não gosta de verduras, mas ingere por saber fazer bem à saúde. Faz caminhadas cerca de três a quatro vezes na semana. Gosta de chá de cidreira, boldo, capim-santo. Nos últimos exames apresentou Colesterol total 298 mg/dL e Glicemia de jejum 119 mg/dL. Atualmente utiliza os medicamentos Enalapril 10 mg, 1 comprimido de 12/12h e Atenolol 25 mg, 1 comprimido às 12h.  (prescritos pela Dra. S.). No dia do atendimento, apresentou PA (em mmHg): 140/80, Glicemia capilar casual = 128 mg/dl.', NULL, 1, 1),
+(35, 10, 2, 'O Sr. J.J. sente-se indisposto para realizar atividade física. O paciente sente que o Enalapril lhe causa desconforto gastrointestinal, constipação e garganta seca. Relata que não tolera esses efeitos colaterais. Toma o Atenolol junto com o almoço, segundo ele, é mais fácil para lembrar. No último final de semana, o paciente foi ao aniversário do seu melhor amigo e abusou nas frituras que foram servidas no evento. Os níveis de colesterol estão elevados.', NULL, 1, 1),
+(36, 10, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(37, 10, 4, 'Com as intervenções educativas, o paciente entendeu a importância e as peculiaridades da sua farmacoterapia, em especial a interação fármaco-alimento do Atenolol. O paciente concordou em realizar 30 minutos de caminhada por dia e está apto para controlar a alimentação. Ele expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela. Após intervenção farmacêutica, o médico prescreveu um hipolipemiante (Sinvastatina 20mg, 1 comprimido antes de dormir) e concordou em trocar o Enalapril por outro medicamento (Hidroclorotiazida 25mg, 1 vez ao dia) que não cause ao Sr. J.J. os referidos efeitos colaterais. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 128 mg/dl; Peso = 54 kg; Circunferência Abdominal = 81,5 cm. ', NULL, 1, 1),
+(38, 11, 1, 'J.R. homem, branco, data de nascimento 08/09/1949, casado, viúvo, tem cinco filhos, mora com três deles, é aposentado, técnico em eletrônica, cursou ensino superior incompleto em Engenharia Química. O paciente é usuário do SUS, adquire os medicamentos na Unidade Básica de Saúde, na Farmácia Popular do Brasil e em farmácias de manipulação. Os médicos que o acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,56 m, Peso 58,2 Kg, Circunferência abdominal 90 cm, não fuma, bebe café de 2-6 xícaras por dia e ingere bebida alcoólica, menos de dois copos de cerveja por semana. Na revisão dos sistemas e da história pessoal, informou ter: Hipertensão Arterial Sistêmica (HAS) diagnosticada há 35 anos e Diabetes Mellitus tipo II desde 2008. Anda de bicicleta por 15 minutos/ duas vezes na semana. Na alimentação, reduziu o sal e a gordura. Relata que às vezes sente-se mal quando toma o anti-hipertensivo (tontura, sudorese, sensação de desmaio, fraqueza, tremor), por isso não adere completamente a este medicamento. Paciente não tolera o efeito colateral dos medicamentos. Não gosta que corte alimentos da sua dieta, prefere reduzir e moderar na alimentação diária. Relata que no passado teve reação adversa ao Captopril, Hidroclorotiazida e o Propranolol, sentia sensação de desmaio. Os pais são hipertensos, assim como todos os irmãos (10). Nos últimos exames apresentou Hemoglobina glicada 7,5%. Atualmente utiliza os medicamentos Metformina 850, 1 comprimido de após o almoço (prescrito pelo endocrinologista) e Losartana 50 mg, de 12/12 horas (prescrito pela clínica geral).  No dia do primeiro atendimento farmacêutico, o Sr. J.R. apresentou PA (mmHg): 126/72; Glicemia capilar casual = 128 mg/dl.', NULL, 1, 1),
+(39, 11, 2, 'Paciente relata que viajou no final de semana e esqueceu-se de levar o anti-hipertensivo. Desse modo, a PA atingiu 170/10 mmHg. Está andando de bicicleta 40 minutos/ 3 vezes por semana. Às vezes deixa de tomar o medicamento Losartana por apresentar crises de hipoglicemia, mas não é frequente. Paciente não tolera este efeito colateral. Quando se sente bem, deixa de tomar o hipoglicemiante. ', NULL, 1, 1),
+(40, 11, 3, 'O Sr. J.R. retornou ao médico e está de acordo em utilizar outro medicamento (Valsartana, 80mg, 1 comprimido uma vez ao dia) que mantenha o controle da PA e não lhe cause os referidos efeitos colaterais. Ele expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela, comprometendo-se em aderir ao tratamento. Após intervenções educativas, compreendeu que é portador de doenças crônicas e não deve deixar de tomar os medicamentos quando se sente bem. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 120/70; Glicemia capilar casual = 128 mg/dl; Altura 1,56 m, Peso 55,2 Kg, Circunferência abdominal 87 cm. ', NULL, 1, 1),
+(41, 11, 4, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(42, 12, 1, 'J.V.S.C., mulher, negra, data de nascimento 04/07/1943, casada, católica, mora com o esposo e dois filhos, é aposentada e dona de casa, estudou até o ensino fundamental completo, possui cinco filhos e cinco netos. Adquire os medicamentos na farmácia popular e no posto de saúde. É acompanhada pelo Dra. S. (Clínica Geral) e Dr. P. (Endocrinologista). Altura 1,50 m, Peso 61,30 Kg, Circunferência abdominal 98 cm. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos. Espera melhorar com o tratamento medicamentoso. Ela diz que entende a farmacoterapia prescrita e confessa que exagera na alimentação. Acredita que não precisa utilizar o medicamento para a HAS, porque a mesma está controlada. Paciente prefere não tomar o medicamento quando se sente bem. Não possui alergias. Teve os filhos por partos normais. Não fuma, não bebe e toma entre 2 a 6 xícaras de café por dia. Alimenta-se mal: come muito cuscuz, exagera no adoçante, ingere muito sal e gordura. Usa chás de boldo, camomila, cidreira, limão, capim santo. Tentou realizar atividade física, mas sentiu-se muito cansada e desistiu (tentou uma hora de caminhada). Nos últimos exames apresentou Glicemia de jejum 106 mg/dL; Hemoglobina glicada HbA1c 7,82% e Glicemia pós-prandial: 133 mg/dL. Atualmente utiliza os medicamentos Metformina 850 mg, 1 comprimido três vezes ao dia (antes do café, almoço e jantar); Glibenclamida 5 mg, 2 comprimidos antes do café e 2 antes do almoço (estes dois prescritos pelo Endocrinologista) e Captopril 25 mg, 1 comprimido antes das refeições (prescrito pela Dra. S.). No dia do primeiro atendimento farmacêutico, a Sra. J.V.S.C apresentou PA (mmHg): 143/79 e Glicemia capilar 353 mg/dL.', NULL, 1, 1),
+(43, 12, 2, 'A Srª J.V.S.C. relata ter catarata, mas não pode operar devido a Diabetes Mellitus descontrolada. Apresenta tosse seca quando utiliza o captopril e isso a incomoda muito. Deixa de tomar o anti-hipertensivo quando sente que a HAS está controlada. Paciente prefere não tomar o medicamento quando se sente bem. Esquece-se de tomar a metformina e a substituiu por conta própria, na última semana, por cápsulas de “pata de vaca” indicadas por uma vendedora porta-a-porta. ', NULL, 1, 1),
+(44, 12, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(45, 12, 4, 'A paciente concordou em realizar 15 minutos de caminhada por dia e ir aumentando esse tempo gradativamente. Marcou uma consulta com a nutricionista. Relatou que o novo medicamento para a HAS (Nifedipino 5mg, 1 vez ao dia) não lhe causa mais tosse e ela está muito aliviada. Após as intervenções educativas, compreendeu a importância de aderir ao tratamento e a importância de não substituir a Metformina por conta própria. Sente-se estimulada a marcar a cirurgia de catarata, pois “até que enfim, controlei essa bendita Diabetes!”. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 121 mg/dl; Peso = 65 kg; Circunferência Abdominal = 97 cm.', NULL, 1, 1),
+(46, 13, 1, 'J.F.C., homem, branco, data de nascimento 17/05/1946, casado, tem quatro filhos e apenas um mora com ele. Trabalhava como motorista, mas hoje é aposentado. Cursou o ensino fundamental completo. Tem acesso ao sistema de saúde pelo SUS. Adquire seus medicamentos no posto da saúde e em farmácias comerciais. Os médicos que fazem o seu acompanhamento são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura = 1,72 cm, Peso= 71 kg, Circunferência Abdominal= 91 cm. Parou de fumar há um ano, nunca fez uso de álcool e toma mais de duas xícaras de café por dia. Na revisão de sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 10 anos e hiperlipidemia. Realizou três pontos de safena há 10 anos Quanto ao seu tratamento, o paciente relata não ter nenhuma preocupação, pois é “amigo do medicamento”. O paciente disse que tem uma tabela com o horário de tomada dos medicamentos, mas questiona a necessidade de usá-los todos os dias. Frequenta uma igreja evangélica há dois anos. Possui alergia à penicilina e a derivados. Sua mãe faleceu por causa de uma rejeição a uma prótese de platina na perna, seu pai sofria de Hipertensão Arterial Sistêmica e de Diabetes Mellitus. Alegou que consome pequenas quantidades de gorduras, massas e sal, que faz caminhada de 15 a 20 min por dia, toma chá de cidreira toda noite e se vacinou contra a gripe. Nos últimos exames apresentou Glicemia de jejum 103 mg/dL; Colesterol total: 291 mg/dL; Colesterol LDL: 223 mg/dL; Colesterol HDL: 50 mg/dl; Triglicérides: 103 mg/dL. Atualmente utiliza os medicamentos Glibenclamida 5mg, 1 comprimido antes do café da manhã; Insulina NPH 10 U por dia as 17 horas (os dois prescritos pelo endocrinologista) e Nifedipino 20mg, 1 comprimido as 8 horas e as 20 horas (prescrito pelo clínico geral). No dia do primeiro atendimento farmacêutico, o Sr. J.F.C. apresentou PA (mmHg): 144/88 e Glicemia capilar 231 mg/dL.', NULL, 1, 1),
+(47, 13, 2, 'No 2º atendimento, a Sra. V.C. estava presente e relatou que o Sr. J.F.C. não realizava caminhada e não utilizava o medicamento Nifedipino. Os níveis de colesterol do paciente estão acima dos limites de referência, ainda assim ele não faz uso de nenhum hipolipemiante. O paciente apresenta resistência em aumentar o número de medicamentos que ingere, por isso reluta em retornar ao médico. ', NULL, 1, 1),
+(48, 13, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(49, 13, 4, 'Após intervenções educativas, o paciente concordou em retornar ao o médico e em utilizar mais um medicamento (Atorvastatina 40mg, 1 comprimido antes de dormir) para o tratamento da hiperlipidemia. Marcou consulta com uma nutricionista e começou a realizar atividade física. O Sr. J.F.C. comentou que compreendeu a importância adesão ao tratamento e expressou a necessidade de organizar seus horários de medicamentos em uma tabela. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 140/80; Glicemia capilar casual = 144 mg/dl; Peso = 71,30 kg; Circunferência Abdominal = 88 cm. ', NULL, 1, 1),
+(50, 14, 1, 'J.F.S, homem, branco, data de nascimento 16/08/1942, casado, mora com a esposa, a sogra e o filho. É caminhoneiro aposentado. Estudou até o ensino fundamental. Tem acesso ao sistema de saúde pelo SUS. Adquire seus medicamentos na Farmácia Popular do Brasil. O médico que o acompanha é o Dra. S. (Clínica Geral) e Dr. P. (Endocrinologista), atende em clínicas particulares. Altura 1,60 m, Peso 65 Kg, Circunferência da cintura 91 cm. Não fuma, ingere entre duas a seis xícaras de café por dia. Parou de beber bebidas alcoólicas há 10 anos. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há nove anos. Expressa o desejo de controlar e compreender seu tratamento medicamentoso. Ele não acredita que os medicamentos possam controlar a HAS, a glicemia e os triglicerídeos. Paciente questiona os efeitos dos medicamentos. É católico praticante. Tem alergia à penicilina. Utiliza óculos. Fez cirurgia a laser nos olhos por complicações na retina causada pelo diabetes. Já foi hospitalizado duas vezes por causa da pressão descontrolada e frisa que nunca foi para a emergência por causa do diabetes. A mãe teve HAS. A alimentação é exagerada, mas diz que “come tudo e nada o faz mal”. Tem sempre “garrafadas em casa”. Toma chá de “pata de vaca” quase todos os dias e come amora de vez em quando, acredita que seja terapêutica. Já utilizou captopril e hidroclorotiazida, parou porque não fazia mais efeito. Vacina-se todos os anos. Faz 30 min de caminhada entre duas a três vezes na semana. Nos últimos exames apresentou Glicemia de jejum: 170 mg/dL e Hemoglobina Glicosilada: 9,9%. Atualmente utiliza os medicamentos Benicar® 20mg- 1 comprimido às 10h (prescrito pela Dra. S.); Metformina 850mg- 1 comprimido após o almoço (prescrito pelo Dr. P.) e o Colírio Combigan® - 1 gota em cada olho às 07h e às 19h. No dia do atendimento, apresentou PA (em mmHg): 154/90, Glicemia capilar 255 mg/dL.', NULL, 1, 1),
+(51, 14, 2, 'O paciente reclama que a Metformina 850mg provoca muita dor no estômago, quando isso acontece, ele deixa de utilizá-la por alguns dias. Desse modo, gostaria de substituí-la. Informa que começou a trabalhar na roça e por isso, muitas vezes esquece-se de tomar o Benicar® por ser no meio da manhã (às 10h) e também por acreditar que este medicamento não faça efeito. Expressa o desejo de ter o horário dos seus medicamentos mais organizado. Está há dois anos sem procurar um oftalmologista e utiliza o mesmo colírio prescrito para retinopatia diabética na última consulta. ', NULL, 1, 1),
+(52, 14, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(53, 14, 4, 'O Sr. J.F.S. relata que compreendeu a importância de controlar sua alimentação. Expressou a necessidade de buscar uma ajuda profissional para esse controle. Segundo o mesmo, a tabela de horário facilitará a organização e adesão aos medicamentos. Após as intervenções educativas, o paciente compreendeu o efeito dos medicamentos e comprometeu-se a testar esse efeito, aderindo ao tratamento nos próximos três meses. A médica trocou a Metformina por Glibenclamida (5mg, duas vezes ao dia, antes do café da manhã e jantar) e suspendeu o uso do colírio, a retinopatia mostrou-se estável. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 150/90; Glicemia capilar casual = 90 mg/dl; Peso = 62 kg; Circunferência Abdominal = 90 cm. ', NULL, 1, 1),
+(54, 15, 1, 'M.A.O., homem, branco, data de nascimento 10/07/1947, casado, mora com a esposa, aposentado pela Fundação Nacional de Saúde, cursou um ano de graduação em ciências contábeis. Tem acesso ao sistema de saúde pelo Plano Capes Saúde. Adquire os medicamentos na Farmácia Popular do Brasil e farmácias comunitárias. Os médicos que o acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Cardiologista). Altura 1,56 m, Peso 61,5 Kg, Circunferência da cintura 90 cm, não fuma, bebe café de 2-6 xícaras por dia, toma chá de cidreira e boldo, bebe cerveja no final de semana. Na revisão dos sistemas e da história pessoal, informou ter: Hiperlipidemia e Hipertensão Arterial Sistêmica (HAS) diagnosticada há dois anos, refluxo e edema periférico. Faz caminhada durante 50 minutos/ 3 vezes por semana. Na alimentação, reduz o sal e carnes vermelhas, gosta de frutas, verduras (cebola, tomate, cenoura, beterraba). Relata não ter alergia a medicamento. Espera que o tratamento medicamentoso ajude a controlar suas doenças, mas às vezes não sente que está melhorando. Paciente questiona os efeitos dos medicamentos. Já foi para a urgência três vezes por causa do refluxo, por isso iniciou o tratamento com o Pantoprazol e sente-se melhor. O médico substituiu o Captopril por Anlodipino há um mês, porque “perdeu o efeito”. Dizem que seu pai morreu de problema no coração, não o conheceu, todos os irmãos (5) tem HAS. Nos últimos exames apresentou Colesterol Total 266 mg/dl. Atualmente utiliza os medicamentos Pantoprazol 40 mg, 1 comprimido em jejum (prescrito pelo Dr. S.); Sinvastatina/Ezetimiba 20/10 mg, 1 comprimido após o jantar e Anlodipino 5 mg, 1 comprimido às 8h e 20h (estes dois prescritos pelo cardiologista). No dia do primeiro atendimento farmacêutico, o Sr. M.A.O. apresentou PA (mmHg): 136/80 e Glicemia capilar = 126 mg/dl.', NULL, 1, 1),
+(55, 15, 2, 'O Sr. M.A.O. relata que às vezes esquece de o medicamento para a Hiperlipidemia. Ele não acredita no efeito dos seus medicamentos. Parou de fazer atividade física porque está no período chuvoso, sente-se mais ansioso desde que parou de caminhar. O inchaço nas suas pernas tem piorado nos último mês.', NULL, 1, 1),
+(56, 15, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1);
+INSERT INTO `tb_relato_clinico` (`IdRelato`, `IdPaciente`, `OrdemCronologia`, `RelatoTextual`, `RelatoVideo`, `NivelDificuldade`, `idAreaAtuacao`) VALUES
+(57, 15, 4, 'O paciente voltou a realizar 30 minutos de caminhada por dia e sente-se mais relaxado. Ele expressou o desejo de ter o horário do dos medicamentos organizados em uma tabela. Após as intervenções educativas, o Sr. M.A.O. se comprometeu em aderir ao tratamento. O médico substituiu o medicamento Anlodipino por Losartana (50mg por dia), o inchaço nas pernas diminuiu. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 125/70; Peso = 61,5 kg; Glicemia capilar = 126 mg/dl; Circunferência Abdominal = 90 cm. ', NULL, 1, 1),
+(58, 16, 1, 'M.A.S.A., mulher, branca, data de nascimento 20/06/1954, solteira, aposentada, mora com um irmão e é técnica de enfermagem, cursou o ensino superior incompleto. Tem acesso ao sistema de saúde pelo SUS. Adquire seus medicamentos na Farmácia Popular do Brasil e farmácias comunitárias. Os médicos que a acompanham são: Dra. S. (Clínico Geral) e Dr. P. (Endocrinologista). Altura 1,45 m, Peso 59 Kg, Circunferência da cintura 97 cm, não fuma, não consome bebida alcoólica, bebe café entre duas a seis xícaras por dia. Na revisão dos sistemas e da história pessoal informou ter: Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos. Relata que deseja “ficar boa”. Expressa preocupação com a grande quantidade de medicamentos que ingere. Paciente sente medo de usar vários medicamentos. Relata entender sobre a sua farmacoterapia e aderir ao tratamento. A paciente elaborou por conta própria, uma tabela de horários para os seus medicamentos. Tem alergia a camarão, azeitona, salsicha e inseticida. Ficou internada 12/2008 por 11 dias devido a crises de HAS e Diabetes. Relata que toma “muito cuidado com a alimentação”, não come açúcar, ingere pouco sal e gordura. Usa chás todos os dias: abacate e boldo. Faz 45 minutos de caminhada em dias alternados e participa do grupo de canto da pastoral na igreja. Tem o plano OSAF “pra não dá trabalho a ninguém”. Nos últimos exames apresentou Hemoglobina Glicada - HbA1c 10,2% e Colesterol total 133 mg/dl. Atualmente utiliza os medicamentos Captopril 25 mg, 1 comprimido três vezes ao dia (prescrito pela Dra. S.); Glibenclamida 5 mg, 1 comprimido duas vezes ao dia e Metformina 850 mg, 1 comprimido antes das refeições (prescritos pelo endocrinologista). No dia do primeiro atendimento farmacêutico, a Srª. M.A.S.A. apresentou PA (mmHg): 144/81 e Glicemia capilar 256 mg/dL.', NULL, 1, 1),
+(59, 16, 2, 'A paciente reclama que o Captopril esteja lhe causando uma tosse seca, por isso deixou de utilizá-lo há alguns meses. Confessou utilizar a Glibenclamida apenas uma vez por dia, acredita que usa muitos medicamentos e que a redução de uma dose não irá lhe trazer prejuízos. Paciente sente medo de usar vários medicamentos.', NULL, 1, 1),
+(60, 16, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(61, 16, 4, 'Paciente relata que o médico substituiu o Captopril por Atenolol (50mg, 1 vez ao dia), a tosse seca desapareceu e a Srª M.A.S.A. sente-se muito aliviada porque diminuiu o número de tomadas de medicamentos por dia. Após as intervenções educativas, a paciente relata que entendeu a importância da adesão aos medicamentos e está tomando a Glibenclamida conforme a prescrição. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 128 mg/dl; Peso = 59 kg; Circunferência Abdominal = 97 cm. ', NULL, 1, 1),
+(62, 17, 1, 'M.C.B.S., mulher, branca, data de nascimento 11/01/1948, casada, católica, mora com o esposo, é aposentada e trabalhava como professora, formada em pedagogia. Possui dois filhos adotados. Adquire os medicamentos na Farmácia Popular, farmácias comunitárias e no posto de saúde. É usuária do SUS. Os médicos que a acompanham são dois clínicos geral (J.F.A e F.M.N). Altura 1,54 m, Peso 90,00 Kg, Circunferência da cintura 116 cm, não fuma, bebe menos de dois copos de cerveja por semana, ingere entre duas a seis xícaras de café por dia. A paciente apresenta Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos. Na revisão dos sistemas e da história pessoal informou ter: aumento de peso, dor, tonteira, edema no pé, zumbido no ouvido, rinite alérgica com crises matinais, falta de ar, dor abdominal, diminuição do desejo sexual, dores nas costas, dor muscular e perda de memória. Relata que “quer se ver livre da diabetes”. Espera melhorar com o tratamento medicamentoso, mas duvida que o anti-hipertensivo faça efeito. Acha que os medicamentos fazem mal ao fígado e aos rins. Usa os medicamentos conforme a receita médica. Possui alergia a mofo. Usa óculos e sente a visão turva, às vezes. Passou por uma cirurgia para a retirada do útero há 13 anos. Sua mãe faleceu por infarto (HAS) aos 75 anos de idade. Tem muitas dúvidas sobre a alimentação adequada. A paciente confessa que gosta muito de comer pirão e rabada, pão e manga. Usa chás de capim santo. Quando vai para o interior, realiza caminhadas por 20 minutos. Atualmente utiliza os medicamentos Omeprazol 20 mg  1 comprimido em jejum todos os dias; Glibenclamida 5 mg, 1 comprimido antes do café;  Metformina 850 mg, 1 comprimido duas vezes ao dia (no almoço e jantar) e Captopril 50 mg, 2 comprimidos por dia. No dia do primeiro atendimento farmacêutico, a Sra. M.C.B.S apresentou PA (mmHg): 147/81 e Glicemia capilar 355 mg/dL.', NULL, 1, 1),
+(63, 17, 2, 'A paciente não faz exame preventivo ginecológico há 13 anos. Segundo ela, o anti-hipertensivo captopril não está sendo efetivo por isso, às vezes, não toma este medicamento: “tomando ou não tomando, a minha pressão arterial fica do mesmo jeito, já fiz o teste”. Não usa o omeprazol prescrito porque teme que ele “atrapalhe os outros medicamentos”. Adere aos hipoglicemiantes.  ', NULL, 1, 1),
+(64, 17, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(65, 17, 4, 'A Srª M.C.B.S marcou uma consulta com a ginecologista do Posto de Saúde, outra consulta com a nutricionista e com o oftalmologista do Hospital Universitário. Expressa felicidade por enfim, conseguir controlar a sua HAS com os novos medicamentos: “enfim, alguém acreditou em mim... viu como eu estava certa?! Aquele remédio não servia mais mesmo!”. Por outro lado, ficou se sentindo fracassada porque teve que aumentar a dose dos hipoglicemiantes. Após intervenções educativas, compreendeu os efeitos do Omeprazol. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 200 mg/dl; Peso = 86,95 kg; Circunferência Abdominal = 115 cm. ', NULL, 1, 1),
+(66, 18, 1, 'M.D.O., mulher, negra, data de nascimento 22/09/1933, divorciada, aposentada, dona de casa, mora com o ex marido, estudou até o primeiro ano do ensino médio. Possui 10 filhos, dois faleceram. Adquire os medicamentos na farmácia popular e no posto de saúde. O médico que a acompanha é um clínico geral (G.R.F.). Altura 1,48 m, Peso 56,65 Kg, Circunferência da cintura 92 cm, deixou de fumar aos 60 anos, só consome bebida alcoólica em festas, bebe de duas a seis xícaras de café por dia. A paciente apresenta Hipertensão arterial e Diabetes Mellitus tipo II há 13 anos.  Na revisão dos sistemas e da história pessoal informou ter: diminuição do peso, alterações visuais, zumbido no ouvido, dor no peito, dor nas costas, parestesia, depressão e perda de memória. Espera ficar bem com o tratamento medicamentoso, mas questiona a necessidade de usar medicamentos. Ela diz que entende a farmacoterapia prescrita. Não possui alergias.   A mãe faleceu aos 100 anos por infarto agudo do miocárdio, não tinha HAS e DM. Come cuscuz, pão, batata, gosta de gordura, gosta de sal, mas esta tentando diminuir, não faz atividade física. Toma chás todos os dias: quebra pedra e pata de vaca. Vacina-se contra a gripe todos os anos. Nos últimos exames apresentou Glicemia de jejum 140 mg/dL; Glicemia pós prandial 200mg/dL; HbA1c 10,7%  e Colesterol total 220 mg/dL. Atualmente utiliza os medicamentos Glibenclamida 5mg: 2 comprimidos em jejum; Metformina 850 mg: 1 comprimido depois do café, do almoço e do jantar; Sinvastatina 20  mg 1 comprimido antes de dormir e Captopril 25mg 1 comprimido de 12/12 horas (todos os medicamentos foram prescritos pelo Dr. G.R.F.). No dia do primeiro atendimento farmacêutico, a Sra. M.D.O. apresentou PA (mmHg): 156/74 e Glicemia capilar 450 mg/dL.\r\n', NULL, 1, 1),
+(67, 18, 2, 'A paciente guarda seus medicamentos na cozinha e o captopril fora da embalagem. Esquece-se de tomar os medicamentos porque acha que “não são tão importantes assim, afinal não sente nada”. Diz que muitas vezes se pergunta “o que esses remédios estão fazendo por mim?”. Embora divida a casa com o marido, os dois não se falam e isso a deixa muito triste. A Srª M.D.O. relata estar sempre muito ocupada com seus afazeres e com os problemas dos filhos, tudo isso a deixa “sem cabeça para lembrar dos meus remédios”.', NULL, 1, 1),
+(68, 18, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(69, 18, 4, 'Após as intervenções educativas, a paciente diz que ficou impressionada com os riscos que corria ao não armazenar seus medicamentos da forma adequada: “na minha cidade tem um monte de farmácias e nunca ninguém me disse essas coisas!”. Marcou uma consulta com a nutricionista e comprometeu-se a seguir a “tabela de horário”.  Foi ao oftalmologista que a diagnosticou com uma leve retinopatia. Esse fato, mais as intervenções educativas, fizeram-na compreender como a doença age silenciosamente em seu organismo e a importância de aderir ao tratamento. Ainda não está disposta a realizar atividade física. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 128 mg/dl; Peso = 59 kg; Circunferência Abdominal = 97 cm. ', NULL, 1, 1),
+(70, 19, 1, 'M.I.S.O, mulher, negra, data de nascimento 15/09/1943, casada, tem dois filhos, mora com o marido e um filho, é técnica de dentista, aposentada, formação ensino médio incompleto. Utiliza o plano de saúde UNIMED. Adquire os medicamentos na Farmácia Popular do Brasil e em farmácias comunitárias. Os médicos que a acompanham são: Endocrinologista (M.), Cardiologista (D.), Ortopedista (S), Ginecologista (S). Altura 1,68m, Peso 75,10 Kg, Circunferência abdominal 103 cm, não fuma, ingere menos de duas xícaras de café por dia e menos de dois copos de cerveja por semana. A paciente apresenta Diabetes Mellitus tipo II há 23 anos e Hiperlipidemia. Na revisão dos sistemas e da história pessoal, informou ter: dor nos pés, alterações visuais, já apresentou incontinência urinária, tendinite e parestesia. Relatou que seu pai e irmãos foram portadores de Hipertensão Arterial Sistêmica. Já fez cirurgia de redução de mama, cirurgia de mioma há mais de 20 anos. Na alimentação não utiliza açúcar, não tem restrições com comidas gordurosas e salgadas, e não come verdura. Come frutas, principalmente pêra, faz quatro refeições diárias. Sempre toma chá de camomila e cidreira. Faz 30 minutos de caminhada e hidroginástica de terça a sexta. Toma vacina da gripe todos os anos e faz curso de pintura. A paciente deseja melhorar com o tratamento medicamentoso, mas se preocupa por acreditar que alguns medicamentos não funcionam. Paciente questiona a necessidade de usar medicamentos. É católica praticante. Não possui alergia a medicamentos. Nos últimos exames apresentou Glicemia de jejum 292mg/dL; Glicemia pós prandial: 314 mg/dL; Hemoglobina Glicosilada 11,8%; Magnésio: 1,9 mg/dL; Uréia: 41mg/dL; TSH: 1,69 mUI/L; T4: 9,1 Ug/dL e T3: 133,91 Ug/dL. Atualmente utiliza os medicamentos Galvus 100/850, 1 comprimido após o café da manhã e após o jantar; Beneum (uso provisório-3 meses) - tomar juntamente com o Galvus e Glimepirida 4mg- 1 comprimido antes do almoço (prescritos pelo endocrinologista); Ácido Acetilsalicilico 100mg- 1 comprimido após o almoço e Sinvastatina 20mg- 1 comprimido após o jantar (prescritos pelo cardiologista) No dia do atendimento, apresentou PA (em mmHg): 140/80, Glicemia capilar 284 mg/dL.', NULL, 1, 1),
+(71, 19, 2, 'A paciente diz que quando toma Galvus® sente uma tontura, um suor frio e acredita que isso significa que o medicamento está fazendo efeito. Não adere à Metformina e às vezes deixa de tomar a Glimepirida, pois não acredita que seja necessária. Segundo ela, sua Diabetes é “de fundo emocional”. A paciente teme precisar tomar insulina: “Deus me livre de insulina!”. ', NULL, 1, 1),
+(72, 19, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(73, 19, 4, 'Após a tabela de horário, a paciente diz que ficou mais organizada aos medicamentos e compreendeu. Marcou consulta com uma nutricionista. A Srª MISO concordou em utilizar a insulina ao saber que a mesma seria disponibilizada gratuitamente e que ela não teria mais que gastar com os hipoglicemiantes.  Além disso, sentiu-se aliviada com a redução da quantidade de medicamentos e doses que tinha que tomar todos os dias. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 120/80; Glicemia capilar casual = 130 mg/dl; Peso = 76 kg; Circunferência Abdominal = 101  cm. ', NULL, 1, 1),
+(74, 20, 1, 'M.J.S., mulher, branca, data de nascimento 16/04/1948, divorciada, aposentada, dona de casa mora com a neta, o marido e a filha, estudou até a terceira série do ensino fundamental. Possui oito filhos. Adquire os medicamentos na farmácia popular e farmácias comunitárias, é usuária do SUS. Os médicos que a acompanham são: clínico geral (H.R.F.), cardiologista (S.L.P). Altura 1,49 m, Peso 60,85 Kg, Circunferência abdominal = 97 cm, deixou de fumar há mais de 20 anos, não consome bebida alcoólica, bebe de duas a seis xícaras de café por dia. A paciente apresenta Hipertensão Arterial Sistêmica e Diabetes Mellitus tipo II há 13 anos.  Na revisão dos sistemas e da história pessoal informou ter: perda de apetite, dor, edema nas pernas, alterações visuais, diminuição da audição, hiperlipidemia, dor abdominal, constipação, diminuição do desejo sexual, dor nas costas e parestesia no braço direito. Relata que tem muitos problemas de saúde e deseja entender a farmacoterapia. Espera ficar bem com o tratamento medicamentoso. Ela diz que às vezes esquece-se de tomar os medicamentos. Não possui alergias. Fez cirurgia para retirada da vesícula há 33 anos. Teve 8 filhos de parto normal. A mãe faleceu aos 72 anos e tinha diabetes e hiperlipidemia.  Come pouca gordura e pouco sal. Toma chá de erva cidreira e de boldo. Faz atividade física uma vez por semana. Vacinou-se contra a gripe há 4 anos. Nos últimos exames apresentou Colesterol total: 220 mg/dl; LDL: 130 mg/dl; HDL: 46 mg/dl e VLDL: 44 mg/dl. Atualmente utiliza os medicamentos Acído Acetil Salicílico 100mg 1 comprimido durante o almoço; Captopril 25 mg 1 comprimido de 8/8 horas; Hidroclorotiazida 25mg 2 comprimidos pela manhã; Metformina 850mg 1 comprimido as 08 horas e as 14 horas (prescritos pelo cardiologista); Atorvastatina 20 mg 1 comprimido durante o jantar e Triformin 500mg 1 comprimido as 08 horas e as 14 horas (prescritos pelo clínico geral). No dia do primeiro atendimento farmacêutico, a Sra. M.J.S. apresentou PA (mmHg): 123/90 e Glicemia capilar 243 mg/dL.\r\n', NULL, 1, 1),
+(75, 20, 2, 'A paciente relata que no posto de saúde não tem o “medicamento branco grande” (Metformina) na dosagem prescrita pelo médico (500mg), então seu médico a orientou que utilizasse apenas metade do comprimido de Metformina 850mg. Tem se sentido mal desde que começou a utilizar mais um medicamento, o Triformin® 500mg, que seu outro médico prescreveu para a Diabetes (visão turva, sudorese, tontura, palpitações) chegando a desmaiar na última semana. Não esta tomando o Lipitor® por ser um medicamento de alto custo. ', NULL, 1, 1),
+(76, 20, 3, 'Para algumas intervenções realizadas no acompanhamento dessa paciente, seria necessário referenciá-la ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados da paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pela paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(77, 20, 4, 'Após intervenção farmacêutica, o médico suspendeu o Triformin®. A paciente relata que suspeitava que os “remédios não estavam certos, mas tinha medo de falar e levar bronca!”.  Com as intervenções educativas, compreendeu a importância de não partir os comprimidos e agora está adquirindo os seus medicamentos na dosagem de 500mg pela Farmácia Popular do Brasil. As crises de hipoglicemia desapareceram e ela está muito aliviada. Concordou em realizar atividade física. Além disso, o médico aceitou substituir o Lipitor® pela Sinvastatina, entregue gratuitamente no posto de saúde. Após essas mudanças, a paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 110/70; Glicemia capilar casual = 198 mg/dl; Peso = 57 kg; Circunferência Abdominal = 94 cm. ', NULL, 1, 1),
+(78, 21, 1, 'M.M.S., homem, branco, data de nascimento 03/08/1945, casado, mora com a esposa e com duas filhas. Formado em administração, aposentado. Adquire os medicamentos na farmácia popular e outras farmácias comunitárias. Possui o plano de saúde Unimed. Os médicos que o acompanha são: oftalmologista (B.L.), cardiologista (C.A.S.), angiologista (W.C.), endocrinologista (W.B.L.) e reumatologista (A.C.R.B). Altura 1,57 m, Peso 67,70 Kg, Circunferência abdominal 97 cm, deixou de fumar há seis anos, bebe entre dois a seis copos de bebida alcoólica por semana, bebe menos de duas xícaras de café por dia. O paciente apresenta Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus tipo II há 13 anos. Na revisão dos sistemas e da história pessoal informou ter: alterações visuais, rinite alérgica, glaucoma, queimação, impotência, diminuição do desejo sexual, artrite, tendinites, parestesia, ansiedade. Ressalta que não acredita que os medicamentos façam efeito. Espera melhorar com o tratamento medicamentoso e deseja compreender a farmacoterapia. Não possui alergia. A mãe tinha artrite, artrose e osteoporose. Faz caminhada todos os dias há um mês. Toma chá de coassa ou alumã. Vacina-se todos os anos contra a gripe. Nos últimos exames apresentou Glicemia de jejum 207 mg/dL; HbA1c 10,6%; Glicose pós-prandial: 279 mg/dL; Colesterol total 178 e Antígeno prostático especifico 5,03. Atualmente utiliza os medicamentos Acarbose 100mg 1 comprimido antes das três reifeções; Enalapril 20mg 1 comprimido duas vezes ao dia; Glibenclamida 5 mg 02 comprimidos à noite; Gliclazida 02 comprimidos à noite; Janumet 500/50 1 comprimido antes do almoço; Sinvastatina 20mg 1 comprimido depois do jantar e Benerva 300mg 1 comprimido depois do café da manhã. No dia do primeiro atendimento farmacêutico, a Sr. M.S.S. apresentou PA (mmHg): 129/76 e Glicemia capilar 367 mg/dL.\r\n', NULL, 1, 1),
+(79, 21, 2, 'O paciente não toma os hipoglicemiantes na hora certa. Quando toma o Glifage® sente dor no estômago. Acredita que os medicamentos não fazem efeito, em especial o enalapril. Parou de tomar o Acarbose por conta própria. Segundo o Sr. M.M.S., troca os horários dos medicamentos porque não entende a prescrição. Não faz restrições com a alimentação e ingere bebida alcoólica todos os finais de semana.', NULL, 1, 1),
+(80, 21, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(81, 21, 4, 'O paciente sente-se aliviado por ter seus medicamentos organizados em uma tabela de horários. Após intervenções educativas, compreendeu a importância de aderir ao tratamento. O médico concordou em suspender uma das sulfoniluréias. Depois que passou a tomar a metformina após o almoço, a dor no estômago desapareceu. Compreendeu os efeitos do álcool no seu organismo e aceitou ingerir apenas os limites toleráveis a pacientes portadores do Diabetes e HAS. Recusa-se a procurar uma nutricionista. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 115/80; Glicemia capilar casual = 238 mg/dl; Peso = 59 kg; Circunferência Abdominal = 97 cm. ', NULL, 1, 1),
+(82, 22, 1, 'M.M.V., homem, branco, data de nascimento 20/12/1946, casado, católico, mora com a atual esposa e três filhos, é aposentado, cursou o ensino fundamental e possui 15 filhos. Adquire os medicamentos na farmácia popular e no posto de saúde. O médico que o acompanha é endocrinologista (C.A.). Altura 1,67 m, Peso 62 Kg, Circunferência abdominal 87 cm, não fuma, bebe menos de duas xícaras de café por dia e menos de dois copos de cerveja por semana. O paciente apresenta Diabetes Mellitus tipo II há 13 anos. Na revisão dos sistemas e da história pessoal informou ter: perda de apetite, diminução do peso, dor no joelho, tonteira, alterações visuais, dor no peito, dor nas costas, artrite, parestesia, tremor, pensamentos de suicídio, depressão, ansiedade, perda de memória, prurido e gonorréia no passado. Relatou que desejou se matar na noite anterior. Espera melhorar com o tratamento medicamentoso. Paciente tem baixo de nível de conhecimento sobre doença e sobre os medicamentos. Não adere ao tratamento porque desconhece que o Diabetes é uma doença crônica. Possui alergia a Buscopan®. A mãe faleceu por complicações com o Diabetes, antes disso havia amputado uma perna. Alimentação inadequada e não faz atividade física. Não usa chá. Nos últimos exames apresentou Hemoglobina Glicada 7,2%. Atualmente utiliza os medicamentos Metformina 850 mg, 1 comprimido três vezes ao dia (antes do café, almoço e jantar) e Glimepirida 4 mg 1 comprimido duas vezes ao dia (os dois prescritos pelo endocrinologista). No dia do primeiro atendimento farmacêutico, a Sr. M.M.V. apresentou PA (mmHg): 120/70 e Glicemia capilar 355 mg/dL.', NULL, 1, 1),
+(83, 22, 2, 'O paciente relata que já passou por várias crises de hipoglicemia. Sente dores no estômago, principalmente à noite. Reclama que vai muito ao banheiro durante a noite para urinar, isso o atrapalha dormir. Está sentindo muita coceira no corpo desde que voltou a tomar a Metformina, por isso parou de utilizá-lo novamente. Sente-se bastante deprimido e nervoso.', NULL, 1, 1),
+(84, 22, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(85, 22, 4, 'O paciente aceitou realizar 30 minutos de caminhada por dia e está apto para controlar a alimentação. Ele expressou o desejo de ter o horário do uso dos medicamentos organizados em uma tabela. Além disso, o Sr. M.M.V. retornou ao médico e está utilizando outro hipoglicemiante que não lhe causa reações adversas e está aderindo ao tratamento. Após intervenções educativas, ele compreendeu a doença. Diminui a freqüência urinária noturna e está muito aliviado porque consegue dormir bem. O paciente diz que está sentindo-se melhor, menos deprimido e nervoso. Marcou uma consulta com o psicólogo. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 110/70; Glicemia capilar casual = 124 mg/dl; Peso = 69,80 kg; Circunferência Abdominal = 93 cm. ', NULL, 1, 1),
+(86, 23, 1, 'M.F.F, homem, branco, data de nascimento 14/07/1947, divorciado, mora com a esposa (2° casamento) e o filho. Tem dois filhos É aposentado, era representante comercial. Tem curso técnico em contabilidade. Tem acesso ao sistema de saúde pelo SUS e tem o plano Hapvida. Os médicos que o acompanham são: Endocrinologista (M.L), Cardiologista (J.B) e Ortopedista (A.C). Altura 1,68 m, Peso 81,40 Kg, Circunferência abdominal 104 cm. Não fuma e bebe entre duas a seis xícaras de café por dia. Bebe menos de dois copos de cerveja sem álcool por semana. O paciente é portador de Hipertensão Arterial Sistêmica (HAS) e Diabetes Mellitus Tipo II há 15 anos. Na revisão dos sistemas e da história pessoal informou ter: aumento de apetite, dor, edema, queimação, poliúria, impotência sexual, diminuição do desejo sexual, dor muscular, tremor no braço esquerdo, muita perda de memória, fibromialgia, problemas na próstata. Sua principal expectativa é que o Diovan® controle a pressão arterial e a insulina controle o diabetes. Foi diagnosticado com Hiperplasia Prostática, mas não usa o medicamento porque acredita que ele lhe cause impotência. Paciente não tolera o efeito colateral dos medicamentos. É católico não praticante. Às vezes esquece-se de tomar os medicamentos. O pai e um dos sete irmãos tem Diabetes e HAS. Evita comer sal e gordura. Come carne grelhada, usa adoçante e gosta de frutas. Toma vacina todos os anos. Atualmente utiliza os medicamentos Metformina 850 mg: 01 comprimido após o almoço; Valsartana 160mg as 09:00 horas; Dudasterida 0,5 mg 1 comprimido as 08:00 horas; AAS 100 mg 1 comprimido após o almoço e Centrum 01 por dia. No dia do atendimento, apresentou PA (mmHg): 130/80, Glicemia capilar 221mg/dL.', NULL, 1, 1),
+(87, 23, 2, 'O paciente toma Centrum® por conta própria por achar que necessita de suplementos de vitaminas. O cardiologista proibiu atividade física. O Sr. M.F.F. confessou se esquecer de tomar a Metformina, porque geralmente está fora de casa. Além disso, informou que come biscoitos que contém açúcar na sua composição. O médico prescreveu Avodart® para ser tomado durante três meses, mas o paciente reclama que este medicamento está causando diminuição da libido e impotência sexual. ', NULL, 1, 1),
+(88, 23, 3, 'Para algumas intervenções realizadas no acompanhamento desse paciente, seria necessário referenciá-lo ao médico ou a outro profissional de saúde. Desse modo, elabore um laudo técnico contendo os dados do paciente, o motivo de referência à consulta médica ou com outro profissional de saúde, alternativas de resoluções para os problemas apresentados pelo paciente, nome, contato e número de registro do farmacêutico e as referências bibliográficas que foram utilizadas para propor as alternativas de resoluções.', NULL, 1, 1),
+(89, 23, 4, 'O Sr. M.F.F. marcou uma ultrassonografia para reavaliar a Hiperplasia Prostática e o uso do Avodart®. Após as intervenções educativas, o paciente compreendeu que não deve usar medicamentos por conta própria e entendeu a importância da adesão ao tratamento. Além disso, concordou em marcar uma consulta com a nutricionista para ajudá-lo com seus hábitos alimentares. Após essas mudanças, o paciente apresentou os seguintes parâmetros clínicos: PA (mmHg) = 130/80; Glicemia capilar casual = 199 mg/dl; Peso = 85 kg; Circunferência Abdominal = 103 cm. ', NULL, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_religiao`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_religiao` (
+  `IdReligiao` int(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` varchar(45) NOT NULL,
+  PRIMARY KEY (`IdReligiao`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `tb_religiao`
+--
+
+INSERT INTO `tb_religiao` (`IdReligiao`, `Descricao`) VALUES
+(1, 'Não Definida'),
+(2, 'Católica'),
+(3, 'Protestante'),
+(4, 'Evangélico(a)'),
+(5, 'Budista');
 
 -- --------------------------------------------------------
 
@@ -1673,7 +3290,7 @@ CREATE TABLE IF NOT EXISTS `tb_resposta` (
   `IdPergunta` int(11) NOT NULL,
   PRIMARY KEY (`IdResposta`),
   KEY `fk_tb_resposta_tb_pergunta1_idx` (`IdPergunta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
 -- Extraindo dados da tabela `tb_resposta`
@@ -1720,7 +3337,10 @@ INSERT INTO `tb_resposta` (`IdResposta`, `Resposta`, `IdPergunta`) VALUES
 (43, 'As experiências subjetivas do paciente parecem não interferir na farmacoterapia. Reavaliar ao longo dos atendimentos ', 7),
 (44, 'Intervenções educativas sobre a farmacoterapia e sobre a doença ', 7),
 (45, 'Buscar alternativa para o alto custo dos medicamentos ', 7),
-(46, 'Buscar esclarecimento sobre as dúvidas da paciente com relação ao diagnóstico do Diabetes', 7);
+(46, 'Buscar esclarecimento sobre as dúvidas da paciente com relação ao diagnóstico do Diabetes', 7),
+(47, 'Espera não se sentir mal ao tomar o medicamento', 2),
+(48, 'Investigar sobre a efetividade e segurança da farmacoterapia', 7),
+(49, 'Não compreende porque tomar os medicamentos todos os dias', 4);
 
 -- --------------------------------------------------------
 
@@ -1732,15 +3352,28 @@ CREATE TABLE IF NOT EXISTS `tb_sistema` (
   `IdSistema` int(11) NOT NULL AUTO_INCREMENT,
   `NomeSistema` varchar(100) NOT NULL,
   PRIMARY KEY (`IdSistema`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Extraindo dados da tabela `tb_sistema`
 --
 
 INSERT INTO `tb_sistema` (`IdSistema`, `NomeSistema`) VALUES
-(1, 'Respiratório'),
-(2, 'Circulatório');
+(1, 'Pulmonar'),
+(2, 'Cardiovascular'),
+(3, 'Sistema Geral'),
+(4, 'OONB (Olho, Ouvido, Nariz e Boca)'),
+(5, 'TGI (Trato Gastrointestinal)'),
+(6, 'Endócrino'),
+(8, 'Genito urinário/ Reprodutivo'),
+(9, 'Sistema Hematopoiético'),
+(10, 'Musculoesquelético'),
+(12, 'Pele'),
+(13, 'Doenças Infecciosas'),
+(14, 'Hepático'),
+(15, 'Nutricionais/Fluidos Corporais/ Hidroeletrolítico'),
+(16, 'Renal/Urinário'),
+(17, 'Neuropsiquiátrico');
 
 -- --------------------------------------------------------
 
@@ -1750,9 +3383,25 @@ INSERT INTO `tb_sistema` (`IdSistema`, `NomeSistema`) VALUES
 
 CREATE TABLE IF NOT EXISTS `tb_situacao_queixa` (
   `IdSituacaoQueixa` int(11) NOT NULL AUTO_INCREMENT,
-  `Descricao` varchar(45) NOT NULL,
+  `Descricao` varchar(100) NOT NULL,
   PRIMARY KEY (`IdSituacaoQueixa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Extraindo dados da tabela `tb_situacao_queixa`
+--
+
+INSERT INTO `tb_situacao_queixa` (`IdSituacaoQueixa`, `Descricao`) VALUES
+(1, 'Estado de Situação não avaliado até o momento'),
+(2, 'Inicial: Objetivos estabelecidos; início de nova farmacoterapia'),
+(3, 'Resolvido: Objetivos alcançados; término da farmacoterapia'),
+(4, 'Estável: objetivos alcançados; mantém a mesma farmacoterapia'),
+(5, 'Melhora: Progresso adequado; mantém a mesma farmacoterapia'),
+(6, 'Melhora parcial: progresso adequado; ajustes na farmacoterapia'),
+(7, 'Sem melhora: sem progresso; ajustes na farmacoterapia'),
+(8, 'Piora; Declínio na saúde; ajustes na farmacoterapia'),
+(9, 'Falha ou Fracasso: Objetivos não alcançados; descontinuar e iniciar farmacoterapia diferente'),
+(10, 'Morte: Morte do paciente');
 
 -- --------------------------------------------------------
 
@@ -1764,7 +3413,20 @@ CREATE TABLE IF NOT EXISTS `tb_suspeita_prm` (
   `IdSuspeitaPRM` int(11) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`IdSuspeitaPRM`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Extraindo dados da tabela `tb_suspeita_prm`
+--
+
+INSERT INTO `tb_suspeita_prm` (`IdSuspeitaPRM`, `Descricao`) VALUES
+(1, 'Farmacoterapia Desnecessária'),
+(2, 'Necessidade de Farmacoterapia Adicional'),
+(3, 'Medicamento Inefetivo'),
+(4, 'Dose Baixa'),
+(5, 'Reação Adversa ao Medicamento'),
+(6, 'Dose Alta'),
+(7, 'Não Adesão');
 
 -- --------------------------------------------------------
 
@@ -1777,22 +3439,23 @@ CREATE TABLE IF NOT EXISTS `tb_turma` (
   `IdDisciplina` int(11) NOT NULL,
   `IdCurso` int(11) NOT NULL,
   `IdInstituicao` int(11) NOT NULL,
-  `Codigo` varchar(2) NOT NULL,
+  `Codigo` varchar(20) NOT NULL,
   `Periodo` varchar(6) NOT NULL,
   `Ativa` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`IdTurma`),
   KEY `fk_tb_turma_tb_disciplina1_idx` (`IdDisciplina`),
   KEY `fk_tb_turma_tb_curso1_idx` (`IdCurso`),
   KEY `fk_tb_turma_tb_instituicao1_idx` (`IdInstituicao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `tb_turma`
 --
 
 INSERT INTO `tb_turma` (`IdTurma`, `IdDisciplina`, `IdCurso`, `IdInstituicao`, `Codigo`, `Periodo`, `Ativa`) VALUES
-(1, 1, 1, 1, 'a0', '20131', 1),
-(2, 3, 1, 1, 'FI', '2013-1', 0);
+(1, 3, 1, 1, 'DFA0037', '2013-2', 1),
+(2, 3, 1, 1, 'FI', '2013-1', 0),
+(3, 3, 1, 1, 'A0', '2013-2', 0);
 
 -- --------------------------------------------------------
 
@@ -1816,7 +3479,21 @@ CREATE TABLE IF NOT EXISTS `tb_turma_pessoa` (
 --
 
 INSERT INTO `tb_turma_pessoa` (`IdTurma`, `IdPessoa`, `IdRole`, `Ativa`) VALUES
-(1, 1, 1, 1);
+(1, 1, 1, 1),
+(1, 5, 3, 0),
+(1, 6, 3, 1),
+(1, 9, 3, 1),
+(1, 10, 2, 1),
+(1, 12, 3, 1),
+(1, 13, 2, 1),
+(1, 14, 2, 1),
+(1, 15, 2, 1),
+(1, 16, 3, 0),
+(2, 5, 3, 1),
+(2, 11, 3, 1),
+(3, 5, 2, 0),
+(3, 6, 2, 1),
+(3, 11, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -1842,7 +3519,60 @@ CREATE TABLE IF NOT EXISTS `tb_turma_pessoa_relato` (
 INSERT INTO `tb_turma_pessoa_relato` (`IdTurma`, `IdPessoa`, `IdRelato`, `IdConsultaFixo`) VALUES
 (1, 1, 1, 5),
 (1, 1, 1, 6),
-(1, 1, 2, 7);
+(1, 1, 2, 7),
+(1, 10, 2, 12),
+(1, 1, 5, 19),
+(1, 1, 5, 38),
+(1, 9, 5, 11),
+(1, 10, 5, 13),
+(1, 10, 5, 15),
+(1, 12, 5, 17),
+(1, 15, 5, 39),
+(2, 11, 5, 14),
+(3, 5, 5, 8),
+(1, 1, 6, 20),
+(1, 15, 6, 39),
+(1, 1, 7, 20),
+(1, 15, 7, 39),
+(1, 1, 8, 20),
+(1, 15, 8, 39),
+(1, 1, 9, 21),
+(3, 5, 9, 9),
+(1, 1, 11, 21),
+(1, 1, 14, 22),
+(1, 10, 14, 16),
+(1, 13, 14, 40),
+(3, 5, 14, 18),
+(1, 1, 15, 22),
+(1, 13, 15, 40),
+(1, 1, 16, 22),
+(1, 13, 16, 40),
+(1, 1, 17, 22),
+(1, 13, 17, 40),
+(1, 1, 18, 23),
+(1, 14, 18, 41),
+(1, 1, 19, 23),
+(1, 14, 19, 41),
+(1, 1, 20, 23),
+(1, 14, 20, 41),
+(1, 1, 21, 23),
+(1, 14, 21, 41),
+(1, 1, 22, 24),
+(1, 1, 23, 24),
+(1, 1, 26, 25),
+(1, 1, 30, 26),
+(1, 1, 34, 27),
+(1, 1, 38, 28),
+(1, 1, 42, 29),
+(1, 1, 46, 30),
+(1, 1, 50, 31),
+(1, 1, 54, 32),
+(1, 10, 54, 42),
+(1, 1, 58, 33),
+(1, 1, 62, 34),
+(1, 1, 66, 35),
+(1, 1, 70, 36),
+(1, 1, 74, 37);
 
 --
 -- Restrições para as tabelas dumpadas
@@ -1996,8 +3726,8 @@ ALTER TABLE `tb_alergia_exames_fisicos`
 -- Restrições para a tabela `tb_carta`
 --
 ALTER TABLE `tb_carta`
-  ADD CONSTRAINT `fk_tb_carta_tb_curso1` FOREIGN KEY (`IdCursoProfissionalEncaminhado`) REFERENCES `tb_curso` (`IdCurso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tb_carta_tb_consulta_variavel1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tb_carta_tb_consulta_variavel1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_carta_tb_especialidade1` FOREIGN KEY (`IdEspecialidade`) REFERENCES `tb_especialidade` (`IdEspecialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `tb_consulta_parametro`
@@ -2010,7 +3740,7 @@ ALTER TABLE `tb_consulta_parametro`
 -- Restrições para a tabela `tb_consulta_variavel`
 --
 ALTER TABLE `tb_consulta_variavel`
-  ADD CONSTRAINT `fk_tb_consulta_variavel_tb_estado_consulta1` FOREIGN KEY (`idEstadoConsulta`) REFERENCES `tb_estado_consulta` (`idEstadoConsulta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_consulta_variavel_tb_estado_consulta1` FOREIGN KEY (`IdEstadoConsulta`) REFERENCES `tb_estado_consulta` (`idEstadoConsulta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tb_consulta_variavel_tb_razao_encontro1` FOREIGN KEY (`IdRazaoEncontro`) REFERENCES `tb_razao_encontro` (`IdRazaoEncontro`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tb_consulta_variavel_tb_turma_pessoa_relato1` FOREIGN KEY (`IdTurma`, `IdPessoa`, `IdRelato`, `IdConsultaFixo`) REFERENCES `tb_turma_pessoa_relato` (`IdTurma`, `IdPessoa`, `IdRelato`, `IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -2018,17 +3748,17 @@ ALTER TABLE `tb_consulta_variavel`
 -- Restrições para a tabela `tb_consulta_variavel_intervencao`
 --
 ALTER TABLE `tb_consulta_variavel_intervencao`
-  ADD CONSTRAINT `fk_tb_intervencao_has_tb_consulta_variavel_tb_intervencao1` FOREIGN KEY (`IdIntervencao`) REFERENCES `tb_intervencao` (`IdIntervencao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tb_intervencao_has_tb_consulta_variavel_tb_consulta_variav1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tb_intervencao_has_tb_consulta_variavel_tb_consulta_variav1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_intervencao_has_tb_consulta_variavel_tb_intervencao1` FOREIGN KEY (`IdIntervencao`) REFERENCES `tb_intervencao` (`IdIntervencao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `tb_consulta_variavel_queixa`
 --
 ALTER TABLE `tb_consulta_variavel_queixa`
-  ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_objetivo_terapeutico1` FOREIGN KEY (`IdObjetivoTerapeutico`) REFERENCES `tb_objetivo_terapeutico` (`IdObjetivoTerapeutico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_situacao_queixa1` FOREIGN KEY (`IdSituacaoQueixa`) REFERENCES `tb_situacao_queixa` (`IdSituacaoQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_consulta_variavel1` FOREIGN KEY (`IdConsultaVariavel`) REFERENCES `tb_consulta_variavel` (`IdConsultaVariavel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_queixa1` FOREIGN KEY (`IdQueixa`) REFERENCES `tb_queixa` (`IdQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_objetivo_terapeutico1` FOREIGN KEY (`IdObjetivoTerapeutico`) REFERENCES `tb_objetivo_terapeutico` (`IdObjetivoTerapeutico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_queixa1` FOREIGN KEY (`IdQueixa`) REFERENCES `tb_queixa` (`IdQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_tb_situacao_queixa1` FOREIGN KEY (`IdSituacaoQueixa`) REFERENCES `tb_situacao_queixa` (`IdSituacaoQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `tb_demograficos_antropometricos`
@@ -2036,8 +3766,11 @@ ALTER TABLE `tb_consulta_variavel_queixa`
 ALTER TABLE `tb_demograficos_antropometricos`
   ADD CONSTRAINT `fk_tb_demograficos_antropometricos_tb_consulta_fixo1` FOREIGN KEY (`IdConsultaFixo`) REFERENCES `tb_consulta_fixo` (`IdConsultaFixo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tb_demograficos_antropometricos_tb_escolaridade1` FOREIGN KEY (`IdEscolaridade`) REFERENCES `tb_escolaridade` (`IdEscolaridade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_demograficos_antropometricos_tb_estado_civil1` FOREIGN KEY (`IdEstadoCivil`) REFERENCES `tb_estado_civil` (`IdEstadoCivil`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_demograficos_antropometricos_tb_naturalidade1` FOREIGN KEY (`IdNaturalidade`) REFERENCES `tb_naturalidade` (`IdNaturalidade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tb_demograficos_antropometricos_tb_ocupacao1` FOREIGN KEY (`IdOcupacao`) REFERENCES `tb_ocupacao` (`IdOcupacao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tb_demograficos_antropometricos_tb_plano_saude1` FOREIGN KEY (`IdPlanoSaude`) REFERENCES `tb_plano_saude` (`IdPlanoSaude`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tb_demograficos_antropometricos_tb_plano_saude1` FOREIGN KEY (`IdPlanoSaude`) REFERENCES `tb_plano_saude` (`IdPlanoSaude`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_demograficos_antropometricos_tb_religiao1` FOREIGN KEY (`IdReligiao`) REFERENCES `tb_religiao` (`IdReligiao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `tb_diario_pessoal`
@@ -2127,16 +3860,17 @@ ALTER TABLE `tb_queixa`
 -- Restrições para a tabela `tb_queixa_medicamentos`
 --
 ALTER TABLE `tb_queixa_medicamentos`
-  ADD CONSTRAINT `fk_tb_queixa_medicamentos_tb_consulta_variavel_queixa1` FOREIGN KEY (`IdConsultaVariavel`, `IdQueixa`) REFERENCES `tb_consulta_variavel_queixa` (`IdConsultaVariavel`, `IdQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tb_queixa_medicamentos_tb_suspeita_prm1` FOREIGN KEY (`IdSuspeitaPRM`) REFERENCES `tb_suspeita_prm` (`IdSuspeitaPRM`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1` FOREIGN KEY (`IdMedicamento`) REFERENCES `tb_medicamentos` (`IdMedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tb_queixa_medicamentos_tb_acao_queixa1` FOREIGN KEY (`IdAcaoQueixa1`) REFERENCES `tb_acao_queixa` (`IdAcaoQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tb_queixa_medicamentos_tb_acao_queixa2` FOREIGN KEY (`IdAcaoQueixa2`) REFERENCES `tb_acao_queixa` (`IdAcaoQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tb_consulta_variavel_queixa_has_tb_medicamentos_tb_medicam1` FOREIGN KEY (`IdMedicamento`) REFERENCES `tb_medicamentos` (`IdMedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tb_queixa_medicamentos_tb_consulta_variavel_queixa1` FOREIGN KEY (`IdConsultaVariavel`, `IdQueixa`) REFERENCES `tb_consulta_variavel_queixa` (`IdConsultaVariavel`, `IdQueixa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_queixa_medicamentos_tb_suspeita_prm1` FOREIGN KEY (`IdSuspeitaPRM`) REFERENCES `tb_suspeita_prm` (`IdSuspeitaPRM`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `tb_relato_clinico`
 --
 ALTER TABLE `tb_relato_clinico`
+  ADD CONSTRAINT `fk_tb_relato_clinico_tb_area_atuacao1` FOREIGN KEY (`idAreaAtuacao`) REFERENCES `tb_area_atuacao` (`IdAreaAtuacao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tb_relato_clinico_tb_paciente1` FOREIGN KEY (`IdPaciente`) REFERENCES `tb_paciente` (`IdPaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
