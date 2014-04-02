@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.MedicamentoNaoPrescritoModel>" %>
+<%@ Import Namespace = "PacienteVirtual.Helpers" %>
+
 <script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
@@ -66,7 +68,7 @@
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
     </div>
 </fieldset>
-<div class="span5">
-    <%: Html.ValidationMessageFor(model => model.ErroListaMedNaoPresc, string.Empty, new { @class = "styleValidation" })%>
+<div class="styleValidation">
+    <%: Html.QuebraLinhaFor(model => model.ErroListaMedNaoPresc)%>
 </div>
 <% } %>
