@@ -74,7 +74,7 @@ namespace PacienteVirtual.Controllers
             SessionController.PrimeiraTelaConsulta = true;
             if (SessionController.EmCorrecao)
             {
-                corrigir(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica);
+                corrigirPrimeiraTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica);
             }
             return View(consultaModel);
         }
@@ -93,6 +93,11 @@ namespace PacienteVirtual.Controllers
             
             SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
             SessionController.PrimeiraTelaConsulta = false;
+
+            if (SessionController.EmCorrecao)
+            {
+                corrigirSegundaTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica);
+            }
             
             return View(consultaModel);
         }
@@ -280,11 +285,11 @@ namespace PacienteVirtual.Controllers
         }
         
         /// <summary>
-        /// Obtem o gabarito e faz a correção da consulta
+        /// Obtem o gabarito e faz a correção da consulta na primeira tela
         /// </summary>
         /// <param name="idPaciente"></param>
         /// <param name="ordemCronologica"></param>
-        public void corrigir(int idPaciente, int ordemCronologica)
+        public void corrigirPrimeiraTela(int idPaciente, int ordemCronologica)
         {
             // Gabarito da consulta
             ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
@@ -326,7 +331,21 @@ namespace PacienteVirtual.Controllers
             // Alergias
             IEnumerable<AlergiaModel> ListaAlergiaGabarito = GerenciadorExamesFisicos.GetInstance().ObterAlergias(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorExamesFisicos.GetInstance().CorrigirRespostasAlergias(SessionController.ListaAlergia, ListaAlergiaGabarito, ModelState);
+            //Revisão dos Sistemas
+            IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostas(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
         }
         
+        /// <summary>
+        /// Obtem o gabarito e faz a correção da consulta na segunda tela
+        /// </summary>
+        /// <param name="idPaciente"></param>
+        /// <param name="ordemCronologica"></param>
+        public void corrigirSegundaTela(int idPaciente, int ordemCronologica)
+        {
+            // Gabarito da consulta
+            ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
+            
+        }
     }
 }

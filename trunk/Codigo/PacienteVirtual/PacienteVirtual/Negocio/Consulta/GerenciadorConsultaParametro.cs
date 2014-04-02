@@ -69,9 +69,9 @@ namespace PacienteVirtual.Negocio
                     erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + parametroGabarito.ParametroClinico + "; " + Environment.NewLine;
                 }
             }
-            modelState.AddModelError("ErroParametroClinico", (erroRespostas.Equals("") ? "" : erroRespostas + Environment.NewLine) +
-                (erroNaoContemNoGabarito.Equals("") ? "" : "Parâmetros Clínicos que não contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine) +
-                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Parâmetros Clínicos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+            modelState.AddModelError("ErroParametroClinico", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Parâmetros Clínicos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Parâmetros Clínicos que não foram adicionados: <br>" + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>

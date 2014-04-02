@@ -48,5 +48,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "estado_situacao", ResourceType = typeof(Mensagem))]
         public string DescricaoSituacao { get; set; }
+
+        public string ErroConsultaVariavelQueixa { get; set; }
      }
 }

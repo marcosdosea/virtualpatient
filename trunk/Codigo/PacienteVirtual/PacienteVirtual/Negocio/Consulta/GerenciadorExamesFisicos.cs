@@ -45,7 +45,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + alergia.Alergia + "; " + Environment.NewLine;
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + alergia.Alergia + ";<br>";
                 }
             }
             foreach (var alergiaGabarito in listaAlergiaGabarito)
@@ -61,10 +61,10 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + alergiaGabarito.Alergia + "; " + Environment.NewLine;
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + alergiaGabarito.Alergia + ";<br>";
                 }
             }
-            modelState.AddModelError("ErroParametroClinico", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + Environment.NewLine) +
+            modelState.AddModelError("ErroParametroClinico", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
                 (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Alergias que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
