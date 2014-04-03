@@ -70,9 +70,11 @@
                 .Encoded(false)
                 .Sanitized(false)
                 .SetWidth(30)
-                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.atribuir, "AtribuirRelato", "RelatoClinico", new { idTurma = o.IdTurma, idPessoa = o.IdPessoa }, new { onclick = "alert('O paciente foi atribuído a Consulta.')" }));
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.atribuir, "AtribuirRelato", "RelatoClinico", new { idTurma = o.IdTurma, idPessoa = o.IdPessoa }, null));
                 
     }).WithPaging(5).Sortable().ToHtmlString()%>
     </div>
+
+    
 
 </asp:Content>

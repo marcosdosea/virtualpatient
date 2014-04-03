@@ -213,6 +213,7 @@ namespace PacienteVirtual.Negocio
             if (GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
                 consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count() > 0)
             {
+                SessionController.AlertaBox = "false";
                 throw new NegocioException("Essa consulta já foi atribuída.");
             }
         }
