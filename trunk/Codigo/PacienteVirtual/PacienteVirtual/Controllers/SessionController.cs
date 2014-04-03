@@ -659,5 +659,15 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_IdEstadoConsulta"] = value;
             }
         }
+
+        //Mostrar mensagens em alert box
+        public static string AlertaBox
+        {
+            get
+            {
+                return (string)HttpContext.Current.Session["_AlertaBox"];
+            }
+            set { HttpContext.Current.Session["_AlertaBox"] = value; }
+        }
     }
 }

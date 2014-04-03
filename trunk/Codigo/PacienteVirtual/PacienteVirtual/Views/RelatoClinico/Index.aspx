@@ -82,5 +82,21 @@
 
 </div>
 
+    <!-- Código javascript para mostrar as mensagens de alerta quando as consultas forem atribuídas com sucesso -->
+    <input type="hidden" value="<%: Session["_AlertaBox"] %>" id="alertBox" />
+    <script type="text/javascript">
+        var msg = document.getElementById('alertBox').value;
+        if (msg != "") {
+            if (msg == "true") {
+                alert("O paciente foi atribuído a consulta.");
+            } else {
+                alert("Não foi possível atribuir o paciente a consulta.");
+            }
+        }
+    </script>
+    <%: HttpContext.Current.Session["_AlertaBox"] = "" %>
+    <!-- Fim do código para mostrar e esconder o alert de sucesso -->
+
 </asp:Content>
+
 

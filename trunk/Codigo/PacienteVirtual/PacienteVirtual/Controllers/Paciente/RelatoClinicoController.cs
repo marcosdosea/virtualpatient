@@ -14,6 +14,7 @@ namespace PacienteVirtual.Controllers
         // GET: /RelatoClinico/Atribuir/5
         public ActionResult Atribuir(int idRelato, int idPaciente, int ordemCronologica)
         {
+            SessionController.AlertaBox = "";
             SessionController.IdRelato = idRelato;
             ViewBag.NomePaciente = GerenciadorPaciente.GetInstance().ObterNomePorId(idPaciente);
             ViewBag.OrdemCronologica = ordemCronologica;
@@ -47,6 +48,7 @@ namespace PacienteVirtual.Controllers
                 InserirDadosConsultaAnterior(consultaVariavelAnteriorModel, cvm, idConsultaVariavel);
             }
             SessionController.IdRelato = 0;
+            SessionController.AlertaBox = "true";
             return RedirectToAction("Index", "RelatoClinico");
         }
 
