@@ -20,6 +20,10 @@ namespace PacienteVirtual.Controllers
                 gExpMedicamento.Atualizar(expMedicamento);
                 SessionController.ExperienciaMedicamentos = expMedicamento;
             }
+            else
+            {
+                GerenciadorExperienciaMedicamentos.GetInstance().ValidarRespostasSelecionaveis(expMedicamento.IdRespostaComportamento, expMedicamento.IdRespostaCultural, expMedicamento.IdRespostaEsperaTratamento, expMedicamento.IdRespostaGrauEntendimento, expMedicamento.IdRespostaIncorporadoPlano, expMedicamento.IdRespostaPreocupacoes);
+            }
             SessionController.Abas1 = Global.abaExpMed;
             return RedirectToAction("Edit", "Consulta");
         }

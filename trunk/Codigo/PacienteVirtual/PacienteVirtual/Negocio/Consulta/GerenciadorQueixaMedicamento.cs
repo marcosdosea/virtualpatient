@@ -156,6 +156,21 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Faz a validação para verificar se todos os id estão diferentes de 0
+        /// </summary>
+        public bool ValidarRespostasSelecionaveis(int IdAcaoQueixa1, int IdAcaoQueixa2, int IdMedicamento, int IdQueixaMedicamento, int IdSuspeitaPRM)
+        {
+            if (IdAcaoQueixa1 == 0 || IdAcaoQueixa2 == 0 || IdMedicamento == 0 || IdQueixaMedicamento == 0 || IdSuspeitaPRM == 0)
+            {
+                throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais campos.");
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="queixaMedicamentoModel"></param>

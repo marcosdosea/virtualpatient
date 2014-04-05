@@ -207,5 +207,20 @@ namespace PacienteVirtual.Negocio
             _expMedicamentosE.AtencaoComportamento = expMedicamentos.AtencaoComportamento;
 
         }
+
+        /// <summary>
+        /// Faz a validação para verificar se todos os id estão diferentes de 0
+        /// </summary>
+        public bool ValidarRespostasSelecionaveis(int IdRespostaComportamento, int IdRespostaCultural, int IdRespostaEsperaTratamento, int IdRespostaGrauEntendimento, int IdRespostaIncorporadoPlano, int IdRespostaPreocupacoes)
+        {
+            if (IdRespostaComportamento == 0 || IdRespostaCultural == 0 || IdRespostaEsperaTratamento == 0 || IdRespostaGrauEntendimento == 0 || IdRespostaIncorporadoPlano == 0 || IdRespostaPreocupacoes == 0)
+            {
+                throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais respostas.");
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
