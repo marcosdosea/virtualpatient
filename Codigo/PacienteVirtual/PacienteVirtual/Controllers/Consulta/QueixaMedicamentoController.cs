@@ -24,6 +24,10 @@ namespace PacienteVirtual.Controllers
                 GerenciadorQueixaMedicamento.GetInstance().Inserir(queixaMedicamento);
                 SessionController.ListaQueixaMedicamento = null;
             }
+            else 
+            {
+                GerenciadorQueixaMedicamento.GetInstance().ValidarRespostasSelecionaveis(queixaMedicamento.IdAcaoQueixa1, queixaMedicamento.IdAcaoQueixa2, queixaMedicamento.IdMedicamento, queixaMedicamento.IdQueixaMedicamento, queixaMedicamento.IdSuspeitaPRM);
+            }
             SessionController.Abas2 = Global.abaClassificacaoPRM;
             return RedirectToAction("Edit2", "Consulta");
         }
