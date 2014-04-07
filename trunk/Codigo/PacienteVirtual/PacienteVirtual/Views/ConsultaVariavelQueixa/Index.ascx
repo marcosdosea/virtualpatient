@@ -8,6 +8,7 @@
 </style>
 <h3>
     <%: Resources.Mensagem.revisao_sistemas %></h3>
+<div id="minhaBarra">
 <div class="box-content">
     <table class="table table-bordered table-striped">
         <tr>
@@ -81,4 +82,5 @@
         </tr>
         <% } %>
     </table>
+</div>
 </div>

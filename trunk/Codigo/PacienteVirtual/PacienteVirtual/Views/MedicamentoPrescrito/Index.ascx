@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.MedicamentoPrescritoModel>>" %>
+<div id="minhaBarra">
 <div class="box-content">
     <table class="table table-bordered table-striped">
         <tr>
@@ -56,4 +57,5 @@
         </tr>
         <% } %>
     </table>
+</div>
 </div>
