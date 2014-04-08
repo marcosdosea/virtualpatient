@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -20,6 +21,66 @@ namespace PacienteVirtual.Negocio
             return gCarta;
         }
 
+        /// <summary>
+        /// Realiza a correção da carta de acordo com as respostas do gabarito
+        /// </summary>
+        /// <param name="listaCarta"></param>
+        /// <param name="listaCartaGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostas(IEnumerable<CartaModel> listaCarta, IEnumerable<CartaModel> listaCartaGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var carta in listaCarta)
+            {
+                contem = false;
+                foreach (var cartaGabarito in listaCartaGabarito)
+                {
+                    if (carta.IdCarta == cartaGabarito.IdCarta)
+                    {
+                        contem = true;
+                        if (carta.IdEspecialidade != cartaGabarito.IdEspecialidade || !carta.NomeProfissional.Equals(cartaGabarito.NomeProfissional) || 
+                            !carta.NomePaciente.Equals(cartaGabarito.NomePaciente) || !carta.DataNascimento.Equals(cartaGabarito.DataNascimento) ||
+                            !carta.MotivoReferenciaConsulta.Equals(cartaGabarito.MotivoReferenciaConsulta) || !carta.Alternativas.Equals(cartaGabarito.Alternativas) ||
+                            !carta.Farmaceutico.Equals(cartaGabarito.Farmaceutico) || !carta.Referências.Equals(cartaGabarito.Referências))
+                        {
+                            erroRespostas = erroRespostas + "Gabarito da Especialidade: " + carta.Especialidade + ": " + 
+                                cartaGabarito.NomeProfissional + ", " + cartaGabarito.NomePaciente + ", " + cartaGabarito.DataNascimento + ", " + 
+                                cartaGabarito.MotivoReferenciaConsulta + ", " + cartaGabarito.Alternativas + ", " + cartaGabarito.Farmaceutico + ", " + 
+                                 " e " + cartaGabarito.Referências + "; " + "<br>";
+                        }
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + carta.Especialidade + "; " + "<br>";
+                }
+            }
+            foreach (var cartaGabarito in listaCartaGabarito)
+            {
+                contem = false;
+                foreach (var carta in listaCarta)
+                {
+                    if (carta.IdCarta == cartaGabarito.IdCarta)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + cartaGabarito.Especialidade + "; " + "<br>";
+                }
+            }
+            modelState.AddModelError("ErroCarta", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+        }
+        
+        
         /// <summary>
         /// Insere dados do Carta
         /// </summary>

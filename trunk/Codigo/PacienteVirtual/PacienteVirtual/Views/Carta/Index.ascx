@@ -4,6 +4,9 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
+                <%: Resources.Mensagem.especialidade %>
+            </th>
+            <th>
                 <%: Resources.Mensagem.nome_profissional %>
             </th>
             <th>
@@ -22,9 +25,6 @@
                 <%: Resources.Mensagem.farmaceutico %>
             </th>
             <th>
-                <%: Resources.Mensagem.especialidade %>
-            </th>
-            <th>
                 <%: Resources.Mensagem.referencia_utilizadas %>
             </th>
             <th>
@@ -34,6 +34,9 @@
         <% foreach (var item in Model)
            { %>
         <tr>
+            <td>
+                <%: Html.DisplayFor(modelItem => item.Especialidade) %>
+            </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.NomeProfissional) %>
             </td>
@@ -51,9 +54,6 @@
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Farmaceutico) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Especialidade) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Referências) %>
