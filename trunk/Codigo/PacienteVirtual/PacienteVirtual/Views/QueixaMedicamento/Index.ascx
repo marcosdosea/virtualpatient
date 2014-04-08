@@ -1,6 +1,12 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.QueixaMedicamentoModel>>" %>
+<%@ Import Namespace = "PacienteVirtual.Helpers" %>
+
 <h3>
     <%: Resources.Mensagem.medicamentos_queixa_suspeita_prm %></h3>
+
+<div class="styleValidation">
+     <%: Html.Raw(Session["_ErroQueixaMedicamento"].ToString())%>
+</div>
 <div id="minhaBarra">
 <div class="box-content">
     <table class="table table-bordered table-striped">

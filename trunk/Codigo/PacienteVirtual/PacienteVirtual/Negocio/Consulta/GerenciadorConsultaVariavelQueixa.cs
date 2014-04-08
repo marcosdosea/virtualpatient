@@ -4,6 +4,7 @@ using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
 using System.Web.Mvc;
+using PacienteVirtual.Controllers;
 
 namespace PacienteVirtual.Negocio
 {
@@ -158,12 +159,12 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Faz correção das Alergias da consulta de acordo com o gabarito
+        /// Faz correção das consultas variaveis queixa da consulta 1 de acordo com o gabarito
         /// </summary>
         /// <param name="listaConsultVarQueixa"></param>
         /// <param name="ListaConsultVarQueixaGabarito"></param>
         /// <param name="modelState"></param>
-        public void CorrigirRespostas(IEnumerable<ConsultaVariavelQueixaModel> listaConsultVarQueixa, IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixaGabarito, ModelStateDictionary modelState)
+        public void CorrigirRespostasConsulta1(IEnumerable<ConsultaVariavelQueixaModel> listaConsultVarQueixa, IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixaGabarito, ModelStateDictionary modelState)
         {
             string erroNaoContemNoGabarito = "";
             string erroContemGabaritoNaoContemResposta = "";
@@ -202,6 +203,59 @@ namespace PacienteVirtual.Negocio
             }
             modelState.AddModelError("ErroConsultaVariavelQueixa", (erroNaoContemNoGabarito.Equals("") ? "" : "As Revisões do Sistema que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
                 (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "As Revisões do Sistema que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+        }
+
+        /// <summary>
+        /// Faz correção das consultas variaveis queixa da consulta 2 de acordo com o gabarito
+        /// </summary>
+        /// <param name="listaConsultVarQueixa"></param>
+        /// <param name="ListaConsultVarQueixaGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostasConsulta2(IEnumerable<ConsultaVariavelQueixaModel> listaConsultVarQueixa, IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixaGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var queixa in listaConsultVarQueixa)
+            {
+                contem = false;
+                foreach (var queixaGabarito in ListaConsultVarQueixaGabarito)
+                {
+                    if (queixa.IdQueixa == queixaGabarito.IdQueixa)
+                    {
+                        contem = true;
+                        if (queixa.IdObjetivoTerapeutico != queixaGabarito.IdObjetivoTerapeutico || !queixa.DescricaoSituacao.Equals(queixaGabarito.DescricaoSituacao) || queixa.Desde != queixaGabarito.Desde || queixa.Tipo != queixaGabarito.Tipo || queixa.Prioridade != queixaGabarito.Prioridade)
+                        {
+                            erroRespostas += "Gabarito da Revisão do Problema " + queixaGabarito.DescricaoQueixa + ": " + queixaGabarito.DescricaoObjetivoTerapeutico + ", " + (queixaGabarito.DescricaoSituacao == null || queixaGabarito.DescricaoSituacao == "" ? "EM BRANCO" : queixaGabarito.DescricaoSituacao) + ", " + (queixaGabarito.Desde == null || queixaGabarito.Desde == "" ? "EM BRANCO" : queixaGabarito.Desde) + ", " + queixaGabarito.Tipo + " e " + queixaGabarito.Prioridade + ".<br>";
+                        }
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito += queixa.DescricaoQueixa + "<br>";
+                }
+            }
+            foreach (var queixaGabarito in ListaConsultVarQueixaGabarito)
+            {
+                contem = false;
+                foreach (var queixa in listaConsultVarQueixa)
+                {
+                    if (queixa.IdQueixa == queixaGabarito.IdQueixa)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta += queixaGabarito.DescricaoQueixa + ";<br>";
+                }
+            }
+            SessionController.ErroConsultaVariavelQueixa2 = (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
+                  (erroNaoContemNoGabarito.Equals("") ? "" : "Problemas que não contém no Gabarito: <br>" + erroNaoContemNoGabarito + "<br>") +
+                  (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Problemas que não foram adicionados do Gabarito: <br>" + erroContemGabaritoNaoContemResposta);
         }
     }
 }

@@ -41,6 +41,6 @@
     </div>
 </fieldset>
 <div class="styleValidation">
-    <%: Html.QuebraLinhaFor(model => model.ErroConsultaVariavelQueixa)%>
+    <%: Html.QuebraLinhaFor(model => model.ErroConsultaVariavelQueixa) %>
 </div>
 <% } %>

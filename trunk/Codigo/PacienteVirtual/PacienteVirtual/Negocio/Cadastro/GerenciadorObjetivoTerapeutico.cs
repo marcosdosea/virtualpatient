@@ -109,7 +109,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<ObjetivoTerapeuticoModel> ObterTodos()
         {
-            return GetQuery().ToList();
+            return GetQuery().ToList().OrderBy(ot => ot.DescricaoObjetivoTerapeutico);
         }
 
         /// <summary>

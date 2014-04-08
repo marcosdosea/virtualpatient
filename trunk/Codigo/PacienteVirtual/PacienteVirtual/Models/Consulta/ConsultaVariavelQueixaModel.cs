@@ -50,5 +50,6 @@ namespace PacienteVirtual.Models
         public string DescricaoSituacao { get; set; }
 
         public string ErroConsultaVariavelQueixa { get; set; }
+        public string ErroConsultaVariavelQueixa2 { get; set; }
      }
 }

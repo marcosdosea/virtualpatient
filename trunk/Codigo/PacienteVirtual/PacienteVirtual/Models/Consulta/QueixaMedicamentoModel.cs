@@ -72,5 +72,7 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "resolvido", ResourceType = typeof(Mensagem))]
         public bool Resolvido { get; set; }
+
+        public string ErroQueixaMed { get; set; }
     }
 }
