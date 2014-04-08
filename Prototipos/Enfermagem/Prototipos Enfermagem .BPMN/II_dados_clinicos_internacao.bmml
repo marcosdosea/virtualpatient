@@ -96,91 +96,91 @@
         <text>Patol%F3gias%20Atuais%3A</text>
       </controlProperties>
     </control>
-    <control controlID="27" controlTypeID="com.balsamiq.mockups::TextInput" x="853" y="332" w="317" h="-1" measuredW="79" measuredH="26" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::TextInput" x="853" y="254" w="317" h="-1" measuredW="79" measuredH="26" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::TextInput" x="853" y="254" w="317" h="-1" measuredW="79" measuredH="26" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::TextInput" x="853" y="288" w="316" h="-1" measuredW="79" measuredH="26" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="32" controlTypeID="com.balsamiq.mockups::TextInput" x="853" y="288" w="316" h="-1" measuredW="79" measuredH="26" zOrder="21" locked="false" isInGroup="-1">
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="288" w="370" h="-1" measuredW="79" measuredH="26" zOrder="21" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="33" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="288" w="370" h="-1" measuredW="79" measuredH="26" zOrder="22" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text/>
-      </controlProperties>
-    </control>
-    <control controlID="34" controlTypeID="com.balsamiq.mockups::CheckBox" x="1060" y="370" w="-1" h="-1" measuredW="110" measuredH="22" zOrder="23" locked="false" isInGroup="-1">
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::CheckBox" x="1060" y="370" w="-1" h="-1" measuredW="110" measuredH="22" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
         <text>N%E3o%20sei%20Aplicar</text>
       </controlProperties>
     </control>
-    <control controlID="35" controlTypeID="com.balsamiq.mockups::TextInput" x="678" y="399" w="492" h="-1" measuredW="242" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::TextInput" x="678" y="399" w="492" h="-1" measuredW="242" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Espa%E7o%20para%20cadastrar%20a%20op%E7%E3o%20outros</text>
       </controlProperties>
     </control>
-    <control controlID="36" controlTypeID="com.balsamiq.mockups::Button" x="588" y="671" w="203" h="27" measuredW="60" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Button" x="588" y="671" w="203" h="27" measuredW="60" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Salvar</text>
       </controlProperties>
     </control>
-    <control controlID="37" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="218" w="370" h="-1" measuredW="79" measuredH="26" zOrder="26" locked="false" isInGroup="-1">
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="218" w="370" h="-1" measuredW="79" measuredH="26" zOrder="25" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="38" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="332" w="370" h="-1" measuredW="79" measuredH="26" zOrder="27" locked="false" isInGroup="-1">
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="332" w="370" h="-1" measuredW="79" measuredH="26" zOrder="26" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="39" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="254" w="370" h="-1" measuredW="79" measuredH="26" zOrder="28" locked="false" isInGroup="-1">
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="254" w="370" h="-1" measuredW="79" measuredH="26" zOrder="27" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="40" controlTypeID="com.balsamiq.mockups::ComboBox" x="295" y="407" w="368" h="-1" measuredW="88" measuredH="24" zOrder="29" locked="false" isInGroup="-1">
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::ComboBox" x="295" y="407" w="368" h="-1" measuredW="88" measuredH="24" zOrder="28" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Selecione</text>
       </controlProperties>
     </control>
-    <control controlID="44" controlTypeID="com.balsamiq.mockups::ComboBox" x="678" y="490" w="381" h="-1" measuredW="88" measuredH="24" zOrder="31" locked="false" isInGroup="-1">
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::ComboBox" x="678" y="490" w="381" h="-1" measuredW="88" measuredH="24" zOrder="30" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Selecione</text>
       </controlProperties>
     </control>
-    <control controlID="45" controlTypeID="com.balsamiq.mockups::Button" x="678" y="528" w="84" h="27" measuredW="77" measuredH="27" zOrder="32" locked="false" isInGroup="-1">
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Button" x="678" y="528" w="84" h="27" measuredW="77" measuredH="27" zOrder="31" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Adicionar</text>
       </controlProperties>
     </control>
-    <control controlID="47" controlTypeID="com.balsamiq.mockups::Link" x="1107" y="611" w="-1" h="-1" measuredW="53" measuredH="19" zOrder="33" locked="false" isInGroup="-1">
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Link" x="1107" y="611" w="-1" h="-1" measuredW="53" measuredH="19" zOrder="32" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Remover</text>
       </controlProperties>
     </control>
-    <control controlID="48" controlTypeID="com.balsamiq.mockups::DataGrid" x="678" y="558" w="507" h="98" measuredW="178" measuredH="151" zOrder="30" locked="false" isInGroup="-1">
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::DataGrid" x="678" y="558" w="507" h="98" measuredW="178" measuredH="151" zOrder="29" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <rowHeight>26</rowHeight>
         <text>Medicamentos%20%5E%2C%20Remover%0AAciclovir%0AAlbendazol%0AAtenolol%0ACetoconazol%0ADipirona%0A%7B30L%2C%207L%7D</text>
       </controlProperties>
     </control>
-    <control controlID="49" controlTypeID="com.balsamiq.mockups::Link" x="1107" y="637" w="-1" h="-1" measuredW="53" measuredH="19" zOrder="34" locked="false" isInGroup="-1">
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Link" x="1107" y="637" w="-1" h="-1" measuredW="53" measuredH="19" zOrder="33" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Remover</text>
       </controlProperties>
     </control>
-    <control controlID="50" controlTypeID="com.balsamiq.mockups::Link" x="1107" y="583" w="-1" h="-1" measuredW="53" measuredH="19" zOrder="35" locked="false" isInGroup="-1">
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Link" x="1107" y="583" w="-1" h="-1" measuredW="53" measuredH="19" zOrder="34" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Remover</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::ComboBox" x="853" y="333" w="317" h="-1" measuredW="88" measuredH="24" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Selecione</text>
       </controlProperties>
     </control>
   </controls>
