@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
+using PacienteVirtual.Controllers;
 
 namespace PacienteVirtual.Negocio
 {
@@ -190,6 +192,59 @@ namespace PacienteVirtual.Negocio
             _tb_queixa_medicamentos.Seguro = queixaMedicamentoModel.Seguro;
             _tb_queixa_medicamentos.Necessario = queixaMedicamentoModel.Necessario;
             _tb_queixa_medicamentos.Cumprimento = queixaMedicamentoModel.Cumprimento;
+        }
+
+        /// <summary>
+        /// Faz correção de queixa medicamento da consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="listaConsultVarQueixa"></param>
+        /// <param name="ListaConsultVarQueixaGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostas(IEnumerable<QueixaMedicamentoModel> listaQueixaMedi, IEnumerable<QueixaMedicamentoModel> listaQueixaMedGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var queixa in listaQueixaMedi)
+            {
+                contem = false;
+                foreach (var queixaGabarito in listaQueixaMedGabarito)
+                {
+                    if (queixa.IdQueixaMedicamento == queixaGabarito.IdQueixaMedicamento)
+                    {
+                        contem = true;
+                        if (queixa.IdMedicamento != queixaGabarito.IdMedicamento || !queixa.Dose.Equals(queixaGabarito.Dose) || !queixa.Desde.Equals(queixaGabarito.Desde) || queixa.Necessario != queixaGabarito.Necessario || queixa.Efetivo != queixaGabarito.Efetivo || queixa.Seguro != queixaGabarito.Seguro || queixa.Cumprimento != queixaGabarito.Cumprimento || queixa.IdSuspeitaPRM != queixaGabarito.IdSuspeitaPRM || queixa.IdAcaoQueixa1 != queixaGabarito.IdAcaoQueixa1 || queixa.IdAcaoQueixa2 != queixaGabarito.IdAcaoQueixa2 || queixa.Resolvido != queixaGabarito.Resolvido)
+                        {
+                            erroRespostas += queixaGabarito.Queixa + ": " + queixaGabarito.NomeMedicamento + ", " + queixaGabarito.Dose + ", " + queixaGabarito.Desde + ", Necessário: " + (queixaGabarito.Necessario == true ? "Sim" : "Não") + ", Efetivo" + (queixaGabarito.Efetivo == true ? "Sim" : "Não") + ", Seguro: " + (queixaGabarito.Seguro == true ? "Sim" : "Não") + ",Cumprimento: " + (queixaGabarito.Cumprimento == true ? "Sim" : "Não") +  ",PRM: " + queixaGabarito.SuspeitaPRM + ", " + queixaGabarito.DescricaoAcaoQueixa1 + " e " + queixaGabarito.DescricaoAcaoQueixa2 + ".<br>";
+                        }
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito += queixa.Queixa + " - " + queixa.NomeMedicamento + "<br>";
+                }
+            }
+            foreach (var queixaGabarito in listaQueixaMedGabarito)
+            {
+                contem = false;
+                foreach (var queixa in listaQueixaMedi)
+                {
+                    if (queixa.IdQueixaMedicamento == queixaGabarito.IdQueixaMedicamento)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta += queixaGabarito.NomeMedicamento + ";<br>";
+                }
+            }
+            SessionController.ErroQueixaMedicamento = (erroRespostas.Equals("") ? "" : "Gabarito dos Medicamentos relacionados:<br>" + erroRespostas + "<br>") +
+                  (erroNaoContemNoGabarito.Equals("") ? "" : "Problemas que não contém no Gabarito: <br>" + erroNaoContemNoGabarito + "<br>") +
+                  (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Problemas que não foram adicionados do Gabarito: <br>" + erroContemGabaritoNaoContemResposta);
         }
     }
 }

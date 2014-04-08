@@ -333,7 +333,7 @@ namespace PacienteVirtual.Controllers
             GerenciadorExamesFisicos.GetInstance().CorrigirRespostasAlergias(SessionController.ListaAlergia, ListaAlergiaGabarito, ModelState);
             //Revisão dos Sistemas
             IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
-            GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostas(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
+            GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostasConsulta1(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
         }
         
         /// <summary>
@@ -347,7 +347,10 @@ namespace PacienteVirtual.Controllers
             ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
             //Classificação PRM
             IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
-            GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostas(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
+            GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostasConsulta2(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
+            //Queixa Medicamento
+            IEnumerable<QueixaMedicamentoModel> ListaQueixaMedicamento = GerenciadorQueixaMedicamento.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorQueixaMedicamento.GetInstance().CorrigirRespostas(SessionController.ListaQueixaMedicamento, ListaQueixaMedicamento, ModelState);
             //Diario Pessoal
             IEnumerable<DiarioPessoalModel> ListaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorDiarioPessoal.GetInstance().CorrigirRespostas(SessionController.ListaDiarioPessoal, ListaDiarioPessoal, ModelState);

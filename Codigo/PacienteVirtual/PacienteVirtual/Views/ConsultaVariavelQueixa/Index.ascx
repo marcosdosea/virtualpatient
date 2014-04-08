@@ -8,6 +8,13 @@
 </style>
 <h3>
     <%: Resources.Mensagem.revisao_sistemas %></h3>
+<% if (Session["_PrimeiraTelaConsulta"].Equals(false))
+   { %>
+<div class="styleValidation">
+     <%: Html.Raw(Session["_ErroConsultaVariavelQueixa2"].ToString())%>
+</div>
+<% } %>
+
 <div id="minhaBarra">
 <div class="box-content">
     <table class="table table-bordered table-striped">

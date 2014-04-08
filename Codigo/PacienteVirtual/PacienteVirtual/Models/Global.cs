@@ -64,6 +64,8 @@ namespace PacienteVirtual.Models
             SessionController.ListaQueixaMedicamento = null;
             SessionController.ListaIntervencaoConsulta = null;
             SessionController.ListaCarta = null;
+            SessionController.ErroConsultaVariavelQueixa2 = "";
+            SessionController.ErroQueixaMedicamento = "";
             SessionController.Abas1 = 0;
             SessionController.Abas2 = -1;
             /////////////////////////////////////////////////////////////////

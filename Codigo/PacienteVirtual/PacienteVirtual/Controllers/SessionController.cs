@@ -669,5 +669,23 @@ namespace PacienteVirtual.Controllers
             }
             set { HttpContext.Current.Session["_AlertaBox"] = value; }
         }
+
+        public static string ErroConsultaVariavelQueixa2
+        {
+            get
+            {
+                return (string)HttpContext.Current.Session["_ErroConsultaVariavelQueixa2"];
+            }
+            set { HttpContext.Current.Session["_ErroConsultaVariavelQueixa2"] = value; }
+        }
+
+        public static string ErroQueixaMedicamento
+        {
+            get
+            {
+                return (string)HttpContext.Current.Session["_ErroQueixaMedicamento"];
+            }
+            set { HttpContext.Current.Session["_ErroQueixaMedicamento"] = value; }
+        }
     }
 }
