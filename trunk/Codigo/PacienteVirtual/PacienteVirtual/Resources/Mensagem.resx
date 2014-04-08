@@ -1068,4 +1068,7 @@
   <data name="cpf_ja_cadastrado" xml:space="preserve">
     <value>Este CPF já foi cadastrado anteriormente.</value>
   </data>
+  <data name="outros_achados" xml:space="preserve">
+    <value>Outros Achados</value>
+  </data>
 </root>
