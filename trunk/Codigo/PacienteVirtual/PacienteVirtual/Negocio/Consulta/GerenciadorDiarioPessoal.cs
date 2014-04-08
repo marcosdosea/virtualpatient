@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -95,7 +96,7 @@ namespace PacienteVirtual.Negocio
             var pvEntities = (pvEntities)repDiarioPessoal.ObterContexto();
             var query = from tb_diario_pessoal in pvEntities.tb_diario_pessoal
                         join tb_medicamentos in pvEntities.tb_medicamentos
-                        on tb_diario_pessoal.IdMedicamento equals tb_medicamentos.IdMedicamento 
+                        on tb_diario_pessoal.IdMedicamento equals tb_medicamentos.IdMedicamento
                         join tb_bebida in pvEntities.tb_bebida
                         on tb_diario_pessoal.IdBebida equals tb_bebida.IdBebida
                         select new DiarioPessoalModel
@@ -161,5 +162,57 @@ namespace PacienteVirtual.Negocio
             _tb_diario_pessoal.HorarioComplemento = DiarioPessoalModel.HorarioComplemento;
         }
 
+        /// <summary>
+        /// Realiza a correção do medicamento prescrito de acordo com as respostas do gabarito
+        /// </summary>
+        /// <param name="demoAntrop"></param>
+        /// <param name="demoAntropGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostas(IEnumerable<DiarioPessoalModel> listaDiario, IEnumerable<DiarioPessoalModel> listaDiarioPessoalGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var diario in listaDiario)
+            {
+                contem = false;
+                foreach (var diarioGabarito in listaDiarioPessoalGabarito)
+                {
+                    if (diario.IdMedicamento == diarioGabarito.IdMedicamento)
+                    {
+                        contem = true;
+                        if (!diario.Periodo.Equals(diarioGabarito.Periodo) || !diario.Horario.Equals(diarioGabarito.Horario) || !diario.HorarioComplemento.Equals(diarioGabarito.HorarioComplemento) || !diario.Dose.Equals(diarioGabarito.Dose) || !diario.Quantidade.Equals(diarioGabarito.Quantidade) || diario.IdBebida != diarioGabarito.IdBebida)
+                        { 
+                            erroRespostas = erroRespostas + "Gabarito correto do Medicamento "+  diarioGabarito.Medicamento + ": " + diarioGabarito.Periodo + ", " + diarioGabarito.Horario + "hrs, " + (diarioGabarito.HorarioComplemento == null || diarioGabarito.HorarioComplemento == "" ? "EM BRANCO" : diarioGabarito.HorarioComplemento) +  ", " + diarioGabarito.Dose + ", " + diarioGabarito.Quantidade + " e " + diarioGabarito.NomeBebida + ";" + "<br>";
+                        }
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito += diario.Medicamento + "; " + "<br>";
+                }
+            }
+            foreach (var diarioGabarito in listaDiarioPessoalGabarito)
+            {
+                contem = false;
+                foreach (var diario in listaDiario)
+                {
+                    if (diario.IdMedicamento == diarioGabarito.IdMedicamento)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta += diarioGabarito.Medicamento + "; " + "<br>";
+                }
+            }
+            modelState.AddModelError("ErroDiarioPessoal", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
+                  (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: <br>" + erroNaoContemNoGabarito + "<br>") +
+                  (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados do Gabarito: <br>" + erroContemGabaritoNaoContemResposta));
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DiarioPessoalModel>" %>
+<%@ Import Namespace = "PacienteVirtual.Helpers" %>
+
 <% using (Html.BeginForm("Create", "DiarioPessoal"))
    { %>
 <%: Html.ValidationSummary(true) %>
@@ -109,4 +111,7 @@
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
     </div>
 </fieldset>
+<div class="styleValidation">
+    <%: Html.QuebraLinhaFor(model => model.ErroDiarioPessoal) %>
+</div>
 <% } %>

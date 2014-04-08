@@ -42,5 +42,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "horario_complemento", ResourceType = typeof(Mensagem))]
         public string HorarioComplemento { get; set; }
+
+        public string ErroDiarioPessoal { get; set; }
     }
 }
