@@ -351,6 +351,12 @@ namespace PacienteVirtual.Controllers
             //Diario Pessoal
             IEnumerable<DiarioPessoalModel> ListaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorDiarioPessoal.GetInstance().CorrigirRespostas(SessionController.ListaDiarioPessoal, ListaDiarioPessoal, ModelState);
+            // carta
+            IEnumerable<CartaModel> listaCarta = GerenciadorCarta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorCarta.GetInstance().CorrigirRespostas(SessionController.ListaCarta, listaCarta, ModelState);
+            // Intervencao
+            IEnumerable<IntervencaoConsultaModel> listaIntervencao = GerenciadorIntervencaoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorIntervencaoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaIntervencaoConsulta, listaIntervencao, ModelState);
         }
     }
 }

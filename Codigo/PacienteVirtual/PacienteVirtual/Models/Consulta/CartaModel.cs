@@ -55,5 +55,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "especialidade", ResourceType = typeof(Mensagem))]
         public string Especialidade { get; set; }
+
+        public string ErroCarta { get; set; }
     }
 }

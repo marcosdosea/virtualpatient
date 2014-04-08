@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -18,6 +19,62 @@ namespace PacienteVirtual.Negocio
                 gIntervencaoConsulta = new GerenciadorIntervencaoConsulta();
             }
             return gIntervencaoConsulta;
+        }
+
+        /// <summary>
+        /// Realiza a correção da consulta intervencao de acordo com as respostas do gabarito
+        /// </summary>
+        /// <param name="listaIntervencao"></param>
+        /// <param name="listaintervencaoGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostas(IEnumerable<IntervencaoConsultaModel> listaIntervencao, IEnumerable<IntervencaoConsultaModel> listaintervencaoGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var intervencao in listaIntervencao)
+            {
+                contem = false;
+                foreach (var intervencaoGabarito in listaintervencaoGabarito)
+                {
+                    if (intervencao.IdIntervencao == intervencaoGabarito.IdIntervencao)
+                    {
+                        contem = true;
+                        if (intervencao.Paciente != intervencaoGabarito.Paciente || intervencao.Outro != intervencaoGabarito.Outro || 
+                            !intervencao.Justificativa.Equals(intervencaoGabarito.Justificativa))
+                        {
+                            erroRespostas = erroRespostas + "Gabarito da Intervenção: " + intervencao.DescricaoIntervencao + ": " +
+                                (intervencaoGabarito.Paciente == true ? "Sim" : "Não") + ", " + (intervencaoGabarito.Outro == true ? "Sim" : "Não") + 
+                                " e " + intervencaoGabarito.Justificativa + "; " + "<br>";
+                        }
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + intervencao.DescricaoIntervencao + "; " + "<br>";
+                }
+            }
+            foreach (var intervencaoGabarito in listaintervencaoGabarito)
+            {
+                contem = false;
+                foreach (var intervencao in listaIntervencao)
+                {
+                    if (intervencao.IdIntervencao == intervencaoGabarito.IdIntervencao)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + intervencaoGabarito.DescricaoIntervencao + "; " + "<br>";
+                }
+            }
+            modelState.AddModelError("ErroIntervencao", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>
