@@ -171,7 +171,12 @@
                             <%: Resources.Mensagem.parametro_clinico %></a></li>
                             <li id="li12"><a href="#tab1-12" data-toggle="tab">
                             <%: Resources.Mensagem.revisao_sistemas %></a></li>
-                                    <% } %>
+                        <% }
+                           else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                           { %>
+                            <li id="li2"><a href="#tab1-2" data-toggle="tab">
+                            <%: Resources.Mensagem.outros_achados %></a></li>   
+                          <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
                         <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia") || ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
@@ -244,6 +249,14 @@
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
                                 <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
+                            </div>
+                        </div>
+                        <% }
+                           else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                           { %>
+                         <div class="tab-pane" id="tab1-2">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../OutrosAchados/Edit", Model.ConsultaVariavel);%>
                             </div>
                         </div>
                         <% } %>

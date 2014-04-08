@@ -1068,4 +1068,7 @@
   <data name="cpf_ja_cadastrado" xml:space="preserve">
     <value>This Personal ID has been previously registered</value>
   </data>
+  <data name="outros_achados" xml:space="preserve">
+    <value>Others Findings</value>
+  </data>
 </root>

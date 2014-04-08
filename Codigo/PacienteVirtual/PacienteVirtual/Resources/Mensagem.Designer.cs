@@ -2032,6 +2032,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Outros Achados.
+        /// </summary>
+        public static string outros_achados {
+            get {
+                return ResourceManager.GetString("outros_achados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paciente.
         /// </summary>
         public static string paciente {
