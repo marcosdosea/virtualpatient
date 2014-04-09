@@ -195,6 +195,10 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.especialidade, "Index", "Especialidade")%>
                                         </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.patologia, "Index", "Patologia")%>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
