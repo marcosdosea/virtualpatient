@@ -162,11 +162,13 @@
     <Compile Include="Controllers\Consulta\DemograficosAntropometicosController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
     <Compile Include="Controllers\Consulta\IntervencaoConsultaController.cs" />
+    <Compile Include="Controllers\Consulta\OxigenacaoController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\AtivarTutorTurmaController.cs" />
     <Compile Include="Controllers\Turma\SelecionarTurmaController.cs" />
     <Compile Include="Controllers\Turma\SolicitarMatriculaTurmaController.cs" />
+    <Compile Include="Helpers\EnumDropDownListFor.cs" />
     <Compile Include="Helpers\HelperQuebraLinha.cs" />
     <Compile Include="Models\Cadastro\AcaoQueixaModel.cs" />
     <Compile Include="Models\Cadastro\AreaAtuacaoModel.cs" />
@@ -184,6 +186,7 @@
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
     <Compile Include="Models\Consulta\IntervencaoConsultaModel.cs" />
+    <Compile Include="Models\Consulta\OxigenacaoModel.cs" />
     <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
     <Compile Include="Models\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -581,6 +584,7 @@
     <Content Include="Views\ConsultaVariavelQueixa\Create.ascx" />
     <Content Include="Views\ConsultaVariavelQueixa\Index.ascx" />
     <Content Include="Views\ConsultaVariavel\Edit.ascx" />
+    <Content Include="Views\DadosComplementares\Edit.ascx" />
     <Content Include="Views\DiarioPessoal\Edit.aspx" />
     <Content Include="Views\DiarioPessoal\Index.ascx" />
     <Content Include="Views\Erros\Index.aspx" />
@@ -604,6 +608,11 @@
     <Content Include="Views\Naturalidade\Edit.aspx" />
     <Content Include="Views\Naturalidade\Index.aspx" />
     <Content Include="Views\OutrosAchados\Edit.ascx" />
+    <Content Include="Views\Oxigenacao\Create.aspx" />
+    <Content Include="Views\Oxigenacao\Delete.aspx" />
+    <Content Include="Views\Oxigenacao\Details.aspx" />
+    <Content Include="Views\Oxigenacao\Edit.aspx" />
+    <Content Include="Views\Oxigenacao\Index.aspx" />
     <Content Include="Views\QueixaMedicamento\Edit.aspx" />
     <Content Include="Views\Religiao\Create.aspx" />
     <Content Include="Views\Religiao\Delete.aspx" />

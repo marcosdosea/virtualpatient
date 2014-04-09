@@ -148,6 +148,10 @@ namespace PacienteVirtual.Negocio
                             NivelDificuldade = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.NivelDificuldade,
                             OrdemCronologica = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.OrdemCronologia,
                             NotaAluno = tb_consulta_variavel.NotaAluno,
+                            //Enfermagem
+                            DescricaoOutrosAchados = tb_consulta_variavel.OutrosAchados,
+                            DescricaoDadosComplementares = tb_consulta_variavel.DadosComplementares,
+                            InfoFornecidas = tb_consulta_variavel.InformacoesFamiliares,
 
                             IdPaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.IdPaciente,
                             NomePessoa = tb_consulta_variavel.tb_turma_pessoa_relato.tb_turma_pessoa.tb_pessoa.Nome,
@@ -345,6 +349,10 @@ namespace PacienteVirtual.Negocio
             _consultaVariavelE.DataPreenchimento = (DateTime)consultaVariavel.DataPreenchimento;
             _consultaVariavelE.ResumoPlanoCuidados = consultaVariavel.ResumoPlanoCuidados;
             _consultaVariavelE.ComentariosTutor = consultaVariavel.ComentariosTutor;
+            //Enfermagem
+            _consultaVariavelE.OutrosAchados = consultaVariavel.DescricaoOutrosAchados;
+            _consultaVariavelE.DadosComplementares = consultaVariavel.DescricaoDadosComplementares;
+            _consultaVariavelE.InformacoesFamiliares = consultaVariavel.InfoFornecidas;
         }
     }
 }

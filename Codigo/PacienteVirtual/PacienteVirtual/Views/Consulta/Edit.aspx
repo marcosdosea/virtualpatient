@@ -175,7 +175,11 @@
                            else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
                            { %>
                             <li id="li2"><a href="#tab1-2" data-toggle="tab">
-                            <%: Resources.Mensagem.outros_achados %></a></li>   
+                            <%: Resources.Mensagem.oxigenacao %></a></li>
+                            <li id="li3"><a href="#tab1-2" data-toggle="tab">
+                            <%: Resources.Mensagem.outros_achados %></a></li>
+                            <li id="li14"><a href="#tab1-3" data-toggle="tab">
+                            <%: Resources.Mensagem.dados_complementares %></a></li>   
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -254,9 +258,14 @@
                         <% }
                            else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
                            { %>
-                         <div class="tab-pane" id="tab1-2">
+                         <div class="tab-pane" id="tab1-3">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../OutrosAchados/Edit", Model.ConsultaVariavel);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-4">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../DadosComplementares/Edit", Model.ConsultaVariavel);%>
                             </div>
                         </div>
                         <% } %>
