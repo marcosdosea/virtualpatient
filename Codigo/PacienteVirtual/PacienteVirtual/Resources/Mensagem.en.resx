@@ -1086,4 +1086,7 @@
   <data name="ritmo" xml:space="preserve">
     <value>Rate</value>
   </data>
+  <data name="patologia" xml:space="preserve">
+    <value>Pathology</value>
+  </data>
 </root>
