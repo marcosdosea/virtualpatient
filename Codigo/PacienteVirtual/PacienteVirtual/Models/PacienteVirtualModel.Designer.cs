@@ -87,6 +87,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "tb_antecedentes_familiares", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_antecedentes_patologicos", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_patologias_atuais", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
+[assembly: EdmRelationshipAttribute("pvModel", "tb_clinico_internacao_alergia", "tb_alergia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_alergia), "tb_clinico_internacao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_clinico_internacao))]
 
 #endregion
 
@@ -2853,6 +2854,28 @@ namespace PacienteVirtual.Models
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "tb_clinico_internacao_alergia", "tb_clinico_internacao")]
+        public EntityCollection<tb_clinico_internacao> tb_clinico_internacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_clinico_internacao>("pvModel.tb_clinico_internacao_alergia", "tb_clinico_internacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_clinico_internacao>("pvModel.tb_clinico_internacao_alergia", "tb_clinico_internacao", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -3846,6 +3869,28 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_consulta_fixo>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_consulta_fixo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "tb_clinico_internacao_alergia", "tb_alergia")]
+        public EntityCollection<tb_alergia> tb_alergia
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_alergia>("pvModel.tb_clinico_internacao_alergia", "tb_alergia");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_alergia>("pvModel.tb_clinico_internacao_alergia", "tb_alergia", value);
                 }
             }
         }
