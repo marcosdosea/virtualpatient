@@ -1071,4 +1071,19 @@
   <data name="outros_achados" xml:space="preserve">
     <value>Outros Achados</value>
   </data>
+  <data name="dados_complementares" xml:space="preserve">
+    <value>Dados Complementares Importantes</value>
+  </data>
+  <data name="informacoes_fornecidas" xml:space="preserve">
+    <value>Informações Fornecidas Pelos Familiares</value>
+  </data>
+  <data name="frequencia_respiratoria" xml:space="preserve">
+    <value>Frequência Respiratória</value>
+  </data>
+  <data name="oxigenacao" xml:space="preserve">
+    <value>Oxigenação</value>
+  </data>
+  <data name="ritmo" xml:space="preserve">
+    <value>Ritmo</value>
+  </data>
 </root>

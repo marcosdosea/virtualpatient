@@ -53,5 +53,11 @@ namespace PacienteVirtual.Models
         //Enfermagem
         [Display(Name = "descricao", ResourceType = typeof(Mensagem))]
         public string DescricaoOutrosAchados { get; set; }
+
+        [Display(Name = "descricao", ResourceType = typeof(Mensagem))]
+        public string DescricaoDadosComplementares { get; set; }
+
+        [Display(Name = "informacoes_fornecidas", ResourceType = typeof(Mensagem))]
+        public string InfoFornecidas { get; set; }
     }
 }

@@ -772,6 +772,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dados Complementares Importantes.
+        /// </summary>
+        public static string dados_complementares {
+            get {
+                return ResourceManager.GetString("dados_complementares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dados do Paciente.
         /// </summary>
         public static string dados_paciente {
@@ -1267,6 +1276,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Frequência Respiratória.
+        /// </summary>
+        public static string frequencia_respiratoria {
+            get {
+                return ResourceManager.GetString("frequencia_respiratoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gênero.
         /// </summary>
         public static string genero {
@@ -1479,6 +1497,15 @@ namespace Resources {
         public static string informacao_conta {
             get {
                 return ResourceManager.GetString("informacao_conta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Informações Fornecidas Pelos Familiares.
+        /// </summary>
+        public static string informacoes_fornecidas {
+            get {
+                return ResourceManager.GetString("informacoes_fornecidas", resourceCulture);
             }
         }
         
@@ -2041,6 +2068,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oxigenação.
+        /// </summary>
+        public static string oxigenacao {
+            get {
+                return ResourceManager.GetString("oxigenacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paciente.
         /// </summary>
         public static string paciente {
@@ -2469,6 +2505,15 @@ namespace Resources {
         public static string rg {
             get {
                 return ResourceManager.GetString("rg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ritmo.
+        /// </summary>
+        public static string ritmo {
+            get {
+                return ResourceManager.GetString("ritmo", resourceCulture);
             }
         }
         
