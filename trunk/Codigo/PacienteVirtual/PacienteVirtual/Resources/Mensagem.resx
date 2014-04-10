@@ -1131,4 +1131,61 @@
   <data name="String1" xml:space="preserve">
     <value>Antecedentes Familiares</value>
   </data>
+  <data name="barril" xml:space="preserve">
+    <value>Barril</value>
+  </data>
+  <data name="bradipneia" xml:space="preserve">
+    <value>Bradipneia</value>
+  </data>
+  <data name="cheyneStokes" xml:space="preserve">
+    <value>CheyneStokes</value>
+  </data>
+  <data name="cifose" xml:space="preserve">
+    <value>Cifose</value>
+  </data>
+  <data name="coriza" xml:space="preserve">
+    <value>Coriza</value>
+  </data>
+  <data name="desvioDeSepto" xml:space="preserve">
+    <value>Desvio De Septo</value>
+  </data>
+  <data name="dispineia" xml:space="preserve">
+    <value>Dispineia</value>
+  </data>
+  <data name="epistaxe" xml:space="preserve">
+    <value>Epistaxis</value>
+  </data>
+  <data name="escoliose" xml:space="preserve">
+    <value>Escoliose</value>
+  </data>
+  <data name="funil" xml:space="preserve">
+    <value>Funil</value>
+  </data>
+  <data name="kussmaul" xml:space="preserve">
+    <value>Kussmaul</value>
+  </data>
+  <data name="labioCianotico" xml:space="preserve">
+    <value>Lábio Cianótico</value>
+  </data>
+  <data name="lordose" xml:space="preserve">
+    <value>Lordose</value>
+  </data>
+  <data name="obstrucaoNasal" xml:space="preserve">
+    <value>Obstrução Nasal</value>
+  </data>
+  <data name="palidez" xml:space="preserve">
+    <value>Palidez</value>
+  </data>
+  <data name="peitoDePombo" xml:space="preserve">
+    <value>Peito de Pombo</value>
+  </data>
+  <data name="simetriaToracica" xml:space="preserve">
+    <value>Simetria Torácica</value>
+  </data>
+  <data name="taquipneia" xml:space="preserve">
+    <value>Taquipneia</value>
+  </data>
+  <data name="tiragemIntercostal" xml:space="preserve">
+    <value>Tiragem Intercostal</value>
+  </data>
 </root>
