@@ -10,7 +10,7 @@ namespace PacienteVirtual.Models
     public class ClinicoInternacaoModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "consulta_fixo", ResourceType = typeof(Mensagem))]
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public long IdConsultaFixo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

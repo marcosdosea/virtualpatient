@@ -205,6 +205,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Antecedentes Familiares.
+        /// </summary>
+        public static string antecedentes_familiares {
+            get {
+                return ResourceManager.GetString("antecedentes_familiares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Antecedentes Patológicos.
+        /// </summary>
+        public static string antecedentes_patologicos {
+            get {
+                return ResourceManager.GetString("antecedentes_patologicos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Área de Atuação.
         /// </summary>
         public static string area_atuacao {
@@ -417,6 +435,24 @@ namespace Resources {
         public static string classificao_prm {
             get {
                 return ResourceManager.GetString("classificao_prm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clínica.
+        /// </summary>
+        public static string clinica {
+            get {
+                return ResourceManager.GetString("clinica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clínico Internação.
+        /// </summary>
+        public static string clinico_internacao {
+            get {
+                return ResourceManager.GetString("clinico_internacao", resourceCulture);
             }
         }
         
@@ -799,6 +835,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data de Admissão.
+        /// </summary>
+        public static string data_admissao {
+            get {
+                return ResourceManager.GetString("data_admissao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data de Atualização.
         /// </summary>
         public static string data_atualizacao {
@@ -957,6 +1002,15 @@ namespace Resources {
         public static string detalhes {
             get {
                 return ResourceManager.GetString("detalhes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diagnóstico Médico.
+        /// </summary>
+        public static string diagnostico_medico {
+            get {
+                return ResourceManager.GetString("diagnostico_medico", resourceCulture);
             }
         }
         
@@ -1591,6 +1645,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Leito.
+        /// </summary>
+        public static string leito {
+            get {
+                return ResourceManager.GetString("leito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lembrar-me.
         /// </summary>
         public static string lembrar_me {
@@ -1785,6 +1848,15 @@ namespace Resources {
         public static string moradia_familia {
             get {
                 return ResourceManager.GetString("moradia_familia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Motivo da Internação.
+        /// </summary>
+        public static string motivo_internacao {
+            get {
+                return ResourceManager.GetString("motivo_internacao", resourceCulture);
             }
         }
         
@@ -2136,6 +2208,15 @@ namespace Resources {
         public static string patologia {
             get {
                 return ResourceManager.GetString("patologia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patologias Atuais.
+        /// </summary>
+        public static string patologias_atuais {
+            get {
+                return ResourceManager.GetString("patologias_atuais", resourceCulture);
             }
         }
         
@@ -2725,6 +2806,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Antecedentes Familiares.
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Substância.
         /// </summary>
         public static string substancia {
@@ -2874,6 +2964,42 @@ namespace Resources {
         public static string uso {
             get {
                 return ResourceManager.GetString("uso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usa Marca Passo.
+        /// </summary>
+        public static string uso_marca_passo {
+            get {
+                return ResourceManager.GetString("uso_marca_passo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uso Não se Aplica.
+        /// </summary>
+        public static string uso_nao_aplica {
+            get {
+                return ResourceManager.GetString("uso_nao_aplica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uso Outros.
+        /// </summary>
+        public static string uso_outros {
+            get {
+                return ResourceManager.GetString("uso_outros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usa Outros Descrição.
+        /// </summary>
+        public static string uso_outros_descricao {
+            get {
+                return ResourceManager.GetString("uso_outros_descricao", resourceCulture);
             }
         }
         

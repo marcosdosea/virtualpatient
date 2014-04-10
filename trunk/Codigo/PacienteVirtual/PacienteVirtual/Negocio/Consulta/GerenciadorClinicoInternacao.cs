@@ -23,6 +23,278 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Insere uma Patologia Atual
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idPatologia"></param>
+        public void InserirPatologiasAtuais(long idConsultaFixo, long idPatologia)
+        {
+            try
+            {
+                var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+                var repPatologia = new RepositorioGenerico<tb_patologia>(repConsultaFixo.ObterContexto());
+                
+                tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+                tb_patologia _tb_patologia = repPatologia.ObterEntidade(p => p.IdPatologia == idPatologia);
+
+                _tb_consulta_fixo.tb_patologia.Add(_tb_patologia);
+
+                repConsultaFixo.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ConsultaFixo", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Insere um Antecedente Patologico
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idPatologia"></param>
+        public void InserirAntecedentesPatologicos(long idConsultaFixo, long idPatologia)
+        {
+            try
+            {
+                var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+                var repPatologia = new RepositorioGenerico<tb_patologia>(repConsultaFixo.ObterContexto());
+
+                tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+                tb_patologia _tb_patologia = repPatologia.ObterEntidade(p => p.IdPatologia == idPatologia);
+
+                _tb_consulta_fixo.tb_patologia1.Add(_tb_patologia);
+
+                repConsultaFixo.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ConsultaFixo", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Insere uma Antecedente Familiar
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idPatologia"></param>
+        public void InserirAntecedentesFamiliares(long idConsultaFixo, long idPatologia)
+        {
+            try
+            {
+                var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+                var repPatologia = new RepositorioGenerico<tb_patologia>(repConsultaFixo.ObterContexto());
+
+                tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+                tb_patologia _tb_patologia = repPatologia.ObterEntidade(p => p.IdPatologia == idPatologia);
+
+                _tb_consulta_fixo.tb_patologia2.Add(_tb_patologia);
+
+                repConsultaFixo.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ConsultaFixo", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Insere alergias
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idAlergia"></param>
+        public void InserirAlergias(long idConsultaFixo, int idAlergia)
+        {
+            try
+            {
+                var repClinicoInternacao = new RepositorioGenerico<tb_clinico_internacao>();
+                var repAlergia = new RepositorioGenerico<tb_alergia>(repClinicoInternacao.ObterContexto());
+
+                tb_clinico_internacao _tb_clinico_internacao = repClinicoInternacao.ObterEntidade(ci => ci.IdConsultaFixo == idConsultaFixo);
+                tb_alergia _tb_alergia = repAlergia.ObterEntidade(a => a.IdAlergia == idAlergia);
+
+                _tb_clinico_internacao.tb_alergia.Add(_tb_alergia);
+
+                repClinicoInternacao.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ClinicoInternacao", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Remove uma patologia atual
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idPatologia"></param>
+        public void RemoverPatologiasAtuais(long idConsultaFixo, long idPatologia)
+        {
+            try
+            {
+                var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+                var repPatologia = new RepositorioGenerico<tb_patologia>(repConsultaFixo.ObterContexto());
+
+                tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+                tb_patologia _tb_patologia = repPatologia.ObterEntidade(p => p.IdPatologia == idPatologia);
+
+                _tb_consulta_fixo.tb_patologia.Remove(_tb_patologia);
+
+                repConsultaFixo.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ConsultaFixo", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Remove um AntecedentePatologico
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idPatologia"></param>
+        public void RemoverAntecedentesPatologicos(long idConsultaFixo, long idPatologia)
+        {
+            try
+            {
+                var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+                var repPatologia = new RepositorioGenerico<tb_patologia>(repConsultaFixo.ObterContexto());
+
+                tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+                tb_patologia _tb_patologia = repPatologia.ObterEntidade(p => p.IdPatologia == idPatologia);
+
+                _tb_consulta_fixo.tb_patologia1.Remove(_tb_patologia);
+
+                repConsultaFixo.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ConsultaFixo", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Remove um Antecedente Familiar
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idPatologia"></param>
+        public void RemoverAntecedentesFamiliares(long idConsultaFixo, long idPatologia)
+        {
+            try
+            {
+                var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+                var repPatologia = new RepositorioGenerico<tb_patologia>(repConsultaFixo.ObterContexto());
+
+                tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+                tb_patologia _tb_patologia = repPatologia.ObterEntidade(p => p.IdPatologia == idPatologia);
+
+                _tb_consulta_fixo.tb_patologia2.Remove(_tb_patologia);
+
+                repConsultaFixo.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ConsultaFixo", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Remove uma alergia do ClinicoInternacao
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <param name="idAlergia"></param>
+        public void RemoverAlergia(long idConsultaFixo, int idAlergia)
+        {
+            try
+            {
+                var repClinicoInternacao = new RepositorioGenerico<tb_clinico_internacao>();
+                var repAlergia = new RepositorioGenerico<tb_alergia>(repClinicoInternacao.ObterContexto());
+
+                tb_clinico_internacao _tb_clinico_internacao = repClinicoInternacao.ObterEntidade(ci => ci.IdConsultaFixo == idConsultaFixo);
+                tb_alergia _tb_alergia = repAlergia.ObterEntidade(a => a.IdAlergia == idAlergia);
+
+                _tb_clinico_internacao.tb_alergia.Remove(_tb_alergia);
+
+                repClinicoInternacao.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new DadosException("ClinicoInternacao", e.Message, e);
+            }
+        }
+
+        /// <summary>
+        /// Obtem todas as patologias atuais de determinada consulta
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <returns></returns>
+        public IEnumerable<PatologiaModel> ObterPatologiasAtuais(long idConsultaFixo)
+        {
+            var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+            tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+            var query = from patologiasAtuais in _tb_consulta_fixo.tb_patologia
+                        select new PatologiaModel
+                        {
+                            IdPatologia = patologiasAtuais.IdPatologia,
+                            Descricao = patologiasAtuais.Descricao
+                        };
+            return query;
+        }
+
+        /// <summary>
+        /// Obtem todas os Antecedentes patologicos de determinada consulta
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <returns></returns>
+        public IEnumerable<PatologiaModel> ObterAntecedentesPatologicos(long idConsultaFixo)
+        {
+            var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+            tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+            var query = from patologiasAtuais in _tb_consulta_fixo.tb_patologia1
+                        select new PatologiaModel
+                        {
+                            IdPatologia = patologiasAtuais.IdPatologia,
+                            Descricao = patologiasAtuais.Descricao
+                        };
+            return query;
+        }
+
+        /// <summary>
+        /// Obtem todas as patologias atuais de determinada consulta
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <returns></returns>
+        public IEnumerable<PatologiaModel> ObterAntecedentesFamiliares(long idConsultaFixo)
+        {
+            var repConsultaFixo = new RepositorioGenerico<tb_consulta_fixo>();
+            tb_consulta_fixo _tb_consulta_fixo = repConsultaFixo.ObterEntidade(cf => cf.IdConsultaFixo == idConsultaFixo);
+            var query = from patologiasAtuais in _tb_consulta_fixo.tb_patologia2
+                        select new PatologiaModel
+                        {
+                            IdPatologia = patologiasAtuais.IdPatologia,
+                            Descricao = patologiasAtuais.Descricao
+                        };
+            return query;
+        }
+
+        /// <summary>
+        /// Obtem todas as alergias de um ClinicoInternacao
+        /// </summary>
+        /// <param name="idConsultaFixo"></param>
+        /// <returns></returns>
+        public IEnumerable<AlergiaModel> ObterAlergias(long idConsultaFixo)
+        {
+            var repClinicoInternacao = new RepositorioGenerico<tb_clinico_internacao>();
+            tb_clinico_internacao _tb_clinico_internacao = repClinicoInternacao.ObterEntidade(ci => ci.IdConsultaFixo == idConsultaFixo);
+            var query = from Alergias in _tb_clinico_internacao.tb_alergia
+                        select new AlergiaModel
+                        {
+                            IdAlergia = Alergias.IdAlergia,
+                            Alergia = Alergias.Alergia
+                        };
+            return query;
+        }
+
+        /// <summary>
         /// Insere dados Clinico Internação
         /// </summary>
         /// <param name="clinicoInternacao"></param>

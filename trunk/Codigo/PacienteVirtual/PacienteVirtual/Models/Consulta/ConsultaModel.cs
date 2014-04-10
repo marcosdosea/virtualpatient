@@ -16,6 +16,23 @@ namespace PacienteVirtual.Models
         public DiarioPessoalModel DiarioPessoal { get; set; }
         public IEnumerable<DiarioPessoalModel> ListaDiarioPessoal { get; set; }
 
+        /////////////////////////////////////////
+        public ClinicoInternacaoModel ClinicoInternacao { get; set; }
+
+        public PatologiasAtuaisModel PatologiasAtuais { get; set; }
+        public IEnumerable<PatologiaModel> ListaPatologiasAtuais { get; set; }
+
+        public AntecedentesPatologicosModel AntecedentesPatologicos { get; set; }
+        public IEnumerable<PatologiaModel> ListaAntecedentesPatologicos { get; set; }
+
+        public AntecedentesFamiliaresModel AntecedentesFamiliares { get; set; }
+        public IEnumerable<PatologiaModel> ListaAntecedentesFamiliares { get; set; }
+
+        public ClinicoInternacaoAlergiasModel ClinicoInternacaoAlergias { get; set; }
+        public IEnumerable<AlergiaModel> ListaClinicoInternacaoAlergias { get; set; }
+        //////////////////////////////////////
+
+
         // Dados Variáveis nas consultas
         public ConsultaVariavelModel ConsultaVariavel { get; set; }
         public EstiloVidaModel EstiloVida { get; set; }

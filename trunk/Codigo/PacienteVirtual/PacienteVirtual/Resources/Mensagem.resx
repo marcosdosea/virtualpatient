@@ -1089,4 +1089,46 @@
   <data name="patologia" xml:space="preserve">
     <value>Patologia</value>
   </data>
+  <data name="clinico_internacao" xml:space="preserve">
+    <value>Clínico Internação</value>
+  </data>
+  <data name="clinica" xml:space="preserve">
+    <value>Clínica</value>
+  </data>
+  <data name="data_admissao" xml:space="preserve">
+    <value>Data de Admissão</value>
+  </data>
+  <data name="diagnostico_medico" xml:space="preserve">
+    <value>Diagnóstico Médico</value>
+  </data>
+  <data name="leito" xml:space="preserve">
+    <value>Leito</value>
+  </data>
+  <data name="motivo_internacao" xml:space="preserve">
+    <value>Motivo da Internação</value>
+  </data>
+  <data name="uso_marca_passo" xml:space="preserve">
+    <value>Usa Marca Passo</value>
+  </data>
+  <data name="uso_nao_aplica" xml:space="preserve">
+    <value>Uso Não se Aplica</value>
+  </data>
+  <data name="uso_outros" xml:space="preserve">
+    <value>Uso Outros</value>
+  </data>
+  <data name="uso_outros_descricao" xml:space="preserve">
+    <value>Usa Outros Descrição</value>
+  </data>
+  <data name="antecedentes_familiares" xml:space="preserve">
+    <value>Antecedentes Familiares</value>
+  </data>
+  <data name="antecedentes_patologicos" xml:space="preserve">
+    <value>Antecedentes Patológicos</value>
+  </data>
+  <data name="patologias_atuais" xml:space="preserve">
+    <value>Patologias Atuais</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Antecedentes Familiares</value>
+  </data>
 </root>

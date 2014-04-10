@@ -1089,4 +1089,43 @@
   <data name="patologia" xml:space="preserve">
     <value>Pathology</value>
   </data>
+  <data name="clinico_internacao" xml:space="preserve">
+    <value>Inpatient clinical</value>
+  </data>
+  <data name="clinica" xml:space="preserve">
+    <value>Clinical</value>
+  </data>
+  <data name="data_admissao" xml:space="preserve">
+    <value>Date of Admission</value>
+  </data>
+  <data name="diagnostico_medico" xml:space="preserve">
+    <value>Medical Diagnostic</value>
+  </data>
+  <data name="leito" xml:space="preserve">
+    <value>Ber</value>
+  </data>
+  <data name="motivo_internacao" xml:space="preserve">
+    <value>Reason for Hospitalization</value>
+  </data>
+  <data name="uso_marca_passo" xml:space="preserve">
+    <value>Uses Brand Step</value>
+  </data>
+  <data name="uso_nao_aplica" xml:space="preserve">
+    <value>Use Not Applicable</value>
+  </data>
+  <data name="uso_outros" xml:space="preserve">
+    <value>Use Other</value>
+  </data>
+  <data name="uso_outros_descricao" xml:space="preserve">
+    <value>Use Other Description</value>
+  </data>
+  <data name="antecedentes_patologicos" xml:space="preserve">
+    <value>Pathologic Background</value>
+  </data>
+  <data name="patologias_atuais" xml:space="preserve">
+    <value>Current Conditions</value>
+  </data>
+  <data name="antecedentes_familiares" xml:space="preserve">
+    <value>Family History</value>
+  </data>
 </root>
