@@ -191,6 +191,35 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static ClinicoInternacaoModel ClinicoInternacao
+        {
+            get
+            {
+                ClinicoInternacaoModel clinicoInternacao = (ClinicoInternacaoModel)HttpContext.Current.Session["_ClinicoInternacao"];
+                if (clinicoInternacao == null)
+                {
+                    clinicoInternacao = GerenciadorClinicoInternacao.GetInstance().Obter(ConsultaVariavel.IdConsultaFixo);
+                    if (clinicoInternacao == null)
+                    {
+                        clinicoInternacao = new ClinicoInternacaoModel();
+                        clinicoInternacao.IdConsultaFixo = ConsultaVariavel.IdConsultaFixo;
+                        clinicoInternacao.Clinica = Global.stringVazia;
+                        clinicoInternacao.Leito = Global.stringVazia;
+                        clinicoInternacao.DiagnosticoMedico = Global.stringVazia;
+                        clinicoInternacao.MotivoInternacao = Global.stringVazia;
+                        clinicoInternacao.UsoOutrosDescricao = Global.stringVazia;
+                        GerenciadorClinicoInternacao.GetInstance().Inserir(clinicoInternacao);
+                    }
+                    HttpContext.Current.Session["_ClinicoInternacao"] = clinicoInternacao;
+                }
+                return clinicoInternacao;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ClinicoInternacao"] = value;
+            }
+        }
+
         public static ExperienciaMedicamentosModel ExperienciaMedicamentos
         {
             get
@@ -254,6 +283,78 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_ListaAlergia"] = value;
+            }
+        }
+
+        public static IEnumerable<PatologiaModel> ListaPatologiasAtuais
+        {
+            get
+            {
+                IEnumerable<PatologiaModel> listaPatologiaisAtuais = (IEnumerable<PatologiaModel>)HttpContext.Current.Session["_ListaPatologiasAtuais"];
+                if (listaPatologiaisAtuais == null)
+                {
+                    listaPatologiaisAtuais = GerenciadorClinicoInternacao.GetInstance().ObterPatologiasAtuais(SessionController.ConsultaFixo.IdConsultaFixo);
+                    HttpContext.Current.Session["_ListaPatologiasAtuais"] = listaPatologiaisAtuais;
+                }
+                return listaPatologiaisAtuais;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaPatologiasAtuais"] = value;
+            }
+        }
+
+        public static IEnumerable<PatologiaModel> ListaAntecedentesPatologicos
+        {
+            get
+            {
+                IEnumerable<PatologiaModel> listaAntecedentesPatologicos = (IEnumerable<PatologiaModel>)HttpContext.Current.Session["_ListaAntecedentesPatologicos"];
+                if (listaAntecedentesPatologicos == null)
+                {
+                    listaAntecedentesPatologicos = GerenciadorClinicoInternacao.GetInstance().ObterAntecedentesPatologicos(SessionController.ConsultaFixo.IdConsultaFixo);
+                    HttpContext.Current.Session["_ListaAntecedentesPatologicos"] = listaAntecedentesPatologicos;
+                }
+                return listaAntecedentesPatologicos;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaAntecedentesPatologicos"] = value;
+            }
+        }
+
+        public static IEnumerable<PatologiaModel> ListaAntecedentesFamiliares
+        {
+            get
+            {
+                IEnumerable<PatologiaModel> listaAntecedentesFamiliares = (IEnumerable<PatologiaModel>)HttpContext.Current.Session["_ListaAntecedentesFamiliares"];
+                if (listaAntecedentesFamiliares == null)
+                {
+                    listaAntecedentesFamiliares = GerenciadorClinicoInternacao.GetInstance().ObterAntecedentesFamiliares(SessionController.ConsultaFixo.IdConsultaFixo);
+                    HttpContext.Current.Session["_ListaAntecedentesFamiliares"] = listaAntecedentesFamiliares;
+                }
+                return listaAntecedentesFamiliares;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaAntecedentesFamiliares"] = value;
+            }
+        }
+
+        public static IEnumerable<AlergiaModel> ListaClinicoInternacaoAlergia
+        {
+            get
+            {
+                IEnumerable<AlergiaModel> listaClinicoInternacaoAlergia = (IEnumerable<AlergiaModel>)HttpContext.Current.Session["_ListaClinicoInternacaoAlergia"];
+                if (listaClinicoInternacaoAlergia == null)
+                {
+                    listaClinicoInternacaoAlergia = GerenciadorClinicoInternacao.GetInstance().ObterAlergias(SessionController.ConsultaFixo.IdConsultaFixo);
+                    HttpContext.Current.Session["_ListaClinicoInternacaoAlergia"] = listaClinicoInternacaoAlergia;
+                }
+                return listaClinicoInternacaoAlergia;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaClinicoInternacaoAlergia"] = value;
             }
         }
 

@@ -142,6 +142,9 @@ namespace PacienteVirtual.Controllers
             ViewBag.Abas1 = SessionController.Abas1;
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
+
+            ViewBag.IdPatologia = new SelectList(GerenciadorPatologia.GetInstance().ObterTodos(), "IdPatologia", "Descricao");
+
             ViewBag.EscondeLinks = false;
         }
         
@@ -194,6 +197,16 @@ namespace PacienteVirtual.Controllers
             consultaModel.IdSistema = SessionController.Sistema;
             consultaModel.AlergiaExamesFisicos = new AlergiaExamesFisicosModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel }; ;
             consultaModel.ListaAlergia = SessionController.ListaAlergia;
+
+            consultaModel.ClinicoInternacao = SessionController.ClinicoInternacao;
+            consultaModel.PatologiasAtuais = new PatologiasAtuaisModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
+            consultaModel.ListaPatologiasAtuais = SessionController.ListaPatologiasAtuais;
+            consultaModel.AntecedentesPatologicos = new AntecedentesPatologicosModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
+            consultaModel.ListaAntecedentesPatologicos = SessionController.ListaAntecedentesPatologicos;
+            consultaModel.AntecedentesFamiliares = new AntecedentesFamiliaresModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
+            consultaModel.ListaAntecedentesFamiliares = SessionController.ListaAntecedentesFamiliares;
+            consultaModel.ClinicoInternacaoAlergias = new ClinicoInternacaoAlergiasModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
+            consultaModel.ListaClinicoInternacaoAlergias = SessionController.ListaClinicoInternacaoAlergia;
 
             return consultaModel;
         }

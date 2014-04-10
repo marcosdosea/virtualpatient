@@ -176,10 +176,12 @@
                            { %>
                             <li id="li2"><a href="#tab1-2" data-toggle="tab">
                             <%: Resources.Mensagem.oxigenacao %></a></li>
-                            <li id="li3"><a href="#tab1-2" data-toggle="tab">
+                            <li id="li3"><a href="#tab1-3" data-toggle="tab">
                             <%: Resources.Mensagem.outros_achados %></a></li>
-                            <li id="li14"><a href="#tab1-3" data-toggle="tab">
-                            <%: Resources.Mensagem.dados_complementares %></a></li>   
+                            <li id="li4"><a href="#tab1-4" data-toggle="tab">
+                            <%: Resources.Mensagem.dados_complementares %></a></li>
+                            <li id="li5"><a href="#tab1-5" data-toggle="tab">
+                            <%: Resources.Mensagem.clinico_internacao %></a></li>   
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -266,6 +268,19 @@
                         <div class="tab-pane" id="tab1-4">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../DadosComplementares/Edit", Model.ConsultaVariavel);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-5">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../ClinicoInternacao/Edit", Model.ClinicoInternacao);%>
+                                <% Html.RenderPartial("../ClinicoInternacao/AdicionarPatologiasAtuais", Model.PatologiasAtuais);%>
+                                <% Html.RenderPartial("../ClinicoInternacao/ListaPatologiasAtuais", Model.ListaPatologiasAtuais);%>
+                                <% Html.RenderPartial("../ClinicoInternacao/AdicionarAntecedentesPatologicos", Model.AntecedentesPatologicos);%>
+                                <% Html.RenderPartial("../ClinicoInternacao/ListaAntecedentesPatologicos", Model.ListaAntecedentesPatologicos);%>
+                                <% Html.RenderPartial("../ClinicoInternacao/AdicionarAntecedentesFamiliares", Model.AntecedentesFamiliares);%>
+                                <% Html.RenderPartial("../ClinicoInternacao/ListaAntecedentesFamiliares", Model.ListaAntecedentesFamiliares);%>
+                                <% Html.RenderPartial("../ClinicoInternacao/AdicionarClinicoInternacaoAlergias", Model.ClinicoInternacaoAlergias);%>
+                                <% Html.RenderPartial("../ClinicoInternacao/ListaClinicoInternacaoAlergias", Model.ListaClinicoInternacaoAlergias);%>
                             </div>
                         </div>
                         <% } %>

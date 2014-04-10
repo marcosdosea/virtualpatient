@@ -15,7 +15,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
-            return View(gDiarioPessoal.Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
+            return View(gDiarioPessoal.Obter(SessionController.ConsultaVariavel.IdConsultaFixo));
         }
 
        

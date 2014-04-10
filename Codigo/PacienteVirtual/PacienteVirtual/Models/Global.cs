@@ -69,6 +69,7 @@ namespace PacienteVirtual.Models
             SessionController.Abas1 = 0;
             SessionController.Abas2 = -1;
             /////////////////////////////////////////////////////////////////
+            SessionController.ClinicoInternacao = null;
         }
 
         public const long CODIGO_USUARIO_PADRAO = 1;
