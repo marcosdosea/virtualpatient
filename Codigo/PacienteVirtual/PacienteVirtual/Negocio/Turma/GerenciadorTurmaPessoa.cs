@@ -217,6 +217,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém uma TurmaPessoa ativa com o idPessoa
+        /// </summary>
+        /// <param name="codTurma"></param>
+        /// <returns></returns>
+        public TurmaPessoaModel ObterPorPessoaAtivaUmaTurmaPessoa(int idPessoa)
+        {
+            return GetQuery().Where(turma => turma.IdPessoa == idPessoa && turma.Ativa == true).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
         /// Obtem todas as pessoas que estão na turma passada Ativa com excecao de tutorea
         /// </summary>
         /// <returns></returns>
