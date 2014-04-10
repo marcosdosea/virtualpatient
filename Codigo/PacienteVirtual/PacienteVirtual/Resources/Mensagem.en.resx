@@ -1128,4 +1128,61 @@
   <data name="antecedentes_familiares" xml:space="preserve">
     <value>Family History</value>
   </data>
+  <data name="barril" xml:space="preserve">
+    <value>Barrel</value>
+  </data>
+  <data name="bradipneia" xml:space="preserve">
+    <value>Bradypnea</value>
+  </data>
+  <data name="cheyneStokes" xml:space="preserve">
+    <value>CheyneStokes</value>
+  </data>
+  <data name="cifose" xml:space="preserve">
+    <value>Kyphosis</value>
+  </data>
+  <data name="coriza" xml:space="preserve">
+    <value>Coryza</value>
+  </data>
+  <data name="desvioDeSepto" xml:space="preserve">
+    <value>Deviated Septum</value>
+  </data>
+  <data name="dispineia" xml:space="preserve">
+    <value>Dispineia</value>
+  </data>
+  <data name="epistaxe" xml:space="preserve">
+    <value>Epistaxis</value>
+  </data>
+  <data name="escoliose" xml:space="preserve">
+    <value>Scoliosis</value>
+  </data>
+  <data name="funil" xml:space="preserve">
+    <value>Funnel</value>
+  </data>
+  <data name="kussmaul" xml:space="preserve">
+    <value>Kussmaul</value>
+  </data>
+  <data name="labioCianotico" xml:space="preserve">
+    <value>Lips Cyanotic</value>
+  </data>
+  <data name="lordose" xml:space="preserve">
+    <value>Lordosis</value>
+  </data>
+  <data name="obstrucaoNasal" xml:space="preserve">
+    <value>Nasal Obstruction</value>
+  </data>
+  <data name="palidez" xml:space="preserve">
+    <value>Pallor</value>
+  </data>
+  <data name="peitoDePombo" xml:space="preserve">
+    <value>From Pigeon Chest</value>
+  </data>
+  <data name="simetriaToracica" xml:space="preserve">
+    <value>Thoracic Symmetry</value>
+  </data>
+  <data name="taquipneia" xml:space="preserve">
+    <value>Tachypnea</value>
+  </data>
+  <data name="tiragemIntercostal" xml:space="preserve">
+    <value>Drawing Intercoastal</value>
+  </data>
 </root>
