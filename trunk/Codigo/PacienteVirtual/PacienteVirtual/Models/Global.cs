@@ -154,6 +154,7 @@ namespace PacienteVirtual.Models
 
             return CPF.EndsWith(Digito);
         }
+
     }
         
 }

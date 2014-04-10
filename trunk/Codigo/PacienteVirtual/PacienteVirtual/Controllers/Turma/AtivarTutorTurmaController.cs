@@ -47,6 +47,7 @@ namespace PacienteVirtual.Controllers
                     tpm.NomeRole = Global.stringAdministradorRole;
                     break;
             }
+            tpm.Ativa = true;
             GerenciadorTurmaPessoa.GetInstance().Atualizar(tpm);
             return RedirectToAction("Index", idTurma);
         }
