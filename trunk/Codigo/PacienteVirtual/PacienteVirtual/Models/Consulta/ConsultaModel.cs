@@ -67,5 +67,8 @@ namespace PacienteVirtual.Models
         // medicamento relacionados a queixa
         public QueixaMedicamentoModel QueixaMedicamento { get; set; }
         public IEnumerable<QueixaMedicamentoModel> ListaQueixaMedicamento { get; set; }
+
+        //Enfermagem
+        public OxigenacaoModel Oxigenacao { get; set; }
     }
 }

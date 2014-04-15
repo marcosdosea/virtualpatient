@@ -197,6 +197,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.IdSistema = SessionController.Sistema;
             consultaModel.AlergiaExamesFisicos = new AlergiaExamesFisicosModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel }; ;
             consultaModel.ListaAlergia = SessionController.ListaAlergia;
+            consultaModel.Oxigenacao = SessionController.Oxigenacao;
 
             consultaModel.ClinicoInternacao = SessionController.ClinicoInternacao;
             consultaModel.PatologiasAtuais = new PatologiasAtuaisModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };

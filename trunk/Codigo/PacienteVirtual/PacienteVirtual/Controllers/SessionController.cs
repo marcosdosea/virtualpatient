@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
@@ -787,6 +786,50 @@ namespace PacienteVirtual.Controllers
                 return (string)HttpContext.Current.Session["_ErroQueixaMedicamento"];
             }
             set { HttpContext.Current.Session["_ErroQueixaMedicamento"] = value; }
+        }
+
+        //Enfermagem
+        public static OxigenacaoModel Oxigenacao
+        {
+            get
+            {
+                OxigenacaoModel oxigenacao = (OxigenacaoModel)HttpContext.Current.Session["_Oxigenacao"];
+                if (oxigenacao == null)
+                {
+                    oxigenacao = GerenciadorOxigenacao.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (oxigenacao == null)
+                    {
+                        oxigenacao = new OxigenacaoModel();
+                        oxigenacao.FequenciaResporatoria = Global.ValorInteiroNulo;
+                        oxigenacao.Ritmo = ListaRitmo.Regular;
+                        oxigenacao.SimetriaToracica = ListaSimetriaToracica.Simetrico;
+                        oxigenacao.Dispineia = false;
+                        oxigenacao.Taquipneia = false;
+                        oxigenacao.Bradipneia = false;
+                        oxigenacao.Kussmaul = false;
+                        oxigenacao.CheyneStokes = false;
+                        oxigenacao.Epistaxe = false;
+                        oxigenacao.ObstrucaoNasal = false;
+                        oxigenacao.Coriza = false;
+                        oxigenacao.DesvioDeSepto = false;
+                        oxigenacao.Palidez = false;
+                        oxigenacao.LabioCianotico = false;
+                        oxigenacao.Funil = false;
+                        oxigenacao.Lordose = false;
+                        oxigenacao.Cifose = false;
+                        oxigenacao.Escoliose = false;
+                        oxigenacao.TiragemIntercostal = false;
+                        oxigenacao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        GerenciadorOxigenacao.GetInstance().Inserir(oxigenacao);
+                    }
+                    HttpContext.Current.Session["_Oxigenacao"] = oxigenacao;
+                }
+                return oxigenacao;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Oxigenacao"] = value;
+            }
         }
     }
 }
