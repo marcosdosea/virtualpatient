@@ -260,6 +260,11 @@
                         <% }
                            else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
                            { %>
+                         <div class="tab-pane" id="tab1-2">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Oxigenacao/Edit", Model.Oxigenacao);%>
+                            </div>
+                        </div>
                          <div class="tab-pane" id="tab1-3">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../OutrosAchados/Edit", Model.ConsultaVariavel);%>
