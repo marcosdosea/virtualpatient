@@ -18,8 +18,7 @@
                 </div>
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.Ritmo) %>
-                    <%: Html.DropDownListFor(model => model.Ritmo, new [] { new SelectListItem() {Text = "Regular", Value = "Regular" }, 
-            new SelectListItem() {Text = "Irregular", Value = "Irregular"} })%>
+                    <%: Html.EnumDropDownListFor(model => model.Ritmo, ListaRitmo.Regular) %>
                     <%: Html.ValidationMessageFor(model => model.Ritmo) %>
                 </div>
             </div>
@@ -86,9 +85,7 @@
             <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.SimetriaToracica) %>
-                    <%: Html.DropDownListFor(model => model.SimetriaToracica, new[] { new SelectListItem() {Text = "Simetrico" , Value = "Simetrico" }, 
-            new SelectListItem() {Text = "Assimetrico Unilateral", Value = "Assimetrico Unilateral"}, new SelectListItem() {Text = "Assimetrico Bilateral", Value = "Assimetrico Bilateral"} })%>
-                    
+                    <%: Html.EnumDropDownListFor(model => model.SimetriaToracica, ListaSimetriaToracica.Simetrico) %>
                     <%: Html.ValidationMessageFor(model => model.SimetriaToracica) %>
                 </div>
             </div>

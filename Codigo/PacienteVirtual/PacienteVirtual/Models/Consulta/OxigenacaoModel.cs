@@ -59,8 +59,8 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "simetriaToracica", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaSimetriaToracica))]
-        public ListaSimetriaToracica SimetriaToracica { get; set; } //{ Simetrico = "Simetrico", AssimetricoUnilateral = "Assimetrico Unilateral", AssimetricoBilateral = "Assimetrico Bilateral" }
-
+        public ListaSimetriaToracica SimetriaToracica { get; set; } 
+        
         [Display(Name = "barril", ResourceType = typeof(Mensagem))]
         public bool Barril { get; set; }
 

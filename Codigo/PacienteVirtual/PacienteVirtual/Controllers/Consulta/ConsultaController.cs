@@ -142,9 +142,9 @@ namespace PacienteVirtual.Controllers
             ViewBag.Abas1 = SessionController.Abas1;
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
-
+            //Enfermagem
             ViewBag.IdPatologia = new SelectList(GerenciadorPatologia.GetInstance().ObterTodos(), "IdPatologia", "Descricao");
-
+            
             ViewBag.EscondeLinks = false;
         }
         

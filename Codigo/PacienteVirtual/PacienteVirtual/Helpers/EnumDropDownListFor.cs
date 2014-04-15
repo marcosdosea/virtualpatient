@@ -19,6 +19,7 @@ namespace PacienteVirtual.Helpers
                                                 select new SelectListItem()
                                                 {
                                                     Text = value.ToString(),
+                                                    //Fazer a conversão de "_" pelo espaço em branco
                                                     Value = value.ToString(),
                                                     Selected = (value.Equals(selectedValue))
                                                 };

@@ -17,6 +17,8 @@ namespace PacienteVirtual.Models
         public IEnumerable<DiarioPessoalModel> ListaDiarioPessoal { get; set; }
 
         /////////////////////////////////////////
+        public OxigenacaoModel Oxigenacao { get; set; }
+
         public ClinicoInternacaoModel ClinicoInternacao { get; set; }
 
         public PatologiasAtuaisModel PatologiasAtuais { get; set; }
@@ -68,7 +70,5 @@ namespace PacienteVirtual.Models
         public QueixaMedicamentoModel QueixaMedicamento { get; set; }
         public IEnumerable<QueixaMedicamentoModel> ListaQueixaMedicamento { get; set; }
 
-        //Enfermagem
-        public OxigenacaoModel Oxigenacao { get; set; }
     }
 }
