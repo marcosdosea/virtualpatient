@@ -636,6 +636,7 @@
     <Content Include="Views\Patologia\Details.aspx" />
     <Content Include="Views\Patologia\Edit.aspx" />
     <Content Include="Views\Patologia\Index.aspx" />
+    <Content Include="Views\Pessoa\DefinirAdministrador.aspx" />
     <Content Include="Views\QueixaMedicamento\Edit.aspx" />
     <Content Include="Views\Religiao\Create.aspx" />
     <Content Include="Views\Religiao\Delete.aspx" />

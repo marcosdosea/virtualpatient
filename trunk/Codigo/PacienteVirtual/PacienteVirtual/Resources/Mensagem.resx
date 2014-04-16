@@ -1188,4 +1188,16 @@
   <data name="tiragemIntercostal" xml:space="preserve">
     <value>Tiragem Intercostal</value>
   </data>
+  <data name="definir_administrador" xml:space="preserve">
+    <value>Definir Administrador</value>
+  </data>
+  <data name="definir_adm_enfermagem" xml:space="preserve">
+    <value>Definir Administrador do Curso de Enfermagem</value>
+  </data>
+  <data name="definir_adm_farmacia" xml:space="preserve">
+    <value>Definir Administrador do Curso de Farmácia</value>
+  </data>
+  <data name="definir" xml:space="preserve">
+    <value>Definir</value>
+  </data>
 </root>

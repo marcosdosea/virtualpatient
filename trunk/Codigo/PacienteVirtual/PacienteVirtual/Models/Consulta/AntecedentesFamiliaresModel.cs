@@ -19,5 +19,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "antecedentes_familiares", ResourceType = typeof(Mensagem))]
         public string Patologia { get; set; }
+
+        public string ErroAntecedentesFamiliares { get; set; }
     }
 }

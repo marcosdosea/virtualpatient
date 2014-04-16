@@ -92,7 +92,7 @@ namespace PacienteVirtual.Negocio
         private IQueryable<TurmaModel> GetQuery()
         {
             var repTurma = new RepositorioGenerico<tb_turma>();
-            var pvEntities = (pvEntities) repTurma.ObterContexto();
+            var pvEntities = (pvEntities)repTurma.ObterContexto();
             var query = from tb_turma in pvEntities.tb_turma
                         join tb_instituicao in pvEntities.tb_instituicao
                         on tb_turma.IdInstituicao equals tb_instituicao.IdInstituicao
@@ -113,7 +113,7 @@ namespace PacienteVirtual.Negocio
                             NomeInstituicao = tb_instituicao.NomeInstituicao,
                             NomeDisciplina = tb_disciplina.NomeDisciplina,
                             NomeCurso = tb_curso.NomeCurso
-      
+
                         };
             return query;
         }
@@ -144,6 +144,25 @@ namespace PacienteVirtual.Negocio
         public TurmaModel Obter(int idTurma)
         {
             return GetQuery().Where(turma => turma.IdTurma == idTurma).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtem o Id de uma turma qualquer informando o curso
+        /// </summary>
+        /// <param name="idCurso"></param>
+        /// <returns></returns>
+        public int ObterIdTurmaPorCurso(int idCurso)
+        {
+            TurmaModel turma = GetQuery().Where(t => t.IdCurso == idCurso).ToList().ElementAtOrDefault(0);
+            if (turma == null)
+            {
+                throw new NegocioException("É necessário cadastrar uma turma no curso desejado!");
+            }
+            else
+            {
+                return turma.IdTurma;
+            }
+
         }
 
         /// <summary>

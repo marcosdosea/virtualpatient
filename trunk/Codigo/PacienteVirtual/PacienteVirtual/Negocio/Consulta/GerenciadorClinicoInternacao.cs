@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -20,6 +21,290 @@ namespace PacienteVirtual.Negocio
                 gClinicoInternacao = new GerenciadorClinicoInternacao();
             }
             return gClinicoInternacao;
+        }
+
+        /// <summary>
+        /// Realiza a correção de acordo com as respostas do gabarito
+        /// </summary>
+        /// <param name="clinicoInternacao"></param>
+        /// <param name="clinicoInternacaoGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostasClinicoInternacao(ClinicoInternacaoModel clinicoInternacao, ClinicoInternacaoModel clinicoInternacaoGabarito, ModelStateDictionary modelState)
+        {
+            if (clinicoInternacaoGabarito.Clinica == null || clinicoInternacaoGabarito.Clinica.Equals(""))
+            {
+                if (clinicoInternacao.Clinica != null && !clinicoInternacao.Clinica.Equals(""))
+                {
+                    modelState.AddModelError("Clinica", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(clinicoInternacao.Clinica.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.Clinica.ToLower())))
+                {
+                    modelState.AddModelError("Clinica", "Gabarito: \"" + clinicoInternacaoGabarito.Clinica + "\"");
+                }
+            }
+            if (clinicoInternacaoGabarito.Leito == null || clinicoInternacaoGabarito.Leito.Equals(""))
+            {
+                if (clinicoInternacao.Leito != null && !clinicoInternacao.Leito.Equals(""))
+                {
+                    modelState.AddModelError("Leito", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(clinicoInternacao.Leito.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.Leito.ToLower())))
+                {
+                    modelState.AddModelError("Leito", "Gabarito: \"" + clinicoInternacaoGabarito.Leito + "\"");
+                }
+            }
+            if (!clinicoInternacao.DataAdmissao.Equals(clinicoInternacaoGabarito.DataAdmissao))
+            {
+                modelState.AddModelError("DataAdmissao", "Gabarito: \"" + clinicoInternacaoGabarito.DataAdmissao.ToShortDateString() + "\"");
+            }
+            if (clinicoInternacaoGabarito.DiagnosticoMedico == null || clinicoInternacaoGabarito.DiagnosticoMedico.Equals(""))
+            {
+                if (clinicoInternacao.DiagnosticoMedico != null && !clinicoInternacao.DiagnosticoMedico.Equals(""))
+                {
+                    modelState.AddModelError("DiagnosticoMedico", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(clinicoInternacao.DiagnosticoMedico.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.DiagnosticoMedico.ToLower())))
+                {
+                    modelState.AddModelError("DiagnosticoMedico", "Gabarito: \"" + clinicoInternacaoGabarito.DiagnosticoMedico + "\"");
+                }
+            }
+            if (clinicoInternacaoGabarito.MotivoInternacao == null || clinicoInternacaoGabarito.MotivoInternacao.Equals(""))
+            {
+                if (clinicoInternacao.MotivoInternacao != null && !clinicoInternacao.MotivoInternacao.Equals(""))
+                {
+                    modelState.AddModelError("DiagnosticoMedico", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(clinicoInternacao.MotivoInternacao.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.MotivoInternacao.ToLower())))
+                {
+                    modelState.AddModelError("MotivoInternacao", "Gabarito: \"" + clinicoInternacaoGabarito.MotivoInternacao + "\"");
+                }
+            }
+            if (clinicoInternacaoGabarito.UsoOutrosDescricao == null || clinicoInternacaoGabarito.UsoOutrosDescricao.Equals(""))
+            {
+                if (clinicoInternacao.UsoOutrosDescricao != null && !clinicoInternacao.UsoOutrosDescricao.Equals(""))
+                {
+                    modelState.AddModelError("UsoOutrosDescricao", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(clinicoInternacao.UsoOutrosDescricao.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.UsoOutrosDescricao.ToLower())))
+                {
+                    modelState.AddModelError("UsoOutrosDescricao", "Gabarito: \"" + clinicoInternacaoGabarito.UsoOutrosDescricao + "\"");
+                }
+            }
+            if (!clinicoInternacao.UsoMarcaPasso.Equals(clinicoInternacaoGabarito.UsoMarcaPasso))
+            {
+                modelState.AddModelError("UsoMarcaPasso", "Gabarito: \"" + (clinicoInternacaoGabarito.UsoMarcaPasso == true ? "Sim" : "Não") + "\"");
+            }
+            if (!clinicoInternacao.UsoNaoSeAplica.Equals(clinicoInternacaoGabarito.UsoNaoSeAplica))
+            {
+                modelState.AddModelError("UsoNaoSeAplica", "Gabarito: \"" + (clinicoInternacaoGabarito.UsoNaoSeAplica == true ? "Sim" : "Não") + "\"");
+            }
+            if (!clinicoInternacao.UsoOutros.Equals(clinicoInternacaoGabarito.UsoOutros))
+            {
+                modelState.AddModelError("UsoOutros", "Gabarito: \"" + (clinicoInternacaoGabarito.UsoOutros == true ? "Sim" : "Não") + "\"");
+            }
+        }
+
+        /// <summary>
+        /// Faz correção das Alergias da consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="listaAlergia"></param>
+        /// <param name="listaAlergiaGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostasAlergias(IEnumerable<AlergiaModel> listaAlergia, IEnumerable<AlergiaModel> listaAlergiaGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            bool contem;
+            foreach (var alergia in listaAlergia)
+            {
+                contem = false;
+                foreach (var alergiaGabarito in listaAlergiaGabarito)
+                {
+                    if (alergia.IdAlergia == alergiaGabarito.IdAlergia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + alergia.Alergia + ";<br>";
+                }
+            }
+            foreach (var alergiaGabarito in listaAlergiaGabarito)
+            {
+                contem = false;
+                foreach (var alergia in listaAlergia)
+                {
+                    if (alergia.IdAlergia == alergiaGabarito.IdAlergia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + alergiaGabarito.Alergia + ";<br>";
+                }
+            }
+            modelState.AddModelError("ErroAlergias", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Alergias que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+        }
+
+        /// <summary>
+        /// Faz correção das patologias Atuais da consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="listaPatologias"></param>
+        /// <param name="listaPatologiaGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostasPatologiasAtuais(IEnumerable<PatologiaModel> listaPatologias, IEnumerable<PatologiaModel> listaPatologiasGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            bool contem;
+            foreach (var patologia in listaPatologias)
+            {
+                contem = false;
+                foreach (var patologiaGabarito in listaPatologiasGabarito)
+                {
+                    if (patologia.IdPatologia == patologiaGabarito.IdPatologia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + ";<br>";
+                }
+            }
+            foreach (var patologiaGabarito in listaPatologiasGabarito)
+            {
+                contem = false;
+                foreach (var patologia in listaPatologias)
+                {
+                    if (patologia.IdPatologia == patologiaGabarito.IdPatologia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + ";<br>";
+                }
+            }
+            modelState.AddModelError("ErroPatologiasAtuais", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Alergias que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+        }
+
+        /// <summary>
+        /// Faz correção das Antecedentes Familiares da consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="listaPatologias"></param>
+        /// <param name="listaPatologiaGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostasAntecedentesFamiliares(IEnumerable<PatologiaModel> listaPatologias, IEnumerable<PatologiaModel> listaPatologiasGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            bool contem;
+            foreach (var patologia in listaPatologias)
+            {
+                contem = false;
+                foreach (var patologiaGabarito in listaPatologiasGabarito)
+                {
+                    if (patologia.IdPatologia == patologiaGabarito.IdPatologia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + ";<br>";
+                }
+            }
+            foreach (var patologiaGabarito in listaPatologiasGabarito)
+            {
+                contem = false;
+                foreach (var patologia in listaPatologias)
+                {
+                    if (patologia.IdPatologia == patologiaGabarito.IdPatologia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + ";<br>";
+                }
+            }
+            modelState.AddModelError("ErroAntecedentesFamiliares", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Alergias que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+        }
+
+        /// <summary>
+        /// Faz correção das Antecedentes Patologicos da consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="listaPatologias"></param>
+        /// <param name="listaPatologiaGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostasAntecedentesPatologicos(IEnumerable<PatologiaModel> listaPatologias, IEnumerable<PatologiaModel> listaPatologiasGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            bool contem;
+            foreach (var patologia in listaPatologias)
+            {
+                contem = false;
+                foreach (var patologiaGabarito in listaPatologiasGabarito)
+                {
+                    if (patologia.IdPatologia == patologiaGabarito.IdPatologia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + ";<br>";
+                }
+            }
+            foreach (var patologiaGabarito in listaPatologiasGabarito)
+            {
+                contem = false;
+                foreach (var patologia in listaPatologias)
+                {
+                    if (patologia.IdPatologia == patologiaGabarito.IdPatologia)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + ";<br>";
+                }
+            }
+            modelState.AddModelError("ErroAntecedentesPatologicos", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Alergias que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>
