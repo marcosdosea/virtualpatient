@@ -31,14 +31,14 @@
     <script type="text/javascript" src="../../Content/themes/pv/js/imperio.general.js"></script>
 </head>
 <body>
-        <noscript>
-            <div>
-                <h2>
-                    This site requires JavaScript ... melhor invocar um View especificar para exibição
-                    de uma mensagem ao usuário se possivel colocar tbm uma animação para intrete-lo</h2>
-            </div>
-        </noscript>
-        <header class="container">
+    <noscript>
+        <div>
+            <h2>
+                This site requires JavaScript ... melhor invocar um View especificar para exibição
+                de uma mensagem ao usuário se possivel colocar tbm uma animação para intrete-lo</h2>
+        </div>
+    </noscript>
+    <header class="container">
             <div id="title">
                 <div id="title1" class="span3">
                     <a href="<%: Url.Action("Index", "Home")%>">
@@ -85,37 +85,53 @@
                 </style>
             </div>
         <style>
-            #fieldset {
+            #fieldset
+            {
                 border: 1px solid #ddd;
                 padding: 0.4em 1em 0.4em 1.4em;
                 margin: 0 0 0.5em 0;
             }
-
-            .legend1 {
+            
+            .legend1
+            {
                 font-size: medium;
                 font-weight: bold;
-            }         
+            }
         </style>
         </header>
-        <div class="container">
-            <div class="navbar">
-                <!--navbar-static-top" id="nav" data-spy="affix" data-offset-top="120"-->
-                <div class="navbar-inner">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                        class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+    <div class="container">
+        <div class="navbar">
+            <!--navbar-static-top" id="nav" data-spy="affix" data-offset-top="120"-->
+            <div class="navbar-inner">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a>
+                <div class="brand">
+                    <a href="<%: Url.Action("Index", "Home")%>">
+                        <img alt="Noob" src="../../Content/themes/pv/img/icons/home.png" />
+                        <!-- < %: Html.ActionLink("Paciente Virtual", "Index", "Home")%>-->
                     </a>
-                    <div class="brand">
-                        <a href="<%: Url.Action("Index", "Home")%>">
-                            <img alt="Noob" src="../../Content/themes/pv/img/icons/home.png" />
-                            <!-- < %: Html.ActionLink("Paciente Virtual", "Index", "Home")%>-->
-                        </a>
-                    </div>
-                    <% if (HttpContext.Current.Request.IsAuthenticated && Session["_DadosTurmaPessoa"] != null)
-                       { %>
-                    <% if (Session["_Roles"].Equals("administrador"))
-                       { %>
-                    <div class="nav-collapse collapse">
-                        <nav class="nav">
+                </div>
+                <% if (HttpContext.Current.Request.IsAuthenticated && Session["_DadosTurmaPessoa"] != null)
+                   { %>
+                <% if (Session["_Roles"].Equals("administrador"))
+                   { %>
+                <div class="nav-collapse collapse">
+                    <nav class="nav">
+                            <ul class="nav" role="menu">
+                                <li>
+                                    <%: Html.ActionLink(Resources.Mensagem.definir_administrador, "DefinirAdministrador", "Pessoa")%>
+                                </li>
+                            </ul>
+                        </nav>
+                </div>
+                <% }
+                   else
+                   { %>
+                <% if (Session["_Roles"].Equals("administrador_farmacia") || Session["_Roles"].Equals("administrador_enfermagem"))
+                   { %>
+                <div class="nav-collapse collapse">
+                    <nav class="nav">
                             <ul class="nav" role="menu">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     <%= Resources.Mensagem.cadastros%>
@@ -195,24 +211,26 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.especialidade, "Index", "Especialidade")%>
                                         </li>
-                                        <li class="divider"></li>
+                                        <% if (Session["_Roles"].Equals("administrador_enfermagem"))
+                                           { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.patologia, "Index", "Patologia")%>
                                         </li>
+                                        <% } %>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
-                    </div>
-                    <% } %>
-                    <div class="nav-collapse collapse">
-                        <nav class="nav">
+                </div>
+                <% } %>
+                <div class="nav-collapse collapse">
+                    <nav class="nav">
                             <ul class="nav" role="menu">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     <%: Resources.Mensagem.turma%>
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <% if (Session["_Roles"].Equals("administrador"))
+                                        <% if (Session["_Roles"].Equals("administrador_farmacia") || Session["_Roles"].Equals("administrador_enfermagem"))
                                            { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.turma, "Index", "Turma")%>
@@ -226,31 +244,28 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.instituicao, "Index", "Instituicao")%>
                                         </li>
-                                        <% } %>
-                                        <li>
-                                            <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
-                                        </li>
-                                        <% if (Session["_Roles"].Equals("administrador"))
-                                           { %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_tutor_turma, "Index", "AtivarTutorTurma")%>
                                         </li>
-                                        <%}%>
-                                        <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("administrador"))
-                                           { %> 
+                                        <% } %>
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.ativar_matriculas_turma, "Index", "AtivarMatriculasTurma")%>
+                                        </li>
+                                        <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("usuario"))
+                                           { %> 
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.solicitar_matricula_turma, "Index", "SolicitarMatriculaTurma")%>
                                         </li>
                                         <% } %>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
-                    </div>
-                    <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("administrador"))
-                       { %>
-                    <div class="nav-collapse collapse">
-                        <nav class="nav">
+                </div>
+                <% if (Session["_Roles"].Equals("tutor") || Session["_Roles"].Equals("administrador_farmacia") || Session["_Roles"].Equals("administrador_enfermagem"))
+                   { %>
+                <div class="nav-collapse collapse">
+                    <nav class="nav">
                             <ul class="nav" role="menu">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     <%: Resources.Mensagem.paciente%>
@@ -266,10 +281,10 @@
                                 </li>
                             </ul>
                         </nav>
-                    </div>
-                    <% } %>
-                    <div class="nav-collapse collapse">
-                        <nav class="nav">
+                </div>
+                <% } %>
+                <div class="nav-collapse collapse">
+                    <nav class="nav">
                             <ul class="nav" role="menu">
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     <%: Resources.Mensagem.consultas%>
@@ -288,14 +303,15 @@
                                 </li>
                             </ul>
                         </nav>
-                    </div>
-                    <% } %>
                 </div>
+                <% } %>
+                <% } %>
             </div>
         </div>
-        <!-- /.navbar -->
-        <div class="container">
-            <section id="main">
+    </div>
+    <!-- /.navbar -->
+    <div class="container">
+        <section id="main">
                 <!--input type="submit" class="btn btn-primary" rel="tooltip" value="Tema botão não funciona" title="O Css não funciona" />
            <script type="text/javascript">
                $('tooltip2').tooltip('show');
@@ -310,9 +326,9 @@
             </script-->
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </section>
-        </div>
-        <div class="container" >
-            <footer class="footer">
+    </div>
+    <div class="container">
+        <footer class="footer">
                 <div class="container" id="rodape">
                     <div class="span11">
                         <div class="span3">
@@ -337,20 +353,20 @@
                     </div>
                 </div>
             </footer>
-        </div>
-        <style>
-            #rodape
-            {
-                height: 70px;
-            }
-            #roda
-            {
-                font-size: smaller;
-            }
-            .styleValidation
-            {
-                color: Red;
-            }
-        </style>
+    </div>
+    <style>
+        #rodape
+        {
+            height: 70px;
+        }
+        #roda
+        {
+            font-size: smaller;
+        }
+        .styleValidation
+        {
+            color: Red;
+        }
+    </style>
 </body>
 </html>

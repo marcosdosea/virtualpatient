@@ -10,6 +10,10 @@ namespace PacienteVirtual.Models
 {
     public class Global
     {
+        public const string cursoEnfermagem = "Bacharelado em Enfermagem";
+        public const int idCursoEnfermagem = 2;
+        public const int idCursoFarmacia = 1;
+
         public const int abaCarta = 3;
         public const int abaConsultaParametro = 11;
         public const int abaRazaoEncontro = 2;
@@ -37,6 +41,8 @@ namespace PacienteVirtual.Models
         public const string stringUsuarioRole = "usuario";
         public const string stringAdministradorRole = "administrador";
         public const string stringTutorRole = "tutor";
+        public const string stringAdministradorEnfermagem = "administrador_farmacia";
+        public const string stringAdministradorFarmacia = "administrador_enfermagem";
 
         public static void ZeraSessaoConsulta()
         {
@@ -70,6 +76,10 @@ namespace PacienteVirtual.Models
             SessionController.Abas2 = -1;
             /////////////////////////////////////////////////////////////////
             SessionController.ClinicoInternacao = null;
+            SessionController.ListaClinicoInternacaoAlergia = null;
+            SessionController.ListaAntecedentesFamiliares = null;
+            SessionController.ListaAntecedentesPatologicos = null;
+            SessionController.ListaPatologiasAtuais = null;
         }
 
         public const long CODIGO_USUARIO_PADRAO = 1;
@@ -92,9 +102,10 @@ namespace PacienteVirtual.Models
         public const int Administrador = 1;
         public const int Usuario = 2;
         public const int Tutor = 3;
+        public const int AdministradorEnfermagem = 4;
+        public const int AdministradorFarmacia = 5;
 
         public const int IdRazaoEncontro = 1;
-
 
         //metodo para remover acentuação
         public static string RemoverAcentuacao(string text)

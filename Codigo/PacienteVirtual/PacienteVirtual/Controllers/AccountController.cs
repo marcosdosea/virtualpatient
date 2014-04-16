@@ -52,6 +52,12 @@ namespace PacienteVirtual.Controllers
                             case Global.Administrador:
                                 SessionController.Roles = Global.stringAdministradorRole;
                                 break;
+                            case Global.AdministradorEnfermagem:
+                                SessionController.Roles = Global.stringAdministradorEnfermagem;
+                                break;
+                            case Global.AdministradorFarmacia:
+                                SessionController.Roles = Global.stringAdministradorFarmacia;
+                                break;
                             default:
                                 SessionController.Roles = Global.stringUsuarioRole;
                                 return RedirectToAction("Index", "SolicitarMatriculaTurma");

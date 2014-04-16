@@ -19,5 +19,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "patologias_atuais", ResourceType = typeof(Mensagem))]
         public string Patologia { get; set; }
+
+        public string ErroPatologiasAtuais { get; set; }
     }
 }
