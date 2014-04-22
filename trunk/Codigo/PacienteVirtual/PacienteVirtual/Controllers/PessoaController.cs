@@ -9,31 +9,31 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult DefinirAdministrador()
         {
-            return View(GerenciadorTurmaPessoa.GetInstance().ObterTodos());
+            return View(GerenciadorPessoa.GetInstance().ObterTodos());
         }
 
 
-        public ActionResult DefinirAdmEnfermagem(int idPessoa, int idTurma)
+        public ActionResult DefinirAdmEnfermagem(int idPessoa)
         {
             TurmaPessoaModel turmaPessoa = new TurmaPessoaModel();
             turmaPessoa.IdPessoa = idPessoa;
             turmaPessoa.IdRole = Global.AdministradorEnfermagem;
-            turmaPessoa.IdTurma = idTurma;
+            turmaPessoa.IdTurma = Global.TurmaAdminEnfermagem;
             turmaPessoa.Ativa = true;
-            GerenciadorTurmaPessoa.GetInstance().Atualizar(turmaPessoa);
-            return RedirectToAction("DefinirAdministrador");
+            GerenciadorTurmaPessoa.GetInstance().Inserir(turmaPessoa);
+            return RedirectToAction("Index", "Home");
         }
 
 
-        public ActionResult DefinirAdmFarmacia(int idPessoa, int idTurma)
+        public ActionResult DefinirAdmFarmacia(int idPessoa)
         {
             TurmaPessoaModel turmaPessoa = new TurmaPessoaModel();
             turmaPessoa.IdPessoa = idPessoa;
             turmaPessoa.IdRole = Global.AdministradorFarmacia;
-            turmaPessoa.IdTurma = idTurma;
+            turmaPessoa.IdTurma = Global.TurmaAdminFarmacia;
             turmaPessoa.Ativa = true;
-            GerenciadorTurmaPessoa.GetInstance().Atualizar(turmaPessoa);
-            return RedirectToAction("DefinirAdministrador");
+            GerenciadorTurmaPessoa.GetInstance().Inserir(turmaPessoa);
+            return RedirectToAction("Index", "Home");
         }
         
         //

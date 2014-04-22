@@ -107,6 +107,9 @@ namespace PacienteVirtual.Models
 
         public const int IdRazaoEncontro = 1;
 
+        public const int TurmaAdminEnfermagem = 5;
+        public const int TurmaAdminFarmacia = 6;
+
         //metodo para remover acentuação
         public static string RemoverAcentuacao(string text)
         {
