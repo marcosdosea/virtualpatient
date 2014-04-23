@@ -1,14 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Resources;
-using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Data.Entity;
 
 namespace PacienteVirtual.Models
 {
-    public enum ListaRitmo { Regular = 0, Irregular = 1 }
+    public enum ListaRitmo{ Regular = 0, Irregular = 1 }
 
-    public enum ListaSimetriaToracica { Simetrico = 0, AssimetricoUnilateral = 1, AssimetricoBilateral = 2}
+    public enum ListaSimetriaToracica { Simetrico = 0, AssimetricoUnilateral = 1, AssimetricoBilateral = 2 }
 
     public class OxigenacaoModel
     {
@@ -59,7 +56,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "simetriaToracica", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaSimetriaToracica))]
-        public ListaSimetriaToracica SimetriaToracica { get; set; } 
+        public ListaSimetriaToracica SimetriaToracica { get; set; }
         
         [Display(Name = "barril", ResourceType = typeof(Mensagem))]
         public bool Barril { get; set; }

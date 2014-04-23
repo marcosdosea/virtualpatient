@@ -51,21 +51,21 @@
                     <%: Resources.Mensagem.epistaxe %>
                 </div>
             </div>
-            <br />  
+            <br />
             <div class="span12">
-            <div class="span3">
-                <%: Html.EditorFor(model => model.DesvioDeSepto) %>
-                <%: Resources.Mensagem.desvioDeSepto %>
+                <div class="span3">
+                    <%: Html.EditorFor(model => model.DesvioDeSepto) %>
+                    <%: Resources.Mensagem.desvioDeSepto %>
+                </div>
+                <div class="span3">
+                    <%: Html.EditorFor(model => model.Palidez) %>
+                    <%: Resources.Mensagem.palidez %>
+                </div>
+                <div class="span3">
+                    <%: Html.EditorFor(model => model.LabioCianotico) %>
+                    <%: Resources.Mensagem.labioCianotico %>
+                </div>
             </div>
-            <div class="span3">
-                <%: Html.EditorFor(model => model.Palidez) %>
-                <%: Resources.Mensagem.palidez %>
-            </div>
-            <div class="span3">
-                <%: Html.EditorFor(model => model.LabioCianotico) %>
-                <%: Resources.Mensagem.labioCianotico %>
-            </div>
-        </div>
             <br />
             <div class="span12">
                 <div class="span3">
