@@ -10,7 +10,6 @@ namespace PacienteVirtual.Controllers
         // GET/Index
         public ActionResult Index()
         {
-            int teste = GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoaEmTurmasAtivas(SessionController.Pessoa.IdPessoa);
             if (GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoaEmTurmasAtivas(SessionController.Pessoa.IdPessoa) == Global.ValorInteiroNulo)
             {
                 return RedirectToAction("Index", "SolicitarMatriculaTurma");
@@ -37,7 +36,7 @@ namespace PacienteVirtual.Controllers
         //[HttpPost]
         public ActionResult Create(int id)
         {
-            ViewBag.QtdTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoa(SessionController.Pessoa.IdPessoa);
+            ViewBag.QtdTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterQuantidadePorPessoaEmTurmasAtivas(SessionController.Pessoa.IdPessoa);
             if(id > Global.ValorInteiroNulo)
             {
                 SessionController.DadosTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(id, SessionController.Pessoa.IdPessoa);

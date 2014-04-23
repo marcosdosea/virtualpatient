@@ -6,15 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
             <%: Resources.Mensagem.ativar_matriculas_turma%></h2>
-    <!--% if (ViewBag.SelecionaTurma == true)
-       { %>
-    <div class="span9">
-        < % using (Html.BeginForm("Index", "AtivarMatriculasTurma", FormMethod.Post, null))
-           { %>
-        < %: Html.DropDownList("IdTurma", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
-        < % } %>
-    </div>
-    < % } %-->
+
     <%@ import namespace="GridMvc.Html" %>
     <%@ import namespace="GridMvc.Sorting" %>
     <div class="box-content">

@@ -18,7 +18,9 @@ namespace PacienteVirtual.Controllers
             SessionController.IdRelato = idRelato;
             ViewBag.NomePaciente = GerenciadorPaciente.GetInstance().ObterNomePorId(idPaciente);
             ViewBag.OrdemCronologica = ordemCronologica;
-            if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador || 
+                SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem ||
+                SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
             {
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterPorPerfil(SessionController.DadosTurmaPessoa.IdRole));
             }

@@ -13,7 +13,8 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Index()
         {
-            if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
+            int idRole = SessionController.DadosTurmaPessoa.IdRole;
+            if (idRole == Global.AdministradorEnfermagem || idRole == Global.AdministradorFarmacia)
             {
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTurmasAtivas());
             }
@@ -22,25 +23,6 @@ namespace PacienteVirtual.Controllers
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
         }
-
-        [HttpPost]
-        public ActionResult Index(int IdTurma = Global.NaoSelecionado)
-        {
-            ViewBag.SelecionaTurma = true;
-            ViewBag.codigo = IdTurma;
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
-            if (IdTurma != Global.NaoSelecionado)
-            {
-                SessionController.IdTurmaAtribuirMatriculaTutor = IdTurma;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosPorTurma(IdTurma).ToList());
-            }
-            else
-            {
-                SessionController.IdTurmaAtribuirMatriculaTutor = Global.NaoSelecionado;
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTurmasAtivas());
-            }
-        }
-
 
         public ActionResult Ativar(int idTurma, int idPessoa)
         {

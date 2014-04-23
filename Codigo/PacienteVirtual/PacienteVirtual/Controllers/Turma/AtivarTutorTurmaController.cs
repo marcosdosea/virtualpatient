@@ -15,21 +15,6 @@ namespace PacienteVirtual.Controllers
             return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresTurmasAtivas());
         }
 
-        [HttpPost]
-        public ActionResult Index(int IdTurma = Global.NaoSelecionado)
-        {
-            ViewBag.codigo = IdTurma;
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTodosAtivos().ToList(), "IdTurma", "Codigo");
-            if (IdTurma != Global.NaoSelecionado)
-            {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresPorTurma(IdTurma).ToList());
-            }
-            else
-            {
-                return View(GerenciadorTurmaPessoa.GetInstance().ObterAlunosTutoresTurmasAtivas());
-            }
-        }
-
         // Ativar
         public ActionResult Ativar(int idTurma, int idPessoa)
         {

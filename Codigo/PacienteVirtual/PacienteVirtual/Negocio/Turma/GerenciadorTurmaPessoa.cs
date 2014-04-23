@@ -32,7 +32,7 @@ namespace PacienteVirtual.Negocio
             tb_turma_pessoa _turmaPessoa = new tb_turma_pessoa();
             try
             {
-                if (QuantidadeSolicitacoes(turmaPessoa.IdPessoa, turmaPessoa.IdTurma) > 0)
+                if (QuantidadeSolicitacoesNaturma(turmaPessoa.IdPessoa, turmaPessoa.IdTurma) > 0)
                 {
                     throw new NegocioException("Já foi solicitada uma matrícula nesta turma. Contate um Tutor desta turma para ativá-la.");
                 }
@@ -130,16 +130,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém a quantidade das solicitações realizadas por uma pessoa
+        /// Obtém a quantidade das solicitações realizadas por uma pessoa em uma turma
         /// </summary>
         /// <returns></returns>
-        public int QuantidadeSolicitacoes(int idPessoa, int idTurma)
+        public int QuantidadeSolicitacoesNaturma(int idPessoa, int idTurma)
         {
             return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa && tpr.IdTurma == idTurma).Count();
         }
 
         /// <summary>
-        /// Obtém todos os turmaPessoa cadastrados com excecao dos Administradores e turmas desativadas
+        /// Obtém usuarios das turmas ativas
         /// </summary>
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterAlunosTurmasAtivas()
@@ -153,7 +153,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterAlunosTutoresTurmasAtivas()
         {
-            return GetQuery().Where(tpr => tpr.IdRole != Global.Administrador && tpr.TurmaAtiva == true).ToList();
+            return GetQuery().Where(tpr => tpr.IdRole != Global.Administrador && tpr.TurmaAtiva == true &&
+                tpr.IdRole != Global.AdministradorEnfermagem && tpr.IdRole != Global.AdministradorFarmacia).ToList();
         }
 
         /// <summary>
@@ -164,16 +165,6 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<TurmaPessoaModel> ObterAlunosPorTurma(int codTurma)
         {
             return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.IdRole == Global.Usuario).ToList();
-        }
-
-        /// <summary>
-        /// Obtem alunos e tutores de uma turma
-        /// </summary>
-        /// <param name="codTurma"></param>
-        /// <returns></returns>
-        public IEnumerable<TurmaPessoaModel> ObterAlunosTutoresPorTurma(int codTurma)
-        {
-            return GetQuery().Where(tpr => tpr.IdTurma == codTurma && tpr.IdRole != Global.Administrador).ToList();
         }
 
         /// <summary>
@@ -207,16 +198,6 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém uma TurmaPessoa com o idPessoa
-        /// </summary>
-        /// <param name="codTurma"></param>
-        /// <returns></returns>
-        public TurmaPessoaModel ObterPorPessoaUmaTurmaPessoa(int idPessoa)
-        {
-            return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().ElementAtOrDefault(0);
-        }
-
-        /// <summary>
         /// Obtém uma TurmaPessoa ativa com o idPessoa
         /// </summary>
         /// <param name="codTurma"></param>
@@ -227,22 +208,12 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtem todas as pessoas que estão na turma passada Ativa com excecao de tutorea
+        /// Obtem todas as pessoas que estão na turma passada Ativa com excecao de tutor e administradores
         /// </summary>
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterPorTurma(int idTurma)
         {
-            return GetQuery().Where(tpr => tpr.IdTurma == idTurma && tpr.Ativa == true && tpr.IdRole != Global.Tutor).ToList();
-        }
-
-        /// <summary>
-        /// Obtem quantidade de turmaPessoa a partir de uma pessoa
-        /// </summary>
-        /// <param name="idPessoa"></param>
-        /// <returns></returns>
-        public int ObterQuantidadePorPessoa(int idPessoa)
-        {
-            return GetQuery().Where(turma => turma.IdPessoa == idPessoa).ToList().Count;
+            return GetQuery().Where(tpr => tpr.IdTurma == idTurma && tpr.Ativa == true && tpr.IdRole == Global.Usuario).ToList();
         }
 
         /// <summary>
