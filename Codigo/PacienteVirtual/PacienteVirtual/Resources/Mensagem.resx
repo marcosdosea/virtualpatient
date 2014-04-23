@@ -1200,4 +1200,19 @@
   <data name="definir" xml:space="preserve">
     <value>Definir</value>
   </data>
+  <data name="irregular" xml:space="preserve">
+    <value>Irregular</value>
+  </data>
+  <data name="regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="AssimetricoBilateral" xml:space="preserve">
+    <value>Assimétrico Bilateral</value>
+  </data>
+  <data name="AssimetricoUnilateral" xml:space="preserve">
+    <value>Assimétrico Unilateral</value>
+  </data>
+  <data name="Simetrico" xml:space="preserve">
+    <value>Simétrico</value>
+  </data>
 </root>

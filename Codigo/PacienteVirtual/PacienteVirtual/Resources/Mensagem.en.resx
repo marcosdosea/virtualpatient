@@ -1197,4 +1197,19 @@
   <data name="definir_adm_farmacia" xml:space="preserve">
     <value>Set administrator of Pharmacy course.</value>
   </data>
+  <data name="irregular" xml:space="preserve">
+    <value>Irregular</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="AssimetricoBilateral" xml:space="preserve">
+    <value>Bilateral Asymmetric</value>
+  </data>
+  <data name="AssimetricoUnilateral" xml:space="preserve">
+    <value>Unilateral Asymmetry</value>
+  </data>
+  <data name="Simetrico" xml:space="preserve">
+    <value>Symmetric</value>
+  </data>
 </root>
