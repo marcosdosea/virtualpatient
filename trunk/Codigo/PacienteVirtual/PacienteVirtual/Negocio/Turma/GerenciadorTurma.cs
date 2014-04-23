@@ -168,11 +168,22 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Obtém turmas de determinada instituicao ativas
         /// </summary>
-        /// <param name="nome"></param>
+        /// <param name="idInstituicao"></param>
         /// <returns></returns>
         public IEnumerable<TurmaModel> ObterTurmasAtivadasPorInstituicoes(int idInstituicao)
         {
             return GetQuery().Where(turma => turma.IdInstituicao == idInstituicao && turma.Ativa == true).ToList();
+        }
+
+        /// <summary>
+        /// Obtém turmas de determinada instituicao ativas com exececao das turmas de Administradores
+        /// </summary>
+        /// <param name="idInstituicao"></param>
+        /// <returns></returns>
+        public IEnumerable<TurmaModel> ObterTurmasAtivasPorInstExcAdm(int idInstituicao)
+        {
+            return GetQuery().Where(t => t.IdInstituicao == idInstituicao && t.Ativa == true && t.IdTurma != Global.TurmaAdminEnfermagem 
+                && t.IdTurma != Global.TurmaAdminFarmacia).ToList();
         }
 
         /// <summary>
