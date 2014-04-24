@@ -1215,4 +1215,70 @@
   <data name="Simetrico" xml:space="preserve">
     <value>Simétrico</value>
   </data>
+  <data name="Ar" xml:space="preserve">
+    <value>Ar</value>
+  </data>
+  <data name="aspecto_secrecao" xml:space="preserve">
+    <value>Aspecto da Secreção</value>
+  </data>
+  <data name="Diminuida" xml:space="preserve">
+    <value>Diminuída</value>
+  </data>
+  <data name="enfizema_subcutaneo" xml:space="preserve">
+    <value>Enfizema Subcutâneo</value>
+  </data>
+  <data name="Esporadica" xml:space="preserve">
+    <value>Esporádica</value>
+  </data>
+  <data name="expansibilidade" xml:space="preserve">
+    <value>Expansibilidade</value>
+  </data>
+  <data name="frequencia_tosse" xml:space="preserve">
+    <value>Frequência de Tosse</value>
+  </data>
+  <data name="Frequente" xml:space="preserve">
+    <value>Frequênte</value>
+  </data>
+  <data name="ganglios_dolorosos" xml:space="preserve">
+    <value>Dolorosos</value>
+  </data>
+  <data name="ganglios_palpaveis" xml:space="preserve">
+    <value>Palpáveis</value>
+  </data>
+  <data name="inspecao_toracica" xml:space="preserve">
+    <value>Inspeção Torácica</value>
+  </data>
+  <data name="Liquido" xml:space="preserve">
+    <value>Líquido</value>
+  </data>
+  <data name="Massa" xml:space="preserve">
+    <value>Massa</value>
+  </data>
+  <data name="NaoSeAplica" xml:space="preserve">
+    <value>Não se Aplica</value>
+  </data>
+  <data name="Noturna" xml:space="preserve">
+    <value>Noturna</value>
+  </data>
+  <data name="percursao" xml:space="preserve">
+    <value>Percursão</value>
+  </data>
+  <data name="presenca_fremito" xml:space="preserve">
+    <value>Presença de Frêmito</value>
+  </data>
+  <data name="Preservada" xml:space="preserve">
+    <value>Preservada</value>
+  </data>
+  <data name="Produtiva" xml:space="preserve">
+    <value>Produtiva</value>
+  </data>
+  <data name="Seca" xml:space="preserve">
+    <value>Seca</value>
+  </data>
+  <data name="tipo_tosse" xml:space="preserve">
+    <value>Tipo de Tosse</value>
+  </data>
+  <data name="tosse" xml:space="preserve">
+    <value>Tosse</value>
+  </data>
 </root>
