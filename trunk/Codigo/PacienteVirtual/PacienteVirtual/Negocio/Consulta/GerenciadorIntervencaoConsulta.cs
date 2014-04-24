@@ -176,9 +176,9 @@ namespace PacienteVirtual.Negocio
                         {
                             IdConsultaVariavel = tb_consulta_variavel_intervencao.IdConsultaVariavel,
                             IdIntervencao = tb_consulta_variavel_intervencao.IdIntervencao,
-                            Paciente = (bool) tb_consulta_variavel_intervencao.comunicaPaciente,
-                            Outro = (bool) tb_consulta_variavel_intervencao.comunicaOutro,
-                            Justificativa = tb_consulta_variavel_intervencao.justificativa,
+                            Paciente = (bool) tb_consulta_variavel_intervencao.ComunicaPaciente,
+                            Outro = (bool) tb_consulta_variavel_intervencao.ComunicaOutro,
+                            Justificativa = tb_consulta_variavel_intervencao.Justificativa,
 
                             DescricaoGrupoIntervencao = tb_consulta_variavel_intervencao.tb_intervencao.tb_grupo_intervencao.Descricao,
                             DescricaoIntervencao = tb_intervencao.DescricaoIntervencao
@@ -226,9 +226,9 @@ namespace PacienteVirtual.Negocio
         {
             _tb_consulta_variavel_intervencao.IdConsultaVariavel = IntervencaoConsultaModel.IdConsultaVariavel;
             _tb_consulta_variavel_intervencao.IdIntervencao = IntervencaoConsultaModel.IdIntervencao;
-            _tb_consulta_variavel_intervencao.comunicaOutro = IntervencaoConsultaModel.Outro;
-            _tb_consulta_variavel_intervencao.comunicaPaciente = IntervencaoConsultaModel.Paciente;
-            _tb_consulta_variavel_intervencao.justificativa = IntervencaoConsultaModel.Justificativa;
+            _tb_consulta_variavel_intervencao.ComunicaOutro = IntervencaoConsultaModel.Outro;
+            _tb_consulta_variavel_intervencao.ComunicaPaciente = IntervencaoConsultaModel.Paciente;
+            _tb_consulta_variavel_intervencao.Justificativa = IntervencaoConsultaModel.Justificativa;
 
         }
     }
