@@ -1212,4 +1212,67 @@
   <data name="Simetrico" xml:space="preserve">
     <value>Symmetric</value>
   </data>
+  <data name="Ar" xml:space="preserve">
+    <value>Air</value>
+  </data>
+  <data name="aspecto_secrecao" xml:space="preserve">
+    <value>Appearance Secretion</value>
+  </data>
+  <data name="Diminuida" xml:space="preserve">
+    <value>Decreased</value>
+  </data>
+  <data name="enfizema_subcutaneo" xml:space="preserve">
+    <value>Subcutaneous Emphysema</value>
+  </data>
+  <data name="Esporadica" xml:space="preserve">
+    <value>Sporadic</value>
+  </data>
+  <data name="expansibilidade" xml:space="preserve">
+    <value>Expansibility</value>
+  </data>
+  <data name="frequencia_tosse" xml:space="preserve">
+    <value>Frequency of Cough</value>
+  </data>
+  <data name="Frequente" xml:space="preserve">
+    <value>Frequent</value>
+  </data>
+  <data name="ganglios_dolorosos" xml:space="preserve">
+    <value>Painful Nodes</value>
+  </data>
+  <data name="ganglios_palpaveis" xml:space="preserve">
+    <value>Touchable Nodes</value>
+  </data>
+  <data name="inspecao_toracica" xml:space="preserve">
+    <value>Thoracic Inspection</value>
+  </data>
+  <data name="Liquido" xml:space="preserve">
+    <value>Fluid</value>
+  </data>
+  <data name="Massa" xml:space="preserve">
+    <value>Pasta</value>
+  </data>
+  <data name="NaoSeAplica" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+  <data name="Noturna" xml:space="preserve">
+    <value>Night</value>
+  </data>
+  <data name="percursao" xml:space="preserve">
+    <value>Percussion</value>
+  </data>
+  <data name="presenca_fremito" xml:space="preserve">
+    <value>Presence Thrill</value>
+  </data>
+  <data name="Preservada" xml:space="preserve">
+    <value>Preserved</value>
+  </data>
+  <data name="Produtiva" xml:space="preserve">
+    <value>Productive</value>
+  </data>
+  <data name="Seca" xml:space="preserve">
+    <value>Drought</value>
+  </data>
+  <data name="tipo_tosse" xml:space="preserve">
+    <value>Cough type</value>
+  </data>
 </root>
