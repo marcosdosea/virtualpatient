@@ -1564,6 +1564,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Localizar.
+        /// </summary>
+        public static string ganglios_localizar {
+            get {
+                return ResourceManager.GetString("ganglios_localizar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Palpáveis.
         /// </summary>
         public static string ganglios_palpaveis {
@@ -2523,6 +2532,15 @@ namespace Resources {
         public static string palidez {
             get {
                 return ResourceManager.GetString("palidez", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Palpação.
+        /// </summary>
+        public static string palpacao {
+            get {
+                return ResourceManager.GetString("palpacao", resourceCulture);
             }
         }
         

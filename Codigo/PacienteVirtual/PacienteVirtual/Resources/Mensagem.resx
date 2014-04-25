@@ -1242,6 +1242,9 @@
   <data name="ganglios_dolorosos" xml:space="preserve">
     <value>Dolorosos</value>
   </data>
+  <data name="ganglios_localizar" xml:space="preserve">
+    <value>Localizar</value>
+  </data>
   <data name="ganglios_palpaveis" xml:space="preserve">
     <value>Palpáveis</value>
   </data>
@@ -1259,6 +1262,9 @@
   </data>
   <data name="Noturna" xml:space="preserve">
     <value>Noturna</value>
+  </data>
+  <data name="palpacao" xml:space="preserve">
+    <value>Palpação</value>
   </data>
   <data name="percursao" xml:space="preserve">
     <value>Percursão</value>
