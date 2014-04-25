@@ -819,6 +819,17 @@ namespace PacienteVirtual.Controllers
                         oxigenacao.Cifose = false;
                         oxigenacao.Escoliose = false;
                         oxigenacao.TiragemIntercostal = false;
+                        oxigenacao.Expansibilidade = ListaExpansibilidade.Preservada;
+                        oxigenacao.EnfizemaSubcutaneo = false;
+                        oxigenacao.PresencaFremito = false;
+                        oxigenacao.Tosse = false;
+                        oxigenacao.FrequenciaTosse = ListaFrequenciaTosse.NaoSeAplica;
+                        oxigenacao.TipoTosse = ListaTipoTosse.NaoSeAplica;
+                        oxigenacao.AspectoSecrecao = "";
+                        oxigenacao.Percursao = ListaPercursao.Ar;
+                        oxigenacao.GangliosPalpaveis = false;
+                        oxigenacao.GangliosDolorosos = false;
+                        oxigenacao.GangliosLocalizar = "";
                         oxigenacao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
                         GerenciadorOxigenacao.GetInstance().Inserir(oxigenacao);
                     }

@@ -125,6 +125,17 @@ namespace PacienteVirtual.Negocio
                             Escoliose = oxigenacao.Escoliose,
                             TiragemIntercostal = oxigenacao.TiragemIntercostal,
                             SimetriaToracica = ListaSimetriaToracica.Simetrico,
+                            Expansibilidade = ListaExpansibilidade.Preservada,
+                            EnfizemaSubcutaneo = oxigenacao.EnfizemaSubcutaneo,
+                            PresencaFremito = oxigenacao.PresencaFremito,
+                            Tosse = oxigenacao.Tosse,
+                            FrequenciaTosse = ListaFrequenciaTosse.NaoSeAplica,
+                            TipoTosse = ListaTipoTosse.NaoSeAplica,
+                            AspectoSecrecao = oxigenacao.AspectoSecrecao,
+                            Percursao = ListaPercursao.Ar,
+                            GangliosPalpaveis = oxigenacao.GangliosPalpaveis,
+                            GangliosDolorosos = oxigenacao.GangliosDolorosos,
+                            GangliosLocalizar = oxigenacao.GangliosLocalizar
                         };
             return query;
         }
@@ -174,6 +185,17 @@ namespace PacienteVirtual.Negocio
             _oxigenacaoE.Escoliose = oxigenacao.Escoliose;
             _oxigenacaoE.TiragemIntercostal = oxigenacao.TiragemIntercostal;
             _oxigenacaoE.SimetriaToracica = oxigenacao.SimetriaToracica.ToString();
+            _oxigenacaoE.Expansibilidade = oxigenacao.Expansibilidade.ToString();
+            _oxigenacaoE.EnfizemaSubcutaneo = oxigenacao.EnfizemaSubcutaneo;
+            _oxigenacaoE.PresencaFremito = oxigenacao.PresencaFremito;
+            _oxigenacaoE.Tosse = oxigenacao.Tosse;
+            _oxigenacaoE.FrequenciaTosse = oxigenacao.FrequenciaTosse.ToString();
+            _oxigenacaoE.TipoTosse = oxigenacao.TipoTosse.ToString();
+            _oxigenacaoE.AspectoSecrecao = oxigenacao.AspectoSecrecao;
+            _oxigenacaoE.Percursao = oxigenacao.Percursao.ToString();
+            _oxigenacaoE.GangliosPalpaveis = oxigenacao.GangliosPalpaveis;
+            _oxigenacaoE.GangliosDolorosos = oxigenacao.GangliosDolorosos;
+            _oxigenacaoE.GangliosLocalizar = oxigenacao.GangliosLocalizar;
         }
     }
 }

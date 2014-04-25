@@ -7,6 +7,14 @@ namespace PacienteVirtual.Models
 
     public enum ListaSimetriaToracica { Simetrico = 0, AssimetricoUnilateral = 1, AssimetricoBilateral = 2 }
 
+    public enum ListaExpansibilidade { Preservada = 0, Diminuida = 1 }
+
+    public enum ListaFrequenciaTosse { NaoSeAplica = 0, Frequente = 1, Noturna = 2, Esporadica = 3 }
+
+    public enum ListaTipoTosse { NaoSeAplica = 0, Seca = 1, Produtiva = 2 }
+
+    public enum ListaPercursao { Ar = 0, Liquido = 1, Massa = 2 }
+
     public class OxigenacaoModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -78,5 +86,43 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "tiragemIntercostal", ResourceType = typeof(Mensagem))]
         public bool TiragemIntercostal { get; set; }
+
+        [Display(Name = "expansibilidade", ResourceType = typeof(Mensagem))]
+        [EnumDataType(typeof(ListaExpansibilidade))]
+        public ListaExpansibilidade Expansibilidade { get; set; }
+
+        [Display(Name = "enfizema_subcutaneo", ResourceType = typeof(Mensagem))]
+        public bool EnfizemaSubcutaneo { get; set; }
+
+        [Display(Name = "presenca_fremito", ResourceType = typeof(Mensagem))]
+        public bool PresencaFremito { get; set; }
+
+        [Display(Name = "tosse", ResourceType = typeof(Mensagem))]
+        public bool Tosse { get; set; }
+
+        [Display(Name = "frequencia_tosse", ResourceType = typeof(Mensagem))]
+        [EnumDataType(typeof(ListaFrequenciaTosse))]
+        public ListaFrequenciaTosse FrequenciaTosse { get; set; }
+
+        [Display(Name = "tipo_tosse", ResourceType = typeof(Mensagem))]
+        [EnumDataType(typeof(ListaTipoTosse))]
+        public ListaTipoTosse TipoTosse { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "aspecto_secrecao", ResourceType = typeof(Mensagem))]
+        public string AspectoSecrecao { get; set; }
+
+        [Display(Name = "percursao", ResourceType = typeof(Mensagem))]
+        [EnumDataType(typeof(ListaPercursao))]
+        public ListaPercursao Percursao { get; set; }
+
+        [Display(Name = "ganglios_palpaveis", ResourceType = typeof(Mensagem))]
+        public bool GangliosPalpaveis { get; set; }
+
+        [Display(Name = "ganglios_dolorosos", ResourceType = typeof(Mensagem))]
+        public bool GangliosDolorosos { get; set; }
+
+        [Display(Name = "ganglios_localizar", ResourceType = typeof(Mensagem))]
+        public string GangliosLocalizar { get; set; }
     }
 }
