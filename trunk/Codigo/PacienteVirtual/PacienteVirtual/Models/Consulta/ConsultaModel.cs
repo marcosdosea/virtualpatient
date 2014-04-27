@@ -19,6 +19,8 @@ namespace PacienteVirtual.Models
         /////////////////////////////////////////
         public OxigenacaoModel Oxigenacao { get; set; }
 
+        public TermorregulacaoModel Termorregulacao { get; set; }
+
         public ClinicoInternacaoModel ClinicoInternacao { get; set; }
 
         public PatologiasAtuaisModel PatologiasAtuais { get; set; }

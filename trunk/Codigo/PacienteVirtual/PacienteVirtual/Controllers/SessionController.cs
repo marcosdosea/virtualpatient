@@ -842,5 +842,34 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_Oxigenacao"] = value;
             }
         }
+
+        public static TermorregulacaoModel Termorregulacao
+        {
+            get
+            {
+                TermorregulacaoModel termorregulacao = (TermorregulacaoModel)HttpContext.Current.Session["_Termorregulacao"];
+                if (termorregulacao == null)
+                {
+                    termorregulacao = GerenciadorTermorregulacao.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (termorregulacao == null)
+                    {
+                        termorregulacao = new TermorregulacaoModel();
+                        termorregulacao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        termorregulacao.Temperatura = Global.ValorDoubleNulo;
+                        termorregulacao.TemperaturaPele = ListaTemperaturaPele.Quente;
+                        termorregulacao.Sudorese = false;
+                        termorregulacao.Calafrio = false;
+                        termorregulacao.Piloerecao = false;
+                        GerenciadorTermorregulacao.GetInstance().Inserir(termorregulacao);
+                    }
+                    HttpContext.Current.Session["_Termorregulacao"] = termorregulacao;
+                }
+                return termorregulacao;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Termorregulacao"] = value;
+            }
+        }
     }
 }
