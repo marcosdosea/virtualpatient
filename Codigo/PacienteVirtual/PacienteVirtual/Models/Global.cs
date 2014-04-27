@@ -33,6 +33,7 @@ namespace PacienteVirtual.Models
 
         public const int NaoSelecionado = -1;
         public const int ValorInteiroNulo = 0;
+        public const double ValorDoubleNulo = 0.0;
         public const int ValorInicial = 1;
         public const string stringVazia = "";
         public const string CharVazia = " ";

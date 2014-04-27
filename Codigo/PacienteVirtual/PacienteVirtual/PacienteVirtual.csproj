@@ -167,6 +167,7 @@
     <Compile Include="Controllers\Consulta\IntervencaoConsultaController.cs" />
     <Compile Include="Controllers\Consulta\OxigenacaoController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
+    <Compile Include="Controllers\Consulta\TermorregulacaoController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\AtivarTutorTurmaController.cs" />
     <Compile Include="Controllers\Turma\SelecionarTurmaController.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="Models\Consulta\OxigenacaoModel.cs" />
     <Compile Include="Models\Consulta\PatologiasAtuaisModel.cs" />
     <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
+    <Compile Include="Models\Consulta\TermorregulacaoModel.cs" />
     <Compile Include="Models\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +226,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorOxigenacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorCarta.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorTermorregulacao.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -700,6 +703,7 @@
     <Content Include="Views\SuspeitaPrm\Details.aspx" />
     <Content Include="Views\SuspeitaPrm\Edit.aspx" />
     <Content Include="Views\SuspeitaPrm\Index.aspx" />
+    <Content Include="Views\Termorregulacao\Edit.ascx" />
     <Content Include="Views\VMPaciente\Curso.ascx" />
     <Content Include="Views\Curso\Create.aspx" />
     <Content Include="Views\Curso\Delete.aspx" />

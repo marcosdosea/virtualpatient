@@ -412,6 +412,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calafrio.
+        /// </summary>
+        public static string calafrio {
+            get {
+                return ResourceManager.GetString("calafrio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Campo {0} só aceita &quot;M&quot; ou &quot;F&quot;.
         /// </summary>
         public static string campo_MouF {
@@ -1546,6 +1555,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fria.
+        /// </summary>
+        public static string Fria {
+            get {
+                return ResourceManager.GetString("Fria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Funil.
         /// </summary>
         public static string funil {
@@ -2653,6 +2671,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Piloereção.
+        /// </summary>
+        public static string piloerecao {
+            get {
+                return ResourceManager.GetString("piloerecao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Plano de Saúde.
         /// </summary>
         public static string plano_saude {
@@ -2847,6 +2874,15 @@ namespace Resources {
         public static string queixa_medicamento {
             get {
                 return ResourceManager.GetString("queixa_medicamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quente.
+        /// </summary>
+        public static string Quente {
+            get {
+                return ResourceManager.GetString("Quente", resourceCulture);
             }
         }
         
@@ -3247,11 +3283,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String2 {
+            get {
+                return ResourceManager.GetString("String2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Substância.
         /// </summary>
         public static string substancia {
             get {
                 return ResourceManager.GetString("substancia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sudorese.
+        /// </summary>
+        public static string sudorese {
+            get {
+                return ResourceManager.GetString("sudorese", resourceCulture);
             }
         }
         
@@ -3324,6 +3378,33 @@ namespace Resources {
         public static string telefone {
             get {
                 return ResourceManager.GetString("telefone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperatura.
+        /// </summary>
+        public static string temperatura {
+            get {
+                return ResourceManager.GetString("temperatura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperatura da Pele.
+        /// </summary>
+        public static string temperatura_pele {
+            get {
+                return ResourceManager.GetString("temperatura_pele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Termorregulação.
+        /// </summary>
+        public static string termorregulacao {
+            get {
+                return ResourceManager.GetString("termorregulacao", resourceCulture);
             }
         }
         

@@ -1287,4 +1287,31 @@
   <data name="tosse" xml:space="preserve">
     <value>Tosse</value>
   </data>
+  <data name="calafrio" xml:space="preserve">
+    <value>Calafrio</value>
+  </data>
+  <data name="Fria" xml:space="preserve">
+    <value>Fria</value>
+  </data>
+  <data name="piloerecao" xml:space="preserve">
+    <value>Piloereção</value>
+  </data>
+  <data name="Quente" xml:space="preserve">
+    <value>Quente</value>
+  </data>
+  <data name="sudorese" xml:space="preserve">
+    <value>Sudorese</value>
+  </data>
+  <data name="temperatura" xml:space="preserve">
+    <value>Temperatura</value>
+  </data>
+  <data name="temperatura_pele" xml:space="preserve">
+    <value>Temperatura da Pele</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="termorregulacao" xml:space="preserve">
+    <value>Termorregulação</value>
+  </data>
 </root>

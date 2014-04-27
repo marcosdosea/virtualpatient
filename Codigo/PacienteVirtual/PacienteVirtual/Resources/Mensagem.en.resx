@@ -1281,4 +1281,28 @@
   <data name="tipo_tosse" xml:space="preserve">
     <value>Cough type</value>
   </data>
+  <data name="calafrio" xml:space="preserve">
+    <value>Chill</value>
+  </data>
+  <data name="Fria" xml:space="preserve">
+    <value>Cold</value>
+  </data>
+  <data name="piloerecao" xml:space="preserve">
+    <value>Piloerection</value>
+  </data>
+  <data name="Quente" xml:space="preserve">
+    <value>Hot</value>
+  </data>
+  <data name="sudorese" xml:space="preserve">
+    <value>Sweating</value>
+  </data>
+  <data name="temperatura" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="temperatura_pele" xml:space="preserve">
+    <value>Skin Temperature</value>
+  </data>
+  <data name="termorregulacao" xml:space="preserve">
+    <value>Thermoregulation</value>
+  </data>
 </root>

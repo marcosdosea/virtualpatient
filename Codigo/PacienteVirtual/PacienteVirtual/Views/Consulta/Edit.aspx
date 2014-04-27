@@ -182,6 +182,8 @@
                             <%: Resources.Mensagem.dados_complementares %></a></li>
                             <li id="li5"><a href="#tab1-5" data-toggle="tab">
                             <%: Resources.Mensagem.clinico_internacao %></a></li>   
+                            <li id="li13"><a href="#tab1-6" data-toggle="tab">
+                            <%: Resources.Mensagem.termorregulacao %></a></li> 
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -286,6 +288,11 @@
                                 <% Html.RenderPartial("../ClinicoInternacao/ListaAntecedentesFamiliares", Model.ListaAntecedentesFamiliares);%>
                                 <% Html.RenderPartial("../ClinicoInternacao/AdicionarClinicoInternacaoAlergias", Model.ClinicoInternacaoAlergias);%>
                                 <% Html.RenderPartial("../ClinicoInternacao/ListaClinicoInternacaoAlergias", Model.ListaClinicoInternacaoAlergias);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-6">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Termorregulacao/Edit", Model.Termorregulacao);%>
                             </div>
                         </div>
                         <% } %>
