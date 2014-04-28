@@ -563,6 +563,29 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static HigieneModel Higiene
+        {
+            get
+            {
+                HigieneModel higiene = (HigieneModel)HttpContext.Current.Session["_Higiene"];
+                if (higiene == null)
+                {
+                    higiene = GerenciadorHigiene.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (higiene == null)
+                    {
+                        higiene = new HigieneModel();
+                        GerenciadorHigiene.GetInstance().Inserir(higiene);
+                    }
+                    HttpContext.Current.Session["_Higiene"] = higiene;
+                }
+                return higiene;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Higiene"] = value;
+            }
+        }
+
         public static EstiloVidaModel EstiloVida
         {
             get

@@ -1305,4 +1305,40 @@
   <data name="termorregulacao" xml:space="preserve">
     <value>Thermoregulation</value>
   </data>
+  <data name="alopecia" xml:space="preserve">
+    <value>Alopecia</value>
+  </data>
+  <data name="banho_leito" xml:space="preserve">
+    <value>Bed bath</value>
+  </data>
+  <data name="carie" xml:space="preserve">
+    <value>Caries</value>
+  </data>
+  <data name="halitose" xml:space="preserve">
+    <value>Halitosis</value>
+  </data>
+  <data name="higiene_intima" xml:space="preserve">
+    <value>Intimate hygiene</value>
+  </data>
+  <data name="lingua_saburrosa" xml:space="preserve">
+    <value>Coated tongue</value>
+  </data>
+  <data name="pediculose" xml:space="preserve">
+    <value>Pediculosis</value>
+  </data>
+  <data name="quebradicos" xml:space="preserve">
+    <value>Brittle</value>
+  </data>
+  <data name="ressecamento" xml:space="preserve">
+    <value>dryness</value>
+  </data>
+  <data name="satisfatoria" xml:space="preserve">
+    <value>Satisfactory</value>
+  </data>
+  <data name="seborreia" xml:space="preserve">
+    <value>Seborrhea</value>
+  </data>
+  <data name="ulceracao" xml:space="preserve">
+    <value>Soreness</value>
+  </data>
 </root>
