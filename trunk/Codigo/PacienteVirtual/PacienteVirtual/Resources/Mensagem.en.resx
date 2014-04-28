@@ -1341,4 +1341,94 @@
   <data name="ulceracao" xml:space="preserve">
     <value>Soreness</value>
   </data>
+  <data name="aspecto" xml:space="preserve">
+    <value>Aspect</value>
+  </data>
+  <data name="descamacao" xml:space="preserve">
+    <value>Peeling</value>
+  </data>
+  <data name="descorada" xml:space="preserve">
+    <value>Bleached</value>
+  </data>
+  <data name="Desidratada" xml:space="preserve">
+    <value>Dried</value>
+  </data>
+  <data name="Diminuido" xml:space="preserve">
+    <value>Lowered</value>
+  </data>
+  <data name="equimose" xml:space="preserve">
+    <value>Bruise</value>
+  </data>
+  <data name="eritema" xml:space="preserve">
+    <value>Erythema</value>
+  </data>
+  <data name="escoriacao" xml:space="preserve">
+    <value>Excoriation</value>
+  </data>
+  <data name="estado_hidratacao" xml:space="preserve">
+    <value>Hydration Status</value>
+  </data>
+  <data name="estagio" xml:space="preserve">
+    <value>Stage</value>
+  </data>
+  <data name="ferida_cirurgica" xml:space="preserve">
+    <value>Surgical Wound</value>
+  </data>
+  <data name="grau" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="hematoma" xml:space="preserve">
+    <value>Hematoma</value>
+  </data>
+  <data name="Hidratada" xml:space="preserve">
+    <value>Hydrated</value>
+  </data>
+  <data name="hiperemia" xml:space="preserve">
+    <value>Hyperemia</value>
+  </data>
+  <data name="letericia" xml:space="preserve">
+    <value>Letericia</value>
+  </data>
+  <data name="local" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="localizar_alteracao" xml:space="preserve">
+    <value>Find Amendment</value>
+  </data>
+  <data name="nodulo" xml:space="preserve">
+    <value>Nodule</value>
+  </data>
+  <data name="perda_sensibilidade" xml:space="preserve">
+    <value>Loss Sensitivity</value>
+  </data>
+  <data name="pe_diabetico" xml:space="preserve">
+    <value>Diabetic Foot</value>
+  </data>
+  <data name="Presente" xml:space="preserve">
+    <value>Present</value>
+  </data>
+  <data name="purido" xml:space="preserve">
+    <value>Purido</value>
+  </data>
+  <data name="queimadura" xml:space="preserve">
+    <value>Burn</value>
+  </data>
+  <data name="rubor" xml:space="preserve">
+    <value>Rubor</value>
+  </data>
+  <data name="turgor" xml:space="preserve">
+    <value>Turgor</value>
+  </data>
+  <data name="ulcera_pressao" xml:space="preserve">
+    <value>Pressure Ulcer</value>
+  </data>
+  <data name="integridade_tecidual" xml:space="preserve">
+    <value>Iissue Integrity</value>
+  </data>
+  <data name="lesoes" xml:space="preserve">
+    <value>Lesões</value>
+  </data>
+  <data name="pele" xml:space="preserve">
+    <value>Skin</value>
+  </data>
 </root>

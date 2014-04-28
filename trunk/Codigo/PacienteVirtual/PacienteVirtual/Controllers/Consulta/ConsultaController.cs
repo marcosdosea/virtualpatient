@@ -235,6 +235,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaAntecedentesFamiliares = SessionController.ListaAntecedentesFamiliares;
             consultaModel.ClinicoInternacaoAlergias = new ClinicoInternacaoAlergiasModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
             consultaModel.ListaClinicoInternacaoAlergias = SessionController.ListaClinicoInternacaoAlergia;
+            consultaModel.IntegridadeTecidual = SessionController.IntegridadeTecidual;
         }
 
         /// <summary>

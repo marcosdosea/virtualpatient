@@ -894,5 +894,54 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_Termorregulacao"] = value;
             }
         }
+
+        public static IntegridadeTecidualModel IntegridadeTecidual
+        {
+            get
+            {
+                IntegridadeTecidualModel integridadeTecidual = (IntegridadeTecidualModel)HttpContext.Current.Session["_IntegridadeTecidual"];
+                if (integridadeTecidual == null)
+                {
+                    integridadeTecidual = GerenciadorIntegridadeTecidual.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (integridadeTecidual == null)
+                    {
+                        integridadeTecidual = new IntegridadeTecidualModel();
+                        integridadeTecidual.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        integridadeTecidual.Turgor = ListaTurgor.Presente;
+                        integridadeTecidual.Equimose = false;
+                        integridadeTecidual.Hematoma = false;
+                        integridadeTecidual.Letericia = false;
+                        integridadeTecidual.Descorada = false;
+                        integridadeTecidual.EstadoHidratacao = ListaEstadoHidratacao.Hidratada;
+                        integridadeTecidual.Purido = false;
+                        integridadeTecidual.Hiperemia = false;
+                        integridadeTecidual.Nodulo = false;
+                        integridadeTecidual.Descamacao = false;
+                        integridadeTecidual.PerdaSensibilidade = false;
+                        integridadeTecidual.Eritema = false;
+                        integridadeTecidual.Rubor = false;
+                        integridadeTecidual.LocalAlteracaoPele = "";
+                        integridadeTecidual.Pediabetico = false;
+                        integridadeTecidual.Escoriacao = false;
+                        integridadeTecidual.UlceraPressao = false;
+                        integridadeTecidual.UlceraPressaoEstagio = "";
+                        integridadeTecidual.UlceraPressaoLocal = "";
+                        integridadeTecidual.Queimadura = false;
+                        integridadeTecidual.QueimaduraGrau = "";
+                        integridadeTecidual.QueimaduraLocal = "";
+                        integridadeTecidual.FeridaCirurgica = false;
+                        integridadeTecidual.FeridaCirurgicaLocal = "";
+                        integridadeTecidual.LesaoAspecto = "";
+                        GerenciadorIntegridadeTecidual.GetInstance().Inserir(integridadeTecidual);
+                    }
+                    HttpContext.Current.Session["_IntegridadeTecidual"] = integridadeTecidual;
+                }
+                return integridadeTecidual;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IntegridadeTecidual"] = value;
+            }
+        }
     }
 }
