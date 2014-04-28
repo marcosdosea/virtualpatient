@@ -11,6 +11,7 @@ namespace PacienteVirtual.Models
     public class Global
     {
         public const string cursoEnfermagem = "Bacharelado em Enfermagem";
+        public const string cursoFarmacia = "Bacharelado em Farmácia";
         public const int idCursoEnfermagem = 2;
         public const int idCursoFarmacia = 1;
 

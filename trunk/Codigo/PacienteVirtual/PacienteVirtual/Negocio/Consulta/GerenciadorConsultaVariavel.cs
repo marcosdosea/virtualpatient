@@ -76,7 +76,7 @@ namespace PacienteVirtual.Negocio
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EnviadoParaCorrecao;
             }
-            else if (SessionController.DadosTurmaPessoa.IdRole == Global.Administrador)
+            else if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.GabaritoDisponivel;
             }
