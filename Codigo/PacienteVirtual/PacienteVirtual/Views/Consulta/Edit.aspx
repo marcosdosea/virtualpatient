@@ -184,6 +184,8 @@
                             <%: Resources.Mensagem.clinico_internacao %></a></li>   
                             <li id="li13"><a href="#tab1-6" data-toggle="tab">
                             <%: Resources.Mensagem.termorregulacao %></a></li> 
+                            <li id="li14"><a href="#tab1-7" data-toggle="tab">
+                            <%: Resources.Mensagem.integridade_tecidual %></a></li> 
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -293,6 +295,11 @@
                         <div class="tab-pane" id="tab1-6">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../Termorregulacao/Edit", Model.Termorregulacao);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-7">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../IntegridadeTecidual/Edit", Model.IntegridadeTecidual);%>
                             </div>
                         </div>
                         <% } %>
