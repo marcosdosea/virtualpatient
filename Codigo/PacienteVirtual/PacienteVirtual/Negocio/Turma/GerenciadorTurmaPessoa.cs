@@ -188,7 +188,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém turmaPessoas a partir do pefil
+        /// Obtém turmaPessoas por pefil
         /// </summary>
         /// <param name="codTurma"></param>
         /// <returns></returns>
@@ -208,7 +208,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtem todas as pessoas que estão na turma passada Ativa com excecao de tutor e administradores
+        /// Obtem todas as os alunos (perfil de usuario) de determinada turma
         /// </summary>
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterPorTurma(int idTurma)

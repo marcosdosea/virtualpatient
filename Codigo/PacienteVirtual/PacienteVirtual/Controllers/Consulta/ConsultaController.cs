@@ -28,7 +28,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.Codigo = Global.NaoSelecionado;
             Global.ZeraSessaoConsulta();
             SessionController.TutorVisualizaConsultaPeloCorrigirConsultas = false;
-            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor)
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem
+                || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
             {
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
@@ -42,13 +43,16 @@ namespace PacienteVirtual.Controllers
             if (IdPaciente != Global.NaoSelecionado)
             {
                 ViewBag.Codigo = IdPaciente;
-                if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor) {
+                if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem
+                    || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia) 
+                {
                     return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPacienteTurma(IdPaciente, SessionController.DadosTurmaPessoa.IdTurma));
                 }
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPacienteTurmaPessoa(IdPaciente, SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
             }
             ViewBag.Codigo = Global.NaoSelecionado;
-            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor)
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem
+                || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
             {
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
@@ -115,16 +119,47 @@ namespace PacienteVirtual.Controllers
         /// <param name="consultaModel"></param>
         private void ViewBagsPrimeiraParteConsulta(ConsultaModel consultaModel)
         {
-            ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
-            ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema), "IdQueixa", "DescricaoQueixa");
+            // views bags comun aos cursos
             ViewBag.IdAlergia = new SelectList(GerenciadorAlergia.GetInstance().ObterTodos().ToList(), "IdAlergia", "Alergia");
-            ViewBag.IdRazaoEncontro = new SelectList(GerenciadorRazaoEncontro.GetInstance().ObterTodos().ToList(), "IdRazaoEncontro", "DescricaoRazao", consultaModel.ConsultaVariavel.IdRazaoEncontro);
+            ViewBag.IdEstadoCivil = new SelectList(GerenciadorEstadoCivil.GetInstance().ObterTodos(), "IdEstadoCivil", "EstadoCivil", consultaModel.DemograficoAntropometrico.IdEstadoCivil);
             ViewBag.IdEscolaridade = new SelectList(gEscolaridade.ObterTodos(), "IdEscolaridade", "Nivel", consultaModel.DemograficoAntropometrico.IdEscolaridade);
             ViewBag.IdOcupacao = new SelectList(gOcupacao.ObterTodos(), "IdOcupacao", "Descricao", consultaModel.DemograficoAntropometrico.IdOcupacao);
             ViewBag.IdPlanoSaude = new SelectList(gPlanoSaude.ObterTodos(), "IdPlanoSaude", "Nome", consultaModel.DemograficoAntropometrico.IdPlanoSaude);
-            ViewBag.IdEstadoCivil = new SelectList(GerenciadorEstadoCivil.GetInstance().ObterTodos(), "IdEstadoCivil", "EstadoCivil", consultaModel.DemograficoAntropometrico.IdEstadoCivil);
             ViewBag.IdNaturalidade = new SelectList(GerenciadorNaturalidade.GetInstance().ObterTodos(), "IdNaturalidade", "Naturalidade", consultaModel.DemograficoAntropometrico.IdNaturalidade);
             ViewBag.IdReligiao = new SelectList(GerenciadorReligiao.GetInstance().ObterTodos(), "IdReligiao", "Religiao", consultaModel.DemograficoAntropometrico.IdReligiao);
+            ViewBag.Abas1 = SessionController.Abas1;
+            ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
+            ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
+            ViewBag.EscondeLinks = false;
+
+            if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
+            {
+                ViewsBagPrimeiraTelaCursoFarmacia(consultaModel);
+            }
+            else
+            {
+                ViewsBagPrimeiraTelaCursoEnfermagem();
+            }
+            
+        }
+
+        /// <summary>
+        /// Atribui valores aos views bags exclusivos do curso de Enfermagem
+        /// </summary>
+        private void ViewsBagPrimeiraTelaCursoEnfermagem()
+        {
+            ViewBag.IdPatologia = new SelectList(GerenciadorPatologia.GetInstance().ObterTodos(), "IdPatologia", "Descricao");
+        }
+
+        /// <summary>
+        /// Atribui valores aos views bags exclusivos do curso de Farmacia
+        /// </summary>
+        /// <param name="consultaModel"></param>
+        private void ViewsBagPrimeiraTelaCursoFarmacia(ConsultaModel consultaModel)
+        {
+            ViewBag.IdSistema = new SelectList(GerenciadorSistema.GetInstance().ObterTodos(), "IdSistema", "NomeSistema", consultaModel.IdSistema);
+            ViewBag.IdQueixa = new SelectList(GerenciadorQueixa.GetInstance().ObterPorSistema(consultaModel.IdSistema), "IdQueixa", "DescricaoQueixa");
+            ViewBag.IdRazaoEncontro = new SelectList(GerenciadorRazaoEncontro.GetInstance().ObterTodos().ToList(), "IdRazaoEncontro", "DescricaoRazao", consultaModel.ConsultaVariavel.IdRazaoEncontro);
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
             ViewBag.IdParametroClinico = new SelectList(GerenciadorParametroClinico.GetInstance().ObterTodos().ToList(), "IdParametroClinico", "ParametroClinico");
             ViewBag.PerguntaEsperaTratamento = SessionController.ObterPergunta(PERGUNTA_ESPERA_TRATAMENTO).Pergunta;
@@ -139,13 +174,6 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdRespostaComportamento = new SelectList(SessionController.ObterRespostas(PERGUNTA_COMPORTAMENTO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaComportamento);
             ViewBag.PerguntaIncorporadoPlano = SessionController.ObterPergunta(PERGUNTA_INCORPORADO_PLANO).Pergunta;
             ViewBag.IdRespostaIncorporadoPlano = new SelectList(SessionController.ObterRespostas(PERGUNTA_INCORPORADO_PLANO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaIncorporadoPlano);
-            ViewBag.Abas1 = SessionController.Abas1;
-            ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
-            ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
-            //Enfermagem
-            ViewBag.IdPatologia = new SelectList(GerenciadorPatologia.GetInstance().ObterTodos(), "IdPatologia", "Descricao");
-            
-            ViewBag.EscondeLinks = false;
         }
         
         /// <summary>
@@ -178,9 +206,44 @@ namespace PacienteVirtual.Controllers
         {
             ConsultaModel consultaModel = ConsultaComumTelas(consultaVariavelModel, new ConsultaModel());
             ApontaPrimeiraConsultaPrimeiraTela(consultaVariavelModel);
-
-            consultaModel.Historia = SessionController.Historia;
             consultaModel.DemograficoAntropometrico = SessionController.DemograficosAntropometricos;
+            if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
+            {
+                ConsultaFarmaciaPrimeiraTela(consultaModel);
+            }
+            else
+            {
+                ConsultaEnfermagemPrimeiraTela(consultaModel);
+            }
+            return consultaModel;
+        }
+
+        /// <summary>
+        /// Obtém os dados da consulta referente ao curso de Enfermagem
+        /// </summary>
+        /// <param name="consultaModel"></param>
+        private static void ConsultaEnfermagemPrimeiraTela(ConsultaModel consultaModel)
+        {
+            consultaModel.Oxigenacao = SessionController.Oxigenacao;
+            consultaModel.Termorregulacao = SessionController.Termorregulacao;
+            consultaModel.ClinicoInternacao = SessionController.ClinicoInternacao;
+            consultaModel.PatologiasAtuais = new PatologiasAtuaisModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
+            consultaModel.ListaPatologiasAtuais = SessionController.ListaPatologiasAtuais;
+            consultaModel.AntecedentesPatologicos = new AntecedentesPatologicosModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
+            consultaModel.ListaAntecedentesPatologicos = SessionController.ListaAntecedentesPatologicos;
+            consultaModel.AntecedentesFamiliares = new AntecedentesFamiliaresModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
+            consultaModel.ListaAntecedentesFamiliares = SessionController.ListaAntecedentesFamiliares;
+            consultaModel.ClinicoInternacaoAlergias = new ClinicoInternacaoAlergiasModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
+            consultaModel.ListaClinicoInternacaoAlergias = SessionController.ListaClinicoInternacaoAlergia;
+        }
+
+        /// <summary>
+        /// Obtém os dados da consulta referente ao curso de Farmacia
+        /// </summary>
+        /// <param name="consultaModel"></param>
+        private static void ConsultaFarmaciaPrimeiraTela(ConsultaModel consultaModel)
+        {
+            consultaModel.Historia = SessionController.Historia;
             consultaModel.ExperienciaMedicamentos = SessionController.ExperienciaMedicamentos;
             consultaModel.EstiloVida = SessionController.EstiloVida;
             consultaModel.MedicamentoNaoPrescrito = new MedicamentoNaoPrescritoModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel };
@@ -197,20 +260,6 @@ namespace PacienteVirtual.Controllers
             consultaModel.IdSistema = SessionController.Sistema;
             consultaModel.AlergiaExamesFisicos = new AlergiaExamesFisicosModel { IdConsultaVariavel = consultaModel.ConsultaVariavel.IdConsultaVariavel }; ;
             consultaModel.ListaAlergia = SessionController.ListaAlergia;
-            consultaModel.Oxigenacao = SessionController.Oxigenacao;
-            consultaModel.Termorregulacao = SessionController.Termorregulacao;
-
-            consultaModel.ClinicoInternacao = SessionController.ClinicoInternacao;
-            consultaModel.PatologiasAtuais = new PatologiasAtuaisModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
-            consultaModel.ListaPatologiasAtuais = SessionController.ListaPatologiasAtuais;
-            consultaModel.AntecedentesPatologicos = new AntecedentesPatologicosModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
-            consultaModel.ListaAntecedentesPatologicos = SessionController.ListaAntecedentesPatologicos;
-            consultaModel.AntecedentesFamiliares = new AntecedentesFamiliaresModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
-            consultaModel.ListaAntecedentesFamiliares = SessionController.ListaAntecedentesFamiliares;
-            consultaModel.ClinicoInternacaoAlergias = new ClinicoInternacaoAlergiasModel { IdConsultaFixo = SessionController.ConsultaFixo.IdConsultaFixo };
-            consultaModel.ListaClinicoInternacaoAlergias = SessionController.ListaClinicoInternacaoAlergia;
-
-            return consultaModel;
         }
 
         /// <summary>
@@ -222,7 +271,6 @@ namespace PacienteVirtual.Controllers
         {
             ConsultaModel consultaModel = ConsultaComumTelas(consultaVariavelModel, new ConsultaModel());
             ApontaPrimeiraConsultaSegundaTela(consultaVariavelModel);
-
             consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
             consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
             consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
@@ -232,7 +280,6 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaIntervencaoConsulta = SessionController.ListaIntervencaoConsulta;
             consultaModel.Carta = new CartaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaCarta = SessionController.ListaCarta;
-
             return consultaModel;
         }
 
@@ -261,9 +308,12 @@ namespace PacienteVirtual.Controllers
             {
                 ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
                     , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
-                SessionController.Historia = GerenciadorHistoria.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
                 SessionController.DemograficosAntropometricos = GerenciadorDemograficosAntropometricos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
-                SessionController.ExperienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
+                if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
+                {
+                    SessionController.Historia = GerenciadorHistoria.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
+                    SessionController.ExperienciaMedicamentos = GerenciadorExperienciaMedicamentos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
+                }
             }
         }
 
@@ -306,47 +356,69 @@ namespace PacienteVirtual.Controllers
         /// <param name="ordemCronologica"></param>
         public void corrigirPrimeiraTela(int idPaciente, int ordemCronologica)
         {
-            // Gabarito da consulta
             ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
-            // Demograficos Antropomedicos
             DemograficosAntropometricosModel demograficoGabarito = GerenciadorDemograficosAntropometricos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorDemograficosAntropometricos.GetInstance().CorrigirRespostas(SessionController.DemograficosAntropometricos, demograficoGabarito, ModelState);
             TryValidateModel(SessionController.DemograficosAntropometricos);
-            // Exames Físicos
+            if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
+            {
+                CorrigirPrimeiraTelaCursoFarmacia(gabaritoConsultaSelecionada);
+            }
+            else
+            {
+                CorrigirPrimeiraTelaCursoEnfermagem(gabaritoConsultaSelecionada);
+            }
+        }
+
+        /// <summary>
+        /// Faz a correção da primeira tela do curso de Enfermagem
+        /// </summary>
+        /// <param name="gabaritoConsultaSelecionada"></param>
+        private void CorrigirPrimeiraTelaCursoEnfermagem(ConsultaVariavelModel gabaritoConsultaSelecionada)
+        {
+            ClinicoInternacaoModel clinicoInternacaoGabarito = GerenciadorClinicoInternacao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
+            GerenciadorClinicoInternacao.GetInstance().CorrigirRespostasClinicoInternacao(SessionController.ClinicoInternacao, clinicoInternacaoGabarito, ModelState);
+            TryValidateModel(SessionController.ClinicoInternacao);
+            IEnumerable<AlergiaModel> ListaClinicoInternacaoAlergiaGabarito = GerenciadorClinicoInternacao.GetInstance().ObterAlergias(gabaritoConsultaSelecionada.IdConsultaFixo);
+            GerenciadorClinicoInternacao.GetInstance().CorrigirRespostasAlergias(SessionController.ListaClinicoInternacaoAlergia, ListaClinicoInternacaoAlergiaGabarito, ModelState);
+            IEnumerable<PatologiaModel> ListaAntecedentesPatologicosGabarito = GerenciadorClinicoInternacao.GetInstance().ObterAntecedentesPatologicos(gabaritoConsultaSelecionada.IdConsultaFixo);
+            GerenciadorClinicoInternacao.GetInstance().CorrigirRespostasAntecedentesPatologicos(SessionController.ListaAntecedentesPatologicos, ListaAntecedentesPatologicosGabarito, ModelState);
+            IEnumerable<PatologiaModel> ListaAntecedentesFamiliaresGabarito = GerenciadorClinicoInternacao.GetInstance().ObterAntecedentesFamiliares(gabaritoConsultaSelecionada.IdConsultaFixo);
+            GerenciadorClinicoInternacao.GetInstance().CorrigirRespostasAntecedentesFamiliares(SessionController.ListaAntecedentesFamiliares, ListaAntecedentesFamiliaresGabarito, ModelState);
+            IEnumerable<PatologiaModel> ListaPatologiasAtuaisGabarito = GerenciadorClinicoInternacao.GetInstance().ObterPatologiasAtuais(gabaritoConsultaSelecionada.IdConsultaFixo);
+            GerenciadorClinicoInternacao.GetInstance().CorrigirRespostasPatologiasAtuais(SessionController.ListaPatologiasAtuais, ListaPatologiasAtuaisGabarito, ModelState);
+        }
+
+        /// <summary>
+        /// Faz a correção da primeira tela da consulta do curso de Farmácia
+        /// </summary>
+        /// <param name="gabaritoConsultaSelecionada"></param>
+        private void CorrigirPrimeiraTelaCursoFarmacia(ConsultaVariavelModel gabaritoConsultaSelecionada)
+        {
             ExamesFisicosModel examesFisicosGabarito = GerenciadorExamesFisicos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorExamesFisicos.GetInstance().CorrigirRespostas(SessionController.ExamesFisicos, examesFisicosGabarito, ModelState);
             TryValidateModel(SessionController.ExamesFisicos);
-            // Estilo de Vida
             EstiloVidaModel estiloVidaGabarito = GerenciadorEstiloVida.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorEstiloVida.GetInstance().CorrigirRespostas(SessionController.EstiloVida, estiloVidaGabarito, ModelState);
             TryValidateModel(SessionController.EstiloVida);
-            // Historia
             HistoriaModel historiaGabarito = GerenciadorHistoria.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorHistoria.GetInstance().CorrigirRespostas(SessionController.Historia, historiaGabarito, ModelState);
             TryValidateModel(SessionController.Historia);
-            // Razão do encontro
             GerenciadorConsultaVariavel.GetInstance().CorrigirRespostasRazaoEncontro(SessionController.ConsultaVariavel, gabaritoConsultaSelecionada, ModelState);
             TryValidateModel(SessionController.ConsultaVariavel);
-            // Experiencia com Medicamentos
             ExperienciaMedicamentosModel experienciaMedicamentosGabarito = GerenciadorExperienciaMedicamentos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorExperienciaMedicamentos.GetInstance().CorrigirRespostas(SessionController.ExperienciaMedicamentos, experienciaMedicamentosGabarito, ModelState);
             TryValidateModel(SessionController.ExperienciaMedicamentos);
-            // Medicamentos Prescristos
             IEnumerable<MedicamentoPrescritoModel> ListaMedPrescGabarito = GerenciadorMedicamentoPrescrito.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorMedicamentoPrescrito.GetInstance().CorrigirRespostas(SessionController.ListaMedicamentosPrescritos, ListaMedPrescGabarito, ModelState);
-            // Medicamentos Nao prescristos
             IEnumerable<MedicamentoNaoPrescritoModel> ListaMedNaoPrescGabarito = GerenciadorMedicamentoNaoPrescrito.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorMedicamentoNaoPrescrito.GetInstance().CorrigirRespostas(SessionController.ListaMedicamentoNaoPrescrito, ListaMedNaoPrescGabarito, ModelState);
-            // Medicamentos Anteriores
             IEnumerable<MedicamentosAnterioresModel> ListaMedAntGabarito = GerenciadorMedicamentosAnteriores.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorMedicamentosAnteriores.GetInstance().CorrigirRespostas(SessionController.ListaMedicamentosAnteriores, ListaMedAntGabarito, ModelState);
-            // Parâmetros Clínicos
             IEnumerable<ConsultaParametroModel> ListaParametroGabarito = GerenciadorConsultaParametro.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorConsultaParametro.GetInstance().CorrigirRespostas(SessionController.ListaConsultaParametro, ListaParametroGabarito, ModelState);
-            // Alergias
             IEnumerable<AlergiaModel> ListaAlergiaGabarito = GerenciadorExamesFisicos.GetInstance().ObterAlergias(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorExamesFisicos.GetInstance().CorrigirRespostasAlergias(SessionController.ListaAlergia, ListaAlergiaGabarito, ModelState);
-            //Revisão dos Sistemas
             IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostasConsulta1(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
         }
@@ -358,21 +430,15 @@ namespace PacienteVirtual.Controllers
         /// <param name="ordemCronologica"></param>
         public void corrigirSegundaTela(int idPaciente, int ordemCronologica)
         {
-            // Gabarito da consulta
             ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
-            //Classificação PRM
             IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostasConsulta2(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
-            //Queixa Medicamento
             IEnumerable<QueixaMedicamentoModel> ListaQueixaMedicamento = GerenciadorQueixaMedicamento.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorQueixaMedicamento.GetInstance().CorrigirRespostas(SessionController.ListaQueixaMedicamento, ListaQueixaMedicamento, ModelState);
-            //Diario Pessoal
             IEnumerable<DiarioPessoalModel> ListaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorDiarioPessoal.GetInstance().CorrigirRespostas(SessionController.ListaDiarioPessoal, ListaDiarioPessoal, ModelState);
-            // carta
             IEnumerable<CartaModel> listaCarta = GerenciadorCarta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorCarta.GetInstance().CorrigirRespostas(SessionController.ListaCarta, listaCarta, ModelState);
-            // Intervencao
             IEnumerable<IntervencaoConsultaModel> listaIntervencao = GerenciadorIntervencaoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorIntervencaoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaIntervencaoConsulta, listaIntervencao, ModelState);
         }
