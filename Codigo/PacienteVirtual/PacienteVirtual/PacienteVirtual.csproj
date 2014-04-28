@@ -164,6 +164,7 @@
     <Compile Include="Controllers\Consulta\ConsultaVariavelController.cs" />
     <Compile Include="Controllers\Consulta\DemograficosAntropometicosController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
+    <Compile Include="Controllers\Consulta\HigieneController.cs" />
     <Compile Include="Controllers\Consulta\IntervencaoConsultaController.cs" />
     <Compile Include="Controllers\Consulta\OxigenacaoController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="Models\Consulta\ClinicoInternacaoModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
+    <Compile Include="Models\Consulta\HigieneModel.cs" />
     <Compile Include="Models\Consulta\IntervencaoConsultaModel.cs" />
     <Compile Include="Models\Consulta\OxigenacaoModel.cs" />
     <Compile Include="Models\Consulta\PatologiasAtuaisModel.cs" />
@@ -222,6 +224,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorClinicoInternacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorHigiene.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorIntervencaoConsulta.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorOxigenacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />

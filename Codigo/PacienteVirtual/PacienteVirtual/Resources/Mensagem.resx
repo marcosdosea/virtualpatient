@@ -1314,4 +1314,40 @@
   <data name="termorregulacao" xml:space="preserve">
     <value>Termorregulação</value>
   </data>
+  <data name="alopecia" xml:space="preserve">
+    <value>Alopecia</value>
+  </data>
+  <data name="banho_leito" xml:space="preserve">
+    <value>Banho no leito</value>
+  </data>
+  <data name="carie" xml:space="preserve">
+    <value>Cárie</value>
+  </data>
+  <data name="halitose" xml:space="preserve">
+    <value>Halitose</value>
+  </data>
+  <data name="higiene_intima" xml:space="preserve">
+    <value>Higiene íntima</value>
+  </data>
+  <data name="lingua_saburrosa" xml:space="preserve">
+    <value>Língua saburrosa</value>
+  </data>
+  <data name="pediculose" xml:space="preserve">
+    <value>Pediculose</value>
+  </data>
+  <data name="quebradicos" xml:space="preserve">
+    <value>Quebradiços</value>
+  </data>
+  <data name="ressecamento" xml:space="preserve">
+    <value>Ressecamento</value>
+  </data>
+  <data name="satisfatoria" xml:space="preserve">
+    <value>Satisfatória</value>
+  </data>
+  <data name="seborreia" xml:space="preserve">
+    <value>Seborréia</value>
+  </data>
+  <data name="ulceracao" xml:space="preserve">
+    <value>Ulceração</value>
+  </data>
 </root>
