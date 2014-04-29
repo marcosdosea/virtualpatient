@@ -17,6 +17,8 @@ namespace PacienteVirtual.Models
         public IEnumerable<DiarioPessoalModel> ListaDiarioPessoal { get; set; }
 
         /////////////////////////////////////////
+        public HigieneModel Higiene { get; set; }
+        
         public OxigenacaoModel Oxigenacao { get; set; }
 
         public TermorregulacaoModel Termorregulacao { get; set; }
