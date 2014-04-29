@@ -629,6 +629,7 @@
     <Content Include="Views\EstadoCivil\Details.aspx" />
     <Content Include="Views\EstadoCivil\Edit.aspx" />
     <Content Include="Views\EstadoCivil\Index.aspx" />
+    <Content Include="Views\Higiene\Edit.ascx" />
     <Content Include="Views\IntegridadeTecidual\Edit.ascx" />
     <Content Include="Views\IntervencaoConsulta\Edit.aspx" />
     <Content Include="Views\MedicamentoNaoPrescrito\Edit.aspx" />

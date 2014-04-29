@@ -574,6 +574,7 @@ namespace PacienteVirtual.Controllers
                     if (higiene == null)
                     {
                         higiene = new HigieneModel();
+                        higiene.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
                         GerenciadorHigiene.GetInstance().Inserir(higiene);
                     }
                     HttpContext.Current.Session["_Higiene"] = higiene;

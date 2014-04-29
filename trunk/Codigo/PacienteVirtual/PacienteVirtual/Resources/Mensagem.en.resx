@@ -1431,4 +1431,19 @@
   <data name="pele" xml:space="preserve">
     <value>Skin</value>
   </data>
+  <data name="cabelos" xml:space="preserve">
+    <value>Hair:</value>
+  </data>
+  <data name="corporal" xml:space="preserve">
+    <value>Corporal:</value>
+  </data>
+  <data name="higiene" xml:space="preserve">
+    <value>Hygiene</value>
+  </data>
+  <data name="necessidade_de" xml:space="preserve">
+    <value>Need for:</value>
+  </data>
+  <data name="oral" xml:space="preserve">
+    <value>Oral:</value>
+  </data>
 </root>

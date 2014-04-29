@@ -1437,4 +1437,19 @@
   <data name="String3" xml:space="preserve">
     <value />
   </data>
+  <data name="cabelos" xml:space="preserve">
+    <value>Cabelos:</value>
+  </data>
+  <data name="corporal" xml:space="preserve">
+    <value>Corporal:</value>
+  </data>
+  <data name="higiene" xml:space="preserve">
+    <value>Higiene</value>
+  </data>
+  <data name="necessidade_de" xml:space="preserve">
+    <value>Necessidade de:</value>
+  </data>
+  <data name="oral" xml:space="preserve">
+    <value>Oral:</value>
+  </data>
 </root>
