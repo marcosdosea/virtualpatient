@@ -390,6 +390,8 @@ namespace PacienteVirtual.Controllers
             GerenciadorClinicoInternacao.GetInstance().CorrigirRespostasAntecedentesFamiliares(SessionController.ListaAntecedentesFamiliares, ListaAntecedentesFamiliaresGabarito, ModelState);
             IEnumerable<PatologiaModel> ListaPatologiasAtuaisGabarito = GerenciadorClinicoInternacao.GetInstance().ObterPatologiasAtuais(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorClinicoInternacao.GetInstance().CorrigirRespostasPatologiasAtuais(SessionController.ListaPatologiasAtuais, ListaPatologiasAtuaisGabarito, ModelState);
+            GerenciadorIntegridadeTecidual.GetInstance().CorrigirRespostas(SessionController.IntegridadeTecidual, GerenciadorIntegridadeTecidual.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.IntegridadeTecidual);
         }
 
         /// <summary>
