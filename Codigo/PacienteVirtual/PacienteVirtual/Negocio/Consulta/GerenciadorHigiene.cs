@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -19,6 +20,68 @@ namespace PacienteVirtual.Negocio
                 gHigiene = new GerenciadorHigiene();
             }
             return gHigiene;
+        }
+
+        /// <summary>
+        /// Faz correção de Higiene de uma consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="higiene"></param>
+        /// <param name="higieneGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostas(HigieneModel higiene, HigieneModel higieneGabarito, ModelStateDictionary modelState)
+        {
+            if (higiene.Satisfatoria != higieneGabarito.Satisfatoria)
+            {
+                modelState.AddModelError("Satisfatoria", "Gabarito: " + (higieneGabarito.Satisfatoria.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.NecessitaHigieneIntima != higieneGabarito.NecessitaHigieneIntima)
+            {
+                modelState.AddModelError("NecessitaHigieneIntima", "Gabarito: " + (higieneGabarito.NecessitaHigieneIntima.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.NecessitaHigieneIntima != higieneGabarito.NecessitaHigieneIntima)
+            {
+                modelState.AddModelError("NecessitaHigieneIntima", "Gabarito: " + (higieneGabarito.NecessitaHigieneIntima.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.NecessitaBanhoLeito != higieneGabarito.NecessitaBanhoLeito)
+            {
+                modelState.AddModelError("NecessitaBanhoLeito", "Gabarito: " + (higieneGabarito.NecessitaBanhoLeito.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.CabelosPediculose != higieneGabarito.CabelosPediculose)
+            {
+                modelState.AddModelError("CabelosPediculose", "Gabarito: " + (higieneGabarito.CabelosPediculose.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.CabelosSeborreia != higieneGabarito.CabelosSeborreia)
+            {
+                modelState.AddModelError("CabelosSeborreia", "Gabarito: " + (higieneGabarito.CabelosSeborreia.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.CabelosAlopecia != higieneGabarito.CabelosAlopecia)
+            {
+                modelState.AddModelError("CabelosAlopecia", "Gabarito: " + (higieneGabarito.CabelosAlopecia.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.CabelosQuebradicos != higieneGabarito.CabelosQuebradicos)
+            {
+                modelState.AddModelError("CabelosQuebradicos", "Gabarito: " + (higieneGabarito.CabelosQuebradicos.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.OralRessecamento != higieneGabarito.OralRessecamento)
+            {
+                modelState.AddModelError("OralRessecamento", "Gabarito: " + (higieneGabarito.OralRessecamento.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.OralHalitose != higieneGabarito.OralHalitose)
+            {
+                modelState.AddModelError("OralHalitose", "Gabarito: " + (higieneGabarito.OralHalitose.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.OralLinguaSaburrosa != higieneGabarito.OralLinguaSaburrosa)
+            {
+                modelState.AddModelError("OralLinguaSaburrosa", "Gabarito: " + (higieneGabarito.OralLinguaSaburrosa.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.OralCarie != higieneGabarito.OralCarie)
+            {
+                modelState.AddModelError("OralCarie", "Gabarito: " + (higieneGabarito.OralCarie.Equals(true) ? "Sim" : "Não"));
+            }
+            if (higiene.OralUlceracao != higieneGabarito.OralUlceracao)
+            {
+                modelState.AddModelError("OralUlceracao", "Gabarito: " + (higieneGabarito.OralUlceracao.Equals(true) ? "Sim" : "Não"));
+            }
         }
 
         /// <summary>

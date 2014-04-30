@@ -21,7 +21,10 @@
                     <%: Html.ValidationMessageFor(model => model.TemperaturaPele) %>
                 </div>
             </div>
-            <div id="checks" class="span12">
+        </div>
+        <br />
+        <div class="row-fluid">
+            <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.Sudorese) %>
                     <%: Resources.Mensagem.sudorese %>
@@ -41,13 +44,6 @@
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </div>
     </fieldset>
-    <style>
-        #checks
-        {
-            position: relative;
-            top: 17px;
-        }
-    </style>
 
 <% } %>
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Persistence;
 using PacienteVirtual.Models;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -27,9 +28,28 @@ namespace PacienteVirtual.Negocio
         /// <param name="oxigenacao"></param>
         /// <param name="oxigenacaoGabarito"></param>
         /// <param name="modelState"></param>
-        public void CorrigirRespostas()
+        public void CorrigirRespostas(TermorregulacaoModel termorregulacao, TermorregulacaoModel termorregulacaoGabarito, ModelStateDictionary modelState)
         {
-            
+            if (termorregulacao.Temperatura != termorregulacaoGabarito.Temperatura)
+            {
+                modelState.AddModelError("Temperatura", "Gabarito: \"" + termorregulacaoGabarito.Temperatura + "\"");
+            }
+            if (termorregulacao.TemperaturaPele != termorregulacaoGabarito.TemperaturaPele)
+            {
+                modelState.AddModelError("TemperaturaPele", "Gabarito: \"" + termorregulacaoGabarito.TemperaturaPele + "\"");
+            }
+            if (termorregulacao.Sudorese != termorregulacaoGabarito.Sudorese)
+            {
+                modelState.AddModelError("Sudorese", "Gabarito: " + (termorregulacaoGabarito.Sudorese.Equals(true) ? "Sim" : "Não"));
+            }
+            if (termorregulacao.Calafrio != termorregulacaoGabarito.Calafrio)
+            {
+                modelState.AddModelError("Calafrio", "Gabarito: " + (termorregulacaoGabarito.Calafrio.Equals(true) ? "Sim" : "Não"));
+            }
+            if (termorregulacao.Piloerecao != termorregulacaoGabarito.Piloerecao)
+            {
+                modelState.AddModelError("Piloerecao", "Gabarito: " + (termorregulacaoGabarito.Piloerecao.Equals(true) ? "Sim" : "Não"));
+            }
         }
 
         /// <summary>
