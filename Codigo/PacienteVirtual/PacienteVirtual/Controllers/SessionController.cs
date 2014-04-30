@@ -587,6 +587,30 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static PsicoEspiritualModel PsicoEspiritual
+        {
+            get
+            {
+                PsicoEspiritualModel psicoEspiritual = (PsicoEspiritualModel)HttpContext.Current.Session["_PsicoEspiritual"];
+                if (psicoEspiritual == null)
+                {
+                    psicoEspiritual = GerenciadorPsicoEspiritual.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (psicoEspiritual == null)
+                    {
+                        psicoEspiritual = new PsicoEspiritualModel();
+                        psicoEspiritual.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        GerenciadorPsicoEspiritual.GetInstance().Inserir(psicoEspiritual);
+                    }
+                    HttpContext.Current.Session["_PsicoEspiritual"] = psicoEspiritual;
+                }
+                return psicoEspiritual;
+            }
+            set
+            {
+                HttpContext.Current.Session["_PsicoEspiritual"] = value;
+            }
+        }
+
         public static EstiloVidaModel EstiloVida
         {
             get

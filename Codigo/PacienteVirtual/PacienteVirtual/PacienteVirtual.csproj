@@ -168,6 +168,7 @@
     <Compile Include="Controllers\Consulta\IntegridadeTecidualController.cs" />
     <Compile Include="Controllers\Consulta\IntervencaoConsultaController.cs" />
     <Compile Include="Controllers\Consulta\OxigenacaoController.cs" />
+    <Compile Include="Controllers\Consulta\PsicoEspiritualController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
     <Compile Include="Controllers\Consulta\TermorregulacaoController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
@@ -202,6 +203,7 @@
     <Compile Include="Models\Consulta\IntervencaoConsultaModel.cs" />
     <Compile Include="Models\Consulta\OxigenacaoModel.cs" />
     <Compile Include="Models\Consulta\PatologiasAtuaisModel.cs" />
+    <Compile Include="Models\Consulta\PsicoEspiritualModel.cs" />
     <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
     <Compile Include="Models\Consulta\TermorregulacaoModel.cs" />
     <Compile Include="Models\PacienteVirtualModel.Designer.cs">
@@ -230,6 +232,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorIntegridadeTecidual.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorIntervencaoConsulta.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorOxigenacao.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorPsicoEspiritual.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorCarta.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorTermorregulacao.cs" />
@@ -648,6 +651,7 @@
     <Content Include="Views\Patologia\Edit.aspx" />
     <Content Include="Views\Patologia\Index.aspx" />
     <Content Include="Views\Pessoa\DefinirAdministrador.aspx" />
+    <Content Include="Views\PsicoEspiritual\Edit.ascx" />
     <Content Include="Views\QueixaMedicamento\Edit.aspx" />
     <Content Include="Views\Religiao\Create.aspx" />
     <Content Include="Views\Religiao\Delete.aspx" />

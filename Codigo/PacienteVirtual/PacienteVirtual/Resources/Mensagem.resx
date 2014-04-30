@@ -1452,4 +1452,46 @@
   <data name="oral" xml:space="preserve">
     <value>Oral:</value>
   </data>
+  <data name="ansiedade" xml:space="preserve">
+    <value>Ansiedade</value>
+  </data>
+  <data name="apatico" xml:space="preserve">
+    <value>Apático</value>
+  </data>
+  <data name="baixo_auto_estima" xml:space="preserve">
+    <value>Baixa auto-estima</value>
+  </data>
+  <data name="busca_assistencia_espiritual" xml:space="preserve">
+    <value>Busca assistência espiritual na internação</value>
+  </data>
+  <data name="choro" xml:space="preserve">
+    <value>Choro</value>
+  </data>
+  <data name="crenca_religiosa" xml:space="preserve">
+    <value>Crença religiosa</value>
+  </data>
+  <data name="disturbios_sono" xml:space="preserve">
+    <value>Distúrbios de sono</value>
+  </data>
+  <data name="especifica_assistencia_espiritual" xml:space="preserve">
+    <value>Especificar assistência espiritual</value>
+  </data>
+  <data name="estresse" xml:space="preserve">
+    <value>Estresse</value>
+  </data>
+  <data name="humor_deprimido" xml:space="preserve">
+    <value>Humor deprimido</value>
+  </data>
+  <data name="negacao" xml:space="preserve">
+    <value>Negação</value>
+  </data>
+  <data name="preocupacao_morte" xml:space="preserve">
+    <value>Demonstra preocupação com a morte</value>
+  </data>
+  <data name="raiva" xml:space="preserve">
+    <value>Raiva</value>
+  </data>
+  <data name="psicoespiritual" xml:space="preserve">
+    <value>Psicoespiritual</value>
+  </data>
 </root>

@@ -237,6 +237,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaClinicoInternacaoAlergias = SessionController.ListaClinicoInternacaoAlergia;
             consultaModel.IntegridadeTecidual = SessionController.IntegridadeTecidual;
             consultaModel.Higiene = SessionController.Higiene;
+            consultaModel.PsicoEspiritual = SessionController.PsicoEspiritual;
         }
 
         /// <summary>

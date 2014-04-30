@@ -18,6 +18,7 @@ namespace PacienteVirtual.Models
 
         /////////////////////////////////////////
         public HigieneModel Higiene { get; set; }
+        public PsicoEspiritualModel PsicoEspiritual { get; set; }
         
         public OxigenacaoModel Oxigenacao { get; set; }
 
