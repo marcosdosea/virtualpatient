@@ -214,6 +214,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ansiedade.
+        /// </summary>
+        public static string ansiedade {
+            get {
+                return ResourceManager.GetString("ansiedade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Antecedentes Familiares.
         /// </summary>
         public static string antecedentes_familiares {
@@ -228,6 +237,15 @@ namespace Resources {
         public static string antecedentes_patologicos {
             get {
                 return ResourceManager.GetString("antecedentes_patologicos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apático.
+        /// </summary>
+        public static string apatico {
+            get {
+                return ResourceManager.GetString("apatico", resourceCulture);
             }
         }
         
@@ -349,6 +367,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Baixa auto-estima.
+        /// </summary>
+        public static string baixo_auto_estima {
+            get {
+                return ResourceManager.GetString("baixo_auto_estima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Banho no leito.
         /// </summary>
         public static string banho_leito {
@@ -390,6 +417,15 @@ namespace Resources {
         public static string bradipneia {
             get {
                 return ResourceManager.GetString("bradipneia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Busca assistência espiritual na internação.
+        /// </summary>
+        public static string busca_assistencia_espiritual {
+            get {
+                return ResourceManager.GetString("busca_assistencia_espiritual", resourceCulture);
             }
         }
         
@@ -498,6 +534,15 @@ namespace Resources {
         public static string cheyneStokes {
             get {
                 return ResourceManager.GetString("cheyneStokes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choro.
+        /// </summary>
+        public static string choro {
+            get {
+                return ResourceManager.GetString("choro", resourceCulture);
             }
         }
         
@@ -876,6 +921,15 @@ namespace Resources {
         public static string cpf_ja_cadastrado {
             get {
                 return ResourceManager.GetString("cpf_ja_cadastrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crença religiosa.
+        /// </summary>
+        public static string crenca_religiosa {
+            get {
+                return ResourceManager.GetString("crenca_religiosa", resourceCulture);
             }
         }
         
@@ -1285,6 +1339,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Distúrbios de sono.
+        /// </summary>
+        public static string disturbios_sono {
+            get {
+                return ResourceManager.GetString("disturbios_sono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Doença ou Agravo.
         /// </summary>
         public static string doenca_agrave {
@@ -1474,6 +1537,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Especificar assistência espiritual.
+        /// </summary>
+        public static string especifica_assistencia_espiritual {
+            get {
+                return ResourceManager.GetString("especifica_assistencia_espiritual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Espera tratamento.
         /// </summary>
         public static string espera_tratamento {
@@ -1569,6 +1641,15 @@ namespace Resources {
         public static string estilo_vida {
             get {
                 return ResourceManager.GetString("estilo_vida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estresse.
+        /// </summary>
+        public static string estresse {
+            get {
+                return ResourceManager.GetString("estresse", resourceCulture);
             }
         }
         
@@ -1956,6 +2037,15 @@ namespace Resources {
         public static string horario_observacao {
             get {
                 return ResourceManager.GetString("horario_observacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Humor deprimido.
+        /// </summary>
+        public static string humor_deprimido {
+            get {
+                return ResourceManager.GetString("humor_deprimido", resourceCulture);
             }
         }
         
@@ -2563,6 +2653,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Negação.
+        /// </summary>
+        public static string negacao {
+            get {
+                return ResourceManager.GetString("negacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nível de Dificuldade.
         /// </summary>
         public static string nivel_dificuldade {
@@ -3040,6 +3139,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Demonstra preocupação com a morte.
+        /// </summary>
+        public static string preocupacao_morte {
+            get {
+                return ResourceManager.GetString("preocupacao_morte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Preocupações.
         /// </summary>
         public static string preocupacoes {
@@ -3175,6 +3283,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Psicoespiritual.
+        /// </summary>
+        public static string psicoespiritual {
+            get {
+                return ResourceManager.GetString("psicoespiritual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purido.
         /// </summary>
         public static string purido {
@@ -3243,6 +3360,15 @@ namespace Resources {
         public static string Quente {
             get {
                 return ResourceManager.GetString("Quente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raiva.
+        /// </summary>
+        public static string raiva {
+            get {
+                return ResourceManager.GetString("raiva", resourceCulture);
             }
         }
         
