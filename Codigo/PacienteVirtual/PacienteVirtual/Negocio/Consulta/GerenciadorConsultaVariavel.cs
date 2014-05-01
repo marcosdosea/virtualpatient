@@ -155,7 +155,9 @@ namespace PacienteVirtual.Negocio
 
                             IdPaciente = tb_consulta_variavel.tb_turma_pessoa_relato.tb_relato_clinico.tb_paciente.IdPaciente,
                             NomePessoa = tb_consulta_variavel.tb_turma_pessoa_relato.tb_turma_pessoa.tb_pessoa.Nome,
-                            NomeTurma = tb_consulta_variavel.tb_turma_pessoa_relato.tb_turma_pessoa.tb_turma.Codigo
+                            NomeTurma = tb_consulta_variavel.tb_turma_pessoa_relato.tb_turma_pessoa.tb_turma.Codigo,
+                            IdCurso = tb_consulta_variavel.tb_turma_pessoa_relato.tb_turma_pessoa.tb_turma.IdCurso
+
                         };
             return query;
         }
@@ -191,6 +193,10 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Obtém consultaVariavel anterior do paciente
         /// </summary>
+        /// <param name="idPessoa"></param>
+        /// <param name="idTurma"></param>
+        /// <param name="idPaciente"></param>
+        /// <param name="ordemCronologica"></param>
         /// <returns></returns>
         public ConsultaVariavelModel ObterConsultaAnterior(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
         {
@@ -199,13 +205,26 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém consultaVariavel anterior da turma
+        /// </summary>
+        /// <param name="idTurma"></param>
+        /// <param name="idPaciente"></param>
+        /// <param name="ordemCronologica"></param>
+        /// <returns></returns>
+        public ConsultaVariavelModel ObterConsultaAnterior(int idTurma, int idPaciente, int ordemCronologica)
+        {
+            return GetQuery().Where(consultaVariavel => consultaVariavel.IdTurma == idTurma &&
+                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica - 1).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
         /// Obtém o gabarito de uma consulta
         /// </summary>
         /// <returns></returns>
-        public ConsultaVariavelModel ObterConsultaGabarito(int idPaciente, int ordemCronologica)
+        public ConsultaVariavelModel ObterConsultaGabarito(int idPaciente, int ordemCronologica, int idCurso)
         {
             return GetQuery().Where(cv => cv.IdPaciente == idPaciente && cv.OrdemCronologica == ordemCronologica && 
-                cv.IdEstadoConsulta == Global.GabaritoDisponivel).ToList().ElementAtOrDefault(0);
+                cv.IdEstadoConsulta == Global.GabaritoDisponivel && cv.IdCurso == idCurso).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
@@ -214,8 +233,20 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public void VerificaSeConsultaFoiAtribuida(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
         {
-            if (GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
-                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count() > 0)
+            int cont = 0;
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem ||
+                SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
+            {
+                cont = GetQuery().Where(consultaVariavel => consultaVariavel.IdTurma == idTurma &&
+                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count();
+            }
+            else
+            {
+                cont = GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
+                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count();
+            }
+
+            if (cont > 0)
             {
                 SessionController.AlertaBox = "false";
                 throw new NegocioException("Essa consulta já foi atribuída.");
@@ -232,7 +263,16 @@ namespace PacienteVirtual.Negocio
         /// <param name="ordemCronologica"></param>
         public void ConsultaAnteriorFinalizada(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
         {
-            ConsultaVariavelModel cvm = ObterConsultaAnterior(idPessoa, idTurma, idPaciente, ordemCronologica);
+            ConsultaVariavelModel cvm;
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem ||
+                SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
+            {
+                cvm = ObterConsultaAnterior(idTurma, idPaciente, ordemCronologica);
+            }
+            else
+            {
+                cvm = ObterConsultaAnterior(idPessoa, idTurma, idPaciente, ordemCronologica);
+            }
             if (cvm == null)
             {
                 throw new NegocioException("A consulta anterior ainda não foi atribuída.");

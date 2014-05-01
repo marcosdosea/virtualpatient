@@ -54,6 +54,39 @@ namespace PacienteVirtual.Models
             SessionController.ConsultaFixo = null;
             SessionController.ConsultaVariavel = null;
             SessionController.DemograficosAntropometricos = null;
+            SessionController.Paciente = null;
+            SessionController.RelatoClinico = null;
+            SessionController.ErroConsultaVariavelQueixa2 = "";
+            SessionController.ErroQueixaMedicamento = "";
+            SessionController.Abas1 = 0;
+            SessionController.Abas2 = -1;
+
+            if (SessionController.DadosTurmaPessoa.Curso.Equals(cursoFarmacia))
+            {
+                ZeraSessaoConsultaFarmacia();
+            }
+            else 
+            {
+                ZeraSessaoConsultaEnfermagem();
+            }
+        }
+
+        private static void ZeraSessaoConsultaEnfermagem()
+        {
+            SessionController.ClinicoInternacao = null;
+            SessionController.ListaClinicoInternacaoAlergia = null;
+            SessionController.ListaAntecedentesFamiliares = null;
+            SessionController.ListaAntecedentesPatologicos = null;
+            SessionController.ListaPatologiasAtuais = null;
+            SessionController.PsicoEspiritual = null;
+            SessionController.Higiene = null;
+            SessionController.IntegridadeTecidual = null;
+            SessionController.Oxigenacao = null;
+            SessionController.Termorregulacao = null;
+        }
+
+        private static void ZeraSessaoConsultaFarmacia()
+        {
             SessionController.EstiloVida = null;
             SessionController.ExamesFisicos = null;
             SessionController.ExperienciaMedicamentos = null;
@@ -66,22 +99,10 @@ namespace PacienteVirtual.Models
             SessionController.ListaMedicamentos = null;
             SessionController.ListaMedicamentosAnteriores = null;
             SessionController.ListaMedicamentosPrescritos = null;
-            SessionController.Paciente = null;
-            SessionController.RelatoClinico = null;
             SessionController.ListaAlergia = null;
             SessionController.ListaQueixaMedicamento = null;
             SessionController.ListaIntervencaoConsulta = null;
             SessionController.ListaCarta = null;
-            SessionController.ErroConsultaVariavelQueixa2 = "";
-            SessionController.ErroQueixaMedicamento = "";
-            SessionController.Abas1 = 0;
-            SessionController.Abas2 = -1;
-            /////////////////////////////////////////////////////////////////
-            SessionController.ClinicoInternacao = null;
-            SessionController.ListaClinicoInternacaoAlergia = null;
-            SessionController.ListaAntecedentesFamiliares = null;
-            SessionController.ListaAntecedentesPatologicos = null;
-            SessionController.ListaPatologiasAtuais = null;
         }
 
         public const long CODIGO_USUARIO_PADRAO = 1;

@@ -116,15 +116,58 @@ namespace PacienteVirtual.Controllers
         {
             cvm.IdRazaoEncontro = consultaVariavelAnteriorModel.IdRazaoEncontro;
             cvm.IdConsultaVariavel = idConsultaVariavel;
+            cvm.DescricaoOutrosAchados = consultaVariavelAnteriorModel.DescricaoOutrosAchados;
+            cvm.DescricaoDadosComplementares = consultaVariavelAnteriorModel.DescricaoDadosComplementares;
+            cvm.InfoFornecidas = consultaVariavelAnteriorModel.InfoFornecidas;
             GerenciadorConsultaVariavel.GetInstance().Atualizar(cvm);
             SessionController.ConsultaVariavel = consultaVariavelAnteriorModel;
+
+            if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
+            {
+                DadosConsultaAnteriorFarmacia(consultaVariavelAnteriorModel, idConsultaVariavel);
+            }
+            else
+            {
+                DadosConsultaAnteriorEnfermagem(idConsultaVariavel);
+            }
+        }
+
+        /// <summary>
+        /// Insere os dados não fixos da consulta Anterior do curso de Enfermagem
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        private static void DadosConsultaAnteriorEnfermagem(long idConsultaVariavel)
+        {
+            OxigenacaoModel oxigenacao = SessionController.Oxigenacao;
+            oxigenacao.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorOxigenacao.GetInstance().Inserir(oxigenacao);
+            TermorregulacaoModel termoRegulacao = SessionController.Termorregulacao;
+            termoRegulacao.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorTermorregulacao.GetInstance().Inserir(termoRegulacao);
+            IntegridadeTecidualModel integridadeTecidual = SessionController.IntegridadeTecidual;
+            integridadeTecidual.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorIntegridadeTecidual.GetInstance().Inserir(integridadeTecidual);
+            HigieneModel higiene = SessionController.Higiene;
+            higiene.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorHigiene.GetInstance().Inserir(higiene);
+            PsicoEspiritualModel psicoEspiritual = SessionController.PsicoEspiritual;
+            psicoEspiritual.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorPsicoEspiritual.GetInstance().Inserir(psicoEspiritual);
+        }
+
+        /// <summary>
+        /// Insere os dados não fixos da consulta Anterior do curso de Farmacia
+        /// </summary>
+        /// <param name="consultaVariavelAnteriorModel"></param>
+        /// <param name="idConsultaVariavel"></param>
+        private static void DadosConsultaAnteriorFarmacia(ConsultaVariavelModel consultaVariavelAnteriorModel, long idConsultaVariavel)
+        {
             EstiloVidaModel evm = SessionController.EstiloVida;
             evm.IdConsultaVariavel = idConsultaVariavel;
             GerenciadorEstiloVida.GetInstance().Inserir(evm);
             ExamesFisicosModel efm = SessionController.ExamesFisicos;
             efm.IdConsultaVariavel = idConsultaVariavel;
             GerenciadorExamesFisicos.GetInstance().Inserir(efm);
-
             foreach (var a in GerenciadorExamesFisicos.GetInstance().ObterAlergias(consultaVariavelAnteriorModel.IdConsultaVariavel))
             {
                 GerenciadorExamesFisicos.GetInstance().InserirAlergia(efm, a.IdAlergia);

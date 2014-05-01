@@ -6,6 +6,8 @@ namespace PacienteVirtual.Models
 {
     public class ConsultaVariavelModel
     {
+        public int IdCurso { get; set; }
+
         public long IdConsultaVariavel { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
