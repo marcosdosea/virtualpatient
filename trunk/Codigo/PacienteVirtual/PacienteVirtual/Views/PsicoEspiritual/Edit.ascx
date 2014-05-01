@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.PsicoEspiritualModel>" %>
-<% using (Html.BeginForm("Edit", "Higiene"))
+<% using (Html.BeginForm("Edit", "PsicoEspiritual"))
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>

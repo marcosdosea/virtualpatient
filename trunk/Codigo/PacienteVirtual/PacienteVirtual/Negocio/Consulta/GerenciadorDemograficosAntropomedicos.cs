@@ -178,7 +178,7 @@ namespace PacienteVirtual.Negocio
             }
             else
             {
-                if (!Global.RemoverAcentuacao(demoAntrop.OndeAdquireMedicamentos.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.OndeAdquireMedicamentos.ToLower())))
+                if (demoAntrop.OndeAdquireMedicamentos == null || !Global.RemoverAcentuacao(demoAntrop.OndeAdquireMedicamentos.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.OndeAdquireMedicamentos.ToLower())))
                 {
                     modelState.AddModelError("OndeAdquireMedicamentos", "Gabarito: \"" + demoAntropGabarito.OndeAdquireMedicamentos + "\"");
                 }

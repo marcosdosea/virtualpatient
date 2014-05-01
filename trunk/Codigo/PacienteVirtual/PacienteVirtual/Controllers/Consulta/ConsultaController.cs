@@ -78,7 +78,7 @@ namespace PacienteVirtual.Controllers
             SessionController.PrimeiraTelaConsulta = true;
             if (SessionController.EmCorrecao)
             {
-                corrigirPrimeiraTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica);
+                corrigirPrimeiraTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica, consultaVariavelModel.IdCurso);
             }
             return View(consultaModel);
         }
@@ -100,7 +100,7 @@ namespace PacienteVirtual.Controllers
 
             if (SessionController.EmCorrecao)
             {
-                corrigirSegundaTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica);
+                corrigirSegundaTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica, consultaVariavelModel.IdCurso);
             }
             
             return View(consultaModel);
@@ -357,9 +357,9 @@ namespace PacienteVirtual.Controllers
         /// </summary>
         /// <param name="idPaciente"></param>
         /// <param name="ordemCronologica"></param>
-        public void corrigirPrimeiraTela(int idPaciente, int ordemCronologica)
+        public void corrigirPrimeiraTela(int idPaciente, int ordemCronologica, int idCurso)
         {
-            ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
+            ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica, idCurso);
             DemograficosAntropometricosModel demograficoGabarito = GerenciadorDemograficosAntropometricos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorDemograficosAntropometricos.GetInstance().CorrigirRespostas(SessionController.DemograficosAntropometricos, demograficoGabarito, ModelState);
             TryValidateModel(SessionController.DemograficosAntropometricos);
@@ -433,9 +433,9 @@ namespace PacienteVirtual.Controllers
         /// </summary>
         /// <param name="idPaciente"></param>
         /// <param name="ordemCronologica"></param>
-        public void corrigirSegundaTela(int idPaciente, int ordemCronologica)
+        public void corrigirSegundaTela(int idPaciente, int ordemCronologica, int idCurso)
         {
-            ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica);
+            ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica, idCurso);
             IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostasConsulta2(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
             IEnumerable<QueixaMedicamentoModel> ListaQueixaMedicamento = GerenciadorQueixaMedicamento.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
