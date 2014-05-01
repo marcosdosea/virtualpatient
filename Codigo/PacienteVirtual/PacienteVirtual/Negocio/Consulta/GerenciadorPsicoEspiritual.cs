@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -19,6 +20,68 @@ namespace PacienteVirtual.Negocio
                 gPsicoEspiritual = new GerenciadorPsicoEspiritual();
             }
             return gPsicoEspiritual;
+        }
+
+        /// <summary>
+        /// Faz correção de PsicoEspiritual de uma consulta de acordo com o gabarito
+        /// </summary>
+        /// <param name="psico"></param>
+        /// <param name="psicoGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostas(PsicoEspiritualModel psicoEspiritual, PsicoEspiritualModel psicoEspiritualGabarito, ModelStateDictionary modelState)
+        {
+            if (!Global.RemoverAcentuacao(psicoEspiritual.CrencaReligiosa.ToLower()).Equals(Global.RemoverAcentuacao(psicoEspiritualGabarito.CrencaReligiosa.ToLower())))
+            {
+                modelState.AddModelError("CrencaReligiosa", "Gabarito: \"" + psicoEspiritualGabarito.CrencaReligiosa + "\"");
+            }
+            if (psicoEspiritual.BuscaAssistenciaEspiritual != psicoEspiritualGabarito.BuscaAssistenciaEspiritual)
+            {
+                modelState.AddModelError("BuscaAssistenciaEspiritual", "Gabarito: " + (psicoEspiritualGabarito.BuscaAssistenciaEspiritual.Equals(true) ? "Sim" : "Não"));
+            }
+            if (!Global.RemoverAcentuacao(psicoEspiritual.EspecificaAssistenciaEspiritual.ToLower()).Equals(Global.RemoverAcentuacao(psicoEspiritualGabarito.EspecificaAssistenciaEspiritual.ToLower())))
+            {
+                modelState.AddModelError("EspecificaAssistenciaEspiritual", "Gabarito: \"" + psicoEspiritualGabarito.EspecificaAssistenciaEspiritual + "\"");
+            }
+            if (psicoEspiritual.DisturbiosSono != psicoEspiritualGabarito.DisturbiosSono)
+            {
+                modelState.AddModelError("DisturbiosSono", "Gabarito: " + (psicoEspiritualGabarito.DisturbiosSono.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.Ansiedade != psicoEspiritualGabarito.Ansiedade)
+            {
+                modelState.AddModelError("Ansiedade", "Gabarito: " + (psicoEspiritualGabarito.Ansiedade.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.BaixoAutoEstima != psicoEspiritualGabarito.BaixoAutoEstima)
+            {
+                modelState.AddModelError("BaixoAutoEstima", "Gabarito: " + (psicoEspiritualGabarito.BaixoAutoEstima.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.Estresse != psicoEspiritualGabarito.Estresse)
+            {
+                modelState.AddModelError("Estresse", "Gabarito: " + (psicoEspiritualGabarito.Estresse.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.HumorDeprimido != psicoEspiritualGabarito.HumorDeprimido)
+            {
+                modelState.AddModelError("HumorDeprimido", "Gabarito: " + (psicoEspiritualGabarito.HumorDeprimido.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.Choro != psicoEspiritualGabarito.Choro)
+            {
+                modelState.AddModelError("Choro", "Gabarito: " + (psicoEspiritualGabarito.Choro.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.Raiva != psicoEspiritualGabarito.Raiva)
+            {
+                modelState.AddModelError("Raiva", "Gabarito: " + (psicoEspiritualGabarito.Raiva.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.Negacao != psicoEspiritualGabarito.Negacao)
+            {
+                modelState.AddModelError("Negacao", "Gabarito: " + (psicoEspiritualGabarito.Negacao.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.Apatico != psicoEspiritualGabarito.Apatico)
+            {
+                modelState.AddModelError("Apatico", "Gabarito: " + (psicoEspiritualGabarito.Apatico.Equals(true) ? "Sim" : "Não"));
+            }
+            if (psicoEspiritual.PreocupacaoMorte != psicoEspiritualGabarito.PreocupacaoMorte)
+            {
+                modelState.AddModelError("PreocupacaoMorte", "Gabarito: " + (psicoEspiritualGabarito.PreocupacaoMorte.Equals(true) ? "Sim" : "Não"));
+            }
         }
 
         /// <summary>

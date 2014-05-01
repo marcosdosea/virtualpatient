@@ -392,6 +392,10 @@ namespace PacienteVirtual.Controllers
             GerenciadorClinicoInternacao.GetInstance().CorrigirRespostasPatologiasAtuais(SessionController.ListaPatologiasAtuais, ListaPatologiasAtuaisGabarito, ModelState);
             GerenciadorIntegridadeTecidual.GetInstance().CorrigirRespostas(SessionController.IntegridadeTecidual, GerenciadorIntegridadeTecidual.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
             TryValidateModel(SessionController.IntegridadeTecidual);
+            GerenciadorHigiene.GetInstance().CorrigirRespostas(SessionController.Higiene, GerenciadorHigiene.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Higiene);
+            GerenciadorPsicoEspiritual.GetInstance().CorrigirRespostas(SessionController.PsicoEspiritual, GerenciadorPsicoEspiritual.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.PsicoEspiritual);
         }
 
         /// <summary>
