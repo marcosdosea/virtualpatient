@@ -28,12 +28,21 @@ namespace PacienteVirtual.Controllers
             ViewBag.Codigo = Global.NaoSelecionado;
             Global.ZeraSessaoConsulta();
             SessionController.TutorVisualizaConsultaPeloCorrigirConsultas = false;
-            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem
-                || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor)
             {
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
-            return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
+            else
+            {
+                if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
+                {
+                    return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasGabaritosPorCurso(SessionController.DadosTurmaPessoa.IdCurso));
+                }
+                else
+                {
+                    return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
+                }
+            }
         }
 
         [HttpPost]
@@ -43,20 +52,38 @@ namespace PacienteVirtual.Controllers
             if (IdPaciente != Global.NaoSelecionado)
             {
                 ViewBag.Codigo = IdPaciente;
-                if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem
-                    || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia) 
+                if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor)
                 {
                     return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPacienteTurma(IdPaciente, SessionController.DadosTurmaPessoa.IdTurma));
                 }
-                return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPacienteTurmaPessoa(IdPaciente, SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
+                else
+                {
+                    if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
+                    {
+                        return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasGabaritosPorCursoPaciente(IdPaciente, SessionController.DadosTurmaPessoa.IdCurso));
+                    }
+                    else
+                    {
+                        return View(GerenciadorConsultaVariavel.GetInstance().ObterPorPacienteTurmaPessoa(IdPaciente, SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
+                    }
+                }
             }
             ViewBag.Codigo = Global.NaoSelecionado;
-            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem
-                || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.Tutor)
             {
                 return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurma(SessionController.DadosTurmaPessoa.IdTurma));
             }
-            return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
+            else
+            {
+                if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
+                {
+                    return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasGabaritosPorCurso(SessionController.DadosTurmaPessoa.IdCurso));
+                }
+                else
+                {
+                    return View(GerenciadorConsultaVariavel.GetInstance().ObterConsultasPorTurmaPessoa(SessionController.DadosTurmaPessoa.IdTurma, SessionController.Pessoa.IdPessoa));
+                }
+            }
         }
 
         //

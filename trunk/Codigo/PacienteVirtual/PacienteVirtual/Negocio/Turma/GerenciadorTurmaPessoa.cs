@@ -114,8 +114,8 @@ namespace PacienteVirtual.Negocio
                             Curso = tb_turma_pessoa.tb_turma.tb_curso.NomeCurso,
                             Disciplina = tb_turma_pessoa.tb_turma.tb_disciplina.NomeDisciplina,
                             Periodo = tb_turma_pessoa.tb_turma.Periodo,
-
-                            TurmaAtiva = tb_turma_pessoa.tb_turma.Ativa
+                            TurmaAtiva = tb_turma_pessoa.tb_turma.Ativa,
+                            IdCurso = tb_turma_pessoa.tb_turma.IdCurso
                         };
             return query;
         }

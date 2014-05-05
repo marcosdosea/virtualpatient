@@ -35,6 +35,9 @@ namespace PacienteVirtual.Models
         public bool Ativa { get; set; }
 
         // dados da tela selecionar turma
+        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
+        public int IdCurso { get; set; }
+        
         [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
         public String Instituicao { get; set; }
 
@@ -47,7 +50,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "periodo", ResourceType = typeof(Mensagem))]
         public String Periodo { get; set; }
 
-        //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ativa", ResourceType = typeof(Mensagem))]
         public bool TurmaAtiva { get; set; }
     }

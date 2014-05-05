@@ -205,16 +205,15 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém consultaVariavel anterior da turma
+        /// Obtém consultaVariavel anterior gabarito
         /// </summary>
-        /// <param name="idTurma"></param>
         /// <param name="idPaciente"></param>
         /// <param name="ordemCronologica"></param>
         /// <returns></returns>
-        public ConsultaVariavelModel ObterConsultaAnterior(int idTurma, int idPaciente, int ordemCronologica)
+        public ConsultaVariavelModel ObterConsultaAnteriorPorCurso(int idPaciente, int ordemCronologica, int idCurso)
         {
-            return GetQuery().Where(consultaVariavel => consultaVariavel.IdTurma == idTurma &&
-                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica - 1).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(cv => cv.IdPaciente == idPaciente && cv.OrdemCronologica == ordemCronologica - 1 && cv.IdCurso == idCurso &&
+                (cv.IdEstadoConsulta == Global.GabaritoEmPreenchimento || cv.IdEstadoConsulta == Global.GabaritoDisponivel)).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
@@ -231,14 +230,14 @@ namespace PacienteVirtual.Negocio
         /// Verifica se a consulta já foi atribuida para a pessoa
         /// </summary>
         /// <returns></returns>
-        public void VerificaSeConsultaFoiAtribuida(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
+        public void VerificaSeConsultaFoiAtribuida(int idPessoa, int idTurma, int idPaciente, int ordemCronologica, int idCurso)
         {
             int cont = 0;
             if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem ||
                 SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
             {
-                cont = GetQuery().Where(consultaVariavel => consultaVariavel.IdTurma == idTurma &&
-                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count();
+                cont = GetQuery().Where(cv => cv.IdPaciente == idPaciente && cv.OrdemCronologica == ordemCronologica && cv.IdCurso == idCurso &&
+                    (cv.IdEstadoConsulta == Global.GabaritoDisponivel || cv.IdEstadoConsulta == Global.GabaritoEmPreenchimento)).ToList().Count();
             }
             else
             {
@@ -273,13 +272,13 @@ namespace PacienteVirtual.Negocio
         /// <param name="idTurma"></param>
         /// <param name="idPaciente"></param>
         /// <param name="ordemCronologica"></param>
-        public void ConsultaAnteriorFinalizada(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
+        public void ConsultaAnteriorFinalizada(int idPessoa, int idTurma, int idPaciente, int ordemCronologica, int idCurso)
         {
             ConsultaVariavelModel cvm;
             if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem ||
                 SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
             {
-                cvm = ObterConsultaAnterior(idTurma, idPaciente, ordemCronologica);
+                cvm = ObterConsultaAnteriorPorCurso(idPaciente, ordemCronologica, idCurso);
             }
             else
             {
@@ -327,6 +326,29 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<ConsultaVariavelModel> ObterConsultasPorTurma(int idTurma)
         {
             return GetQuery().Where(cv => cv.IdTurma == idTurma).ToList();
+        }
+
+        /// <summary>
+        /// Obtem as consultas de determinado curso que estajem com o Gabarito finalizado ou em preenchimento
+        /// </summary>
+        /// <param name="idCurso"></param>
+        /// <returns></returns>
+        public IEnumerable<ConsultaVariavelModel> ObterConsultasGabaritosPorCurso(int idCurso)
+        {
+            return GetQuery().Where(cv => cv.IdCurso == idCurso && 
+                (cv.IdEstadoConsulta == Global.GabaritoDisponivel || cv.IdEstadoConsulta == Global.GabaritoEmPreenchimento)).ToList();
+        }
+
+        /// <summary>
+        /// Obtem as consultas de determinado curso e pacinete que estajem com o Gabarito finalizado ou em preenchimento
+        /// </summary>
+        /// <param name="idCurso"></param>
+        /// <param name="idPaciente"></param>
+        /// <returns></returns>
+        public IEnumerable<ConsultaVariavelModel> ObterConsultasGabaritosPorCursoPaciente(int idPaciente, int idCurso)
+        {
+            return GetQuery().Where(cv => cv.IdCurso == idCurso && cv.IdPaciente == idPaciente &&
+                (cv.IdEstadoConsulta == Global.GabaritoDisponivel || cv.IdEstadoConsulta == Global.GabaritoEmPreenchimento)).ToList();
         }
 
         /// <summary>
