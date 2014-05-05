@@ -120,6 +120,7 @@ namespace PacienteVirtual.Models
         public const int EmCorrecaoPeloTutor = 5;
         public const int AguardandoCorrecaoDoAluno = 6;
         public const int Finalizado = 7;
+        public const int GabaritoEmPreenchimento = 8;
 
         // roles
         public const int Administrador = 1;

@@ -11,7 +11,7 @@ namespace PacienteVirtual.Controllers
         GerenciadorPaciente gPaciente = GerenciadorPaciente.GetInstance();
 
         //
-        // GET: /RelatoClinico/Atribuir/5
+        // RelatoClinico/Atribuir/5
         public ActionResult Atribuir(int idRelato, int idPaciente, int ordemCronologica)
         {
             SessionController.AlertaBox = "";
@@ -31,11 +31,12 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // GET: /RelatoClinico/AtribuirRelato/5
+        // RelatoClinico/AtribuirRelato/5
         public ActionResult AtribuirRelato(int idTurma, int idPessoa)
         {
             RelatoClinicoModel relato = GerenciadorRelatoClinico.GetInstance().Obter(SessionController.IdRelato);
-            GerenciadorConsultaVariavel.GetInstance().VerificaSeConsultaFoiAtribuida(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica);
+            GerenciadorConsultaVariavel.GetInstance().VerificaSeConsultaFoiAtribuida(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica,
+                SessionController.DadosTurmaPessoa.IdCurso);
 
             long idConsultaFixo = 0;
             ConsultaVariavelModel consultaVariavelAnteriorModel = null;
@@ -71,7 +72,8 @@ namespace PacienteVirtual.Controllers
             }
             else
             {
-                GerenciadorConsultaVariavel.GetInstance().ConsultaAnteriorFinalizada(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica);
+                GerenciadorConsultaVariavel.GetInstance().ConsultaAnteriorFinalizada(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica,
+                    SessionController.DadosTurmaPessoa.IdCurso);
 
                 consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
                     relato.IdPaciente, relato.OrdemCronologica);
@@ -92,7 +94,14 @@ namespace PacienteVirtual.Controllers
             cvm = new ConsultaVariavelModel();
             TurmaPessoaRelatoModel tprm = new TurmaPessoaRelatoModel();
             cvm.IdConsultaFixo = idConsultaFixo;
-            cvm.IdEstadoConsulta = Global.AguardandoPreenchimento;
+            if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem || SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorFarmacia)
+            {
+                cvm.IdEstadoConsulta = Global.GabaritoEmPreenchimento;
+            }
+            else
+            {
+                cvm.IdEstadoConsulta = Global.AguardandoPreenchimento;
+            }
             cvm.IdPessoa = idPessoa;
             cvm.IdTurma = idTurma;
             cvm.IdRelato = SessionController.IdRelato;
