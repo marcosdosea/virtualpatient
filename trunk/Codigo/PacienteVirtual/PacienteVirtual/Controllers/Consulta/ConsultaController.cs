@@ -360,6 +360,7 @@ namespace PacienteVirtual.Controllers
         public void corrigirPrimeiraTela(int idPaciente, int ordemCronologica, int idCurso)
         {
             ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica, idCurso);
+            GerenciadorConsultaVariavel.GetInstance().VerificaGabaritoNulo(gabaritoConsultaSelecionada);
             DemograficosAntropometricosModel demograficoGabarito = GerenciadorDemograficosAntropometricos.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaFixo);
             GerenciadorDemograficosAntropometricos.GetInstance().CorrigirRespostas(SessionController.DemograficosAntropometricos, demograficoGabarito, ModelState);
             TryValidateModel(SessionController.DemograficosAntropometricos);

@@ -108,7 +108,6 @@ namespace PacienteVirtual.Models
         [EnumDataType(typeof(ListaTipoTosse))]
         public ListaTipoTosse TipoTosse { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "aspecto_secrecao", ResourceType = typeof(Mensagem))]
         public string AspectoSecrecao { get; set; }
 

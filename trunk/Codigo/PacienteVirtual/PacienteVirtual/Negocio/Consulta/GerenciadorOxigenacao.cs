@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -27,9 +28,152 @@ namespace PacienteVirtual.Negocio
         /// <param name="oxigenacao"></param>
         /// <param name="oxigenacaoGabarito"></param>
         /// <param name="modelState"></param>
-        public void CorrigirRespostas()
+        public void CorrigirRespostas(OxigenacaoModel oxigenacao, OxigenacaoModel oxigenacaoGabarito, ModelStateDictionary modelState)
         {
-            
+            if (oxigenacao.FequenciaResporatoria != oxigenacaoGabarito.FequenciaResporatoria)
+            {
+                modelState.AddModelError("FequenciaResporatoria", "Gabarito: \"" + oxigenacaoGabarito.FrequenciaTosse + "\"");
+            }
+            if (oxigenacao.Ritmo != oxigenacaoGabarito.Ritmo)
+            {
+                modelState.AddModelError("Ritmo", "Gabarito: \"" + oxigenacaoGabarito.Ritmo + "\"");
+            }
+            if (oxigenacao.Dispineia != oxigenacaoGabarito.Dispineia)
+            {
+                modelState.AddModelError("Dispineia", "Gabarito: " + (oxigenacaoGabarito.Dispineia.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Taquipneia != oxigenacaoGabarito.Taquipneia)
+            {
+                modelState.AddModelError("Taquipneia", "Gabarito: " + (oxigenacaoGabarito.Taquipneia.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Bradipneia != oxigenacaoGabarito.Bradipneia)
+            {
+                modelState.AddModelError("Bradipneia", "Gabarito: " + (oxigenacaoGabarito.Bradipneia.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.CheyneStokes != oxigenacaoGabarito.CheyneStokes)
+            {
+                modelState.AddModelError("CheyneStokes", "Gabarito: " + (oxigenacaoGabarito.CheyneStokes.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Kussmaul != oxigenacaoGabarito.Kussmaul)
+            {
+                modelState.AddModelError("Kussmaul", "Gabarito: " + (oxigenacaoGabarito.Kussmaul.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Epistaxe != oxigenacaoGabarito.Epistaxe)
+            {
+                modelState.AddModelError("Epistaxe", "Gabarito: " + (oxigenacaoGabarito.Epistaxe.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.DesvioDeSepto != oxigenacaoGabarito.DesvioDeSepto)
+            {
+                modelState.AddModelError("DesvioDeSepto", "Gabarito: " + (oxigenacaoGabarito.DesvioDeSepto.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Palidez != oxigenacaoGabarito.Palidez)
+            {
+                modelState.AddModelError("Palidez", "Gabarito: " + (oxigenacaoGabarito.Palidez.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.LabioCianotico != oxigenacaoGabarito.LabioCianotico)
+            {
+                modelState.AddModelError("LabioCianotico", "Gabarito: " + (oxigenacaoGabarito.LabioCianotico.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.ObstrucaoNasal != oxigenacaoGabarito.ObstrucaoNasal)
+            {
+                modelState.AddModelError("ObstrucaoNasal", "Gabarito: " + (oxigenacaoGabarito.ObstrucaoNasal.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Coriza != oxigenacaoGabarito.Coriza)
+            {
+                modelState.AddModelError("Coriza", "Gabarito: " + (oxigenacaoGabarito.Coriza.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.SimetriaToracica != oxigenacaoGabarito.SimetriaToracica)
+            {
+                modelState.AddModelError("SimetriaToracica", "Gabarito: \"" + oxigenacaoGabarito.SimetriaToracica + "\"");
+            }
+            if (oxigenacao.PeitoDePombo != oxigenacaoGabarito.PeitoDePombo)
+            {
+                modelState.AddModelError("PeitoDePombo", "Gabarito: " + (oxigenacaoGabarito.PeitoDePombo.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Funil != oxigenacaoGabarito.Funil)
+            {
+                modelState.AddModelError("Funil", "Gabarito: " + (oxigenacaoGabarito.Funil.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Lordose != oxigenacaoGabarito.Lordose)
+            {
+                modelState.AddModelError("Lordose", "Gabarito: " + (oxigenacaoGabarito.Lordose.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Cifose != oxigenacaoGabarito.Cifose)
+            {
+                modelState.AddModelError("Cifose", "Gabarito: " + (oxigenacaoGabarito.Cifose.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Escoliose != oxigenacaoGabarito.Escoliose)
+            {
+                modelState.AddModelError("Escoliose", "Gabarito: " + (oxigenacaoGabarito.Escoliose.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.TiragemIntercostal != oxigenacaoGabarito.TiragemIntercostal)
+            {
+                modelState.AddModelError("TiragemIntercostal", "Gabarito: " + (oxigenacaoGabarito.TiragemIntercostal.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Expansibilidade != oxigenacaoGabarito.Expansibilidade)
+            {
+                modelState.AddModelError("Expansibilidade", "Gabarito: \"" + oxigenacaoGabarito.Expansibilidade + "\"");
+            }
+            if (oxigenacao.EnfizemaSubcutaneo != oxigenacaoGabarito.EnfizemaSubcutaneo)
+            {
+                modelState.AddModelError("EnfizemaSubcutaneo", "Gabarito: " + (oxigenacaoGabarito.EnfizemaSubcutaneo.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.PresencaFremito != oxigenacaoGabarito.PresencaFremito)
+            {
+                modelState.AddModelError("PresencaFremito", "Gabarito: " + (oxigenacaoGabarito.PresencaFremito.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.Tosse != oxigenacaoGabarito.Tosse)
+            {
+                modelState.AddModelError("Tosse", "Gabarito: " + (oxigenacaoGabarito.Tosse.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.FrequenciaTosse != oxigenacaoGabarito.FrequenciaTosse)
+            {
+                modelState.AddModelError("FrequenciaTosse", "Gabarito: \"" + oxigenacaoGabarito.FrequenciaTosse + "\"");
+            }
+            if (oxigenacao.TipoTosse != oxigenacaoGabarito.TipoTosse)
+            {
+                modelState.AddModelError("TipoTosse", "Gabarito: \"" + oxigenacaoGabarito.TipoTosse + "\"");
+            }
+            if (oxigenacao.AspectoSecrecao == null || oxigenacao.AspectoSecrecao.Equals(""))
+            {
+                if (oxigenacaoGabarito.AspectoSecrecao != null && !oxigenacaoGabarito.AspectoSecrecao.Equals(""))
+                {
+                    modelState.AddModelError("AspectoSecrecao", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (oxigenacao.AspectoSecrecao.Equals(oxigenacaoGabarito.AspectoSecrecao))
+                {
+                    modelState.AddModelError("AspectoSecrecao", "Gabarito: \"" + oxigenacaoGabarito.AspectoSecrecao + "\"");
+                }
+            }
+            if (oxigenacao.Percursao != oxigenacaoGabarito.Percursao)
+            {
+                modelState.AddModelError("Percursao", "Gabarito: \"" + oxigenacaoGabarito.Percursao + "\"");
+            }
+            if (oxigenacao.GangliosPalpaveis != oxigenacaoGabarito.GangliosPalpaveis)
+            {
+                modelState.AddModelError("GangliosPalpaveis", "Gabarito: " + (oxigenacaoGabarito.GangliosPalpaveis.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.GangliosDolorosos != oxigenacaoGabarito.GangliosDolorosos)
+            {
+                modelState.AddModelError("GangliosDolorosos", "Gabarito: " + (oxigenacaoGabarito.GangliosDolorosos.Equals(true) ? "Sim" : "Não"));
+            }
+            if (oxigenacao.GangliosLocalizar == null || oxigenacao.GangliosLocalizar.Equals(""))
+            {
+                if (oxigenacaoGabarito.GangliosLocalizar != null && !oxigenacaoGabarito.GangliosLocalizar.Equals(""))
+                {
+                    modelState.AddModelError("GangliosLocalizar", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (oxigenacao.GangliosLocalizar.Equals(oxigenacaoGabarito.GangliosLocalizar))
+                {
+                    modelState.AddModelError("GangliosLocalizar", "Gabarito: \"" + oxigenacaoGabarito.GangliosLocalizar + "\"");
+                }
+            }
         }
 
         /// <summary>
