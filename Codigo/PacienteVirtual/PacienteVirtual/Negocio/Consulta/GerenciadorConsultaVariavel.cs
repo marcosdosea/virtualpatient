@@ -257,6 +257,18 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Verifica se a consulta anterior já foi atribuida e finalizada.
         /// </summary>
+        /// <param name="gabarito"></param>
+        public void VerificaGabaritoNulo(ConsultaVariavelModel gabarito)
+        {
+            if (gabarito == null)
+            {
+                throw new NegocioException("Verifique se esta Consulta já possui um Gabarito com o status de FINALIZADO.");
+            }
+        }
+
+        /// <summary>
+        /// Verifica se a consulta anterior já foi atribuida e finalizada.
+        /// </summary>
         /// <param name="idPessoa"></param>
         /// <param name="idTurma"></param>
         /// <param name="idPaciente"></param>
