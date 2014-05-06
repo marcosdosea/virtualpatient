@@ -36,7 +36,7 @@ namespace PacienteVirtual.Negocio
             }
             if (termorregulacao.TemperaturaPele != termorregulacaoGabarito.TemperaturaPele)
             {
-                modelState.AddModelError("TemperaturaPele", "Gabarito: \"" + termorregulacaoGabarito.TemperaturaPele + "\"");
+                modelState.AddModelError("ErroTemperaturaPele", "Gabarito: \"" + termorregulacaoGabarito.TemperaturaPele + "\"");
             }
             if (termorregulacao.Sudorese != termorregulacaoGabarito.Sudorese)
             {
@@ -126,7 +126,7 @@ namespace PacienteVirtual.Negocio
                         select new TermorregulacaoModel
                         {
                             Temperatura = (double)termorregulacao.Temperatura,
-                            TemperaturaPele = ListaTemperaturaPele.Quente,
+                            TemperaturaPele = (termorregulacao.TemperaturaPele == "Quente" ? ListaTemperaturaPele.Quente : ListaTemperaturaPele.Fria),
                             Sudorese = termorregulacao.Sudorese,
                             Calafrio = termorregulacao.Calafrio,
                             Piloerecao = termorregulacao.Piloerecao,
@@ -162,7 +162,7 @@ namespace PacienteVirtual.Negocio
         {
             _termorregulacaoE.IdConsultaVariavel = termorregulacao.IdConsultaVariavel;
             _termorregulacaoE.Temperatura = (decimal)termorregulacao.Temperatura;
-            _termorregulacaoE.TemperaturaPele = ListaTemperaturaPele.Quente.ToString();
+            _termorregulacaoE.TemperaturaPele = termorregulacao.TemperaturaPele.ToString();
             _termorregulacaoE.Sudorese = termorregulacao.Sudorese;
             _termorregulacaoE.Calafrio = termorregulacao.Calafrio;
             _termorregulacaoE.Piloerecao = termorregulacao.Piloerecao;

@@ -33,7 +33,7 @@ namespace PacienteVirtual.Negocio
         {
             if (integridade.Turgor != integridadeGabarito.Turgor)
             {
-                modelState.AddModelError("Turgor", "Gabarito: \"" + integridadeGabarito.Turgor + "\"");
+                modelState.AddModelError("ErroTurgor", "Gabarito: \"" + integridadeGabarito.Turgor + "\"");
             }
             if (integridade.Equimose != integridadeGabarito.Equimose)
             {
@@ -53,7 +53,7 @@ namespace PacienteVirtual.Negocio
             }
             if (integridade.EstadoHidratacao != integridadeGabarito.EstadoHidratacao)
             {
-                modelState.AddModelError("EstadoHidratacao", "Gabarito: \"" + integridadeGabarito.EstadoHidratacao + "\"");
+                modelState.AddModelError("ErroEstadoHidratacao", "Gabarito: \"" + integridadeGabarito.EstadoHidratacao + "\"");
             }
             if (integridade.Purido != integridadeGabarito.Purido)
             {
@@ -83,20 +83,8 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("Rubor", "Gabarito: " + (integridadeGabarito.Rubor.Equals(true) ? "Sim" : "Não"));
             }
-            if (integridade.LocalAlteracaoPele == null || integridade.LocalAlteracaoPele.Equals(""))
-            {
-                if (integridadeGabarito.LocalAlteracaoPele != null && !integridadeGabarito.LocalAlteracaoPele.Equals(""))
-                {
-                    modelState.AddModelError("LocalAlteracaoPele", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(integridade.LocalAlteracaoPele.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.LocalAlteracaoPele.ToLower())))
-                {
-                    modelState.AddModelError("LocalAlteracaoPele", "Gabarito: \"" + integridadeGabarito.LocalAlteracaoPele + "\"");
-                }
-            }
+            Global.CorrecaoDeStrings("LocalAlteracaoPele", integridade.LocalAlteracaoPele, integridadeGabarito.LocalAlteracaoPele, modelState);
+            
             if (integridade.Pediabetico != integridadeGabarito.Pediabetico)
             {
                 modelState.AddModelError("Pediabetico", "Gabarito: " + (integridadeGabarito.Pediabetico.Equals(true) ? "Sim" : "Não"));
@@ -109,20 +97,8 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("UlceraPressao", "Gabarito: " + (integridadeGabarito.UlceraPressao.Equals(true) ? "Sim" : "Não"));
             }
-            if (integridade.UlceraPressaoLocal == null || integridade.UlceraPressaoLocal.Equals(""))
-            {
-                if (integridadeGabarito.UlceraPressaoLocal != null && !integridadeGabarito.UlceraPressaoLocal.Equals(""))
-                {
-                    modelState.AddModelError("UlceraPressaoLocal", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(integridade.UlceraPressaoLocal.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.UlceraPressaoLocal.ToLower())))
-                {
-                    modelState.AddModelError("UlceraPressaoLocal", "Gabarito: \"" + integridadeGabarito.UlceraPressaoLocal + "\"");
-                }
-            }
+            Global.CorrecaoDeStrings("UlceraPressaoLocal", integridade.UlceraPressaoLocal, integridadeGabarito.UlceraPressaoLocal, modelState);
+            
             if (!Global.RemoverAcentuacao(integridade.UlceraPressaoEstagio.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.UlceraPressaoEstagio.ToLower())))
             {
                 modelState.AddModelError("UlceraPressaoEstagio", "Gabarito: \"" + integridadeGabarito.UlceraPressaoEstagio + "\"");
@@ -131,34 +107,9 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("Queimadura", "Gabarito: " + (integridadeGabarito.Queimadura.Equals(true) ? "Sim" : "Não"));
             }
-            if (integridade.QueimaduraGrau == null || integridade.QueimaduraGrau.Equals(""))
-            {
-                if (integridadeGabarito.QueimaduraGrau != null && !integridadeGabarito.QueimaduraGrau.Equals(""))
-                {
-                    modelState.AddModelError("QueimaduraGrau", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(integridade.QueimaduraGrau.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.QueimaduraGrau.ToLower())))
-                {
-                    modelState.AddModelError("QueimaduraGrau", "Gabarito: \"" + integridadeGabarito.QueimaduraGrau + "\"");
-                }
-            }
-            if (integridade.QueimaduraLocal == null || integridade.QueimaduraLocal.Equals(""))
-            {
-                if (integridadeGabarito.QueimaduraLocal != null && !integridadeGabarito.QueimaduraLocal.Equals(""))
-                {
-                    modelState.AddModelError("QueimaduraLocal", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(integridade.QueimaduraLocal.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.QueimaduraLocal.ToLower())))
-                {
-                    modelState.AddModelError("QueimaduraLocal", "Gabarito: \"" + integridadeGabarito.QueimaduraLocal + "\"");
-                }
-            }
+            Global.CorrecaoDeStrings("QueimaduraGrau", integridade.QueimaduraGrau, integridadeGabarito.QueimaduraGrau, modelState);
+            Global.CorrecaoDeStrings("QueimaduraLocal", integridade.QueimaduraLocal, integridadeGabarito.QueimaduraLocal, modelState);
+            
             if (integridade.FeridaCirurgica != integridadeGabarito.FeridaCirurgica)
             {
                 modelState.AddModelError("FeridaCirurgica", "Gabarito: " + (integridadeGabarito.FeridaCirurgica.Equals(true) ? "Sim" : "Não"));
@@ -246,12 +197,12 @@ namespace PacienteVirtual.Negocio
             var query = from integridadeTecidual in pvEntities.tb_integridade_tecidual
                         select new IntegridadeTecidualModel
                         {
-                            Turgor = ListaTurgor.Presente,
+                            Turgor = (integridadeTecidual.Turgor == "Presente" ? ListaTurgor.Presente : ListaTurgor.Diminuido),
                             Equimose = integridadeTecidual.Equimose,
                             Hematoma = integridadeTecidual.Hematoma,
                             Letericia = integridadeTecidual.Letericia,
                             Descorada = integridadeTecidual.Descorada,
-                            EstadoHidratacao = ListaEstadoHidratacao.Hidratada,
+                            EstadoHidratacao = (integridadeTecidual.EstadoHidratacao == "Hidratada" ? ListaEstadoHidratacao.Hidratada : ListaEstadoHidratacao.Desidratada),
                             Purido = integridadeTecidual.Purido,
                             Hiperemia = integridadeTecidual.Hiperemia,
                             Nodulo = integridadeTecidual.Nodulo,
@@ -302,12 +253,12 @@ namespace PacienteVirtual.Negocio
         private static void Atribuir(IntegridadeTecidualModel integridadeTecidual, tb_integridade_tecidual _integridadeTecidualE)
         {
             _integridadeTecidualE.IdConsultaVariavel = integridadeTecidual.IdConsultaVariavel;
-            _integridadeTecidualE.Turgor = ListaTurgor.Presente.ToString();
+            _integridadeTecidualE.Turgor = integridadeTecidual.Turgor.ToString();
             _integridadeTecidualE.Equimose = integridadeTecidual.Equimose;
             _integridadeTecidualE.Hematoma = integridadeTecidual.Hematoma;
             _integridadeTecidualE.Letericia = integridadeTecidual.Letericia;
             _integridadeTecidualE.Descorada = integridadeTecidual.Descorada;
-            _integridadeTecidualE.EstadoHidratacao = ListaEstadoHidratacao.Hidratada.ToString();
+            _integridadeTecidualE.EstadoHidratacao = integridadeTecidual.EstadoHidratacao.ToString();
             _integridadeTecidualE.Purido = integridadeTecidual.Purido;
             _integridadeTecidualE.Hiperemia = integridadeTecidual.Hiperemia;
             _integridadeTecidualE.Nodulo = integridadeTecidual.Nodulo;

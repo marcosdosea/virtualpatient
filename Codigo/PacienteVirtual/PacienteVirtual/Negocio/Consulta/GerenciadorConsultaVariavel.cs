@@ -35,48 +35,20 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("IdRazaoEncontro", "Gabarito: \"" + consultaVariavelGabarito.DescricaoRazao + "\"");
             }
-            if (consultaVariavel.DescricaoOutrosAchados == null || consultaVariavel.DescricaoOutrosAchados.Equals(""))
-            {
-                if (consultaVariavelGabarito.DescricaoOutrosAchados != null && !consultaVariavelGabarito.DescricaoOutrosAchados.Equals(""))
-                {
-                    modelState.AddModelError("DescricaoOutrosAchados", "Gabarito: \"" + consultaVariavelGabarito.DescricaoDadosComplementares + "\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(consultaVariavel.DescricaoOutrosAchados.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.DescricaoOutrosAchados.ToLower())))
-                {
-                    modelState.AddModelError("DescricaoOutrosAchados", "Gabarito: \"" + consultaVariavelGabarito.DescricaoOutrosAchados + "\"");
-                }
-            }
-            if (consultaVariavel.DescricaoDadosComplementares == null || consultaVariavel.DescricaoDadosComplementares.Equals(""))
-            {
-                if (consultaVariavelGabarito.DescricaoDadosComplementares != null && !consultaVariavelGabarito.DescricaoDadosComplementares.Equals(""))
-                {
-                    modelState.AddModelError("DescricaoDadosComplementares", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(consultaVariavel.DescricaoDadosComplementares.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.DescricaoDadosComplementares.ToLower())))
-                {
-                    modelState.AddModelError("DescricaoDadosComplementares", "Gabarito: \"" + consultaVariavelGabarito.DescricaoDadosComplementares + "\"");
-                }
-            }
-            if (consultaVariavel.InfoFornecidas == null || consultaVariavel.InfoFornecidas.Equals(""))
-            {
-                if (consultaVariavelGabarito.InfoFornecidas != null && !consultaVariavelGabarito.InfoFornecidas.Equals(""))
-                {
-                    modelState.AddModelError("InfoFornecidas", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(consultaVariavel.InfoFornecidas.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.InfoFornecidas.ToLower())))
-                {
-                    modelState.AddModelError("InfoFornecidas", "Gabarito: \"" + consultaVariavelGabarito.InfoFornecidas + "\"");
-                }
-            }
+            
+        }
+
+        /// <summary>
+        /// Faz a correção das Abas de Enfermagem da consulta
+        /// </summary>
+        /// <param name="consultaVariavel"></param>
+        /// <param name="consultaVariavelGabarito"></param>
+        /// <param name="modelState"></param>
+        public void CorrigirRespostasEnfermagem(ConsultaVariavelModel consultaVariavel, ConsultaVariavelModel consultaVariavelGabarito, ModelStateDictionary modelState)
+        {
+            Global.CorrecaoDeStrings("DescricaoOutrosAchados", consultaVariavel.DescricaoOutrosAchados, consultaVariavelGabarito.DescricaoOutrosAchados, modelState);
+            Global.CorrecaoDeStrings("DescricaoDadosComplementares", consultaVariavel.DescricaoDadosComplementares, consultaVariavelGabarito.DescricaoDadosComplementares, modelState);
+            Global.CorrecaoDeStrings("InfoFornecidas", consultaVariavel.InfoFornecidas, consultaVariavelGabarito.InfoFornecidas, modelState);
         }
 
         /// <summary>

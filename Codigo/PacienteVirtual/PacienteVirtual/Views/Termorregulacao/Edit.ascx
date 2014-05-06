@@ -13,14 +13,16 @@
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.Temperatura) %>
                     <%: Html.TextBoxFor(model => model.Temperatura, new { style = "width:60px;" })%>
-                    <%: Html.ValidationMessageFor(model => model.Temperatura) %>
+                    <%: Html.ValidationMessageFor(model => model.Temperatura, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.TemperaturaPele) %>
                     <%: Html.EnumDropDownListFor(model => model.TemperaturaPele, ListaTemperaturaPele.Quente) %>
-                    <%: Html.ValidationMessageFor(model => model.TemperaturaPele) %>
                 </div>
             </div>
+        </div>
+        <div class="row-fluid">
+            <%: Html.ValidationMessageFor(model => model.ErroTemperaturaPele, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <br />
         <div class="row-fluid">
@@ -28,14 +30,17 @@
                 <div class="span3">
                     <%: Html.EditorFor(model => model.Sudorese) %>
                     <%: Resources.Mensagem.sudorese %>
+                    <%: Html.ValidationMessageFor(model => model.Sudorese, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="span3">
                     <%: Html.EditorFor(model => model.Calafrio) %>
                     <%: Resources.Mensagem.calafrio %>
+                    <%: Html.ValidationMessageFor(model => model.Calafrio, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="span3">
                     <%: Html.EditorFor(model => model.Piloerecao) %>
                     <%: Resources.Mensagem.piloerecao %>
+                    <%: Html.ValidationMessageFor(model => model.Piloerecao, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@
         <p class="titulos">FR</p>
         <legend></legend>
         <div class="row-fluid">
-            <div id="fr" class="span12">
+            <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.FequenciaResporatoria) %>
                     <%: Html.EditorFor(model => model.FequenciaResporatoria) %>
@@ -19,9 +19,14 @@
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.Ritmo) %>
                     <%: Html.EnumDropDownListFor(model => model.Ritmo, ListaRitmo.Regular) %>
-                    <%: Html.ValidationMessageFor(model => model.Ritmo, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+                <div class="editor-field">
+                    <%: Html.ValidationMessageFor(model => model.ErroRitmo, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
+        </div>
+        <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.Dispineia) %>
@@ -39,7 +44,9 @@
                     <%: Html.ValidationMessageFor(model => model.Bradipneia, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
-            <br />
+        </div>
+        <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.CheyneStokes) %>
@@ -57,7 +64,9 @@
                     <%: Html.ValidationMessageFor(model => model.Epistaxe, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
-            <br />
+        </div>
+        <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.DesvioDeSepto) %>
@@ -75,7 +84,9 @@
                     <%: Html.ValidationMessageFor(model => model.LabioCianotico, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
+        </div>
             <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.ObstrucaoNasal) %>
@@ -89,17 +100,22 @@
                 </div>
             </div>
         </div>
-
-        <div id="inspecao" class="row-fluid">
+        <br />
+        <div class="row-fluid">
             <p class="titulos"><%= Resources.Mensagem.inspecao_toracica %></p>
             <legend></legend>
             <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.SimetriaToracica) %>
                     <%: Html.EnumDropDownListFor(model => model.SimetriaToracica, ListaSimetriaToracica.Simetrico) %>
-                    <%: Html.ValidationMessageFor(model => model.SimetriaToracica, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
+        </div>
+        <div class="row-fluid">
+            <%: Html.ValidationMessageFor(model => model.ErroSimetriaToracica, string.Empty, new { @class = "styleValidation" })%>
+        </div>
+        <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.Barril) %>
@@ -117,6 +133,9 @@
                     <%: Html.ValidationMessageFor(model => model.Funil, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
+        </div>
+        <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.Lordose) %>
@@ -134,6 +153,9 @@
                     <%: Html.ValidationMessageFor(model => model.Escoliose, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
+        </div>
+        <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.TiragemIntercostal) %>
@@ -141,20 +163,24 @@
                     <%: Html.ValidationMessageFor(model => model.TiragemIntercostal, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
-
         </div>
-        
-
-        <div id="palpacao" class="row-fluid">
-            <p class="titulos"><%= Resources.Mensagem.palpacao %></p>
+        <br />
+        <div class="row-fluid">
+            <p class="titulos">
+                <%= Resources.Mensagem.palpacao %></p>
             <legend></legend>
             <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.Expansibilidade) %>
                     <%: Html.EnumDropDownListFor(model => model.Expansibilidade, ListaExpansibilidade.Preservada) %>
-                    <%: Html.ValidationMessageFor(model => model.Expansibilidade) %>
                 </div>
             </div>
+        </div>
+        <div class="row-fluid">
+            <%: Html.ValidationMessageFor(model => model.ErroExpansibilidade, string.Empty, new { @class = "styleValidation" })%>
+        </div>
+        <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="span4">
                     <%: Html.EditorFor(model => model.EnfizemaSubcutaneo) %>
@@ -166,8 +192,8 @@
                 </div>
             </div>
         </div>
-
-        <div id="tosse" class="row-fluid">
+        <br />
+        <div class="row-fluid">
             <p class="titulos"><%= Resources.Mensagem.tosse %></p>
             <legend></legend>
             <div class="span12">
@@ -176,20 +202,33 @@
                     <%: Resources.Mensagem.tosse %>
                 </div>
             </div>
+        </div>
+        <br />
+        <div class="row-fluid">
             <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.FrequenciaTosse) %>
                     <%: Html.EnumDropDownListFor(model => model.FrequenciaTosse, ListaFrequenciaTosse.NaoSeAplica) %>
-                    <%: Html.ValidationMessageFor(model => model.FrequenciaTosse) %>
                 </div>
             </div>
+        </div>
+         <div class="row-fluid">
+            <%: Html.ValidationMessageFor(model => model.ErroFrequenciaTosse, string.Empty, new { @class = "styleValidation" })%>
+         </div>
+         <br />
+         <div class="row-fluid">
             <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.TipoTosse) %>
                     <%: Html.EnumDropDownListFor(model => model.TipoTosse, ListaTipoTosse.NaoSeAplica) %>
-                    <%: Html.ValidationMessageFor(model => model.TipoTosse) %>
                 </div>
             </div>
+        </div>
+         <div class="row-fluid">
+            <%: Html.ValidationMessageFor(model => model.ErroTipoTosse, string.Empty, new { @class = "styleValidation" })%>
+         </div>
+         <br />
+         <div class="row-fluid">
             <div class="span12">
                 <%= Resources.Mensagem.aspecto_secrecao %>:
                 <%: Html.TextBoxFor(model => model.AspectoSecrecao, new { MaxLength = 50, style = "width:340px;" })%>
@@ -197,29 +236,34 @@
             </div>
         </div>
 
-        <div id="percursao" class="row-fluid">
+        <div class="row-fluid">
             <p class="titulos"><%= Resources.Mensagem.percursao %></p>
             <legend></legend>
             <div class="span12">
                 <div class="span3">
                     <%: Html.LabelFor(model => model.Percursao) %>
                     <%: Html.EnumDropDownListFor(model => model.Percursao, ListaPercursao.Ar) %>
-                    <%: Html.ValidationMessageFor(model => model.Percursao) %>
                 </div>
             </div>
         </div>
+         <div class="row-fluid">
+            <%: Html.ValidationMessageFor(model => model.ErroPercursao, string.Empty, new { @class = "styleValidation" })%>
+         </div>
+         <br />
 
-        <div id="ganglios" class="row-fluid">
+        <div class="row-fluid">
             <p class="titulos">Palpação Gânglios</p>
             <legend></legend>
             <div class="span12">
                 <div class="span3">
                     <%: Html.EditorFor(model => model.GangliosPalpaveis) %>
                     <%: Resources.Mensagem.ganglios_palpaveis %>
+                    <%: Html.ValidationMessageFor(model => model.GangliosPalpaveis, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="span3">
                     <%: Html.EditorFor(model => model.GangliosDolorosos) %>
                     <%: Resources.Mensagem.ganglios_dolorosos %>
+                    <%: Html.ValidationMessageFor(model => model.GangliosDolorosos, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
             <div class="span12">
@@ -229,51 +273,9 @@
             </div>
         </div>
 
-        <div id="posicaoSalvar" class="form-actions">
+        <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </div>
     </fieldset>
-
-<style>
-    .titulos
-    {
-        font-size: large;
-    }
-    #fr
-    {
-        position: relative;
-        left:15px;
-    }
-    #inspecao
-    {
-        position:relative;
-        top:12px;
-    }
-    #palpacao
-    {
-        position:relative;
-        top:20px;
-    }
-    #tosse
-    {
-        position:relative;
-        top:25px;
-    }
-    #percursao
-    {
-        position:relative;
-        top:34px;
-    }
-    #ganglios
-    {
-        position:relative;
-        top:40px;
-    }
-    #posicaoSalvar
-    {
-        position: relative;
-        top: 44px;
-    }
-</style>
 <% } %>
 

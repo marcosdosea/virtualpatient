@@ -7,6 +7,8 @@ namespace PacienteVirtual.Models
 
     public class TermorregulacaoModel
     {
+        public string ErroTemperaturaPele { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public long IdConsultaVariavel { get; set; }

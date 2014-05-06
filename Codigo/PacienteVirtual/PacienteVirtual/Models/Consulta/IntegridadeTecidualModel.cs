@@ -9,6 +9,9 @@ namespace PacienteVirtual.Models
 
     public class IntegridadeTecidualModel
     {
+        public string ErroTurgor { get; set; }
+        public string ErroEstadoHidratacao { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public long IdConsultaVariavel { get; set; }

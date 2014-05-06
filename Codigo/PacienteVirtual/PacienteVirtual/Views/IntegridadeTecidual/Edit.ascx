@@ -14,10 +14,12 @@
                 <div class="span3">
                     <%: Html.Label(Resources.Mensagem.turgor) %>
                     <%: Html.EnumDropDownListFor(model => model.Turgor, ListaTurgor.Presente) %>
-                    <%: Html.ValidationMessageFor(model => model.Turgor, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row-fluid">
+        <%: Html.ValidationMessageFor(model => model.ErroTurgor, string.Empty, new { @class = "styleValidation" })%>
     </div>
     <br />
     <div class="row-fluid">
@@ -50,9 +52,11 @@
             <div class="editor-field">
                 <%: Html.LabelFor(model => model.EstadoHidratacao) %>
                 <%: Html.EnumDropDownListFor(model => model.EstadoHidratacao, ListaEstadoHidratacao.Hidratada) %>
-                <%: Html.ValidationMessageFor(model => model.EstadoHidratacao, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
+    </div>
+    <div class="row-fluid">
+        <%: Html.ValidationMessageFor(model => model.ErroEstadoHidratacao, string.Empty, new { @class = "styleValidation" })%>
     </div>
     <br />
     <div class="row-fluid">
