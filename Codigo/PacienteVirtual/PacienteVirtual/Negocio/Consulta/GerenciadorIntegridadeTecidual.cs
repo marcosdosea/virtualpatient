@@ -83,10 +83,16 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("Rubor", "Gabarito: " + (integridadeGabarito.Rubor.Equals(true) ? "Sim" : "Não"));
             }
-            /*if (!Global.RemoverAcentuacao(integridade.LocalAlteracaoPele.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.LocalAlteracaoPele.ToLower())))
+            if (integridade.LocalAlteracaoPele == null || integridade.LocalAlteracaoPele.Equals(""))
             {
-                modelState.AddModelError("LocalAlteracaoPele", "Gabarito: \"" + integridadeGabarito.LocalAlteracaoPele + "\"");
-            }*/
+                if (integridadeGabarito.LocalAlteracaoPele != null && !integridadeGabarito.LocalAlteracaoPele.Equals(""))
+                {
+                    if (!Global.RemoverAcentuacao(integridade.LocalAlteracaoPele.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.LocalAlteracaoPele.ToLower())))
+                    {
+                        modelState.AddModelError("LocalAlteracaoPele", "Gabarito: \"" + integridadeGabarito.LocalAlteracaoPele + "\"");
+                    }
+                }
+            }
             if (integridade.Pediabetico != integridadeGabarito.Pediabetico)
             {
                 modelState.AddModelError("Pediabetico", "Gabarito: " + (integridadeGabarito.Pediabetico.Equals(true) ? "Sim" : "Não"));
@@ -99,10 +105,16 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("UlceraPressao", "Gabarito: " + (integridadeGabarito.UlceraPressao.Equals(true) ? "Sim" : "Não"));
             }
-            /*if (!Global.RemoverAcentuacao(integridade.UlceraPressaoLocal.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.UlceraPressaoLocal.ToLower())))
+            if (integridade.UlceraPressaoLocal == null || integridade.UlceraPressaoLocal.Equals(""))
             {
-                modelState.AddModelError("UlceraPressaoLocal", "Gabarito: \"" + integridadeGabarito.UlceraPressaoLocal + "\"");
-            }*/
+                if (integridadeGabarito.UlceraPressaoLocal != null && !integridadeGabarito.UlceraPressaoLocal.Equals(""))
+                {
+                    if (!Global.RemoverAcentuacao(integridade.UlceraPressaoLocal.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.UlceraPressaoLocal.ToLower())))
+                    {
+                        modelState.AddModelError("UlceraPressaoLocal", "Gabarito: \"" + integridadeGabarito.UlceraPressaoLocal + "\"");
+                    }
+                }
+            }
             if (!Global.RemoverAcentuacao(integridade.UlceraPressaoEstagio.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.UlceraPressaoEstagio.ToLower())))
             {
                 modelState.AddModelError("UlceraPressaoEstagio", "Gabarito: \"" + integridadeGabarito.UlceraPressaoEstagio + "\"");
@@ -111,14 +123,26 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("Queimadura", "Gabarito: " + (integridadeGabarito.Queimadura.Equals(true) ? "Sim" : "Não"));
             }
-            /*if (!Global.RemoverAcentuacao(integridade.QueimaduraGrau.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.QueimaduraGrau.ToLower())))
+            if (integridade.QueimaduraGrau == null || integridade.QueimaduraGrau.Equals(""))
             {
-                modelState.AddModelError("QueimaduraGrau", "Gabarito: \"" + integridadeGabarito.QueimaduraGrau + "\"");
+                if (integridadeGabarito.QueimaduraGrau != null && !integridadeGabarito.QueimaduraGrau.Equals(""))
+                {
+                    if (!Global.RemoverAcentuacao(integridade.QueimaduraGrau.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.QueimaduraGrau.ToLower())))
+                    {
+                        modelState.AddModelError("QueimaduraGrau", "Gabarito: \"" + integridadeGabarito.QueimaduraGrau + "\"");
+                    }
+                }
             }
-            if (!Global.RemoverAcentuacao(integridade.QueimaduraLocal.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.QueimaduraLocal.ToLower())))
+            if (integridade.QueimaduraLocal == null || integridade.QueimaduraLocal.Equals(""))
             {
-                modelState.AddModelError("QueimaduraLocal", "Gabarito: \"" + integridadeGabarito.QueimaduraLocal + "\"");
-            }*/
+                if (integridadeGabarito.QueimaduraLocal != null && !integridadeGabarito.QueimaduraLocal.Equals(""))
+                {
+                    if (!Global.RemoverAcentuacao(integridade.QueimaduraLocal.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.QueimaduraLocal.ToLower())))
+                    {
+                        modelState.AddModelError("QueimaduraLocal", "Gabarito: \"" + integridadeGabarito.QueimaduraLocal + "\"");
+                    }
+                }
+            }
             if (integridade.FeridaCirurgica != integridadeGabarito.FeridaCirurgica)
             {
                 modelState.AddModelError("FeridaCirurgica", "Gabarito: " + (integridadeGabarito.FeridaCirurgica.Equals(true) ? "Sim" : "Não"));
