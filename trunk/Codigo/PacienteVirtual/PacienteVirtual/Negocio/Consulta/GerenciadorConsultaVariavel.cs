@@ -39,30 +39,42 @@ namespace PacienteVirtual.Negocio
             {
                 if (consultaVariavelGabarito.DescricaoOutrosAchados != null && !consultaVariavelGabarito.DescricaoOutrosAchados.Equals(""))
                 {
-                    if (!Global.RemoverAcentuacao(consultaVariavel.DescricaoOutrosAchados.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.DescricaoOutrosAchados.ToLower())))
-                    {
-                        modelState.AddModelError("DescricaoOutrosAchados", "Gabarito: \"" + consultaVariavelGabarito.DescricaoOutrosAchados + "\"");
-                    }
+                    modelState.AddModelError("DescricaoOutrosAchados", "Gabarito: \"" + consultaVariavelGabarito.DescricaoDadosComplementares + "\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(consultaVariavel.DescricaoOutrosAchados.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.DescricaoOutrosAchados.ToLower())))
+                {
+                    modelState.AddModelError("DescricaoOutrosAchados", "Gabarito: \"" + consultaVariavelGabarito.DescricaoOutrosAchados + "\"");
                 }
             }
             if (consultaVariavel.DescricaoDadosComplementares == null || consultaVariavel.DescricaoDadosComplementares.Equals(""))
             {
                 if (consultaVariavelGabarito.DescricaoDadosComplementares != null && !consultaVariavelGabarito.DescricaoDadosComplementares.Equals(""))
                 {
-                    if (!Global.RemoverAcentuacao(consultaVariavel.DescricaoDadosComplementares.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.DescricaoDadosComplementares.ToLower())))
-                    {
-                        modelState.AddModelError("DescricaoDadosComplementares", "Gabarito: \"" + consultaVariavelGabarito.DescricaoDadosComplementares + "\"");
-                    }
+                    modelState.AddModelError("DescricaoDadosComplementares", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(consultaVariavel.DescricaoDadosComplementares.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.DescricaoDadosComplementares.ToLower())))
+                {
+                    modelState.AddModelError("DescricaoDadosComplementares", "Gabarito: \"" + consultaVariavelGabarito.DescricaoDadosComplementares + "\"");
                 }
             }
             if (consultaVariavel.InfoFornecidas == null || consultaVariavel.InfoFornecidas.Equals(""))
             {
                 if (consultaVariavelGabarito.InfoFornecidas != null && !consultaVariavelGabarito.InfoFornecidas.Equals(""))
                 {
-                    if (!Global.RemoverAcentuacao(consultaVariavel.InfoFornecidas.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.InfoFornecidas.ToLower()))
-                    {
-                        modelState.AddModelError("InfoFornecidas", "Gabarito: \"" + consultaVariavelGabarito.InfoFornecidas + "\"");
-                    }
+                    modelState.AddModelError("InfoFornecidas", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(consultaVariavel.InfoFornecidas.ToLower()).Equals(Global.RemoverAcentuacao(consultaVariavelGabarito.InfoFornecidas.ToLower())))
+                {
+                    modelState.AddModelError("InfoFornecidas", "Gabarito: \"" + consultaVariavelGabarito.InfoFornecidas + "\"");
                 }
             }
         }
