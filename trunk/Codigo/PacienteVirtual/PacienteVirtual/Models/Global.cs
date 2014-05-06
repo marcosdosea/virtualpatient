@@ -5,6 +5,7 @@ using System.Web;
 using PacienteVirtual.Controllers;
 using System.Text;
 using System.Globalization;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Models
 {
@@ -191,6 +192,29 @@ namespace PacienteVirtual.Models
             Digito = Digito + resto.ToString();
 
             return CPF.EndsWith(Digito);
+        }
+
+        //metodo para correção de string já adicionando no ModelState
+        public static void CorrecaoDeStrings(string variavelModel,string resposta, string gabarito, ModelStateDictionary modelState)
+        {
+            if (resposta == null || resposta.Equals(""))
+            {
+                if (gabarito != null || !gabarito.Equals(""))
+                {
+                    modelState.AddModelError(variavelModel, "Gabarito: \"" + gabarito + "\"");
+                }
+            }
+            else
+            {
+                if (gabarito == null || gabarito.Equals(""))
+                {
+                    modelState.AddModelError(variavelModel, "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+                else if (!Global.RemoverAcentuacao(resposta.ToLower()).Equals(Global.RemoverAcentuacao(gabarito.ToLower())))
+                {
+                    modelState.AddModelError(variavelModel, "Gabarito: \"" + gabarito + "\"");
+                }
+            }
         }
 
     }

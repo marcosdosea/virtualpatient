@@ -36,7 +36,7 @@ namespace PacienteVirtual.Negocio
             }
             if (oxigenacao.Ritmo != oxigenacaoGabarito.Ritmo)
             {
-                modelState.AddModelError("Ritmo", "Gabarito: \"" + oxigenacaoGabarito.Ritmo + "\"");
+                modelState.AddModelError("ErroRitmo", "Gabarito: \"" + oxigenacaoGabarito.Ritmo + "\"");
             }
             if (oxigenacao.Dispineia != oxigenacaoGabarito.Dispineia)
             {
@@ -84,7 +84,7 @@ namespace PacienteVirtual.Negocio
             }
             if (oxigenacao.SimetriaToracica != oxigenacaoGabarito.SimetriaToracica)
             {
-                modelState.AddModelError("SimetriaToracica", "Gabarito: \"" + oxigenacaoGabarito.SimetriaToracica + "\"");
+                modelState.AddModelError("ErroSimetriaToracica", "Gabarito: \"" + oxigenacaoGabarito.SimetriaToracica + "\"");
             }
             if (oxigenacao.PeitoDePombo != oxigenacaoGabarito.PeitoDePombo)
             {
@@ -112,7 +112,7 @@ namespace PacienteVirtual.Negocio
             }
             if (oxigenacao.Expansibilidade != oxigenacaoGabarito.Expansibilidade)
             {
-                modelState.AddModelError("Expansibilidade", "Gabarito: \"" + oxigenacaoGabarito.Expansibilidade + "\"");
+                modelState.AddModelError("ErroExpansibilidade", "Gabarito: \"" + oxigenacaoGabarito.Expansibilidade + "\"");
             }
             if (oxigenacao.EnfizemaSubcutaneo != oxigenacaoGabarito.EnfizemaSubcutaneo)
             {
@@ -128,29 +128,17 @@ namespace PacienteVirtual.Negocio
             }
             if (oxigenacao.FrequenciaTosse != oxigenacaoGabarito.FrequenciaTosse)
             {
-                modelState.AddModelError("FrequenciaTosse", "Gabarito: \"" + oxigenacaoGabarito.FrequenciaTosse + "\"");
+                modelState.AddModelError("ErroFrequenciaTosse", "Gabarito: \"" + oxigenacaoGabarito.FrequenciaTosse + "\"");
             }
             if (oxigenacao.TipoTosse != oxigenacaoGabarito.TipoTosse)
             {
-                modelState.AddModelError("TipoTosse", "Gabarito: \"" + oxigenacaoGabarito.TipoTosse + "\"");
+                modelState.AddModelError("ErroTipoTosse", "Gabarito: \"" + oxigenacaoGabarito.TipoTosse + "\"");
             }
-            if (oxigenacao.AspectoSecrecao == null || oxigenacao.AspectoSecrecao.Equals(""))
-            {
-                if (oxigenacaoGabarito.AspectoSecrecao != null && !oxigenacaoGabarito.AspectoSecrecao.Equals(""))
-                {
-                    modelState.AddModelError("AspectoSecrecao", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (oxigenacao.AspectoSecrecao.Equals(oxigenacaoGabarito.AspectoSecrecao))
-                {
-                    modelState.AddModelError("AspectoSecrecao", "Gabarito: \"" + oxigenacaoGabarito.AspectoSecrecao + "\"");
-                }
-            }
+            Global.CorrecaoDeStrings("AspectoSecrecao", oxigenacao.AspectoSecrecao, oxigenacaoGabarito.AspectoSecrecao, modelState);
+
             if (oxigenacao.Percursao != oxigenacaoGabarito.Percursao)
             {
-                modelState.AddModelError("Percursao", "Gabarito: \"" + oxigenacaoGabarito.Percursao + "\"");
+                modelState.AddModelError("ErroPercursao", "Gabarito: \"" + oxigenacaoGabarito.Percursao + "\"");
             }
             if (oxigenacao.GangliosPalpaveis != oxigenacaoGabarito.GangliosPalpaveis)
             {
@@ -160,20 +148,9 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("GangliosDolorosos", "Gabarito: " + (oxigenacaoGabarito.GangliosDolorosos.Equals(true) ? "Sim" : "Não"));
             }
-            if (oxigenacao.GangliosLocalizar == null || oxigenacao.GangliosLocalizar.Equals(""))
-            {
-                if (oxigenacaoGabarito.GangliosLocalizar != null && !oxigenacaoGabarito.GangliosLocalizar.Equals(""))
-                {
-                    modelState.AddModelError("GangliosLocalizar", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (oxigenacao.GangliosLocalizar.Equals(oxigenacaoGabarito.GangliosLocalizar))
-                {
-                    modelState.AddModelError("GangliosLocalizar", "Gabarito: \"" + oxigenacaoGabarito.GangliosLocalizar + "\"");
-                }
-            }
+
+            Global.CorrecaoDeStrings("GangliosLocalizar", oxigenacao.GangliosLocalizar, oxigenacaoGabarito.GangliosLocalizar, modelState);
+            
         }
 
         /// <summary>
@@ -251,7 +228,7 @@ namespace PacienteVirtual.Negocio
                         {
                             IdConsultaVariavel = oxigenacao.IdConsultaVariavel,
                             FequenciaResporatoria = oxigenacao.FrequeciaRespiratoria,
-                            Ritmo = ListaRitmo.Regular,
+                            Ritmo = (oxigenacao.Ritmo == "Regular" ? ListaRitmo.Regular : ListaRitmo.Irregular),
                             Dispineia = oxigenacao.Dispineia,
                             Taquipneia = oxigenacao.Taquipneia,
                             Bradipneia = oxigenacao.Bradipneia,
@@ -268,15 +245,15 @@ namespace PacienteVirtual.Negocio
                             Cifose = oxigenacao.Cifose,
                             Escoliose = oxigenacao.Escoliose,
                             TiragemIntercostal = oxigenacao.TiragemIntercostal,
-                            SimetriaToracica = ListaSimetriaToracica.Simetrico,
-                            Expansibilidade = ListaExpansibilidade.Preservada,
+                            SimetriaToracica = (oxigenacao.SimetriaToracica == "Simetrico" ? ListaSimetriaToracica.Simetrico : (oxigenacao.SimetriaToracica == "AssimetricoBilateral" ? ListaSimetriaToracica.AssimetricoBilateral : ListaSimetriaToracica.AssimetricoUnilateral)),
+                            Expansibilidade = (oxigenacao.Expansibilidade == "Preservada" ? ListaExpansibilidade.Preservada : ListaExpansibilidade.Diminuida),
                             EnfizemaSubcutaneo = oxigenacao.EnfizemaSubcutaneo,
                             PresencaFremito = oxigenacao.PresencaFremito,
                             Tosse = oxigenacao.Tosse,
-                            FrequenciaTosse = ListaFrequenciaTosse.NaoSeAplica,
-                            TipoTosse = ListaTipoTosse.NaoSeAplica,
+                            FrequenciaTosse = (oxigenacao.FrequenciaTosse == "NaoSeAplica" ? ListaFrequenciaTosse.NaoSeAplica : (oxigenacao.FrequenciaTosse == "Noturna" ? ListaFrequenciaTosse.Noturna : (oxigenacao.FrequenciaTosse == "Frequente" ? ListaFrequenciaTosse.Frequente : ListaFrequenciaTosse.Esporadica))),
+                            TipoTosse = (oxigenacao.TipoTosse == "NaoSeAplica" ? ListaTipoTosse.NaoSeAplica : (oxigenacao.TipoTosse == "Produtiva" ? ListaTipoTosse.Produtiva : ListaTipoTosse.Seca)),
                             AspectoSecrecao = oxigenacao.AspectoSecrecao,
-                            Percursao = ListaPercursao.Ar,
+                            Percursao = (oxigenacao.Percursao == "Ar" ? ListaPercursao.Ar : (oxigenacao.Percursao == "Massa" ? ListaPercursao.Massa : ListaPercursao.Liquido)),
                             GangliosPalpaveis = oxigenacao.GangliosPalpaveis,
                             GangliosDolorosos = oxigenacao.GangliosDolorosos,
                             GangliosLocalizar = oxigenacao.GangliosLocalizar

@@ -17,6 +17,13 @@ namespace PacienteVirtual.Models
 
     public class OxigenacaoModel
     {
+        public string ErroRitmo { get; set; }
+        public string ErroSimetriaToracica { get; set; }
+        public string ErroExpansibilidade { get; set; }
+        public string ErroFrequenciaTosse { get; set; }
+        public string ErroTipoTosse { get; set; }
+        public string ErroPercursao { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public long IdConsultaVariavel { get; set; }

@@ -424,6 +424,12 @@ namespace PacienteVirtual.Controllers
             TryValidateModel(SessionController.Higiene);
             GerenciadorPsicoEspiritual.GetInstance().CorrigirRespostas(SessionController.PsicoEspiritual, GerenciadorPsicoEspiritual.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
             TryValidateModel(SessionController.PsicoEspiritual);
+            GerenciadorOxigenacao.GetInstance().CorrigirRespostas(SessionController.Oxigenacao, GerenciadorOxigenacao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Oxigenacao);
+            GerenciadorConsultaVariavel.GetInstance().CorrigirRespostasEnfermagem(SessionController.ConsultaVariavel, GerenciadorConsultaVariavel.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.ConsultaVariavel);
+            GerenciadorTermorregulacao.GetInstance().CorrigirRespostas(SessionController.Termorregulacao, GerenciadorTermorregulacao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Termorregulacao);
         }
 
         /// <summary>
