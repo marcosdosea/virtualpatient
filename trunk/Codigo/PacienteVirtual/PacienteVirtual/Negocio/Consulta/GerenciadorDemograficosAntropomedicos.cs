@@ -125,7 +125,6 @@ namespace PacienteVirtual.Negocio
         /// <param name="modelState"></param>
         public void CorrigirRespostas(DemograficosAntropometricosModel demoAntrop, DemograficosAntropometricosModel demoAntropGabarito, ModelStateDictionary modelState)
         {
-            
             if (!Global.RemoverAcentuacao(demoAntrop.Nome.ToLower()).Equals(Global.RemoverAcentuacao(demoAntropGabarito.Nome.ToLower())))
             {
                 modelState.AddModelError("Nome", "Gabarito: \"" + demoAntropGabarito.Nome + "\"");
