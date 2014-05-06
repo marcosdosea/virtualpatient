@@ -30,14 +30,17 @@ namespace PacienteVirtual.Negocio
         /// <param name="modelState"></param>
         public void CorrigirRespostas(PsicoEspiritualModel psicoEspiritual, PsicoEspiritualModel psicoEspiritualGabarito, ModelStateDictionary modelState)
         {
-            if (psicoEspiritual.CrencaReligiosa == null || psicoEspiritual.CrencaReligiosa.Equals(""))
+            if (psicoEspiritual.CrencaReligiosa == null || !psicoEspiritual.CrencaReligiosa.Equals(""))
             {
                 if (psicoEspiritualGabarito.CrencaReligiosa != null && !psicoEspiritualGabarito.CrencaReligiosa.Equals(""))
                 {
-                    if (!Global.RemoverAcentuacao(psicoEspiritual.CrencaReligiosa.ToLower()).Equals(Global.RemoverAcentuacao(psicoEspiritualGabarito.CrencaReligiosa.ToLower())))
-                    {
-                        modelState.AddModelError("CrencaReligiosa", "Gabarito: \"" + psicoEspiritualGabarito.CrencaReligiosa + "\"");
-                    }
+                    modelState.AddModelError("CrencaReligiosa", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else {
+                if (!Global.RemoverAcentuacao(psicoEspiritual.CrencaReligiosa.ToLower()).Equals(Global.RemoverAcentuacao(psicoEspiritualGabarito.CrencaReligiosa.ToLower())))
+                {
+                    modelState.AddModelError("CrencaReligiosa", "Gabarito: \"" + psicoEspiritualGabarito.CrencaReligiosa + "\"");
                 }
             }
             if (psicoEspiritual.BuscaAssistenciaEspiritual != psicoEspiritualGabarito.BuscaAssistenciaEspiritual)
@@ -48,10 +51,14 @@ namespace PacienteVirtual.Negocio
             {
                 if (psicoEspiritualGabarito.EspecificaAssistenciaEspiritual != null && !psicoEspiritualGabarito.EspecificaAssistenciaEspiritual.Equals(""))
                 {
-                    if (!Global.RemoverAcentuacao(psicoEspiritual.EspecificaAssistenciaEspiritual.ToLower()).Equals(Global.RemoverAcentuacao(psicoEspiritualGabarito.EspecificaAssistenciaEspiritual.ToLower())))
-                    {
-                        modelState.AddModelError("EspecificaAssistenciaEspiritual", "Gabarito: \"" + psicoEspiritualGabarito.EspecificaAssistenciaEspiritual + "\"");
-                    }
+                    modelState.AddModelError("EspecificaAssistenciaEspiritual", "Gabarito: \"Esse campo deve permanecer vazio\"");
+                }
+            }
+            else
+            {
+                if (!Global.RemoverAcentuacao(psicoEspiritual.EspecificaAssistenciaEspiritual.ToLower()).Equals(Global.RemoverAcentuacao(psicoEspiritualGabarito.EspecificaAssistenciaEspiritual.ToLower())))
+                {
+                    modelState.AddModelError("EspecificaAssistenciaEspiritual", "Gabarito: \"" + psicoEspiritualGabarito.EspecificaAssistenciaEspiritual + "\"");
                 }
             }
             if (psicoEspiritual.DisturbiosSono != psicoEspiritualGabarito.DisturbiosSono)
