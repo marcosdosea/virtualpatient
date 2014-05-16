@@ -197,7 +197,7 @@ namespace PacienteVirtual.Negocio
             var query = from integridadeTecidual in pvEntities.tb_integridade_tecidual
                         select new IntegridadeTecidualModel
                         {
-                            Turgor = (integridadeTecidual.Turgor == "Presente" ? ListaTurgor.Presente : ListaTurgor.Diminuido),
+                            Turgor = (integridadeTecidual.TurgorCutaneo == "Presente" ? ListaTurgor.Presente : ListaTurgor.Diminuido),
                             Equimose = integridadeTecidual.Equimose,
                             Hematoma = integridadeTecidual.Hematoma,
                             Letericia = integridadeTecidual.Letericia,
@@ -253,7 +253,7 @@ namespace PacienteVirtual.Negocio
         private static void Atribuir(IntegridadeTecidualModel integridadeTecidual, tb_integridade_tecidual _integridadeTecidualE)
         {
             _integridadeTecidualE.IdConsultaVariavel = integridadeTecidual.IdConsultaVariavel;
-            _integridadeTecidualE.Turgor = integridadeTecidual.Turgor.ToString();
+            _integridadeTecidualE.TurgorCutaneo = integridadeTecidual.Turgor.ToString();
             _integridadeTecidualE.Equimose = integridadeTecidual.Equimose;
             _integridadeTecidualE.Hematoma = integridadeTecidual.Hematoma;
             _integridadeTecidualE.Letericia = integridadeTecidual.Letericia;
