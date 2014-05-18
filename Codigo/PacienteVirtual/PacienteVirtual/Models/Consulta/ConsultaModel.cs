@@ -17,6 +17,8 @@ namespace PacienteVirtual.Models
         public IEnumerable<DiarioPessoalModel> ListaDiarioPessoal { get; set; }
 
         /////////////////////////////////////////
+        public ConscienciaModel Consciencia { get; set; }
+        
         public HigieneModel Higiene { get; set; }
         public PsicoEspiritualModel PsicoEspiritual { get; set; }
         

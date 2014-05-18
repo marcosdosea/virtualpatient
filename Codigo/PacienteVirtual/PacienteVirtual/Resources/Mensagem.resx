@@ -1434,9 +1434,6 @@
   <data name="pele" xml:space="preserve">
     <value>Pele</value>
   </data>
-  <data name="String3" xml:space="preserve">
-    <value />
-  </data>
   <data name="cabelos" xml:space="preserve">
     <value>Cabelos:</value>
   </data>
@@ -1493,5 +1490,80 @@
   </data>
   <data name="psicoespiritual" xml:space="preserve">
     <value>Psicoespiritual</value>
+  </data>
+  <data name="abertura_ocular" xml:space="preserve">
+    <value>Abertura Ocular</value>
+  </data>
+  <data name="avaliacao_consciencia_glasgow" xml:space="preserve">
+    <value>Avaliação consciência glasgow</value>
+  </data>
+  <data name="avaliacao_sedacao" xml:space="preserve">
+    <value>Avaliação sedação</value>
+  </data>
+  <data name="consciencia" xml:space="preserve">
+    <value>Consciência</value>
+  </data>
+  <data name="ConversacaoConfusa" xml:space="preserve">
+    <value>Conversação confusa</value>
+  </data>
+  <data name="Dor" xml:space="preserve">
+    <value>Dor</value>
+  </data>
+  <data name="Espontanea" xml:space="preserve">
+    <value>Espontânea</value>
+  </data>
+  <data name="EstimuloVerbal" xml:space="preserve">
+    <value>Estimulo verbal</value>
+  </data>
+  <data name="ExtensaoAnormal" xml:space="preserve">
+    <value>Extensão anormal</value>
+  </data>
+  <data name="FalaInadequada" xml:space="preserve">
+    <value>Fala inadequada</value>
+  </data>
+  <data name="FlexaoAnormal" xml:space="preserve">
+    <value>Flexão anormal</value>
+  </data>
+  <data name="FlexaoRetirada" xml:space="preserve">
+    <value>Flexão retirada</value>
+  </data>
+  <data name="Grau1" xml:space="preserve">
+    <value>Grau 1</value>
+  </data>
+  <data name="Grau2" xml:space="preserve">
+    <value>Grau 2</value>
+  </data>
+  <data name="Grau3" xml:space="preserve">
+    <value>Grau 3</value>
+  </data>
+  <data name="Grau4" xml:space="preserve">
+    <value>Grau 4</value>
+  </data>
+  <data name="Grau5" xml:space="preserve">
+    <value>Grau 5</value>
+  </data>
+  <data name="Grau6" xml:space="preserve">
+    <value>Grau 6</value>
+  </data>
+  <data name="LocalizaDor" xml:space="preserve">
+    <value>Localiza dor</value>
+  </data>
+  <data name="melhor_resposta_motora" xml:space="preserve">
+    <value>Melhor resposta motora</value>
+  </data>
+  <data name="melhor_resposta_verbal" xml:space="preserve">
+    <value>Melhor resposta verbal</value>
+  </data>
+  <data name="NenhumaResposta" xml:space="preserve">
+    <value>Nenhuma resposta</value>
+  </data>
+  <data name="ObedeceComandoVerbal" xml:space="preserve">
+    <value>Obedece comando verbal</value>
+  </data>
+  <data name="Orientado" xml:space="preserve">
+    <value>Orientado</value>
+  </data>
+  <data name="SonsIncopativeis" xml:space="preserve">
+    <value>Sons incompatíveis</value>
   </data>
 </root>

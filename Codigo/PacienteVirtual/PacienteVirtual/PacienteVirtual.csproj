@@ -158,6 +158,7 @@
     <Compile Include="Controllers\Cadastro\SuspeitaPrmController.cs" />
     <Compile Include="Controllers\Consulta\CartaController.cs" />
     <Compile Include="Controllers\Consulta\ClinicoInternacaoController.cs" />
+    <Compile Include="Controllers\Consulta\ConscienciaController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaParametroController.cs" />
     <Compile Include="Controllers\Consulta\ConsultasAlunosController.cs" />
     <Compile Include="Controllers\Consulta\CorrigirConsultasController.cs" />
@@ -196,6 +197,7 @@
     <Compile Include="Models\Consulta\CartaModel.cs" />
     <Compile Include="Models\Consulta\ClinicoInternacaoAlergiasModel.cs" />
     <Compile Include="Models\Consulta\ClinicoInternacaoModel.cs" />
+    <Compile Include="Models\Consulta\ConscienciaModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
     <Compile Include="Models\Consulta\HigieneModel.cs" />
@@ -226,6 +228,7 @@
     <Compile Include="Negocio\Cadastro\GerenciadorSituacaoQueixa.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorSuspeitaPrm.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorClinicoInternacao.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorConsciencia.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorHigiene.cs" />
@@ -609,6 +612,7 @@
     <Content Include="Views\ClinicoInternacao\Edit.ascx" />
     <Content Include="Views\ClinicoInternacao\ListaClinicoInternacaoAlergias.ascx" />
     <Content Include="Views\ClinicoInternacao\ListaPatologiasAtuais.ascx" />
+    <Content Include="Views\Consciencia\Edit.ascx" />
     <Content Include="Views\CorrigirConsultas\ComentariosTutor.ascx" />
     <Content Include="Views\CorrigirConsultas\Index.aspx" />
     <Content Include="Views\ConsultaVariavelQueixa\Edit.aspx" />

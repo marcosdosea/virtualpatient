@@ -147,6 +147,9 @@ namespace PacienteVirtual.Controllers
         /// <param name="idConsultaVariavel"></param>
         private static void DadosConsultaAnteriorEnfermagem(long idConsultaVariavel)
         {
+            ConscienciaModel consciencia = SessionController.Consciencia;
+            consciencia.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorConsciencia.GetInstance().Inserir(consciencia);
             OxigenacaoModel oxigenacao = SessionController.Oxigenacao;
             oxigenacao.IdConsultaVariavel = idConsultaVariavel;
             GerenciadorOxigenacao.GetInstance().Inserir(oxigenacao);
