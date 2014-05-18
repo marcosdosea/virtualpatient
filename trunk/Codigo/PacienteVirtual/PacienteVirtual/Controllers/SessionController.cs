@@ -920,6 +920,35 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static ConscienciaModel Consciencia
+        {
+            get
+            {
+                ConscienciaModel consciencia = (ConscienciaModel)HttpContext.Current.Session["_Consciencia"];
+                if (consciencia == null)
+                {
+                    consciencia = GerenciadorConsciencia.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (consciencia == null)
+                    {
+                        consciencia = new ConscienciaModel();
+                        consciencia.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        consciencia.AberturaOcular = ListaAberturaOcular.NenhumaResposta;
+                        consciencia.MelhorRespostaMotora = ListaMelhorRespostaMotora.NenhumaResposta;
+                        consciencia.MelhorRespostaVerbal = ListaMelhorRespostaVerbal.NenhumaResposta;
+                        consciencia.AvaliacaoSedacao = ListaAvaliacaoSedacao.Grau1;
+                        consciencia.AvaliacaoConscienciaGlasgow = Global.ValorInteiroNulo;
+                        GerenciadorConsciencia.GetInstance().Inserir(consciencia);
+                    }
+                    HttpContext.Current.Session["_Consciencia"] = consciencia;
+                }
+                return consciencia;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Consciencia"] = value;
+            }
+        }
+
         public static IntegridadeTecidualModel IntegridadeTecidual
         {
             get

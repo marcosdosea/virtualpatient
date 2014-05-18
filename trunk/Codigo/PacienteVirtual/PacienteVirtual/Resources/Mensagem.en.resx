@@ -1488,4 +1488,79 @@
   <data name="psicoespiritual" xml:space="preserve">
     <value>Psychospiritual</value>
   </data>
+  <data name="abertura_ocular" xml:space="preserve">
+    <value>Eye opening</value>
+  </data>
+  <data name="avaliacao_consciencia_glasgow" xml:space="preserve">
+    <value>Avaluation conscience glasgow</value>
+  </data>
+  <data name="avaliacao_sedacao" xml:space="preserve">
+    <value>Sedation evaluation</value>
+  </data>
+  <data name="consciencia" xml:space="preserve">
+    <value>Conscience</value>
+  </data>
+  <data name="ConversacaoConfusa" xml:space="preserve">
+    <value>Confusing conversation</value>
+  </data>
+  <data name="Dor" xml:space="preserve">
+    <value>Pain</value>
+  </data>
+  <data name="Espontanea" xml:space="preserve">
+    <value>Spontaneous</value>
+  </data>
+  <data name="EstimuloVerbal" xml:space="preserve">
+    <value>Verbal stimulus</value>
+  </data>
+  <data name="ExtensaoAnormal" xml:space="preserve">
+    <value>Abnormal extension</value>
+  </data>
+  <data name="FalaInadequada" xml:space="preserve">
+    <value>Inadequate speak</value>
+  </data>
+  <data name="FlexaoAnormal" xml:space="preserve">
+    <value>Abnormal flexion</value>
+  </data>
+  <data name="FlexaoRetirada" xml:space="preserve">
+    <value>Flexion withdrawal</value>
+  </data>
+  <data name="Grau1" xml:space="preserve">
+    <value>Grade 1</value>
+  </data>
+  <data name="Grau2" xml:space="preserve">
+    <value>Grade 2</value>
+  </data>
+  <data name="Grau3" xml:space="preserve">
+    <value>Grade 3</value>
+  </data>
+  <data name="Grau4" xml:space="preserve">
+    <value>Grade 4</value>
+  </data>
+  <data name="Grau5" xml:space="preserve">
+    <value>Grade 5</value>
+  </data>
+  <data name="Grau6" xml:space="preserve">
+    <value>Grade 6</value>
+  </data>
+  <data name="LocalizaDor" xml:space="preserve">
+    <value>Finds pain</value>
+  </data>
+  <data name="melhor_resposta_motora" xml:space="preserve">
+    <value>Best motor answer</value>
+  </data>
+  <data name="melhor_resposta_verbal" xml:space="preserve">
+    <value>Best verbal answer</value>
+  </data>
+  <data name="NenhumaResposta" xml:space="preserve">
+    <value>No answer</value>
+  </data>
+  <data name="ObedeceComandoVerbal" xml:space="preserve">
+    <value>Obeys verbal command</value>
+  </data>
+  <data name="Orientado" xml:space="preserve">
+    <value>Oriented</value>
+  </data>
+  <data name="SonsIncopativeis" xml:space="preserve">
+    <value>Sounds inconsistent</value>
+  </data>
 </root>

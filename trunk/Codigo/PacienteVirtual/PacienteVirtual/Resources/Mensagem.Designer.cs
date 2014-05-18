@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abertura Ocular.
+        /// </summary>
+        public static string abertura_ocular {
+            get {
+                return ResourceManager.GetString("abertura_ocular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ação Alternativa.
         /// </summary>
         public static string acao_alternativa {
@@ -358,11 +367,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avaliação consciência glasgow.
+        /// </summary>
+        public static string avaliacao_consciencia_glasgow {
+            get {
+                return ResourceManager.GetString("avaliacao_consciencia_glasgow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Avaliação Farmacêutica.
         /// </summary>
         public static string avaliacao_farmaceutica {
             get {
                 return ResourceManager.GetString("avaliacao_farmaceutica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avaliação sedação.
+        /// </summary>
+        public static string avaliacao_sedacao {
+            get {
+                return ResourceManager.GetString("avaliacao_sedacao", resourceCulture);
             }
         }
         
@@ -709,6 +736,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Consciência.
+        /// </summary>
+        public static string consciencia {
+            get {
+                return ResourceManager.GetString("consciencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consulta.
         /// </summary>
         public static string consulta {
@@ -822,6 +858,15 @@ namespace Resources {
         public static string conta_sem_sucesso_tentar_novamente {
             get {
                 return ResourceManager.GetString("conta_sem_sucesso_tentar_novamente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conversação confusa.
+        /// </summary>
+        public static string ConversacaoConfusa {
+            get {
+                return ResourceManager.GetString("ConversacaoConfusa", resourceCulture);
             }
         }
         
@@ -1357,6 +1402,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dor.
+        /// </summary>
+        public static string Dor {
+            get {
+                return ResourceManager.GetString("Dor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dosagem.
         /// </summary>
         public static string dosagem {
@@ -1573,6 +1627,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Espontânea.
+        /// </summary>
+        public static string Espontanea {
+            get {
+                return ResourceManager.GetString("Espontanea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Esporádica.
         /// </summary>
         public static string Esporadica {
@@ -1645,6 +1708,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Estimulo verbal.
+        /// </summary>
+        public static string EstimuloVerbal {
+            get {
+                return ResourceManager.GetString("EstimuloVerbal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estresse.
         /// </summary>
         public static string estresse {
@@ -1690,6 +1762,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extensão anormal.
+        /// </summary>
+        public static string ExtensaoAnormal {
+            get {
+                return ResourceManager.GetString("ExtensaoAnormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fala inadequada.
+        /// </summary>
+        public static string FalaInadequada {
+            get {
+                return ResourceManager.GetString("FalaInadequada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Farmacêutico.
         /// </summary>
         public static string farmaceutico {
@@ -1731,6 +1821,24 @@ namespace Resources {
         public static string fitoterapico {
             get {
                 return ResourceManager.GetString("fitoterapico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flexão anormal.
+        /// </summary>
+        public static string FlexaoAnormal {
+            get {
+                return ResourceManager.GetString("FlexaoAnormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flexão retirada.
+        /// </summary>
+        public static string FlexaoRetirada {
+            get {
+                return ResourceManager.GetString("FlexaoRetirada", resourceCulture);
             }
         }
         
@@ -1875,6 +1983,60 @@ namespace Resources {
         public static string grau_entendimento_reposta_codigo {
             get {
                 return ResourceManager.GetString("grau_entendimento_reposta_codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grau 1.
+        /// </summary>
+        public static string Grau1 {
+            get {
+                return ResourceManager.GetString("Grau1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grau 2.
+        /// </summary>
+        public static string Grau2 {
+            get {
+                return ResourceManager.GetString("Grau2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grau 3.
+        /// </summary>
+        public static string Grau3 {
+            get {
+                return ResourceManager.GetString("Grau3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grau 4.
+        /// </summary>
+        public static string Grau4 {
+            get {
+                return ResourceManager.GetString("Grau4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grau 5.
+        /// </summary>
+        public static string Grau5 {
+            get {
+                return ResourceManager.GetString("Grau5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grau 6.
+        /// </summary>
+        public static string Grau6 {
+            get {
+                return ResourceManager.GetString("Grau6", resourceCulture);
             }
         }
         
@@ -2329,6 +2491,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Localiza dor.
+        /// </summary>
+        public static string LocalizaDor {
+            get {
+                return ResourceManager.GetString("LocalizaDor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Localizar Alteração.
         /// </summary>
         public static string localizar_alteracao {
@@ -2478,6 +2649,24 @@ namespace Resources {
         public static string medicos_atendem {
             get {
                 return ResourceManager.GetString("medicos_atendem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Melhor resposta motora.
+        /// </summary>
+        public static string melhor_resposta_motora {
+            get {
+                return ResourceManager.GetString("melhor_resposta_motora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Melhor resposta verbal.
+        /// </summary>
+        public static string melhor_resposta_verbal {
+            get {
+                return ResourceManager.GetString("melhor_resposta_verbal", resourceCulture);
             }
         }
         
@@ -2662,6 +2851,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nenhuma resposta.
+        /// </summary>
+        public static string NenhumaResposta {
+            get {
+                return ResourceManager.GetString("NenhumaResposta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nível de Dificuldade.
         /// </summary>
         public static string nivel_dificuldade {
@@ -2797,6 +2995,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Obedece comando verbal.
+        /// </summary>
+        public static string ObedeceComandoVerbal {
+            get {
+                return ResourceManager.GetString("ObedeceComandoVerbal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Objetivo Terapêutico.
         /// </summary>
         public static string objetivo_terapeutico {
@@ -2856,6 +3063,15 @@ namespace Resources {
         public static string ordem_cronologica {
             get {
                 return ResourceManager.GetString("ordem_cronologica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orientado.
+        /// </summary>
+        public static string Orientado {
+            get {
+                return ResourceManager.GetString("Orientado", resourceCulture);
             }
         }
         
@@ -3778,6 +3994,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sons incompatíveis.
+        /// </summary>
+        public static string SonsIncopativeis {
+            get {
+                return ResourceManager.GetString("SonsIncopativeis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string status {
@@ -3792,15 +4017,6 @@ namespace Resources {
         public static string status_preenchimento {
             get {
                 return ResourceManager.GetString("status_preenchimento", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string String3 {
-            get {
-                return ResourceManager.GetString("String3", resourceCulture);
             }
         }
         

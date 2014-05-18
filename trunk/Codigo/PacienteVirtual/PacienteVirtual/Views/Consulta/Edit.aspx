@@ -189,7 +189,9 @@
                             <li id="li15"><a href="#tab1-8" data-toggle="tab">
                             <%: Resources.Mensagem.higiene %></a></li> 
                             <li id="li16"><a href="#tab1-9" data-toggle="tab">
-                            <%: Resources.Mensagem.psicoespiritual %></a></li> 
+                            <%: Resources.Mensagem.psicoespiritual %></a></li>
+                            <li id="li17"><a href="#tab1-10" data-toggle="tab">
+                            <%: Resources.Mensagem.consciencia %></a></li> 
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -314,6 +316,11 @@
                         <div class="tab-pane" id="tab1-9">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../PsicoEspiritual/Edit", Model.PsicoEspiritual);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-10">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Consciencia/Edit", Model.Consciencia);%>
                             </div>
                         </div>
                         <% } %>
