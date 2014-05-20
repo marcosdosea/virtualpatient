@@ -1566,4 +1566,76 @@
   <data name="SonsIncopativeis" xml:space="preserve">
     <value>Sons incompatíveis</value>
   </data>
+  <data name="Afonia" xml:space="preserve">
+    <value>Aphonia</value>
+  </data>
+  <data name="Agressico" xml:space="preserve">
+    <value>Aggressive</value>
+  </data>
+  <data name="Ansioso" xml:space="preserve">
+    <value>Anxious</value>
+  </data>
+  <data name="Calmo" xml:space="preserve">
+    <value>Calm</value>
+  </data>
+  <data name="celular" xml:space="preserve">
+    <value>cellular</value>
+  </data>
+  <data name="ComMedo" xml:space="preserve">
+    <value>Afraid</value>
+  </data>
+  <data name="ComunicaPorEscrita" xml:space="preserve">
+    <value>Communicate by writing</value>
+  </data>
+  <data name="ComunicaPorGesto" xml:space="preserve">
+    <value>Communicates by gesture</value>
+  </data>
+  <data name="deprimido" xml:space="preserve">
+    <value>Depressed</value>
+  </data>
+  <data name="Disartria" xml:space="preserve">
+    <value>Dysarthria</value>
+  </data>
+  <data name="discurso_incoerente" xml:space="preserve">
+    <value>Incoherent speech</value>
+  </data>
+  <data name="Disfasia" xml:space="preserve">
+    <value>Dysphonia</value>
+  </data>
+  <data name="Dislalia" xml:space="preserve">
+    <value>Dyslalia</value>
+  </data>
+  <data name="especificar" xml:space="preserve">
+    <value>Specify</value>
+  </data>
+  <data name="interage_com_equipe_saude" xml:space="preserve">
+    <value>Interacts with staff health</value>
+  </data>
+  <data name="leituras" xml:space="preserve">
+    <value>Readings</value>
+  </data>
+  <data name="participa_atividades" xml:space="preserve">
+    <value>Participates in activities</value>
+  </data>
+  <data name="radio" xml:space="preserve">
+    <value>Radio</value>
+  </data>
+  <data name="recebe_visitas" xml:space="preserve">
+    <value>Receives visits</value>
+  </data>
+  <data name="Retraido" xml:space="preserve">
+    <value>Retiring</value>
+  </data>
+  <data name="tipo_comportamento" xml:space="preserve">
+    <value>Type behavior</value>
+  </data>
+  <data name="transtornos_expressao_verbal" xml:space="preserve">
+    <value>Nuisance verbal expression</value>
+  </data>
+  <data name="tv" xml:space="preserve">
+    <value>Tv</value>
+  </data>
+  <data name="verbaliza" xml:space="preserve">
+    <value>Verbalize</value>
+  </data>
 </root>
