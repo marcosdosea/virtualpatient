@@ -197,6 +197,7 @@
     <Compile Include="Models\Consulta\CartaModel.cs" />
     <Compile Include="Models\Consulta\ClinicoInternacaoAlergiasModel.cs" />
     <Compile Include="Models\Consulta\ClinicoInternacaoModel.cs" />
+    <Compile Include="Models\Consulta\ComunicacaoModel.cs" />
     <Compile Include="Models\Consulta\ConscienciaModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
@@ -228,6 +229,7 @@
     <Compile Include="Negocio\Cadastro\GerenciadorSituacaoQueixa.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorSuspeitaPrm.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorClinicoInternacao.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorComunicacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsciencia.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
