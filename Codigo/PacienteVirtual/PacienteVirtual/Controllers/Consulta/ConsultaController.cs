@@ -266,6 +266,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.Higiene = SessionController.Higiene;
             consultaModel.PsicoEspiritual = SessionController.PsicoEspiritual;
             consultaModel.Consciencia = SessionController.Consciencia;
+            consultaModel.Comunicacao = SessionController.Comunicacao;
         }
 
         /// <summary>

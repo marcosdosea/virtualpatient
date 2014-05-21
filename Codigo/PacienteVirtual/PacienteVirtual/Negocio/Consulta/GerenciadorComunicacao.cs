@@ -5,7 +5,7 @@ using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
 
-namespace PacienteVirtual.Negocio.Consulta
+namespace PacienteVirtual.Negocio
 {
     public class GerenciadorComunicacao
     {
