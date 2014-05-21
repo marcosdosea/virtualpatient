@@ -158,6 +158,7 @@
     <Compile Include="Controllers\Cadastro\SuspeitaPrmController.cs" />
     <Compile Include="Controllers\Consulta\CartaController.cs" />
     <Compile Include="Controllers\Consulta\ClinicoInternacaoController.cs" />
+    <Compile Include="Controllers\Consulta\ComunicacaoController.cs" />
     <Compile Include="Controllers\Consulta\ConscienciaController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaParametroController.cs" />
     <Compile Include="Controllers\Consulta\ConsultasAlunosController.cs" />
@@ -614,6 +615,7 @@
     <Content Include="Views\ClinicoInternacao\Edit.ascx" />
     <Content Include="Views\ClinicoInternacao\ListaClinicoInternacaoAlergias.ascx" />
     <Content Include="Views\ClinicoInternacao\ListaPatologiasAtuais.ascx" />
+    <Content Include="Views\Comunicacao\Edit.ascx" />
     <Content Include="Views\Consciencia\Edit.ascx" />
     <Content Include="Views\CorrigirConsultas\ComentariosTutor.ascx" />
     <Content Include="Views\CorrigirConsultas\Index.aspx" />

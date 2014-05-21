@@ -949,6 +949,43 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static ComunicacaoModel Comunicacao
+        {
+            get
+            {
+                ComunicacaoModel comunicacao = (ComunicacaoModel)HttpContext.Current.Session["_Comunicacao"];
+                if (comunicacao == null)
+                {
+                    comunicacao = GerenciadorComunicacao.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (comunicacao == null)
+                    {
+                        comunicacao = new ComunicacaoModel();
+                        comunicacao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        comunicacao.Celular = false;
+                        comunicacao.Deprimido = false;
+                        comunicacao.DiscursoIncoerente = false;
+                        comunicacao.Especificar = Global.stringVazia;
+                        comunicacao.InterageComEquipeSaude = false;
+                        comunicacao.Leituras = false;
+                        comunicacao.ParticipaAtividades = false;
+                        comunicacao.Radio = false;
+                        comunicacao.RecebeVisitas = false;
+                        comunicacao.TipoComportamento = ListaTipoComportamento.Calmo;
+                        comunicacao.TranstornosExpressaoVerbal = ListaTranstornosExpressaoVerbal.NaoSeAplica;
+                        comunicacao.Tv = false;
+                        comunicacao.Verbaliza = false;
+                        GerenciadorComunicacao.GetInstance().Inserir(comunicacao);
+                    }
+                    HttpContext.Current.Session["_Comunicacao"] = comunicacao;
+                }
+                return comunicacao;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Comunicacao"] = value;
+            }
+        }
+
         public static IntegridadeTecidualModel IntegridadeTecidual
         {
             get
