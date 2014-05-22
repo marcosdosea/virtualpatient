@@ -165,10 +165,12 @@
     <Compile Include="Controllers\Consulta\CorrigirConsultasController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelController.cs" />
     <Compile Include="Controllers\Consulta\DemograficosAntropometicosController.cs" />
+    <Compile Include="Controllers\Consulta\EliminacaoController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
     <Compile Include="Controllers\Consulta\HigieneController.cs" />
     <Compile Include="Controllers\Consulta\IntegridadeTecidualController.cs" />
     <Compile Include="Controllers\Consulta\IntervencaoConsultaController.cs" />
+    <Compile Include="Controllers\Consulta\NutricaoController.cs" />
     <Compile Include="Controllers\Consulta\OxigenacaoController.cs" />
     <Compile Include="Controllers\Consulta\PsicoEspiritualController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
@@ -201,10 +203,12 @@
     <Compile Include="Models\Consulta\ComunicacaoModel.cs" />
     <Compile Include="Models\Consulta\ConscienciaModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
+    <Compile Include="Models\Consulta\EliminacaoModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
     <Compile Include="Models\Consulta\HigieneModel.cs" />
     <Compile Include="Models\Consulta\IntegridadeTecidualModel.cs" />
     <Compile Include="Models\Consulta\IntervencaoConsultaModel.cs" />
+    <Compile Include="Models\Consulta\NutricaoModel.cs" />
     <Compile Include="Models\Consulta\OxigenacaoModel.cs" />
     <Compile Include="Models\Consulta\PatologiasAtuaisModel.cs" />
     <Compile Include="Models\Consulta\PsicoEspiritualModel.cs" />
@@ -233,10 +237,12 @@
     <Compile Include="Negocio\Consulta\GerenciadorComunicacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsciencia.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorEliminacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorHigiene.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorIntegridadeTecidual.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorIntervencaoConsulta.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorNutricao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorOxigenacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorPsicoEspiritual.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
@@ -629,6 +635,7 @@
     <Content Include="Views\DadosComplementares\Edit.ascx" />
     <Content Include="Views\DiarioPessoal\Edit.aspx" />
     <Content Include="Views\DiarioPessoal\Index.ascx" />
+    <Content Include="Views\Eliminacao\Edit.ascx" />
     <Content Include="Views\Erros\Index.aspx" />
     <Content Include="Views\Especialidade\Create.aspx" />
     <Content Include="Views\Especialidade\Delete.aspx" />
@@ -651,6 +658,7 @@
     <Content Include="Views\Naturalidade\Details.aspx" />
     <Content Include="Views\Naturalidade\Edit.aspx" />
     <Content Include="Views\Naturalidade\Index.aspx" />
+    <Content Include="Views\Nutricao\Edit.ascx" />
     <Content Include="Views\OutrosAchados\Edit.ascx" />
     <Content Include="Views\Oxigenacao\Edit.ascx" />
     <Content Include="Views\Patologia\Create.aspx" />

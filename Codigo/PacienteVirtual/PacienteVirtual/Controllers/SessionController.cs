@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
+using System;
 
 namespace PacienteVirtual.Controllers
 {
@@ -1032,6 +1033,100 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_IntegridadeTecidual"] = value;
+            }
+        }
+
+        public static NutricaoModel Nutricao
+        {
+            get
+            {
+                NutricaoModel nutricao = (NutricaoModel)HttpContext.Current.Session["_Nutricao"];
+                if (nutricao == null)
+                {
+                    nutricao = GerenciadorNutricao.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (nutricao == null)
+                    {
+                        nutricao = new NutricaoModel();
+                        nutricao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        nutricao.Peso = 0.0;
+                            nutricao.Altura = 0.0;
+                            nutricao.EstadoNutricional = ListaEstadoNutricional.PesoNormal;
+                            nutricao.NutricaoOral = false;
+                            nutricao.Disfagia = false;
+                            nutricao.DificuldadeMastigar = false;
+                            nutricao.SangramentoGengival = false;
+                            nutricao.AusenciaDentes = false;
+                            nutricao.Nausea = false;
+                            nutricao.Emese = false;
+                            nutricao.Pirose = false;
+                            nutricao.IngestaHidrica = false;
+                            nutricao.IngestaHidricaValor = 0.0;
+                            nutricao.RestricaoHidrica = false;
+                            nutricao.RestricaoHidricaValor = 0.0;
+                            nutricao.SemRestricao = false;
+                            nutricao.RestricaoAlimentar = false;
+                            nutricao.RestricaoAlimentarTexto = "";
+                            nutricao.HabitosAlimentares = "";
+                            nutricao.DispositivosAlimentacao = ListaDispositivosAlimentacao.NaoSeAplica;
+                            nutricao.Instalada = DateTime.Today;
+                    }
+                    HttpContext.Current.Session["_Nutricao"] = nutricao;
+                }
+                return nutricao;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Nutricao"] = value;
+            }
+        }
+
+        public static EliminacaoModel Eliminacao
+        {
+            get
+            {
+                EliminacaoModel eliminacao = (EliminacaoModel)HttpContext.Current.Session["_Eliminacao"];
+                if (eliminacao == null)
+                {
+                    eliminacao = GerenciadorEliminacao.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (eliminacao == null)
+                    {
+                        eliminacao = new EliminacaoModel();
+                        eliminacao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        eliminacao.UltimaEvacuacao = DateTime.Today;
+                        eliminacao.EvacuacoesDia = Global.ValorInteiroNulo;
+                        eliminacao.EsforcoEvacuar = false;
+                        eliminacao.FezesPastosas = true;
+                        eliminacao.Melena = false;
+                        eliminacao.Diarreia = false;
+                        eliminacao.Constipacao = false;
+                        eliminacao.IncontinenciaFecal = false;
+                        eliminacao.Flatos = false;
+                        eliminacao.SangramentoRetal = false;
+                        eliminacao.PruridoAnal = false;
+                        eliminacao.EstomasCirurgicos = ListaEstomasCirurgicos.NaoSeAplica;
+                        eliminacao.FormasAbdomem = ListaFormasAbdomem.Plano;
+                        eliminacao.SonsIntestinais = ListaSonsIntestinais.Presentes;
+                        eliminacao.TipoSonsPercussao = ListaTipoSonsPercussao.SomMacico;
+                        eliminacao.LocalizarPercussaoAbdominal = Global.stringVazia;
+                        eliminacao.PalpacaoAbodminal = ListaPalpacaoAbodminal.Normotenso;
+                        eliminacao.ColoracaoUrinaria = ListaColoracaoUrinaria.LimpidaClara;
+                        eliminacao.Disuria = false;
+                        eliminacao.DebitoUrinario = ListaDebitoUrinario.NaoSeAplica;
+                        eliminacao.Tempo = Global.stringVazia;
+                        eliminacao.CondicaoContinenciaUrinaria = ListaCondicaoContinenciaUrinaria.IncontinenciaUrinaria;
+                        eliminacao.IrrigacaoVesical = Global.stringVazia;
+                        eliminacao.IrrigacaoVesicalDesde = DateTime.Today;
+                        eliminacao.SVD = false;
+                        eliminacao.SVDInstalada = DateTime.Today;
+                        eliminacao.Cistostomia = false;
+                    }
+                    HttpContext.Current.Session["_Eliminacao"] = eliminacao;
+                }
+                return eliminacao;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Eliminacao"] = value;
             }
         }
     }
