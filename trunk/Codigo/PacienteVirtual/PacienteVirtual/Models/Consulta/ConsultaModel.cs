@@ -42,6 +42,8 @@ namespace PacienteVirtual.Models
 
         public ClinicoInternacaoAlergiasModel ClinicoInternacaoAlergias { get; set; }
         public IEnumerable<AlergiaModel> ListaClinicoInternacaoAlergias { get; set; }
+
+        public NutricaoModel Nutricao { get; set; }
         //////////////////////////////////////
 
 

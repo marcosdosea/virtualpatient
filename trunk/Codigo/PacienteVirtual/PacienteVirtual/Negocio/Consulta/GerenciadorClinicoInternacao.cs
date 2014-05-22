@@ -31,80 +31,17 @@ namespace PacienteVirtual.Negocio
         /// <param name="modelState"></param>
         public void CorrigirRespostasClinicoInternacao(ClinicoInternacaoModel clinicoInternacao, ClinicoInternacaoModel clinicoInternacaoGabarito, ModelStateDictionary modelState)
         {
-            if (clinicoInternacaoGabarito.Clinica == null || clinicoInternacaoGabarito.Clinica.Equals(""))
-            {
-                if (clinicoInternacao.Clinica != null && !clinicoInternacao.Clinica.Equals(""))
-                {
-                    modelState.AddModelError("Clinica", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(clinicoInternacao.Clinica.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.Clinica.ToLower())))
-                {
-                    modelState.AddModelError("Clinica", "Gabarito: \"" + clinicoInternacaoGabarito.Clinica + "\"");
-                }
-            }
-            if (clinicoInternacaoGabarito.Leito == null || clinicoInternacaoGabarito.Leito.Equals(""))
-            {
-                if (clinicoInternacao.Leito != null && !clinicoInternacao.Leito.Equals(""))
-                {
-                    modelState.AddModelError("Leito", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(clinicoInternacao.Leito.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.Leito.ToLower())))
-                {
-                    modelState.AddModelError("Leito", "Gabarito: \"" + clinicoInternacaoGabarito.Leito + "\"");
-                }
-            }
+            Global.CorrecaoDeStrings("Clinica", clinicoInternacao.Clinica, clinicoInternacaoGabarito.Clinica, modelState);
+            Global.CorrecaoDeStrings("Leito", clinicoInternacao.Leito, clinicoInternacaoGabarito.Leito, modelState);
+            
             if (!clinicoInternacao.DataAdmissao.Equals(clinicoInternacaoGabarito.DataAdmissao))
             {
                 modelState.AddModelError("DataAdmissao", "Gabarito: \"" + clinicoInternacaoGabarito.DataAdmissao.ToShortDateString() + "\"");
             }
-            if (clinicoInternacaoGabarito.DiagnosticoMedico == null || clinicoInternacaoGabarito.DiagnosticoMedico.Equals(""))
-            {
-                if (clinicoInternacao.DiagnosticoMedico != null && !clinicoInternacao.DiagnosticoMedico.Equals(""))
-                {
-                    modelState.AddModelError("DiagnosticoMedico", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(clinicoInternacao.DiagnosticoMedico.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.DiagnosticoMedico.ToLower())))
-                {
-                    modelState.AddModelError("DiagnosticoMedico", "Gabarito: \"" + clinicoInternacaoGabarito.DiagnosticoMedico + "\"");
-                }
-            }
-            if (clinicoInternacaoGabarito.MotivoInternacao == null || clinicoInternacaoGabarito.MotivoInternacao.Equals(""))
-            {
-                if (clinicoInternacao.MotivoInternacao != null && !clinicoInternacao.MotivoInternacao.Equals(""))
-                {
-                    modelState.AddModelError("DiagnosticoMedico", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(clinicoInternacao.MotivoInternacao.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.MotivoInternacao.ToLower())))
-                {
-                    modelState.AddModelError("MotivoInternacao", "Gabarito: \"" + clinicoInternacaoGabarito.MotivoInternacao + "\"");
-                }
-            }
-            if (clinicoInternacaoGabarito.UsoOutrosDescricao == null || clinicoInternacaoGabarito.UsoOutrosDescricao.Equals(""))
-            {
-                if (clinicoInternacao.UsoOutrosDescricao != null && !clinicoInternacao.UsoOutrosDescricao.Equals(""))
-                {
-                    modelState.AddModelError("UsoOutrosDescricao", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(clinicoInternacao.UsoOutrosDescricao.ToLower()).Equals(Global.RemoverAcentuacao(clinicoInternacaoGabarito.UsoOutrosDescricao.ToLower())))
-                {
-                    modelState.AddModelError("UsoOutrosDescricao", "Gabarito: \"" + clinicoInternacaoGabarito.UsoOutrosDescricao + "\"");
-                }
-            }
+
+            Global.CorrecaoDeStrings("DiagnosticoMedico", clinicoInternacao.DiagnosticoMedico, clinicoInternacaoGabarito.DiagnosticoMedico, modelState);
+            Global.CorrecaoDeStrings("MotivoInternacao", clinicoInternacao.MotivoInternacao, clinicoInternacaoGabarito.MotivoInternacao, modelState);
+
             if (!clinicoInternacao.UsoMarcaPasso.Equals(clinicoInternacaoGabarito.UsoMarcaPasso))
             {
                 modelState.AddModelError("UsoMarcaPasso", "Gabarito: \"" + (clinicoInternacaoGabarito.UsoMarcaPasso == true ? "Sim" : "Não") + "\"");
@@ -117,6 +54,9 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("UsoOutros", "Gabarito: \"" + (clinicoInternacaoGabarito.UsoOutros == true ? "Sim" : "Não") + "\"");
             }
+
+            Global.CorrecaoDeStrings("UsoOutrosDescricao", clinicoInternacao.UsoOutrosDescricao, clinicoInternacaoGabarito.UsoOutrosDescricao, modelState);
+            
         }
 
         /// <summary>

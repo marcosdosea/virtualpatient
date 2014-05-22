@@ -72,7 +72,7 @@
                 <%: Html.LabelFor(model => model.DataNascimento) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.DataNascimento, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.DataNascimento)), type = "text", id = "calendario" , style = "width:176px;"}) %>
+                <%: Html.TextBoxFor(model => model.DataNascimento, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.DataNascimento)), type = "text", @class = "calendario" , style = "width:176px;"}) %>
                 <%: Html.ValidationMessageFor(model => model.DataNascimento, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>

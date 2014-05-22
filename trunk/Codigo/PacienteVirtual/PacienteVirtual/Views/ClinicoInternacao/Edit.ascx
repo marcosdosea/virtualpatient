@@ -8,7 +8,7 @@
         <%: Resources.Mensagem.clinico_internacao %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span12">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Clinica) %>
             </div>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span10">
+        <div class="span12">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Leito)%>
             </div>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span12">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.DiagnosticoMedico)%>
             </div>
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span10">
+        <div class="span12">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.MotivoInternacao)%>
             </div>
@@ -57,48 +57,37 @@
                 <%: Html.LabelFor(model => model.DataAdmissao) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.DataAdmissao, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.DataAdmissao)), type = "text", id = "calendario" , style = "width:176px;"}) %>
+                <%: Html.TextBoxFor(model => model.DataAdmissao, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.DataAdmissao)), type = "text", @class = "calendario" , style = "width:176px;"}) %>
                 <%: Html.ValidationMessageFor(model => model.DataAdmissao, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
+    <br />
     <div class="row-fluid">
-        <div class="span3">
+        <div class="span4">
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.UsoMarcaPasso) %>
-            </div>
-        </div>
-        <div class="span1">
-            <div class="editor-field">
                 <%: Html.EditorFor(model => model.UsoMarcaPasso) %>
+                <%: Resources.Mensagem.uso_marca_passo %>
                 <%: Html.ValidationMessageFor(model => model.UsoMarcaPasso, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
-        <div class="span3">
+        <div class="span4">
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.UsoNaoSeAplica) %>
-            </div>
-        </div>
-        <div class="span1">
-            <div class="editor-field">
                 <%: Html.EditorFor(model => model.UsoNaoSeAplica) %>
+                <%: Resources.Mensagem.uso_nao_aplica %>
                 <%: Html.ValidationMessageFor(model => model.UsoNaoSeAplica, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
-        <div class="span3">
+        <div class="span4">
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.UsoOutros) %>
-            </div>
-        </div>
-        <div class="span1">
-            <div class="editor-field">
                 <%: Html.EditorFor(model => model.UsoOutros) %>
+                <%: Resources.Mensagem.uso_outros %>
                 <%: Html.ValidationMessageFor(model => model.UsoOutros, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span6">
+        <div class="span12">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.UsoOutrosDescricao) %>
             </div>

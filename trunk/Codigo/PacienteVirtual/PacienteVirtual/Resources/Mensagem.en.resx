@@ -1563,6 +1563,249 @@
   <data name="SonsIncopativeis" xml:space="preserve">
     <value>Sounds inconsistent</value>
   </data>
+  <data name="AumentoPeso" xml:space="preserve">
+    <value>Win Weight</value>
+  </data>
+  <data name="ausencia_dentes" xml:space="preserve">
+    <value>Absence of Teeth</value>
+  </data>
+  <data name="Caqueixa" xml:space="preserve">
+    <value>Cachexy</value>
+  </data>
+  <data name="dificuldade_mastigar" xml:space="preserve">
+    <value>Difficulty Chewing</value>
+  </data>
+  <data name="disfagia" xml:space="preserve">
+    <value>Dysphagia</value>
+  </data>
+  <data name="dispositivos_armazenacao" xml:space="preserve">
+    <value>Devices for Food</value>
+  </data>
+  <data name="emese" xml:space="preserve">
+    <value>Emese</value>
+  </data>
+  <data name="estado_nutricional" xml:space="preserve">
+    <value>Nutritional Status</value>
+  </data>
+  <data name="Gastrostomia" xml:space="preserve">
+    <value>Gastrostomy</value>
+  </data>
+  <data name="habitos_alimentares" xml:space="preserve">
+    <value>Eating Habits</value>
+  </data>
+  <data name="ingesta_hidrica" xml:space="preserve">
+    <value>Habitual intake Hydro</value>
+  </data>
+  <data name="instalada" xml:space="preserve">
+    <value>Installed in</value>
+  </data>
+  <data name="Jejunostomia" xml:space="preserve">
+    <value>Jejunostomy</value>
+  </data>
+  <data name="nausea" xml:space="preserve">
+    <value>Nausea</value>
+  </data>
+  <data name="nutricao_oral" xml:space="preserve">
+    <value>Oral Nutritional</value>
+  </data>
+  <data name="PerdaPeso" xml:space="preserve">
+    <value>Lose of Weight</value>
+  </data>
+  <data name="PesoNormal" xml:space="preserve">
+    <value>Normal Weight</value>
+  </data>
+  <data name="pirose" xml:space="preserve">
+    <value>Pirose</value>
+  </data>
+  <data name="restricao_hidrica" xml:space="preserve">
+    <value>Water Restriction of</value>
+  </data>
+  <data name="sangramento_gengival" xml:space="preserve">
+    <value>Gingival Bleeding</value>
+  </data>
+  <data name="sem_restricao" xml:space="preserve">
+    <value>No Water Restriction</value>
+  </data>
+  <data name="SNE" xml:space="preserve">
+    <value>SNE</value>
+  </data>
+  <data name="SNG" xml:space="preserve">
+    <value>SNG</value>
+  </data>
+  <data name="Sobrepeso" xml:space="preserve">
+    <value>Overweight</value>
+  </data>
+  <data name="Anuria" xml:space="preserve">
+    <value>Anuria</value>
+  </data>
+  <data name="Ausentes" xml:space="preserve">
+    <value>Absent</value>
+  </data>
+  <data name="cistostomia" xml:space="preserve">
+    <value>Cystostomy</value>
+  </data>
+  <data name="coloracao_urinaria" xml:space="preserve">
+    <value>Coloring Urinary</value>
+  </data>
+  <data name="Colostomia" xml:space="preserve">
+    <value>Colostomy</value>
+  </data>
+  <data name="Colurica" xml:space="preserve">
+    <value>Colurica</value>
+  </data>
+  <data name="Concentrada" xml:space="preserve">
+    <value>Concentrated</value>
+  </data>
+  <data name="condicao_continencia_urinaria" xml:space="preserve">
+    <value>Condition Urinary Continence</value>
+  </data>
+  <data name="constipacao" xml:space="preserve">
+    <value>Constipation</value>
+  </data>
+  <data name="debito_urinario" xml:space="preserve">
+    <value>Urinary Output</value>
+  </data>
+  <data name="diarreia" xml:space="preserve">
+    <value>Diarrhea</value>
+  </data>
+  <data name="Diminuidos" xml:space="preserve">
+    <value>Decreased</value>
+  </data>
+  <data name="disuria" xml:space="preserve">
+    <value>Disuria</value>
+  </data>
+  <data name="esforco_evacuar" xml:space="preserve">
+    <value>Effort to Evacuate</value>
+  </data>
+  <data name="estomas_cirurgicos" xml:space="preserve">
+    <value>Surgical Stomas</value>
+  </data>
+  <data name="evacuacoes_dia" xml:space="preserve">
+    <value>Numbers evacuations/day</value>
+  </data>
+  <data name="fezes_pastosas" xml:space="preserve">
+    <value>Pasty Stools</value>
+  </data>
+  <data name="Flacido" xml:space="preserve">
+    <value>Flaccid</value>
+  </data>
+  <data name="flatos" xml:space="preserve">
+    <value>Flatus</value>
+  </data>
+  <data name="forma_abdomen" xml:space="preserve">
+    <value>Formas do Abdomen</value>
+  </data>
+  <data name="Globoso" xml:space="preserve">
+    <value>Globose</value>
+  </data>
+  <data name="Hematurica" xml:space="preserve">
+    <value>Hematurica</value>
+  </data>
+  <data name="Hiperativos" xml:space="preserve">
+    <value>Hyperactive</value>
+  </data>
+  <data name="Ileostomia" xml:space="preserve">
+    <value>Ileostomia</value>
+  </data>
+  <data name="IncontinenciaUrinaria" xml:space="preserve">
+    <value>Urinary Incontinence</value>
+  </data>
+  <data name="incontinencia_fecal" xml:space="preserve">
+    <value>Fecal Incontinence</value>
+  </data>
+  <data name="IrrigacaoVesical" xml:space="preserve">
+    <value>Bladder Irrigation</value>
+  </data>
+  <data name="irrigacao_vesical" xml:space="preserve">
+    <value>Bladder Irrigation</value>
+  </data>
+  <data name="irrigacao_vesical_desde" xml:space="preserve">
+    <value>Since Bladder Irrigation</value>
+  </data>
+  <data name="LimpidaClara" xml:space="preserve">
+    <value>Clear and Clara</value>
+  </data>
+  <data name="localizar" xml:space="preserve">
+    <value>To Find</value>
+  </data>
+  <data name="melena" xml:space="preserve">
+    <value>Melena</value>
+  </data>
+  <data name="Normotenso" xml:space="preserve">
+    <value>Normotensive</value>
+  </data>
+  <data name="Oliguria" xml:space="preserve">
+    <value>Oliguria</value>
+  </data>
+  <data name="palpacao_abodminal" xml:space="preserve">
+    <value>Abdominal Palpation</value>
+  </data>
+  <data name="Piurica" xml:space="preserve">
+    <value>Piurica</value>
+  </data>
+  <data name="Plano" xml:space="preserve">
+    <value>Plan</value>
+  </data>
+  <data name="Polaciuria" xml:space="preserve">
+    <value>Pollakiuria</value>
+  </data>
+  <data name="Poliuria" xml:space="preserve">
+    <value>Poliuria</value>
+  </data>
+  <data name="PresencaSendimentos" xml:space="preserve">
+    <value>Presence of Sediments</value>
+  </data>
+  <data name="Presentes" xml:space="preserve">
+    <value>Present</value>
+  </data>
+  <data name="prurido_anal" xml:space="preserve">
+    <value>Itching Anal</value>
+  </data>
+  <data name="RetencaoUrinaria" xml:space="preserve">
+    <value>Urinary Retention</value>
+  </data>
+  <data name="sangramento_retal" xml:space="preserve">
+    <value>Rectal Bleeding</value>
+  </data>
+  <data name="SinalBlumberg" xml:space="preserve">
+    <value>Blumberg's Sign (+)</value>
+  </data>
+  <data name="SinalMurphy" xml:space="preserve">
+    <value>Murphy's Sign (+)</value>
+  </data>
+  <data name="SomMacico" xml:space="preserve">
+    <value>Sound Massif</value>
+  </data>
+  <data name="SomTimpanico" xml:space="preserve">
+    <value>Tympanic Sound</value>
+  </data>
+  <data name="sons_intestinais" xml:space="preserve">
+    <value>Bowel Sounds</value>
+  </data>
+  <data name="svd" xml:space="preserve">
+    <value>SVD</value>
+  </data>
+  <data name="svd_instalada" xml:space="preserve">
+    <value>SVD Installed</value>
+  </data>
+  <data name="tempo" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Tenso" xml:space="preserve">
+    <value>Tense</value>
+  </data>
+  <data name="tipos_sons_percussao" xml:space="preserve">
+    <value>Types of Percussion Sounds</value>
+  </data>
+  <data name="ultima_evacuacao" xml:space="preserve">
+    <value>Last Evacuation</value>
+  </data>
+  <data name="nutricao" xml:space="preserve">
+    <value>Nutrition</value>
+  </data>
+  <data name="restricao_alimentar" xml:space="preserve">
+    <value>Food Restriction</value>
+  </data>
   <data name="Afonia" xml:space="preserve">
     <value>Afonia</value>
   </data>

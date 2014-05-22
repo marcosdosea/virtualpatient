@@ -182,18 +182,22 @@
                             <%: Resources.Mensagem.dados_complementares %></a></li>
                             <li id="li5"><a href="#tab1-5" data-toggle="tab">
                             <%: Resources.Mensagem.clinico_internacao %></a></li>   
-                            <li id="li13"><a href="#tab1-6" data-toggle="tab">
+                            <li id="li6"><a href="#tab1-6" data-toggle="tab">
                             <%: Resources.Mensagem.termorregulacao %></a></li> 
-                            <li id="li14"><a href="#tab1-7" data-toggle="tab">
+                            <li id="li7"><a href="#tab1-7" data-toggle="tab">
                             <%: Resources.Mensagem.integridade_tecidual %></a></li>
-                            <li id="li15"><a href="#tab1-8" data-toggle="tab">
+                            <li id="li8"><a href="#tab1-8" data-toggle="tab">
                             <%: Resources.Mensagem.higiene %></a></li> 
-                            <li id="li16"><a href="#tab1-9" data-toggle="tab">
+                            <li id="li9"><a href="#tab1-9" data-toggle="tab">
                             <%: Resources.Mensagem.psicoespiritual %></a></li>
                             <li id="li17"><a href="#tab1-10" data-toggle="tab">
                             <%: Resources.Mensagem.consciencia %></a></li>
                             <li id="li18"><a href="#tab1-11" data-toggle="tab">
                             <%: Resources.Mensagem.comunicacao %></a></li>  
+                            <li id="li10"><a href="#tab1-10" data-toggle="tab">
+                            <%: Resources.Mensagem.consciencia %></a>
+                            <li id="li11"><a href="#tab1-11" data-toggle="tab">
+                            <%: Resources.Mensagem.nutricao %></a></li>
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -328,6 +332,11 @@
                         <div class="tab-pane" id="tab1-11">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../Comunicacao/Edit", Model.Comunicacao);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-12">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Nutricao/Edit", Model.Nutricao);%>
                             </div>
                         </div>
                         <% } %>
@@ -474,7 +483,7 @@
     <script type="text/javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     <script type="text/javascript">
         $(function () {
-            $("#calendario").datepicker({
+            $(".calendario").datepicker({
                 dateFormat: 'dd/mm/yy',
                 dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
                 dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
