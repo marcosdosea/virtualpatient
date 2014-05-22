@@ -1878,4 +1878,100 @@
   <data name="verbaliza" xml:space="preserve">
     <value>Verbalize</value>
   </data>
+  <data name="Agitado" xml:space="preserve">
+    <value>Agitated</value>
+  </data>
+  <data name="Agressivo" xml:space="preserve">
+    <value>Aggressive</value>
+  </data>
+  <data name="auditiva" xml:space="preserve">
+    <value>Hearing</value>
+  </data>
+  <data name="Comatoso" xml:space="preserve">
+    <value>Comatose</value>
+  </data>
+  <data name="Confuso" xml:space="preserve">
+    <value>Confused</value>
+  </data>
+  <data name="defensividade" xml:space="preserve">
+    <value>Defensiveness</value>
+  </data>
+  <data name="descricao_dor" xml:space="preserve">
+    <value>Description of pain</value>
+  </data>
+  <data name="descricao_tipo_distorcao" xml:space="preserve">
+    <value>Description of the type of distortion</value>
+  </data>
+  <data name="dor_intensidade_valor" xml:space="preserve">
+    <value>Amount of pain intensity</value>
+  </data>
+  <data name="duracao_dor" xml:space="preserve">
+    <value>Duration of pain</value>
+  </data>
+  <data name="EpisodioDelirio" xml:space="preserve">
+    <value>Episode of delirium</value>
+  </data>
+  <data name="estado_mental" xml:space="preserve">
+    <value>Mental state</value>
+  </data>
+  <data name="expressao_facial" xml:space="preserve">
+    <value>Facial expression</value>
+  </data>
+  <data name="fatores_agravantes_dor" xml:space="preserve">
+    <value>Aggravating factors of pain</value>
+  </data>
+  <data name="fatores_aliviantes_dor" xml:space="preserve">
+    <value>Aliviantes pain factors</value>
+  </data>
+  <data name="gustativa" xml:space="preserve">
+    <value>Gustatory</value>
+  </data>
+  <data name="inquietacao" xml:space="preserve">
+    <value>Unrest</value>
+  </data>
+  <data name="localizacao_dor" xml:space="preserve">
+    <value>Location of pain</value>
+  </data>
+  <data name="olfativa" xml:space="preserve">
+    <value>Olfactory</value>
+  </data>
+  <data name="PA" xml:space="preserve">
+    <value>PA</value>
+  </data>
+  <data name="palpebral" xml:space="preserve">
+    <value>Eyelid</value>
+  </data>
+  <data name="plantar" xml:space="preserve">
+    <value>Plant</value>
+  </data>
+  <data name="pulso" xml:space="preserve">
+    <value>Pulse</value>
+  </data>
+  <data name="pupilar" xml:space="preserve">
+    <value>Pupilary</value>
+  </data>
+  <data name="respiracao" xml:space="preserve">
+    <value>Breathing</value>
+  </data>
+  <data name="sem_dor" xml:space="preserve">
+    <value>Painless</value>
+  </data>
+  <data name="sensorial" xml:space="preserve">
+    <value>Sensory</value>
+  </data>
+  <data name="sinal_babinski" xml:space="preserve">
+    <value>Sign babinski</value>
+  </data>
+  <data name="Sonolento" xml:space="preserve">
+    <value>Sleepy</value>
+  </data>
+  <data name="tatil" xml:space="preserve">
+    <value>Tactile</value>
+  </data>
+  <data name="Torporoso" xml:space="preserve">
+    <value>Torporoso</value>
+  </data>
+  <data name="visual" xml:space="preserve">
+    <value>Visual</value>
+  </data>
 </root>
