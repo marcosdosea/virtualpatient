@@ -84,6 +84,7 @@ namespace PacienteVirtual.Models
             SessionController.IntegridadeTecidual = null;
             SessionController.Oxigenacao = null;
             SessionController.Termorregulacao = null;
+            SessionController.Nutricao = null;
         }
 
         private static void ZeraSessaoConsultaFarmacia()
