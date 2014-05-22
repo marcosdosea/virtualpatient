@@ -22,7 +22,6 @@ namespace PacienteVirtual.Controllers.Consulta
                 gNutricao.Atualizar(nutricao);
                 SessionController.Nutricao = nutricao;
             }
-            //SessionController.Abas1 = Global.abaDemoAntrop;
             return RedirectToAction("Edit", "Consulta");
         }
     }

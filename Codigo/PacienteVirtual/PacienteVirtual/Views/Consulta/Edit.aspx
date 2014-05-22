@@ -190,13 +190,11 @@
                             <%: Resources.Mensagem.higiene %></a></li> 
                             <li id="li9"><a href="#tab1-9" data-toggle="tab">
                             <%: Resources.Mensagem.psicoespiritual %></a></li>
-                            <li id="li17"><a href="#tab1-10" data-toggle="tab">
-                            <%: Resources.Mensagem.consciencia %></a></li>
-                            <li id="li18"><a href="#tab1-11" data-toggle="tab">
-                            <%: Resources.Mensagem.comunicacao %></a></li>  
                             <li id="li10"><a href="#tab1-10" data-toggle="tab">
-                            <%: Resources.Mensagem.consciencia %></a>
+                            <%: Resources.Mensagem.consciencia %></a></li>
                             <li id="li11"><a href="#tab1-11" data-toggle="tab">
+                            <%: Resources.Mensagem.comunicacao %></a></li>  
+                            <li id="li12"><a href="#tab1-12" data-toggle="tab">
                             <%: Resources.Mensagem.nutricao %></a></li>
                           <% } %>
                     </ul>

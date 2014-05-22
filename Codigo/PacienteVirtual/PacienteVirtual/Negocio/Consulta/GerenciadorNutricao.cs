@@ -36,18 +36,18 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="Nutricao"></param>
         /// <returns></returns>
-        public long Inserir(NutricaoModel NutricaoModel)
+        public long Inserir(NutricaoModel nutricao)
         {
             var repNutricao = new RepositorioGenerico<tb_nutricao>();
-            tb_nutricao _tb_nutricao = new tb_nutricao();
+            tb_nutricao _tb_nutricaoE = new tb_nutricao();
             try
             {
-                Atribuir(NutricaoModel, _tb_nutricao);
+                Atribuir(nutricao, _tb_nutricaoE);
 
-                repNutricao.Inserir(_tb_nutricao);
+                repNutricao.Inserir(_tb_nutricaoE);
                 repNutricao.SaveChanges();
 
-                return _tb_nutricao.IdConsultaVariavel;
+                return _tb_nutricaoE.IdConsultaVariavel;
             }
             catch (Exception e)
             {
@@ -59,13 +59,13 @@ namespace PacienteVirtual.Negocio
         /// Atualiza dados do Nutricao
         /// </summary>
         /// <param name="Nutricao"></param>
-        public void Atualizar(NutricaoModel NutricaoModel)
+        public void Atualizar(NutricaoModel nutricao)
         {
             try
             {
                 var repNutricao = new RepositorioGenerico<tb_nutricao>();
-                tb_nutricao _tb_nutricao = repNutricao.ObterEntidade(dP => dP.IdConsultaVariavel == NutricaoModel.IdConsultaVariavel);
-                Atribuir(NutricaoModel, _tb_nutricao);
+                tb_nutricao _nutricaoE = repNutricao.ObterEntidade(n => n.IdConsultaVariavel == nutricao.IdConsultaVariavel);
+                Atribuir(nutricao, _nutricaoE);
 
                 repNutricao.SaveChanges();
             }
@@ -84,7 +84,7 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repNutricao = new RepositorioGenerico<tb_nutricao>();
-                repNutricao.Remover(dP => dP.IdConsultaVariavel == idConsultaVariavel);
+                repNutricao.Remover(n => n.IdConsultaVariavel == idConsultaVariavel);
                 repNutricao.SaveChanges();
             }
             catch (Exception e)
