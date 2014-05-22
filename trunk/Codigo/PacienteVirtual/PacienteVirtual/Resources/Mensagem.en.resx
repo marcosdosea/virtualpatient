@@ -1041,9 +1041,6 @@
   <data name="nao_se_aplica" xml:space="preserve">
     <value>Not Applicable</value>
   </data>
-  <data name="circunferencia_abdominal" xml:space="preserve">
-    <value>Circunferência Abdominal</value>
-  </data>
   <data name="corrigir_consultas" xml:space="preserve">
     <value>Fix Queries</value>
   </data>
@@ -1146,9 +1143,6 @@
   <data name="desvioDeSepto" xml:space="preserve">
     <value>Deviated Septum</value>
   </data>
-  <data name="dispineia" xml:space="preserve">
-    <value>Dispineia</value>
-  </data>
   <data name="epistaxe" xml:space="preserve">
     <value>Epistaxis</value>
   </data>
@@ -1196,9 +1190,6 @@
   </data>
   <data name="definir_adm_farmacia" xml:space="preserve">
     <value>Set administrator of Pharmacy course.</value>
-  </data>
-  <data name="irregular" xml:space="preserve">
-    <value>Irregular</value>
   </data>
   <data name="Regular" xml:space="preserve">
     <value>Regular</value>
@@ -1304,9 +1295,6 @@
   </data>
   <data name="termorregulacao" xml:space="preserve">
     <value>Thermoregulation</value>
-  </data>
-  <data name="alopecia" xml:space="preserve">
-    <value>Alopecia</value>
   </data>
   <data name="banho_leito" xml:space="preserve">
     <value>Bed bath</value>
@@ -1635,9 +1623,6 @@
   <data name="Sobrepeso" xml:space="preserve">
     <value>Overweight</value>
   </data>
-  <data name="Anuria" xml:space="preserve">
-    <value>Anuria</value>
-  </data>
   <data name="Ausentes" xml:space="preserve">
     <value>Absent</value>
   </data>
@@ -1671,9 +1656,6 @@
   <data name="Diminuidos" xml:space="preserve">
     <value>Decreased</value>
   </data>
-  <data name="disuria" xml:space="preserve">
-    <value>Disuria</value>
-  </data>
   <data name="esforco_evacuar" xml:space="preserve">
     <value>Effort to Evacuate</value>
   </data>
@@ -1691,9 +1673,6 @@
   </data>
   <data name="flatos" xml:space="preserve">
     <value>Flatus</value>
-  </data>
-  <data name="forma_abdomen" xml:space="preserve">
-    <value>Formas do Abdomen</value>
   </data>
   <data name="Globoso" xml:space="preserve">
     <value>Globose</value>
@@ -1806,76 +1785,97 @@
   <data name="restricao_alimentar" xml:space="preserve">
     <value>Food Restriction</value>
   </data>
-  <data name="Afonia" xml:space="preserve">
-    <value>Afonia</value>
-  </data>
-  <data name="Agressico" xml:space="preserve">
-    <value>Agressivo</value>
-  </data>
-  <data name="Ansioso" xml:space="preserve">
-    <value>Ansioso</value>
-  </data>
-  <data name="Calmo" xml:space="preserve">
-    <value>Calmo</value>
-  </data>
-  <data name="celular" xml:space="preserve">
-    <value>Celular</value>
-  </data>
-  <data name="ComMedo" xml:space="preserve">
-    <value>Com medo</value>
-  </data>
-  <data name="ComunicaPorEscrita" xml:space="preserve">
-    <value>Comunica por escrita</value>
-  </data>
-  <data name="ComunicaPorGesto" xml:space="preserve">
-    <value>Comunica por gesto</value>
-  </data>
-  <data name="deprimido" xml:space="preserve">
-    <value>Deprimido</value>
-  </data>
   <data name="Disartria" xml:space="preserve">
     <value>Disartria</value>
-  </data>
-  <data name="discurso_incoerente" xml:space="preserve">
-    <value>Discurso incoerente</value>
-  </data>
-  <data name="Disfasia" xml:space="preserve">
-    <value>Disfasia</value>
-  </data>
-  <data name="Dislalia" xml:space="preserve">
-    <value>Dislalia</value>
-  </data>
-  <data name="especificar" xml:space="preserve">
-    <value>Especificar</value>
-  </data>
-  <data name="interage_com_equipe_saude" xml:space="preserve">
-    <value>Interage com equipe saúde</value>
-  </data>
-  <data name="leituras" xml:space="preserve">
-    <value>Leituras</value>
-  </data>
-  <data name="participa_atividades" xml:space="preserve">
-    <value>Participa atividades</value>
   </data>
   <data name="radio" xml:space="preserve">
     <value>Rádio</value>
   </data>
-  <data name="recebe_visitas" xml:space="preserve">
-    <value>Recebe visitas</value>
-  </data>
-  <data name="Retraido" xml:space="preserve">
-    <value>Retraído</value>
-  </data>
-  <data name="tipo_comportamento" xml:space="preserve">
-    <value>Tipo comportamento</value>
-  </data>
-  <data name="transtornos_expressao_verbal" xml:space="preserve">
-    <value>Transtornos expressão verbal</value>
-  </data>
   <data name="tv" xml:space="preserve">
     <value>Tv</value>
   </data>
+  <data name="Afonia" xml:space="preserve">
+    <value>Aphonia</value>
+  </data>
+  <data name="Agressico" xml:space="preserve">
+    <value>Aggressive</value>
+  </data>
+  <data name="alopecia" xml:space="preserve">
+    <value>Alopecia</value>
+  </data>
+  <data name="Ansioso" xml:space="preserve">
+    <value>Anxious</value>
+  </data>
+  <data name="Anuria" xml:space="preserve">
+    <value>Anuria</value>
+  </data>
+  <data name="Calmo" xml:space="preserve">
+    <value>Calm</value>
+  </data>
+  <data name="celular" xml:space="preserve">
+    <value>cellular</value>
+  </data>
+  <data name="circunferencia_abdominal" xml:space="preserve">
+    <value>Abdominal circumference</value>
+  </data>
+  <data name="ComMedo" xml:space="preserve">
+    <value>Afraid</value>
+  </data>
+  <data name="ComunicaPorEscrita" xml:space="preserve">
+    <value>Communicate by writing</value>
+  </data>
+  <data name="ComunicaPorGesto" xml:space="preserve">
+    <value>Communicates by gesture</value>
+  </data>
+  <data name="deprimido" xml:space="preserve">
+    <value>Depressed</value>
+  </data>
+  <data name="discurso_incoerente" xml:space="preserve">
+    <value>Incoherent speech</value>
+  </data>
+  <data name="Disfasia" xml:space="preserve">
+    <value>Dysphonia</value>
+  </data>
+  <data name="Dislalia" xml:space="preserve">
+    <value>Dyslalia</value>
+  </data>
+  <data name="dispineia" xml:space="preserve">
+    <value>Dyspnea</value>
+  </data>
+  <data name="disuria" xml:space="preserve">
+    <value>Dysuria</value>
+  </data>
+  <data name="especificar" xml:space="preserve">
+    <value>Specify</value>
+  </data>
+  <data name="forma_abdomen" xml:space="preserve">
+    <value>Abdomen form</value>
+  </data>
+  <data name="interage_com_equipe_saude" xml:space="preserve">
+    <value>Interacts with staff health</value>
+  </data>
+  <data name="irregular" xml:space="preserve">
+    <value>Irregular</value>
+  </data>
+  <data name="leituras" xml:space="preserve">
+    <value>Readings</value>
+  </data>
+  <data name="participa_atividades" xml:space="preserve">
+    <value>Participates in activities</value>
+  </data>
+  <data name="recebe_visitas" xml:space="preserve">
+    <value>Receives visits</value>
+  </data>
+  <data name="Retraido" xml:space="preserve">
+    <value>Retiring</value>
+  </data>
+  <data name="tipo_comportamento" xml:space="preserve">
+    <value>Type behavior</value>
+  </data>
+  <data name="transtornos_expressao_verbal" xml:space="preserve">
+    <value>Nuisance verbal expression</value>
+  </data>
   <data name="verbaliza" xml:space="preserve">
-    <value>Verbaliza</value>
+    <value>Verbalize</value>
   </data>
 </root>
