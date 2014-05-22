@@ -987,6 +987,54 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static SensorialModel Sensorial
+        {
+            get
+            {
+                SensorialModel sensorial = (SensorialModel)HttpContext.Current.Session["_Sensorial"];
+                if (sensorial == null)
+                {
+                    sensorial = GerenciadorSensorial.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (sensorial == null)
+                    {
+                        sensorial = new SensorialModel();
+                        sensorial.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        sensorial.Auditiva = false;
+                        sensorial.Defensividade = false;
+                        sensorial.DescricaoDor = Global.stringVazia;
+                        sensorial.DescricaoTipoDistorcao = Global.stringVazia;
+                        sensorial.DorIntensidadeValor = Global.ValorInteiroNulo;
+                        sensorial.DuracaoDor = Global.stringVazia;
+                        sensorial.EstadoMental = ListaEstadoMental.NaoSeAplica;
+                        sensorial.ExpressaoFacial = false;
+                        sensorial.FatoresAgravantesDor = Global.stringVazia;
+                        sensorial.FatoresAliviantesDor = Global.stringVazia;
+                        sensorial.Gustativa = false;
+                        sensorial.Inquietacao = false;
+                        sensorial.LocalizacaoDor = Global.stringVazia;
+                        sensorial.Olfativa = false;
+                        sensorial.PA = false;
+                        sensorial.Palpebral = false;
+                        sensorial.Plantar = false;
+                        sensorial.Pulso = false;
+                        sensorial.Pupilar = false;
+                        sensorial.Respiracao = false;
+                        sensorial.SemDor = false;
+                        sensorial.SinalBabinski = false;
+                        sensorial.Tatil = false;
+                        sensorial.Visual = false;
+                        GerenciadorSensorial.GetInstance().Inserir(sensorial);
+                    }
+                    HttpContext.Current.Session["_Sensorial"] = sensorial;
+                }
+                return sensorial;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Sensorial"] = value;
+            }
+        }
+
         public static IntegridadeTecidualModel IntegridadeTecidual
         {
             get
