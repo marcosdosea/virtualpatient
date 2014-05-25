@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acuidades prejudicadas.
+        /// </summary>
+        public static string acuidades_prejudicadas {
+            get {
+                return ResourceManager.GetString("acuidades_prejudicadas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adicionar.
         /// </summary>
         public static string adicionar {
@@ -4543,6 +4552,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reflexos presentes.
+        /// </summary>
+        public static string reflexos_presentes {
+            get {
+                return ResourceManager.GetString("reflexos_presentes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registre - se.
         /// </summary>
         public static string registre_se {
@@ -4962,6 +4980,15 @@ namespace Resources {
         public static string Simetrico {
             get {
                 return ResourceManager.GetString("Simetrico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sinais físicos.
+        /// </summary>
+        public static string sinais_fisicos {
+            get {
+                return ResourceManager.GetString("sinais_fisicos", resourceCulture);
             }
         }
         
