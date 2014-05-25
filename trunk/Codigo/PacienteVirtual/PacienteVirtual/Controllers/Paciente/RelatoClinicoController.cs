@@ -147,6 +147,18 @@ namespace PacienteVirtual.Controllers
         /// <param name="idConsultaVariavel"></param>
         private static void DadosConsultaAnteriorEnfermagem(long idConsultaVariavel)
         {
+            ComunicacaoModel comunicacao = SessionController.Comunicacao;
+            comunicacao.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorComunicacao.GetInstance().Inserir(comunicacao);
+            SensorialModel sensorial = SessionController.Sensorial;
+            sensorial.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorSensorial.GetInstance().Inserir(sensorial);
+            OutrasNecessidadesModel outrasNecessidades = SessionController.OutrasNecessidades;
+            outrasNecessidades.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorOutrasNecessidades.GetInstance().Inserir(outrasNecessidades);
+            SexualidadeModel sexualidade = SessionController.Sexualidade;
+            sexualidade.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorSexualidade.GetInstance().Inserir(sexualidade);
             ConscienciaModel consciencia = SessionController.Consciencia;
             consciencia.IdConsultaVariavel = idConsultaVariavel;
             GerenciadorConsciencia.GetInstance().Inserir(consciencia);

@@ -1035,6 +1035,43 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static SexualidadeModel Sexualidade
+        {
+            get
+            {
+                SexualidadeModel sexualidade = (SexualidadeModel)HttpContext.Current.Session["_Sexualidade"];
+                if (sexualidade == null)
+                {
+                    sexualidade = GerenciadorSexualidade.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (sexualidade == null)
+                    {
+                        sexualidade = new SexualidadeModel();
+                        sexualidade.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        sexualidade.ConflitoPreferenciaSexual = false;
+                        sexualidade.DorRelacaoSexual = false;
+                        sexualidade.Edema = false;
+                        sexualidade.Hiperemia = false;
+                        sexualidade.Lesao = false;
+                        sexualidade.OdorFetido = false;
+                        sexualidade.ParceiroFixo = false;
+                        sexualidade.Prurido = false;
+                        sexualidade.Sangramento = false;
+                        sexualidade.Secrecao = false;
+                        sexualidade.SimetriaMamas = ListaSimetriaMamas.Simetricas;
+                        sexualidade.TipoSecrecao = ListaTipoSecrecao.SecrecaoSerosa;
+                        sexualidade.UsoContraceptivo = false;
+                        GerenciadorSexualidade.GetInstance().Inserir(sexualidade);
+                    }
+                    HttpContext.Current.Session["_Sexualidade"] = sexualidade;
+                }
+                return sexualidade;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Sexualidade"] = value;
+            }
+        }
+
         public static OutrasNecessidadesModel OutrasNecessidades
         {
             get

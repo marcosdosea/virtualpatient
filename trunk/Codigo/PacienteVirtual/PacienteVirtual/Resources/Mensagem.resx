@@ -2034,4 +2034,64 @@
   <data name="uso_drogas_ilicitas" xml:space="preserve">
     <value>Uso drogas ilícitas</value>
   </data>
+  <data name="Assimetricas" xml:space="preserve">
+    <value>Assimétricas</value>
+  </data>
+  <data name="conflito_preferencia_sexual" xml:space="preserve">
+    <value>Conflito com a preferência sexual</value>
+  </data>
+  <data name="data_exame_preventivo" xml:space="preserve">
+    <value>Data do exame preventivo</value>
+  </data>
+  <data name="data_ultima_menstruacao" xml:space="preserve">
+    <value>Data da última menstruação</value>
+  </data>
+  <data name="dor_relacao_sexual" xml:space="preserve">
+    <value>Dor na relação sexual</value>
+  </data>
+  <data name="edema" xml:space="preserve">
+    <value>Edema</value>
+  </data>
+  <data name="genitalia" xml:space="preserve">
+    <value>Genitália</value>
+  </data>
+  <data name="lesao" xml:space="preserve">
+    <value>Lesão</value>
+  </data>
+  <data name="odor_fetido" xml:space="preserve">
+    <value>Odor fétido</value>
+  </data>
+  <data name="parceiro_fixo" xml:space="preserve">
+    <value>Parceiro fixo</value>
+  </data>
+  <data name="prurido" xml:space="preserve">
+    <value>Prurido</value>
+  </data>
+  <data name="sangramento" xml:space="preserve">
+    <value>Sangramento</value>
+  </data>
+  <data name="secrecao" xml:space="preserve">
+    <value>Secreção</value>
+  </data>
+  <data name="SecrecaoPurulenta" xml:space="preserve">
+    <value>Secreção purulenta</value>
+  </data>
+  <data name="SecrecaoSerosa" xml:space="preserve">
+    <value>Secreção serosa</value>
+  </data>
+  <data name="sexualidade" xml:space="preserve">
+    <value>Sexualidade</value>
+  </data>
+  <data name="simetria_mamas" xml:space="preserve">
+    <value>simétria das mamas</value>
+  </data>
+  <data name="Simetricas" xml:space="preserve">
+    <value>Simétricas</value>
+  </data>
+  <data name="tipo_secrecao" xml:space="preserve">
+    <value>Tipo de secreção</value>
+  </data>
+  <data name="uso_contraceptivo" xml:space="preserve">
+    <value>Uso contraceptivo</value>
+  </data>
 </root>
