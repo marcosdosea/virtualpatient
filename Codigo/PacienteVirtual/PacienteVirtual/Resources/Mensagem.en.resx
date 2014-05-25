@@ -1974,4 +1974,13 @@
   <data name="visual" xml:space="preserve">
     <value>Visual</value>
   </data>
+  <data name="acuidades_prejudicadas" xml:space="preserve">
+    <value>Impaired acuity</value>
+  </data>
+  <data name="reflexos_presentes" xml:space="preserve">
+    <value>Presents reflexes</value>
+  </data>
+  <data name="sinais_fisicos" xml:space="preserve">
+    <value>Physical signs</value>
+  </data>
 </root>
