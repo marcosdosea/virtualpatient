@@ -198,6 +198,8 @@
                             <%: Resources.Mensagem.nutricao %></a></li>
                             <li id="li13"><a href="#tab1-13" data-toggle="tab">
                             <%: Resources.Mensagem.sensorial %></a></li>
+                            <li id="li14"><a href="#tab1-14" data-toggle="tab">
+                            <%: Resources.Mensagem.outras_necessidades %></a></li>
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -342,6 +344,11 @@
                         <div class="tab-pane" id="tab1-13">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../Sensorial/Edit", Model.Sensorial);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-14">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../OutrasNecessidades/Edit", Model.OutrasNecessidades);%>
                             </div>
                         </div>
                         <% } %>

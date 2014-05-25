@@ -1983,4 +1983,52 @@
   <data name="sinais_fisicos" xml:space="preserve">
     <value>Physical signs</value>
   </data>
+  <data name="DependentePara" xml:space="preserve">
+    <value>Dependent for</value>
+  </data>
+  <data name="descrever_tipo_tempo_qtde" xml:space="preserve">
+    <value>Describe type, time and amount</value>
+  </data>
+  <data name="descricao_estilista" xml:space="preserve">
+    <value>Description stylist</value>
+  </data>
+  <data name="descricao_grau_dependencia" xml:space="preserve">
+    <value>Description degree of dependence</value>
+  </data>
+  <data name="descricao_tabagista" xml:space="preserve">
+    <value>Description smoker</value>
+  </data>
+  <data name="estilista" xml:space="preserve">
+    <value>Stylist</value>
+  </data>
+  <data name="frequencia_drogas" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="grau_dependencia" xml:space="preserve">
+    <value>Degree of dependence</value>
+  </data>
+  <data name="Independente" xml:space="preserve">
+    <value>Independent</value>
+  </data>
+  <data name="outras_necessidades" xml:space="preserve">
+    <value>Other necessities</value>
+  </data>
+  <data name="ParcialmenteDependente" xml:space="preserve">
+    <value>Partially dependent</value>
+  </data>
+  <data name="quantidade_drogas" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="tabagista" xml:space="preserve">
+    <value>Smoker</value>
+  </data>
+  <data name="tempo_drogas" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="tipo_drogas" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="uso_drogas_ilicitas" xml:space="preserve">
+    <value>Use illicit drugs</value>
+  </data>
 </root>

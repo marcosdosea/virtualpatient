@@ -1035,6 +1035,42 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static OutrasNecessidadesModel OutrasNecessidades
+        {
+            get
+            {
+                OutrasNecessidadesModel outrasNecessidades = (OutrasNecessidadesModel)HttpContext.Current.Session["_OutrasNecessidades"];
+                if (outrasNecessidades == null)
+                {
+                    outrasNecessidades = GerenciadorOutrasNecessidades.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (outrasNecessidades == null)
+                    {
+                        outrasNecessidades = new OutrasNecessidadesModel();
+                        outrasNecessidades.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        outrasNecessidades.DescreverTipoTempoQtde = Global.stringVazia;
+                        outrasNecessidades.DescricaoEstilista = Global.stringVazia;
+                        outrasNecessidades.DescricaoGrauDependencia = Global.stringVazia;
+                        outrasNecessidades.DescricaoTabagista = Global.stringVazia;
+                        outrasNecessidades.Estilista = false;
+                        outrasNecessidades.FrequenciaDrogas = Global.stringVazia;
+                        outrasNecessidades.GrauDependencia = ListaGrauDependencia.Independente;
+                        outrasNecessidades.QuantidadeDrogas = Global.stringVazia;
+                        outrasNecessidades.Tabagista = false;
+                        outrasNecessidades.TempoDrogas = Global.stringVazia;
+                        outrasNecessidades.TipoDrogas = Global.stringVazia;
+                        outrasNecessidades.UsoDrogasIlicitas = false;
+                        GerenciadorOutrasNecessidades.GetInstance().Inserir(outrasNecessidades);
+                    }
+                    HttpContext.Current.Session["_OutrasNecessidades"] = outrasNecessidades;
+                }
+                return outrasNecessidades;
+            }
+            set
+            {
+                HttpContext.Current.Session["_OutrasNecessidades"] = value;
+            }
+        }
+
         public static IntegridadeTecidualModel IntegridadeTecidual
         {
             get
