@@ -176,6 +176,7 @@
     <Compile Include="Controllers\Consulta\PsicoEspiritualController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
     <Compile Include="Controllers\Consulta\SensorialController.cs" />
+    <Compile Include="Controllers\Consulta\SexualidadeController.cs" />
     <Compile Include="Controllers\Consulta\TermorregulacaoController.cs" />
     <Compile Include="Controllers\Turma\AtivarMatriculasTurmaController.cs" />
     <Compile Include="Controllers\Turma\AtivarTutorTurmaController.cs" />
@@ -217,6 +218,7 @@
     <Compile Include="Models\Consulta\PsicoEspiritualModel.cs" />
     <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
     <Compile Include="Models\Consulta\SensorialModel.cs" />
+    <Compile Include="Models\Consulta\SexualidadeModel.cs" />
     <Compile Include="Models\Consulta\TermorregulacaoModel.cs" />
     <Compile Include="Models\PacienteVirtualModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -253,6 +255,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorCarta.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorSensorial.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorSexualidade.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorTermorregulacao.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -720,6 +723,7 @@
     <Content Include="Views\SelecionarTurma\DadosTurma.ascx" />
     <Content Include="Views\SelecionarTurma\Index.aspx" />
     <Content Include="Views\Sensorial\Edit.ascx" />
+    <Content Include="Views\Sexualidade\Edit.ascx" />
     <Content Include="Views\Shared\NotFound.aspx" />
     <Content Include="Views\RelatoClinico\Listar.aspx" />
     <Content Include="Views\Consulta\Edit.aspx" />

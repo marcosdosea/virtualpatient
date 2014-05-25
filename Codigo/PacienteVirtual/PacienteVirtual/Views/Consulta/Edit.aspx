@@ -200,6 +200,8 @@
                             <%: Resources.Mensagem.sensorial %></a></li>
                             <li id="li14"><a href="#tab1-14" data-toggle="tab">
                             <%: Resources.Mensagem.outras_necessidades %></a></li>
+                            <li id="li15"><a href="#tab1-15" data-toggle="tab">
+                            <%: Resources.Mensagem.sexualidade %></a></li>
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -349,6 +351,11 @@
                         <div class="tab-pane" id="tab1-14">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../OutrasNecessidades/Edit", Model.OutrasNecessidades);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-15">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Sexualidade/Edit", Model.Sexualidade);%>
                             </div>
                         </div>
                         <% } %>

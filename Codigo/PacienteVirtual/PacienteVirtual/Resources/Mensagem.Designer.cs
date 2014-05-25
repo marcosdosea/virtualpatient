@@ -358,6 +358,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assimétricas.
+        /// </summary>
+        public static string Assimetricas {
+            get {
+                return ResourceManager.GetString("Assimetricas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assimétrico Bilateral.
         /// </summary>
         public static string AssimetricoBilateral {
@@ -952,6 +961,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Conflito com a preferência sexual.
+        /// </summary>
+        public static string conflito_preferencia_sexual {
+            get {
+                return ResourceManager.GetString("conflito_preferencia_sexual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confuso.
         /// </summary>
         public static string Confuso {
@@ -1339,6 +1357,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data do exame preventivo.
+        /// </summary>
+        public static string data_exame_preventivo {
+            get {
+                return ResourceManager.GetString("data_exame_preventivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data de Nascimento.
         /// </summary>
         public static string data_nascimento {
@@ -1353,6 +1380,15 @@ namespace Resources {
         public static string data_resposta {
             get {
                 return ResourceManager.GetString("data_resposta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data da última menstruação.
+        /// </summary>
+        public static string data_ultima_menstruacao {
+            get {
+                return ResourceManager.GetString("data_ultima_menstruacao", resourceCulture);
             }
         }
         
@@ -1825,6 +1861,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dor na relação sexual.
+        /// </summary>
+        public static string dor_relacao_sexual {
+            get {
+                return ResourceManager.GetString("dor_relacao_sexual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dosagem.
         /// </summary>
         public static string dosagem {
@@ -1848,6 +1893,15 @@ namespace Resources {
         public static string duracao_dor {
             get {
                 return ResourceManager.GetString("duracao_dor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edema.
+        /// </summary>
+        public static string edema {
+            get {
+                return ResourceManager.GetString("edema", resourceCulture);
             }
         }
         
@@ -2527,6 +2581,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Genitália.
+        /// </summary>
+        public static string genitalia {
+            get {
+                return ResourceManager.GetString("genitalia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Glicemia.
         /// </summary>
         public static string glicemia {
@@ -3180,6 +3243,15 @@ namespace Resources {
         public static string lembrar_me {
             get {
                 return ResourceManager.GetString("lembrar_me", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lesão.
+        /// </summary>
+        public static string lesao {
+            get {
+                return ResourceManager.GetString("lesao", resourceCulture);
             }
         }
         
@@ -3859,6 +3931,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Odor fétido.
+        /// </summary>
+        public static string odor_fetido {
+            get {
+                return ResourceManager.GetString("odor_fetido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Olfativa.
         /// </summary>
         public static string olfativa {
@@ -4053,6 +4134,15 @@ namespace Resources {
         public static string parametro_clinico {
             get {
                 return ResourceManager.GetString("parametro_clinico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parceiro fixo.
+        /// </summary>
+        public static string parceiro_fixo {
+            get {
+                return ResourceManager.GetString("parceiro_fixo", resourceCulture);
             }
         }
         
@@ -4489,6 +4579,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prurido.
+        /// </summary>
+        public static string prurido {
+            get {
+                return ResourceManager.GetString("prurido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Prurido Anal.
         /// </summary>
         public static string prurido_anal {
@@ -4876,6 +4975,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sangramento.
+        /// </summary>
+        public static string sangramento {
+            get {
+                return ResourceManager.GetString("sangramento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sangramento Gengival.
         /// </summary>
         public static string sangramento_gengival {
@@ -4935,6 +5043,33 @@ namespace Resources {
         public static string Seca {
             get {
                 return ResourceManager.GetString("Seca", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secreção.
+        /// </summary>
+        public static string secrecao {
+            get {
+                return ResourceManager.GetString("secrecao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secreção purulenta.
+        /// </summary>
+        public static string SecrecaoPurulenta {
+            get {
+                return ResourceManager.GetString("SecrecaoPurulenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secreção serosa.
+        /// </summary>
+        public static string SecrecaoSerosa {
+            get {
+                return ResourceManager.GetString("SecrecaoSerosa", resourceCulture);
             }
         }
         
@@ -5056,6 +5191,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sexualidade.
+        /// </summary>
+        public static string sexualidade {
+            get {
+                return ResourceManager.GetString("sexualidade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sigla.
         /// </summary>
         public static string sigla {
@@ -5074,11 +5218,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to simétria das mamas.
+        /// </summary>
+        public static string simetria_mamas {
+            get {
+                return ResourceManager.GetString("simetria_mamas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Simetria Torácica.
         /// </summary>
         public static string simetriaToracica {
             get {
                 return ResourceManager.GetString("simetriaToracica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simétricas.
+        /// </summary>
+        public static string Simetricas {
+            get {
+                return ResourceManager.GetString("Simetricas", resourceCulture);
             }
         }
         
@@ -5497,6 +5659,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tipo de secreção.
+        /// </summary>
+        public static string tipo_secrecao {
+            get {
+                return ResourceManager.GetString("tipo_secrecao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tipo de Tosse.
         /// </summary>
         public static string tipo_tosse {
@@ -5646,6 +5817,15 @@ namespace Resources {
         public static string uso {
             get {
                 return ResourceManager.GetString("uso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uso contraceptivo.
+        /// </summary>
+        public static string uso_contraceptivo {
+            get {
+                return ResourceManager.GetString("uso_contraceptivo", resourceCulture);
             }
         }
         

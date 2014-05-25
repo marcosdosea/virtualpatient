@@ -270,6 +270,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.Comunicacao = SessionController.Comunicacao;
             consultaModel.Sensorial = SessionController.Sensorial;
             consultaModel.OutrasNecessidades = SessionController.OutrasNecessidades;
+            consultaModel.Sexualidade = SessionController.Sexualidade;
         }
 
         /// <summary>

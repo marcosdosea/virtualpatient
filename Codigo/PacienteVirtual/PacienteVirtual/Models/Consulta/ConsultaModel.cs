@@ -21,6 +21,7 @@ namespace PacienteVirtual.Models
         public ComunicacaoModel Comunicacao { get; set; }
         public SensorialModel Sensorial { get; set; }
         public OutrasNecessidadesModel OutrasNecessidades { get; set; }
+        public SexualidadeModel Sexualidade { get; set; }
         
         public HigieneModel Higiene { get; set; }
         public PsicoEspiritualModel PsicoEspiritual { get; set; }
