@@ -9,10 +9,12 @@
         <%: Resources.Mensagem.sensorial %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <div class="row-fluid">
-        <div class="span6">
+        <div class="span2">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.EstadoMental) %>
             </div>
+        </div>
+        <div class="span6">
             <div class="editor-field">
                 <%: Html.EnumDropDownListFor(model => model.EstadoMental, ListaEstadoMental.NaoSeAplica) %>
             </div>

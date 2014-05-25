@@ -171,6 +171,7 @@
     <Compile Include="Controllers\Consulta\IntegridadeTecidualController.cs" />
     <Compile Include="Controllers\Consulta\IntervencaoConsultaController.cs" />
     <Compile Include="Controllers\Consulta\NutricaoController.cs" />
+    <Compile Include="Controllers\Consulta\OutrasNecessidadesController.cs" />
     <Compile Include="Controllers\Consulta\OxigenacaoController.cs" />
     <Compile Include="Controllers\Consulta\PsicoEspiritualController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Models\Consulta\IntegridadeTecidualModel.cs" />
     <Compile Include="Models\Consulta\IntervencaoConsultaModel.cs" />
     <Compile Include="Models\Consulta\NutricaoModel.cs" />
+    <Compile Include="Models\Consulta\OutrasNecessidadesModel.cs" />
     <Compile Include="Models\Consulta\OxigenacaoModel.cs" />
     <Compile Include="Models\Consulta\PatologiasAtuaisModel.cs" />
     <Compile Include="Models\Consulta\PsicoEspiritualModel.cs" />
@@ -245,6 +247,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorIntegridadeTecidual.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorIntervencaoConsulta.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorNutricao.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorOutrasNecessidades.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorOxigenacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorPsicoEspiritual.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
@@ -662,6 +665,7 @@
     <Content Include="Views\Naturalidade\Edit.aspx" />
     <Content Include="Views\Naturalidade\Index.aspx" />
     <Content Include="Views\Nutricao\Edit.ascx" />
+    <Content Include="Views\OutrasNecessidades\Edit.ascx" />
     <Content Include="Views\OutrosAchados\Edit.ascx" />
     <Content Include="Views\Oxigenacao\Edit.ascx" />
     <Content Include="Views\Patologia\Create.aspx" />

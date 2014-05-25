@@ -269,6 +269,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.Nutricao = SessionController.Nutricao;
             consultaModel.Comunicacao = SessionController.Comunicacao;
             consultaModel.Sensorial = SessionController.Sensorial;
+            consultaModel.OutrasNecessidades = SessionController.OutrasNecessidades;
         }
 
         /// <summary>
