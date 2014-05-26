@@ -1590,8 +1590,8 @@
   <data name="estado_nutricional" xml:space="preserve">
     <value>Estado Nutricional</value>
   </data>
-  <data name="Gastrostomia" xml:space="preserve">
-    <value>Gastrostomia</value>
+  <data name="Gastronomia" xml:space="preserve">
+    <value>Gastronomia</value>
   </data>
   <data name="habitos_alimentares" xml:space="preserve">
     <value>Hábitos Alimentares</value>
@@ -1686,8 +1686,8 @@
   <data name="evacuacoes_dia" xml:space="preserve">
     <value>Nº Evacuações/dia</value>
   </data>
-  <data name="fezes_pastosas" xml:space="preserve">
-    <value>Fezes Pastosas</value>
+  <data name="tipos_fezes" xml:space="preserve">
+    <value>Tipos de Fezes</value>
   </data>
   <data name="Flacido" xml:space="preserve">
     <value>Flácido</value>
