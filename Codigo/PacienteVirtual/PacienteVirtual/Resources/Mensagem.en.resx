@@ -1575,8 +1575,8 @@
   <data name="estado_nutricional" xml:space="preserve">
     <value>Nutritional Status</value>
   </data>
-  <data name="Gastrostomia" xml:space="preserve">
-    <value>Gastrostomy</value>
+  <data name="Gastronomia" xml:space="preserve">
+    <value>Gastrosnomy</value>
   </data>
   <data name="habitos_alimentares" xml:space="preserve">
     <value>Eating Habits</value>
@@ -1665,8 +1665,8 @@
   <data name="evacuacoes_dia" xml:space="preserve">
     <value>Numbers evacuations/day</value>
   </data>
-  <data name="fezes_pastosas" xml:space="preserve">
-    <value>Pasty Stools</value>
+  <data name="tipos_fezes" xml:space="preserve">
+    <value>Types of Stools</value>
   </data>
   <data name="Flacido" xml:space="preserve">
     <value>Flaccid</value>

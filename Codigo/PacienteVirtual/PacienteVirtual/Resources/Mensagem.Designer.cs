@@ -277,6 +277,132 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alcóol.
+        /// </summary>
+        public static string alcool {
+            get {
+                return ResourceManager.GetString("alcool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consumo de álcool.
+        /// </summary>
+        public static string alcool_consumo {
+            get {
+                return ResourceManager.GetString("alcool_consumo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parou o consumo.
+        /// </summary>
+        public static string alcool_parou {
+            get {
+                return ResourceManager.GetString("alcool_parou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipo de bebida alcoólica.
+        /// </summary>
+        public static string alcool_tipo_bebida {
+            get {
+                return ResourceManager.GetString("alcool_tipo_bebida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uso de álcool.
+        /// </summary>
+        public static string alcool_uso {
+            get {
+                return ResourceManager.GetString("alcool_uso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alergia.
+        /// </summary>
+        public static string alergia {
+            get {
+                return ResourceManager.GetString("alergia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alopecia.
+        /// </summary>
+        public static string alopecia {
+            get {
+                return ResourceManager.GetString("alopecia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alterar Dados do Usuário.
+        /// </summary>
+        public static string alterar_dados_usuario {
+            get {
+                return ResourceManager.GetString("alterar_dados_usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alterar Senha.
+        /// </summary>
+        public static string alterar_senha {
+            get {
+                return ResourceManager.GetString("alterar_senha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alterar Turma.
+        /// </summary>
+        public static string alterar_turma {
+            get {
+                return ResourceManager.GetString("alterar_turma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alternativas.
+        /// </summary>
+        public static string alternativas {
+            get {
+                return ResourceManager.GetString("alternativas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alternativas de Intervenção.
+        /// </summary>
+        public static string alternativas_intervencao {
+            get {
+                return ResourceManager.GetString("alternativas_intervencao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Altura.
+        /// </summary>
+        public static string altura {
+            get {
+                return ResourceManager.GetString("altura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ansiedade.
+        /// </summary>
+        public static string ansiedade {
+            get {
+                return ResourceManager.GetString("ansiedade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ansioso.
         /// </summary>
         public static string Ansioso {
@@ -853,8 +979,34 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comatoso.
+        public static string coloracao_urinaria {
+            get {
+                return ResourceManager.GetString("coloracao_urinaria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colostomia.
         /// </summary>
+        public static string Colostomia {
+            get {
+                return ResourceManager.GetString("Colostomia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colúrica.
+        /// </summary>
+        public static string Colurica {
+            get {
+                return ResourceManager.GetString("Colurica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+<<<<<<< .mine        ///   Looks up a localized string similar to Afraid.
+=======        ///   Looks up a localized string similar to Comatoso.
+>>>>>>> .theirs        /// </summary>
         public static string Comatoso {
             get {
                 return ResourceManager.GetString("Comatoso", resourceCulture);
@@ -907,8 +1059,9 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comunica por escrita.
-        /// </summary>
+<<<<<<< .mine        ///   Looks up a localized string similar to Communicate by writing.
+=======        ///   Looks up a localized string similar to Comunica por escrita.
+>>>>>>> .theirs        /// </summary>
         public static string ComunicaPorEscrita {
             get {
                 return ResourceManager.GetString("ComunicaPorEscrita", resourceCulture);
@@ -916,8 +1069,9 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comunica por gesto.
-        /// </summary>
+<<<<<<< .mine        ///   Looks up a localized string similar to Communicates by gesture.
+=======        ///   Looks up a localized string similar to Comunica por gesto.
+>>>>>>> .theirs        /// </summary>
         public static string ComunicaPorGesto {
             get {
                 return ResourceManager.GetString("ComunicaPorGesto", resourceCulture);
@@ -1753,8 +1907,9 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disciplina.
-        /// </summary>
+<<<<<<< .mine        ///   Looks up a localized string similar to Dysarthria.
+=======        ///   Looks up a localized string similar to Disciplina.
+>>>>>>> .theirs        /// </summary>
         public static string disciplina {
             get {
                 return ResourceManager.GetString("disciplina", resourceCulture);
@@ -1762,8 +1917,9 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discurso incoerente.
-        /// </summary>
+<<<<<<< .mine        ///   Looks up a localized string similar to Disciplina.
+=======        ///   Looks up a localized string similar to Discurso incoerente.
+>>>>>>> .theirs        /// </summary>
         public static string discurso_incoerente {
             get {
                 return ResourceManager.GetString("discurso_incoerente", resourceCulture);
@@ -1771,18 +1927,29 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disfagia.
-        /// </summary>
-        public static string disfagia {
+<<<<<<< .mine        ///   Looks up a localized string similar to Incoherent speech.
+=======        ///   Looks up a localized string similar to Disfagia.
+>>>>>>> .theirs        /// </summary>
+        public static string discurso_incoerente {
+            get {
+                return ResourceManager.GetString("discurso_incoerente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+<<<<<<< .mine        ///   Looks up a localized string similar to Disfagia.
+=======        ///   Looks up a localized string similar to Disfasia.
+>>>>>>> .theirs        /// </summary>
+<<<<<<< .mine        public static string disfagia {
             get {
                 return ResourceManager.GetString("disfagia", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disfasia.
+        ///   Looks up a localized string similar to Dysphonia.
         /// </summary>
-        public static string Disfasia {
+=======>>>>>>> .theirs        public static string Disfasia {
             get {
                 return ResourceManager.GetString("Disfasia", resourceCulture);
             }
@@ -1798,8 +1965,9 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dispnéia.
-        /// </summary>
+<<<<<<< .mine        ///   Looks up a localized string similar to Dispineia.
+=======        ///   Looks up a localized string similar to Dispnéia.
+>>>>>>> .theirs        /// </summary>
         public static string dispineia {
             get {
                 return ResourceManager.GetString("dispineia", resourceCulture);
@@ -2392,15 +2560,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fezes Pastosas.
-        /// </summary>
-        public static string fezes_pastosas {
-            get {
-                return ResourceManager.GetString("fezes_pastosas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Finalizar Correção.
         /// </summary>
         public static string finalizar_correcao {
@@ -2563,11 +2722,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gastrostomia.
+        ///   Looks up a localized string similar to Gastronomia.
         /// </summary>
-        public static string Gastrostomia {
+        public static string Gastronomia {
             get {
-                return ResourceManager.GetString("Gastrostomia", resourceCulture);
+                return ResourceManager.GetString("Gastronomia", resourceCulture);
             }
         }
         
@@ -4921,8 +5080,9 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Retraído.
-        /// </summary>
+<<<<<<< .mine        ///   Looks up a localized string similar to Retiring.
+=======        ///   Looks up a localized string similar to Retraído.
+>>>>>>> .theirs        /// </summary>
         public static string Retraido {
             get {
                 return ResourceManager.GetString("Retraido", resourceCulture);
@@ -5673,6 +5833,15 @@ namespace Resources {
         public static string tipo_tosse {
             get {
                 return ResourceManager.GetString("tipo_tosse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipos de Fezes.
+        /// </summary>
+        public static string tipos_fezes {
+            get {
+                return ResourceManager.GetString("tipos_fezes", resourceCulture);
             }
         }
         
