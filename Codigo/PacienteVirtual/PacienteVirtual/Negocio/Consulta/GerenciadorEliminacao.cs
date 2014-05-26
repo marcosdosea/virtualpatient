@@ -109,10 +109,6 @@ namespace PacienteVirtual.Negocio
                             UltimaEvacuacao = eliminacao.UltimaEvacuacao,
                             EvacuacoesDia = eliminacao.EvacuacoesDia,
                             EsforcoEvacuar = eliminacao.EsforcoEvacuar,
-                            FezesPastosas = eliminacao.FezesPastosas,
-                            Melena = eliminacao.Melena,
-                            Diarreia = eliminacao.Diarreia,
-                            Constipacao = eliminacao.Constipacao,
                             IncontinenciaFecal = eliminacao.IncontinenciaFecal,
                             Flatos =eliminacao.Flatos,
                             SangramentoRetal = eliminacao.SangramentoRetal,
@@ -167,10 +163,6 @@ namespace PacienteVirtual.Negocio
             _eliminacaoE.UltimaEvacuacao = eliminacao.UltimaEvacuacao;
             _eliminacaoE.EvacuacoesDia = eliminacao.EvacuacoesDia;
             _eliminacaoE.EsforcoEvacuar = eliminacao.EsforcoEvacuar;
-            _eliminacaoE.FezesPastosas = eliminacao.FezesPastosas;
-            _eliminacaoE.Melena = eliminacao.Melena;
-            _eliminacaoE.Diarreia = eliminacao.Diarreia;
-            _eliminacaoE.Constipacao = eliminacao.Constipacao;
             _eliminacaoE.IncontinenciaFecal = eliminacao.IncontinenciaFecal;
             _eliminacaoE.Flatos = eliminacao.Flatos;
             _eliminacaoE.SangramentoRetal = eliminacao.SangramentoRetal;

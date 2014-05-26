@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -28,29 +29,38 @@ namespace PacienteVirtual.Negocio
         /// <param name="oxigenacao"></param>
         /// <param name="oxigenacaoGabarito"></param>
         /// <param name="modelState"></param>
-        /*public void CorrigirRespostas(OutrasNecessidadesModel termorregulacao, TermorregulacaoModel termorregulacaoGabarito, ModelStateDictionary modelState)
+        public void CorrigirRespostas(OutrasNecessidadesModel outrasneces, OutrasNecessidadesModel outrasnecesGabarito, ModelStateDictionary modelState)
         {
-            if (termorregulacao.Temperatura != termorregulacaoGabarito.Temperatura)
+            if (outrasneces.GrauDependencia != outrasnecesGabarito.GrauDependencia)
             {
-                modelState.AddModelError("Temperatura", "Gabarito: \"" + termorregulacaoGabarito.Temperatura + "\"");
+                modelState.AddModelError("GrauDependencia", "Gabarito: \"" + outrasnecesGabarito.GrauDependencia + "\"");
             }
-            if (termorregulacao.TemperaturaPele != termorregulacaoGabarito.TemperaturaPele)
+            Global.CorrecaoDeStrings("DescricaoGrauDependencia", outrasneces.DescricaoGrauDependencia, outrasnecesGabarito.DescricaoGrauDependencia, modelState);
+            if (outrasnecesGabarito.Estilista != outrasnecesGabarito.Estilista)
             {
-                modelState.AddModelError("ErroTemperaturaPele", "Gabarito: \"" + termorregulacaoGabarito.TemperaturaPele + "\"");
+                modelState.AddModelError("Estilista", "Gabarito: " + (outrasnecesGabarito.Estilista.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Sudorese != termorregulacaoGabarito.Sudorese)
+            if (outrasnecesGabarito.Tabagista != outrasnecesGabarito.Tabagista)
             {
-                modelState.AddModelError("Sudorese", "Gabarito: " + (termorregulacaoGabarito.Sudorese.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("Tabagista", "Gabarito: " + (outrasnecesGabarito.Tabagista.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Calafrio != termorregulacaoGabarito.Calafrio)
+            Global.CorrecaoDeStrings("DescricaoEstilista", outrasneces.DescricaoEstilista, outrasnecesGabarito.DescricaoEstilista, modelState);
+            Global.CorrecaoDeStrings("DescricaoTabagista", outrasneces.DescricaoTabagista, outrasnecesGabarito.DescricaoTabagista, modelState);
+            Global.CorrecaoDeStrings("DescreverTipoTempoQtde", outrasneces.DescreverTipoTempoQtde, outrasnecesGabarito.DescreverTipoTempoQtde, modelState);
+            if (outrasnecesGabarito.Tabagista != outrasnecesGabarito.Tabagista)
             {
-                modelState.AddModelError("Calafrio", "Gabarito: " + (termorregulacaoGabarito.Calafrio.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("Tabagista", "Gabarito: " + (outrasnecesGabarito.Tabagista.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Piloerecao != termorregulacaoGabarito.Piloerecao)
+            Global.CorrecaoDeStrings("DescreverTipoTempoQtde", outrasneces.DescreverTipoTempoQtde, outrasnecesGabarito.DescreverTipoTempoQtde, modelState);
+            if (outrasnecesGabarito.UsoDrogasIlicitas != outrasnecesGabarito.UsoDrogasIlicitas)
             {
-                modelState.AddModelError("Piloerecao", "Gabarito: " + (termorregulacaoGabarito.Piloerecao.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("UsoDrogasIlicitas", "Gabarito: " + (outrasnecesGabarito.UsoDrogasIlicitas.Equals(true) ? "Sim" : "Não"));
             }
-        } */
+            Global.CorrecaoDeStrings("TipoDrogas", outrasneces.TipoDrogas, outrasnecesGabarito.TipoDrogas, modelState);
+            Global.CorrecaoDeStrings("FrequenciaDrogas", outrasneces.FrequenciaDrogas, outrasnecesGabarito.FrequenciaDrogas, modelState);
+            Global.CorrecaoDeStrings("TempoDrogas", outrasneces.TempoDrogas, outrasnecesGabarito.TempoDrogas, modelState);
+            Global.CorrecaoDeStrings("QuantidadeDrogas", outrasneces.QuantidadeDrogas, outrasnecesGabarito.QuantidadeDrogas, modelState);
+        } 
 
         /// <summary>
         /// Insere dados da OutrasNecessidades

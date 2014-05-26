@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -28,29 +29,58 @@ namespace PacienteVirtual.Negocio
         /// <param name="oxigenacao"></param>
         /// <param name="oxigenacaoGabarito"></param>
         /// <param name="modelState"></param>
-        /*public void CorrigirRespostas(ComunicacaoModel termorregulacao, TermorregulacaoModel termorregulacaoGabarito, ModelStateDictionary modelState)
+        public void CorrigirRespostas(ComunicacaoModel comunicacao, ComunicacaoModel comunicacaoGabarito, ModelStateDictionary modelState)
         {
-            if (termorregulacao.Temperatura != termorregulacaoGabarito.Temperatura)
+            if (comunicacao.Verbaliza != comunicacaoGabarito.Verbaliza)
             {
-                modelState.AddModelError("Temperatura", "Gabarito: \"" + termorregulacaoGabarito.Temperatura + "\"");
+                modelState.AddModelError("Verbaliza", "Gabarito: " + (comunicacaoGabarito.Verbaliza.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.TemperaturaPele != termorregulacaoGabarito.TemperaturaPele)
+            if (comunicacao.Deprimido != comunicacaoGabarito.Deprimido)
             {
-                modelState.AddModelError("ErroTemperaturaPele", "Gabarito: \"" + termorregulacaoGabarito.TemperaturaPele + "\"");
+                modelState.AddModelError("Deprimido", "Gabarito: " + (comunicacaoGabarito.Deprimido.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Sudorese != termorregulacaoGabarito.Sudorese)
+            if (comunicacao.DiscursoIncoerente != comunicacaoGabarito.DiscursoIncoerente)
             {
-                modelState.AddModelError("Sudorese", "Gabarito: " + (termorregulacaoGabarito.Sudorese.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("DiscursoIncoerente", "Gabarito: " + (comunicacaoGabarito.DiscursoIncoerente.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Calafrio != termorregulacaoGabarito.Calafrio)
+            if (comunicacao.TranstornosExpressaoVerbal != comunicacaoGabarito.TranstornosExpressaoVerbal)
             {
-                modelState.AddModelError("Calafrio", "Gabarito: " + (termorregulacaoGabarito.Calafrio.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("TranstornosExpressaoVerbal", "Gabarito: \"" + comunicacaoGabarito.TranstornosExpressaoVerbal  + "\"");
             }
-            if (termorregulacao.Piloerecao != termorregulacaoGabarito.Piloerecao)
+            if (comunicacao.Tv != comunicacaoGabarito.Tv)
             {
-                modelState.AddModelError("Piloerecao", "Gabarito: " + (termorregulacaoGabarito.Piloerecao.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("Tv", "Gabarito: " + (comunicacaoGabarito.Tv.Equals(true) ? "Sim" : "Não"));
             }
-        } */
+            if (comunicacao.Radio != comunicacaoGabarito.Radio)
+            {
+                modelState.AddModelError("Radio", "Gabarito: " + (comunicacaoGabarito.Radio.Equals(true) ? "Sim" : "Não"));
+            }
+            if (comunicacao.Celular != comunicacaoGabarito.Celular)
+            {
+                modelState.AddModelError("Celular", "Gabarito: " + (comunicacaoGabarito.Celular.Equals(true) ? "Sim" : "Não"));
+            }
+            if (comunicacao.Leituras != comunicacaoGabarito.Leituras)
+            {
+                modelState.AddModelError("Leituras", "Gabarito: " + (comunicacaoGabarito.Leituras.Equals(true) ? "Sim" : "Não"));
+            }
+            Global.CorrecaoDeStrings("Especificar", comunicacao.Especificar, comunicacaoGabarito.Especificar, modelState);
+            if (comunicacao.TipoComportamento != comunicacaoGabarito.TipoComportamento)
+            {
+                modelState.AddModelError("TipoComportamento", "Gabarito: \""+ comunicacaoGabarito.TipoComportamento +"\'");
+            }
+            if (comunicacao.InterageComEquipeSaude != comunicacaoGabarito.InterageComEquipeSaude)
+            {
+                modelState.AddModelError("InterageComEquipeSaude", "Gabarito: " + (comunicacaoGabarito.InterageComEquipeSaude.Equals(true) ? "Sim" : "Não"));
+            }
+            if (comunicacao.RecebeVisitas != comunicacaoGabarito.RecebeVisitas)
+            {
+                modelState.AddModelError("RecebeVisitas", "Gabarito: " + (comunicacaoGabarito.RecebeVisitas.Equals(true) ? "Sim" : "Não"));
+            }
+            if (comunicacao.ParticipaAtividades != comunicacaoGabarito.ParticipaAtividades)
+            {
+                modelState.AddModelError("ParticipaAtividades", "Gabarito: " + (comunicacaoGabarito.ParticipaAtividades.Equals(true) ? "Sim" : "Não"));
+            }
+        } 
 
         /// <summary>
         /// Insere dados da Comunicacao

@@ -208,6 +208,7 @@ namespace PacienteVirtual.Controllers
                         clinicoInternacao.DiagnosticoMedico = Global.stringVazia;
                         clinicoInternacao.MotivoInternacao = Global.stringVazia;
                         clinicoInternacao.UsoOutrosDescricao = Global.stringVazia;
+                        clinicoInternacao.DataAdmissao = DateTime.Today;
                         GerenciadorClinicoInternacao.GetInstance().Inserir(clinicoInternacao);
                     }
                     HttpContext.Current.Session["_ClinicoInternacao"] = clinicoInternacao;
@@ -1060,6 +1061,8 @@ namespace PacienteVirtual.Controllers
                         sexualidade.SimetriaMamas = ListaSimetriaMamas.Simetricas;
                         sexualidade.TipoSecrecao = ListaTipoSecrecao.SecrecaoSerosa;
                         sexualidade.UsoContraceptivo = false;
+                        sexualidade.DataExamePreventivo = DateTime.Today;
+                        sexualidade.DataUltimaMenstruacao = DateTime.Today;
                         GerenciadorSexualidade.GetInstance().Inserir(sexualidade);
                     }
                     HttpContext.Current.Session["_Sexualidade"] = sexualidade;
@@ -1217,10 +1220,6 @@ namespace PacienteVirtual.Controllers
                         eliminacao.UltimaEvacuacao = DateTime.Today;
                         eliminacao.EvacuacoesDia = Global.ValorInteiroNulo;
                         eliminacao.EsforcoEvacuar = false;
-                        eliminacao.FezesPastosas = true;
-                        eliminacao.Melena = false;
-                        eliminacao.Diarreia = false;
-                        eliminacao.Constipacao = false;
                         eliminacao.IncontinenciaFecal = false;
                         eliminacao.Flatos = false;
                         eliminacao.SangramentoRetal = false;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -28,29 +29,87 @@ namespace PacienteVirtual.Negocio
         /// <param name="oxigenacao"></param>
         /// <param name="oxigenacaoGabarito"></param>
         /// <param name="modelState"></param>
-        /*public void CorrigirRespostas(SensorialModel termorregulacao, TermorregulacaoModel termorregulacaoGabarito, ModelStateDictionary modelState)
+        public void CorrigirRespostas(SensorialModel sensorial, SensorialModel sensorialGabarito, ModelStateDictionary modelState)
         {
-            if (termorregulacao.Temperatura != termorregulacaoGabarito.Temperatura)
+            if (sensorial.EstadoMental != sensorialGabarito.EstadoMental)
             {
-                modelState.AddModelError("Temperatura", "Gabarito: \"" + termorregulacaoGabarito.Temperatura + "\"");
+                modelState.AddModelError("EstadoMental", "Gabarito: \""+ sensorialGabarito.EstadoMental +"\"");
             }
-            if (termorregulacao.TemperaturaPele != termorregulacaoGabarito.TemperaturaPele)
+            if (sensorial.Palpebral != sensorialGabarito.Palpebral)
             {
-                modelState.AddModelError("ErroTemperaturaPele", "Gabarito: \"" + termorregulacaoGabarito.TemperaturaPele + "\"");
+                modelState.AddModelError("Palpebral", "Gabarito: " + (sensorialGabarito.Palpebral.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Sudorese != termorregulacaoGabarito.Sudorese)
+            if (sensorial.Pupilar != sensorialGabarito.Pupilar)
             {
-                modelState.AddModelError("Sudorese", "Gabarito: " + (termorregulacaoGabarito.Sudorese.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("Pupilar", "Gabarito: " + (sensorialGabarito.Pupilar.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Calafrio != termorregulacaoGabarito.Calafrio)
+            if (sensorial.Plantar != sensorialGabarito.Plantar)
             {
-                modelState.AddModelError("Calafrio", "Gabarito: " + (termorregulacaoGabarito.Calafrio.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("Plantar", "Gabarito: " + (sensorialGabarito.Plantar.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Piloerecao != termorregulacaoGabarito.Piloerecao)
+            if (sensorial.SinalBabinski != sensorialGabarito.SinalBabinski)
             {
-                modelState.AddModelError("Piloerecao", "Gabarito: " + (termorregulacaoGabarito.Piloerecao.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("SinalBabinski", "Gabarito: " + (sensorialGabarito.SinalBabinski.Equals(true) ? "Sim" : "Não"));
             }
-        } */
+            if (sensorial.SemDor != sensorialGabarito.SemDor)
+            {
+                modelState.AddModelError("SemDor", "Gabarito: " + (sensorialGabarito.SemDor.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.DorIntensidadeValor != sensorialGabarito.DorIntensidadeValor)
+            {
+                modelState.AddModelError("DorIntensidadeValor", "Gabarito: \"" + sensorialGabarito.DorIntensidadeValor +"\"");
+            }
+            if (sensorial.Inquietacao != sensorialGabarito.Inquietacao)
+            {
+                modelState.AddModelError("Inquietacao", "Gabarito: " + (sensorialGabarito.Inquietacao.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.ExpressaoFacial != sensorialGabarito.ExpressaoFacial)
+            {
+                modelState.AddModelError("ExpressaoFacial", "Gabarito: " + (sensorialGabarito.ExpressaoFacial.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.Defensividade != sensorialGabarito.Defensividade)
+            {
+                modelState.AddModelError("Defensividade", "Gabarito: " + (sensorialGabarito.Defensividade.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.PA != sensorialGabarito.PA)
+            {
+                modelState.AddModelError("PA", "Gabarito: " + (sensorialGabarito.PA.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.Pulso != sensorialGabarito.Pulso)
+            {
+                modelState.AddModelError("Pulso", "Gabarito: " + (sensorialGabarito.Pulso.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.Respiracao != sensorialGabarito.Respiracao)
+            {
+                modelState.AddModelError("Respiracao", "Gabarito: " + (sensorialGabarito.Respiracao.Equals(true) ? "Sim" : "Não"));
+            }
+            Global.CorrecaoDeStrings("LocalizacaoDor", sensorial.LocalizacaoDor, sensorialGabarito.LocalizacaoDor, modelState);
+            Global.CorrecaoDeStrings("DuracaoDor", sensorial.DuracaoDor, sensorialGabarito.DuracaoDor, modelState);
+            Global.CorrecaoDeStrings("DescricaoDor", sensorial.DescricaoDor, sensorialGabarito.DescricaoDor, modelState);
+            Global.CorrecaoDeStrings("FatoresAgravantesDor", sensorial.FatoresAgravantesDor, sensorialGabarito.FatoresAgravantesDor, modelState);
+            Global.CorrecaoDeStrings("FatoresAliviantesDor", sensorial.FatoresAliviantesDor, sensorialGabarito.FatoresAliviantesDor, modelState);
+            if (sensorial.Visual != sensorialGabarito.Visual)
+            {
+                modelState.AddModelError("Visual", "Gabarito: " + (sensorialGabarito.Visual.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.Auditiva != sensorialGabarito.Auditiva)
+            {
+                modelState.AddModelError("Auditiva", "Gabarito: " + (sensorialGabarito.Auditiva.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.Gustativa != sensorialGabarito.Gustativa)
+            {
+                modelState.AddModelError("Gustativa", "Gabarito: " + (sensorialGabarito.Gustativa.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.Olfativa != sensorialGabarito.Olfativa)
+            {
+                modelState.AddModelError("Olfativa", "Gabarito: " + (sensorialGabarito.Olfativa.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sensorial.Tatil != sensorialGabarito.Tatil)
+            {
+                modelState.AddModelError("Tatil", "Gabarito: " + (sensorialGabarito.Tatil.Equals(true) ? "Sim" : "Não"));
+            }
+            Global.CorrecaoDeStrings("DescricaoTipoDistorcao", sensorial.DescricaoTipoDistorcao, sensorialGabarito.DescricaoTipoDistorcao, modelState);
+        } 
 
         /// <summary>
         /// Insere dados da Sensorial
