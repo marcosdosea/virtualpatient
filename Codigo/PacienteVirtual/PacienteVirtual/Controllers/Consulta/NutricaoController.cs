@@ -12,17 +12,23 @@ namespace PacienteVirtual.Controllers.Consulta
 { 
     public class NutricaoController : Controller
     {
-        private GerenciadorNutricao gNutricao = GerenciadorNutricao.GetInstance();
+        //
+        // POST: /Higiene/Create
 
         [HttpPost]
-        public ActionResult Edit(NutricaoModel nutricao)
+        public ActionResult Edit(NutricaoModel nutricaoModel)
         {
             if (ModelState.IsValid)
             {
-                gNutricao.Atualizar(nutricao);
-                SessionController.Nutricao = nutricao;
+                GerenciadorNutricao.GetInstance().Atualizar(nutricaoModel);
+                SessionController.Nutricao = nutricaoModel;
             }
             return RedirectToAction("Edit", "Consulta");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
     }
 }

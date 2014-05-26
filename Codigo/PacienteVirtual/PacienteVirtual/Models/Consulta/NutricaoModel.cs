@@ -9,7 +9,7 @@ namespace PacienteVirtual.Models
 {
     public enum ListaEstadoNutricional { PesoNormal = 0, PerdaPeso = 1, AumentoPeso = 2, Caqueixa = 3, Sobrepeso = 4 }
 
-    public enum ListaDispositivosAlimentacao { NaoSeAplica = 0, SNE = 1, SNG = 2, NPT = 3, Gastrostomia = 4, Jejunostomia = 5 }
+    public enum ListaDispositivosAlimentacao { NaoSeAplica = 0, SNE = 1, SNG = 2, NPT = 3, Gastronomia = 4, Jejunostomia = 5 }
 
     public class NutricaoModel
     {
@@ -19,11 +19,11 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "peso", ResourceType = typeof(Mensagem))]
-        public double Peso { get; set; }
+        public float Peso { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "altura", ResourceType = typeof(Mensagem))]
-        public double Altura { get; set; }
+        public float Altura { get; set; }
 
         [Display(Name = "estado_nutricional", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaEstadoNutricional))]
@@ -67,7 +67,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ingesta_hidrica", ResourceType = typeof(Mensagem))]
-        public double IngestaHidricaValor { get; set; }
+        public float IngestaHidricaValor { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "restricao_hidrica", ResourceType = typeof(Mensagem))]
@@ -75,7 +75,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "restricao_hidrica", ResourceType = typeof(Mensagem))]
-        public double RestricaoHidricaValor { get; set; }
+        public float RestricaoHidricaValor { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "sem_restricao", ResourceType = typeof(Mensagem))]

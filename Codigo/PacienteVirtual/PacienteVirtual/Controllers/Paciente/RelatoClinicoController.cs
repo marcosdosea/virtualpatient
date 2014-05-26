@@ -177,6 +177,9 @@ namespace PacienteVirtual.Controllers
             PsicoEspiritualModel psicoEspiritual = SessionController.PsicoEspiritual;
             psicoEspiritual.IdConsultaVariavel = idConsultaVariavel;
             GerenciadorPsicoEspiritual.GetInstance().Inserir(psicoEspiritual);
+            NutricaoModel nutricao = SessionController.Nutricao;
+            nutricao.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorNutricao.GetInstance().Inserir(nutricao);
         }
 
         /// <summary>

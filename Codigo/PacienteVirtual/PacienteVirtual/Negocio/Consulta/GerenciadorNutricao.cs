@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
-using System.Web.Mvc;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
     public class GerenciadorNutricao
-    { private static GerenciadorNutricao gNutricao;
+    {
+        private static GerenciadorNutricao gNutricao;
         private GerenciadorNutricao() { }
 
         public static GerenciadorNutricao GetInstance()
         {
-            if (gNutricao == null)
+            if (gNutricao== null)
             {
                 gNutricao = new GerenciadorNutricao();
             }
@@ -22,32 +23,110 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Faz correção de Nutricao de uma consulta de acordo com o gabarito
+        /// Faz correção de Higiene de uma consulta de acordo com o gabarito
         /// </summary>
-        /// <param name="Nutricao"></param>
-        /// <param name="NutricaoGabarito"></param>
+        /// <param name="higiene"></param>
+        /// <param name="higieneGabarito"></param>
         /// <param name="modelState"></param>
         public void CorrigirRespostas(NutricaoModel nutricao, NutricaoModel nutricaoGabarito, ModelStateDictionary modelState)
         {
+            if (nutricao.Peso != nutricaoGabarito.Peso)
+            {
+                modelState.AddModelError("Peso", "Gabarito: \"" + nutricaoGabarito.Peso + "\"");
+            }
+            if (nutricao.Altura != nutricaoGabarito.Altura)
+            {
+                modelState.AddModelError("Altura", "Gabarito: \"" + nutricaoGabarito.Altura + "\"");
+            }
+            if (nutricao.EstadoNutricional != nutricaoGabarito.EstadoNutricional)
+            {
+                modelState.AddModelError("EstadoNutricional", "Gabarito: \"" + nutricaoGabarito.EstadoNutricional.ToString() + "\"");
+            }
+            if (nutricao.NutricaoOral != nutricaoGabarito.NutricaoOral)
+            {
+                modelState.AddModelError("NutricaoOral", "Gabarito: \"" + (nutricaoGabarito.NutricaoOral == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.Disfagia != nutricaoGabarito.Disfagia)
+            {
+                modelState.AddModelError("Disfagia", "Gabarito: \"" + (nutricaoGabarito.Disfagia == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.DificuldadeMastigar != nutricaoGabarito.DificuldadeMastigar)
+            {
+                modelState.AddModelError("DificuldadeMastigar", "Gabarito: \"" + (nutricaoGabarito.DificuldadeMastigar == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.SangramentoGengival != nutricaoGabarito.SangramentoGengival)
+            {
+                modelState.AddModelError("SangramentoGengival", "Gabarito: \"" + (nutricaoGabarito.SangramentoGengival == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.AusenciaDentes != nutricaoGabarito.AusenciaDentes)
+            {
+                modelState.AddModelError("AusenciaDentes", "Gabarito: \"" + (nutricaoGabarito.AusenciaDentes == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.Nausea != nutricaoGabarito.Nausea)
+            {
+                modelState.AddModelError("Nausea", "Gabarito: \"" + (nutricaoGabarito.Nausea == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.Emese != nutricaoGabarito.Emese)
+            {
+                modelState.AddModelError("Emese", "Gabarito: \"" + (nutricaoGabarito.Emese == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.Pirose != nutricaoGabarito.Pirose)
+            {
+                modelState.AddModelError("Pirose", "Gabarito: \"" + (nutricaoGabarito.Pirose == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.IngestaHidrica != nutricaoGabarito.IngestaHidrica)
+            {
+                modelState.AddModelError("IngestaHidrica", "Gabarito: \"" + (nutricaoGabarito.IngestaHidrica == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.IngestaHidricaValor != nutricaoGabarito.IngestaHidricaValor)
+            {
+                modelState.AddModelError("IngestaHidricaValor", "Gabarito: \"" + nutricaoGabarito.IngestaHidricaValor + "\"");
+            }
+            if (nutricao.RestricaoHidrica != nutricaoGabarito.RestricaoHidrica)
+            {
+                modelState.AddModelError("RestricaoHidrica", "Gabarito: \"" + (nutricaoGabarito.RestricaoHidrica == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.RestricaoHidricaValor != nutricaoGabarito.RestricaoHidricaValor)
+            {
+                modelState.AddModelError("RestricaoHidricaValor", "Gabarito: \"" + nutricaoGabarito.RestricaoHidricaValor + "\"");
+            }
+            if (nutricao.SemRestricao != nutricaoGabarito.SemRestricao)
+            {
+                modelState.AddModelError("SemRestricao", "Gabarito: \"" + (nutricaoGabarito.SemRestricao == true ? "Sim" : "Não") + "\"");
+            }
+            if (nutricao.RestricaoAlimentar != nutricaoGabarito.RestricaoAlimentar)
+            {
+                modelState.AddModelError("RestricaoAlimentar", "Gabarito: \"" + (nutricaoGabarito.RestricaoAlimentar == true ? "Sim" : "Não") + "\"");
+            }
+            Global.CorrecaoDeStrings("RestricaoAlimentarTexto", nutricao.RestricaoAlimentarTexto, nutricaoGabarito.RestricaoAlimentarTexto, modelState);
+            Global.CorrecaoDeStrings("HabitosAlimentares", nutricao.HabitosAlimentares, nutricaoGabarito.HabitosAlimentares, modelState);
+            if (nutricao.DispositivosAlimentacao != nutricaoGabarito.DispositivosAlimentacao)
+            {
+                modelState.AddModelError("DispositivosAlimentacao", "Gabarito: \"" + nutricaoGabarito.DispositivosAlimentacao.ToString() + "\"");
+            }
+            if (nutricao.Instalada != nutricaoGabarito.Instalada)
+            {
+                modelState.AddModelError("Instalada", "Gabarito: \"" + nutricaoGabarito.Instalada + "\"");
+            }
         }
 
         /// <summary>
-        /// Insere dados do Nutricao
+        /// Insere dados do Higiene
         /// </summary>
-        /// <param name="Nutricao"></param>
+        /// <param name="Higiene"></param>
         /// <returns></returns>
-        public long Inserir(NutricaoModel nutricao)
+        public long Inserir(NutricaoModel nutricaoModel)
         {
             var repNutricao = new RepositorioGenerico<tb_nutricao>();
-            tb_nutricao _tb_nutricaoE = new tb_nutricao();
+            tb_nutricao _tb_nutricao = new tb_nutricao();
             try
             {
-                Atribuir(nutricao, _tb_nutricaoE);
+                Atribuir(nutricaoModel, _tb_nutricao);
 
-                repNutricao.Inserir(_tb_nutricaoE);
+                repNutricao.Inserir(_tb_nutricao);
                 repNutricao.SaveChanges();
 
-                return _tb_nutricaoE.IdConsultaVariavel;
+                return _tb_nutricao.IdConsultaVariavel;
             }
             catch (Exception e)
             {
@@ -56,16 +135,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Atualiza dados do Nutricao
+        /// Atualiza dados do Higiene
         /// </summary>
-        /// <param name="Nutricao"></param>
-        public void Atualizar(NutricaoModel nutricao)
+        /// <param name="Higiene"></param>
+        public void Atualizar(NutricaoModel nutricaoModel)
         {
             try
             {
                 var repNutricao = new RepositorioGenerico<tb_nutricao>();
-                tb_nutricao _nutricaoE = repNutricao.ObterEntidade(n => n.IdConsultaVariavel == nutricao.IdConsultaVariavel);
-                Atribuir(nutricao, _nutricaoE);
+                tb_nutricao _tb_nutricao = repNutricao.ObterEntidade(n => n.IdConsultaVariavel == nutricaoModel.IdConsultaVariavel);
+                Atribuir(nutricaoModel, _tb_nutricao);
 
                 repNutricao.SaveChanges();
             }
@@ -101,37 +180,37 @@ namespace PacienteVirtual.Negocio
         {
             var repNutricao = new RepositorioGenerico<tb_nutricao>();
             var pvEntities = (pvEntities)repNutricao.ObterContexto();
-            var query = from nutricao in pvEntities.tb_nutricao
+            var query = from tb_nutricao in pvEntities.tb_nutricao
                         select new NutricaoModel
                         {
-                            IdConsultaVariavel = nutricao.IdConsultaVariavel,
-                            Peso = (double)nutricao.Peso,
-                            Altura = (double)nutricao.Altura,
-                            EstadoNutricional = (nutricao.EstadoNutricional == "AumentoPeso" ? ListaEstadoNutricional.AumentoPeso : (nutricao.EstadoNutricional == "Caqueixa" ? ListaEstadoNutricional.Caqueixa : (nutricao.EstadoNutricional == "PerdaPeso" ? ListaEstadoNutricional.PerdaPeso : (nutricao.EstadoNutricional == "PesoNormal" ? ListaEstadoNutricional.PesoNormal : ListaEstadoNutricional.Sobrepeso)))),
-                            NutricaoOral = nutricao.NutricaoOral,
-                            Disfagia = nutricao.Disfagia,
-                            DificuldadeMastigar = nutricao.DificuldadeMastigar,
-                            SangramentoGengival = nutricao.SangramentoGengival,
-                            AusenciaDentes = nutricao.AusenciaDentes,
-                            Nausea = nutricao.Nausea,
-                            Emese = nutricao.Emese,
-                            Pirose = nutricao.Pirose,
-                            IngestaHidrica = nutricao.IngestaHidrica,
-                            IngestaHidricaValor = (double)nutricao.IngestaHidricaValor,
-                            RestricaoHidrica = nutricao.RestricaoHidrica,
-                            RestricaoHidricaValor = (double)nutricao.RestricaoHidricaValor,
-                            SemRestricao = nutricao.SemRestricao,
-                            RestricaoAlimentar = nutricao.RestricaoAlimentar,
-                            RestricaoAlimentarTexto = nutricao.RestricaoAlimentarTexto,
-                            HabitosAlimentares = nutricao.HabitosAlimentares,
-                            DispositivosAlimentacao = (nutricao.DispositivosAlimentacao == "NaoSeAplica" ? ListaDispositivosAlimentacao.NaoSeAplica : (nutricao.DispositivosAlimentacao == "Gastrostomia" ? ListaDispositivosAlimentacao.Gastrostomia : (nutricao.DispositivosAlimentacao == "Jejunostomia" ? ListaDispositivosAlimentacao.Jejunostomia : (nutricao.DispositivosAlimentacao=="NPT" ? ListaDispositivosAlimentacao.NPT : (nutricao.DispositivosAlimentacao == "SNE" ? ListaDispositivosAlimentacao.SNE : ListaDispositivosAlimentacao.SNG))))),
-                            Instalada = (DateTime)nutricao.Instalada
+                            IdConsultaVariavel = tb_nutricao.IdConsultaVariavel,
+                            Peso = (float)tb_nutricao.Peso,
+                            Altura = (float)tb_nutricao.Altura,
+                            EstadoNutricional = (tb_nutricao.EstadoNutricional == "AumentoPeso" ? ListaEstadoNutricional.AumentoPeso : (tb_nutricao.EstadoNutricional == "Caqueixa" ? ListaEstadoNutricional.Caqueixa : (tb_nutricao.EstadoNutricional == "PerdaPeso" ? ListaEstadoNutricional.PerdaPeso : (tb_nutricao.EstadoNutricional == "PesoNormal" ? ListaEstadoNutricional.PesoNormal : ListaEstadoNutricional.Sobrepeso)))),
+                            NutricaoOral = tb_nutricao.NutricaoOral,
+                            Disfagia = tb_nutricao.Disfagia,
+                            DificuldadeMastigar = tb_nutricao.DificuldadeMastigar,
+                            SangramentoGengival = tb_nutricao.SangramentoGengival,
+                            AusenciaDentes = tb_nutricao.AusenciaDentes,
+                            Nausea = tb_nutricao.Nausea,
+                            Emese = tb_nutricao.Emese,
+                            Pirose = tb_nutricao.Pirose,
+                            IngestaHidrica = tb_nutricao.IngestaHidrica,
+                            IngestaHidricaValor = (float)tb_nutricao.IngestaHidricaValor,
+                            RestricaoHidrica = tb_nutricao.RestricaoHidrica,
+                            RestricaoHidricaValor = (float)tb_nutricao.RestricaoHidricaValor,
+                            SemRestricao = tb_nutricao.SemRestricao,
+                            RestricaoAlimentar = tb_nutricao.RestricaoAlimentar,
+                            RestricaoAlimentarTexto = tb_nutricao.RestricaoAlimentarTexto,
+                            HabitosAlimentares = tb_nutricao.HabitosAlimentares,
+                            DispositivosAlimentacao = (tb_nutricao.DispositivosAlimentacao == "NaoSeAplica" ? ListaDispositivosAlimentacao.NaoSeAplica : (tb_nutricao.DispositivosAlimentacao == "Gastrosnomia" ? ListaDispositivosAlimentacao.Gastrosnomia : (tb_nutricao.DispositivosAlimentacao == "Jejunostomia" ? ListaDispositivosAlimentacao.Jejunostomia : (tb_nutricao.DispositivosAlimentacao == "NPT" ? ListaDispositivosAlimentacao.NPT : (tb_nutricao.DispositivosAlimentacao == "SNE" ? ListaDispositivosAlimentacao.SNE : ListaDispositivosAlimentacao.SNG))))),
+                            Instalada = (DateTime)tb_nutricao.Instalada
                         };
             return query;
         }
 
         /// <summary>
-        /// Obtém todos os NutricaoModel cadastrados
+        /// Obtém todos os HigieneModel cadastrados
         /// </summary>
         /// <returns></returns>
         public IEnumerable<NutricaoModel> ObterTodos()
@@ -140,19 +219,20 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém NutricaoModel com o código da consulta variavel especificiado
+        /// Obtém HigieneModel com o código da consulta variavel especificiado
         /// </summary>
         /// <returns></returns>
         public NutricaoModel Obter(long idConsultaVariavel)
         {
-            return GetQuery().Where(NutricaoModel => NutricaoModel.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(nutricao => nutricao.IdConsultaVariavel == idConsultaVariavel).ToList().ElementAtOrDefault(0);
         }
+
 
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
-        /// <param name="NutricaoModel"></param>
+        /// <param name="nutricaoModel"></param>
         /// <param name="_tb_nutricao"></param>
         private static void Atribuir(NutricaoModel nutricao, tb_nutricao _nutricaoE)
         {
