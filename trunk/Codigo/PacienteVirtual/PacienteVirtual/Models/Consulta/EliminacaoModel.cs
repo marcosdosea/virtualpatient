@@ -7,6 +7,8 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    public enum ListaTiposFezes { }
+
     public enum ListaEstomasCirurgicos { NaoSeAplica = 0, Colostomia = 1, Ileostomia = 2 }
 
     public enum ListaFormasAbdomem { Plano = 0, Retraido = 1, Globoso = 2 }
@@ -42,20 +44,8 @@ namespace PacienteVirtual.Models
         public bool EsforcoEvacuar { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "fezes_pastosas", ResourceType = typeof(Mensagem))]
-        public bool FezesPastosas { get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "melena", ResourceType = typeof(Mensagem))]
-        public bool Melena { get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "diarreia", ResourceType = typeof(Mensagem))]
-        public bool Diarreia{ get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "constipacao", ResourceType = typeof(Mensagem))]
-        public bool Constipacao { get; set; }
+        [Display(Name = "tipos_fezes", ResourceType = typeof(Mensagem))]
+        public ListaTiposFezes TiposFezes { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "incontinencia_fecal", ResourceType = typeof(Mensagem))]

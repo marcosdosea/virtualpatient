@@ -1,35 +1,43 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.EliminacaoModel>" %>
+<%@ Import Namespace="PacienteVirtual.Helpers" %>
+<%@ Import Namespace="PacienteVirtual.Models" %>
 
 <% using (Html.BeginForm("Edit","Eliminacao")) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>tb_eliminacao</legend>
-
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.UltimaEvacuacao) %>
+        <p class="titulos">Intestinal</p>
+        <legend></legend>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="editor-field">
+                    <%: Resources.Mensagem.evacuacoes_dia %>
+                    &nbsp
+                    <%: Html.TextBoxFor(model => model.EvacuacoesDia, new { style = "width:70px;" })%>
+                    dias
+                </div>
+            </div>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.UltimaEvacuacao) %>
-            <%: Html.ValidationMessageFor(model => model.UltimaEvacuacao) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="editor-field">
+                    <%: Html.LabelFor(model => model.UltimaEvacuacao) %>
+                    <%: Html.TextBoxFor(model => model.UltimaEvacuacao, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.UltimaEvacuacao)), type = "text", @class = "calendario" , style = "width:176px;"}) %>
+                </div>
+            </div>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.EvacuacoesDia) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span12">
+                <%: Html.EditorFor(model => model.EsforcoEvacuar) %>
+                <%: Resources.Mensagem.esforco_evacuar %>
+                <%: Html.ValidationMessageFor(model => model.EsforcoEvacuar) %>
+            </div>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.EvacuacoesDia) %>
-            <%: Html.ValidationMessageFor(model => model.EvacuacoesDia) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.EsforcoEvacuar) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.EsforcoEvacuar) %>
-            <%: Html.ValidationMessageFor(model => model.EsforcoEvacuar) %>
-        </div>
+        <br />
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.FezesPastosas) %>

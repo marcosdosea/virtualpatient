@@ -1169,8 +1169,8 @@ namespace PacienteVirtual.Controllers
                     {
                         nutricao = new NutricaoModel();
                         nutricao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
-                        nutricao.Peso = 0.0;
-                        nutricao.Altura = 0.0;
+                        nutricao.Peso = 0;
+                        nutricao.Altura = 0;
                         nutricao.EstadoNutricional = ListaEstadoNutricional.PesoNormal;
                         nutricao.NutricaoOral = false;
                         nutricao.Disfagia = false;
@@ -1181,15 +1181,16 @@ namespace PacienteVirtual.Controllers
                         nutricao.Emese = false;
                         nutricao.Pirose = false;
                         nutricao.IngestaHidrica = false;
-                        nutricao.IngestaHidricaValor = 0.0;
+                        nutricao.IngestaHidricaValor = 0;
                         nutricao.RestricaoHidrica = false;
-                        nutricao.RestricaoHidricaValor = 0.0;
+                        nutricao.RestricaoHidricaValor = 0;
                         nutricao.SemRestricao = false;
                         nutricao.RestricaoAlimentar = false;
-                        nutricao.RestricaoAlimentarTexto = " ";
-                        nutricao.HabitosAlimentares = " ";
+                        nutricao.RestricaoAlimentarTexto = "";
+                        nutricao.HabitosAlimentares = "";
                         nutricao.DispositivosAlimentacao = ListaDispositivosAlimentacao.NaoSeAplica;
                         nutricao.Instalada = DateTime.Today;
+                        GerenciadorNutricao.GetInstance().Inserir(nutricao);
                     }
                     HttpContext.Current.Session["_Nutricao"] = nutricao;
                 }
@@ -1240,6 +1241,7 @@ namespace PacienteVirtual.Controllers
                         eliminacao.SVD = false;
                         eliminacao.SVDInstalada = DateTime.Today;
                         eliminacao.Cistostomia = false;
+                        GerenciadorEliminacao.GetInstance().Inserir(eliminacao);
                     }
                     HttpContext.Current.Session["_Eliminacao"] = eliminacao;
                 }
