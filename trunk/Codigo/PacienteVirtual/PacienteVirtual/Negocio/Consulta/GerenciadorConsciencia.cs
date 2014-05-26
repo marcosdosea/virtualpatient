@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -28,29 +29,29 @@ namespace PacienteVirtual.Negocio
         /// <param name="oxigenacao"></param>
         /// <param name="oxigenacaoGabarito"></param>
         /// <param name="modelState"></param>
-        /*public void CorrigirRespostas(ConscienciaModel termorregulacao, TermorregulacaoModel termorregulacaoGabarito, ModelStateDictionary modelState)
+        public void CorrigirRespostas(ConscienciaModel consciencia, ConscienciaModel conscienciaGabarito, ModelStateDictionary modelState)
         {
-            if (termorregulacao.Temperatura != termorregulacaoGabarito.Temperatura)
+            if (consciencia.AberturaOcular != conscienciaGabarito.AberturaOcular)
             {
-                modelState.AddModelError("Temperatura", "Gabarito: \"" + termorregulacaoGabarito.Temperatura + "\"");
+                modelState.AddModelError("AberturaOcular", "Gabarito: \"" + conscienciaGabarito.AberturaOcular + "\"");
             }
-            if (termorregulacao.TemperaturaPele != termorregulacaoGabarito.TemperaturaPele)
+            if (consciencia.MelhorRespostaVerbal != conscienciaGabarito.MelhorRespostaVerbal)
             {
-                modelState.AddModelError("ErroTemperaturaPele", "Gabarito: \"" + termorregulacaoGabarito.TemperaturaPele + "\"");
+                modelState.AddModelError("MelhorRespostaVerbal", "Gabarito: \"" + conscienciaGabarito.MelhorRespostaVerbal + "\"");
             }
-            if (termorregulacao.Sudorese != termorregulacaoGabarito.Sudorese)
+            if (consciencia.AvaliacaoConscienciaGlasgow != conscienciaGabarito.AvaliacaoConscienciaGlasgow)
             {
-                modelState.AddModelError("Sudorese", "Gabarito: " + (termorregulacaoGabarito.Sudorese.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("AvaliacaoConscienciaGlasgow", "Gabarito: \"" + conscienciaGabarito.AvaliacaoConscienciaGlasgow + "\"");
             }
-            if (termorregulacao.Calafrio != termorregulacaoGabarito.Calafrio)
+            if (consciencia.MelhorRespostaMotora != conscienciaGabarito.MelhorRespostaMotora)
             {
-                modelState.AddModelError("Calafrio", "Gabarito: " + (termorregulacaoGabarito.Calafrio.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("MelhorRespostaMotora", "Gabarito: \"" + conscienciaGabarito.MelhorRespostaMotora + "\"");
             }
-            if (termorregulacao.Piloerecao != termorregulacaoGabarito.Piloerecao)
+            if (consciencia.AvaliacaoSedacao != conscienciaGabarito.AvaliacaoSedacao)
             {
-                modelState.AddModelError("Piloerecao", "Gabarito: " + (termorregulacaoGabarito.Piloerecao.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("AvaliacaoSedacao", "Gabarito: \"" + conscienciaGabarito.AvaliacaoSedacao + "\"");
             }
-        } */
+        } 
 
         /// <summary>
         /// Insere dados da Consciencia

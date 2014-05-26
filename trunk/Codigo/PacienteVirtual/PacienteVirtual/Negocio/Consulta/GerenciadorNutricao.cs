@@ -203,7 +203,7 @@ namespace PacienteVirtual.Negocio
                             RestricaoAlimentar = tb_nutricao.RestricaoAlimentar,
                             RestricaoAlimentarTexto = tb_nutricao.RestricaoAlimentarTexto,
                             HabitosAlimentares = tb_nutricao.HabitosAlimentares,
-                            DispositivosAlimentacao = (tb_nutricao.DispositivosAlimentacao == "NaoSeAplica" ? ListaDispositivosAlimentacao.NaoSeAplica : (tb_nutricao.DispositivosAlimentacao == "Gastrosnomia" ? ListaDispositivosAlimentacao.Gastrosnomia : (tb_nutricao.DispositivosAlimentacao == "Jejunostomia" ? ListaDispositivosAlimentacao.Jejunostomia : (tb_nutricao.DispositivosAlimentacao == "NPT" ? ListaDispositivosAlimentacao.NPT : (tb_nutricao.DispositivosAlimentacao == "SNE" ? ListaDispositivosAlimentacao.SNE : ListaDispositivosAlimentacao.SNG))))),
+                            DispositivosAlimentacao = (tb_nutricao.DispositivosAlimentacao == "NaoSeAplica" ? ListaDispositivosAlimentacao.NaoSeAplica : (tb_nutricao.DispositivosAlimentacao == "Gastrosnomia" ? ListaDispositivosAlimentacao.Gastronomia : (tb_nutricao.DispositivosAlimentacao == "Jejunostomia" ? ListaDispositivosAlimentacao.Jejunostomia : (tb_nutricao.DispositivosAlimentacao == "NPT" ? ListaDispositivosAlimentacao.NPT : (tb_nutricao.DispositivosAlimentacao == "SNE" ? ListaDispositivosAlimentacao.SNE : ListaDispositivosAlimentacao.SNG))))),
                             Instalada = (DateTime)tb_nutricao.Instalada
                         };
             return query;

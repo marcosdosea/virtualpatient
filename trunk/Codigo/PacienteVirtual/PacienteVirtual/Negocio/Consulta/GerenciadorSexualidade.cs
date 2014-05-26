@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -28,29 +29,69 @@ namespace PacienteVirtual.Negocio
         /// <param name="oxigenacao"></param>
         /// <param name="oxigenacaoGabarito"></param>
         /// <param name="modelState"></param>
-        /*public void CorrigirRespostas(SexualidadeModel termorregulacao, TermorregulacaoModel termorregulacaoGabarito, ModelStateDictionary modelState)
+        public void CorrigirRespostas(SexualidadeModel sexualidade, SexualidadeModel sexualidadeGabarito, ModelStateDictionary modelState)
         {
-            if (termorregulacao.Temperatura != termorregulacaoGabarito.Temperatura)
+            if (sexualidade.ParceiroFixo != sexualidadeGabarito.ParceiroFixo)
             {
-                modelState.AddModelError("Temperatura", "Gabarito: \"" + termorregulacaoGabarito.Temperatura + "\"");
+                modelState.AddModelError("ParceiroFixo", "Gabarito: " + (sexualidadeGabarito.ParceiroFixo.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.TemperaturaPele != termorregulacaoGabarito.TemperaturaPele)
+            if (sexualidade.ConflitoPreferenciaSexual != sexualidadeGabarito.ConflitoPreferenciaSexual)
             {
-                modelState.AddModelError("ErroTemperaturaPele", "Gabarito: \"" + termorregulacaoGabarito.TemperaturaPele + "\"");
+                modelState.AddModelError("ConflitoPreferenciaSexual", "Gabarito: " + (sexualidadeGabarito.ConflitoPreferenciaSexual.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Sudorese != termorregulacaoGabarito.Sudorese)
+            if (sexualidade.DataUltimaMenstruacao != sexualidadeGabarito.DataUltimaMenstruacao)
             {
-                modelState.AddModelError("Sudorese", "Gabarito: " + (termorregulacaoGabarito.Sudorese.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("ConflitoPreferenciaSexual", "Gabarito: \"" + sexualidadeGabarito.DataUltimaMenstruacao + "\"");
             }
-            if (termorregulacao.Calafrio != termorregulacaoGabarito.Calafrio)
+            if (sexualidade.UsoContraceptivo != sexualidadeGabarito.UsoContraceptivo)
             {
-                modelState.AddModelError("Calafrio", "Gabarito: " + (termorregulacaoGabarito.Calafrio.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("UsoContraceptivo", "Gabarito: " + (sexualidadeGabarito.UsoContraceptivo.Equals(true) ? "Sim" : "Não"));
             }
-            if (termorregulacao.Piloerecao != termorregulacaoGabarito.Piloerecao)
+            if (sexualidade.DorRelacaoSexual != sexualidadeGabarito.DorRelacaoSexual)
             {
-                modelState.AddModelError("Piloerecao", "Gabarito: " + (termorregulacaoGabarito.Piloerecao.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("DorRelacaoSexual", "Gabarito: " + (sexualidadeGabarito.DorRelacaoSexual.Equals(true) ? "Sim" : "Não"));
             }
-        } */
+            if (sexualidade.DataExamePreventivo != sexualidadeGabarito.DataExamePreventivo)
+            {
+                modelState.AddModelError("DataExamePreventivo", "Gabarito: \"" + sexualidadeGabarito.DataExamePreventivo + "\"");
+            }
+            if (sexualidade.SimetriaMamas != sexualidadeGabarito.SimetriaMamas)
+            {
+                modelState.AddModelError("SimetriaMamas", "Gabarito: \"" + sexualidadeGabarito.SimetriaMamas + "\"");
+            }
+            if (sexualidade.TipoSecrecao != sexualidadeGabarito.TipoSecrecao)
+            {
+                modelState.AddModelError("TipoSecrecao", "Gabarito: \"" + sexualidadeGabarito.TipoSecrecao + "\"");
+            }
+            if (sexualidade.Secrecao != sexualidadeGabarito.Secrecao)
+            {
+                modelState.AddModelError("Secrecao", "Gabarito: " + (sexualidadeGabarito.Secrecao.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sexualidade.Prurido != sexualidadeGabarito.Prurido)
+            {
+                modelState.AddModelError("Prurido", "Gabarito: " + (sexualidadeGabarito.Prurido.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sexualidade.OdorFetido != sexualidadeGabarito.OdorFetido)
+            {
+                modelState.AddModelError("OdorFetido", "Gabarito: " + (sexualidadeGabarito.OdorFetido.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sexualidade.Edema != sexualidadeGabarito.Edema)
+            {
+                modelState.AddModelError("Edema", "Gabarito: " + (sexualidadeGabarito.Edema.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sexualidade.Lesao != sexualidadeGabarito.Lesao)
+            {
+                modelState.AddModelError("Lesao", "Gabarito: " + (sexualidadeGabarito.Lesao.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sexualidade.Sangramento != sexualidadeGabarito.Sangramento)
+            {
+                modelState.AddModelError("Sangramento", "Gabarito: " + (sexualidadeGabarito.Sangramento.Equals(true) ? "Sim" : "Não"));
+            }
+            if (sexualidade.Hiperemia != sexualidadeGabarito.Hiperemia)
+            {
+                modelState.AddModelError("Hiperemia", "Gabarito: " + (sexualidadeGabarito.Hiperemia.Equals(true) ? "Sim" : "Não"));
+            }
+        }
 
         /// <summary>
         /// Insere dados da Sexualidade
