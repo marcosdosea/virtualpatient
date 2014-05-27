@@ -763,10 +763,7 @@
           <Property Name="UltimaEvacuacao" Type="datetime" Nullable="false" />
           <Property Name="EvacuacoesDia" Type="int" Nullable="false" />
           <Property Name="EsforcoEvacuar" Type="bool" Nullable="false" />
-          <Property Name="FezesPastosas" Type="bool" Nullable="false" />
-          <Property Name="Melena" Type="bool" Nullable="false" />
-          <Property Name="Diarreia" Type="bool" Nullable="false" />
-          <Property Name="Constipacao" Type="bool" Nullable="false" />
+          <Property Name="TiposFezes" Type="enum" Nullable="false" />
           <Property Name="IncontinenciaFecal" Type="bool" Nullable="false" />
           <Property Name="Flatos" Type="bool" Nullable="false" />
           <Property Name="SangramentoRetal" Type="bool" Nullable="false" />
@@ -2770,7 +2767,6 @@
           </AssociationSet>
           <EntitySet Name="tb_comunicacao" EntityType="pvModel.tb_comunicacao" />
           <EntitySet Name="tb_consciencia" EntityType="pvModel.tb_consciencia" />
-          <EntitySet Name="tb_eliminacao" EntityType="pvModel.tb_eliminacao" />
           <EntitySet Name="tb_nutricao" EntityType="pvModel.tb_nutricao" />
           <EntitySet Name="tb_outras_necessidades" EntityType="pvModel.tb_outras_necessidades" />
           <EntitySet Name="tb_sensorial" EntityType="pvModel.tb_sensorial" />
@@ -2786,10 +2782,6 @@
           <AssociationSet Name="fk_table1_tb_consulta_variavel1" Association="pvModel.fk_table1_tb_consulta_variavel1">
             <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
             <End Role="tb_outras_necessidades" EntitySet="tb_outras_necessidades" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tb_eliminacao_tb_consulta_variavel1" Association="pvModel.fk_tb_eliminacao_tb_consulta_variavel1">
-            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
-            <End Role="tb_eliminacao" EntitySet="tb_eliminacao" />
           </AssociationSet>
           <AssociationSet Name="fk_tb_nutricao_tb_consulta_variavel1" Association="pvModel.fk_tb_nutricao_tb_consulta_variavel1">
             <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
@@ -2807,6 +2799,11 @@
           <AssociationSet Name="fk_tb_integridade_tecidual_tb_consulta_variavel1" Association="pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1">
             <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
             <End Role="tb_integridade_tecidual" EntitySet="tb_integridade_tecidual" />
+          </AssociationSet>
+          <EntitySet Name="tb_eliminacao" EntityType="pvModel.tb_eliminacao" />
+          <AssociationSet Name="fk_tb_eliminacao_tb_consulta_variavel1" Association="pvModel.fk_tb_eliminacao_tb_consulta_variavel1">
+            <End Role="tb_consulta_variavel" EntitySet="tb_consulta_variavel" />
+            <End Role="tb_eliminacao" EntitySet="tb_eliminacao" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="my_aspnet_membership">
@@ -2995,11 +2992,11 @@
           <NavigationProperty Name="tb_comunicacao" Relationship="pvModel.fk_tb_comunicacao_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_comunicacao" />
           <NavigationProperty Name="tb_consciencia" Relationship="pvModel.fk_tb_consciencia_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_consciencia" />
           <NavigationProperty Name="tb_outras_necessidades" Relationship="pvModel.fk_table1_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_outras_necessidades" />
-          <NavigationProperty Name="tb_eliminacao" Relationship="pvModel.fk_tb_eliminacao_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_eliminacao" />
           <NavigationProperty Name="tb_nutricao" Relationship="pvModel.fk_tb_nutricao_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_nutricao" />
           <NavigationProperty Name="tb_sensorial" Relationship="pvModel.fk_tb_sensorial_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_sensorial" />
           <NavigationProperty Name="tb_sexualidade" Relationship="pvModel.fk_tb_sexualidade_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_sexualidade" />
           <NavigationProperty Name="tb_integridade_tecidual" Relationship="pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_integridade_tecidual" />
+          <NavigationProperty Name="tb_eliminacao" Relationship="pvModel.fk_tb_eliminacao_tb_consulta_variavel1" FromRole="tb_consulta_variavel" ToRole="tb_eliminacao" />
         </EntityType>
         <EntityType Name="tb_consulta_variavel_intervencao">
           <Key>
@@ -4549,41 +4546,6 @@
           <Property Type="Int32" Name="AvaliacaoConscienciaGlasgow" Nullable="false" />
           <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_consciencia_tb_consulta_variavel1" FromRole="tb_consciencia" ToRole="tb_consulta_variavel" />
         </EntityType>
-        <EntityType Name="tb_eliminacao">
-          <Key>
-            <PropertyRef Name="IdConsultaVariavel" />
-          </Key>
-          <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
-          <Property Type="DateTime" Name="UltimaEvacuacao" Nullable="false" />
-          <Property Type="Int32" Name="EvacuacoesDia" Nullable="false" />
-          <Property Type="Boolean" Name="EsforcoEvacuar" Nullable="false" />
-          <Property Type="Boolean" Name="FezesPastosas" Nullable="false" />
-          <Property Type="Boolean" Name="Melena" Nullable="false" />
-          <Property Type="Boolean" Name="Diarreia" Nullable="false" />
-          <Property Type="Boolean" Name="Constipacao" Nullable="false" />
-          <Property Type="Boolean" Name="IncontinenciaFecal" Nullable="false" />
-          <Property Type="Boolean" Name="Flatos" Nullable="false" />
-          <Property Type="Boolean" Name="SangramentoRetal" Nullable="false" />
-          <Property Type="Boolean" Name="Hemorroidas" Nullable="false" />
-          <Property Type="Boolean" Name="PruridoAnal" Nullable="false" />
-          <Property Type="String" Name="EstomasCirurgicos" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="FormasAbdomem" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="SonsIntestinais" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="TipoSonsPercussao" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="LocalizarPercussaoAbdominal" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="PalpacaoAbodminal" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ColoracaoUrinaria" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="Disuria" Nullable="false" />
-          <Property Type="String" Name="DebitoUrinario" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Tempo" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CondicaoContinenciaUrinaria" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="IrrigacaoVesicalCom" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="IrrigacaoVesicalDesde" />
-          <Property Type="Boolean" Name="SVD" Nullable="false" />
-          <Property Type="DateTime" Name="SVDInstalada" />
-          <Property Type="Boolean" Name="Cistostomia" Nullable="false" />
-          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_eliminacao_tb_consulta_variavel1" FromRole="tb_eliminacao" ToRole="tb_consulta_variavel" />
-        </EntityType>
         <EntityType Name="tb_nutricao">
           <Key>
             <PropertyRef Name="IdConsultaVariavel" />
@@ -4720,18 +4682,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_tb_eliminacao_tb_consulta_variavel1">
-          <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
-          <End Type="pvModel.tb_eliminacao" Role="tb_eliminacao" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tb_consulta_variavel">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Principal>
-            <Dependent Role="tb_eliminacao">
-              <PropertyRef Name="IdConsultaVariavel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_tb_nutricao_tb_consulta_variavel1">
           <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
           <End Type="pvModel.tb_nutricao" Role="tb_nutricao" Multiplicity="0..1" />
@@ -4808,6 +4758,50 @@
               <PropertyRef Name="IdConsultaVariavel" />
             </Principal>
             <Dependent Role="tb_integridade_tecidual">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tb_eliminacao">
+          <Key>
+            <PropertyRef Name="IdConsultaVariavel" />
+          </Key>
+          <Property Type="Int64" Name="IdConsultaVariavel" Nullable="false" />
+          <Property Type="DateTime" Name="UltimaEvacuacao" Nullable="false" />
+          <Property Type="Int32" Name="EvacuacoesDia" Nullable="false" />
+          <Property Type="Boolean" Name="EsforcoEvacuar" Nullable="false" />
+          <Property Type="String" Name="TiposFezes" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IncontinenciaFecal" Nullable="false" />
+          <Property Type="Boolean" Name="Flatos" Nullable="false" />
+          <Property Type="Boolean" Name="SangramentoRetal" Nullable="false" />
+          <Property Type="Boolean" Name="Hemorroidas" Nullable="false" />
+          <Property Type="Boolean" Name="PruridoAnal" Nullable="false" />
+          <Property Type="String" Name="EstomasCirurgicos" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FormasAbdomem" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SonsIntestinais" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TipoSonsPercussao" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LocalizarPercussaoAbdominal" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PalpacaoAbodminal" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ColoracaoUrinaria" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Disuria" Nullable="false" />
+          <Property Type="String" Name="DebitoUrinario" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tempo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CondicaoContinenciaUrinaria" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IrrigacaoVesicalCom" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="IrrigacaoVesicalDesde" />
+          <Property Type="Boolean" Name="SVD" Nullable="false" />
+          <Property Type="DateTime" Name="SVDInstalada" />
+          <Property Type="Boolean" Name="Cistostomia" Nullable="false" />
+          <NavigationProperty Name="tb_consulta_variavel" Relationship="pvModel.fk_tb_eliminacao_tb_consulta_variavel1" FromRole="tb_eliminacao" ToRole="tb_consulta_variavel" />
+        </EntityType>
+        <Association Name="fk_tb_eliminacao_tb_consulta_variavel1">
+          <End Type="pvModel.tb_consulta_variavel" Role="tb_consulta_variavel" Multiplicity="1" />
+          <End Type="pvModel.tb_eliminacao" Role="tb_eliminacao" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_consulta_variavel">
+              <PropertyRef Name="IdConsultaVariavel" />
+            </Principal>
+            <Dependent Role="tb_eliminacao">
               <PropertyRef Name="IdConsultaVariavel" />
             </Dependent>
           </ReferentialConstraint>
@@ -5645,41 +5639,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tb_eliminacao">
-            <EntityTypeMapping TypeName="pvModel.tb_eliminacao">
-              <MappingFragment StoreEntitySet="tb_eliminacao">
-                <ScalarProperty Name="Cistostomia" ColumnName="Cistostomia" />
-                <ScalarProperty Name="SVDInstalada" ColumnName="SVDInstalada" />
-                <ScalarProperty Name="SVD" ColumnName="SVD" />
-                <ScalarProperty Name="IrrigacaoVesicalDesde" ColumnName="IrrigacaoVesicalDesde" />
-                <ScalarProperty Name="IrrigacaoVesicalCom" ColumnName="IrrigacaoVesicalCom" />
-                <ScalarProperty Name="CondicaoContinenciaUrinaria" ColumnName="CondicaoContinenciaUrinaria" />
-                <ScalarProperty Name="Tempo" ColumnName="Tempo" />
-                <ScalarProperty Name="DebitoUrinario" ColumnName="DebitoUrinario" />
-                <ScalarProperty Name="Disuria" ColumnName="Disuria" />
-                <ScalarProperty Name="ColoracaoUrinaria" ColumnName="ColoracaoUrinaria" />
-                <ScalarProperty Name="PalpacaoAbodminal" ColumnName="PalpacaoAbodminal" />
-                <ScalarProperty Name="LocalizarPercussaoAbdominal" ColumnName="LocalizarPercussaoAbdominal" />
-                <ScalarProperty Name="TipoSonsPercussao" ColumnName="TipoSonsPercussao" />
-                <ScalarProperty Name="SonsIntestinais" ColumnName="SonsIntestinais" />
-                <ScalarProperty Name="FormasAbdomem" ColumnName="FormasAbdomem" />
-                <ScalarProperty Name="EstomasCirurgicos" ColumnName="EstomasCirurgicos" />
-                <ScalarProperty Name="PruridoAnal" ColumnName="PruridoAnal" />
-                <ScalarProperty Name="Hemorroidas" ColumnName="Hemorroidas" />
-                <ScalarProperty Name="SangramentoRetal" ColumnName="SangramentoRetal" />
-                <ScalarProperty Name="Flatos" ColumnName="Flatos" />
-                <ScalarProperty Name="IncontinenciaFecal" ColumnName="IncontinenciaFecal" />
-                <ScalarProperty Name="Constipacao" ColumnName="Constipacao" />
-                <ScalarProperty Name="Diarreia" ColumnName="Diarreia" />
-                <ScalarProperty Name="Melena" ColumnName="Melena" />
-                <ScalarProperty Name="FezesPastosas" ColumnName="FezesPastosas" />
-                <ScalarProperty Name="EsforcoEvacuar" ColumnName="EsforcoEvacuar" />
-                <ScalarProperty Name="EvacuacoesDia" ColumnName="EvacuacoesDia" />
-                <ScalarProperty Name="UltimaEvacuacao" ColumnName="UltimaEvacuacao" />
-                <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_nutricao">
             <EntityTypeMapping TypeName="pvModel.tb_nutricao">
               <MappingFragment StoreEntitySet="tb_nutricao">
@@ -5812,6 +5771,38 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tb_eliminacao">
+            <EntityTypeMapping TypeName="pvModel.tb_eliminacao">
+              <MappingFragment StoreEntitySet="tb_eliminacao">
+                <ScalarProperty Name="Cistostomia" ColumnName="Cistostomia" />
+                <ScalarProperty Name="SVDInstalada" ColumnName="SVDInstalada" />
+                <ScalarProperty Name="SVD" ColumnName="SVD" />
+                <ScalarProperty Name="IrrigacaoVesicalDesde" ColumnName="IrrigacaoVesicalDesde" />
+                <ScalarProperty Name="IrrigacaoVesicalCom" ColumnName="IrrigacaoVesicalCom" />
+                <ScalarProperty Name="CondicaoContinenciaUrinaria" ColumnName="CondicaoContinenciaUrinaria" />
+                <ScalarProperty Name="Tempo" ColumnName="Tempo" />
+                <ScalarProperty Name="DebitoUrinario" ColumnName="DebitoUrinario" />
+                <ScalarProperty Name="Disuria" ColumnName="Disuria" />
+                <ScalarProperty Name="ColoracaoUrinaria" ColumnName="ColoracaoUrinaria" />
+                <ScalarProperty Name="PalpacaoAbodminal" ColumnName="PalpacaoAbodminal" />
+                <ScalarProperty Name="LocalizarPercussaoAbdominal" ColumnName="LocalizarPercussaoAbdominal" />
+                <ScalarProperty Name="TipoSonsPercussao" ColumnName="TipoSonsPercussao" />
+                <ScalarProperty Name="SonsIntestinais" ColumnName="SonsIntestinais" />
+                <ScalarProperty Name="FormasAbdomem" ColumnName="FormasAbdomem" />
+                <ScalarProperty Name="EstomasCirurgicos" ColumnName="EstomasCirurgicos" />
+                <ScalarProperty Name="PruridoAnal" ColumnName="PruridoAnal" />
+                <ScalarProperty Name="Hemorroidas" ColumnName="Hemorroidas" />
+                <ScalarProperty Name="SangramentoRetal" ColumnName="SangramentoRetal" />
+                <ScalarProperty Name="Flatos" ColumnName="Flatos" />
+                <ScalarProperty Name="IncontinenciaFecal" ColumnName="IncontinenciaFecal" />
+                <ScalarProperty Name="TiposFezes" ColumnName="TiposFezes" />
+                <ScalarProperty Name="EsforcoEvacuar" ColumnName="EsforcoEvacuar" />
+                <ScalarProperty Name="EvacuacoesDia" ColumnName="EvacuacoesDia" />
+                <ScalarProperty Name="UltimaEvacuacao" ColumnName="UltimaEvacuacao" />
+                <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -5917,16 +5908,16 @@
           <ConnectorPoint PointX="6" PointY="28.817047526041662" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_carta_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.75" PointY="33.671649766449413" />
-          <ConnectorPoint PointX="10.5" PointY="33.671649766449413" />
+          <ConnectorPoint PointX="9.75" PointY="33.839950794364015" />
+          <ConnectorPoint PointX="10.5" PointY="33.839950794364015" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_carta_tb_especialidade1" >
           <ConnectorPoint PointX="9.75" PointY="28.595683593749982" />
           <ConnectorPoint PointX="10.125" PointY="28.970683593749982" />
-          <ConnectorPoint PointX="10.125" PointY="31.643786349624911" />
-          <ConnectorPoint PointX="10.166666666666666" PointY="31.643786349624911" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="31.643786349624911" />
-          <ConnectorPoint PointX="10.5" PointY="31.643786349624911" />
+          <ConnectorPoint PointX="10.125" PointY="31.800778362165545" />
+          <ConnectorPoint PointX="10.166666666666666" PointY="31.800778362165545" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="31.800778362165545" />
+          <ConnectorPoint PointX="10.5" PointY="31.800778362165545" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_demograficos_antropometricos_tb_consulta_fixo1" >
           <ConnectorPoint PointX="2.25" PointY="28.703003410950153" />
@@ -5992,8 +5983,8 @@
           <ConnectorPoint PointX="6" PointY="34.311697091145838" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_parametro_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.75" PointY="35.270799713953863" />
-          <ConnectorPoint PointX="10.25" PointY="35.270799713953863" />
+          <ConnectorPoint PointX="9.75" PointY="35.354950227911168" />
+          <ConnectorPoint PointX="10.25" PointY="35.354950227911168" />
           <ConnectorPoint PointX="10.25" PointY="35.028300781249982" />
           <ConnectorPoint PointX="12.494791666666666" PointY="35.028300781249982" />
           <ConnectorPoint PointX="12.661458333333334" PointY="35.028300781249982" />
@@ -6009,17 +6000,17 @@
           <ConnectorPoint PointX="13.5" PointY="32.807444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1" >
-          <ConnectorPoint PointX="9.75" PointY="32.626465558037168" />
-          <ConnectorPoint PointX="10.25" PointY="32.626465558037168" />
+          <ConnectorPoint PointX="9.75" PointY="32.789112078264786" />
+          <ConnectorPoint PointX="10.25" PointY="32.789112078264786" />
           <ConnectorPoint PointX="10.25" PointY="30.701396484374982" />
           <ConnectorPoint PointX="12.494791666666666" PointY="30.701396484374982" />
           <ConnectorPoint PointX="12.661458333333334" PointY="30.701396484374982" />
           <ConnectorPoint PointX="15.197916666666666" PointY="30.701396484374982" />
           <ConnectorPoint PointX="15.364583333333334" PointY="30.701396484374982" />
-          <ConnectorPoint PointX="16.908853854166669" PointY="30.701396484374982" />
-          <ConnectorPoint PointX="17.075520520833333" PointY="30.701396484374982" />
-          <ConnectorPoint PointX="17.484374375" PointY="30.701396484374982" />
-          <ConnectorPoint PointX="17.484374375" PointY="29.989889322916667" />
+          <ConnectorPoint PointX="16.916544263346356" PointY="30.701396484374982" />
+          <ConnectorPoint PointX="17.083210930013021" PointY="30.701396484374982" />
+          <ConnectorPoint PointX="17.499755193359377" PointY="30.701396484374982" />
+          <ConnectorPoint PointX="17.499755193359377" PointY="29.989889322916667" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2" >
           <ConnectorPoint PointX="9.75" PointY="30.607646484374982" />
@@ -6033,8 +6024,8 @@
           <ConnectorPoint PointX="15.364583333333334" PointY="30.607646484374982" />
           <ConnectorPoint PointX="16.041666666666668" PointY="30.607646484374982" />
           <ConnectorPoint PointX="16.208333333333332" PointY="30.607646484374982" />
-          <ConnectorPoint PointX="16.9921871875" PointY="30.607646484374982" />
-          <ConnectorPoint PointX="16.9921871875" PointY="31.5" />
+          <ConnectorPoint PointX="16.999877596679688" PointY="30.607646484374982" />
+          <ConnectorPoint PointX="16.999877596679688" PointY="31.5" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_queixa_tb_consulta_variavel1" >
           <ConnectorPoint PointX="9.75" PointY="30.373320345001993" />
@@ -6065,10 +6056,10 @@
           <ConnectorPoint PointX="8.25" PointY="32.778595377604177" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_estilo_vida_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.3471369319009767" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="9.3471369319009767" PointY="47.788198242187491" />
-          <ConnectorPoint PointX="9.3799680198458812" PointY="47.788198242187491" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="47.788198242187491" />
+          <ConnectorPoint PointX="9.4058396648518361" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="9.4058396648518361" PointY="47.788198242187491" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="47.788198242187491" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="47.788198242187491" />
           <ConnectorPoint PointX="10.5" PointY="47.788198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_exames_fisicos_tb_consulta_variavel1" >
@@ -6111,10 +6102,10 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_queixa_tb_queixa1" >
           <ConnectorPoint PointX="12.75" PointY="21.53125" />
-          <ConnectorPoint PointX="12.952004821464398" PointY="21.817975005533697" />
-          <ConnectorPoint PointX="13.172995178535604" PointY="22.131648020339952" />
-          <ConnectorPoint PointX="13.71875" PointY="22.906290690104157" />
-          <ConnectorPoint PointX="13.71875" PointY="28.500040690104157" />
+          <ConnectorPoint PointX="12.916666666666666" PointY="21.53125" />
+          <ConnectorPoint PointX="13.208333333333334" PointY="21.53125" />
+          <ConnectorPoint PointX="13.71875" PointY="21.53125" />
+          <ConnectorPoint PointX="13.71875" PointY="27.125" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consulta_variavel_queixa_tb_situacao_queixa1" >
           <ConnectorPoint PointX="12.578125" PointY="39.5" />
@@ -6254,23 +6245,23 @@
           <ConnectorPoint PointX="5.583333333333333" PointY="50.225698242187491" />
           <ConnectorPoint PointX="5.6145833333333339" PointY="50.225698242187491" />
           <ConnectorPoint PointX="5.78125" PointY="50.225698242187491" />
-          <ConnectorPoint PointX="8.2547299191109342" PointY="50.225698242187491" />
-          <ConnectorPoint PointX="8.5719648382218683" PointY="50.225698242187491" />
-          <ConnectorPoint PointX="8.5734848657480871" PointY="50.225698242187491" />
-          <ConnectorPoint PointX="9.3152876286466917" PointY="50.225698242187491" />
-          <ConnectorPoint PointX="9.3799680198458812" PointY="50.225698242187491" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="50.225698242187491" />
+          <ConnectorPoint PointX="8.2507329553992914" PointY="50.225698242187491" />
+          <ConnectorPoint PointX="8.5639709107985862" PointY="50.225698242187491" />
+          <ConnectorPoint PointX="8.5640261078764386" PointY="50.225698242187491" />
+          <ConnectorPoint PointX="9.35090046051833" PointY="50.225698242187491" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="50.225698242187491" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="50.225698242187491" />
           <ConnectorPoint PointX="14.166666666666666" PointY="50.225698242187491" />
           <ConnectorPoint PointX="14.333333333333334" PointY="50.225698242187491" />
           <ConnectorPoint PointX="15.28125" PointY="50.225698242187491" />
           <ConnectorPoint PointX="15.28125" PointY="25.576396484374982" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_historico_tb_relato_clinico1" >
-          <ConnectorPoint PointX="5.25" PointY="15.064964251302129" />
-          <ConnectorPoint PointX="12.916666666666666" PointY="15.064964251302127" />
-          <ConnectorPoint PointX="13.208333333333334" PointY="15.064964251302129" />
-          <ConnectorPoint PointX="14.75" PointY="15.064964251302129" />
-          <ConnectorPoint PointX="14.75" PointY="23.625040690104157" />
+          <ConnectorPoint PointX="5.25" PointY="13.689923561197972" />
+          <ConnectorPoint PointX="12.979166666666666" PointY="13.689923561197972" />
+          <ConnectorPoint PointX="13.208333333333334" PointY="13.689923561197972" />
+          <ConnectorPoint PointX="14.75" PointY="13.689923561197972" />
+          <ConnectorPoint PointX="14.75" PointY="22.25" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_turma_tb_instituicao1" >
           <ConnectorPoint PointX="3.0000000000000013" PointY="66.75" />
@@ -6321,8 +6312,8 @@
           <ConnectorPoint PointX="4.9895853333333333" PointY="34.345683593749982" />
           <ConnectorPoint PointX="5.416666666666667" PointY="34.345683593749982" />
           <ConnectorPoint PointX="5.583333333333333" PointY="34.345683593749982" />
-          <ConnectorPoint PointX="5.666666666666667" PointY="34.345683593749982" />
-          <ConnectorPoint PointX="5.833333333333333" PointY="34.345683593749982" />
+          <ConnectorPoint PointX="5.6145833333333339" PointY="34.345683593749982" />
+          <ConnectorPoint PointX="5.8333333333333339" PointY="34.345683593749982" />
           <ConnectorPoint PointX="8" PointY="34.345683593749982" />
           <ConnectorPoint PointX="8" PointY="28.845683593749982" />
           <ConnectorPoint PointX="9.9166666666666661" PointY="28.845683593749982" />
@@ -6344,16 +6335,16 @@
           <ConnectorPoint PointX="4.906252" PointY="34.220683593749982" />
           <ConnectorPoint PointX="5.416666666666667" PointY="34.220683593749982" />
           <ConnectorPoint PointX="5.583333333333333" PointY="34.220683593749982" />
-          <ConnectorPoint PointX="5.666666666666667" PointY="34.220683593749982" />
-          <ConnectorPoint PointX="5.833333333333333" PointY="34.220683593749982" />
+          <ConnectorPoint PointX="5.6145833333333339" PointY="34.220683593749982" />
+          <ConnectorPoint PointX="5.8333333333333339" PointY="34.220683593749982" />
           <ConnectorPoint PointX="7.9375" PointY="34.220683593749982" />
           <ConnectorPoint PointX="7.9375" PointY="29.875" />
-          <ConnectorPoint PointX="8.3873674791666648" PointY="29.875" />
-          <ConnectorPoint PointX="8.5540341458333327" PointY="29.875" />
-          <ConnectorPoint PointX="8.6705722916666659" PointY="29.875" />
-          <ConnectorPoint PointX="8.8372389583333337" PointY="29.875" />
-          <ConnectorPoint PointX="9.1998714791666654" PointY="29.875" />
-          <ConnectorPoint PointX="9.3665381458333332" PointY="29.875" />
+          <ConnectorPoint PointX="8.495033768229165" PointY="29.875" />
+          <ConnectorPoint PointX="8.6617004348958329" PointY="29.875" />
+          <ConnectorPoint PointX="8.8859048697916663" PointY="29.875" />
+          <ConnectorPoint PointX="9.0525715364583341" PointY="29.875" />
+          <ConnectorPoint PointX="9.3075377682291656" PointY="29.875" />
+          <ConnectorPoint PointX="9.4742044348958334" PointY="29.875" />
           <ConnectorPoint PointX="9.9789733589743541" PointY="29.875" />
           <ConnectorPoint PointX="10.270833333333332" PointY="29.875" />
           <ConnectorPoint PointX="10.375" PointY="29.875" />
@@ -6362,8 +6353,8 @@
           <ConnectorPoint PointX="12.661458333333334" PointY="30.732646484374982" />
           <ConnectorPoint PointX="15.197916666666666" PointY="30.732646484374982" />
           <ConnectorPoint PointX="15.364583333333334" PointY="30.732646484374982" />
-          <ConnectorPoint PointX="16.908853854166669" PointY="30.732646484374982" />
-          <ConnectorPoint PointX="17.075520520833333" PointY="30.732646484374982" />
+          <ConnectorPoint PointX="16.916544263346356" PointY="30.732646484374982" />
+          <ConnectorPoint PointX="17.083210930013021" PointY="30.732646484374982" />
           <ConnectorPoint PointX="18.375" PointY="30.732646484374982" />
           <ConnectorPoint PointX="18.375" PointY="28.865102539062491" />
           <ConnectorPoint PointX="18.75" PointY="28.865102539062491" />
@@ -6434,10 +6425,10 @@
           <ConnectorPoint PointX="3.9999995" PointY="21.768697916666667" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_oxiginecao_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="8.753905625" PointY="30.125" />
-          <ConnectorPoint PointX="8.753905625" PointY="29.75" />
-          <ConnectorPoint PointX="9.1998714791666654" PointY="29.75" />
-          <ConnectorPoint PointX="9.3665381458333332" PointY="29.75" />
+          <ConnectorPoint PointX="8.969238203125" PointY="30.125" />
+          <ConnectorPoint PointX="8.969238203125" PointY="29.75" />
+          <ConnectorPoint PointX="9.3075377682291656" PointY="29.75" />
+          <ConnectorPoint PointX="9.4742044348958334" PointY="29.75" />
           <ConnectorPoint PointX="10.041666666666666" PointY="29.75" />
           <ConnectorPoint PointX="10.208333333333334" PointY="29.75" />
           <ConnectorPoint PointX="10.25" PointY="29.75" />
@@ -6450,12 +6441,12 @@
           <ConnectorPoint PointX="11.25" PointY="14.375" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_percepcao_expectativas_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="8.8824021532416335" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="8.8824021532416335" PointY="54.393992513020834" />
-          <ConnectorPoint PointX="8.9162535726503531" PointY="54.393992513020834" />
-          <ConnectorPoint PointX="9.3152876286466917" PointY="54.393992513020834" />
-          <ConnectorPoint PointX="9.3799680198458812" PointY="54.393992513020834" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="54.393992513020834" />
+          <ConnectorPoint PointX="8.8746794462503864" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="8.8746794462503864" PointY="54.393992513020834" />
+          <ConnectorPoint PointX="8.91865368455094" PointY="54.393992513020834" />
+          <ConnectorPoint PointX="9.3509004605183321" PointY="54.393992513020834" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="54.393992513020834" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="54.393992513020834" />
           <ConnectorPoint PointX="10.5" PointY="54.393992513020834" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.tb_antecedentes_familiares" >
@@ -6482,14 +6473,12 @@
         </AssociationConnector>
         <AssociationConnector Association="pvModel.tb_clinico_internacao_alergia" >
           <ConnectorPoint PointX="11.25" PointY="51.893992513020834" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="51.893992513020834" />
-          <ConnectorPoint PointX="9.3799680198458812" PointY="51.893992513020834" />
-          <ConnectorPoint PointX="9.3152876286466917" PointY="51.893992513020834" />
-          <ConnectorPoint PointX="8.5734848657480871" PointY="51.893992513020834" />
-          <ConnectorPoint PointX="8.5719648382218683" PointY="51.893992513020834" />
-          <ConnectorPoint PointX="8.2547299191109342" PointY="51.893992513020834" />
-          <ConnectorPoint PointX="5.78125" PointY="51.893992513020834" />
-          <ConnectorPoint PointX="5.6145833333333339" PointY="51.893992513020834" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="51.893992513020834" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="51.893992513020834" />
+          <ConnectorPoint PointX="9.3509004605183321" PointY="51.893992513020834" />
+          <ConnectorPoint PointX="8.5640261078764368" PointY="51.893992513020834" />
+          <ConnectorPoint PointX="8.5639709107985862" PointY="51.893992513020834" />
+          <ConnectorPoint PointX="8.2507329553992914" PointY="51.893992513020834" />
           <ConnectorPoint PointX="5.5" PointY="51.893992513020834" />
           <ConnectorPoint PointX="5.5" PointY="31.832337239583353" />
           <ConnectorPoint PointX="3.6302108333333334" PointY="31.832337239583353" />
@@ -6504,15 +6493,17 @@
           <ConnectorPoint PointX="2.75" PointY="24.845683593749982" />
           <ConnectorPoint PointX="3.25" PointY="24.845683593749982" />
           <ConnectorPoint PointX="3.25" PointY="22.206197916666667" />
-          <ConnectorPoint PointX="4.226565625" PointY="22.206197916666667" />
-          <ConnectorPoint PointX="4.226565625" PointY="21.768697916666667" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="22.206197916666667" />
+          <ConnectorPoint PointX="3.5833333333333335" PointY="22.206197916666667" />
+          <ConnectorPoint PointX="4.19726715625" PointY="22.206197916666667" />
+          <ConnectorPoint PointX="4.19726715625" PointY="21.768697916666667" />
         </AssociationConnector>
         <EntityTypeShape EntityType="pvModel.tb_circulacao" Width="1.5" PointX="10.5" PointY="6.875" Height="6.018616536458353" />
         <EntityTypeShape EntityType="pvModel.tb_higiene" Width="1.5" PointX="10.5" PointY="56.625" Height="3.710999348958353" />
         <EntityTypeShape EntityType="pvModel.tb_termorregulacao" Width="1.5" PointX="10.5" PointY="61" Height="2.3648893229166674" />
         <AssociationConnector Association="pvModel.fk_tb_circulacao_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.2832048125" PointY="30.125" />
-          <ConnectorPoint PointX="9.2832048125" PointY="29.625" />
+          <ConnectorPoint PointX="9.3908711015625" PointY="30.125" />
+          <ConnectorPoint PointX="9.3908711015625" PointY="29.625" />
           <ConnectorPoint PointX="10.041666666666666" PointY="29.625" />
           <ConnectorPoint PointX="10.333333333333334" PointY="29.625" />
           <ConnectorPoint PointX="10.375" PointY="29.625" />
@@ -6524,105 +6515,95 @@
           <ConnectorPoint PointX="12" PointY="9.8843082682291765" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_higiene_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="8.4886315048885344" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="8.4886315048885344" PointY="58.480499674479177" />
-          <ConnectorPoint PointX="8.5734848657480871" PointY="58.480499674479177" />
-          <ConnectorPoint PointX="8.8529435094948621" PointY="58.480499674479177" />
-          <ConnectorPoint PointX="8.9162535726503531" PointY="58.480499674479177" />
-          <ConnectorPoint PointX="9.3152876286466917" PointY="58.480499674479177" />
-          <ConnectorPoint PointX="9.3799680198458812" PointY="58.480499674479177" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="58.480499674479177" />
+          <ConnectorPoint PointX="8.4806375774652523" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="8.4806375774652523" PointY="58.480499674479177" />
+          <ConnectorPoint PointX="8.5640261078764386" PointY="58.480499674479177" />
+          <ConnectorPoint PointX="8.8443527770634116" PointY="58.480499674479177" />
+          <ConnectorPoint PointX="8.91865368455094" PointY="58.480499674479177" />
+          <ConnectorPoint PointX="9.3509004605183321" PointY="58.480499674479177" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="58.480499674479177" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="58.480499674479177" />
           <ConnectorPoint PointX="10.5" PointY="58.480499674479177" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_termorregulacao_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.5794657744574536" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="9.5794657744574536" PointY="62.182444661458334" />
-          <ConnectorPoint PointX="9.6126520538953937" PointY="62.182444661458334" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="62.182444661458334" />
+          <ConnectorPoint PointX="9.5750167669793775" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="9.5750167669793775" PointY="62.182444661458334" />
+          <ConnectorPoint PointX="9.6104275501563539" PointY="62.182444661458334" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="62.182444661458334" />
           <ConnectorPoint PointX="10.5" PointY="62.182444661458334" />
         </AssociationConnector>
         <EntityTypeShape EntityType="pvModel.tb_psicoespiritual" Width="1.5" PointX="10.5" PointY="65.75" Height="3.9033007812499818" />
         <AssociationConnector Association="pvModel.fk_tb_psicoespiritual_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.1167716587257388" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="9.1167716587257388" PointY="67.701650390624991" />
-          <ConnectorPoint PointX="9.1486209619800238" PointY="67.701650390624991" />
-          <ConnectorPoint PointX="9.3152876286466917" PointY="67.701650390624991" />
-          <ConnectorPoint PointX="9.3799680198458812" PointY="67.701650390624991" />
-          <ConnectorPoint PointX="9.5466346865125491" PointY="67.701650390624991" />
-          <ConnectorPoint PointX="9.6126520538953937" PointY="67.701650390624991" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="67.701650390624991" />
+          <ConnectorPoint PointX="9.12929458951816" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="9.12929458951816" PointY="67.701650390624991" />
+          <ConnectorPoint PointX="9.1842337938516643" PointY="67.701650390624991" />
+          <ConnectorPoint PointX="9.3509004605183321" PointY="67.701650390624991" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="67.701650390624991" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="67.701650390624991" />
           <ConnectorPoint PointX="10.5" PointY="67.701650390624991" />
         </AssociationConnector>
         <EntityTypeShape EntityType="pvModel.tb_comunicacao" Width="1.5" PointX="10.5" PointY="71" Height="3.9033007812499818" />
         <EntityTypeShape EntityType="pvModel.tb_consciencia" Width="1.5" PointX="10.5" PointY="75.625" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="pvModel.tb_eliminacao" Width="1.5" PointX="10.5" PointY="78.75" Height="6.7878222656249818" />
         <EntityTypeShape EntityType="pvModel.tb_nutricao" Width="1.5" PointX="10.5" PointY="86.25" Height="5.441712239583353" />
         <EntityTypeShape EntityType="pvModel.tb_outras_necessidades" Width="1.5" PointX="10.5" PointY="92.5" Height="3.710999348958353" />
         <EntityTypeShape EntityType="pvModel.tb_sensorial" Width="1.5" PointX="10.5" PointY="96.875" Height="6.018616536458353" />
         <EntityTypeShape EntityType="pvModel.tb_sexualidade" Width="1.5" PointX="10.5" PointY="103.75" Height="4.287903645833353" />
         <AssociationConnector Association="pvModel.fk_tb_comunicacao_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="8.656818199081421" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="8.656818199081421" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="8.6862768428281942" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="8.8529435094948621" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="8.9162535726503531" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="9.082920239317021" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="9.1486209619800238" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="9.3152876286466917" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="9.3799680198458812" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="9.5466346865125491" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="9.6126520538953937" PointY="72.951650390624991" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="8.6473594412097725" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="8.6473594412097725" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="8.6776861103967455" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="8.8443527770634134" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="8.91865368455094" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="9.0853203512176073" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="9.1842337938516643" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="9.3509004605183321" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="72.951650390624991" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="72.951650390624991" />
           <ConnectorPoint PointX="10.5" PointY="72.951650390624991" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_consciencia_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="8.3380632524442682" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="8.3380632524442682" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="8.6862768428281942" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="8.8529435094948621" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="8.9162535726503531" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="9.082920239317021" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="9.1486209619800238" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="9.3152876286466917" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="9.3799680198458812" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="9.5466346865125491" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="9.6126520538953937" PointY="76.807444661458334" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="8.3340662887326253" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="8.3340662887326253" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="8.6776861103967455" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="8.8443527770634134" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="8.91865368455094" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="9.0853203512176073" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="9.1842337938516643" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="9.3509004605183321" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="76.807444661458334" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="76.807444661458334" />
           <ConnectorPoint PointX="10.5" PointY="76.807444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_table1_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.6959853872287276" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="9.6959853872287276" PointY="94.355499674479177" />
+          <ConnectorPoint PointX="9.6937608834896878" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="9.6937608834896878" PointY="94.355499674479177" />
           <ConnectorPoint PointX="10.5" PointY="94.355499674479177" />
         </AssociationConnector>
-        <AssociationConnector Association="pvModel.fk_tb_eliminacao_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.4633013531792152" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="9.4633013531792152" PointY="82.143911132812491" />
-          <ConnectorPoint PointX="9.6126520538953937" PointY="82.143911132812491" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="82.143911132812491" />
-          <ConnectorPoint PointX="10.5" PointY="82.143911132812491" />
-        </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_nutricao_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="9.2319542953133578" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="9.2319542953133578" PointY="88.970856119791677" />
-          <ConnectorPoint PointX="9.6126520538953937" PointY="88.970856119791677" />
-          <ConnectorPoint PointX="9.7793187205620615" PointY="88.970856119791677" />
+          <ConnectorPoint PointX="9.2675671271849982" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="9.2675671271849982" PointY="88.970856119791677" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="88.970856119791677" />
+          <ConnectorPoint PointX="9.7770942168230217" PointY="88.970856119791677" />
           <ConnectorPoint PointX="10.5" PointY="88.970856119791677" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_sensorial_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="8.999586905983687" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="8.999586905983687" PointY="99.884308268229177" />
+          <ConnectorPoint PointX="9.0019870178842734" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="9.0019870178842734" PointY="99.884308268229177" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="99.884308268229177" />
+          <ConnectorPoint PointX="9.62709760031271" PointY="99.884308268229177" />
           <ConnectorPoint PointX="10.5" PointY="99.884308268229177" />
         </AssociationConnector>
         <AssociationConnector Association="pvModel.fk_tb_sexualidade_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="8.7696101761615282" PointY="38.835836588541667" />
-          <ConnectorPoint PointX="8.7696101761615282" PointY="105.89395182291668" />
+          <ConnectorPoint PointX="8.76101944373008" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="8.76101944373008" PointY="105.89395182291668" />
+          <ConnectorPoint PointX="9.4604309336460428" PointY="105.89395182291668" />
+          <ConnectorPoint PointX="9.62709760031271" PointY="105.89395182291668" />
           <ConnectorPoint PointX="10.5" PointY="105.89395182291668" />
         </AssociationConnector>
         <EntityTypeShape EntityType="pvModel.tb_integridade_tecidual" Width="1.5" PointX="10.5" PointY="0.75" Height="6.2109179687499818" />
         <AssociationConnector Association="pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1" >
-          <ConnectorPoint PointX="8.4707008124999987" PointY="30.125" />
-          <ConnectorPoint PointX="8.4707008124999987" PointY="29.5" />
+          <ConnectorPoint PointX="8.5783671015624989" PointY="30.125" />
+          <ConnectorPoint PointX="8.5783671015624989" PointY="29.5" />
           <ConnectorPoint PointX="10.1875" PointY="29.5" />
           <ConnectorPoint PointX="10.1875" PointY="26.376933593749982" />
           <ConnectorPoint PointX="12.322916666666666" PointY="26.376933593749982" />
@@ -6631,6 +6612,12 @@
           <ConnectorPoint PointX="13.125" PointY="0.375" />
           <ConnectorPoint PointX="11.25" PointY="0.375" />
           <ConnectorPoint PointX="11.25" PointY="0.75" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="pvModel.tb_eliminacao" Width="1.5" PointX="10.5" PointY="109.375" Height="6.2109179687499818" />
+        <AssociationConnector Association="pvModel.fk_tb_eliminacao_tb_consulta_variavel1" >
+          <ConnectorPoint PointX="9.5437642669793767" PointY="38.835836588541667" />
+          <ConnectorPoint PointX="9.5437642669793767" PointY="112.48045898437499" />
+          <ConnectorPoint PointX="10.5" PointY="112.48045898437499" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

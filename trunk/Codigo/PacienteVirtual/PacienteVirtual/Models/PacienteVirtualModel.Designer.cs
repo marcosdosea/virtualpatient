@@ -95,11 +95,11 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_comunicacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_comunicacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_comunicacao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consciencia_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_consciencia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_consciencia), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_table1_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_outras_necessidades", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_outras_necessidades), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_eliminacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_eliminacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_eliminacao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_nutricao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_nutricao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_nutricao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sensorial_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sensorial", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sensorial), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sexualidade_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sexualidade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sexualidade), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_integridade_tecidual", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_integridade_tecidual), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_eliminacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_eliminacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_eliminacao), true)]
 
 #endregion
 
@@ -1194,22 +1194,6 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_eliminacao> tb_eliminacao
-        {
-            get
-            {
-                if ((_tb_eliminacao == null))
-                {
-                    _tb_eliminacao = base.CreateObjectSet<tb_eliminacao>("tb_eliminacao");
-                }
-                return _tb_eliminacao;
-            }
-        }
-        private ObjectSet<tb_eliminacao> _tb_eliminacao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<tb_nutricao> tb_nutricao
         {
             get
@@ -1286,6 +1270,22 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<tb_integridade_tecidual> _tb_integridade_tecidual;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_eliminacao> tb_eliminacao
+        {
+            get
+            {
+                if ((_tb_eliminacao == null))
+                {
+                    _tb_eliminacao = base.CreateObjectSet<tb_eliminacao>("tb_eliminacao");
+                }
+                return _tb_eliminacao;
+            }
+        }
+        private ObjectSet<tb_eliminacao> _tb_eliminacao;
 
         #endregion
 
@@ -1812,14 +1812,6 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tb_eliminacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_eliminacao(tb_eliminacao tb_eliminacao)
-        {
-            base.AddObject("tb_eliminacao", tb_eliminacao);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the tb_nutricao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_nutricao(tb_nutricao tb_nutricao)
@@ -1857,6 +1849,14 @@ namespace PacienteVirtual.Models
         public void AddTotb_integridade_tecidual(tb_integridade_tecidual tb_integridade_tecidual)
         {
             base.AddObject("tb_integridade_tecidual", tb_integridade_tecidual);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_eliminacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_eliminacao(tb_eliminacao tb_eliminacao)
+        {
+            base.AddObject("tb_eliminacao", tb_eliminacao);
         }
 
         #endregion
@@ -7274,44 +7274,6 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao")]
-        public tb_eliminacao tb_eliminacao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_eliminacao> tb_eliminacaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao")]
         public tb_nutricao tb_nutricao
         {
@@ -7454,6 +7416,44 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao")]
+        public tb_eliminacao tb_eliminacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_eliminacao> tb_eliminacaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao", value);
                 }
             }
         }
@@ -9392,10 +9392,7 @@ namespace PacienteVirtual.Models
         /// <param name="ultimaEvacuacao">Initial value of the UltimaEvacuacao property.</param>
         /// <param name="evacuacoesDia">Initial value of the EvacuacoesDia property.</param>
         /// <param name="esforcoEvacuar">Initial value of the EsforcoEvacuar property.</param>
-        /// <param name="fezesPastosas">Initial value of the FezesPastosas property.</param>
-        /// <param name="melena">Initial value of the Melena property.</param>
-        /// <param name="diarreia">Initial value of the Diarreia property.</param>
-        /// <param name="constipacao">Initial value of the Constipacao property.</param>
+        /// <param name="tiposFezes">Initial value of the TiposFezes property.</param>
         /// <param name="incontinenciaFecal">Initial value of the IncontinenciaFecal property.</param>
         /// <param name="flatos">Initial value of the Flatos property.</param>
         /// <param name="sangramentoRetal">Initial value of the SangramentoRetal property.</param>
@@ -9412,17 +9409,14 @@ namespace PacienteVirtual.Models
         /// <param name="condicaoContinenciaUrinaria">Initial value of the CondicaoContinenciaUrinaria property.</param>
         /// <param name="sVD">Initial value of the SVD property.</param>
         /// <param name="cistostomia">Initial value of the Cistostomia property.</param>
-        public static tb_eliminacao Createtb_eliminacao(global::System.Int64 idConsultaVariavel, global::System.DateTime ultimaEvacuacao, global::System.Int32 evacuacoesDia, global::System.Boolean esforcoEvacuar, global::System.Boolean fezesPastosas, global::System.Boolean melena, global::System.Boolean diarreia, global::System.Boolean constipacao, global::System.Boolean incontinenciaFecal, global::System.Boolean flatos, global::System.Boolean sangramentoRetal, global::System.Boolean hemorroidas, global::System.Boolean pruridoAnal, global::System.String estomasCirurgicos, global::System.String formasAbdomem, global::System.String sonsIntestinais, global::System.String tipoSonsPercussao, global::System.String palpacaoAbodminal, global::System.String coloracaoUrinaria, global::System.Boolean disuria, global::System.String debitoUrinario, global::System.String condicaoContinenciaUrinaria, global::System.Boolean sVD, global::System.Boolean cistostomia)
+        public static tb_eliminacao Createtb_eliminacao(global::System.Int64 idConsultaVariavel, global::System.DateTime ultimaEvacuacao, global::System.Int32 evacuacoesDia, global::System.Boolean esforcoEvacuar, global::System.String tiposFezes, global::System.Boolean incontinenciaFecal, global::System.Boolean flatos, global::System.Boolean sangramentoRetal, global::System.Boolean hemorroidas, global::System.Boolean pruridoAnal, global::System.String estomasCirurgicos, global::System.String formasAbdomem, global::System.String sonsIntestinais, global::System.String tipoSonsPercussao, global::System.String palpacaoAbodminal, global::System.String coloracaoUrinaria, global::System.Boolean disuria, global::System.String debitoUrinario, global::System.String condicaoContinenciaUrinaria, global::System.Boolean sVD, global::System.Boolean cistostomia)
         {
             tb_eliminacao tb_eliminacao = new tb_eliminacao();
             tb_eliminacao.IdConsultaVariavel = idConsultaVariavel;
             tb_eliminacao.UltimaEvacuacao = ultimaEvacuacao;
             tb_eliminacao.EvacuacoesDia = evacuacoesDia;
             tb_eliminacao.EsforcoEvacuar = esforcoEvacuar;
-            tb_eliminacao.FezesPastosas = fezesPastosas;
-            tb_eliminacao.Melena = melena;
-            tb_eliminacao.Diarreia = diarreia;
-            tb_eliminacao.Constipacao = constipacao;
+            tb_eliminacao.TiposFezes = tiposFezes;
             tb_eliminacao.IncontinenciaFecal = incontinenciaFecal;
             tb_eliminacao.Flatos = flatos;
             tb_eliminacao.SangramentoRetal = sangramentoRetal;
@@ -9550,96 +9544,24 @@ namespace PacienteVirtual.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean FezesPastosas
+        public global::System.String TiposFezes
         {
             get
             {
-                return _FezesPastosas;
+                return _TiposFezes;
             }
             set
             {
-                OnFezesPastosasChanging(value);
-                ReportPropertyChanging("FezesPastosas");
-                _FezesPastosas = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("FezesPastosas");
-                OnFezesPastosasChanged();
+                OnTiposFezesChanging(value);
+                ReportPropertyChanging("TiposFezes");
+                _TiposFezes = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("TiposFezes");
+                OnTiposFezesChanged();
             }
         }
-        private global::System.Boolean _FezesPastosas;
-        partial void OnFezesPastosasChanging(global::System.Boolean value);
-        partial void OnFezesPastosasChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Melena
-        {
-            get
-            {
-                return _Melena;
-            }
-            set
-            {
-                OnMelenaChanging(value);
-                ReportPropertyChanging("Melena");
-                _Melena = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Melena");
-                OnMelenaChanged();
-            }
-        }
-        private global::System.Boolean _Melena;
-        partial void OnMelenaChanging(global::System.Boolean value);
-        partial void OnMelenaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Diarreia
-        {
-            get
-            {
-                return _Diarreia;
-            }
-            set
-            {
-                OnDiarreiaChanging(value);
-                ReportPropertyChanging("Diarreia");
-                _Diarreia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Diarreia");
-                OnDiarreiaChanged();
-            }
-        }
-        private global::System.Boolean _Diarreia;
-        partial void OnDiarreiaChanging(global::System.Boolean value);
-        partial void OnDiarreiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Constipacao
-        {
-            get
-            {
-                return _Constipacao;
-            }
-            set
-            {
-                OnConstipacaoChanging(value);
-                ReportPropertyChanging("Constipacao");
-                _Constipacao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Constipacao");
-                OnConstipacaoChanged();
-            }
-        }
-        private global::System.Boolean _Constipacao;
-        partial void OnConstipacaoChanging(global::System.Boolean value);
-        partial void OnConstipacaoChanged();
+        private global::System.String _TiposFezes;
+        partial void OnTiposFezesChanging(global::System.String value);
+        partial void OnTiposFezesChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
