@@ -114,14 +114,8 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("FeridaCirurgica", "Gabarito: " + (integridadeGabarito.FeridaCirurgica.Equals(true) ? "Sim" : "Não"));
             }
-            if (!Global.RemoverAcentuacao(integridade.FeridaCirurgicaLocal.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.FeridaCirurgicaLocal.ToLower())))
-            {
-                modelState.AddModelError("FeridaCirurgicaLocal", "Gabarito: \"" + integridadeGabarito.FeridaCirurgicaLocal + "\"");
-            }
-            if (!Global.RemoverAcentuacao(integridade.LesaoAspecto.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.LesaoAspecto.ToLower())))
-            {
-                modelState.AddModelError("LesaoAspecto", "Gabarito: \"" + integridadeGabarito.LesaoAspecto + "\"");
-            }
+            Global.CorrecaoDeStrings("FeridaCirurgicaLocal", integridade.FeridaCirurgicaLocal, integridadeGabarito.FeridaCirurgicaLocal, modelState);
+            Global.CorrecaoDeStrings("LesaoAspecto", integridade.LesaoAspecto, integridadeGabarito.LesaoAspecto, modelState);
         }
 
         /// <summary>
