@@ -20,7 +20,7 @@ namespace PacienteVirtual.Controllers
                 gClinicoInternacao.Atualizar(clinicoInternacao);
                 SessionController.ClinicoInternacao = clinicoInternacao;
             }
-            //SessionController.Abas1 = Global.abaDemoAntrop;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 

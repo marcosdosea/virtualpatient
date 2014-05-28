@@ -2,7 +2,7 @@
 <% if (Model != null)
    { %>
 <div class="row-fluid">
-        <% if (Model.NomeRole != ("administrador")) { %>
+        <% if (Model.NomeRole == ("usuario") || Model.NomeRole == ("tutor")) { %>
         <div class="span2">
             <div class="editor-label">
                 <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
@@ -16,6 +16,26 @@
             </div>
         </div>
         <% } %>
+        <% if (Model.NomeRole == ("administrador_enfermagem")) { %>
+        <div class="span2">
+            <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
+                <p class="conteudo"><%: Model.NomeTurma%></p>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
+                <p class="conteudo"><%: Html.Label(Model.NomeRole.Replace("_"," ")) %></p>
+            </div>
+        </div>    
+        <div class="span3">
+            <div class="editor-label">
+                <p class="cabecalho"><%: Resources.Mensagem.curso %>:</p>
+                <p class="conteudo"><%: Model.Curso %></p>
+            </div>
+        </div>
+        <% } %>
         <% if (Model.NomeRole == ("administrador")) { %>
         <div class="span3">
             <div class="editor-label">
@@ -24,12 +44,14 @@
             </div>
         </div>  
         <% } %>
+        <% if (Model.NomeRole != ("administrador_enfermagem")) { %>
         <div class="span5">
             <div class="editor-label">
                 <p class="cabecalho"><%: Resources.Mensagem.curso %>:</p>
                 <p class="conteudo"><%: Model.Curso %></p>
             </div>
         </div>
+        <% } %>
         <% if (ViewBag.QtdTurmaPessoa > 1)
        { %>
             <div>

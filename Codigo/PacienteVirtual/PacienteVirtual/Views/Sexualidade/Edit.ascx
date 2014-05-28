@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.SexualidadeModel>" %>
 <%@ Import Namespace="PacienteVirtual.Helpers" %>
 <%@ Import Namespace="PacienteVirtual.Models" %>
+
 <% using (Html.BeginForm("Edit", "Sexualidade"))
    { %>
 <%: Html.ValidationSummary(true) %>

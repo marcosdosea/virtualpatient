@@ -18,6 +18,7 @@ namespace PacienteVirtual.Controllers
                 gTermorregulacao.Atualizar(Termorregulacao);
                 SessionController.Termorregulacao = Termorregulacao;
             }
+            SessionController.Abas1 = Global.abaTermorregulacao;
             return RedirectToAction("Edit", "Consulta");
         }
     }

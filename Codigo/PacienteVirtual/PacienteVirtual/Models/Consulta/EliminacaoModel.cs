@@ -7,7 +7,7 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
-    public enum ListaTiposFezes { }
+    public enum ListaTiposFezes { FezesFormadas = 0, FezesPastosas = 1, Melena = 2, Diarreia = 3, Constipacao = 4 }
 
     public enum ListaEstomasCirurgicos { NaoSeAplica = 0, Colostomia = 1, Ileostomia = 2 }
 

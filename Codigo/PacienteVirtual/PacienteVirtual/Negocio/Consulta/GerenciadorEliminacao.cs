@@ -110,7 +110,7 @@ namespace PacienteVirtual.Negocio
                             EvacuacoesDia = eliminacao.EvacuacoesDia,
                             EsforcoEvacuar = eliminacao.EsforcoEvacuar,
                             IncontinenciaFecal = eliminacao.IncontinenciaFecal,
-                            Flatos =eliminacao.Flatos,
+                            Flatos = eliminacao.Flatos,
                             SangramentoRetal = eliminacao.SangramentoRetal,
                             PruridoAnal = eliminacao.PruridoAnal,
                             EstomasCirurgicos = (eliminacao.EstomasCirurgicos == "NaoSeAplica" ? ListaEstomasCirurgicos.NaoSeAplica : (eliminacao.EstomasCirurgicos == "Colostomia" ? ListaEstomasCirurgicos.Colostomia : ListaEstomasCirurgicos.Ileostomia)),

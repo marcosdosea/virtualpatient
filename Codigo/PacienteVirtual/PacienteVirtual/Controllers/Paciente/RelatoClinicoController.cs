@@ -180,6 +180,9 @@ namespace PacienteVirtual.Controllers
             NutricaoModel nutricao = SessionController.Nutricao;
             nutricao.IdConsultaVariavel = idConsultaVariavel;
             GerenciadorNutricao.GetInstance().Inserir(nutricao);
+            EliminacaoModel eliminacao = SessionController.Eliminacao;
+            eliminacao.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorEliminacao.GetInstance().Inserir(eliminacao);
         }
 
         /// <summary>

@@ -16,6 +16,22 @@ namespace PacienteVirtual.Models
         public const int idCursoEnfermagem = 2;
         public const int idCursoFarmacia = 1;
 
+        public const int abaOxigenacao = 3;
+        public const int abaOutrosAchados = 2;
+        public const int abaDadosCompImportantes = 4;
+        public const int abaClinicoInternacao = 5;
+        public const int abaTermorregulacao = 6;
+        public const int abaIntegridadeTecidual = 7;
+        public const int abaHigiene = 8;
+        public const int abaPsicoespiritual = 9;
+        public const int abaConciencia = 10;
+        public const int abaComunicacao = 11;
+        public const int abaNutricao = 12;
+        public const int abaSensorial = 13;
+        public const int abaOutrasNecessidades = 14;
+        public const int abaSexualidade = 15;
+        public const int totalAbasENF_Edit1 = 15;
+
         public const int abaCarta = 3;
         public const int abaConsultaParametro = 11;
         public const int abaRazaoEncontro = 2;
@@ -32,6 +48,8 @@ namespace PacienteVirtual.Models
         public const int abaMedNaoPresc = 7;
         public const int abaMedPresc = 6;
         public const int abaMedAnte = 8;
+        public const int totalAbasFARM_Edit1 = 12;
+        public const int totalAbasFARM_Edit2 = 0;
 
         public const int NaoSelecionado = -1;
         public const int ValorInteiroNulo = 0;
