@@ -83,7 +83,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + alergia.Alergia + ";<br>";
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + alergia.Alergia + "; " + "<br>";
                 }
             }
             foreach (var alergiaGabarito in listaAlergiaGabarito)
@@ -99,7 +99,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + alergiaGabarito.Alergia + ";<br>";
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + alergiaGabarito.Alergia + "; " + "<br>";
                 }
             }
             modelState.AddModelError("ErroAlergias", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
@@ -130,7 +130,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + ";<br>";
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + "; " + "<br>";
                 }
             }
             foreach (var patologiaGabarito in listaPatologiasGabarito)
@@ -146,7 +146,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + ";<br>";
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + "; " + "<br>";
                 }
             }
             modelState.AddModelError("ErroPatologiasAtuais", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
@@ -177,7 +177,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + ";<br>";
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + "; " + "<br>";
                 }
             }
             foreach (var patologiaGabarito in listaPatologiasGabarito)
@@ -193,7 +193,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + ";<br>";
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + "; " + "<br>";
                 }
             }
             modelState.AddModelError("ErroAntecedentesFamiliares", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
@@ -224,7 +224,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + ";<br>";
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + patologia.Descricao + "; " + "<br>";
                 }
             }
             foreach (var patologiaGabarito in listaPatologiasGabarito)
@@ -240,7 +240,7 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + ";<br>";
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + patologiaGabarito.Descricao + "; " + "<br>";
                 }
             }
             modelState.AddModelError("ErroAntecedentesPatologicos", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +

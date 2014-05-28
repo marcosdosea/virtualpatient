@@ -4,8 +4,8 @@ INSERT INTO `pv1`.`tb_disciplina` (`NomeDisciplina`) VALUES ('Administrador do S
 
 -- Novas turmas 
 
-INSERT INTO `pv1`.`tb_turma` (`IdDisciplina`, `IdCurso`, `IdInstituicao`, `Codigo`, `Periodo`, `Ativa`) VALUES ('4', '2', '1', 'ENF01-ADMIN', '2014-1', '1');
-INSERT INTO `pv1`.`tb_turma` (`IdDisciplina`, `IdCurso`, `IdInstituicao`, `Codigo`, `Periodo`, `Ativa`) VALUES ('4', '1', '1', 'FAR01-ADMIN', '2014-1', '1');
+INSERT INTO `pv1`.`tb_turma` (`IdTurma`, `IdDisciplina`, `IdCurso`, `IdInstituicao`, `Codigo`, `Periodo`, `Ativa`) VALUES ('4', '4', '2', '1', 'ENF01-ADMIN', '2014-1', '1');
+INSERT INTO `pv1`.`tb_turma` (`IdTurma`, `IdDisciplina`, `IdCurso`, `IdInstituicao`, `Codigo`, `Periodo`, `Ativa`) VALUES ('5', '4', '1', '1', 'FAR01-ADMIN', '2014-1', '1');
 
 -- Novos Administradores
 
@@ -26,3 +26,8 @@ INSERT INTO `pv1`.`tb_estado_consulta` (`IdEstadoConsulta`, `DescricaoEstado`) V
 
 ALTER TABLE `pv1`.`tb_oxiginecao` 
 CHANGE COLUMN `SimetriaToracica` `SimetriaToracica` ENUM('Simetrico','AssimetricoUnilateral','AssimetricoBilateral') NOT NULL DEFAULT 'Simetrico' ;
+
+-- remove turmas duplicadas
+
+DELETE FROM `pv1`.`tb_turma` WHERE `IdTurma`='6';
+DELETE FROM `pv1`.`tb_turma` WHERE `IdTurma`='7';
