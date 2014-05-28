@@ -438,6 +438,18 @@ namespace PacienteVirtual.Controllers
             TryValidateModel(SessionController.ConsultaVariavel);
             GerenciadorTermorregulacao.GetInstance().CorrigirRespostas(SessionController.Termorregulacao, GerenciadorTermorregulacao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
             TryValidateModel(SessionController.Termorregulacao);
+            GerenciadorConsciencia.GetInstance().CorrigirRespostas(SessionController.Consciencia, GerenciadorConsciencia.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Consciencia);
+            GerenciadorComunicacao.GetInstance().CorrigirRespostas(SessionController.Comunicacao, GerenciadorComunicacao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Comunicacao);
+            GerenciadorNutricao.GetInstance().CorrigirRespostas(SessionController.Nutricao, GerenciadorNutricao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Nutricao);
+            GerenciadorSensorial.GetInstance().CorrigirRespostas(SessionController.Sensorial, GerenciadorSensorial.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Sensorial);
+            GerenciadorOutrasNecessidades.GetInstance().CorrigirRespostas(SessionController.OutrasNecessidades, GerenciadorOutrasNecessidades.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.OutrasNecessidades);
+            GerenciadorSexualidade.GetInstance().CorrigirRespostas(SessionController.Sexualidade, GerenciadorSexualidade.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Sexualidade);
         }
 
         /// <summary>
