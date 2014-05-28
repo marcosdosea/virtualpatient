@@ -173,7 +173,7 @@ namespace PacienteVirtual.Negocio
             }
             catch (Exception e)
             {
-                throw new DadosException("oxigenacao", e.Message, e);
+                throw new DadosException("Oxigenacao", e.Message, e);
             }
         }
 
@@ -193,7 +193,7 @@ namespace PacienteVirtual.Negocio
             }
             catch (Exception e)
             {
-                throw new DadosException("oxigenacao", e.Message, e);
+                throw new DadosException("Oxigenacao", e.Message, e);
             }
         }
 
@@ -211,7 +211,7 @@ namespace PacienteVirtual.Negocio
             }
             catch (Exception e)
             {
-                throw new DadosException("oxigenacao", e.Message, e);
+                throw new DadosException("Oxigenacao", e.Message, e);
             }
         }
 
@@ -245,15 +245,22 @@ namespace PacienteVirtual.Negocio
                             Cifose = oxigenacao.Cifose,
                             Escoliose = oxigenacao.Escoliose,
                             TiragemIntercostal = oxigenacao.TiragemIntercostal,
-                            SimetriaToracica = (oxigenacao.SimetriaToracica == "Simetrico" ? ListaSimetriaToracica.Simetrico : (oxigenacao.SimetriaToracica == "AssimetricoBilateral" ? ListaSimetriaToracica.AssimetricoBilateral : ListaSimetriaToracica.AssimetricoUnilateral)),
-                            Expansibilidade = (oxigenacao.Expansibilidade == "Preservada" ? ListaExpansibilidade.Preservada : ListaExpansibilidade.Diminuida),
+                            SimetriaToracica = (oxigenacao.SimetriaToracica == "Simetrico" ? ListaSimetriaToracica.Simetrico : 
+                                oxigenacao.SimetriaToracica == "AssimetricoBilateral" ? ListaSimetriaToracica.AssimetricoBilateral : 
+                                ListaSimetriaToracica.AssimetricoUnilateral),
+                            Expansibilidade = (oxigenacao.Expansibilidade == "Preservada" ? ListaExpansibilidade.Preservada : 
+                                ListaExpansibilidade.Diminuida),
                             EnfizemaSubcutaneo = oxigenacao.EnfizemaSubcutaneo,
                             PresencaFremito = oxigenacao.PresencaFremito,
                             Tosse = oxigenacao.Tosse,
-                            FrequenciaTosse = (oxigenacao.FrequenciaTosse == "NaoSeAplica" ? ListaFrequenciaTosse.NaoSeAplica : (oxigenacao.FrequenciaTosse == "Noturna" ? ListaFrequenciaTosse.Noturna : (oxigenacao.FrequenciaTosse == "Frequente" ? ListaFrequenciaTosse.Frequente : ListaFrequenciaTosse.Esporadica))),
-                            TipoTosse = (oxigenacao.TipoTosse == "NaoSeAplica" ? ListaTipoTosse.NaoSeAplica : (oxigenacao.TipoTosse == "Produtiva" ? ListaTipoTosse.Produtiva : ListaTipoTosse.Seca)),
+                            FrequenciaTosse = (oxigenacao.FrequenciaTosse == "NaoSeAplica" ? ListaFrequenciaTosse.NaoSeAplica : 
+                                oxigenacao.FrequenciaTosse == "Noturna" ? ListaFrequenciaTosse.Noturna : oxigenacao.FrequenciaTosse == "Frequente" ? 
+                                ListaFrequenciaTosse.Frequente : ListaFrequenciaTosse.Esporadica),
+                            TipoTosse = (oxigenacao.TipoTosse == "NaoSeAplica" ? ListaTipoTosse.NaoSeAplica : oxigenacao.TipoTosse == "Produtiva" ? 
+                                ListaTipoTosse.Produtiva : ListaTipoTosse.Seca),
                             AspectoSecrecao = oxigenacao.AspectoSecrecao,
-                            Percursao = (oxigenacao.Percursao == "Ar" ? ListaPercursao.Ar : (oxigenacao.Percursao == "Massa" ? ListaPercursao.Massa : ListaPercursao.Liquido)),
+                            Percursao = (oxigenacao.Percursao == "Ar" ? ListaPercursao.Ar : oxigenacao.Percursao == "Massa" ? ListaPercursao.Massa : 
+                                ListaPercursao.Liquido),
                             GangliosPalpaveis = oxigenacao.GangliosPalpaveis,
                             GangliosDolorosos = oxigenacao.GangliosDolorosos,
                             GangliosLocalizar = oxigenacao.GangliosLocalizar
