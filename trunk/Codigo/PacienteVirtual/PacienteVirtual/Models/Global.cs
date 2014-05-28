@@ -220,22 +220,25 @@ namespace PacienteVirtual.Models
         //metodo para correção de string já adicionando no ModelState
         public static void CorrecaoDeStrings(string variavelModel,string resposta, string gabarito, ModelStateDictionary modelState)
         {
-            if (resposta == null || resposta.Equals(""))
+            if (resposta != null && gabarito != null)
             {
-                if (gabarito != null || !gabarito.Equals(""))
+                if (resposta == null || resposta.Equals(""))
                 {
-                    modelState.AddModelError(variavelModel, "Gabarito: \"" + gabarito + "\"");
+                    if (gabarito != null || !gabarito.Equals(""))
+                    {
+                        modelState.AddModelError(variavelModel, "Gabarito: \"" + gabarito + "\"");
+                    }
                 }
-            }
-            else
-            {
-                if (gabarito == null || gabarito.Equals(""))
+                else
                 {
-                    modelState.AddModelError(variavelModel, "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-                else if (!Global.RemoverAcentuacao(resposta.ToLower()).Equals(Global.RemoverAcentuacao(gabarito.ToLower())))
-                {
-                    modelState.AddModelError(variavelModel, "Gabarito: \"" + gabarito + "\"");
+                    if (gabarito == null || gabarito.Equals(""))
+                    {
+                        modelState.AddModelError(variavelModel, "Gabarito: \"Esse campo deve permanecer vazio\"");
+                    }
+                    else if (!Global.RemoverAcentuacao(resposta.ToLower()).Equals(Global.RemoverAcentuacao(gabarito.ToLower())))
+                    {
+                        modelState.AddModelError(variavelModel, "Gabarito: \"" + gabarito + "\"");
+                    }
                 }
             }
         }
