@@ -41,7 +41,7 @@ namespace PacienteVirtual.Controllers
                 gClinicoInternacao.InserirPatologiasAtuais(patologiasAtuais.IdConsultaFixo, patologiasAtuais.IdPatologia);
                 SessionController.ListaPatologiasAtuais = null;
             }
-            //SessionController.Abas1 = Global.abaMedPresc;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -49,7 +49,7 @@ namespace PacienteVirtual.Controllers
         {
             gClinicoInternacao.RemoverPatologiasAtuais(SessionController.ConsultaFixo.IdConsultaFixo, idPatologia);
             SessionController.ListaPatologiasAtuais = null;
-            //SessionController.Abas2 = Global.abaDiarioPessoal;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -70,7 +70,7 @@ namespace PacienteVirtual.Controllers
                 gClinicoInternacao.InserirAntecedentesPatologicos(antecedentesPatologicos.IdConsultaFixo, antecedentesPatologicos.IdPatologia);
                 SessionController.ListaAntecedentesPatologicos = null;
             }
-            //SessionController.Abas1 = Global.abaMedPresc;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -78,7 +78,7 @@ namespace PacienteVirtual.Controllers
         {
             gClinicoInternacao.RemoverAntecedentesPatologicos(SessionController.ConsultaFixo.IdConsultaFixo, idPatologia);
             SessionController.ListaAntecedentesPatologicos = null;
-            //SessionController.Abas2 = Global.abaDiarioPessoal;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -99,7 +99,7 @@ namespace PacienteVirtual.Controllers
                 gClinicoInternacao.InserirAntecedentesFamiliares(antecedentesFamiliares.IdConsultaFixo, antecedentesFamiliares.IdPatologia);
                 SessionController.ListaAntecedentesFamiliares = null;
             }
-            //SessionController.Abas1 = Global.abaMedPresc;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -107,7 +107,7 @@ namespace PacienteVirtual.Controllers
         {
             gClinicoInternacao.RemoverAntecedentesFamiliares(SessionController.ConsultaFixo.IdConsultaFixo, idPatologia);
             SessionController.ListaAntecedentesFamiliares = null;
-            //SessionController.Abas2 = Global.abaDiarioPessoal;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -127,7 +127,7 @@ namespace PacienteVirtual.Controllers
                 gClinicoInternacao.InserirAlergias(SessionController.ConsultaFixo.IdConsultaFixo, clinicoInternacaoAlergia.IdAlergia);
                 SessionController.ListaClinicoInternacaoAlergia = null;
             }
-            //SessionController.Abas1 = Global.abaMedPresc;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 
@@ -135,7 +135,7 @@ namespace PacienteVirtual.Controllers
         {
             gClinicoInternacao.RemoverAlergia(SessionController.ConsultaFixo.IdConsultaFixo, idAlergia);
             SessionController.ListaClinicoInternacaoAlergia = null;
-            //SessionController.Abas2 = Global.abaDiarioPessoal;
+            SessionController.Abas1 = Global.abaClinicoInternacao;
             return RedirectToAction("Edit", "Consulta");
         }
 

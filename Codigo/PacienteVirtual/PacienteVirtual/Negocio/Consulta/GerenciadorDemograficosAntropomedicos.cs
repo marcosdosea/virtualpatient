@@ -137,7 +137,7 @@ namespace PacienteVirtual.Negocio
                 modelState.AddModelError("DataNascimento", "Gabarito: \"" + demoAntropGabarito.DataNascimento.ToShortDateString() + "\"");
             }
 
-            Global.CorrecaoDeStrings("Nome", demoAntrop.MoradiaFamilia, demoAntropGabarito.MoradiaFamilia, modelState);
+            Global.CorrecaoDeStrings("MoradiaFamilia", demoAntrop.MoradiaFamilia, demoAntropGabarito.MoradiaFamilia, modelState);
             Global.CorrecaoDeStrings("OndeAdquireMedicamentos", demoAntrop.OndeAdquireMedicamentos, demoAntropGabarito.OndeAdquireMedicamentos, modelState);
             Global.CorrecaoDeStrings("RG", demoAntrop.RG, demoAntropGabarito.RG, modelState);
             Global.CorrecaoDeStrings("Procedencia", demoAntrop.Procedencia, demoAntropGabarito.Procedencia, modelState);
