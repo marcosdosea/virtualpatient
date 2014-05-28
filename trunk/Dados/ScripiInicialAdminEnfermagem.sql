@@ -21,3 +21,8 @@ INSERT INTO `pv1`.`tb_turma_pessoa` (`IdTurma`, `IdPessoa`, `IdRole`, `Ativa`) V
 -- novo estado de preenchimento
 
 INSERT INTO `pv1`.`tb_estado_consulta` (`IdEstadoConsulta`, `DescricaoEstado`) VALUES ('8', 'Gabarito Em Preenchimento');
+
+-- tirar os espaços em branco do campo SimetriaToracica de oxigenação
+
+ALTER TABLE `pv1`.`tb_oxiginecao` 
+CHANGE COLUMN `SimetriaToracica` `SimetriaToracica` ENUM('Simetrico','AssimetricoUnilateral','AssimetricoBilateral') NOT NULL DEFAULT 'Simetrico' ;
