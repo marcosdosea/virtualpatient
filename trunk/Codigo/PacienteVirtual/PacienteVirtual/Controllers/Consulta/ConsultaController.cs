@@ -176,6 +176,7 @@ namespace PacienteVirtual.Controllers
         private void ViewsBagPrimeiraTelaCursoEnfermagem()
         {
             ViewBag.IdPatologia = new SelectList(GerenciadorPatologia.GetInstance().ObterTodos(), "IdPatologia", "Descricao");
+            ViewBag.TotalAbas = Global.totalAbasENF_Edit1;
         }
 
         /// <summary>
@@ -222,6 +223,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.EscondeLinks = true;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
+            ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
         }
 
         /// <summary>

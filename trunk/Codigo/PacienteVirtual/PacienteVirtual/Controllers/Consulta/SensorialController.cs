@@ -22,6 +22,7 @@ namespace PacienteVirtual.Controllers
                 gSensorial.Atualizar(sensorial);
                 SessionController.Sensorial = sensorial;
             }
+            SessionController.Abas1 = Global.abaSensorial;
             return RedirectToAction("Edit", "Consulta");
         }
 

@@ -22,6 +22,7 @@ namespace PacienteVirtual.Controllers
                 gSexualidade.Atualizar(sexualidade);
                 SessionController.Sexualidade = sexualidade;
             }
+            SessionController.Abas1 = Global.abaSexualidade;
             return RedirectToAction("Edit", "Consulta");
         }
 

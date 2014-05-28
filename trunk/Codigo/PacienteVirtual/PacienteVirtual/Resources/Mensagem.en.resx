@@ -1644,13 +1644,13 @@
   <data name="condicao_continencia_urinaria" xml:space="preserve">
     <value>Condition Urinary Continence</value>
   </data>
-  <data name="constipacao" xml:space="preserve">
+  <data name="Constipacao" xml:space="preserve">
     <value>Constipation</value>
   </data>
   <data name="debito_urinario" xml:space="preserve">
     <value>Urinary Output</value>
   </data>
-  <data name="diarreia" xml:space="preserve">
+  <data name="Diarreia" xml:space="preserve">
     <value>Diarrhea</value>
   </data>
   <data name="Diminuidos" xml:space="preserve">
@@ -1665,8 +1665,8 @@
   <data name="evacuacoes_dia" xml:space="preserve">
     <value>Numbers evacuations/day</value>
   </data>
-  <data name="tipos_fezes" xml:space="preserve">
-    <value>Types of Stools</value>
+  <data name="FezesPastosas" xml:space="preserve">
+    <value>Pasty Stools</value>
   </data>
   <data name="Flacido" xml:space="preserve">
     <value>Flaccid</value>
@@ -1707,7 +1707,7 @@
   <data name="localizar" xml:space="preserve">
     <value>To Find</value>
   </data>
-  <data name="melena" xml:space="preserve">
+  <data name="Melena" xml:space="preserve">
     <value>Melena</value>
   </data>
   <data name="Normotenso" xml:space="preserve">
@@ -2090,5 +2090,8 @@
   </data>
   <data name="uso_contraceptivo" xml:space="preserve">
     <value>Contraceptive use</value>
+  </data>
+  <data name="FezesFormadas" xml:space="preserve">
+    <value>Formed Stool</value>
   </data>
 </root>

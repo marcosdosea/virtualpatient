@@ -21,7 +21,7 @@ namespace PacienteVirtual.Controllers
                 GerenciadorPsicoEspiritual.GetInstance().Atualizar(psicoEspiritualModel);
                 SessionController.PsicoEspiritual = psicoEspiritualModel;
             }
-            //SessionController.Abas1 = Global.abaExamesFisicos;
+            SessionController.Abas1 = Global.abaPsicoespiritual;
             return RedirectToAction("Edit", "Consulta");
         }
 

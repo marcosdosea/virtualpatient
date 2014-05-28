@@ -1219,6 +1219,7 @@ namespace PacienteVirtual.Controllers
                         eliminacao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
                         eliminacao.UltimaEvacuacao = DateTime.Today;
                         eliminacao.EvacuacoesDia = Global.ValorInteiroNulo;
+                        eliminacao.TiposFezes = ListaTiposFezes.FezesFormadas;
                         eliminacao.EsforcoEvacuar = false;
                         eliminacao.IncontinenciaFecal = false;
                         eliminacao.Flatos = false;

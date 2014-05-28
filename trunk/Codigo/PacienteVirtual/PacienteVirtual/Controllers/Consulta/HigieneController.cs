@@ -21,7 +21,7 @@ namespace PacienteVirtual.Controllers
                 GerenciadorHigiene.GetInstance().Atualizar(higieneModel);
                 SessionController.Higiene = higieneModel;
             }
-            //SessionController.Abas1 = Global.abaExamesFisicos;
+            SessionController.Abas1 = Global.abaHigiene;
             return RedirectToAction("Edit", "Consulta");
         }
 
