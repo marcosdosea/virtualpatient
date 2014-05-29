@@ -5,246 +5,238 @@
 <% using (Html.BeginForm("Edit","Eliminacao")) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>tb_eliminacao</legend>
+        <legend><%: Resources.Mensagem.eliminacao %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
 
-        <p class="titulos">Intestinal</p>
+        <h4><%: Resources.Mensagem.intestinal %></h4>
         <legend></legend>
         <div class="row-fluid">
-            <div class="span12">
+            <div class="span3">
                 <div class="editor-field">
-                    <%: Resources.Mensagem.evacuacoes_dia %>
-                    &nbsp
+                    <%: Html.LabelFor(model => model.EvacuacoesDia) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-label">
                     <%: Html.TextBoxFor(model => model.EvacuacoesDia, new { style = "width:70px;" })%>
-                    dias
+                    <%: Html.ValidationMessageFor(model => model.EvacuacoesDia, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
         </div>
         <br />
         <div class="row-fluid">
-            <div class="span12">
+            <div class="span3">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.UltimaEvacuacao) %>
-                    <%: Html.TextBoxFor(model => model.UltimaEvacuacao, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.UltimaEvacuacao)), type = "text", @class = "calendario" , style = "width:176px;"}) %>
+                </div>
+            </div>
+            <div class="span5">
+                <%: Html.TextBoxFor(model => model.UltimaEvacuacao, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.UltimaEvacuacao)), type = "text", @class = "calendario" , style = "width:70px;"}) %>
+            </div>
+        </div>
+        <br />
+        <div class="row-fluid">
+            <div class="span7">
+                <div class="editor-field">
+                    <%: Html.EditorFor(model => model.EsforcoEvacuar) %>
+                    <%: Resources.Mensagem.esforco_evacuar %>
+                    <%: Html.ValidationMessageFor(model => model.EsforcoEvacuar) %>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.TiposFezes) %>
+                </div>
+                <div class="editor-field">
+                    <%: Html.EnumDropDownListFor(model => model.TiposFezes, ListaTiposFezes.FezesFormadas) %>
                 </div>
             </div>
         </div>
         <br />
         <div class="row-fluid">
             <div class="span12">
-                <%: Html.EditorFor(model => model.EsforcoEvacuar) %>
-                <%: Resources.Mensagem.esforco_evacuar %>
-                <%: Html.ValidationMessageFor(model => model.EsforcoEvacuar) %>
+                <div class="span4">
+                    <%: Html.EditorFor(model => model.IncontinenciaFecal) %>
+                    <%: Resources.Mensagem.incontinencia_fecal %>
+                    <%: Html.ValidationMessageFor(model => model.IncontinenciaFecal, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+                <div class="span3">
+                    <%: Html.EditorFor(model => model.Flatos) %>
+                    <%: Resources.Mensagem.flatos %>
+                    <%: Html.ValidationMessageFor(model => model.Flatos, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+                <div class="span5">
+                    <%: Html.EditorFor(model => model.SangramentoRetal) %>
+                    <%: Resources.Mensagem.sangramento_retal %>
+                    <%: Html.ValidationMessageFor(model => model.SangramentoRetal, string.Empty, new { @class = "styleValidation" })%>
+                </div>
             </div>
         </div>
         <br />
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.FezesPastosas) %>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="span4">
+                    <%: Html.EditorFor(model => model.Hemorroidas) %>
+                    <%: Resources.Mensagem.hemorroidas %>
+                    <%: Html.ValidationMessageFor(model => model.Hemorroidas, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+                <div class="span3">
+                    <%: Html.EditorFor(model => model.PruridoAnal) %>
+                    <%: Resources.Mensagem.prurido_anal %>
+                    <%: Html.ValidationMessageFor(model => model.PruridoAnal, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+            </div>
+        </div>        
+        <br />
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.EstomasCirurgicos) %>
+                    <%: Html.EnumDropDownListFor(model => model.EstomasCirurgicos, ListaEstomasCirurgicos.NaoSeAplica) %>
+                </div>
+            </div>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.FezesPastosas) %>
-            <%: Html.ValidationMessageFor(model => model.FezesPastosas) %>
+        <br />
+        <h4><%: Resources.Mensagem.abdomen %></h4>
+        <legend></legend>
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.FormasAbdomem) %>
+                    <%: Html.EnumDropDownListFor(model => model.FormasAbdomem, ListaFormasAbdomem.Plano) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.SonsIntestinais) %>
+                    <%: Html.EnumDropDownListFor(model => model.SonsIntestinais, ListaSonsIntestinais.Presentes) %>
+                </div>
+            </div>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Melena) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.TipoSonsPercussao) %>
+                    <%: Html.EnumDropDownListFor(model => model.TipoSonsPercussao, ListaTipoSonsPercussao.SomMacico) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.PalpacaoAbodminal) %>
+                    <%: Html.EnumDropDownListFor(model => model.PalpacaoAbodminal, ListaPalpacaoAbodminal.Tenso) %>
+                </div>
+            </div>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Melena) %>
-            <%: Html.ValidationMessageFor(model => model.Melena) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="editor-field">
+                    <%: Html.LabelFor(model => model.LocalizarPercussaoAbdominal) %>
+                </div>
+            </div>
+            <div class="span10">
+                <div class="editor-label">
+                    <%: Html.TextBoxFor(model => model.LocalizarPercussaoAbdominal, new { style = "width:410px;" })%>
+                    <%: Html.ValidationMessageFor(model => model.LocalizarPercussaoAbdominal, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+            </div>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Diarreia) %>
+        <br />
+        <h4><%: Resources.Mensagem.urinaria %></h4>
+        <legend></legend>
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.ColoracaoUrinaria) %>
+                    <%: Html.EnumDropDownListFor(model => model.ColoracaoUrinaria, ListaColoracaoUrinaria.LimpidaClara) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.DebitoUrinario) %>
+                    <%: Html.EnumDropDownListFor(model => model.DebitoUrinario, ListaDebitoUrinario.NaoSeAplica) %>
+                </div>
+            </div>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Diarreia) %>
-            <%: Html.ValidationMessageFor(model => model.Diarreia) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span6">
+                <%: Html.EditorFor(model => model.Disuria) %> &nbsp
+                <%: Resources.Mensagem.disuria %>
+                <%: Html.ValidationMessageFor(model => model.Disuria) %>
+            </div>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Constipacao) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="editor-field">
+                    <%: Html.LabelFor(model => model.Tempo) %>
+                </div>
+            </div>
+            <div class="span10">
+                <div class="editor-label">
+                    <%: Html.TextBoxFor(model => model.Tempo, new { style = "width:410px;" })%>
+                    <%: Html.ValidationMessageFor(model => model.Tempo, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+            </div>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Constipacao) %>
-            <%: Html.ValidationMessageFor(model => model.Constipacao) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.CondicaoContinenciaUrinaria) %>
+                    <%: Html.EnumDropDownListFor(model => model.CondicaoContinenciaUrinaria, ListaCondicaoContinenciaUrinaria.IncontinenciaUrinaria) %>
+                </div>
+            </div>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.IncontinenciaFecal) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.IrrigacaoVesical) %>
+                    <%: Html.TextBoxFor(model => model.IrrigacaoVesical, new { style = "width:px;" })%>
+                    <%: Html.ValidationMessageFor(model => model.IrrigacaoVesical, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-field">
+                    <%: Html.LabelFor(model => model.IrrigacaoVesicalDesde) %>
+                    <%: Html.TextBoxFor(model => model.IrrigacaoVesicalDesde, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.IrrigacaoVesicalDesde)), type = "text", @class = "calendario" , style = "width:100px;"}) %>
+                    <%: Html.ValidationMessageFor(model => model.IrrigacaoVesicalDesde) %>
+                </div>
+            </div>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.IncontinenciaFecal) %>
-            <%: Html.ValidationMessageFor(model => model.IncontinenciaFecal) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="editor-field">
+                <%: Html.EditorFor(model => model.SVD) %> &nbsp
+                <%: Resources.Mensagem.svd %>
+                <%: Html.ValidationMessageFor(model => model.SVD) %>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="editor-field">
+                    <%: Html.LabelFor(model => model.SVDInstalada) %>
+                    <%: Html.TextBoxFor(model => model.SVDInstalada, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.SVDInstalada)), type = "text", @class = "calendario" , style = "width:100px;"}) %>
+                    <%: Html.ValidationMessageFor(model => model.SVDInstalada) %>
+                </div>
+            </div>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Flatos) %>
+        <br />
+        <div class="row-fluid">
+            <div class="span6">
+                <%: Html.EditorFor(model => model.Cistostomia) %> &nbsp
+                <%: Resources.Mensagem.cistostomia %>
+                <%: Html.ValidationMessageFor(model => model.Cistostomia) %>
+            </div>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Flatos) %>
-            <%: Html.ValidationMessageFor(model => model.Flatos) %>
+        <div class="form-actions">
+            <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.SangramentoRetal) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.SangramentoRetal) %>
-            <%: Html.ValidationMessageFor(model => model.SangramentoRetal) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Hemorroidas) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Hemorroidas) %>
-            <%: Html.ValidationMessageFor(model => model.Hemorroidas) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.PruridoAnal) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.PruridoAnal) %>
-            <%: Html.ValidationMessageFor(model => model.PruridoAnal) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.EstomasCirurgicos) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.EstomasCirurgicos) %>
-            <%: Html.ValidationMessageFor(model => model.EstomasCirurgicos) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.FormasAbdomem) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.FormasAbdomem) %>
-            <%: Html.ValidationMessageFor(model => model.FormasAbdomem) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.SonsIntestinais) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.SonsIntestinais) %>
-            <%: Html.ValidationMessageFor(model => model.SonsIntestinais) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.TipoSonsPercussao) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.TipoSonsPercussao) %>
-            <%: Html.ValidationMessageFor(model => model.TipoSonsPercussao) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.LocalizarPercussaoAbdominal) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.LocalizarPercussaoAbdominal) %>
-            <%: Html.ValidationMessageFor(model => model.LocalizarPercussaoAbdominal) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.PalpacaoAbodminal) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.PalpacaoAbodminal) %>
-            <%: Html.ValidationMessageFor(model => model.PalpacaoAbodminal) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.ColoracaoUrinaria) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.ColoracaoUrinaria) %>
-            <%: Html.ValidationMessageFor(model => model.ColoracaoUrinaria) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Disuria) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Disuria) %>
-            <%: Html.ValidationMessageFor(model => model.Disuria) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.DebitoUrinario) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.DebitoUrinario) %>
-            <%: Html.ValidationMessageFor(model => model.DebitoUrinario) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Tempo) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Tempo) %>
-            <%: Html.ValidationMessageFor(model => model.Tempo) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.CondicaoContinenciaUrinaria) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.CondicaoContinenciaUrinaria) %>
-            <%: Html.ValidationMessageFor(model => model.CondicaoContinenciaUrinaria) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.IrrigacaoVesicalCom) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.IrrigacaoVesicalCom) %>
-            <%: Html.ValidationMessageFor(model => model.IrrigacaoVesicalCom) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.IrrigacaoVesicalDesde) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.IrrigacaoVesicalDesde) %>
-            <%: Html.ValidationMessageFor(model => model.IrrigacaoVesicalDesde) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.SVD) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.SVD) %>
-            <%: Html.ValidationMessageFor(model => model.SVD) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.SVDInstalada) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.SVDInstalada) %>
-            <%: Html.ValidationMessageFor(model => model.SVDInstalada) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Cistostomia) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Cistostomia) %>
-            <%: Html.ValidationMessageFor(model => model.Cistostomia) %>
-        </div>
-
-        <p>
-            <input type="submit" value="Save" />
-        </p>
     </fieldset>
 <% } %>
-
-<div>
-    <%: Html.ActionLink("Back to List", "Index") %>
-</div>

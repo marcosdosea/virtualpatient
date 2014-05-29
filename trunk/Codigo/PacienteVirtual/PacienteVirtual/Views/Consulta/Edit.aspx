@@ -197,6 +197,8 @@
                             <%: Resources.Mensagem.outras_necessidades %></a></li>
                             <li id="li15"><a href="#tab1-15" data-toggle="tab">
                             <%: Resources.Mensagem.sexualidade %></a></li>
+                            <li id="li16"><a href="#tab1-16" data-toggle="tab">
+                            <%: Resources.Mensagem.eliminacao %></a></li>
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -351,6 +353,11 @@
                         <div class="tab-pane" id="tab1-15">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../Sexualidade/Edit", Model.Sexualidade);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-16">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Eliminacao/Edit", Model.Eliminacao);%>
                             </div>
                         </div>
                         <% } %>

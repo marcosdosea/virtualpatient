@@ -273,6 +273,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.Sensorial = SessionController.Sensorial;
             consultaModel.OutrasNecessidades = SessionController.OutrasNecessidades;
             consultaModel.Sexualidade = SessionController.Sexualidade;
+            consultaModel.Eliminacao = SessionController.Eliminacao;
         }
 
         /// <summary>
@@ -450,6 +451,8 @@ namespace PacienteVirtual.Controllers
             TryValidateModel(SessionController.OutrasNecessidades);
             GerenciadorSexualidade.GetInstance().CorrigirRespostas(SessionController.Sexualidade, GerenciadorSexualidade.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
             TryValidateModel(SessionController.Sexualidade);
+            GerenciadorEliminacao.GetInstance().CorrigirRespostas(SessionController.Eliminacao, GerenciadorEliminacao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Eliminacao);
         }
 
         /// <summary>

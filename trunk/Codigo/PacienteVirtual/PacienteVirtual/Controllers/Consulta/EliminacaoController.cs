@@ -22,6 +22,7 @@ namespace PacienteVirtual.Controllers.Consulta
                 gEliminacao.Atualizar(eliminacao);
                 SessionController.Eliminacao = eliminacao;
             }
+            SessionController.Abas1 = Global.abaEliminacao;
             return RedirectToAction("Edit", "Consulta");
         }
     }
