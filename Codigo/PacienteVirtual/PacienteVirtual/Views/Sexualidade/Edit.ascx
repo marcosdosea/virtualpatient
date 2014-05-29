@@ -8,7 +8,7 @@
 <fieldset>
     <legend>
         <%: Resources.Mensagem.sexualidade %></legend>
-    <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
+        <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     
     <div class="row-fluid">
         <div class="span1">

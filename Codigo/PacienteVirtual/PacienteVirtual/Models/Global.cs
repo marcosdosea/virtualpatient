@@ -30,7 +30,8 @@ namespace PacienteVirtual.Models
         public const int abaSensorial = 13;
         public const int abaOutrasNecessidades = 14;
         public const int abaSexualidade = 15;
-        public const int totalAbasENF_Edit1 = 15;
+        public const int abaEliminacao = 16;
+        public const int totalAbasENF_Edit1 = 16;
 
         public const int abaCarta = 3;
         public const int abaConsultaParametro = 11;

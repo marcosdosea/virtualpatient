@@ -60,6 +60,10 @@ namespace PacienteVirtual.Models
         public bool SangramentoRetal { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "hemorroidas", ResourceType = typeof(Mensagem))]
+        public bool Hemorroidas { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "prurido_anal", ResourceType = typeof(Mensagem))]
         public bool PruridoAnal { get; set; }
 

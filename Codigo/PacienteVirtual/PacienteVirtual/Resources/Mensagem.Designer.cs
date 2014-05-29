@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abdômen.
+        /// </summary>
+        public static string abdomen {
+            get {
+                return ResourceManager.GetString("abdomen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abertura Ocular.
         /// </summary>
         public static string abertura_ocular {
@@ -1942,6 +1951,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Eliminação.
+        /// </summary>
+        public static string eliminacao {
+            get {
+                return ResourceManager.GetString("eliminacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to *O E-mail está Inválido. (Exemplo: paciente@virtual.com).
         /// </summary>
         public static string email_invalido {
@@ -2392,15 +2410,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fezes Pastosas.
-        /// </summary>
-        public static string fezes_pastosas {
-            get {
-                return ResourceManager.GetString("fezes_pastosas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Fezes Formadas.
         /// </summary>
         public static string FezesFormadas {
@@ -2788,6 +2797,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hemorróidas.
+        /// </summary>
+        public static string hemorroidas {
+            get {
+                return ResourceManager.GetString("hemorroidas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hidratada.
         /// </summary>
         public static string Hidratada {
@@ -3153,6 +3171,15 @@ namespace Resources {
         public static string intervencoes {
             get {
                 return ResourceManager.GetString("intervencoes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Intestinal.
+        /// </summary>
+        public static string intestinal {
+            get {
+                return ResourceManager.GetString("intestinal", resourceCulture);
             }
         }
         
@@ -5695,6 +5722,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tipos de Fezes.
+        /// </summary>
+        public static string tipos_fezes {
+            get {
+                return ResourceManager.GetString("tipos_fezes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tipos de Sons Percussão.
         /// </summary>
         public static string tipos_sons_percussao {
@@ -5826,6 +5862,15 @@ namespace Resources {
         public static string unidade {
             get {
                 return ResourceManager.GetString("unidade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Urinária.
+        /// </summary>
+        public static string urinaria {
+            get {
+                return ResourceManager.GetString("urinaria", resourceCulture);
             }
         }
         

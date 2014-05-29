@@ -1224,6 +1224,7 @@ namespace PacienteVirtual.Controllers
                         eliminacao.IncontinenciaFecal = false;
                         eliminacao.Flatos = false;
                         eliminacao.SangramentoRetal = false;
+                        eliminacao.Hemorroidas = false;
                         eliminacao.PruridoAnal = false;
                         eliminacao.EstomasCirurgicos = ListaEstomasCirurgicos.NaoSeAplica;
                         eliminacao.FormasAbdomem = ListaFormasAbdomem.Plano;

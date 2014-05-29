@@ -1686,9 +1686,9 @@
   <data name="evacuacoes_dia" xml:space="preserve">
     <value>Nº Evacuações/dia</value>
   </data>
-  <data name="fezes_pastosas" xml:space="preserve">
-    <value>Fezes Pastosas</value>
-   </data>
+  <data name="tipos_fezes" xml:space="preserve">
+    <value>Tipos de Fezes</value>
+  </data>
   <data name="FezesPastosas" xml:space="preserve">
     <value>Fezes Pastosas</value>
   </data>
@@ -2099,5 +2099,20 @@
   </data>
   <data name="FezesFormadas" xml:space="preserve">
     <value>Fezes Formadas</value>
+  </data>
+  <data name="eliminacao" xml:space="preserve">
+    <value>Eliminação</value>
+  </data>
+  <data name="hemorroidas" xml:space="preserve">
+    <value>Hemorróidas</value>
+  </data>
+  <data name="abdomen" xml:space="preserve">
+    <value>Abdômen</value>
+  </data>
+  <data name="intestinal" xml:space="preserve">
+    <value>Intestinal</value>
+  </data>
+  <data name="urinaria" xml:space="preserve">
+    <value>Urinária</value>
   </data>
 </root>

@@ -30,6 +30,96 @@ namespace PacienteVirtual.Negocio
         /// <param name="modelState"></param>
         public void CorrigirRespostas(EliminacaoModel eliminacao, EliminacaoModel eliminacaoGabarito, ModelStateDictionary modelState)
         {
+            if (eliminacao.EvacuacoesDia != eliminacaoGabarito.EvacuacoesDia)
+            {
+                modelState.AddModelError("EvacuacoesDia", "Gabarito: \"" + eliminacaoGabarito.EvacuacoesDia + "\"");
+            }
+            if (eliminacao.UltimaEvacuacao != eliminacaoGabarito.UltimaEvacuacao)
+            {
+                modelState.AddModelError("UltimaEvacuacao", "Gabarito: \"" + eliminacaoGabarito.UltimaEvacuacao + "\"");
+            }
+            if (eliminacao.EsforcoEvacuar != eliminacaoGabarito.EsforcoEvacuar)
+            {
+                modelState.AddModelError("EsforcoEvacuar", "Gabarito: " + (eliminacaoGabarito.EsforcoEvacuar.Equals(true) ? "Sim" : "Não"));
+            }
+            if (eliminacao.TiposFezes != eliminacaoGabarito.TiposFezes)
+            {
+                modelState.AddModelError("TiposFezes", "Gabarito: \"" + eliminacaoGabarito.TiposFezes + "\"");
+            }
+            if (eliminacao.IncontinenciaFecal != eliminacaoGabarito.IncontinenciaFecal)
+            {
+                modelState.AddModelError("IncontinenciaFecal", "Gabarito: " + (eliminacaoGabarito.IncontinenciaFecal.Equals(true) ? "Sim" : "Não"));
+            }
+            if (eliminacao.Flatos != eliminacaoGabarito.Flatos)
+            {
+                modelState.AddModelError("Flatos", "Gabarito: " + (eliminacaoGabarito.Flatos.Equals(true) ? "Sim" : "Não"));
+            }
+            if (eliminacao.SangramentoRetal != eliminacaoGabarito.SangramentoRetal)
+            {
+                modelState.AddModelError("SangramentoRetal", "Gabarito: " + (eliminacaoGabarito.SangramentoRetal.Equals(true) ? "Sim" : "Não"));
+            }
+            if (eliminacao.Hemorroidas != eliminacaoGabarito.Hemorroidas)
+            {
+                modelState.AddModelError("Hemorroidas", "Gabarito: " + (eliminacaoGabarito.Hemorroidas.Equals(true) ? "Sim" : "Não"));
+            }
+            if (eliminacao.PruridoAnal != eliminacaoGabarito.PruridoAnal)
+            {
+                modelState.AddModelError("PruridoAnal", "Gabarito: " + (eliminacaoGabarito.PruridoAnal.Equals(true) ? "Sim" : "Não"));
+            }
+            if (eliminacao.FormasAbdomem != eliminacaoGabarito.FormasAbdomem)
+            {
+                modelState.AddModelError("FormasAbdomem", "Gabarito: \"" + eliminacaoGabarito.FormasAbdomem + "\"");
+            }
+            if (eliminacao.SonsIntestinais != eliminacaoGabarito.SonsIntestinais)
+            {
+                modelState.AddModelError("SonsIntestinais", "Gabarito: \"" + eliminacaoGabarito.SonsIntestinais + "\"");
+            }
+            if (eliminacao.TipoSonsPercussao != eliminacaoGabarito.TipoSonsPercussao)
+            {
+                modelState.AddModelError("TipoSonsPercussao", "Gabarito: \"" + eliminacaoGabarito.TipoSonsPercussao + "\"");
+            }
+            if (eliminacao.PalpacaoAbodminal != eliminacaoGabarito.PalpacaoAbodminal)
+            {
+                modelState.AddModelError("PalpacaoAbodminal", "Gabarito: \"" + eliminacaoGabarito.PalpacaoAbodminal + "\"");
+            }
+            Global.CorrecaoDeStrings("LocalizarPercussaoAbdominal", eliminacao.LocalizarPercussaoAbdominal, eliminacaoGabarito.LocalizarPercussaoAbdominal, modelState);
+            if (eliminacao.ColoracaoUrinaria != eliminacaoGabarito.ColoracaoUrinaria)
+            {
+                modelState.AddModelError("ColoracaoUrinaria", "Gabarito: \"" + eliminacaoGabarito.ColoracaoUrinaria + "\"");
+            }
+            if (eliminacao.DebitoUrinario != eliminacaoGabarito.DebitoUrinario)
+            {
+                modelState.AddModelError("DebitoUrinario", "Gabarito: \"" + eliminacaoGabarito.DebitoUrinario + "\"");
+            }
+            if (eliminacao.Disuria != eliminacaoGabarito.Disuria)
+            {
+                modelState.AddModelError("Disuria", "Gabarito: " + (eliminacaoGabarito.Disuria.Equals(true) ? "Sim" : "Não"));
+            }
+            Global.CorrecaoDeStrings("Tempo", eliminacao.Tempo, eliminacaoGabarito.Tempo, modelState);
+            if (eliminacao.CondicaoContinenciaUrinaria != eliminacaoGabarito.CondicaoContinenciaUrinaria)
+            {
+                modelState.AddModelError("CondicaoContinenciaUrinaria", "Gabarito: \"" + eliminacaoGabarito.CondicaoContinenciaUrinaria + "\"");
+            }
+            if (eliminacao.IrrigacaoVesical != eliminacaoGabarito.IrrigacaoVesical)
+            {
+                modelState.AddModelError("IrrigacaoVesical", "Gabarito: \"" + eliminacaoGabarito.IrrigacaoVesical + "\"");
+            }
+            if (eliminacao.IrrigacaoVesicalDesde != eliminacaoGabarito.IrrigacaoVesicalDesde)
+            {
+                modelState.AddModelError("IrrigacaoVesicalDesde", "Gabarito: \"" + eliminacaoGabarito.IrrigacaoVesicalDesde + "\"");
+            }
+            if (eliminacao.SVD != eliminacaoGabarito.SVD)
+            {
+                modelState.AddModelError("SVD", "Gabarito: " + (eliminacaoGabarito.SVD.Equals(true) ? "Sim" : "Não"));
+            }
+            if (eliminacao.SVDInstalada != eliminacaoGabarito.SVDInstalada)
+            {
+                modelState.AddModelError("SVDInstalada", "Gabarito: \"" + eliminacaoGabarito.SVDInstalada + "\"");
+            }
+            if (eliminacao.Cistostomia != eliminacaoGabarito.Cistostomia)
+            {
+                modelState.AddModelError("Cistostomia", "Gabarito: " + (eliminacaoGabarito.Cistostomia.Equals(true) ? "Sim" : "Não"));
+            }
         }
 
         /// <summary>
@@ -109,9 +199,11 @@ namespace PacienteVirtual.Negocio
                             UltimaEvacuacao = eliminacao.UltimaEvacuacao,
                             EvacuacoesDia = eliminacao.EvacuacoesDia,
                             EsforcoEvacuar = eliminacao.EsforcoEvacuar,
+                            TiposFezes = (eliminacao.TiposFezes == "FezesFormadas" ? ListaTiposFezes.FezesFormadas : (eliminacao.TiposFezes == "FezesPastosas") ? ListaTiposFezes.FezesPastosas : (eliminacao.TiposFezes == "Melena") ? ListaTiposFezes.Melena : (eliminacao.TiposFezes == "Diarreia") ? ListaTiposFezes.Diarreia : ListaTiposFezes.Constipacao),
                             IncontinenciaFecal = eliminacao.IncontinenciaFecal,
                             Flatos = eliminacao.Flatos,
                             SangramentoRetal = eliminacao.SangramentoRetal,
+                            Hemorroidas = eliminacao.Hemorroidas,
                             PruridoAnal = eliminacao.PruridoAnal,
                             EstomasCirurgicos = (eliminacao.EstomasCirurgicos == "NaoSeAplica" ? ListaEstomasCirurgicos.NaoSeAplica : (eliminacao.EstomasCirurgicos == "Colostomia" ? ListaEstomasCirurgicos.Colostomia : ListaEstomasCirurgicos.Ileostomia)),
                             FormasAbdomem = (eliminacao.FormasAbdomem == "Plano" ? ListaFormasAbdomem.Plano : (eliminacao.FormasAbdomem == "Retraido" ? ListaFormasAbdomem.Retraido : ListaFormasAbdomem.Globoso )),
@@ -163,9 +255,11 @@ namespace PacienteVirtual.Negocio
             _eliminacaoE.UltimaEvacuacao = eliminacao.UltimaEvacuacao;
             _eliminacaoE.EvacuacoesDia = eliminacao.EvacuacoesDia;
             _eliminacaoE.EsforcoEvacuar = eliminacao.EsforcoEvacuar;
+            _eliminacaoE.TiposFezes = eliminacao.TiposFezes.ToString();
             _eliminacaoE.IncontinenciaFecal = eliminacao.IncontinenciaFecal;
             _eliminacaoE.Flatos = eliminacao.Flatos;
             _eliminacaoE.SangramentoRetal = eliminacao.SangramentoRetal;
+            _eliminacaoE.Hemorroidas = eliminacao.Hemorroidas;
             _eliminacaoE.PruridoAnal = eliminacao.PruridoAnal;
             _eliminacaoE.EstomasCirurgicos = eliminacao.EstomasCirurgicos.ToString();
             _eliminacaoE.FormasAbdomem = eliminacao.FormasAbdomem.ToString();
