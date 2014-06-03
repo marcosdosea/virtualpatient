@@ -87,7 +87,7 @@ namespace PacienteVirtual.Controllers
             SmtpClient objSmtp = new SmtpClient();
 
             //endereço do servidor SMTP(para mais detalhes leia abaixo do código)
-            objSmtp.Host = "http://www.pv.sistemasitatechjr.com.br/";
+            objSmtp.Host = "smtp.sistemasitatechjr.com.br";
 
             //Permitir que emails possam ser enviados de dominios diferentes
             objSmtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.PickupDirectoryFromIis;

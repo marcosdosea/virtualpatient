@@ -697,7 +697,7 @@ namespace PacienteVirtual.Controllers
                 int numeroAba2 = (int)HttpContext.Current.Session["_NumeroAba2"];
                 if (numeroAba2 == Global.NaoSelecionado)
                 {
-                    numeroAba2 = Global.ValorInteiroNulo;
+                    numeroAba2 = Global.ValorInicial;
                     HttpContext.Current.Session["_NumeroAba2"] = numeroAba2;
                 }
                 return numeroAba2;
