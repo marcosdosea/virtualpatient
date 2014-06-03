@@ -66,6 +66,21 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Faz a validação para verificar se todos os id estão diferentes de 0
+        /// </summary>
+        public bool ValidarRespostasSelecionaveis(int IdMedicamento, int IdBebida)
+        {
+            if (IdBebida == 0 || IdMedicamento == 0)
+            {
+                throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais campos.");
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
         /// Remove dados do diario pessoal especificando: consulta fixo, medicamento, horario e quantidade
         /// </summary>
         /// <param name="idConsultaFixo"></param>

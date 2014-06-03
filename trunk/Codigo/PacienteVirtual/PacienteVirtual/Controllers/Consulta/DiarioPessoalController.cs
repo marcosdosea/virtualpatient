@@ -34,6 +34,10 @@ namespace PacienteVirtual.Controllers
                 SessionController.ListaDiarioPessoal = null;
                 return RedirectToAction("Edit2", "Consulta");
             }
+            else
+            {
+                GerenciadorDiarioPessoal.GetInstance().ValidarRespostasSelecionaveis(diarioPessoal.IdMedicamento, diarioPessoal.IdBebida);
+            }
             return PartialView(diarioPessoal);
         }
 

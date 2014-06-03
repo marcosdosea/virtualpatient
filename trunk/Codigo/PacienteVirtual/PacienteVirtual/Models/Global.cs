@@ -50,7 +50,7 @@ namespace PacienteVirtual.Models
         public const int abaMedPresc = 6;
         public const int abaMedAnte = 8;
         public const int totalAbasFARM_Edit1 = 12;
-        public const int totalAbasFARM_Edit2 = 0;
+        public const int totalAbasFARM_Edit2 = 4;
 
         public const int NaoSelecionado = -1;
         public const int ValorInteiroNulo = 0;

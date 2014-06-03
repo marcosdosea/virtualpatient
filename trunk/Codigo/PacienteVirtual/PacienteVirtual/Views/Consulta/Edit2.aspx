@@ -18,26 +18,53 @@
     <!-- Solução das abas 2 com jquery -->
     <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
     <input type="hidden" value="<%: ViewBag.Abas2 %>" id="abas2" />
+    <input type="hidden" value="<%: ViewBag.TotalAbas %>" id="totalAbas" />
     <script type="text/javascript">
         var abas2 = document.getElementById('abas2').value;
-        if (abas2 == 1) {
-            //função que adiciona ou remove a classe que ativa as abas
-            $(document).ready(function () {
-                $("#li1").addClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#tab1-1").removeClass("tab-pane"); $("#tab1-1").addClass("tab-pane active"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane"); 
+        var totalAbas = document.getElementById('totalAbas').value;
+        //método que concatena os nomes das abas para adicionar ou remover classes que ativam e desativam as abas
+        $(document).ready(function () {
+            if (abas2 != 1) {
+                var aba = "#li";
+                var cont = "#tab1-";
+                for (var i = 1; i <= totalAbas; i++) {
+                    if (i != abas2) {
+                        var resultAba = aba.concat(i);
+                        var resultCont = cont.concat(i);
+
+                        $(resultAba).removeClass("active");
+                        $(resultCont).removeClass("tab-pane active");
+                        $(resultCont).addClass("tab-pane");
+                    }
+                }
+                var resultAba = aba.concat(abas2);
+                var resultCont = cont.concat(abas2);
+                $(resultAba).addClass("active");
+                $(resultCont).addClass("tab-pane active");
+                $(resultCont).removeClass("tab-pane");
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        //função complementar para esconder a aba após os adicionamentos das classes tab-pane
+        var abasEdit2 = document.getElementById('abas2').value;
+        var totalAbas = document.getElementById('totalAbas').value;
+        $(document).ready(function () {
+            var aba2 = "#li";
+            var cont2 = "#tab1-";
+            for (var i = 0; i <= totalAbas; i++) {
+                var resultAba2 = aba2.concat(i);
+                $(resultAba2).click(function () {
+                    var resultCont2 = cont2.concat(abas2);
+                    $(resultCont2).hide();
+                });
+            }
+            var resultAbaAtualEdit = aba2.concat(abas2);
+            $(resultAbaAtualEdit).click(function () {
+                var resultContAbaEdit = cont2.concat(abas2);
+                $(resultContAbaEdit).show();
             });
-        } else if (abas2 == 2) {
-            $(document).ready(function () {
-                $("#li1").removeClass("active"); $("#li2").addClass("active"); $("#li3").removeClass("active"); $("#li4").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane"); $("#tab1-2").addClass("tab-pane active"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane");
-            });
-        } else if (abas2 == 3) {
-            $(document).ready(function () {
-                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").addClass("active"); $("#li4").removeClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane"); $("#tab1-3").addClass("tab-pane active"); $("#tab1-4").removeClass("tab-pane active"); $("#tab1-4").addClass("tab-pane");
-            });
-        } else if (abas2 == 4) {
-            $(document).ready(function () {
-                $("#li1").removeClass("active"); $("#li2").removeClass("active"); $("#li3").removeClass("active"); $("#li4").addClass("active"); $("#tab1-1").removeClass("tab-pane active"); $("#tab1-1").addClass("tab-pane"); $("#tab1-2").removeClass("tab-pane active"); $("#tab1-2").addClass("tab-pane"); $("#tab1-3").removeClass("tab-pane active"); $("#tab1-3").addClass("tab-pane"); $("#tab1-4").removeClass("tab-pane"); $("#tab1-4").addClass("tab-pane active");
-            });
-        }
+        });
     </script>
 
     <!-- Solução para âncoras no código -->
