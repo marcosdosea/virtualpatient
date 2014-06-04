@@ -27,6 +27,10 @@ namespace PacienteVirtual.Controllers
                 GerenciadorCarta.GetInstance().Inserir(carta);
                 SessionController.ListaCarta = null;
             }
+            else
+            {
+                GerenciadorCarta.GetInstance().ValidarRespostasSelecionaveis(carta.IdEspecialidade);
+            }
             SessionController.Abas2 = Global.abaCarta;
             return RedirectToAction("Edit2", "Consulta");
         }

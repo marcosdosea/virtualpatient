@@ -28,6 +28,10 @@ namespace PacienteVirtual.Controllers
                 gMedicamentoNaoPrescrito.Inserir(medicamentoNaoPrescrito);
                 SessionController.ListaMedicamentoNaoPrescrito = null;
             }
+            else
+            {
+                GerenciadorMedicamentoNaoPrescrito.GetInstance().ValidarRespostasSelecionaveis(medicamentoNaoPrescrito.IdMedicamento);
+            }
             SessionController.Abas1 = Global.abaMedNaoPresc;
             return RedirectToAction("Edit", "Consulta");
         }
