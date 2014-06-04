@@ -2142,4 +2142,76 @@
   <data name="percepcao_expectativas_paciente" xml:space="preserve">
     <value>Perception and expectations of the patient</value>
   </data>
+  <data name="cateter_central" xml:space="preserve">
+    <value>Central catheter</value>
+  </data>
+  <data name="cateter_central_data" xml:space="preserve">
+    <value>Date of central catheter</value>
+  </data>
+  <data name="cateter_central_local" xml:space="preserve">
+    <value>Local central catheter</value>
+  </data>
+  <data name="cateter_data" xml:space="preserve">
+    <value>Date catheter</value>
+  </data>
+  <data name="cateter_local" xml:space="preserve">
+    <value>Local catheter</value>
+  </data>
+  <data name="cateter_periferico" xml:space="preserve">
+    <value>Peripheral catheter</value>
+  </data>
+  <data name="dissecacao_venosa_data" xml:space="preserve">
+    <value>Date of venous dissection</value>
+  </data>
+  <data name="disseccao_venosa" xml:space="preserve">
+    <value>Venous dissection</value>
+  </data>
+  <data name="disseccao_venosa_local" xml:space="preserve">
+    <value>Local venous dissection</value>
+  </data>
+  <data name="edema_localizar" xml:space="preserve">
+    <value>Find edema</value>
+  </data>
+  <data name="enchimento_capilar" xml:space="preserve">
+    <value>Capillary refill</value>
+  </data>
+  <data name="flebite" xml:space="preserve">
+    <value>Phlebitis</value>
+  </data>
+  <data name="flebite_localizar" xml:space="preserve">
+    <value>Find phlebitis</value>
+  </data>
+  <data name="infiltracao" xml:space="preserve">
+    <value>Infiltration</value>
+  </data>
+  <data name="infiltracao_localizar" xml:space="preserve">
+    <value>Find infiltration</value>
+  </data>
+  <data name="Maior3" xml:space="preserve">
+    <value>Greater than 3</value>
+  </data>
+  <data name="MenorIgual3" xml:space="preserve">
+    <value>Less than or equal to 3</value>
+  </data>
+  <data name="p" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="rede_venosa_pulsos_palpaveis" xml:space="preserve">
+    <value>Venous network palpable pulses</value>
+  </data>
+  <data name="rede_venosa_sem_acesso" xml:space="preserve">
+    <value>Network without venous access</value>
+  </data>
+  <data name="rede_venosa_visivel" xml:space="preserve">
+    <value>Visible venous network</value>
+  </data>
+  <data name="sinais_flogisticos" xml:space="preserve">
+    <value>Inflammatory signs</value>
+  </data>
+  <data name="sinais_flogisticos_quais_local" xml:space="preserve">
+    <value>Local of inflammatory signs</value>
+  </data>
+  <data name="varizes" xml:space="preserve">
+    <value>Varicose veins</value>
+  </data>
 </root>

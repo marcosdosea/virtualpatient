@@ -157,6 +157,7 @@
     <Compile Include="Controllers\Cadastro\SituacaoQueixaController.cs" />
     <Compile Include="Controllers\Cadastro\SuspeitaPrmController.cs" />
     <Compile Include="Controllers\Consulta\CartaController.cs" />
+    <Compile Include="Controllers\Consulta\CirculacaoControllerController.cs" />
     <Compile Include="Controllers\Consulta\ClinicoInternacaoController.cs" />
     <Compile Include="Controllers\Consulta\ComunicacaoController.cs" />
     <Compile Include="Controllers\Consulta\ConscienciaController.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="Models\Consulta\AntecedentesFamiliaresModel.cs" />
     <Compile Include="Models\Consulta\AntecedentesPatologicosModel.cs" />
     <Compile Include="Models\Consulta\CartaModel.cs" />
+    <Compile Include="Models\Consulta\CirculacaoModel.cs" />
     <Compile Include="Models\Consulta\ClinicoInternacaoAlergiasModel.cs" />
     <Compile Include="Models\Consulta\ClinicoInternacaoModel.cs" />
     <Compile Include="Models\Consulta\ComunicacaoModel.cs" />
@@ -239,6 +241,7 @@
     <Compile Include="Negocio\Cadastro\GerenciadorReligiao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorSituacaoQueixa.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorSuspeitaPrm.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorCirculacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorClinicoInternacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorComunicacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsciencia.cs" />
