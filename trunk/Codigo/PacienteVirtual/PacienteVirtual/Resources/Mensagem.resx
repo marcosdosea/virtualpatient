@@ -913,7 +913,7 @@
     <value>Resolvido</value>
   </data>
   <data name="comunicacao" xml:space="preserve">
-    <value>Comunicação</value>
+    <value>Necessidade de comunicação</value>
   </data>
   <data name="alternativas" xml:space="preserve">
     <value>Alternativas</value>
@@ -1090,7 +1090,7 @@
     <value>Patologia</value>
   </data>
   <data name="clinico_internacao" xml:space="preserve">
-    <value>Clínico Internação</value>
+    <value>Dados Clínicos/Internação</value>
   </data>
   <data name="clinica" xml:space="preserve">
     <value>Clínica</value>
@@ -1501,7 +1501,7 @@
     <value>Avaliação sedação</value>
   </data>
   <data name="consciencia" xml:space="preserve">
-    <value>Consciência</value>
+    <value>Avaliação da consciência</value>
   </data>
   <data name="ConversacaoConfusa" xml:space="preserve">
     <value>Conversação confusa</value>
@@ -2117,5 +2117,32 @@
   </data>
   <data name="solicitar" xml:space="preserve">
     <value>Solicitar</value>
+  </data>
+  <data name="dados_identificacao" xml:space="preserve">
+    <value>Dados de Identificação</value>
+  </data>
+  <data name="circulacao" xml:space="preserve">
+    <value>Circulação</value>
+  </data>
+  <data name="necessidades_psicobiologicas" xml:space="preserve">
+    <value>Necessidades psicobiológicas</value>
+  </data>
+  <data name="necessidades_psicoespirituais" xml:space="preserve">
+    <value>Necessidades psicoespirituais</value>
+  </data>
+  <data name="necessidades_psicossociais" xml:space="preserve">
+    <value>Necessidades psicossociais</value>
+  </data>
+  <data name="necessidade_interacao_social" xml:space="preserve">
+    <value>Necessidade de interação social</value>
+  </data>
+  <data name="necessidade_lazer_recreacao" xml:space="preserve">
+    <value>Necessidade de Lazer/Recreação</value>
+  </data>
+  <data name="necessidade_seguranca" xml:space="preserve">
+    <value>Necessidade de segurança</value>
+  </data>
+  <data name="percepcao_expectativas_paciente" xml:space="preserve">
+    <value>Percepção e expectativas do paciente</value>
   </data>
 </root>

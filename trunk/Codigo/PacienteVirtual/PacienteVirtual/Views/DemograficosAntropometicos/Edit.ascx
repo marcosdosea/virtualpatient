@@ -4,8 +4,16 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
+    <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+       { %>
+       <legend>
+        <%: Resources.Mensagem.dados_identificacao%></legend>
+    <% }
+       else
+       { %>
     <legend>
-        <%: Resources.Mensagem.demografico_antropometricos %></legend>
+        <%: Resources.Mensagem.demografico_antropometricos%></legend>
+        <% } %>
     <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
     <div class="row-fluid">
         <div class="span4">

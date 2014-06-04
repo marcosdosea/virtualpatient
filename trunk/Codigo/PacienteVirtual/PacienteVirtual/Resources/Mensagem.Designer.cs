@@ -754,6 +754,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Circulação.
+        /// </summary>
+        public static string circulacao {
+            get {
+                return ResourceManager.GetString("circulacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Circunferência Abdominal.
         /// </summary>
         public static string circunferencia_abdominal {
@@ -799,7 +808,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clínico Internação.
+        ///   Looks up a localized string similar to Dados Clínicos/Internação.
         /// </summary>
         public static string clinico_internacao {
             get {
@@ -907,7 +916,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comunicação.
+        ///   Looks up a localized string similar to Necessidade de comunicação.
         /// </summary>
         public static string comunicacao {
             get {
@@ -988,7 +997,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consciência.
+        ///   Looks up a localized string similar to Avaliação da consciência.
         /// </summary>
         public static string consciencia {
             get {
@@ -1317,6 +1326,15 @@ namespace Resources {
         public static string dados_complementares {
             get {
                 return ResourceManager.GetString("dados_complementares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dados de Identificação.
+        /// </summary>
+        public static string dados_identificacao {
+            get {
+                return ResourceManager.GetString("dados_identificacao", resourceCulture);
             }
         }
         
@@ -3760,6 +3778,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Necessidade de interação social.
+        /// </summary>
+        public static string necessidade_interacao_social {
+            get {
+                return ResourceManager.GetString("necessidade_interacao_social", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Necessidade de Lazer/Recreação.
+        /// </summary>
+        public static string necessidade_lazer_recreacao {
+            get {
+                return ResourceManager.GetString("necessidade_lazer_recreacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Necessidade de segurança.
+        /// </summary>
+        public static string necessidade_seguranca {
+            get {
+                return ResourceManager.GetString("necessidade_seguranca", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Necessidades psicobiológicas.
+        /// </summary>
+        public static string necessidades_psicobiologicas {
+            get {
+                return ResourceManager.GetString("necessidades_psicobiologicas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Necessidades psicoespirituais.
+        /// </summary>
+        public static string necessidades_psicoespirituais {
+            get {
+                return ResourceManager.GetString("necessidades_psicoespirituais", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Necessidades psicossociais.
+        /// </summary>
+        public static string necessidades_psicossociais {
+            get {
+                return ResourceManager.GetString("necessidades_psicossociais", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Negação.
         /// </summary>
         public static string negacao {
@@ -4260,6 +4332,15 @@ namespace Resources {
         public static string pele {
             get {
                 return ResourceManager.GetString("pele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percepção e expectativas do paciente.
+        /// </summary>
+        public static string percepcao_expectativas_paciente {
+            get {
+                return ResourceManager.GetString("percepcao_expectativas_paciente", resourceCulture);
             }
         }
         
