@@ -338,7 +338,8 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<ConsultaVariavelModel> ObterConsultasPorTurma(int idTurma)
         {
-            return GetQuery().Where(cv => cv.IdTurma == idTurma).ToList();
+            return GetQuery().Where(cv => cv.IdTurma == idTurma &&
+                cv.IdEstadoConsulta != Global.GabaritoDisponivel && cv.IdEstadoConsulta != Global.GabaritoEmPreenchimento).ToList();
         }
 
         /// <summary>
