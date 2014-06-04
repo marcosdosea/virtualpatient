@@ -30,6 +30,10 @@ namespace PacienteVirtual.Controllers
                 gMedicamentoPrescrito.Inserir(medicamentoPrescrito);
                 SessionController.ListaMedicamentosPrescritos = null;
             }
+            else
+            {
+                GerenciadorMedicamentoPrescrito.GetInstance().ValidarRespostasSelecionaveis(medicamentoPrescrito.IdMedicamento);
+            }
             SessionController.Abas1 = Global.abaMedPresc;
             return RedirectToAction("Edit", "Consulta");
         }

@@ -28,6 +28,10 @@ namespace PacienteVirtual.Controllers
                 gMedicamentosAnteriores.Inserir(medicamentosAnterioresModel);
                 SessionController.ListaMedicamentosAnteriores = null;
             }
+            else
+            {
+                GerenciadorMedicamentosAnteriores.GetInstance().ValidarRespostasSelecionaveis(medicamentosAnterioresModel.IdMedicamento);
+            }
             SessionController.Abas1 = Global.abaMedAnte;
             return RedirectToAction("Edit", "Consulta");
         }

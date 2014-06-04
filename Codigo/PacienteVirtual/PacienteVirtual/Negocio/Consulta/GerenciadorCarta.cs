@@ -126,6 +126,21 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Faz a validação para verificar se todos os id estão diferentes de 0
+        /// </summary>
+        public bool ValidarRespostasSelecionaveis(int parametro1)
+        {
+            if (parametro1 == 0)
+            {
+                throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais campos.");
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
         /// Remove dados do Carta
         /// </summary>
         /// <param name="idConsultaVariavel"></param>

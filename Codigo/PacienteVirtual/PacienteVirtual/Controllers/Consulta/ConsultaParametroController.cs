@@ -27,6 +27,10 @@ namespace PacienteVirtual.Controllers
                 GerenciadorConsultaParametro.GetInstance().Inserir(consultaParametroModel);
                 SessionController.ListaConsultaParametro = null;
             }
+            else
+            {
+                GerenciadorParametroClinico.GetInstance().ValidarRespostasSelecionaveis(consultaParametroModel.IdParametroClinico);
+            }
             SessionController.Abas1 = Global.abaConsultaParametro;
             return RedirectToAction("Edit", "Consulta");
         }

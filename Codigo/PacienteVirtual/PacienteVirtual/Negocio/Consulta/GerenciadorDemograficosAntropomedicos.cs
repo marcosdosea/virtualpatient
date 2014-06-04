@@ -98,6 +98,21 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Faz a validação para verificar se todos os id estão diferentes de 0
+        /// </summary>
+        public bool ValidarRespostasSelecionaveis(int parametro1, int parametro2, int parametro3, int parametro4, int parametro5, int parametro6)
+        {
+            if (parametro1 == 0 || parametro2 == 0 || parametro2 == 3 || parametro2 == 4 || parametro5 == 0 || parametro6 == 0)
+            {
+                throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais campos.");
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
         /// Remove dados do demoAntrop
         /// </summary>
         /// <param name="codDisciplina"></param>
