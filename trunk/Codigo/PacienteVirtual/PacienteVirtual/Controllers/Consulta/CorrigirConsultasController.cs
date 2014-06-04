@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Web.Security;
+using System;
 
 namespace PacienteVirtual.Controllers
 {
@@ -48,54 +49,43 @@ namespace PacienteVirtual.Controllers
 
         private void EnviarEmailParaAluno(string emailTutor, string emailAluno)
         {
-            //crio objeto responsável pela mensagem de email
-            MailMessage objEmail = new MailMessage();
+            string from = "sistemapacientevirtual@gmail.com";
 
-            //rementente do email
-            objEmail.From = new MailAddress(emailTutor);
+            string to = emailAluno;
 
-            //email para resposta(quando o destinatário receber e clicar em responder, vai para:)
-            objEmail.ReplyTo = new MailAddress(emailTutor);
+            System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+            mail.To.Add(to);
+            mail.From = new MailAddress(from, "Paciente Virtual", System.Text.Encoding.UTF8);
+            mail.Subject = "Correção de Consulta do Paciente Virtual";
+            mail.SubjectEncoding = System.Text.Encoding.UTF8;
+            mail.Body = "Uma das suas consultas precisa de correções. Acesse http://www.pv.sistemasitatechjr.com.br/ e faça seu login.";
+            mail.BodyEncoding = System.Text.Encoding.UTF8;
+            mail.IsBodyHtml = true;
+            mail.Priority = MailPriority.High;
 
-            //destinatário(s) do email(s). Obs. pode ser mais de um, pra isso basta repetir a linha
-            //abaixo com outro endereço
-            objEmail.To.Add(emailAluno);
+            SmtpClient client = new SmtpClient();
+            //Add as credenciais usando o email e a senha criada para o sistema
 
-            //se quiser enviar uma cópia oculta pra alguém, utilize a linha abaixo:
-            //objEmail.Bcc.Add("oculto@provedor.com.br");
+            client.Credentials = new System.Net.NetworkCredential(from, "paciente2014");
 
-            //prioridade do email
-            objEmail.Priority = MailPriority.Normal;
-
-            //utilize true pra ativar html no conteúdo do email, ou false, para somente texto
-            objEmail.IsBodyHtml = true;
-
-            //Assunto do email
-            objEmail.Subject = "Correção de Consulta do Paciente Virtual";
-
-            //corpo do email a ser enviado
-            objEmail.Body = "Uma das suas consultas precisa de correções. Acesse http://www.pv.sistemasitatechjr.com.br/ e faça seu login.";
-
-            //codificação do assunto do email para que os caracteres acentuados serem reconhecidos.
-            objEmail.SubjectEncoding = Encoding.GetEncoding("ISO-8859-1");
-
-            //codificação do corpo do emailpara que os caracteres acentuados serem reconhecidos.
-            objEmail.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
-
-            //cria o objeto responsável pelo envio do email
-            SmtpClient objSmtp = new SmtpClient();
-
-            //endereço do servidor SMTP(para mais detalhes leia abaixo do código)
-            objSmtp.Host = "smtp.sistemasitatechjr.com.br";
-
-            //Permitir que emails possam ser enviados de dominios diferentes
-            objSmtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.PickupDirectoryFromIis;
-
-            //para envio de email autenticado, coloque login e senha de seu servidor de email
-            //objSmtp.Credentials = new NetworkCredential("login", "senha");
-
-            //envia o email
-            objSmtp.Send(objEmail);
+            client.Port = 587; // Gmail funciona com essa porta 587
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true; //Gmail trabalha utilizando SSL
+            try
+            {
+                client.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                Exception ex2 = ex;
+                string errorMessage = string.Empty;
+                while (ex2 != null)
+                {
+                    errorMessage += ex2.ToString();
+                    ex2 = ex2.InnerException;
+                }
+                throw new NegocioException(errorMessage);
+            }
         }
 
         public ActionResult FinalizarCorrecao(long idConsultaVariavel)
