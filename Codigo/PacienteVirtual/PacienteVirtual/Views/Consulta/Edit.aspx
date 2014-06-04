@@ -170,35 +170,23 @@
                            else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
                            { %>
                             <li id="li2"><a href="#tab1-2" data-toggle="tab">
-                            <%: Resources.Mensagem.outros_achados %></a></li>
+                            <%: Resources.Mensagem.clinico_internacao %></a></li>
                             <li id="li3"><a href="#tab1-3" data-toggle="tab">
-                            <%: Resources.Mensagem.oxigenacao %></a></li>
+                            <%: Resources.Mensagem.percepcao_expectativas_paciente %></a></li>
                             <li id="li4"><a href="#tab1-4" data-toggle="tab">
-                            <%: Resources.Mensagem.dados_complementares %></a></li>
-                            <li id="li5"><a href="#tab1-5" data-toggle="tab">
-                            <%: Resources.Mensagem.clinico_internacao %></a></li>   
-                            <li id="li6"><a href="#tab1-6" data-toggle="tab">
-                            <%: Resources.Mensagem.termorregulacao %></a></li> 
-                            <li id="li7"><a href="#tab1-7" data-toggle="tab">
-                            <%: Resources.Mensagem.integridade_tecidual %></a></li>
-                            <li id="li8"><a href="#tab1-8" data-toggle="tab">
-                            <%: Resources.Mensagem.higiene %></a></li> 
-                            <li id="li9"><a href="#tab1-9" data-toggle="tab">
-                            <%: Resources.Mensagem.psicoespiritual %></a></li>
-                            <li id="li10"><a href="#tab1-10" data-toggle="tab">
                             <%: Resources.Mensagem.consciencia %></a></li>
-                            <li id="li11"><a href="#tab1-11" data-toggle="tab">
-                            <%: Resources.Mensagem.comunicacao %></a></li>  
-                            <li id="li12"><a href="#tab1-12" data-toggle="tab">
-                            <%: Resources.Mensagem.nutricao %></a></li>
-                            <li id="li13"><a href="#tab1-13" data-toggle="tab">
-                            <%: Resources.Mensagem.sensorial %></a></li>
-                            <li id="li14"><a href="#tab1-14" data-toggle="tab">
-                            <%: Resources.Mensagem.outras_necessidades %></a></li>
-                            <li id="li15"><a href="#tab1-15" data-toggle="tab">
-                            <%: Resources.Mensagem.sexualidade %></a></li>
-                            <li id="li16"><a href="#tab1-16" data-toggle="tab">
-                            <%: Resources.Mensagem.eliminacao %></a></li>
+                            <li id="li5"><a href="#tab1-5" data-toggle="tab">
+                            <%: Resources.Mensagem.necessidades_psicobiologicas %></a></li>   
+                            <li id="li6"><a href="#tab1-6" data-toggle="tab">
+                            <%: Resources.Mensagem.necessidades_psicossociais %></a></li> 
+                            <li id="li7"><a href="#tab1-7" data-toggle="tab">
+                            <%: Resources.Mensagem.necessidades_psicoespirituais %></a></li>
+                            <li id="li8"><a href="#tab1-8" data-toggle="tab">
+                            <%: Resources.Mensagem.outras_necessidades %></a></li> 
+                            <li id="li9"><a href="#tab1-9" data-toggle="tab">
+                            <%: Resources.Mensagem.dados_complementares %></a></li>
+                            <li id="li10"><a href="#tab1-10" data-toggle="tab">
+                            <%: Resources.Mensagem.outros_achados %></a></li>
                           <% } %>
                     </ul>
                     <div class="tab-content" id="desabilitar">
@@ -277,22 +265,7 @@
                         <% }
                            else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
                            { %>
-                         <div class="tab-pane" id="tab1-2">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../OutrosAchados/Edit", Model.ConsultaVariavel);%>
-                            </div>
-                        </div>
-                         <div class="tab-pane" id="tab1-3">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../Oxigenacao/Edit", Model.Oxigenacao);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-4">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../DadosComplementares/Edit", Model.ConsultaVariavel);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-5">
+                        <div class="tab-pane" id="tab1-2">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ClinicoInternacao/Edit", Model.ClinicoInternacao);%>
                                 <% Html.RenderPartial("../ClinicoInternacao/AdicionarPatologiasAtuais", Model.PatologiasAtuais);%>
@@ -303,61 +276,124 @@
                                 <% Html.RenderPartial("../ClinicoInternacao/ListaAntecedentesFamiliares", Model.ListaAntecedentesFamiliares);%>
                                 <% Html.RenderPartial("../ClinicoInternacao/AdicionarClinicoInternacaoAlergias", Model.ClinicoInternacaoAlergias);%>
                                 <% Html.RenderPartial("../ClinicoInternacao/ListaClinicoInternacaoAlergias", Model.ListaClinicoInternacaoAlergias);%>
-                            </div>
+                            </div>    
                         </div>
-                        <div class="tab-pane" id="tab1-6">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../Termorregulacao/Edit", Model.Termorregulacao);%>
+                            <div class="tab-pane" id="tab1-3">
+                            
                             </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-7">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../IntegridadeTecidual/Edit", Model.IntegridadeTecidual);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-8">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../Higiene/Edit", Model.Higiene);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-9">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../PsicoEspiritual/Edit", Model.PsicoEspiritual);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-10">
+                        <div class="tab-pane" id="tab1-4">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../Consciencia/Edit", Model.Consciencia);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab1-11">
+                        <div class="tab-pane" id="tab1-5">
+                            <div class="tabbable">
+                                <ul class="nav nav-tabs">    
+                                    <li id="li5-1" class="active"><a href="#tab1-5-1" data-toggle="tab"><%: Resources.Mensagem.oxigenacao%></a></li>
+                                    <li id="li5-2"><a href="#tab1-5-2" data-toggle="tab"><%: Resources.Mensagem.circulacao %></a></li>
+                                    <li id="li5-3"><a href="#tab1-5-3" data-toggle="tab"><%: Resources.Mensagem.termorregulacao %></a></li>
+                                    <li id="li5-4"><a href="#tab1-5-4" data-toggle="tab"><%: Resources.Mensagem.higiene %></a></li>
+                                    <li id="li5-5"><a href="#tab1-5-5" data-toggle="tab"><%: Resources.Mensagem.nutricao %></a></li>
+                                    <li id="li5-6"><a href="#tab1-5-6" data-toggle="tab"><%: Resources.Mensagem.integridade_tecidual %></a></li>
+                                    <li id="li5-7"><a href="#tab1-5-7" data-toggle="tab"><%: Resources.Mensagem.eliminacao %></a></li>
+                                    <li id="li5-8"><a href="#tab1-5-8" data-toggle="tab"><%: Resources.Mensagem.sensorial %></a></li>
+                                    <li id="li5-9"><a href="#tab1-5-9" data-toggle="tab"><%: Resources.Mensagem.sexualidade %></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab1-5-1">
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Oxigenacao/Edit", Model.Oxigenacao);%>
+                                        </div>    
+                                    </div>
+                                    <div class="tab-pane" id="tab1-5-2">
+                                        <!-- Circulação -->
+                                        <%: Resources.Mensagem.teste %>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-5-3">
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Termorregulacao/Edit", Model.Termorregulacao);%>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-5-4">
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Higiene/Edit", Model.Higiene);%>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-5-5">
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Nutricao/Edit", Model.Nutricao);%>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-5-6">
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../IntegridadeTecidual/Edit", Model.IntegridadeTecidual);%>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-5-7">
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Eliminacao/Edit", Model.Eliminacao);%>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-5-8">
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Sensorial/Edit", Model.Sensorial);%>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-5-9">
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Sexualidade/Edit", Model.Sexualidade);%>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-6">
+                            <div class="tabbable">
+                                <ul class="nav nav-tabs">    
+                                    <li id="li6-1" class="active"><a href="#tab1-6-1" data-toggle="tab"><%: Resources.Mensagem.necessidade_seguranca%></a></li>
+                                    <li id="li6-2"><a href="#tab1-6-2" data-toggle="tab"><%: Resources.Mensagem.comunicacao %></a></li>
+                                    <li id="li6-3"><a href="#tab1-6-3" data-toggle="tab"><%: Resources.Mensagem.necessidade_lazer_recreacao %></a></li>
+                                    <li id="li6-4"><a href="#tab1-6-4" data-toggle="tab"><%: Resources.Mensagem.necessidade_interacao_social %></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab1-6-1">
+                                        <!-- Necessidade Segurança -->
+                                        <%: Resources.Mensagem.teste %>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-6-2">  
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Comunicacao/Edit", Model.Comunicacao);%>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-6-3">
+                                        <!-- Necessidade Lazer/Recreação -->
+                                        <%: Resources.Mensagem.teste %>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-6-4">
+                                        <!-- Necessidade de interação social -->
+                                        <%: Resources.Mensagem.teste %>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-7">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../Comunicacao/Edit", Model.Comunicacao);%>
+                                <% Html.RenderPartial("../PsicoEspiritual/Edit", Model.PsicoEspiritual);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab1-12">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../Nutricao/Edit", Model.Nutricao);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-13">
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../Sensorial/Edit", Model.Sensorial);%>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab1-14">
+                        <div class="tab-pane" id="tab1-8">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../OutrasNecessidades/Edit", Model.OutrasNecessidades);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab1-15">
+                        <div class="tab-pane" id="tab1-9">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../Sexualidade/Edit", Model.Sexualidade);%>
+                                <% Html.RenderPartial("../DadosComplementares/Edit", Model.ConsultaVariavel);%>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab1-16">
+                        <div class="tab-pane" id="tab1-10">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../Eliminacao/Edit", Model.Eliminacao);%>
+                                <% Html.RenderPartial("../OutrosAchados/Edit", Model.ConsultaVariavel);%>
                             </div>
                         </div>
                         <% } %>
