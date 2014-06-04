@@ -2,66 +2,47 @@
 <% if (Model != null)
    { %>
 <div class="row-fluid">
-        <% if (Model.NomeRole == ("usuario") || Model.NomeRole == ("tutor")) { %>
-        <div class="span2">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
-                <p class="conteudo"><%: Model.NomeTurma%></p>
-            </div>
+    <div class="span2">
+        <div class="editor-field">
+            <p class="cabecalho">
+                <%: Resources.Mensagem.turma %></p>
+            <p class="conteudo">
+                <%: Model.NomeTurma %></p>
         </div>
-        <div class="span2">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
-                <p class="conteudo"><%: Model.NomeRole %></p>
-            </div>
-        </div>
-        <% } %>
-        <% if (Model.NomeRole == ("administrador_enfermagem")) { %>
-        <div class="span2">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.turma%>:</p>
-                <p class="conteudo"><%: Model.NomeTurma%></p>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
-                <p class="conteudo"><%: Html.Label(Model.NomeRole.Replace("_"," ")) %></p>
-            </div>
-        </div>    
-        <div class="span3">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.curso %>:</p>
-                <p class="conteudo"><%: Model.Curso %></p>
-            </div>
-        </div>
-        <% } %>
-        <% if (Model.NomeRole == ("administrador")) { %>
-        <div class="span3">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.perfil %>:</p>
-                <p class="conteudo"><%: Model.NomeRole %></p>
-            </div>
-        </div>  
-        <% } %>
-        <% if (Model.NomeRole != ("administrador_enfermagem")) { %>
-        <div class="span5">
-            <div class="editor-label">
-                <p class="cabecalho"><%: Resources.Mensagem.curso %>:</p>
-                <p class="conteudo"><%: Model.Curso %></p>
-            </div>
-        </div>
-        <% } %>
-        <% if (ViewBag.QtdTurmaPessoa > 1)
-       { %>
-            <div>
-            <br />
-            <div class="btn btn-primary">
-                <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small; "}) %>
-            </div>
-            </div>
-      <% } %>
     </div>
+    <% if (Model.NomeRole.Contains("administrador_"))
+       { %>
+    <div class="span2">           
+    <% }
+       else
+       { %>
+    <div class="span1">
+    <% } %>
+        <div class="editor-field">
+            <p class="cabecalho">
+                <%: Resources.Mensagem.perfil %></p>
+            <p class="conteudo">
+                <%: Model.NomeRole.Replace("_"," ") %></p>
+        </div>
+    </div>
+    <div id="posCurso" class="span3">
+        <div class="editor-field">
+            <p class="cabecalho">
+                <%: Resources.Mensagem.curso %></p>
+            <p class="conteudo">
+                <%: Model.Curso %></p>
+        </div>
+    </div>
+    <% if (ViewBag.QtdTurmaPessoa > 1)
+       { %>
+    <br />
+    <div id="posBotao">
+        <div class="btn btn-primary">
+            <%: Html.ActionLink(Resources.Mensagem.alterar_turma, "Index", "SelecionarTurma", null, new { @style = "color:White; font-size:small; " })%>
+        </div>
+    </div>
+    <% } %>
+</div>
 <% } %>
 
 <style>
@@ -70,11 +51,12 @@
         font-size: medium;
         font-family: Tahoma;
         font-weight: bold;
+        text-align: center;
     }
     .conteudo
     {
         float: left;
-        text-align: right;
+        text-align: center;
         font-size: small;
         font-family: Tahoma;
         text-transform:capitalize;
@@ -83,5 +65,14 @@
     {
         clear: left;
     }
-    
+    #posBotao
+    {
+        position: relative;
+        left: 10%;
+    }    
+    #posCurso
+    {
+        position: relative;
+        left: 3%;
+    }
 </style>
