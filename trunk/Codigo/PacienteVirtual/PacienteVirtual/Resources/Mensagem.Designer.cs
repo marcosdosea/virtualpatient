@@ -691,6 +691,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cateter central.
+        /// </summary>
+        public static string cateter_central {
+            get {
+                return ResourceManager.GetString("cateter_central", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data do cateter  central.
+        /// </summary>
+        public static string cateter_central_data {
+            get {
+                return ResourceManager.GetString("cateter_central_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local do cateter central.
+        /// </summary>
+        public static string cateter_central_local {
+            get {
+                return ResourceManager.GetString("cateter_central_local", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data do cateter.
+        /// </summary>
+        public static string cateter_data {
+            get {
+                return ResourceManager.GetString("cateter_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local do cateter.
+        /// </summary>
+        public static string cateter_local {
+            get {
+                return ResourceManager.GetString("cateter_local", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cateter periférico.
+        /// </summary>
+        public static string cateter_periferico {
+            get {
+                return ResourceManager.GetString("cateter_periferico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Celular.
         /// </summary>
         public static string celular {
@@ -1843,6 +1897,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data da dissecção venosa.
+        /// </summary>
+        public static string dissecacao_venosa_data {
+            get {
+                return ResourceManager.GetString("dissecacao_venosa_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dissecção venosa.
+        /// </summary>
+        public static string disseccao_venosa {
+            get {
+                return ResourceManager.GetString("disseccao_venosa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local da dissecção venosa.
+        /// </summary>
+        public static string disseccao_venosa_local {
+            get {
+                return ResourceManager.GetString("disseccao_venosa_local", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Distúrbios de sono.
         /// </summary>
         public static string disturbios_sono {
@@ -1933,6 +2014,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Localizar edema.
+        /// </summary>
+        public static string edema_localizar {
+            get {
+                return ResourceManager.GetString("edema_localizar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editar.
         /// </summary>
         public static string editar {
@@ -2001,6 +2091,15 @@ namespace Resources {
         public static string encerrar_consulta {
             get {
                 return ResourceManager.GetString("encerrar_consulta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enchimento capilar.
+        /// </summary>
+        public static string enchimento_capilar {
+            get {
+                return ResourceManager.GetString("enchimento_capilar", resourceCulture);
             }
         }
         
@@ -2478,6 +2577,24 @@ namespace Resources {
         public static string flatos {
             get {
                 return ResourceManager.GetString("flatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flebite.
+        /// </summary>
+        public static string flebite {
+            get {
+                return ResourceManager.GetString("flebite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localizar flebite.
+        /// </summary>
+        public static string flebite_localizar {
+            get {
+                return ResourceManager.GetString("flebite_localizar", resourceCulture);
             }
         }
         
@@ -3058,6 +3175,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Infiltração.
+        /// </summary>
+        public static string infiltracao {
+            get {
+                return ResourceManager.GetString("infiltracao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localizar infiltração.
+        /// </summary>
+        public static string infiltracao_localizar {
+            get {
+                return ResourceManager.GetString("infiltracao_localizar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Informações da Conta.
         /// </summary>
         public static string informacao_conta {
@@ -3463,6 +3598,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maior que 3.
+        /// </summary>
+        public static string Maior3 {
+            get {
+                return ResourceManager.GetString("Maior3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manhã.
         /// </summary>
         public static string manha {
@@ -3594,6 +3738,15 @@ namespace Resources {
         public static string melhor_resposta_verbal {
             get {
                 return ResourceManager.GetString("melhor_resposta_verbal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menor ou igual a 3.
+        /// </summary>
+        public static string MenorIgual3 {
+            get {
+                return ResourceManager.GetString("MenorIgual3", resourceCulture);
             }
         }
         
@@ -4152,6 +4305,15 @@ namespace Resources {
         public static string oxigenacao {
             get {
                 return ResourceManager.GetString("oxigenacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P.
+        /// </summary>
+        public static string p {
+            get {
+                return ResourceManager.GetString("p", resourceCulture);
             }
         }
         
@@ -4876,6 +5038,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rede venosa pulsos palpáveis.
+        /// </summary>
+        public static string rede_venosa_pulsos_palpaveis {
+            get {
+                return ResourceManager.GetString("rede_venosa_pulsos_palpaveis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rede venosa sem acesso.
+        /// </summary>
+        public static string rede_venosa_sem_acesso {
+            get {
+                return ResourceManager.GetString("rede_venosa_sem_acesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rede venosa visível.
+        /// </summary>
+        public static string rede_venosa_visivel {
+            get {
+                return ResourceManager.GetString("rede_venosa_visivel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Referências Utilizadas.
         /// </summary>
         public static string referencia_utilizadas {
@@ -5385,6 +5574,24 @@ namespace Resources {
         public static string sinais_fisicos {
             get {
                 return ResourceManager.GetString("sinais_fisicos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sinais flogísticos.
+        /// </summary>
+        public static string sinais_flogisticos {
+            get {
+                return ResourceManager.GetString("sinais_flogisticos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Locais dos sinais flogísticos.
+        /// </summary>
+        public static string sinais_flogisticos_quais_local {
+            get {
+                return ResourceManager.GetString("sinais_flogisticos_quais_local", resourceCulture);
             }
         }
         
@@ -6069,6 +6276,15 @@ namespace Resources {
         public static string valor_referencia {
             get {
                 return ResourceManager.GetString("valor_referencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Varizes.
+        /// </summary>
+        public static string varizes {
+            get {
+                return ResourceManager.GetString("varizes", resourceCulture);
             }
         }
         

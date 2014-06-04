@@ -70,13 +70,6 @@
     <fieldset>
         <legend id="nomeConsulta">
             <%: Resources.Mensagem.consulta %> - <%: Resources.Mensagem.usuario %>: <%: Model.ConsultaVariavel.NomePessoa %></legend>
-        <!--div class="editor-label">
-            < %: Html.LabelFor(model => model.quantRelatos) %>
-        </div>
-        <div class="editor-field">
-            < %: Html.EditorFor(model => model.quantRelatos) %>
-            < %: Html.ValidationMessageFor(model => model.quantRelatos) %>
-        </div-->
         <div class="span5">
             <div class="thumbnails center">
                 <div class="span2">
