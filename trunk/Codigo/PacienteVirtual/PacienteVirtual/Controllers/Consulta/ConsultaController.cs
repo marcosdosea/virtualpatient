@@ -88,10 +88,9 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /Consulta/Edit
-        public ActionResult Edit(long? idConsultaVariavel)
+        public ActionResult Edit(long idConsultaVariavel)
         {
-            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
-            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavel);
 
             AtribuiEstadoDaConsultaEstadoDaCorrecao(consultaVariavelModel);
             
@@ -112,10 +111,9 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /Consulta2/
-        public ActionResult Edit2(long? idConsultaVariavel)
+        public ActionResult Edit2(long idConsultaVariavel)
         {
-            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
-            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavel);
             
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
@@ -134,9 +132,9 @@ namespace PacienteVirtual.Controllers
         }
 
         // Concluir
-        public ActionResult Concluir(long? idConsultaVariavel)
+        public ActionResult Concluir(long IdConsultaVariavel)
         {
-            GerenciadorConsultaVariavel.GetInstance().Concluir(idConsultaVariavel);
+            GerenciadorConsultaVariavel.GetInstance().Concluir(IdConsultaVariavel);
             return RedirectToAction("Index", "Consulta");
         }
 
