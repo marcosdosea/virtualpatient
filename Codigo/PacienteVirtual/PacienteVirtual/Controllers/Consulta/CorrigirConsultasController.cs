@@ -29,10 +29,9 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit", "Consulta");
         }
 
-        public ActionResult EnviarParaCorrecao(long? idConsultaVariavel)
+        public ActionResult EnviarParaCorrecao(long idConsultaVariavel)
         {
-            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
-            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavel);
             consultaVariavelModel.IdEstadoConsulta = Global.AguardandoCorrecaoDoAluno;
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             SessionController.EmCorrecao = false;
@@ -99,10 +98,9 @@ namespace PacienteVirtual.Controllers
             objSmtp.Send(objEmail);
         }
 
-        public ActionResult FinalizarCorrecao(long? idConsultaVariavel)
+        public ActionResult FinalizarCorrecao(long idConsultaVariavel)
         {
-            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
-            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavel);
             consultaVariavelModel.IdEstadoConsulta = Global.Finalizado;
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             SessionController.EmCorrecao = false;

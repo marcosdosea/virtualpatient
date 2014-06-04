@@ -81,10 +81,9 @@ namespace PacienteVirtual.Negocio
         /// Conclui o preenchimento de uma consulta
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
-        public void Concluir(long? idConsultaVariavel)
+        public void Concluir(long IdConsultaVariavel)
         {
-            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
-            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(IdConsultaVariavel);
             if (SessionController.DadosTurmaPessoa.IdRole == Global.Usuario)
             {
                 consultaVariavelModel.IdEstadoConsulta = Global.EnviadoParaCorrecao;

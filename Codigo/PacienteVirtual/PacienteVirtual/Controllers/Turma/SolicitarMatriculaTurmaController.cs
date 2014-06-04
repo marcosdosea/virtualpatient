@@ -6,40 +6,23 @@ namespace PacienteVirtual.Controllers
 {
     public class SolicitarMatriculaTurmaController : Controller
     {
-        
+
         // GET/Index 
         public ViewResult Index()
         {
-            ViewBag.IdInstituicao = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos(), "IdInstituicao", "NomeInstituicao");
-            ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTurmasAtivasPorInstExcAdm(Global.NaoSelecionado), "IdTurma", "Codigo");
-            return View();
+            return View(GerenciadorTurma.GetInstance().ObterTurmasAtivasExcAdm());
         }
 
-        // Index
-        [HttpPost]
-        public ActionResult Index(SolicitarMatriculaTurmaModel smt, int IdInstituicao = Global.NaoSelecionado)
+        public ActionResult Solicitar(int IdTurma)
         {
-            ViewBag.IdInstituicao = new SelectList(GerenciadorInstituicao.GetInstance().ObterTodos(), "IdInstituicao", "NomeInstituicao");
-            if (IdInstituicao != Global.NaoSelecionado)
-            {
-                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTurmasAtivasPorInstExcAdm(IdInstituicao), "IdTurma", "Codigo");
-            }
-            else 
-            {
-                ViewBag.IdTurma = new SelectList(GerenciadorTurma.GetInstance().ObterTurmasAtivasPorInstExcAdm(Global.NaoSelecionado), "IdTurma", "Codigo");
-            }
-            if (ModelState.IsValid)
-            {
-                TurmaPessoaModel tpm = new TurmaPessoaModel();
-                tpm.IdTurma = smt.IdTurma;
-                tpm.Ativa = false;
-                tpm.IdRole = Global.Usuario;
+            TurmaPessoaModel tpm = new TurmaPessoaModel();
+            tpm.IdTurma = (int)IdTurma;
+            tpm.Ativa = false;
+            tpm.IdRole = Global.Usuario;
 
-                tpm.IdPessoa = SessionController.Pessoa.IdPessoa;
-                GerenciadorTurmaPessoa.GetInstance().Inserir(tpm);
-                return RedirectToAction("Index", "Home");
-            }
-            return View();
+            tpm.IdPessoa = SessionController.Pessoa.IdPessoa;
+            GerenciadorTurmaPessoa.GetInstance().Inserir(tpm);
+            return RedirectToAction("Index", "Home");
         }
 
     }
