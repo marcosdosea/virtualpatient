@@ -2014,6 +2014,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dúvidas / Questionamento.
+        /// </summary>
+        public static string duvidas_questionamentos {
+            get {
+                return ResourceManager.GetString("duvidas_questionamentos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edema.
         /// </summary>
         public static string edema {
@@ -4962,6 +4971,15 @@ namespace Resources {
         public static string quantidade_drogas {
             get {
                 return ResourceManager.GetString("quantidade_drogas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quanto a doença.
+        /// </summary>
+        public static string quanto_doenca {
+            get {
+                return ResourceManager.GetString("quanto_doenca", resourceCulture);
             }
         }
         

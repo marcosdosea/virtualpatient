@@ -183,6 +183,12 @@ namespace PacienteVirtual.Controllers
             EliminacaoModel eliminacao = SessionController.Eliminacao;
             eliminacao.IdConsultaVariavel = idConsultaVariavel;
             GerenciadorEliminacao.GetInstance().Inserir(eliminacao);
+            PercepcaoExpectativasModel percepcaoExpectativas = SessionController.PercepcaoExpectativas;
+            percepcaoExpectativas.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorPercepcaoExpectativas.GetInstance().Inserir(percepcaoExpectativas);
+            CirculacaoModel circulacao = SessionController.Circulacao;
+            circulacao.IdConsultaVariavel = idConsultaVariavel;
+            GerenciadorCirculacao.GetInstance().Inserir(circulacao);
         }
 
         /// <summary>

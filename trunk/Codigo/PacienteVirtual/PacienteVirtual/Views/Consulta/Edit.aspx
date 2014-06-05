@@ -271,9 +271,11 @@
                                 <% Html.RenderPartial("../ClinicoInternacao/ListaClinicoInternacaoAlergias", Model.ListaClinicoInternacaoAlergias);%>
                             </div>    
                         </div>
-                            <div class="tab-pane" id="tab1-3">
-                            
+                        <div class="tab-pane" id="tab1-3">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../PercepcaoExpectativas/Edit", Model.PercepcaoExpectativas);%>
                             </div>
+                        </div>
                         <div class="tab-pane" id="tab1-4">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../Consciencia/Edit", Model.Consciencia);%>

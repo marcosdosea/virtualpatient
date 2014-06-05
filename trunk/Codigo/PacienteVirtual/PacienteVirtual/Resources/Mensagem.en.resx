@@ -2223,4 +2223,10 @@
   <data name="inspecao_rede_venosa" xml:space="preserve">
     <value>Inspection venous network</value>
   </data>
+  <data name="duvidas_questionamentos" xml:space="preserve">
+    <value>Questions / Questioning</value>
+  </data>
+  <data name="quanto_doenca" xml:space="preserve">
+    <value>As the disease</value>
+  </data>
 </root>
