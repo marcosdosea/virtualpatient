@@ -1033,6 +1033,32 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static PercepcaoExpectativasModel PercepcaoExpectativas
+        {
+            get
+            {
+                PercepcaoExpectativasModel percepcaoExpectativas = (PercepcaoExpectativasModel)HttpContext.Current.Session["_PercepcaoExpectativas"];
+                if (percepcaoExpectativas == null)
+                {
+                    percepcaoExpectativas = GerenciadorPercepcaoExpectativas.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (percepcaoExpectativas == null)
+                    {
+                        percepcaoExpectativas = new PercepcaoExpectativasModel();
+                        percepcaoExpectativas.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        percepcaoExpectativas.quantoDoenca = Global.stringVazia;
+                        percepcaoExpectativas.duvidasQuestionamentos = Global.stringVazia;
+                        GerenciadorPercepcaoExpectativas.GetInstance().Inserir(percepcaoExpectativas);
+                    }
+                    HttpContext.Current.Session["_PercepcaoExpectativas"] = percepcaoExpectativas;
+                }
+                return percepcaoExpectativas;
+            }
+            set
+            {
+                HttpContext.Current.Session["_PercepcaoExpectativas"] = value;
+            }
+        }
+
         public static SensorialModel Sensorial
         {
             get

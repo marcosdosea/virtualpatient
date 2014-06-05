@@ -24,6 +24,7 @@ namespace PacienteVirtual.Models
         public SexualidadeModel Sexualidade { get; set; }
         public EliminacaoModel Eliminacao { get; set; }
         public CirculacaoModel Circulacao { get; set; }
+        public PercepcaoExpectativasModel PercepcaoExpectativas { get; set; }
         
         public HigieneModel Higiene { get; set; }
         public PsicoEspiritualModel PsicoEspiritual { get; set; }

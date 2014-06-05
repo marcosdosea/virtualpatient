@@ -174,6 +174,7 @@
     <Compile Include="Controllers\Consulta\NutricaoController.cs" />
     <Compile Include="Controllers\Consulta\OutrasNecessidadesController.cs" />
     <Compile Include="Controllers\Consulta\OxigenacaoController.cs" />
+    <Compile Include="Controllers\Consulta\PercepcaoExpectativasController.cs" />
     <Compile Include="Controllers\Consulta\PsicoEspiritualController.cs" />
     <Compile Include="Controllers\Consulta\QueixaMedicamentoController.cs" />
     <Compile Include="Controllers\Consulta\SensorialController.cs" />
@@ -217,6 +218,7 @@
     <Compile Include="Models\Consulta\OutrasNecessidadesModel.cs" />
     <Compile Include="Models\Consulta\OxigenacaoModel.cs" />
     <Compile Include="Models\Consulta\PatologiasAtuaisModel.cs" />
+    <Compile Include="Models\Consulta\PercepcaoExpectativasModel.cs" />
     <Compile Include="Models\Consulta\PsicoEspiritualModel.cs" />
     <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
     <Compile Include="Models\Consulta\SensorialModel.cs" />
@@ -253,6 +255,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorIntervencaoConsulta.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorOutrasNecessidades.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorOxigenacao.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorPercepcaoExpectativas.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorPsicoEspiritual.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorCarta.cs" />
@@ -680,6 +683,7 @@
     <Content Include="Views\Patologia\Details.aspx" />
     <Content Include="Views\Patologia\Edit.aspx" />
     <Content Include="Views\Patologia\Index.aspx" />
+    <Content Include="Views\PercepcaoExpectativas\Edit.ascx" />
     <Content Include="Views\Pessoa\DefinirAdministrador.aspx" />
     <Content Include="Views\PsicoEspiritual\Edit.ascx" />
     <Content Include="Views\QueixaMedicamento\Edit.aspx" />
