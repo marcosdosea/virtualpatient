@@ -556,6 +556,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to bpm.
+        /// </summary>
+        public static string bpm {
+            get {
+                return ResourceManager.GetString("bpm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bradipneia.
         /// </summary>
         public static string bradipneia {
@@ -3211,6 +3220,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Infusão venosa.
+        /// </summary>
+        public static string infusao_venosa {
+            get {
+                return ResourceManager.GetString("infusao_venosa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingesta Hídrica Habitual.
         /// </summary>
         public static string ingesta_hidrica {
@@ -3225,6 +3243,15 @@ namespace Resources {
         public static string inquietacao {
             get {
                 return ResourceManager.GetString("inquietacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inspeção rede venosa.
+        /// </summary>
+        public static string inspecao_rede_venosa {
+            get {
+                return ResourceManager.GetString("inspecao_rede_venosa", resourceCulture);
             }
         }
         

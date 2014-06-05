@@ -299,8 +299,9 @@
                                         </div>    
                                     </div>
                                     <div class="tab-pane" id="tab1-5-2">
-                                        <!-- Circulação -->
-                                        <%: Resources.Mensagem.teste %>
+                                        <div class="thumbnail">
+                                            <% Html.RenderPartial("../Circulacao/Edit", Model.Circulacao);%>
+                                        </div>
                                     </div>
                                     <div class="tab-pane" id="tab1-5-3">
                                         <div class="thumbnail">

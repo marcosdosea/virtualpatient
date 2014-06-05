@@ -988,6 +988,51 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static CirculacaoModel Circulacao
+        {
+            get
+            {
+                CirculacaoModel circulacao = (CirculacaoModel)HttpContext.Current.Session["_Circulacao"];
+                if (circulacao == null)
+                {
+                    circulacao = GerenciadorCirculacao.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (circulacao == null)
+                    {
+                        circulacao = new CirculacaoModel();
+                        circulacao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        circulacao.CateterCentral = false;
+                        circulacao.CateterCentralLocal = Global.stringVazia;
+                        circulacao.CateterLocal = Global.stringVazia;
+                        circulacao.CateterPeriferico = false;
+                        circulacao.DisseccaoVenosa = false;
+                        circulacao.DisseccaoVenosaLocal = Global.stringVazia;
+                        circulacao.Edema = false;
+                        circulacao.EdemaLocalizar = Global.stringVazia;
+                        circulacao.EnchimentoCapilar = ListaEnchimentoCapilar.MenorIgual3;
+                        circulacao.Flebite = false;
+                        circulacao.FlebiteLocalizar = Global.stringVazia;
+                        circulacao.Infiltracao = false;
+                        circulacao.InfiltracaoLocalizar = Global.stringVazia;
+                        circulacao.P = Global.ValorInteiroNulo;
+                        circulacao.PA = Global.ValorInteiroNulo;
+                        circulacao.RedeVenosaPulsosPalpaveis = false;
+                        circulacao.RedeVenosaSemAcesso = false;
+                        circulacao.RedeVenosaVisivel = false;
+                        circulacao.SinaisFlogisticos = false;
+                        circulacao.SinaisFlogisticosQuaisLocal = Global.stringVazia;
+                        circulacao.Varizes = false;
+                        GerenciadorCirculacao.GetInstance().Inserir(circulacao);
+                    }
+                    HttpContext.Current.Session["_Circulacao"] = circulacao;
+                }
+                return circulacao;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Circulacao"] = value;
+            }
+        }
+
         public static SensorialModel Sensorial
         {
             get

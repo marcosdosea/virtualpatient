@@ -15,7 +15,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public long IdConsultaVariavel { get; set; }
 
-        [Display(Name = "pa", ResourceType = typeof(Mensagem))]
+        [Display(Name = "PA", ResourceType = typeof(Mensagem))]
         public decimal PA { get; set; }
 
         [Display(Name = "p", ResourceType = typeof(Mensagem))]

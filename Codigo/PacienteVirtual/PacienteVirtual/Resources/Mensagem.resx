@@ -2217,4 +2217,13 @@
   <data name="varizes" xml:space="preserve">
     <value>Varizes</value>
   </data>
+  <data name="bpm" xml:space="preserve">
+    <value>bpm</value>
+  </data>
+  <data name="infusao_venosa" xml:space="preserve">
+    <value>Infusão venosa</value>
+  </data>
+  <data name="inspecao_rede_venosa" xml:space="preserve">
+    <value>Inspeção rede venosa</value>
+  </data>
 </root>
