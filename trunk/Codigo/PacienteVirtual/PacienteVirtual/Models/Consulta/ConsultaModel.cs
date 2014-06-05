@@ -23,6 +23,7 @@ namespace PacienteVirtual.Models
         public OutrasNecessidadesModel OutrasNecessidades { get; set; }
         public SexualidadeModel Sexualidade { get; set; }
         public EliminacaoModel Eliminacao { get; set; }
+        public CirculacaoModel Circulacao { get; set; }
         
         public HigieneModel Higiene { get; set; }
         public PsicoEspiritualModel PsicoEspiritual { get; set; }

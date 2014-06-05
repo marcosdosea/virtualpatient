@@ -88,9 +88,10 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /Consulta/Edit
-        public ActionResult Edit(long idConsultaVariavel)
+        public ActionResult Edit(long? idConsultaVariavel)
         {
-            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavel);
+            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
 
             AtribuiEstadoDaConsultaEstadoDaCorrecao(consultaVariavelModel);
             
@@ -111,9 +112,10 @@ namespace PacienteVirtual.Controllers
 
         //
         // GET: /Consulta2/
-        public ActionResult Edit2(long idConsultaVariavel)
+        public ActionResult Edit2(long? idConsultaVariavel)
         {
-            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavel);
+            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
             
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
@@ -273,6 +275,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.OutrasNecessidades = SessionController.OutrasNecessidades;
             consultaModel.Sexualidade = SessionController.Sexualidade;
             consultaModel.Eliminacao = SessionController.Eliminacao;
+            consultaModel.Circulacao = SessionController.Circulacao;
         }
 
         /// <summary>
@@ -452,6 +455,8 @@ namespace PacienteVirtual.Controllers
             TryValidateModel(SessionController.Sexualidade);
             GerenciadorEliminacao.GetInstance().CorrigirRespostas(SessionController.Eliminacao, GerenciadorEliminacao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
             TryValidateModel(SessionController.Eliminacao);
+            GerenciadorCirculacao.GetInstance().CorrigirRespostas(SessionController.Circulacao, GerenciadorCirculacao.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel), ModelState);
+            TryValidateModel(SessionController.Circulacao);
         }
 
         /// <summary>
