@@ -27,6 +27,10 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diario_pessoal_tb_bebida1", "tb_bebida", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_bebida), "tb_diario_pessoal", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_diario_pessoal), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_carta_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_carta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_carta), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_carta_tb_especialidade1", "tb_especialidade", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_especialidade), "tb_carta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_carta), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_circulacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_circulacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_circulacao), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_internacao_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_clinico_internacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_clinico_internacao), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_comunicacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_comunicacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_comunicacao), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consciencia_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_consciencia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_consciencia), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_demograficos_antropometricos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_demograficos_antropometricos), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diario_pessoal_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_diario_pessoal", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_diario_pessoal), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_experiencia_medicamentos_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_experiencia_medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_experiencia_medicamentos), true)]
@@ -34,16 +38,27 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_pessoa_relato_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_turma_pessoa_relato", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_turma_pessoa_relato), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_parametro_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_consulta_parametro", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_parametro), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_parametro_tb_parametro_clinico1", "tb_parametro_clinico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_parametro_clinico), "tb_consulta_parametro", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_parametro), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_table1_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_outras_necessidades", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_outras_necessidades), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_medicamentos_anteriores", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_medicamentos_anteriores), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_has_tb_medicamentos_tb_consulta_varia2", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_medicamento_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_medicamento_prescrito), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_consulta_variavel_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel_queixa), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_tb_estado_consulta1", "tb_estado_consulta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_estado_consulta), "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_tb_razao_encontro1", "tb_razao_encontro", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_razao_encontro), "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_tb_turma_pessoa_relato1", "tb_turma_pessoa_relato", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_turma_pessoa_relato), "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_eliminacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_eliminacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_eliminacao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_estilo_vida_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_estilo_vida", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_estilo_vida), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_exames_fisicos_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_exames_fisicos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_exames_fisicos), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_higiene_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_higiene", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_higiene), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_integridade_tecidual", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_integridade_tecidual), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_intervencao_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_consulta_variavel_intervencao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel_intervencao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_medicamento_nao_prescrito", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_medicamento_nao_prescrito), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_nutricao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_nutricao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_nutricao), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_oxiginecao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_oxiginecao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_oxiginecao), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_percepcao_expectativas_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_percepcao_expectativas", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_percepcao_expectativas), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_psicoespiritual_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_psicoespiritual", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_psicoespiritual), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sensorial_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sensorial", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sensorial), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sexualidade_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sexualidade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sexualidade), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_termorregulacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_termorregulacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_termorregulacao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_intervencao_has_tb_consulta_variavel_tb_intervencao1", "tb_intervencao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_intervencao), "tb_consulta_variavel_intervencao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel_intervencao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_objetivo_terapeutico1", "tb_objetivo_terapeutico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_objetivo_terapeutico), "tb_consulta_variavel_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel_queixa), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consulta_variavel_queixa_tb_queixa1", "tb_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_queixa), "tb_consulta_variavel_queixa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel_queixa), true)]
@@ -81,25 +96,10 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_has_tb_pessoa_tb_turma1", "tb_turma", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_turma), "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_turma_pessoa), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_turma_pessoa_has_tb_relato_clinico_tb_turma_pessoa1", "tb_turma_pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_turma_pessoa), "tb_turma_pessoa_relato", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_turma_pessoa_relato), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_alergia_exames_fisicos", "tb_alergia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_alergia), "tb_exames_fisicos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_exames_fisicos))]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_internacao_tb_consulta_fixo1", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_clinico_internacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_clinico_internacao), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_oxiginecao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_oxiginecao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_oxiginecao), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_percepcao_expectativas_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_percepcao_expectativas", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_percepcao_expectativas), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_antecedentes_familiares", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_antecedentes_patologicos", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
-[assembly: EdmRelationshipAttribute("pvModel", "tb_patologias_atuais", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_clinico_internacao_alergia", "tb_alergia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_alergia), "tb_clinico_internacao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_clinico_internacao))]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_circulacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_circulacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_circulacao), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_higiene_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_higiene", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_higiene), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_termorregulacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_termorregulacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_termorregulacao), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_psicoespiritual_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_psicoespiritual", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_psicoespiritual), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_comunicacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_comunicacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_comunicacao), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_consciencia_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_consciencia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_consciencia), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_table1_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_outras_necessidades", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_outras_necessidades), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_nutricao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_nutricao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_nutricao), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sensorial_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sensorial", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sensorial), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sexualidade_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sexualidade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sexualidade), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_integridade_tecidual", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_integridade_tecidual), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_eliminacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_eliminacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_eliminacao), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "tb_patologias_atuais", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
 
 #endregion
 
@@ -314,6 +314,70 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<tb_circulacao> tb_circulacao
+        {
+            get
+            {
+                if ((_tb_circulacao == null))
+                {
+                    _tb_circulacao = base.CreateObjectSet<tb_circulacao>("tb_circulacao");
+                }
+                return _tb_circulacao;
+            }
+        }
+        private ObjectSet<tb_circulacao> _tb_circulacao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_clinico_internacao> tb_clinico_internacao
+        {
+            get
+            {
+                if ((_tb_clinico_internacao == null))
+                {
+                    _tb_clinico_internacao = base.CreateObjectSet<tb_clinico_internacao>("tb_clinico_internacao");
+                }
+                return _tb_clinico_internacao;
+            }
+        }
+        private ObjectSet<tb_clinico_internacao> _tb_clinico_internacao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_comunicacao> tb_comunicacao
+        {
+            get
+            {
+                if ((_tb_comunicacao == null))
+                {
+                    _tb_comunicacao = base.CreateObjectSet<tb_comunicacao>("tb_comunicacao");
+                }
+                return _tb_comunicacao;
+            }
+        }
+        private ObjectSet<tb_comunicacao> _tb_comunicacao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_consciencia> tb_consciencia
+        {
+            get
+            {
+                if ((_tb_consciencia == null))
+                {
+                    _tb_consciencia = base.CreateObjectSet<tb_consciencia>("tb_consciencia");
+                }
+                return _tb_consciencia;
+            }
+        }
+        private ObjectSet<tb_consciencia> _tb_consciencia;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<tb_consulta_fixo> tb_consulta_fixo
         {
             get
@@ -458,6 +522,22 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<tb_eliminacao> tb_eliminacao
+        {
+            get
+            {
+                if ((_tb_eliminacao == null))
+                {
+                    _tb_eliminacao = base.CreateObjectSet<tb_eliminacao>("tb_eliminacao");
+                }
+                return _tb_eliminacao;
+            }
+        }
+        private ObjectSet<tb_eliminacao> _tb_eliminacao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<tb_escolaridade> tb_escolaridade
         {
             get
@@ -586,6 +666,22 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<tb_higiene> tb_higiene
+        {
+            get
+            {
+                if ((_tb_higiene == null))
+                {
+                    _tb_higiene = base.CreateObjectSet<tb_higiene>("tb_higiene");
+                }
+                return _tb_higiene;
+            }
+        }
+        private ObjectSet<tb_higiene> _tb_higiene;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<tb_historia> tb_historia
         {
             get
@@ -630,6 +726,22 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<tb_instituicao> _tb_instituicao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_integridade_tecidual> tb_integridade_tecidual
+        {
+            get
+            {
+                if ((_tb_integridade_tecidual == null))
+                {
+                    _tb_integridade_tecidual = base.CreateObjectSet<tb_integridade_tecidual>("tb_integridade_tecidual");
+                }
+                return _tb_integridade_tecidual;
+            }
+        }
+        private ObjectSet<tb_integridade_tecidual> _tb_integridade_tecidual;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -730,6 +842,22 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<tb_nutricao> tb_nutricao
+        {
+            get
+            {
+                if ((_tb_nutricao == null))
+                {
+                    _tb_nutricao = base.CreateObjectSet<tb_nutricao>("tb_nutricao");
+                }
+                return _tb_nutricao;
+            }
+        }
+        private ObjectSet<tb_nutricao> _tb_nutricao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<tb_objetivo_terapeutico> tb_objetivo_terapeutico
         {
             get
@@ -762,6 +890,38 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<tb_outras_necessidades> tb_outras_necessidades
+        {
+            get
+            {
+                if ((_tb_outras_necessidades == null))
+                {
+                    _tb_outras_necessidades = base.CreateObjectSet<tb_outras_necessidades>("tb_outras_necessidades");
+                }
+                return _tb_outras_necessidades;
+            }
+        }
+        private ObjectSet<tb_outras_necessidades> _tb_outras_necessidades;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_oxiginecao> tb_oxiginecao
+        {
+            get
+            {
+                if ((_tb_oxiginecao == null))
+                {
+                    _tb_oxiginecao = base.CreateObjectSet<tb_oxiginecao>("tb_oxiginecao");
+                }
+                return _tb_oxiginecao;
+            }
+        }
+        private ObjectSet<tb_oxiginecao> _tb_oxiginecao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<tb_paciente> tb_paciente
         {
             get
@@ -790,6 +950,38 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<tb_parametro_clinico> _tb_parametro_clinico;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_patologia> tb_patologia
+        {
+            get
+            {
+                if ((_tb_patologia == null))
+                {
+                    _tb_patologia = base.CreateObjectSet<tb_patologia>("tb_patologia");
+                }
+                return _tb_patologia;
+            }
+        }
+        private ObjectSet<tb_patologia> _tb_patologia;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_percepcao_expectativas> tb_percepcao_expectativas
+        {
+            get
+            {
+                if ((_tb_percepcao_expectativas == null))
+                {
+                    _tb_percepcao_expectativas = base.CreateObjectSet<tb_percepcao_expectativas>("tb_percepcao_expectativas");
+                }
+                return _tb_percepcao_expectativas;
+            }
+        }
+        private ObjectSet<tb_percepcao_expectativas> _tb_percepcao_expectativas;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -838,6 +1030,22 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<tb_plano_saude> _tb_plano_saude;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_psicoespiritual> tb_psicoespiritual
+        {
+            get
+            {
+                if ((_tb_psicoespiritual == null))
+                {
+                    _tb_psicoespiritual = base.CreateObjectSet<tb_psicoespiritual>("tb_psicoespiritual");
+                }
+                return _tb_psicoespiritual;
+            }
+        }
+        private ObjectSet<tb_psicoespiritual> _tb_psicoespiritual;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -938,6 +1146,38 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<tb_sensorial> tb_sensorial
+        {
+            get
+            {
+                if ((_tb_sensorial == null))
+                {
+                    _tb_sensorial = base.CreateObjectSet<tb_sensorial>("tb_sensorial");
+                }
+                return _tb_sensorial;
+            }
+        }
+        private ObjectSet<tb_sensorial> _tb_sensorial;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_sexualidade> tb_sexualidade
+        {
+            get
+            {
+                if ((_tb_sexualidade == null))
+                {
+                    _tb_sexualidade = base.CreateObjectSet<tb_sexualidade>("tb_sexualidade");
+                }
+                return _tb_sexualidade;
+            }
+        }
+        private ObjectSet<tb_sexualidade> _tb_sexualidade;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<tb_sistema> tb_sistema
         {
             get
@@ -986,6 +1226,22 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<tb_termorregulacao> tb_termorregulacao
+        {
+            get
+            {
+                if ((_tb_termorregulacao == null))
+                {
+                    _tb_termorregulacao = base.CreateObjectSet<tb_termorregulacao>("tb_termorregulacao");
+                }
+                return _tb_termorregulacao;
+            }
+        }
+        private ObjectSet<tb_termorregulacao> _tb_termorregulacao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<tb_turma> tb_turma
         {
             get
@@ -1030,262 +1286,6 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<tb_turma_pessoa_relato> _tb_turma_pessoa_relato;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_clinico_internacao> tb_clinico_internacao
-        {
-            get
-            {
-                if ((_tb_clinico_internacao == null))
-                {
-                    _tb_clinico_internacao = base.CreateObjectSet<tb_clinico_internacao>("tb_clinico_internacao");
-                }
-                return _tb_clinico_internacao;
-            }
-        }
-        private ObjectSet<tb_clinico_internacao> _tb_clinico_internacao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_oxiginecao> tb_oxiginecao
-        {
-            get
-            {
-                if ((_tb_oxiginecao == null))
-                {
-                    _tb_oxiginecao = base.CreateObjectSet<tb_oxiginecao>("tb_oxiginecao");
-                }
-                return _tb_oxiginecao;
-            }
-        }
-        private ObjectSet<tb_oxiginecao> _tb_oxiginecao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_patologia> tb_patologia
-        {
-            get
-            {
-                if ((_tb_patologia == null))
-                {
-                    _tb_patologia = base.CreateObjectSet<tb_patologia>("tb_patologia");
-                }
-                return _tb_patologia;
-            }
-        }
-        private ObjectSet<tb_patologia> _tb_patologia;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_percepcao_expectativas> tb_percepcao_expectativas
-        {
-            get
-            {
-                if ((_tb_percepcao_expectativas == null))
-                {
-                    _tb_percepcao_expectativas = base.CreateObjectSet<tb_percepcao_expectativas>("tb_percepcao_expectativas");
-                }
-                return _tb_percepcao_expectativas;
-            }
-        }
-        private ObjectSet<tb_percepcao_expectativas> _tb_percepcao_expectativas;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_circulacao> tb_circulacao
-        {
-            get
-            {
-                if ((_tb_circulacao == null))
-                {
-                    _tb_circulacao = base.CreateObjectSet<tb_circulacao>("tb_circulacao");
-                }
-                return _tb_circulacao;
-            }
-        }
-        private ObjectSet<tb_circulacao> _tb_circulacao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_higiene> tb_higiene
-        {
-            get
-            {
-                if ((_tb_higiene == null))
-                {
-                    _tb_higiene = base.CreateObjectSet<tb_higiene>("tb_higiene");
-                }
-                return _tb_higiene;
-            }
-        }
-        private ObjectSet<tb_higiene> _tb_higiene;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_termorregulacao> tb_termorregulacao
-        {
-            get
-            {
-                if ((_tb_termorregulacao == null))
-                {
-                    _tb_termorregulacao = base.CreateObjectSet<tb_termorregulacao>("tb_termorregulacao");
-                }
-                return _tb_termorregulacao;
-            }
-        }
-        private ObjectSet<tb_termorregulacao> _tb_termorregulacao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_psicoespiritual> tb_psicoespiritual
-        {
-            get
-            {
-                if ((_tb_psicoespiritual == null))
-                {
-                    _tb_psicoespiritual = base.CreateObjectSet<tb_psicoespiritual>("tb_psicoespiritual");
-                }
-                return _tb_psicoespiritual;
-            }
-        }
-        private ObjectSet<tb_psicoespiritual> _tb_psicoespiritual;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_comunicacao> tb_comunicacao
-        {
-            get
-            {
-                if ((_tb_comunicacao == null))
-                {
-                    _tb_comunicacao = base.CreateObjectSet<tb_comunicacao>("tb_comunicacao");
-                }
-                return _tb_comunicacao;
-            }
-        }
-        private ObjectSet<tb_comunicacao> _tb_comunicacao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_consciencia> tb_consciencia
-        {
-            get
-            {
-                if ((_tb_consciencia == null))
-                {
-                    _tb_consciencia = base.CreateObjectSet<tb_consciencia>("tb_consciencia");
-                }
-                return _tb_consciencia;
-            }
-        }
-        private ObjectSet<tb_consciencia> _tb_consciencia;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_nutricao> tb_nutricao
-        {
-            get
-            {
-                if ((_tb_nutricao == null))
-                {
-                    _tb_nutricao = base.CreateObjectSet<tb_nutricao>("tb_nutricao");
-                }
-                return _tb_nutricao;
-            }
-        }
-        private ObjectSet<tb_nutricao> _tb_nutricao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_outras_necessidades> tb_outras_necessidades
-        {
-            get
-            {
-                if ((_tb_outras_necessidades == null))
-                {
-                    _tb_outras_necessidades = base.CreateObjectSet<tb_outras_necessidades>("tb_outras_necessidades");
-                }
-                return _tb_outras_necessidades;
-            }
-        }
-        private ObjectSet<tb_outras_necessidades> _tb_outras_necessidades;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_sensorial> tb_sensorial
-        {
-            get
-            {
-                if ((_tb_sensorial == null))
-                {
-                    _tb_sensorial = base.CreateObjectSet<tb_sensorial>("tb_sensorial");
-                }
-                return _tb_sensorial;
-            }
-        }
-        private ObjectSet<tb_sensorial> _tb_sensorial;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_sexualidade> tb_sexualidade
-        {
-            get
-            {
-                if ((_tb_sexualidade == null))
-                {
-                    _tb_sexualidade = base.CreateObjectSet<tb_sexualidade>("tb_sexualidade");
-                }
-                return _tb_sexualidade;
-            }
-        }
-        private ObjectSet<tb_sexualidade> _tb_sexualidade;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_integridade_tecidual> tb_integridade_tecidual
-        {
-            get
-            {
-                if ((_tb_integridade_tecidual == null))
-                {
-                    _tb_integridade_tecidual = base.CreateObjectSet<tb_integridade_tecidual>("tb_integridade_tecidual");
-                }
-                return _tb_integridade_tecidual;
-            }
-        }
-        private ObjectSet<tb_integridade_tecidual> _tb_integridade_tecidual;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tb_eliminacao> tb_eliminacao
-        {
-            get
-            {
-                if ((_tb_eliminacao == null))
-                {
-                    _tb_eliminacao = base.CreateObjectSet<tb_eliminacao>("tb_eliminacao");
-                }
-                return _tb_eliminacao;
-            }
-        }
-        private ObjectSet<tb_eliminacao> _tb_eliminacao;
 
         #endregion
 
@@ -1372,6 +1372,38 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the tb_circulacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_circulacao(tb_circulacao tb_circulacao)
+        {
+            base.AddObject("tb_circulacao", tb_circulacao);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_clinico_internacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_clinico_internacao(tb_clinico_internacao tb_clinico_internacao)
+        {
+            base.AddObject("tb_clinico_internacao", tb_clinico_internacao);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_comunicacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_comunicacao(tb_comunicacao tb_comunicacao)
+        {
+            base.AddObject("tb_comunicacao", tb_comunicacao);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_consciencia EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_consciencia(tb_consciencia tb_consciencia)
+        {
+            base.AddObject("tb_consciencia", tb_consciencia);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the tb_consulta_fixo EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_consulta_fixo(tb_consulta_fixo tb_consulta_fixo)
@@ -1444,6 +1476,14 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the tb_eliminacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_eliminacao(tb_eliminacao tb_eliminacao)
+        {
+            base.AddObject("tb_eliminacao", tb_eliminacao);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the tb_escolaridade EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_escolaridade(tb_escolaridade tb_escolaridade)
@@ -1508,6 +1548,14 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the tb_higiene EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_higiene(tb_higiene tb_higiene)
+        {
+            base.AddObject("tb_higiene", tb_higiene);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the tb_historia EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_historia(tb_historia tb_historia)
@@ -1529,6 +1577,14 @@ namespace PacienteVirtual.Models
         public void AddTotb_instituicao(tb_instituicao tb_instituicao)
         {
             base.AddObject("tb_instituicao", tb_instituicao);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_integridade_tecidual EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_integridade_tecidual(tb_integridade_tecidual tb_integridade_tecidual)
+        {
+            base.AddObject("tb_integridade_tecidual", tb_integridade_tecidual);
         }
     
         /// <summary>
@@ -1580,6 +1636,14 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the tb_nutricao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_nutricao(tb_nutricao tb_nutricao)
+        {
+            base.AddObject("tb_nutricao", tb_nutricao);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the tb_objetivo_terapeutico EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_objetivo_terapeutico(tb_objetivo_terapeutico tb_objetivo_terapeutico)
@@ -1596,6 +1660,22 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the tb_outras_necessidades EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_outras_necessidades(tb_outras_necessidades tb_outras_necessidades)
+        {
+            base.AddObject("tb_outras_necessidades", tb_outras_necessidades);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_oxiginecao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_oxiginecao(tb_oxiginecao tb_oxiginecao)
+        {
+            base.AddObject("tb_oxiginecao", tb_oxiginecao);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the tb_paciente EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_paciente(tb_paciente tb_paciente)
@@ -1609,6 +1689,22 @@ namespace PacienteVirtual.Models
         public void AddTotb_parametro_clinico(tb_parametro_clinico tb_parametro_clinico)
         {
             base.AddObject("tb_parametro_clinico", tb_parametro_clinico);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_patologia EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_patologia(tb_patologia tb_patologia)
+        {
+            base.AddObject("tb_patologia", tb_patologia);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_percepcao_expectativas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_percepcao_expectativas(tb_percepcao_expectativas tb_percepcao_expectativas)
+        {
+            base.AddObject("tb_percepcao_expectativas", tb_percepcao_expectativas);
         }
     
         /// <summary>
@@ -1633,6 +1729,14 @@ namespace PacienteVirtual.Models
         public void AddTotb_plano_saude(tb_plano_saude tb_plano_saude)
         {
             base.AddObject("tb_plano_saude", tb_plano_saude);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_psicoespiritual EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_psicoespiritual(tb_psicoespiritual tb_psicoespiritual)
+        {
+            base.AddObject("tb_psicoespiritual", tb_psicoespiritual);
         }
     
         /// <summary>
@@ -1684,6 +1788,22 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the tb_sensorial EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_sensorial(tb_sensorial tb_sensorial)
+        {
+            base.AddObject("tb_sensorial", tb_sensorial);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_sexualidade EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_sexualidade(tb_sexualidade tb_sexualidade)
+        {
+            base.AddObject("tb_sexualidade", tb_sexualidade);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the tb_sistema EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_sistema(tb_sistema tb_sistema)
@@ -1708,6 +1828,14 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the tb_termorregulacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_termorregulacao(tb_termorregulacao tb_termorregulacao)
+        {
+            base.AddObject("tb_termorregulacao", tb_termorregulacao);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the tb_turma EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_turma(tb_turma tb_turma)
@@ -1729,134 +1857,6 @@ namespace PacienteVirtual.Models
         public void AddTotb_turma_pessoa_relato(tb_turma_pessoa_relato tb_turma_pessoa_relato)
         {
             base.AddObject("tb_turma_pessoa_relato", tb_turma_pessoa_relato);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_clinico_internacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_clinico_internacao(tb_clinico_internacao tb_clinico_internacao)
-        {
-            base.AddObject("tb_clinico_internacao", tb_clinico_internacao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_oxiginecao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_oxiginecao(tb_oxiginecao tb_oxiginecao)
-        {
-            base.AddObject("tb_oxiginecao", tb_oxiginecao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_patologia EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_patologia(tb_patologia tb_patologia)
-        {
-            base.AddObject("tb_patologia", tb_patologia);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_percepcao_expectativas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_percepcao_expectativas(tb_percepcao_expectativas tb_percepcao_expectativas)
-        {
-            base.AddObject("tb_percepcao_expectativas", tb_percepcao_expectativas);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_circulacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_circulacao(tb_circulacao tb_circulacao)
-        {
-            base.AddObject("tb_circulacao", tb_circulacao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_higiene EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_higiene(tb_higiene tb_higiene)
-        {
-            base.AddObject("tb_higiene", tb_higiene);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_termorregulacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_termorregulacao(tb_termorregulacao tb_termorregulacao)
-        {
-            base.AddObject("tb_termorregulacao", tb_termorregulacao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_psicoespiritual EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_psicoespiritual(tb_psicoespiritual tb_psicoespiritual)
-        {
-            base.AddObject("tb_psicoespiritual", tb_psicoespiritual);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_comunicacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_comunicacao(tb_comunicacao tb_comunicacao)
-        {
-            base.AddObject("tb_comunicacao", tb_comunicacao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_consciencia EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_consciencia(tb_consciencia tb_consciencia)
-        {
-            base.AddObject("tb_consciencia", tb_consciencia);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_nutricao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_nutricao(tb_nutricao tb_nutricao)
-        {
-            base.AddObject("tb_nutricao", tb_nutricao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_outras_necessidades EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_outras_necessidades(tb_outras_necessidades tb_outras_necessidades)
-        {
-            base.AddObject("tb_outras_necessidades", tb_outras_necessidades);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_sensorial EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_sensorial(tb_sensorial tb_sensorial)
-        {
-            base.AddObject("tb_sensorial", tb_sensorial);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_sexualidade EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_sexualidade(tb_sexualidade tb_sexualidade)
-        {
-            base.AddObject("tb_sexualidade", tb_sexualidade);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_integridade_tecidual EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_integridade_tecidual(tb_integridade_tecidual tb_integridade_tecidual)
-        {
-            base.AddObject("tb_integridade_tecidual", tb_integridade_tecidual);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tb_eliminacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_eliminacao(tb_eliminacao tb_eliminacao)
-        {
-            base.AddObject("tb_eliminacao", tb_eliminacao);
         }
 
         #endregion
@@ -5701,6 +5701,44 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao")]
+        public tb_clinico_internacao tb_clinico_internacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_clinico_internacao>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_clinico_internacao>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_clinico_internacao> tb_clinico_internacaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_clinico_internacao>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_clinico_internacao>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_demograficos_antropometricos_tb_consulta_fixo1", "tb_demograficos_antropometricos")]
         public tb_demograficos_antropometricos tb_demograficos_antropometricos
         {
@@ -5849,44 +5887,6 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_turma_pessoa_relato>("pvModel.fk_tb_turma_pessoa_relato_tb_consulta_fixo1", "tb_turma_pessoa_relato", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao")]
-        public tb_clinico_internacao tb_clinico_internacao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_clinico_internacao>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_clinico_internacao>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_clinico_internacao> tb_clinico_internacaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_clinico_internacao>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_clinico_internacao>("pvModel.fk_tb_internacao_tb_consulta_fixo1", "tb_clinico_internacao", value);
                 }
             }
         }
@@ -6610,6 +6610,120 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao")]
+        public tb_circulacao tb_circulacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_circulacao> tb_circulacaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao")]
+        public tb_comunicacao tb_comunicacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_comunicacao>("pvModel.fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_comunicacao>("pvModel.fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_comunicacao> tb_comunicacaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_comunicacao>("pvModel.fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_comunicacao>("pvModel.fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia")]
+        public tb_consciencia tb_consciencia
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consciencia>("pvModel.fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consciencia>("pvModel.fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_consciencia> tb_conscienciaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consciencia>("pvModel.fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_consciencia>("pvModel.fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consulta_parametro_tb_consulta_variavel1", "tb_consulta_parametro")]
         public EntityCollection<tb_consulta_parametro> tb_consulta_parametro
         {
@@ -6622,6 +6736,44 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_consulta_parametro>("pvModel.fk_tb_consulta_parametro_tb_consulta_variavel1", "tb_consulta_parametro", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_table1_tb_consulta_variavel1", "tb_outras_necessidades")]
+        public tb_outras_necessidades tb_outras_necessidades
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_outras_necessidades>("pvModel.fk_table1_tb_consulta_variavel1", "tb_outras_necessidades").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_outras_necessidades>("pvModel.fk_table1_tb_consulta_variavel1", "tb_outras_necessidades").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_outras_necessidades> tb_outras_necessidadesReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_outras_necessidades>("pvModel.fk_table1_tb_consulta_variavel1", "tb_outras_necessidades");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_outras_necessidades>("pvModel.fk_table1_tb_consulta_variavel1", "tb_outras_necessidades", value);
                 }
             }
         }
@@ -6812,6 +6964,44 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao")]
+        public tb_eliminacao tb_eliminacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_eliminacao> tb_eliminacaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_estilo_vida_tb_consulta_variavel1", "tb_estilo_vida")]
         public tb_estilo_vida tb_estilo_vida
         {
@@ -6888,6 +7078,82 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_higiene_tb_consulta_variavel1", "tb_higiene")]
+        public tb_higiene tb_higiene
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_higiene>("pvModel.fk_tb_higiene_tb_consulta_variavel1", "tb_higiene").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_higiene>("pvModel.fk_tb_higiene_tb_consulta_variavel1", "tb_higiene").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_higiene> tb_higieneReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_higiene>("pvModel.fk_tb_higiene_tb_consulta_variavel1", "tb_higiene");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_higiene>("pvModel.fk_tb_higiene_tb_consulta_variavel1", "tb_higiene", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual")]
+        public tb_integridade_tecidual tb_integridade_tecidual
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_integridade_tecidual> tb_integridade_tecidualReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_intervencao_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel_intervencao")]
         public EntityCollection<tb_consulta_variavel_intervencao> tb_consulta_variavel_intervencao
         {
@@ -6922,6 +7188,44 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_medicamento_nao_prescrito>("pvModel.fk_tb_medicamento_prescrito_tb_consulta_variavel1", "tb_medicamento_nao_prescrito", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao")]
+        public tb_nutricao tb_nutricao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_nutricao>("pvModel.fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_nutricao>("pvModel.fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_nutricao> tb_nutricaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_nutricao>("pvModel.fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_nutricao>("pvModel.fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao", value);
                 }
             }
         }
@@ -7008,120 +7312,6 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao")]
-        public tb_circulacao tb_circulacao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_circulacao> tb_circulacaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_higiene_tb_consulta_variavel1", "tb_higiene")]
-        public tb_higiene tb_higiene
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_higiene>("pvModel.fk_tb_higiene_tb_consulta_variavel1", "tb_higiene").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_higiene>("pvModel.fk_tb_higiene_tb_consulta_variavel1", "tb_higiene").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_higiene> tb_higieneReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_higiene>("pvModel.fk_tb_higiene_tb_consulta_variavel1", "tb_higiene");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_higiene>("pvModel.fk_tb_higiene_tb_consulta_variavel1", "tb_higiene", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao")]
-        public tb_termorregulacao tb_termorregulacao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_termorregulacao>("pvModel.fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_termorregulacao>("pvModel.fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_termorregulacao> tb_termorregulacaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_termorregulacao>("pvModel.fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_termorregulacao>("pvModel.fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_psicoespiritual_tb_consulta_variavel1", "tb_psicoespiritual")]
         public tb_psicoespiritual tb_psicoespiritual
         {
@@ -7150,158 +7340,6 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_psicoespiritual>("pvModel.fk_tb_psicoespiritual_tb_consulta_variavel1", "tb_psicoespiritual", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao")]
-        public tb_comunicacao tb_comunicacao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_comunicacao>("pvModel.fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_comunicacao>("pvModel.fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_comunicacao> tb_comunicacaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_comunicacao>("pvModel.fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_comunicacao>("pvModel.fk_tb_comunicacao_tb_consulta_variavel1", "tb_comunicacao", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia")]
-        public tb_consciencia tb_consciencia
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consciencia>("pvModel.fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consciencia>("pvModel.fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_consciencia> tb_conscienciaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consciencia>("pvModel.fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_consciencia>("pvModel.fk_tb_consciencia_tb_consulta_variavel1", "tb_consciencia", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_table1_tb_consulta_variavel1", "tb_outras_necessidades")]
-        public tb_outras_necessidades tb_outras_necessidades
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_outras_necessidades>("pvModel.fk_table1_tb_consulta_variavel1", "tb_outras_necessidades").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_outras_necessidades>("pvModel.fk_table1_tb_consulta_variavel1", "tb_outras_necessidades").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_outras_necessidades> tb_outras_necessidadesReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_outras_necessidades>("pvModel.fk_table1_tb_consulta_variavel1", "tb_outras_necessidades");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_outras_necessidades>("pvModel.fk_table1_tb_consulta_variavel1", "tb_outras_necessidades", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao")]
-        public tb_nutricao tb_nutricao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_nutricao>("pvModel.fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_nutricao>("pvModel.fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_nutricao> tb_nutricaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_nutricao>("pvModel.fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_nutricao>("pvModel.fk_tb_nutricao_tb_consulta_variavel1", "tb_nutricao", value);
                 }
             }
         }
@@ -7388,16 +7426,16 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual")]
-        public tb_integridade_tecidual tb_integridade_tecidual
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao")]
+        public tb_termorregulacao tb_termorregulacao
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_termorregulacao>("pvModel.fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_termorregulacao>("pvModel.fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao").Value = value;
             }
         }
         /// <summary>
@@ -7405,55 +7443,17 @@ namespace PacienteVirtual.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<tb_integridade_tecidual> tb_integridade_tecidualReference
+        public EntityReference<tb_termorregulacao> tb_termorregulacaoReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_termorregulacao>("pvModel.fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_integridade_tecidual>("pvModel.fk_tb_integridade_tecidual_tb_consulta_variavel1", "tb_integridade_tecidual", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao")]
-        public tb_eliminacao tb_eliminacao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_eliminacao> tb_eliminacaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_eliminacao>("pvModel.fk_tb_eliminacao_tb_consulta_variavel1", "tb_eliminacao", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_termorregulacao>("pvModel.fk_tb_termorregulacao_tb_consulta_variavel1", "tb_termorregulacao", value);
                 }
             }
         }
@@ -16239,24 +16239,12 @@ namespace PacienteVirtual.Models
         /// </summary>
         /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
         /// <param name="frequeciaRespiratoria">Initial value of the FrequeciaRespiratoria property.</param>
-        /// <param name="dispineia">Initial value of the Dispineia property.</param>
-        /// <param name="taquipneia">Initial value of the Taquipneia property.</param>
-        /// <param name="bradipneia">Initial value of the Bradipneia property.</param>
-        /// <param name="kussmaul">Initial value of the Kussmaul property.</param>
-        /// <param name="cheyneStokes">Initial value of the CheyneStokes property.</param>
-        /// <param name="epistaxe">Initial value of the Epistaxe property.</param>
         /// <param name="obstrucaoNasal">Initial value of the ObstrucaoNasal property.</param>
         /// <param name="coriza">Initial value of the Coriza property.</param>
         /// <param name="desvioDeSepto">Initial value of the DesvioDeSepto property.</param>
         /// <param name="palidez">Initial value of the Palidez property.</param>
         /// <param name="labioCianotico">Initial value of the LabioCianotico property.</param>
         /// <param name="simetriaToracica">Initial value of the SimetriaToracica property.</param>
-        /// <param name="barril">Initial value of the Barril property.</param>
-        /// <param name="peitoDePombo">Initial value of the PeitoDePombo property.</param>
-        /// <param name="funil">Initial value of the Funil property.</param>
-        /// <param name="lordose">Initial value of the Lordose property.</param>
-        /// <param name="cifose">Initial value of the Cifose property.</param>
-        /// <param name="escoliose">Initial value of the Escoliose property.</param>
         /// <param name="tiragemIntercostal">Initial value of the TiragemIntercostal property.</param>
         /// <param name="expansibilidade">Initial value of the Expansibilidade property.</param>
         /// <param name="enfizemaSubcutaneo">Initial value of the EnfizemaSubcutaneo property.</param>
@@ -16269,29 +16257,17 @@ namespace PacienteVirtual.Models
         /// <param name="gangliosPalpaveis">Initial value of the GangliosPalpaveis property.</param>
         /// <param name="gangliosDolorosos">Initial value of the GangliosDolorosos property.</param>
         /// <param name="gangliosLocalizar">Initial value of the GangliosLocalizar property.</param>
-        public static tb_oxiginecao Createtb_oxiginecao(global::System.Int64 idConsultaVariavel, global::System.Int32 frequeciaRespiratoria, global::System.Boolean dispineia, global::System.Boolean taquipneia, global::System.Boolean bradipneia, global::System.Boolean kussmaul, global::System.Boolean cheyneStokes, global::System.Boolean epistaxe, global::System.Boolean obstrucaoNasal, global::System.Boolean coriza, global::System.Boolean desvioDeSepto, global::System.Boolean palidez, global::System.Boolean labioCianotico, global::System.String simetriaToracica, global::System.Boolean barril, global::System.Boolean peitoDePombo, global::System.Boolean funil, global::System.Boolean lordose, global::System.Boolean cifose, global::System.Boolean escoliose, global::System.Boolean tiragemIntercostal, global::System.String expansibilidade, global::System.Boolean enfizemaSubcutaneo, global::System.Boolean presencaFremito, global::System.Boolean tosse, global::System.String frequenciaTosse, global::System.String tipoTosse, global::System.String aspectoSecrecao, global::System.String percursao, global::System.Boolean gangliosPalpaveis, global::System.Boolean gangliosDolorosos, global::System.String gangliosLocalizar)
+        public static tb_oxiginecao Createtb_oxiginecao(global::System.Int64 idConsultaVariavel, global::System.Int32 frequeciaRespiratoria, global::System.Boolean obstrucaoNasal, global::System.Boolean coriza, global::System.Boolean desvioDeSepto, global::System.Boolean palidez, global::System.Boolean labioCianotico, global::System.String simetriaToracica, global::System.Boolean tiragemIntercostal, global::System.String expansibilidade, global::System.Boolean enfizemaSubcutaneo, global::System.Boolean presencaFremito, global::System.String tosse, global::System.String frequenciaTosse, global::System.String tipoTosse, global::System.String aspectoSecrecao, global::System.String percursao, global::System.Boolean gangliosPalpaveis, global::System.Boolean gangliosDolorosos, global::System.String gangliosLocalizar)
         {
             tb_oxiginecao tb_oxiginecao = new tb_oxiginecao();
             tb_oxiginecao.IdConsultaVariavel = idConsultaVariavel;
             tb_oxiginecao.FrequeciaRespiratoria = frequeciaRespiratoria;
-            tb_oxiginecao.Dispineia = dispineia;
-            tb_oxiginecao.Taquipneia = taquipneia;
-            tb_oxiginecao.Bradipneia = bradipneia;
-            tb_oxiginecao.Kussmaul = kussmaul;
-            tb_oxiginecao.CheyneStokes = cheyneStokes;
-            tb_oxiginecao.Epistaxe = epistaxe;
             tb_oxiginecao.ObstrucaoNasal = obstrucaoNasal;
             tb_oxiginecao.Coriza = coriza;
             tb_oxiginecao.DesvioDeSepto = desvioDeSepto;
             tb_oxiginecao.Palidez = palidez;
             tb_oxiginecao.LabioCianotico = labioCianotico;
             tb_oxiginecao.SimetriaToracica = simetriaToracica;
-            tb_oxiginecao.Barril = barril;
-            tb_oxiginecao.PeitoDePombo = peitoDePombo;
-            tb_oxiginecao.Funil = funil;
-            tb_oxiginecao.Lordose = lordose;
-            tb_oxiginecao.Cifose = cifose;
-            tb_oxiginecao.Escoliose = escoliose;
             tb_oxiginecao.TiragemIntercostal = tiragemIntercostal;
             tb_oxiginecao.Expansibilidade = expansibilidade;
             tb_oxiginecao.EnfizemaSubcutaneo = enfizemaSubcutaneo;
@@ -16389,146 +16365,26 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Boolean Dispineia
+        public global::System.String PadraoRespiratorio
         {
             get
             {
-                return _Dispineia;
+                return _PadraoRespiratorio;
             }
             set
             {
-                OnDispineiaChanging(value);
-                ReportPropertyChanging("Dispineia");
-                _Dispineia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Dispineia");
-                OnDispineiaChanged();
+                OnPadraoRespiratorioChanging(value);
+                ReportPropertyChanging("PadraoRespiratorio");
+                _PadraoRespiratorio = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("PadraoRespiratorio");
+                OnPadraoRespiratorioChanged();
             }
         }
-        private global::System.Boolean _Dispineia;
-        partial void OnDispineiaChanging(global::System.Boolean value);
-        partial void OnDispineiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Taquipneia
-        {
-            get
-            {
-                return _Taquipneia;
-            }
-            set
-            {
-                OnTaquipneiaChanging(value);
-                ReportPropertyChanging("Taquipneia");
-                _Taquipneia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Taquipneia");
-                OnTaquipneiaChanged();
-            }
-        }
-        private global::System.Boolean _Taquipneia;
-        partial void OnTaquipneiaChanging(global::System.Boolean value);
-        partial void OnTaquipneiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Bradipneia
-        {
-            get
-            {
-                return _Bradipneia;
-            }
-            set
-            {
-                OnBradipneiaChanging(value);
-                ReportPropertyChanging("Bradipneia");
-                _Bradipneia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Bradipneia");
-                OnBradipneiaChanged();
-            }
-        }
-        private global::System.Boolean _Bradipneia;
-        partial void OnBradipneiaChanging(global::System.Boolean value);
-        partial void OnBradipneiaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Kussmaul
-        {
-            get
-            {
-                return _Kussmaul;
-            }
-            set
-            {
-                OnKussmaulChanging(value);
-                ReportPropertyChanging("Kussmaul");
-                _Kussmaul = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Kussmaul");
-                OnKussmaulChanged();
-            }
-        }
-        private global::System.Boolean _Kussmaul;
-        partial void OnKussmaulChanging(global::System.Boolean value);
-        partial void OnKussmaulChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean CheyneStokes
-        {
-            get
-            {
-                return _CheyneStokes;
-            }
-            set
-            {
-                OnCheyneStokesChanging(value);
-                ReportPropertyChanging("CheyneStokes");
-                _CheyneStokes = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CheyneStokes");
-                OnCheyneStokesChanged();
-            }
-        }
-        private global::System.Boolean _CheyneStokes;
-        partial void OnCheyneStokesChanging(global::System.Boolean value);
-        partial void OnCheyneStokesChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Epistaxe
-        {
-            get
-            {
-                return _Epistaxe;
-            }
-            set
-            {
-                OnEpistaxeChanging(value);
-                ReportPropertyChanging("Epistaxe");
-                _Epistaxe = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Epistaxe");
-                OnEpistaxeChanged();
-            }
-        }
-        private global::System.Boolean _Epistaxe;
-        partial void OnEpistaxeChanging(global::System.Boolean value);
-        partial void OnEpistaxeChanged();
+        private global::System.String _PadraoRespiratorio;
+        partial void OnPadraoRespiratorioChanging(global::System.String value);
+        partial void OnPadraoRespiratorioChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -16677,146 +16533,26 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Boolean Barril
+        public global::System.String TiposTorax
         {
             get
             {
-                return _Barril;
+                return _TiposTorax;
             }
             set
             {
-                OnBarrilChanging(value);
-                ReportPropertyChanging("Barril");
-                _Barril = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Barril");
-                OnBarrilChanged();
+                OnTiposToraxChanging(value);
+                ReportPropertyChanging("TiposTorax");
+                _TiposTorax = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TiposTorax");
+                OnTiposToraxChanged();
             }
         }
-        private global::System.Boolean _Barril;
-        partial void OnBarrilChanging(global::System.Boolean value);
-        partial void OnBarrilChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean PeitoDePombo
-        {
-            get
-            {
-                return _PeitoDePombo;
-            }
-            set
-            {
-                OnPeitoDePomboChanging(value);
-                ReportPropertyChanging("PeitoDePombo");
-                _PeitoDePombo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PeitoDePombo");
-                OnPeitoDePomboChanged();
-            }
-        }
-        private global::System.Boolean _PeitoDePombo;
-        partial void OnPeitoDePomboChanging(global::System.Boolean value);
-        partial void OnPeitoDePomboChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Funil
-        {
-            get
-            {
-                return _Funil;
-            }
-            set
-            {
-                OnFunilChanging(value);
-                ReportPropertyChanging("Funil");
-                _Funil = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Funil");
-                OnFunilChanged();
-            }
-        }
-        private global::System.Boolean _Funil;
-        partial void OnFunilChanging(global::System.Boolean value);
-        partial void OnFunilChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Lordose
-        {
-            get
-            {
-                return _Lordose;
-            }
-            set
-            {
-                OnLordoseChanging(value);
-                ReportPropertyChanging("Lordose");
-                _Lordose = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Lordose");
-                OnLordoseChanged();
-            }
-        }
-        private global::System.Boolean _Lordose;
-        partial void OnLordoseChanging(global::System.Boolean value);
-        partial void OnLordoseChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Cifose
-        {
-            get
-            {
-                return _Cifose;
-            }
-            set
-            {
-                OnCifoseChanging(value);
-                ReportPropertyChanging("Cifose");
-                _Cifose = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Cifose");
-                OnCifoseChanged();
-            }
-        }
-        private global::System.Boolean _Cifose;
-        partial void OnCifoseChanging(global::System.Boolean value);
-        partial void OnCifoseChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Escoliose
-        {
-            get
-            {
-                return _Escoliose;
-            }
-            set
-            {
-                OnEscolioseChanging(value);
-                ReportPropertyChanging("Escoliose");
-                _Escoliose = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Escoliose");
-                OnEscolioseChanged();
-            }
-        }
-        private global::System.Boolean _Escoliose;
-        partial void OnEscolioseChanging(global::System.Boolean value);
-        partial void OnEscolioseChanged();
+        private global::System.String _TiposTorax;
+        partial void OnTiposToraxChanging(global::System.String value);
+        partial void OnTiposToraxChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -16919,7 +16655,7 @@ namespace PacienteVirtual.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean Tosse
+        public global::System.String Tosse
         {
             get
             {
@@ -16929,13 +16665,13 @@ namespace PacienteVirtual.Models
             {
                 OnTosseChanging(value);
                 ReportPropertyChanging("Tosse");
-                _Tosse = StructuralObject.SetValidValue(value);
+                _Tosse = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Tosse");
                 OnTosseChanged();
             }
         }
-        private global::System.Boolean _Tosse;
-        partial void OnTosseChanging(global::System.Boolean value);
+        private global::System.String _Tosse;
+        partial void OnTosseChanging(global::System.String value);
         partial void OnTosseChanged();
     
         /// <summary>
@@ -17105,6 +16841,30 @@ namespace PacienteVirtual.Models
         private global::System.String _GangliosLocalizar;
         partial void OnGangliosLocalizarChanging(global::System.String value);
         partial void OnGangliosLocalizarChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AuscultaPulmonar
+        {
+            get
+            {
+                return _AuscultaPulmonar;
+            }
+            set
+            {
+                OnAuscultaPulmonarChanging(value);
+                ReportPropertyChanging("AuscultaPulmonar");
+                _AuscultaPulmonar = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AuscultaPulmonar");
+                OnAuscultaPulmonarChanged();
+            }
+        }
+        private global::System.String _AuscultaPulmonar;
+        partial void OnAuscultaPulmonarChanging(global::System.String value);
+        partial void OnAuscultaPulmonarChanged();
 
         #endregion
 
