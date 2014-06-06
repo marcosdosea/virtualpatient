@@ -1128,16 +1128,16 @@
   <data name="patologias_atuais" xml:space="preserve">
     <value>Patologias Atuais</value>
   </data>
-  <data name="barril" xml:space="preserve">
+  <data name="Barril" xml:space="preserve">
     <value>Barril</value>
   </data>
-  <data name="bradipneia" xml:space="preserve">
+  <data name="Bradipneia" xml:space="preserve">
     <value>Bradipneia</value>
   </data>
-  <data name="cheyneStokes" xml:space="preserve">
+  <data name="CheyneStoke" xml:space="preserve">
     <value>CheyneStokes</value>
   </data>
-  <data name="cifose" xml:space="preserve">
+  <data name="Cifose" xml:space="preserve">
     <value>Cifose</value>
   </data>
   <data name="coriza" xml:space="preserve">
@@ -1146,25 +1146,25 @@
   <data name="desvioDeSepto" xml:space="preserve">
     <value>Desvio De Septo</value>
   </data>
-  <data name="dispineia" xml:space="preserve">
+  <data name="Dispineia" xml:space="preserve">
     <value>Dispnéia</value>
   </data>
-  <data name="epistaxe" xml:space="preserve">
-    <value>Epistaxe</value>
+  <data name="Eupineico" xml:space="preserve">
+    <value>Eupineico</value>
   </data>
-  <data name="escoliose" xml:space="preserve">
+  <data name="Escoliose" xml:space="preserve">
     <value>Escoliose</value>
   </data>
-  <data name="funil" xml:space="preserve">
+  <data name="Funil" xml:space="preserve">
     <value>Funil</value>
   </data>
-  <data name="kussmaul" xml:space="preserve">
+  <data name="Kussmaul" xml:space="preserve">
     <value>Kussmaul</value>
   </data>
   <data name="labioCianotico" xml:space="preserve">
     <value>Lábio Cianótico</value>
   </data>
-  <data name="lordose" xml:space="preserve">
+  <data name="Lordose" xml:space="preserve">
     <value>Lordose</value>
   </data>
   <data name="obstrucaoNasal" xml:space="preserve">
@@ -1173,13 +1173,13 @@
   <data name="palidez" xml:space="preserve">
     <value>Palidez</value>
   </data>
-  <data name="peitoDePombo" xml:space="preserve">
+  <data name="PeitoDePombo" xml:space="preserve">
     <value>Peito de Pombo</value>
   </data>
   <data name="simetriaToracica" xml:space="preserve">
     <value>Simetria Torácica</value>
   </data>
-  <data name="taquipneia" xml:space="preserve">
+  <data name="Taquipneia" xml:space="preserve">
     <value>Taquipneia</value>
   </data>
   <data name="tiragemIntercostal" xml:space="preserve">
@@ -1504,28 +1504,28 @@
     <value>Avaliação da consciência</value>
   </data>
   <data name="ConversacaoConfusa" xml:space="preserve">
-    <value>Conversação confusa</value>
+    <value>Conversação Confusa (4)</value>
   </data>
   <data name="Dor" xml:space="preserve">
-    <value>Dor</value>
+    <value>Dor (2)</value>
   </data>
   <data name="Espontanea" xml:space="preserve">
-    <value>Espontânea</value>
+    <value>Espontânea (4)</value>
   </data>
   <data name="EstimuloVerbal" xml:space="preserve">
-    <value>Estimulo verbal</value>
+    <value>Estimulo verbal (3)</value>
   </data>
   <data name="ExtensaoAnormal" xml:space="preserve">
-    <value>Extensão anormal</value>
+    <value>Extensão Anormal – Rigidez da Descerebração (2)</value>
   </data>
   <data name="FalaInadequada" xml:space="preserve">
-    <value>Fala inadequada</value>
+    <value>Fala Inadequada (3)</value>
   </data>
   <data name="FlexaoAnormal" xml:space="preserve">
-    <value>Flexão anormal</value>
+    <value>Flexão Anormal - Rigidez da Decorticação (3)</value>
   </data>
   <data name="FlexaoRetirada" xml:space="preserve">
-    <value>Flexão retirada</value>
+    <value>Flexão Retirada (4)</value>
   </data>
   <data name="Grau1" xml:space="preserve">
     <value>Grau 1</value>
@@ -1546,7 +1546,7 @@
     <value>Grau 6</value>
   </data>
   <data name="LocalizaDor" xml:space="preserve">
-    <value>Localiza dor</value>
+    <value>Localiza Dor (5)</value>
   </data>
   <data name="melhor_resposta_motora" xml:space="preserve">
     <value>Melhor resposta motora</value>
@@ -1555,16 +1555,16 @@
     <value>Melhor resposta verbal</value>
   </data>
   <data name="NenhumaResposta" xml:space="preserve">
-    <value>Nenhuma resposta</value>
+    <value>Nenhuma resposta (1)</value>
   </data>
   <data name="ObedeceComandoVerbal" xml:space="preserve">
-    <value>Obedece comando verbal</value>
+    <value>Obedece Comando Verbal (6)</value>
   </data>
   <data name="Orientado" xml:space="preserve">
-    <value>Orientado</value>
+    <value>Orientado (5)</value>
   </data>
   <data name="SonsIncopativeis" xml:space="preserve">
-    <value>Sons incompatíveis</value>
+    <value>Sons Incompreensíveis (2)</value>
   </data>
   <data name="AumentoPeso" xml:space="preserve">
     <value>Aumento de Peso</value>
@@ -1573,7 +1573,7 @@
     <value>Ausência de Dentes</value>
   </data>
   <data name="Caqueixa" xml:space="preserve">
-    <value>Caqueixa</value>
+    <value>Caquexia</value>
   </data>
   <data name="dificuldade_mastigar" xml:space="preserve">
     <value>Dificuldade de Mastigar</value>
@@ -2231,5 +2231,38 @@
   </data>
   <data name="quanto_doenca" xml:space="preserve">
     <value>Quanto a doença</value>
+  </data>
+  <data name="dados_indentificacao" xml:space="preserve">
+    <value>Dados de Identificação</value>
+  </data>
+  <data name="padrao_respiratorio" xml:space="preserve">
+    <value>Padrão Respiratório</value>
+  </data>
+  <data name="tipo_torax" xml:space="preserve">
+    <value>Tipo de Torax</value>
+  </data>
+  <data name="asculta_pulmonar" xml:space="preserve">
+    <value>Asculta Pulmonar</value>
+  </data>
+  <data name="AtritoPleural" xml:space="preserve">
+    <value>Atrito Pleural</value>
+  </data>
+  <data name="Estertores" xml:space="preserve">
+    <value>Estertores</value>
+  </data>
+  <data name="Estridor" xml:space="preserve">
+    <value>Estridor</value>
+  </data>
+  <data name="Roncos" xml:space="preserve">
+    <value>Roncos</value>
+  </data>
+  <data name="Sibilos" xml:space="preserve">
+    <value>Sibilos</value>
+  </data>
+  <data name="VesicularDiminuido" xml:space="preserve">
+    <value>Vesicular Diminuído</value>
+  </data>
+  <data name="VesicularPresente" xml:space="preserve">
+    <value>Vesicular Presente</value>
   </data>
 </root>

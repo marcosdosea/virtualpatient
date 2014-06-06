@@ -6,14 +6,14 @@
 <fieldset>
     <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
        { %>
-       <legend>
+    <legend>
         <%: Resources.Mensagem.dados_identificacao%></legend>
     <% }
        else
        { %>
     <legend>
         <%: Resources.Mensagem.demografico_antropometricos%></legend>
-        <% } %>
+    <% } %>
     <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
     <div class="row-fluid">
         <div class="span4">
@@ -26,7 +26,15 @@
             </div>
         </div>
     </div>
-    <div class="row-fluid">
+    <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+           { %>
+        <%: Html.HiddenFor(model => model.MedicosAtendem) %>
+        <%: Html.HiddenFor(model => model.MoradiaFamilia) %>
+        <%: Html.HiddenFor(model => model.OndeAdquireMedicamentos) %>
+        <% }
+           else
+           { %>
+           <div class="row-fluid">
         <div class="span10">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.MedicosAtendem)%>
@@ -37,28 +45,29 @@
             </div>
         </div>
     </div>
-    <div class="row-fluid">
-        <div class="span4">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.MoradiaFamilia)%>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.MoradiaFamilia, new { @class = "textbox", style = "width:579px;" })%>
-                <%: Html.ValidationMessageFor(model => model.MoradiaFamilia, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-    </div>
-    <div class="row-fluid">
-        <div class="span10">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.OndeAdquireMedicamentos)%>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.OndeAdquireMedicamentos, new { @class = "textbox", style = "width:579px;" })%>
-                <%: Html.ValidationMessageFor(model => model.OndeAdquireMedicamentos, string.Empty, new { @class = "styleValidation" })%>
+        <div class="row-fluid">
+            <div class="span4">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.MoradiaFamilia)%>
+                </div>
+                <div class="editor-field">
+                    <%: Html.TextBoxFor(model => model.MoradiaFamilia, new { @class = "textbox", style = "width:579px;" })%>
+                    <%: Html.ValidationMessageFor(model => model.MoradiaFamilia, string.Empty, new { @class = "styleValidation" })%>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="row-fluid">
+            <div class="span10">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.OndeAdquireMedicamentos)%>
+                </div>
+                <div class="editor-field">
+                    <%: Html.TextBoxFor(model => model.OndeAdquireMedicamentos, new { @class = "textbox", style = "width:579px;" })%>
+                    <%: Html.ValidationMessageFor(model => model.OndeAdquireMedicamentos, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+            </div>
+        </div>
+        <% } %>
     <div class="row-fluid">
         <div class="span6">
             <div class="editor-label">
@@ -95,6 +104,12 @@
                 <%: Html.ValidationMessageFor(model => model.IdEstadoCivil, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
+        <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+           { %>
+        <%: Html.HiddenFor(model => model.RG) %>
+        <% }
+           else
+           { %>
         <div class="span6">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.RG) %>
@@ -104,6 +119,7 @@
                 <%: Html.ValidationMessageFor(model => model.RG, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
+        <% } %>
     </div>
     <div class="row-fluid">
         <div class="span6">

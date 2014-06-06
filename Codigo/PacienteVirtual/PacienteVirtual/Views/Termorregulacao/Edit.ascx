@@ -12,7 +12,7 @@
             <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.Temperatura) %>
-                    <%: Html.TextBoxFor(model => model.Temperatura, new { style = "width:60px;" })%>
+                    <%: Html.TextBoxFor(model => model.Temperatura, new { style = "width:60px;" })%> °C
                     <%: Html.ValidationMessageFor(model => model.Temperatura, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="editor-field">

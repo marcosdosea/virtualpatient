@@ -5,7 +5,11 @@ namespace PacienteVirtual.Models
 {
     public enum ListaRitmo{ Regular = 0, Irregular = 1 }
 
+    public enum ListaPadraoRespiratorio { Eupineico = 0, Dispneia = 1, Taquipneia = 2, Bradipneia = 3, CheyneStoke = 4, Kussmaul = 5 }
+
     public enum ListaSimetriaToracica { Simetrico = 0, AssimetricoUnilateral = 1, AssimetricoBilateral = 2 }
+
+    public enum ListaTiposTorax { Barril = 0, PeitoDePombo = 1, Funil = 2, Lordose = 3, Cifose = 4, Escoliose = 5 }
 
     public enum ListaExpansibilidade { Preservada = 0, Diminuida = 1 }
 
@@ -15,14 +19,19 @@ namespace PacienteVirtual.Models
 
     public enum ListaPercursao { Ar = 0, Liquido = 1, Massa = 2 }
 
+    public enum ListaAuscultaPulmonar { VesicularPresente = 0, VesicularDiminuido = 1, Roncos = 2, Estertores = 3, Sibilos = 4, Estridor = 5, AtritoPleural = 6 }
+
     public class OxigenacaoModel
     {
         public string ErroRitmo { get; set; }
+        public string ErroPadraoResp { get; set; }
         public string ErroSimetriaToracica { get; set; }
+        public string ErroTiposTorax { get; set; }
         public string ErroExpansibilidade { get; set; }
         public string ErroFrequenciaTosse { get; set; }
         public string ErroTipoTosse { get; set; }
         public string ErroPercursao { get; set; }
+        public string ErroAuscultaPulmonar { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
@@ -34,25 +43,11 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "ritmo", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaRitmo))]
-        public ListaRitmo Ritmo { get; set; } 
+        public ListaRitmo Ritmo { get; set; }
 
-        [Display(Name = "dispineia", ResourceType = typeof(Mensagem))]
-        public bool Dispineia { get; set; }
-
-        [Display(Name = "taquipneia", ResourceType = typeof(Mensagem))]
-        public bool Taquipneia { get; set; }
-
-        [Display(Name = "bradipneia", ResourceType = typeof(Mensagem))]
-        public bool Bradipneia { get; set; }
-
-        [Display(Name = "kussmaul", ResourceType = typeof(Mensagem))]
-        public bool Kussmaul { get; set; }
-
-        [Display(Name = "cheyneStokes", ResourceType = typeof(Mensagem))]
-        public bool CheyneStokes { get; set; }
-
-        [Display(Name = "epistaxe", ResourceType = typeof(Mensagem))]
-        public bool Epistaxe { get; set; }
+        [Display(Name = "padrao_respiratorio", ResourceType = typeof(Mensagem))]
+        [EnumDataType(typeof(ListaPadraoRespiratorio))]
+        public ListaPadraoRespiratorio PadraoRespiratorio { get; set; }
 
         [Display(Name = "obstrucaoNasal", ResourceType = typeof(Mensagem))]
         public bool ObstrucaoNasal { get; set; }
@@ -72,24 +67,10 @@ namespace PacienteVirtual.Models
         [Display(Name = "simetriaToracica", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaSimetriaToracica))]
         public ListaSimetriaToracica SimetriaToracica { get; set; }
-        
-        [Display(Name = "barril", ResourceType = typeof(Mensagem))]
-        public bool Barril { get; set; }
 
-        [Display(Name = "peitoDePombo", ResourceType = typeof(Mensagem))]
-        public bool PeitoDePombo { get; set; }
-
-        [Display(Name = "funil", ResourceType = typeof(Mensagem))]
-        public bool Funil { get; set; }
-
-        [Display(Name = "lordose", ResourceType = typeof(Mensagem))]
-        public bool Lordose { get; set; }
-
-        [Display(Name = "cifose", ResourceType = typeof(Mensagem))]
-        public bool Cifose { get; set; }
-
-        [Display(Name = "escoliose", ResourceType = typeof(Mensagem))]
-        public bool Escoliose { get; set; }
+        [Display(Name = "tipo_torax", ResourceType = typeof(Mensagem))]
+        [EnumDataType(typeof(ListaTiposTorax))]
+        public ListaTiposTorax TiposTorax { get; set; }
 
         [Display(Name = "tiragemIntercostal", ResourceType = typeof(Mensagem))]
         public bool TiragemIntercostal { get; set; }
@@ -105,7 +86,7 @@ namespace PacienteVirtual.Models
         public bool PresencaFremito { get; set; }
 
         [Display(Name = "tosse", ResourceType = typeof(Mensagem))]
-        public bool Tosse { get; set; }
+        public string Tosse { get; set; }
 
         [Display(Name = "frequencia_tosse", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaFrequenciaTosse))]
@@ -130,5 +111,9 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "ganglios_localizar", ResourceType = typeof(Mensagem))]
         public string GangliosLocalizar { get; set; }
+
+        [Display(Name = "asculta_pulmonar", ResourceType = typeof(Mensagem))]
+        [EnumDataType(typeof(ListaAuscultaPulmonar))]
+        public ListaAuscultaPulmonar AuscultaPulmonar { get; set; }
     }
 }
