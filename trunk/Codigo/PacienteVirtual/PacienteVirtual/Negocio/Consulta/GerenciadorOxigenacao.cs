@@ -36,31 +36,11 @@ namespace PacienteVirtual.Negocio
             }
             if (oxigenacao.Ritmo != oxigenacaoGabarito.Ritmo)
             {
-                modelState.AddModelError("ErroRitmo", "Gabarito: \"" + oxigenacaoGabarito.Ritmo + "\"");
+                modelState.AddModelError("ErroRitmo", "Gabarito: \"" + oxigenacaoGabarito.Ritmo.ToString() + "\"");
             }
-            if (oxigenacao.Dispineia != oxigenacaoGabarito.Dispineia)
+            if (oxigenacao.PadraoRespiratorio != oxigenacaoGabarito.PadraoRespiratorio)
             {
-                modelState.AddModelError("Dispineia", "Gabarito: " + (oxigenacaoGabarito.Dispineia.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.Taquipneia != oxigenacaoGabarito.Taquipneia)
-            {
-                modelState.AddModelError("Taquipneia", "Gabarito: " + (oxigenacaoGabarito.Taquipneia.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.Bradipneia != oxigenacaoGabarito.Bradipneia)
-            {
-                modelState.AddModelError("Bradipneia", "Gabarito: " + (oxigenacaoGabarito.Bradipneia.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.CheyneStokes != oxigenacaoGabarito.CheyneStokes)
-            {
-                modelState.AddModelError("CheyneStokes", "Gabarito: " + (oxigenacaoGabarito.CheyneStokes.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.Kussmaul != oxigenacaoGabarito.Kussmaul)
-            {
-                modelState.AddModelError("Kussmaul", "Gabarito: " + (oxigenacaoGabarito.Kussmaul.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.Epistaxe != oxigenacaoGabarito.Epistaxe)
-            {
-                modelState.AddModelError("Epistaxe", "Gabarito: " + (oxigenacaoGabarito.Epistaxe.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("ErroPadraoResp", "Gabarito: \"" + oxigenacaoGabarito.PadraoRespiratorio.ToString() + "\"");
             }
             if (oxigenacao.DesvioDeSepto != oxigenacaoGabarito.DesvioDeSepto)
             {
@@ -84,27 +64,11 @@ namespace PacienteVirtual.Negocio
             }
             if (oxigenacao.SimetriaToracica != oxigenacaoGabarito.SimetriaToracica)
             {
-                modelState.AddModelError("ErroSimetriaToracica", "Gabarito: \"" + oxigenacaoGabarito.SimetriaToracica + "\"");
+                modelState.AddModelError("ErroSimetriaToracica", "Gabarito: \"" + oxigenacaoGabarito.SimetriaToracica.ToString() + "\"");
             }
-            if (oxigenacao.PeitoDePombo != oxigenacaoGabarito.PeitoDePombo)
+            if (oxigenacao.TiposTorax != oxigenacaoGabarito.TiposTorax)
             {
-                modelState.AddModelError("PeitoDePombo", "Gabarito: " + (oxigenacaoGabarito.PeitoDePombo.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.Funil != oxigenacaoGabarito.Funil)
-            {
-                modelState.AddModelError("Funil", "Gabarito: " + (oxigenacaoGabarito.Funil.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.Lordose != oxigenacaoGabarito.Lordose)
-            {
-                modelState.AddModelError("Lordose", "Gabarito: " + (oxigenacaoGabarito.Lordose.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.Cifose != oxigenacaoGabarito.Cifose)
-            {
-                modelState.AddModelError("Cifose", "Gabarito: " + (oxigenacaoGabarito.Cifose.Equals(true) ? "Sim" : "Não"));
-            }
-            if (oxigenacao.Escoliose != oxigenacaoGabarito.Escoliose)
-            {
-                modelState.AddModelError("Escoliose", "Gabarito: " + (oxigenacaoGabarito.Escoliose.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("ErroTiposTorax", "Gabarito: \"" + oxigenacaoGabarito.TiposTorax.ToString() + "\"");
             }
             if (oxigenacao.TiragemIntercostal != oxigenacaoGabarito.TiragemIntercostal)
             {
@@ -112,7 +76,7 @@ namespace PacienteVirtual.Negocio
             }
             if (oxigenacao.Expansibilidade != oxigenacaoGabarito.Expansibilidade)
             {
-                modelState.AddModelError("ErroExpansibilidade", "Gabarito: \"" + oxigenacaoGabarito.Expansibilidade + "\"");
+                modelState.AddModelError("ErroExpansibilidade", "Gabarito: \"" + oxigenacaoGabarito.Expansibilidade.ToString() + "\"");
             }
             if (oxigenacao.EnfizemaSubcutaneo != oxigenacaoGabarito.EnfizemaSubcutaneo)
             {
@@ -124,21 +88,21 @@ namespace PacienteVirtual.Negocio
             }
             if (oxigenacao.Tosse != oxigenacaoGabarito.Tosse)
             {
-                modelState.AddModelError("Tosse", "Gabarito: " + (oxigenacaoGabarito.Tosse.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("Tosse", "Gabarito: " + (oxigenacaoGabarito.Tosse.Equals("S") ? "Sim" : "Não"));
             }
             if (oxigenacao.FrequenciaTosse != oxigenacaoGabarito.FrequenciaTosse)
             {
-                modelState.AddModelError("ErroFrequenciaTosse", "Gabarito: \"" + oxigenacaoGabarito.FrequenciaTosse + "\"");
+                modelState.AddModelError("ErroFrequenciaTosse", "Gabarito: \"" + oxigenacaoGabarito.FrequenciaTosse.ToString() + "\"");
             }
             if (oxigenacao.TipoTosse != oxigenacaoGabarito.TipoTosse)
             {
-                modelState.AddModelError("ErroTipoTosse", "Gabarito: \"" + oxigenacaoGabarito.TipoTosse + "\"");
+                modelState.AddModelError("ErroTipoTosse", "Gabarito: \"" + oxigenacaoGabarito.TipoTosse.ToString() + "\"");
             }
             Global.CorrecaoDeStrings("AspectoSecrecao", oxigenacao.AspectoSecrecao, oxigenacaoGabarito.AspectoSecrecao, modelState);
 
             if (oxigenacao.Percursao != oxigenacaoGabarito.Percursao)
             {
-                modelState.AddModelError("ErroPercursao", "Gabarito: \"" + oxigenacaoGabarito.Percursao + "\"");
+                modelState.AddModelError("ErroPercursao", "Gabarito: \"" + oxigenacaoGabarito.Percursao.ToString() + "\"");
             }
             if (oxigenacao.GangliosPalpaveis != oxigenacaoGabarito.GangliosPalpaveis)
             {
@@ -150,7 +114,10 @@ namespace PacienteVirtual.Negocio
             }
 
             Global.CorrecaoDeStrings("GangliosLocalizar", oxigenacao.GangliosLocalizar, oxigenacaoGabarito.GangliosLocalizar, modelState);
-            
+            if (oxigenacao.AuscultaPulmonar != oxigenacaoGabarito.AuscultaPulmonar)
+            {
+                modelState.AddModelError("ErroAscultaPulmonar", "Gabarito: \"" + oxigenacaoGabarito.AuscultaPulmonar.ToString() + "\"");
+            }
         }
 
         /// <summary>
@@ -229,21 +196,13 @@ namespace PacienteVirtual.Negocio
                             IdConsultaVariavel = oxigenacao.IdConsultaVariavel,
                             FequenciaResporatoria = oxigenacao.FrequeciaRespiratoria,
                             Ritmo = (oxigenacao.Ritmo == "Regular" ? ListaRitmo.Regular : ListaRitmo.Irregular),
-                            Dispineia = oxigenacao.Dispineia,
-                            Taquipneia = oxigenacao.Taquipneia,
-                            Bradipneia = oxigenacao.Bradipneia,
-                            Kussmaul = oxigenacao.Kussmaul,
-                            CheyneStokes = oxigenacao.CheyneStokes,
-                            Epistaxe = oxigenacao.Epistaxe,
+                            PadraoRespiratorio = (oxigenacao.PadraoRespiratorio == "Eupineico" ? ListaPadraoRespiratorio.Eupineico : (oxigenacao.PadraoRespiratorio == "Dispneia" ? ListaPadraoRespiratorio.Dispneia : (oxigenacao.PadraoRespiratorio == "Taquipneia" ? ListaPadraoRespiratorio.Taquipneia : (oxigenacao.PadraoRespiratorio == "CheyneStoke" ? ListaPadraoRespiratorio.CheyneStoke : ListaPadraoRespiratorio.Kussmaul)))),
                             ObstrucaoNasal = oxigenacao.ObstrucaoNasal,
                             Coriza = oxigenacao.Coriza,
                             DesvioDeSepto = oxigenacao.DesvioDeSepto,
                             Palidez = oxigenacao.Palidez,
                             LabioCianotico = oxigenacao.LabioCianotico,
-                            Funil = oxigenacao.Funil,
-                            Lordose = oxigenacao.Lordose,
-                            Cifose = oxigenacao.Cifose,
-                            Escoliose = oxigenacao.Escoliose,
+                            TiposTorax =  (oxigenacao.TiposTorax == "Barril" ? ListaTiposTorax.Barril : (oxigenacao.TiposTorax == "PeitoDePombo" ? ListaTiposTorax.PeitoDePombo : (oxigenacao.TiposTorax == "Funil" ? ListaTiposTorax.Funil : (oxigenacao.TiposTorax == "Lordose" ? ListaTiposTorax.Lordose : (oxigenacao.TiposTorax == "Cifose" ? ListaTiposTorax.Cifose : ListaTiposTorax.Escoliose))))),
                             TiragemIntercostal = oxigenacao.TiragemIntercostal,
                             SimetriaToracica = (oxigenacao.SimetriaToracica == "Simetrico" ? ListaSimetriaToracica.Simetrico : 
                                 oxigenacao.SimetriaToracica == "AssimetricoBilateral" ? ListaSimetriaToracica.AssimetricoBilateral : 
@@ -263,7 +222,8 @@ namespace PacienteVirtual.Negocio
                                 ListaPercursao.Liquido),
                             GangliosPalpaveis = oxigenacao.GangliosPalpaveis,
                             GangliosDolorosos = oxigenacao.GangliosDolorosos,
-                            GangliosLocalizar = oxigenacao.GangliosLocalizar
+                            GangliosLocalizar = oxigenacao.GangliosLocalizar,
+                            AuscultaPulmonar = (oxigenacao.AuscultaPulmonar == "VesicularPresente" ? ListaAuscultaPulmonar.VesicularPresente : (oxigenacao.AuscultaPulmonar == "VesicularDiminuido" ? ListaAuscultaPulmonar.VesicularDiminuido : (oxigenacao.AuscultaPulmonar == "Roncos" ? ListaAuscultaPulmonar.Roncos : (oxigenacao.AuscultaPulmonar == "Estertores" ? ListaAuscultaPulmonar.Estertores : (oxigenacao.AuscultaPulmonar == "Sibilos" ? ListaAuscultaPulmonar.Sibilos : (oxigenacao.AuscultaPulmonar == "Estridor" ? ListaAuscultaPulmonar.Estridor : ListaAuscultaPulmonar.AtritoPleural))))))
                         };
             return query;
         }
@@ -296,21 +256,13 @@ namespace PacienteVirtual.Negocio
             _oxigenacaoE.IdConsultaVariavel = oxigenacao.IdConsultaVariavel;
             _oxigenacaoE.FrequeciaRespiratoria = oxigenacao.FequenciaResporatoria;
             _oxigenacaoE.Ritmo = oxigenacao.Ritmo.ToString();
-            _oxigenacaoE.Dispineia = oxigenacao.Dispineia;
-            _oxigenacaoE.Taquipneia = oxigenacao.Taquipneia;
-            _oxigenacaoE.Bradipneia = oxigenacao.Bradipneia;
-            _oxigenacaoE.Kussmaul = oxigenacao.Kussmaul;
-            _oxigenacaoE.CheyneStokes = oxigenacao.CheyneStokes;
-            _oxigenacaoE.Epistaxe = oxigenacao.Epistaxe;
+            _oxigenacaoE.PadraoRespiratorio = oxigenacao.PadraoRespiratorio.ToString();
             _oxigenacaoE.ObstrucaoNasal = oxigenacao.ObstrucaoNasal;
             _oxigenacaoE.Coriza = oxigenacao.Coriza;
             _oxigenacaoE.DesvioDeSepto = oxigenacao.DesvioDeSepto;
             _oxigenacaoE.Palidez = oxigenacao.Palidez;
             _oxigenacaoE.LabioCianotico = oxigenacao.LabioCianotico;
-            _oxigenacaoE.Funil = oxigenacao.Funil;
-            _oxigenacaoE.Lordose = oxigenacao.Lordose;
-            _oxigenacaoE.Cifose = oxigenacao.Cifose;
-            _oxigenacaoE.Escoliose = oxigenacao.Escoliose;
+            _oxigenacaoE.TiposTorax = oxigenacao.TiposTorax.ToString();
             _oxigenacaoE.TiragemIntercostal = oxigenacao.TiragemIntercostal;
             _oxigenacaoE.SimetriaToracica = oxigenacao.SimetriaToracica.ToString();
             _oxigenacaoE.Expansibilidade = oxigenacao.Expansibilidade.ToString();
@@ -324,6 +276,7 @@ namespace PacienteVirtual.Negocio
             _oxigenacaoE.GangliosPalpaveis = oxigenacao.GangliosPalpaveis;
             _oxigenacaoE.GangliosDolorosos = oxigenacao.GangliosDolorosos;
             _oxigenacaoE.GangliosLocalizar = oxigenacao.GangliosLocalizar;
+            _oxigenacaoE.AuscultaPulmonar = oxigenacao.AuscultaPulmonar.ToString();
         }
     }
 }

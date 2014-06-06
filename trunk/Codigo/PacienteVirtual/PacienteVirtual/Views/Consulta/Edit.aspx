@@ -131,12 +131,10 @@
             <div class="thumbnails">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
-                        <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia") || ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
-                           { %>
-                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.demografico_antropometricos%></a></li>
-                        <% } %>
                         <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia"))
                            { %>
+                        <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab">
+                        <%: Resources.Mensagem.demografico_antropometricos%></a></li>
                         <li id="li2"><a href="#tab1-2" data-toggle="tab">
                             <%: Resources.Mensagem.razao_encontro %></a></li>
                         <li id="li3"><a href="#tab1-3" data-toggle="tab">
@@ -162,6 +160,8 @@
                         <% }
                            else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
                            { %>
+                            <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab">
+                            <%: Resources.Mensagem.dados_identificacao%></a></li>
                             <li id="li2"><a href="#tab1-2" data-toggle="tab">
                             <%: Resources.Mensagem.clinico_internacao %></a></li>
                             <li id="li3"><a href="#tab1-3" data-toggle="tab">

@@ -47,18 +47,18 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Index", "CorrigirConsultas");
         }
 
-        private void EnviarEmailParaAluno(string emailTutor, string emailAluno)
+        private void EnviarEmailParaAluno(string emailTutor, MembershipUser aluno)
         {
             string from = "sistemapacientevirtual@gmail.com";
 
-            string to = emailAluno;
+            string to = aluno.Email;
 
             System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
             mail.To.Add(to);
             mail.From = new MailAddress(from, "Paciente Virtual", System.Text.Encoding.UTF8);
             mail.Subject = "Correção de Consulta do Paciente Virtual";
             mail.SubjectEncoding = System.Text.Encoding.UTF8;
-            mail.Body = "Uma das suas consultas precisa de correções. Acesse http://www.pv.sistemasitatechjr.com.br/ e faça seu login.";
+            mail.Body = "Caro " + GerenciadorPessoa.GetInstance().ObterPorUserName(aluno.UserName).Nome + ",<br/>Uma das suas consultas precisa de correções. Acesse http://www.pv.sistemasitatechjr.com.br/ e faça seu login.<br/><br/>Att. Sistema Paciente Virtual.";
             mail.BodyEncoding = System.Text.Encoding.UTF8;
             mail.IsBodyHtml = true;
             mail.Priority = MailPriority.High;

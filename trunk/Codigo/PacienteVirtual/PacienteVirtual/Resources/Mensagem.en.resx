@@ -1125,16 +1125,16 @@
   <data name="antecedentes_familiares" xml:space="preserve">
     <value>Family History</value>
   </data>
-  <data name="barril" xml:space="preserve">
+  <data name="Barril" xml:space="preserve">
     <value>Barrel</value>
   </data>
-  <data name="bradipneia" xml:space="preserve">
+  <data name="Bradipneia" xml:space="preserve">
     <value>Bradypnea</value>
   </data>
-  <data name="cheyneStokes" xml:space="preserve">
+  <data name="CheyneStoke" xml:space="preserve">
     <value>CheyneStokes</value>
   </data>
-  <data name="cifose" xml:space="preserve">
+  <data name="Cifose" xml:space="preserve">
     <value>Kyphosis</value>
   </data>
   <data name="coriza" xml:space="preserve">
@@ -1143,22 +1143,22 @@
   <data name="desvioDeSepto" xml:space="preserve">
     <value>Deviated Septum</value>
   </data>
-  <data name="epistaxe" xml:space="preserve">
-    <value>Epistaxis</value>
+  <data name="Eupineico" xml:space="preserve">
+    <value>Eupneic</value>
   </data>
-  <data name="escoliose" xml:space="preserve">
+  <data name="Escoliose" xml:space="preserve">
     <value>Scoliosis</value>
   </data>
-  <data name="funil" xml:space="preserve">
+  <data name="Funil" xml:space="preserve">
     <value>Funnel</value>
   </data>
-  <data name="kussmaul" xml:space="preserve">
+  <data name="Kussmaul" xml:space="preserve">
     <value>Kussmaul</value>
   </data>
   <data name="labioCianotico" xml:space="preserve">
     <value>Lips Cyanotic</value>
   </data>
-  <data name="lordose" xml:space="preserve">
+  <data name="Lordose" xml:space="preserve">
     <value>Lordosis</value>
   </data>
   <data name="obstrucaoNasal" xml:space="preserve">
@@ -1167,13 +1167,13 @@
   <data name="palidez" xml:space="preserve">
     <value>Pallor</value>
   </data>
-  <data name="peitoDePombo" xml:space="preserve">
+  <data name="PeitoDePombo" xml:space="preserve">
     <value>From Pigeon Chest</value>
   </data>
   <data name="simetriaToracica" xml:space="preserve">
     <value>Thoracic Symmetry</value>
   </data>
-  <data name="taquipneia" xml:space="preserve">
+  <data name="Taquipneia" xml:space="preserve">
     <value>Tachypnea</value>
   </data>
   <data name="tiragemIntercostal" xml:space="preserve">
@@ -1839,7 +1839,7 @@
   <data name="Dislalia" xml:space="preserve">
     <value>Dyslalia</value>
   </data>
-  <data name="dispineia" xml:space="preserve">
+  <data name="Dispineia" xml:space="preserve">
     <value>Dyspnea</value>
   </data>
   <data name="disuria" xml:space="preserve">
@@ -2228,5 +2228,32 @@
   </data>
   <data name="quanto_doenca" xml:space="preserve">
     <value>As the disease</value>
+  </data>
+  <data name="dados_indentificacao" xml:space="preserve">
+    <value>Indentity Datas</value>
+  </data>
+  <data name="padrao_respiratorio" xml:space="preserve">
+    <value>Breathing Pattern</value>
+  </data>
+  <data name="tipo_torax" xml:space="preserve">
+    <value>Chest Type</value>
+  </data>
+  <data name="asculta_pulmonar" xml:space="preserve">
+    <value>Asculation</value>
+  </data>
+  <data name="AtritoPleural" xml:space="preserve">
+    <value>Pleural Friction</value>
+  </data>
+  <data name="Estertores" xml:space="preserve">
+    <value>Rales</value>
+  </data>
+  <data name="Estridor" xml:space="preserve">
+    <value>Stridor</value>
+  </data>
+  <data name="Roncos" xml:space="preserve">
+    <value>Husky</value>
+  </data>
+  <data name="Sibilos" xml:space="preserve">
+    <value>Wheezing</value>
   </data>
 </root>

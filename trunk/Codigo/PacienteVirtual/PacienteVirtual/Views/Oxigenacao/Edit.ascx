@@ -7,13 +7,13 @@
     <fieldset>
         <legend><%: Resources.Mensagem.oxigenacao %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
-        <p class="titulos">FR</p>
+        <h4>FR</h4>
         <legend></legend>
         <div class="row-fluid">
             <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.FequenciaResporatoria) %>
-                    <%: Html.EditorFor(model => model.FequenciaResporatoria) %>
+                    <%: Html.EditorFor(model => model.FequenciaResporatoria) %>mov/min
                     <%: Html.ValidationMessageFor(model => model.FrequenciaTosse, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="editor-field">
@@ -28,42 +28,12 @@
         <br />
         <div class="row-fluid">
             <div class="span12">
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Dispineia) %>
-                    <%: Resources.Mensagem.dispineia %>
-                    <%: Html.ValidationMessageFor(model => model.Dispineia, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Taquipneia) %>
-                    <%: Resources.Mensagem.taquipneia %>
-                    <%: Html.ValidationMessageFor(model => model.Taquipneia, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Bradipneia) %>
-                    <%: Resources.Mensagem.bradipneia %>
-                    <%: Html.ValidationMessageFor(model => model.Bradipneia, string.Empty, new { @class = "styleValidation" })%>
-                </div>
+                <%: Html.LabelFor(model => model.PadraoRespiratorio) %>
+                <%: Html.EnumDropDownListFor(model => model.PadraoRespiratorio, ListaPadraoRespiratorio.Eupineico) %>
             </div>
         </div>
-        <br />
         <div class="row-fluid">
-            <div class="span12">
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.CheyneStokes) %>
-                    <%: Resources.Mensagem.cheyneStokes %>
-                    <%: Html.ValidationMessageFor(model => model.CheyneStokes, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Kussmaul) %>
-                    <%: Resources.Mensagem.kussmaul %>
-                    <%: Html.ValidationMessageFor(model => model.Kussmaul, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Epistaxe) %>
-                    <%: Resources.Mensagem.epistaxe %>
-                    <%: Html.ValidationMessageFor(model => model.Epistaxe, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-            </div>
+            <%: Html.ValidationMessageFor(model => model.ErroPadraoResp, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <br />
         <div class="row-fluid">
@@ -101,14 +71,13 @@
             </div>
         </div>
         <br />
+        <h4>
+            <%= Resources.Mensagem.inspecao_toracica %></h4>
+        <legend></legend>
         <div class="row-fluid">
-            <p class="titulos"><%= Resources.Mensagem.inspecao_toracica %></p>
-            <legend></legend>
             <div class="span12">
-                <div class="editor-field">
-                    <%: Html.LabelFor(model => model.SimetriaToracica) %>
-                    <%: Html.EnumDropDownListFor(model => model.SimetriaToracica, ListaSimetriaToracica.Simetrico) %>
-                </div>
+                <%: Html.LabelFor(model => model.SimetriaToracica) %>
+                <%: Html.EnumDropDownListFor(model => model.SimetriaToracica, ListaSimetriaToracica.Simetrico) %>
             </div>
         </div>
         <div class="row-fluid">
@@ -117,63 +86,29 @@
         <br />
         <div class="row-fluid">
             <div class="span12">
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Barril) %>
-                    <%: Resources.Mensagem.barril %>
-                    <%: Html.ValidationMessageFor(model => model.Barril, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.PeitoDePombo) %>
-                    <%: Resources.Mensagem.peitoDePombo %>
-                    <%: Html.ValidationMessageFor(model => model.PeitoDePombo, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Funil) %>
-                    <%: Resources.Mensagem.funil %>
-                    <%: Html.ValidationMessageFor(model => model.Funil, string.Empty, new { @class = "styleValidation" })%>
-                </div>
+                <%: Html.LabelFor(model => model.TiposTorax) %>
+                <%: Html.EnumDropDownListFor(model => model.TiposTorax, ListaTiposTorax.Barril) %>
             </div>
+        </div>
+        <div class="row-fluid">
+            <%: Html.ValidationMessageFor(model => model.TiposTorax, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <br />
         <div class="row-fluid">
             <div class="span12">
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Lordose) %>
-                    <%: Resources.Mensagem.lordose %>
-                    <%: Html.ValidationMessageFor(model => model.Lordose, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Cifose) %>
-                    <%: Resources.Mensagem.cifose %>
-                    <%: Html.ValidationMessageFor(model => model.Cifose, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Escoliose) %>
-                    <%: Resources.Mensagem.escoliose %>
-                    <%: Html.ValidationMessageFor(model => model.Escoliose, string.Empty, new { @class = "styleValidation" })%>
-                </div>
+                <%: Html.EditorFor(model => model.TiragemIntercostal) %>
+                <%: Resources.Mensagem.tiragemIntercostal %>
+                <%: Html.ValidationMessageFor(model => model.TiragemIntercostal, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
         <br />
-        <div class="row-fluid">
-            <div class="span12">
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.TiragemIntercostal) %>
-                    <%: Resources.Mensagem.tiragemIntercostal %>
-                    <%: Html.ValidationMessageFor(model => model.TiragemIntercostal, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-            </div>
-        </div>
-        <br />
-        <div class="row-fluid">
-            <p class="titulos">
-                <%= Resources.Mensagem.palpacao %></p>
+            <h4>
+                <%= Resources.Mensagem.palpacao %></h4>
             <legend></legend>
+        <div class="row-fluid">
             <div class="span12">
-                <div class="editor-field">
-                    <%: Html.LabelFor(model => model.Expansibilidade) %>
-                    <%: Html.EnumDropDownListFor(model => model.Expansibilidade, ListaExpansibilidade.Preservada) %>
-                </div>
+                <%: Html.LabelFor(model => model.Expansibilidade) %>
+                <%: Html.EnumDropDownListFor(model => model.Expansibilidade, ListaExpansibilidade.Preservada) %>
             </div>
         </div>
         <div class="row-fluid">
@@ -194,13 +129,15 @@
         </div>
         <br />
         <div class="row-fluid">
-            <p class="titulos"><%= Resources.Mensagem.tosse %></p>
+            <h4><%= Resources.Mensagem.tosse %></h4>
             <legend></legend>
             <div class="span12">
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Tosse) %>
-                    <%: Resources.Mensagem.tosse %>
-                </div>
+                <%= Html.RadioButtonFor(model => model.Tosse, "S" ) %>
+                <%: Resources.Mensagem.sim %>
+                &nbsp &nbsp
+                <%= Html.RadioButtonFor(model => model.Tosse, "N")%>
+                <%: Resources.Mensagem.nao %>
+                <%: Html.ValidationMessageFor(model => model.Tosse, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
         <br />
@@ -235,15 +172,14 @@
                 <%: Html.ValidationMessageFor(model => model.AspectoSecrecao, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
-
-        <div class="row-fluid">
-            <p class="titulos"><%= Resources.Mensagem.percursao %></p>
+        <br />
+            <h4>
+                <%= Resources.Mensagem.percursao %></h4>
             <legend></legend>
+        <div class="row-fluid">
             <div class="span12">
-                <div class="span3">
-                    <%: Html.LabelFor(model => model.Percursao) %>
-                    <%: Html.EnumDropDownListFor(model => model.Percursao, ListaPercursao.Ar) %>
-                </div>
+                <%: Html.LabelFor(model => model.Percursao) %>
+                <%: Html.EnumDropDownListFor(model => model.Percursao, ListaPercursao.Ar) %>
             </div>
         </div>
          <div class="row-fluid">
@@ -252,7 +188,7 @@
          <br />
 
         <div class="row-fluid">
-            <p class="titulos">Palpação Gânglios</p>
+            <h4>Palpação Gânglios</h4>
             <legend></legend>
             <div class="span12">
                 <div class="span3">
@@ -266,12 +202,25 @@
                     <%: Html.ValidationMessageFor(model => model.GangliosDolorosos, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
+            <br />
             <div class="span12">
                 <%= Resources.Mensagem.ganglios_localizar %>:
                 <%: Html.TextBoxFor(model => model.GangliosLocalizar, new { MaxLength = 50, style = "width:340px;" })%>
                 <%: Html.ValidationMessageFor(model => model.GangliosLocalizar, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
+        <br />
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="editor-field">
+                    <%: Html.LabelFor(model => model.AuscultaPulmonar) %>
+                    <%: Html.EnumDropDownListFor(model => model.AuscultaPulmonar, ListaAuscultaPulmonar.VesicularPresente) %>
+                </div>
+            </div>
+        </div>
+         <div class="row-fluid">
+            <%: Html.ValidationMessageFor(model => model.ErroAuscultaPulmonar, string.Empty, new { @class = "styleValidation" })%>
+         </div>
 
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
