@@ -1528,22 +1528,22 @@
     <value>Flexão Retirada (4)</value>
   </data>
   <data name="Grau1" xml:space="preserve">
-    <value>Grau 1</value>
+    <value>Grau 1: Paciente ansioso, agitado, colabora e atende</value>
   </data>
   <data name="Grau2" xml:space="preserve">
-    <value>Grau 2</value>
+    <value>Grau 2: Ccooperativo, orientado, tranqüilo, colabora e atende</value>
   </data>
   <data name="Grau3" xml:space="preserve">
-    <value>Grau 3</value>
+    <value>Grau 3: Sonolento, atendendo aos comandos</value>
   </data>
   <data name="Grau4" xml:space="preserve">
-    <value>Grau 4</value>
+    <value>Grau 4: Dormindo, responde rapidamente ao estímulo glabear ou estímulo sonoro vigoroso</value>
   </data>
   <data name="Grau5" xml:space="preserve">
-    <value>Grau 5</value>
+    <value>Grau 5: Dormindo, responde lentamente ao estímulo glabear ou estímulo sonoro vigoroso</value>
   </data>
   <data name="Grau6" xml:space="preserve">
-    <value>Grau 6</value>
+    <value>Grau 6: Dormindo, sem resposta</value>
   </data>
   <data name="LocalizaDor" xml:space="preserve">
     <value>Localiza Dor (5)</value>
@@ -1939,7 +1939,7 @@
     <value>Olfativa</value>
   </data>
   <data name="PA" xml:space="preserve">
-    <value>PA</value>
+    <value>Aumento da PA</value>
   </data>
   <data name="palpebral" xml:space="preserve">
     <value>Palpebral</value>
@@ -1948,13 +1948,13 @@
     <value>Plantar</value>
   </data>
   <data name="pulso" xml:space="preserve">
-    <value>Pulso</value>
+    <value>Aumento da FC</value>
   </data>
   <data name="pupilar" xml:space="preserve">
     <value>Pupilar</value>
   </data>
   <data name="respiracao" xml:space="preserve">
-    <value>Respiração</value>
+    <value>Aumento da FR</value>
   </data>
   <data name="sem_dor" xml:space="preserve">
     <value>Sem dor</value>
@@ -2227,10 +2227,10 @@
     <value>Inspeção rede venosa</value>
   </data>
   <data name="duvidas_questionamentos" xml:space="preserve">
-    <value>Dúvidas / Questionamento</value>
+    <value>Dúvidas / Questionamento do Paciente</value>
   </data>
   <data name="quanto_doenca" xml:space="preserve">
-    <value>Quanto a doença</value>
+    <value>Quanto a doença  e hospitalização</value>
   </data>
   <data name="dados_indentificacao" xml:space="preserve">
     <value>Dados de Identificação</value>
@@ -2264,5 +2264,8 @@
   </data>
   <data name="VesicularPresente" xml:space="preserve">
     <value>Vesicular Presente</value>
+  </data>
+  <data name="dor_label" xml:space="preserve">
+    <value>Dor</value>
   </data>
 </root>

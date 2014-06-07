@@ -27,21 +27,15 @@
         <br />
         <div class="row-fluid">
             <div class="span12">
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Sudorese) %>
-                    <%: Resources.Mensagem.sudorese %>
-                    <%: Html.ValidationMessageFor(model => model.Sudorese, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Calafrio) %>
-                    <%: Resources.Mensagem.calafrio %>
-                    <%: Html.ValidationMessageFor(model => model.Calafrio, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="span3">
-                    <%: Html.EditorFor(model => model.Piloerecao) %>
-                    <%: Resources.Mensagem.piloerecao %>
-                    <%: Html.ValidationMessageFor(model => model.Piloerecao, string.Empty, new { @class = "styleValidation" })%>
-                </div>
+                <%: Html.EditorFor(model => model.Sudorese) %>
+                <%: Resources.Mensagem.sudorese %>
+                <%: Html.ValidationMessageFor(model => model.Sudorese, string.Empty, new { @class = "styleValidation" })%>
+                <%: Html.EditorFor(model => model.Calafrio) %>
+                <%: Resources.Mensagem.calafrio %>
+                <%: Html.ValidationMessageFor(model => model.Calafrio, string.Empty, new { @class = "styleValidation" })%>
+                <%: Html.EditorFor(model => model.Piloerecao) %>
+                <%: Resources.Mensagem.piloerecao %>
+                <%: Html.ValidationMessageFor(model => model.Piloerecao, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
 

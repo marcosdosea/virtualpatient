@@ -872,7 +872,7 @@ namespace PacienteVirtual.Controllers
                         oxigenacao.GangliosPalpaveis = false;
                         oxigenacao.GangliosDolorosos = false;
                         oxigenacao.GangliosLocalizar = "";
-                        oxigenacao.AscultaPulmonar = ListaAuscultaPulmonar.VesicularPresente;
+                        oxigenacao.AuscultaPulmonar = ListaAuscultaPulmonar.VesicularPresente;
                         oxigenacao.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
                         GerenciadorOxigenacao.GetInstance().Inserir(oxigenacao);
                     }

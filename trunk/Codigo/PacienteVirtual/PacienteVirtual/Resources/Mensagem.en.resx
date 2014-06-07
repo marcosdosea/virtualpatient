@@ -2256,4 +2256,7 @@
   <data name="Sibilos" xml:space="preserve">
     <value>Wheezing</value>
   </data>
+  <data name="dor_label" xml:space="preserve">
+    <value>Pain</value>
+  </data>
 </root>

@@ -76,24 +76,19 @@
     </h4>
     <br />
     <div class="row-fluid">
-        <div class="span1">
+        <div class="span12">
             <div class="editor-field">
+                <%: Resources.Mensagem.sem_dor %>
                 <%: Html.EditorFor(model => model.SemDor) %>
                 <%: Html.ValidationMessageFor(model => model.SemDor, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
-        <div class="span2">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.SemDor) %>
-            </div>
-        </div>
-        <div class="span4">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.DorIntensidadeValor) %>
-            </div>
-        </div>
-        <div class="span4">
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span12">
             <div class="editor-field">
+                <%: Resources.Mensagem.dor_intensidade_valor %>
                 <%: Html.TextBoxFor(model => model.DorIntensidadeValor, new { @class = "textbox", style = "width:225px;" })%>
                 <%: Html.ValidationMessageFor(model => model.DorIntensidadeValor, string.Empty, new { @class = "styleValidation" })%>
             </div>
@@ -107,35 +102,49 @@
     <div class="row-fluid">
         <div class="span1">
             <div class="editor-field">
+                <%: Resources.Mensagem.inquietacao %>
                 <%: Html.EditorFor(model => model.Inquietacao) %>
                 <%: Html.ValidationMessageFor(model => model.Inquietacao, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
-        <div class="span3">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Inquietacao) %>
-            </div>
-        </div>
-        <div class="span1">
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span5">
             <div class="editor-field">
+                <%: Resources.Mensagem.expressao_facial %>
                 <%: Html.EditorFor(model => model.ExpressaoFacial) %>
                 <%: Html.ValidationMessageFor(model => model.ExpressaoFacial, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
-        <div class="span3">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.ExpressaoFacial) %>
-            </div>
-        </div>
-        <div class="span1">
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span5">
             <div class="editor-field">
+                <%: Resources.Mensagem.defensividade %>
                 <%: Html.EditorFor(model => model.Defensividade) %>
                 <%: Html.ValidationMessageFor(model => model.Defensividade, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
-        <div class="span3">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Defensividade) %>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span5">
+            <div class="editor-field">
+                <%: Resources.Mensagem.PA %>
+                <%: Html.EditorFor(model => model.PA) %>
+                <%: Html.ValidationMessageFor(model => model.PA, string.Empty, new { @class = "styleValidation" })%>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span5">
+            <div class="editor-field">
+                <%: Resources.Mensagem.pulso %>
+                <%: Html.EditorFor(model => model.Pulso) %>
+                <%: Html.ValidationMessageFor(model => model.Pulso, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>
@@ -143,35 +152,9 @@
     <div class="row-fluid">
         <div class="span1">
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.PA) %>
-                <%: Html.ValidationMessageFor(model => model.PA, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.PA) %>
-            </div>
-        </div>
-        <div class="span1">
-            <div class="editor-field">
-                <%: Html.EditorFor(model => model.Pulso) %>
-                <%: Html.ValidationMessageFor(model => model.Pulso, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Pulso) %>
-            </div>
-        </div>
-        <div class="span1">
-            <div class="editor-field">
+                <%: Resources.Mensagem.respiracao %>
                 <%: Html.EditorFor(model => model.Respiracao) %>
                 <%: Html.ValidationMessageFor(model => model.Respiracao, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Respiracao) %>
             </div>
         </div>
     </div>
