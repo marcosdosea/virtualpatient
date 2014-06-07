@@ -2005,6 +2005,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dor.
+        /// </summary>
+        public static string dor_label {
+            get {
+                return ResourceManager.GetString("dor_label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dor na relação sexual.
         /// </summary>
         public static string dor_relacao_sexual {
@@ -2041,7 +2050,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dúvidas / Questionamento.
+        ///   Looks up a localized string similar to Dúvidas / Questionamento do Paciente.
         /// </summary>
         public static string duvidas_questionamentos {
             get {
@@ -2878,7 +2887,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grau 1.
+        ///   Looks up a localized string similar to Grau 1: Paciente ansioso, agitado, colabora e atende.
         /// </summary>
         public static string Grau1 {
             get {
@@ -2887,7 +2896,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grau 2.
+        ///   Looks up a localized string similar to Grau 2: Ccooperativo, orientado, tranqüilo, colabora e atende.
         /// </summary>
         public static string Grau2 {
             get {
@@ -2896,7 +2905,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grau 3.
+        ///   Looks up a localized string similar to Grau 3: Sonolento, atendendo aos comandos.
         /// </summary>
         public static string Grau3 {
             get {
@@ -2905,7 +2914,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grau 4.
+        ///   Looks up a localized string similar to Grau 4: Dormindo, responde rapidamente ao estímulo glabear ou estímulo sonoro vigoroso.
         /// </summary>
         public static string Grau4 {
             get {
@@ -2914,7 +2923,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grau 5.
+        ///   Looks up a localized string similar to Grau 5: Dormindo, responde lentamente ao estímulo glabear ou estímulo sonoro vigoroso.
         /// </summary>
         public static string Grau5 {
             get {
@@ -2923,7 +2932,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grau 6.
+        ///   Looks up a localized string similar to Grau 6: Dormindo, sem resposta.
         /// </summary>
         public static string Grau6 {
             get {
@@ -4399,7 +4408,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PA.
+        ///   Looks up a localized string similar to Aumento da PA.
         /// </summary>
         public static string PA {
             get {
@@ -4984,7 +4993,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pulso.
+        ///   Looks up a localized string similar to Aumento da FC.
         /// </summary>
         public static string pulso {
             get {
@@ -5029,7 +5038,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quanto a doença.
+        ///   Looks up a localized string similar to Quanto a doença  e hospitalização.
         /// </summary>
         public static string quanto_doenca {
             get {
@@ -5272,7 +5281,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Respiração.
+        ///   Looks up a localized string similar to Aumento da FR.
         /// </summary>
         public static string respiracao {
             get {
