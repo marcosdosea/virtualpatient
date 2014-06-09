@@ -23,6 +23,7 @@ namespace PacienteVirtual.Controllers
                 SessionController.Consciencia = consciencia;
             }
             SessionController.Abas1 = Global.abaConciencia;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 

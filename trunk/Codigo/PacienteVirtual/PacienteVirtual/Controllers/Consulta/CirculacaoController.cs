@@ -22,7 +22,8 @@ namespace PacienteVirtual.Controllers
                 gCirculacao.Atualizar(circulacao);
                 SessionController.Circulacao = circulacao;
             }
-            //SessionController.Abas1 = Global.abaComunicacao;
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaCirculacao;
             return RedirectToAction("Edit", "Consulta");
         }
 

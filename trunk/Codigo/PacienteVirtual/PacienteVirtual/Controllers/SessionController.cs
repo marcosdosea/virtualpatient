@@ -708,6 +708,24 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static int AbasDentro
+        {
+            get
+            {
+                int numeroAbaDentro = (int)HttpContext.Current.Session["_NumeroAbaDentro"];
+                if (numeroAbaDentro == Global.NaoSelecionado)
+                {
+                    numeroAbaDentro = Global.ValorInteiroNulo;
+                    HttpContext.Current.Session["_NumeroAbaDentro"] = numeroAbaDentro;
+                }
+                return numeroAbaDentro;
+            }
+            set
+            {
+                HttpContext.Current.Session["_NumeroAbaDentro"] = value;
+            }
+        }
+
         public static IEnumerable<IntervencaoConsultaModel> ListaIntervencaoConsulta
         {
             get

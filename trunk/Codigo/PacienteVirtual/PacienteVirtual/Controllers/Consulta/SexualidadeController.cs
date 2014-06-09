@@ -22,7 +22,8 @@ namespace PacienteVirtual.Controllers
                 gSexualidade.Atualizar(sexualidade);
                 SessionController.Sexualidade = sexualidade;
             }
-            SessionController.Abas1 = Global.abaSexualidade;
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaSexualidade;
             return RedirectToAction("Edit", "Consulta");
         }
 

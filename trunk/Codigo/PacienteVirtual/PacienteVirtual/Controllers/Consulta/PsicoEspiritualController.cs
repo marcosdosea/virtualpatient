@@ -22,6 +22,7 @@ namespace PacienteVirtual.Controllers
                 SessionController.PsicoEspiritual = psicoEspiritualModel;
             }
             SessionController.Abas1 = Global.abaPsicoespiritual;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 

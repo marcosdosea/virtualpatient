@@ -29,9 +29,13 @@
             <div class="span12">
                 <%: Html.EditorFor(model => model.Sudorese) %>
                 <%: Resources.Mensagem.sudorese %>
+                <br />
+                <br />
                 <%: Html.ValidationMessageFor(model => model.Sudorese, string.Empty, new { @class = "styleValidation" })%>
                 <%: Html.EditorFor(model => model.Calafrio) %>
                 <%: Resources.Mensagem.calafrio %>
+                <br />
+                <br />
                 <%: Html.ValidationMessageFor(model => model.Calafrio, string.Empty, new { @class = "styleValidation" })%>
                 <%: Html.EditorFor(model => model.Piloerecao) %>
                 <%: Resources.Mensagem.piloerecao %>

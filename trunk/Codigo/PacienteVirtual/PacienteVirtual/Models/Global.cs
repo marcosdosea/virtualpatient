@@ -16,22 +16,26 @@ namespace PacienteVirtual.Models
         public const int idCursoEnfermagem = 2;
         public const int idCursoFarmacia = 1;
 
-        public const int abaOxigenacao = 3;
-        public const int abaOutrosAchados = 2;
-        public const int abaDadosCompImportantes = 4;
-        public const int abaClinicoInternacao = 5;
-        public const int abaTermorregulacao = 6;
-        public const int abaIntegridadeTecidual = 7;
-        public const int abaHigiene = 8;
-        public const int abaPsicoespiritual = 9;
-        public const int abaConciencia = 10;
-        public const int abaComunicacao = 11;
-        public const int abaNutricao = 12;
-        public const int abaSensorial = 13;
-        public const int abaOutrasNecessidades = 14;
-        public const int abaSexualidade = 15;
-        public const int abaEliminacao = 16;
-        public const int totalAbasENF_Edit1 = 16;
+        public const int abaClinicoInternacao = 2;
+        public const int abaPercepcao = 3;
+        public const int abaConciencia = 4;
+        public const int abaPsicobiologicas = 5;
+        public const int abaOxigenacao = 51;
+        public const int abaCirculacao = 52;
+        public const int abaTermorregulacao = 53;
+        public const int abaHigiene = 54;
+        public const int abaNutricao = 55;
+        public const int abaIntegridadeTecidual = 56;
+        public const int abaEliminacao = 57;
+        public const int abaSensorial = 58;
+        public const int abaSexualidade = 59;
+        public const int abaPsicossociais = 6;
+        public const int abaComunicacao = 62;
+        public const int abaPsicoespiritual = 7;
+        public const int abaOutrasNecessidades = 8;
+        public const int abaDadosCompImportantes = 9;
+        public const int abaOutrosAchados = 10;
+        public const int totalAbasENF_Edit1 = 10;
 
         public const int abaCarta = 3;
         public const int abaConsultaParametro = 11;
@@ -59,6 +63,7 @@ namespace PacienteVirtual.Models
         public const string stringVazia = "";
         public const string CharVazia = " ";
         public const int ValorInicialDadosExpMed = 3;
+        public const int ValorInicialAbaDentro = 51;
 
         public const string stringUsuarioRole = "usuario";
         public const string stringAdministradorRole = "administrador";
@@ -80,6 +85,7 @@ namespace PacienteVirtual.Models
             SessionController.ErroQueixaMedicamento = "";
             SessionController.Abas1 = 0;
             SessionController.Abas2 = -1;
+            SessionController.AbasDentro = -1;
 
             if (SessionController.DadosTurmaPessoa.Curso.Equals(cursoFarmacia))
             {
