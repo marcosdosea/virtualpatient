@@ -23,6 +23,7 @@ namespace PacienteVirtual.Controllers
                 SessionController.OutrasNecessidades = outrasNecessidades;
             }
             SessionController.Abas1 = Global.abaOutrasNecessidades;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 

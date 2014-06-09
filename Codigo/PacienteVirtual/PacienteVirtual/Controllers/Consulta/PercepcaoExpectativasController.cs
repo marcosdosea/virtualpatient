@@ -22,7 +22,8 @@ namespace PacienteVirtual.Controllers
                 gPercepcaoExpectativas.Atualizar(percepcaoExpectativas);
                 SessionController.PercepcaoExpectativas = percepcaoExpectativas;
             }
-            //SessionController.Abas1 = Global.abaComunicacao;
+            SessionController.Abas1 = Global.abaPercepcao;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 

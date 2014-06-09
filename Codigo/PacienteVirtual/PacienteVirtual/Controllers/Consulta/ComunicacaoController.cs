@@ -22,7 +22,8 @@ namespace PacienteVirtual.Controllers
                 gComunicacao.Atualizar(comunicacao);
                 SessionController.Comunicacao = comunicacao;
             }
-            SessionController.Abas1 = Global.abaComunicacao;
+            SessionController.Abas1 = Global.abaPsicossociais;
+            SessionController.AbasDentro = Global.abaComunicacao;
             return RedirectToAction("Edit", "Consulta");
         }
 

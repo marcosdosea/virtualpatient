@@ -20,7 +20,8 @@ namespace PacienteVirtual.Controllers
                 gOxigenacao.Atualizar(oxigenacao);
                 SessionController.Oxigenacao = oxigenacao;
             }
-            SessionController.Abas1 = Global.abaOxigenacao;
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaOxigenacao;
             return RedirectToAction("Edit", "Consulta");
         }
     }

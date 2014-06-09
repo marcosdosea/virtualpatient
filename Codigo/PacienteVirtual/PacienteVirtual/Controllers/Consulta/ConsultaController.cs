@@ -176,6 +176,7 @@ namespace PacienteVirtual.Controllers
         private void ViewsBagPrimeiraTelaCursoEnfermagem()
         {
             ViewBag.IdPatologia = new SelectList(GerenciadorPatologia.GetInstance().ObterTodos(), "IdPatologia", "Descricao");
+            ViewBag.AbasDentro = SessionController.AbasDentro;
             ViewBag.TotalAbas = Global.totalAbasENF_Edit1;
         }
 
@@ -203,6 +204,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.PerguntaIncorporadoPlano = SessionController.ObterPergunta(PERGUNTA_INCORPORADO_PLANO).Pergunta;
             ViewBag.IdRespostaIncorporadoPlano = new SelectList(SessionController.ObterRespostas(PERGUNTA_INCORPORADO_PLANO), "IdResposta", "Resposta", consultaModel.ExperienciaMedicamentos.IdRespostaIncorporadoPlano);
             ViewBag.TotalAbas = Global.totalAbasFARM_Edit1;
+            ViewBag.AbasDentro = Global.ValorInteiroNulo;
+            ViewBag.TotalAbasDentro = Global.ValorInteiroNulo;
         }
         
         /// <summary>

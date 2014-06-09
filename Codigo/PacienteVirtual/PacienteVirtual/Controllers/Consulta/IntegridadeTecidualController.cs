@@ -20,7 +20,8 @@ namespace PacienteVirtual.Controllers
                 gIntegridadeTecidual.Atualizar(IntegridadeTecidual);
                 SessionController.IntegridadeTecidual = IntegridadeTecidual;
             }
-            SessionController.Abas1 = Global.abaIntegridadeTecidual;
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaIntegridadeTecidual;
             return RedirectToAction("Edit", "Consulta");
         }
     }

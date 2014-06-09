@@ -26,6 +26,7 @@ namespace PacienteVirtual.Controllers
                 GerenciadorDemograficosAntropometricos.GetInstance().ValidarRespostasSelecionaveis(demoAntro.IdEscolaridade, demoAntro.IdEstadoCivil, demoAntro.IdNaturalidade, demoAntro.IdOcupacao, demoAntro.IdPlanoSaude, demoAntro.IdReligiao);
             }
             SessionController.Abas1 = Global.abaDemoAntrop;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 

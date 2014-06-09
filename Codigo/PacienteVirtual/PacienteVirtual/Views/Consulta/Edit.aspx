@@ -12,58 +12,7 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
-    <!-- Solução das abas 1 com jquery -->
-    <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
-    <input type="hidden" value="<%: ViewBag.Abas1 %>" id="abas1" />
-    <input type="hidden" value="<%: ViewBag.TotalAbas %>" id="totalAbas" />
-    <script type="text/javascript">
-        var abas1 = document.getElementById('abas1').value;
-        var totalAbas = document.getElementById('totalAbas').value;
-        //método que concatena os nomes das abas para adicionar ou remover classes que ativam e desativam as abas
-        $(document).ready(function () {
-            if (abas1 != 1) {
-                var aba = "#li";
-                var cont = "#tab1-";
-                for (var i = 1; i <= totalAbas; i++) {
-                    if (i != abas1) {
-                        var resultAba = aba.concat(i);
-                        var resultCont = cont.concat(i);
-
-                        $(resultAba).removeClass("active");
-                        $(resultCont).removeClass("tab-pane active");
-                        $(resultCont).addClass("tab-pane");
-                    }
-                }
-                var resultAba = aba.concat(abas1);
-                var resultCont = cont.concat(abas1);
-                $(resultAba).addClass("active");
-                $(resultCont).addClass("tab-pane active");
-                $(resultCont).removeClass("tab-pane");
-            }
-        });
-    </script>
-    <script type="text/javascript">
-        //função complementar para esconder a aba após os adicionamentos das classes tab-pane
-        var abasEdit1 = document.getElementById('abas1').value;
-        var totalAbas = document.getElementById('totalAbas').value;
-        $(document).ready(function () {
-            var aba2 = "#li";
-            var cont2 = "#tab1-";
-            for (var i = 0; i <= totalAbas; i++) {
-                var resultAba2 = aba2.concat(i);
-                $(resultAba2).click(function () {
-                    var resultCont2 = cont2.concat(abas1);
-                    $(resultCont2).hide();
-                });
-            }
-            var resultAbaAtualEdit = aba2.concat(abas1);
-            $(resultAbaAtualEdit).click(function () {
-                var resultContAbaEdit = cont2.concat(abas1);
-                $(resultContAbaEdit).show();
-            });
-        });
-    </script>
-
+    
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
@@ -284,58 +233,58 @@
                         <div class="tab-pane" id="tab1-5">
                             <div class="tabbable">
                                 <ul class="nav nav-tabs">    
-                                    <li id="li5-1" class="active"><a href="#tab1-5-1" data-toggle="tab"><%: Resources.Mensagem.oxigenacao%></a></li>
-                                    <li id="li5-2"><a href="#tab1-5-2" data-toggle="tab"><%: Resources.Mensagem.circulacao %></a></li>
-                                    <li id="li5-3"><a href="#tab1-5-3" data-toggle="tab"><%: Resources.Mensagem.termorregulacao %></a></li>
-                                    <li id="li5-4"><a href="#tab1-5-4" data-toggle="tab"><%: Resources.Mensagem.higiene %></a></li>
-                                    <li id="li5-5"><a href="#tab1-5-5" data-toggle="tab"><%: Resources.Mensagem.nutricao %></a></li>
-                                    <li id="li5-6"><a href="#tab1-5-6" data-toggle="tab"><%: Resources.Mensagem.integridade_tecidual %></a></li>
-                                    <li id="li5-7"><a href="#tab1-5-7" data-toggle="tab"><%: Resources.Mensagem.eliminacao %></a></li>
-                                    <li id="li5-8"><a href="#tab1-5-8" data-toggle="tab"><%: Resources.Mensagem.sensorial %></a></li>
-                                    <li id="li5-9"><a href="#tab1-5-9" data-toggle="tab"><%: Resources.Mensagem.sexualidade %></a></li>
+                                    <li id="li51" class="active"><a href="#tab1-51" data-toggle="tab"><%: Resources.Mensagem.oxigenacao%></a></li>
+                                    <li id="li52"><a href="#tab1-52" data-toggle="tab"><%: Resources.Mensagem.circulacao %></a></li>
+                                    <li id="li53"><a href="#tab1-53" data-toggle="tab"><%: Resources.Mensagem.termorregulacao %></a></li>
+                                    <li id="li54"><a href="#tab1-54" data-toggle="tab"><%: Resources.Mensagem.higiene %></a></li>
+                                    <li id="li55"><a href="#tab1-55" data-toggle="tab"><%: Resources.Mensagem.nutricao %></a></li>
+                                    <li id="li56"><a href="#tab1-56" data-toggle="tab"><%: Resources.Mensagem.integridade_tecidual %></a></li>
+                                    <li id="li57"><a href="#tab1-57" data-toggle="tab"><%: Resources.Mensagem.eliminacao %></a></li>
+                                    <li id="li58"><a href="#tab1-58" data-toggle="tab"><%: Resources.Mensagem.sensorial %></a></li>
+                                    <li id="li59"><a href="#tab1-59" data-toggle="tab"><%: Resources.Mensagem.sexualidade %></a></li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="tab1-5-1">
+                                    <div class="tab-pane active" id="tab1-51">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Oxigenacao/Edit", Model.Oxigenacao);%>
                                         </div>    
                                     </div>
-                                    <div class="tab-pane" id="tab1-5-2">
+                                    <div class="tab-pane" id="tab1-52">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Circulacao/Edit", Model.Circulacao);%>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tab1-5-3">
+                                    <div class="tab-pane" id="tab1-53">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Termorregulacao/Edit", Model.Termorregulacao);%>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tab1-5-4">
+                                    <div class="tab-pane" id="tab1-54">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Higiene/Edit", Model.Higiene);%>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tab1-5-5">
+                                    <div class="tab-pane" id="tab1-55">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Nutricao/Edit", Model.Nutricao);%>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tab1-5-6">
+                                    <div class="tab-pane" id="tab1-56">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../IntegridadeTecidual/Edit", Model.IntegridadeTecidual);%>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tab1-5-7">
+                                    <div class="tab-pane" id="tab1-57">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Eliminacao/Edit", Model.Eliminacao);%>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tab1-5-8">
+                                    <div class="tab-pane" id="tab1-58">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Sensorial/Edit", Model.Sensorial);%>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tab1-5-9">
+                                    <div class="tab-pane" id="tab1-59">
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Sexualidade/Edit", Model.Sexualidade);%>
                                         </div>
@@ -346,26 +295,26 @@
                         <div class="tab-pane" id="tab1-6">
                             <div class="tabbable">
                                 <ul class="nav nav-tabs">    
-                                    <li id="li6-1" class="active"><a href="#tab1-6-1" data-toggle="tab"><%: Resources.Mensagem.necessidade_seguranca%></a></li>
-                                    <li id="li6-2"><a href="#tab1-6-2" data-toggle="tab"><%: Resources.Mensagem.comunicacao %></a></li>
-                                    <li id="li6-3"><a href="#tab1-6-3" data-toggle="tab"><%: Resources.Mensagem.necessidade_lazer_recreacao %></a></li>
-                                    <li id="li6-4"><a href="#tab1-6-4" data-toggle="tab"><%: Resources.Mensagem.necessidade_interacao_social %></a></li>
+                                    <li id="li61" class="active"><a href="#tab1-61" data-toggle="tab"><%: Resources.Mensagem.necessidade_seguranca%></a></li>
+                                    <li id="li62"><a href="#tab1-62" data-toggle="tab"><%: Resources.Mensagem.comunicacao %></a></li>
+                                    <li id="li63"><a href="#tab1-63" data-toggle="tab"><%: Resources.Mensagem.necessidade_lazer_recreacao %></a></li>
+                                    <li id="li64"><a href="#tab1-64" data-toggle="tab"><%: Resources.Mensagem.necessidade_interacao_social %></a></li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="tab1-6-1">
+                                    <div class="tab-pane active" id="tab1-61">
                                         <!-- Necessidade Segurança -->
                                         <%: Resources.Mensagem.teste %>
                                     </div>
-                                    <div class="tab-pane" id="tab1-6-2">  
+                                    <div class="tab-pane" id="tab1-62">  
                                         <div class="thumbnail">
                                             <% Html.RenderPartial("../Comunicacao/Edit", Model.Comunicacao);%>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tab1-6-3">
+                                    <div class="tab-pane" id="tab1-63">
                                         <!-- Necessidade Lazer/Recreação -->
                                         <%: Resources.Mensagem.teste %>
                                     </div>
-                                    <div class="tab-pane" id="tab1-6-4">
+                                    <div class="tab-pane" id="tab1-64">
                                         <!-- Necessidade de interação social -->
                                         <%: Resources.Mensagem.teste %>
                                     </div>
@@ -463,6 +412,7 @@
         <% } %>
     </div>
 
+
     <!-- Posicionamento e estilos dos botões desta página. -->
     <style>
         #botoes
@@ -485,6 +435,103 @@
         }
     </style>
 
+    <!-- Código javascript para as Abas dentro das outras abas de enfermagem -->
+    <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
+    <input type="hidden" value="<%: ViewBag.AbasDentro %>" id="AbasDentro" />
+    <script type="text/javascript">
+        var abasDentro = document.getElementById('AbasDentro').value;
+        if (abasDentro != 0) {
+            if (abasDentro == 51){
+                $(document).ready(function () {
+                    $("#li51").addClass("active"); $("#li52").removeClass("active"); $("#li53").removeClass("active"); $("#tab1-51").removeClass("tab-pane"); $("#tab1-51").addClass("tab-pane active"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane");
+                });
+            } else if (abasDentro == 52) {
+                $(document).ready(function () {
+                    $("#li51").removeClass("active"); $("#li52").addClass("active"); $("#li53").removeClass("active"); $("#tab1-51").removeClass("tab-pane active"); $("#tab1-51").addClass("tab-pane"); $("#tab1-52").removeClass("tab-pane"); $("#tab1-52").addClass("tab-pane active"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane");
+                });
+            } else if (abasDentro == 53) {
+                $(document).ready(function () {
+                    $("#li51").removeClass("active"); $("#li52").removeClass("active"); $("#li53").addClass("active"); $("#tab1-51").removeClass("tab-pane active"); $("#tab1-51").addClass("tab-pane"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane"); $("#tab1-53").addClass("tab-pane active");
+                });
+            } else if (abasDentro == 54) {
+                $(document).ready(function () {
+                    $("#li51").removeClass("active"); $("#li52").removeClass("active"); $("#li53").removeClass("active"); $("#li54").addClass("active"); $("#tab1-51").removeClass("tab-pane active"); $("#tab1-51").addClass("tab-pane"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane"); $("#tab1-54").removeClass("tab-pane"); $("#tab1-54").addClass("tab-pane active");
+                });
+            } else if (abasDentro == 55) {
+                $(document).ready(function () {
+                    $("#li51").removeClass("active"); $("#li52").removeClass("active"); $("#li53").removeClass("active"); $("#li54").removeClass("active"); $("#li55").addClass("active"); $("#tab1-51").removeClass("tab-pane active"); $("#tab1-51").addClass("tab-pane"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane"); $("#tab1-54").removeClass("tab-pane active"); $("#tab1-54").addClass("tab-pane"); $("#tab1-55").removeClass("tab-pane"); $("#tab1-55").addClass("tab-pane active");
+                });
+            } else if (abasDentro == 56) {
+                $(document).ready(function () {
+                    $("#li51").removeClass("active"); $("#li52").removeClass("active"); $("#li53").removeClass("active"); $("#li54").removeClass("active"); $("#li55").removeClass("active"); $("#li56").addClass("active"); $("#tab1-51").removeClass("tab-pane active"); $("#tab1-51").addClass("tab-pane"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane"); $("#tab1-54").removeClass("tab-pane active"); $("#tab1-54").addClass("tab-pane"); $("#tab1-55").removeClass("tab-pane active"); $("#tab1-55").addClass("tab-pane"); $("#tab1-56").removeClass("tab-pane"); $("#tab1-56").addClass("tab-pane active");
+                });
+            } else if (abasDentro == 57) {
+                $(document).ready(function () {
+                    $("#li51").removeClass("active"); $("#li52").removeClass("active"); $("#li53").removeClass("active"); $("#li54").removeClass("active"); $("#li55").removeClass("active"); $("#li56").removeClass("active"); $("#li57").addClass("active"); $("#tab1-51").removeClass("tab-pane active"); $("#tab1-51").addClass("tab-pane"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane"); $("#tab1-54").removeClass("tab-pane active"); $("#tab1-54").addClass("tab-pane"); $("#tab1-55").removeClass("tab-pane active"); $("#tab1-55").addClass("tab-pane"); $("#tab1-56").removeClass("tab-pane active"); $("#tab1-56").addClass("tab-pane"); $("#tab1-57").removeClass("tab-pane"); $("#tab1-57").addClass("tab-pane active");
+                });
+            } else if (abasDentro == 58) {
+                $(document).ready(function () {
+                    $("#li51").removeClass("active"); $("#li52").removeClass("active"); $("#li53").removeClass("active"); $("#li54").removeClass("active"); $("#li55").removeClass("active"); $("#li56").removeClass("active"); $("#li57").removeClass("active"); $("#li58").addClass("active"); $("#tab1-51").removeClass("tab-pane active"); $("#tab1-51").addClass("tab-pane"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane"); $("#tab1-54").removeClass("tab-pane active"); $("#tab1-54").addClass("tab-pane"); $("#tab1-55").removeClass("tab-pane active"); $("#tab1-55").addClass("tab-pane"); $("#tab1-56").removeClass("tab-pane active"); $("#tab1-56").addClass("tab-pane"); $("#tab1-57").removeClass("tab-pane active"); $("#tab1-57").addClass("tab-pane"); $("#tab1-58").removeClass("tab-pane"); $("#tab1-58").addClass("tab-pane active");
+                });
+            } else if (abasDentro == 59) {
+                $(document).ready(function () {
+                    $("#li51").removeClass("active"); $("#li52").removeClass("active"); $("#li53").removeClass("active"); $("#li54").removeClass("active"); $("#li55").removeClass("active"); $("#li56").removeClass("active"); $("#li57").removeClass("active"); $("#li58").removeClass("active"); $("#li59").addClass("active"); $("#tab1-51").removeClass("tab-pane active"); $("#tab1-51").addClass("tab-pane"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane"); $("#tab1-54").removeClass("tab-pane active"); $("#tab1-54").addClass("tab-pane"); $("#tab1-55").removeClass("tab-pane active"); $("#tab1-55").addClass("tab-pane"); $("#tab1-56").removeClass("tab-pane active"); $("#tab1-56").addClass("tab-pane"); $("#tab1-57").removeClass("tab-pane active"); $("#tab1-57").addClass("tab-pane"); $("#tab1-58").removeClass("tab-pane active"); $("#tab1-58").addClass("tab-pane"); $("#tab1-59").removeClass("tab-pane"); $("#tab1-59").addClass("tab-pane active");
+                });
+            }
+        }
+    </script>
+
+    <!-- Solução das abas 1 com jquery -->
+    <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
+    <input type="hidden" value="<%: ViewBag.Abas1 %>" id="abas1" />
+    <input type="hidden" value="<%: ViewBag.TotalAbas %>" id="totalAbas" />
+    <script type="text/javascript">
+        var abas1 = document.getElementById('abas1').value;
+        var totalAbas = document.getElementById('totalAbas').value;
+        //método que concatena os nomes das abas para adicionar ou remover classes que ativam e desativam as abas
+        $(document).ready(function () {
+            if (abas1 != 1) {
+                var aba = "#li";
+                var cont = "#tab1-";
+                for (var i = 1; i <= totalAbas; i++) {
+                    if (i != abas1) {
+                        var resultAba = aba.concat(i);
+                        var resultCont = cont.concat(i);
+
+                        $(resultAba).removeClass("active");
+                        $(resultCont).removeClass("tab-pane active");
+                        $(resultCont).addClass("tab-pane");
+                    }
+                }
+                var resultAba = aba.concat(abas1);
+                var resultCont = cont.concat(abas1);
+                $(resultAba).addClass("active");
+                $(resultCont).addClass("tab-pane active");
+                $(resultCont).removeClass("tab-pane");
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        //função complementar para esconder a aba após os adicionamentos das classes tab-pane
+        var abasEdit1 = document.getElementById('abas1').value;
+        var totalAbas = document.getElementById('totalAbas').value;
+        $(document).ready(function () {
+            var aba2 = "#li";
+            var cont2 = "#tab1-";
+            for (var i = 0; i <= totalAbas; i++) {
+                var resultAba2 = aba2.concat(i);
+                $(resultAba2).click(function () {
+                    var resultCont2 = cont2.concat(abas1);
+                    $(resultCont2).hide();
+                });
+            }
+            var resultAbaAtualEdit = aba2.concat(abas1);
+            $(resultAbaAtualEdit).click(function () {
+                var resultContAbaEdit = cont2.concat(abas1);
+                $(resultContAbaEdit).show();
+            });
+        });
+    </script>
     <!-- Código javascript para as Abas dos Relatos -->
     <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
     <input type="hidden" value="<%: ViewBag.AbasRelato %>" id="abasRelato" />
