@@ -2259,4 +2259,7 @@
   <data name="dor_label" xml:space="preserve">
     <value>Pain</value>
   </data>
+  <data name="comunicacao_seguranca_lazer" xml:space="preserve">
+    <value>Communication/Security/Leisure</value>
+  </data>
 </root>

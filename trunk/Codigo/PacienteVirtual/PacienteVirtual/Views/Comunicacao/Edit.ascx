@@ -7,9 +7,10 @@
 <%: Html.ValidationSummary(true) %>
 <fieldset>
     <legend>
-        <%: Resources.Mensagem.comunicacao %></legend>
+        <%: Resources.Mensagem.comunicacao_seguranca_lazer %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
-
+    <h4><%: Resources.Mensagem.comunicacao %></h4>
+    <br />
     <div class="row-fluid">
         <div class="span12">
             <div class="span4">
@@ -22,11 +23,6 @@
                 <%: Resources.Mensagem.deprimido %>
                 <%: Html.ValidationMessageFor(model => model.Deprimido, string.Empty, new { @class = "styleValidation" })%>
             </div>
-            <div class="span4">
-                <%: Html.EditorFor(model => model.DiscursoIncoerente) %>
-                <%: Resources.Mensagem.discurso_incoerente %>
-                <%: Html.ValidationMessageFor(model => model.DiscursoIncoerente, string.Empty, new { @class = "styleValidation" })%>
-            </div>
         </div>
     </div>
     <br />
@@ -38,6 +34,27 @@
                 </div>
             </div>
     </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <%: Html.EditorFor(model => model.DiscursoIncoerente) %>
+            <%: Resources.Mensagem.discurso_incoerente %>
+            <%: Html.ValidationMessageFor(model => model.DiscursoIncoerente, string.Empty, new { @class = "styleValidation" })%>
+        </div>
+    </div>
+    <br />
+    <h4><%: Resources.Mensagem.necessidade_seguranca %></h4>
+    <br />
+    <div class="row-fluid">
+            <div class="span6">
+                <div class="editor-field">
+                    <%: Html.LabelFor(model => model.TipoComportamento) %>
+                    <%: Html.EnumDropDownListFor(model => model.TipoComportamento, ListaTipoComportamento.Calmo) %>
+                </div>
+            </div>
+    </div>
+    <br />
+    <h4><%: Resources.Mensagem.necessidade_lazer_recreacao %></h4>
     <br />
     <div class="row-fluid">
         <div class="span12">
@@ -76,14 +93,7 @@
         </div>
     </div>
     <br />
-    <div class="row-fluid">
-            <div class="span6">
-                <div class="editor-field">
-                    <%: Html.LabelFor(model => model.TipoComportamento) %>
-                    <%: Html.EnumDropDownListFor(model => model.TipoComportamento, ListaTipoComportamento.Calmo) %>
-                </div>
-            </div>
-    </div>
+    <h4><%: Resources.Mensagem.necessidade_interacao_social %></h4>
     <br />
     <div class="row-fluid">
         <div class="span12">
