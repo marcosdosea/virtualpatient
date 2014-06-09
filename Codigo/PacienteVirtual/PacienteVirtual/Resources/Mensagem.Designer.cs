@@ -1006,6 +1006,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Comunicação/Segurança/Lazer/Interação Social.
+        /// </summary>
+        public static string comunicacao_seguranca_lazer {
+            get {
+                return ResourceManager.GetString("comunicacao_seguranca_lazer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comunica por escrita.
         /// </summary>
         public static string ComunicaPorEscrita {

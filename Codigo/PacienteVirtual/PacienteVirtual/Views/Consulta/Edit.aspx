@@ -293,33 +293,9 @@
                         </div>
                         </div>
                         <div class="tab-pane" id="tab1-6">
-                            <div class="tabbable">
-                                <ul class="nav nav-tabs">    
-                                    <li id="li61" class="active"><a href="#tab1-61" data-toggle="tab"><%: Resources.Mensagem.necessidade_seguranca%></a></li>
-                                    <li id="li62"><a href="#tab1-62" data-toggle="tab"><%: Resources.Mensagem.comunicacao %></a></li>
-                                    <li id="li63"><a href="#tab1-63" data-toggle="tab"><%: Resources.Mensagem.necessidade_lazer_recreacao %></a></li>
-                                    <li id="li64"><a href="#tab1-64" data-toggle="tab"><%: Resources.Mensagem.necessidade_interacao_social %></a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="tab1-61">
-                                        <!-- Necessidade Segurança -->
-                                        <%: Resources.Mensagem.teste %>
-                                    </div>
-                                    <div class="tab-pane" id="tab1-62">  
-                                        <div class="thumbnail">
-                                            <% Html.RenderPartial("../Comunicacao/Edit", Model.Comunicacao);%>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="tab1-63">
-                                        <!-- Necessidade Lazer/Recreação -->
-                                        <%: Resources.Mensagem.teste %>
-                                    </div>
-                                    <div class="tab-pane" id="tab1-64">
-                                        <!-- Necessidade de interação social -->
-                                        <%: Resources.Mensagem.teste %>
-                                    </div>
-                                </div>
-                        </div>
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Comunicacao/Edit", Model.Comunicacao);%>
+                            </div>
                         </div>
                         <div class="tab-pane" id="tab1-7">
                             <div class="thumbnail">
