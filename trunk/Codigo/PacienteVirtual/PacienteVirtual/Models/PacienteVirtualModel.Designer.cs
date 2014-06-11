@@ -100,6 +100,9 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "tb_antecedentes_patologicos", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_clinico_internacao_alergia", "tb_alergia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_alergia), "tb_clinico_internacao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_clinico_internacao))]
 [assembly: EdmRelationshipAttribute("pvModel", "tb_patologias_atuais", "tb_consulta_fixo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_fixo), "tb_patologia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_patologia))]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_diagnostico_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_diagnostico_consulta_variavel), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_diagnostico), "tb_diagnostico_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_diagnostico_consulta_variavel), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_grupo_diagnostico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_grupo_diagnostico), "tb_diagnostico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_diagnostico), true)]
 
 #endregion
 
@@ -1286,6 +1289,54 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<tb_turma_pessoa_relato> _tb_turma_pessoa_relato;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_diagnostico> tb_diagnostico
+        {
+            get
+            {
+                if ((_tb_diagnostico == null))
+                {
+                    _tb_diagnostico = base.CreateObjectSet<tb_diagnostico>("tb_diagnostico");
+                }
+                return _tb_diagnostico;
+            }
+        }
+        private ObjectSet<tb_diagnostico> _tb_diagnostico;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_diagnostico_consulta_variavel> tb_diagnostico_consulta_variavel
+        {
+            get
+            {
+                if ((_tb_diagnostico_consulta_variavel == null))
+                {
+                    _tb_diagnostico_consulta_variavel = base.CreateObjectSet<tb_diagnostico_consulta_variavel>("tb_diagnostico_consulta_variavel");
+                }
+                return _tb_diagnostico_consulta_variavel;
+            }
+        }
+        private ObjectSet<tb_diagnostico_consulta_variavel> _tb_diagnostico_consulta_variavel;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_grupo_diagnostico> tb_grupo_diagnostico
+        {
+            get
+            {
+                if ((_tb_grupo_diagnostico == null))
+                {
+                    _tb_grupo_diagnostico = base.CreateObjectSet<tb_grupo_diagnostico>("tb_grupo_diagnostico");
+                }
+                return _tb_grupo_diagnostico;
+            }
+        }
+        private ObjectSet<tb_grupo_diagnostico> _tb_grupo_diagnostico;
 
         #endregion
 
@@ -1857,6 +1908,30 @@ namespace PacienteVirtual.Models
         public void AddTotb_turma_pessoa_relato(tb_turma_pessoa_relato tb_turma_pessoa_relato)
         {
             base.AddObject("tb_turma_pessoa_relato", tb_turma_pessoa_relato);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_diagnostico EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_diagnostico(tb_diagnostico tb_diagnostico)
+        {
+            base.AddObject("tb_diagnostico", tb_diagnostico);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_diagnostico_consulta_variavel EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_diagnostico_consulta_variavel(tb_diagnostico_consulta_variavel tb_diagnostico_consulta_variavel)
+        {
+            base.AddObject("tb_diagnostico_consulta_variavel", tb_diagnostico_consulta_variavel);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_grupo_diagnostico EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_grupo_diagnostico(tb_grupo_diagnostico tb_grupo_diagnostico)
+        {
+            base.AddObject("tb_grupo_diagnostico", tb_grupo_diagnostico);
         }
 
         #endregion
@@ -7457,6 +7532,28 @@ namespace PacienteVirtual.Models
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_diagnostico_consulta_variavel")]
+        public EntityCollection<tb_diagnostico_consulta_variavel> tb_diagnostico_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_diagnostico_consulta_variavel>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_diagnostico_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_diagnostico_consulta_variavel>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_diagnostico_consulta_variavel", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -8898,6 +8995,491 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_religiao>("pvModel.fk_tb_demograficos_antropometricos_tb_religiao1", "tb_religiao", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_diagnostico")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tb_diagnostico : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new tb_diagnostico object.
+        /// </summary>
+        /// <param name="idDiagnostico">Initial value of the IdDiagnostico property.</param>
+        /// <param name="idGrupoDiagnostico">Initial value of the IdGrupoDiagnostico property.</param>
+        /// <param name="diagnostico">Initial value of the Diagnostico property.</param>
+        /// <param name="possuiRisco">Initial value of the PossuiRisco property.</param>
+        public static tb_diagnostico Createtb_diagnostico(global::System.Int32 idDiagnostico, global::System.Int32 idGrupoDiagnostico, global::System.String diagnostico, global::System.Boolean possuiRisco)
+        {
+            tb_diagnostico tb_diagnostico = new tb_diagnostico();
+            tb_diagnostico.IdDiagnostico = idDiagnostico;
+            tb_diagnostico.IdGrupoDiagnostico = idGrupoDiagnostico;
+            tb_diagnostico.Diagnostico = diagnostico;
+            tb_diagnostico.PossuiRisco = possuiRisco;
+            return tb_diagnostico;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdDiagnostico
+        {
+            get
+            {
+                return _IdDiagnostico;
+            }
+            set
+            {
+                if (_IdDiagnostico != value)
+                {
+                    OnIdDiagnosticoChanging(value);
+                    ReportPropertyChanging("IdDiagnostico");
+                    _IdDiagnostico = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdDiagnostico");
+                    OnIdDiagnosticoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdDiagnostico;
+        partial void OnIdDiagnosticoChanging(global::System.Int32 value);
+        partial void OnIdDiagnosticoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdGrupoDiagnostico
+        {
+            get
+            {
+                return _IdGrupoDiagnostico;
+            }
+            set
+            {
+                OnIdGrupoDiagnosticoChanging(value);
+                ReportPropertyChanging("IdGrupoDiagnostico");
+                _IdGrupoDiagnostico = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdGrupoDiagnostico");
+                OnIdGrupoDiagnosticoChanged();
+            }
+        }
+        private global::System.Int32 _IdGrupoDiagnostico;
+        partial void OnIdGrupoDiagnosticoChanging(global::System.Int32 value);
+        partial void OnIdGrupoDiagnosticoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Diagnostico
+        {
+            get
+            {
+                return _Diagnostico;
+            }
+            set
+            {
+                OnDiagnosticoChanging(value);
+                ReportPropertyChanging("Diagnostico");
+                _Diagnostico = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Diagnostico");
+                OnDiagnosticoChanged();
+            }
+        }
+        private global::System.String _Diagnostico;
+        partial void OnDiagnosticoChanging(global::System.String value);
+        partial void OnDiagnosticoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean PossuiRisco
+        {
+            get
+            {
+                return _PossuiRisco;
+            }
+            set
+            {
+                OnPossuiRiscoChanging(value);
+                ReportPropertyChanging("PossuiRisco");
+                _PossuiRisco = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PossuiRisco");
+                OnPossuiRiscoChanged();
+            }
+        }
+        private global::System.Boolean _PossuiRisco;
+        partial void OnPossuiRiscoChanging(global::System.Boolean value);
+        partial void OnPossuiRiscoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico_consulta_variavel")]
+        public EntityCollection<tb_diagnostico_consulta_variavel> tb_diagnostico_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_diagnostico_consulta_variavel>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_diagnostico_consulta_variavel>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_grupo_diagnostico")]
+        public tb_grupo_diagnostico tb_grupo_diagnostico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_grupo_diagnostico>("pvModel.fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_grupo_diagnostico").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_grupo_diagnostico>("pvModel.fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_grupo_diagnostico").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_grupo_diagnostico> tb_grupo_diagnosticoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_grupo_diagnostico>("pvModel.fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_grupo_diagnostico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_grupo_diagnostico>("pvModel.fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_grupo_diagnostico", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_diagnostico_consulta_variavel")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tb_diagnostico_consulta_variavel : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new tb_diagnostico_consulta_variavel object.
+        /// </summary>
+        /// <param name="idDiagnostico">Initial value of the IdDiagnostico property.</param>
+        /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
+        public static tb_diagnostico_consulta_variavel Createtb_diagnostico_consulta_variavel(global::System.Int32 idDiagnostico, global::System.Int64 idConsultaVariavel)
+        {
+            tb_diagnostico_consulta_variavel tb_diagnostico_consulta_variavel = new tb_diagnostico_consulta_variavel();
+            tb_diagnostico_consulta_variavel.IdDiagnostico = idDiagnostico;
+            tb_diagnostico_consulta_variavel.IdConsultaVariavel = idConsultaVariavel;
+            return tb_diagnostico_consulta_variavel;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdDiagnostico
+        {
+            get
+            {
+                return _IdDiagnostico;
+            }
+            set
+            {
+                if (_IdDiagnostico != value)
+                {
+                    OnIdDiagnosticoChanging(value);
+                    ReportPropertyChanging("IdDiagnostico");
+                    _IdDiagnostico = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdDiagnostico");
+                    OnIdDiagnosticoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdDiagnostico;
+        partial void OnIdDiagnosticoChanging(global::System.Int32 value);
+        partial void OnIdDiagnosticoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 IdConsultaVariavel
+        {
+            get
+            {
+                return _IdConsultaVariavel;
+            }
+            set
+            {
+                if (_IdConsultaVariavel != value)
+                {
+                    OnIdConsultaVariavelChanging(value);
+                    ReportPropertyChanging("IdConsultaVariavel");
+                    _IdConsultaVariavel = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdConsultaVariavel");
+                    OnIdConsultaVariavelChanged();
+                }
+            }
+        }
+        private global::System.Int64 _IdConsultaVariavel;
+        partial void OnIdConsultaVariavelChanging(global::System.Int64 value);
+        partial void OnIdConsultaVariavelChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Fatores
+        {
+            get
+            {
+                return _Fatores;
+            }
+            set
+            {
+                OnFatoresChanging(value);
+                ReportPropertyChanging("Fatores");
+                _Fatores = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Fatores");
+                OnFatoresChanged();
+            }
+        }
+        private global::System.String _Fatores;
+        partial void OnFatoresChanging(global::System.String value);
+        partial void OnFatoresChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CaracteristicasDefinidoras
+        {
+            get
+            {
+                return _CaracteristicasDefinidoras;
+            }
+            set
+            {
+                OnCaracteristicasDefinidorasChanging(value);
+                ReportPropertyChanging("CaracteristicasDefinidoras");
+                _CaracteristicasDefinidoras = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("CaracteristicasDefinidoras");
+                OnCaracteristicasDefinidorasChanged();
+            }
+        }
+        private global::System.String _CaracteristicasDefinidoras;
+        partial void OnCaracteristicasDefinidorasChanging(global::System.String value);
+        partial void OnCaracteristicasDefinidorasChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ResultadoEsperado
+        {
+            get
+            {
+                return _ResultadoEsperado;
+            }
+            set
+            {
+                OnResultadoEsperadoChanging(value);
+                ReportPropertyChanging("ResultadoEsperado");
+                _ResultadoEsperado = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ResultadoEsperado");
+                OnResultadoEsperadoChanged();
+            }
+        }
+        private global::System.String _ResultadoEsperado;
+        partial void OnResultadoEsperadoChanging(global::System.String value);
+        partial void OnResultadoEsperadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String PrescricaoCuidados
+        {
+            get
+            {
+                return _PrescricaoCuidados;
+            }
+            set
+            {
+                OnPrescricaoCuidadosChanging(value);
+                ReportPropertyChanging("PrescricaoCuidados");
+                _PrescricaoCuidados = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("PrescricaoCuidados");
+                OnPrescricaoCuidadosChanged();
+            }
+        }
+        private global::System.String _PrescricaoCuidados;
+        partial void OnPrescricaoCuidadosChanging(global::System.String value);
+        partial void OnPrescricaoCuidadosChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AvaliacaoResultado
+        {
+            get
+            {
+                return _AvaliacaoResultado;
+            }
+            set
+            {
+                OnAvaliacaoResultadoChanging(value);
+                ReportPropertyChanging("AvaliacaoResultado");
+                _AvaliacaoResultado = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AvaliacaoResultado");
+                OnAvaliacaoResultadoChanged();
+            }
+        }
+        private global::System.String _AvaliacaoResultado;
+        partial void OnAvaliacaoResultadoChanging(global::System.String value);
+        partial void OnAvaliacaoResultadoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel")]
+        public tb_consulta_variavel tb_consulta_variavel
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consulta_variavel>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consulta_variavel>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_consulta_variavel> tb_consulta_variavelReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_consulta_variavel>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_consulta_variavel>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico")]
+        public tb_diagnostico tb_diagnostico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_diagnostico>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_diagnostico>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_diagnostico> tb_diagnosticoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_diagnostico>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_diagnostico>("pvModel.fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico", value);
                 }
             }
         }
@@ -11795,6 +12377,115 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_resposta>("pvModel.fk_tb_experiencia_medicamentos_tb_resposta6", "tb_resposta", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="tb_grupo_diagnostico")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tb_grupo_diagnostico : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new tb_grupo_diagnostico object.
+        /// </summary>
+        /// <param name="idGrupoDiagnostico">Initial value of the IdGrupoDiagnostico property.</param>
+        /// <param name="descricaoGrupo">Initial value of the DescricaoGrupo property.</param>
+        public static tb_grupo_diagnostico Createtb_grupo_diagnostico(global::System.Int32 idGrupoDiagnostico, global::System.String descricaoGrupo)
+        {
+            tb_grupo_diagnostico tb_grupo_diagnostico = new tb_grupo_diagnostico();
+            tb_grupo_diagnostico.IdGrupoDiagnostico = idGrupoDiagnostico;
+            tb_grupo_diagnostico.DescricaoGrupo = descricaoGrupo;
+            return tb_grupo_diagnostico;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdGrupoDiagnostico
+        {
+            get
+            {
+                return _IdGrupoDiagnostico;
+            }
+            set
+            {
+                if (_IdGrupoDiagnostico != value)
+                {
+                    OnIdGrupoDiagnosticoChanging(value);
+                    ReportPropertyChanging("IdGrupoDiagnostico");
+                    _IdGrupoDiagnostico = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdGrupoDiagnostico");
+                    OnIdGrupoDiagnosticoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdGrupoDiagnostico;
+        partial void OnIdGrupoDiagnosticoChanging(global::System.Int32 value);
+        partial void OnIdGrupoDiagnosticoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String DescricaoGrupo
+        {
+            get
+            {
+                return _DescricaoGrupo;
+            }
+            set
+            {
+                OnDescricaoGrupoChanging(value);
+                ReportPropertyChanging("DescricaoGrupo");
+                _DescricaoGrupo = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("DescricaoGrupo");
+                OnDescricaoGrupoChanged();
+            }
+        }
+        private global::System.String _DescricaoGrupo;
+        partial void OnDescricaoGrupoChanging(global::System.String value);
+        partial void OnDescricaoGrupoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_diagnostico")]
+        public EntityCollection<tb_diagnostico> tb_diagnostico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tb_diagnostico>("pvModel.fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_diagnostico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tb_diagnostico>("pvModel.fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_diagnostico", value);
                 }
             }
         }
