@@ -148,6 +148,7 @@
     <Compile Include="Controllers\Cadastro\AreaAtuacaoController.cs" />
     <Compile Include="Controllers\Cadastro\EspecialidadeController.cs" />
     <Compile Include="Controllers\Cadastro\EstadoCivilController.cs" />
+    <Compile Include="Controllers\Cadastro\GrupoDiagnosticoController.cs" />
     <Compile Include="Controllers\Cadastro\NaturalidadeController.cs" />
     <Compile Include="Controllers\Cadastro\PatologiaController.cs" />
     <Compile Include="Controllers\Cadastro\ReligiaoController.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="Models\Cadastro\AreaAtuacaoModel.cs" />
     <Compile Include="Models\Cadastro\EspecialidadeModel.cs" />
     <Compile Include="Models\Cadastro\EstadoCivilModel.cs" />
+    <Compile Include="Models\Cadastro\GrupoDiagnosticoModel.cs" />
     <Compile Include="Models\Cadastro\GrupoIntervencaoModel.cs" />
     <Compile Include="Models\Cadastro\IntervencaoModel.cs" />
     <Compile Include="Models\Cadastro\NaturalidadeModel.cs" />
@@ -235,6 +237,7 @@
     <Compile Include="Negocio\Cadastro\GerenciadorAreaAtuacao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorEspecialidade.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorEstadoCivil.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorGrupoDiagnostico.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorGrupoIntervencao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorIntervencao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorNaturalidade.cs" />
@@ -663,6 +666,11 @@
     <Content Include="Views\EstadoCivil\Details.aspx" />
     <Content Include="Views\EstadoCivil\Edit.aspx" />
     <Content Include="Views\EstadoCivil\Index.aspx" />
+    <Content Include="Views\GrupoDiagnostico\Create.aspx" />
+    <Content Include="Views\GrupoDiagnostico\Delete.aspx" />
+    <Content Include="Views\GrupoDiagnostico\Details.aspx" />
+    <Content Include="Views\GrupoDiagnostico\Edit.aspx" />
+    <Content Include="Views\GrupoDiagnostico\Index.aspx" />
     <Content Include="Views\Higiene\Edit.ascx" />
     <Content Include="Views\IntegridadeTecidual\Edit.ascx" />
     <Content Include="Views\IntervencaoConsulta\Edit.aspx" />

@@ -2262,4 +2262,13 @@
   <data name="comunicacao_seguranca_lazer" xml:space="preserve">
     <value>Communication/Security/Leisure</value>
   </data>
+  <data name="diagnostico" xml:space="preserve">
+    <value>Diagnostic</value>
+  </data>
+  <data name="grupo_diagnostico" xml:space="preserve">
+    <value>Diagnostic group</value>
+  </data>
+  <data name="possui_risco" xml:space="preserve">
+    <value>Own risk</value>
+  </data>
 </root>

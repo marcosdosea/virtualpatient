@@ -216,6 +216,12 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.patologia, "Index", "Patologia")%>
                                         </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.grupo_diagnostico, "Index", "GrupoDiagnostico")%>
+                                        </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.diagnostico, "Index", "Diagnostico")%>
+                                        </li>
                                         <% } %>
                                     </ul>
                                 </li>
