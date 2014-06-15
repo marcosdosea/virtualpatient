@@ -2271,4 +2271,13 @@
   <data name="comunicacao_seguranca_lazer" xml:space="preserve">
     <value>Comunicação/Segurança/Lazer/Interação Social</value>
   </data>
+  <data name="diagnostico" xml:space="preserve">
+    <value>Diagnóstico</value>
+  </data>
+  <data name="grupo_diagnostico" xml:space="preserve">
+    <value>Grupo diagnóstico</value>
+  </data>
+  <data name="possui_risco" xml:space="preserve">
+    <value>Possui risco</value>
+  </data>
 </root>
