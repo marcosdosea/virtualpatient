@@ -75,8 +75,16 @@ namespace PacienteVirtual.Controllers
                 GerenciadorConsultaVariavel.GetInstance().ConsultaAnteriorFinalizada(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica,
                     SessionController.DadosTurmaPessoa.IdCurso);
 
-                consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
-                    relato.IdPaciente, relato.OrdemCronologica);
+                if (GerenciadorPessoa.GetInstance().Obter(idPessoa).IdUser == Global.Usuario)
+                {
+                    consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
+                        relato.IdPaciente, relato.OrdemCronologica);
+                }
+                else
+                {
+                    consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnteriorPorCurso(relato.IdPaciente,
+                        relato.OrdemCronologica, SessionController.DadosTurmaPessoa.IdCurso);
+                }
                 idConsultaFixo = consultaVariavelAnteriorModel.IdConsultaFixo;
             }
         }
