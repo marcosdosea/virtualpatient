@@ -320,6 +320,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtém primeira do gabarito dos administradores
+        /// </summary>
+        /// <returns></returns>
+        public ConsultaVariavelModel ObterPrimeiraConsultaGabaritoAdm(int idPaciente, int idCurso)
+        {
+            return GetQuery().Where(cv => cv.IdPaciente == idPaciente && cv.OrdemCronologica == Global.ValorInicial && cv.IdCurso == idCurso &&
+                cv.IdEstadoConsulta == Global.GabaritoDisponivel).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
         /// Obtem consultas por turma e pessoa
         /// </summary>
         /// <param name="idTurma"></param>
