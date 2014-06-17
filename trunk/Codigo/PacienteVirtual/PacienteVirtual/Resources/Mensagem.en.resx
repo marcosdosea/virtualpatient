@@ -2271,4 +2271,10 @@
   <data name="possui_risco" xml:space="preserve">
     <value>Own risk</value>
   </data>
+  <data name="descricao_grupo_diagnostico" xml:space="preserve">
+    <value>Diagnostic Group</value>
+  </data>
+  <data name="risco" xml:space="preserve">
+    <value>Risk</value>
+  </data>
 </root>

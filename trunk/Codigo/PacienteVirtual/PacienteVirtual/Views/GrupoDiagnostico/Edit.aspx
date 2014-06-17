@@ -19,11 +19,11 @@
         <%: Html.HiddenFor(model => model.IdGrupoDiagnostico) %>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Descricao) %>
+            <%: Html.LabelFor(model => model.DescricaoGrupoDiagnostico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Descricao, new { @class = "textbox", style = "width:1100px;", MaxLength = 255})%>
-            <%: Html.ValidationMessageFor(model => model.Descricao, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.TextBoxFor(model => model.DescricaoGrupoDiagnostico, new { @class = "textbox", style = "width:1100px;", MaxLength = 255})%>
+            <%: Html.ValidationMessageFor(model => model.DescricaoGrupoDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
     <div class="form-actions">

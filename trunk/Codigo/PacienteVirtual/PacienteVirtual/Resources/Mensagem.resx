@@ -2275,9 +2275,15 @@
     <value>Diagnóstico</value>
   </data>
   <data name="grupo_diagnostico" xml:space="preserve">
-    <value>Grupo diagnóstico</value>
+    <value>Grupo Diagnóstico</value>
   </data>
   <data name="possui_risco" xml:space="preserve">
     <value>Possui risco</value>
+  </data>
+  <data name="descricao_grupo_diagnostico" xml:space="preserve">
+    <value>Descrição Grupo Diagnóstico</value>
+  </data>
+  <data name="risco" xml:space="preserve">
+    <value>Risco</value>
   </data>
 </root>
