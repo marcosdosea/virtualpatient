@@ -99,7 +99,7 @@ namespace PacienteVirtual.Negocio
                         select new GrupoDiagnosticoModel
                         {
                             IdGrupoDiagnostico = grupoDiagnostico.IdGrupoDiagnostico,
-                            Descricao = grupoDiagnostico.DescricaoGrupo
+                            DescricaoGrupoDiagnostico = grupoDiagnostico.DescricaoGrupo
                         };
             return query;
         }
@@ -130,7 +130,7 @@ namespace PacienteVirtual.Negocio
         /// <param name="_tb_grupo_diagnostico"></param>
         private static void Atribuir(GrupoDiagnosticoModel grupoDiagnostico, tb_grupo_diagnostico _tb_grupo_diagnostico)
         {
-            _tb_grupo_diagnostico.DescricaoGrupo = grupoDiagnostico.Descricao;
+            _tb_grupo_diagnostico.DescricaoGrupo = grupoDiagnostico.DescricaoGrupoDiagnostico;
         }
     }
 }

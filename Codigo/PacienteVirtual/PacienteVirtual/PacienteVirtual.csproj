@@ -146,6 +146,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Cadastro\AcaoQueixaController.cs" />
     <Compile Include="Controllers\Cadastro\AreaAtuacaoController.cs" />
+    <Compile Include="Controllers\Cadastro\DiagnosticoController.cs" />
     <Compile Include="Controllers\Cadastro\EspecialidadeController.cs" />
     <Compile Include="Controllers\Cadastro\EstadoCivilController.cs" />
     <Compile Include="Controllers\Cadastro\GrupoDiagnosticoController.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="Helpers\HelperQuebraLinha.cs" />
     <Compile Include="Models\Cadastro\AcaoQueixaModel.cs" />
     <Compile Include="Models\Cadastro\AreaAtuacaoModel.cs" />
+    <Compile Include="Models\Cadastro\DiagnosticoModel.cs" />
     <Compile Include="Models\Cadastro\EspecialidadeModel.cs" />
     <Compile Include="Models\Cadastro\EstadoCivilModel.cs" />
     <Compile Include="Models\Cadastro\GrupoDiagnosticoModel.cs" />
@@ -235,6 +237,7 @@
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorAcaoQueixa.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorAreaAtuacao.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorDiagnostico.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorEspecialidade.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorEstadoCivil.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorGrupoDiagnostico.cs" />
@@ -652,6 +655,11 @@
     <Content Include="Views\ConsultaVariavelQueixa\Index.ascx" />
     <Content Include="Views\ConsultaVariavel\Edit.ascx" />
     <Content Include="Views\DadosComplementares\Edit.ascx" />
+    <Content Include="Views\Diagnostico\Create.aspx" />
+    <Content Include="Views\Diagnostico\Delete.aspx" />
+    <Content Include="Views\Diagnostico\Details.aspx" />
+    <Content Include="Views\Diagnostico\Edit.aspx" />
+    <Content Include="Views\Diagnostico\Index.aspx" />
     <Content Include="Views\DiarioPessoal\Edit.aspx" />
     <Content Include="Views\DiarioPessoal\Index.ascx" />
     <Content Include="Views\Eliminacao\Edit.ascx" />
