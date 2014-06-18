@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -25,9 +26,29 @@ namespace PacienteVirtual.Negocio
         /// Realiza a correção da consulta diagnostico de acordo com as respostas do gabarito
         /// </summary>
         /// <param name="listaIntervencao"></param>
-        public void CorrigirRespostas()
+        public void CorrigirRespostas(IEnumerable<DiagnosticoConsultaModel> resposta, IEnumerable<DiagnosticoConsultaModel> gabarito, ModelStateDictionary model)
         {
+            string erro = "";
+            foreach (DiagnosticoConsultaModel itemResp in resposta)
+            {
+                foreach (DiagnosticoConsultaModel itemGaba in gabarito)
+                {
+                    if ((itemResp.IdDiagnostico != itemGaba.IdDiagnostico) && (itemResp.IdGrupoDiagnostico != itemGaba.IdGrupoDiagnostico))
+                    {
+                        /*if ((Global.RemoverAcentuacao(resposta.AvaliacaoResultados) != Global.RemoverAcentuacao(gabarito.AvaliacaoResultados)) || (Global.RemoverAcentuacao(resposta.CaracteristicasDefinidoras) != Global.RemoverAcentuacao(gabarito.CaracteristicasDefinidoras)) || (Global.RemoverAcentuacao(resposta.Fatores) != Global.RemoverAcentuacao(gabarito.Fatores)) || (Global.RemoverAcentuacao(resposta.PrescricaoCuidado) != Global.RemoverAcentuacao(gabarito.PrescricaoCuidado)) || (Global.RemoverAcentuacao(resposta.ResultadoEsperado) != Global.RemoverAcentuacao(gabarito.ResultadoEsperado)))
+                        {
+                            erro += "Gabarito do Diagnóstico \"" + gabarito.DescricaoDiagnostico + "\" com Grupo Diagnóstico \"" + gabarito.DescricaoGrupoDiagnostico + "\": " + gabarito.Fatores + "; " + gabarito.CaracteristicasDefinidoras + "; " + gabarito.ResultadoEsperado + "; " + gabarito.PrescricaoCuidado + "; " + gabarito.AvaliacaoResultados + ";<br>";
+                        }*/
+                    }
+                    else
+                    {
+
+                    }
+                    
+                }
+            }
             
+            model.AddModelError("ErroDiagnostico", erro);
         }
 
         /// <summary>
