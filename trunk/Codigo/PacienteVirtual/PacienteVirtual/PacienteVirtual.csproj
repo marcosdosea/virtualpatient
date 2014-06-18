@@ -168,6 +168,7 @@
     <Compile Include="Controllers\Consulta\CorrigirConsultasController.cs" />
     <Compile Include="Controllers\Consulta\ConsultaVariavelController.cs" />
     <Compile Include="Controllers\Consulta\DemograficosAntropometicosController.cs" />
+    <Compile Include="Controllers\Consulta\DiagnosticoConsultaController.cs" />
     <Compile Include="Controllers\Consulta\EliminacaoController.cs" />
     <Compile Include="Controllers\Consulta\ExamesFisicosController.cs" />
     <Compile Include="Controllers\Consulta\HigieneController.cs" />
@@ -213,6 +214,7 @@
     <Compile Include="Models\Consulta\ComunicacaoModel.cs" />
     <Compile Include="Models\Consulta\ConscienciaModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
+    <Compile Include="Models\Consulta\DiagnosticoConsultaModel.cs" />
     <Compile Include="Models\Consulta\EliminacaoModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
     <Compile Include="Models\Consulta\HigieneModel.cs" />
@@ -254,6 +256,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorComunicacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsciencia.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorDiagnosticoConsulta.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorEliminacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorHigiene.cs" />
@@ -655,6 +658,9 @@
     <Content Include="Views\ConsultaVariavelQueixa\Index.ascx" />
     <Content Include="Views\ConsultaVariavel\Edit.ascx" />
     <Content Include="Views\DadosComplementares\Edit.ascx" />
+    <Content Include="Views\DiagnosticoConsulta\Create.ascx" />
+    <Content Include="Views\DiagnosticoConsulta\Edit.aspx" />
+    <Content Include="Views\DiagnosticoConsulta\Index.ascx" />
     <Content Include="Views\Diagnostico\Create.aspx" />
     <Content Include="Views\Diagnostico\Delete.aspx" />
     <Content Include="Views\Diagnostico\Details.aspx" />

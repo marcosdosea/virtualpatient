@@ -227,6 +227,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.EscondeLinks = true;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
+            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico");
+            ViewBag.IdGrupoDiagnostico = new SelectList(GerenciadorGrupoDiagnostico.GetInstance().ObterTodos().ToList(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", SessionController.IdGrupoDiagnostico);
             ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
         }
 
@@ -325,6 +327,8 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaIntervencaoConsulta = SessionController.ListaIntervencaoConsulta;
             consultaModel.Carta = new CartaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaCarta = SessionController.ListaCarta;
+            consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ListaDiagnosticoConsulta = SessionController.ListaDiagnostico;
             return consultaModel;
         }
 

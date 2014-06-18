@@ -520,6 +520,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avaliação Resultado.
+        /// </summary>
+        public static string avaliacao_resultado {
+            get {
+                return ResourceManager.GetString("avaliacao_resultado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Avaliação sedação.
         /// </summary>
         public static string avaliacao_sedacao {
@@ -696,6 +705,15 @@ namespace Resources {
         public static string Caqueixa {
             get {
                 return ResourceManager.GetString("Caqueixa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Características Definidoras.
+        /// </summary>
+        public static string caracteristicas_definidoras {
+            get {
+                return ResourceManager.GetString("caracteristicas_definidoras", resourceCulture);
             }
         }
         
@@ -2586,6 +2604,15 @@ namespace Resources {
         public static string farmaceutico {
             get {
                 return ResourceManager.GetString("farmaceutico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fatores.
+        /// </summary>
+        public static string fatores {
+            get {
+                return ResourceManager.GetString("fatores", resourceCulture);
             }
         }
         
@@ -4885,6 +4912,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prescrição Cuidados.
+        /// </summary>
+        public static string prescricao_cuidados {
+            get {
+                return ResourceManager.GetString("prescricao_cuidados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Prescritor.
         /// </summary>
         public static string prescritor {
@@ -5376,6 +5412,15 @@ namespace Resources {
         public static string restricao_hidrica {
             get {
                 return ResourceManager.GetString("restricao_hidrica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resultado Esperado.
+        /// </summary>
+        public static string resultado_esperado {
+            get {
+                return ResourceManager.GetString("resultado_esperado", resourceCulture);
             }
         }
         

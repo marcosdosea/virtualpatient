@@ -50,6 +50,9 @@ namespace PacienteVirtual.Models
         public IEnumerable<AlergiaModel> ListaClinicoInternacaoAlergias { get; set; }
 
         public NutricaoModel Nutricao { get; set; }
+
+        public DiagnosticoConsultaModel DiagnosticoConsulta { get; set; }
+        public IEnumerable<DiagnosticoConsultaModel> ListaDiagnosticoConsulta { get; set; }
         //////////////////////////////////////
 
 

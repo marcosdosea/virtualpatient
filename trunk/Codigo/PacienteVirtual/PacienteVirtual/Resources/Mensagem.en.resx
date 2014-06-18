@@ -2277,4 +2277,19 @@
   <data name="risco" xml:space="preserve">
     <value>Risk</value>
   </data>
+  <data name="avaliacao_resultado" xml:space="preserve">
+    <value>Evaluation Results</value>
+  </data>
+  <data name="caracteristicas_definidoras" xml:space="preserve">
+    <value>Defining Characteristics</value>
+  </data>
+  <data name="fatores" xml:space="preserve">
+    <value>Factors</value>
+  </data>
+  <data name="prescricao_cuidados" xml:space="preserve">
+    <value>Prescription Care</value>
+  </data>
+  <data name="resultado_esperado" xml:space="preserve">
+    <value>Expected Result</value>
+  </data>
 </root>

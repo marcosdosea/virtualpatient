@@ -174,7 +174,7 @@
         <div class="span6">
             <div class="thumbnails">
                 <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia"))
-                           { %>
+                   { %>
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
                         <li id="li1" class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.classificacao_de_prm%></a></li>
@@ -213,6 +213,20 @@
                             <div class="thumbnail">
                             <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
                             <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <% }else { %>
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.diagnostico%></a></li>
+                    </ul>
+                    <div class="tab-content" id="desabilitar">
+                        <div class="tab-pane active" id="tab1-1">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../DiagnosticoConsulta/Create", Model.DiagnosticoConsulta);%>
+                                <% Html.RenderPartial("../DiagnosticoConsulta/Index", Model.ListaDiagnosticoConsulta);%>
                             </div>
                         </div>
                     </div>
