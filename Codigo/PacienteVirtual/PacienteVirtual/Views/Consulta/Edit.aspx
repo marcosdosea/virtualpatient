@@ -357,13 +357,10 @@
             <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
         </div>
         &nbsp;
-        <% if (!ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
-              { %>   
         <div class="btn btn-large btn-primary">
             <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;" })%>
         </div>
         &nbsp;
-        <% } %>
         <!-- Escondendo botões de acordo com o perfil do usuário. A Session[_Roles] contém uma string com o perfil do usuário. -->
          <% if (!Session["_Roles"].Equals("tutor"))
            { %>   

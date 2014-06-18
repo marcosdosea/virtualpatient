@@ -762,6 +762,24 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static int IdGrupoDiagnostico
+        {
+            get
+            {
+                int idGrupoDiagnostico = (int)HttpContext.Current.Session["_IdGrupoDiagnostico"];
+                if (idGrupoDiagnostico < Global.ValorInicial)
+                {
+                    idGrupoDiagnostico = Global.ValorInteiroNulo;
+                    HttpContext.Current.Session["_IdGrupoDiagnostico"] = idGrupoDiagnostico;
+                }
+                return idGrupoDiagnostico;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdGrupoDiagnostico"] = value;
+            }
+        }
+
         public static IEnumerable<CartaModel> ListaCarta
         {
             get
@@ -777,6 +795,24 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_listaCarta"] = value;
+            }
+        }
+
+        public static IEnumerable<DiagnosticoConsultaModel> ListaDiagnostico
+        {
+            get
+            {
+                IEnumerable<DiagnosticoConsultaModel> ListaDiagnostico = (IEnumerable<DiagnosticoConsultaModel>)HttpContext.Current.Session["_ListaDiagnostico"];
+                if (ListaDiagnostico == null)
+                {
+                    ListaDiagnostico = GerenciadorDiagnosticoConsulta.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    HttpContext.Current.Session["_ListaDiagnostico"] = ListaDiagnostico;
+                }
+                return ListaDiagnostico;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaDiagnostico"] = value;
             }
         }
 
@@ -1333,6 +1369,35 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_Eliminacao"] = value;
+            }
+        }
+
+        public static DiagnosticoConsultaModel DiagnosticoConsulta
+        {
+            get
+            {
+                DiagnosticoConsultaModel diagnostico = (DiagnosticoConsultaModel)HttpContext.Current.Session["_Diagnostico"];
+                if (diagnostico == null)
+                {
+                    diagnostico = (DiagnosticoConsultaModel)GerenciadorDiagnosticoConsulta.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
+                    if (diagnostico == null)
+                    {
+                        diagnostico = new DiagnosticoConsultaModel();
+                        diagnostico.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
+                        diagnostico.IdDiagnostico = Global.ValorInicial;
+                        diagnostico.AvaliacaoResultados = Global.stringVazia;
+                        diagnostico.CaracteristicasDefinidoras = Global.stringVazia;
+                        diagnostico.Fatores = Global.stringVazia;
+                        diagnostico.PrescricaoCuidado = Global.stringVazia;
+                        diagnostico.ResultadoEsperado = Global.stringVazia;
+                        GerenciadorDiagnosticoConsulta.GetInstance().Inserir(diagnostico);
+                    }
+                }
+                return diagnostico;
+            }
+            set
+            {
+                HttpContext.Current.Session["_Diagnostico"] = value;
             }
         }
     }

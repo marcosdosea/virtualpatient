@@ -81,8 +81,8 @@ namespace PacienteVirtual.Models
             SessionController.DemograficosAntropometricos = null;
             SessionController.Paciente = null;
             SessionController.RelatoClinico = null;
-            SessionController.ErroConsultaVariavelQueixa2 = "";
-            SessionController.ErroQueixaMedicamento = "";
+            SessionController.ErroConsultaVariavelQueixa2 = Global.stringVazia;
+            SessionController.ErroQueixaMedicamento = Global.stringVazia;
             SessionController.Abas1 = 0;
             SessionController.Abas2 = -1;
             SessionController.AbasDentro = -1;
@@ -114,6 +114,8 @@ namespace PacienteVirtual.Models
             SessionController.Sensorial = null;
             SessionController.OutrasNecessidades = null;
             SessionController.Sexualidade = null;
+            SessionController.DiagnosticoConsulta = null;
+            SessionController.IdGrupoDiagnostico = Global.ValorInteiroNulo;
         }
 
         private static void ZeraSessaoConsultaFarmacia()
