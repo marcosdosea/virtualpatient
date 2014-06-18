@@ -228,7 +228,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
             ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico");
-            ViewBag.IdGrupoDiagnostico = new SelectList(GerenciadorGrupoDiagnostico.GetInstance().ObterTodos().ToList(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", SessionController.IdGrupoDiagnostico);
+            ViewBag.IdGrupoDiagnostico = new SelectList(GerenciadorGrupoDiagnostico.GetInstance().ObterTodos(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", SessionController.IdGrupoDiagnostico);
             ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
         }
 
@@ -531,6 +531,8 @@ namespace PacienteVirtual.Controllers
             GerenciadorCarta.GetInstance().CorrigirRespostas(SessionController.ListaCarta, listaCarta, ModelState);
             IEnumerable<IntervencaoConsultaModel> listaIntervencao = GerenciadorIntervencaoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorIntervencaoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaIntervencaoConsulta, listaIntervencao, ModelState);
+            IEnumerable<DiagnosticoConsultaModel> listaDiagnostico = GerenciadorDiagnosticoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorDiagnosticoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaDiagnostico, listaDiagnostico, ModelState);
         }
     }
 }
