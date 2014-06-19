@@ -14,38 +14,34 @@
     <fieldset>
         <legend><%: Resources.Mensagem.diagnostico %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
-
-        <% using (Html.BeginForm("Edit", "DiagnosticoConsulta", FormMethod.Post, null))
-       { %>
+        <%: Html.HiddenFor(model => model.IdDiagnostico) %>
+        
         <div class="row-fluid">
-            <div class="span3">
-                <div class="editor-label">
+            <div class="span2">
+                 <div class="editor-label">
                     <%: Html.LabelFor(model => model.DescricaoGrupoDiagnostico) %>
                 </div>
             </div>
-            <div class="span6">
+            <div class="span7">
                 <div class="editor-field">
-                    <%: Html.DropDownList("IdGrupoDiagnostico", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
+                    <%: Html.TextBoxFor(model => model.DescricaoGrupoDiagnostico, new { id = "textbox" })%>
                 </div>
             </div>
         </div>
-        <% } %>
-        <br />
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span2">
                  <div class="editor-label">
                     <%: Html.LabelFor(model => model.DescricaoDiagnostico) %>
                 </div>
             </div>
-            <div class="span6">
+            <div class="span7">
                 <div class="editor-field">
-                    <%: Html.DropDownList("IdDiagnostico", Resources.Mensagem.selecione)%>
+                    <%: Html.TextBoxFor(model => model.DescricaoDiagnostico, new { id = "textbox2" })%>
                 </div>
             </div>
         </div>
-        <br />
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span2">
                  <div class="editor-label">
                     <%: Html.LabelFor(model => model.Fatores) %>
                 </div>
@@ -59,7 +55,7 @@
         </div>
         <br />
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span2">
                  <div class="editor-label">
                     <%: Html.LabelFor(model => model.CaracteristicasDefinidoras) %>
                 </div>
@@ -73,7 +69,7 @@
         </div>
         <br />
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span2">
                  <div class="editor-label">
                     <%: Html.LabelFor(model => model.ResultadoEsperado) %>
                 </div>
@@ -87,7 +83,7 @@
         </div>
         <br />
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span2">
                  <div class="editor-label">
                     <%: Html.LabelFor(model => model.PrescricaoCuidado) %>
                 </div>
@@ -101,7 +97,7 @@
         </div>
         <br />
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span2">
                  <div class="editor-label">
                     <%: Html.LabelFor(model => model.AvaliacaoResultados) %>
                 </div>
@@ -124,4 +120,10 @@
     <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit2", "Consulta", Model.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
 </div>
 
+<script type="text/javascript">
+    document.getElementById('textbox').disabled = true;
+</script>
+<script type="text/javascript">
+    document.getElementById('textbox2').disabled = true;
+</script>
 </asp:Content>

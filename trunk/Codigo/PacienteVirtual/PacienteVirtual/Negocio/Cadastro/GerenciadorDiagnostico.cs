@@ -148,11 +148,11 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtem intervencoes pelo GrupoIntervenção
+        /// Obtem intervencoes pelo GrupoDiagnostico
         /// </summary>
         /// <param name="idGrupoIntervencao"></param>
         /// <returns></returns>
-        public IEnumerable<DiagnosticoModel> ObterPorGrupoIntervencao(int idGrupoDiagnostico)
+        public IEnumerable<DiagnosticoModel> ObterPorGrupoDiagnostico(int idGrupoDiagnostico)
         {
             return GetQuery().Where(diagnostico => diagnostico.IdGrupoDiagnostico == idGrupoDiagnostico).ToList();
         }
