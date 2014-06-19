@@ -384,8 +384,18 @@ namespace PacienteVirtual.Controllers
         {
             if (consultaVariavelModel.OrdemCronologica != Global.ValorInicial)
             {
-                ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
-                    , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
+                ConsultaVariavelModel consultaOrdem1;
+                if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem || SessionController.DadosTurmaPessoa.IdRole ==
+                    Global.AdministradorFarmacia)
+                {
+                    consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsultaGabaritoAdm(consultaVariavelModel.IdPaciente,
+                        consultaVariavelModel.IdCurso);
+                }
+                else
+                {
+                    consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
+                       , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
+                }
                 SessionController.ListaDiarioPessoal = GerenciadorDiarioPessoal.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
             }
         }
