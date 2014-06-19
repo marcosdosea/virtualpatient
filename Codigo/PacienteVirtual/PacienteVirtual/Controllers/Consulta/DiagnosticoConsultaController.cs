@@ -45,8 +45,6 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(long idConsultaVariavel, int idDiagnostico)
         {
             DiagnosticoConsultaModel diagnostico = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorConsultaDiagnostico(idConsultaVariavel, idDiagnostico);
-            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico");
-            ViewBag.IdGrupoDiagnostico = new SelectList(GerenciadorGrupoDiagnostico.GetInstance().ObterTodos().ToList(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", SessionController.IdGrupoDiagnostico);
             return View(diagnostico);
         }
 
