@@ -43,7 +43,12 @@
         <div class="row-fluid">
             <div class="span2">
                  <div class="editor-label">
-                    <%: Html.LabelFor(model => model.Fatores) %>
+                    <% if (Session["_Risco"].Equals(false))
+                       { %>
+                        <%: Resources.Mensagem.fatores_relacionados %>
+                    <% }else{ %>
+                        <%: Resources.Mensagem.fatores_risco %>
+                    <% } %>
                 </div>
             </div>
             <div class="span7">
@@ -54,9 +59,11 @@
             </div>
         </div>
         <br />
+        <% if (Session["_Risco"].Equals(false))
+           { %>
         <div class="row-fluid">
-            <div class="span2">
-                 <div class="editor-label">
+            <div class="span3">
+                <div class="editor-label">
                     <%: Html.LabelFor(model => model.CaracteristicasDefinidoras) %>
                 </div>
             </div>
@@ -67,6 +74,12 @@
                 </div>
             </div>
         </div>
+        <br />
+        <% }
+           else
+           { %>
+        <%: Html.HiddenFor(model => model.CaracteristicasDefinidoras)%>
+        <% } %>
         <br />
         <div class="row-fluid">
             <div class="span2">

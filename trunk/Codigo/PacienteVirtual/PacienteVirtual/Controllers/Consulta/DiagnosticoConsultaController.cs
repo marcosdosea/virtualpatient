@@ -48,6 +48,7 @@ namespace PacienteVirtual.Controllers
                     {
                         SessionController.RiscoDiagnostico = false;
                     }
+                    SessionController.IdDiagnostico = diagnostico.IdDiagnostico;
                     return RedirectToAction("Edit2", "Consulta");
                 }
                 SessionController.IdGrupoDiagnostico = diagnostico.IdGrupoDiagnostico;
@@ -59,6 +60,16 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(long idConsultaVariavel, int idDiagnostico)
         {
             DiagnosticoConsultaModel diagnostico = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorConsultaDiagnostico(idConsultaVariavel, idDiagnostico);
+            DiagnosticoModel diagnoConsulta = GerenciadorDiagnostico.GetInstance().Obter(idDiagnostico);
+            if (diagnoConsulta.Risco == true)
+            {
+                //Session Controller para o risco do diagnostico, guardando se é de risco ou não.
+                SessionController.RiscoDiagnostico = true;
+            }
+            else
+            {
+                SessionController.RiscoDiagnostico = false;
+            }
             return View(diagnostico);
         }
 
@@ -71,6 +82,7 @@ namespace PacienteVirtual.Controllers
             {
                 GerenciadorDiagnosticoConsulta.GetInstance().Atualizar(diagnostico);
                 SessionController.ListaDiagnostico = null;
+                SessionController.RiscoDiagnostico = false;
                 return RedirectToAction("Edit2", "Consulta");
             }
             return View(diagnostico);

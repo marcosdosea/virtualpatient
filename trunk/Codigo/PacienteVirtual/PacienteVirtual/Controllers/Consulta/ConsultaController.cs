@@ -178,6 +178,9 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdPatologia = new SelectList(GerenciadorPatologia.GetInstance().ObterTodos(), "IdPatologia", "Descricao");
             ViewBag.AbasDentro = SessionController.AbasDentro;
             ViewBag.TotalAbas = Global.totalAbasENF_Edit1;
+            //zerando SessionController Enfermagem da segunda tela
+            SessionController.IdDiagnostico = Global.NaoSelecionado;
+            SessionController.IdGrupoDiagnostico = Global.NaoSelecionado;
         }
 
         /// <summary>

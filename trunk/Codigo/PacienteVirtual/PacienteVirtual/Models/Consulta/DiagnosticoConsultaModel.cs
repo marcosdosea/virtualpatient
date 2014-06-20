@@ -31,7 +31,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "fatores_relacionados", ResourceType = typeof(Mensagem))]
         public string Fatores { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "caracteristicas_definidoras", ResourceType = typeof(Mensagem))]
         public string CaracteristicasDefinidoras { get; set; }
 
