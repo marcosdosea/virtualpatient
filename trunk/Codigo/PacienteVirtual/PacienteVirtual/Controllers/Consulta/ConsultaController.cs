@@ -321,6 +321,26 @@ namespace PacienteVirtual.Controllers
         {
             ConsultaModel consultaModel = ConsultaComumTelas(consultaVariavelModel, new ConsultaModel());
             ApontaPrimeiraConsultaSegundaTela(consultaVariavelModel);
+
+            if (SessionController.DadosTurmaPessoa.IdCurso == Global.idCursoFarmacia)
+            {
+                ConsultaSegundaTelaFarmacia(consultaModel);
+            }
+            else
+            {
+                ConsultaSegundaTelaEnfermagem(consultaModel);
+            }
+            return consultaModel;
+        }
+
+        private static void ConsultaSegundaTelaEnfermagem(ConsultaModel consultaModel)
+        {
+            consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.ListaDiagnosticoConsulta = SessionController.ListaDiagnostico;
+        }
+
+        private static void ConsultaSegundaTelaFarmacia(ConsultaModel consultaModel)
+        {
             consultaModel.ListaDiarioPessoal = SessionController.ListaDiarioPessoal;
             consultaModel.DiarioPessoal = new DiarioPessoalModel() { IdConsultaFixo = SessionController.ConsultaVariavel.IdConsultaFixo };
             consultaModel.ListaConsultaVariavelQueixa = SessionController.ListaConsultaVariavelQueixa;
@@ -330,9 +350,6 @@ namespace PacienteVirtual.Controllers
             consultaModel.ListaIntervencaoConsulta = SessionController.ListaIntervencaoConsulta;
             consultaModel.Carta = new CartaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaCarta = SessionController.ListaCarta;
-            consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.ListaDiagnosticoConsulta = SessionController.ListaDiagnostico;
-            return consultaModel;
         }
 
         /// <summary>

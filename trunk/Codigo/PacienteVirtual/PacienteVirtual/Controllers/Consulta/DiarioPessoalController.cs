@@ -25,10 +25,21 @@ namespace PacienteVirtual.Controllers
         public ActionResult Create(DiarioPessoalModel diarioPessoal)
         {
             SessionController.Abas2 = Global.abaDiarioPessoal;
+            
             if (ModelState.IsValid)
             {
-                ConsultaVariavelModel consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(SessionController.ConsultaVariavel.IdPessoa, 
-                    SessionController.ConsultaVariavel.IdTurma, SessionController.ConsultaVariavel.IdPaciente);
+                ConsultaVariavelModel consultaOrdem1;
+                if (SessionController.DadosTurmaPessoa.IdRole == Global.AdministradorEnfermagem || SessionController.DadosTurmaPessoa.IdRole ==
+                    Global.AdministradorFarmacia)
+                {
+                    consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsultaGabaritoAdm(SessionController.ConsultaVariavel.IdPaciente,
+                        SessionController.ConsultaVariavel.IdCurso);
+                }
+                else
+                {
+                    consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(SessionController.ConsultaVariavel.IdPessoa
+                       , SessionController.ConsultaVariavel.IdTurma, SessionController.ConsultaVariavel.IdPaciente);
+                }
                 diarioPessoal.IdConsultaFixo = consultaOrdem1.IdConsultaFixo;
                 gDiarioPessoal.Inserir(diarioPessoal);
                 SessionController.ListaDiarioPessoal = null;
