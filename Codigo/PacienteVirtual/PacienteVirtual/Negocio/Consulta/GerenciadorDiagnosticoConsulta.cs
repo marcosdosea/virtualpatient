@@ -58,20 +58,28 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(DiagnosticoConsultaModel DiagnosticoConsultaModel)
         {
-            var repDiagnosticoConsulta = new RepositorioGenerico<tb_diagnostico_consulta_variavel>();
-            tb_diagnostico_consulta_variavel _tb_diagnostico_consulta_variavel = new tb_diagnostico_consulta_variavel();
-            try
+            DiagnosticoConsultaModel diagConsult = gDiagnosticoConsulta.ObterPorDiagnosticoGrupo(DiagnosticoConsultaModel.IdConsultaVariavel, DiagnosticoConsultaModel.IdDiagnostico, DiagnosticoConsultaModel.IdGrupoDiagnostico);
+            if (diagConsult == null)
             {
-                Atribuir(DiagnosticoConsultaModel, _tb_diagnostico_consulta_variavel);
+                var repDiagnosticoConsulta = new RepositorioGenerico<tb_diagnostico_consulta_variavel>();
+                tb_diagnostico_consulta_variavel _tb_diagnostico_consulta_variavel = new tb_diagnostico_consulta_variavel();
+                try
+                {
+                    Atribuir(DiagnosticoConsultaModel, _tb_diagnostico_consulta_variavel);
 
-                repDiagnosticoConsulta.Inserir(_tb_diagnostico_consulta_variavel);
-                repDiagnosticoConsulta.SaveChanges();
+                    repDiagnosticoConsulta.Inserir(_tb_diagnostico_consulta_variavel);
+                    repDiagnosticoConsulta.SaveChanges();
 
-                return _tb_diagnostico_consulta_variavel.IdConsultaVariavel;
+                    return _tb_diagnostico_consulta_variavel.IdConsultaVariavel;
+                }
+                catch (Exception e)
+                {
+                    throw new DadosException("DiagnosticoConsulta", e.Message, e);
+                }
             }
-            catch (Exception e)
+            else
             {
-                throw new DadosException("DiagnosticoConsulta", e.Message, e);
+                throw new NegocioException("Já foi cadastrado um Diagnóstico com essa Descrição de Diagnóstico e com esse Grupo Diagnóstico.");
             }
         }
 
@@ -99,22 +107,15 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Faz a validação para verificar se todos os id estão diferentes de 0
         /// </summary>
-        public bool ValidarRespostasSelecionaveis(int idDiagnostico, int idGrupoDiagnostico)
+        public bool ValidarRespostasSelecionaveis(string s1, string s2, string s3, string s4)
         {
-            if (idGrupoDiagnostico == 0)
+            if (s1 != null && s2 != null && s3 != null && s4 != null )
             {
-                if (idDiagnostico == 0)
-                {
-                    throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais campos.");
-                }
-                else
-                {
-                    return true;
-                }
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
 
@@ -214,8 +215,20 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public DiagnosticoConsultaModel ObterPorConsultaDiagnostico(long idConsultaVariavel, int idDiagnostico)
         {
-            return GetQuery().Where(DiagnosticoConsultaModel => DiagnosticoConsultaModel.IdConsultaVariavel == idConsultaVariavel
-                && DiagnosticoConsultaModel.IdDiagnostico == idDiagnostico).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(dc => dc.IdConsultaVariavel == idConsultaVariavel
+                && dc.IdDiagnostico == idDiagnostico).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtem consulta intervencao por consulta e intervencao e Grupo
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        /// <param name="idIntervencao"></param>
+        /// <returns></returns>
+        public DiagnosticoConsultaModel ObterPorDiagnosticoGrupo(long idConsultaVariavel, int idDiagnostico, int idGrupoDiagnostico)
+        {
+            return GetQuery().Where(dc => dc.IdConsultaVariavel == idConsultaVariavel
+                && dc.IdDiagnostico == idDiagnostico && dc.IdGrupoDiagnostico == idGrupoDiagnostico).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>

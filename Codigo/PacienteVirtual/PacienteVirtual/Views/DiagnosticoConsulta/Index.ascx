@@ -10,7 +10,7 @@
             <%: Resources.Mensagem.grupo_diagnostico %>
         </th>
         <th>
-            <%: Resources.Mensagem.fatores %>
+            <%: Resources.Mensagem.fatores_relacionados %>
         </th>
         <th>
             <%: Resources.Mensagem.caracteristicas_definidoras %>
@@ -53,7 +53,7 @@
         <td>
             <%: Html.ActionLink(Resources.Mensagem.editar,"Edit", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, null) %>
             |
-            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, null)%>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, new { onclick = ("return confirm('Deseja realmente REMOVER este Diagnóstico?')") })%>
         </td>
     </tr>
 <% } %>

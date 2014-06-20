@@ -87,6 +87,8 @@ namespace PacienteVirtual.Models
             SessionController.Abas2 = -1;
             SessionController.AbasDentro = -1;
             SessionController.IdGrupoDiagnostico = Global.NaoSelecionado;
+            SessionController.IdDiagnostico = Global.NaoSelecionado;
+            SessionController.RiscoDiagnostico = false;
 
             if (SessionController.DadosTurmaPessoa.Curso.Equals(cursoFarmacia))
             {
@@ -116,7 +118,6 @@ namespace PacienteVirtual.Models
             SessionController.OutrasNecessidades = null;
             SessionController.Sexualidade = null;
             SessionController.DiagnosticoConsulta = null;
-            SessionController.IdGrupoDiagnostico = Global.NaoSelecionado;
         }
 
         private static void ZeraSessaoConsultaFarmacia()

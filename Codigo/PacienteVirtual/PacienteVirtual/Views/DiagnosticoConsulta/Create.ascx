@@ -26,12 +26,12 @@
         <div class="row-fluid">
             <div class="span3">
                  <div class="editor-label">
-                    <%: Html.LabelFor(model => model.DescricaoDiagnostico) %>
+                    <%: Html.LabelFor(model => model.DescricaoDiagnostico)%>
                 </div>
             </div>
             <div class="span6">
                 <div class="editor-field">
-                    <%: Html.DropDownList("IdDiagnostico", Resources.Mensagem.selecione)%>
+                    <%: Html.DropDownList("IdDiagnostico", null, Resources.Mensagem.selecione)%>
                     <%: Html.ValidationMessageFor(model => model.IdDiagnostico, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -40,7 +40,12 @@
         <div class="row-fluid">
             <div class="span3">
                  <div class="editor-label">
-                    <%: Html.LabelFor(model => model.Fatores) %>
+                    <% if (Session["_Risco"].Equals(false))
+                       { %>
+                        <%: Resources.Mensagem.fatores_relacionados %>
+                    <% }else{ %>
+                        <%: Resources.Mensagem.fatores_risco %>
+                    <% } %>
                 </div>
             </div>
             <div class="span7">
@@ -51,9 +56,11 @@
             </div>
         </div>
         <br />
+        <% if (Session["_Risco"].Equals(false))
+           { %>
         <div class="row-fluid">
             <div class="span3">
-                 <div class="editor-label">
+                <div class="editor-label">
                     <%: Html.LabelFor(model => model.CaracteristicasDefinidoras) %>
                 </div>
             </div>
@@ -65,6 +72,25 @@
             </div>
         </div>
         <br />
+        <% }
+           else
+           { %>
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="editor-label">
+                    <%: Html.LabelFor(model => model.CaracteristicasDefinidoras) %>
+                </div>
+            </div>
+            <div class="span7">
+                <div class="editor-field">
+                    <%= Html.TextBoxFor(model => model.CaracteristicasDefinidoras, new { id = "textbox" })%>
+                    <%: Html.ValidationMessageFor(model => model.CaracteristicasDefinidoras) %>
+                </div>
+            </div>
+        </div>
+        <br />
+        <% } %>
+
         <div class="row-fluid">
             <div class="span3">
                  <div class="editor-label">
@@ -115,4 +141,6 @@
         <%: Html.QuebraLinhaFor(model => model.ErroDiagnostico) %>
     </div>
 <% } %>
-
+<script type="text/javascript">
+    document.getElementById('textbox').disabled = true;
+</script>

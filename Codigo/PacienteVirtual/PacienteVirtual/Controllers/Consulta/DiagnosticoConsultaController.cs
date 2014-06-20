@@ -33,10 +33,24 @@ namespace PacienteVirtual.Controllers
             }
             else
             {
-                if (GerenciadorDiagnosticoConsulta.GetInstance().ValidarRespostasSelecionaveis(diagnostico.IdDiagnostico, diagnostico.IdGrupoDiagnostico))
+                //Verifica se foi selecionado algum diagnostico no combobox ou não.
+                if (diagnostico.IdDiagnostico != 0)
                 {
-                    SessionController.IdGrupoDiagnostico = diagnostico.IdGrupoDiagnostico;
+                    //Obtem o diagnostico na tb_diagnostico passado no combobox
+                    DiagnosticoModel diagnoConsulta = GerenciadorDiagnostico.GetInstance().Obter(diagnostico.IdDiagnostico);
+                    //verifica se o diagnostico que foi passado é de risco ou não.
+                    if (diagnoConsulta.Risco == true)
+                    {
+                        //Session Controller para o risco do diagnostico, guardando se é de risco ou não.
+                        SessionController.RiscoDiagnostico = true;
+                    }
+                    else
+                    {
+                        SessionController.RiscoDiagnostico = false;
+                    }
+                    return RedirectToAction("Edit2", "Consulta");
                 }
+                SessionController.IdGrupoDiagnostico = diagnostico.IdGrupoDiagnostico;
             }
             return RedirectToAction("Edit2", "Consulta");
         }

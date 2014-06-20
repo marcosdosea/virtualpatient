@@ -128,11 +128,11 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Obtém queixas que iniciam com o descricao diagnostico
         /// </summary>
-        /// <param name="descricaoIntervencao"></param>
+        /// <param name="descricaoDiagnostico"></param>
         /// <returns></returns>
-        public IEnumerable<DiagnosticoModel> ObterPorNome(string descricaoIntervencao)
+        public IEnumerable<DiagnosticoModel> ObterPorNome(string descricaoDiagnostico)
         {
-            return GetQuery().Where(diagnostico => diagnostico.DescricaoDiagnostico.StartsWith(descricaoIntervencao)).ToList();
+            return GetQuery().Where(diagnostico => diagnostico.DescricaoDiagnostico.StartsWith(descricaoDiagnostico)).ToList();
         }
 
         /// <summary>
