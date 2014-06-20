@@ -110,7 +110,7 @@
                 .Encoded(false)
                 .Sanitized(false)
                 .SetWidth(30)
-                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.preencher, "Edit", "Consulta", new { idConsultaVariavel = o.IdConsultaVariavel }));
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.preencher, "Edit", new { idConsultaVariavel = o.IdConsultaVariavel }));
                 
     }).WithPaging(5).Sortable().ToHtmlString()%>
 
