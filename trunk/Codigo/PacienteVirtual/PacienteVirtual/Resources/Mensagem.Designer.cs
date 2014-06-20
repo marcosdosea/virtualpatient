@@ -2608,15 +2608,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fatores.
-        /// </summary>
-        public static string fatores {
-            get {
-                return ResourceManager.GetString("fatores", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Fatores agravantes da dor.
         /// </summary>
         public static string fatores_agravantes_dor {
@@ -2631,6 +2622,24 @@ namespace Resources {
         public static string fatores_aliviantes_dor {
             get {
                 return ResourceManager.GetString("fatores_aliviantes_dor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fatores Relacionados.
+        /// </summary>
+        public static string fatores_relacionados {
+            get {
+                return ResourceManager.GetString("fatores_relacionados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fatores de Risco.
+        /// </summary>
+        public static string fatores_risco {
+            get {
+                return ResourceManager.GetString("fatores_risco", resourceCulture);
             }
         }
         

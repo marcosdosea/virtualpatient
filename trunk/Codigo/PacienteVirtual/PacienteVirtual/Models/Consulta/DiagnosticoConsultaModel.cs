@@ -28,7 +28,7 @@ namespace PacienteVirtual.Models
         public String DescricaoGrupoDiagnostico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "fatores", ResourceType = typeof(Mensagem))]
+        [Display(Name = "fatores_relacionados", ResourceType = typeof(Mensagem))]
         public string Fatores { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

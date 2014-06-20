@@ -228,7 +228,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
             ViewBag.IdGrupoDiagnostico = new SelectList(GerenciadorGrupoDiagnostico.GetInstance().ObterTodos().ToList(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", SessionController.IdGrupoDiagnostico);
-            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorGrupoDiagnostico(SessionController.IdGrupoDiagnostico), "IdDiagnostico", "DescricaoGrupoDiagnostico");
+            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorGrupoDiagnostico(SessionController.IdGrupoDiagnostico), "IdDiagnostico", "DescricaoGrupoDiagnostico", SessionController.IdDiagnostico);
             ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
         }
 

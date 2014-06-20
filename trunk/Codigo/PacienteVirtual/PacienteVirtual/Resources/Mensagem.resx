@@ -2292,13 +2292,16 @@
   <data name="caracteristicas_definidoras" xml:space="preserve">
     <value>Características Definidoras</value>
   </data>
-  <data name="fatores" xml:space="preserve">
-    <value>Fatores</value>
+  <data name="fatores_relacionados" xml:space="preserve">
+    <value>Fatores Relacionados</value>
   </data>
   <data name="prescricao_cuidados" xml:space="preserve">
     <value>Prescrição Cuidados</value>
   </data>
   <data name="resultado_esperado" xml:space="preserve">
     <value>Resultado Esperado</value>
+  </data>
+  <data name="fatores_risco" xml:space="preserve">
+    <value>Fatores de Risco</value>
   </data>
 </root>

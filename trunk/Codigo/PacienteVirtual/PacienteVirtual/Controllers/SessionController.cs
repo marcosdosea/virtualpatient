@@ -780,6 +780,24 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static int IdDiagnostico
+        {
+            get
+            {
+                int idDiagnostico = (int)HttpContext.Current.Session["_IdDiagnostico"];
+                if (idDiagnostico < Global.ValorInicial)
+                {
+                    idDiagnostico = Global.ValorInteiroNulo;
+                    HttpContext.Current.Session["_IdDiagnostico"] = idDiagnostico;
+                }
+                return idDiagnostico;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdDiagnostico"] = value;
+            }
+        }
+
         public static IEnumerable<CartaModel> ListaCarta
         {
             get
@@ -872,6 +890,15 @@ namespace PacienteVirtual.Controllers
                 return (string)HttpContext.Current.Session["_AlertaBox"];
             }
             set { HttpContext.Current.Session["_AlertaBox"] = value; }
+        }
+
+        public static bool RiscoDiagnostico
+        {
+            get
+            {
+                return (bool)HttpContext.Current.Session["_Risco"];
+            }
+            set { HttpContext.Current.Session["_Risco"] = value; }
         }
 
         public static string ErroConsultaVariavelQueixa2
@@ -1377,22 +1404,11 @@ namespace PacienteVirtual.Controllers
             get
             {
                 DiagnosticoConsultaModel diagnostico = (DiagnosticoConsultaModel)HttpContext.Current.Session["_Diagnostico"];
-                if (diagnostico == null)
-                {
-                    diagnostico = (DiagnosticoConsultaModel)GerenciadorDiagnosticoConsulta.GetInstance().Obter(ConsultaVariavel.IdConsultaVariavel);
-                    if (diagnostico == null)
-                    {
-                        diagnostico = new DiagnosticoConsultaModel();
-                        diagnostico.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
-                        diagnostico.IdDiagnostico = Global.ValorInicial;
-                        diagnostico.AvaliacaoResultados = Global.stringVazia;
-                        diagnostico.CaracteristicasDefinidoras = Global.stringVazia;
-                        diagnostico.Fatores = Global.stringVazia;
-                        diagnostico.PrescricaoCuidado = Global.stringVazia;
-                        diagnostico.ResultadoEsperado = Global.stringVazia;
-                        GerenciadorDiagnosticoConsulta.GetInstance().Inserir(diagnostico);
-                    }
-                }
+                diagnostico.AvaliacaoResultados = Global.stringVazia;
+                diagnostico.CaracteristicasDefinidoras = Global.stringVazia;
+                diagnostico.Fatores = Global.stringVazia;
+                diagnostico.PrescricaoCuidado = Global.stringVazia;
+                diagnostico.ResultadoEsperado = Global.stringVazia;
                 return diagnostico;
             }
             set
