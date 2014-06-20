@@ -5,6 +5,7 @@ using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
 using System.Web.Mvc;
+using PacienteVirtual.Controllers;
 
 namespace PacienteVirtual.Negocio
 {
@@ -79,6 +80,8 @@ namespace PacienteVirtual.Negocio
             }
             else
             {
+                SessionController.IdGrupoDiagnostico = Global.NaoSelecionado;
+                SessionController.IdDiagnostico = Global.NaoSelecionado;
                 throw new NegocioException("Já foi cadastrado um Diagnóstico com essa Descrição de Diagnóstico e com esse Grupo Diagnóstico.");
             }
         }
@@ -107,9 +110,9 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Faz a validação para verificar se todos os id estão diferentes de 0
         /// </summary>
-        public bool ValidarRespostasSelecionaveis(string s1, string s2, string s3, string s4)
+        public bool ValidarRespostasSelecionaveis(string s1, string s2, string s3, string s4, string s5, int idDiag, int idGrupoDiag)
         {
-            if (s1 != null && s2 != null && s3 != null && s4 != null )
+            if (s1 != null && s2 != null && s3 != null && s4 != null && s5 != null && idDiag != 0 && idGrupoDiag != 0)
             {
                 return true;
             }
@@ -175,6 +178,7 @@ namespace PacienteVirtual.Negocio
                         {
                             IdConsultaVariavel = tb_diagnostico_consulta_variavel.IdConsultaVariavel,
                             IdDiagnostico = tb_diagnostico.IdDiagnostico,
+                            IdGrupoDiagnostico = tb_grupo_diagnostico.IdGrupoDiagnostico,
                             Fatores = tb_diagnostico_consulta_variavel.Fatores,
                             CaracteristicasDefinidoras = tb_diagnostico_consulta_variavel.CaracteristicasDefinidoras,
                             AvaliacaoResultados = tb_diagnostico_consulta_variavel.AvaliacaoResultado,

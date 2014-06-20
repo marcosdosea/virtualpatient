@@ -21,7 +21,6 @@
                 </div>
             </div>
         </div>
-        <% } %>
         <br />
         <div class="row-fluid">
             <div class="span3">
@@ -31,11 +30,12 @@
             </div>
             <div class="span6">
                 <div class="editor-field">
-                    <%: Html.DropDownList("IdDiagnostico", null, Resources.Mensagem.selecione)%>
+                    <%: Html.DropDownList("IdDiagnostico", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
                     <%: Html.ValidationMessageFor(model => model.IdDiagnostico, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
         </div>
+        <% } %>
         <br />
         <div class="row-fluid">
             <div class="span3">
@@ -75,20 +75,7 @@
         <% }
            else
            { %>
-        <div class="row-fluid">
-            <div class="span3">
-                <div class="editor-label">
-                    <%: Html.LabelFor(model => model.CaracteristicasDefinidoras) %>
-                </div>
-            </div>
-            <div class="span7">
-                <div class="editor-field">
-                    <%= Html.TextBoxFor(model => model.CaracteristicasDefinidoras, new { id = "textbox" })%>
-                    <%: Html.ValidationMessageFor(model => model.CaracteristicasDefinidoras) %>
-                </div>
-            </div>
-        </div>
-        <br />
+        <%: Html.HiddenFor(model => model.CaracteristicasDefinidoras)%>
         <% } %>
 
         <div class="row-fluid">
@@ -141,6 +128,3 @@
         <%: Html.QuebraLinhaFor(model => model.ErroDiagnostico) %>
     </div>
 <% } %>
-<script type="text/javascript">
-    document.getElementById('textbox').disabled = true;
-</script>
