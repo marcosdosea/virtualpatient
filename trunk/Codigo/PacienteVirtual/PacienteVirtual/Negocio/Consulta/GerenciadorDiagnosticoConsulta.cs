@@ -29,27 +29,49 @@ namespace PacienteVirtual.Negocio
         /// <param name="listaIntervencao"></param>
         public void CorrigirRespostas(IEnumerable<DiagnosticoConsultaModel> resposta, IEnumerable<DiagnosticoConsultaModel> gabarito, ModelStateDictionary model)
         {
-            string erro = "";
-            foreach (DiagnosticoConsultaModel itemResp in resposta)
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var diagnostico in resposta)
             {
-                foreach (DiagnosticoConsultaModel itemGaba in gabarito)
+                contem = false;
+                foreach (var diagnosticoGabarito in gabarito)
                 {
-                    if ((itemResp.IdDiagnostico != itemGaba.IdDiagnostico) && (itemResp.IdGrupoDiagnostico != itemGaba.IdGrupoDiagnostico))
+                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdGrupoDiagnostico == diagnosticoGabarito.IdGrupoDiagnostico)
                     {
-                        /*if ((Global.RemoverAcentuacao(resposta.AvaliacaoResultados) != Global.RemoverAcentuacao(gabarito.AvaliacaoResultados)) || (Global.RemoverAcentuacao(resposta.CaracteristicasDefinidoras) != Global.RemoverAcentuacao(gabarito.CaracteristicasDefinidoras)) || (Global.RemoverAcentuacao(resposta.Fatores) != Global.RemoverAcentuacao(gabarito.Fatores)) || (Global.RemoverAcentuacao(resposta.PrescricaoCuidado) != Global.RemoverAcentuacao(gabarito.PrescricaoCuidado)) || (Global.RemoverAcentuacao(resposta.ResultadoEsperado) != Global.RemoverAcentuacao(gabarito.ResultadoEsperado)))
+                        contem = true;
+                        if (Global.RemoverAcentuacao(diagnostico.AvaliacaoResultados) != Global.RemoverAcentuacao(diagnosticoGabarito.AvaliacaoResultados) || Global.RemoverAcentuacao(diagnostico.CaracteristicasDefinidoras) != Global.RemoverAcentuacao(diagnosticoGabarito.CaracteristicasDefinidoras) || Global.RemoverAcentuacao(diagnostico.PrescricaoCuidado) != Global.RemoverAcentuacao(diagnosticoGabarito.PrescricaoCuidado) || Global.RemoverAcentuacao(diagnostico.ResultadoEsperado) != Global.RemoverAcentuacao(diagnosticoGabarito.ResultadoEsperado))
                         {
-                            erro += "Gabarito do Diagnóstico \"" + gabarito.DescricaoDiagnostico + "\" com Grupo Diagnóstico \"" + gabarito.DescricaoGrupoDiagnostico + "\": " + gabarito.Fatores + "; " + gabarito.CaracteristicasDefinidoras + "; " + gabarito.ResultadoEsperado + "; " + gabarito.PrescricaoCuidado + "; " + gabarito.AvaliacaoResultados + ";<br>";
-                        }*/
+                            erroRespostas = erroRespostas + "Gabarito do Diagnóstico: " + diagnosticoGabarito.DescricaoDiagnostico+" e Grupo Diagnóstico "+ diagnosticoGabarito.DescricaoGrupoDiagnostico + ": " + diagnosticoGabarito.Fatores + "," + diagnosticoGabarito.PrescricaoCuidado + ", " + diagnosticoGabarito.ResultadoEsperado + ",<br>";
+                        }
+                        break;
                     }
-                    else
-                    {
-
-                    }
-                    
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + diagnostico.DescricaoDiagnostico + ";<br>";
                 }
             }
-            
-            model.AddModelError("ErroDiagnostico", erro);
+            foreach (var diagnosticoGabarito in gabarito)
+            {
+                contem = false;
+                foreach (var diagnostico in resposta)
+                {
+                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdGrupoDiagnostico == diagnosticoGabarito.IdGrupoDiagnostico)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + diagnosticoGabarito.DescricaoDiagnostico + ";<br>";
+                }
+            }
+            model.AddModelError("ErroDiagnostico", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Diagnósticos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Diagnósticos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>
