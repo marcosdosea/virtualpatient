@@ -89,8 +89,6 @@
         if (msg != "") {
             if (msg == "true") {
                 alert("O paciente foi atribuído a consulta.");
-            } else {
-                alert("Não foi possível atribuir o paciente a consulta.");
             }
         }
     </script>
