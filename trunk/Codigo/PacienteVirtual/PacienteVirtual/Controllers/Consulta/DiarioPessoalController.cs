@@ -66,6 +66,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(DiarioPessoalModel diarioPessoal)
         {
             SessionController.Abas2 = Global.abaDiarioPessoal;
+            GerenciadorDiarioPessoal.GetInstance().ValidarRespostasSelecionaveis(diarioPessoal.IdMedicamento, diarioPessoal.IdBebida);
             if (ModelState.IsValid)
             {
                 GerenciadorDiarioPessoal.GetInstance().Atualizar(diarioPessoal);
