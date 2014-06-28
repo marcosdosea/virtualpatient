@@ -18,6 +18,11 @@ namespace PacienteVirtual.Controllers
             return View(GerenciadorDiagnosticoConsulta.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
         }
 
+        public ViewResult Details(long idConsultaVariavel, int idDiagnostico, int idGrupoDiagnostico)
+        {
+            return View(GerenciadorDiagnosticoConsulta.GetInstance().ObterPorDiagnosticoGrupo(idConsultaVariavel, idDiagnostico, idGrupoDiagnostico));
+        }
+
         //
         // POST: /DiagnosticoConsulta/Create
 
@@ -30,6 +35,7 @@ namespace PacienteVirtual.Controllers
                 GerenciadorDiagnosticoConsulta.GetInstance().Inserir(diagnostico);
                 SessionController.ListaDiagnostico = null;
                 SessionController.IdGrupoDiagnostico = Global.ValorInteiroNulo;
+                SessionController.IdDiagnostico = Global.ValorInteiroNulo;
             }
             else
             {

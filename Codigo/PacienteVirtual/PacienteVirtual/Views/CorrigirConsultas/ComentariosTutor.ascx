@@ -24,11 +24,11 @@
                 </div>
             </div>
         </div>
-    <% if (!Session["_Roles"].Equals("usuario"))
+    <% if (!(Session["_Roles"].Equals("usuario") || (Session["_Roles"].Equals("administrador_enfermagem")) || (Session["_Roles"].Equals("administrador_farmacia"))))
        { %>
-    <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>"/>
-    </div>
+        <div class="form-actions">
+            <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>"/>
+        </div>
        <% } %>
     </fieldset>
 <% } %>

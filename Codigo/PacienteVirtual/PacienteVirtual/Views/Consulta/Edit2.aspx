@@ -225,8 +225,8 @@
                     <div class="tab-content" id="desabilitar">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
-                                <% Html.RenderPartial("../DiagnosticoConsulta/Create", Model.DiagnosticoConsulta);%>
                                 <% Html.RenderPartial("../DiagnosticoConsulta/Index", Model.ListaDiagnosticoConsulta);%>
+                                <% Html.RenderPartial("../DiagnosticoConsulta/Create", Model.DiagnosticoConsulta);%>
                             </div>
                         </div>
                     </div>
