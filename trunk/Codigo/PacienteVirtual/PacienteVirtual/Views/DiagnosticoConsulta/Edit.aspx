@@ -62,7 +62,7 @@
         <% if (Session["_Risco"].Equals(false))
            { %>
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span2">
                 <div class="editor-label">
                     <%: Html.LabelFor(model => model.CaracteristicasDefinidoras) %>
                 </div>
