@@ -233,11 +233,7 @@
                 </div>
                <% } %>
             </div>
-        </div>
-    </fieldset>
-
-    <% } %>
-    <div id="botoesRodape">
+            <br />
         <div class="btn btn-large btn-primary">
             <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;" })%>
         </div>
@@ -264,7 +260,10 @@
                <%: Html.ActionLink(Resources.Mensagem.finalizar_correcao, "FinalizarCorrecao", "CorrigirConsultas", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Finalizar esta consulta?')") })%>
            </div>
         <% } %>
-    </div>
+        </div>
+    </fieldset>
+
+    <% } %>
     <style>
         #botoesRodape
         {

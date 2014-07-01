@@ -49,6 +49,44 @@ namespace PacienteVirtual.Negocio
             }
         }
 
+        public void DefinirAdministradorEnfermagem(int idPessoa)
+        {
+            TurmaPessoaModel turmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(Global.TurmaAdminEnfermagem, idPessoa);
+            if (turmaPessoa == null)
+            {
+                turmaPessoa = new TurmaPessoaModel();
+                turmaPessoa.IdPessoa = idPessoa;
+                turmaPessoa.IdRole = Global.AdministradorEnfermagem;
+                turmaPessoa.IdTurma = Global.TurmaAdminEnfermagem;
+                turmaPessoa.Ativa = true;
+                Inserir(turmaPessoa);
+            }
+            else
+            {
+                turmaPessoa.Ativa = true;
+                Atualizar(turmaPessoa);
+            }
+        }
+
+        public void DefinirAdministradorFarmacia(int idPessoa)
+        {
+            TurmaPessoaModel turmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(Global.TurmaAdminFarmacia, idPessoa);
+            if (turmaPessoa == null)
+            {
+                turmaPessoa = new TurmaPessoaModel();
+                turmaPessoa.IdPessoa = idPessoa;
+                turmaPessoa.IdRole = Global.AdministradorFarmacia;
+                turmaPessoa.IdTurma = Global.TurmaAdminFarmacia;
+                turmaPessoa.Ativa = true;
+                Inserir(turmaPessoa);
+            }
+            else
+            {
+                turmaPessoa.Ativa = true;
+                Atualizar(turmaPessoa);
+            }
+        }
+
         /// <summary>
         /// Atualiza dados do turmaPessoa
         /// </summary>
@@ -73,12 +111,12 @@ namespace PacienteVirtual.Negocio
         /// Remove dados do turmaPessoa
         /// </summary>
         /// <param name="codDisciplina"></param>
-        public void Remover(int IdTurma)
+        public void Remover(int IdTurma, int IdPessoa)
         {
             try
             {
                 var repTurmaPessoa = new RepositorioGenerico<tb_turma_pessoa>();
-                repTurmaPessoa.Remover(c => c.IdTurma == IdTurma);
+                repTurmaPessoa.Remover(c => c.IdTurma == IdTurma && c.IdPessoa == IdPessoa);
                 repTurmaPessoa.SaveChanges();
             }
             catch (Exception e)
@@ -208,12 +246,21 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtem todas as os alunos (perfil de usuario) de determinada turma
+        /// Obtem todas as os alunos (perfil de usuario) de determinada turma que estão ativos
         /// </summary>
         /// <returns></returns>
         public IEnumerable<TurmaPessoaModel> ObterPorTurma(int idTurma)
         {
             return GetQuery().Where(tpr => tpr.IdTurma == idTurma && tpr.Ativa == true && tpr.IdRole == Global.Usuario).ToList();
+        }
+
+        /// <summary>
+        /// Obtem todas as TurmaPessoa a partir de uma Turma
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TurmaPessoaModel> ObterTurmaPessoaPorTurma(int idTurma)
+        {
+            return GetQuery().Where(tpr => tpr.IdTurma == idTurma).ToList();
         }
 
         /// <summary>

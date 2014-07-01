@@ -118,12 +118,21 @@
                    { %>
                 <div class="nav-collapse collapse">
                     <nav class="nav">
-                            <ul class="nav" role="menu">
-                                <li>
-                                    <%: Html.ActionLink(Resources.Mensagem.definir_administrador, "DefinirAdministrador", "Pessoa")%>
-                                </li>
-                            </ul>
-                        </nav>
+                        <ul class="nav" role="menu">
+                            <li>
+                                <%: Html.ActionLink(Resources.Mensagem.definir_administrador_farmacia, "DefinirAdministradorFarmacia", "Pessoa")%>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="nav-collapse collapse">
+                    <nav class="nav">
+                        <ul class="nav" role="menu">
+                            <li>
+                                <%: Html.ActionLink(Resources.Mensagem.definir_administrador_enfermagem, "DefinirAdministradorEnfermagem", "Pessoa")%>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
                 <% }
                    else

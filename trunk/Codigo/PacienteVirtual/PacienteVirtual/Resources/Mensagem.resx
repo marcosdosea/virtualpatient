@@ -2304,4 +2304,10 @@
   <data name="fatores_risco" xml:space="preserve">
     <value>Fatores de Risco</value>
   </data>
+  <data name="definir_administrador_enfermagem" xml:space="preserve">
+    <value>Ativar administrador do curso de enfermagem</value>
+  </data>
+  <data name="definir_administrador_farmacia" xml:space="preserve">
+    <value>Ativar administrador do curso de fármacia</value>
+  </data>
 </root>
