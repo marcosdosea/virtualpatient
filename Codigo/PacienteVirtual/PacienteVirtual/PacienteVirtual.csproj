@@ -707,7 +707,8 @@
     <Content Include="Views\Patologia\Edit.aspx" />
     <Content Include="Views\Patologia\Index.aspx" />
     <Content Include="Views\PercepcaoExpectativas\Edit.ascx" />
-    <Content Include="Views\Pessoa\DefinirAdministrador.aspx" />
+    <Content Include="Views\Pessoa\DefinirAdministradorFarmacia.aspx" />
+    <Content Include="Views\Pessoa\DefinirAdministradorEnfermagem.aspx" />
     <Content Include="Views\PsicoEspiritual\Edit.ascx" />
     <Content Include="Views\QueixaMedicamento\Edit.aspx" />
     <Content Include="Views\Religiao\Create.aspx" />

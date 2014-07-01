@@ -7,32 +7,49 @@ namespace PacienteVirtual.Controllers
     public class PessoaController : Controller
     {
 
-        public ViewResult DefinirAdministrador()
+        public ViewResult DefinirAdministradorFarmacia()
         {
-            return View(GerenciadorPessoa.GetInstance().ObterTodos());
+            return View(GerenciadorPessoa.GetInstance().ObterPessoaStatusAdministradoresFarmacia());
         }
 
+        public ViewResult DefinirAdministradorEnfermagem()
+        {
+            return View(GerenciadorPessoa.GetInstance().ObterPessoaStatusAdministradoresEnfermagem());
+        }
 
         public ActionResult DefinirAdmEnfermagem(int idPessoa)
         {
-            TurmaPessoaModel turmaPessoa = new TurmaPessoaModel();
-            turmaPessoa.IdPessoa = idPessoa;
-            turmaPessoa.IdRole = Global.AdministradorEnfermagem;
-            turmaPessoa.IdTurma = Global.TurmaAdminEnfermagem;
-            turmaPessoa.Ativa = true;
-            GerenciadorTurmaPessoa.GetInstance().Inserir(turmaPessoa);
+            GerenciadorTurmaPessoa.GetInstance().DefinirAdministradorEnfermagem(idPessoa);
             return RedirectToAction("Index", "Home");
         }
 
 
         public ActionResult DefinirAdmFarmacia(int idPessoa)
         {
-            TurmaPessoaModel turmaPessoa = new TurmaPessoaModel();
-            turmaPessoa.IdPessoa = idPessoa;
-            turmaPessoa.IdRole = Global.AdministradorFarmacia;
-            turmaPessoa.IdTurma = Global.TurmaAdminFarmacia;
-            turmaPessoa.Ativa = true;
-            GerenciadorTurmaPessoa.GetInstance().Inserir(turmaPessoa);
+            GerenciadorTurmaPessoa.GetInstance().DefinirAdministradorFarmacia(idPessoa);
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult RemoverAdmEnfermagem(int idPessoa)
+        {
+            TurmaPessoaModel turmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(Global.TurmaAdminEnfermagem, idPessoa);
+            if (turmaPessoa != null)
+            {
+                turmaPessoa.Ativa = false;
+                GerenciadorTurmaPessoa.GetInstance().Atualizar(turmaPessoa);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        public ActionResult RemoverAdmFarmacia(int idPessoa)
+        {
+            TurmaPessoaModel turmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorTurmaPessoa(Global.TurmaAdminFarmacia, idPessoa);
+            if (turmaPessoa != null)
+            {
+                turmaPessoa.Ativa = false;
+                GerenciadorTurmaPessoa.GetInstance().Atualizar(turmaPessoa);
+            }
             return RedirectToAction("Index", "Home");
         }
         

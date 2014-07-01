@@ -321,38 +321,7 @@
                 </div>
             </div>
         </div>
-        </div>
-    </fieldset>
-    <% } %>
-    <!-- Código Javascript para desabilitar todos os campos do formulario caso seja tutor -->
-    <!-- Passando o perfil do usuario e o id do estado da consulta, da viewbag para dentro do código javascript através do id -->
-    <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
-    <input type="hidden" value="<%: Session["_IdEstadoConsulta"] %>" id="IdEstadoConsulta" />
-    <script type="text/javascript">
-        var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
-        var perfil = document.getElementById('perfil').value;
-        if (perfil == "tutor") {
-            //método que habilita para tutor corrigir e comentarios do tutor
-            $("#desabilitar *").attr("disabled", "disabled").off('click');
-        } else if (perfil == "usuario") {
-            //Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs
-            if (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7) {
-                $("#desabilitar *").attr("disabled", "disabled").off('click');
-            }
-        }
-    </script>
-    <!-- Código Javascript para desabilitar o campo de comentários, caso seja tutor -->
-    <script type="text/javascript">
-        var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
-        var perfil = document.getElementById('perfil').value;
-        if (!(perfil == "tutor" && idEstadoConsulta == 5)) {
-            $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
-        } else if (perfil == "usuario") {
-            $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
-        }
-    </script>
-
-    <div id="botoes">
+        <br />
         <div class="btn btn-large btn-primary">
             <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
         </div>
@@ -383,8 +352,36 @@
                <%: Html.ActionLink(Resources.Mensagem.finalizar_correcao, "FinalizarCorrecao", "CorrigirConsultas", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Finalizar esta consulta?')") })%>
            </div>
         <% } %>
-    </div>
-
+        </div>
+    </fieldset>
+    <% } %>
+    <!-- Código Javascript para desabilitar todos os campos do formulario caso seja tutor -->
+    <!-- Passando o perfil do usuario e o id do estado da consulta, da viewbag para dentro do código javascript através do id -->
+    <input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
+    <input type="hidden" value="<%: Session["_IdEstadoConsulta"] %>" id="IdEstadoConsulta" />
+    <script type="text/javascript">
+        var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
+        var perfil = document.getElementById('perfil').value;
+        if (perfil == "tutor") {
+            //método que habilita para tutor corrigir e comentarios do tutor
+            $("#desabilitar *").attr("disabled", "disabled").off('click');
+        } else if (perfil == "usuario") {
+            //Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs
+            if (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7) {
+                $("#desabilitar *").attr("disabled", "disabled").off('click');
+            }
+        }
+    </script>
+    <!-- Código Javascript para desabilitar o campo de comentários, caso seja tutor -->
+    <script type="text/javascript">
+        var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
+        var perfil = document.getElementById('perfil').value;
+        if (!(perfil == "tutor" && idEstadoConsulta == 5)) {
+            $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
+        } else if (perfil == "usuario") {
+            $("#desabilitarComentariosTutor *").attr("disabled", "disabled").off('click');
+        }
+    </script>
 
     <!-- Posicionamento e estilos dos botões desta página. -->
     <style>

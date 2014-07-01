@@ -141,6 +141,48 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtem todas as pessoas cadastradas no sistema e define se a pessoas é administradora ou não do curso de Farmacia
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<PessoaModel> ObterPessoaStatusAdministradoresFarmacia()
+        {
+            IEnumerable<PessoaModel> pessoas = ObterTodos();
+            IEnumerable<TurmaPessoaModel> pessoasTurmaAdministador = GerenciadorTurmaPessoa.GetInstance().ObterTurmaPessoaPorTurma(Global.TurmaAdminFarmacia);
+            DefineStatusAdministrador(pessoas, pessoasTurmaAdministador);
+            return pessoas;
+        }
+
+        /// <summary>
+        /// Obtem todas as pessoas cadastradas no sistema e define se a pessoas é administradora ou não do curso de Enfermagem
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<PessoaModel> ObterPessoaStatusAdministradoresEnfermagem()
+        {
+            IEnumerable<PessoaModel> pessoas = ObterTodos();
+            IEnumerable<TurmaPessoaModel> pessoasTurmaAdministador = GerenciadorTurmaPessoa.GetInstance().ObterTurmaPessoaPorTurma(Global.TurmaAdminEnfermagem);
+            DefineStatusAdministrador(pessoas, pessoasTurmaAdministador);
+            return pessoas;
+        }
+
+        private static void DefineStatusAdministrador(IEnumerable<PessoaModel> pessoas, IEnumerable<TurmaPessoaModel> pessoasTurmaAdministador)
+        {
+            bool statusAdministrador = false;
+            foreach (var itemPessoa in pessoas)
+            {
+                statusAdministrador = false;
+                foreach (var itemPessoaTurma in pessoasTurmaAdministador)
+                {
+                    if (itemPessoa.IdPessoa == itemPessoaTurma.IdPessoa && itemPessoaTurma.Ativa == true)
+                    {
+                        statusAdministrador = true;
+                        break;
+                    }
+                }
+                itemPessoa.StatusAdministrador = statusAdministrador;
+            }
+        }
+
+        /// <summary>
         /// Obtém pessoas que iniciam com o user_name
         /// </summary>
         /// <param name="nome"></param>

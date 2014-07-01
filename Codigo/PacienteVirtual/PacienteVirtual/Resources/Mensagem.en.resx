@@ -2295,4 +2295,10 @@
   <data name="fatores_risco" xml:space="preserve">
     <value>Risk Fators</value>
   </data>
+  <data name="definir_administrador_enfermagem" xml:space="preserve">
+    <value>Enable administrator of the nursing program</value>
+  </data>
+  <data name="definir_administrador_farmacia" xml:space="preserve">
+    <value>Enable administrator pharmacy course</value>
+  </data>
 </root>

@@ -32,5 +32,7 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "matricula", ResourceType = typeof(Mensagem))]
         public String Matricula { get; set; }
+
+        public bool StatusAdministrador { get; set; }
     }
 }
