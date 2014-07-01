@@ -137,6 +137,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Concluir(long IdConsultaVariavel)
         {
             GerenciadorConsultaVariavel.GetInstance().Concluir(IdConsultaVariavel);
+            Global.ZeraSessaoConsulta();
             return RedirectToAction("Index", "Consulta");
         }
 
