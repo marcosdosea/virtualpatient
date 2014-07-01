@@ -196,7 +196,7 @@ namespace PacienteVirtual.Negocio
                             IdConsultaVariavel = oxigenacao.IdConsultaVariavel,
                             FequenciaResporatoria = oxigenacao.FrequeciaRespiratoria,
                             Ritmo = (oxigenacao.Ritmo == "Regular" ? ListaRitmo.Regular : ListaRitmo.Irregular),
-                            PadraoRespiratorio = (oxigenacao.PadraoRespiratorio == "Eupineico" ? ListaPadraoRespiratorio.Eupineico : (oxigenacao.PadraoRespiratorio == "Dispneia" ? ListaPadraoRespiratorio.Dispneia : (oxigenacao.PadraoRespiratorio == "Taquipneia" ? ListaPadraoRespiratorio.Taquipneia : (oxigenacao.PadraoRespiratorio == "CheyneStoke" ? ListaPadraoRespiratorio.CheyneStoke : ListaPadraoRespiratorio.Kussmaul)))),
+                            PadraoRespiratorio = (oxigenacao.PadraoRespiratorio == "Eupineico" ? ListaPadraoRespiratorio.Eupineico : (oxigenacao.PadraoRespiratorio == "Dispneia" ? ListaPadraoRespiratorio.Dispneia : (oxigenacao.PadraoRespiratorio == "Taquipneia" ? ListaPadraoRespiratorio.Taquipneia : (oxigenacao.PadraoRespiratorio == "CheyneStokes" ? ListaPadraoRespiratorio.CheyneStokes : ListaPadraoRespiratorio.Kussmaul)))),
                             ObstrucaoNasal = oxigenacao.ObstrucaoNasal,
                             Coriza = oxigenacao.Coriza,
                             DesvioDeSepto = oxigenacao.DesvioDeSepto,

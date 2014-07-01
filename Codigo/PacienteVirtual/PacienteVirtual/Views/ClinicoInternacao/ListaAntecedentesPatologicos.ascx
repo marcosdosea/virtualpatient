@@ -14,7 +14,7 @@
            { %>
         <tr>
             <td>
-                <%: Html.DisplayFor(modelItem => item.IdPatologia) %>
+                <%: Html.DisplayFor(modelItem => item.Descricao) %>
             </td>
             <td>
             <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))

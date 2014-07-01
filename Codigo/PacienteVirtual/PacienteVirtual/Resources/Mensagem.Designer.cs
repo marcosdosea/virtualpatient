@@ -702,9 +702,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Caquexia.
         /// </summary>
-        public static string Caqueixa {
+        public static string Caquexia {
             get {
-                return ResourceManager.GetString("Caqueixa", resourceCulture);
+                return ResourceManager.GetString("Caquexia", resourceCulture);
             }
         }
         
@@ -801,9 +801,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to CheyneStokes.
         /// </summary>
-        public static string CheyneStoke {
+        public static string CheyneStokes {
             get {
-                return ResourceManager.GetString("CheyneStoke", resourceCulture);
+                return ResourceManager.GetString("CheyneStokes", resourceCulture);
             }
         }
         
