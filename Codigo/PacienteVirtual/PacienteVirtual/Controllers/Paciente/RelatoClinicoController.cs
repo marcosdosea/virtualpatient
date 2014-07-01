@@ -261,6 +261,7 @@ namespace PacienteVirtual.Controllers
         // GET: /RelatoClinico/
         public ViewResult Index()
         {
+            Global.ZeraSessaoConsulta();
             ViewBag.codigo = Global.NaoSelecionado;
             ViewBag.IdPaciente = new SelectList(gPaciente.ObterTodos().ToList(), "IdPaciente", "NomePaciente");
             return View(gRelato.ObterTodos());
