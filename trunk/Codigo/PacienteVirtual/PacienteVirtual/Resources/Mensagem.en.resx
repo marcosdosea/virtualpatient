@@ -1131,7 +1131,7 @@
   <data name="Bradipneia" xml:space="preserve">
     <value>Bradypnea</value>
   </data>
-  <data name="CheyneStoke" xml:space="preserve">
+  <data name="CheyneStokes" xml:space="preserve">
     <value>CheyneStokes</value>
   </data>
   <data name="Cifose" xml:space="preserve">
@@ -1557,7 +1557,7 @@
   <data name="ausencia_dentes" xml:space="preserve">
     <value>Absence of Teeth</value>
   </data>
-  <data name="Caqueixa" xml:space="preserve">
+  <data name="Caquexia" xml:space="preserve">
     <value>Cachexy</value>
   </data>
   <data name="dificuldade_mastigar" xml:space="preserve">

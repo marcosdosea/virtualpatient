@@ -5,7 +5,7 @@ namespace PacienteVirtual.Models
 {
     public enum ListaRitmo{ Regular = 0, Irregular = 1 }
 
-    public enum ListaPadraoRespiratorio { Eupineico = 0, Dispneia = 1, Taquipneia = 2, Bradipneia = 3, CheyneStoke = 4, Kussmaul = 5 }
+    public enum ListaPadraoRespiratorio { Eupineico = 0, Dispneia = 1, Taquipneia = 2, Bradipneia = 3, CheyneStokes = 4, Kussmaul = 5 }
 
     public enum ListaSimetriaToracica { Simetrico = 0, AssimetricoUnilateral = 1, AssimetricoBilateral = 2 }
 
@@ -96,6 +96,7 @@ namespace PacienteVirtual.Models
         [EnumDataType(typeof(ListaTipoTosse))]
         public ListaTipoTosse TipoTosse { get; set; }
 
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "aspecto_secrecao", ResourceType = typeof(Mensagem))]
         public string AspectoSecrecao { get; set; }
 
@@ -109,6 +110,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "ganglios_dolorosos", ResourceType = typeof(Mensagem))]
         public bool GangliosDolorosos { get; set; }
 
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ganglios_localizar", ResourceType = typeof(Mensagem))]
         public string GangliosLocalizar { get; set; }
 
