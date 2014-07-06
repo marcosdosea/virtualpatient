@@ -4,7 +4,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                <%: Resources.Mensagem.patologias_atuais%>
+                <%: Resources.Mensagem.doencas_atuais%>
             </th>
             <th>
                 <%: Resources.Mensagem.opcoes %>

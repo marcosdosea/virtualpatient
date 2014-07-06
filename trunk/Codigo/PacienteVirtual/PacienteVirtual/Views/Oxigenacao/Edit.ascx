@@ -7,8 +7,6 @@
     <fieldset>
         <legend><%: Resources.Mensagem.oxigenacao %></legend>
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
-        <h4>FR</h4>
-        <legend></legend>
         <div class="row-fluid">
             <div class="span12">
                 <div class="editor-field">

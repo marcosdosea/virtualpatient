@@ -8,6 +8,7 @@
     <legend>
         <%: Resources.Mensagem.integridade_tecidual %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
+    <p id="titulo"><%: Resources.Mensagem.caracteristicas_pele %></p>
     <div class="row-fluid">
         <div class="span12">
             <div class="editor-field">
@@ -223,4 +224,10 @@
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>
 </fieldset>
+<style>
+    #titulo
+    {
+        font-weight: bolder;
+    }
+</style>
 <% } %>

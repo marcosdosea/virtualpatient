@@ -7,8 +7,8 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
-    public enum ListaSimetriaMamas { Simetricas = 0, Assimetricas = 1 }
-    public enum ListaTipoSecrecao { SecrecaoSerosa = 0, SecrecaoPurulenta = 1 }
+    public enum ListaSimetriaMamas { NaoSeAplica = 0, Simetricas = 1, Assimetricas = 2 }
+    public enum ListaTipoSecrecao { NaoSeAplica = 0, SecrecaoSerosa = 1, SecrecaoPurulenta = 2 }
 
     public class SexualidadeModel
     {

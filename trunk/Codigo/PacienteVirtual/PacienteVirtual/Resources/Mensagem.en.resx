@@ -2301,4 +2301,16 @@
   <data name="definir_administrador_farmacia" xml:space="preserve">
     <value>Enable administrator pharmacy course</value>
   </data>
+  <data name="antecedentes_doencas" xml:space="preserve">
+    <value>Background Diseases</value>
+  </data>
+  <data name="doencas_atuais" xml:space="preserve">
+    <value>Current Diseases</value>
+  </data>
+  <data name="pulso_enf" xml:space="preserve">
+    <value>Pulse</value>
+  </data>
+  <data name="caracteristicas_pele" xml:space="preserve">
+    <value>Skin Characteristics</value>
+  </data>
 </root>
