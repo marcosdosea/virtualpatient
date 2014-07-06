@@ -167,8 +167,8 @@ namespace PacienteVirtual.Negocio
                         select new SexualidadeModel
                         {
                             IdConsultaVariavel = sexualidade.IdConsultaVariavel,
-                            SimetriaMamas = (sexualidade.SimetriaMamas == "Simetricas" ? ListaSimetriaMamas.Simetricas : ListaSimetriaMamas.Assimetricas),
-                            TipoSecrecao = (sexualidade.TipoSecrecao == "SecrecaoPurulenta" ? ListaTipoSecrecao.SecrecaoPurulenta : ListaTipoSecrecao.SecrecaoSerosa),
+                            SimetriaMamas = (sexualidade.SimetriaMamas == "Simetricas" ? ListaSimetriaMamas.Simetricas : (sexualidade.SimetriaMamas == "Assimetricas" ? ListaSimetriaMamas.Assimetricas : ListaSimetriaMamas.NaoSeAplica)),
+                            TipoSecrecao = (sexualidade.TipoSecrecao == "SecrecaoPurulenta" ? ListaTipoSecrecao.SecrecaoPurulenta : (sexualidade.TipoSecrecao == "SecrecaoSerosa" ? ListaTipoSecrecao.SecrecaoSerosa : ListaTipoSecrecao.NaoSeAplica)),
                             ConflitoPreferenciaSexual = sexualidade.ConflitoPreferenciaSexual,
                             DataExamePreventivo = (DateTime)sexualidade.DataExamePreventivo,
                             DataUltimaMenstruacao = (DateTime)sexualidade.DataUltimaMenstruacao,

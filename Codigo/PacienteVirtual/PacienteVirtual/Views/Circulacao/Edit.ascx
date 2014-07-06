@@ -185,17 +185,6 @@
         </div>
         <div class="span1">
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.RedeVenosaPulsosPalpaveis) %>
-                <%: Html.ValidationMessageFor(model => model.RedeVenosaPulsosPalpaveis, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.RedeVenosaPulsosPalpaveis)%>
-            </div>
-        </div>
-        <div class="span1">
-            <div class="editor-field">
                 <%: Html.EditorFor(model => model.RedeVenosaSemAcesso) %>
                 <%: Html.ValidationMessageFor(model => model.RedeVenosaSemAcesso, string.Empty, new { @class = "styleValidation" })%>
             </div>

@@ -1088,7 +1088,7 @@ namespace PacienteVirtual.Controllers
                         circulacao.Infiltracao = false;
                         circulacao.InfiltracaoLocalizar = Global.stringVazia;
                         circulacao.P = Global.ValorInteiroNulo;
-                        circulacao.PA = Global.ValorInteiroNulo;
+                        circulacao.PA = Global.stringVazia;
                         circulacao.RedeVenosaPulsosPalpaveis = false;
                         circulacao.RedeVenosaSemAcesso = false;
                         circulacao.RedeVenosaVisivel = false;
@@ -1203,8 +1203,8 @@ namespace PacienteVirtual.Controllers
                         sexualidade.Prurido = false;
                         sexualidade.Sangramento = false;
                         sexualidade.Secrecao = false;
-                        sexualidade.SimetriaMamas = ListaSimetriaMamas.Simetricas;
-                        sexualidade.TipoSecrecao = ListaTipoSecrecao.SecrecaoSerosa;
+                        sexualidade.SimetriaMamas = ListaSimetriaMamas.NaoSeAplica;
+                        sexualidade.TipoSecrecao = ListaTipoSecrecao.NaoSeAplica;
                         sexualidade.UsoContraceptivo = false;
                         sexualidade.DataExamePreventivo = DateTime.Today;
                         sexualidade.DataUltimaMenstruacao = DateTime.Today;

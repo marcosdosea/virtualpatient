@@ -1120,7 +1120,7 @@
     <value>Usa Outros Descrição</value>
   </data>
   <data name="antecedentes_familiares" xml:space="preserve">
-    <value>Antecedentes Familiares</value>
+    <value>Histórico Familiar de Doenças</value>
   </data>
   <data name="antecedentes_patologicos" xml:space="preserve">
     <value>Antecedentes Patológicos</value>
@@ -1150,7 +1150,7 @@
     <value>Dispnéia</value>
   </data>
   <data name="Eupineico" xml:space="preserve">
-    <value>Eupineico</value>
+    <value>Eupneico</value>
   </data>
   <data name="Escoliose" xml:space="preserve">
     <value>Escoliose</value>
@@ -1234,7 +1234,7 @@
     <value>Frequência de Tosse</value>
   </data>
   <data name="Frequente" xml:space="preserve">
-    <value>Frequênte</value>
+    <value>Freqüente</value>
   </data>
   <data name="ganglios_dolorosos" xml:space="preserve">
     <value>Dolorosos</value>
@@ -1390,7 +1390,7 @@
     <value>Hiperemia</value>
   </data>
   <data name="letericia" xml:space="preserve">
-    <value>Letericia</value>
+    <value>Icteríca</value>
   </data>
   <data name="local" xml:space="preserve">
     <value>Local</value>
@@ -1495,13 +1495,13 @@
     <value>Abertura Ocular</value>
   </data>
   <data name="avaliacao_consciencia_glasgow" xml:space="preserve">
-    <value>Avaliação consciência glasgow</value>
+    <value>Pontuação na Escala de Glasgow</value>
   </data>
   <data name="avaliacao_sedacao" xml:space="preserve">
-    <value>Avaliação sedação</value>
+    <value>Avaliação de Sedação: Escala de Ramsay</value>
   </data>
   <data name="consciencia" xml:space="preserve">
-    <value>Avaliação da consciência</value>
+    <value>Avaliação do Nível de Consciência</value>
   </data>
   <data name="ConversacaoConfusa" xml:space="preserve">
     <value>Conversação Confusa (4)</value>
@@ -1585,7 +1585,7 @@
     <value>Dispositivos para Alimentação</value>
   </data>
   <data name="emese" xml:space="preserve">
-    <value>Emese</value>
+    <value>Êmese</value>
   </data>
   <data name="estado_nutricional" xml:space="preserve">
     <value>Estado Nutricional</value>
@@ -1858,13 +1858,13 @@
     <value>Especificar</value>
   </data>
   <data name="interage_com_equipe_saude" xml:space="preserve">
-    <value>Interage com equipe saúde</value>
+    <value>Interage com equipe de saúde</value>
   </data>
   <data name="leituras" xml:space="preserve">
     <value>Leituras</value>
   </data>
   <data name="participa_atividades" xml:space="preserve">
-    <value>Participa atividades</value>
+    <value>Participa de atividades</value>
   </data>
   <data name="recebe_visitas" xml:space="preserve">
     <value>Recebe visitas</value>
@@ -1873,10 +1873,10 @@
     <value>Retraído</value>
   </data>
   <data name="tipo_comportamento" xml:space="preserve">
-    <value>Tipo comportamento</value>
+    <value>Tipo de comportamento</value>
   </data>
   <data name="transtornos_expressao_verbal" xml:space="preserve">
-    <value>Transtornos expressão verbal</value>
+    <value>Transtornos na expressão verbal</value>
   </data>
   <data name="verbaliza" xml:space="preserve">
     <value>Verbaliza</value>
@@ -1963,7 +1963,7 @@
     <value>Sensorial</value>
   </data>
   <data name="sinal_babinski" xml:space="preserve">
-    <value>Sinal babinski</value>
+    <value>Sinal de Babinski</value>
   </data>
   <data name="Sonolento" xml:space="preserve">
     <value>Sonolento</value>
@@ -1990,10 +1990,10 @@
     <value>Dependente para</value>
   </data>
   <data name="descrever_tipo_tempo_qtde" xml:space="preserve">
-    <value>Descrever tipo, tempo e quantidade</value>
+    <value>Descrever tempo e quantidade</value>
   </data>
   <data name="descricao_estilista" xml:space="preserve">
-    <value>Descrição estilista</value>
+    <value>Descrição Etilista</value>
   </data>
   <data name="descricao_grau_dependencia" xml:space="preserve">
     <value>Descrição grau de dependência</value>
@@ -2002,7 +2002,7 @@
     <value>Descrição tabagista</value>
   </data>
   <data name="estilista" xml:space="preserve">
-    <value>Estilista</value>
+    <value>Etilista</value>
   </data>
   <data name="frequencia_drogas" xml:space="preserve">
     <value>Frequência</value>
@@ -2014,7 +2014,7 @@
     <value>Independente</value>
   </data>
   <data name="outras_necessidades" xml:space="preserve">
-    <value>Outras necessidades</value>
+    <value>Outras necessidades/Hábitos de Vida</value>
   </data>
   <data name="ParcialmenteDependente" xml:space="preserve">
     <value>Parcialmente dependente</value>
@@ -2191,10 +2191,10 @@
     <value>Localizar infiltração</value>
   </data>
   <data name="Maior3" xml:space="preserve">
-    <value>Maior que 3</value>
+    <value>Maior que 3 segundos</value>
   </data>
   <data name="MenorIgual3" xml:space="preserve">
-    <value>Menor ou igual a 3</value>
+    <value>Menor ou igual a 3 segundos</value>
   </data>
   <data name="p" xml:space="preserve">
     <value>P</value>
@@ -2203,7 +2203,7 @@
     <value>Rede venosa pulsos palpáveis</value>
   </data>
   <data name="rede_venosa_sem_acesso" xml:space="preserve">
-    <value>Rede venosa sem acesso</value>
+    <value>Sem condições de acesso periférico</value>
   </data>
   <data name="rede_venosa_visivel" xml:space="preserve">
     <value>Rede venosa visível</value>
@@ -2309,5 +2309,17 @@
   </data>
   <data name="definir_administrador_farmacia" xml:space="preserve">
     <value>Ativar administrador do curso de fármacia</value>
+  </data>
+  <data name="antecedentes_doencas" xml:space="preserve">
+    <value>Antecedentes de Doenças</value>
+  </data>
+  <data name="doencas_atuais" xml:space="preserve">
+    <value>Doenças Atuais</value>
+  </data>
+  <data name="pulso_enf" xml:space="preserve">
+    <value>Pulso</value>
+  </data>
+  <data name="caracteristicas_pele" xml:space="preserve">
+    <value>Características da pele:</value>
   </data>
 </root>

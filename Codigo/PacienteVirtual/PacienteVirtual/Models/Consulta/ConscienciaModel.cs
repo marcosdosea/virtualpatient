@@ -7,12 +7,13 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
-    public enum ListaAberturaOcular { Espontanea = 0, EstimuloVerbal = 1, Dor = 2, NenhumaResposta = 3 }
+    public enum ListaAberturaOcular { Espontanea = 0, EstimuloVerbal = 1, Dor = 2, NenhumaResposta = 3, NaoSeAplica = 4 }
+
     public enum ListaMelhorRespostaMotora { ObedeceComandoVerbal = 0, LocalizaDor = 1, FlexaoRetirada = 2, FlexaoAnormal = 3,
-                                            ExtensaoAnormal = 4, NenhumaResposta = 5 }
+    ExtensaoAnormal = 4, NenhumaResposta = 5, NaoSeAplica = 6}
     public enum ListaMelhorRespostaVerbal { Orientado = 0, ConversacaoConfusa = 1, FalaInadequada = 2, SonsIncopativeis = 3,
-                                            NenhumaResposta = 4 }
-    public enum ListaAvaliacaoSedacao { Grau1 = 0, Grau2 = 1, Grau3 = 2, Grau4 = 3, Grau5 = 4, Grau6 = 5 }
+    NenhumaResposta = 4, NaoSeAplica = 5}
+    public enum ListaAvaliacaoSedacao { Grau1 = 0, Grau2 = 1, Grau3 = 2, Grau4 = 3, Grau5 = 4, Grau6 = 5, NaoSeAplica = 6 }
 
     public class ConscienciaModel
     {

@@ -4,7 +4,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                <%: Resources.Mensagem.antecedentes_patologicos%>
+                <%: Resources.Mensagem.antecedentes_doencas%>
             </th>
             <th>
                 <%: Resources.Mensagem.opcoes %>

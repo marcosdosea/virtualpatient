@@ -129,21 +129,21 @@ namespace PacienteVirtual.Negocio
                             IdConsultaVariavel = consciencia.IdConsultaVariavel,
                             AberturaOcular = (consciencia.AberturaOcular == "Espontanea" ? ListaAberturaOcular.Espontanea : consciencia.AberturaOcular ==
                                 "EstimuloVerbal" ? ListaAberturaOcular.EstimuloVerbal : consciencia.AberturaOcular == "Dor" ? ListaAberturaOcular.Dor : 
-                                ListaAberturaOcular.NenhumaResposta),
+                                (consciencia.AberturaOcular == "NenhumaResposta" ? ListaAberturaOcular.NenhumaResposta : ListaAberturaOcular.NaoSeAplica)),
                             MelhorRespostaMotora = (consciencia.MelhorRespostaMotora == "ObedeceComandoVerbal" ? ListaMelhorRespostaMotora.ObedeceComandoVerbal :
                                 consciencia.MelhorRespostaMotora == "LocalizaDor" ? ListaMelhorRespostaMotora.LocalizaDor : consciencia.MelhorRespostaMotora ==
                                 "FlexaoRetirada" ? ListaMelhorRespostaMotora.FlexaoRetirada : consciencia.MelhorRespostaMotora == "FlexaoAnormal" ?
-                                ListaMelhorRespostaMotora.FlexaoAnormal : consciencia.MelhorRespostaMotora == "ExtensaoAnormal" ? ListaMelhorRespostaMotora.ExtensaoAnormal : 
-                                ListaMelhorRespostaMotora.NenhumaResposta),
+                                ListaMelhorRespostaMotora.FlexaoAnormal : consciencia.MelhorRespostaMotora == "ExtensaoAnormal" ? ListaMelhorRespostaMotora.ExtensaoAnormal :
+                                (consciencia.MelhorRespostaMotora == "NenhumaResposta" ? ListaMelhorRespostaMotora.NenhumaResposta : ListaMelhorRespostaMotora.NaoSeAplica)),
                             MelhorRespostaVerbal = (consciencia.MelhorRespostaVerbal == "Orientado" ? ListaMelhorRespostaVerbal.Orientado :
                                 consciencia.MelhorRespostaVerbal == "ConversacaoConfusa" ? ListaMelhorRespostaVerbal.ConversacaoConfusa :
                                 consciencia.MelhorRespostaVerbal == "FalaInadequada" ? ListaMelhorRespostaVerbal.FalaInadequada :
-                                consciencia.MelhorRespostaVerbal == "SonsIncopativeis" ? ListaMelhorRespostaVerbal.SonsIncopativeis : 
-                                ListaMelhorRespostaVerbal.NenhumaResposta),
+                                consciencia.MelhorRespostaVerbal == "SonsIncopativeis" ? ListaMelhorRespostaVerbal.SonsIncopativeis :
+                                (consciencia.MelhorRespostaVerbal == "NenhumaResposta" ? ListaMelhorRespostaVerbal.NenhumaResposta : ListaMelhorRespostaVerbal.NaoSeAplica)),
                             AvaliacaoSedacao = (consciencia.AvaliacaoSedacao == "Grau1" ? ListaAvaliacaoSedacao.Grau1 : consciencia.AvaliacaoSedacao ==
                                 "Grau2" ? ListaAvaliacaoSedacao.Grau2 : consciencia.AvaliacaoSedacao == "Grau3" ? ListaAvaliacaoSedacao.Grau3 :
                                 consciencia.AvaliacaoSedacao == "Grau4" ? ListaAvaliacaoSedacao.Grau4 : consciencia.AvaliacaoSedacao == "Grau5" ?
-                                ListaAvaliacaoSedacao.Grau5 : ListaAvaliacaoSedacao.Grau6),
+                                ListaAvaliacaoSedacao.Grau5 : (consciencia.AvaliacaoSedacao == "Grau6" ? ListaAvaliacaoSedacao.Grau6 : ListaAvaliacaoSedacao.NaoSeAplica)),
                             AvaliacaoConscienciaGlasgow = consciencia.AvaliacaoConscienciaGlasgow
                         };
             return query;
