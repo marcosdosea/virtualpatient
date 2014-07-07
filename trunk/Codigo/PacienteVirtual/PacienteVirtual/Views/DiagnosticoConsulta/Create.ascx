@@ -37,46 +37,94 @@
         </div>
         <% } %>
         <br />
-        <div class="row-fluid">
-            <div class="span3">
-                 <div class="editor-label">
-                    <% if (Session["_Risco"].Equals(false))
-                       { %>
-                        <%: Resources.Mensagem.fatores_relacionados %>
-                    <% }else{ %>
-                        <%: Resources.Mensagem.fatores_risco %>
-                    <% } %>
-                </div>
-            </div>
-            <div class="span7">
-                <div class="editor-field">
-                    <%: Html.TextAreaFor(model => model.Fatores, new { style = "width:400px;height:200px;" })%>
-                    <%: Html.ValidationMessageFor(model => model.Fatores) %>
-                </div>
-            </div>
-        </div>
-        <br />
         <% if (Session["_Risco"].Equals(false))
            { %>
-        <div class="row-fluid">
-            <div class="span3">
-                <div class="editor-label">
-                    <%: Html.LabelFor(model => model.CaracteristicasDefinidoras) %>
+            <div class="row-fluid">
+                <div class="span3">
+                     <div class="editor-label">
+                        <% if (Session["_Risco"].Equals(false))
+                           { %>
+                            <%: Resources.Mensagem.fatores_relacionados%>
+                        <% }
+                           else
+                           { %>
+                            <%: Resources.Mensagem.fatores_risco%>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="span7">
+                    <div class="editor-field">
+                        <%: Html.TextAreaFor(model => model.Fatores, new { style = "width:400px;height:200px;" })%>
+                        <%: Html.ValidationMessageFor(model => model.Fatores)%>
+                    </div>
                 </div>
             </div>
-            <div class="span7">
-                <div class="editor-field">
-                    <%: Html.TextAreaFor(model => model.CaracteristicasDefinidoras, new { style = "width:400px;height:200px;" })%>
-                    <%: Html.ValidationMessageFor(model => model.CaracteristicasDefinidoras) %>
+            <br />
+            <% if (Session["_Risco"].Equals(false))
+               { %>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="editor-label">
+                        <%: Html.LabelFor(model => model.CaracteristicasDefinidoras)%>
+                    </div>
+                </div>
+                <div class="span7">
+                    <div class="editor-field">
+                        <%: Html.TextAreaFor(model => model.CaracteristicasDefinidoras, new { style = "width:400px;height:200px;" })%>
+                        <%: Html.ValidationMessageFor(model => model.CaracteristicasDefinidoras)%>
+                    </div>
                 </div>
             </div>
-        </div>
-        <br />
-        <% }
-           else
-           { %>
-        <%: Html.HiddenFor(model => model.CaracteristicasDefinidoras)%>
-        <% } %>
+            <br />
+            <% }
+               else
+               { %>
+            <%: Html.HiddenFor(model => model.CaracteristicasDefinidoras)%>
+            <% } %>
+        <% }else{ %>
+            <% if (Session["_Risco"].Equals(false))
+               { %>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="editor-label">
+                        <%: Html.LabelFor(model => model.CaracteristicasDefinidoras)%>
+                    </div>
+                </div>
+                <div class="span7">
+                    <div class="editor-field">
+                        <%: Html.TextAreaFor(model => model.CaracteristicasDefinidoras, new { style = "width:400px;height:200px;" })%>
+                        <%: Html.ValidationMessageFor(model => model.CaracteristicasDefinidoras)%>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <% }
+               else
+               { %>
+            <%: Html.HiddenFor(model => model.CaracteristicasDefinidoras)%>
+            <% } %>
+            <div class="row-fluid">
+                <div class="span3">
+                     <div class="editor-label">
+                        <% if (Session["_Risco"].Equals(false))
+                           { %>
+                            <%: Resources.Mensagem.fatores_relacionados%>
+                        <% }
+                           else
+                           { %>
+                            <%: Resources.Mensagem.fatores_risco%>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="span7">
+                    <div class="editor-field">
+                        <%: Html.TextAreaFor(model => model.Fatores, new { style = "width:400px;height:200px;" })%>
+                        <%: Html.ValidationMessageFor(model => model.Fatores)%>
+                    </div>
+                </div>
+            </div>
+            <br />
+        <%} %>
 
         <div class="row-fluid">
             <div class="span3">
