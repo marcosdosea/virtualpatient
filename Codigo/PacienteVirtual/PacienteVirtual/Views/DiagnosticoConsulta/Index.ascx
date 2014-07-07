@@ -23,6 +23,8 @@
         <td>
             <%: Html.ActionLink(Resources.Mensagem.visualizar,"Details", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idGrupoDiagnostico = item.IdGrupoDiagnostico }, null) %>
             |
+            <%: Html.ActionLink(Resources.Mensagem.editar,"Details", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idGrupoDiagnostico = item.IdGrupoDiagnostico }, null) %>
+            |
             <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, new { onclick = ("return confirm('Deseja realmente REMOVER este Diagnóstico?')") })%>
         </td>
     </tr>

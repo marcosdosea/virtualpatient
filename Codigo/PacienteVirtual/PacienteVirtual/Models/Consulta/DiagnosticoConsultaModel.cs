@@ -42,7 +42,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "prescricao_cuidados", ResourceType = typeof(Mensagem))]
         public string PrescricaoCuidado { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "avaliacao_resultado", ResourceType = typeof(Mensagem))]
         public string AvaliacaoResultados { get; set; }
 
