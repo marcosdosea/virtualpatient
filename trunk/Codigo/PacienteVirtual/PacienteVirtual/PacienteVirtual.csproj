@@ -659,7 +659,7 @@
     <Content Include="Views\ConsultaVariavel\Edit.ascx" />
     <Content Include="Views\DadosComplementares\Edit.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Create.ascx" />
-    <Content Include="Views\DiagnosticoConsulta\Details.aspx" />
+    <Content Include="Views\DiagnosticoConsulta\Details.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Edit.aspx" />
     <Content Include="Views\DiagnosticoConsulta\Index.ascx" />
     <Content Include="Views\Diagnostico\Create.aspx" />
