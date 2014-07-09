@@ -901,6 +901,15 @@ namespace PacienteVirtual.Controllers
             set { HttpContext.Current.Session["_Risco"] = value; }
         }
 
+        public static bool DiagnosticoDetalhes
+        {
+            get
+            {
+                return (bool)HttpContext.Current.Session["_DiagDetalhes"];
+            }
+            set { HttpContext.Current.Session["_DiagDetalhes"] = value; }
+        }
+
         public static string ErroConsultaVariavelQueixa2
         {
             get
@@ -1414,6 +1423,32 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_Diagnostico"] = value;
+            }
+        }
+
+        public static DiagnosticoConsultaModel DiagnosticoConsultaDetalhes
+        {
+            get
+            {
+                DiagnosticoConsultaModel diagnosticoDetalhes = (DiagnosticoConsultaModel)HttpContext.Current.Session["_DiagnosticoDetalhes"];
+                if (diagnosticoDetalhes == null)
+                {
+                    diagnosticoDetalhes = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorConsultaDiagnostico(SessionController.ConsultaVariavel.IdConsultaVariavel, SessionController.IdDiagnostico);
+                    if (diagnosticoDetalhes == null)
+                    {
+                        diagnosticoDetalhes = new DiagnosticoConsultaModel();
+                        diagnosticoDetalhes.AvaliacaoResultados = Global.stringVazia;
+                        diagnosticoDetalhes.CaracteristicasDefinidoras = Global.stringVazia;
+                        diagnosticoDetalhes.Fatores = Global.stringVazia;
+                        diagnosticoDetalhes.PrescricaoCuidado = Global.stringVazia;
+                        diagnosticoDetalhes.ResultadoEsperado = Global.stringVazia;
+                    }
+                }
+                return diagnosticoDetalhes;
+            }
+            set
+            {
+                HttpContext.Current.Session["_DiagnosticoDetalhes"] = value;
             }
         }
     }

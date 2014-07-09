@@ -1,15 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.DiagnosticoConsultaModel>" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.visualizar %>
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-<h2><%: Resources.Mensagem.diagnostico %></h2>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.DiagnosticoConsultaModel>" %>
 
 <fieldset>
-    <legend><%: Resources.Mensagem.diagnostico %></legend>
 
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <%: Html.HiddenFor(model => model.IdDiagnostico) %>
@@ -52,10 +43,6 @@
 
 
 </fieldset>
-<br />
-    <div class="btn btn-large btn-primary">
-        <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit2", "Consulta", new { idConsultaVariavel = Model.IdConsultaVariavel }, new { @style = "color:White; font-size:small;" })%>
-    </div>
 <style>
     .display-label
     {
@@ -64,5 +51,4 @@
     }
     
 </style>
-</asp:Content>
 

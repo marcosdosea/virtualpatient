@@ -118,6 +118,8 @@ namespace PacienteVirtual.Models
             SessionController.OutrasNecessidades = null;
             SessionController.Sexualidade = null;
             SessionController.DiagnosticoConsulta = null;
+            SessionController.DiagnosticoConsultaDetalhes = null;
+            SessionController.DiagnosticoDetalhes = false;
         }
 
         private static void ZeraSessaoConsultaFarmacia()

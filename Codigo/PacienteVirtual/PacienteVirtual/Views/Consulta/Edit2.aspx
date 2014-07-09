@@ -225,6 +225,7 @@
                     <div class="tab-content" id="desabilitar">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
+                                <div id="dialog" title="<%: Resources.Mensagem.diagnostico %>"><% Html.RenderPartial("../DiagnosticoConsulta/Details", Model.DiagnosticoConsultaDetalhes);%></div>
                                 <% Html.RenderPartial("../DiagnosticoConsulta/Index", Model.ListaDiagnosticoConsulta);%>
                                 <% Html.RenderPartial("../DiagnosticoConsulta/Create", Model.DiagnosticoConsulta);%>
                             </div>

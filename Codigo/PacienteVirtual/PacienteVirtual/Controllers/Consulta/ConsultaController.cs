@@ -182,6 +182,7 @@ namespace PacienteVirtual.Controllers
             //zerando SessionController Enfermagem da segunda tela
             SessionController.IdDiagnostico = Global.NaoSelecionado;
             SessionController.IdGrupoDiagnostico = Global.NaoSelecionado;
+            SessionController.DiagnosticoDetalhes = false;
         }
 
         /// <summary>
@@ -338,6 +339,7 @@ namespace PacienteVirtual.Controllers
         {
             consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaDiagnosticoConsulta = SessionController.ListaDiagnostico;
+            consultaModel.DiagnosticoConsultaDetalhes = SessionController.DiagnosticoConsultaDetalhes;
         }
 
         private static void ConsultaSegundaTelaFarmacia(ConsultaModel consultaModel)
