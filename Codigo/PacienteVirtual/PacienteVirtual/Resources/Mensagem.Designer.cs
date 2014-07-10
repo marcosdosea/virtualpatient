@@ -3670,7 +3670,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Icteríca.
+        ///   Looks up a localized string similar to Icterícia.
         /// </summary>
         public static string letericia {
             get {
