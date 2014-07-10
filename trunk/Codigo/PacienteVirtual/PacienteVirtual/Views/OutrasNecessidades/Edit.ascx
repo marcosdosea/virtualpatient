@@ -45,7 +45,7 @@
                 <%: Html.LabelFor(model => model.Estilista) %>
             </div>
         </div>
-        <div class="span3">
+        <!--div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.DescricaoEstilista) %>
             </div>
@@ -55,7 +55,7 @@
                 <%: Html.TextBoxFor(model => model.DescricaoEstilista, new { @class = "textbox", style = "width:276px;" })%>
                 <%: Html.ValidationMessageFor(model => model.DescricaoEstilista, string.Empty, new { @class = "styleValidation" })%>
             </div>
-        </div>
+        </div-->
     </div>
     <br />
     <div class="row-fluid">
@@ -70,7 +70,7 @@
                 <%: Html.LabelFor(model => model.Tabagista) %>
             </div>
         </div>
-        <div class="span3">
+        <!--div class="span3">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.DescricaoTabagista) %>
             </div>
@@ -80,12 +80,9 @@
                 <%: Html.TextBoxFor(model => model.DescricaoTabagista, new { @class = "textbox", style = "width:276px;" })%>
                 <%: Html.ValidationMessageFor(model => model.DescricaoTabagista, string.Empty, new { @class = "styleValidation" })%>
             </div>
-        </div>
+        </div-->
     </div>
     <br />
-    <h4>
-        <%: Resources.Mensagem.uso_drogas_ilicitas %>
-    </h4>
     <br />
     <div class="row-fluid">
         <div class="span12">
