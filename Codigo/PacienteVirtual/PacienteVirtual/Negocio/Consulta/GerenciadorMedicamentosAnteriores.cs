@@ -70,9 +70,9 @@ namespace PacienteVirtual.Negocio
                     erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome + ";<br>";
                 }
             }
-            modelState.AddModelError("ErroMedAnt", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
-                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
-                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+            modelState.AddModelError("ErroMedAnt", (erroRespostas.Equals("") ? " " : erroRespostas + "<br>") +
+                (erroNaoContemNoGabarito.Equals("") ? " " : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? " " : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>

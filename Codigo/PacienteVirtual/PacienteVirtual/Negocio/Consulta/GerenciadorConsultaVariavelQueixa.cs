@@ -201,8 +201,8 @@ namespace PacienteVirtual.Negocio
                     erroContemGabaritoNaoContemResposta += queixaGabarito.DescricaoQueixa + ";<br>";
                 }
             }
-            modelState.AddModelError("ErroConsultaVariavelQueixa", (erroNaoContemNoGabarito.Equals("") ? "" : "As Revisões do Sistema que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
-                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "As Revisões do Sistema que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+            modelState.AddModelError("ErroConsultaVariavelQueixa", (erroNaoContemNoGabarito.Equals("") ? " " : "As Revisões do Sistema que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? " " : "As Revisões do Sistema que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>
@@ -253,9 +253,9 @@ namespace PacienteVirtual.Negocio
                     erroContemGabaritoNaoContemResposta += queixaGabarito.DescricaoQueixa + ";<br>";
                 }
             }
-            SessionController.ErroConsultaVariavelQueixa2 = (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
-                  (erroNaoContemNoGabarito.Equals("") ? "" : "Problemas que não contém no Gabarito: <br>" + erroNaoContemNoGabarito + "<br>") +
-                  (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Problemas que não foram adicionados do Gabarito: <br>" + erroContemGabaritoNaoContemResposta);
+            SessionController.ErroConsultaVariavelQueixa2 = (erroRespostas.Equals("") ? " " : erroRespostas + "<br>") +
+                  (erroNaoContemNoGabarito.Equals("") ? " " : "Problemas que não contém no Gabarito: <br>" + erroNaoContemNoGabarito + "<br>") +
+                  (erroContemGabaritoNaoContemResposta.Equals("") ? " " : "Problemas que não foram adicionados do Gabarito: <br>" + erroContemGabaritoNaoContemResposta);
         }
     }
 }

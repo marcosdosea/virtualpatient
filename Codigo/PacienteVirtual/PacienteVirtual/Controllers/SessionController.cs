@@ -238,7 +238,7 @@ namespace PacienteVirtual.Controllers
                         experiencia.IdRespostaEsperaTratamento = Global.ValorInicialDadosExpMed;
                         experiencia.IdRespostaGrauEntendimento = Global.ValorInicialDadosExpMed;
                         experiencia.IdRespostaIncorporadoPlano = Global.ValorInicialDadosExpMed;
-                        experiencia.IdRespostaPreocupacoes = Global.ValorInicialDadosExpMed;
+                        experiencia.IdRespostaPreocupacoes = 4;
                         GerenciadorExperienciaMedicamentos.GetInstance().Inserir(experiencia);
                     }
                     HttpContext.Current.Session["_ExperienciaMedicamentos"] = experiencia;

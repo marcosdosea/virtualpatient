@@ -45,10 +45,13 @@
                 <%: Resources.Mensagem.necessidade_atencao %>
             </div>
             <div class="editor-field">
-                <!--%: Html.EditorFor(model => model.AtencaoPreocupacoes) % -->
-                <%= Html.RadioButtonFor(model => model.AtencaoPreocupacoes, true)%> &nbsp <%: Resources.Mensagem.sim %>
-                &nbsp &nbsp 
-                <%= Html.RadioButtonFor(model => model.AtencaoPreocupacoes, false)%> &nbsp <%: Resources.Mensagem.nao %>
+                <%= Html.RadioButtonFor(model => model.AtencaoPreocupacoes, true)%>
+                &nbsp
+                <%: Resources.Mensagem.sim %>
+                &nbsp &nbsp
+                <%= Html.RadioButtonFor(model => model.AtencaoPreocupacoes, false)%>
+                &nbsp
+                <%: Resources.Mensagem.nao %>
                 <%: Html.ValidationMessageFor(model => model.AtencaoPreocupacoes, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
