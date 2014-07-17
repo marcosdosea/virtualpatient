@@ -51,7 +51,7 @@
                { %>
                 <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "MedicamentoPrescrito", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento }, null)%>
                 |
-                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "MedicamentoPrescrito", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento }, null)%>
+                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "MedicamentoPrescrito", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento }, new { onclick = ("return confirm('Deseja realmente REMOVER este Medicamento?')") })%>
             <% } %>
             </td>
         </tr>

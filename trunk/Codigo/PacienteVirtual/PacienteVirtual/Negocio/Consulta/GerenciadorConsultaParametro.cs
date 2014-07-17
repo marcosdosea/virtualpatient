@@ -178,6 +178,15 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(ConsultaParametroModel => ConsultaParametroModel.IdConsultaVariavel == idConsultaVariavel).ToList();
         }
+
+        /// <summary>
+        /// Obtém ConsultaParametroModel com o código especificiado
+        /// </summary>
+        /// <returns></returns>
+        public ConsultaParametroModel ObterPorConsultaParametro(long idConsultaVariavel, int idConsultaParametro)
+        {
+            return GetQuery().Where(cp => cp.IdConsultaVariavel == idConsultaVariavel && cp.IdParametroClinico == idConsultaParametro).ToList().ElementAt(0);
+        }
         
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência

@@ -66,12 +66,12 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome + "; <br>";
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + medGabarito.MedicamentoNome + ";<br>";
                 }
             }
-            modelState.AddModelError("ErroListaMedNaoPresc", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
-                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
-                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+            modelState.AddModelError("ErroListaMedNaoPresc", (erroRespostas.Equals("") ? " " : erroRespostas + "<br>") +
+                (erroNaoContemNoGabarito.Equals("") ? " " : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? " " : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>

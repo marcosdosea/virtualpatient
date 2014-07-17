@@ -649,6 +649,7 @@
     <Content Include="Views\ClinicoInternacao\ListaPatologiasAtuais.ascx" />
     <Content Include="Views\Comunicacao\Edit.ascx" />
     <Content Include="Views\Consciencia\Edit.ascx" />
+    <Content Include="Views\ConsultaParametro\Edit.aspx" />
     <Content Include="Views\CorrigirConsultas\ComentariosTutor.ascx" />
     <Content Include="Views\CorrigirConsultas\Index.aspx" />
     <Content Include="Views\ConsultaVariavelQueixa\Edit.aspx" />

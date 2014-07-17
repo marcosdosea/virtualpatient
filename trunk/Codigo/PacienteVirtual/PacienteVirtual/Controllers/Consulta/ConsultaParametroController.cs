@@ -35,6 +35,31 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit", "Consulta");
         }
 
+        // GET: /ConsultaVariavelQueixa/Edit/5
+
+        public ActionResult Edit(long idConsultaVariavel, int idConsultaPar)
+        {
+            ConsultaParametroModel consultaParametro = GerenciadorConsultaParametro.GetInstance().ObterPorConsultaParametro(idConsultaVariavel, idConsultaPar);
+            SessionController.Abas1 = Global.abaConsultaParametro;
+            return View(consultaParametro);
+        }
+
+        //
+        // POST: /ConsultaVariavelQueixa/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(ConsultaParametroModel cp)
+        {
+            SessionController.Abas1 = Global.abaConsultaParametro;
+            if (ModelState.IsValid)
+            {
+                GerenciadorConsultaParametro.GetInstance().Atualizar(cp);
+                SessionController.ListaConsultaParametro = null;
+                return RedirectToAction("Edit", "Consulta");
+            }
+            return View(cp);
+        }
+
         //
         // POST: /MedicamentoPrescrito/Delete/5
         //[HttpPost]

@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.AlergiaExamesFisicosModel>" %>
+<%@ Import Namespace = "PacienteVirtual.Helpers" %>
 <% using (Html.BeginForm("AdicionarAlergia", "ExamesFisicos"))
    { %>
 <%: Html.ValidationSummary(true) %>
@@ -22,7 +23,7 @@
         </div>
     </div>
 </fieldset>
-<div class="span5">
-    <%: Html.ValidationMessageFor(model => model.ErroAlergia, string.Empty, new { @class = "styleValidation" })%>
+<div class="styleValidation">
+    <%: Html.QuebraLinhaFor(model => model.ErroAlergia) %>
 </div>
 <% } %>

@@ -108,7 +108,7 @@ namespace PacienteVirtual.Negocio
             {
                 if ((estiloVida.AlcoolTipoBebida == null || estiloVida.AlcoolTipoBebida.Equals("")) || !Global.RemoverAcentuacao(estiloVida.AlcoolTipoBebida.ToLower()).Equals(Global.RemoverAcentuacao(estiloVidaGabarito.AlcoolTipoBebida.ToLower())))
                 {
-                    modelState.AddModelError("AlcoolTipoBebida", "Gabarito: \"" + estiloVidaGabarito.AlcoolTipoBebida + "\"");
+                    modelState.AddModelError("AlcoolTipoBebida", "Gabarito Tipo de Bebida: \"" + estiloVidaGabarito.AlcoolTipoBebida + "\"");
                 }
             }
         }

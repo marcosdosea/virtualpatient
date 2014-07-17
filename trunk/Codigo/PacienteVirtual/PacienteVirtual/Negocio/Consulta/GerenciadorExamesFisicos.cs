@@ -64,8 +64,8 @@ namespace PacienteVirtual.Negocio
                     erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + alergiaGabarito.Alergia + ";<br>";
                 }
             }
-            modelState.AddModelError("ErroAlergia", (erroNaoContemNoGabarito.Equals("") ? "" : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
-                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Alergias que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+            modelState.AddModelError("ErroAlergia", (erroNaoContemNoGabarito.Equals("") ? " " : "Alergias que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? " " : "Alergias que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
 
         /// <summary>
