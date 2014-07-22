@@ -488,6 +488,7 @@
     <Content Include="Content\themes\pv\css\datepicker.css" />
     <Content Include="Content\themes\pv\css\imperio.css" />
     <Content Include="Content\themes\pv\css\jquery-ui.css" />
+    <Content Include="Content\themes\pv\css\style-PopUp.css" />
     <Content Include="Content\themes\pv\img\ajax-loader.gif" />
     <Content Include="Content\themes\pv\img\icons\calendar3.png" />
     <Content Include="Content\themes\pv\img\icons\calendar2.png" />
@@ -592,7 +593,13 @@
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.4.2.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Content\themes\pv\css\jquery-ui2.css" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui-PopUp.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\messages_pt.js" />
     <Content Include="Scripts\partial.view.reload.js" />

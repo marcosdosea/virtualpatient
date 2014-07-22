@@ -20,12 +20,22 @@
 
     <script src="<%: Url.Content("~/Scripts/jquery.maskedinput.min.js") %>" ></script>
 
+    <script src="<%: Url.Content("~/Scripts/jquery-1.4.2.min.js") %>" type="text/javascript"></script>
+
     <% using (Html.BeginForm()) { %>
         <%: Html.ValidationSummary(true, Resources.Mensagem.conta_sem_sucesso_tentar_novamente) %>
         <div>
             <fieldset>
                 <legend><%: Resources.Mensagem.informacao_conta %></legend>
                 
+                <div class="editor-label">
+                    <%: Html.LabelFor(m => m.Nome) %>
+                </div>
+                <div class="editor-field">
+                    <%: Html.TextBoxFor(m => m.Nome) %>
+                    <%: Html.ValidationMessageFor(m => m.Nome, string.Empty, new { @class = "styleValidation" })%>
+                </div>
+
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.UserName) %>
                 </div>
@@ -41,6 +51,14 @@
                     <%: Html.TextBoxFor(m => m.Email) %>
                     <%: Html.ValidationMessageFor(m => m.Email, string.Empty, new { @class = "styleValidation" })%>
                 </div>
+
+                <div class="editor-label">
+                    <%: Html.LabelFor(m => m.ConfirmaEmail) %>
+                </div>
+                <div class="editor-field">
+                    <%: Html.TextBoxFor(m => m.ConfirmaEmail, new { id = "textBoxColar" })%>
+                    <%: Html.ValidationMessageFor(m => m.ConfirmaEmail, string.Empty, new { @class = "styleValidation" })%>
+                </div>
                 
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.Password) %>
@@ -55,13 +73,6 @@
                 <div class="editor-field">
                     <%: Html.PasswordFor(m => m.ConfirmPassword) %>
                     <%: Html.ValidationMessageFor(m => m.ConfirmPassword, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-                <div class="editor-label">
-                    <%: Html.LabelFor(m => m.Nome) %>
-                </div>
-                <div class="editor-field">
-                    <%: Html.TextBoxFor(m => m.Nome) %>
-                    <%: Html.ValidationMessageFor(m => m.Nome, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 
                 <div class="editor-label">
@@ -153,5 +164,13 @@
             padding-top: 25%;
         }
     </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#textBoxColar').bind('paste', function (e) {
+                e.preventDefault();
+            });
+        });
+    </script>
 </asp:Content>
 
