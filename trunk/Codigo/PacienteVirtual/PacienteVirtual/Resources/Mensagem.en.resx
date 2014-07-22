@@ -2313,4 +2313,10 @@
   <data name="caracteristicas_pele" xml:space="preserve">
     <value>Skin Characteristics</value>
   </data>
+  <data name="confirmar_email" xml:space="preserve">
+    <value>Email Confirm</value>
+  </data>
+  <data name="email_nao_coincidem" xml:space="preserve">
+    <value>The Email and confirmation email do not match.</value>
+  </data>
 </root>

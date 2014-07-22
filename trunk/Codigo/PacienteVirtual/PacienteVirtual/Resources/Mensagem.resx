@@ -2322,4 +2322,10 @@
   <data name="caracteristicas_pele" xml:space="preserve">
     <value>Características da pele:</value>
   </data>
+  <data name="confirmar_email" xml:space="preserve">
+    <value>Confirmar E-mail</value>
+  </data>
+  <data name="email_nao_coincidem" xml:space="preserve">
+    <value>"Email" e "Confirmar Email" não coincidem.</value>
+  </data>
 </root>

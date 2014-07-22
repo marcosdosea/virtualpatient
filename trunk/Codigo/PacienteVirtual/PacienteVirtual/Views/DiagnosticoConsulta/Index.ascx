@@ -1,8 +1,8 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PacienteVirtual.Models.DiagnosticoConsultaModel>>" %>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet" href="<%: Url.Content("~/Content/themes/pv/jquery-ui2.css") %>" />
+<script src="<%: Url.Content("~/Scripts/jquery-1.10.2.js") %>" type="text/javascript"></script>
+<script src="<%: Url.Content("~/Scripts/jquery-ui-PopUp.js") %>" type="text/javascript"></script>
+<link rel="stylesheet" href="<%: Url.Content("~/Content/themes/pv/style-PopUp.css") %>" />
   <script type="text/javascript">
           $(function () {
               $("#dialog").dialog({
@@ -24,7 +24,7 @@
   </script>
   <% if (Session["_DiagDetalhes"].Equals(true))
      { %>
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery-1.9.1.min.js") %>" type="text/javascript"></script>
     <script type="text/javascript">
         $(window).load(function () {
             $("#opener").click();

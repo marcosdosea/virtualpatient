@@ -1096,6 +1096,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmar E-mail.
+        /// </summary>
+        public static string confirmar_email {
+            get {
+                return ResourceManager.GetString("confirmar_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmar Senha.
         /// </summary>
         public static string confirme_senha {
@@ -2217,6 +2226,15 @@ namespace Resources {
         public static string email_invalido {
             get {
                 return ResourceManager.GetString("email_invalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Email&quot; e &quot;Confirmar Email&quot; não coincidem..
+        /// </summary>
+        public static string email_nao_coincidem {
+            get {
+                return ResourceManager.GetString("email_nao_coincidem", resourceCulture);
             }
         }
         

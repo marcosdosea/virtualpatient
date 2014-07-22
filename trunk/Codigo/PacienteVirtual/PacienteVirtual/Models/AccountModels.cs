@@ -51,6 +51,10 @@ namespace PacienteVirtual.Models
         [Display(Name = "endereco_email", ResourceType = typeof(Mensagem))]
         public string Email { get; set; }
 
+        [Display(Name = "confirmar_email", ResourceType = typeof(Mensagem))]
+        [Compare("Email", ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "email_nao_coincidem")]
+        public string ConfirmaEmail { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [StringLength(100, ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "senha_curta", MinimumLength = 3)]
         [DataType(DataType.Password)]
