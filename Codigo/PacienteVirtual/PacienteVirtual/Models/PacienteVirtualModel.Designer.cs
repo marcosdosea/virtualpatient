@@ -54,7 +54,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_nutricao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_nutricao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_nutricao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_percepcao_expectativas_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_percepcao_expectativas", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_percepcao_expectativas), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_psicoespiritual_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_psicoespiritual", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_psicoespiritual), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sensorial_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sensorial", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sensorial), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sexualidade_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sexualidade", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sexualidade), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_termorregulacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_termorregulacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_termorregulacao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_intervencao_has_tb_consulta_variavel_tb_intervencao1", "tb_intervencao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_intervencao), "tb_consulta_variavel_intervencao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_consulta_variavel_intervencao), true)]
@@ -101,8 +100,9 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diagnostico_has_tb_consulta_variavel_tb_consulta_variav1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_diagnostico_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_diagnostico_consulta_variavel), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diagnostico_has_tb_consulta_variavel_tb_diagnostico1", "tb_diagnostico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_diagnostico), "tb_diagnostico_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_diagnostico_consulta_variavel), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_diagnostico_tb_grupo_diagnostico1", "tb_grupo_diagnostico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_grupo_diagnostico), "tb_diagnostico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PacienteVirtual.Models.tb_diagnostico), true)]
-[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_circulacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_circulacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_circulacao), true)]
 [assembly: EdmRelationshipAttribute("pvModel", "fk_tb_oxiginecao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_oxiginecao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_oxiginecao), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_sensorial_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_sensorial", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_sensorial), true)]
+[assembly: EdmRelationshipAttribute("pvModel", "fk_tb_circulacao_tb_consulta_variavel1", "tb_consulta_variavel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PacienteVirtual.Models.tb_consulta_variavel), "tb_circulacao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PacienteVirtual.Models.tb_circulacao), true)]
 
 #endregion
 
@@ -1117,22 +1117,6 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_sensorial> tb_sensorial
-        {
-            get
-            {
-                if ((_tb_sensorial == null))
-                {
-                    _tb_sensorial = base.CreateObjectSet<tb_sensorial>("tb_sensorial");
-                }
-                return _tb_sensorial;
-            }
-        }
-        private ObjectSet<tb_sensorial> _tb_sensorial;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<tb_sexualidade> tb_sexualidade
         {
             get
@@ -1357,22 +1341,6 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tb_circulacao> tb_circulacao
-        {
-            get
-            {
-                if ((_tb_circulacao == null))
-                {
-                    _tb_circulacao = base.CreateObjectSet<tb_circulacao>("tb_circulacao");
-                }
-                return _tb_circulacao;
-            }
-        }
-        private ObjectSet<tb_circulacao> _tb_circulacao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<tb_oxiginecao> tb_oxiginecao
         {
             get
@@ -1385,6 +1353,38 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<tb_oxiginecao> _tb_oxiginecao;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_sensorial> tb_sensorial
+        {
+            get
+            {
+                if ((_tb_sensorial == null))
+                {
+                    _tb_sensorial = base.CreateObjectSet<tb_sensorial>("tb_sensorial");
+                }
+                return _tb_sensorial;
+            }
+        }
+        private ObjectSet<tb_sensorial> _tb_sensorial;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tb_circulacao> tb_circulacao
+        {
+            get
+            {
+                if ((_tb_circulacao == null))
+                {
+                    _tb_circulacao = base.CreateObjectSet<tb_circulacao>("tb_circulacao");
+                }
+                return _tb_circulacao;
+            }
+        }
+        private ObjectSet<tb_circulacao> _tb_circulacao;
 
         #endregion
 
@@ -1871,14 +1871,6 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tb_sensorial EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_sensorial(tb_sensorial tb_sensorial)
-        {
-            base.AddObject("tb_sensorial", tb_sensorial);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the tb_sexualidade EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_sexualidade(tb_sexualidade tb_sexualidade)
@@ -1991,19 +1983,27 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tb_circulacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotb_circulacao(tb_circulacao tb_circulacao)
-        {
-            base.AddObject("tb_circulacao", tb_circulacao);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the tb_oxiginecao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotb_oxiginecao(tb_oxiginecao tb_oxiginecao)
         {
             base.AddObject("tb_oxiginecao", tb_oxiginecao);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_sensorial EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_sensorial(tb_sensorial tb_sensorial)
+        {
+            base.AddObject("tb_sensorial", tb_sensorial);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tb_circulacao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotb_circulacao(tb_circulacao tb_circulacao)
+        {
+            base.AddObject("tb_circulacao", tb_circulacao);
         }
 
         #endregion
@@ -7927,44 +7927,6 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial")]
-        public tb_sensorial tb_sensorial
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_sensorial>("pvModel.fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_sensorial>("pvModel.fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_sensorial> tb_sensorialReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_sensorial>("pvModel.fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_sensorial>("pvModel.fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_sexualidade_tb_consulta_variavel1", "tb_sexualidade")]
         public tb_sexualidade tb_sexualidade
         {
@@ -8063,44 +8025,6 @@ namespace PacienteVirtual.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao")]
-        public tb_circulacao tb_circulacao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tb_circulacao> tb_circulacaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_oxiginecao_tb_consulta_variavel1", "tb_oxiginecao")]
         public tb_oxiginecao tb_oxiginecao
         {
@@ -8129,6 +8053,82 @@ namespace PacienteVirtual.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_oxiginecao>("pvModel.fk_tb_oxiginecao_tb_consulta_variavel1", "tb_oxiginecao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial")]
+        public tb_sensorial tb_sensorial
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_sensorial>("pvModel.fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_sensorial>("pvModel.fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_sensorial> tb_sensorialReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_sensorial>("pvModel.fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_sensorial>("pvModel.fk_tb_sensorial_tb_consulta_variavel1", "tb_sensorial", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pvModel", "fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao")]
+        public tb_circulacao tb_circulacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tb_circulacao> tb_circulacaoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tb_circulacao>("pvModel.fk_tb_circulacao_tb_consulta_variavel1", "tb_circulacao", value);
                 }
             }
         }
@@ -16275,7 +16275,8 @@ namespace PacienteVirtual.Models
         /// <param name="semRestricao">Initial value of the SemRestricao property.</param>
         /// <param name="restricaoAlimentar">Initial value of the RestricaoAlimentar property.</param>
         /// <param name="dispositivosAlimentacao">Initial value of the DispositivosAlimentacao property.</param>
-        public static tb_nutricao Createtb_nutricao(global::System.Int64 idConsultaVariavel, global::System.Decimal peso, global::System.Decimal altura, global::System.String estadoNutricional, global::System.Boolean nutricaoOral, global::System.Boolean disfagia, global::System.Boolean dificuldadeMastigar, global::System.Boolean sangramentoGengival, global::System.Boolean ausenciaDentes, global::System.Boolean nausea, global::System.Boolean emese, global::System.Boolean pirose, global::System.Boolean ingestaHidrica, global::System.Boolean restricaoHidrica, global::System.Boolean semRestricao, global::System.Boolean restricaoAlimentar, global::System.String dispositivosAlimentacao)
+        /// <param name="semRestricaoAlimentar">Initial value of the SemRestricaoAlimentar property.</param>
+        public static tb_nutricao Createtb_nutricao(global::System.Int64 idConsultaVariavel, global::System.Decimal peso, global::System.Decimal altura, global::System.String estadoNutricional, global::System.Boolean nutricaoOral, global::System.Boolean disfagia, global::System.Boolean dificuldadeMastigar, global::System.Boolean sangramentoGengival, global::System.Boolean ausenciaDentes, global::System.Boolean nausea, global::System.Boolean emese, global::System.Boolean pirose, global::System.Boolean ingestaHidrica, global::System.Boolean restricaoHidrica, global::System.Boolean semRestricao, global::System.Boolean restricaoAlimentar, global::System.String dispositivosAlimentacao, global::System.Boolean semRestricaoAlimentar)
         {
             tb_nutricao tb_nutricao = new tb_nutricao();
             tb_nutricao.IdConsultaVariavel = idConsultaVariavel;
@@ -16295,6 +16296,7 @@ namespace PacienteVirtual.Models
             tb_nutricao.SemRestricao = semRestricao;
             tb_nutricao.RestricaoAlimentar = restricaoAlimentar;
             tb_nutricao.DispositivosAlimentacao = dispositivosAlimentacao;
+            tb_nutricao.SemRestricaoAlimentar = semRestricaoAlimentar;
             return tb_nutricao;
         }
 
@@ -16832,6 +16834,30 @@ namespace PacienteVirtual.Models
         private Nullable<global::System.DateTime> _Instalada;
         partial void OnInstaladaChanging(Nullable<global::System.DateTime> value);
         partial void OnInstaladaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean SemRestricaoAlimentar
+        {
+            get
+            {
+                return _SemRestricaoAlimentar;
+            }
+            set
+            {
+                OnSemRestricaoAlimentarChanging(value);
+                ReportPropertyChanging("SemRestricaoAlimentar");
+                _SemRestricaoAlimentar = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SemRestricaoAlimentar");
+                OnSemRestricaoAlimentarChanged();
+            }
+        }
+        private global::System.Boolean _SemRestricaoAlimentar;
+        partial void OnSemRestricaoAlimentarChanging(global::System.Boolean value);
+        partial void OnSemRestricaoAlimentarChanged();
 
         #endregion
 
@@ -17508,15 +17534,12 @@ namespace PacienteVirtual.Models
         /// </summary>
         /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
         /// <param name="frequeciaRespiratoria">Initial value of the FrequeciaRespiratoria property.</param>
-        /// <param name="ritmo">Initial value of the Ritmo property.</param>
-        /// <param name="padraoRespiratorio">Initial value of the PadraoRespiratorio property.</param>
         /// <param name="obstrucaoNasal">Initial value of the ObstrucaoNasal property.</param>
         /// <param name="coriza">Initial value of the Coriza property.</param>
         /// <param name="desvioDeSepto">Initial value of the DesvioDeSepto property.</param>
         /// <param name="palidez">Initial value of the Palidez property.</param>
         /// <param name="labioCianotico">Initial value of the LabioCianotico property.</param>
         /// <param name="simetriaToracica">Initial value of the SimetriaToracica property.</param>
-        /// <param name="tiposTorax">Initial value of the TiposTorax property.</param>
         /// <param name="tiragemIntercostal">Initial value of the TiragemIntercostal property.</param>
         /// <param name="expansibilidade">Initial value of the Expansibilidade property.</param>
         /// <param name="enfizemaSubcutaneo">Initial value of the EnfizemaSubcutaneo property.</param>
@@ -17524,26 +17547,21 @@ namespace PacienteVirtual.Models
         /// <param name="tosse">Initial value of the Tosse property.</param>
         /// <param name="frequenciaTosse">Initial value of the FrequenciaTosse property.</param>
         /// <param name="tipoTosse">Initial value of the TipoTosse property.</param>
-        /// <param name="aspectoSecrecao">Initial value of the AspectoSecrecao property.</param>
         /// <param name="percursao">Initial value of the Percursao property.</param>
         /// <param name="gangliosPalpaveis">Initial value of the GangliosPalpaveis property.</param>
         /// <param name="gangliosDolorosos">Initial value of the GangliosDolorosos property.</param>
         /// <param name="gangliosLocalizar">Initial value of the GangliosLocalizar property.</param>
-        /// <param name="auscultaPulmonar">Initial value of the AuscultaPulmonar property.</param>
-        public static tb_oxiginecao Createtb_oxiginecao(global::System.Int64 idConsultaVariavel, global::System.Int32 frequeciaRespiratoria, global::System.String ritmo, global::System.String padraoRespiratorio, global::System.Boolean obstrucaoNasal, global::System.Boolean coriza, global::System.Boolean desvioDeSepto, global::System.Boolean palidez, global::System.Boolean labioCianotico, global::System.String simetriaToracica, global::System.String tiposTorax, global::System.Boolean tiragemIntercostal, global::System.String expansibilidade, global::System.Boolean enfizemaSubcutaneo, global::System.Boolean presencaFremito, global::System.String tosse, global::System.String frequenciaTosse, global::System.String tipoTosse, global::System.String aspectoSecrecao, global::System.String percursao, global::System.Boolean gangliosPalpaveis, global::System.Boolean gangliosDolorosos, global::System.String gangliosLocalizar, global::System.String auscultaPulmonar)
+        public static tb_oxiginecao Createtb_oxiginecao(global::System.Int64 idConsultaVariavel, global::System.Int32 frequeciaRespiratoria, global::System.Boolean obstrucaoNasal, global::System.Boolean coriza, global::System.Boolean desvioDeSepto, global::System.Boolean palidez, global::System.Boolean labioCianotico, global::System.String simetriaToracica, global::System.Boolean tiragemIntercostal, global::System.String expansibilidade, global::System.Boolean enfizemaSubcutaneo, global::System.Boolean presencaFremito, global::System.String tosse, global::System.String frequenciaTosse, global::System.String tipoTosse, global::System.String percursao, global::System.Boolean gangliosPalpaveis, global::System.Boolean gangliosDolorosos, global::System.String gangliosLocalizar)
         {
             tb_oxiginecao tb_oxiginecao = new tb_oxiginecao();
             tb_oxiginecao.IdConsultaVariavel = idConsultaVariavel;
             tb_oxiginecao.FrequeciaRespiratoria = frequeciaRespiratoria;
-            tb_oxiginecao.Ritmo = ritmo;
-            tb_oxiginecao.PadraoRespiratorio = padraoRespiratorio;
             tb_oxiginecao.ObstrucaoNasal = obstrucaoNasal;
             tb_oxiginecao.Coriza = coriza;
             tb_oxiginecao.DesvioDeSepto = desvioDeSepto;
             tb_oxiginecao.Palidez = palidez;
             tb_oxiginecao.LabioCianotico = labioCianotico;
             tb_oxiginecao.SimetriaToracica = simetriaToracica;
-            tb_oxiginecao.TiposTorax = tiposTorax;
             tb_oxiginecao.TiragemIntercostal = tiragemIntercostal;
             tb_oxiginecao.Expansibilidade = expansibilidade;
             tb_oxiginecao.EnfizemaSubcutaneo = enfizemaSubcutaneo;
@@ -17551,12 +17569,10 @@ namespace PacienteVirtual.Models
             tb_oxiginecao.Tosse = tosse;
             tb_oxiginecao.FrequenciaTosse = frequenciaTosse;
             tb_oxiginecao.TipoTosse = tipoTosse;
-            tb_oxiginecao.AspectoSecrecao = aspectoSecrecao;
             tb_oxiginecao.Percursao = percursao;
             tb_oxiginecao.GangliosPalpaveis = gangliosPalpaveis;
             tb_oxiginecao.GangliosDolorosos = gangliosDolorosos;
             tb_oxiginecao.GangliosLocalizar = gangliosLocalizar;
-            tb_oxiginecao.AuscultaPulmonar = auscultaPulmonar;
             return tb_oxiginecao;
         }
 
@@ -17618,7 +17634,7 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String Ritmo
         {
@@ -17630,7 +17646,7 @@ namespace PacienteVirtual.Models
             {
                 OnRitmoChanging(value);
                 ReportPropertyChanging("Ritmo");
-                _Ritmo = StructuralObject.SetValidValue(value, false);
+                _Ritmo = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Ritmo");
                 OnRitmoChanged();
             }
@@ -17642,7 +17658,7 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String PadraoRespiratorio
         {
@@ -17654,7 +17670,7 @@ namespace PacienteVirtual.Models
             {
                 OnPadraoRespiratorioChanging(value);
                 ReportPropertyChanging("PadraoRespiratorio");
-                _PadraoRespiratorio = StructuralObject.SetValidValue(value, false);
+                _PadraoRespiratorio = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("PadraoRespiratorio");
                 OnPadraoRespiratorioChanged();
             }
@@ -17810,7 +17826,7 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String TiposTorax
         {
@@ -17822,7 +17838,7 @@ namespace PacienteVirtual.Models
             {
                 OnTiposToraxChanging(value);
                 ReportPropertyChanging("TiposTorax");
-                _TiposTorax = StructuralObject.SetValidValue(value, false);
+                _TiposTorax = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("TiposTorax");
                 OnTiposToraxChanged();
             }
@@ -18004,30 +18020,6 @@ namespace PacienteVirtual.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String AspectoSecrecao
-        {
-            get
-            {
-                return _AspectoSecrecao;
-            }
-            set
-            {
-                OnAspectoSecrecaoChanging(value);
-                ReportPropertyChanging("AspectoSecrecao");
-                _AspectoSecrecao = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("AspectoSecrecao");
-                OnAspectoSecrecaoChanged();
-            }
-        }
-        private global::System.String _AspectoSecrecao;
-        partial void OnAspectoSecrecaoChanging(global::System.String value);
-        partial void OnAspectoSecrecaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.String Percursao
         {
             get
@@ -18122,7 +18114,7 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String AuscultaPulmonar
         {
@@ -18134,7 +18126,7 @@ namespace PacienteVirtual.Models
             {
                 OnAuscultaPulmonarChanging(value);
                 ReportPropertyChanging("AuscultaPulmonar");
-                _AuscultaPulmonar = StructuralObject.SetValidValue(value, false);
+                _AuscultaPulmonar = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("AuscultaPulmonar");
                 OnAuscultaPulmonarChanged();
             }
@@ -18142,6 +18134,30 @@ namespace PacienteVirtual.Models
         private global::System.String _AuscultaPulmonar;
         partial void OnAuscultaPulmonarChanging(global::System.String value);
         partial void OnAuscultaPulmonarChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ApectoSecrecao
+        {
+            get
+            {
+                return _ApectoSecrecao;
+            }
+            set
+            {
+                OnApectoSecrecaoChanging(value);
+                ReportPropertyChanging("ApectoSecrecao");
+                _ApectoSecrecao = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ApectoSecrecao");
+                OnApectoSecrecaoChanged();
+            }
+        }
+        private global::System.String _ApectoSecrecao;
+        partial void OnApectoSecrecaoChanging(global::System.String value);
+        partial void OnApectoSecrecaoChanged();
 
         #endregion
 
@@ -21254,14 +21270,14 @@ namespace PacienteVirtual.Models
         /// <param name="olfativa">Initial value of the Olfativa property.</param>
         /// <param name="tatil">Initial value of the Tatil property.</param>
         /// <param name="gustativa">Initial value of the Gustativa property.</param>
-        /// <param name="semDor">Initial value of the SemDor property.</param>
+        /// <param name="dor">Initial value of the Dor property.</param>
         /// <param name="inquietacao">Initial value of the Inquietacao property.</param>
         /// <param name="expressaoFacial">Initial value of the ExpressaoFacial property.</param>
         /// <param name="defensividade">Initial value of the Defensividade property.</param>
         /// <param name="pA">Initial value of the PA property.</param>
         /// <param name="pulso">Initial value of the Pulso property.</param>
         /// <param name="respiracao">Initial value of the Respiracao property.</param>
-        public static tb_sensorial Createtb_sensorial(global::System.Int64 idConsultaVariavel, global::System.String estadoMental, global::System.Boolean palpebral, global::System.Boolean pupilar, global::System.Boolean plantar, global::System.Boolean sinalBabinski, global::System.Boolean visual, global::System.Boolean auditiva, global::System.Boolean olfativa, global::System.Boolean tatil, global::System.Boolean gustativa, global::System.Boolean semDor, global::System.Boolean inquietacao, global::System.Boolean expressaoFacial, global::System.Boolean defensividade, global::System.Boolean pA, global::System.Boolean pulso, global::System.Boolean respiracao)
+        public static tb_sensorial Createtb_sensorial(global::System.Int64 idConsultaVariavel, global::System.String estadoMental, global::System.Boolean palpebral, global::System.Boolean pupilar, global::System.Boolean plantar, global::System.Boolean sinalBabinski, global::System.Boolean visual, global::System.Boolean auditiva, global::System.Boolean olfativa, global::System.Boolean tatil, global::System.Boolean gustativa, global::System.String dor, global::System.Boolean inquietacao, global::System.Boolean expressaoFacial, global::System.Boolean defensividade, global::System.Boolean pA, global::System.Boolean pulso, global::System.Boolean respiracao)
         {
             tb_sensorial tb_sensorial = new tb_sensorial();
             tb_sensorial.IdConsultaVariavel = idConsultaVariavel;
@@ -21275,7 +21291,7 @@ namespace PacienteVirtual.Models
             tb_sensorial.Olfativa = olfativa;
             tb_sensorial.Tatil = tatil;
             tb_sensorial.Gustativa = gustativa;
-            tb_sensorial.SemDor = semDor;
+            tb_sensorial.Dor = dor;
             tb_sensorial.Inquietacao = inquietacao;
             tb_sensorial.ExpressaoFacial = expressaoFacial;
             tb_sensorial.Defensividade = defensividade;
@@ -21585,24 +21601,24 @@ namespace PacienteVirtual.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean SemDor
+        public global::System.String Dor
         {
             get
             {
-                return _SemDor;
+                return _Dor;
             }
             set
             {
-                OnSemDorChanging(value);
-                ReportPropertyChanging("SemDor");
-                _SemDor = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("SemDor");
-                OnSemDorChanged();
+                OnDorChanging(value);
+                ReportPropertyChanging("Dor");
+                _Dor = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Dor");
+                OnDorChanged();
             }
         }
-        private global::System.Boolean _SemDor;
-        partial void OnSemDorChanging(global::System.Boolean value);
-        partial void OnSemDorChanged();
+        private global::System.String _Dor;
+        partial void OnDorChanging(global::System.String value);
+        partial void OnDorChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

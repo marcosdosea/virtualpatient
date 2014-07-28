@@ -2352,4 +2352,13 @@
   <data name="sem_restricao_alimentar" xml:space="preserve">
     <value>Without Food Restriction</value>
   </data>
+  <data name="alteracoes_vesicais" xml:space="preserve">
+    <value>Bladder Changes</value>
+  </data>
+  <data name="com_dor" xml:space="preserve">
+    <value>With Pain</value>
+  </data>
+  <data name="SemAlteracoes" xml:space="preserve">
+    <value>No Changes</value>
+  </data>
 </root>

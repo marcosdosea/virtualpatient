@@ -9,7 +9,7 @@ namespace PacienteVirtual.Models
 {
     public enum ListaEstadoMental
     {
-        NaoSeAplica = 0, Agressivo = 1, EpisodioDelirio = 2, Confuso = 3, Agitado = 4, Apatico = 5, Sonolento = 6,
+        SemAlteracoes = 0, Agressivo = 1, EpisodioDelirio = 2, Confuso = 3, Agitado = 4, Apatico = 5, Sonolento = 6,
         Torporoso = 7, Comatoso = 8
     }
     
@@ -62,9 +62,8 @@ namespace PacienteVirtual.Models
         [Display(Name = "descricao_tipo_distorcao", ResourceType = typeof(Mensagem))]
         public string DescricaoTipoDistorcao { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "sem_dor", ResourceType = typeof(Mensagem))]
-        public bool SemDor { get; set; }
+        [Display(Name = "Dor", ResourceType = typeof(Mensagem))]
+        public string Dor { get; set; }
 
         [Display(Name = "dor_intensidade_valor", ResourceType = typeof(Mensagem))]
         public int DorIntensidadeValor { get; set; }

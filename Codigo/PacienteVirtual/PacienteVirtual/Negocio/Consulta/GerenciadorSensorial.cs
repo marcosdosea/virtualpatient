@@ -51,9 +51,9 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("SinalBabinski", "Gabarito: " + (sensorialGabarito.SinalBabinski.Equals(true) ? "Sim" : "Não"));
             }
-            if (sensorial.SemDor != sensorialGabarito.SemDor)
+            if (sensorial.Dor != sensorialGabarito.Dor)
             {
-                modelState.AddModelError("SemDor", "Gabarito: " + (sensorialGabarito.SemDor.Equals(true) ? "Sim" : "Não"));
+                modelState.AddModelError("SemDor", "Gabarito: " + (sensorialGabarito.Dor.Equals("C") ? "Com Dor" : "Sem Dor"));
             }
             if (sensorial.DorIntensidadeValor != sensorialGabarito.DorIntensidadeValor)
             {
@@ -185,7 +185,7 @@ namespace PacienteVirtual.Negocio
                         select new SensorialModel
                         {
                             IdConsultaVariavel = sensorial.IdConsultaVariavel,
-                            EstadoMental = (sensorial.EstadoMental == "NaoSeAplica" ? ListaEstadoMental.NaoSeAplica :
+                            EstadoMental = (sensorial.EstadoMental == "NaoSeAplica" ? ListaEstadoMental.SemAlteracoes :
                                 sensorial.EstadoMental == "Agressivo" ? ListaEstadoMental.Agressivo : sensorial.EstadoMental == "EpisodioDelirio" ?
                                 ListaEstadoMental.EpisodioDelirio : sensorial.EstadoMental == "Confuso" ? ListaEstadoMental.Confuso :
                                 sensorial.EstadoMental == "Agitado" ? ListaEstadoMental.Agitado : sensorial.EstadoMental == "Apatico" ?
@@ -210,7 +210,7 @@ namespace PacienteVirtual.Negocio
                             Pulso = sensorial.Pulso,
                             Pupilar = sensorial.Pupilar,
                             Respiracao = sensorial.Respiracao,
-                            SemDor = sensorial.SemDor,
+                            Dor = sensorial.Dor,
                             SinalBabinski = sensorial.SinalBabinski,
                             Tatil = sensorial.Tatil,
                             Visual = sensorial.Tatil
@@ -265,7 +265,7 @@ namespace PacienteVirtual.Negocio
             _tb_sensorial.Pulso = sensorial.Pulso;
             _tb_sensorial.Pupilar = sensorial.Pupilar;
             _tb_sensorial.Respiracao = sensorial.Respiracao;
-            _tb_sensorial.SemDor = sensorial.SemDor;
+            _tb_sensorial.Dor = sensorial.Dor;
             _tb_sensorial.SinalBabinski = sensorial.SinalBabinski;
             _tb_sensorial.Tatil = sensorial.Tatil;
             _tb_sensorial.Visual = sensorial.Visual;

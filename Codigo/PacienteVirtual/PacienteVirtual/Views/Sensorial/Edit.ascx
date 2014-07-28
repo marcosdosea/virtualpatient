@@ -60,11 +60,13 @@
     </h4>
     <br />
     <div class="row-fluid">
-        <div class="span3">
+        <div class="span9">
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.SemDor) %>
+                <%= Html.RadioButtonFor(model => model.Dor, "C" ) %>
+                <%: Resources.Mensagem.com_dor %>
+                &nbsp &nbsp
+                <%= Html.RadioButtonFor(model => model.Dor, "S")%>
                 <%: Resources.Mensagem.sem_dor %>
-                <%: Html.ValidationMessageFor(model => model.SemDor, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
     </div>

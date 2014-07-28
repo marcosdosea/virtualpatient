@@ -223,6 +223,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alterações Vesicais.
+        /// </summary>
+        public static string alteracoes_vesicais {
+            get {
+                return ResourceManager.GetString("alteracoes_vesicais", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alterar Dados do Usuário.
         /// </summary>
         public static string alterar_dados_usuario {
@@ -993,6 +1002,15 @@ namespace Resources {
         public static string Colurica {
             get {
                 return ResourceManager.GetString("Colurica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Com Dor.
+        /// </summary>
+        public static string com_dor {
+            get {
+                return ResourceManager.GetString("com_dor", resourceCulture);
             }
         }
         
@@ -5830,6 +5848,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sem Alterações.
+        /// </summary>
+        public static string SemAlteracoes {
+            get {
+                return ResourceManager.GetString("SemAlteracoes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Senha.
         /// </summary>
         public static string senha {
@@ -5974,7 +6001,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sinais físicos.
+        ///   Looks up a localized string similar to Sinais físicos da dor.
         /// </summary>
         public static string sinais_fisicos {
             get {

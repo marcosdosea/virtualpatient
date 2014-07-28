@@ -957,7 +957,7 @@ namespace PacienteVirtual.Controllers
                         oxigenacao.Tosse = "N";
                         oxigenacao.FrequenciaTosse = ListaFrequenciaTosse.NaoSeAplica;
                         oxigenacao.TipoTosse = ListaTipoTosse.NaoSeAplica;
-                        oxigenacao.AspectoSecrecao = "";
+                        oxigenacao.AspectoSecrecao = ListaAspectoSecrecao.NaoSeAplica;
                         oxigenacao.Percursao = ListaPercursao.Ar;
                         oxigenacao.GangliosPalpaveis = false;
                         oxigenacao.GangliosDolorosos = false;
@@ -1160,7 +1160,7 @@ namespace PacienteVirtual.Controllers
                         sensorial.DescricaoTipoDistorcao = Global.stringVazia;
                         sensorial.DorIntensidadeValor = Global.ValorInteiroNulo;
                         sensorial.DuracaoDor = Global.stringVazia;
-                        sensorial.EstadoMental = ListaEstadoMental.NaoSeAplica;
+                        sensorial.EstadoMental = ListaEstadoMental.SemAlteracoes;
                         sensorial.ExpressaoFacial = false;
                         sensorial.FatoresAgravantesDor = Global.stringVazia;
                         sensorial.FatoresAliviantesDor = Global.stringVazia;
@@ -1174,7 +1174,7 @@ namespace PacienteVirtual.Controllers
                         sensorial.Pulso = false;
                         sensorial.Pupilar = false;
                         sensorial.Respiracao = false;
-                        sensorial.SemDor = false;
+                        sensorial.Dor = "";
                         sensorial.SinalBabinski = false;
                         sensorial.Tatil = false;
                         sensorial.Visual = false;
