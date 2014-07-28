@@ -85,11 +85,9 @@ namespace PacienteVirtual.Models
         [Display(Name = "restricao_alimentar", ResourceType = typeof(Mensagem))]
         public bool RestricaoAlimentar { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "restricao_alimentar", ResourceType = typeof(Mensagem))]
         public string RestricaoAlimentarTexto { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "habitos_alimentares", ResourceType = typeof(Mensagem))]
         public string HabitosAlimentares { get; set; }
 
@@ -100,5 +98,9 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "instalada", ResourceType = typeof(Mensagem))]
         public DateTime Instalada { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "sem_restricao_alimentar", ResourceType = typeof(Mensagem))]
+        public bool SemRestricaoAlimentar { get; set; }
     }
 }

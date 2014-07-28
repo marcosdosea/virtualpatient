@@ -2328,4 +2328,37 @@
   <data name="email_nao_coincidem" xml:space="preserve">
     <value>"Email" e "Confirmar Email" não coincidem.</value>
   </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Amarelada" xml:space="preserve">
+    <value>Amarelada</value>
+  </data>
+  <data name="EnegrecidaCinzenta" xml:space="preserve">
+    <value>Enegrecida/Cinzenta</value>
+  </data>
+  <data name="Esbranquicada" xml:space="preserve">
+    <value>Esbranquiçada</value>
+  </data>
+  <data name="Esverdeada" xml:space="preserve">
+    <value>Esverdeada</value>
+  </data>
+  <data name="FerruginosaArroxeada" xml:space="preserve">
+    <value>Ferruginosa/Arroxeada</value>
+  </data>
+  <data name="Hematica" xml:space="preserve">
+    <value>Hemética</value>
+  </data>
+  <data name="Mucopurulenta" xml:space="preserve">
+    <value>Mucopurulenta</value>
+  </data>
+  <data name="Purulenta" xml:space="preserve">
+    <value>Purulenta</value>
+  </data>
+  <data name="Rosea" xml:space="preserve">
+    <value>Rósea</value>
+  </data>
+  <data name="sem_restricao_alimentar" xml:space="preserve">
+    <value>Sem Restrição Alimentar</value>
+  </data>
 </root>

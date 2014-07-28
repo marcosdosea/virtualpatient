@@ -3,7 +3,7 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
-    public enum ListaTemperaturaPele { Quente = 0, Fria = 1 }
+    public enum ListaTemperaturaPele { Quente = 0, Fria = 1, Normotermica = 2 }
 
     public class TermorregulacaoModel
     {

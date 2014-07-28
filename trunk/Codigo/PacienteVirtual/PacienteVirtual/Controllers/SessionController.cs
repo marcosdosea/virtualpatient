@@ -1347,6 +1347,7 @@ namespace PacienteVirtual.Controllers
                         nutricao.HabitosAlimentares = "";
                         nutricao.DispositivosAlimentacao = ListaDispositivosAlimentacao.NaoSeAplica;
                         nutricao.Instalada = DateTime.Today;
+                        nutricao.SemRestricaoAlimentar = false;
                         GerenciadorNutricao.GetInstance().Inserir(nutricao);
                     }
                     HttpContext.Current.Session["_Nutricao"] = nutricao;

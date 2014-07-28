@@ -126,7 +126,7 @@ namespace PacienteVirtual.Negocio
                         select new TermorregulacaoModel
                         {
                             Temperatura = (double)termorregulacao.Temperatura,
-                            TemperaturaPele = (termorregulacao.TemperaturaPele == "Quente" ? ListaTemperaturaPele.Quente : ListaTemperaturaPele.Fria),
+                            TemperaturaPele = (termorregulacao.TemperaturaPele == "Quente" ? ListaTemperaturaPele.Quente : (termorregulacao.TemperaturaPele == "Frio" ? ListaTemperaturaPele.Fria : ListaTemperaturaPele.Normotermica)),
                             Sudorese = termorregulacao.Sudorese,
                             Calafrio = termorregulacao.Calafrio,
                             Piloerecao = termorregulacao.Piloerecao,

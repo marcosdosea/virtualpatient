@@ -202,7 +202,7 @@ namespace PacienteVirtual.Negocio
                             DesvioDeSepto = oxigenacao.DesvioDeSepto,
                             Palidez = oxigenacao.Palidez,
                             LabioCianotico = oxigenacao.LabioCianotico,
-                            TiposTorax =  (oxigenacao.TiposTorax == "Barril" ? ListaTiposTorax.Barril : (oxigenacao.TiposTorax == "PeitoDePombo" ? ListaTiposTorax.PeitoDePombo : (oxigenacao.TiposTorax == "Funil" ? ListaTiposTorax.Funil : (oxigenacao.TiposTorax == "Lordose" ? ListaTiposTorax.Lordose : (oxigenacao.TiposTorax == "Cifose" ? ListaTiposTorax.Cifose : ListaTiposTorax.Escoliose))))),
+                            TiposTorax =  (oxigenacao.TiposTorax == "Barril" ? ListaTiposTorax.Barril : (oxigenacao.TiposTorax == "PeitoDePombo" ? ListaTiposTorax.PeitoDePombo : (oxigenacao.TiposTorax == "Funil" ? ListaTiposTorax.Funil : (oxigenacao.TiposTorax == "Lordose" ? ListaTiposTorax.Lordose : (oxigenacao.TiposTorax == "Cifose" ? ListaTiposTorax.Cifose : (oxigenacao.TiposTorax == "Escoliose" ? ListaTiposTorax.Escoliose : ListaTiposTorax.Normal)))))),
                             TiragemIntercostal = oxigenacao.TiragemIntercostal,
                             SimetriaToracica = (oxigenacao.SimetriaToracica == "Simetrico" ? ListaSimetriaToracica.Simetrico : 
                                 oxigenacao.SimetriaToracica == "AssimetricoBilateral" ? ListaSimetriaToracica.AssimetricoBilateral : 
@@ -217,7 +217,7 @@ namespace PacienteVirtual.Negocio
                                 ListaFrequenciaTosse.Frequente : ListaFrequenciaTosse.Esporadica),
                             TipoTosse = (oxigenacao.TipoTosse == "NaoSeAplica" ? ListaTipoTosse.NaoSeAplica : oxigenacao.TipoTosse == "Produtiva" ? 
                                 ListaTipoTosse.Produtiva : ListaTipoTosse.Seca),
-                            AspectoSecrecao = oxigenacao.AspectoSecrecao,
+                            AspectoSecrecao = (oxigenacao.AspectoSecrecao == "NaoSeAplica" ? ListaAspectoSecrecao.NaoSeAplica : (oxigenacao.AspectoSecrecao == "Amarelada" ? ListaAspectoSecrecao.Amarelada : (oxigenacao.AspectoSecrecao == "EnegrecidaCinzenta" ? ListaAspectoSecrecao.EnegrecidaCinzenta : (oxigenacao.AspectoSecrecao == "Esbranquicada" ? ListaAspectoSecrecao.Esbranquicada : (oxigenacao.AspectoSecrecao == "Esverdeada" ? ListaAspectoSecrecao.Esverdeada : (oxigenacao.AspectoSecrecao == "FerruginosaArroxeada" ? ListaAspectoSecrecao.FerruginosaArroxeada : (oxigenacao.AspectoSecrecao == "Hematica" ? ListaAspectoSecrecao.Hematica : (oxigenacao.AspectoSecrecao == "Mucopurulenta" ? ListaAspectoSecrecao.Mucopurulenta : (oxigenacao.AspectoSecrecao == "Purulenta" ? ListaAspectoSecrecao.Purulenta : ListaAspectoSecrecao.Rosea))))))))),
                             Percursao = (oxigenacao.Percursao == "Ar" ? ListaPercursao.Ar : oxigenacao.Percursao == "Massa" ? ListaPercursao.Massa : 
                                 ListaPercursao.Liquido),
                             GangliosPalpaveis = oxigenacao.GangliosPalpaveis,
@@ -271,7 +271,7 @@ namespace PacienteVirtual.Negocio
             _oxigenacaoE.Tosse = oxigenacao.Tosse;
             _oxigenacaoE.FrequenciaTosse = oxigenacao.FrequenciaTosse.ToString();
             _oxigenacaoE.TipoTosse = oxigenacao.TipoTosse.ToString();
-            _oxigenacaoE.AspectoSecrecao = oxigenacao.AspectoSecrecao;
+            _oxigenacaoE.AspectoSecrecao = oxigenacao.AspectoSecrecao.ToString();
             _oxigenacaoE.Percursao = oxigenacao.Percursao.ToString();
             _oxigenacaoE.GangliosPalpaveis = oxigenacao.GangliosPalpaveis;
             _oxigenacaoE.GangliosDolorosos = oxigenacao.GangliosDolorosos;
