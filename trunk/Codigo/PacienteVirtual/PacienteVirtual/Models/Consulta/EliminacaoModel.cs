@@ -23,7 +23,7 @@ namespace PacienteVirtual.Models
 
     public enum ListaDebitoUrinario { NaoSeAplica = 0, Oliguria = 1, Poliuria = 2, Anuria = 3, Polaciuria = 4 }
 
-    public enum ListaCondicaoContinenciaUrinaria { IncontinenciaUrinaria = 0, RetencaoUrinaria = 1, IrrigacaoVesical = 2 }
+    public enum ListaCondicaoContinenciaUrinaria { IncontinenciaUrinaria = 0, RetencaoUrinaria = 1, IrrigacaoVesical = 2, SemAlteracoes = 3 }
 
     public class EliminacaoModel
     {
@@ -108,7 +108,7 @@ namespace PacienteVirtual.Models
         public string Tempo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "condicao_continencia_urinaria", ResourceType = typeof(Mensagem))]
+        [Display(Name = "alteracoes_vesicais", ResourceType = typeof(Mensagem))]
         public ListaCondicaoContinenciaUrinaria CondicaoContinenciaUrinaria { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

@@ -1984,7 +1984,7 @@
     <value>Reflexos presentes</value>
   </data>
   <data name="sinais_fisicos" xml:space="preserve">
-    <value>Sinais físicos</value>
+    <value>Sinais físicos da dor</value>
   </data>
   <data name="DependentePara" xml:space="preserve">
     <value>Dependente para</value>
@@ -2360,5 +2360,14 @@
   </data>
   <data name="sem_restricao_alimentar" xml:space="preserve">
     <value>Sem Restrição Alimentar</value>
+  </data>
+  <data name="alteracoes_vesicais" xml:space="preserve">
+    <value>Alterações Vesicais</value>
+  </data>
+  <data name="com_dor" xml:space="preserve">
+    <value>Com Dor</value>
+  </data>
+  <data name="SemAlteracoes" xml:space="preserve">
+    <value>Sem Alterações</value>
   </data>
 </root>

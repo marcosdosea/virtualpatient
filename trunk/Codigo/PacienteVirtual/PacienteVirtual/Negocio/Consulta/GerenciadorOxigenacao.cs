@@ -98,8 +98,10 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("ErroTipoTosse", "Gabarito: \"" + oxigenacaoGabarito.TipoTosse.ToString() + "\"");
             }
-            Global.CorrecaoDeStrings("AspectoSecrecao", oxigenacao.AspectoSecrecao, oxigenacaoGabarito.AspectoSecrecao, modelState);
-
+            if (oxigenacao.AspectoSecrecao != oxigenacaoGabarito.AspectoSecrecao)
+            {
+                modelState.AddModelError("AspectoSecrecao", "Gabarito: \"" + oxigenacaoGabarito.AspectoSecrecao.ToString() + "\"");
+            }
             if (oxigenacao.Percursao != oxigenacaoGabarito.Percursao)
             {
                 modelState.AddModelError("ErroPercursao", "Gabarito: \"" + oxigenacaoGabarito.Percursao.ToString() + "\"");
@@ -217,7 +219,7 @@ namespace PacienteVirtual.Negocio
                                 ListaFrequenciaTosse.Frequente : ListaFrequenciaTosse.Esporadica),
                             TipoTosse = (oxigenacao.TipoTosse == "NaoSeAplica" ? ListaTipoTosse.NaoSeAplica : oxigenacao.TipoTosse == "Produtiva" ? 
                                 ListaTipoTosse.Produtiva : ListaTipoTosse.Seca),
-                            AspectoSecrecao = (oxigenacao.AspectoSecrecao == "NaoSeAplica" ? ListaAspectoSecrecao.NaoSeAplica : (oxigenacao.AspectoSecrecao == "Amarelada" ? ListaAspectoSecrecao.Amarelada : (oxigenacao.AspectoSecrecao == "EnegrecidaCinzenta" ? ListaAspectoSecrecao.EnegrecidaCinzenta : (oxigenacao.AspectoSecrecao == "Esbranquicada" ? ListaAspectoSecrecao.Esbranquicada : (oxigenacao.AspectoSecrecao == "Esverdeada" ? ListaAspectoSecrecao.Esverdeada : (oxigenacao.AspectoSecrecao == "FerruginosaArroxeada" ? ListaAspectoSecrecao.FerruginosaArroxeada : (oxigenacao.AspectoSecrecao == "Hematica" ? ListaAspectoSecrecao.Hematica : (oxigenacao.AspectoSecrecao == "Mucopurulenta" ? ListaAspectoSecrecao.Mucopurulenta : (oxigenacao.AspectoSecrecao == "Purulenta" ? ListaAspectoSecrecao.Purulenta : ListaAspectoSecrecao.Rosea))))))))),
+                            AspectoSecrecao = (oxigenacao.ApectoSecrecao == "NaoSeAplica" ? ListaAspectoSecrecao.NaoSeAplica : (oxigenacao.ApectoSecrecao == "Amarelada" ? ListaAspectoSecrecao.Amarelada : (oxigenacao.ApectoSecrecao == "EnegrecidaCinzenta" ? ListaAspectoSecrecao.EnegrecidaCinzenta : (oxigenacao.ApectoSecrecao == "Esbranquicada" ? ListaAspectoSecrecao.Esbranquicada : (oxigenacao.ApectoSecrecao == "Esverdeada" ? ListaAspectoSecrecao.Esverdeada : (oxigenacao.ApectoSecrecao == "FerruginosaArroxeada" ? ListaAspectoSecrecao.FerruginosaArroxeada : (oxigenacao.ApectoSecrecao == "Hematica" ? ListaAspectoSecrecao.Hematica : (oxigenacao.ApectoSecrecao == "Mucopurulenta" ? ListaAspectoSecrecao.Mucopurulenta : (oxigenacao.ApectoSecrecao == "Purulenta" ? ListaAspectoSecrecao.Purulenta : ListaAspectoSecrecao.Rosea))))))))),
                             Percursao = (oxigenacao.Percursao == "Ar" ? ListaPercursao.Ar : oxigenacao.Percursao == "Massa" ? ListaPercursao.Massa : 
                                 ListaPercursao.Liquido),
                             GangliosPalpaveis = oxigenacao.GangliosPalpaveis,
@@ -271,7 +273,7 @@ namespace PacienteVirtual.Negocio
             _oxigenacaoE.Tosse = oxigenacao.Tosse;
             _oxigenacaoE.FrequenciaTosse = oxigenacao.FrequenciaTosse.ToString();
             _oxigenacaoE.TipoTosse = oxigenacao.TipoTosse.ToString();
-            _oxigenacaoE.AspectoSecrecao = oxigenacao.AspectoSecrecao.ToString();
+            _oxigenacaoE.ApectoSecrecao = oxigenacao.AspectoSecrecao.ToString();
             _oxigenacaoE.Percursao = oxigenacao.Percursao.ToString();
             _oxigenacaoE.GangliosPalpaveis = oxigenacao.GangliosPalpaveis;
             _oxigenacaoE.GangliosDolorosos = oxigenacao.GangliosDolorosos;
