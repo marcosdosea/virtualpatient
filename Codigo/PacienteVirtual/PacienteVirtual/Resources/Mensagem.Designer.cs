@@ -277,6 +277,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amarelada.
+        /// </summary>
+        public static string Amarelada {
+            get {
+                return ResourceManager.GetString("Amarelada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ansiedade.
         /// </summary>
         public static string ansiedade {
@@ -2284,6 +2293,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enegrecida/Cinzenta.
+        /// </summary>
+        public static string EnegrecidaCinzenta {
+            get {
+                return ResourceManager.GetString("EnegrecidaCinzenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enfizema Subcutâneo.
         /// </summary>
         public static string enfizema_subcutaneo {
@@ -2334,6 +2352,15 @@ namespace Resources {
         public static string eritema {
             get {
                 return ResourceManager.GetString("eritema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esbranquiçada.
+        /// </summary>
+        public static string Esbranquicada {
+            get {
+                return ResourceManager.GetString("Esbranquicada", resourceCulture);
             }
         }
         
@@ -2581,6 +2608,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esverdeada.
+        /// </summary>
+        public static string Esverdeada {
+            get {
+                return ResourceManager.GetString("Esverdeada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Eupneico.
         /// </summary>
         public static string Eupineico {
@@ -2721,6 +2757,15 @@ namespace Resources {
         public static string ferida_cirurgica {
             get {
                 return ResourceManager.GetString("ferida_cirurgica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ferruginosa/Arroxeada.
+        /// </summary>
+        public static string FerruginosaArroxeada {
+            get {
+                return ResourceManager.GetString("FerruginosaArroxeada", resourceCulture);
             }
         }
         
@@ -3117,6 +3162,15 @@ namespace Resources {
         public static string halitose {
             get {
                 return ResourceManager.GetString("halitose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hemética.
+        /// </summary>
+        public static string Hematica {
+            get {
+                return ResourceManager.GetString("Hematica", resourceCulture);
             }
         }
         
@@ -4084,6 +4138,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mucopurulenta.
+        /// </summary>
+        public static string Mucopurulenta {
+            get {
+                return ResourceManager.GetString("Mucopurulenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Não.
         /// </summary>
         public static string nao {
@@ -4332,6 +4395,15 @@ namespace Resources {
         public static string nome_usuario {
             get {
                 return ResourceManager.GetString("nome_usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string Normal {
+            get {
+                return ResourceManager.GetString("Normal", resourceCulture);
             }
         }
         
@@ -5182,6 +5254,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purulenta.
+        /// </summary>
+        public static string Purulenta {
+            get {
+                return ResourceManager.GetString("Purulenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quantidade.
         /// </summary>
         public static string quantidade {
@@ -5569,6 +5650,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rósea.
+        /// </summary>
+        public static string Rosea {
+            get {
+                return ResourceManager.GetString("Rosea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rubor.
         /// </summary>
         public static string rubor {
@@ -5727,6 +5817,15 @@ namespace Resources {
         public static string sem_restricao {
             get {
                 return ResourceManager.GetString("sem_restricao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sem Restrição Alimentar.
+        /// </summary>
+        public static string sem_restricao_alimentar {
+            get {
+                return ResourceManager.GetString("sem_restricao_alimentar", resourceCulture);
             }
         }
         

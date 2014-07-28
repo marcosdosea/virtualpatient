@@ -113,6 +113,13 @@
         <br />
         <div class="row-fluid">
             <div class="span12">
+                <%: Html.EditorFor(model => model.SemRestricaoAlimentar) %>
+                <%: Resources.Mensagem.sem_restricao_alimentar %>
+            </div>
+        </div>
+        <br />
+        <div class="row-fluid">
+            <div class="span12">
                 <%: Html.EditorFor(model => model.RestricaoAlimentar) %>
                 <%: Resources.Mensagem.restricao_alimentar %>
                 <%: Html.TextBoxFor(model => model.RestricaoAlimentarTexto, new { MaxLength = 100, style = "width:440px;" })%>

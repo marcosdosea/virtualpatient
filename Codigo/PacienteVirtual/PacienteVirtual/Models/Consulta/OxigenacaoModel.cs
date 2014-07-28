@@ -9,7 +9,7 @@ namespace PacienteVirtual.Models
 
     public enum ListaSimetriaToracica { Simetrico = 0, AssimetricoUnilateral = 1, AssimetricoBilateral = 2 }
 
-    public enum ListaTiposTorax { Barril = 0, PeitoDePombo = 1, Funil = 2, Lordose = 3, Cifose = 4, Escoliose = 5 }
+    public enum ListaTiposTorax { Barril = 0, PeitoDePombo = 1, Funil = 2, Lordose = 3, Cifose = 4, Escoliose = 5, Normal = 6 }
 
     public enum ListaExpansibilidade { Preservada = 0, Diminuida = 1 }
 
@@ -20,6 +20,8 @@ namespace PacienteVirtual.Models
     public enum ListaPercursao { Ar = 0, Liquido = 1, Massa = 2 }
 
     public enum ListaAuscultaPulmonar { VesicularPresente = 0, VesicularDiminuido = 1, Roncos = 2, Estertores = 3, Sibilos = 4, Estridor = 5, AtritoPleural = 6 }
+
+    public enum ListaAspectoSecrecao { NaoSeAplica = 0, Esbranquicada = 1, Purulenta = 2, Esverdeada = 3, Amarelada = 4, FerruginosaArroxeada = 5, Mucopurulenta = 6, Rosea = 7, Hematica = 8, EnegrecidaCinzenta = 9 }
 
     public class OxigenacaoModel
     {
@@ -96,9 +98,9 @@ namespace PacienteVirtual.Models
         [EnumDataType(typeof(ListaTipoTosse))]
         public ListaTipoTosse TipoTosse { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "aspecto_secrecao", ResourceType = typeof(Mensagem))]
-        public string AspectoSecrecao { get; set; }
+        [EnumDataType(typeof(ListaAspectoSecrecao))]
+        public ListaAspectoSecrecao AspectoSecrecao { get; set; }
 
         [Display(Name = "percursao", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaPercursao))]

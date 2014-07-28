@@ -42,7 +42,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "uso_outros", ResourceType = typeof(Mensagem))]
         public bool UsoOutros { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "uso_outros_descricao", ResourceType = typeof(Mensagem))]
         public string UsoOutrosDescricao { get; set; }
         
