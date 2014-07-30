@@ -38,20 +38,6 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("TabacoUso", "Gabarito: " + estiloVidaGabarito.TabacoUso + "ª Opção.");
             }
-            if (estiloVidaGabarito.TabacoParou == null || estiloVidaGabarito.TabacoParou.Equals(""))
-            {
-                if (estiloVida.TabacoParou != null && !estiloVida.TabacoParou.Equals(""))
-                {
-                    modelState.AddModelError("TabacoParou", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(estiloVida.TabacoParou.ToLower()).Equals(Global.RemoverAcentuacao(estiloVidaGabarito.TabacoParou.ToLower())))
-                {
-                    modelState.AddModelError("TabacoParou", "Gabarito: \"" + estiloVidaGabarito.TabacoParou + "\"");
-                }
-            }
             if (estiloVida.CafeConsumo != estiloVidaGabarito.CafeConsumo)
             {
                 modelState.AddModelError("CafeConsumo", "Gabarito: \"" + (estiloVidaGabarito.CafeConsumo == true ? "Sim" : "Não") + "\"");
@@ -59,21 +45,6 @@ namespace PacienteVirtual.Negocio
             if (estiloVida.CafeUso != estiloVidaGabarito.CafeUso)
             {
                 modelState.AddModelError("CafeUso", "Gabarito: " + estiloVidaGabarito.CafeUso + "ª Opção.");
-            }
-
-            if (estiloVidaGabarito.CafeParou == null || estiloVidaGabarito.CafeParou.Equals(""))
-            {
-                if (estiloVida.CafeParou != null && !estiloVida.CafeParou.Equals(""))
-                {
-                    modelState.AddModelError("CafeParou", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(estiloVida.CafeParou.ToLower()).Equals(Global.RemoverAcentuacao(estiloVidaGabarito.CafeParou.ToLower())))
-                {
-                    modelState.AddModelError("CafeParou", "Gabarito: \"" + estiloVidaGabarito.CafeParou + "\"");
-                }
             }
             if (estiloVida.AlcoolConsumo != estiloVidaGabarito.AlcoolConsumo)
             {
@@ -83,34 +54,10 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("AlcoolUso", "Gabarito: " + estiloVidaGabarito.AlcoolUso + "ª Opção.");
             }
-            if (estiloVidaGabarito.AlcoolParou == null || estiloVidaGabarito.AlcoolParou.Equals(""))
-            {
-                if (estiloVida.AlcoolParou != null && !estiloVida.AlcoolParou.Equals(""))
-                {
-                    modelState.AddModelError("AlcoolParou", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if (!Global.RemoverAcentuacao(estiloVida.AlcoolParou.ToLower()).Equals(Global.RemoverAcentuacao(estiloVidaGabarito.AlcoolParou.ToLower())))
-                {
-                    modelState.AddModelError("AlcoolParou", "Gabarito: \"" + estiloVidaGabarito.AlcoolParou + "\"");
-                }
-            }
-            if (estiloVidaGabarito.AlcoolTipoBebida == null || estiloVidaGabarito.AlcoolTipoBebida.Equals(""))
-            {
-                if (estiloVida.AlcoolTipoBebida != null && !estiloVida.AlcoolTipoBebida.Equals(""))
-                {
-                    modelState.AddModelError("AlcoolTipoBebida", "Gabarito: \"Esse campo deve permanecer vazio\"");
-                }
-            }
-            else
-            {
-                if ((estiloVida.AlcoolTipoBebida == null || estiloVida.AlcoolTipoBebida.Equals("")) || !Global.RemoverAcentuacao(estiloVida.AlcoolTipoBebida.ToLower()).Equals(Global.RemoverAcentuacao(estiloVidaGabarito.AlcoolTipoBebida.ToLower())))
-                {
-                    modelState.AddModelError("AlcoolTipoBebida", "Gabarito Tipo de Bebida: \"" + estiloVidaGabarito.AlcoolTipoBebida + "\"");
-                }
-            }
+            Global.CorrecaoDeStrings("TabacoParou", estiloVida.TabacoParou, estiloVidaGabarito.TabacoParou, modelState);
+            Global.CorrecaoDeStrings("CafeParou", estiloVida.CafeParou, estiloVidaGabarito.CafeParou, modelState);
+            Global.CorrecaoDeStrings("AlcoolParou", estiloVida.AlcoolParou, estiloVidaGabarito.AlcoolParou, modelState);
+            Global.CorrecaoDeStrings("AlcoolTipoBebida", estiloVida.AlcoolTipoBebida, estiloVidaGabarito.AlcoolTipoBebida, modelState);
         }
 
         /// <summary>

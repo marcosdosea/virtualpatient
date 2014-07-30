@@ -30,14 +30,8 @@ namespace PacienteVirtual.Negocio
         /// <param name="modelState"></param>
         public void CorrigirRespostas(HistoriaModel historia, HistoriaModel historiaGabarito, ModelStateDictionary modelState)
         {
-            if (!Global.RemoverAcentuacao(historia.HistoriaFamiliar.ToLower()).Equals(Global.RemoverAcentuacao(historiaGabarito.HistoriaFamiliar.ToLower())))
-            {
-                modelState.AddModelError("HistoriaFamiliar", "Gabarito: \"" + historiaGabarito.HistoriaFamiliar + "\"");
-            }
-            if (!Global.RemoverAcentuacao(historia.HistoriaMedicaPregressa.ToLower()).Equals(Global.RemoverAcentuacao(historiaGabarito.HistoriaMedicaPregressa.ToLower())))
-            {
-                modelState.AddModelError("HistoriaMedicaPregressa", "Gabarito: \"" + historiaGabarito.HistoriaMedicaPregressa + "\"");
-            }
+            Global.CorrecaoDeStrings("HistoriaFamiliar", historia.HistoriaFamiliar, historiaGabarito.HistoriaFamiliar, modelState);
+            Global.CorrecaoDeStrings("HistoriaMedicaPregressa", historia.HistoriaMedicaPregressa, historiaGabarito.HistoriaMedicaPregressa, modelState);
         }
 
         /// <summary>
