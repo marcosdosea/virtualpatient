@@ -7,7 +7,7 @@
     }
 </style>
 <h3>
-    <%: Resources.Mensagem.revisao_sistemas %></h3>
+    <%: Resources.Mensagem.problema_saude %></h3>
 <% if (Session["_PrimeiraTelaConsulta"].Equals(false))
    { %>
 <div class="styleValidation">
