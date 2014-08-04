@@ -20,8 +20,7 @@
             <%: Html.LabelFor(model => model.UserName) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.UserName) %>
-            <%: Html.ValidationMessageFor(model => model.UserName, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.TextBoxFor(model => model.UserName, new { id = "textbox" })%>
         </div>
 
         <div class="editor-label">
@@ -69,5 +68,9 @@
         </div>
     </fieldset>
 <% } %>
+
+<script type="text/javascript">
+    document.getElementById('textbox').disabled = true;
+</script>
 
 </asp:Content>

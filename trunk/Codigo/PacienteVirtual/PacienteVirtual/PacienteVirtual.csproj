@@ -190,7 +190,6 @@
     <Compile Include="Helpers\EnumDropDownListFor.cs" />
     <Compile Include="Helpers\EnumToSelectList.cs" />
     <Compile Include="Helpers\HelperQuebraLinha.cs" />
-    <Compile Include="Models\AspnetUserModel.cs" />
     <Compile Include="Models\Cadastro\AcaoQueixaModel.cs" />
     <Compile Include="Models\Cadastro\AreaAtuacaoModel.cs" />
     <Compile Include="Models\Cadastro\DiagnosticoModel.cs" />
@@ -273,7 +272,6 @@
     <Compile Include="Negocio\Consulta\GerenciadorSexualidade.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorTermorregulacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorNutricao.cs" />
-    <Compile Include="Negocio\GerenciadorAspnetUsers.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
