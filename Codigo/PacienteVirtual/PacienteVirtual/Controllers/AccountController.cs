@@ -292,8 +292,6 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 MembershipUser currentUser = Membership.GetUser(User.Identity.Name, true /* userIsOnline */);
-                AspnetUserModel aspnetUser = new AspnetUserModel();
-                aspnetUser = GerenciadorAspnetUsers.GetInstance().ObterPorNome(currentUser.UserName);
                 PessoaModel pessoaModel = new PessoaModel();
                 pessoaModel.IdUser = SessionController.Pessoa.IdUser;
                 pessoaModel.IdPessoa = SessionController.Pessoa.IdPessoa;
@@ -303,8 +301,6 @@ namespace PacienteVirtual.Controllers
                 pessoaModel.Matricula = model.Matricula;
                 pessoaModel.UserName = model.UserName;
                 currentUser.Email = model.Email;
-                aspnetUser.Nome = model.UserName;
-                GerenciadorAspnetUsers.GetInstance().Atualizar(aspnetUser);
                 GerenciadorPessoa.GetInstance().Atualizar(pessoaModel);
                 SessionController.Pessoa = pessoaModel;
                 return RedirectToAction("LogOff", "Account");
