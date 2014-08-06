@@ -7,14 +7,14 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
-    public class GrupoDiagnosticoModel
+    public class ClasseDiagnosticoModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        public int IdGrupoDiagnostico { get; set; }
+        public int IdClasseDiagnostico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "descricao", ResourceType = typeof(Mensagem))]
-        public String DescricaoGrupoDiagnostico { get; set; }
+        public String DescricaoClasseDiagnostico { get; set; }
     }
 }

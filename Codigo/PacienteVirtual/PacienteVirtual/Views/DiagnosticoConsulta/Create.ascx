@@ -11,13 +11,13 @@
         <div class="row-fluid">
             <div class="span3">
                 <div class="editor-label">
-                    <%: Html.LabelFor(model => model.DescricaoGrupoDiagnostico) %>
+                    <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico) %>
                 </div>
             </div>
             <div class="span6">
                 <div class="editor-field">
-                    <%: Html.DropDownList("IdGrupoDiagnostico", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
-                    <%: Html.ValidationMessageFor(model => model.IdGrupoDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+                    <%: Html.DropDownList("IdClasseDiagnostico", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
+                    <%: Html.ValidationMessageFor(model => model.IdClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
         </div>

@@ -22,10 +22,10 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        public int IdGrupoDiagnostico { get; set; }
+        public int IdClasseDiagnostico { get; set; }
 
-        [Display(Name = "descricao_grupo_diagnostico", ResourceType = typeof(Mensagem))]
-        public String DescricaoGrupoDiagnostico { get; set; }
+        [Display(Name = "descricao_classe_diagnostico", ResourceType = typeof(Mensagem))]
+        public String DescricaoClasseDiagnostico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "fatores_relacionados", ResourceType = typeof(Mensagem))]

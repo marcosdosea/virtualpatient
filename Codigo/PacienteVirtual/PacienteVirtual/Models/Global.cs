@@ -86,7 +86,7 @@ namespace PacienteVirtual.Models
             SessionController.Abas1 = 0;
             SessionController.Abas2 = -1;
             SessionController.AbasDentro = -1;
-            SessionController.IdGrupoDiagnostico = Global.NaoSelecionado;
+            SessionController.IdClasseDiagnostico = Global.NaoSelecionado;
             SessionController.IdDiagnostico = Global.NaoSelecionado;
             SessionController.RiscoDiagnostico = false;
 

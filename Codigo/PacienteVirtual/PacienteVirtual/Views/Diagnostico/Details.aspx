@@ -16,9 +16,9 @@
         <%: Html.DisplayFor(model => model.DescricaoDiagnostico) %>
     </div>
 
-    <div class="display-label"><%: Resources.Mensagem.grupo_diagnostico %></div>
+    <div class="display-label"><%: Resources.Mensagem.classe_diagnostico %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.DescricaoGrupoDiagnostico) %>
+        <%: Html.DisplayFor(model => model.DescricaoClasseDiagnostico) %>
     </div>
 
     <div class="display-label"><%: Resources.Mensagem.risco %></div>

@@ -38,12 +38,12 @@ namespace PacienteVirtual.Negocio
                 contem = false;
                 foreach (var diagnosticoGabarito in gabarito)
                 {
-                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdGrupoDiagnostico == diagnosticoGabarito.IdGrupoDiagnostico)
+                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdClasseDiagnostico == diagnosticoGabarito.IdClasseDiagnostico)
                     {
                         contem = true;
                         if (Global.RemoverAcentuacao(diagnostico.AvaliacaoResultados) != Global.RemoverAcentuacao(diagnosticoGabarito.AvaliacaoResultados) || Global.RemoverAcentuacao(diagnostico.CaracteristicasDefinidoras) != Global.RemoverAcentuacao(diagnosticoGabarito.CaracteristicasDefinidoras) || Global.RemoverAcentuacao(diagnostico.PrescricaoCuidado) != Global.RemoverAcentuacao(diagnosticoGabarito.PrescricaoCuidado) || Global.RemoverAcentuacao(diagnostico.ResultadoEsperado) != Global.RemoverAcentuacao(diagnosticoGabarito.ResultadoEsperado))
                         {
-                            erroRespostas = erroRespostas + "Gabarito do Diagnóstico: " + diagnosticoGabarito.DescricaoDiagnostico+" e Grupo Diagnóstico "+ diagnosticoGabarito.DescricaoGrupoDiagnostico + ": " + diagnosticoGabarito.Fatores + "," + diagnosticoGabarito.PrescricaoCuidado + ", " + diagnosticoGabarito.ResultadoEsperado + ",<br>";
+                            erroRespostas = erroRespostas + "Gabarito do Diagnóstico: " + diagnosticoGabarito.DescricaoDiagnostico+" e Grupo Diagnóstico "+ diagnosticoGabarito.DescricaoClasseDiagnostico + ": " + diagnosticoGabarito.Fatores + "," + diagnosticoGabarito.PrescricaoCuidado + ", " + diagnosticoGabarito.ResultadoEsperado + ",<br>";
                         }
                         break;
                     }
@@ -58,7 +58,7 @@ namespace PacienteVirtual.Negocio
                 contem = false;
                 foreach (var diagnostico in resposta)
                 {
-                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdGrupoDiagnostico == diagnosticoGabarito.IdGrupoDiagnostico)
+                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdClasseDiagnostico == diagnosticoGabarito.IdClasseDiagnostico)
                     {
                         contem = true;
                         break;
@@ -81,7 +81,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public long Inserir(DiagnosticoConsultaModel DiagnosticoConsultaModel)
         {
-            DiagnosticoConsultaModel diagConsult = gDiagnosticoConsulta.ObterPorDiagnosticoGrupo(DiagnosticoConsultaModel.IdConsultaVariavel, DiagnosticoConsultaModel.IdDiagnostico, DiagnosticoConsultaModel.IdGrupoDiagnostico);
+            DiagnosticoConsultaModel diagConsult = gDiagnosticoConsulta.ObterPorDiagnosticoGrupo(DiagnosticoConsultaModel.IdConsultaVariavel, DiagnosticoConsultaModel.IdDiagnostico, DiagnosticoConsultaModel.IdClasseDiagnostico);
             if (diagConsult == null)
             {
                 var repDiagnosticoConsulta = new RepositorioGenerico<tb_diagnostico_consulta_variavel>();
@@ -102,7 +102,7 @@ namespace PacienteVirtual.Negocio
             }
             else
             {
-                SessionController.IdGrupoDiagnostico = Global.NaoSelecionado;
+                SessionController.IdClasseDiagnostico = Global.NaoSelecionado;
                 SessionController.IdDiagnostico = Global.NaoSelecionado;
                 throw new NegocioException("Já foi cadastrado um Diagnóstico com essa Descrição de Diagnóstico e com esse Grupo Diagnóstico.");
             }
@@ -194,22 +194,16 @@ namespace PacienteVirtual.Negocio
             var query = from tb_diagnostico_consulta_variavel in pvEntities.tb_diagnostico_consulta_variavel
                         join tb_diagnostico in pvEntities.tb_diagnostico
                         on tb_diagnostico_consulta_variavel.IdDiagnostico equals tb_diagnostico.IdDiagnostico
-                        join tb_grupo_diagnostico in pvEntities.tb_grupo_diagnostico
-                        on tb_diagnostico.IdGrupoDiagnostico equals tb_grupo_diagnostico.IdGrupoDiagnostico
+                        join tb_classe_diagnostico in pvEntities.tb_classe_diagnostico
+                        on tb_diagnostico.IdClasseDiagnostico equals tb_classe_diagnostico.IdClasseDiagnostico
                         select new DiagnosticoConsultaModel
                         {
                             IdConsultaVariavel = tb_diagnostico_consulta_variavel.IdConsultaVariavel,
                             IdDiagnostico = tb_diagnostico.IdDiagnostico,
-                            IdGrupoDiagnostico = tb_grupo_diagnostico.IdGrupoDiagnostico,
-                            Fatores = tb_diagnostico_consulta_variavel.Fatores,
-                            CaracteristicasDefinidoras = tb_diagnostico_consulta_variavel.CaracteristicasDefinidoras,
-                            AvaliacaoResultados = tb_diagnostico_consulta_variavel.AvaliacaoResultado,
-                            PrescricaoCuidado = tb_diagnostico_consulta_variavel.PrescricaoCuidados,
+                            IdClasseDiagnostico = tb_classe_diagnostico.IdClasseDiagnostico,
                             ResultadoEsperado = tb_diagnostico_consulta_variavel.ResultadoEsperado,
-
-
                             DescricaoDiagnostico = tb_diagnostico.Diagnostico,
-                            DescricaoGrupoDiagnostico = tb_grupo_diagnostico.DescricaoGrupo
+                            DescricaoClasseDiagnostico = tb_classe_diagnostico.DescricaoClasse
                         };
             return query;
         }
@@ -251,10 +245,10 @@ namespace PacienteVirtual.Negocio
         /// <param name="idConsultaVariavel"></param>
         /// <param name="idIntervencao"></param>
         /// <returns></returns>
-        public DiagnosticoConsultaModel ObterPorDiagnosticoGrupo(long idConsultaVariavel, int idDiagnostico, int idGrupoDiagnostico)
+        public DiagnosticoConsultaModel ObterPorDiagnosticoGrupo(long idConsultaVariavel, int idDiagnostico, int idClasseDiagnostico)
         {
             return GetQuery().Where(dc => dc.IdConsultaVariavel == idConsultaVariavel
-                && dc.IdDiagnostico == idDiagnostico && dc.IdGrupoDiagnostico == idGrupoDiagnostico).ToList().ElementAtOrDefault(0);
+                && dc.IdDiagnostico == idDiagnostico && dc.IdClasseDiagnostico == idClasseDiagnostico).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
@@ -266,11 +260,7 @@ namespace PacienteVirtual.Negocio
         {
             _tb_diagnostico_consulta_variavel.IdConsultaVariavel = DiagnosticoConsultaModel.IdConsultaVariavel;
             _tb_diagnostico_consulta_variavel.IdDiagnostico = DiagnosticoConsultaModel.IdDiagnostico;
-            _tb_diagnostico_consulta_variavel.Fatores = DiagnosticoConsultaModel.Fatores;
-            _tb_diagnostico_consulta_variavel.CaracteristicasDefinidoras = DiagnosticoConsultaModel.CaracteristicasDefinidoras;
             _tb_diagnostico_consulta_variavel.ResultadoEsperado = DiagnosticoConsultaModel.ResultadoEsperado;
-            _tb_diagnostico_consulta_variavel.PrescricaoCuidados = DiagnosticoConsultaModel.PrescricaoCuidado;
-            _tb_diagnostico_consulta_variavel.AvaliacaoResultado = DiagnosticoConsultaModel.AvaliacaoResultados;
         }
     }
 }

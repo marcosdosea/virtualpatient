@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.GrupoDiagnosticoModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ClasseDiagnosticoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
      <%: Resources.Mensagem.editar %>
@@ -14,16 +14,16 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.grupo_diagnostico %></legend>
+        <legend><%: Resources.Mensagem.classe_diagnostico %></legend>
 
-        <%: Html.HiddenFor(model => model.IdGrupoDiagnostico) %>
+        <%: Html.HiddenFor(model => model.IdClasseDiagnostico) %>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.DescricaoGrupoDiagnostico) %>
+            <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoGrupoDiagnostico, new { @class = "textbox", style = "width:1100px;", MaxLength = 255})%>
-            <%: Html.ValidationMessageFor(model => model.DescricaoGrupoDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.TextBoxFor(model => model.DescricaoClasseDiagnostico, new { @class = "textbox", style = "width:1100px;", MaxLength = 255})%>
+            <%: Html.ValidationMessageFor(model => model.DescricaoClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
     <div class="form-actions">

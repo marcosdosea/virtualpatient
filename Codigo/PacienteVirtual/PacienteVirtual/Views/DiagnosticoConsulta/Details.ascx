@@ -4,16 +4,16 @@
 
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <%: Html.HiddenFor(model => model.IdDiagnostico) %>
-    <%: Html.HiddenFor(model => model.IdGrupoDiagnostico) %>
+    <%: Html.HiddenFor(model => model.IdClasseDiagnostico) %>
 
     <div class="display-label"><%: Resources.Mensagem.diagnostico %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.DescricaoDiagnostico) %>
     </div>
     <br />
-    <div class="display-label"><%: Resources.Mensagem.grupo_diagnostico %></div>
+    <div class="display-label"><%: Resources.Mensagem.classe_diagnostico %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.DescricaoGrupoDiagnostico) %>
+        <%: Html.DisplayFor(model => model.DescricaoClasseDiagnostico) %>
     </div>
     <br />
     <div class="display-label"><%: Resources.Mensagem.fatores_relacionados %></div>
