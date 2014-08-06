@@ -16,7 +16,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.EnumDropDownListFor(model => model.EstadoMental, ListaEstadoMental.NaoSeAplica) %>
+                <%: Html.EnumDropDownListFor(model => model.EstadoMental, ListaEstadoMental.SemAlteracoes) %>
             </div>
         </div>
     </div>
