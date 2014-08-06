@@ -27,9 +27,9 @@
                 .Filterable(true);
 
         /* Adding "CompanyName" column: */
-        columns.Add(o => o.DescricaoGrupoDiagnostico)
-                .Titled(Resources.Mensagem.grupo_diagnostico)
-                .ThenSortByDescending(o => o.DescricaoGrupoDiagnostico)
+        columns.Add(o => o.DescricaoClasseDiagnostico)
+                .Titled(Resources.Mensagem.classe_diagnostico)
+                .ThenSortByDescending(o => o.DescricaoClasseDiagnostico)
                 .Filterable(true);
 
         columns.Add(o => o.Risco)

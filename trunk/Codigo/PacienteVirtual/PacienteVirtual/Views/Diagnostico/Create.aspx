@@ -25,11 +25,11 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.DescricaoGrupoDiagnostico)%>
+            <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico)%>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdGrupoDiagnostico", Resources.Mensagem.selecione)%>
-            <%: Html.ValidationMessageFor(model => model.IdGrupoDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.DropDownList("IdClasseDiagnostico", Resources.Mensagem.selecione)%>
+            <%: Html.ValidationMessageFor(model => model.IdClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="row-fluid">
             <div class="span4">

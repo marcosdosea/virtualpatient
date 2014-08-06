@@ -21,9 +21,9 @@ namespace PacienteVirtual.Controllers
         //
         // GET: /DiagnosticoConsulta/Details
 
-        public ActionResult Details(long idConsultaVariavel, int idDiagnostico, int idGrupoDiagnostico)
+        public ActionResult Details(long idConsultaVariavel, int idDiagnostico, int idClasseDiagnostico)
         {
-            SessionController.DiagnosticoConsultaDetalhes = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorDiagnosticoGrupo(idConsultaVariavel, idDiagnostico, idGrupoDiagnostico);
+            SessionController.DiagnosticoConsultaDetalhes = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorDiagnosticoGrupo(idConsultaVariavel, idDiagnostico, idClasseDiagnostico);
             SessionController.DiagnosticoDetalhes = true;
             return RedirectToAction("Edit2", "Consulta");
         }
@@ -39,7 +39,7 @@ namespace PacienteVirtual.Controllers
                 diagnostico.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
                 GerenciadorDiagnosticoConsulta.GetInstance().Inserir(diagnostico);
                 SessionController.ListaDiagnostico = null;
-                SessionController.IdGrupoDiagnostico = Global.ValorInteiroNulo;
+                SessionController.IdClasseDiagnostico = Global.ValorInteiroNulo;
                 SessionController.IdDiagnostico = Global.ValorInteiroNulo;
             }
             else
@@ -62,7 +62,7 @@ namespace PacienteVirtual.Controllers
                     SessionController.IdDiagnostico = diagnostico.IdDiagnostico;
                     return RedirectToAction("Edit2", "Consulta");
                 }
-                SessionController.IdGrupoDiagnostico = diagnostico.IdGrupoDiagnostico;
+                SessionController.IdClasseDiagnostico = diagnostico.IdClasseDiagnostico;
             }
             return RedirectToAction("Edit2", "Consulta");
         }

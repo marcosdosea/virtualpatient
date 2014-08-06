@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.GrupoDiagnosticoModel>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.ClasseDiagnosticoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.grupo_diagnostico %>
+    <%: Resources.Mensagem.classe_diagnostico %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2> <%: Resources.Mensagem.grupo_diagnostico %></h2>
+<h2> <%: Resources.Mensagem.classe_diagnostico %></h2>
 
 <p>
     <%: Html.ActionLink(Resources.Mensagem.criar, "Create")%>
@@ -21,9 +21,9 @@
     {
         
         /* Adding "CompanyName" column: */
-        columns.Add(o => o.DescricaoGrupoDiagnostico)
+        columns.Add(o => o.DescricaoClasseDiagnostico)
                 .Titled(Resources.Mensagem.descricao)
-                .ThenSortByDescending(o => o.DescricaoGrupoDiagnostico)
+                .ThenSortByDescending(o => o.DescricaoClasseDiagnostico)
                 .Filterable(true);
 
         /* Adding not mapped column, that renders body, using inline Razor html helper */
@@ -32,21 +32,21 @@
                 .Encoded(false)
                 .Sanitized(false)
                 .SetWidth(30)
-                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = o.IdGrupoDiagnostico }, new { @class = "modal-link" }));
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.editar, "Edit", new { id = o.IdClasseDiagnostico }, new { @class = "modal-link" }));
 
         columns.Add()
                 .Titled(Resources.Mensagem.detalhes)
                 .Encoded(false)
                 .Sanitized(false)
                 .SetWidth(30)
-                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = o.IdGrupoDiagnostico }, new { @class = "modal-link" }));
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.detalhes, "Details", new { id = o.IdClasseDiagnostico }, new { @class = "modal-link" }));
 
         columns.Add()
                 .Titled(Resources.Mensagem.remover)
                 .Encoded(false)
                 .Sanitized(false)
                 .SetWidth(30)
-                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = o.IdGrupoDiagnostico }, new { @class = "modal-link" }));
+                .RenderValueAs(o => Html.ActionLink(Resources.Mensagem.remover, "Delete", new { id = o.IdClasseDiagnostico }, new { @class = "modal-link" }));
 
     }).WithPaging(5).Sortable().ToHtmlString()%>
 

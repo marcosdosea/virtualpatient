@@ -7,83 +7,83 @@ using Persistence;
 
 namespace PacienteVirtual.Negocio
 {
-    public class GerenciadorGrupoDiagnostico
+    public class GerenciadorClasseDiagnostico
     {
-        public static GerenciadorGrupoDiagnostico gGrupoDiagnostico;
+        public static GerenciadorClasseDiagnostico gClasseDiagnostico;
 
-        private GerenciadorGrupoDiagnostico()
+        private GerenciadorClasseDiagnostico()
         {
         }
 
-        public static GerenciadorGrupoDiagnostico GetInstance()
+        public static GerenciadorClasseDiagnostico GetInstance()
         {
-            if (gGrupoDiagnostico == null)
+            if (gClasseDiagnostico == null)
             {
-                gGrupoDiagnostico = new GerenciadorGrupoDiagnostico();
+                gClasseDiagnostico = new GerenciadorClasseDiagnostico();
             }
-            return gGrupoDiagnostico;
+            return gClasseDiagnostico;
         }
 
         /// <summary>
-        /// inserir dados da grupoDiagnostico
+        /// inserir dados da classeDiagnostico
         /// </summary>
-        /// <param name="grupoDiagnostico"></param>
+        /// <param name="classeDiagnostico"></param>
         /// <returns></returns>
-        public int Inserir(GrupoDiagnosticoModel grupoDiagnostico)
+        public int Inserir(ClasseDiagnosticoModel classeDiagnostico)
         {
-            var repGrupoDiagnostico = new RepositorioGenerico<tb_grupo_diagnostico>();
-            tb_grupo_diagnostico _tb_grupo_diagnostico = new tb_grupo_diagnostico();
+            var repClasseDiagnostico = new RepositorioGenerico<tb_classe_diagnostico>();
+            tb_classe_diagnostico _tb_classe_diagnostico = new tb_classe_diagnostico();
             try
             {
-                Atribuir(grupoDiagnostico, _tb_grupo_diagnostico);
+                Atribuir(classeDiagnostico, _tb_classe_diagnostico);
 
-                repGrupoDiagnostico.Inserir(_tb_grupo_diagnostico);
-                repGrupoDiagnostico.SaveChanges();
+                repClasseDiagnostico.Inserir(_tb_classe_diagnostico);
+                repClasseDiagnostico.SaveChanges();
 
-                return _tb_grupo_diagnostico.IdGrupoDiagnostico;
+                return _tb_classe_diagnostico.IdClasseDiagnostico;
             }
             catch (Exception e)
             {
-                throw new NegocioException("GrupoDiagnostico", e.Message, e);
+                throw new NegocioException("ClasseDiagnostico", e.Message, e);
             }
 
         }
 
         /// <summary>
-        /// Atualiza dados da GrupoDiagnostico
+        /// Atualiza dados da ClasseDiagnostico
         /// </summary>
-        /// <param name="grupoDiagnostico"></param>
-        public void Atualizar(GrupoDiagnosticoModel grupoDiagnostico)
+        /// <param name="classeDiagnostico"></param>
+        public void Atualizar(ClasseDiagnosticoModel classeDiagnostico)
         {
             try
             {
-                var repGrupoDiagnostico = new RepositorioGenerico<tb_grupo_diagnostico>();
-                tb_grupo_diagnostico _tb_grupo_diagnostico = repGrupoDiagnostico.ObterEntidade(d => d.IdGrupoDiagnostico == grupoDiagnostico.IdGrupoDiagnostico);
-                Atribuir(grupoDiagnostico, _tb_grupo_diagnostico);
+                var repClasseDiagnostico = new RepositorioGenerico<tb_classe_diagnostico>();
+                tb_classe_diagnostico _tb_classe_diagnostico = repClasseDiagnostico.ObterEntidade(d => d.IdClasseDiagnostico == classeDiagnostico.IdClasseDiagnostico);
+                Atribuir(classeDiagnostico, _tb_classe_diagnostico);
 
-                repGrupoDiagnostico.SaveChanges();
+                repClasseDiagnostico.SaveChanges();
             }
             catch (Exception e)
             {
-                throw new DadosException("GrupoDiagnostico", e.Message, e);
+                throw new DadosException("ClasseDiagnostico", e.Message, e);
             }
         }
 
         /// <summary>
-        /// Remove dados da GrupoDiagnostico
+        /// Remove dados da ClasseDiagnostico
         /// </summary>
-        /// <param name="idGrupoDiagnostico"></param>
-        public void Remover(int idGrupoDiagnostico)
+        /// <param name="idClasseDiagnostico"></param>
+        public void Remover(int idClasseDiagnostico)
         {
             try
             {
-                var repGrupoDiagnostico = new RepositorioGenerico<tb_grupo_diagnostico>();
-                repGrupoDiagnostico.Remover(d => d.IdGrupoDiagnostico == idGrupoDiagnostico);
-                repGrupoDiagnostico.SaveChanges();
+                var repClasseDiagnostico = new RepositorioGenerico<tb_classe_diagnostico>();
+                repClasseDiagnostico.Remover(d => d.IdClasseDiagnostico == idClasseDiagnostico);
+                repClasseDiagnostico.SaveChanges();
             }
             catch (Exception e)
             {
-                throw new DadosException("GrupoDiagnostico", e.Message, e);
+                throw new DadosException("ClasseDiagnostico", e.Message, e);
             }
         }
 
@@ -91,15 +91,15 @@ namespace PacienteVirtual.Negocio
         /// Consulta para retornar dados da entidade
         /// </summary>
         /// <returns></returns>
-        private IQueryable<GrupoDiagnosticoModel> GetQuery()
+        private IQueryable<ClasseDiagnosticoModel> GetQuery()
         {
-            var repGrupoDiagnostico = new RepositorioGenerico<tb_grupo_diagnostico>();
-            var pvEntities = (pvEntities)repGrupoDiagnostico.ObterContexto();
-            var query = from grupoDiagnostico in pvEntities.tb_grupo_diagnostico
-                        select new GrupoDiagnosticoModel
+            var repClasseDiagnostico = new RepositorioGenerico<tb_classe_diagnostico>();
+            var pvEntities = (pvEntities)repClasseDiagnostico.ObterContexto();
+            var query = from classeDiagnostico in pvEntities.tb_classe_diagnostico
+                        select new ClasseDiagnosticoModel
                         {
-                            IdGrupoDiagnostico = grupoDiagnostico.IdGrupoDiagnostico,
-                            DescricaoGrupoDiagnostico = grupoDiagnostico.DescricaoGrupo
+                            IdClasseDiagnostico = classeDiagnostico.IdClasseDiagnostico,
+                            DescricaoClasseDiagnostico = classeDiagnostico.DescricaoClasse
                         };
             return query;
         }
@@ -108,29 +108,29 @@ namespace PacienteVirtual.Negocio
         /// Obtém todos os GruposDiagnosticos cadastradas
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<GrupoDiagnosticoModel> ObterTodos()
+        public IEnumerable<ClasseDiagnosticoModel> ObterTodos()
         {
             return GetQuery().ToList();
         }
 
         /// <summary>
-        /// Obtém GrupoDiagnostico com o código especificiado
+        /// Obtém ClasseDiagnostico com o código especificiado
         /// </summary>
-        /// <param name="idGrupoDiagnostico"></param>
+        /// <param name="idClasseDiagnostico"></param>
         /// <returns></returns>
-        public GrupoDiagnosticoModel Obter(int idGrupoDiagnostico)
+        public ClasseDiagnosticoModel Obter(int idClasseDiagnostico)
         {
-            return GetQuery().Where(grupoDiagnostico => grupoDiagnostico.IdGrupoDiagnostico == idGrupoDiagnostico).ToList().ElementAtOrDefault(0);
+            return GetQuery().Where(classeDiagnostico => classeDiagnostico.IdClasseDiagnostico == idClasseDiagnostico).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
-        /// <param name="grupoDiagnostico"></param>
-        /// <param name="_tb_grupo_diagnostico"></param>
-        private static void Atribuir(GrupoDiagnosticoModel grupoDiagnostico, tb_grupo_diagnostico _tb_grupo_diagnostico)
+        /// <param name="classeDiagnostico"></param>
+        /// <param name="_tb_classe_diagnostico"></param>
+        private static void Atribuir(ClasseDiagnosticoModel classeDiagnostico, tb_classe_diagnostico _tb_classe_diagnostico)
         {
-            _tb_grupo_diagnostico.DescricaoGrupo = grupoDiagnostico.DescricaoGrupoDiagnostico;
+            _tb_classe_diagnostico.DescricaoClasse = classeDiagnostico.DescricaoClasseDiagnostico;
         }
     }
 }

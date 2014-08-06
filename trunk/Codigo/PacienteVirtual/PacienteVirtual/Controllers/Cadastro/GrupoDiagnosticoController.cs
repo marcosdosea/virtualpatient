@@ -10,26 +10,26 @@ using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual.Controllers
 { 
-    public class GrupoDiagnosticoController : Controller
+    public class ClasseDiagnosticoController : Controller
     {
         //
-        // GET: /GrupoDiagnostico/
+        // GET: /ClasseDiagnostico/
 
         public ViewResult Index()
         {
-            return View(GerenciadorGrupoDiagnostico.GetInstance().ObterTodos());
+            return View(GerenciadorClasseDiagnostico.GetInstance().ObterTodos());
         }
 
         //
-        // GET: /GrupoDiagnostico/Details/5
+        // GET: /ClasseDiagnostico/Details/5
 
         public ViewResult Details(int id)
         {
-            return View(GerenciadorGrupoDiagnostico.GetInstance().Obter(id));
+            return View(GerenciadorClasseDiagnostico.GetInstance().Obter(id));
         }
 
         //
-        // GET: /GrupoDiagnostico/Create
+        // GET: /ClasseDiagnostico/Create
 
         public ActionResult Create()
         {
@@ -37,58 +37,58 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /GrupoDiagnostico/Create
+        // POST: /ClasseDiagnostico/Create
 
         [HttpPost]
-        public ActionResult Create(GrupoDiagnosticoModel grupoDiagnostico)
+        public ActionResult Create(ClasseDiagnosticoModel classeDiagnostico)
         {
             if (ModelState.IsValid)
             {
-                GerenciadorGrupoDiagnostico.GetInstance().Inserir(grupoDiagnostico);
+                GerenciadorClasseDiagnostico.GetInstance().Inserir(classeDiagnostico);
                 return RedirectToAction("Index");
             }
-            return View(grupoDiagnostico);
+            return View(classeDiagnostico);
         }
 
         //
-        // GET: /GrupoDiagnostico/Edit/5
+        // GET: /ClasseDiagnostico/Edit/5
 
         public ActionResult Edit(int id)
         {
-            GrupoDiagnosticoModel grupoDiagnostico = GerenciadorGrupoDiagnostico.GetInstance().Obter(id);
-            return View(grupoDiagnostico);
+            ClasseDiagnosticoModel classeDiagnostico = GerenciadorClasseDiagnostico.GetInstance().Obter(id);
+            return View(classeDiagnostico);
         }
 
         //
-        // POST: /GrupoDiagnostico/Edit/5
+        // POST: /ClasseDiagnostico/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(GrupoDiagnosticoModel grupoDiagnostico)
+        public ActionResult Edit(ClasseDiagnosticoModel classeDiagnostico)
         {
             if (ModelState.IsValid)
             {
-                GerenciadorGrupoDiagnostico.GetInstance().Atualizar(grupoDiagnostico);
+                GerenciadorClasseDiagnostico.GetInstance().Atualizar(classeDiagnostico);
                 return RedirectToAction("Index");
             }
-            return View(grupoDiagnostico);
+            return View(classeDiagnostico);
         }
 
         //
-        // GET: /GrupoDiagnostico/Delete/5
+        // GET: /ClasseDiagnostico/Delete/5
 
         public ActionResult Delete(int id)
         {
-            GrupoDiagnosticoModel grupoDiagnostico = GerenciadorGrupoDiagnostico.GetInstance().Obter(id);
-            return View(grupoDiagnostico);
+            ClasseDiagnosticoModel classeDiagnostico = GerenciadorClasseDiagnostico.GetInstance().Obter(id);
+            return View(classeDiagnostico);
         }
 
         //
-        // POST: /GrupoDiagnostico/Delete/5
+        // POST: /ClasseDiagnostico/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            GerenciadorGrupoDiagnostico.GetInstance().Remover(id);
+            GerenciadorClasseDiagnostico.GetInstance().Remover(id);
             return RedirectToAction("Index");
         }
 

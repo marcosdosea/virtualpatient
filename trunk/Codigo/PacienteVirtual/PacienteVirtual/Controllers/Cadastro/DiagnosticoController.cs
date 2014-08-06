@@ -13,7 +13,7 @@ namespace PacienteVirtual.Controllers
     public class DiagnosticoController : Controller
     {
         GerenciadorDiagnostico gDiagnostico = GerenciadorDiagnostico.GetInstance();
-        GerenciadorGrupoDiagnostico gGrupoDiagnostico = GerenciadorGrupoDiagnostico.GetInstance();
+        GerenciadorClasseDiagnostico gClasseDiagnostico = GerenciadorClasseDiagnostico.GetInstance();
 
         //
         // GET: /Intervencao/
@@ -34,7 +34,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdGrupoDiagnostico = new SelectList(gGrupoDiagnostico.ObterTodos(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico");
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico");
             return View();
         }
 
@@ -45,10 +45,10 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                diagnosticoModel.IdGrupoDiagnostico = gDiagnostico.Inserir(diagnosticoModel);
+                diagnosticoModel.IdClasseDiagnostico = gDiagnostico.Inserir(diagnosticoModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdGrupoDiagnostico = new SelectList(gGrupoDiagnostico.ObterTodos(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", diagnosticoModel.IdGrupoDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", diagnosticoModel.IdClasseDiagnostico);
             return View(diagnosticoModel);
         }
 
@@ -57,7 +57,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(int id)
         {
             DiagnosticoModel diagnostico = gDiagnostico.Obter(id);
-            ViewBag.IdGrupoDiagnostico = new SelectList(gGrupoDiagnostico.ObterTodos(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", diagnostico.IdGrupoDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", diagnostico.IdClasseDiagnostico);
             return View(diagnostico);
         }
 
@@ -72,7 +72,7 @@ namespace PacienteVirtual.Controllers
                 gDiagnostico.Atualizar(diagnostico);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdGrupoDiagnostico = new SelectList(gGrupoDiagnostico.ObterTodos(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", diagnostico.IdGrupoDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", diagnostico.IdClasseDiagnostico);
             return View(diagnostico);
         }
 

@@ -19,12 +19,12 @@
         <div class="row-fluid">
             <div class="span2">
                  <div class="editor-label">
-                    <%: Html.LabelFor(model => model.DescricaoGrupoDiagnostico) %>
+                    <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico) %>
                 </div>
             </div>
             <div class="span7">
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.DescricaoGrupoDiagnostico, new { id = "textbox" })%>
+                    <%: Html.TextBoxFor(model => model.DescricaoClasseDiagnostico, new { id = "textbox" })%>
                 </div>
             </div>
         </div>

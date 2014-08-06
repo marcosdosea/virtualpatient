@@ -56,7 +56,7 @@
     <file relUrl="Content/themes/base/jquery.ui.tabs.css" publishTime="11/18/2013 10:40:37" />
     <file relUrl="Views/RelatoClinico/Index.aspx" publishTime="06/25/2014 18:15:58" />
     <file relUrl="Views/Paciente/Delete.aspx" publishTime="11/18/2013 10:40:58" />
-    <file relUrl="Views/GrupoDiagnostico/Details.aspx" publishTime="06/18/2014 23:12:45" />
+    <file relUrl="Views/ClasseDiagnostico/Details.aspx" publishTime="06/18/2014 23:12:45" />
     <file relUrl="Views/QueixaMedicamento/Index.ascx" publishTime="07/18/2014 12:07:11" />
     <file relUrl="Content/themes/pv/js/imperio.dashboard.js" publishTime="11/18/2013 10:40:37" />
     <file relUrl="Content/themes/pv/img/icons/film.png" publishTime="11/18/2013 10:40:33" />
@@ -81,7 +81,7 @@
     <file relUrl="Views/ClinicoInternacao/AdicionarClinicoInternacaoAlergias.ascx" publishTime="05/28/2014 23:20:16" />
     <file relUrl="Views/AtivarMatriculasTurma/Index.aspx" publishTime="04/23/2014 14:36:30" />
     <file relUrl="Scripts/modernizr-1.7.js" publishTime="11/18/2013 10:40:41" />
-    <file relUrl="Views/GrupoDiagnostico/Create.aspx" publishTime="06/18/2014 23:12:45" />
+    <file relUrl="Views/ClasseDiagnostico/Create.aspx" publishTime="06/18/2014 23:12:45" />
     <file relUrl="Content/themes/pv/js/imperio.tables.js" publishTime="11/18/2013 10:40:36" />
     <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="11/18/2013 10:40:37" />
     <file relUrl="Views/EstadoCivil/Edit.aspx" publishTime="01/27/2014 09:53:09" />
@@ -106,7 +106,7 @@
     <file relUrl="Content/themes/pv/img/switch.gif" publishTime="11/18/2013 10:40:32" />
     <file relUrl="Content/themes/pv/js/jquery.js" publishTime="11/18/2013 10:40:36" />
     <file relUrl="Content/themes/pv/css/jquery-ui.css" publishTime="11/18/2013 10:40:31" />
-    <file relUrl="Views/GrupoDiagnostico/Index.aspx" publishTime="06/18/2014 23:12:45" />
+    <file relUrl="Views/ClasseDiagnostico/Index.aspx" publishTime="06/18/2014 23:12:45" />
     <file relUrl="Views/TurmaPessoaRelato/Delete.aspx" publishTime="11/18/2013 10:40:56" />
     <file relUrl="Scripts/gridmvc.min.js" publishTime="11/18/2013 10:40:41" />
     <file relUrl="Content/themes/pv/img/icons/compass.png" publishTime="11/18/2013 10:40:32" />
@@ -315,7 +315,7 @@
     <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="11/18/2013 10:40:37" />
     <file relUrl="bin/System.Web.Abstractions.dll" publishTime="03/18/2010 19:31:26" />
     <file relUrl="Views/Queixa/Edit.aspx" publishTime="01/27/2014 09:53:09" />
-    <file relUrl="Views/GrupoDiagnostico/Edit.aspx" publishTime="06/18/2014 23:12:45" />
+    <file relUrl="Views/ClasseDiagnostico/Edit.aspx" publishTime="06/18/2014 23:12:45" />
     <file relUrl="Views/Shared/Error.aspx" publishTime="11/28/2013 17:03:58" />
     <file relUrl="Views/Curso/Details.aspx" publishTime="11/18/2013 10:40:52" />
     <file relUrl="Content/themes/pv/img/ufs3.png" publishTime="11/18/2013 10:40:32" />
@@ -421,7 +421,7 @@
     <file relUrl="Views/ExperienciaMedicamentos/Edit.ascx" publishTime="07/18/2014 12:07:11" />
     <file relUrl="Views/ClinicoInternacao/ListaPatologiasAtuais.ascx" publishTime="07/06/2014 22:32:09" />
     <file relUrl="Content/themes/pv/js/excanvas.min.js" publishTime="11/18/2013 10:40:37" />
-    <file relUrl="Views/GrupoDiagnostico/Delete.aspx" publishTime="06/18/2014 23:12:45" />
+    <file relUrl="Views/ClasseDiagnostico/Delete.aspx" publishTime="06/18/2014 23:12:45" />
     <file relUrl="Views/Patologia/Delete.aspx" publishTime="04/11/2014 20:41:48" />
     <file relUrl="Content/themes/pv/js/jquery.flot.min.js" publishTime="11/18/2013 10:40:36" />
     <file relUrl="Content/themes/base/jquery.ui.selectable.css" publishTime="11/18/2013 10:40:37" />

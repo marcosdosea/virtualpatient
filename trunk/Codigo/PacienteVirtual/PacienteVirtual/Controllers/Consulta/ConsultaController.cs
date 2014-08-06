@@ -181,7 +181,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.TotalAbas = Global.totalAbasENF_Edit1;
             //zerando SessionController Enfermagem da segunda tela
             SessionController.IdDiagnostico = Global.NaoSelecionado;
-            SessionController.IdGrupoDiagnostico = Global.NaoSelecionado;
+            SessionController.IdClasseDiagnostico = Global.NaoSelecionado;
             SessionController.DiagnosticoDetalhes = false;
         }
 
@@ -232,8 +232,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.EscondeLinks = true;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
-            ViewBag.IdGrupoDiagnostico = new SelectList(GerenciadorGrupoDiagnostico.GetInstance().ObterTodos().ToList(), "IdGrupoDiagnostico", "DescricaoGrupoDiagnostico", SessionController.IdGrupoDiagnostico);
-            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorGrupoDiagnostico(SessionController.IdGrupoDiagnostico), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(GerenciadorClasseDiagnostico.GetInstance().ObterTodos().ToList(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", SessionController.IdClasseDiagnostico);
+            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(SessionController.IdClasseDiagnostico), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
             ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
         }
 

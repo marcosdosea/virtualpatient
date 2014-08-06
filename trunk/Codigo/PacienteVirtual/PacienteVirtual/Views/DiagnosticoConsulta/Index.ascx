@@ -40,7 +40,7 @@
             <%: Resources.Mensagem.diagnostico %>
         </th>
         <th>
-            <%: Resources.Mensagem.grupo_diagnostico %>
+            <%: Resources.Mensagem.classe_diagnostico %>
         </th>
         <th><%: Resources.Mensagem.opcoes %></th>
     </tr>
@@ -51,12 +51,12 @@
             <%: Html.DisplayFor(modelItem => item.DescricaoDiagnostico) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.DescricaoGrupoDiagnostico) %>
+            <%: Html.DisplayFor(modelItem => item.DescricaoClasseDiagnostico) %>
         </td>
         <td>
-            <%: Html.ActionLink(Resources.Mensagem.visualizar, "Details", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idGrupoDiagnostico = item.IdGrupoDiagnostico }, null)%>
+            <%: Html.ActionLink(Resources.Mensagem.visualizar, "Details", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idClasseDiagnostico = item.IdClasseDiagnostico }, null)%>
             |
-            <%: Html.ActionLink(Resources.Mensagem.editar,"Edit", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idGrupoDiagnostico = item.IdGrupoDiagnostico }, null) %>
+            <%: Html.ActionLink(Resources.Mensagem.editar,"Edit", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idClasseDiagnostico = item.IdClasseDiagnostico }, null) %>
             |
             <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, new { onclick = ("return confirm('Deseja realmente REMOVER este Diagnóstico?')") })%>
         </td>

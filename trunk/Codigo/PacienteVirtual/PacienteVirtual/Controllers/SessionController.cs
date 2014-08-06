@@ -762,21 +762,21 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-        public static int IdGrupoDiagnostico
+        public static int IdClasseDiagnostico
         {
             get
             {
-                int idGrupoDiagnostico = (int)HttpContext.Current.Session["_IdGrupoDiagnostico"];
-                if (idGrupoDiagnostico < Global.ValorInicial)
+                int idClasseDiagnostico = (int)HttpContext.Current.Session["_IdClasseDiagnostico"];
+                if (idClasseDiagnostico < Global.ValorInicial)
                 {
-                    idGrupoDiagnostico = Global.ValorInteiroNulo;
-                    HttpContext.Current.Session["_IdGrupoDiagnostico"] = idGrupoDiagnostico;
+                    idClasseDiagnostico = Global.ValorInteiroNulo;
+                    HttpContext.Current.Session["_IdClasseDiagnostico"] = idClasseDiagnostico;
                 }
-                return idGrupoDiagnostico;
+                return idClasseDiagnostico;
             }
             set
             {
-                HttpContext.Current.Session["_IdGrupoDiagnostico"] = value;
+                HttpContext.Current.Session["_IdClasseDiagnostico"] = value;
             }
         }
 
