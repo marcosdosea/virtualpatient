@@ -1,0 +1,4 @@
+tirar o campo desde de queixas
+cada queixa está relacionada a 1 medicamento
+cada quixa/medicamento pode ter várias intervenções
+cada queixa/medicamento possui um status 

@@ -1,0 +1,125 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1386" measuredH="663" mockupW="1354" mockupH="656">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="32" y="7" w="1354" h="656" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//PV</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="45" y="104" w="1304" h="510" measuredW="1278" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>DADOS%20DE%20IDENTIFICA%C7%C3O%2C%20DADOS%20CL%CDNICOS%20/%20INTERNA%C7%C3O%2C%20PERCEP%C7%C3O%20E%20EXPECTATIVAS%20DO%20PACIENTE%2C%20AVALIA%C7%C3O%20DE%20SA%DADE%2C%20OUTROS%20ACHADOS%2C%20DADOS%20COMPLEMENTARES%20IMPORTANTES</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="162" y="145" w="1054" h="-1" measuredW="1046" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>NECESSIDADES%20PSICOBIOL%D3GICAS%20%28PB%29%20/%20PSICOSSOCIAIS%20%28PS%29%20/%20PSICOESPIRITUAIS%20%28PE%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="248" controlTypeID="com.balsamiq.mockups::TabBar" x="68" y="187" w="1258" h="392" measuredW="1194" measuredH="100" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>4</selectedIndex>
+        <text>Avalia%E7%E3oda%20Consci%EAncia%3A%20Escala%20de%20Coma%20de%20Glasgow%2C%20Avalia%E7%E3o%20de%20Seda%E7%E3o%3A%20Escala%20de%20Ramsay%2C%20Necessidades%20de%20Elimina%E7%E3o%2C%20Necessidades%20de%20Percep%E7%E3o%20Sensorial%2C%20Outras%20Necessidades</text>
+      </controlProperties>
+    </control>
+    <control controlID="249" controlTypeID="com.balsamiq.mockups::FieldSet" x="500" y="234" w="350" h="226" measuredW="200" measuredH="170" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="250" controlTypeID="com.balsamiq.mockups::FieldSet" x="107" y="234" w="361" h="226" measuredW="200" measuredH="170" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="251" controlTypeID="com.balsamiq.mockups::Label" x="122" y="249" w="327" h="-1" measuredW="199" measuredH="28" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Grau%20de%20Depend%EAncia</text>
+      </controlProperties>
+    </control>
+    <control controlID="252" controlTypeID="com.balsamiq.mockups::Label" x="516" y="249" w="230" h="-1" measuredW="196" measuredH="28" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Uso%20de%20drogas%20il%EDcitas</text>
+      </controlProperties>
+    </control>
+    <control controlID="253" controlTypeID="com.balsamiq.mockups::Label" x="531" y="289" w="111" h="-1" measuredW="28" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tipo%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="254" controlTypeID="com.balsamiq.mockups::ComboBox" x="267" y="287" w="171" h="-1" measuredW="113" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Independente</text>
+      </controlProperties>
+    </control>
+    <control controlID="255" controlTypeID="com.balsamiq.mockups::Label" x="122" y="291" w="-1" h="-1" measuredW="132" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Grau%20de%20Depend%EAncia%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="256" controlTypeID="com.balsamiq.mockups::TextInput" x="208" y="334" w="230" h="-1" measuredW="79" measuredH="26" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="257" controlTypeID="com.balsamiq.mockups::Label" x="531" y="319" w="72" h="-1" measuredW="70" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Frequ%EAncia%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="258" controlTypeID="com.balsamiq.mockups::Label" x="531" y="349" w="61" h="-1" measuredW="43" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tempo%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="259" controlTypeID="com.balsamiq.mockups::CheckBox" x="122" y="370" w="86" h="27" measuredW="77" measuredH="22" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tabagista</text>
+      </controlProperties>
+    </control>
+    <control controlID="260" controlTypeID="com.balsamiq.mockups::Label" x="531" y="376" w="-1" h="-1" measuredW="73" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Quantidade%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="261" controlTypeID="com.balsamiq.mockups::CheckBox" x="122" y="334" w="86" h="27" measuredW="68" measuredH="22" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Estilista</text>
+      </controlProperties>
+    </control>
+    <control controlID="262" controlTypeID="com.balsamiq.mockups::TextInput" x="208" y="370" w="229" h="-1" measuredW="79" measuredH="26" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="263" controlTypeID="com.balsamiq.mockups::TextInput" x="621" y="286" w="204" h="-1" measuredW="79" measuredH="26" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="264" controlTypeID="com.balsamiq.mockups::TextInput" x="621" y="373" w="204" h="-1" measuredW="79" measuredH="26" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="265" controlTypeID="com.balsamiq.mockups::TextInput" x="621" y="346" w="204" h="-1" measuredW="79" measuredH="26" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="266" controlTypeID="com.balsamiq.mockups::TextInput" x="621" y="316" w="204" h="-1" measuredW="79" measuredH="26" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="267" controlTypeID="com.balsamiq.mockups::Button" x="685" y="487" w="83" h="27" measuredW="60" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Salvar</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,294 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,body {
+	height: 100%;
+}
+
+@charset "UTF-8";
+
+/* Configuracoes para o corpo da pagina */
+body {
+	font: 100% Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	color: #000000;
+}
+
+* html #tudo {
+	height: 100%;
+}
+
+.tudo {
+	margin: 0 auto;
+	min-height: 100%;
+	position: relative;
+	text-align: left;
+}
+
+.conteudo {
+	padding-bottom: 40px;
+}
+
+/* Configuracoes para cabecalho */
+.header {
+	background: #3B5998;
+	text-align: left;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+.header h1 {
+	color: #FFFFFF;
+	padding: 0 20px;
+	font-size: 125%;
+	padding-left: 20px;
+	padding-top: 1 px;
+}
+
+.header img {
+	padding: 0;
+	margin: 0;
+}
+
+/* Configuracoes para a parte central e principal */
+.mainContent {
+	padding: 10px 20px 10px 20px;
+	background: #FFFFFF;
+}
+
+.wraper {
+	background-color: #FFF;
+	min-height: 400px;
+}
+
+.wraper .mainContent {
+	background-color: #FFFFFF;
+	margin-left: 0%;
+	color: #666;
+}
+
+.wraper .mainContent h2 {
+	font-size: 100%;
+	background-color: #9C9;
+	color: #FFF;
+	padding-left: 10px;
+}
+
+
+
+.wraper .mainContent .field {
+	margin: 10px;
+	font-size: 70%;
+}
+
+.wraper .mainContent .field h3 {
+	font-size: 110%;
+	background-color: #9C9;
+	color: #FFF;
+	padding-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.wraper .mainContent .field table {
+	margin-left: 10px;
+    margin-bottom: 5px;
+    width: 95%;
+}
+
+
+.wraper .mainContent .field .field_textarea,.wraper .mainContent .field .field_text
+	{
+	width: 100%;
+	background-color: #EFE;
+	color: #999;
+	border: #CCC thin solid;
+}
+
+.wraper .mainContent .field .field_textarea:focus,.wraper .mainContent .field .field_text:focus
+	{
+	width: 100%;
+	background-color: #EFE;
+	color: #333;
+	border: #999 thin solid;
+}
+
+/* Configuracoes para o rodape */
+.footer {
+	background: repeat-x scroll center center #3B5998;
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+	clear: both;
+	width: 100%;
+	color: #FFFFFF;
+}
+
+.footer p {
+	margin: 0;
+	text-align: center;
+	padding: 10px 0;
+	color: #FFFFFF;
+}
+
+.footer a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.footer a:hover {
+	text-decoration: underline;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+/* Configuracoes para fieldsets */
+fieldset {
+	border: 1px solid #781351;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom:10px;
+	font-size: 95%
+}
+
+legend {
+	border: 1px solid #781351;
+	margin-left: 10px;
+	padding: 2px 6px
+}
+
+.clear {
+	clear: both;
+}
+
+/* Configuracoes para dataTables*/
+.dataTables {
+     border: 1px solid #030521;
+}
+
+.headerDataTable {
+   font-weight: bold;
+   color: #FFF;
+   background:  #9C9;
+}
+
+.headerDataTableInside {
+	font-weight: bold;
+   	color: #FFF;
+   	background:  #0F26D2;
+}
+ 
+.odd {
+   background: #CACDF9;
+}
+
+.even {
+   background: #E4E5F9;
+}
+
+.oddInside {
+	background: #D6F3DC;
+}
+	
+.evenInside {
+	background: #E3FFE9;
+}
+
+.tableEstilosDeVida {
+	text-align: center;
+}
+
+.headerDataTableQueixas {
+	border: 2px solid #3366CC;
+	font-weight: bold;
+   	color: #FFFFFF;
+    background-color: #3366CC;
+}
+
+.oddQueixas {
+   background: #9C9;
+}
+
+.evenQueixas {
+   background: #E4E5F9;
+}
+
+.headerGridQueixasMed
+{
+	font-size: small;
+	font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.gridQueixasMed
+{
+	width: 50%;
+	height: 100%;
+}
+
+
+/* Configuracoes para todas as tabelas */
+table {
+	border-collapse: collapse;
+}
+
+/* Configuracoes para panelGrid de addCasoClinico2 */
+.columnsCasoClinico2 {
+	width: 250px;
+}
+.columnsCasoClinico1 {
+	width: 280px;
+}
+
+/* Configuracoes para panelGrid de addCasoClinico4 */
+.columnsCasoClinicoP {
+	width: 30px;
+}
+.rowCasoClinicoP{
+	height: 30px;
+}
+
+/* Configuracoes para linha 1 da tabela de queixas */
+.column1row1{
+	width: 60%;
+}
+.column2row1{
+	width: 40%;
+}
+
+/* Configuracoes para linha 2 da tabela de queixas */
+.column1row2{
+	width: 30%;
+}
+.column2row2{
+	width: 30%;
+}
+.column3row2{
+	width: 40%;
+}
+
+/* Configuracoes para linha 4 da tabela de queixas */
+.column1row3{
+	width: 5%;
+}
+.column2row3{
+	width: 45%;
+}
+.column3row3{
+	width: 5%;
+}
+.column4row3{
+	width: 45%;
+}
+
+
+.refMedAlternativasC1{
+	width: 50px;
+	text-align: center;
+}
+.refMedAlternativasC2{
+}

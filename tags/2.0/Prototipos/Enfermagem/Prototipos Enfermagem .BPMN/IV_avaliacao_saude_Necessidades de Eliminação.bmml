@@ -1,0 +1,276 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1386" measuredH="713" mockupW="1354" mockupH="706">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="32" y="7" w="1354" h="706" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//PV</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="45" y="104" w="1304" h="561" measuredW="1278" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>DADOS%20DE%20IDENTIFICA%C7%C3O%2C%20DADOS%20CL%CDNICOS%20/%20INTERNA%C7%C3O%2C%20PERCEP%C7%C3O%20E%20EXPECTATIVAS%20DO%20PACIENTE%2C%20AVALIA%C7%C3O%20DE%20SA%DADE%2C%20OUTROS%20ACHADOS%2C%20DADOS%20COMPLEMENTARES%20IMPORTANTES</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="162" y="145" w="1054" h="-1" measuredW="1046" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>NECESSIDADES%20PSICOBIOL%D3GICAS%20%28PB%29%20/%20PSICOSSOCIAIS%20%28PS%29%20/%20PSICOESPIRITUAIS%20%28PE%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="243" controlTypeID="com.balsamiq.mockups::TabBar" x="68" y="187" w="1258" h="456" measuredW="1194" measuredH="100" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>Avalia%E7%E3oda%20Consci%EAncia%3A%20Escala%20de%20Coma%20de%20Glasgow%2C%20Avalia%E7%E3o%20de%20Seda%E7%E3o%3A%20Escala%20de%20Ramsay%2C%20Necessidades%20de%20Elimina%E7%E3o%2C%20Necessidades%20de%20Percep%E7%E3o%20Sensorial%2C%20Outras%20Necessidades</text>
+      </controlProperties>
+    </control>
+    <control controlID="244" controlTypeID="com.balsamiq.mockups::FieldSet" x="801" y="220" w="405" h="342" measuredW="200" measuredH="170" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="245" controlTypeID="com.balsamiq.mockups::FieldSet" x="97" y="220" w="668" h="342" measuredW="200" measuredH="170" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="246" controlTypeID="com.balsamiq.mockups::Label" x="112" y="235" w="327" h="-1" measuredW="86" measuredH="28" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Intestinal</text>
+      </controlProperties>
+    </control>
+    <control controlID="247" controlTypeID="com.balsamiq.mockups::Label" x="817" y="235" w="230" h="-1" measuredW="72" measuredH="28" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Urin%E1ria</text>
+      </controlProperties>
+    </control>
+    <control controlID="248" controlTypeID="com.balsamiq.mockups::Label" x="821" y="275" w="138" h="-1" measuredW="131" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Colora%E7%E3o%20de%20Urin%E1ria%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="249" controlTypeID="com.balsamiq.mockups::ComboBox" x="543" y="306" w="201" h="-1" measuredW="63" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Plano</text>
+      </controlProperties>
+    </control>
+    <control controlID="250" controlTypeID="com.balsamiq.mockups::ComboBox" x="232" y="507" w="151" h="-1" measuredW="96" measuredH="24" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Colostomia</text>
+      </controlProperties>
+    </control>
+    <control controlID="251" controlTypeID="com.balsamiq.mockups::Label" x="112" y="311" w="-1" h="-1" measuredW="107" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%DAltima%20evacua%E7%E3o%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="252" controlTypeID="com.balsamiq.mockups::Label" x="112" y="362" w="-1" h="-1" measuredW="91" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tipos%20de%20fezes%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="253" controlTypeID="com.balsamiq.mockups::CheckBox" x="112" y="335" w="145" h="27" measuredW="134" measuredH="22" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Esfor%E7o%20p/%20evacuar</text>
+      </controlProperties>
+    </control>
+    <control controlID="254" controlTypeID="com.balsamiq.mockups::CheckBox" x="112" y="446" w="135" h="27" measuredW="133" measuredH="22" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Incontin%EAncia%20fecal</text>
+      </controlProperties>
+    </control>
+    <control controlID="255" controlTypeID="com.balsamiq.mockups::DateChooser" x="223" y="309" w="103" h="-1" measuredW="90" measuredH="25" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20/%20%20/%20%20%20%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="256" controlTypeID="com.balsamiq.mockups::Label" x="112" y="390" w="-1" h="-1" measuredW="95" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Caracter%EDsticas%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="257" controlTypeID="com.balsamiq.mockups::CheckBox" x="257" y="446" w="71" h="27" measuredW="56" measuredH="22" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Flatos</text>
+      </controlProperties>
+    </control>
+    <control controlID="258" controlTypeID="com.balsamiq.mockups::Label" x="112" y="509" w="-1" h="-1" measuredW="116" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Estomas%20cir%FArgicos%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="259" controlTypeID="com.balsamiq.mockups::CheckBox" x="112" y="473" w="135" h="27" measuredW="134" measuredH="22" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sangramento%20Retal</text>
+      </controlProperties>
+    </control>
+    <control controlID="260" controlTypeID="com.balsamiq.mockups::ComboBox" x="210" y="360" w="176" h="-1" measuredW="126" measuredH="24" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Fezes%20formadas</text>
+      </controlProperties>
+    </control>
+    <control controlID="261" controlTypeID="com.balsamiq.mockups::CheckBox" x="322" y="446" w="96" h="27" measuredW="96" measuredH="22" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hemorr%F3idas</text>
+      </controlProperties>
+    </control>
+    <control controlID="262" controlTypeID="com.balsamiq.mockups::CheckBox" x="257" y="473" w="96" h="27" measuredW="86" measuredH="22" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Purido%20anal</text>
+      </controlProperties>
+    </control>
+    <control controlID="263" controlTypeID="com.balsamiq.mockups::Label" x="112" y="281" w="-1" h="-1" measuredW="199" measuredH="21" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Frequ%EAncia%20normal%20de%20evacua%E7%E3o%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="264" controlTypeID="com.balsamiq.mockups::TextInput" x="311" y="278" w="44" h="-1" measuredW="79" measuredH="26" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="265" controlTypeID="com.balsamiq.mockups::Label" x="361" y="281" w="32" h="-1" measuredW="25" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>dias</text>
+      </controlProperties>
+    </control>
+    <control controlID="266" controlTypeID="com.balsamiq.mockups::TextInput" x="214" y="387" w="172" h="-1" measuredW="79" measuredH="26" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="267" controlTypeID="com.balsamiq.mockups::Label" x="112" y="417" w="-1" h="-1" measuredW="117" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>N%BA%20Evacua%E7%F5es/dia%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="268" controlTypeID="com.balsamiq.mockups::TextInput" x="233" y="414" w="44" h="-1" measuredW="79" measuredH="26" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="269" controlTypeID="com.balsamiq.mockups::Label" x="428" y="275" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Abdome</text>
+      </controlProperties>
+    </control>
+    <control controlID="270" controlTypeID="com.balsamiq.mockups::Label" x="434" y="307" w="-1" h="-1" measuredW="106" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tipos%20de%20Abdome%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="271" controlTypeID="com.balsamiq.mockups::Label" x="428" y="335" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Ausculta</text>
+      </controlProperties>
+    </control>
+    <control controlID="272" controlTypeID="com.balsamiq.mockups::ComboBox" x="543" y="357" w="201" h="-1" measuredW="91" measuredH="24" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Presentes</text>
+      </controlProperties>
+    </control>
+    <control controlID="273" controlTypeID="com.balsamiq.mockups::Label" x="436" y="362" w="-1" h="-1" measuredW="99" measuredH="21" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sons%20Intestinais%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="274" controlTypeID="com.balsamiq.mockups::Label" x="428" y="387" w="-1" h="-1" measuredW="64" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Percuss%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="275" controlTypeID="com.balsamiq.mockups::ComboBox" x="543" y="412" w="201" h="-1" measuredW="102" measuredH="24" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Som%20Maci%E7o</text>
+      </controlProperties>
+    </control>
+    <control controlID="276" controlTypeID="com.balsamiq.mockups::Label" x="436" y="411" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tipos%20de%20sons%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="277" controlTypeID="com.balsamiq.mockups::Label" x="439" y="449" w="-1" h="-1" measuredW="58" measuredH="21" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Localizar%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="278" controlTypeID="com.balsamiq.mockups::TextInput" x="541" y="446" w="204" h="-1" measuredW="79" measuredH="26" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="279" controlTypeID="com.balsamiq.mockups::VRule" x="418" y="269" w="-1" h="293" measuredW="10" measuredH="100" zOrder="39" locked="false" isInGroup="-1"/>
+    <control controlID="280" controlTypeID="com.balsamiq.mockups::HRule" x="97" y="263" w="664" h="-1" measuredW="100" measuredH="10" zOrder="40" locked="false" isInGroup="-1"/>
+    <control controlID="281" controlTypeID="com.balsamiq.mockups::Label" x="428" y="486" w="-1" h="-1" measuredW="56" measuredH="21" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Palpa%E7%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="282" controlTypeID="com.balsamiq.mockups::ComboBox" x="543" y="515" w="202" h="-1" measuredW="66" measuredH="24" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tenso</text>
+      </controlProperties>
+    </control>
+    <control controlID="283" controlTypeID="com.balsamiq.mockups::Label" x="436" y="517" w="64" h="-1" measuredW="57" measuredH="21" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Palpa%E7%E3o%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="284" controlTypeID="com.balsamiq.mockups::ComboBox" x="959" y="273" w="232" h="-1" measuredW="120" measuredH="24" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>L%EDmpida%20e%20clara</text>
+      </controlProperties>
+    </control>
+    <control controlID="285" controlTypeID="com.balsamiq.mockups::Label" x="821" y="308" w="99" h="-1" measuredW="90" measuredH="21" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>D%E9bito%20urin%E1ria%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="286" controlTypeID="com.balsamiq.mockups::ComboBox" x="959" y="306" w="232" h="-1" measuredW="77" measuredH="24" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Olig%FAria</text>
+      </controlProperties>
+    </control>
+    <control controlID="287" controlTypeID="com.balsamiq.mockups::Label" x="821" y="338" w="211" h="-1" measuredW="198" measuredH="21" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Condi%E7%E3o%20de%20contin%EAncia%20urin%E1ria%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="288" controlTypeID="com.balsamiq.mockups::ComboBox" x="1032" y="336" w="156" h="-1" measuredW="159" measuredH="24" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Incontin%EAncia%20urin%E1ria</text>
+      </controlProperties>
+    </control>
+    <control controlID="289" controlTypeID="com.balsamiq.mockups::CheckBox" x="821" y="369" w="57" h="27" measuredW="47" measuredH="22" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>SVD</text>
+      </controlProperties>
+    </control>
+    <control controlID="290" controlTypeID="com.balsamiq.mockups::Label" x="878" y="372" w="-1" h="-1" measuredW="81" measuredH="21" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Instalada%20em%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="291" controlTypeID="com.balsamiq.mockups::DateChooser" x="962" y="370" w="103" h="-1" measuredW="90" measuredH="25" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20/%20%20/%20%20%20%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="292" controlTypeID="com.balsamiq.mockups::CheckBox" x="821" y="402" w="86" h="27" measuredW="72" measuredH="22" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cistomia</text>
+      </controlProperties>
+    </control>
+    <control controlID="293" controlTypeID="com.balsamiq.mockups::Button" x="685" y="588" w="76" h="30" measuredW="60" measuredH="27" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Salvar</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

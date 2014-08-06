@@ -1,0 +1,2364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="campo_requerido" xml:space="preserve">
+    <value>*The field "{0}" is required.</value>
+  </data>
+  <data name="codigo" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="instituicao_codigo" xml:space="preserve">
+    <value>Institution Code</value>
+  </data>
+  <data name="consulta_dados_fixos" xml:space="preserve">
+    <value>Data Query Fixed </value>
+  </data>
+  <data name="criar" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="curso" xml:space="preserve">
+    <value>Course</value>
+  </data>
+  <data name="data_nascimento" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="deletar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="demografico_antropometricos" xml:space="preserve">
+    <value>Demographic and Anthropometric Data</value>
+  </data>
+  <data name="detalhes" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="disciplina" xml:space="preserve">
+    <value>Discipline</value>
+  </data>
+  <data name="editar" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="escolaridade" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="excluir" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="experiencia_medicamentos" xml:space="preserve">
+    <value>Experiment with Medications</value>
+  </data>
+  <data name="genero" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="historia" xml:space="preserve">
+    <value>Patient History</value>
+  </data>
+  <data name="instituicao" xml:space="preserve">
+    <value>Institution</value>
+  </data>
+  <data name="medicos_atendem" xml:space="preserve">
+    <value>Doctors Attending</value>
+  </data>
+  <data name="moradia_familia" xml:space="preserve">
+    <value>House/Family</value>
+  </data>
+  <data name="nivel_escolaridade" xml:space="preserve">
+    <value>Level of Education</value>
+  </data>
+  <data name="ocupacao" xml:space="preserve">
+    <value>Occupation</value>
+  </data>
+  <data name="onde_adquire_medicamentos" xml:space="preserve">
+    <value>Where to get the medicines</value>
+  </data>
+  <data name="paciente_pessoa_turma" xml:space="preserve">
+    <value>Patient Person Class</value>
+  </data>
+  <data name="pergunta" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="pessoa" xml:space="preserve">
+    <value>Person</value>
+  </data>
+  <data name="plano_saude" xml:space="preserve">
+    <value>Health Plan</value>
+  </data>
+  <data name="remover" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="resposta" xml:space="preserve">
+    <value>Answers</value>
+  </data>
+  <data name="teste" xml:space="preserve">
+    <value>Test English</value>
+  </data>
+  <data name="turma" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="deletar_pergunta" xml:space="preserve">
+    <value>Are you sure you want to delete this data?</value>
+  </data>
+  <data name="comportamento" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="comportamento_atencao" xml:space="preserve">
+    <value>Caution - Behavior</value>
+  </data>
+  <data name="cultural" xml:space="preserve">
+    <value>Cultural</value>
+  </data>
+  <data name="cultural_atencao" xml:space="preserve">
+    <value>Caution - Cultural</value>
+  </data>
+  <data name="espera_tratamento" xml:space="preserve">
+    <value>Wait Treatment</value>
+  </data>
+  <data name="espera_tratamento_atencao" xml:space="preserve">
+    <value>Caution - Wait Treatment</value>
+  </data>
+  <data name="grau_entendimento" xml:space="preserve">
+    <value>Understanding Degree</value>
+  </data>
+  <data name="grau_entendimento_atencao" xml:space="preserve">
+    <value>Caution - Understanding Degree</value>
+  </data>
+  <data name="incorporado_plano" xml:space="preserve">
+    <value>Incorporated Plan</value>
+  </data>
+  <data name="incorporado_plano_atencao" xml:space="preserve">
+    <value>Caution - Incorporated Plan</value>
+  </data>
+  <data name="preocupacoes" xml:space="preserve">
+    <value>Concerns</value>
+  </data>
+  <data name="preocupacoes_atencao" xml:space="preserve">
+    <value>Caution - Concerns</value>
+  </data>
+  <data name="consulta" xml:space="preserve">
+    <value>Query</value>
+  </data>
+  <data name="eh_gabarito" xml:space="preserve">
+    <value>Is Feedback</value>
+  </data>
+  <data name="paciente" xml:space="preserve">
+    <value>Patient</value>
+  </data>
+  <data name="salvar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="selecione" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="historia_familiar" xml:space="preserve">
+    <value>Family History</value>
+  </data>
+  <data name="historia_medicamento_pregressa" xml:space="preserve">
+    <value>History of Medicines Previous</value>
+  </data>
+  <data name="consulta_dados_variaveis" xml:space="preserve">
+    <value>Data Query Variable</value>
+  </data>
+  <data name="descricao" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="estado_preenchimento" xml:space="preserve">
+    <value>State of Completion</value>
+  </data>
+  <data name="grupo_atividades" xml:space="preserve">
+    <value>Activities Groups</value>
+  </data>
+  <data name="sigla" xml:space="preserve">
+    <value>Abbreviation</value>
+  </data>
+  <data name="periodo" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="instituicao_nome" xml:space="preserve">
+    <value>Institution Name</value>
+  </data>
+  <data name="consulta_dados_fixos_codigo" xml:space="preserve">
+    <value>Data Query Fixed Code</value>
+  </data>
+  <data name="consulta_dados_variaveis_codigo" xml:space="preserve">
+    <value>Data Query Variable Code</value>
+  </data>
+  <data name="pergunta_codigo" xml:space="preserve">
+    <value>Code Question</value>
+  </data>
+  <data name="resposta_codigo" xml:space="preserve">
+    <value>Answers Code</value>
+  </data>
+  <data name="paciente_codigo" xml:space="preserve">
+    <value>Patient Code</value>
+  </data>
+  <data name="campo_MouF" xml:space="preserve">
+    <value>Field {0} only accepts "M" or "F"</value>
+  </data>
+  <data name="tutor_comentarios" xml:space="preserve">
+    <value>Reviews Tutor</value>
+  </data>
+  <data name="data_envio" xml:space="preserve">
+    <value>Ship Date</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="pessoa_codigo" xml:space="preserve">
+    <value>Code Person</value>
+  </data>
+  <data name="relato_codigo" xml:space="preserve">
+    <value>Report Code</value>
+  </data>
+  <data name="turma_codigo" xml:space="preserve">
+    <value>Class Code</value>
+  </data>
+  <data name="historia_medica_pregressa" xml:space="preserve">
+    <value>History  Medical Previous</value>
+  </data>
+  <data name="data_atualizacao" xml:space="preserve">
+    <value>Date of Update</value>
+  </data>
+  <data name="data_resposta" xml:space="preserve">
+    <value>Date of Response</value>
+  </data>
+  <data name="historico" xml:space="preserve">
+    <value>Historic</value>
+  </data>
+  <data name="tutor_codigo" xml:space="preserve">
+    <value>Tutor Code</value>
+  </data>
+  <data name="diario_pessoal" xml:space="preserve">
+    <value>Personal Diary</value>
+  </data>
+  <data name="horario" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="medicamento_codigo" xml:space="preserve">
+    <value>Medication Code</value>
+  </data>
+  <data name="quantidade" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="tipo_bebida" xml:space="preserve">
+    <value>Type of Drink</value>
+  </data>
+  <data name="comportamento_resposta_codigo" xml:space="preserve">
+    <value>Behavior Response Code</value>
+  </data>
+  <data name="cultural_resposta_codigo" xml:space="preserve">
+    <value>Response Cultural Codel</value>
+  </data>
+  <data name="espera_tratamento_resposta_codigo" xml:space="preserve">
+    <value>Wait Treatment Response Code</value>
+  </data>
+  <data name="grau_entendimento_reposta_codigo" xml:space="preserve">
+    <value>Response Code Degree Understanding</value>
+  </data>
+  <data name="incorporado_plano_resposta_codigo" xml:space="preserve">
+    <value>Response Plan Incorporated Code</value>
+  </data>
+  <data name="preocupacoes_resposta_codigo" xml:space="preserve">
+    <value>Response Concerns Code</value>
+  </data>
+  <data name="codigo_sistema" xml:space="preserve">
+    <value>System code</value>
+  </data>
+  <data name="descricao_acao" xml:space="preserve">
+    <value>Description of Action</value>
+  </data>
+  <data name="descricao_queixa" xml:space="preserve">
+    <value>Description of Complaint</value>
+  </data>
+  <data name="descricao_razao" xml:space="preserve">
+    <value>Description of Reason Meeting</value>
+  </data>
+  <data name="nome_sistema" xml:space="preserve">
+    <value>System Name</value>
+  </data>
+  <data name="parametro_clinico" xml:space="preserve">
+    <value>Clinical Parameter</value>
+  </data>
+  <data name="nome_medicamento" xml:space="preserve">
+    <value>Medication Name</value>
+  </data>
+  <data name="acao_alternativa" xml:space="preserve">
+    <value>Alternative action</value>
+  </data>
+  <data name="acao_queixa" xml:space="preserve">
+    <value>Complaint action</value>
+  </data>
+  <data name="medicamentos" xml:space="preserve">
+    <value>Medications</value>
+  </data>
+  <data name="queixa" xml:space="preserve">
+    <value>Complaint</value>
+  </data>
+  <data name="razao_encontro" xml:space="preserve">
+    <value>Reason for Encounter</value>
+  </data>
+  <data name="sistema" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="alergia" xml:space="preserve">
+    <value>Allergy</value>
+  </data>
+  <data name="foto" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="nivel_dificuldade" xml:space="preserve">
+    <value>Level of Difficulty</value>
+  </data>
+  <data name="ordem_cronologica" xml:space="preserve">
+    <value>Chronological Order</value>
+  </data>
+  <data name="relato_clinico" xml:space="preserve">
+    <value>Clinical Report</value>
+  </data>
+  <data name="relato_textual" xml:space="preserve">
+    <value>Report Textual</value>
+  </data>
+  <data name="nome" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="consulta_variavel_codigo" xml:space="preserve">
+    <value>Data Query Variable Code</value>
+  </data>
+  <data name="indicacao" xml:space="preserve">
+    <value>Indication</value>
+  </data>
+  <data name="alcool_consumo" xml:space="preserve">
+    <value>Alcohol consumption</value>
+  </data>
+  <data name="alcool_parou" xml:space="preserve">
+    <value>Stopped consumption of alcohol</value>
+  </data>
+  <data name="alcool_tipo_bebida" xml:space="preserve">
+    <value>Type of alcoholic beverage</value>
+  </data>
+  <data name="alcool_uso" xml:space="preserve">
+    <value>Consumption of alcohol</value>
+  </data>
+  <data name="cafe_consumo" xml:space="preserve">
+    <value>Consumption of coffee</value>
+  </data>
+  <data name="cafe_parou" xml:space="preserve">
+    <value>Stopped consumption of coffee</value>
+  </data>
+  <data name="cafe_uso" xml:space="preserve">
+    <value>Consumption of coffee</value>
+  </data>
+  <data name="dosagem" xml:space="preserve">
+    <value>Dosage</value>
+  </data>
+  <data name="especialidade" xml:space="preserve">
+    <value>Specialty</value>
+  </data>
+  <data name="fitoterapico" xml:space="preserve">
+    <value>Physiotherapy</value>
+  </data>
+  <data name="posologia" xml:space="preserve">
+    <value>Dosage</value>
+  </data>
+  <data name="prescritor" xml:space="preserve">
+    <value>Prescriber</value>
+  </data>
+  <data name="tabaco_consumo" xml:space="preserve">
+    <value>Tobacco Consumption</value>
+  </data>
+  <data name="tabaco_parou" xml:space="preserve">
+    <value>Stopped consumption of Tobacco</value>
+  </data>
+  <data name="tabaco_uso" xml:space="preserve">
+    <value>Consumption of Tobacco</value>
+  </data>
+  <data name="consulta_variavel" xml:space="preserve">
+    <value>Variable Query</value>
+  </data>
+  <data name="estilo_vida" xml:space="preserve">
+    <value>Lifestyle</value>
+  </data>
+  <data name="medicamentos_anteriores" xml:space="preserve">
+    <value>Previous Medications</value>
+  </data>
+  <data name="medicamento_nao_prescrito" xml:space="preserve">
+    <value>Medication not Prescribed</value>
+  </data>
+  <data name="medicamento_prescrito" xml:space="preserve">
+    <value>Medication Prescribed</value>
+  </data>
+  <data name="listar" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="sobre" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="cadastros" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="paciente_virtual" xml:space="preserve">
+    <value>Virtual Patient</value>
+  </data>
+  <data name="paciente_nome" xml:space="preserve">
+    <value>Patient's Name</value>
+  </data>
+  <data name="codigo_paciente" xml:space="preserve">
+    <value>Patient Code</value>
+  </data>
+  <data name="nome_paciente" xml:space="preserve">
+    <value>Patient Name</value>
+  </data>
+  <data name="relato_texto" xml:space="preserve">
+    <value>Narrative Text</value>
+  </data>
+  <data name="relato_video" xml:space="preserve">
+    <value>Relate in Video</value>
+  </data>
+  <data name="adicionar" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="medicamento" xml:space="preserve">
+    <value>Medicine</value>
+  </data>
+  <data name="bebida" xml:space="preserve">
+    <value>Drink</value>
+  </data>
+  <data name="listar_todos" xml:space="preserve">
+    <value>All List</value>
+  </data>
+  <data name="preencher" xml:space="preserve">
+    <value>Fill</value>
+  </data>
+  <data name="status_preenchimento" xml:space="preserve">
+    <value>Filling Status</value>
+  </data>
+  <data name="ativa" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="confirme_senha" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="cpf" xml:space="preserve">
+    <value>Personal ID</value>
+  </data>
+  <data name="endereco_email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="fone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="informacao_conta" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="lembrar_me" xml:space="preserve">
+    <value>Remenber me</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="matricula" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="nome_usuario" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="registre_se" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="senha" xml:space="preserve">
+    <value>Passoword</value>
+  </data>
+  <data name="se_nao_tem_conta" xml:space="preserve">
+    <value>if you don't have an account.</value>
+  </data>
+  <data name="opcoes" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="solicitar_matricula_turma" xml:space="preserve">
+    <value>Request Enroll in Class</value>
+  </data>
+  <data name="criar_conta" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="nome_pessoa" xml:space="preserve">
+    <value>Person Name</value>
+  </data>
+  <data name="enviar_solicitacao_turma" xml:space="preserve">
+    <value>Send Request Class</value>
+  </data>
+  <data name="ativar" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="ativar_matriculas_turma" xml:space="preserve">
+    <value>Enable Enrollments Class</value>
+  </data>
+  <data name="desativar" xml:space="preserve">
+    <value>Deactivate</value>
+  </data>
+  <data name="desativa" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="ativar_desativar_todos" xml:space="preserve">
+    <value>Activate/Deactivate All</value>
+  </data>
+  <data name="grupo_intervencao" xml:space="preserve">
+    <value>Intervention Group </value>
+  </data>
+  <data name="descricao_intervencao" xml:space="preserve">
+    <value>Description of Intervention</value>
+  </data>
+  <data name="nome_grupo_intervencao" xml:space="preserve">
+    <value>Name of Intervention Group</value>
+  </data>
+  <data name="intervencao" xml:space="preserve">
+    <value>Intervention</value>
+  </data>
+  <data name="altura" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="glicemia" xml:space="preserve">
+    <value>Glycemia</value>
+  </data>
+  <data name="peso" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="pressao_diastolica" xml:space="preserve">
+    <value>Diastolic Pressure</value>
+  </data>
+  <data name="pressao_sistolica" xml:space="preserve">
+    <value>Systolic Pressure</value>
+  </data>
+  <data name="substancia" xml:space="preserve">
+    <value>Substance</value>
+  </data>
+  <data name="alcool" xml:space="preserve">
+    <value>Alcohol</value>
+  </data>
+  <data name="cafe" xml:space="preserve">
+    <value>Coffee</value>
+  </data>
+  <data name="consumo" xml:space="preserve">
+    <value>Consumption</value>
+  </data>
+  <data name="historia_anterior_uso" xml:space="preserve">
+    <value>Previous History of Use</value>
+  </data>
+  <data name="historia_uso" xml:space="preserve">
+    <value>History of Use</value>
+  </data>
+  <data name="quanto_tempo_parou" xml:space="preserve">
+    <value>How Long Stopped?</value>
+  </data>
+  <data name="tabaco" xml:space="preserve">
+    <value>Tobacco</value>
+  </data>
+  <data name="uso" xml:space="preserve">
+    <value>Use</value>
+  </data>
+  <data name="consulta_parametro" xml:space="preserve">
+    <value>Parameter Query</value>
+  </data>
+  <data name="exames_fisicos" xml:space="preserve">
+    <value>Physical Tests</value>
+  </data>
+  <data name="unidade" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="valor" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="valor_referencia" xml:space="preserve">
+    <value>Reference Value</value>
+  </data>
+  <data name="conta_sem_sucesso_tentar_novamente" xml:space="preserve">
+    <value>Account creation was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="minimo_senha_1" xml:space="preserve">
+    <value>Passwords are required to be a minimum of</value>
+  </data>
+  <data name="minimo_senha_2" xml:space="preserve">
+    <value>characters in length.</value>
+  </data>
+  <data name="alterar_senha" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="senha_alterada_sucesso" xml:space="preserve">
+    <value>Your password has been changed successfully.</value>
+  </data>
+  <data name="senha_sem_sucesso_tentar_novamente" xml:space="preserve">
+    <value>Password change was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="utilize_formulario_altera_senha" xml:space="preserve">
+    <value>Use the form below to change your password.</value>
+  </data>
+  <data name="login_sem_sucesso" xml:space="preserve">
+    <value>Login was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="nova_senha" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="senha_atual" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="feminino" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="masculino" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="nao" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="senha_atual_incorreta" xml:space="preserve">
+    <value>The current password is incorrect or the new password is invalid.</value>
+  </data>
+  <data name="sim" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="usuario_senha_incorretos" xml:space="preserve">
+    <value>The user name or password provided is incorrect.</value>
+  </data>
+  <data name="desde" xml:space="preserve">
+    <value>Since</value>
+  </data>
+  <data name="prioridade" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="tipo" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="doenca_agrave" xml:space="preserve">
+    <value>falta</value>
+  </data>
+  <data name="necessidade_atencao" xml:space="preserve">
+    <value>Need for Attention</value>
+  </data>
+  <data name="manha" xml:space="preserve">
+    <value>Morning</value>
+  </data>
+  <data name="noite" xml:space="preserve">
+    <value>Night</value>
+  </data>
+  <data name="tarde" xml:space="preserve">
+    <value>Afternoon</value>
+  </data>
+  <data name="senha_confSenha_nao_coincidem" xml:space="preserve">
+    <value>The new password and confirmation password do not match.</value>
+  </data>
+  <data name="senha_curta" xml:space="preserve">
+    <value>This password is very short.</value>
+  </data>
+  <data name="cigarros_dia_0_10" xml:space="preserve">
+    <value>1-10 Cigarettes/Day</value>
+  </data>
+  <data name="cigarros_dia_10_20" xml:space="preserve">
+    <value>10-20 Cigarettes/Day</value>
+  </data>
+  <data name="cigarros_dia_20_mais" xml:space="preserve">
+    <value>&gt; 20 Cigarettes/Day</value>
+  </data>
+  <data name="copos_dia_2_6" xml:space="preserve">
+    <value>2-6 Cups/Day</value>
+  </data>
+  <data name="copos_dia_2_menos" xml:space="preserve">
+    <value>&lt; 2 Cups/Day</value>
+  </data>
+  <data name="copos_dia_6_mais" xml:space="preserve">
+    <value>&gt; 6 Cups/Day</value>
+  </data>
+  <data name="proximo" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="xicaras_dias_6_mais" xml:space="preserve">
+    <value>&gt; 6 Cups/Day</value>
+  </data>
+  <data name="xicaras_dia_2_6" xml:space="preserve">
+    <value>2-6 Cups/Day</value>
+  </data>
+  <data name="xicaras_dia_2_menos" xml:space="preserve">
+    <value>&lt; 2 Cups/Day</value>
+  </data>
+  <data name="adicionar_alergia" xml:space="preserve">
+    <value>Add Allergy</value>
+  </data>
+  <data name="ativar_tutor_turma" xml:space="preserve">
+    <value>Enable Tutor in Class</value>
+  </data>
+  <data name="consulta2" xml:space="preserve">
+    <value>Query 2</value>
+  </data>
+  <data name="kg" xml:space="preserve">
+    <value>Kg</value>
+  </data>
+  <data name="m" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="mg_dl" xml:space="preserve">
+    <value>mg/dl</value>
+  </data>
+  <data name="mmHg" xml:space="preserve">
+    <value>mmHg</value>
+  </data>
+  <data name="pressao_arterial" xml:space="preserve">
+    <value>Blood Pressure</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="x" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="suspeita_prm" xml:space="preserve">
+    <value>PRM Suspicion</value>
+  </data>
+  <data name="cumprimento" xml:space="preserve">
+    <value>Fulfillment</value>
+  </data>
+  <data name="dose" xml:space="preserve">
+    <value>Shot</value>
+  </data>
+  <data name="efetivo" xml:space="preserve">
+    <value>Effective</value>
+  </data>
+  <data name="necessario" xml:space="preserve">
+    <value>Necessary</value>
+  </data>
+  <data name="seguro" xml:space="preserve">
+    <value>Insurance</value>
+  </data>
+  <data name="queixa_medicamento" xml:space="preserve">
+    <value>Drug Abuse</value>
+  </data>
+  <data name="novo_prm" xml:space="preserve">
+    <value>Prm New</value>
+  </data>
+  <data name="medicamentos_queixa_suspeita_prm" xml:space="preserve">
+    <value>Medicines related complaint with suspected PRM.</value>
+  </data>
+  <data name="sistemas_corpo_humano" xml:space="preserve">
+    <value>Systems of the Human Body</value>
+  </data>
+  <data name="perfil" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="alterar_turma" xml:space="preserve">
+    <value>Alter Class</value>
+  </data>
+  <data name="selecionar_turma" xml:space="preserve">
+    <value>Select Class</value>
+  </data>
+  <data name="bem_vindo" xml:space="preserve">
+    <value>Welcome,  </value>
+  </data>
+  <data name="atribuir" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="concluir" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="consultas" xml:space="preserve">
+    <value>Queries</value>
+  </data>
+  <data name="consultas_correcao" xml:space="preserve">
+    <value>Correct Query</value>
+  </data>
+  <data name="corrigir" xml:space="preserve">
+    <value>To correct</value>
+  </data>
+  <data name="justificativa" xml:space="preserve">
+    <value>Justification</value>
+  </data>
+  <data name="outro" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="descricao_objetivo_terapeutico" xml:space="preserve">
+    <value>Therapeutic Objective Description</value>
+  </data>
+  <data name="descricao_situacao" xml:space="preserve">
+    <value>Description of the Situation</value>
+  </data>
+  <data name="objetivo_terapeutico" xml:space="preserve">
+    <value>Therapeutic Objective</value>
+  </data>
+  <data name="situacao_queixa" xml:space="preserve">
+    <value>Abuse Situation</value>
+  </data>
+  <data name="intervencao_1" xml:space="preserve">
+    <value>Intervention of the Complaint 1</value>
+  </data>
+  <data name="intervencao_2" xml:space="preserve">
+    <value>Intervention of the Complaint 2</value>
+  </data>
+  <data name="resolvido" xml:space="preserve">
+    <value>Resolved</value>
+  </data>
+  <data name="comunicacao" xml:space="preserve">
+    <value>Need for comunication</value>
+  </data>
+  <data name="alternativas" xml:space="preserve">
+    <value>Alternatives</value>
+  </data>
+  <data name="carta" xml:space="preserve">
+    <value>Letter</value>
+  </data>
+  <data name="farmaceutico" xml:space="preserve">
+    <value>Pharmaceutical</value>
+  </data>
+  <data name="motivo_referencia_consulta" xml:space="preserve">
+    <value>Reason Query References</value>
+  </data>
+  <data name="nome_profissional" xml:space="preserve">
+    <value>Professional Name</value>
+  </data>
+  <data name="crfuf" xml:space="preserve">
+    <value>CRFUF</value>
+  </data>
+  <data name="telefone" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="dados_paciente" xml:space="preserve">
+    <value>Patient Data</value>
+  </data>
+  <data name="recomendacoes" xml:space="preserve">
+    <value>Recommendations</value>
+  </data>
+  <data name="indice_massa_corporea" xml:space="preserve">
+    <value>IMC</value>
+  </data>
+  <data name="alterar_dados_usuario" xml:space="preserve">
+    <value>Change User Datas</value>
+  </data>
+  <data name="cpf_invalido" xml:space="preserve">
+    <value>Invalid Personal ID.</value>
+  </data>
+  <data name="email_invalido" xml:space="preserve">
+    <value>Invalid Email.</value>
+  </data>
+  <data name="revisao_sistemas" xml:space="preserve">
+    <value>Systems Review</value>
+  </data>
+  <data name="msgErro_DuplicateEmail" xml:space="preserve">
+    <value>A user name for that e-mail address already exists. Please enter a different e-mail address.</value>
+  </data>
+  <data name="msgErro_DuplicateUserName" xml:space="preserve">
+    <value>User name already exists. Please enter a different user name.</value>
+  </data>
+  <data name="msgErro_InvalidEmail" xml:space="preserve">
+    <value>The e-mail address provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="msgErro_InvalidPassword" xml:space="preserve">
+    <value>The password provided is invalid. Please enter a valid password value.</value>
+  </data>
+  <data name="msgErro_InvalidUserName" xml:space="preserve">
+    <value>"The user name provided is invalid. Please check the value and try again."</value>
+  </data>
+  <data name="classificacao_de_prm" xml:space="preserve">
+    <value>Rating PRM</value>
+  </data>
+  <data name="diario_pessoal_medicamentos" xml:space="preserve">
+    <value>Personal diary of medicines</value>
+  </data>
+  <data name="intervencoes" xml:space="preserve">
+    <value>Interventions</value>
+  </data>
+  <data name="alternativas_intervencao" xml:space="preserve">
+    <value>Intervention Alternatives</value>
+  </data>
+  <data name="classificao_prm" xml:space="preserve">
+    <value>Grading PRM</value>
+  </data>
+  <data name="estado_situacao" xml:space="preserve">
+    <value>State Situation</value>
+  </data>
+  <data name="preencher_gabarito" xml:space="preserve">
+    <value>Fill Correct Answers</value>
+  </data>
+  <data name="visualizar" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="dados_usuario" xml:space="preserve">
+    <value>User Data</value>
+  </data>
+  <data name="encerrar_consulta" xml:space="preserve">
+    <value>Close Consultation</value>
+  </data>
+  <data name="area_atuacao" xml:space="preserve">
+    <value>Area of Expertise</value>
+  </data>
+  <data name="estado_civil" xml:space="preserve">
+    <value>Marital Status</value>
+  </data>
+  <data name="nacionalidade" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="religiao" xml:space="preserve">
+    <value>Religion</value>
+  </data>
+  <data name="endereco" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="procedencia" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="rg" xml:space="preserve">
+    <value>RG</value>
+  </data>
+  <data name="avaliacao_farmaceutica" xml:space="preserve">
+    <value>Pharmaceutical Review</value>
+  </data>
+  <data name="identificacao_prm" xml:space="preserve">
+    <value>PRM Identification</value>
+  </data>
+  <data name="problema_saude" xml:space="preserve">
+    <value>Health Problem</value>
+  </data>
+  <data name="editar_gabarito" xml:space="preserve">
+    <value>Edit Template</value>
+  </data>
+  <data name="referencia_utilizadas" xml:space="preserve">
+    <value>References Used</value>
+  </data>
+  <data name="nao_se_aplica" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+  <data name="corrigir_consultas" xml:space="preserve">
+    <value>Fix Queries</value>
+  </data>
+  <data name="enviar_para_correcao_do_aluno" xml:space="preserve">
+    <value>Send to Correction for Student</value>
+  </data>
+  <data name="finalizar_correcao" xml:space="preserve">
+    <value>Complete Correction</value>
+  </data>
+  <data name="horario_observacao" xml:space="preserve">
+    <value>Hour/Note</value>
+  </data>
+  <data name="horario_complemento" xml:space="preserve">
+    <value>Hour Supplement</value>
+  </data>
+  <data name="se_necessario" xml:space="preserve">
+    <value>If Necessary</value>
+  </data>
+  <data name="cpf_erro" xml:space="preserve">
+    <value>The Personal ID is invalid or doesn't exist.</value>
+  </data>
+  <data name="cpf_ja_cadastrado" xml:space="preserve">
+    <value>This Personal ID has been previously registered</value>
+  </data>
+  <data name="outros_achados" xml:space="preserve">
+    <value>Others Findings</value>
+  </data>
+  <data name="dados_complementares" xml:space="preserve">
+    <value>Important Complementary Data</value>
+  </data>
+  <data name="informacoes_fornecidas" xml:space="preserve">
+    <value>Information Provided From Family</value>
+  </data>
+  <data name="frequencia_respiratoria" xml:space="preserve">
+    <value>Respiratory Rate</value>
+  </data>
+  <data name="oxigenacao" xml:space="preserve">
+    <value>Oxidation</value>
+  </data>
+  <data name="ritmo" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="patologia" xml:space="preserve">
+    <value>Pathology</value>
+  </data>
+  <data name="clinico_internacao" xml:space="preserve">
+    <value>Clinical / Inpatient data</value>
+  </data>
+  <data name="clinica" xml:space="preserve">
+    <value>Clinical</value>
+  </data>
+  <data name="data_admissao" xml:space="preserve">
+    <value>Date of Admission</value>
+  </data>
+  <data name="diagnostico_medico" xml:space="preserve">
+    <value>Medical Diagnostic</value>
+  </data>
+  <data name="leito" xml:space="preserve">
+    <value>Ber</value>
+  </data>
+  <data name="motivo_internacao" xml:space="preserve">
+    <value>Reason for Hospitalization</value>
+  </data>
+  <data name="uso_marca_passo" xml:space="preserve">
+    <value>Uses Brand Step</value>
+  </data>
+  <data name="uso_nao_aplica" xml:space="preserve">
+    <value>Use Not Applicable</value>
+  </data>
+  <data name="uso_outros" xml:space="preserve">
+    <value>Use Other</value>
+  </data>
+  <data name="uso_outros_descricao" xml:space="preserve">
+    <value>Use Other Description</value>
+  </data>
+  <data name="antecedentes_patologicos" xml:space="preserve">
+    <value>Pathologic Background</value>
+  </data>
+  <data name="patologias_atuais" xml:space="preserve">
+    <value>Current Conditions</value>
+  </data>
+  <data name="antecedentes_familiares" xml:space="preserve">
+    <value>Family History</value>
+  </data>
+  <data name="Barril" xml:space="preserve">
+    <value>Barrel</value>
+  </data>
+  <data name="Bradipneia" xml:space="preserve">
+    <value>Bradypnea</value>
+  </data>
+  <data name="CheyneStokes" xml:space="preserve">
+    <value>CheyneStokes</value>
+  </data>
+  <data name="Cifose" xml:space="preserve">
+    <value>Kyphosis</value>
+  </data>
+  <data name="coriza" xml:space="preserve">
+    <value>Coryza</value>
+  </data>
+  <data name="desvioDeSepto" xml:space="preserve">
+    <value>Deviated Septum</value>
+  </data>
+  <data name="Eupineico" xml:space="preserve">
+    <value>Eupneic</value>
+  </data>
+  <data name="Escoliose" xml:space="preserve">
+    <value>Scoliosis</value>
+  </data>
+  <data name="Funil" xml:space="preserve">
+    <value>Funnel</value>
+  </data>
+  <data name="Kussmaul" xml:space="preserve">
+    <value>Kussmaul</value>
+  </data>
+  <data name="labioCianotico" xml:space="preserve">
+    <value>Lips Cyanotic</value>
+  </data>
+  <data name="Lordose" xml:space="preserve">
+    <value>Lordosis</value>
+  </data>
+  <data name="obstrucaoNasal" xml:space="preserve">
+    <value>Nasal Obstruction</value>
+  </data>
+  <data name="palidez" xml:space="preserve">
+    <value>Pallor</value>
+  </data>
+  <data name="PeitoDePombo" xml:space="preserve">
+    <value>From Pigeon Chest</value>
+  </data>
+  <data name="simetriaToracica" xml:space="preserve">
+    <value>Thoracic Symmetry</value>
+  </data>
+  <data name="Taquipneia" xml:space="preserve">
+    <value>Tachypnea</value>
+  </data>
+  <data name="tiragemIntercostal" xml:space="preserve">
+    <value>Drawing Intercoastal</value>
+  </data>
+  <data name="definir" xml:space="preserve">
+    <value>Define</value>
+  </data>
+  <data name="definir_administrador" xml:space="preserve">
+    <value>Set Administrator</value>
+  </data>
+  <data name="definir_adm_enfermagem" xml:space="preserve">
+    <value>Set administrator of the nursing course.</value>
+  </data>
+  <data name="definir_adm_farmacia" xml:space="preserve">
+    <value>Set administrator of Pharmacy course.</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="AssimetricoBilateral" xml:space="preserve">
+    <value>Bilateral Asymmetric</value>
+  </data>
+  <data name="AssimetricoUnilateral" xml:space="preserve">
+    <value>Unilateral Asymmetry</value>
+  </data>
+  <data name="Simetrico" xml:space="preserve">
+    <value>Symmetric</value>
+  </data>
+  <data name="Ar" xml:space="preserve">
+    <value>Air</value>
+  </data>
+  <data name="aspecto_secrecao" xml:space="preserve">
+    <value>Appearance Secretion</value>
+  </data>
+  <data name="Diminuida" xml:space="preserve">
+    <value>Decreased</value>
+  </data>
+  <data name="enfizema_subcutaneo" xml:space="preserve">
+    <value>Subcutaneous Emphysema</value>
+  </data>
+  <data name="Esporadica" xml:space="preserve">
+    <value>Sporadic</value>
+  </data>
+  <data name="expansibilidade" xml:space="preserve">
+    <value>Expansibility</value>
+  </data>
+  <data name="frequencia_tosse" xml:space="preserve">
+    <value>Frequency of Cough</value>
+  </data>
+  <data name="Frequente" xml:space="preserve">
+    <value>Frequent</value>
+  </data>
+  <data name="ganglios_dolorosos" xml:space="preserve">
+    <value>Painful Nodes</value>
+  </data>
+  <data name="ganglios_localizar" xml:space="preserve">
+    <value>Locate Node</value>
+  </data>
+  <data name="ganglios_palpaveis" xml:space="preserve">
+    <value>Touchable Nodes</value>
+  </data>
+  <data name="inspecao_toracica" xml:space="preserve">
+    <value>Thoracic Inspection</value>
+  </data>
+  <data name="Liquido" xml:space="preserve">
+    <value>Fluid</value>
+  </data>
+  <data name="Massa" xml:space="preserve">
+    <value>Pasta</value>
+  </data>
+  <data name="NaoSeAplica" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+  <data name="Noturna" xml:space="preserve">
+    <value>Night</value>
+  </data>
+  <data name="palpacao" xml:space="preserve">
+    <value>Palpation</value>
+  </data>
+  <data name="percursao" xml:space="preserve">
+    <value>Percussion</value>
+  </data>
+  <data name="presenca_fremito" xml:space="preserve">
+    <value>Presence Thrill</value>
+  </data>
+  <data name="Preservada" xml:space="preserve">
+    <value>Preserved</value>
+  </data>
+  <data name="Produtiva" xml:space="preserve">
+    <value>Productive</value>
+  </data>
+  <data name="Seca" xml:space="preserve">
+    <value>Drought</value>
+  </data>
+  <data name="tipo_tosse" xml:space="preserve">
+    <value>Cough type</value>
+  </data>
+  <data name="calafrio" xml:space="preserve">
+    <value>Chill</value>
+  </data>
+  <data name="Fria" xml:space="preserve">
+    <value>Cold</value>
+  </data>
+  <data name="piloerecao" xml:space="preserve">
+    <value>Piloerection</value>
+  </data>
+  <data name="Quente" xml:space="preserve">
+    <value>Hot</value>
+  </data>
+  <data name="sudorese" xml:space="preserve">
+    <value>Sweating</value>
+  </data>
+  <data name="temperatura" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="temperatura_pele" xml:space="preserve">
+    <value>Skin Temperature</value>
+  </data>
+  <data name="termorregulacao" xml:space="preserve">
+    <value>Thermoregulation</value>
+  </data>
+  <data name="banho_leito" xml:space="preserve">
+    <value>Bed bath</value>
+  </data>
+  <data name="carie" xml:space="preserve">
+    <value>Caries</value>
+  </data>
+  <data name="halitose" xml:space="preserve">
+    <value>Halitosis</value>
+  </data>
+  <data name="higiene_intima" xml:space="preserve">
+    <value>Intimate hygiene</value>
+  </data>
+  <data name="lingua_saburrosa" xml:space="preserve">
+    <value>Coated tongue</value>
+  </data>
+  <data name="pediculose" xml:space="preserve">
+    <value>Pediculosis</value>
+  </data>
+  <data name="quebradicos" xml:space="preserve">
+    <value>Brittle</value>
+  </data>
+  <data name="ressecamento" xml:space="preserve">
+    <value>dryness</value>
+  </data>
+  <data name="satisfatoria" xml:space="preserve">
+    <value>Satisfactory</value>
+  </data>
+  <data name="seborreia" xml:space="preserve">
+    <value>Seborrhea</value>
+  </data>
+  <data name="ulceracao" xml:space="preserve">
+    <value>Soreness</value>
+  </data>
+  <data name="aspecto" xml:space="preserve">
+    <value>Aspect</value>
+  </data>
+  <data name="descamacao" xml:space="preserve">
+    <value>Peeling</value>
+  </data>
+  <data name="descorada" xml:space="preserve">
+    <value>Bleached</value>
+  </data>
+  <data name="Desidratada" xml:space="preserve">
+    <value>Dried</value>
+  </data>
+  <data name="Diminuido" xml:space="preserve">
+    <value>Lowered</value>
+  </data>
+  <data name="equimose" xml:space="preserve">
+    <value>Bruise</value>
+  </data>
+  <data name="eritema" xml:space="preserve">
+    <value>Erythema</value>
+  </data>
+  <data name="escoriacao" xml:space="preserve">
+    <value>Excoriation</value>
+  </data>
+  <data name="estado_hidratacao" xml:space="preserve">
+    <value>Hydration Status</value>
+  </data>
+  <data name="estagio" xml:space="preserve">
+    <value>Stage</value>
+  </data>
+  <data name="ferida_cirurgica" xml:space="preserve">
+    <value>Surgical Wound</value>
+  </data>
+  <data name="grau" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="hematoma" xml:space="preserve">
+    <value>Hematoma</value>
+  </data>
+  <data name="Hidratada" xml:space="preserve">
+    <value>Hydrated</value>
+  </data>
+  <data name="hiperemia" xml:space="preserve">
+    <value>Hyperemia</value>
+  </data>
+  <data name="letericia" xml:space="preserve">
+    <value>Letericia</value>
+  </data>
+  <data name="local" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="localizar_alteracao" xml:space="preserve">
+    <value>Find Amendment</value>
+  </data>
+  <data name="nodulo" xml:space="preserve">
+    <value>Nodule</value>
+  </data>
+  <data name="perda_sensibilidade" xml:space="preserve">
+    <value>Loss Sensitivity</value>
+  </data>
+  <data name="pe_diabetico" xml:space="preserve">
+    <value>Diabetic Foot</value>
+  </data>
+  <data name="Presente" xml:space="preserve">
+    <value>Present</value>
+  </data>
+  <data name="purido" xml:space="preserve">
+    <value>Purido</value>
+  </data>
+  <data name="queimadura" xml:space="preserve">
+    <value>Burn</value>
+  </data>
+  <data name="rubor" xml:space="preserve">
+    <value>Rubor</value>
+  </data>
+  <data name="turgor" xml:space="preserve">
+    <value>Turgor</value>
+  </data>
+  <data name="ulcera_pressao" xml:space="preserve">
+    <value>Pressure Ulcer</value>
+  </data>
+  <data name="integridade_tecidual" xml:space="preserve">
+    <value>Iissue Integrity</value>
+  </data>
+  <data name="lesoes" xml:space="preserve">
+    <value>Lesões</value>
+  </data>
+  <data name="pele" xml:space="preserve">
+    <value>Skin</value>
+  </data>
+  <data name="cabelos" xml:space="preserve">
+    <value>Hair:</value>
+  </data>
+  <data name="corporal" xml:space="preserve">
+    <value>Corporal:</value>
+  </data>
+  <data name="higiene" xml:space="preserve">
+    <value>Hygiene</value>
+  </data>
+  <data name="necessidade_de" xml:space="preserve">
+    <value>Need for:</value>
+  </data>
+  <data name="oral" xml:space="preserve">
+    <value>Oral:</value>
+  </data>
+  <data name="ansiedade" xml:space="preserve">
+    <value>Anxiety</value>
+  </data>
+  <data name="apatico" xml:space="preserve">
+    <value>Apathetic</value>
+  </data>
+  <data name="baixo_auto_estima" xml:space="preserve">
+    <value>Low self esteem</value>
+  </data>
+  <data name="busca_assistencia_espiritual" xml:space="preserve">
+    <value>Seeking spiritual care in hospital</value>
+  </data>
+  <data name="choro" xml:space="preserve">
+    <value>Crying</value>
+  </data>
+  <data name="crenca_religiosa" xml:space="preserve">
+    <value>Religious belief</value>
+  </data>
+  <data name="disturbios_sono" xml:space="preserve">
+    <value>Sleep disorders</value>
+  </data>
+  <data name="especifica_assistencia_espiritual" xml:space="preserve">
+    <value>Specify spiritual assistance</value>
+  </data>
+  <data name="estresse" xml:space="preserve">
+    <value>stress</value>
+  </data>
+  <data name="humor_deprimido" xml:space="preserve">
+    <value>Depressed mood</value>
+  </data>
+  <data name="negacao" xml:space="preserve">
+    <value>Denial</value>
+  </data>
+  <data name="preocupacao_morte" xml:space="preserve">
+    <value>Demonstrates preoccupation with death.</value>
+  </data>
+  <data name="raiva" xml:space="preserve">
+    <value>Anger</value>
+  </data>
+  <data name="psicoespiritual" xml:space="preserve">
+    <value>Psychospiritual</value>
+  </data>
+  <data name="abertura_ocular" xml:space="preserve">
+    <value>Eye opening</value>
+  </data>
+  <data name="avaliacao_consciencia_glasgow" xml:space="preserve">
+    <value>Avaluation conscience glasgow</value>
+  </data>
+  <data name="avaliacao_sedacao" xml:space="preserve">
+    <value>Sedation evaluation</value>
+  </data>
+  <data name="consciencia" xml:space="preserve">
+    <value>Appreciation awareness</value>
+  </data>
+  <data name="ConversacaoConfusa" xml:space="preserve">
+    <value>Confusing conversation</value>
+  </data>
+  <data name="Dor" xml:space="preserve">
+    <value>Pain</value>
+  </data>
+  <data name="Espontanea" xml:space="preserve">
+    <value>Spontaneous</value>
+  </data>
+  <data name="EstimuloVerbal" xml:space="preserve">
+    <value>Verbal stimulus</value>
+  </data>
+  <data name="ExtensaoAnormal" xml:space="preserve">
+    <value>Abnormal extension</value>
+  </data>
+  <data name="FalaInadequada" xml:space="preserve">
+    <value>Inadequate speak</value>
+  </data>
+  <data name="FlexaoAnormal" xml:space="preserve">
+    <value>Abnormal flexion</value>
+  </data>
+  <data name="FlexaoRetirada" xml:space="preserve">
+    <value>Flexion withdrawal</value>
+  </data>
+  <data name="Grau1" xml:space="preserve">
+    <value>Grade 1</value>
+  </data>
+  <data name="Grau2" xml:space="preserve">
+    <value>Grade 2</value>
+  </data>
+  <data name="Grau3" xml:space="preserve">
+    <value>Grade 3</value>
+  </data>
+  <data name="Grau4" xml:space="preserve">
+    <value>Grade 4</value>
+  </data>
+  <data name="Grau5" xml:space="preserve">
+    <value>Grade 5</value>
+  </data>
+  <data name="Grau6" xml:space="preserve">
+    <value>Grade 6</value>
+  </data>
+  <data name="LocalizaDor" xml:space="preserve">
+    <value>Finds pain</value>
+  </data>
+  <data name="melhor_resposta_motora" xml:space="preserve">
+    <value>Best motor answer</value>
+  </data>
+  <data name="melhor_resposta_verbal" xml:space="preserve">
+    <value>Best verbal answer</value>
+  </data>
+  <data name="NenhumaResposta" xml:space="preserve">
+    <value>No answer</value>
+  </data>
+  <data name="ObedeceComandoVerbal" xml:space="preserve">
+    <value>Obeys verbal command</value>
+  </data>
+  <data name="Orientado" xml:space="preserve">
+    <value>Oriented</value>
+  </data>
+  <data name="SonsIncopativeis" xml:space="preserve">
+    <value>Sounds inconsistent</value>
+  </data>
+  <data name="AumentoPeso" xml:space="preserve">
+    <value>Win Weight</value>
+  </data>
+  <data name="ausencia_dentes" xml:space="preserve">
+    <value>Absence of Teeth</value>
+  </data>
+  <data name="Caquexia" xml:space="preserve">
+    <value>Cachexy</value>
+  </data>
+  <data name="dificuldade_mastigar" xml:space="preserve">
+    <value>Difficulty Chewing</value>
+  </data>
+  <data name="disfagia" xml:space="preserve">
+    <value>Dysphagia</value>
+  </data>
+  <data name="dispositivos_armazenacao" xml:space="preserve">
+    <value>Devices for Food</value>
+  </data>
+  <data name="emese" xml:space="preserve">
+    <value>Emese</value>
+  </data>
+  <data name="estado_nutricional" xml:space="preserve">
+    <value>Nutritional Status</value>
+  </data>
+  <data name="Gastronomia" xml:space="preserve">
+    <value>Gastrosnomy</value>
+  </data>
+  <data name="habitos_alimentares" xml:space="preserve">
+    <value>Eating Habits</value>
+  </data>
+  <data name="ingesta_hidrica" xml:space="preserve">
+    <value>Habitual intake Hydro</value>
+  </data>
+  <data name="instalada" xml:space="preserve">
+    <value>Installed in</value>
+  </data>
+  <data name="Jejunostomia" xml:space="preserve">
+    <value>Jejunostomy</value>
+  </data>
+  <data name="nausea" xml:space="preserve">
+    <value>Nausea</value>
+  </data>
+  <data name="nutricao_oral" xml:space="preserve">
+    <value>Oral Nutritional</value>
+  </data>
+  <data name="PerdaPeso" xml:space="preserve">
+    <value>Lose of Weight</value>
+  </data>
+  <data name="PesoNormal" xml:space="preserve">
+    <value>Normal Weight</value>
+  </data>
+  <data name="pirose" xml:space="preserve">
+    <value>Pirose</value>
+  </data>
+  <data name="restricao_hidrica" xml:space="preserve">
+    <value>Water Restriction of</value>
+  </data>
+  <data name="sangramento_gengival" xml:space="preserve">
+    <value>Gingival Bleeding</value>
+  </data>
+  <data name="sem_restricao" xml:space="preserve">
+    <value>No Water Restriction</value>
+  </data>
+  <data name="SNE" xml:space="preserve">
+    <value>SNE</value>
+  </data>
+  <data name="SNG" xml:space="preserve">
+    <value>SNG</value>
+  </data>
+  <data name="Sobrepeso" xml:space="preserve">
+    <value>Overweight</value>
+  </data>
+  <data name="Ausentes" xml:space="preserve">
+    <value>Absent</value>
+  </data>
+  <data name="cistostomia" xml:space="preserve">
+    <value>Cystostomy</value>
+  </data>
+  <data name="coloracao_urinaria" xml:space="preserve">
+    <value>Coloring Urinary</value>
+  </data>
+  <data name="Colostomia" xml:space="preserve">
+    <value>Colostomy</value>
+  </data>
+  <data name="Colurica" xml:space="preserve">
+    <value>Colurica</value>
+  </data>
+  <data name="Concentrada" xml:space="preserve">
+    <value>Concentrated</value>
+  </data>
+  <data name="condicao_continencia_urinaria" xml:space="preserve">
+    <value>Condition Urinary Continence</value>
+  </data>
+  <data name="Constipacao" xml:space="preserve">
+    <value>Constipation</value>
+  </data>
+  <data name="debito_urinario" xml:space="preserve">
+    <value>Urinary Output</value>
+  </data>
+  <data name="Diarreia" xml:space="preserve">
+    <value>Diarrhea</value>
+  </data>
+  <data name="Diminuidos" xml:space="preserve">
+    <value>Decreased</value>
+  </data>
+  <data name="esforco_evacuar" xml:space="preserve">
+    <value>Effort to Evacuate</value>
+  </data>
+  <data name="estomas_cirurgicos" xml:space="preserve">
+    <value>Surgical Stomas</value>
+  </data>
+  <data name="evacuacoes_dia" xml:space="preserve">
+    <value>Numbers evacuations/day</value>
+  </data>
+  <data name="FezesPastosas" xml:space="preserve">
+    <value>Pasty Stools</value>
+  </data>
+  <data name="Flacido" xml:space="preserve">
+    <value>Flaccid</value>
+  </data>
+  <data name="flatos" xml:space="preserve">
+    <value>Flatus</value>
+  </data>
+  <data name="Globoso" xml:space="preserve">
+    <value>Globose</value>
+  </data>
+  <data name="Hematurica" xml:space="preserve">
+    <value>Hematurica</value>
+  </data>
+  <data name="Hiperativos" xml:space="preserve">
+    <value>Hyperactive</value>
+  </data>
+  <data name="Ileostomia" xml:space="preserve">
+    <value>Ileostomia</value>
+  </data>
+  <data name="IncontinenciaUrinaria" xml:space="preserve">
+    <value>Urinary Incontinence</value>
+  </data>
+  <data name="incontinencia_fecal" xml:space="preserve">
+    <value>Fecal Incontinence</value>
+  </data>
+  <data name="IrrigacaoVesical" xml:space="preserve">
+    <value>Bladder Irrigation</value>
+  </data>
+  <data name="irrigacao_vesical" xml:space="preserve">
+    <value>Bladder Irrigation</value>
+  </data>
+  <data name="irrigacao_vesical_desde" xml:space="preserve">
+    <value>Since Bladder Irrigation</value>
+  </data>
+  <data name="LimpidaClara" xml:space="preserve">
+    <value>Clear and Clara</value>
+  </data>
+  <data name="localizar" xml:space="preserve">
+    <value>To Find</value>
+  </data>
+  <data name="Melena" xml:space="preserve">
+    <value>Melena</value>
+  </data>
+  <data name="Normotenso" xml:space="preserve">
+    <value>Normotensive</value>
+  </data>
+  <data name="Oliguria" xml:space="preserve">
+    <value>Oliguria</value>
+  </data>
+  <data name="palpacao_abodminal" xml:space="preserve">
+    <value>Abdominal Palpation</value>
+  </data>
+  <data name="Piurica" xml:space="preserve">
+    <value>Piurica</value>
+  </data>
+  <data name="Plano" xml:space="preserve">
+    <value>Plan</value>
+  </data>
+  <data name="Polaciuria" xml:space="preserve">
+    <value>Pollakiuria</value>
+  </data>
+  <data name="Poliuria" xml:space="preserve">
+    <value>Poliuria</value>
+  </data>
+  <data name="PresencaSendimentos" xml:space="preserve">
+    <value>Presence of Sediments</value>
+  </data>
+  <data name="Presentes" xml:space="preserve">
+    <value>Present</value>
+  </data>
+  <data name="prurido_anal" xml:space="preserve">
+    <value>Itching Anal</value>
+  </data>
+  <data name="RetencaoUrinaria" xml:space="preserve">
+    <value>Urinary Retention</value>
+  </data>
+  <data name="sangramento_retal" xml:space="preserve">
+    <value>Rectal Bleeding</value>
+  </data>
+  <data name="SinalBlumberg" xml:space="preserve">
+    <value>Blumberg's Sign (+)</value>
+  </data>
+  <data name="SinalMurphy" xml:space="preserve">
+    <value>Murphy's Sign (+)</value>
+  </data>
+  <data name="SomMacico" xml:space="preserve">
+    <value>Sound Massif</value>
+  </data>
+  <data name="SomTimpanico" xml:space="preserve">
+    <value>Tympanic Sound</value>
+  </data>
+  <data name="sons_intestinais" xml:space="preserve">
+    <value>Bowel Sounds</value>
+  </data>
+  <data name="svd" xml:space="preserve">
+    <value>SVD</value>
+  </data>
+  <data name="svd_instalada" xml:space="preserve">
+    <value>SVD Installed</value>
+  </data>
+  <data name="tempo" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Tenso" xml:space="preserve">
+    <value>Tense</value>
+  </data>
+  <data name="tipos_sons_percussao" xml:space="preserve">
+    <value>Types of Percussion Sounds</value>
+  </data>
+  <data name="ultima_evacuacao" xml:space="preserve">
+    <value>Last Evacuation</value>
+  </data>
+  <data name="nutricao" xml:space="preserve">
+    <value>Nutrition</value>
+  </data>
+  <data name="restricao_alimentar" xml:space="preserve">
+    <value>Food Restriction</value>
+  </data>
+  <data name="Disartria" xml:space="preserve">
+    <value>Disartria</value>
+  </data>
+  <data name="radio" xml:space="preserve">
+    <value>Rádio</value>
+  </data>
+  <data name="tv" xml:space="preserve">
+    <value>Tv</value>
+  </data>
+  <data name="Afonia" xml:space="preserve">
+    <value>Aphonia</value>
+  </data>
+  <data name="Agressico" xml:space="preserve">
+    <value>Aggressive</value>
+  </data>
+  <data name="alopecia" xml:space="preserve">
+    <value>Alopecia</value>
+  </data>
+  <data name="Ansioso" xml:space="preserve">
+    <value>Anxious</value>
+  </data>
+  <data name="Anuria" xml:space="preserve">
+    <value>Anuria</value>
+  </data>
+  <data name="Calmo" xml:space="preserve">
+    <value>Calm</value>
+  </data>
+  <data name="celular" xml:space="preserve">
+    <value>cellular</value>
+  </data>
+  <data name="circunferencia_abdominal" xml:space="preserve">
+    <value>Abdominal circumference</value>
+  </data>
+  <data name="ComMedo" xml:space="preserve">
+    <value>Afraid</value>
+  </data>
+  <data name="ComunicaPorEscrita" xml:space="preserve">
+    <value>Communicate by writing</value>
+  </data>
+  <data name="ComunicaPorGesto" xml:space="preserve">
+    <value>Communicates by gesture</value>
+  </data>
+  <data name="deprimido" xml:space="preserve">
+    <value>Depressed</value>
+  </data>
+  <data name="discurso_incoerente" xml:space="preserve">
+    <value>Incoherent speech</value>
+  </data>
+  <data name="Disfasia" xml:space="preserve">
+    <value>Dysphonia</value>
+  </data>
+  <data name="Dislalia" xml:space="preserve">
+    <value>Dyslalia</value>
+  </data>
+  <data name="Dispineia" xml:space="preserve">
+    <value>Dyspnea</value>
+  </data>
+  <data name="disuria" xml:space="preserve">
+    <value>Dysuria</value>
+  </data>
+  <data name="especificar" xml:space="preserve">
+    <value>Specify</value>
+  </data>
+  <data name="forma_abdomen" xml:space="preserve">
+    <value>Abdomen form</value>
+  </data>
+  <data name="interage_com_equipe_saude" xml:space="preserve">
+    <value>Interacts with staff health</value>
+  </data>
+  <data name="irregular" xml:space="preserve">
+    <value>Irregular</value>
+  </data>
+  <data name="leituras" xml:space="preserve">
+    <value>Readings</value>
+  </data>
+  <data name="participa_atividades" xml:space="preserve">
+    <value>Participates in activities</value>
+  </data>
+  <data name="recebe_visitas" xml:space="preserve">
+    <value>Receives visits</value>
+  </data>
+  <data name="Retraido" xml:space="preserve">
+    <value>Retiring</value>
+  </data>
+  <data name="tipo_comportamento" xml:space="preserve">
+    <value>Type behavior</value>
+  </data>
+  <data name="transtornos_expressao_verbal" xml:space="preserve">
+    <value>Nuisance verbal expression</value>
+  </data>
+  <data name="verbaliza" xml:space="preserve">
+    <value>Verbalize</value>
+  </data>
+  <data name="Agitado" xml:space="preserve">
+    <value>Agitated</value>
+  </data>
+  <data name="Agressivo" xml:space="preserve">
+    <value>Aggressive</value>
+  </data>
+  <data name="auditiva" xml:space="preserve">
+    <value>Hearing</value>
+  </data>
+  <data name="Comatoso" xml:space="preserve">
+    <value>Comatose</value>
+  </data>
+  <data name="Confuso" xml:space="preserve">
+    <value>Confused</value>
+  </data>
+  <data name="defensividade" xml:space="preserve">
+    <value>Defensiveness</value>
+  </data>
+  <data name="descricao_dor" xml:space="preserve">
+    <value>Description of pain</value>
+  </data>
+  <data name="descricao_tipo_distorcao" xml:space="preserve">
+    <value>Description of the type of distortion</value>
+  </data>
+  <data name="dor_intensidade_valor" xml:space="preserve">
+    <value>Amount of pain intensity</value>
+  </data>
+  <data name="duracao_dor" xml:space="preserve">
+    <value>Duration of pain</value>
+  </data>
+  <data name="EpisodioDelirio" xml:space="preserve">
+    <value>Episode of delirium</value>
+  </data>
+  <data name="estado_mental" xml:space="preserve">
+    <value>Mental state</value>
+  </data>
+  <data name="expressao_facial" xml:space="preserve">
+    <value>Facial expression</value>
+  </data>
+  <data name="fatores_agravantes_dor" xml:space="preserve">
+    <value>Aggravating factors of pain</value>
+  </data>
+  <data name="fatores_aliviantes_dor" xml:space="preserve">
+    <value>Aliviantes pain factors</value>
+  </data>
+  <data name="gustativa" xml:space="preserve">
+    <value>Gustatory</value>
+  </data>
+  <data name="inquietacao" xml:space="preserve">
+    <value>Unrest</value>
+  </data>
+  <data name="localizacao_dor" xml:space="preserve">
+    <value>Location of pain</value>
+  </data>
+  <data name="olfativa" xml:space="preserve">
+    <value>Olfactory</value>
+  </data>
+  <data name="PA" xml:space="preserve">
+    <value>PA</value>
+  </data>
+  <data name="palpebral" xml:space="preserve">
+    <value>Eyelid</value>
+  </data>
+  <data name="plantar" xml:space="preserve">
+    <value>Plant</value>
+  </data>
+  <data name="pulso" xml:space="preserve">
+    <value>Pulse</value>
+  </data>
+  <data name="pupilar" xml:space="preserve">
+    <value>Pupilary</value>
+  </data>
+  <data name="respiracao" xml:space="preserve">
+    <value>Breathing</value>
+  </data>
+  <data name="sem_dor" xml:space="preserve">
+    <value>Painless</value>
+  </data>
+  <data name="sensorial" xml:space="preserve">
+    <value>Sensory</value>
+  </data>
+  <data name="sinal_babinski" xml:space="preserve">
+    <value>Sign babinski</value>
+  </data>
+  <data name="Sonolento" xml:space="preserve">
+    <value>Sleepy</value>
+  </data>
+  <data name="tatil" xml:space="preserve">
+    <value>Tactile</value>
+  </data>
+  <data name="Torporoso" xml:space="preserve">
+    <value>Torporoso</value>
+  </data>
+  <data name="visual" xml:space="preserve">
+    <value>Visual</value>
+  </data>
+  <data name="acuidades_prejudicadas" xml:space="preserve">
+    <value>Impaired acuity</value>
+  </data>
+  <data name="reflexos_presentes" xml:space="preserve">
+    <value>Presents reflexes</value>
+  </data>
+  <data name="sinais_fisicos" xml:space="preserve">
+    <value>Physical signs</value>
+  </data>
+  <data name="DependentePara" xml:space="preserve">
+    <value>Dependent for</value>
+  </data>
+  <data name="descrever_tipo_tempo_qtde" xml:space="preserve">
+    <value>Describe type, time and amount</value>
+  </data>
+  <data name="descricao_estilista" xml:space="preserve">
+    <value>Description stylist</value>
+  </data>
+  <data name="descricao_grau_dependencia" xml:space="preserve">
+    <value>Description degree of dependence</value>
+  </data>
+  <data name="descricao_tabagista" xml:space="preserve">
+    <value>Description smoker</value>
+  </data>
+  <data name="estilista" xml:space="preserve">
+    <value>Stylist</value>
+  </data>
+  <data name="frequencia_drogas" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="grau_dependencia" xml:space="preserve">
+    <value>Degree of dependence</value>
+  </data>
+  <data name="Independente" xml:space="preserve">
+    <value>Independent</value>
+  </data>
+  <data name="outras_necessidades" xml:space="preserve">
+    <value>Other necessities</value>
+  </data>
+  <data name="ParcialmenteDependente" xml:space="preserve">
+    <value>Partially dependent</value>
+  </data>
+  <data name="quantidade_drogas" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="tabagista" xml:space="preserve">
+    <value>Smoker</value>
+  </data>
+  <data name="tempo_drogas" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="tipo_drogas" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="uso_drogas_ilicitas" xml:space="preserve">
+    <value>Use illicit drugs</value>
+  </data>
+  <data name="Assimetricas" xml:space="preserve">
+    <value>Asymmetric</value>
+  </data>
+  <data name="conflito_preferencia_sexual" xml:space="preserve">
+    <value>Conflict with sexual preference</value>
+  </data>
+  <data name="data_exame_preventivo" xml:space="preserve">
+    <value>Date of the screening test</value>
+  </data>
+  <data name="data_ultima_menstruacao" xml:space="preserve">
+    <value>Date of last menstruation</value>
+  </data>
+  <data name="dor_relacao_sexual" xml:space="preserve">
+    <value>Pain during intercourse</value>
+  </data>
+  <data name="edema" xml:space="preserve">
+    <value>Edema</value>
+  </data>
+  <data name="genitalia" xml:space="preserve">
+    <value>Genitalia</value>
+  </data>
+  <data name="lesao" xml:space="preserve">
+    <value>Lesion</value>
+  </data>
+  <data name="odor_fetido" xml:space="preserve">
+    <value>Foul odor</value>
+  </data>
+  <data name="parceiro_fixo" xml:space="preserve">
+    <value>Steady partner</value>
+  </data>
+  <data name="prurido" xml:space="preserve">
+    <value>Itch</value>
+  </data>
+  <data name="sangramento" xml:space="preserve">
+    <value>Bleeding</value>
+  </data>
+  <data name="secrecao" xml:space="preserve">
+    <value>Secretion</value>
+  </data>
+  <data name="SecrecaoPurulenta" xml:space="preserve">
+    <value>Purulent secretion</value>
+  </data>
+  <data name="SecrecaoSerosa" xml:space="preserve">
+    <value>Serous secretion</value>
+  </data>
+  <data name="sexualidade" xml:space="preserve">
+    <value>Sexuality</value>
+  </data>
+  <data name="simetria_mamas" xml:space="preserve">
+    <value>Symmetry of the breasts</value>
+  </data>
+  <data name="Simetricas" xml:space="preserve">
+    <value>Symmetric</value>
+  </data>
+  <data name="tipo_secrecao" xml:space="preserve">
+    <value>Type of secretion</value>
+  </data>
+  <data name="uso_contraceptivo" xml:space="preserve">
+    <value>Contraceptive use</value>
+  </data>
+  <data name="FezesFormadas" xml:space="preserve">
+    <value>Formed Stool</value>
+  </data>
+  <data name="eliminacao" xml:space="preserve">
+    <value>Elimination</value>
+  </data>
+  <data name="hemorroidas" xml:space="preserve">
+    <value>Hemorrhoids</value>
+  </data>
+  <data name="tipos_fezes" xml:space="preserve">
+    <value>Types Stools</value>
+  </data>
+  <data name="abdomen" xml:space="preserve">
+    <value>Abdomen</value>
+  </data>
+  <data name="intestinal" xml:space="preserve">
+    <value>Intestinal</value>
+  </data>
+  <data name="urinaria" xml:space="preserve">
+    <value>Urinary</value>
+  </data>
+  <data name="solicitar" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="dados_identificacao" xml:space="preserve">
+    <value>Identification ata</value>
+  </data>
+  <data name="circulacao" xml:space="preserve">
+    <value>Circulation</value>
+  </data>
+  <data name="necessidades_psicobiologicas" xml:space="preserve">
+    <value>Physiological needs</value>
+  </data>
+  <data name="necessidades_psicoespirituais" xml:space="preserve">
+    <value>Psychospiritual needs</value>
+  </data>
+  <data name="necessidades_psicossociais" xml:space="preserve">
+    <value>Psychosocial needs</value>
+  </data>
+  <data name="necessidade_interacao_social" xml:space="preserve">
+    <value>Need for social interaction</value>
+  </data>
+  <data name="necessidade_lazer_recreacao" xml:space="preserve">
+    <value>Need for Leisure / Recreation</value>
+  </data>
+  <data name="necessidade_seguranca" xml:space="preserve">
+    <value>Need for security</value>
+  </data>
+  <data name="percepcao_expectativas_paciente" xml:space="preserve">
+    <value>Perception and expectations of the patient</value>
+  </data>
+  <data name="cateter_central" xml:space="preserve">
+    <value>Central catheter</value>
+  </data>
+  <data name="cateter_central_data" xml:space="preserve">
+    <value>Date of central catheter</value>
+  </data>
+  <data name="cateter_central_local" xml:space="preserve">
+    <value>Local central catheter</value>
+  </data>
+  <data name="cateter_data" xml:space="preserve">
+    <value>Date catheter</value>
+  </data>
+  <data name="cateter_local" xml:space="preserve">
+    <value>Local catheter</value>
+  </data>
+  <data name="cateter_periferico" xml:space="preserve">
+    <value>Peripheral catheter</value>
+  </data>
+  <data name="dissecacao_venosa_data" xml:space="preserve">
+    <value>Date of venous dissection</value>
+  </data>
+  <data name="disseccao_venosa" xml:space="preserve">
+    <value>Venous dissection</value>
+  </data>
+  <data name="disseccao_venosa_local" xml:space="preserve">
+    <value>Local venous dissection</value>
+  </data>
+  <data name="edema_localizar" xml:space="preserve">
+    <value>Find edema</value>
+  </data>
+  <data name="enchimento_capilar" xml:space="preserve">
+    <value>Capillary refill</value>
+  </data>
+  <data name="flebite" xml:space="preserve">
+    <value>Phlebitis</value>
+  </data>
+  <data name="flebite_localizar" xml:space="preserve">
+    <value>Find phlebitis</value>
+  </data>
+  <data name="infiltracao" xml:space="preserve">
+    <value>Infiltration</value>
+  </data>
+  <data name="infiltracao_localizar" xml:space="preserve">
+    <value>Find infiltration</value>
+  </data>
+  <data name="Maior3" xml:space="preserve">
+    <value>Greater than 3</value>
+  </data>
+  <data name="MenorIgual3" xml:space="preserve">
+    <value>Less than or equal to 3</value>
+  </data>
+  <data name="p" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="rede_venosa_pulsos_palpaveis" xml:space="preserve">
+    <value>Venous network palpable pulses</value>
+  </data>
+  <data name="rede_venosa_sem_acesso" xml:space="preserve">
+    <value>Network without venous access</value>
+  </data>
+  <data name="rede_venosa_visivel" xml:space="preserve">
+    <value>Visible venous network</value>
+  </data>
+  <data name="sinais_flogisticos" xml:space="preserve">
+    <value>Inflammatory signs</value>
+  </data>
+  <data name="sinais_flogisticos_quais_local" xml:space="preserve">
+    <value>Local of inflammatory signs</value>
+  </data>
+  <data name="varizes" xml:space="preserve">
+    <value>Varicose veins</value>
+  </data>
+  <data name="bpm" xml:space="preserve">
+    <value>bpm</value>
+  </data>
+  <data name="infusao_venosa" xml:space="preserve">
+    <value>Venous infusion</value>
+  </data>
+  <data name="inspecao_rede_venosa" xml:space="preserve">
+    <value>Inspection venous network</value>
+  </data>
+  <data name="duvidas_questionamentos" xml:space="preserve">
+    <value>Questions / Questioning</value>
+  </data>
+  <data name="quanto_doenca" xml:space="preserve">
+    <value>As the disease</value>
+  </data>
+  <data name="dados_indentificacao" xml:space="preserve">
+    <value>Indentity Datas</value>
+  </data>
+  <data name="padrao_respiratorio" xml:space="preserve">
+    <value>Breathing Pattern</value>
+  </data>
+  <data name="tipo_torax" xml:space="preserve">
+    <value>Chest Type</value>
+  </data>
+  <data name="asculta_pulmonar" xml:space="preserve">
+    <value>Asculation</value>
+  </data>
+  <data name="AtritoPleural" xml:space="preserve">
+    <value>Pleural Friction</value>
+  </data>
+  <data name="Estertores" xml:space="preserve">
+    <value>Rales</value>
+  </data>
+  <data name="Estridor" xml:space="preserve">
+    <value>Stridor</value>
+  </data>
+  <data name="Roncos" xml:space="preserve">
+    <value>Husky</value>
+  </data>
+  <data name="Sibilos" xml:space="preserve">
+    <value>Wheezing</value>
+  </data>
+  <data name="dor_label" xml:space="preserve">
+    <value>Pain</value>
+  </data>
+  <data name="comunicacao_seguranca_lazer" xml:space="preserve">
+    <value>Communication/Security/Leisure</value>
+  </data>
+  <data name="diagnostico" xml:space="preserve">
+    <value>Diagnostic</value>
+  </data>
+  <data name="grupo_diagnostico" xml:space="preserve">
+    <value>Diagnostic group</value>
+  </data>
+  <data name="possui_risco" xml:space="preserve">
+    <value>Own risk</value>
+  </data>
+  <data name="descricao_grupo_diagnostico" xml:space="preserve">
+    <value>Diagnostic Group</value>
+  </data>
+  <data name="risco" xml:space="preserve">
+    <value>Risk</value>
+  </data>
+  <data name="avaliacao_resultado" xml:space="preserve">
+    <value>Evaluation Results</value>
+  </data>
+  <data name="caracteristicas_definidoras" xml:space="preserve">
+    <value>Defining Characteristics</value>
+  </data>
+  <data name="fatores_relacionados" xml:space="preserve">
+    <value>Factors Related</value>
+  </data>
+  <data name="prescricao_cuidados" xml:space="preserve">
+    <value>Prescription Care</value>
+  </data>
+  <data name="resultado_esperado" xml:space="preserve">
+    <value>Expected Result</value>
+  </data>
+  <data name="fatores_risco" xml:space="preserve">
+    <value>Risk Fators</value>
+  </data>
+  <data name="definir_administrador_enfermagem" xml:space="preserve">
+    <value>Enable administrator of the nursing program</value>
+  </data>
+  <data name="definir_administrador_farmacia" xml:space="preserve">
+    <value>Enable administrator pharmacy course</value>
+  </data>
+  <data name="antecedentes_doencas" xml:space="preserve">
+    <value>Background Diseases</value>
+  </data>
+  <data name="doencas_atuais" xml:space="preserve">
+    <value>Current Diseases</value>
+  </data>
+  <data name="pulso_enf" xml:space="preserve">
+    <value>Pulse</value>
+  </data>
+  <data name="caracteristicas_pele" xml:space="preserve">
+    <value>Skin Characteristics</value>
+  </data>
+  <data name="confirmar_email" xml:space="preserve">
+    <value>Email Confirm</value>
+  </data>
+  <data name="email_nao_coincidem" xml:space="preserve">
+    <value>The Email and confirmation email do not match.</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Amarelada" xml:space="preserve">
+    <value>Yellowish</value>
+  </data>
+  <data name="EnegrecidaCinzenta" xml:space="preserve">
+    <value>Blackened/Grey</value>
+  </data>
+  <data name="Esbranquicada" xml:space="preserve">
+    <value>Whitish</value>
+  </data>
+  <data name="Esverdeada" xml:space="preserve">
+    <value>Greenish</value>
+  </data>
+  <data name="FerruginosaArroxeada" xml:space="preserve">
+    <value>Ferruginosa/Purplish</value>
+  </data>
+  <data name="Hematica" xml:space="preserve">
+    <value>Emetic</value>
+  </data>
+  <data name="Mucopurulenta" xml:space="preserve">
+    <value>Mucopurulent</value>
+  </data>
+  <data name="Purulenta" xml:space="preserve">
+    <value>Purulent</value>
+  </data>
+  <data name="Rosea" xml:space="preserve">
+    <value>Rosy</value>
+  </data>
+  <data name="sem_restricao_alimentar" xml:space="preserve">
+    <value>Without Food Restriction</value>
+  </data>
+  <data name="alteracoes_vesicais" xml:space="preserve">
+    <value>Bladder Changes</value>
+  </data>
+  <data name="com_dor" xml:space="preserve">
+    <value>With Pain</value>
+  </data>
+  <data name="SemAlteracoes" xml:space="preserve">
+    <value>No Changes</value>
+  </data>
+</root>

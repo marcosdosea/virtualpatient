@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" comment="goHome" id="pf12724735655420" configfile="/pacienteVirtualJSF/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="addTutor" x="554" y="3250" id="pf12740303026110" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" outlinks="pf12740303026111" inlinks="pf12740303026112" path="/addTutor.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="listTutor" x="770" y="2866" id="pf12740303026113" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf12740303026111" path="/listTutor.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="index" x="338" y="1330" id="pf12740303026114" referenceLink="//@navigationRule.63/@navigationCase.0/@toViewId|" outlinks="pf12740303026115 pf12740303026117 pf127403030261110" inlinks="pf13344104040400" path="/index.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="contaInexistente" x="554" y="562" id="pf127403030261211" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf12740303026115" path="/contaInexistente.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="menuAdministrador" x="338" y="3634" id="pf127403030261212" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf12740303026112" inlinks="pf13344104040401" path="/menuAdministrador.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addAluno" x="554" y="946" id="pf127403030261213" referenceLink="//@navigationRule.62/@fromViewId|" outlinks="pf12757700655446 pf12768229104570 pf13344104040402" inlinks="pf12740303026117" path="/addAluno.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="menuTutor" x="338" y="4018" id="pf127403030261214" referenceLink="//@navigationRule.64/@fromViewId|" outlinks="pf127403030261216 pf12757700655447 pf13344104040403 pf133441238151827 pf13357915966451" inlinks="pf13344104040405" path="/menuTutor.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinico" x="554" y="3634" id="pf127403030261218" referenceLink="//@navigationRule.64/@navigationCase.0/@toViewId|" outlinks="pf127403030261219 pf13344325569610" inlinks="pf133441238151827" path="/addCasoClinico.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="menuAluno" x="338" y="9010" id="pf127403030261220" referenceLink="//@navigationRule.79/@fromViewId|" outlinks="pf127403030261221 pf127403030261222 pf127403030261223 pf127403030261224 pf12757700655448 pf12757700655449 pf127577006554410 pf13344104040407 pf13344104040408 pf13344104040409 pf133441040404010 pf133441040404011 pf133596441115523" inlinks="pf133441040404012" path="/menuAluno.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinico2" x="770" y="3250" id="pf127403030261226" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf127403030261227" inlinks="pf127403030261219" path="/addCasoClinico2.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinico3" x="986" y="3250" id="pf127403030261228" referenceLink="//@navigationRule.38/@fromViewId|" outlinks="pf127403030261329" inlinks="pf127403030261227" path="/addCasoClinico3.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinico4" x="1418" y="3250" id="pf127403030261330" referenceLink="//@navigationRule.39/@navigationCase.0/@toViewId|" outlinks="pf133441040404013" inlinks="pf127403030261332" path="/addCasoClinico4.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinico5" x="1850" y="3250" id="pf127403030261333" referenceLink="//@navigationRule.65/@navigationCase.0/@toViewId|" outlinks="pf127403030261334" inlinks="pf133441385270632" path="/addCasoClinico5.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinicoLast" x="2066" y="3250" id="pf127403030261335" referenceLink="//@navigationRule.14/@navigationCase.0/@toViewId|" inlinks="pf127403030261334" path="/addCasoClinicoLast.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="analisarCaso" x="554" y="10162" id="pf127403030261336" referenceLink="//@navigationRule.23/@fromViewId|" outlinks="pf127403030261337" inlinks="pf127403030261221" path="/analisarCaso.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="analisarCasoClínicoSegundaConsulta" x="554" y="9010" id="pf127403030261338" referenceLink="//@navigationRule.46/@fromViewId|" outlinks="pf127403030261339 pf127577006554411" inlinks="pf127403030261222" path="/analisarCasoClínicoSegundaConsulta.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="analisarCasoTerceiraConsulta" x="554" y="9394" id="pf127403030261340" referenceLink="//@navigationRule.27/@fromViewId|" outlinks="pf127403030261341" inlinks="pf127403030261223" path="/analisarCasoTerceiraConsulta.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="analisarCasoPrimeiraConsulta" x="770" y="10364" id="pf127403030261342" referenceLink="//@navigationRule.45/@navigationCase.0/@toViewId|" outlinks="pf127403030261343" inlinks="pf127403030261337 pf12757700655449 pf127577006554410" path="/analisarCasoPrimeiraConsulta.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="analisarCasoQuartaConsulta" x="554" y="9778" id="pf127403030261444" referenceLink="//@navigationRule.58/@fromViewId|" outlinks="pf127403030261445 pf127577006554412" inlinks="pf127403030261224" path="/analisarCasoQuartaConsulta.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="consultaRealizada" x="986" y="9373" id="pf127403030261446" referenceLink="//@navigationRule.59/@navigationCase.0/@toViewId|" inlinks="pf127403030261343 pf127403030261339 pf127403030261341 pf127403030261445 pf127577006554413 pf127577006554414" path="/consultaRealizada.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastrarTurma" x="554" y="2482" id="pf127403030261447" referenceLink="//@navigationRule.31/@fromViewId|" outlinks="pf127403030261448 pf127403030261449" inlinks="pf127403030261216" path="/cadastrarTurma.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addTurma" x="770" y="2098" id="pf127403030261450" referenceLink="//@navigationRule.41/@fromViewId|" outlinks="pf127577006554515" inlinks="pf127403030261448" path="/addTurma.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="alocarAlunos" x="770" y="2482" id="pf127403030261451" referenceLink="//@navigationRule.40/@fromViewId|" outlinks="pf127577006554516" inlinks="pf127403030261449" path="/alocarAlunos.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="turmaCadastradaComSucesso" x="986" y="2098" id="pf127403030261453" referenceLink="//@navigationRule.41/@navigationCase.0/@toViewId|" inlinks="pf127577006554515" path="/turmaCadastradaComSucesso.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="avaliarConsulta1EscolhendoTurma" x="554" y="4402" id="pf127403030261454" referenceLink="//@navigationRule.35/@fromViewId|" outlinks="pf127577006554617" inlinks="pf12757700655447" path="/avaliarConsulta1EscolhendoTurma.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="recuperandoSenha" x="554" y="1330" id="pf127403030261456" referenceLink="//@navigationRule.60/@fromViewId|" outlinks="pf127403030261557 pf12766362196970" inlinks="pf127403030261110" path="/recuperandoSenha.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="recuperandoSenhaFim" x="770" y="1330" id="pf127403030261558" referenceLink="//@navigationRule.34/@navigationCase.0/@toViewId|" inlinks="pf127403030261557" path="/recuperandoSenhaFim.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="avaliarConsulta2EscolhendoAluno" x="770" y="4402" id="pf127403030261559" referenceLink="//@navigationRule.53/@fromViewId|" outlinks="pf127577006554718 pf127577006554719 pf127577006554720 pf127577006554721" inlinks="pf127577006554617" path="/avaliarConsulta2EscolhendoAluno.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="avaliarConsultaPrimeira" x="986" y="3824" id="pf127403030261561" referenceLink="//@navigationRule.43/@fromViewId|" outlinks="pf127577006554722 pf127577006554723" inlinks="pf127577006554718" path="/avaliarConsultaPrimeira.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="esperandoTutor" x="554" y="6706" id="pf127403030261562" referenceLink="//@navigationRule.37/@navigationCase.0/@toViewId|" inlinks="pf12757700655448" path="/esperandoTutor.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinicoTabelas" x="1202" y="3250" id="pf127403030261563" referenceLink="//@navigationRule.39/@fromViewId|" outlinks="pf127403030261332" inlinks="pf127403030261329" path="/addCasoClinicoTabelas.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="alocacaoSucesso" x="986" y="2482" id="pf12741411216111" referenceLink="//@navigationRule.40/@navigationCase.0/@toViewId|" inlinks="pf127577006554516" path="/alocacaoSucesso.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="AvaliacaoEfetuada" x="1202" y="4400" id="pf12741412067784" referenceLink="//@navigationRule.57/@navigationCase.0/@toViewId|" inlinks="pf127577006554722 pf127577006554723 pf127577006554824 pf127577006554825 pf127577006554826 pf127577006554827 pf127577006554828 pf127577006554829" path="/AvaliacaoEfetuada.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="cartaSegunda" x="770" y="9057" id="pf12744633817252" referenceLink="//@navigationRule.47/@fromViewId|" outlinks="pf127577006554413" inlinks="pf127577006554411" path="/cartaSegunda.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="avaliarConsultaSegunda" x="986" y="4208" id="pf12746393324311" referenceLink="//@navigationRule.50/@fromViewId|" outlinks="pf127577006554824 pf127577006554825" inlinks="pf127577006554719" path="/avaliarConsultaSegunda.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastroSucesso" x="770" y="178" id="pf12747063295891" referenceLink="//@navigationRule.51/@navigationCase.0/@toViewId|" inlinks="pf12757700655446" path="/cadastroSucesso.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="avaliarConsultaTerceira" x="986" y="4592" id="pf12755971709383" referenceLink="//@navigationRule.55/@fromViewId|" outlinks="pf127577006554826 pf127577006554827" inlinks="pf127577006554720" path="/avaliarConsultaTerceira.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="avaliarConsultaQuarta" x="986" y="4976" id="pf12757420185623" referenceLink="//@navigationRule.57/@fromViewId|" outlinks="pf127577006554828 pf127577006554829" inlinks="pf127577006554721" path="/avaliarConsultaQuarta.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="cartaQuarta" x="770" y="9576" id="pf12757661772622" referenceLink="//@navigationRule.59/@fromViewId|" outlinks="pf127577006554414" inlinks="pf127577006554412" path="/cartaQuarta.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="alunosAlocados" x="122" y="1906" id="pf12757689529665" referenceLink="//@navigationRule.30/@navigationCase.0/@toViewId|" path="/alunosAlocados.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="erroEmail" x="770" y="1714" id="pf12766362196991" referenceLink="//@navigationRule.60/@navigationCase.0/@toViewId|" inlinks="pf12766362196970" path="/erroEmail.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="emailExistente" x="770" y="562" id="pf12768229104611" referenceLink="//@navigationRule.61/@navigationCase.0/@toViewId|" inlinks="pf12768229104570" path="/emailExistente.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="4018" id="pf133441040404315" outlinks="pf13344104040401 pf13344104040405 pf133441040404012 pf13344104040400" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="consultarCaso" x="554" y="4018" id="pf133441040404317" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf13344325569641" inlinks="pf13344104040403" path="/consultarCaso.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinico5" x="122" y="7383" id="pf133441040404319" referenceLink="//@navigationRule.7/@fromViewId|" path="/addCasoClinico5.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCasoClinicoRefMedica" x="1634" y="3250" id="pf133441040404320" referenceLink="//@navigationRule.65/@fromViewId|" outlinks="pf133441385270632" inlinks="pf133441040404013" path="/addCasoClinicoRefMedica.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="consultasFinalizadas" x="554" y="7090" id="pf133441040404321" referenceLink="//@navigationRule.18/@navigationCase.0/@toViewId|" inlinks="pf13344104040407" path="/consultasFinalizadas.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="gabaritoPrimeira" x="554" y="7474" id="pf133441040404322" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" inlinks="pf13344104040408" path="/gabaritoPrimeira.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="gabaritoSegunda" x="554" y="7858" id="pf133441040404323" referenceLink="//@navigationRule.20/@navigationCase.0/@toViewId|" inlinks="pf13344104040409" path="/gabaritoSegunda.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="gabaritoTerceira" x="554" y="8242" id="pf133441040404324" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" inlinks="pf133441040404010" path="/gabaritoTerceira.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="gabaritoQuarta" x="554" y="8626" id="pf133441040404325" referenceLink="//@navigationRule.22/@navigationCase.0/@toViewId|" inlinks="pf133441040404011" path="/gabaritoQuarta.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="erroCadastro" x="770" y="946" id="pf133441040404326" referenceLink="//@navigationRule.62/@navigationCase.0/@toViewId|" inlinks="pf13344104040402" path="/erroCadastro.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="consultarCaso2" x="770" y="4018" id="pf13344325569652" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf13344325569641" path="/consultarCaso2.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="upload" x="770" y="3634" id="pf13344325569653" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf13344325569610" path="/upload.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarOpcoes" x="554" y="6322" id="pf13357915966452" referenceLink="//@navigationRule.77/@fromViewId|" outlinks="pf13358047895493 pf13359643936581 pf13359643936582 pf13359643936583 pf13359643936584 pf13359643936585 pf13359643936586 pf13359643936587 pf13359643936588 pf13359643936589 pf133596439365810 pf133596439365811" inlinks="pf13357915966451" path="/adicionarOpcoes.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarMedicamentos" x="770" y="4786" id="pf13358047895494" referenceLink="//@navigationRule.66/@navigationCase.0/@toViewId|" inlinks="pf13358047895493" path="/adicionarMedicamentos.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarRazaoEncontro" x="770" y="5170" id="pf133596439365812" referenceLink="//@navigationRule.67/@navigationCase.0/@toViewId|" inlinks="pf13359643936581" path="/adicionarRazaoEncontro.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarExperienciaMed1" x="770" y="5554" id="pf133596439365813" referenceLink="//@navigationRule.68/@navigationCase.0/@toViewId|" inlinks="pf13359643936582" path="/adicionarExperienciaMed1.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarExperienciaMed2" x="770" y="5938" id="pf133596439365914" referenceLink="//@navigationRule.69/@navigationCase.0/@toViewId|" inlinks="pf13359643936583" path="/adicionarExperienciaMed2.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarExperienciaMed3" x="770" y="6322" id="pf133596439365915" referenceLink="//@navigationRule.70/@navigationCase.0/@toViewId|" inlinks="pf13359643936584" path="/adicionarExperienciaMed3.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarExperienciaMed4" x="770" y="6706" id="pf133596439365916" referenceLink="//@navigationRule.71/@navigationCase.0/@toViewId|" inlinks="pf13359643936585" path="/adicionarExperienciaMed4.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarExperienciaMed5" x="770" y="7090" id="pf133596439365917" referenceLink="//@navigationRule.72/@navigationCase.0/@toViewId|" inlinks="pf13359643936586" path="/adicionarExperienciaMed5.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarExperienciaMedConc" x="770" y="7474" id="pf133596439365918" referenceLink="//@navigationRule.73/@navigationCase.0/@toViewId|" inlinks="pf13359643936587" path="/adicionarExperienciaMedConc.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarHistMedicaPregressa" x="770" y="7858" id="pf133596439365919" referenceLink="//@navigationRule.74/@navigationCase.0/@toViewId|" inlinks="pf13359643936588" path="/adicionarHistMedicaPregressa.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarHistFamiliar" x="770" y="8242" id="pf133596439365920" referenceLink="//@navigationRule.75/@navigationCase.0/@toViewId|" inlinks="pf13359643936589" path="/adicionarHistFamiliar.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarAlergias" x="770" y="8626" id="pf133596439365921" referenceLink="//@navigationRule.76/@navigationCase.0/@toViewId|" inlinks="pf133596439365810" path="/adicionarAlergias.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="adicionarAlternativas" x="770" y="9010" id="pf133596439365922" referenceLink="//@navigationRule.77/@navigationCase.0/@toViewId|" inlinks="pf133596439365811" path="/adicionarAlternativas.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="questionario" id="pf133596441115524" referenceLink="//@navigationRule.79/@navigationCase.0/@toViewId|" inlinks="pf133596441115523" path="/questionario.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="questionarioQualidade" id="pf13363085948236" referenceLink="//@navigationRule.80/@fromViewId|" outlinks="pf13363085948237" path="/questionarioQualidade.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="questionarioSucesso" id="pf13363085948238" referenceLink="//@navigationRule.80/@navigationCase.0/@toViewId|" inlinks="pf13363085948237 pf133630862828710" path="/questionarioSucesso.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="questionarioSatisfacao" id="pf133630862828711" referenceLink="//@navigationRule.80/@fromViewId|" outlinks="pf133630862828710" path="/questionarioSatisfacao.jsp"/>
+  <links id="pf12740303026111" target="pf12740303026113" source="pf12740303026110" outcome="success"/>
+  <links id="pf12740303026115" target="pf127403030261211" source="pf12740303026114" outcome="inexistente"/>
+  <links id="pf12740303026117" target="pf127403030261213" source="pf12740303026114" outcome="cadastrar Aluno"/>
+  <links id="pf12740303026112" target="pf12740303026110" source="pf127403030261212" outcome="cadastrar Tutor"/>
+  <links id="pf127403030261219" target="pf127403030261226" source="pf127403030261218" outcome="pagina2"/>
+  <links id="pf127403030261227" target="pf127403030261228" source="pf127403030261226" outcome="pagina3"/>
+  <links id="pf127403030261332" target="pf127403030261330" source="pf127403030261563" outcome="pagina4"/>
+  <links id="pf127403030261334" target="pf127403030261335" source="pf127403030261333" outcome="success"/>
+  <links id="pf127403030261221" target="pf127403030261336" source="pf127403030261220" outcome="1 1"/>
+  <links id="pf127403030261222" target="pf127403030261338" source="pf127403030261220" outcome="2"/>
+  <links id="pf127403030261223" target="pf127403030261340" source="pf127403030261220" outcome="3"/>
+  <links id="pf127403030261337" target="pf127403030261342" source="pf127403030261336" outcome="Escolhido com sucesso"/>
+  <links id="pf127403030261224" target="pf127403030261444" source="pf127403030261220" outcome="4"/>
+  <links id="pf127403030261343" target="pf127403030261446" source="pf127403030261342" outcome="Primeira consulta concluida"/>
+  <links id="pf127403030261339" target="pf127403030261446" source="pf127403030261338" outcome="Segunda consulta concluida"/>
+  <links id="pf127403030261341" target="pf127403030261446" source="pf127403030261340" outcome="Terceira consulta concluida"/>
+  <links id="pf127403030261445" target="pf127403030261446" source="pf127403030261444" outcome="Quarta consulta concluida"/>
+  <links id="pf127403030261216" target="pf127403030261447" source="pf127403030261214" outcome="CadastrarTurma"/>
+  <links id="pf127403030261448" target="pf127403030261450" source="pf127403030261447" outcome="AdicionarTurma"/>
+  <links id="pf127403030261449" target="pf127403030261451" source="pf127403030261447" outcome="AlocarAlunos"/>
+  <links id="pf127403030261110" target="pf127403030261456" source="pf12740303026114" outcome="recuperarSenha"/>
+  <links id="pf127403030261557" target="pf127403030261558" source="pf127403030261456" outcome="senhaEnviada"/>
+  <links id="pf127403030261329" target="pf127403030261563" source="pf127403030261228" outcome="tabelas"/>
+  <links id="pf12757700655447" target="pf127403030261454" source="pf127403030261214" outcome="AvaliarConsulta"/>
+  <links id="pf127577006554617" target="pf127403030261559" source="pf127403030261454" outcome="Turma Escolhida com Sucesso"/>
+  <links id="pf127577006554718" target="pf127403030261561" source="pf127403030261559" outcome="aluno escolhido com sucesso 1"/>
+  <links id="pf12757700655448" target="pf127403030261562" source="pf127403030261220" outcome="esperando tutor"/>
+  <links id="pf127577006554516" target="pf12741411216111" source="pf127403030261451" outcome="alocação com sucesso"/>
+  <links id="pf127577006554515" target="pf127403030261453" source="pf127403030261450" outcome="Turma Cadastrada com Sucesso"/>
+  <links id="pf127577006554722" target="pf12741412067784" source="pf127403030261561" outcome="Incorreto"/>
+  <links id="pf127577006554723" target="pf12741412067784" source="pf127403030261561" outcome="Correto"/>
+  <links id="pf12757700655449" target="pf127403030261342" source="pf127403030261220" outcome="1 3"/>
+  <links id="pf127577006554410" target="pf127403030261342" source="pf127403030261220" outcome="1 2"/>
+  <links id="pf127577006554411" target="pf12744633817252" source="pf127403030261338" outcome="carta"/>
+  <links id="pf127577006554413" target="pf127403030261446" source="pf12744633817252" outcome="Segunda consulta concluida"/>
+  <links id="pf127577006554719" target="pf12746393324311" source="pf127403030261559" outcome="aluno escolhido com sucesso 2"/>
+  <links id="pf127577006554824" target="pf12741412067784" source="pf12746393324311" outcome="Incorreto"/>
+  <links id="pf127577006554825" target="pf12741412067784" source="pf12746393324311" outcome="Correto"/>
+  <links id="pf12757700655446" target="pf12747063295891" source="pf127403030261213" outcome="success"/>
+  <links id="pf127577006554720" target="pf12755971709383" source="pf127403030261559" outcome="aluno escolhido com sucesso 3"/>
+  <links id="pf127577006554721" target="pf12757420185623" source="pf127403030261559" outcome="aluno escolhido com sucesso 4"/>
+  <links id="pf127577006554826" target="pf12741412067784" source="pf12755971709383" outcome="Incorreto"/>
+  <links id="pf127577006554827" target="pf12741412067784" source="pf12755971709383" outcome="Correto"/>
+  <links id="pf127577006554828" target="pf12741412067784" source="pf12757420185623" outcome="Incorreto"/>
+  <links id="pf127577006554829" target="pf12741412067784" source="pf12757420185623" outcome="Correto"/>
+  <links id="pf127577006554412" target="pf12757661772622" source="pf127403030261444" outcome="carta"/>
+  <links id="pf127577006554414" target="pf127403030261446" source="pf12757661772622" outcome="Quarta consulta concluida"/>
+  <links id="pf12766362196970" target="pf12766362196991" source="pf127403030261456" outcome="Não existe conta registrada com esse email."/>
+  <links id="pf12768229104570" target="pf12768229104611" source="pf127403030261213" outcome="emailExistente"/>
+  <links id="pf13344104040401" target="pf127403030261212" source="pf133441040404315" outcome="Administrador logado"/>
+  <links id="pf13344104040405" target="pf127403030261214" source="pf133441040404315" outcome="Tutor logado"/>
+  <links id="pf13344104040403" target="pf133441040404317" source="pf127403030261214" outcome="consultar Caso Clinico"/>
+  <links id="pf133441040404012" target="pf127403030261220" source="pf133441040404315" outcome="Aluno logado"/>
+  <links id="pf133441040404013" target="pf133441040404320" source="pf127403030261330" outcome="paginaRefMed"/>
+  <links id="pf13344104040407" target="pf133441040404321" source="pf127403030261220" outcome="consultas finalizadas"/>
+  <links id="pf13344104040408" target="pf133441040404322" source="pf127403030261220" outcome="gabaritoPrimeira"/>
+  <links id="pf13344104040409" target="pf133441040404323" source="pf127403030261220" outcome="gabaritoSegunda"/>
+  <links id="pf133441040404010" target="pf133441040404324" source="pf127403030261220" outcome="gabaritoTerceira"/>
+  <links id="pf133441040404011" target="pf133441040404325" source="pf127403030261220" outcome="gabaritoQuarta"/>
+  <links id="pf13344104040402" target="pf133441040404326" source="pf127403030261213" outcome="erroCadastro"/>
+  <links id="pf13344104040400" target="pf12740303026114" source="pf133441040404315" outcome="goHome"/>
+  <links id="pf133441238151827" target="pf127403030261218" source="pf127403030261214" outcome="cadastrarCasoClinico"/>
+  <links id="pf133441385270632" target="pf127403030261333" source="pf133441040404320" outcome="pagina5"/>
+  <links id="pf13344325569641" target="pf13344325569652" source="pf133441040404317" outcome="consultado com sucesso"/>
+  <links id="pf13344325569610" target="pf13344325569653" source="pf127403030261218" outcome="upload"/>
+  <links id="pf13357915966451" target="pf13357915966452" source="pf127403030261214" outcome="adicionarOpcoes"/>
+  <links id="pf13358047895493" target="pf13358047895494" source="pf13357915966452" outcome="opcao1"/>
+  <links id="pf13359643936581" target="pf133596439365812" source="pf13357915966452" outcome="opcao2"/>
+  <links id="pf13359643936582" target="pf133596439365813" source="pf13357915966452" outcome="opcao3"/>
+  <links id="pf13359643936583" target="pf133596439365914" source="pf13357915966452" outcome="opcao4"/>
+  <links id="pf13359643936584" target="pf133596439365915" source="pf13357915966452" outcome="opcao5"/>
+  <links id="pf13359643936585" target="pf133596439365916" source="pf13357915966452" outcome="opcao6"/>
+  <links id="pf13359643936586" target="pf133596439365917" source="pf13357915966452" outcome="opcao7"/>
+  <links id="pf13359643936587" target="pf133596439365918" source="pf13357915966452" outcome="opcao8"/>
+  <links id="pf13359643936588" target="pf133596439365919" source="pf13357915966452" outcome="opcao9"/>
+  <links id="pf13359643936589" target="pf133596439365920" source="pf13357915966452" outcome="opcao10"/>
+  <links id="pf133596439365810" target="pf133596439365921" source="pf13357915966452" outcome="opcao11"/>
+  <links id="pf133596439365811" target="pf133596439365922" source="pf13357915966452" outcome="opcao12"/>
+  <links id="pf133596441115523" target="pf133596441115524" source="pf127403030261220" outcome="questionario"/>
+  <links id="pf13363085948237" target="pf13363085948238" source="pf13363085948236" outcome="sucessoQuestionario"/>
+  <links id="pf133630862828710" target="pf13363085948238" source="pf133630862828711" outcome="sucessoQuestionario"/>
+</pageflow:Pageflow>

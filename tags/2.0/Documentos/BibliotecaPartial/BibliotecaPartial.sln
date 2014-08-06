@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaPartialWeb", "MvcApplication1\BibliotecaPartialWeb.csproj", "{C655CBA1-C526-4F33-825D-EF45DC41F06E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilbiotecaPartialWeb.Tests", "MvcApplication1.Tests\BilbiotecaPartialWeb.Tests.csproj", "{BD49FD2A-5E63-4A2C-87F9-BAA314BFFAD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C655CBA1-C526-4F33-825D-EF45DC41F06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C655CBA1-C526-4F33-825D-EF45DC41F06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C655CBA1-C526-4F33-825D-EF45DC41F06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C655CBA1-C526-4F33-825D-EF45DC41F06E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD49FD2A-5E63-4A2C-87F9-BAA314BFFAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD49FD2A-5E63-4A2C-87F9-BAA314BFFAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD49FD2A-5E63-4A2C-87F9-BAA314BFFAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD49FD2A-5E63-4A2C-87F9-BAA314BFFAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
