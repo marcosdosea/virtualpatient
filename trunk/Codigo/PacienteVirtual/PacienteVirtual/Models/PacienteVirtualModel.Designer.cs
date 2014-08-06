@@ -157,22 +157,6 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<my_aspnet_applications> my_aspnet_applications
-        {
-            get
-            {
-                if ((_my_aspnet_applications == null))
-                {
-                    _my_aspnet_applications = base.CreateObjectSet<my_aspnet_applications>("my_aspnet_applications");
-                }
-                return _my_aspnet_applications;
-            }
-        }
-        private ObjectSet<my_aspnet_applications> _my_aspnet_applications;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<my_aspnet_membership> my_aspnet_membership
         {
             get
@@ -185,22 +169,6 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<my_aspnet_membership> _my_aspnet_membership;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<my_aspnet_profiles> my_aspnet_profiles
-        {
-            get
-            {
-                if ((_my_aspnet_profiles == null))
-                {
-                    _my_aspnet_profiles = base.CreateObjectSet<my_aspnet_profiles>("my_aspnet_profiles");
-                }
-                return _my_aspnet_profiles;
-            }
-        }
-        private ObjectSet<my_aspnet_profiles> _my_aspnet_profiles;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1391,27 +1359,11 @@ namespace PacienteVirtual.Models
         #region AddTo Methods
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the my_aspnet_applications EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomy_aspnet_applications(my_aspnet_applications my_aspnet_applications)
-        {
-            base.AddObject("my_aspnet_applications", my_aspnet_applications);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the my_aspnet_membership EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTomy_aspnet_membership(my_aspnet_membership my_aspnet_membership)
         {
             base.AddObject("my_aspnet_membership", my_aspnet_membership);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the my_aspnet_profiles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomy_aspnet_profiles(my_aspnet_profiles my_aspnet_profiles)
-        {
-            base.AddObject("my_aspnet_profiles", my_aspnet_profiles);
         }
     
         /// <summary>
@@ -2017,111 +1969,6 @@ namespace PacienteVirtual.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_applications")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class my_aspnet_applications : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new my_aspnet_applications object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        public static my_aspnet_applications Createmy_aspnet_applications(global::System.Int32 id)
-        {
-            my_aspnet_applications my_aspnet_applications = new my_aspnet_applications();
-            my_aspnet_applications.id = id;
-            return my_aspnet_applications;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                OnnameChanging(value);
-                ReportPropertyChanging("name");
-                _name = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("name");
-                OnnameChanged();
-            }
-        }
-        private global::System.String _name;
-        partial void OnnameChanging(global::System.String value);
-        partial void OnnameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String description
-        {
-            get
-            {
-                return _description;
-            }
-            set
-            {
-                OndescriptionChanging(value);
-                ReportPropertyChanging("description");
-                _description = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("description");
-                OndescriptionChanged();
-            }
-        }
-        private global::System.String _description;
-        partial void OndescriptionChanging(global::System.String value);
-        partial void OndescriptionChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_membership")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2604,161 +2451,6 @@ namespace PacienteVirtual.Models
         private Nullable<global::System.DateTime> _FailedPasswordAnswerAttemptWindowStart;
         partial void OnFailedPasswordAnswerAttemptWindowStartChanging(Nullable<global::System.DateTime> value);
         partial void OnFailedPasswordAnswerAttemptWindowStartChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_profiles")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class my_aspnet_profiles : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new my_aspnet_profiles object.
-        /// </summary>
-        /// <param name="userId">Initial value of the userId property.</param>
-        /// <param name="lastUpdatedDate">Initial value of the lastUpdatedDate property.</param>
-        public static my_aspnet_profiles Createmy_aspnet_profiles(global::System.Int32 userId, global::System.DateTime lastUpdatedDate)
-        {
-            my_aspnet_profiles my_aspnet_profiles = new my_aspnet_profiles();
-            my_aspnet_profiles.userId = userId;
-            my_aspnet_profiles.lastUpdatedDate = lastUpdatedDate;
-            return my_aspnet_profiles;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 userId
-        {
-            get
-            {
-                return _userId;
-            }
-            set
-            {
-                if (_userId != value)
-                {
-                    OnuserIdChanging(value);
-                    ReportPropertyChanging("userId");
-                    _userId = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("userId");
-                    OnuserIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _userId;
-        partial void OnuserIdChanging(global::System.Int32 value);
-        partial void OnuserIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String valueindex
-        {
-            get
-            {
-                return _valueindex;
-            }
-            set
-            {
-                OnvalueindexChanging(value);
-                ReportPropertyChanging("valueindex");
-                _valueindex = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("valueindex");
-                OnvalueindexChanged();
-            }
-        }
-        private global::System.String _valueindex;
-        partial void OnvalueindexChanging(global::System.String value);
-        partial void OnvalueindexChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String stringdata
-        {
-            get
-            {
-                return _stringdata;
-            }
-            set
-            {
-                OnstringdataChanging(value);
-                ReportPropertyChanging("stringdata");
-                _stringdata = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("stringdata");
-                OnstringdataChanged();
-            }
-        }
-        private global::System.String _stringdata;
-        partial void OnstringdataChanging(global::System.String value);
-        partial void OnstringdataChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] binarydata
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_binarydata);
-            }
-            set
-            {
-                OnbinarydataChanging(value);
-                ReportPropertyChanging("binarydata");
-                _binarydata = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("binarydata");
-                OnbinarydataChanged();
-            }
-        }
-        private global::System.Byte[] _binarydata;
-        partial void OnbinarydataChanging(global::System.Byte[] value);
-        partial void OnbinarydataChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime lastUpdatedDate
-        {
-            get
-            {
-                return _lastUpdatedDate;
-            }
-            set
-            {
-                OnlastUpdatedDateChanging(value);
-                ReportPropertyChanging("lastUpdatedDate");
-                _lastUpdatedDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("lastUpdatedDate");
-                OnlastUpdatedDateChanged();
-            }
-        }
-        private global::System.DateTime _lastUpdatedDate;
-        partial void OnlastUpdatedDateChanging(global::System.DateTime value);
-        partial void OnlastUpdatedDateChanged();
 
         #endregion
 
@@ -17540,6 +17232,7 @@ namespace PacienteVirtual.Models
         /// <param name="palidez">Initial value of the Palidez property.</param>
         /// <param name="labioCianotico">Initial value of the LabioCianotico property.</param>
         /// <param name="simetriaToracica">Initial value of the SimetriaToracica property.</param>
+        /// <param name="tiposTorax">Initial value of the TiposTorax property.</param>
         /// <param name="tiragemIntercostal">Initial value of the TiragemIntercostal property.</param>
         /// <param name="expansibilidade">Initial value of the Expansibilidade property.</param>
         /// <param name="enfizemaSubcutaneo">Initial value of the EnfizemaSubcutaneo property.</param>
@@ -17551,7 +17244,8 @@ namespace PacienteVirtual.Models
         /// <param name="gangliosPalpaveis">Initial value of the GangliosPalpaveis property.</param>
         /// <param name="gangliosDolorosos">Initial value of the GangliosDolorosos property.</param>
         /// <param name="gangliosLocalizar">Initial value of the GangliosLocalizar property.</param>
-        public static tb_oxiginecao Createtb_oxiginecao(global::System.Int64 idConsultaVariavel, global::System.Int32 frequeciaRespiratoria, global::System.Boolean obstrucaoNasal, global::System.Boolean coriza, global::System.Boolean desvioDeSepto, global::System.Boolean palidez, global::System.Boolean labioCianotico, global::System.String simetriaToracica, global::System.Boolean tiragemIntercostal, global::System.String expansibilidade, global::System.Boolean enfizemaSubcutaneo, global::System.Boolean presencaFremito, global::System.String tosse, global::System.String frequenciaTosse, global::System.String tipoTosse, global::System.String percursao, global::System.Boolean gangliosPalpaveis, global::System.Boolean gangliosDolorosos, global::System.String gangliosLocalizar)
+        /// <param name="aspectoSecrecao">Initial value of the AspectoSecrecao property.</param>
+        public static tb_oxiginecao Createtb_oxiginecao(global::System.Int64 idConsultaVariavel, global::System.Int32 frequeciaRespiratoria, global::System.Boolean obstrucaoNasal, global::System.Boolean coriza, global::System.Boolean desvioDeSepto, global::System.Boolean palidez, global::System.Boolean labioCianotico, global::System.String simetriaToracica, global::System.String tiposTorax, global::System.Boolean tiragemIntercostal, global::System.String expansibilidade, global::System.Boolean enfizemaSubcutaneo, global::System.Boolean presencaFremito, global::System.String tosse, global::System.String frequenciaTosse, global::System.String tipoTosse, global::System.String percursao, global::System.Boolean gangliosPalpaveis, global::System.Boolean gangliosDolorosos, global::System.String gangliosLocalizar, global::System.String aspectoSecrecao)
         {
             tb_oxiginecao tb_oxiginecao = new tb_oxiginecao();
             tb_oxiginecao.IdConsultaVariavel = idConsultaVariavel;
@@ -17562,6 +17256,7 @@ namespace PacienteVirtual.Models
             tb_oxiginecao.Palidez = palidez;
             tb_oxiginecao.LabioCianotico = labioCianotico;
             tb_oxiginecao.SimetriaToracica = simetriaToracica;
+            tb_oxiginecao.TiposTorax = tiposTorax;
             tb_oxiginecao.TiragemIntercostal = tiragemIntercostal;
             tb_oxiginecao.Expansibilidade = expansibilidade;
             tb_oxiginecao.EnfizemaSubcutaneo = enfizemaSubcutaneo;
@@ -17573,6 +17268,7 @@ namespace PacienteVirtual.Models
             tb_oxiginecao.GangliosPalpaveis = gangliosPalpaveis;
             tb_oxiginecao.GangliosDolorosos = gangliosDolorosos;
             tb_oxiginecao.GangliosLocalizar = gangliosLocalizar;
+            tb_oxiginecao.AspectoSecrecao = aspectoSecrecao;
             return tb_oxiginecao;
         }
 
@@ -17826,7 +17522,7 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String TiposTorax
         {
@@ -17838,7 +17534,7 @@ namespace PacienteVirtual.Models
             {
                 OnTiposToraxChanging(value);
                 ReportPropertyChanging("TiposTorax");
-                _TiposTorax = StructuralObject.SetValidValue(value, true);
+                _TiposTorax = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("TiposTorax");
                 OnTiposToraxChanged();
             }
@@ -18138,7 +17834,7 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String AspectoSecrecao
         {
@@ -18150,7 +17846,7 @@ namespace PacienteVirtual.Models
             {
                 OnAspectoSecrecaoChanging(value);
                 ReportPropertyChanging("AspectoSecrecao");
-                _AspectoSecrecao = StructuralObject.SetValidValue(value, true);
+                _AspectoSecrecao = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("AspectoSecrecao");
                 OnAspectoSecrecaoChanged();
             }
