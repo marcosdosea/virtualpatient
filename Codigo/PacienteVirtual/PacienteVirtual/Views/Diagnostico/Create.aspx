@@ -17,26 +17,25 @@
         <legend><%: Resources.Mensagem.diagnostico %></legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.DescricaoDiagnostico) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoDiagnostico, new { style = "width:350px;", MaxLength = 40  })%>
-            <%: Html.ValidationMessageFor(model => model.DescricaoDiagnostico, string.Empty, new { @class = "styleValidation" })%>
-        </div>
-
-        <div class="editor-label">
             <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico)%>
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdClasseDiagnostico", Resources.Mensagem.selecione)%>
             <%: Html.ValidationMessageFor(model => model.IdClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
-        <div class="row-fluid">
-            <div class="span4">
-                <%: Html.EditorFor(model => model.Risco) %>
-                <%: Resources.Mensagem.risco %>
-                <%: Html.ValidationMessageFor(model => model.Risco, string.Empty, new { @class = "styleValidation" })%>
-            </div>
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.Diagnostico) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.TextBoxFor(model => model.Diagnostico)%>
+            <%: Html.ValidationMessageFor(model => model.Diagnostico, string.Empty, new { @class = "styleValidation" })%>
+        </div>
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.Risco)%>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Risco)%>
+            <%: Html.ValidationMessageFor(model => model.Risco, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />

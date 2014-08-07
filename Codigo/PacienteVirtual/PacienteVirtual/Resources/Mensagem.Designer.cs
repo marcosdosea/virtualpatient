@@ -916,7 +916,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grupo Diagnóstico.
+        ///   Looks up a localized string similar to Classe Diagnóstico.
         /// </summary>
         public static string classe_diagnostico {
             get {
@@ -1780,11 +1780,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Descrição Grupo Diagnóstico.
+        ///   Looks up a localized string similar to Descrição Classe Diagnóstico.
         /// </summary>
         public static string descricao_classe_diagnostico {
             get {
                 return ResourceManager.GetString("descricao_classe_diagnostico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descrição Domínio Diagnóstico.
+        /// </summary>
+        public static string descricao_dominio_diagnostico {
+            get {
+                return ResourceManager.GetString("descricao_dominio_diagnostico", resourceCulture);
             }
         }
         
@@ -2118,6 +2127,15 @@ namespace Resources {
         public static string doencas_atuais {
             get {
                 return ResourceManager.GetString("doencas_atuais", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domínio Diagnóstico.
+        /// </summary>
+        public static string dominio_diagnostico {
+            get {
+                return ResourceManager.GetString("dominio_diagnostico", resourceCulture);
             }
         }
         

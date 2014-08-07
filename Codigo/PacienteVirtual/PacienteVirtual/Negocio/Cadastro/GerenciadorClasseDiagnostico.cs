@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
 
@@ -99,7 +98,10 @@ namespace PacienteVirtual.Negocio
                         select new ClasseDiagnosticoModel
                         {
                             IdClasseDiagnostico = classeDiagnostico.IdClasseDiagnostico,
-                            DescricaoClasseDiagnostico = classeDiagnostico.DescricaoClasse
+                            IdDominioDiagnostico = classeDiagnostico.IdDominioDiagnostico,
+                            DescricaoClasseDiagnostico = classeDiagnostico.DescricaoClasse,
+
+                            DescricaoDominioDiagnostico = classeDiagnostico.tb_dominio_diagnostico.DescricaoDominio
                         };
             return query;
         }
@@ -124,6 +126,16 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
+        /// Obtem classes diagnostico de determinado dominio diagnostico
+        /// </summary>
+        /// <param name="idDominioDiagnnostico">Identificador do domínio do diagnostico</param>
+        /// <returns>Lista de Classes Diagnostico</returns>
+        public IEnumerable<ClasseDiagnosticoModel> ObterClassePorDominio(int idDominioDiagnnostico)
+        {
+            return GetQuery().Where(c => c.IdClasseDiagnostico == idDominioDiagnnostico).ToList();
+        }
+
+        /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="classeDiagnostico"></param>
@@ -131,6 +143,7 @@ namespace PacienteVirtual.Negocio
         private static void Atribuir(ClasseDiagnosticoModel classeDiagnostico, tb_classe_diagnostico _tb_classe_diagnostico)
         {
             _tb_classe_diagnostico.DescricaoClasse = classeDiagnostico.DescricaoClasseDiagnostico;
+            _tb_classe_diagnostico.IdDominioDiagnostico = classeDiagnostico.IdDominioDiagnostico;
         }
     }
 }

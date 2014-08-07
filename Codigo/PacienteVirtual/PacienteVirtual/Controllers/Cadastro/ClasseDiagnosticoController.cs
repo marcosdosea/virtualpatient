@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 
@@ -12,12 +6,16 @@ namespace PacienteVirtual.Controllers
 { 
     public class ClasseDiagnosticoController : Controller
     {
+
+        GerenciadorDominioDiagnostico gDominioDiagnostico = GerenciadorDominioDiagnostico.GetInstance();
+        GerenciadorClasseDiagnostico gClasseDiagnostico = GerenciadorClasseDiagnostico.GetInstance();
+
         //
         // GET: /ClasseDiagnostico/
 
         public ViewResult Index()
         {
-            return View(GerenciadorClasseDiagnostico.GetInstance().ObterTodos());
+            return View(gClasseDiagnostico.ObterTodos());
         }
 
         //
@@ -25,7 +23,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Details(int id)
         {
-            return View(GerenciadorClasseDiagnostico.GetInstance().Obter(id));
+            return View(gClasseDiagnostico.Obter(id));
         }
 
         //
@@ -33,6 +31,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.IdDominioDiagnostico = new SelectList(gDominioDiagnostico.ObterTodos(), "IdDominioDiagnostico", "DescricaoDominioDiagnostico");
             return View();
         }
 
@@ -44,9 +43,11 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                GerenciadorClasseDiagnostico.GetInstance().Inserir(classeDiagnostico);
+                gClasseDiagnostico.Inserir(classeDiagnostico);
                 return RedirectToAction("Index");
             }
+            ViewBag.IdDominioDiagnostico = new SelectList(gDominioDiagnostico.ObterTodos(), "IdDominioDiagnostico", "DescricaoDominioDiagnostico", 
+                classeDiagnostico.IdDominioDiagnostico);
             return View(classeDiagnostico);
         }
 
@@ -55,7 +56,9 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Edit(int id)
         {
-            ClasseDiagnosticoModel classeDiagnostico = GerenciadorClasseDiagnostico.GetInstance().Obter(id);
+            ClasseDiagnosticoModel classeDiagnostico = gClasseDiagnostico.Obter(id);
+            ViewBag.IdDominioDiagnostico = new SelectList(gDominioDiagnostico.ObterTodos(), "IdDominioDiagnostico", "DescricaoDominioDiagnostico",
+                classeDiagnostico.IdDominioDiagnostico);
             return View(classeDiagnostico);
         }
 
@@ -67,9 +70,11 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                GerenciadorClasseDiagnostico.GetInstance().Atualizar(classeDiagnostico);
+                gClasseDiagnostico.Atualizar(classeDiagnostico);
                 return RedirectToAction("Index");
             }
+            ViewBag.IdDominioDiagnostico = new SelectList(gDominioDiagnostico.ObterTodos(), "IdDominioDiagnostico", "DescricaoDominioDiagnostico",
+                classeDiagnostico.IdDominioDiagnostico);
             return View(classeDiagnostico);
         }
 
@@ -78,7 +83,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Delete(int id)
         {
-            ClasseDiagnosticoModel classeDiagnostico = GerenciadorClasseDiagnostico.GetInstance().Obter(id);
+            ClasseDiagnosticoModel classeDiagnostico = gClasseDiagnostico.Obter(id);
             return View(classeDiagnostico);
         }
 
@@ -88,7 +93,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            GerenciadorClasseDiagnostico.GetInstance().Remover(id);
+            gClasseDiagnostico.Remover(id);
             return RedirectToAction("Index");
         }
 

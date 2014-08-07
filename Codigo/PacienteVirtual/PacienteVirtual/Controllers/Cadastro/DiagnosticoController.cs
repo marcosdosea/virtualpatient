@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 
@@ -45,10 +39,11 @@ namespace PacienteVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                diagnosticoModel.IdClasseDiagnostico = gDiagnostico.Inserir(diagnosticoModel);
+                gDiagnostico.Inserir(diagnosticoModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", diagnosticoModel.IdClasseDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
+                diagnosticoModel.IdClasseDiagnostico);
             return View(diagnosticoModel);
         }
 
@@ -57,7 +52,8 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(int id)
         {
             DiagnosticoModel diagnostico = gDiagnostico.Obter(id);
-            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", diagnostico.IdClasseDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
+                diagnostico.IdClasseDiagnostico);
             return View(diagnostico);
         }
 
@@ -72,7 +68,8 @@ namespace PacienteVirtual.Controllers
                 gDiagnostico.Atualizar(diagnostico);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", diagnostico.IdClasseDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
+                diagnostico.IdClasseDiagnostico);
             return View(diagnostico);
         }
 

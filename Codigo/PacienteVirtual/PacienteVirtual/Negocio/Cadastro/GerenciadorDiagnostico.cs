@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
 
@@ -99,7 +98,7 @@ namespace PacienteVirtual.Negocio
                         {
                             IdDiagnostico = tb_diagnostico.IdDiagnostico,
                             IdClasseDiagnostico = tb_diagnostico.IdClasseDiagnostico,
-                            DescricaoDiagnostico = tb_diagnostico.Diagnostico,
+                            Diagnostico = tb_diagnostico.Diagnostico,
                             DescricaoClasseDiagnostico = tb_classe_diagnostico.DescricaoClasse,
                             Risco = tb_diagnostico.PossuiRisco
                         };
@@ -126,23 +125,13 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtém queixas que iniciam com o descricao diagnostico
-        /// </summary>
-        /// <param name="descricaoDiagnostico"></param>
-        /// <returns></returns>
-        public IEnumerable<DiagnosticoModel> ObterPorNome(string descricaoDiagnostico)
-        {
-            return GetQuery().Where(diagnostico => diagnostico.DescricaoDiagnostico.StartsWith(descricaoDiagnostico)).ToList();
-        }
-
-        /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
         /// </summary>
         /// <param name="intervencao"></param>
         /// <param name="_intervencaoE"></param>
         private static void Atribuir(DiagnosticoModel diagnostico, tb_diagnostico _diagnosticoE)
         {
-            _diagnosticoE.Diagnostico = diagnostico.DescricaoDiagnostico;
+            _diagnosticoE.Diagnostico = diagnostico.Diagnostico;
             _diagnosticoE.IdClasseDiagnostico = diagnostico.IdClasseDiagnostico;
             _diagnosticoE.PossuiRisco = diagnostico.Risco;
         }

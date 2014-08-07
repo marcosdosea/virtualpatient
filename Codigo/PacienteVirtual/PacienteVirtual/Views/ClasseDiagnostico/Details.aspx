@@ -11,7 +11,12 @@
 <fieldset>
     <legend><%: Resources.Mensagem.classe_diagnostico %></legend>
 
-    <div class="display-label"><%: Resources.Mensagem.classe_diagnostico %></div>
+    <div class="display-label"><%: Resources.Mensagem.descricao_dominio_diagnostico %></div>
+    <div class="display-label">
+        <%: Html.DisplayFor(model => model.DescricaoDominioDiagnostico) %>
+    </div>
+
+    <div class="display-label"><%: Resources.Mensagem.descricao_classe_diagnostico %></div>
     <div class="display-label">
         <%: Html.DisplayFor(model => model.DescricaoClasseDiagnostico) %>
     </div>

@@ -2275,13 +2275,13 @@
     <value>Diagnóstico</value>
   </data>
   <data name="classe_diagnostico" xml:space="preserve">
-    <value>Grupo Diagnóstico</value>
+    <value>Classe Diagnóstico</value>
   </data>
   <data name="possui_risco" xml:space="preserve">
     <value>Possui risco</value>
   </data>
   <data name="descricao_classe_diagnostico" xml:space="preserve">
-    <value>Descrição Grupo Diagnóstico</value>
+    <value>Descrição Classe Diagnóstico</value>
   </data>
   <data name="risco" xml:space="preserve">
     <value>Risco</value>
@@ -2369,5 +2369,11 @@
   </data>
   <data name="SemAlteracoes" xml:space="preserve">
     <value>Sem Alterações</value>
+  </data>
+  <data name="descricao_dominio_diagnostico" xml:space="preserve">
+    <value>Descrição Domínio Diagnóstico</value>
+  </data>
+  <data name="dominio_diagnostico" xml:space="preserve">
+    <value>Domínio Diagnóstico</value>
   </data>
 </root>
