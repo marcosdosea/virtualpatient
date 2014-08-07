@@ -231,6 +231,9 @@
                                         <li>
                                             <%: Html.ActionLink(Resources.Mensagem.diagnostico, "Index", "Diagnostico")%>
                                         </li>
+                                        <li>
+                                            <%: Html.ActionLink(Resources.Mensagem.dominio_diagnostico, "Index", "DominioDiagnostico")%>
+                                        </li>
                                         <% } %>
                                     </ul>
                                 </li>

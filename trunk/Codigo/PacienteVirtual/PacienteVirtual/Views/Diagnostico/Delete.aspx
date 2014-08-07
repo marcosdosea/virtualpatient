@@ -12,20 +12,21 @@
 <fieldset>
     <legend><%: Resources.Mensagem.diagnostico %></legend>
 
-    <div class="display-label"><%: Resources.Mensagem.descricao_intervencao %></div>
+    <div class="display-label"><%: Resources.Mensagem.diagnostico %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.DescricaoDiagnostico) %>
+        <%: Html.DisplayFor(model => model.Diagnostico) %>
     </div>
 
-    <div class="display-label"><%: Resources.Mensagem.classe_diagnostico %></div>
+    <div class="display-label"><%: Resources.Mensagem.descricao_classe_diagnostico %></div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.DescricaoClasseDiagnostico) %>
     </div>
 
     <div class="display-label"><%: Resources.Mensagem.risco %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => (model.Risco == true ? "Sim" : "Não")) %>
+        <%: Html.DisplayFor(model => model.Risco) %>
     </div>
+
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>

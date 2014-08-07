@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ClasseDiagnosticoModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.DominioDiagnosticoModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-   <%: Resources.Mensagem.deletar %>
-
+    <%: Resources.Mensagem.deletar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -11,17 +10,17 @@
 
 <h3><%: Resources.Mensagem.deletar_pergunta %></h3>
 <fieldset>
-    <legend> <%: Resources.Mensagem.classe_diagnostico %></legend>
+    <legend><%: Resources.Mensagem.dominio_diagnostico %></legend>
 
-    <div class="display-label"><%: Resources.Mensagem.descricao %></div>
+    <div class="display-label"><%: Resources.Mensagem.descricao_dominio_diagnostico %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.DescricaoClasseDiagnostico) %>
+        <%: Html.DisplayFor(model => model.DescricaoDominioDiagnostico) %>
     </div>
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>
         <input type="submit" value=" <%: Resources.Mensagem.deletar %>" /> |
-        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
+        <%: Html.ActionLink(Resources.Mensagem.voltar, "Index")%>
     </p>
 <% } %>
 

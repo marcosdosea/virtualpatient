@@ -19,10 +19,18 @@
         <%: Html.HiddenFor(model => model.IdClasseDiagnostico) %>
 
         <div class="editor-label">
+            <%: Html.LabelFor(model => model.DescricaoDominioDiagnostico)%>
+        </div>
+        <div class="editor-field">
+            <%: Html.DropDownList("IdDominioDiagnostico", Resources.Mensagem.selecione) %>
+            <%: Html.ValidationMessageFor(model => model.IdDominioDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+        </div>
+
+        <div class="editor-label">
             <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoClasseDiagnostico, new { @class = "textbox", style = "width:1100px;", MaxLength = 255})%>
+            <%: Html.TextBoxFor(model => model.DescricaoClasseDiagnostico)%>
             <%: Html.ValidationMessageFor(model => model.DescricaoClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 

@@ -2266,13 +2266,13 @@
     <value>Diagnostic</value>
   </data>
   <data name="classe_diagnostico" xml:space="preserve">
-    <value>Diagnostic group</value>
+    <value>Diagnostic class</value>
   </data>
   <data name="possui_risco" xml:space="preserve">
     <value>Own risk</value>
   </data>
   <data name="descricao_classe_diagnostico" xml:space="preserve">
-    <value>Diagnostic Group</value>
+    <value>Class Description Diagnosis</value>
   </data>
   <data name="risco" xml:space="preserve">
     <value>Risk</value>
@@ -2360,5 +2360,11 @@
   </data>
   <data name="SemAlteracoes" xml:space="preserve">
     <value>No Changes</value>
+  </data>
+  <data name="descricao_dominio_diagnostico" xml:space="preserve">
+    <value>Description of Domain Diagnosis</value>
+  </data>
+  <data name="dominio_diagnostico" xml:space="preserve">
+    <value>Domain Diagnosis</value>
   </data>
 </root>
