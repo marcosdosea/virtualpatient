@@ -195,38 +195,6 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<my_aspnet_sessioncleanup> my_aspnet_sessioncleanup
-        {
-            get
-            {
-                if ((_my_aspnet_sessioncleanup == null))
-                {
-                    _my_aspnet_sessioncleanup = base.CreateObjectSet<my_aspnet_sessioncleanup>("my_aspnet_sessioncleanup");
-                }
-                return _my_aspnet_sessioncleanup;
-            }
-        }
-        private ObjectSet<my_aspnet_sessioncleanup> _my_aspnet_sessioncleanup;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<my_aspnet_sessions> my_aspnet_sessions
-        {
-            get
-            {
-                if ((_my_aspnet_sessions == null))
-                {
-                    _my_aspnet_sessions = base.CreateObjectSet<my_aspnet_sessions>("my_aspnet_sessions");
-                }
-                return _my_aspnet_sessions;
-            }
-        }
-        private ObjectSet<my_aspnet_sessions> _my_aspnet_sessions;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<my_aspnet_users> my_aspnet_users
         {
             get
@@ -1442,22 +1410,6 @@ namespace PacienteVirtual.Models
         public void AddTomy_aspnet_roles(my_aspnet_roles my_aspnet_roles)
         {
             base.AddObject("my_aspnet_roles", my_aspnet_roles);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the my_aspnet_sessioncleanup EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomy_aspnet_sessioncleanup(my_aspnet_sessioncleanup my_aspnet_sessioncleanup)
-        {
-            base.AddObject("my_aspnet_sessioncleanup", my_aspnet_sessioncleanup);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the my_aspnet_sessions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTomy_aspnet_sessions(my_aspnet_sessions my_aspnet_sessions)
-        {
-            base.AddObject("my_aspnet_sessions", my_aspnet_sessions);
         }
     
         /// <summary>
@@ -2692,407 +2644,6 @@ namespace PacienteVirtual.Models
 
         #endregion
 
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_sessioncleanup")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class my_aspnet_sessioncleanup : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new my_aspnet_sessioncleanup object.
-        /// </summary>
-        /// <param name="lastRun">Initial value of the LastRun property.</param>
-        /// <param name="intervalMinutes">Initial value of the IntervalMinutes property.</param>
-        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
-        public static my_aspnet_sessioncleanup Createmy_aspnet_sessioncleanup(global::System.DateTime lastRun, global::System.Int32 intervalMinutes, global::System.Int32 applicationId)
-        {
-            my_aspnet_sessioncleanup my_aspnet_sessioncleanup = new my_aspnet_sessioncleanup();
-            my_aspnet_sessioncleanup.LastRun = lastRun;
-            my_aspnet_sessioncleanup.IntervalMinutes = intervalMinutes;
-            my_aspnet_sessioncleanup.ApplicationId = applicationId;
-            return my_aspnet_sessioncleanup;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime LastRun
-        {
-            get
-            {
-                return _LastRun;
-            }
-            set
-            {
-                OnLastRunChanging(value);
-                ReportPropertyChanging("LastRun");
-                _LastRun = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("LastRun");
-                OnLastRunChanged();
-            }
-        }
-        private global::System.DateTime _LastRun;
-        partial void OnLastRunChanging(global::System.DateTime value);
-        partial void OnLastRunChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IntervalMinutes
-        {
-            get
-            {
-                return _IntervalMinutes;
-            }
-            set
-            {
-                OnIntervalMinutesChanging(value);
-                ReportPropertyChanging("IntervalMinutes");
-                _IntervalMinutes = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IntervalMinutes");
-                OnIntervalMinutesChanged();
-            }
-        }
-        private global::System.Int32 _IntervalMinutes;
-        partial void OnIntervalMinutesChanging(global::System.Int32 value);
-        partial void OnIntervalMinutesChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 ApplicationId
-        {
-            get
-            {
-                return _ApplicationId;
-            }
-            set
-            {
-                if (_ApplicationId != value)
-                {
-                    OnApplicationIdChanging(value);
-                    ReportPropertyChanging("ApplicationId");
-                    _ApplicationId = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ApplicationId");
-                    OnApplicationIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _ApplicationId;
-        partial void OnApplicationIdChanging(global::System.Int32 value);
-        partial void OnApplicationIdChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_sessions")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class my_aspnet_sessions : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new my_aspnet_sessions object.
-        /// </summary>
-        /// <param name="sessionId">Initial value of the SessionId property.</param>
-        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
-        /// <param name="created">Initial value of the Created property.</param>
-        /// <param name="expires">Initial value of the Expires property.</param>
-        /// <param name="lockDate">Initial value of the LockDate property.</param>
-        /// <param name="lockId">Initial value of the LockId property.</param>
-        /// <param name="timeout">Initial value of the Timeout property.</param>
-        /// <param name="locked">Initial value of the Locked property.</param>
-        /// <param name="flags">Initial value of the Flags property.</param>
-        public static my_aspnet_sessions Createmy_aspnet_sessions(global::System.String sessionId, global::System.Int32 applicationId, global::System.DateTime created, global::System.DateTime expires, global::System.DateTime lockDate, global::System.Int32 lockId, global::System.Int32 timeout, global::System.Boolean locked, global::System.Int32 flags)
-        {
-            my_aspnet_sessions my_aspnet_sessions = new my_aspnet_sessions();
-            my_aspnet_sessions.SessionId = sessionId;
-            my_aspnet_sessions.ApplicationId = applicationId;
-            my_aspnet_sessions.Created = created;
-            my_aspnet_sessions.Expires = expires;
-            my_aspnet_sessions.LockDate = lockDate;
-            my_aspnet_sessions.LockId = lockId;
-            my_aspnet_sessions.Timeout = timeout;
-            my_aspnet_sessions.Locked = locked;
-            my_aspnet_sessions.Flags = flags;
-            return my_aspnet_sessions;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String SessionId
-        {
-            get
-            {
-                return _SessionId;
-            }
-            set
-            {
-                if (_SessionId != value)
-                {
-                    OnSessionIdChanging(value);
-                    ReportPropertyChanging("SessionId");
-                    _SessionId = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("SessionId");
-                    OnSessionIdChanged();
-                }
-            }
-        }
-        private global::System.String _SessionId;
-        partial void OnSessionIdChanging(global::System.String value);
-        partial void OnSessionIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 ApplicationId
-        {
-            get
-            {
-                return _ApplicationId;
-            }
-            set
-            {
-                if (_ApplicationId != value)
-                {
-                    OnApplicationIdChanging(value);
-                    ReportPropertyChanging("ApplicationId");
-                    _ApplicationId = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ApplicationId");
-                    OnApplicationIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _ApplicationId;
-        partial void OnApplicationIdChanging(global::System.Int32 value);
-        partial void OnApplicationIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime Created
-        {
-            get
-            {
-                return _Created;
-            }
-            set
-            {
-                OnCreatedChanging(value);
-                ReportPropertyChanging("Created");
-                _Created = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Created");
-                OnCreatedChanged();
-            }
-        }
-        private global::System.DateTime _Created;
-        partial void OnCreatedChanging(global::System.DateTime value);
-        partial void OnCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime Expires
-        {
-            get
-            {
-                return _Expires;
-            }
-            set
-            {
-                OnExpiresChanging(value);
-                ReportPropertyChanging("Expires");
-                _Expires = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Expires");
-                OnExpiresChanged();
-            }
-        }
-        private global::System.DateTime _Expires;
-        partial void OnExpiresChanging(global::System.DateTime value);
-        partial void OnExpiresChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime LockDate
-        {
-            get
-            {
-                return _LockDate;
-            }
-            set
-            {
-                OnLockDateChanging(value);
-                ReportPropertyChanging("LockDate");
-                _LockDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("LockDate");
-                OnLockDateChanged();
-            }
-        }
-        private global::System.DateTime _LockDate;
-        partial void OnLockDateChanging(global::System.DateTime value);
-        partial void OnLockDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 LockId
-        {
-            get
-            {
-                return _LockId;
-            }
-            set
-            {
-                OnLockIdChanging(value);
-                ReportPropertyChanging("LockId");
-                _LockId = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("LockId");
-                OnLockIdChanged();
-            }
-        }
-        private global::System.Int32 _LockId;
-        partial void OnLockIdChanging(global::System.Int32 value);
-        partial void OnLockIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Timeout
-        {
-            get
-            {
-                return _Timeout;
-            }
-            set
-            {
-                OnTimeoutChanging(value);
-                ReportPropertyChanging("Timeout");
-                _Timeout = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Timeout");
-                OnTimeoutChanged();
-            }
-        }
-        private global::System.Int32 _Timeout;
-        partial void OnTimeoutChanging(global::System.Int32 value);
-        partial void OnTimeoutChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Locked
-        {
-            get
-            {
-                return _Locked;
-            }
-            set
-            {
-                OnLockedChanging(value);
-                ReportPropertyChanging("Locked");
-                _Locked = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Locked");
-                OnLockedChanged();
-            }
-        }
-        private global::System.Boolean _Locked;
-        partial void OnLockedChanging(global::System.Boolean value);
-        partial void OnLockedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] SessionItems
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_SessionItems);
-            }
-            set
-            {
-                OnSessionItemsChanging(value);
-                ReportPropertyChanging("SessionItems");
-                _SessionItems = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("SessionItems");
-                OnSessionItemsChanged();
-            }
-        }
-        private global::System.Byte[] _SessionItems;
-        partial void OnSessionItemsChanging(global::System.Byte[] value);
-        partial void OnSessionItemsChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Flags
-        {
-            get
-            {
-                return _Flags;
-            }
-            set
-            {
-                OnFlagsChanging(value);
-                ReportPropertyChanging("Flags");
-                _Flags = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Flags");
-                OnFlagsChanged();
-            }
-        }
-        private global::System.Int32 _Flags;
-        partial void OnFlagsChanging(global::System.Int32 value);
-        partial void OnFlagsChanged();
-
-        #endregion
-
-    
     }
     
     /// <summary>
@@ -11378,30 +10929,6 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String LocalizarPercussaoAbdominal
-        {
-            get
-            {
-                return _LocalizarPercussaoAbdominal;
-            }
-            set
-            {
-                OnLocalizarPercussaoAbdominalChanging(value);
-                ReportPropertyChanging("LocalizarPercussaoAbdominal");
-                _LocalizarPercussaoAbdominal = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("LocalizarPercussaoAbdominal");
-                OnLocalizarPercussaoAbdominalChanged();
-            }
-        }
-        private global::System.String _LocalizarPercussaoAbdominal;
-        partial void OnLocalizarPercussaoAbdominalChanging(global::System.String value);
-        partial void OnLocalizarPercussaoAbdominalChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String PalpacaoAbodminal
@@ -11542,54 +11069,6 @@ namespace PacienteVirtual.Models
         private global::System.String _CondicaoContinenciaUrinaria;
         partial void OnCondicaoContinenciaUrinariaChanging(global::System.String value);
         partial void OnCondicaoContinenciaUrinariaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String IrrigacaoVesicalCom
-        {
-            get
-            {
-                return _IrrigacaoVesicalCom;
-            }
-            set
-            {
-                OnIrrigacaoVesicalComChanging(value);
-                ReportPropertyChanging("IrrigacaoVesicalCom");
-                _IrrigacaoVesicalCom = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("IrrigacaoVesicalCom");
-                OnIrrigacaoVesicalComChanged();
-            }
-        }
-        private global::System.String _IrrigacaoVesicalCom;
-        partial void OnIrrigacaoVesicalComChanging(global::System.String value);
-        partial void OnIrrigacaoVesicalComChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> IrrigacaoVesicalDesde
-        {
-            get
-            {
-                return _IrrigacaoVesicalDesde;
-            }
-            set
-            {
-                OnIrrigacaoVesicalDesdeChanging(value);
-                ReportPropertyChanging("IrrigacaoVesicalDesde");
-                _IrrigacaoVesicalDesde = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IrrigacaoVesicalDesde");
-                OnIrrigacaoVesicalDesdeChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _IrrigacaoVesicalDesde;
-        partial void OnIrrigacaoVesicalDesdeChanging(Nullable<global::System.DateTime> value);
-        partial void OnIrrigacaoVesicalDesdeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -22503,10 +21982,7 @@ namespace PacienteVirtual.Models
         /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
         /// <param name="parceiroFixo">Initial value of the ParceiroFixo property.</param>
         /// <param name="conflitoPreferenciaSexual">Initial value of the ConflitoPreferenciaSexual property.</param>
-        /// <param name="usoContraceptivo">Initial value of the UsoContraceptivo property.</param>
         /// <param name="dorRelacaoSexual">Initial value of the DorRelacaoSexual property.</param>
-        /// <param name="simetriaMamas">Initial value of the SimetriaMamas property.</param>
-        /// <param name="tipoSecrecao">Initial value of the TipoSecrecao property.</param>
         /// <param name="secrecao">Initial value of the Secrecao property.</param>
         /// <param name="prurido">Initial value of the Prurido property.</param>
         /// <param name="edema">Initial value of the Edema property.</param>
@@ -22514,16 +21990,14 @@ namespace PacienteVirtual.Models
         /// <param name="sangramento">Initial value of the Sangramento property.</param>
         /// <param name="lesao">Initial value of the Lesao property.</param>
         /// <param name="hiperemia">Initial value of the Hiperemia property.</param>
-        public static tb_sexualidade Createtb_sexualidade(global::System.Int64 idConsultaVariavel, global::System.Boolean parceiroFixo, global::System.Boolean conflitoPreferenciaSexual, global::System.Boolean usoContraceptivo, global::System.Boolean dorRelacaoSexual, global::System.String simetriaMamas, global::System.String tipoSecrecao, global::System.Boolean secrecao, global::System.Boolean prurido, global::System.Boolean edema, global::System.Boolean odorFetido, global::System.Boolean sangramento, global::System.Boolean lesao, global::System.Boolean hiperemia)
+        /// <param name="semAlteracoes">Initial value of the SemAlteracoes property.</param>
+        public static tb_sexualidade Createtb_sexualidade(global::System.Int64 idConsultaVariavel, global::System.String parceiroFixo, global::System.String conflitoPreferenciaSexual, global::System.String dorRelacaoSexual, global::System.Boolean secrecao, global::System.Boolean prurido, global::System.Boolean edema, global::System.Boolean odorFetido, global::System.Boolean sangramento, global::System.Boolean lesao, global::System.Boolean hiperemia, global::System.Boolean semAlteracoes)
         {
             tb_sexualidade tb_sexualidade = new tb_sexualidade();
             tb_sexualidade.IdConsultaVariavel = idConsultaVariavel;
             tb_sexualidade.ParceiroFixo = parceiroFixo;
             tb_sexualidade.ConflitoPreferenciaSexual = conflitoPreferenciaSexual;
-            tb_sexualidade.UsoContraceptivo = usoContraceptivo;
             tb_sexualidade.DorRelacaoSexual = dorRelacaoSexual;
-            tb_sexualidade.SimetriaMamas = simetriaMamas;
-            tb_sexualidade.TipoSecrecao = tipoSecrecao;
             tb_sexualidade.Secrecao = secrecao;
             tb_sexualidade.Prurido = prurido;
             tb_sexualidade.Edema = edema;
@@ -22531,6 +22005,7 @@ namespace PacienteVirtual.Models
             tb_sexualidade.Sangramento = sangramento;
             tb_sexualidade.Lesao = lesao;
             tb_sexualidade.Hiperemia = hiperemia;
+            tb_sexualidade.SemAlteracoes = semAlteracoes;
             return tb_sexualidade;
         }
 
@@ -22570,7 +22045,7 @@ namespace PacienteVirtual.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean ParceiroFixo
+        public global::System.String ParceiroFixo
         {
             get
             {
@@ -22580,13 +22055,13 @@ namespace PacienteVirtual.Models
             {
                 OnParceiroFixoChanging(value);
                 ReportPropertyChanging("ParceiroFixo");
-                _ParceiroFixo = StructuralObject.SetValidValue(value);
+                _ParceiroFixo = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("ParceiroFixo");
                 OnParceiroFixoChanged();
             }
         }
-        private global::System.Boolean _ParceiroFixo;
-        partial void OnParceiroFixoChanging(global::System.Boolean value);
+        private global::System.String _ParceiroFixo;
+        partial void OnParceiroFixoChanging(global::System.String value);
         partial void OnParceiroFixoChanged();
     
         /// <summary>
@@ -22594,7 +22069,7 @@ namespace PacienteVirtual.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean ConflitoPreferenciaSexual
+        public global::System.String ConflitoPreferenciaSexual
         {
             get
             {
@@ -22604,69 +22079,21 @@ namespace PacienteVirtual.Models
             {
                 OnConflitoPreferenciaSexualChanging(value);
                 ReportPropertyChanging("ConflitoPreferenciaSexual");
-                _ConflitoPreferenciaSexual = StructuralObject.SetValidValue(value);
+                _ConflitoPreferenciaSexual = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("ConflitoPreferenciaSexual");
                 OnConflitoPreferenciaSexualChanged();
             }
         }
-        private global::System.Boolean _ConflitoPreferenciaSexual;
-        partial void OnConflitoPreferenciaSexualChanging(global::System.Boolean value);
+        private global::System.String _ConflitoPreferenciaSexual;
+        partial void OnConflitoPreferenciaSexualChanging(global::System.String value);
         partial void OnConflitoPreferenciaSexualChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> DataUltimaMenstruacao
-        {
-            get
-            {
-                return _DataUltimaMenstruacao;
-            }
-            set
-            {
-                OnDataUltimaMenstruacaoChanging(value);
-                ReportPropertyChanging("DataUltimaMenstruacao");
-                _DataUltimaMenstruacao = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("DataUltimaMenstruacao");
-                OnDataUltimaMenstruacaoChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _DataUltimaMenstruacao;
-        partial void OnDataUltimaMenstruacaoChanging(Nullable<global::System.DateTime> value);
-        partial void OnDataUltimaMenstruacaoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean UsoContraceptivo
-        {
-            get
-            {
-                return _UsoContraceptivo;
-            }
-            set
-            {
-                OnUsoContraceptivoChanging(value);
-                ReportPropertyChanging("UsoContraceptivo");
-                _UsoContraceptivo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("UsoContraceptivo");
-                OnUsoContraceptivoChanged();
-            }
-        }
-        private global::System.Boolean _UsoContraceptivo;
-        partial void OnUsoContraceptivoChanging(global::System.Boolean value);
-        partial void OnUsoContraceptivoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean DorRelacaoSexual
+        public global::System.String DorRelacaoSexual
         {
             get
             {
@@ -22676,86 +22103,14 @@ namespace PacienteVirtual.Models
             {
                 OnDorRelacaoSexualChanging(value);
                 ReportPropertyChanging("DorRelacaoSexual");
-                _DorRelacaoSexual = StructuralObject.SetValidValue(value);
+                _DorRelacaoSexual = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("DorRelacaoSexual");
                 OnDorRelacaoSexualChanged();
             }
         }
-        private global::System.Boolean _DorRelacaoSexual;
-        partial void OnDorRelacaoSexualChanging(global::System.Boolean value);
+        private global::System.String _DorRelacaoSexual;
+        partial void OnDorRelacaoSexualChanging(global::System.String value);
         partial void OnDorRelacaoSexualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> DataExamePreventivo
-        {
-            get
-            {
-                return _DataExamePreventivo;
-            }
-            set
-            {
-                OnDataExamePreventivoChanging(value);
-                ReportPropertyChanging("DataExamePreventivo");
-                _DataExamePreventivo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("DataExamePreventivo");
-                OnDataExamePreventivoChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _DataExamePreventivo;
-        partial void OnDataExamePreventivoChanging(Nullable<global::System.DateTime> value);
-        partial void OnDataExamePreventivoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String SimetriaMamas
-        {
-            get
-            {
-                return _SimetriaMamas;
-            }
-            set
-            {
-                OnSimetriaMamasChanging(value);
-                ReportPropertyChanging("SimetriaMamas");
-                _SimetriaMamas = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("SimetriaMamas");
-                OnSimetriaMamasChanged();
-            }
-        }
-        private global::System.String _SimetriaMamas;
-        partial void OnSimetriaMamasChanging(global::System.String value);
-        partial void OnSimetriaMamasChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String TipoSecrecao
-        {
-            get
-            {
-                return _TipoSecrecao;
-            }
-            set
-            {
-                OnTipoSecrecaoChanging(value);
-                ReportPropertyChanging("TipoSecrecao");
-                _TipoSecrecao = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("TipoSecrecao");
-                OnTipoSecrecaoChanged();
-            }
-        }
-        private global::System.String _TipoSecrecao;
-        partial void OnTipoSecrecaoChanging(global::System.String value);
-        partial void OnTipoSecrecaoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -22924,6 +22279,30 @@ namespace PacienteVirtual.Models
         private global::System.Boolean _Hiperemia;
         partial void OnHiperemiaChanging(global::System.Boolean value);
         partial void OnHiperemiaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean SemAlteracoes
+        {
+            get
+            {
+                return _SemAlteracoes;
+            }
+            set
+            {
+                OnSemAlteracoesChanging(value);
+                ReportPropertyChanging("SemAlteracoes");
+                _SemAlteracoes = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SemAlteracoes");
+                OnSemAlteracoesChanged();
+            }
+        }
+        private global::System.Boolean _SemAlteracoes;
+        partial void OnSemAlteracoesChanging(global::System.Boolean value);
+        partial void OnSemAlteracoesChanged();
 
         #endregion
 

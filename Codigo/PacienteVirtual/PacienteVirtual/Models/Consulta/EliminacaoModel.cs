@@ -84,10 +84,6 @@ namespace PacienteVirtual.Models
         public ListaTipoSonsPercussao TipoSonsPercussao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "localizar", ResourceType = typeof(Mensagem))]
-        public string LocalizarPercussaoAbdominal { get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "palpacao_abodminal", ResourceType = typeof(Mensagem))]
         public ListaPalpacaoAbodminal PalpacaoAbodminal { get; set; }
 
@@ -110,14 +106,6 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "alteracoes_vesicais", ResourceType = typeof(Mensagem))]
         public ListaCondicaoContinenciaUrinaria CondicaoContinenciaUrinaria { get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "irrigacao_vesical", ResourceType = typeof(Mensagem))]
-        public string IrrigacaoVesical { get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "irrigacao_vesical_desde", ResourceType = typeof(Mensagem))]
-        public DateTime IrrigacaoVesicalDesde { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "svd", ResourceType = typeof(Mensagem))]

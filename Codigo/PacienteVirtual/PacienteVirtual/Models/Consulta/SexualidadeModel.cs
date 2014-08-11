@@ -7,9 +7,6 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
-    public enum ListaSimetriaMamas { NaoSeAplica = 0, Simetricas = 1, Assimetricas = 2 }
-    public enum ListaTipoSecrecao { NaoSeAplica = 0, SecrecaoSerosa = 1, SecrecaoPurulenta = 2 }
-
     public class SexualidadeModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -18,33 +15,15 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "parceiro_fixo", ResourceType = typeof(Mensagem))]
-        public bool ParceiroFixo { get; set; }
+        public string ParceiroFixo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "conflito_preferencia_sexual", ResourceType = typeof(Mensagem))]
-        public bool ConflitoPreferenciaSexual { get; set; }
-
-        [Display(Name = "data_ultima_menstruacao", ResourceType = typeof(Mensagem))]
-        public DateTime DataUltimaMenstruacao { get; set; }
-
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "uso_contraceptivo", ResourceType = typeof(Mensagem))]
-        public bool UsoContraceptivo { get; set; }
+        public string ConflitoPreferenciaSexual { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "dor_relacao_sexual", ResourceType = typeof(Mensagem))]
-        public bool DorRelacaoSexual { get; set; }
-
-        [Display(Name = "data_exame_preventivo", ResourceType = typeof(Mensagem))]
-        public DateTime DataExamePreventivo { get; set; }
-
-        [Display(Name = "simetria_mamas", ResourceType = typeof(Mensagem))]
-        [EnumDataType(typeof(ListaSimetriaMamas))]
-        public ListaSimetriaMamas SimetriaMamas { get; set; }
-
-        [Display(Name = "tipo_secrecao", ResourceType = typeof(Mensagem))]
-        [EnumDataType(typeof(ListaTipoSecrecao))]
-        public ListaTipoSecrecao TipoSecrecao { get; set; }
+        public string DorRelacaoSexual { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "secrecao", ResourceType = typeof(Mensagem))]

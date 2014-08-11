@@ -39,29 +39,9 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("ConflitoPreferenciaSexual", "Gabarito: " + (sexualidadeGabarito.ConflitoPreferenciaSexual.Equals(true) ? "Sim" : "Não"));
             }
-            if (sexualidade.DataUltimaMenstruacao != sexualidadeGabarito.DataUltimaMenstruacao)
-            {
-                modelState.AddModelError("ConflitoPreferenciaSexual", "Gabarito: \"" + sexualidadeGabarito.DataUltimaMenstruacao + "\"");
-            }
-            if (sexualidade.UsoContraceptivo != sexualidadeGabarito.UsoContraceptivo)
-            {
-                modelState.AddModelError("UsoContraceptivo", "Gabarito: " + (sexualidadeGabarito.UsoContraceptivo.Equals(true) ? "Sim" : "Não"));
-            }
             if (sexualidade.DorRelacaoSexual != sexualidadeGabarito.DorRelacaoSexual)
             {
                 modelState.AddModelError("DorRelacaoSexual", "Gabarito: " + (sexualidadeGabarito.DorRelacaoSexual.Equals(true) ? "Sim" : "Não"));
-            }
-            if (sexualidade.DataExamePreventivo != sexualidadeGabarito.DataExamePreventivo)
-            {
-                modelState.AddModelError("DataExamePreventivo", "Gabarito: \"" + sexualidadeGabarito.DataExamePreventivo + "\"");
-            }
-            if (sexualidade.SimetriaMamas != sexualidadeGabarito.SimetriaMamas)
-            {
-                modelState.AddModelError("SimetriaMamas", "Gabarito: \"" + sexualidadeGabarito.SimetriaMamas + "\"");
-            }
-            if (sexualidade.TipoSecrecao != sexualidadeGabarito.TipoSecrecao)
-            {
-                modelState.AddModelError("TipoSecrecao", "Gabarito: \"" + sexualidadeGabarito.TipoSecrecao + "\"");
             }
             if (sexualidade.Secrecao != sexualidadeGabarito.Secrecao)
             {
@@ -167,11 +147,7 @@ namespace PacienteVirtual.Negocio
                         select new SexualidadeModel
                         {
                             IdConsultaVariavel = sexualidade.IdConsultaVariavel,
-                            SimetriaMamas = (sexualidade.SimetriaMamas == "Simetricas" ? ListaSimetriaMamas.Simetricas : (sexualidade.SimetriaMamas == "Assimetricas" ? ListaSimetriaMamas.Assimetricas : ListaSimetriaMamas.NaoSeAplica)),
-                            TipoSecrecao = (sexualidade.TipoSecrecao == "SecrecaoPurulenta" ? ListaTipoSecrecao.SecrecaoPurulenta : (sexualidade.TipoSecrecao == "SecrecaoSerosa" ? ListaTipoSecrecao.SecrecaoSerosa : ListaTipoSecrecao.NaoSeAplica)),
                             ConflitoPreferenciaSexual = sexualidade.ConflitoPreferenciaSexual,
-                            DataExamePreventivo = (DateTime)sexualidade.DataExamePreventivo,
-                            DataUltimaMenstruacao = (DateTime)sexualidade.DataUltimaMenstruacao,
                             DorRelacaoSexual = sexualidade.DorRelacaoSexual,
                             Edema = sexualidade.Edema,
                             Hiperemia = sexualidade.Hiperemia,
@@ -180,8 +156,7 @@ namespace PacienteVirtual.Negocio
                             ParceiroFixo = sexualidade.ParceiroFixo,
                             Prurido = sexualidade.Prurido,
                             Sangramento = sexualidade.Sangramento,
-                            Secrecao = sexualidade.Secrecao,
-                            UsoContraceptivo = sexualidade.UsoContraceptivo
+                            Secrecao = sexualidade.Secrecao                           
                         };
             return query;
         }
@@ -214,8 +189,6 @@ namespace PacienteVirtual.Negocio
         {
             _tb_sexualidade.IdConsultaVariavel = sexualidade.IdConsultaVariavel;
             _tb_sexualidade.ConflitoPreferenciaSexual = sexualidade.ConflitoPreferenciaSexual;
-            _tb_sexualidade.DataExamePreventivo = sexualidade.DataExamePreventivo;
-            _tb_sexualidade.DataUltimaMenstruacao = sexualidade.DataUltimaMenstruacao;
             _tb_sexualidade.DorRelacaoSexual = sexualidade.DorRelacaoSexual;
             _tb_sexualidade.Edema = sexualidade.Edema;
             _tb_sexualidade.Hiperemia = sexualidade.Hiperemia;
@@ -225,9 +198,6 @@ namespace PacienteVirtual.Negocio
             _tb_sexualidade.Prurido = sexualidade.Prurido;
             _tb_sexualidade.Sangramento = sexualidade.Sangramento;
             _tb_sexualidade.Secrecao = sexualidade.Secrecao;
-            _tb_sexualidade.SimetriaMamas = sexualidade.SimetriaMamas.ToString();
-            _tb_sexualidade.TipoSecrecao = sexualidade.TipoSecrecao.ToString();
-            _tb_sexualidade.UsoContraceptivo = sexualidade.UsoContraceptivo;
         }
     }
 }
