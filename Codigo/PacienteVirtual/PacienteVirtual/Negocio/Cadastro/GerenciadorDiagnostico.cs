@@ -100,7 +100,9 @@ namespace PacienteVirtual.Negocio
                             IdClasseDiagnostico = tb_diagnostico.IdClasseDiagnostico,
                             Diagnostico = tb_diagnostico.Diagnostico,
                             DescricaoClasseDiagnostico = tb_classe_diagnostico.DescricaoClasse,
-                            Risco = tb_diagnostico.PossuiRisco
+                            Risco = tb_diagnostico.PossuiRisco,
+                            IdDominioDiagnostico = tb_diagnostico.tb_classe_diagnostico.tb_dominio_diagnostico.IdDominioDiagnostico,
+                            DescricaoDominioDiagnostico = tb_diagnostico.tb_classe_diagnostico.tb_dominio_diagnostico.DescricaoDominio
                         };
             return query;
         }

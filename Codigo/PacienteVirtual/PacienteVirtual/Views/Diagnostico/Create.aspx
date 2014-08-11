@@ -15,7 +15,16 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend><%: Resources.Mensagem.diagnostico %></legend>
-
+        <% using (Html.BeginForm("Create", "Diagnostico", FormMethod.Post, null))
+           { %>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.DescricaoDominioDiagnostico)%>
+            </div>
+            <div class="editor-field">
+                <%: Html.DropDownList("IdDominioDiagnostico", null, Resources.Mensagem.selecione, new { onchange = "this.form.submit();" })%>
+                <%: Html.ValidationMessageFor(model => model.IdDominioDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+            </div>        
+        <% } %>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico)%>
         </div>

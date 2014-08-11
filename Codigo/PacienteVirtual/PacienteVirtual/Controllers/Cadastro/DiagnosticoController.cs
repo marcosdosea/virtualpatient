@@ -8,69 +8,104 @@ namespace PacienteVirtual.Controllers
     {
         GerenciadorDiagnostico gDiagnostico = GerenciadorDiagnostico.GetInstance();
         GerenciadorClasseDiagnostico gClasseDiagnostico = GerenciadorClasseDiagnostico.GetInstance();
+        GerenciadorDominioDiagnostico gDominioDiagnostico = GerenciadorDominioDiagnostico.GetInstance();
 
         //
-        // GET: /Intervencao/
+        // GET: /Diagnostico/
         public ViewResult Index()
         {
             return View(gDiagnostico.ObterTodos());
         }
 
         //
-        // GET: /Intervencao/Details/5
+        // GET: /Diagnostico/Details/5
         public ViewResult Details(int id)
         {
             return View(gDiagnostico.Obter(id));
         }
 
         //
-        // GET: /Intervencao/Create
+        // GET: /Diagnostico/Create
 
         public ActionResult Create()
         {
-            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico");
+            ViewBag.IdDominioDiagnostico = new SelectList(gDominioDiagnostico.ObterTodos(), "IdDominioDiagnostico", "DescricaoDominioDiagnostico");
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterPorDominio(Global.ValorInteiroNulo), "IdClasseDiagnostico", 
+                "DescricaoClasseDiagnostico");
             return View();
         }
 
         //
-        // POST: /Intervencao/Create
+        // POST: /Diagnostico/Create
         [HttpPost]
         public ActionResult Create(DiagnosticoModel diagnosticoModel)
         {
+            ViewBag.IdDominioDiagnostico = new SelectList(gDominioDiagnostico.ObterTodos(), "IdDominioDiagnostico", "DescricaoDominioDiagnostico",
+                diagnosticoModel.IdDominioDiagnostico);
             if (ModelState.IsValid)
             {
                 gDiagnostico.Inserir(diagnosticoModel);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
-                diagnosticoModel.IdClasseDiagnostico);
+            else
+            {
+                if (diagnosticoModel.IdDominioDiagnostico > Global.ValorInteiroNulo)
+                {
+                    ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterPorDominio(diagnosticoModel.IdDominioDiagnostico),
+                        "IdClasseDiagnostico", "DescricaoClasseDiagnostico", diagnosticoModel.IdClasseDiagnostico);
+                }
+                else
+                {
+                    ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", 
+                        "DescricaoClasseDiagnostico", diagnosticoModel.IdClasseDiagnostico);
+                }
+            }
             return View(diagnosticoModel);
         }
 
-
+        //
+        // GET: /Diagnostico/Edit/5
         public ActionResult Edit(int id)
         {
             DiagnosticoModel diagnostico = gDiagnostico.Obter(id);
+            ViewBag.IdDominioDiagnostico = new SelectList(gDominioDiagnostico.ObterTodos(), "IdDominioDiagnostico", "DescricaoDominioDiagnostico",
+                diagnostico.IdDominioDiagnostico);
             ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
                 diagnostico.IdClasseDiagnostico);
             return View(diagnostico);
         }
 
+        //
+        // POST: /Diagnostico/Edit/5
 
         [HttpPost]
         public ActionResult Edit(DiagnosticoModel diagnostico)
         {
+            ViewBag.IdDominioDiagnostico = new SelectList(gDominioDiagnostico.ObterTodos(), "IdDominioDiagnostico", "DescricaoDominioDiagnostico",
+                diagnostico.IdDominioDiagnostico);
             if (ModelState.IsValid)
             {
                 gDiagnostico.Atualizar(diagnostico);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico");
+            else
+            {
+                if (diagnostico.IdDominioDiagnostico > Global.ValorInteiroNulo)
+                {
+                    ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterPorDominio(diagnostico.IdDominioDiagnostico),
+                        "IdClasseDiagnostico", "DescricaoClasseDiagnostico", diagnostico.IdClasseDiagnostico);
+                }
+                else
+                {
+                    ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", 
+                        "DescricaoClasseDiagnostico", diagnostico.IdClasseDiagnostico);
+                }
+            }
             return View(diagnostico);
         }
 
         //
-        // GET: /Intervencao/Delete/5
+        // GET: /Diagnostico/Delete/5
 
         public ActionResult Delete(int id)
         {
@@ -78,7 +113,7 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // POST: /Intervencao/Delete/5
+        // POST: /Diagnostico/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
