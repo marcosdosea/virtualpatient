@@ -82,7 +82,6 @@ namespace PacienteVirtual.Negocio
             {
                 modelState.AddModelError("PalpacaoAbodminal", "Gabarito: \"" + eliminacaoGabarito.PalpacaoAbodminal + "\"");
             }
-            Global.CorrecaoDeStrings("LocalizarPercussaoAbdominal", eliminacao.LocalizarPercussaoAbdominal, eliminacaoGabarito.LocalizarPercussaoAbdominal, modelState);
             if (eliminacao.ColoracaoUrinaria != eliminacaoGabarito.ColoracaoUrinaria)
             {
                 modelState.AddModelError("ColoracaoUrinaria", "Gabarito: \"" + eliminacaoGabarito.ColoracaoUrinaria + "\"");
@@ -99,14 +98,6 @@ namespace PacienteVirtual.Negocio
             if (eliminacao.CondicaoContinenciaUrinaria != eliminacaoGabarito.CondicaoContinenciaUrinaria)
             {
                 modelState.AddModelError("CondicaoContinenciaUrinaria", "Gabarito: \"" + eliminacaoGabarito.CondicaoContinenciaUrinaria + "\"");
-            }
-            if (eliminacao.IrrigacaoVesical != eliminacaoGabarito.IrrigacaoVesical)
-            {
-                modelState.AddModelError("IrrigacaoVesical", "Gabarito: \"" + eliminacaoGabarito.IrrigacaoVesical + "\"");
-            }
-            if (eliminacao.IrrigacaoVesicalDesde != eliminacaoGabarito.IrrigacaoVesicalDesde)
-            {
-                modelState.AddModelError("IrrigacaoVesicalDesde", "Gabarito: \"" + eliminacaoGabarito.IrrigacaoVesicalDesde + "\"");
             }
             if (eliminacao.SVD != eliminacaoGabarito.SVD)
             {
@@ -209,15 +200,12 @@ namespace PacienteVirtual.Negocio
                             FormasAbdomem = (eliminacao.FormasAbdomem == "Plano" ? ListaFormasAbdomem.Plano : (eliminacao.FormasAbdomem == "Retraido" ? ListaFormasAbdomem.Retraido : ListaFormasAbdomem.Globoso )),
                             SonsIntestinais = (eliminacao.SonsIntestinais == "Presentes" ? ListaSonsIntestinais.Presentes : (eliminacao.SonsIntestinais == "Ausentes" ? ListaSonsIntestinais.Ausentes : (eliminacao.SonsIntestinais == "Diminuidos" ? ListaSonsIntestinais.Diminuidos : ListaSonsIntestinais.Hiperativos))),
                             TipoSonsPercussao = (eliminacao.TipoSonsPercussao == "SomMacico" ? ListaTipoSonsPercussao.SomMacico : ListaTipoSonsPercussao.SomTimpanico),
-                            LocalizarPercussaoAbdominal = eliminacao.LocalizarPercussaoAbdominal,
                             PalpacaoAbodminal = (eliminacao.PalpacaoAbodminal == "Normotenso" ? ListaPalpacaoAbodminal.Normotenso : (eliminacao.PalpacaoAbodminal == "Tenso" ? ListaPalpacaoAbodminal.Tenso : (eliminacao.PalpacaoAbodminal == "Flacido" ? ListaPalpacaoAbodminal.Flacido : (eliminacao.PalpacaoAbodminal == "SinalMurphy" ? ListaPalpacaoAbodminal.SinalMurphy : ListaPalpacaoAbodminal.SinalBlumberg)))),
                             ColoracaoUrinaria = (eliminacao.ColoracaoUrinaria == "LimpidaClara" ? ListaColoracaoUrinaria.LimpidaClara : (eliminacao.ColoracaoUrinaria == "Concentrada" ? ListaColoracaoUrinaria.Concentrada : (eliminacao.ColoracaoUrinaria == "PresencaSedimentos" ? ListaColoracaoUrinaria.PresencaSendimentos : (eliminacao.ColoracaoUrinaria == "Hematurica" ? ListaColoracaoUrinaria.Hematurica : (eliminacao.ColoracaoUrinaria == "Piurica" ? ListaColoracaoUrinaria.Piurica : ListaColoracaoUrinaria.Colurica))))),
                             Disuria = eliminacao.Disuria,
                             DebitoUrinario = (eliminacao.DebitoUrinario == "NaoSeAplica" ? ListaDebitoUrinario.NaoSeAplica : (eliminacao.DebitoUrinario == "Oliguria" ? ListaDebitoUrinario.Oliguria : (eliminacao.DebitoUrinario == "Poliuria" ? ListaDebitoUrinario.Poliuria : (eliminacao.DebitoUrinario == "Anuria" ? ListaDebitoUrinario.Anuria : ListaDebitoUrinario.Polaciuria)))),
                             Tempo = eliminacao.Tempo,
                             CondicaoContinenciaUrinaria = (eliminacao.CondicaoContinenciaUrinaria == "IncontinenciaUrinaria" ? ListaCondicaoContinenciaUrinaria.IncontinenciaUrinaria : (eliminacao.CondicaoContinenciaUrinaria == "RetencaoUrinaria" ? ListaCondicaoContinenciaUrinaria.RetencaoUrinaria : ListaCondicaoContinenciaUrinaria.IrrigacaoVesical)),
-                            IrrigacaoVesical = eliminacao.IrrigacaoVesicalCom,
-                            IrrigacaoVesicalDesde = (DateTime)eliminacao.IrrigacaoVesicalDesde,
                             SVD = eliminacao.SVD,
                             SVDInstalada = (DateTime)eliminacao.SVDInstalada,
                             Cistostomia = eliminacao.Cistostomia
@@ -265,15 +253,12 @@ namespace PacienteVirtual.Negocio
             _eliminacaoE.FormasAbdomem = eliminacao.FormasAbdomem.ToString();
             _eliminacaoE.SonsIntestinais = eliminacao.SonsIntestinais.ToString();
             _eliminacaoE.TipoSonsPercussao = eliminacao.TipoSonsPercussao.ToString();
-            _eliminacaoE.LocalizarPercussaoAbdominal = eliminacao.LocalizarPercussaoAbdominal;
             _eliminacaoE.PalpacaoAbodminal = eliminacao.PalpacaoAbodminal.ToString();
             _eliminacaoE.ColoracaoUrinaria = eliminacao.ColoracaoUrinaria.ToString();
             _eliminacaoE.Disuria = eliminacao.Disuria;
             _eliminacaoE.DebitoUrinario = eliminacao.DebitoUrinario.ToString();
             _eliminacaoE.Tempo = eliminacao.Tempo;
             _eliminacaoE.CondicaoContinenciaUrinaria = eliminacao.CondicaoContinenciaUrinaria.ToString();
-            _eliminacaoE.IrrigacaoVesicalCom = eliminacao.IrrigacaoVesical;
-            _eliminacaoE.IrrigacaoVesicalDesde = (DateTime)eliminacao.IrrigacaoVesicalDesde;
             _eliminacaoE.SVD = eliminacao.SVD;
             _eliminacaoE.SVDInstalada = (DateTime)eliminacao.SVDInstalada;
             _eliminacaoE.Cistostomia = eliminacao.Cistostomia;

@@ -1202,21 +1202,16 @@ namespace PacienteVirtual.Controllers
                     {
                         sexualidade = new SexualidadeModel();
                         sexualidade.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
-                        sexualidade.ConflitoPreferenciaSexual = false;
-                        sexualidade.DorRelacaoSexual = false;
+                        sexualidade.ConflitoPreferenciaSexual = "";
+                        sexualidade.DorRelacaoSexual = "";
                         sexualidade.Edema = false;
                         sexualidade.Hiperemia = false;
                         sexualidade.Lesao = false;
                         sexualidade.OdorFetido = false;
-                        sexualidade.ParceiroFixo = false;
+                        sexualidade.ParceiroFixo = "";
                         sexualidade.Prurido = false;
                         sexualidade.Sangramento = false;
                         sexualidade.Secrecao = false;
-                        sexualidade.SimetriaMamas = ListaSimetriaMamas.NaoSeAplica;
-                        sexualidade.TipoSecrecao = ListaTipoSecrecao.NaoSeAplica;
-                        sexualidade.UsoContraceptivo = false;
-                        sexualidade.DataExamePreventivo = DateTime.Today;
-                        sexualidade.DataUltimaMenstruacao = DateTime.Today;
                         GerenciadorSexualidade.GetInstance().Inserir(sexualidade);
                     }
                     HttpContext.Current.Session["_Sexualidade"] = sexualidade;
@@ -1385,15 +1380,12 @@ namespace PacienteVirtual.Controllers
                         eliminacao.FormasAbdomem = ListaFormasAbdomem.Plano;
                         eliminacao.SonsIntestinais = ListaSonsIntestinais.Presentes;
                         eliminacao.TipoSonsPercussao = ListaTipoSonsPercussao.SomMacico;
-                        eliminacao.LocalizarPercussaoAbdominal = Global.stringVazia;
                         eliminacao.PalpacaoAbodminal = ListaPalpacaoAbodminal.Normotenso;
                         eliminacao.ColoracaoUrinaria = ListaColoracaoUrinaria.LimpidaClara;
                         eliminacao.Disuria = false;
                         eliminacao.DebitoUrinario = ListaDebitoUrinario.NaoSeAplica;
                         eliminacao.Tempo = Global.stringVazia;
                         eliminacao.CondicaoContinenciaUrinaria = ListaCondicaoContinenciaUrinaria.IncontinenciaUrinaria;
-                        eliminacao.IrrigacaoVesical = Global.stringVazia;
-                        eliminacao.IrrigacaoVesicalDesde = DateTime.Today;
                         eliminacao.SVD = false;
                         eliminacao.SVDInstalada = DateTime.Today;
                         eliminacao.Cistostomia = false;
