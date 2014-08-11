@@ -130,7 +130,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         /// <param name="idDominioDiagnnostico">Identificador do domínio do diagnostico</param>
         /// <returns>Lista de Classes Diagnostico</returns>
-        public IEnumerable<ClasseDiagnosticoModel> ObterClassePorDominio(int idDominioDiagnnostico)
+        public IEnumerable<ClasseDiagnosticoModel> ObterPorDominio(int idDominioDiagnnostico)
         {
             return GetQuery().Where(c => c.IdClasseDiagnostico == idDominioDiagnnostico).ToList();
         }
