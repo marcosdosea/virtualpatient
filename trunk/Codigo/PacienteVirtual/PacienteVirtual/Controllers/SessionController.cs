@@ -1202,16 +1202,17 @@ namespace PacienteVirtual.Controllers
                     {
                         sexualidade = new SexualidadeModel();
                         sexualidade.IdConsultaVariavel = ConsultaVariavel.IdConsultaVariavel;
-                        sexualidade.ConflitoPreferenciaSexual = "";
-                        sexualidade.DorRelacaoSexual = "";
+                        sexualidade.ConflitoPreferenciaSexual = ListaConflitoPreferenciaSexual.NaoRelatou;
+                        sexualidade.DorRelacaoSexual = ListaDorRelaxaoSexual.NaoRelatou;
                         sexualidade.Edema = false;
                         sexualidade.Hiperemia = false;
                         sexualidade.Lesao = false;
                         sexualidade.OdorFetido = false;
-                        sexualidade.ParceiroFixo = "";
+                        sexualidade.ParceiroFixo = ListaParceiroFixo.NaoRelatou;
                         sexualidade.Prurido = false;
                         sexualidade.Sangramento = false;
                         sexualidade.Secrecao = false;
+                        sexualidade.SemAlteracao = false;
                         GerenciadorSexualidade.GetInstance().Inserir(sexualidade);
                     }
                     HttpContext.Current.Session["_Sexualidade"] = sexualidade;

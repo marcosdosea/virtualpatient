@@ -11,98 +11,43 @@
         <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     
     <div class="row-fluid">
-        <div class="span1">
+        <div class="span12">
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.ParceiroFixo) %>
-                <%: Html.ValidationMessageFor(model => model.ParceiroFixo, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="editor-label">
                 <%: Html.LabelFor(model => model.ParceiroFixo) %>
+                <%: Html.RadioButtonFor(model => model.ParceiroFixo, ListaParceiroFixo.Sim) %>
+                <%: Resources.Mensagem.sim %> &nbsp
+                <%: Html.RadioButtonFor(model => model.ParceiroFixo, ListaParceiroFixo.Nao) %>
+                <%: Resources.Mensagem.nao %> &nbsp
+                <%: Html.RadioButtonFor(model => model.ParceiroFixo, ListaParceiroFixo.NaoRelatou) %>
+                <%: Resources.Mensagem.NaoRelatou %>
             </div>
         </div>
-        <div class="span1">
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span12">
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.ConflitoPreferenciaSexual) %>
-                <%: Html.ValidationMessageFor(model => model.ConflitoPreferenciaSexual, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-        <div class="span5">
-            <div class="editor-label">
                 <%: Html.LabelFor(model => model.ConflitoPreferenciaSexual) %>
+                <%: Html.RadioButtonFor(model => model.ConflitoPreferenciaSexual, ListaConflitoPreferenciaSexual.Sim) %>
+                <%: Resources.Mensagem.sim %> &nbsp
+                <%: Html.RadioButtonFor(model => model.ConflitoPreferenciaSexual, ListaConflitoPreferenciaSexual.Nao)%>
+                <%: Resources.Mensagem.nao %> &nbsp
+                <%: Html.RadioButtonFor(model => model.ConflitoPreferenciaSexual, ListaConflitoPreferenciaSexual.NaoRelatou)%>
+                <%: Resources.Mensagem.NaoRelatou %>
             </div>
         </div>
     </div>
     <br />
     <div class="row-fluid">
-        <div class="span4">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.DataUltimaMenstruacao) %>
-            </div>
-        </div>
-        <div class="span6">
+        <div class="span12">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.DataUltimaMenstruacao, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.DataUltimaMenstruacao)), type = "text", @class = "calendario" , style = "width:176px;"}) %>
-                <%: Html.ValidationMessageFor(model => model.DataUltimaMenstruacao, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-    </div>
-    <br />
-    <div class="row-fluid">
-        <div class="span1">
-            <div class="editor-field">
-                <%: Html.EditorFor(model => model.UsoContraceptivo) %>
-                <%: Html.ValidationMessageFor(model => model.UsoContraceptivo, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.UsoContraceptivo) %>
-            </div>
-        </div>
-        <div class="span1">
-            <div class="editor-field">
-                <%: Html.EditorFor(model => model.DorRelacaoSexual) %>
-                <%: Html.ValidationMessageFor(model => model.DorRelacaoSexual, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-        <div class="span4">
-            <div class="editor-label">
                 <%: Html.LabelFor(model => model.DorRelacaoSexual) %>
-            </div>
-        </div>
-    </div>
-    <br />
-    <div class="row-fluid">
-        <div class="span4">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.DataExamePreventivo) %>
-            </div>
-        </div>
-        <div class="span6">
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.DataExamePreventivo, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.DataExamePreventivo)), type = "text", @class = "calendario" , style = "width:176px;"}) %>
-                <%: Html.ValidationMessageFor(model => model.DataExamePreventivo, string.Empty, new { @class = "styleValidation" })%>
-            </div>
-        </div>
-    </div>
-    <br />
-    <div class="row-fluid">
-        <div class="span6">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.SimetriaMamas) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.EnumDropDownListFor(model => model.SimetriaMamas, ListaSimetriaMamas.Simetricas) %>
-            </div>
-        </div>
-        <div class="span6">
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.TipoSecrecao) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.EnumDropDownListFor(model => model.TipoSecrecao, ListaTipoSecrecao.SecrecaoSerosa) %>
+                <%: Html.RadioButtonFor(model => model.DorRelacaoSexual, ListaDorRelaxaoSexual.Sim)%>
+                <%: Resources.Mensagem.sim %> &nbsp
+                <%: Html.RadioButtonFor(model => model.DorRelacaoSexual, ListaDorRelaxaoSexual.Nao)%>
+                <%: Resources.Mensagem.nao %> &nbsp
+                <%: Html.RadioButtonFor(model => model.DorRelacaoSexual, ListaDorRelaxaoSexual.NaoRelatou)%>
+                <%: Resources.Mensagem.NaoRelatou %>
             </div>
         </div>
     </div>
@@ -188,6 +133,17 @@
         <div class="span2">
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Hiperemia) %>
+            </div>
+        </div>
+        <div class="span1">
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.SemAlteracao) %>
+                <%: Html.ValidationMessageFor(model => model.SemAlteracao, string.Empty, new { @class = "styleValidation" })%>
+            </div>
+        </div>
+        <div class="span2">
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.SemAlteracao) %>
             </div>
         </div>
     </div>

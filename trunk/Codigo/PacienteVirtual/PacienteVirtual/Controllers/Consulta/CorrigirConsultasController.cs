@@ -39,9 +39,9 @@ namespace PacienteVirtual.Controllers
             
             if (SessionController.Roles.Equals(Global.stringTutorRole))
             {
-                /*MembershipUser tutor = Membership.GetUser(SessionController.Pessoa.UserName);
+                MembershipUser tutor = Membership.GetUser(SessionController.Pessoa.UserName);
                 MembershipUser aluno = Membership.GetUser(GerenciadorPessoa.GetInstance().ObterPorNome(consultaVariavelModel.NomePessoa).UserName);
-                EnviarEmailParaAluno(tutor.Email, aluno.Email);*/
+                EnviarEmailParaAluno(tutor.Email, aluno);
             }
             
             return RedirectToAction("Index", "CorrigirConsultas");
@@ -49,7 +49,7 @@ namespace PacienteVirtual.Controllers
 
         private void EnviarEmailParaAluno(string emailTutor, MembershipUser aluno)
         {
-            string from = "sistemapacientevirtual@gmail.com";
+            string from = "pacientevirtual.ufs@gmail.com";
 
             string to = aluno.Email;
 

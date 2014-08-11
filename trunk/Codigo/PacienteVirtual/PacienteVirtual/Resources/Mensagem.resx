@@ -1216,7 +1216,7 @@
     <value>Ar</value>
   </data>
   <data name="aspecto_secrecao" xml:space="preserve">
-    <value>Aspecto da Secreção</value>
+    <value>Aspecto da Secreção: Coloração</value>
   </data>
   <data name="Diminuida" xml:space="preserve">
     <value>Diminuída</value>
@@ -2375,5 +2375,11 @@
   </data>
   <data name="dominio_diagnostico" xml:space="preserve">
     <value>Domínio Diagnóstico</value>
+  </data>
+  <data name="NaoRelatou" xml:space="preserve">
+    <value>Não Relatou</value>
+  </data>
+  <data name="sem_alteracao" xml:space="preserve">
+    <value>Sem Alteração</value>
   </data>
 </root>

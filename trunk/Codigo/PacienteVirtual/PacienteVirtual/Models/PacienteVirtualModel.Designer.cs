@@ -163,6 +163,22 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<my_aspnet_applications> my_aspnet_applications
+        {
+            get
+            {
+                if ((_my_aspnet_applications == null))
+                {
+                    _my_aspnet_applications = base.CreateObjectSet<my_aspnet_applications>("my_aspnet_applications");
+                }
+                return _my_aspnet_applications;
+            }
+        }
+        private ObjectSet<my_aspnet_applications> _my_aspnet_applications;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<my_aspnet_membership> my_aspnet_membership
         {
             get
@@ -179,6 +195,22 @@ namespace PacienteVirtual.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<my_aspnet_profiles> my_aspnet_profiles
+        {
+            get
+            {
+                if ((_my_aspnet_profiles == null))
+                {
+                    _my_aspnet_profiles = base.CreateObjectSet<my_aspnet_profiles>("my_aspnet_profiles");
+                }
+                return _my_aspnet_profiles;
+            }
+        }
+        private ObjectSet<my_aspnet_profiles> _my_aspnet_profiles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<my_aspnet_roles> my_aspnet_roles
         {
             get
@@ -191,6 +223,38 @@ namespace PacienteVirtual.Models
             }
         }
         private ObjectSet<my_aspnet_roles> _my_aspnet_roles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<my_aspnet_sessioncleanup> my_aspnet_sessioncleanup
+        {
+            get
+            {
+                if ((_my_aspnet_sessioncleanup == null))
+                {
+                    _my_aspnet_sessioncleanup = base.CreateObjectSet<my_aspnet_sessioncleanup>("my_aspnet_sessioncleanup");
+                }
+                return _my_aspnet_sessioncleanup;
+            }
+        }
+        private ObjectSet<my_aspnet_sessioncleanup> _my_aspnet_sessioncleanup;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<my_aspnet_sessions> my_aspnet_sessions
+        {
+            get
+            {
+                if ((_my_aspnet_sessions == null))
+                {
+                    _my_aspnet_sessions = base.CreateObjectSet<my_aspnet_sessions>("my_aspnet_sessions");
+                }
+                return _my_aspnet_sessions;
+            }
+        }
+        private ObjectSet<my_aspnet_sessions> _my_aspnet_sessions;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1397,6 +1461,14 @@ namespace PacienteVirtual.Models
         #region AddTo Methods
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the my_aspnet_applications EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTomy_aspnet_applications(my_aspnet_applications my_aspnet_applications)
+        {
+            base.AddObject("my_aspnet_applications", my_aspnet_applications);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the my_aspnet_membership EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTomy_aspnet_membership(my_aspnet_membership my_aspnet_membership)
@@ -1405,11 +1477,35 @@ namespace PacienteVirtual.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the my_aspnet_profiles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTomy_aspnet_profiles(my_aspnet_profiles my_aspnet_profiles)
+        {
+            base.AddObject("my_aspnet_profiles", my_aspnet_profiles);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the my_aspnet_roles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTomy_aspnet_roles(my_aspnet_roles my_aspnet_roles)
         {
             base.AddObject("my_aspnet_roles", my_aspnet_roles);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the my_aspnet_sessioncleanup EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTomy_aspnet_sessioncleanup(my_aspnet_sessioncleanup my_aspnet_sessioncleanup)
+        {
+            base.AddObject("my_aspnet_sessioncleanup", my_aspnet_sessioncleanup);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the my_aspnet_sessions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTomy_aspnet_sessions(my_aspnet_sessions my_aspnet_sessions)
+        {
+            base.AddObject("my_aspnet_sessions", my_aspnet_sessions);
         }
     
         /// <summary>
@@ -2023,6 +2119,111 @@ namespace PacienteVirtual.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_applications")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class my_aspnet_applications : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new my_aspnet_applications object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        public static my_aspnet_applications Createmy_aspnet_applications(global::System.Int32 id)
+        {
+            my_aspnet_applications my_aspnet_applications = new my_aspnet_applications();
+            my_aspnet_applications.id = id;
+            return my_aspnet_applications;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                OnnameChanging(value);
+                ReportPropertyChanging("name");
+                _name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("name");
+                OnnameChanged();
+            }
+        }
+        private global::System.String _name;
+        partial void OnnameChanging(global::System.String value);
+        partial void OnnameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String description
+        {
+            get
+            {
+                return _description;
+            }
+            set
+            {
+                OndescriptionChanging(value);
+                ReportPropertyChanging("description");
+                _description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("description");
+                OndescriptionChanged();
+            }
+        }
+        private global::System.String _description;
+        partial void OndescriptionChanging(global::System.String value);
+        partial void OndescriptionChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_membership")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2514,6 +2715,161 @@ namespace PacienteVirtual.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_profiles")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class my_aspnet_profiles : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new my_aspnet_profiles object.
+        /// </summary>
+        /// <param name="userId">Initial value of the userId property.</param>
+        /// <param name="lastUpdatedDate">Initial value of the lastUpdatedDate property.</param>
+        public static my_aspnet_profiles Createmy_aspnet_profiles(global::System.Int32 userId, global::System.DateTime lastUpdatedDate)
+        {
+            my_aspnet_profiles my_aspnet_profiles = new my_aspnet_profiles();
+            my_aspnet_profiles.userId = userId;
+            my_aspnet_profiles.lastUpdatedDate = lastUpdatedDate;
+            return my_aspnet_profiles;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 userId
+        {
+            get
+            {
+                return _userId;
+            }
+            set
+            {
+                if (_userId != value)
+                {
+                    OnuserIdChanging(value);
+                    ReportPropertyChanging("userId");
+                    _userId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("userId");
+                    OnuserIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _userId;
+        partial void OnuserIdChanging(global::System.Int32 value);
+        partial void OnuserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String valueindex
+        {
+            get
+            {
+                return _valueindex;
+            }
+            set
+            {
+                OnvalueindexChanging(value);
+                ReportPropertyChanging("valueindex");
+                _valueindex = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("valueindex");
+                OnvalueindexChanged();
+            }
+        }
+        private global::System.String _valueindex;
+        partial void OnvalueindexChanging(global::System.String value);
+        partial void OnvalueindexChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String stringdata
+        {
+            get
+            {
+                return _stringdata;
+            }
+            set
+            {
+                OnstringdataChanging(value);
+                ReportPropertyChanging("stringdata");
+                _stringdata = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("stringdata");
+                OnstringdataChanged();
+            }
+        }
+        private global::System.String _stringdata;
+        partial void OnstringdataChanging(global::System.String value);
+        partial void OnstringdataChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] binarydata
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_binarydata);
+            }
+            set
+            {
+                OnbinarydataChanging(value);
+                ReportPropertyChanging("binarydata");
+                _binarydata = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("binarydata");
+                OnbinarydataChanged();
+            }
+        }
+        private global::System.Byte[] _binarydata;
+        partial void OnbinarydataChanging(global::System.Byte[] value);
+        partial void OnbinarydataChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime lastUpdatedDate
+        {
+            get
+            {
+                return _lastUpdatedDate;
+            }
+            set
+            {
+                OnlastUpdatedDateChanging(value);
+                ReportPropertyChanging("lastUpdatedDate");
+                _lastUpdatedDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("lastUpdatedDate");
+                OnlastUpdatedDateChanged();
+            }
+        }
+        private global::System.DateTime _lastUpdatedDate;
+        partial void OnlastUpdatedDateChanging(global::System.DateTime value);
+        partial void OnlastUpdatedDateChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_roles")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2644,6 +3000,407 @@ namespace PacienteVirtual.Models
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_sessioncleanup")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class my_aspnet_sessioncleanup : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new my_aspnet_sessioncleanup object.
+        /// </summary>
+        /// <param name="lastRun">Initial value of the LastRun property.</param>
+        /// <param name="intervalMinutes">Initial value of the IntervalMinutes property.</param>
+        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
+        public static my_aspnet_sessioncleanup Createmy_aspnet_sessioncleanup(global::System.DateTime lastRun, global::System.Int32 intervalMinutes, global::System.Int32 applicationId)
+        {
+            my_aspnet_sessioncleanup my_aspnet_sessioncleanup = new my_aspnet_sessioncleanup();
+            my_aspnet_sessioncleanup.LastRun = lastRun;
+            my_aspnet_sessioncleanup.IntervalMinutes = intervalMinutes;
+            my_aspnet_sessioncleanup.ApplicationId = applicationId;
+            return my_aspnet_sessioncleanup;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastRun
+        {
+            get
+            {
+                return _LastRun;
+            }
+            set
+            {
+                OnLastRunChanging(value);
+                ReportPropertyChanging("LastRun");
+                _LastRun = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastRun");
+                OnLastRunChanged();
+            }
+        }
+        private global::System.DateTime _LastRun;
+        partial void OnLastRunChanging(global::System.DateTime value);
+        partial void OnLastRunChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IntervalMinutes
+        {
+            get
+            {
+                return _IntervalMinutes;
+            }
+            set
+            {
+                OnIntervalMinutesChanging(value);
+                ReportPropertyChanging("IntervalMinutes");
+                _IntervalMinutes = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IntervalMinutes");
+                OnIntervalMinutesChanged();
+            }
+        }
+        private global::System.Int32 _IntervalMinutes;
+        partial void OnIntervalMinutesChanging(global::System.Int32 value);
+        partial void OnIntervalMinutesChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ApplicationId
+        {
+            get
+            {
+                return _ApplicationId;
+            }
+            set
+            {
+                if (_ApplicationId != value)
+                {
+                    OnApplicationIdChanging(value);
+                    ReportPropertyChanging("ApplicationId");
+                    _ApplicationId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ApplicationId");
+                    OnApplicationIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ApplicationId;
+        partial void OnApplicationIdChanging(global::System.Int32 value);
+        partial void OnApplicationIdChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pvModel", Name="my_aspnet_sessions")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class my_aspnet_sessions : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new my_aspnet_sessions object.
+        /// </summary>
+        /// <param name="sessionId">Initial value of the SessionId property.</param>
+        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
+        /// <param name="created">Initial value of the Created property.</param>
+        /// <param name="expires">Initial value of the Expires property.</param>
+        /// <param name="lockDate">Initial value of the LockDate property.</param>
+        /// <param name="lockId">Initial value of the LockId property.</param>
+        /// <param name="timeout">Initial value of the Timeout property.</param>
+        /// <param name="locked">Initial value of the Locked property.</param>
+        /// <param name="flags">Initial value of the Flags property.</param>
+        public static my_aspnet_sessions Createmy_aspnet_sessions(global::System.String sessionId, global::System.Int32 applicationId, global::System.DateTime created, global::System.DateTime expires, global::System.DateTime lockDate, global::System.Int32 lockId, global::System.Int32 timeout, global::System.Boolean locked, global::System.Int32 flags)
+        {
+            my_aspnet_sessions my_aspnet_sessions = new my_aspnet_sessions();
+            my_aspnet_sessions.SessionId = sessionId;
+            my_aspnet_sessions.ApplicationId = applicationId;
+            my_aspnet_sessions.Created = created;
+            my_aspnet_sessions.Expires = expires;
+            my_aspnet_sessions.LockDate = lockDate;
+            my_aspnet_sessions.LockId = lockId;
+            my_aspnet_sessions.Timeout = timeout;
+            my_aspnet_sessions.Locked = locked;
+            my_aspnet_sessions.Flags = flags;
+            return my_aspnet_sessions;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String SessionId
+        {
+            get
+            {
+                return _SessionId;
+            }
+            set
+            {
+                if (_SessionId != value)
+                {
+                    OnSessionIdChanging(value);
+                    ReportPropertyChanging("SessionId");
+                    _SessionId = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("SessionId");
+                    OnSessionIdChanged();
+                }
+            }
+        }
+        private global::System.String _SessionId;
+        partial void OnSessionIdChanging(global::System.String value);
+        partial void OnSessionIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ApplicationId
+        {
+            get
+            {
+                return _ApplicationId;
+            }
+            set
+            {
+                if (_ApplicationId != value)
+                {
+                    OnApplicationIdChanging(value);
+                    ReportPropertyChanging("ApplicationId");
+                    _ApplicationId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ApplicationId");
+                    OnApplicationIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ApplicationId;
+        partial void OnApplicationIdChanging(global::System.Int32 value);
+        partial void OnApplicationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Created
+        {
+            get
+            {
+                return _Created;
+            }
+            set
+            {
+                OnCreatedChanging(value);
+                ReportPropertyChanging("Created");
+                _Created = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Created");
+                OnCreatedChanged();
+            }
+        }
+        private global::System.DateTime _Created;
+        partial void OnCreatedChanging(global::System.DateTime value);
+        partial void OnCreatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Expires
+        {
+            get
+            {
+                return _Expires;
+            }
+            set
+            {
+                OnExpiresChanging(value);
+                ReportPropertyChanging("Expires");
+                _Expires = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Expires");
+                OnExpiresChanged();
+            }
+        }
+        private global::System.DateTime _Expires;
+        partial void OnExpiresChanging(global::System.DateTime value);
+        partial void OnExpiresChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LockDate
+        {
+            get
+            {
+                return _LockDate;
+            }
+            set
+            {
+                OnLockDateChanging(value);
+                ReportPropertyChanging("LockDate");
+                _LockDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LockDate");
+                OnLockDateChanged();
+            }
+        }
+        private global::System.DateTime _LockDate;
+        partial void OnLockDateChanging(global::System.DateTime value);
+        partial void OnLockDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 LockId
+        {
+            get
+            {
+                return _LockId;
+            }
+            set
+            {
+                OnLockIdChanging(value);
+                ReportPropertyChanging("LockId");
+                _LockId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LockId");
+                OnLockIdChanged();
+            }
+        }
+        private global::System.Int32 _LockId;
+        partial void OnLockIdChanging(global::System.Int32 value);
+        partial void OnLockIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Timeout
+        {
+            get
+            {
+                return _Timeout;
+            }
+            set
+            {
+                OnTimeoutChanging(value);
+                ReportPropertyChanging("Timeout");
+                _Timeout = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Timeout");
+                OnTimeoutChanged();
+            }
+        }
+        private global::System.Int32 _Timeout;
+        partial void OnTimeoutChanging(global::System.Int32 value);
+        partial void OnTimeoutChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Locked
+        {
+            get
+            {
+                return _Locked;
+            }
+            set
+            {
+                OnLockedChanging(value);
+                ReportPropertyChanging("Locked");
+                _Locked = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Locked");
+                OnLockedChanged();
+            }
+        }
+        private global::System.Boolean _Locked;
+        partial void OnLockedChanging(global::System.Boolean value);
+        partial void OnLockedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] SessionItems
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_SessionItems);
+            }
+            set
+            {
+                OnSessionItemsChanging(value);
+                ReportPropertyChanging("SessionItems");
+                _SessionItems = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("SessionItems");
+                OnSessionItemsChanged();
+            }
+        }
+        private global::System.Byte[] _SessionItems;
+        partial void OnSessionItemsChanging(global::System.Byte[] value);
+        partial void OnSessionItemsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Flags
+        {
+            get
+            {
+                return _Flags;
+            }
+            set
+            {
+                OnFlagsChanging(value);
+                ReportPropertyChanging("Flags");
+                _Flags = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Flags");
+                OnFlagsChanged();
+            }
+        }
+        private global::System.Int32 _Flags;
+        partial void OnFlagsChanging(global::System.Int32 value);
+        partial void OnFlagsChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>

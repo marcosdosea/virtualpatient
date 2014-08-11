@@ -11,13 +11,13 @@
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
-<% using (Html.BeginForm()) { %>
+<% using (Html.BeginForm())
+       { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.diagnostico %></legend>
-
+        <legend>
+            <%: Resources.Mensagem.diagnostico %></legend>
         <%: Html.HiddenFor(model => model.IdDiagnostico) %>
-
         <div class="editor-label">
             <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico)%>
         </div>
@@ -25,7 +25,6 @@
             <%: Html.DropDownList("IdClasseDiagnostico", Resources.Mensagem.selecione)%>
             <%: Html.ValidationMessageFor(model => model.IdClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
-
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Diagnostico) %>
         </div>
@@ -33,7 +32,6 @@
             <%: Html.TextBoxFor(model => model.Diagnostico)%>
             <%: Html.ValidationMessageFor(model => model.Diagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
-
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Risco) %>
         </div>
@@ -41,10 +39,9 @@
             <%: Html.EditorFor(model => model.Risco)%>
             <%: Html.ValidationMessageFor(model => model.Risco, string.Empty, new { @class = "styleValidation" })%>
         </div>
-
-    <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
-    </div>
+        <div class="form-actions">
+            <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+        </div>
     </fieldset>
 <% } %>
 
