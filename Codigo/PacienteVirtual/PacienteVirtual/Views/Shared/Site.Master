@@ -387,6 +387,7 @@
         .styleValidation
         {
             color: Red;
+            text-align: justify;
         }
     </style>
 </body>

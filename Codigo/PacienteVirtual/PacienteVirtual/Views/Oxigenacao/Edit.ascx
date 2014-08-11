@@ -165,9 +165,8 @@
          <br />
          <div class="row-fluid">
             <div class="span12">
-                <%= Resources.Mensagem.aspecto_secrecao %>:
-                <%: Html.TextBoxFor(model => model.AspectoSecrecao, new { MaxLength = 50, style = "width:340px;" })%>
-                <%: Html.ValidationMessageFor(model => model.AspectoSecrecao, string.Empty, new { @class = "styleValidation" })%>
+                <%: Html.LabelFor(model => model.AspectoSecrecao) %>
+                <%: Html.EnumDropDownListFor(model => model.AspectoSecrecao, ListaAspectoSecrecao.NaoSeAplica) %>
             </div>
         </div>
         <br />

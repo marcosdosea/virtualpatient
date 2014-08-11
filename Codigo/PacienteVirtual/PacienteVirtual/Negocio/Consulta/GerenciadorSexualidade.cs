@@ -147,16 +147,17 @@ namespace PacienteVirtual.Negocio
                         select new SexualidadeModel
                         {
                             IdConsultaVariavel = sexualidade.IdConsultaVariavel,
-                            ConflitoPreferenciaSexual = sexualidade.ConflitoPreferenciaSexual,
-                            DorRelacaoSexual = sexualidade.DorRelacaoSexual,
+                            ConflitoPreferenciaSexual = (sexualidade.ConflitoPreferenciaSexual == "Sim" ? ListaConflitoPreferenciaSexual.Sim : (sexualidade.ConflitoPreferenciaSexual == "Nao" ? ListaConflitoPreferenciaSexual.Nao : ListaConflitoPreferenciaSexual.NaoRelatou)),
+                            DorRelacaoSexual = (sexualidade.DorRelacaoSexual == "Sim" ? ListaDorRelaxaoSexual.Sim : (sexualidade.DorRelacaoSexual == "Nao" ? ListaDorRelaxaoSexual.Nao : ListaDorRelaxaoSexual.NaoRelatou)),
                             Edema = sexualidade.Edema,
                             Hiperemia = sexualidade.Hiperemia,
                             Lesao = sexualidade.Lesao,
                             OdorFetido = sexualidade.OdorFetido,
-                            ParceiroFixo = sexualidade.ParceiroFixo,
+                            ParceiroFixo = (sexualidade.ParceiroFixo == "Sim" ? ListaParceiroFixo.Sim : (sexualidade.ParceiroFixo == "Nao" ? ListaParceiroFixo.Nao : ListaParceiroFixo.NaoRelatou)),
                             Prurido = sexualidade.Prurido,
                             Sangramento = sexualidade.Sangramento,
-                            Secrecao = sexualidade.Secrecao                           
+                            Secrecao = sexualidade.Secrecao,
+                            SemAlteracao = sexualidade.SemAlteracoes
                         };
             return query;
         }
@@ -188,16 +189,17 @@ namespace PacienteVirtual.Negocio
         private static void Atribuir(SexualidadeModel sexualidade, tb_sexualidade _tb_sexualidade)
         {
             _tb_sexualidade.IdConsultaVariavel = sexualidade.IdConsultaVariavel;
-            _tb_sexualidade.ConflitoPreferenciaSexual = sexualidade.ConflitoPreferenciaSexual;
-            _tb_sexualidade.DorRelacaoSexual = sexualidade.DorRelacaoSexual;
+            _tb_sexualidade.ConflitoPreferenciaSexual = sexualidade.ConflitoPreferenciaSexual.ToString();
+            _tb_sexualidade.DorRelacaoSexual = sexualidade.DorRelacaoSexual.ToString();
             _tb_sexualidade.Edema = sexualidade.Edema;
             _tb_sexualidade.Hiperemia = sexualidade.Hiperemia;
             _tb_sexualidade.Lesao = sexualidade.Lesao;
             _tb_sexualidade.OdorFetido = sexualidade.OdorFetido;
-            _tb_sexualidade.ParceiroFixo = sexualidade.ParceiroFixo;
+            _tb_sexualidade.ParceiroFixo = sexualidade.ParceiroFixo.ToString();
             _tb_sexualidade.Prurido = sexualidade.Prurido;
             _tb_sexualidade.Sangramento = sexualidade.Sangramento;
             _tb_sexualidade.Secrecao = sexualidade.Secrecao;
+            _tb_sexualidade.SemAlteracoes = sexualidade.SemAlteracao;
         }
     }
 }

@@ -47,8 +47,7 @@ namespace PacienteVirtual.Controllers
             return View(diagnosticoModel);
         }
 
-        //
-        // GET: /Intervencao/Edit/5
+
         public ActionResult Edit(int id)
         {
             DiagnosticoModel diagnostico = gDiagnostico.Obter(id);
@@ -57,8 +56,6 @@ namespace PacienteVirtual.Controllers
             return View(diagnostico);
         }
 
-        //
-        // POST: /Intervencao/Edit/5
 
         [HttpPost]
         public ActionResult Edit(DiagnosticoModel diagnostico)
@@ -68,8 +65,7 @@ namespace PacienteVirtual.Controllers
                 gDiagnostico.Atualizar(diagnostico);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
-                diagnostico.IdClasseDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(gClasseDiagnostico.ObterTodos(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico");
             return View(diagnostico);
         }
 

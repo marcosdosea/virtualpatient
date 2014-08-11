@@ -2367,4 +2367,10 @@
   <data name="dominio_diagnostico" xml:space="preserve">
     <value>Domain Diagnosis</value>
   </data>
+  <data name="NaoRelatou" xml:space="preserve">
+    <value>No Information</value>
+  </data>
+  <data name="sem_alteracao" xml:space="preserve">
+    <value>No Changes</value>
+  </data>
 </root>

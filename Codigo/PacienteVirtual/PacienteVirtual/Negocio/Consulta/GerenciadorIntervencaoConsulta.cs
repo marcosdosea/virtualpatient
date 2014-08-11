@@ -97,7 +97,15 @@ namespace PacienteVirtual.Negocio
             }
             catch (Exception e)
             {
-                throw new DadosException("IntervencaoConsulta", e.Message, e);
+                IntervencaoConsultaModel intervencao = GerenciadorIntervencaoConsulta.GetInstance().ObterPorConsultaIntervencaoEGrupo(IntervencaoConsultaModel.IdConsultaVariavel, IntervencaoConsultaModel.IdIntervencao, IntervencaoConsultaModel.IdGrupoIntervencao);
+                if (intervencao != null)
+                {
+                    throw new NegocioException("Esta Intervenção e este Grupo Intervenção já foram adicionados anteriormente.");
+                }
+                else
+                {
+                    throw new DadosException("IntervencaoConsulta", e.Message, e);
+                }
             }
         }
 
@@ -161,6 +169,8 @@ namespace PacienteVirtual.Negocio
         }
 
 
+
+
         /// <summary>
         /// Consulta para retornar dados da entidade
         /// </summary>
@@ -215,6 +225,18 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(IntervencaoConsultaModel => IntervencaoConsultaModel.IdConsultaVariavel == idConsultaVariavel
                 && IntervencaoConsultaModel.IdIntervencao == idIntervencao).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtem consulta intervencao por consulta e intervencao
+        /// </summary>
+        /// <param name="idConsultaVariavel"></param>
+        /// <param name="idIntervencao"></param>
+        /// <returns></returns>
+        public IntervencaoConsultaModel ObterPorConsultaIntervencaoEGrupo(long idConsultaVariavel, int idIntervencao, int idGrupoIntervencao)
+        {
+            return GetQuery().Where(IntervencaoConsultaModel => IntervencaoConsultaModel.IdConsultaVariavel == idConsultaVariavel
+                && IntervencaoConsultaModel.IdIntervencao == idIntervencao && IntervencaoConsultaModel.IdGrupoIntervencao == idGrupoIntervencao).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>

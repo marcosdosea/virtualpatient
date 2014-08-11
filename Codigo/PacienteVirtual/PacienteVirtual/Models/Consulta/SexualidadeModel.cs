@@ -7,6 +7,12 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    public enum ListaParceiroFixo { Sim = 0, Nao = 1 , NaoRelatou = 2 }
+
+    public enum ListaConflitoPreferenciaSexual { Sim = 0, Nao = 1, NaoRelatou = 2 }
+
+    public enum ListaDorRelaxaoSexual { Sim = 0, Nao = 1, NaoRelatou = 2 }
+
     public class SexualidadeModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -15,15 +21,15 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "parceiro_fixo", ResourceType = typeof(Mensagem))]
-        public string ParceiroFixo { get; set; }
+        public ListaParceiroFixo ParceiroFixo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "conflito_preferencia_sexual", ResourceType = typeof(Mensagem))]
-        public string ConflitoPreferenciaSexual { get; set; }
+        public ListaConflitoPreferenciaSexual ConflitoPreferenciaSexual { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "dor_relacao_sexual", ResourceType = typeof(Mensagem))]
-        public string DorRelacaoSexual { get; set; }
+        public ListaDorRelaxaoSexual DorRelacaoSexual { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "secrecao", ResourceType = typeof(Mensagem))]
@@ -52,5 +58,9 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "hiperemia", ResourceType = typeof(Mensagem))]
         public bool Hiperemia { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        [Display(Name = "sem_alteracao", ResourceType = typeof(Mensagem))]
+        public bool SemAlteracao { get; set; }
     }
 }

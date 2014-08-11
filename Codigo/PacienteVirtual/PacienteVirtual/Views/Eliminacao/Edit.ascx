@@ -132,20 +132,6 @@
             </div>
         </div>
         <br />
-        <div class="row-fluid">
-            <div class="span2">
-                <div class="editor-field">
-                    <%: Html.LabelFor(model => model.LocalizarPercussaoAbdominal) %>
-                </div>
-            </div>
-            <div class="span10">
-                <div class="editor-label">
-                    <%: Html.TextBoxFor(model => model.LocalizarPercussaoAbdominal, new { style = "width:410px;" })%>
-                    <%: Html.ValidationMessageFor(model => model.LocalizarPercussaoAbdominal, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-            </div>
-        </div>
-        <br />
         <h4><%: Resources.Mensagem.urinaria %></h4>
         <legend></legend>
         <div class="row-fluid">
@@ -190,23 +176,6 @@
                 <div class="editor-label">
                     <%: Html.LabelFor(model => model.CondicaoContinenciaUrinaria) %>
                     <%: Html.EnumDropDownListFor(model => model.CondicaoContinenciaUrinaria, ListaCondicaoContinenciaUrinaria.IncontinenciaUrinaria) %>
-                </div>
-            </div>
-        </div>
-        <br />
-        <div class="row-fluid">
-            <div class="span6">
-                <div class="editor-label">
-                    <%: Html.LabelFor(model => model.IrrigacaoVesical) %>
-                    <%: Html.TextBoxFor(model => model.IrrigacaoVesical, new { style = "width:px;" })%>
-                    <%: Html.ValidationMessageFor(model => model.IrrigacaoVesical, string.Empty, new { @class = "styleValidation" })%>
-                </div>
-            </div>
-            <div class="span6">
-                <div class="editor-field">
-                    <%: Html.LabelFor(model => model.IrrigacaoVesicalDesde) %>
-                    <%: Html.TextBoxFor(model => model.IrrigacaoVesicalDesde, new {  @Value = (String.Format("{0:dd/MM/yyyy}", Model.IrrigacaoVesicalDesde)), type = "text", @class = "calendario" , style = "width:100px;"}) %>
-                    <%: Html.ValidationMessageFor(model => model.IrrigacaoVesicalDesde) %>
                 </div>
             </div>
         </div>
