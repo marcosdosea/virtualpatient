@@ -210,10 +210,25 @@ namespace PacienteVirtual.Negocio
         /// <param name="idPaciente"></param>
         /// <param name="ordemCronologica"></param>
         /// <returns></returns>
-        public ConsultaVariavelModel ObterConsultaAnterior(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
+        /*public ConsultaVariavelModel ObterConsultaAnterior(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
         {
             return GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
                 consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica - 1).ToList().ElementAtOrDefault(0);
+        } */
+
+        /// <summary>
+        /// Obtem consulta anterior que estaja com estado finalizado
+        /// </summary>
+        /// <param name="idPessoa"></param>
+        /// <param name="idTurma"></param>
+        /// <param name="idPaciente"></param>
+        /// <param name="ordemCronologica"></param>
+        /// <returns></returns>
+        public ConsultaVariavelModel ObterConsultaAnteriorFinalizada(int idPessoa, int idTurma, int idPaciente, int ordemCronologica)
+        {
+            return GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
+                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica - 1 &&
+                (consultaVariavel.IdEstadoConsulta == Global.Finalizado)).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
@@ -294,7 +309,7 @@ namespace PacienteVirtual.Negocio
             }
             else
             {
-                cvm = ObterConsultaAnterior(idPessoa, idTurma, idPaciente, ordemCronologica);
+                cvm = ObterConsultaAnteriorFinalizada(idPessoa, idTurma, idPaciente, ordemCronologica);
             }
             if (cvm == null)
             {
