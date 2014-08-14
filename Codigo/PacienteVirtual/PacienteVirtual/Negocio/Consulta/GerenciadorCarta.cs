@@ -76,8 +76,8 @@ namespace PacienteVirtual.Negocio
                 }
             }
             modelState.AddModelError("ErroCarta", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
-                (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
-                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
+                (erroNaoContemNoGabarito.Equals("") ? "" : "Não contém no Gabarito: " + erroNaoContemNoGabarito)/* +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados: " + erroContemGabaritoNaoContemResposta)*/);
         }
         
         
@@ -114,7 +114,7 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repCarta = new RepositorioGenerico<tb_carta>();
-                tb_carta _tb_carta = repCarta.ObterEntidade(c => c.IdConsultaVariavel == CartaModel.IdConsultaVariavel);
+                tb_carta _tb_carta = repCarta.ObterEntidade(c => c.IdConsultaVariavel == CartaModel.IdConsultaVariavel && c.IdCarta == CartaModel.IdCarta);
                 Atribuir(CartaModel, _tb_carta);
 
                 repCarta.SaveChanges();

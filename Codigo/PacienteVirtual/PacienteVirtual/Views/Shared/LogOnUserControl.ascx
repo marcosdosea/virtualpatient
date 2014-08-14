@@ -1,11 +1,11 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 
-<%  %>
-
 <%
     if (Request.IsAuthenticated) {
 %>
-        <p class="bem_vindo"><%: Page.User.Identity.Name %>!</p><p class="nome"><%: Resources.Mensagem.bem_vindo %></p>
+        <% if (!Session["_NomePessoa"].ToString().Equals("")) { %>
+        <p class="bem_vindo"><%: Session["_NomePessoa"].ToString() %>!</p><p class="nome"><%: Resources.Mensagem.bem_vindo %></p>
+        <%  } %>
         [ <%: Html.ActionLink(Resources.Mensagem.alterar_senha, "ChangePassword", "Account")%> ]
         [ <%: Html.ActionLink(Resources.Mensagem.alterar_dados_usuario, "AlterarDadosUsuario", "Account")%> ]
         [ <%: Html.ActionLink("Log Off", "LogOff", "Account") %> ]

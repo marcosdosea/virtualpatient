@@ -35,12 +35,14 @@ namespace PacienteVirtual.Controllers
                     {
                         PessoaModel pessoa = GerenciadorPessoa.GetInstance().ObterPorUserName(model.UserName);
                         SessionController.Pessoa = pessoa;
+                        SessionController.NomePessoa = pessoa.Nome;
                         return Redirect(returnUrl);
                     }
                     else
                     {
                         PessoaModel pessoa = GerenciadorPessoa.GetInstance().ObterPorUserName(model.UserName);
                         SessionController.Pessoa = pessoa;
+                        SessionController.NomePessoa = pessoa.Nome;
                         switch (GerenciadorTurmaPessoa.GetInstance().ObterRolePorPessoa(pessoa.IdPessoa))
                         {
                             case Global.Usuario:
@@ -85,6 +87,7 @@ namespace PacienteVirtual.Controllers
             SessionController.Pessoa = null;
             SessionController.DadosTurmaPessoa = null;
             SessionController.Roles = null;
+            SessionController.NomePessoa = null;
             return RedirectToAction("Index", "Home");
         }
 
