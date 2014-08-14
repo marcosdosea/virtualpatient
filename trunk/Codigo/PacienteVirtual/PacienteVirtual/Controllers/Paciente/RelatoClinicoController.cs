@@ -77,7 +77,7 @@ namespace PacienteVirtual.Controllers
 
                 if (GerenciadorPessoa.GetInstance().Obter(idPessoa).IdUser == Global.Usuario)
                 {
-                    consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnterior(idPessoa, idTurma,
+                    consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnteriorFinalizada(idPessoa, idTurma,
                         relato.IdPaciente, relato.OrdemCronologica);
                 }
                 else

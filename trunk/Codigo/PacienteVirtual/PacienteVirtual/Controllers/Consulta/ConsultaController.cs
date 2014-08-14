@@ -232,8 +232,8 @@ namespace PacienteVirtual.Controllers
             ViewBag.EscondeLinks = true;
             ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
-            ViewBag.IdClasseDiagnostico = new SelectList(GerenciadorClasseDiagnostico.GetInstance().ObterTodos().ToList(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", SessionController.IdClasseDiagnostico);
-            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(SessionController.IdClasseDiagnostico), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
+            //ViewBag.IdClasseDiagnostico = new SelectList(GerenciadorClasseDiagnostico.GetInstance().ObterTodos().ToList(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", SessionController.IdClasseDiagnostico);
+            //ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(SessionController.IdClasseDiagnostico), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
             ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
         }
 
@@ -564,8 +564,8 @@ namespace PacienteVirtual.Controllers
             GerenciadorCarta.GetInstance().CorrigirRespostas(SessionController.ListaCarta, listaCarta, ModelState);
             IEnumerable<IntervencaoConsultaModel> listaIntervencao = GerenciadorIntervencaoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorIntervencaoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaIntervencaoConsulta, listaIntervencao, ModelState);
-            IEnumerable<DiagnosticoConsultaModel> listaDiagnostico = GerenciadorDiagnosticoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
-            GerenciadorDiagnosticoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaDiagnostico, listaDiagnostico, ModelState);
+            //IEnumerable<DiagnosticoConsultaModel> listaDiagnostico = GerenciadorDiagnosticoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            //GerenciadorDiagnosticoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaDiagnostico, listaDiagnostico, ModelState);
         }
     }
 }
