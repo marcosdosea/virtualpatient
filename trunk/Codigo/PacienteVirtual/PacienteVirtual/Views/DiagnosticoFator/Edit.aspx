@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ClasseDiagnosticoModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.DiagnosticoFatorModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%: Resources.Mensagem.criar %>
+     <%: Resources.Mensagem.editar %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2><%: Resources.Mensagem.criar %></h2>
+<h2><%: Resources.Mensagem.editar %></h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -16,20 +16,22 @@
     <fieldset>
         <legend><%: Resources.Mensagem.fator_diagnostico %></legend>
 
+        <%: Html.HiddenFor(model => model.IdDiagnosticoFator) %>
+
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.DescricaoDominioDiagnostico)%>
+            <%: Html.LabelFor(model => model.Diagnostico)%>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdDominioDiagnostico", Resources.Mensagem.selecione) %>
-            <%: Html.ValidationMessageFor(model => model.IdDominioDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.DropDownList("IdDiagnostico", Resources.Mensagem.selecione)%>
+            <%: Html.ValidationMessageFor(model => model.IdDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico) %>
+            <%: Html.LabelFor(model => model.DescricaoFatorDiagnostico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoClasseDiagnostico)%>
-            <%: Html.ValidationMessageFor(model => model.DescricaoClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.TextBoxFor(model => model.DescricaoFatorDiagnostico)%>
+            <%: Html.ValidationMessageFor(model => model.DescricaoFatorDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
     <div class="form-actions">

@@ -146,7 +146,11 @@
   <ItemGroup>
     <Compile Include="Controllers\Cadastro\AcaoQueixaController.cs" />
     <Compile Include="Controllers\Cadastro\AreaAtuacaoController.cs" />
+    <Compile Include="Controllers\Cadastro\DiagnosticoCaracteristicaController.cs" />
     <Compile Include="Controllers\Cadastro\DiagnosticoController.cs" />
+    <Compile Include="Controllers\Cadastro\DiagnosticoFatorController.cs" />
+    <Compile Include="Models\Cadastro\DiagnosticoCaracteristicaModel.cs" />
+    <Compile Include="Models\Cadastro\DiagnosticoFatorModel.cs" />
     <Compile Include="Controllers\Cadastro\DominioDiagnosticoController.cs" />
     <Compile Include="Controllers\Cadastro\EspecialidadeController.cs" />
     <Compile Include="Controllers\Cadastro\EstadoCivilController.cs" />
@@ -242,6 +246,8 @@
     <Compile Include="Negocio\Cadastro\GerenciadorAcaoQueixa.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorAreaAtuacao.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorDiagnostico.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorDiagnosticoCaracteristica.cs" />
+    <Compile Include="Negocio\Cadastro\GerenciadorDiagnosticoFator.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorDominioDiagnostico.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorEspecialidade.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorEstadoCivil.cs" />
@@ -670,10 +676,20 @@
     <Content Include="Views\ConsultaVariavelQueixa\Index.ascx" />
     <Content Include="Views\ConsultaVariavel\Edit.ascx" />
     <Content Include="Views\DadosComplementares\Edit.ascx" />
+    <Content Include="Views\DiagnosticoCaracteristica\Create.aspx" />
+    <Content Include="Views\DiagnosticoCaracteristica\Delete.aspx" />
+    <Content Include="Views\DiagnosticoCaracteristica\Details.aspx" />
+    <Content Include="Views\DiagnosticoCaracteristica\Edit.aspx" />
+    <Content Include="Views\DiagnosticoCaracteristica\Index.aspx" />
     <Content Include="Views\DiagnosticoConsulta\Create.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Details.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Edit.aspx" />
     <Content Include="Views\DiagnosticoConsulta\Index.ascx" />
+    <Content Include="Views\DiagnosticoFator\Create.aspx" />
+    <Content Include="Views\DiagnosticoFator\Delete.aspx" />
+    <Content Include="Views\DiagnosticoFator\Details.aspx" />
+    <Content Include="Views\DiagnosticoFator\Edit.aspx" />
+    <Content Include="Views\DiagnosticoFator\Index.aspx" />
     <Content Include="Views\Diagnostico\Create.aspx" />
     <Content Include="Views\Diagnostico\Delete.aspx" />
     <Content Include="Views\Diagnostico\Details.aspx" />

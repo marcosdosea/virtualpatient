@@ -20,6 +20,6 @@ namespace PacienteVirtual.Models
         public int IdGrupoIntervencao { get; set; }
 
         [Display(Name = "nome_grupo_intervencao", ResourceType = typeof(Mensagem))]
-        public String DescricaoGrupoIntervencao { get; set; }
+        public string DescricaoGrupoIntervencao { get; set; }
     }
 }

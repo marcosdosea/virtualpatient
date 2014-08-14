@@ -12,6 +12,6 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "estado_civil", ResourceType = typeof(Mensagem))]
-        public String EstadoCivil { get; set; }
+        public string EstadoCivil { get; set; }
     }
 }

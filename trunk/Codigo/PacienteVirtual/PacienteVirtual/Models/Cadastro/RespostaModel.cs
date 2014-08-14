@@ -12,14 +12,14 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "resposta", ResourceType = typeof(Mensagem))]
-        public String Resposta { get; set; }
+        public string Resposta { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "pergunta", ResourceType = typeof(Mensagem))]
         public int IdPergunta { get; set; }
 
         [Display(Name = "pergunta", ResourceType = typeof(Mensagem))]
-        public String Pergunta { get; set; }
+        public string Pergunta { get; set; }
 
     }
 }

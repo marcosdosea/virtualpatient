@@ -12,7 +12,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nivel_escolaridade", ResourceType = typeof(Mensagem))]
-        public String Nivel { get; set; }
+        public string Nivel { get; set; }
 
     }
 }

@@ -12,7 +12,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "pergunta", ResourceType = typeof(Mensagem))] 
-        public String Pergunta { get; set; }
+        public string Pergunta { get; set; }
 
     }
 }

@@ -2382,4 +2382,16 @@
   <data name="sem_alteracao" xml:space="preserve">
     <value>Sem Alteração</value>
   </data>
+  <data name="caracteristica_diagnostico" xml:space="preserve">
+    <value>Característica do Diagnóstico</value>
+  </data>
+  <data name="descricao_caracteristica_diagnostico" xml:space="preserve">
+    <value>Descrição da Característica do Diagnóstico</value>
+  </data>
+  <data name="descricao_fator_diagnostico" xml:space="preserve">
+    <value>Descrição Fator Diagnóstico</value>
+  </data>
+  <data name="fator_diagnostico" xml:space="preserve">
+    <value>Fator Diagnóstico</value>
+  </data>
 </root>
