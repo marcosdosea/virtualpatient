@@ -1445,5 +1445,14 @@ namespace PacienteVirtual.Controllers
                 HttpContext.Current.Session["_DiagnosticoDetalhes"] = value;
             }
         }
+
+        public static string NomePessoa
+        {
+            get
+            {
+                return (string)HttpContext.Current.Session["_NomePessoa"];
+            }
+            set { HttpContext.Current.Session["_NomePessoa"] = value; }
+        }
     }
 }
