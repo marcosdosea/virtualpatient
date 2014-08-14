@@ -13,6 +13,6 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "descricao_dominio_diagnostico", ResourceType = typeof(Mensagem))]
         [StringLength(100)]
-        public String DescricaoDominioDiagnostico { get; set; }
+        public string DescricaoDominioDiagnostico { get; set; }
     }
 }

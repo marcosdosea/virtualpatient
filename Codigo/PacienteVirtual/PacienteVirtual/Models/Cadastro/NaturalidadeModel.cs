@@ -12,6 +12,6 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "naturalidade", ResourceType = typeof(Mensagem))]
-        public String Naturalidade { get; set; }
+        public string Naturalidade { get; set; }
     }
 }

@@ -12,6 +12,6 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "descricao", ResourceType = typeof(Mensagem))]
-        public String DescricaoGrupoIntervencao { get; set; }
+        public string DescricaoGrupoIntervencao { get; set; }
     }
 }

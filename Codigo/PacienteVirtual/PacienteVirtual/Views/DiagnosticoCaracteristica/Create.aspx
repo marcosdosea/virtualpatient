@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.ClasseDiagnosticoModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PacienteVirtual.Models.DiagnosticoCaracteristicaModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.criar %>
@@ -14,22 +14,22 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend><%: Resources.Mensagem.fator_diagnostico %></legend>
+        <legend><%: Resources.Mensagem.caracteristica_diagnostico %></legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.DescricaoDominioDiagnostico)%>
+            <%: Html.LabelFor(model => model.Diagnostico)%>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownList("IdDominioDiagnostico", Resources.Mensagem.selecione) %>
-            <%: Html.ValidationMessageFor(model => model.IdDominioDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.DropDownList("IdDiagnostico", Resources.Mensagem.selecione) %>
+            <%: Html.ValidationMessageFor(model => model.IdDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.DescricaoClasseDiagnostico) %>
+            <%: Html.LabelFor(model => model.DescricaoCaracteristicaDiagnostico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoClasseDiagnostico)%>
-            <%: Html.ValidationMessageFor(model => model.DescricaoClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.TextBoxFor(model => model.DescricaoCaracteristicaDiagnostico)%>
+            <%: Html.ValidationMessageFor(model => model.DescricaoCaracteristicaDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
     <div class="form-actions">
