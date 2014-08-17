@@ -281,6 +281,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorSexualidade.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorTermorregulacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorNutricao.cs" />
+    <Compile Include="Negocio\GerenciadorSeguranca.cs" />
     <Compile Include="Negocio\Turma\GerenciadorTurmaPessoa.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
