@@ -118,7 +118,7 @@
                     <%: Html.LabelFor(model => model.Referências) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextAreaFor(model => model.Referências, new { style = "width:579px;" })%>
+                    <%: Html.TextAreaFor(model => model.Referências, new { style = "width:579px;", ID = "mudarCaracter" })%>
                     <%: Html.ValidationMessageFor(model => model.Referências, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -137,17 +137,27 @@
         </div>
 
         <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
-    </div>
+            <input class="btn btn-primary" onclick="AlterarCaracteres()" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
+        </div>
     </fieldset>
     <div class="styleValidation">
         <%: Html.QuebraLinhaFor(model => model.ErroCarta) %>
     </div>
 <% } %>
-</script>
-<style>
+
+<style type="text/css">
     #mostrarReco
     {
         text-align: justify;
     }
 </style>
+
+<script type="text/javascript">
+    function AlterarCaracteres() {
+        var str = document.getElementById("mudarCaracter").value;
+        var res = str.replace(/>/gi, "&gt;");
+
+        res = res.replace(/</gi, "&lt;");
+        document.getElementById("mudarCaracter").value = res;
+    }
+</script>

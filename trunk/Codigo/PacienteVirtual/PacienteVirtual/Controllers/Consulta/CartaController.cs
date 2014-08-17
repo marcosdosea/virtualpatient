@@ -21,6 +21,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(CartaModel carta)
         {
+            carta.Referências = GerenciadorSeguranca.GetInstance().ReplaceCaracteresMaiorMenor(carta.Referências);
             if (ModelState.IsValid)
             {
                 carta.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
