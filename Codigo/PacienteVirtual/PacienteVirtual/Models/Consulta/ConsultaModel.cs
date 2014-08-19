@@ -52,10 +52,7 @@ namespace PacienteVirtual.Models
         public NutricaoModel Nutricao { get; set; }
 
         public DiagnosticoConsultaModel DiagnosticoConsulta { get; set; }
-        public DiagnosticoConsultaModel DiagnosticoConsultaDetalhes { get; set; }
         public IEnumerable<DiagnosticoConsultaModel> ListaDiagnosticoConsulta { get; set; }
-        //////////////////////////////////////
-
 
         // Dados Variáveis nas consultas
         public ConsultaVariavelModel ConsultaVariavel { get; set; }

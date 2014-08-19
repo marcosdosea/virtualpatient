@@ -220,6 +220,7 @@
     <Compile Include="Models\Consulta\ComunicacaoModel.cs" />
     <Compile Include="Models\Consulta\ConscienciaModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
+    <Compile Include="Models\Consulta\DiagnosticoConsultaFatorModel.cs" />
     <Compile Include="Models\Consulta\DiagnosticoConsultaModel.cs" />
     <Compile Include="Models\Consulta\EliminacaoModel.cs" />
     <Compile Include="Models\Consulta\ExamesFisicosModel.cs" />
@@ -266,6 +267,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorConsciencia.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorDiagnosticoConsulta.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorDiagnosticoConsultaFator.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorEliminacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorHigiene.cs" />

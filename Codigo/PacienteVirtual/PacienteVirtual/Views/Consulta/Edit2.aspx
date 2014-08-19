@@ -225,9 +225,8 @@
                     <div class="tab-content" id="desabilitar">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
-                                <div id="dialog" title="<%: Resources.Mensagem.diagnostico %>"><% Html.RenderPartial("../DiagnosticoConsulta/Details", Model.DiagnosticoConsultaDetalhes);%></div>
-                                <% Html.RenderPartial("../DiagnosticoConsulta/Index", Model.ListaDiagnosticoConsulta);%>
                                 <% Html.RenderPartial("../DiagnosticoConsulta/Create", Model.DiagnosticoConsulta);%>
+                                <% Html.RenderPartial("../DiagnosticoConsulta/Index", Model.ListaDiagnosticoConsulta);%>
                             </div>
                         </div>
                     </div>
@@ -265,7 +264,7 @@
     </fieldset>
 
     <% } %>
-    <style>
+    <style type="text/css">
         #botoesRodape
         {
             position: relative;

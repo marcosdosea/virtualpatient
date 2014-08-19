@@ -1,10 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Resources;
 
 namespace PacienteVirtual.Models
 {
-    public class DiagnosticoConsultaModel
+    public class DiagnosticoConsultaFatorModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
@@ -19,18 +18,9 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        public int IdClasseDiagnostico { get; set; }
+        public int IdDiagnosticoFator { get; set; }
 
-        [Display(Name = "descricao_classe_diagnostico", ResourceType = typeof(Mensagem))]
-        public string DescricaoClasseDiagnostico { get; set; }
-
-        [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
-        public int IdDominioDiagnostico { get; set; }
-
-        [Display(Name = "descricao_dominio_diagnostico", ResourceType = typeof(Mensagem))]
-        public string DescricaoDominioDiagnostico { get; set; }
-
-        [Display(Name = "resultado_esperado", ResourceType = typeof(Mensagem))]
-        public string ResultadoEsperado { get; set; }
+        [Display(Name = "descricao_fator_diagnostico", ResourceType = typeof(Mensagem))]
+        public string DescricaoFatorDiagnostico { get; set; }
     }
 }

@@ -179,10 +179,6 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdPatologia = new SelectList(GerenciadorPatologia.GetInstance().ObterTodos(), "IdPatologia", "Descricao");
             ViewBag.AbasDentro = SessionController.AbasDentro;
             ViewBag.TotalAbas = Global.totalAbasENF_Edit1;
-            //zerando SessionController Enfermagem da segunda tela
-            SessionController.IdDiagnostico = Global.NaoSelecionado;
-            SessionController.IdClasseDiagnostico = Global.NaoSelecionado;
-            SessionController.DiagnosticoDetalhes = false;
         }
 
         /// <summary>
@@ -218,6 +214,34 @@ namespace PacienteVirtual.Controllers
         /// </summary>
         private void ViewBagsSegundaParteConsulta()
         {
+            ViewBag.EscondeLinks = true;
+            ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
+            ViewBag.Abas2 = SessionController.Abas2;
+            ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
+            ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
+            if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
+            {
+                ViewBagsSegundaTelaCursoFarmacia();
+            }
+            else
+            {
+                ViewBagsSegundaTelaCursoEnfermagem();
+            }
+        }
+
+        private void ViewBagsSegundaTelaCursoEnfermagem()
+        {
+            ViewBag.IdDominioDiagnostico = new SelectList(GerenciadorDominioDiagnostico.GetInstance().ObterTodos(), "IdDominioDiagnostico",
+                "DescricaoDominioDiagnostico", SessionController.IdDominioDiagnostico);
+            ViewBag.IdClasseDiagnostico = new SelectList(GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio(
+                SessionController.IdDominioDiagnostico), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
+                SessionController.IdClasseDiagnostico);
+            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(
+                SessionController.IdClasseDiagnostico), "IdDiagnostico", "Diagnostico", SessionController.IdDiagnostico);
+        }
+
+        private void ViewBagsSegundaTelaCursoFarmacia()
+        {
             ViewBag.IdMedicamento = new SelectList(GerenciadorMedicamentos.GetInstance().ObterTodos().ToList(), "IdMedicamento", "Nome");
             ViewBag.IdSuspeitaPrm = new SelectList(GerenciadorSuspeitaPrm.GetInstance().ObterTodos().ToList(), "IdSuspeitaPrm", "Descricao");
             ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
@@ -228,13 +252,6 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdIntervencao = new SelectList(GerenciadorIntervencao.GetInstance().ObterPorGrupoIntervencao(SessionController.IdGrupoIntervencao), "IdIntervencao", "DescricaoIntervencao");
             ViewBag.IdCarta = new SelectList(GerenciadorCarta.GetInstance().ObterTodos(), "IdCarta", "NomePaciente");
             ViewBag.IdEspecialidade = new SelectList(GerenciadorEspecialidade.GetInstance().ObterTodos(), "IdEspecialidade", "Especialidade");
-            ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
-            ViewBag.EscondeLinks = true;
-            ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
-            ViewBag.Abas2 = SessionController.Abas2;
-            //ViewBag.IdClasseDiagnostico = new SelectList(GerenciadorClasseDiagnostico.GetInstance().ObterTodos().ToList(), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", SessionController.IdClasseDiagnostico);
-            //ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(SessionController.IdClasseDiagnostico), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
-            ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
         }
 
         /// <summary>
@@ -339,7 +356,6 @@ namespace PacienteVirtual.Controllers
         {
             consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
             consultaModel.ListaDiagnosticoConsulta = SessionController.ListaDiagnostico;
-            consultaModel.DiagnosticoConsultaDetalhes = SessionController.DiagnosticoConsultaDetalhes;
         }
 
         private static void ConsultaSegundaTelaFarmacia(ConsultaModel consultaModel)
