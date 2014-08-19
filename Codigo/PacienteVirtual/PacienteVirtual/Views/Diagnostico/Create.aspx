@@ -33,11 +33,11 @@
             <%: Html.ValidationMessageFor(model => model.IdClasseDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Diagnostico) %>
+            <%: Html.LabelFor(model => model.DescricaoDiagnostico)%>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Diagnostico)%>
-            <%: Html.ValidationMessageFor(model => model.Diagnostico, string.Empty, new { @class = "styleValidation" })%>
+            <%: Html.TextBoxFor(model => model.DescricaoDiagnostico, new { style = "width:700px;", MaxLength = 200 })%>
+            <%: Html.ValidationMessageFor(model => model.DescricaoDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Risco)%>

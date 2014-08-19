@@ -98,7 +98,7 @@ namespace PacienteVirtual.Negocio
                         {
                             IdDiagnostico = tb_diagnostico.IdDiagnostico,
                             IdClasseDiagnostico = tb_diagnostico.IdClasseDiagnostico,
-                            Diagnostico = tb_diagnostico.Diagnostico,
+                            DescricaoDiagnostico = tb_diagnostico.Diagnostico,
                             DescricaoClasseDiagnostico = tb_classe_diagnostico.DescricaoClasse,
                             Risco = tb_diagnostico.PossuiRisco,
                             IdDominioDiagnostico = tb_diagnostico.tb_classe_diagnostico.tb_dominio_diagnostico.IdDominioDiagnostico,
@@ -133,7 +133,7 @@ namespace PacienteVirtual.Negocio
         /// <param name="_intervencaoE"></param>
         private static void Atribuir(DiagnosticoModel diagnostico, tb_diagnostico _diagnosticoE)
         {
-            _diagnosticoE.Diagnostico = diagnostico.Diagnostico;
+            _diagnosticoE.Diagnostico = diagnostico.DescricaoDiagnostico;
             _diagnosticoE.IdClasseDiagnostico = diagnostico.IdClasseDiagnostico;
             _diagnosticoE.PossuiRisco = diagnostico.Risco;
         }

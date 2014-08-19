@@ -24,7 +24,7 @@
 
     <div class="display-label"><%: Resources.Mensagem.diagnostico %></div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.Diagnostico) %>
+        <%: Html.DisplayFor(model => model.DescricaoDiagnostico)%>
     </div>
 
     <div class="display-label"><%: Resources.Mensagem.risco %></div>
