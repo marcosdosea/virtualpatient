@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 
@@ -19,16 +13,6 @@ namespace PacienteVirtual.Controllers
         }
 
         //
-        // GET: /DiagnosticoConsulta/Details
-
-        public ActionResult Details(long idConsultaVariavel, int idDiagnostico, int idClasseDiagnostico)
-        {
-            SessionController.DiagnosticoConsultaDetalhes = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorDiagnosticoGrupo(idConsultaVariavel, idDiagnostico, idClasseDiagnostico);
-            SessionController.DiagnosticoDetalhes = true;
-            return RedirectToAction("Edit2", "Consulta");
-        }
-
-        //
         // POST: /DiagnosticoConsulta/Create
 
         [HttpPost]
@@ -40,33 +24,19 @@ namespace PacienteVirtual.Controllers
                 GerenciadorDiagnosticoConsulta.GetInstance().Inserir(diagnostico);
                 SessionController.ListaDiagnostico = null;
                 SessionController.IdClasseDiagnostico = Global.ValorInteiroNulo;
+                SessionController.IdDominioDiagnostico = Global.ValorInteiroNulo;
                 SessionController.IdDiagnostico = Global.ValorInteiroNulo;
             }
             else
             {
-                //Verifica se foi selecionado algum diagnostico no combobox ou não.
-                if (diagnostico.IdDiagnostico != 0)
-                {
-                    //Obtem o diagnostico na tb_diagnostico passado no combobox
-                    DiagnosticoModel diagnoConsulta = GerenciadorDiagnostico.GetInstance().Obter(diagnostico.IdDiagnostico);
-                    //verifica se o diagnostico que foi passado é de risco ou não.
-                    if (diagnoConsulta.Risco == true)
-                    {
-                        //Session Controller para o risco do diagnostico, guardando se é de risco ou não.
-                        SessionController.RiscoDiagnostico = true;
-                    }
-                    else
-                    {
-                        SessionController.RiscoDiagnostico = false;
-                    }
-                    SessionController.IdDiagnostico = diagnostico.IdDiagnostico;
-                    return RedirectToAction("Edit2", "Consulta");
-                }
+                SessionController.IdDominioDiagnostico = diagnostico.IdDominioDiagnostico;
                 SessionController.IdClasseDiagnostico = diagnostico.IdClasseDiagnostico;
+                SessionController.IdDiagnostico = diagnostico.IdDiagnostico;
             }
             return RedirectToAction("Edit2", "Consulta");
         }
 
+        /*
         // POST: /DiagnosticoConsulta/Edit
         public ActionResult Edit(long idConsultaVariavel, int idDiagnostico)
         {
@@ -100,7 +70,8 @@ namespace PacienteVirtual.Controllers
             SessionController.DiagnosticoDetalhes = true;
             return View(diagnostico);
         }
-
+        */
+ 
         //
         // POST: /DiagnosticoConsulta/Delete/5
         //[HttpPost]
@@ -108,10 +79,9 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorDiagnosticoConsulta.GetInstance().Remover(idConsultaVariavel, idDiagnostico);
             SessionController.ListaDiagnostico = null;
-            SessionController.DiagnosticoDetalhes = true;
             return RedirectToAction("Edit2", "Consulta");
         }
-
+ 
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

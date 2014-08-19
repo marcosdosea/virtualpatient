@@ -87,6 +87,7 @@ namespace PacienteVirtual.Models
             SessionController.Abas2 = -1;
             SessionController.AbasDentro = -1;
             SessionController.IdClasseDiagnostico = Global.NaoSelecionado;
+            SessionController.IdDominioDiagnostico = Global.NaoSelecionado;
             SessionController.IdDiagnostico = Global.NaoSelecionado;
             SessionController.RiscoDiagnostico = false;
 
@@ -117,9 +118,7 @@ namespace PacienteVirtual.Models
             SessionController.Sensorial = null;
             SessionController.OutrasNecessidades = null;
             SessionController.Sexualidade = null;
-            SessionController.DiagnosticoConsulta = null;
-            SessionController.DiagnosticoConsultaDetalhes = null;
-            SessionController.DiagnosticoDetalhes = false;
+            //SessionController.DiagnosticoDetalhes = false;
         }
 
         private static void ZeraSessaoConsultaFarmacia()

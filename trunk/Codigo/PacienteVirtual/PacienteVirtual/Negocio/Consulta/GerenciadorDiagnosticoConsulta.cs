@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
-using System.Web.Mvc;
-using PacienteVirtual.Controllers;
 
 namespace PacienteVirtual.Negocio
 {
@@ -23,6 +20,7 @@ namespace PacienteVirtual.Negocio
             return gDiagnosticoConsulta;
         }
 
+        /*
         /// <summary>
         /// Realiza a correção da consulta diagnostico de acordo com as respostas do gabarito
         /// </summary>
@@ -72,27 +70,26 @@ namespace PacienteVirtual.Negocio
             model.AddModelError("ErroDiagnostico", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
                 (erroNaoContemNoGabarito.Equals("") ? "" : "Diagnósticos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
                 (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Diagnósticos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
-        }
+        } */
 
         /// <summary>
         /// Insere dados do DiagnosticoConsulta
         /// </summary>
         /// <param name="DiagnosticoConsulta"></param>
         /// <returns></returns>
-        public long Inserir(DiagnosticoConsultaModel DiagnosticoConsultaModel)
+        public long Inserir(DiagnosticoConsultaModel diagnosticoConsulta)
         {
-            DiagnosticoConsultaModel diagConsult = gDiagnosticoConsulta.ObterPorDiagnosticoGrupo(DiagnosticoConsultaModel.IdConsultaVariavel, DiagnosticoConsultaModel.IdDiagnostico, DiagnosticoConsultaModel.IdClasseDiagnostico);
+            DiagnosticoConsultaModel diagConsult = gDiagnosticoConsulta.ObterPorConsultaDiagnostico(diagnosticoConsulta.IdConsultaVariavel,
+                diagnosticoConsulta.IdDiagnostico);
             if (diagConsult == null)
             {
                 var repDiagnosticoConsulta = new RepositorioGenerico<tb_diagnostico_consulta_variavel>();
                 tb_diagnostico_consulta_variavel _tb_diagnostico_consulta_variavel = new tb_diagnostico_consulta_variavel();
                 try
                 {
-                    Atribuir(DiagnosticoConsultaModel, _tb_diagnostico_consulta_variavel);
-
+                    Atribuir(diagnosticoConsulta, _tb_diagnostico_consulta_variavel);
                     repDiagnosticoConsulta.Inserir(_tb_diagnostico_consulta_variavel);
                     repDiagnosticoConsulta.SaveChanges();
-
                     return _tb_diagnostico_consulta_variavel.IdConsultaVariavel;
                 }
                 catch (Exception e)
@@ -102,9 +99,7 @@ namespace PacienteVirtual.Negocio
             }
             else
             {
-                SessionController.IdClasseDiagnostico = Global.NaoSelecionado;
-                SessionController.IdDiagnostico = Global.NaoSelecionado;
-                throw new NegocioException("Já foi cadastrado um Diagnóstico com essa Descrição de Diagnóstico e com esse Grupo Diagnóstico.");
+                throw new NegocioException("Um diagnóstico com essas informações já foi cadastrado.");
             }
         }
 
@@ -112,15 +107,14 @@ namespace PacienteVirtual.Negocio
         /// Atualiza dados do IntervencaoConsulta
         /// </summary>
         /// <param name="IntervencaoConsulta"></param>
-        public void Atualizar(DiagnosticoConsultaModel DiagnosticoConsultaModel)
+        public void Atualizar(DiagnosticoConsultaModel diagnosticoConsulta)
         {
             try
             {
                 var repDiagnosticoConsulta = new RepositorioGenerico<tb_diagnostico_consulta_variavel>();
-                tb_diagnostico_consulta_variavel _tb_diagnostico_consulta_variavel = repDiagnosticoConsulta.ObterEntidade(dC => dC.IdConsultaVariavel 
-                    == DiagnosticoConsultaModel.IdConsultaVariavel && dC.IdDiagnostico == DiagnosticoConsultaModel.IdDiagnostico);
-                Atribuir(DiagnosticoConsultaModel, _tb_diagnostico_consulta_variavel);
-
+                tb_diagnostico_consulta_variavel _tb_diagnostico_consulta_variavel = repDiagnosticoConsulta.ObterEntidade(dC => 
+                    dC.IdConsultaVariavel == diagnosticoConsulta.IdConsultaVariavel && dC.IdDiagnostico == diagnosticoConsulta.IdDiagnostico);
+                Atribuir(diagnosticoConsulta, _tb_diagnostico_consulta_variavel);
                 repDiagnosticoConsulta.SaveChanges();
             }
             catch (Exception e)
@@ -129,6 +123,7 @@ namespace PacienteVirtual.Negocio
             }
         }
 
+        /*
         /// <summary>
         /// Faz a validação para verificar se todos os id estão diferentes de 0
         /// </summary>
@@ -142,7 +137,7 @@ namespace PacienteVirtual.Negocio
             {
                 return false;
             }
-        }
+        } */
 
         /// <summary>
         /// Remove dados do DiagnosticoConsulta
@@ -163,26 +158,6 @@ namespace PacienteVirtual.Negocio
             }
         }
 
-
-        /// <summary>
-        /// Remove dados do Diagnostico da consulta
-        /// </summary>
-        /// <param name="idConsultaVariavel"></param>
-        public void Remover(long idConsultaVariavel, int idDiagnostico)
-        {
-            try
-            {
-                var repDiagnosticoConsulta = new RepositorioGenerico<tb_diagnostico_consulta_variavel>();
-                repDiagnosticoConsulta.Remover(iC => iC.IdConsultaVariavel == idConsultaVariavel && iC.IdDiagnostico == idDiagnostico);
-                repDiagnosticoConsulta.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                throw new DadosException("DiagnosticoConsulta", e.Message, e);
-            }
-        }
-
-
         /// <summary>
         /// Consulta para retornar dados da entidade
         /// </summary>
@@ -191,25 +166,24 @@ namespace PacienteVirtual.Negocio
         {
             var repDiagnosticoConsulta = new RepositorioGenerico<tb_diagnostico_consulta_variavel>();
             var pvEntities = (pvEntities)repDiagnosticoConsulta.ObterContexto();
-            var query = from tb_diagnostico_consulta_variavel in pvEntities.tb_diagnostico_consulta_variavel
-                        join tb_diagnostico in pvEntities.tb_diagnostico
-                        on tb_diagnostico_consulta_variavel.IdDiagnostico equals tb_diagnostico.IdDiagnostico
-                        join tb_classe_diagnostico in pvEntities.tb_classe_diagnostico
-                        on tb_diagnostico.IdClasseDiagnostico equals tb_classe_diagnostico.IdClasseDiagnostico
+            var query = from diagnosticoConsulta in pvEntities.tb_diagnostico_consulta_variavel
                         select new DiagnosticoConsultaModel
                         {
-                            IdConsultaVariavel = tb_diagnostico_consulta_variavel.IdConsultaVariavel,
-                            IdDiagnostico = tb_diagnostico.IdDiagnostico,
-                            IdClasseDiagnostico = tb_classe_diagnostico.IdClasseDiagnostico,
-                            ResultadoEsperado = tb_diagnostico_consulta_variavel.ResultadoEsperado,
-                            DescricaoDiagnostico = tb_diagnostico.Diagnostico,
-                            DescricaoClasseDiagnostico = tb_classe_diagnostico.DescricaoClasse
+                            IdConsultaVariavel = diagnosticoConsulta.IdConsultaVariavel,
+                            IdDiagnostico = diagnosticoConsulta.IdDiagnostico,
+                            Diagnostico = diagnosticoConsulta.tb_diagnostico.Diagnostico,
+                            IdClasseDiagnostico = diagnosticoConsulta.tb_diagnostico.IdClasseDiagnostico,
+                            DescricaoClasseDiagnostico = diagnosticoConsulta.tb_diagnostico.tb_classe_diagnostico.DescricaoClasse,
+                            IdDominioDiagnostico = diagnosticoConsulta.tb_diagnostico.tb_classe_diagnostico.IdDominioDiagnostico,
+                            DescricaoDominioDiagnostico = diagnosticoConsulta.tb_diagnostico.tb_classe_diagnostico.tb_dominio_diagnostico.
+                                DescricaoDominio,
+                            ResultadoEsperado = diagnosticoConsulta.ResultadoEsperado
                         };
             return query;
         }
 
         /// <summary>
-        /// Obtém todos os DiagnosticoConsultaModel cadastrados
+        /// Obtém todos os DiagnosticoConsulta cadastrados
         /// </summary>
         /// <returns></returns>
         public IEnumerable<DiagnosticoConsultaModel> ObterTodos()
@@ -228,7 +202,7 @@ namespace PacienteVirtual.Negocio
         }
 
         /// <summary>
-        /// Obtem consulta intervencao por consulta e intervencao
+        /// Obtem consulta Diagnostico por consulta e intervencao
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
         /// <param name="idIntervencao"></param>
@@ -237,18 +211,6 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(dc => dc.IdConsultaVariavel == idConsultaVariavel
                 && dc.IdDiagnostico == idDiagnostico).ToList().ElementAtOrDefault(0);
-        }
-
-        /// <summary>
-        /// Obtem consulta intervencao por consulta e intervencao e Grupo
-        /// </summary>
-        /// <param name="idConsultaVariavel"></param>
-        /// <param name="idIntervencao"></param>
-        /// <returns></returns>
-        public DiagnosticoConsultaModel ObterPorDiagnosticoGrupo(long idConsultaVariavel, int idDiagnostico, int idClasseDiagnostico)
-        {
-            return GetQuery().Where(dc => dc.IdConsultaVariavel == idConsultaVariavel
-                && dc.IdDiagnostico == idDiagnostico && dc.IdClasseDiagnostico == idClasseDiagnostico).ToList().ElementAtOrDefault(0);
         }
 
         /// <summary>
