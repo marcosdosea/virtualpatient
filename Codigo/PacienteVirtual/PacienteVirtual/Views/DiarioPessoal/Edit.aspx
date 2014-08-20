@@ -14,6 +14,9 @@
         <legend><%: Resources.Mensagem.diario_pessoal %></legend>
 
         <%: Html.HiddenFor(model => model.IdConsultaFixo) %>
+        <%: Html.HiddenFor(model => model.IdMedicamento) %>
+        <%: Html.HiddenFor(model => model.Periodo) %>
+        <%: Html.HiddenFor(model => model.Horario) %>
 
         <div class="row-fluid">
             <div class="span2">
@@ -59,15 +62,8 @@
             </div>
         </div>
         <div class="span9">
-            <div class="editor-field">
-                <%= Html.RadioButtonFor(model => model.Periodo, "M")%> <%: Resources.Mensagem.manha %>
-                &nbsp &nbsp 
-                <%= Html.RadioButtonFor(model => model.Periodo, "T")%> <%: Resources.Mensagem.tarde %>
-                 &nbsp &nbsp 
-                <%= Html.RadioButtonFor(model => model.Periodo, "N")%> <%: Resources.Mensagem.noite %>
-                 &nbsp &nbsp 
-                <%= Html.RadioButtonFor(model => model.Periodo, "S")%> <%: Resources.Mensagem.se_necessario %>
-                <%: Html.ValidationMessageFor(model => model.Periodo, string.Empty, new { @class = "styleValidation" })%>
+            <div class="editor-field" >
+                <%: Html.TextBoxFor(model => model.Periodo ,new { id = "textbox2", style = "width:312px;" })%>    
             </div>
         </div>
     </div>
@@ -79,7 +75,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Horario, new { @class = "textbox", style = "width:70px;", MaxLength = 20 })%>
+                <%: Html.TextBoxFor(model => model.Horario, new { id = "textbox3", style = "width:70px;", MaxLength = 20 })%>
                 <!--span class="add-on"><i class="icon-time"></i></span -->
                 <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
                 hrs (Ex: 07:00)
@@ -124,5 +120,7 @@
 </div>
 <script type="text/javascript">
     document.getElementById('textbox').disabled = true;
+    document.getElementById('textbox2').disabled = true;
+    document.getElementById('textbox3').disabled = true;
 </script>
 </asp:Content>

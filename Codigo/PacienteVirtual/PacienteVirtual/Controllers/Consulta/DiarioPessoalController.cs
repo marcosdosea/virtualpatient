@@ -55,7 +55,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(long idConsultaFixo, int idMedicamento)
         {
             DiarioPessoalModel diarioPessoal = GerenciadorDiarioPessoal.GetInstance().ObterPorMedicamento(idConsultaFixo, idMedicamento);
-            ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome");
+            ViewBag.IdBebida = new SelectList(SessionController.ListaBebidas, "IdBebida", "Nome", diarioPessoal.IdBebida);
             SessionController.Abas2 = Global.abaDiarioPessoal;
             return View(diarioPessoal);
         }
