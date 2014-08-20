@@ -54,7 +54,7 @@
         <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
            { %>
             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "DiarioPessoal", new { idConsultaFixo = item.IdConsultaFixo, idMedicamento = item.IdMedicamento }, null)%>|
-            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiarioPessoal", new { idConsultaFixo = item.IdConsultaFixo, idMedicamento = item.IdMedicamento, horario = item.Horario, quantidade = item.Quantidade }, new { onclick = ("return confirm('Deseja realmente REMOVER esta Diário?')") }) %>)%>
+            <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiarioPessoal", new { idConsultaFixo = item.IdConsultaFixo, idMedicamento = item.IdMedicamento, horario = item.Horario, quantidade = item.Quantidade }, new { onclick = ("return confirm('Deseja realmente REMOVER esta Diário?')") }) %>
         <% } %>
         </td>
     </tr>
