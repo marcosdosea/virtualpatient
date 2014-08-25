@@ -199,7 +199,7 @@ namespace PacienteVirtual.Negocio
                         contem = true;
                         if (!diario.Periodo.Equals(diarioGabarito.Periodo) || !diario.Horario.Equals(diarioGabarito.Horario) || !diario.HorarioComplemento.Equals(diarioGabarito.HorarioComplemento) || !diario.Dose.Equals(diarioGabarito.Dose) || !diario.Quantidade.Equals(diarioGabarito.Quantidade) || diario.IdBebida != diarioGabarito.IdBebida)
                         { 
-                            erroRespostas = erroRespostas + "Gabarito correto do Medicamento "+  diarioGabarito.Medicamento + ": " + diarioGabarito.Periodo + ", " + diarioGabarito.Horario + "hrs, " + (diarioGabarito.HorarioComplemento == null || diarioGabarito.HorarioComplemento == "" ? "EM BRANCO" : diarioGabarito.HorarioComplemento) +  ", " + diarioGabarito.Dose + ", " + diarioGabarito.Quantidade + " e " + diarioGabarito.NomeBebida + ";" + "<br>";
+                            erroRespostas = erroRespostas + "Gabarito: "+  diarioGabarito.Medicamento + ": " + diarioGabarito.Periodo + ", " + diarioGabarito.Horario + "hrs, " + (diarioGabarito.HorarioComplemento == null || diarioGabarito.HorarioComplemento == "" ? "EM BRANCO" : diarioGabarito.HorarioComplemento) +  ", " + diarioGabarito.Dose + ", " + diarioGabarito.Quantidade + " e " + diarioGabarito.NomeBebida + ";" + "<br>";
                         }
                         break;
                     }
@@ -226,8 +226,8 @@ namespace PacienteVirtual.Negocio
                 }
             }
             modelState.AddModelError("ErroDiarioPessoal", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
-                  (erroNaoContemNoGabarito.Equals("") ? "" : "Medicamentos que não contém no Gabarito: <br>" + erroNaoContemNoGabarito + "<br>") +
-                  (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Medicamentos que não foram adicionados do Gabarito: <br>" + erroContemGabaritoNaoContemResposta));
+                  (erroNaoContemNoGabarito.Equals("") ? "" : "Não contém no Gabarito: <br>" + erroNaoContemNoGabarito + "<br>") +
+                  (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Não foram adicionados do Gabarito: <br>" + erroContemGabaritoNaoContemResposta));
         }
     }
 }
