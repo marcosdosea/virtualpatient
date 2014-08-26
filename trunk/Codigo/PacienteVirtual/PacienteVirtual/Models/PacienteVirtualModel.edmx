@@ -1319,6 +1319,7 @@
           <Property Name="IdDiagnostico" Type="int" Nullable="false" />
           <Property Name="IdConsultaVariavel" Type="bigint" Nullable="false" />
           <Property Name="DescricaoPrescricao" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="Horarios" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="Realizada" Type="bool" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_psicoespiritual">
@@ -2695,12 +2696,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-      warning 6013: The table/view 'def.pv1.my_aspnet_schemaversion' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="my_aspnet_schemaversion">
-        <Property Name="version" Type="int" />
-      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -4066,6 +4061,7 @@
           <Property Type="String" Name="DescricaoPrescricao" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="Realizada" Nullable="false" />
           <NavigationProperty Name="tb_diagnostico_consulta_variavel" Relationship="pvModel.fk_tb_precricao_enfermagem_tb_diagnostico_consulta_variavel1" FromRole="tb_precricao_enfermagem" ToRole="tb_diagnostico_consulta_variavel" />
+          <Property Type="String" Name="Horarios" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tb_psicoespiritual">
           <Key>
@@ -6165,6 +6161,7 @@
           <EntitySetMapping Name="tb_precricao_enfermagem">
             <EntityTypeMapping TypeName="pvModel.tb_precricao_enfermagem">
               <MappingFragment StoreEntitySet="tb_precricao_enfermagem">
+                <ScalarProperty Name="Horarios" ColumnName="Horarios" />
                 <ScalarProperty Name="Realizada" ColumnName="Realizada" />
                 <ScalarProperty Name="DescricaoPrescricao" ColumnName="DescricaoPrescricao" />
                 <ScalarProperty Name="IdConsultaVariavel" ColumnName="IdConsultaVariavel" />
