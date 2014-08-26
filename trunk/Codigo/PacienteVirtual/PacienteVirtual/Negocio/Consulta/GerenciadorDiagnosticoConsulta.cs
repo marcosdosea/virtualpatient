@@ -171,7 +171,7 @@ namespace PacienteVirtual.Negocio
                         {
                             IdConsultaVariavel = diagnosticoConsulta.IdConsultaVariavel,
                             IdDiagnostico = diagnosticoConsulta.IdDiagnostico,
-                            Diagnostico = diagnosticoConsulta.tb_diagnostico.Diagnostico,
+                            DescricaoDiagnostico = diagnosticoConsulta.tb_diagnostico.Diagnostico,
                             IdClasseDiagnostico = diagnosticoConsulta.tb_diagnostico.IdClasseDiagnostico,
                             DescricaoClasseDiagnostico = diagnosticoConsulta.tb_diagnostico.tb_classe_diagnostico.DescricaoClasse,
                             IdDominioDiagnostico = diagnosticoConsulta.tb_diagnostico.tb_classe_diagnostico.IdDominioDiagnostico,

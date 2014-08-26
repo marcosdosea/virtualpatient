@@ -39,7 +39,7 @@
         <div class="row-fluid">
             <div class="span3">
                  <div class="editor-label">
-                    <%: Html.LabelFor(model => model.Diagnostico)%>
+                    <%: Html.LabelFor(model => model.DescricaoDiagnostico)%>
                 </div>
             </div>
             <div class="span6">

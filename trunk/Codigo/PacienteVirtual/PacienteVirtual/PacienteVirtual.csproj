@@ -149,6 +149,9 @@
     <Compile Include="Controllers\Cadastro\DiagnosticoCaracteristicaController.cs" />
     <Compile Include="Controllers\Cadastro\DiagnosticoController.cs" />
     <Compile Include="Controllers\Cadastro\DiagnosticoFatorController.cs" />
+    <Compile Include="Controllers\Consulta\DiagnosticoConsultaCaracteristicaController.cs" />
+    <Compile Include="Controllers\Consulta\DiagnosticoConsultaFatorController.cs" />
+    <Compile Include="Controllers\Consulta\PrescricaoEnfermagemController.cs" />
     <Compile Include="Models\Cadastro\DiagnosticoCaracteristicaModel.cs" />
     <Compile Include="Models\Cadastro\DiagnosticoFatorModel.cs" />
     <Compile Include="Controllers\Cadastro\DominioDiagnosticoController.cs" />
@@ -220,6 +223,7 @@
     <Compile Include="Models\Consulta\ComunicacaoModel.cs" />
     <Compile Include="Models\Consulta\ConscienciaModel.cs" />
     <Compile Include="Models\Consulta\ConsultaParametroModel.cs" />
+    <Compile Include="Models\Consulta\DiagnosticoConsultaCaracteristicaModel.cs" />
     <Compile Include="Models\Consulta\DiagnosticoConsultaFatorModel.cs" />
     <Compile Include="Models\Consulta\DiagnosticoConsultaModel.cs" />
     <Compile Include="Models\Consulta\EliminacaoModel.cs" />
@@ -232,6 +236,7 @@
     <Compile Include="Models\Consulta\OxigenacaoModel.cs" />
     <Compile Include="Models\Consulta\PatologiasAtuaisModel.cs" />
     <Compile Include="Models\Consulta\PercepcaoExpectativasModel.cs" />
+    <Compile Include="Models\Consulta\PrescricaoEnfermagemModel.cs" />
     <Compile Include="Models\Consulta\PsicoEspiritualModel.cs" />
     <Compile Include="Models\Consulta\QueixaMedicamentoModel.cs" />
     <Compile Include="Models\Consulta\SensorialModel.cs" />
@@ -267,6 +272,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorConsciencia.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorConsultaParametro.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorDiagnosticoConsulta.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorDiagnosticoConsultaCaracteristica.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorDiagnosticoConsultaFator.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorEliminacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorExamesFisicos.cs" />
@@ -276,6 +282,7 @@
     <Compile Include="Negocio\Consulta\GerenciadorOutrasNecessidades.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorOxigenacao.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorPercepcaoExpectativas.cs" />
+    <Compile Include="Negocio\Consulta\GerenciadorPrescricaoEnfermagem.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorPsicoEspiritual.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorQueixaMedicamento.cs" />
     <Compile Include="Negocio\Consulta\GerenciadorCarta.cs" />
@@ -685,10 +692,15 @@
     <Content Include="Views\DiagnosticoCaracteristica\Details.aspx" />
     <Content Include="Views\DiagnosticoCaracteristica\Edit.aspx" />
     <Content Include="Views\DiagnosticoCaracteristica\Index.aspx" />
+    <Content Include="Views\DiagnosticoConsultaCaracteristica\Adicionar.ascx" />
+    <Content Include="Views\DiagnosticoConsultaCaracteristica\Index.ascx" />
+    <Content Include="Views\DiagnosticoConsultaFator\Adicionar.ascx" />
+    <Content Include="Views\DiagnosticoConsultaFator\Index.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Create.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Details.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Edit.aspx" />
     <Content Include="Views\DiagnosticoConsulta\Index.ascx" />
+    <Content Include="Views\DiagnosticoConsulta\ResultadosEsperados.ascx" />
     <Content Include="Views\DiagnosticoFator\Create.aspx" />
     <Content Include="Views\DiagnosticoFator\Delete.aspx" />
     <Content Include="Views\DiagnosticoFator\Details.aspx" />
@@ -746,6 +758,8 @@
     <Content Include="Views\PercepcaoExpectativas\Edit.ascx" />
     <Content Include="Views\Pessoa\DefinirAdministradorFarmacia.aspx" />
     <Content Include="Views\Pessoa\DefinirAdministradorEnfermagem.aspx" />
+    <Content Include="Views\PrescricaoEnfermagem\Adicionar.ascx" />
+    <Content Include="Views\PrescricaoEnfermagem\Index.ascx" />
     <Content Include="Views\PsicoEspiritual\Edit.ascx" />
     <Content Include="Views\QueixaMedicamento\Edit.aspx" />
     <Content Include="Views\Religiao\Create.aspx" />

@@ -2394,4 +2394,22 @@
   <data name="fator_diagnostico" xml:space="preserve">
     <value>Fator Diagnóstico</value>
   </data>
+  <data name="adicionar_fator_diagnostico" xml:space="preserve">
+    <value>Adicionar Fator Diagnóstico</value>
+  </data>
+  <data name="adicionar_caracteristica_diagnostico" xml:space="preserve">
+    <value>Adicionar Característica do Diagnóstico</value>
+  </data>
+  <data name="resultados_esperados" xml:space="preserve">
+    <value>Resultados Esperados</value>
+  </data>
+  <data name="descricao_prescricao" xml:space="preserve">
+    <value>Descrição da Prescrição</value>
+  </data>
+  <data name="nao_realizado" xml:space="preserve">
+    <value>Não Realizado</value>
+  </data>
+  <data name="realizada" xml:space="preserve">
+    <value>Realizada</value>
+  </data>
 </root>

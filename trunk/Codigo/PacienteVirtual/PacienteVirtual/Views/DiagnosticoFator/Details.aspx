@@ -12,7 +12,7 @@
     <legend><%: Resources.Mensagem.fator_diagnostico %></legend>
     <div class="display-label"><%: Resources.Mensagem.diagnostico %></div>
     <div class="display-label">
-        <%: Html.DisplayFor(model => model.Diagnostico) %>
+        <%: Html.DisplayFor(model => model.DescricaoDiagnostico) %>
     </div>
     
     <div class="display-label"><%: Resources.Mensagem.descricao_fator_diagnostico %></div>

@@ -26,18 +26,21 @@
                     <%: Html.DisplayFor(modelItem => item.DescricaoClasseDiagnostico) %>
                 </td>
                 <td>
-                    <%: Html.DisplayFor(modelItem => item.Diagnostico) %>
+                    <%: Html.DisplayFor(modelItem => item.DescricaoDiagnostico) %>
                 </td>
                 <td>
                     <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4)
                         || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
                        { %>
-                        <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "MedicamentoNaoPrescrito", new { idConsultaVariavel = 
-                            item.IdConsultaVariavel, idMedicamento = item.IdDiagnostico }, null)%>
+                        <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "DiagnosticoConsulta", new { idConsultaVariavel = 
+                            item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, null)%>
                         |
-                        <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "MedicamentoNaoPrescrito", new { idConsultaVariavel = 
-                            item.IdConsultaVariavel, idMedicamento = item.IdDiagnostico }, new { onclick = 
+                        <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new { idConsultaVariavel = 
+                            item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, new { onclick = 
                             ("return confirm('Deseja realmente REMOVER este Medicamento?')") })%>
+                        |
+                        <%: Html.ActionLink(Resources.Mensagem.selecione, "SelecionarConsultaDiagnostico", "DiagnosticoConsulta", 
+                            new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, null)%>
                     <% } %>
                 </td>
             </tr>

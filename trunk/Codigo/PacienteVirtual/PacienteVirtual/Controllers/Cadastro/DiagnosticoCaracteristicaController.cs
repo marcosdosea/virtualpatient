@@ -30,7 +30,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "Diagnostico");
+            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico");
             return View();
         }
 
@@ -45,7 +45,7 @@ namespace PacienteVirtual.Controllers
                 gDiagnosticoCaracteristica.Inserir(diagnosticoCaracteristica);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "Diagnostico",
+            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico",
                 diagnosticoCaracteristica.IdDiagnostico);
             return View(diagnosticoCaracteristica);
         }
@@ -56,7 +56,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(int id)
         {
             DiagnosticoCaracteristicaModel diagnosticoCaracteristica = gDiagnosticoCaracteristica.Obter(id);
-            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "Diagnostico",
+            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico",
                 diagnosticoCaracteristica.IdDiagnostico);
             return View(diagnosticoCaracteristica);
         }
@@ -72,7 +72,7 @@ namespace PacienteVirtual.Controllers
                 gDiagnosticoCaracteristica.Atualizar(diagnosticoCaracteristica);
                 return RedirectToAction("Index");
             }
-            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "Diagnostico",
+            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico",
                 diagnosticoCaracteristica.IdDiagnostico);
             return View(diagnosticoCaracteristica);
         }

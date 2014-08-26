@@ -19,7 +19,7 @@
         <%: Html.HiddenFor(model => model.IdDiagnosticoFator) %>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Diagnostico)%>
+            <%: Html.LabelFor(model => model.DescricaoDiagnostico)%>
         </div>
         <div class="editor-field">
             <%: Html.DropDownList("IdDiagnostico", Resources.Mensagem.selecione)%>
