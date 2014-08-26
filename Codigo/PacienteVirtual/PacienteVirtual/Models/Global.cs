@@ -89,7 +89,7 @@ namespace PacienteVirtual.Models
             SessionController.IdClasseDiagnostico = Global.NaoSelecionado;
             SessionController.IdDominioDiagnostico = Global.NaoSelecionado;
             SessionController.IdDiagnostico = Global.NaoSelecionado;
-            SessionController.RiscoDiagnostico = false;
+            //SessionController.RiscoDiagnostico = false;
 
             if (SessionController.DadosTurmaPessoa.Curso.Equals(cursoFarmacia))
             {
@@ -118,6 +118,12 @@ namespace PacienteVirtual.Models
             SessionController.Sensorial = null;
             SessionController.OutrasNecessidades = null;
             SessionController.Sexualidade = null;
+            SessionController.ListaDiagnostico = null;
+            SessionController.ListaDiagnosticoConsultaFator = null;
+            SessionController.ListaDiagnosticoConsultaCaracteristica = null;
+            SessionController.ListaPrescricaoEnfermagem = null;
+            SessionController.IdDiagnosticoConsulta = Global.NaoSelecionado;
+            SessionController.DiagnosticoConsulta = null;
             //SessionController.DiagnosticoDetalhes = false;
         }
 

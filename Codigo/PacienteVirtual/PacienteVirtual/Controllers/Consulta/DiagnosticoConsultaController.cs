@@ -36,6 +36,31 @@ namespace PacienteVirtual.Controllers
             return RedirectToAction("Edit2", "Consulta");
         }
 
+
+        public ActionResult SelecionarConsultaDiagnostico(long idConsultaVariavel, int idDiagnostico)
+        {
+            SessionController.IdDiagnosticoConsulta = idDiagnostico;
+            SessionController.DiagnosticoConsulta = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorConsultaDiagnostico(
+                idConsultaVariavel, idDiagnostico);
+            SessionController.ListaDiagnosticoConsultaCaracteristica = null;
+            SessionController.ListaDiagnosticoConsultaFator = null;
+            SessionController.ListaPrescricaoEnfermagem = null;
+            return RedirectToAction("Edit2", "Consulta");
+        }
+
+
+        [HttpPost]
+        public ActionResult ResultadosEsperados(DiagnosticoConsultaModel diagnosticoConsulta)
+        {
+            if (ModelState.IsValid)
+            {
+                GerenciadorDiagnosticoConsulta.GetInstance().Atualizar(diagnosticoConsulta);
+                SessionController.DiagnosticoConsulta = diagnosticoConsulta;
+                return RedirectToAction("Edit2", "Consulta");
+            }
+            return View(diagnosticoConsulta);
+        }
+
         /*
         // POST: /DiagnosticoConsulta/Edit
         public ActionResult Edit(long idConsultaVariavel, int idDiagnostico)

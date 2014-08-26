@@ -124,6 +124,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adicionar Característica do Diagnóstico.
+        /// </summary>
+        public static string adicionar_caracteristica_diagnostico {
+            get {
+                return ResourceManager.GetString("adicionar_caracteristica_diagnostico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adicionar Fator Diagnóstico.
+        /// </summary>
+        public static string adicionar_fator_diagnostico {
+            get {
+                return ResourceManager.GetString("adicionar_fator_diagnostico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Afonia.
         /// </summary>
         public static string Afonia {
@@ -1866,6 +1884,15 @@ namespace Resources {
         public static string descricao_objetivo_terapeutico {
             get {
                 return ResourceManager.GetString("descricao_objetivo_terapeutico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descrição da Prescrição.
+        /// </summary>
+        public static string descricao_prescricao {
+            get {
+                return ResourceManager.GetString("descricao_prescricao", resourceCulture);
             }
         }
         
@@ -4228,6 +4255,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Não Realizado.
+        /// </summary>
+        public static string nao_realizado {
+            get {
+                return ResourceManager.GetString("nao_realizado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Não se Aplica.
         /// </summary>
         public static string nao_se_aplica {
@@ -5452,6 +5488,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Realizada.
+        /// </summary>
+        public static string realizada {
+            get {
+                return ResourceManager.GetString("realizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recebe visitas.
         /// </summary>
         public static string recebe_visitas {
@@ -5664,6 +5709,15 @@ namespace Resources {
         public static string resultado_esperado {
             get {
                 return ResourceManager.GetString("resultado_esperado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resultados Esperados.
+        /// </summary>
+        public static string resultados_esperados {
+            get {
+                return ResourceManager.GetString("resultados_esperados", resourceCulture);
             }
         }
         

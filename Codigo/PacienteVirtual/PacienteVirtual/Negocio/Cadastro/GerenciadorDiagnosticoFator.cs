@@ -100,7 +100,7 @@ namespace PacienteVirtual.Negocio
                             IdDiagnosticoFator = diagnosticoFator.IdDiagnosticoFator,
                             IdDiagnostico = diagnosticoFator.IdDiagnostico,
                             DescricaoFatorDiagnostico = diagnosticoFator.DescricaoFator,
-                            Diagnostico = diagnosticoFator.tb_diagnostico.Diagnostico
+                            DescricaoDiagnostico = diagnosticoFator.tb_diagnostico.Diagnostico
                         };
             return query;
         }
@@ -122,6 +122,16 @@ namespace PacienteVirtual.Negocio
         public DiagnosticoFatorModel Obter(int idDiagnosticoFator)
         {
             return GetQuery().Where(diagnosticoFator => diagnosticoFator.IdDiagnosticoFator == idDiagnosticoFator).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtem todos os fatores de determinado diagnostico
+        /// </summary>
+        /// <param name="idDiagnostico">Identificador do diagnostico</param>
+        /// <returns></returns>
+        public IEnumerable<DiagnosticoFatorModel> ObterPorDiagnostico(int idDiagnostico)
+        {
+            return GetQuery().Where(diagnosticoFator => diagnosticoFator.IdDiagnostico == idDiagnostico).ToList();
         }
 
         /// <summary>

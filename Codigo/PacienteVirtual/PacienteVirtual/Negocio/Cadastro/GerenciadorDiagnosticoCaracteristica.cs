@@ -102,7 +102,7 @@ namespace PacienteVirtual.Negocio
                             IdDiagnosticoCaracteristica = diagnosticoCaracteristica.IdDiagnosticoCaracteristica,
                             IdDiagnostico = diagnosticoCaracteristica.IdDiagnostico,
                             DescricaoCaracteristicaDiagnostico = diagnosticoCaracteristica.DescricaoCaracteristica,
-                            Diagnostico = diagnosticoCaracteristica.tb_diagnostico.Diagnostico
+                            DescricaoDiagnostico = diagnosticoCaracteristica.tb_diagnostico.Diagnostico
                         };
             return query;
         }
@@ -124,6 +124,16 @@ namespace PacienteVirtual.Negocio
         public DiagnosticoCaracteristicaModel Obter(int idDiagnosticoCaracteristica)
         {
             return GetQuery().Where(dc => dc.IdDiagnosticoCaracteristica == idDiagnosticoCaracteristica).ToList().ElementAtOrDefault(0);
+        }
+
+        /// <summary>
+        /// Obtem as caracteristicas de determinado diagnóstico
+        /// </summary>
+        /// <param name="idDiagnostico"></param>
+        /// <returns></returns>
+        public IEnumerable<DiagnosticoCaracteristicaModel> ObterPorDiagnostico(int idDiagnostico)
+        {
+            return GetQuery().Where(dc => dc.IdDiagnostico == idDiagnostico).ToList();
         }
 
         /// <summary>

@@ -51,9 +51,6 @@ namespace PacienteVirtual.Models
 
         public NutricaoModel Nutricao { get; set; }
 
-        public DiagnosticoConsultaModel DiagnosticoConsulta { get; set; }
-        public IEnumerable<DiagnosticoConsultaModel> ListaDiagnosticoConsulta { get; set; }
-
         // Dados Variáveis nas consultas
         public ConsultaVariavelModel ConsultaVariavel { get; set; }
         public EstiloVidaModel EstiloVida { get; set; }
@@ -89,5 +86,17 @@ namespace PacienteVirtual.Models
         public QueixaMedicamentoModel QueixaMedicamento { get; set; }
         public IEnumerable<QueixaMedicamentoModel> ListaQueixaMedicamento { get; set; }
 
+        public DiagnosticoConsultaModel DiagnosticoConsultaSelecionada { get; set; }
+        public DiagnosticoConsultaModel DiagnosticoConsulta { get; set; }
+        public IEnumerable<DiagnosticoConsultaModel> ListaDiagnosticoConsulta { get; set; }
+
+        public DiagnosticoConsultaFatorModel DiagnosticoConsultaFator { get; set; }
+        public IEnumerable<DiagnosticoFatorModel> ListaDiagnosticoConsultaFator { get; set; }
+
+        public DiagnosticoConsultaCaracteristicaModel DiagnosticoConsultaCaracteristica { get; set; }
+        public IEnumerable<DiagnosticoCaracteristicaModel> ListaDiagnosticoConsultaCaracteristica { get; set; }
+
+        public PrescricaoEnfermagemModel PrescricaoEnfermagem { get; set; }
+        public IEnumerable<PrescricaoEnfermagemModel> ListaPrescricaoEnfermagem { get; set; }
     }
 }

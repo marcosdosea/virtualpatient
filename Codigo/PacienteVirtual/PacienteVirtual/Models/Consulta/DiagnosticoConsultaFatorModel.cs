@@ -14,7 +14,7 @@ namespace PacienteVirtual.Models
         public int IdDiagnostico { get; set; }
 
         [Display(Name = "diagnostico", ResourceType = typeof(Mensagem))]
-        public string Diagnostico { get; set; }
+        public string DescricaoDiagnostico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]

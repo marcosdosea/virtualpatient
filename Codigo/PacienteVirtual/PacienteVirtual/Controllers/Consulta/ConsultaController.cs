@@ -1,8 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
-using System.Collections.Generic;
 
 namespace PacienteVirtual.Controllers
 {
@@ -237,7 +237,11 @@ namespace PacienteVirtual.Controllers
                 SessionController.IdDominioDiagnostico), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
                 SessionController.IdClasseDiagnostico);
             ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(
-                SessionController.IdClasseDiagnostico), "IdDiagnostico", "Diagnostico", SessionController.IdDiagnostico);
+                SessionController.IdClasseDiagnostico), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
+            ViewBag.IdDiagnosticoFator = new SelectList(GerenciadorDiagnosticoFator.GetInstance().ObterPorDiagnostico(
+                SessionController.DiagnosticoConsulta.IdDiagnostico), "IdDiagnosticoFator", "DescricaoFatorDiagnostico");
+            ViewBag.IdDiagnosticoCaracteristica = new SelectList(GerenciadorDiagnosticoCaracteristica.GetInstance().ObterPorDiagnostico(
+                SessionController.DiagnosticoConsulta.IdDiagnostico), "IdDiagnosticoCaracteristica", "DescricaoCaracteristicaDiagnostico"); 
         }
 
         private void ViewBagsSegundaTelaCursoFarmacia()
@@ -354,8 +358,19 @@ namespace PacienteVirtual.Controllers
 
         private static void ConsultaSegundaTelaEnfermagem(ConsultaModel consultaModel)
         {
-            consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel() { IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel() { IdConsultaVariavel = 
+                SessionController.ConsultaVariavel.IdConsultaVariavel };
+            consultaModel.DiagnosticoConsultaSelecionada = SessionController.DiagnosticoConsulta;
             consultaModel.ListaDiagnosticoConsulta = SessionController.ListaDiagnostico;
+            consultaModel.DiagnosticoConsultaFator = new DiagnosticoConsultaFatorModel() { IdConsultaVariavel = 
+                SessionController.ConsultaVariavel.IdConsultaVariavel, IdDiagnostico = SessionController.IdDiagnosticoConsulta};
+            consultaModel.ListaDiagnosticoConsultaFator = SessionController.ListaDiagnosticoConsultaFator;
+            consultaModel.DiagnosticoConsultaCaracteristica = new DiagnosticoConsultaCaracteristicaModel() { IdConsultaVariavel =
+                    SessionController.ConsultaVariavel.IdConsultaVariavel, IdDiagnostico = SessionController.IdDiagnosticoConsulta };
+            consultaModel.ListaDiagnosticoConsultaCaracteristica = SessionController.ListaDiagnosticoConsultaCaracteristica;
+            consultaModel.PrescricaoEnfermagem = new PrescricaoEnfermagemModel() { IdConsultaVariavel = 
+                SessionController.ConsultaVariavel.IdConsultaVariavel, IdDiagnostico = SessionController.IdDiagnosticoConsulta };
+            consultaModel.ListaPrescricaoEnfermagem = SessionController.ListaPrescricaoEnfermagem; 
         }
 
         private static void ConsultaSegundaTelaFarmacia(ConsultaModel consultaModel)

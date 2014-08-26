@@ -287,6 +287,45 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static IEnumerable<DiagnosticoFatorModel> ListaDiagnosticoConsultaFator
+        {
+            get
+            {
+                IEnumerable<DiagnosticoFatorModel> listaDCF = (IEnumerable<DiagnosticoFatorModel>)HttpContext.Current.Session["_ListaDCF"];
+                if (listaDCF == null)
+                {
+                    listaDCF = GerenciadorDiagnosticoConsultaFator.GetInstance().ObterTodosPorDiagnosticoConsulta(
+                        ConsultaVariavel.IdConsultaVariavel, DiagnosticoConsulta.IdDiagnostico);
+                    HttpContext.Current.Session["_ListaDCF"] = listaDCF;
+                }
+                return listaDCF;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaDCF"] = value;
+            }
+        }
+
+        public static IEnumerable<DiagnosticoCaracteristicaModel> ListaDiagnosticoConsultaCaracteristica
+        {
+            get
+            {
+                IEnumerable<DiagnosticoCaracteristicaModel> listaDCC = (IEnumerable<DiagnosticoCaracteristicaModel>)
+                    HttpContext.Current.Session["_ListaDCC"];
+                if (listaDCC == null)
+                {
+                    listaDCC = GerenciadorDiagnosticoConsultaCaracteristica.GetInstance().ObterTodosPorDiagnosticoConsulta(
+                        ConsultaVariavel.IdConsultaVariavel, DiagnosticoConsulta.IdDiagnostico);
+                    HttpContext.Current.Session["_ListaDCC"] = listaDCC;
+                }
+                return listaDCC;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaDCC"] = value;
+            }
+        }
+
         public static IEnumerable<PatologiaModel> ListaPatologiasAtuais
         {
             get
@@ -795,6 +834,24 @@ namespace PacienteVirtual.Controllers
             set
             {
                 HttpContext.Current.Session["_IdDiagnostico"] = value;
+            }
+        }
+
+        public static int IdDiagnosticoConsulta
+        {
+            get
+            {
+                int idDiagnosticoConsulta = (int)HttpContext.Current.Session["_IdDiagnosticoConsulta"];
+                if (idDiagnosticoConsulta < Global.ValorInicial)
+                {
+                    idDiagnosticoConsulta = Global.ValorInteiroNulo;
+                    HttpContext.Current.Session["_IdDiagnosticoConsulta"] = idDiagnosticoConsulta;
+                }
+                return idDiagnosticoConsulta;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdDiagnosticoConsulta"] = value;
             }
         }
 
@@ -1427,6 +1484,44 @@ namespace PacienteVirtual.Controllers
                 return (string)HttpContext.Current.Session["_NomePessoa"];
             }
             set { HttpContext.Current.Session["_NomePessoa"] = value; }
+        }
+
+        public static DiagnosticoConsultaModel DiagnosticoConsulta
+        {
+            get
+            {
+                DiagnosticoConsultaModel diagnosticoConsulta = (DiagnosticoConsultaModel)HttpContext.Current.Session["_DiagnosticoConsulta"];
+                if (diagnosticoConsulta == null)
+                {
+                    diagnosticoConsulta = new DiagnosticoConsultaModel();
+                    HttpContext.Current.Session["_DiagnosticoConsulta"] = diagnosticoConsulta;
+                }
+                return diagnosticoConsulta;
+            }
+            set
+            {
+                HttpContext.Current.Session["_DiagnosticoConsulta"] = value;
+            }
+        }
+
+        public static IEnumerable<PrescricaoEnfermagemModel> ListaPrescricaoEnfermagem
+        {
+            get
+            {
+                IEnumerable<PrescricaoEnfermagemModel> listaPrescricaoEnfermagem = (IEnumerable<PrescricaoEnfermagemModel>)
+                    HttpContext.Current.Session["_ListaPrescricaoEnfermagem"];
+                if (listaPrescricaoEnfermagem == null)
+                {
+                    listaPrescricaoEnfermagem = GerenciadorPrescricaoEnfermagem.GetInstance().ObterPorConsultaDiagnostico(
+                        ConsultaVariavel.IdConsultaVariavel, DiagnosticoConsulta.IdDiagnostico);
+                    HttpContext.Current.Session["_ListaPrescricaoEnfermagem"] = listaPrescricaoEnfermagem;
+                }
+                return listaPrescricaoEnfermagem;
+            }
+            set
+            {
+                HttpContext.Current.Session["_ListaPrescricaoEnfermagem"] = value;
+            }
         }
     }
 }
