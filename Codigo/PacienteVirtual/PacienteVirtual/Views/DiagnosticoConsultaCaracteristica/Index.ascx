@@ -4,7 +4,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                <%: Resources.Mensagem.descricao_caracteristica_diagnostico%>
+                <%: Resources.Mensagem.caracteristica_definidora %>
             </th>
             <th>
                 <%: Resources.Mensagem.opcoes %>

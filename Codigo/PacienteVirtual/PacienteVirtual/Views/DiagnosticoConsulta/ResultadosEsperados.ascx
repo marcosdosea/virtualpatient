@@ -7,14 +7,12 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <legend>
-        <%: Resources.Mensagem.resultados_esperados %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <%: Html.HiddenFor(model => model.IdDiagnostico) %>
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span12">
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.ResultadoEsperado) %>
+                <%: Html.Label(Resources.Mensagem.resultados_esperados) %>
             </div>
             <div class="editor-field">
                 <%: Html.TextAreaFor(model => model.ResultadoEsperado, new { style = "width:579px;" })%>
@@ -22,8 +20,11 @@
             </div>
         </div>
     </div>
-    <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+    <div class="row-fluid">
+        <div class="span9"></div>
+        <div class="span3">
+            <input class="btn btn-primary" type="submit" value=" <%: Resources.Mensagem.salvar %>  " />
+        </div>
     </div>
 </fieldset>
 <% } %>

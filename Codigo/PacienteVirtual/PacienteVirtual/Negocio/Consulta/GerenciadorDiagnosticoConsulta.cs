@@ -123,22 +123,6 @@ namespace PacienteVirtual.Negocio
             }
         }
 
-        /*
-        /// <summary>
-        /// Faz a validação para verificar se todos os id estão diferentes de 0
-        /// </summary>
-        public bool ValidarRespostasSelecionaveis(string s1, string s2, string s3, string s4, string s5, int idDiag, int idGrupoDiag)
-        {
-            if (s1 != null && s2 != null && s3 != null && s4 != null && s5 != null && idDiag != 0 && idGrupoDiag != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        } */
-
         /// <summary>
         /// Remove dados do DiagnosticoConsulta
         /// </summary>
@@ -177,7 +161,8 @@ namespace PacienteVirtual.Negocio
                             IdDominioDiagnostico = diagnosticoConsulta.tb_diagnostico.tb_classe_diagnostico.IdDominioDiagnostico,
                             DescricaoDominioDiagnostico = diagnosticoConsulta.tb_diagnostico.tb_classe_diagnostico.tb_dominio_diagnostico.
                                 DescricaoDominio,
-                            ResultadoEsperado = diagnosticoConsulta.ResultadoEsperado
+                            ResultadoEsperado = diagnosticoConsulta.ResultadoEsperado,
+                            Risco = diagnosticoConsulta.tb_diagnostico.PossuiRisco
                         };
             return query;
         }

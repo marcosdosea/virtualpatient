@@ -4,10 +4,10 @@
         <table class="table table-bordered table-striped">
             <tr>
                 <th>
-                    <%: Resources.Mensagem.descricao_prescricao %>
+                    <%: Resources.Mensagem.prescricao_enfermagem %>
                 </th>
                 <th>
-                    <%: Resources.Mensagem.horario %>
+                    <%: Resources.Mensagem.horarios %>
                 </th>
                 <th>
                 </th>

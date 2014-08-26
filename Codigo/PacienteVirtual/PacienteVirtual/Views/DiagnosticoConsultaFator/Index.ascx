@@ -4,7 +4,14 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                <%: Resources.Mensagem.descricao_fator_diagnostico%>
+                <% if (Session["_Risco"].Equals(true))
+                   { %>
+                    <%: Resources.Mensagem.fatores_risco%>
+                <% }
+                   else
+                   { %>
+                   <%: Resources.Mensagem.fatores_relacionados%>
+                <% } %>
             </th>
             <th>
                 <%: Resources.Mensagem.opcoes %>

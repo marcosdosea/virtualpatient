@@ -124,7 +124,6 @@ namespace PacienteVirtual.Models
             SessionController.ListaPrescricaoEnfermagem = null;
             SessionController.IdDiagnosticoConsulta = Global.NaoSelecionado;
             SessionController.DiagnosticoConsulta = null;
-            //SessionController.DiagnosticoDetalhes = false;
         }
 
         private static void ZeraSessaoConsultaFarmacia()

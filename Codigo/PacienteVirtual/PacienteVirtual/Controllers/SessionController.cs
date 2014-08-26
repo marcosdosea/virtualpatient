@@ -976,15 +976,6 @@ namespace PacienteVirtual.Controllers
             set { HttpContext.Current.Session["_Risco"] = value; }
         }
 
-        public static bool DiagnosticoDetalhes
-        {
-            get
-            {
-                return (bool)HttpContext.Current.Session["_DiagDetalhes"];
-            }
-            set { HttpContext.Current.Session["_DiagDetalhes"] = value; }
-        }
-
         public static string ErroConsultaVariavelQueixa2
         {
             get
@@ -1491,11 +1482,12 @@ namespace PacienteVirtual.Controllers
             get
             {
                 DiagnosticoConsultaModel diagnosticoConsulta = (DiagnosticoConsultaModel)HttpContext.Current.Session["_DiagnosticoConsulta"];
+                /*
                 if (diagnosticoConsulta == null)
                 {
                     diagnosticoConsulta = new DiagnosticoConsultaModel();
                     HttpContext.Current.Session["_DiagnosticoConsulta"] = diagnosticoConsulta;
-                }
+                } */
                 return diagnosticoConsulta;
             }
             set
