@@ -32,5 +32,8 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "resultado_esperado", ResourceType = typeof(Mensagem))]
         public string ResultadoEsperado { get; set; }
+
+        [Display(Name = "risco", ResourceType = typeof(Mensagem))]
+        public bool Risco { get; set; }
     }
 }

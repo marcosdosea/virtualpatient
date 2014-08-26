@@ -228,23 +228,29 @@
                                 <% Html.RenderPartial("../DiagnosticoConsulta/Create", Model.DiagnosticoConsulta);%>
                                 <% Html.RenderPartial("../DiagnosticoConsulta/Index", Model.ListaDiagnosticoConsulta);%>
                             </div>
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../DiagnosticoConsultaFator/Adicionar", Model.DiagnosticoConsultaFator);%>
-                                <% Html.RenderPartial("../DiagnosticoConsultaFator/Index", Model.ListaDiagnosticoConsultaFator);%>
-                            </div>
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../DiagnosticoConsultaCaracteristica/Adicionar", 
+                            <% if (Session["_DiagnosticoConsulta"] != null)
+                               { %>
+                               <% if (Session["_Risco"].Equals(false))
+                                  { %>
+                                <div class="thumbnail">
+                                    <% Html.RenderPartial("../DiagnosticoConsultaCaracteristica/Adicionar",
                                        Model.DiagnosticoConsultaCaracteristica);%>
-                                <% Html.RenderPartial("../DiagnosticoConsultaCaracteristica/Index", 
+                                    <% Html.RenderPartial("../DiagnosticoConsultaCaracteristica/Index",
                                        Model.ListaDiagnosticoConsultaCaracteristica);%>
-                            </div>
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../DiagnosticoConsulta/ResultadosEsperados", Model.DiagnosticoConsultaSelecionada);%>
-                            </div>
-                            <div class="thumbnail">
-                                <% Html.RenderPartial("../PrescricaoEnfermagem/Adicionar", Model.PrescricaoEnfermagem);%>
-                                <% Html.RenderPartial("../PrescricaoEnfermagem/Index", Model.ListaPrescricaoEnfermagem);%>
-                            </div>
+                                </div>
+                                <% } %>
+                                <div class="thumbnail">
+                                    <% Html.RenderPartial("../DiagnosticoConsultaFator/Adicionar", Model.DiagnosticoConsultaFator);%>
+                                    <% Html.RenderPartial("../DiagnosticoConsultaFator/Index", Model.ListaDiagnosticoConsultaFator);%>
+                                </div>
+                                <div class="thumbnail">
+                                    <% Html.RenderPartial("../DiagnosticoConsulta/ResultadosEsperados", Model.DiagnosticoConsultaSelecionada);%>
+                                </div>
+                                <div class="thumbnail">
+                                    <% Html.RenderPartial("../PrescricaoEnfermagem/Adicionar", Model.PrescricaoEnfermagem);%>
+                                    <% Html.RenderPartial("../PrescricaoEnfermagem/Index", Model.ListaPrescricaoEnfermagem);%>
+                                </div>
+                            <% } %>
                         </div>
                     </div>
                 </div>

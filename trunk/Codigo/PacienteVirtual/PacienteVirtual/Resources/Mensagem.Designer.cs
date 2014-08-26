@@ -754,6 +754,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Característica Definidora.
+        /// </summary>
+        public static string caracteristica_definidora {
+            get {
+                return ResourceManager.GetString("caracteristica_definidora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Característica do Diagnóstico.
         /// </summary>
         public static string caracteristica_diagnostico {
@@ -939,6 +948,15 @@ namespace Resources {
         public static string cistostomia {
             get {
                 return ResourceManager.GetString("cistostomia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Classe.
+        /// </summary>
+        public static string classe {
+            get {
+                return ResourceManager.GetString("classe", resourceCulture);
             }
         }
         
@@ -2181,6 +2199,15 @@ namespace Resources {
         public static string doencas_atuais {
             get {
                 return ResourceManager.GetString("doencas_atuais", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domínio.
+        /// </summary>
+        public static string dominio {
+            get {
+                return ResourceManager.GetString("dominio", resourceCulture);
             }
         }
         
@@ -3432,6 +3459,15 @@ namespace Resources {
         public static string horario_observacao {
             get {
                 return ResourceManager.GetString("horario_observacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Horários.
+        /// </summary>
+        public static string horarios {
+            get {
+                return ResourceManager.GetString("horarios", resourceCulture);
             }
         }
         
@@ -5178,6 +5214,15 @@ namespace Resources {
         public static string prescricao_cuidados {
             get {
                 return ResourceManager.GetString("prescricao_cuidados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prescrição de Enfermagem.
+        /// </summary>
+        public static string prescricao_enfermagem {
+            get {
+                return ResourceManager.GetString("prescricao_enfermagem", resourceCulture);
             }
         }
         

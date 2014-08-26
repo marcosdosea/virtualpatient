@@ -94,7 +94,7 @@ namespace PacienteVirtual.Controllers
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
 
             AtribuiEstadoDaConsultaEstadoDaCorrecao(consultaVariavelModel);
-            
+
             GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
@@ -116,12 +116,12 @@ namespace PacienteVirtual.Controllers
         {
             long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
             ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
-            
+
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
             ConsultaModel consultaModel = ConsultaSegundaTela(consultaVariavelModel);
             ViewBagsSegundaParteConsulta();
-            
+
             SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
             SessionController.PrimeiraTelaConsulta = false;
 
@@ -129,7 +129,7 @@ namespace PacienteVirtual.Controllers
             {
                 corrigirSegundaTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica, consultaVariavelModel.IdCurso);
             }
-            
+
             return View(consultaModel);
         }
 
@@ -168,7 +168,7 @@ namespace PacienteVirtual.Controllers
             {
                 ViewsBagPrimeiraTelaCursoEnfermagem();
             }
-            
+
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace PacienteVirtual.Controllers
             ViewBag.AbasDentro = Global.ValorInteiroNulo;
             ViewBag.TotalAbasDentro = Global.ValorInteiroNulo;
         }
-        
+
         /// <summary>
         /// Views bags com dados para a segunda parte da consulta
         /// </summary>
@@ -234,14 +234,17 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdDominioDiagnostico = new SelectList(GerenciadorDominioDiagnostico.GetInstance().ObterTodos(), "IdDominioDiagnostico",
                 "DescricaoDominioDiagnostico", SessionController.IdDominioDiagnostico);
             ViewBag.IdClasseDiagnostico = new SelectList(GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio(
-                SessionController.IdDominioDiagnostico), "IdClasseDiagnostico", "DescricaoClasseDiagnostico", 
+                SessionController.IdDominioDiagnostico), "IdClasseDiagnostico", "DescricaoClasseDiagnostico",
                 SessionController.IdClasseDiagnostico);
             ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(
                 SessionController.IdClasseDiagnostico), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
-            ViewBag.IdDiagnosticoFator = new SelectList(GerenciadorDiagnosticoFator.GetInstance().ObterPorDiagnostico(
-                SessionController.DiagnosticoConsulta.IdDiagnostico), "IdDiagnosticoFator", "DescricaoFatorDiagnostico");
-            ViewBag.IdDiagnosticoCaracteristica = new SelectList(GerenciadorDiagnosticoCaracteristica.GetInstance().ObterPorDiagnostico(
-                SessionController.DiagnosticoConsulta.IdDiagnostico), "IdDiagnosticoCaracteristica", "DescricaoCaracteristicaDiagnostico"); 
+            if (SessionController.DiagnosticoConsulta != null)
+            {
+                ViewBag.IdDiagnosticoFator = new SelectList(GerenciadorDiagnosticoFator.GetInstance().ObterPorDiagnostico(
+                    SessionController.DiagnosticoConsulta.IdDiagnostico), "IdDiagnosticoFator", "DescricaoFatorDiagnostico");
+                ViewBag.IdDiagnosticoCaracteristica = new SelectList(GerenciadorDiagnosticoCaracteristica.GetInstance().ObterPorDiagnostico(
+                    SessionController.DiagnosticoConsulta.IdDiagnostico), "IdDiagnosticoCaracteristica", "DescricaoCaracteristicaDiagnostico");
+            }
         }
 
         private void ViewBagsSegundaTelaCursoFarmacia()
@@ -358,19 +361,33 @@ namespace PacienteVirtual.Controllers
 
         private static void ConsultaSegundaTelaEnfermagem(ConsultaModel consultaModel)
         {
-            consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel() { IdConsultaVariavel = 
-                SessionController.ConsultaVariavel.IdConsultaVariavel };
-            consultaModel.DiagnosticoConsultaSelecionada = SessionController.DiagnosticoConsulta;
+            consultaModel.DiagnosticoConsulta = new DiagnosticoConsultaModel()
+            {
+                IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel
+            };
             consultaModel.ListaDiagnosticoConsulta = SessionController.ListaDiagnostico;
-            consultaModel.DiagnosticoConsultaFator = new DiagnosticoConsultaFatorModel() { IdConsultaVariavel = 
-                SessionController.ConsultaVariavel.IdConsultaVariavel, IdDiagnostico = SessionController.IdDiagnosticoConsulta};
-            consultaModel.ListaDiagnosticoConsultaFator = SessionController.ListaDiagnosticoConsultaFator;
-            consultaModel.DiagnosticoConsultaCaracteristica = new DiagnosticoConsultaCaracteristicaModel() { IdConsultaVariavel =
-                    SessionController.ConsultaVariavel.IdConsultaVariavel, IdDiagnostico = SessionController.IdDiagnosticoConsulta };
-            consultaModel.ListaDiagnosticoConsultaCaracteristica = SessionController.ListaDiagnosticoConsultaCaracteristica;
-            consultaModel.PrescricaoEnfermagem = new PrescricaoEnfermagemModel() { IdConsultaVariavel = 
-                SessionController.ConsultaVariavel.IdConsultaVariavel, IdDiagnostico = SessionController.IdDiagnosticoConsulta };
-            consultaModel.ListaPrescricaoEnfermagem = SessionController.ListaPrescricaoEnfermagem; 
+            if (SessionController.DiagnosticoConsulta != null)
+            {
+                consultaModel.DiagnosticoConsultaSelecionada = SessionController.DiagnosticoConsulta;
+                consultaModel.DiagnosticoConsultaFator = new DiagnosticoConsultaFatorModel()
+                {
+                    IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel,
+                    IdDiagnostico = SessionController.IdDiagnosticoConsulta
+                };
+                consultaModel.ListaDiagnosticoConsultaFator = SessionController.ListaDiagnosticoConsultaFator;
+                consultaModel.DiagnosticoConsultaCaracteristica = new DiagnosticoConsultaCaracteristicaModel()
+                {
+                    IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel,
+                    IdDiagnostico = SessionController.IdDiagnosticoConsulta
+                };
+                consultaModel.ListaDiagnosticoConsultaCaracteristica = SessionController.ListaDiagnosticoConsultaCaracteristica;
+                consultaModel.PrescricaoEnfermagem = new PrescricaoEnfermagemModel()
+                {
+                    IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel,
+                    IdDiagnostico = SessionController.IdDiagnosticoConsulta
+                };
+                consultaModel.ListaPrescricaoEnfermagem = SessionController.ListaPrescricaoEnfermagem;
+            }
         }
 
         private static void ConsultaSegundaTelaFarmacia(ConsultaModel consultaModel)
@@ -400,7 +417,7 @@ namespace PacienteVirtual.Controllers
             consultaModel.ConsultaFixo = SessionController.ConsultaFixo;
             return consultaModel;
         }
-        
+
         /// <summary>
         /// Aponta para os dados Fixos da primeira consulta do paciente da primeira tela 
         /// </summary>
@@ -418,8 +435,8 @@ namespace PacienteVirtual.Controllers
                 }
                 else
                 {
-                     consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
-                        , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
+                    consultaOrdem1 = GerenciadorConsultaVariavel.GetInstance().ObterPrimeiraConsulta(consultaVariavelModel.IdPessoa
+                       , consultaVariavelModel.IdTurma, consultaVariavelModel.IdPaciente);
                 }
                 SessionController.DemograficosAntropometricos = GerenciadorDemograficosAntropometricos.GetInstance().Obter(consultaOrdem1.IdConsultaFixo);
                 if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
@@ -471,7 +488,7 @@ namespace PacienteVirtual.Controllers
                 SessionController.EmCorrecao = true;
             }
         }
-        
+
         /// <summary>
         /// Obtem o gabarito e faz a correção da consulta na primeira tela
         /// </summary>
@@ -576,7 +593,7 @@ namespace PacienteVirtual.Controllers
             IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostasConsulta1(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
         }
-        
+
         /// <summary>
         /// Obtem o gabarito e faz a correção da consulta na segunda tela
         /// </summary>

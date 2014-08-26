@@ -4,13 +4,12 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <legend><%: Resources.Mensagem.adicionar_caracteristica_diagnostico %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <%: Html.HiddenFor(model => model.IdDiagnostico) %>
     <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.DescricaoCaracteristicaDiagnostico) %>
+                <%: Html.Label(Resources.Mensagem.caracteristicas_definidoras) %>
             </div>
         </div>
         <div class="span6">

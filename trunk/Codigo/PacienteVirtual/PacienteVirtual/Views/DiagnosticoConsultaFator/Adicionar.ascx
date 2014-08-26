@@ -4,13 +4,19 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <legend><%: Resources.Mensagem.adicionar_fator_diagnostico %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <%: Html.HiddenFor(model => model.IdDiagnostico) %>
     <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.DescricaoFatorDiagnostico) %>
+                <% if (Session["_Risco"].Equals(true))
+                   { %>
+                    <%: Resources.Mensagem.fatores_risco%>
+                <% }
+                   else
+                   { %>
+                   <%: Resources.Mensagem.fatores_relacionados%>
+                <% } %>
             </div>
         </div>
         <div class="span6">

@@ -2412,4 +2412,19 @@
   <data name="realizada" xml:space="preserve">
     <value>Realizada</value>
   </data>
+  <data name="classe" xml:space="preserve">
+    <value>Classe</value>
+  </data>
+  <data name="dominio" xml:space="preserve">
+    <value>Domínio</value>
+  </data>
+  <data name="horarios" xml:space="preserve">
+    <value>Horários</value>
+  </data>
+  <data name="prescricao_enfermagem" xml:space="preserve">
+    <value>Prescrição de Enfermagem</value>
+  </data>
+  <data name="caracteristica_definidora" xml:space="preserve">
+    <value>Característica Definidora</value>
+  </data>
 </root>

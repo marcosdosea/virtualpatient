@@ -45,6 +45,14 @@ namespace PacienteVirtual.Controllers
             SessionController.ListaDiagnosticoConsultaCaracteristica = null;
             SessionController.ListaDiagnosticoConsultaFator = null;
             SessionController.ListaPrescricaoEnfermagem = null;
+            if (SessionController.DiagnosticoConsulta.Risco == true)
+            {
+                SessionController.RiscoDiagnostico = true;
+            }
+            else
+            {
+                SessionController.RiscoDiagnostico = false;
+            }
             return RedirectToAction("Edit2", "Consulta");
         }
 
@@ -60,42 +68,6 @@ namespace PacienteVirtual.Controllers
             }
             return View(diagnosticoConsulta);
         }
-
-        /*
-        // POST: /DiagnosticoConsulta/Edit
-        public ActionResult Edit(long idConsultaVariavel, int idDiagnostico)
-        {
-            DiagnosticoConsultaModel diagnostico = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorConsultaDiagnostico(idConsultaVariavel, idDiagnostico);
-            DiagnosticoModel diagnoConsulta = GerenciadorDiagnostico.GetInstance().Obter(idDiagnostico);
-            if (diagnoConsulta.Risco == true)
-            {
-                //Session Controller para o risco do diagnostico, guardando se é de risco ou não.
-                SessionController.RiscoDiagnostico = true;
-            }
-            else
-            {
-                SessionController.RiscoDiagnostico = false;
-            }
-            return View(diagnostico);
-        }
-
-        // POST: /DiagnosticoConsulta/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(DiagnosticoConsultaModel diagnostico)
-        {
-            if (ModelState.IsValid)
-            {
-                GerenciadorDiagnosticoConsulta.GetInstance().Atualizar(diagnostico);
-                SessionController.ListaDiagnostico = null;
-                SessionController.RiscoDiagnostico = false;
-                SessionController.DiagnosticoDetalhes = true;
-                return RedirectToAction("Edit2", "Consulta");
-            }
-            SessionController.DiagnosticoDetalhes = true;
-            return View(diagnostico);
-        }
-        */
  
         //
         // POST: /DiagnosticoConsulta/Delete/5
