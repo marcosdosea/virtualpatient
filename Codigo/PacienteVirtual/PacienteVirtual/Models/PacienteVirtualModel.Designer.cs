@@ -19824,7 +19824,8 @@ namespace PacienteVirtual.Models
         /// <param name="idConsultaVariavel">Initial value of the IdConsultaVariavel property.</param>
         /// <param name="descricaoPrescricao">Initial value of the DescricaoPrescricao property.</param>
         /// <param name="realizada">Initial value of the Realizada property.</param>
-        public static tb_precricao_enfermagem Createtb_precricao_enfermagem(global::System.Int64 idPrescricaoEnfermagem, global::System.Int32 idDiagnostico, global::System.Int64 idConsultaVariavel, global::System.String descricaoPrescricao, global::System.Boolean realizada)
+        /// <param name="horarios">Initial value of the Horarios property.</param>
+        public static tb_precricao_enfermagem Createtb_precricao_enfermagem(global::System.Int64 idPrescricaoEnfermagem, global::System.Int32 idDiagnostico, global::System.Int64 idConsultaVariavel, global::System.String descricaoPrescricao, global::System.Boolean realizada, global::System.String horarios)
         {
             tb_precricao_enfermagem tb_precricao_enfermagem = new tb_precricao_enfermagem();
             tb_precricao_enfermagem.IdPrescricaoEnfermagem = idPrescricaoEnfermagem;
@@ -19832,6 +19833,7 @@ namespace PacienteVirtual.Models
             tb_precricao_enfermagem.IdConsultaVariavel = idConsultaVariavel;
             tb_precricao_enfermagem.DescricaoPrescricao = descricaoPrescricao;
             tb_precricao_enfermagem.Realizada = realizada;
+            tb_precricao_enfermagem.Horarios = horarios;
             return tb_precricao_enfermagem;
         }
 
@@ -19961,6 +19963,30 @@ namespace PacienteVirtual.Models
         private global::System.Boolean _Realizada;
         partial void OnRealizadaChanging(global::System.Boolean value);
         partial void OnRealizadaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Horarios
+        {
+            get
+            {
+                return _Horarios;
+            }
+            set
+            {
+                OnHorariosChanging(value);
+                ReportPropertyChanging("Horarios");
+                _Horarios = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Horarios");
+                OnHorariosChanged();
+            }
+        }
+        private global::System.String _Horarios;
+        partial void OnHorariosChanging(global::System.String value);
+        partial void OnHorariosChanged();
 
         #endregion
 
