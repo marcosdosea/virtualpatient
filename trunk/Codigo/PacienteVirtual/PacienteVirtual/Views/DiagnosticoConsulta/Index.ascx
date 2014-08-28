@@ -18,7 +18,7 @@
             </tr>
             <% foreach (var item in Model)
                { %>
-            <tr>
+            <tr class="minhaTabela">
                 <td>
                     <%: Html.DisplayFor(modelItem => item.DescricaoDominioDiagnostico) %>
                 </td>
@@ -45,12 +45,13 @@
         </table>
     </div>
 </div>
-<!--script type="text/javascript">
+
+<script type="text/javascript">
     $(function () {
-        $(".minhaTabela  tr").hover(
-            function () { $(this).addClass("linhaHover"); },
-            function () { $(this).removeClass("linhaHover"); }
-        );
+        /*$(".minhaTabela tr").hover(
+        function () { $(this).addClass("linhaHover"); },
+        function () { $(this).removeClass("linhaHover"); }
+        );*/
 
         $("tr").click(function () {
             $("tr").removeClass("linhaSelecionada");
@@ -65,8 +66,9 @@
         font-weight: bold;
     }
     
+    /*
     .linhaHover
     {
         background-color: #98FB98;
-    }
-</style -->
+    } */
+</style>

@@ -145,7 +145,7 @@ namespace PacienteVirtual.Controllers
             }
             else
             {
-                DadosConsultaAnteriorEnfermagem(idConsultaVariavel);
+                DadosConsultaAnteriorEnfermagem(consultaVariavelAnteriorModel, idConsultaVariavel);
             }
         }
 
@@ -153,7 +153,7 @@ namespace PacienteVirtual.Controllers
         /// Insere os dados não fixos da consulta Anterior do curso de Enfermagem
         /// </summary>
         /// <param name="idConsultaVariavel"></param>
-        private static void DadosConsultaAnteriorEnfermagem(long idConsultaVariavel)
+        private static void DadosConsultaAnteriorEnfermagem(ConsultaVariavelModel consultaVariavelAnteriorModel, long idConsultaVariavel)
         {
             ComunicacaoModel comunicacao = SessionController.Comunicacao;
             comunicacao.IdConsultaVariavel = idConsultaVariavel;
@@ -197,6 +197,36 @@ namespace PacienteVirtual.Controllers
             CirculacaoModel circulacao = SessionController.Circulacao;
             circulacao.IdConsultaVariavel = idConsultaVariavel;
             GerenciadorCirculacao.GetInstance().Inserir(circulacao);
+            foreach (var dc in GerenciadorDiagnosticoConsulta.GetInstance().Obter(consultaVariavelAnteriorModel.IdConsultaVariavel))
+            {
+                dc.IdConsultaVariavel = idConsultaVariavel;
+                GerenciadorDiagnosticoConsulta.GetInstance().Inserir(dc);
+                foreach (var diagnostico in GerenciadorDiagnosticoConsultaCaracteristica.GetInstance().ObterTodosPorDiagnosticoConsulta(
+                    consultaVariavelAnteriorModel.IdConsultaVariavel, dc.IdDiagnostico))
+                {
+                    DiagnosticoConsultaCaracteristicaModel dcc = new DiagnosticoConsultaCaracteristicaModel();
+                    dcc.IdConsultaVariavel = idConsultaVariavel;
+                    dcc.IdDiagnostico = diagnostico.IdDiagnostico;
+                    dcc.IdDiagnosticoCaracteristica = diagnostico.IdDiagnosticoCaracteristica;
+                    GerenciadorDiagnosticoConsultaCaracteristica.GetInstance().Inserir(dcc);
+
+                }
+                foreach (var diagnostico in GerenciadorDiagnosticoConsultaFator.GetInstance().ObterTodosPorDiagnosticoConsulta(
+                    consultaVariavelAnteriorModel.IdConsultaVariavel, dc.IdDiagnostico))
+                {
+                    DiagnosticoConsultaFatorModel dcf = new DiagnosticoConsultaFatorModel();
+                    dcf.IdConsultaVariavel = idConsultaVariavel;
+                    dcf.IdDiagnostico = diagnostico.IdDiagnostico;
+                    dcf.IdDiagnosticoFator = diagnostico.IdDiagnosticoFator;
+                    GerenciadorDiagnosticoConsultaFator.GetInstance().Inserir(dcf);
+                }
+                foreach (var prescricaoEnfermagem in GerenciadorPrescricaoEnfermagem.GetInstance().ObterPorConsultaDiagnostico(
+                    consultaVariavelAnteriorModel.IdConsultaVariavel, dc.IdDiagnostico))
+                {
+                    prescricaoEnfermagem.IdConsultaVariavel = idConsultaVariavel;
+                    GerenciadorPrescricaoEnfermagem.GetInstance().Inserir(prescricaoEnfermagem);
+                }
+            }
         }
 
         /// <summary>
