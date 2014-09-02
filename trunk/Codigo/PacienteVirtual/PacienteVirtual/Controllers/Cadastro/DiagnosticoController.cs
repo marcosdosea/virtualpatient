@@ -112,6 +112,12 @@ namespace PacienteVirtual.Controllers
             return View(gDiagnostico.Obter(id));
         }
 
+        [HttpPost]
+        public ActionResult Teste(DiagnosticoModel diagnostico)
+        {
+            return RedirectToAction("Index");
+        }
+
         //
         // POST: /Diagnostico/Delete/5
 

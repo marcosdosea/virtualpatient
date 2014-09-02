@@ -141,7 +141,7 @@ namespace PacienteVirtual.Negocio
         /// <summary>
         /// Obtem intervencoes pelo ClasseDiagnostico
         /// </summary>
-        /// <param name="idGrupoIntervencao"></param>
+        /// <param name="idClasseDiagnostico"></param>
         /// <returns></returns>
         public IEnumerable<DiagnosticoModel> ObterPorClasseDiagnostico(int idClasseDiagnostico)
         {

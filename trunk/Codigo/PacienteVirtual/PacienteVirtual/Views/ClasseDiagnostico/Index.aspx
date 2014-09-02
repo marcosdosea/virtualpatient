@@ -19,16 +19,16 @@
 
 <%= Html.Grid(Model).Columns(columns =>
     {
+
+        columns.Add(o => o.DescricaoDominioDiagnostico)
+        .Titled(Resources.Mensagem.descricao_dominio_diagnostico)
+        .ThenSortByDescending(o => o.DescricaoDominioDiagnostico)
+        .Filterable(true);
         
         /* Adding "CompanyName" column: */
         columns.Add(o => o.DescricaoClasseDiagnostico)
                 .Titled(Resources.Mensagem.descricao_classe_diagnostico)
                 .ThenSortByDescending(o => o.DescricaoClasseDiagnostico)
-                .Filterable(true);
-
-        columns.Add(o => o.DescricaoDominioDiagnostico)
-                .Titled(Resources.Mensagem.descricao_dominio_diagnostico)
-                .ThenSortByDescending(o => o.DescricaoDominioDiagnostico)
                 .Filterable(true);
 
         /* Adding not mapped column, that renders body, using inline Razor html helper */
