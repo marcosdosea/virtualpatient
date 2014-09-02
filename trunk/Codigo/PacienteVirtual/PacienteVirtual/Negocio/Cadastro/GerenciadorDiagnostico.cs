@@ -147,5 +147,27 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(diagnostico => diagnostico.IdClasseDiagnostico == idClasseDiagnostico).ToList();
         }
+
+        public bool VerificaSeClassePerteceADominio(int idDominioDiagnostico, int idClasseDiagnostico)
+        {
+            IEnumerable<DiagnosticoModel> diagnostico = ObterPorClasseDiagnostico(idClasseDiagnostico);
+            foreach (var d in diagnostico)
+            {
+                if (d.IdDominioDiagnostico == idDominioDiagnostico)
+                    return true;
+            }
+            return false;
+        }
+
+        public bool VerificaSeDiagnosticoPerteceAClasse(int idClasseDiagnostico, int idDiagnostico)
+        {
+            IEnumerable<DiagnosticoModel> diagnostico = ObterPorClasseDiagnostico(idClasseDiagnostico);
+            foreach (var d in diagnostico)
+            {
+                if (d.IdDiagnostico == idDiagnostico)
+                    return true;
+            }
+            return false;
+        }
     }
 }

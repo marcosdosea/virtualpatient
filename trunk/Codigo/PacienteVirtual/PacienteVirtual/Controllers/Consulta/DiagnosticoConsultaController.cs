@@ -6,7 +6,9 @@ namespace PacienteVirtual.Controllers
 { 
     public class DiagnosticoConsultaController : Controller
     {
-        
+
+        private GerenciadorDiagnostico gDiagnostico = GerenciadorDiagnostico.GetInstance();
+
         public ViewResult Index()
         {
             return View(GerenciadorDiagnosticoConsulta.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
@@ -18,7 +20,9 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(DiagnosticoConsultaModel diagnostico)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && gDiagnostico.VerificaSeClassePerteceADominio(diagnostico.IdDominioDiagnostico,
+                diagnostico.IdClasseDiagnostico) && gDiagnostico.VerificaSeDiagnosticoPerteceAClasse(diagnostico.IdClasseDiagnostico,
+                diagnostico.IdDiagnostico))
             {
                 diagnostico.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
                 GerenciadorDiagnosticoConsulta.GetInstance().Inserir(diagnostico);
@@ -37,9 +41,11 @@ namespace PacienteVirtual.Controllers
         }
 
 
-        public ActionResult SelecionarConsultaDiagnostico(long idConsultaVariavel, int idDiagnostico)
+        public ActionResult SelecionarConsultaDiagnostico(long idConsultaVariavel, int idDiagnostico, int idDominio, int idClasse)
         {
             SessionController.IdDiagnosticoConsulta = idDiagnostico;
+            SessionController.IdDominioDiagnosticoConsulta = idDominio;
+            SessionController.IdClasseDiagnosticoConsulta = idClasse;
             SessionController.DiagnosticoConsulta = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorConsultaDiagnostico(
                 idConsultaVariavel, idDiagnostico);
             SessionController.ListaDiagnosticoConsultaCaracteristica = null;

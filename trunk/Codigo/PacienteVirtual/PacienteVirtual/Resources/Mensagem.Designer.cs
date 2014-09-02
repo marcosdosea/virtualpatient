@@ -5542,6 +5542,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Realizado.
+        /// </summary>
+        public static string realizado {
+            get {
+                return ResourceManager.GetString("realizado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recebe visitas.
         /// </summary>
         public static string recebe_visitas {

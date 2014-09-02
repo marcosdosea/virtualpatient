@@ -39,5 +39,14 @@ namespace PacienteVirtual.Controllers
             SessionController.ListaPrescricaoEnfermagem = null;
             return RedirectToAction("Edit2", "Consulta");
         }
+
+        public ActionResult MarcarComoNaoRealizado(long idPrescricaoEnfermagem)
+        {
+            PrescricaoEnfermagemModel prescricaoEnfermagem = GerenciadorPrescricaoEnfermagem.GetInstance().Obter(idPrescricaoEnfermagem);
+            prescricaoEnfermagem.Realizada = false;
+            GerenciadorPrescricaoEnfermagem.GetInstance().Atualizar(prescricaoEnfermagem);
+            SessionController.ListaPrescricaoEnfermagem = null;
+            return RedirectToAction("Edit2", "Consulta");
+        }
     }
 }

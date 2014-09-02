@@ -855,6 +855,42 @@ namespace PacienteVirtual.Controllers
             }
         }
 
+        public static int IdDominioDiagnosticoConsulta
+        {
+            get
+            {
+                int idDominioDiagnosticoConsulta = (int)HttpContext.Current.Session["_IdDominioDiagnosticoConsulta"];
+                if (idDominioDiagnosticoConsulta < Global.ValorInicial)
+                {
+                    idDominioDiagnosticoConsulta = Global.ValorInteiroNulo;
+                    HttpContext.Current.Session["_IdDominioDiagnosticoConsulta"] = idDominioDiagnosticoConsulta;
+                }
+                return idDominioDiagnosticoConsulta;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdDominioDiagnosticoConsulta"] = value;
+            }
+        }
+
+        public static int IdClasseDiagnosticoConsulta
+        {
+            get
+            {
+                int idClasseDiagnosticoConsulta = (int)HttpContext.Current.Session["_IdClasseDiagnosticoConsulta"];
+                if (idClasseDiagnosticoConsulta < Global.ValorInicial)
+                {
+                    idClasseDiagnosticoConsulta = Global.ValorInteiroNulo;
+                    HttpContext.Current.Session["_IdClasseDiagnosticoConsulta"] = idClasseDiagnosticoConsulta;
+                }
+                return idClasseDiagnosticoConsulta;
+            }
+            set
+            {
+                HttpContext.Current.Session["_IdClasseDiagnosticoConsulta"] = value;
+            }
+        }
+
         public static int IdDominioDiagnostico
         {
             get
