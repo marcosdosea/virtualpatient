@@ -2388,4 +2388,7 @@
   <data name="caracteristica_definidora" xml:space="preserve">
     <value>Defining Characteristic</value>
   </data>
+  <data name="realizado" xml:space="preserve">
+    <value>Fulfilled</value>
+  </data>
 </root>
