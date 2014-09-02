@@ -603,7 +603,6 @@
     <Content Include="Content\themes\pv\js\jquery.flot.resize.js" />
     <Content Include="Content\themes\pv\js\jquery.flot.resize.min.js" />
     <Content Include="Content\themes\pv\js\jquery.js" />
-    <Content Include="Content\themes\pv\js\jquery.maskedinput-1.2.2.js" />
     <Content Include="Content\themes\pv\js\jquery.min.js" />
     <Content Include="Content\themes\pv\js\jquery.ui.custom.js" />
     <Content Include="Content\themes\pv\js\jquery.validate.js" />

@@ -1,0 +1,13 @@
+200.17.141.82:8080
+
+lepfs.ufs.br
+ph@rm@VP
+login: Blicie
+senha: 79382503
+
+Mysql ?paciente*
+senha p@ci3nt3
+
+Acessar sistema
+login admin
+Senha !p4c1ent3
