@@ -14,6 +14,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
+            SessionController.IdDiagnostico = Global.ValorInteiroNulo;
             return View(gDiagnosticoCaracteristica.ObterTodos());
         }
 
@@ -30,23 +31,29 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico");
+            if (SessionController.IdDiagnostico != Global.ValorInteiroNulo)
+            {
+                ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
+            }
+            else
+            {
+                ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico");
+            }
+
             return View();
         }
 
         //
         // POST: /DiagnosticoCaracteristica/Create
-
         [HttpPost]
         public ActionResult Create(DiagnosticoCaracteristicaModel diagnosticoCaracteristica)
         {
             if (ModelState.IsValid)
             {
                 gDiagnosticoCaracteristica.Inserir(diagnosticoCaracteristica);
-                return RedirectToAction("Index");
+                SessionController.IdDiagnostico = diagnosticoCaracteristica.IdDiagnostico;
+                return RedirectToAction("Create");
             }
-            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico",
-                diagnosticoCaracteristica.IdDiagnostico);
             return View(diagnosticoCaracteristica);
         }
 
@@ -58,6 +65,7 @@ namespace PacienteVirtual.Controllers
             DiagnosticoCaracteristicaModel diagnosticoCaracteristica = gDiagnosticoCaracteristica.Obter(id);
             ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico",
                 diagnosticoCaracteristica.IdDiagnostico);
+            
             return View(diagnosticoCaracteristica);
         }
 
