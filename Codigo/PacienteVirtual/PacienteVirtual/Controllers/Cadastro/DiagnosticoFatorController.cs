@@ -14,6 +14,7 @@ namespace PacienteVirtual.Controllers
 
         public ViewResult Index()
         {
+            SessionController.IdDiagnostico = Global.ValorInteiroNulo;
             return View(gDiagnosticoFator.ObterTodos());
         }
 
@@ -30,8 +31,16 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico");
-            return View();
+            if (SessionController.IdDiagnostico != Global.ValorInteiroNulo)
+            {
+                ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
+            }
+            else
+            {
+
+                ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico");
+            }
+             return View();
         }
 
         //
@@ -43,7 +52,8 @@ namespace PacienteVirtual.Controllers
             if (ModelState.IsValid)
             {
                 gDiagnosticoFator.Inserir(diagnosticoFator);
-                return RedirectToAction("Index");
+                SessionController.IdDiagnostico = diagnosticoFator.IdDiagnostico;
+                return RedirectToAction("Create");
             }
             ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico",
                 diagnosticoFator.IdDiagnostico);

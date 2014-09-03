@@ -28,7 +28,7 @@
             <%: Html.LabelFor(model => model.DescricaoFatorDiagnostico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoFatorDiagnostico)%>
+            <%: Html.TextBoxFor(model => model.DescricaoFatorDiagnostico, new { style = "width:700px;", MaxLength = 200 })%>
             <%: Html.ValidationMessageFor(model => model.DescricaoFatorDiagnostico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
