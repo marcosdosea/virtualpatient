@@ -17,7 +17,7 @@
             <%: Html.LabelFor(model => model.DescricaoObjetivoTerapeutico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoObjetivoTerapeutico, new { style = "width:350px;", MaxLength = 150 })%>
+            <%: Html.TextBoxFor(model => model.DescricaoObjetivoTerapeutico, new { style = "width:350px;" })%>
             <%: Html.ValidationMessageFor(model => model.DescricaoObjetivoTerapeutico, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">

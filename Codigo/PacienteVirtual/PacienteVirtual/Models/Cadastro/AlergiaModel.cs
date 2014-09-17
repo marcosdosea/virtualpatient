@@ -12,6 +12,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "alergia", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Alergia { get; set; }
     }
 }

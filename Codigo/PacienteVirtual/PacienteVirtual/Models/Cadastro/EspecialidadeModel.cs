@@ -12,6 +12,7 @@ namespace PacienteVirtual.Models.Cadastro
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "especialidade", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Especialidade { get; set; }
     }
 }

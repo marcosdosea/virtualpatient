@@ -20,7 +20,7 @@
             <%: Html.LabelFor(model => model.Religiao) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Religiao, new { style = "width:350px;", MaxLength = 45 })%>
+            <%: Html.TextBoxFor(model => model.Religiao, new { style = "width:350px;"})%>
             <%: Html.ValidationMessageFor(model => model.Religiao, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">
