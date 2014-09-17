@@ -21,7 +21,7 @@
         </div>
         <div class="editor-field">
         <div class="controls">
-            <%: Html.TextAreaFor(model => model.DescricaoQueixa, new { MaxLength = 100 })%>
+            <%: Html.TextAreaFor(model => model.DescricaoQueixa, new { style = "width:350px;" })%>
             <%: Html.ValidationMessageFor(model => model.DescricaoQueixa, string.Empty, new { @class = "styleValidation" })%>
             </div>
             

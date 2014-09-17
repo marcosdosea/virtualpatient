@@ -22,7 +22,7 @@
             <%: Html.LabelFor(model => model.DescricaoGrupoIntervencao) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.DescricaoGrupoIntervencao, new { style = "width:350px;", MaxLength = 40 })%>
+            <%: Html.TextBoxFor(model => model.DescricaoGrupoIntervencao, new { style = "width:350px;" })%>
             <%: Html.ValidationMessageFor(model => model.DescricaoGrupoIntervencao, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">

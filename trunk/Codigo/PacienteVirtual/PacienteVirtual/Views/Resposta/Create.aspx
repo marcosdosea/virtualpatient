@@ -26,7 +26,7 @@
             <%: Html.LabelFor(model => model.Resposta) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Resposta, new { style = "width:850px;", MaxLength = 255 })%>
+            <%: Html.TextBoxFor(model => model.Resposta, new { style = "width:850px;"})%>
             <%: Html.ValidationMessageFor(model => model.Resposta, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">

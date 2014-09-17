@@ -11,6 +11,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "diagnostico", ResourceType = typeof(Mensagem))]
+        [StringLength(200)]
         public string DescricaoDiagnostico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -18,13 +19,14 @@ namespace PacienteVirtual.Models
         public int IdClasseDiagnostico { get; set; }
 
         [Display(Name = "descricao_classe_diagnostico", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public String DescricaoClasseDiagnostico { get; set; }
 
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdDominioDiagnostico { get; set; }
 
         [Display(Name = "descricao_dominio_diagnostico", ResourceType = typeof(Mensagem))]
-        [StringLength(100)]
+        [StringLength(200)]
         public string DescricaoDominioDiagnostico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

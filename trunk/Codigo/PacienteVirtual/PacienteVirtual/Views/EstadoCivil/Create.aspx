@@ -20,7 +20,7 @@
             <%: Html.LabelFor(model => model.EstadoCivil) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.EstadoCivil, new { style = "width:350px;", MaxLength = 45 })%>
+            <%: Html.TextBoxFor(model => model.EstadoCivil, new { style = "width:350px;" })%>
             <%: Html.ValidationMessageFor(model => model.EstadoCivil, string.Empty, new { @class = "styleValidation" })%>
         </div>
         <div class="form-actions">

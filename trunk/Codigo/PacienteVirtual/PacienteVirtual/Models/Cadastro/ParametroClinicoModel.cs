@@ -12,6 +12,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "parametro_clinico", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string ParametroClinico { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "descricao_objetivo_terapeutico", ResourceType = typeof(Mensagem))]
+        [StringLength(150)]
         public string DescricaoObjetivoTerapeutico { get; set; }
     }
 }
