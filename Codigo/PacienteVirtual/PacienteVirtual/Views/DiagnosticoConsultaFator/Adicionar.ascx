@@ -7,7 +7,7 @@
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <%: Html.HiddenFor(model => model.IdDiagnostico) %>
     <div class="row-fluid">
-        <div class="span3">
+        <div class="span9">
             <div class="editor-label">
                 <% if (Session["_Risco"].Equals(true))
                    { %>
@@ -18,13 +18,15 @@
                    <%: Resources.Mensagem.fatores_relacionados%>
                 <% } %>
             </div>
-        </div>
-        <div class="span6">
+            <br />
             <div class="editor-field">
-                <%: Html.DropDownList("IdDiagnosticoFator", Resources.Mensagem.selecione)%>
+                <%: Html.DropDownList("IdDiagnosticoFator", null, Resources.Mensagem.selecione, new { style = "width:576px;" })%>
                 <%: Html.ValidationMessageFor(model => model.IdDiagnosticoFator, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span9"></div>
         <div class="span2">
             <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
         </div>

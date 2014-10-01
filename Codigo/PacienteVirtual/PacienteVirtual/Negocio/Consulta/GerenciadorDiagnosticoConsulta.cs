@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using PacienteVirtual.Controllers;
 
 namespace PacienteVirtual.Negocio
 {
@@ -196,6 +197,25 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(dc => dc.IdConsultaVariavel == idConsultaVariavel
                 && dc.IdDiagnostico == idDiagnostico).ToList().ElementAtOrDefault(0);
+        }
+
+        public void AtualizaConsultaDiagnosticoSelecionada(long idConsultaVariavel, int idDiagnostico, int idDominio, int idClasse)
+        {
+            SessionController.IdDiagnosticoConsulta = idDiagnostico;
+            SessionController.IdDominioDiagnosticoConsulta = idDominio;
+            SessionController.IdClasseDiagnosticoConsulta = idClasse;
+            SessionController.DiagnosticoConsulta = ObterPorConsultaDiagnostico(idConsultaVariavel, idDiagnostico);
+            SessionController.ListaDiagnosticoConsultaCaracteristica = null;
+            SessionController.ListaDiagnosticoConsultaFator = null;
+            SessionController.ListaPrescricaoEnfermagem = null;
+            if (SessionController.DiagnosticoConsulta.Risco == true)
+            {
+                SessionController.RiscoDiagnostico = true;
+            }
+            else
+            {
+                SessionController.RiscoDiagnostico = false;
+            }
         }
 
         /// <summary>
