@@ -9,11 +9,6 @@ namespace PacienteVirtual.Controllers
 
         private GerenciadorDiagnostico gDiagnostico = GerenciadorDiagnostico.GetInstance();
 
-        public ViewResult Index()
-        {
-            return View(GerenciadorDiagnosticoConsulta.GetInstance().Obter(SessionController.ConsultaVariavel.IdConsultaVariavel));
-        }
-
         //
         // POST: /DiagnosticoConsulta/Create
 
@@ -43,25 +38,10 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult SelecionarConsultaDiagnostico(long idConsultaVariavel, int idDiagnostico, int idDominio, int idClasse)
         {
-            SessionController.IdDiagnosticoConsulta = idDiagnostico;
-            SessionController.IdDominioDiagnosticoConsulta = idDominio;
-            SessionController.IdClasseDiagnosticoConsulta = idClasse;
-            SessionController.DiagnosticoConsulta = GerenciadorDiagnosticoConsulta.GetInstance().ObterPorConsultaDiagnostico(
-                idConsultaVariavel, idDiagnostico);
-            SessionController.ListaDiagnosticoConsultaCaracteristica = null;
-            SessionController.ListaDiagnosticoConsultaFator = null;
-            SessionController.ListaPrescricaoEnfermagem = null;
-            if (SessionController.DiagnosticoConsulta.Risco == true)
-            {
-                SessionController.RiscoDiagnostico = true;
-            }
-            else
-            {
-                SessionController.RiscoDiagnostico = false;
-            }
+            GerenciadorDiagnosticoConsulta.GetInstance().AtualizaConsultaDiagnosticoSelecionada(idConsultaVariavel, idDiagnostico, 
+                idDominio, idClasse);
             return RedirectToAction("Edit2", "Consulta");
         }
-
 
         [HttpPost]
         public ActionResult ResultadosEsperados(DiagnosticoConsultaModel diagnosticoConsulta)

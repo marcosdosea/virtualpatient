@@ -366,8 +366,14 @@ namespace PacienteVirtual.Controllers
                 IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel
             };
             consultaModel.ListaDiagnosticoConsulta = SessionController.ListaDiagnostico;
-            if (SessionController.DiagnosticoConsulta != null)
+            if (consultaModel.ListaDiagnosticoConsulta.Count() > 0)
             {
+                if (SessionController.DiagnosticoConsulta == null)
+                {
+                    DiagnosticoConsultaModel cmd = consultaModel.ListaDiagnosticoConsulta.ElementAtOrDefault(0);
+                    GerenciadorDiagnosticoConsulta.GetInstance().AtualizaConsultaDiagnosticoSelecionada(cmd.IdConsultaVariavel,
+                        cmd.IdDiagnostico, cmd.IdDominioDiagnostico, cmd.IdClasseDiagnostico);
+                }
                 consultaModel.DiagnosticoConsultaSelecionada = SessionController.DiagnosticoConsulta;
                 consultaModel.DiagnosticoConsultaFator = new DiagnosticoConsultaFatorModel()
                 {

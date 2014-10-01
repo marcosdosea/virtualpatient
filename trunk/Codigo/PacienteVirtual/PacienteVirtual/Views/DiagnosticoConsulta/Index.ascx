@@ -41,7 +41,8 @@
                         ("return confirm('Deseja realmente REMOVER este Medicamento?')") })%>
                     |
                     <%: Html.ActionLink(Resources.Mensagem.selecione, "SelecionarConsultaDiagnostico", "DiagnosticoConsulta",
-                            new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, null)%>
+                        new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idDominio = 
+                        item.IdDominioDiagnostico, idClasse = item.IdClasseDiagnostico }, null)%>
                     <% } %>
                 </td>
             </tr>
