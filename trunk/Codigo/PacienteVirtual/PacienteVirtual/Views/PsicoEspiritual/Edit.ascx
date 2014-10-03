@@ -11,7 +11,7 @@
             <%: Html.LabelFor(model => model.CrencaReligiosa) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.CrencaReligiosa, new { style = "width:350px;", MaxLength = 100 })%>
+            <%: Html.TextBoxFor(model => model.CrencaReligiosa, new { style = "width:350px;" })%>
             <%: Html.ValidationMessageFor(model => model.CrencaReligiosa, string.Empty, new { @class = "styleValidation" })%>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <%: Html.LabelFor(model => model.EspecificaAssistenciaEspiritual) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.EspecificaAssistenciaEspiritual, new { style = "width:350px;", MaxLength = 100 })%>
+            <%: Html.TextBoxFor(model => model.EspecificaAssistenciaEspiritual, new { style = "width:350px;" })%>
             <%: Html.ValidationMessageFor(model => model.EspecificaAssistenciaEspiritual, string.Empty, new { @class = "styleValidation" })%>
         </div>
     </div>

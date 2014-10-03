@@ -31,6 +31,7 @@ namespace PacienteVirtual.Models
         public bool Outro { get; set; }
 
         [Display(Name = "justificativa", ResourceType = typeof(Mensagem))]
+        [StringLength(500)]
         public string Justificativa { get; set; }
 
         public string ErroIntervencao { get; set; }

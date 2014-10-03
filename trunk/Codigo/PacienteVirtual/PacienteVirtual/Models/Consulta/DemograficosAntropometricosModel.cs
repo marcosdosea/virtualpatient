@@ -11,11 +11,13 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nome", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Nome { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [RegularExpression("M|F", ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_MouF")]
         [Display(Name = "genero", ResourceType = typeof(Mensagem))]
+        [StringLength(1)]
         public string Genero { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -25,14 +27,17 @@ namespace PacienteVirtual.Models
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "medicos_atendem", ResourceType = typeof(Mensagem))]
+        [StringLength(255)]
         public string MedicosAtendem { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "moradia_familia", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string MoradiaFamilia { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "onde_adquire_medicamentos", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string OndeAdquireMedicamentos { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -79,14 +84,17 @@ namespace PacienteVirtual.Models
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "rg", ResourceType = typeof(Mensagem))]
+        [StringLength(20)]
         public String RG { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "procedencia", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public String Procedencia { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "endereco", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public String Endereco { get; set; }
     }
 

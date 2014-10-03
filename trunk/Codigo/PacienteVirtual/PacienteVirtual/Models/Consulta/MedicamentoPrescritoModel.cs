@@ -24,18 +24,22 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "dosagem", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Dosagem { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "posologia", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Posologia { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "prescritor", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Prescritor { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "especialidade", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Especialidade { get; set; }
 
         public string ErroMedPresc { get; set; }

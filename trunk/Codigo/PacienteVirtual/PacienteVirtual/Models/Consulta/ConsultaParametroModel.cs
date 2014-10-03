@@ -15,6 +15,7 @@ namespace PacienteVirtual.Models
         public Int32 IdParametroClinico { get; set; }
 
         [Display(Name = "parametro_clinico", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string ParametroClinico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -23,10 +24,12 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "valor_referencia", ResourceType = typeof(Mensagem))]
+        [StringLength(20)]
         public string ValorReferencia { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "unidade", ResourceType = typeof(Mensagem))]
+        [StringLength(20)]
         public string Unidade { get; set; }
 
         public string ErroParametroClinico { get; set; }

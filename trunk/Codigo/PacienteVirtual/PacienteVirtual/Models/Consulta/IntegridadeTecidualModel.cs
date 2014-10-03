@@ -58,6 +58,7 @@ namespace PacienteVirtual.Models
         public bool Rubor { get; set; }
 
         [Display(Name = "localizar_alteracao", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string LocalAlteracaoPele { get; set; }
 
         [Display(Name = "pe_diabetico", ResourceType = typeof(Mensagem))]
@@ -70,27 +71,33 @@ namespace PacienteVirtual.Models
         public bool UlceraPressao { get; set; }
 
         [Display(Name = "estagio", ResourceType = typeof(Mensagem))]
+        [StringLength(5)]
         public string UlceraPressaoEstagio { get; set; }
 
         [Display(Name = "local", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string UlceraPressaoLocal { get; set; }
 
         [Display(Name = "queimadura", ResourceType = typeof(Mensagem))]
         public bool Queimadura { get; set; }
 
         [Display(Name = "grau", ResourceType = typeof(Mensagem))]
+        [StringLength(5)]
         public string QueimaduraGrau { get; set; }
 
         [Display(Name = "local", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string QueimaduraLocal { get; set; }
 
         [Display(Name = "ferida_cirurgica", ResourceType = typeof(Mensagem))]
         public bool FeridaCirurgica { get; set; }
 
         [Display(Name = "local", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string FeridaCirurgicaLocal { get; set; }
 
         [Display(Name = "aspecto", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string LesaoAspecto { get; set; }
     }
 }

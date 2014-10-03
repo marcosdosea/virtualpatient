@@ -86,9 +86,11 @@ namespace PacienteVirtual.Models
         public bool RestricaoAlimentar { get; set; }
 
         [Display(Name = "restricao_alimentar", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string RestricaoAlimentarTexto { get; set; }
 
         [Display(Name = "habitos_alimentares", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string HabitosAlimentares { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

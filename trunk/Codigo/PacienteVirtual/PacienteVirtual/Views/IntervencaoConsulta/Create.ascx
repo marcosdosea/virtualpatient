@@ -71,7 +71,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextAreaFor(model => model.Justificativa, new { MaxLength = 200 })%>
+                <%: Html.TextAreaFor(model => model.Justificativa)%>
                 <%: Html.ValidationMessageFor(model => model.Justificativa, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>

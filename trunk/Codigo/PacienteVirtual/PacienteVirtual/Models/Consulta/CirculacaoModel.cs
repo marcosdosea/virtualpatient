@@ -16,6 +16,7 @@ namespace PacienteVirtual.Models
         public long IdConsultaVariavel { get; set; }
 
         [Display(Name = "pressao_arterial", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string PA { get; set; }
 
         [Display(Name = "pulso_enf", ResourceType = typeof(Mensagem))]
@@ -27,6 +28,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "cateter_local", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string CateterLocal { get; set; }
 
         [Display(Name = "cateter_data", ResourceType = typeof(Mensagem))]
@@ -37,6 +39,7 @@ namespace PacienteVirtual.Models
         public bool CateterCentral { get; set; }
 
         [Display(Name = "cateter_central_local", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string CateterCentralLocal { get; set; }
 
         [Display(Name = "cateter_central_data", ResourceType = typeof(Mensagem))]
@@ -47,6 +50,7 @@ namespace PacienteVirtual.Models
         public bool DisseccaoVenosa { get; set; }
 
         [Display(Name = "disseccao_venosa_local", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string DisseccaoVenosaLocal { get; set; }
 
         [Display(Name = "dissecacao_venosa_data", ResourceType = typeof(Mensagem))]
@@ -57,6 +61,7 @@ namespace PacienteVirtual.Models
         public bool SinaisFlogisticos { get; set; }
 
         [Display(Name = "sinais_flogisticos_quais_local", ResourceType = typeof(Mensagem))]
+        [StringLength(200)]
         public string SinaisFlogisticosQuaisLocal { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -76,6 +81,7 @@ namespace PacienteVirtual.Models
         public bool Flebite { get; set; }
 
         [Display(Name = "flebite_localizar", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string FlebiteLocalizar { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -83,6 +89,7 @@ namespace PacienteVirtual.Models
         public bool Infiltracao { get; set; }
 
         [Display(Name = "infiltracao_localizar", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string InfiltracaoLocalizar { get; set; }
 
         [Display(Name = "enchimento_capilar", ResourceType = typeof(Mensagem))]
@@ -98,6 +105,7 @@ namespace PacienteVirtual.Models
         public bool Edema { get; set; }
 
         [Display(Name = "edema_localizar", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string EdemaLocalizar { get; set; }
 
     }

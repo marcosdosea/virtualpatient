@@ -11,10 +11,12 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "historia_medica_pregressa", ResourceType = typeof(Mensagem))]
+        [StringLength(255)]
         public string HistoriaMedicaPregressa { get; set; }
         
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "historia_familiar", ResourceType = typeof(Mensagem))] 
+        [Display(Name = "historia_familiar", ResourceType = typeof(Mensagem))]
+        [StringLength(255)]
         public string HistoriaFamiliar { get; set; }
     }
 }

@@ -20,6 +20,7 @@ namespace PacienteVirtual.Models
         public ListaGrauDependencia GrauDependencia { get; set; }
 
         [Display(Name = "descricao_grau_dependencia", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string DescricaoGrauDependencia { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -27,6 +28,7 @@ namespace PacienteVirtual.Models
         public bool Estilista { get; set; }
 
         [Display(Name = "descricao_estilista", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string DescricaoEstilista { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -34,9 +36,11 @@ namespace PacienteVirtual.Models
         public bool Tabagista { get; set; }
 
         [Display(Name = "descricao_tabagista", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string DescricaoTabagista { get; set; }
 
         [Display(Name = "descrever_tipo_tempo_qtde", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string DescreverTipoTempoQtde { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -44,15 +48,19 @@ namespace PacienteVirtual.Models
         public bool UsoDrogasIlicitas { get; set; }
 
         [Display(Name = "tipo_drogas", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string TipoDrogas { get; set; }
 
         [Display(Name = "frequencia_drogas", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string FrequenciaDrogas { get; set; }
 
         [Display(Name = "tempo_drogas", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string TempoDrogas { get; set; }
 
         [Display(Name = "quantidade_drogas", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string QuantidadeDrogas { get; set; }
 
     }

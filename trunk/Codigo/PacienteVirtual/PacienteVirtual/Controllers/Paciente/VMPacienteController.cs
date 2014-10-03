@@ -11,12 +11,13 @@ namespace PacienteVirtual.Controllers
     {
         //
         // GET: /PacienteVM/
-
+        /*
         public ActionResult Index()
         {
             return View(listaVMPaciente());//Tipar a View com uma lista
         }
 
+        
         //Método destinado a pesquisar todos os paciente e obter todos os seus relatos
         private List<VMPaciente> listaVMPaciente()
         {
@@ -175,6 +176,6 @@ namespace PacienteVirtual.Controllers
         //        return RedirectToAction("Index");
         //    }
         //    return View(cursoModel);
-        //}
+        //} */
     }
 }

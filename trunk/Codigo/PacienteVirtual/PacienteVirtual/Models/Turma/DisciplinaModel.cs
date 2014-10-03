@@ -10,7 +10,8 @@ namespace PacienteVirtual.Models
         public int IdDisciplina { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "disciplina", ResourceType = typeof(Mensagem))] 
+        [Display(Name = "disciplina", ResourceType = typeof(Mensagem))]
+        [StringLength(45)]
         public string NomeDisciplina { get; set; }
 
     }

@@ -115,7 +115,7 @@
                 <%: Html.LabelFor(model => model.RG) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.RG, new { @class = "textbox", style = "width:176px;", MaxLength = 20 })%>
+                <%: Html.TextBoxFor(model => model.RG, new { @class = "textbox", style = "width:176px;" })%>
                 <%: Html.ValidationMessageFor(model => model.RG, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -176,7 +176,7 @@
                 <%: Html.LabelFor(model => model.Procedencia) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Procedencia, new { @class = "textbox", style = "width:210px;", MaxLength = 100 })%>
+                <%: Html.TextBoxFor(model => model.Procedencia, new { @class = "textbox", style = "width:210px;" })%>
                 <%: Html.ValidationMessageFor(model => model.Procedencia, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -187,7 +187,7 @@
                 <%: Html.LabelFor(model => model.Endereco) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Endereco, new { @class = "textbox", style = "width:579px;", MaxLength = 100 })%>
+                <%: Html.TextBoxFor(model => model.Endereco, new { @class = "textbox", style = "width:579px;" })%>
                 <%: Html.ValidationMessageFor(model => model.Endereco, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>

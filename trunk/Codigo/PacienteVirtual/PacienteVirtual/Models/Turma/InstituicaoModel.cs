@@ -10,11 +10,13 @@ namespace PacienteVirtual.Models
         public int IdInstituicao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))] 
+        [Display(Name = "instituicao", ResourceType = typeof(Mensagem))]
+        [StringLength(45)]
         public string NomeInstituicao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
-        [Display(Name = "sigla", ResourceType = typeof(Mensagem))] 
+        [Display(Name = "sigla", ResourceType = typeof(Mensagem))]
+        [StringLength(10)]
         public string Sigla { get; set; }
 
     }

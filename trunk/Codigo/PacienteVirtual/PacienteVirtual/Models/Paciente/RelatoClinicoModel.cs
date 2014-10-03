@@ -14,7 +14,6 @@ namespace PacienteVirtual.Models
         [Display(Name = "codigo_paciente", ResourceType = typeof(Mensagem))]
         public int IdPaciente { get; set; }
 
-
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nome_paciente", ResourceType = typeof(Mensagem))]
         public String NomePaciente { get; set; }
@@ -29,6 +28,7 @@ namespace PacienteVirtual.Models
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "relato_video", ResourceType = typeof(Mensagem))]
+        [StringLength(200)]
         public string RelatoVideo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

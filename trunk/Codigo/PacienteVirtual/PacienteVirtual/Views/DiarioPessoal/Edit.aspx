@@ -38,7 +38,7 @@
             </div>
             <div class="span6">
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.Dose, new { style = "width:312px;", MaxLegth = 20 })%>
+                    <%: Html.TextBoxFor(model => model.Dose, new { style = "width:312px;" })%>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Quantidade, new { @class = "textbox", style = "width:312px;", MaxLegth = 20 })%>
+                <%: Html.TextBoxFor(model => model.Quantidade, new { @class = "textbox", style = "width:312px;" })%>
                 <%: Html.ValidationMessageFor(model => model.Quantidade, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -75,7 +75,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Horario, new { id = "textbox3", style = "width:70px;", MaxLength = 20 })%>
+                <%: Html.TextBoxFor(model => model.Horario, new { id = "textbox3", style = "width:70px;" })%>
                 <!--span class="add-on"><i class="icon-time"></i></span -->
                 <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
                 hrs (Ex: 07:00)
@@ -90,7 +90,7 @@
             </div>
             <div class="span6">
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.HorarioComplemento, new { style = "width:312px;", MaxLegth = 60 })%>
+                    <%: Html.TextBoxFor(model => model.HorarioComplemento, new { style = "width:312px;" })%>
                 </div>
             </div>
         </div>

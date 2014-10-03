@@ -15,10 +15,12 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "clinica", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Clinica { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "leito", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Leito { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -28,10 +30,12 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "diagnostico_medico", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string DiagnosticoMedico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "motivo_internacao", ResourceType = typeof(Mensagem))]
+        [StringLength(200)]
         public string MotivoInternacao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -43,6 +47,7 @@ namespace PacienteVirtual.Models
         public bool UsoOutros { get; set; }
 
         [Display(Name = "uso_outros_descricao", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string UsoOutrosDescricao { get; set; }
         
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

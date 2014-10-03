@@ -18,6 +18,7 @@ namespace PacienteVirtual.Models
         public long IdPatologia { get; set; }
 
         [Display(Name = "antecedentes_doencas", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Patologia { get; set; }
 
         public string ErroAntecedentesPatologicos { get; set; }
