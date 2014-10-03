@@ -32,6 +32,5 @@ namespace PacienteVirtual.Models
 
         public string PessoaNome { get; set; }
 
-
     }
 }

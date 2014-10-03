@@ -45,7 +45,7 @@
             <%: Html.LabelFor(model => model.Posologia) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Posologia, new { @class = "textbox", style = "width:276px;", MaxLength = 100 })%>
+            <%: Html.TextBoxFor(model => model.Posologia, new { @class = "textbox", style = "width:276px;" })%>
             <%: Html.ValidationMessageFor(model => model.Posologia, string.Empty, new { @class = "styleValidation" })%>
         </div>
 

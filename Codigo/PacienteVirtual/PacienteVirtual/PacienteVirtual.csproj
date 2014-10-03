@@ -362,7 +362,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Consulta\AcaoAlternativaModel.cs" />
     <Compile Include="Models\AccountModels.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -463,7 +462,6 @@
     </Compile>
     <Compile Include="Models\Turma\TurmaPessoaRelatoModel.cs" />
     <Compile Include="Models\Consulta\ConsultaModel.cs" />
-    <Compile Include="Models\Consulta\VMPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

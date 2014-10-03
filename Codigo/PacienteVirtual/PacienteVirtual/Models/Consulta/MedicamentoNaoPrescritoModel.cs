@@ -24,10 +24,12 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "dosagem", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Dosagem { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "posologia", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Posologia { get; set; }
 
         public string ErroListaMedNaoPresc { get; set; }

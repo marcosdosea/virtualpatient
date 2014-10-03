@@ -15,20 +15,24 @@ namespace PacienteVirtual.Models
         public int IdQueixa { get; set; }
 
         [Display(Name = "alternativas_intervencao", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string DescricaoQueixa { get; set; }
 
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public int IdSistema { get; set; }
 
         [Display(Name = "nome_sistema", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string NomeSistema { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "tipo", ResourceType = typeof(Mensagem))]
+        [StringLength(1)]
         public String Tipo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "desde", ResourceType = typeof(Mensagem))]
+        [StringLength(40)]
         public string Desde { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

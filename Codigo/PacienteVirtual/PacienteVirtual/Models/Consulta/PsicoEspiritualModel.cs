@@ -14,12 +14,14 @@ namespace PacienteVirtual.Models
         public long IdConsultaVariavel { get; set; }
 
         [Display(Name = "crenca_religiosa", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string CrencaReligiosa { get; set; }
 
         [Display(Name = "busca_assistencia_espiritual", ResourceType = typeof(Mensagem))]
         public bool BuscaAssistenciaEspiritual { get; set; }
 
         [Display(Name = "especifica_assistencia_espiritual", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string EspecificaAssistenciaEspiritual { get; set; }
 
         [Display(Name = "disturbios_sono", ResourceType = typeof(Mensagem))]

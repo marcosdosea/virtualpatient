@@ -113,7 +113,7 @@
         <div class="span12">
             <div class="editor-field">
                 <%: Resources.Mensagem.localizar_alteracao %>:&nbsp;&nbsp;
-                <%: Html.TextBoxFor(model => model.LocalAlteracaoPele, new { MaxLength = 100 ,style = "width:410px;" })%>
+                <%: Html.TextBoxFor(model => model.LocalAlteracaoPele, new { style = "width:410px;" })%>
                 <%: Html.ValidationMessageFor(model => model.LocalAlteracaoPele, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="span9">
                     <%: Resources.Mensagem.estagio %>:&nbsp;
-                    <%: Html.TextBoxFor(model => model.UlceraPressaoEstagio, new { MaxLength = 5, style = "width:70px;" })%>
+                    <%: Html.TextBoxFor(model => model.UlceraPressaoEstagio, new { style = "width:70px;" })%>
                     <%: Html.ValidationMessageFor(model => model.UlceraPressaoEstagio, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -161,7 +161,7 @@
             <div class="editor-field">
                 <div class="span12">
                     <%: Resources.Mensagem.local %>:&nbsp;
-                    <%: Html.TextBoxFor(model => model.UlceraPressaoLocal, new { MaxLength = 100, style = "width:490px;" })%>
+                    <%: Html.TextBoxFor(model => model.UlceraPressaoLocal, new { style = "width:490px;" })%>
                     <%: Html.ValidationMessageFor(model => model.UlceraPressaoLocal, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="span9">
                     <%: Resources.Mensagem.grau %>
-                    <%: Html.TextBoxFor(model => model.QueimaduraGrau, new { MaxLength = 5, style = "width:70px;" })%>
+                    <%: Html.TextBoxFor(model => model.QueimaduraGrau, new { style = "width:70px;" })%>
                     <%: Html.ValidationMessageFor(model => model.QueimaduraGrau, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -190,7 +190,7 @@
             <div class="editor-field">
                 <div class="span12">
                     <%: Resources.Mensagem.local %>:&nbsp;
-                    <%: Html.TextBoxFor(model => model.QueimaduraLocal, new { MaxLength = 100, style = "width:487px;" })%>
+                    <%: Html.TextBoxFor(model => model.QueimaduraLocal, new { style = "width:487px;" })%>
                     <%: Html.ValidationMessageFor(model => model.QueimaduraLocal, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>

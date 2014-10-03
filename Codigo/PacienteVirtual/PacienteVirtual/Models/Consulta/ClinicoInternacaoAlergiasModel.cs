@@ -18,6 +18,7 @@ namespace PacienteVirtual.Models
         public int IdAlergia { get; set; }
 
         [Display(Name = "alergia", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Alergia { get; set; }
 
         public string ErroAlergias { get; set; }

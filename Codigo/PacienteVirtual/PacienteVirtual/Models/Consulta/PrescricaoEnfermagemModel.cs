@@ -22,6 +22,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "descricao_prescricao", ResourceType = typeof(Mensagem))]
+        [StringLength(300)]
         public string DescricaoPrescricao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -30,6 +31,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "horario", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Horario { get; set; }
     }
 }

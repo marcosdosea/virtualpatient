@@ -88,6 +88,7 @@ namespace PacienteVirtual.Models
         public bool PresencaFremito { get; set; }
 
         [Display(Name = "tosse", ResourceType = typeof(Mensagem))]
+        [StringLength(1)]
         public string Tosse { get; set; }
 
         [Display(Name = "frequencia_tosse", ResourceType = typeof(Mensagem))]
@@ -114,6 +115,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ganglios_localizar", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string GangliosLocalizar { get; set; }
 
         [Display(Name = "asculta_pulmonar", ResourceType = typeof(Mensagem))]

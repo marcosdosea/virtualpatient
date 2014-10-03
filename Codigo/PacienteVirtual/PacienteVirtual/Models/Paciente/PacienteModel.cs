@@ -21,6 +21,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nome_paciente", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public String NomePaciente { get; set; }
 
         // [Required]

@@ -60,27 +60,34 @@ namespace PacienteVirtual.Models
         public bool Tatil { get; set; }
 
         [Display(Name = "descricao_tipo_distorcao", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string DescricaoTipoDistorcao { get; set; }
 
         [Display(Name = "Dor", ResourceType = typeof(Mensagem))]
+        [StringLength(1)]
         public string Dor { get; set; }
 
         [Display(Name = "dor_intensidade_valor", ResourceType = typeof(Mensagem))]
         public int DorIntensidadeValor { get; set; }
 
         [Display(Name = "localizacao_dor", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string LocalizacaoDor { get; set; }
 
         [Display(Name = "duracao_dor", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string DuracaoDor { get; set; }
 
         [Display(Name = "descricao_dor", ResourceType = typeof(Mensagem))]
+        [StringLength(200)]
         public string DescricaoDor { get; set; }
 
         [Display(Name = "fatores_agravantes_dor", ResourceType = typeof(Mensagem))]
+        [StringLength(200)]
         public string FatoresAgravantesDor { get; set; }
 
         [Display(Name = "fatores_aliviantes_dor", ResourceType = typeof(Mensagem))]
+        [StringLength(200)]
         public string FatoresAliviantesDor { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

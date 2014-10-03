@@ -29,7 +29,7 @@
         </div>
         <div class="span9">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Dose, new { @class = "textbox", style = "width:312px;", MaxLength = 20 })%>
+                <%: Html.TextBoxFor(model => model.Dose, new { @class = "textbox", style = "width:312px;" })%>
                 <%: Html.ValidationMessageFor(model => model.Dose, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -74,7 +74,7 @@
         </div>
         <div class="span9">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Horario, new { placeholder = "07:00", style = "width:70px;", MaxLength = 5 })%>
+                <%: Html.TextBoxFor(model => model.Horario, new { placeholder = "07:00", style = "width:70px;" })%>
                 <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
                 hrs (Ex: 07:00)
             </div>
@@ -88,7 +88,7 @@
         </div>
         <div class="span9">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.HorarioComplemento, new { @class = "textbox", style = "width:312px;", MaxLength = 60 })%>
+                <%: Html.TextBoxFor(model => model.HorarioComplemento, new { @class = "textbox", style = "width:312px;" })%>
                 <%: Html.ValidationMessageFor(model => model.HorarioComplemento, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>

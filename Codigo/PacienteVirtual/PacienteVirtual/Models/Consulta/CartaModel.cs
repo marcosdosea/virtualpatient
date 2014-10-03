@@ -16,10 +16,12 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nome_profissional", ResourceType = typeof(Mensagem))]
+        [StringLength(45)]
         public string NomeProfissional { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nome_paciente", ResourceType = typeof(Mensagem))]
+        [StringLength(45)]
         public string NomePaciente { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -29,6 +31,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "telefone", ResourceType = typeof(Mensagem))]
+        [StringLength(15)]
         public string TelefonePaciente { get; set; }
 
         [Display(Name = "motivo_referencia_consulta", ResourceType = typeof(Mensagem))]
@@ -38,12 +41,15 @@ namespace PacienteVirtual.Models
         public string Alternativas { get; set; }
 
         [Display(Name = "farmaceutico", ResourceType = typeof(Mensagem))]
+        [StringLength(45)]
         public string Farmaceutico { get; set; }
 
         [Display(Name = "crfuf", ResourceType = typeof(Mensagem))]
+        [StringLength(45)]
         public string CRFUF { get; set; }
 
         [Display(Name = "telefone", ResourceType = typeof(Mensagem))]
+        [StringLength(15)]
         public string TelefoneFarmaceutico { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -55,6 +61,7 @@ namespace PacienteVirtual.Models
         public int IdEspecialidade { get; set; }
 
         [Display(Name = "especialidade", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Especialidade { get; set; }
 
         public string ErroCarta { get; set; }

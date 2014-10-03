@@ -100,6 +100,7 @@ namespace PacienteVirtual.Models
         public ListaDebitoUrinario DebitoUrinario { get; set; }
 
         [Display(Name = "tempo", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Tempo { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

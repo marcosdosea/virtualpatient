@@ -122,7 +122,7 @@
             <div class="span12">
                 <%: Html.EditorFor(model => model.RestricaoAlimentar) %>
                 <%: Resources.Mensagem.restricao_alimentar %>
-                <%: Html.TextBoxFor(model => model.RestricaoAlimentarTexto, new { MaxLength = 100, style = "width:440px;" })%>
+                <%: Html.TextBoxFor(model => model.RestricaoAlimentarTexto, new { style = "width:440px;" })%>
                 <%: Html.ValidationMessageFor(model => model.RestricaoAlimentarTexto, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -130,7 +130,7 @@
         <div class="row-fluid">
             <div class="span12">
                 <%: Resources.Mensagem.habitos_alimentares %>
-                <%: Html.TextBoxFor(model => model.HabitosAlimentares, new { MaxLength = 100, style = "width:440px;" })%>
+                <%: Html.TextBoxFor(model => model.HabitosAlimentares, new { style = "width:440px;" })%>
                 <%: Html.ValidationMessageFor(model => model.HabitosAlimentares, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>

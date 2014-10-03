@@ -20,7 +20,7 @@
             <%: Html.LabelFor(model => model.NomeProfissional) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.NomeProfissional, new { MaxLength = 15 })%>
+            <%: Html.TextBoxFor(model => model.NomeProfissional)%>
             <%: Html.ValidationMessageFor(model => model.NomeProfissional, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
@@ -28,7 +28,7 @@
             <%: Html.LabelFor(model => model.NomePaciente) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.NomePaciente, new { MaxLength = 15 })%>
+            <%: Html.TextBoxFor(model => model.NomePaciente)%>
             <%: Html.ValidationMessageFor(model => model.NomePaciente, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
@@ -44,7 +44,7 @@
             <%: Html.LabelFor(model => model.TelefonePaciente) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.TelefonePaciente, new { MaxLength = 15 })%>
+            <%: Html.TextBoxFor(model => model.TelefonePaciente)%>
             <%: Html.ValidationMessageFor(model => model.TelefonePaciente, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
@@ -68,7 +68,7 @@
             <%: Html.LabelFor(model => model.Farmaceutico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Farmaceutico, new { MaxLength = 45 }) %>
+            <%: Html.TextBoxFor(model => model.Farmaceutico) %>
             <%: Html.ValidationMessageFor(model => model.Farmaceutico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
@@ -76,7 +76,7 @@
             <%: Html.LabelFor(model => model.CRFUF) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.CRFUF, new { MaxLength = 45 }) %>
+            <%: Html.TextBoxFor(model => model.CRFUF) %>
             <%: Html.ValidationMessageFor(model => model.CRFUF, string.Empty, new { @class = "styleValidation" })%>
         </div>
 
@@ -84,7 +84,7 @@
             <%: Html.LabelFor(model => model.TelefoneFarmaceutico) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.TelefoneFarmaceutico, new { MaxLength = 15 })%>
+            <%: Html.TextBoxFor(model => model.TelefoneFarmaceutico)%>
             <%: Html.ValidationMessageFor(model => model.TelefoneFarmaceutico, string.Empty, new { @class = "styleValidation" })%>
         </div>
 

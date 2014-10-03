@@ -202,7 +202,7 @@
             <br />
             <div class="span12">
                 <%= Resources.Mensagem.ganglios_localizar %>:
-                <%: Html.TextBoxFor(model => model.GangliosLocalizar, new { MaxLength = 50, style = "width:340px;" })%>
+                <%: Html.TextBoxFor(model => model.GangliosLocalizar, new { style = "width:340px;" })%>
                 <%: Html.ValidationMessageFor(model => model.GangliosLocalizar, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>

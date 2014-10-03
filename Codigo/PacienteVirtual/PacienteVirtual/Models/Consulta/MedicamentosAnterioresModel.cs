@@ -20,14 +20,17 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "indicacao", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Indicacao { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "resposta", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Resposta { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "periodo", ResourceType = typeof(Mensagem))]
+        [StringLength(100)]
         public string Periodo { get; set; }
 
         public string ErroMedAnt { get; set; }

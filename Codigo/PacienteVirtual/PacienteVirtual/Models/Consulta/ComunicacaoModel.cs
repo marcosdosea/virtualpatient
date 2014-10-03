@@ -52,6 +52,7 @@ namespace PacienteVirtual.Models
         public bool Leituras { get; set; }
 
         [Display(Name = "especificar", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string Especificar { get; set; }
 
         [Display(Name = "tipo_comportamento", ResourceType = typeof(Mensagem))]

@@ -14,9 +14,11 @@ namespace PacienteVirtual.Models
         public long IdConsultaVariavel { get; set; }
 
         [Display(Name = "quanto_doenca", ResourceType = typeof(Mensagem))]
+        [StringLength(300)]
         public string quantoDoenca { get; set; }
 
         [Display(Name = "duvidas_questionamentos", ResourceType = typeof(Mensagem))]
+        [StringLength(300)]
         public string duvidasQuestionamentos { get; set; }
     }
 }

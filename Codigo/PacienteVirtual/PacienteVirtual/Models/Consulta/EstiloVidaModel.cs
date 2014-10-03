@@ -18,6 +18,7 @@ namespace PacienteVirtual.Models
         public short TabacoUso { get; set; }
 
         [Display(Name = "tabaco_parou", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string TabacoParou { get; set; }
 
         [Display(Name = "cafe_consumo", ResourceType = typeof(Mensagem))]
@@ -27,6 +28,7 @@ namespace PacienteVirtual.Models
         public short CafeUso { get; set; }
 
         [Display(Name = "cafe_parou", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string CafeParou { get; set; }
 
         [Display(Name = "alcool_consumo", ResourceType = typeof(Mensagem))]
@@ -36,9 +38,11 @@ namespace PacienteVirtual.Models
         public short AlcoolUso { get; set; }
 
         [Display(Name = "alcool_tipo_bebida", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string AlcoolTipoBebida { get; set; }
 
         [Display(Name = "alcool_parou", ResourceType = typeof(Mensagem))]
+        [StringLength(50)]
         public string AlcoolParou { get; set; }
 
     }

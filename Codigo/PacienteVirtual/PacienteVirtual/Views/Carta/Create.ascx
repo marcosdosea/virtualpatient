@@ -14,7 +14,7 @@
                     <%: Html.LabelFor(model => model.NomeProfissional) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.NomeProfissional, new { style = "width:579px;", MaxLength = 45 })%>
+                    <%: Html.TextBoxFor(model => model.NomeProfissional, new { style = "width:579px;")%>
                     <%: Html.ValidationMessageFor(model => model.NomeProfissional, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <%: Html.LabelFor(model => model.NomePaciente) %>
                     </div>
                     <div class="editor-field">
-                        <%: Html.TextBoxFor(model => model.NomePaciente, new { style = "width:579px;", MaxLength = 45 })%>
+                        <%: Html.TextBoxFor(model => model.NomePaciente, new { style = "width:579px;")%>
                         <%: Html.ValidationMessageFor(model => model.NomePaciente, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                         <%: Html.LabelFor(model => model.TelefonePaciente) %>
                     </div>
                     <div class="editor-field">
-                        <%: Html.TextBoxFor(model => model.TelefonePaciente, new {  MaxLength = 15 })%>
+                        <%: Html.TextBoxFor(model => model.TelefonePaciente)%>
                         <%: Html.ValidationMessageFor(model => model.TelefonePaciente, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                     <%: Html.LabelFor(model => model.Farmaceutico) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.Farmaceutico, new { style = "width:579px;", MaxLength = 45 })%>
+                    <%: Html.TextBoxFor(model => model.Farmaceutico, new { style = "width:579px;")%>
                     <%: Html.ValidationMessageFor(model => model.Farmaceutico, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                     <%: Html.LabelFor(model => model.CRFUF) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.CRFUF, new { style = "width:579px;", MaxLength = 45 })%>
+                    <%: Html.TextBoxFor(model => model.CRFUF, new { style = "width:579px;" })%>
                     <%: Html.ValidationMessageFor(model => model.CRFUF, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     <%: Html.LabelFor(model => model.TelefoneFarmaceutico) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.TelefoneFarmaceutico, new { MaxLength = 15 })%>
+                    <%: Html.TextBoxFor(model => model.TelefoneFarmaceutico)%>
                     <%: Html.ValidationMessageFor(model => model.TelefoneFarmaceutico, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
