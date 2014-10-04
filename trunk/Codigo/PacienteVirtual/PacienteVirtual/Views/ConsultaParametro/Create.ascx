@@ -29,7 +29,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Valor, new { @class = "textbox", style = "width:276px;" })%>
+                <%: Html.TextBoxFor(model => model.Valor, new { style = "width:276px;", PlaceHolder = "Ex: 10.00", onkeypress = "return NumeroPonto(event);"  })%>
                 <%: Html.ValidationMessageFor(model => model.Valor, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -68,3 +68,13 @@
     <%: Html.QuebraLinhaFor(model => model.ErroParametroClinico)%>
 </div>
 <% } %>
+<script type="text/javascript">
+    function NumeroPonto(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58 || tecla == 46)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+</script>
