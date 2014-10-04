@@ -51,7 +51,7 @@
                 <%: Html.LabelFor(model => model.OrdemCronologica) %>
             </div>
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.OrdemCronologica) %>
+                <%: Html.TextBoxFor(model => model.OrdemCronologica, new { onkeypress = "return SomenteNumero(event);" })%>
                 <%: Html.ValidationMessageFor(model => model.OrdemCronologica, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="editor-label">
@@ -65,7 +65,7 @@
                 <%: Html.LabelFor(model => model.NivelDificuldade) %>
             </div>
             <div class="editor-field">
-                <%: Html.EditorFor(model => model.NivelDificuldade) %>
+                <%: Html.TextBoxFor(model => model.NivelDificuldade, new { PlaceHolder = "Ex: 10.00", onkeypress = "return SomenteNumero(event);" })%>
                 <%: Html.ValidationMessageFor(model => model.NivelDificuldade, string.Empty, new { @class = "styleValidation" })%>
             </div>
             <div class="form-actions">
@@ -77,4 +77,16 @@
     <div>
         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
     </div>
+
+    <script type="text/javascript">
+        function SomenteNumero(e) {
+            var tecla = (window.event) ? event.keyCode : e.which;
+            if ((tecla > 47 && tecla < 58)) return true;
+            else {
+                if (tecla == 8 || tecla == 0) return true;
+                else return false;
+            }
+        }
+    </script>
 </asp:Content>
+

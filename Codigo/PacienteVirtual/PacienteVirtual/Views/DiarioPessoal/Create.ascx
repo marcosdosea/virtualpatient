@@ -74,8 +74,10 @@
         </div>
         <div class="span9">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Horario, new { placeholder = "07:00", style = "width:70px;" })%>
-                <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
+                <%: Html.TextBoxFor(model => model.Horario, new { placeholder = "07:00", style = "width:70px;", MaxLength = 5, onkeypress = "return NumeroDoisPontos(event);" })%>
+<<<<<<< .mine                <%: Html.TextBoxFor(model => model.Horario, new { placeholder = "07:00", style = "width:70px;", MaxLength = 5, onkeypress = "return NumeroDoisPontos(event);" })%>
+=======                <%: Html.TextBoxFor(model => model.Horario, new { placeholder = "07:00", style = "width:70px;" })%>
+>>>>>>> .theirs                <%: Html.ValidationMessageFor(model => model.Horario, string.Empty, new { @class = "styleValidation" })%>
                 hrs (Ex: 07:00)
             </div>
         </div>
@@ -115,3 +117,13 @@
     <%: Html.QuebraLinhaFor(model => model.ErroDiarioPessoal) %>
 </div>
 <% } %>
+<script type="text/javascript">
+    function NumeroDoisPontos(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58 || tecla == 58)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+</script>

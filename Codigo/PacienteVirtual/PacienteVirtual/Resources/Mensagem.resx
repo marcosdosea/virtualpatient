@@ -2430,4 +2430,7 @@
   <data name="realizado" xml:space="preserve">
     <value>Realizado</value>
   </data>
+  <data name="campo_numerico" xml:space="preserve">
+    <value>Este é um campo númerico. Observe este exemplo de um valor válido"10.00".</value>
+  </data>
 </root>

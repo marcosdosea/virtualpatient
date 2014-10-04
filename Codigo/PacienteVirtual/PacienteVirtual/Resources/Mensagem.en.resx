@@ -2391,4 +2391,7 @@
   <data name="realizado" xml:space="preserve">
     <value>Fulfilled</value>
   </data>
+  <data name="campo_numerico" xml:space="preserve">
+    <value>This is a field number. Look the example "10.00".</value>
+  </data>
 </root>
