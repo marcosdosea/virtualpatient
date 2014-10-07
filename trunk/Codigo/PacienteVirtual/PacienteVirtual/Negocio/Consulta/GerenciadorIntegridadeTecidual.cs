@@ -98,11 +98,7 @@ namespace PacienteVirtual.Negocio
                 modelState.AddModelError("UlceraPressao", "Gabarito: " + (integridadeGabarito.UlceraPressao.Equals(true) ? "Sim" : "Não"));
             }
             Global.CorrecaoDeStrings("UlceraPressaoLocal", integridade.UlceraPressaoLocal, integridadeGabarito.UlceraPressaoLocal, modelState);
-            
-            if (!Global.RemoverAcentuacao(integridade.UlceraPressaoEstagio.ToLower()).Equals(Global.RemoverAcentuacao(integridadeGabarito.UlceraPressaoEstagio.ToLower())))
-            {
-                modelState.AddModelError("UlceraPressaoEstagio", "Gabarito: \"" + integridadeGabarito.UlceraPressaoEstagio + "\"");
-            }
+            Global.CorrecaoDeStrings("UlceraPressaoEstagio", integridade.UlceraPressaoEstagio, integridadeGabarito.UlceraPressaoEstagio, modelState);
             if (integridade.Queimadura != integridadeGabarito.Queimadura)
             {
                 modelState.AddModelError("Queimadura", "Gabarito: " + (integridadeGabarito.Queimadura.Equals(true) ? "Sim" : "Não"));

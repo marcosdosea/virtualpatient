@@ -4,6 +4,7 @@ using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
 using PacienteVirtual.Controllers;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -21,7 +22,7 @@ namespace PacienteVirtual.Negocio
             return gDiagnosticoConsulta;
         }
 
-        /*
+        
         /// <summary>
         /// Realiza a correção da consulta diagnostico de acordo com as respostas do gabarito
         /// </summary>
@@ -30,26 +31,23 @@ namespace PacienteVirtual.Negocio
         {
             string erroNaoContemNoGabarito = "";
             string erroContemGabaritoNaoContemResposta = "";
-            string erroRespostas = "";
             bool contem;
             foreach (var diagnostico in resposta)
             {
                 contem = false;
                 foreach (var diagnosticoGabarito in gabarito)
                 {
-                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdClasseDiagnostico == diagnosticoGabarito.IdClasseDiagnostico)
+                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdClasseDiagnostico == 
+                        diagnosticoGabarito.IdClasseDiagnostico && diagnostico.IdDominioDiagnostico == 
+                        diagnosticoGabarito.IdDominioDiagnostico)
                     {
                         contem = true;
-                        if (Global.RemoverAcentuacao(diagnostico.AvaliacaoResultados) != Global.RemoverAcentuacao(diagnosticoGabarito.AvaliacaoResultados) || Global.RemoverAcentuacao(diagnostico.CaracteristicasDefinidoras) != Global.RemoverAcentuacao(diagnosticoGabarito.CaracteristicasDefinidoras) || Global.RemoverAcentuacao(diagnostico.PrescricaoCuidado) != Global.RemoverAcentuacao(diagnosticoGabarito.PrescricaoCuidado) || Global.RemoverAcentuacao(diagnostico.ResultadoEsperado) != Global.RemoverAcentuacao(diagnosticoGabarito.ResultadoEsperado))
-                        {
-                            erroRespostas = erroRespostas + "Gabarito do Diagnóstico: " + diagnosticoGabarito.DescricaoDiagnostico+" e Grupo Diagnóstico "+ diagnosticoGabarito.DescricaoClasseDiagnostico + ": " + diagnosticoGabarito.Fatores + "," + diagnosticoGabarito.PrescricaoCuidado + ", " + diagnosticoGabarito.ResultadoEsperado + ",<br>";
-                        }
-                        break;
                     }
                 }
                 if (!contem)
                 {
-                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + diagnostico.DescricaoDiagnostico + ";<br>";
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + diagnostico.DescricaoDiagnostico + ", " + 
+                        diagnostico.DescricaoDominioDiagnostico + ", " + diagnostico.DescricaoClasseDiagnostico +";<br>";
                 }
             }
             foreach (var diagnosticoGabarito in gabarito)
@@ -57,7 +55,8 @@ namespace PacienteVirtual.Negocio
                 contem = false;
                 foreach (var diagnostico in resposta)
                 {
-                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdClasseDiagnostico == diagnosticoGabarito.IdClasseDiagnostico)
+                    if (diagnostico.IdDiagnostico == diagnosticoGabarito.IdDiagnostico && diagnostico.IdClasseDiagnostico == 
+                        diagnosticoGabarito.IdClasseDiagnostico)
                     {
                         contem = true;
                         break;
@@ -65,13 +64,15 @@ namespace PacienteVirtual.Negocio
                 }
                 if (!contem)
                 {
-                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + diagnosticoGabarito.DescricaoDiagnostico + ";<br>";
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + diagnosticoGabarito.DescricaoDiagnostico + 
+                       ", " + diagnosticoGabarito.DescricaoDominioDiagnostico + ", " + diagnosticoGabarito.DescricaoClasseDiagnostico + 
+                       ";<br>";
                 }
             }
-            model.AddModelError("ErroDiagnostico", (erroRespostas.Equals("") ? "" : erroRespostas + "<br>") +
-                (erroNaoContemNoGabarito.Equals("") ? "" : "Diagnósticos que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
-                (erroContemGabaritoNaoContemResposta.Equals("") ? "" : "Diagnósticos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
-        } */
+            model.AddModelError("ErroDiagnostico", (erroNaoContemNoGabarito.Equals("") ? "" : "Diagnósticos que não contém no Gabarito: <br>" 
+                + erroNaoContemNoGabarito + "<br>") + (erroContemGabaritoNaoContemResposta.Equals("") ? "" :
+                "Diagnósticos que não foram adicionados: <br>" + erroContemGabaritoNaoContemResposta));
+        }
 
         /// <summary>
         /// Insere dados do DiagnosticoConsulta

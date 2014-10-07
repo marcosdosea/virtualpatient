@@ -608,6 +608,24 @@ namespace PacienteVirtual.Controllers
         public void corrigirSegundaTela(int idPaciente, int ordemCronologica, int idCurso)
         {
             ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica, idCurso);
+            if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
+            {
+                CorrigirSegundaTelaCursoFarmacia(gabaritoConsultaSelecionada);
+            }
+            else
+            {
+                CorrigirSegundaTelaCursoEnfermagem(gabaritoConsultaSelecionada);
+            }
+        }
+
+        private void CorrigirSegundaTelaCursoEnfermagem(ConsultaVariavelModel gabaritoConsultaSelecionada)
+        {
+            IEnumerable<DiagnosticoConsultaModel> listaDiagnosticoConsulta = GerenciadorDiagnosticoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorDiagnosticoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaDiagnostico, listaDiagnosticoConsulta, ModelState);
+        }
+
+        private void CorrigirSegundaTelaCursoFarmacia(ConsultaVariavelModel gabaritoConsultaSelecionada)
+        {
             IEnumerable<ConsultaVariavelQueixaModel> ListaConsultVarQueixa = GerenciadorConsultaVariavelQueixa.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorConsultaVariavelQueixa.GetInstance().CorrigirRespostasConsulta2(SessionController.ListaConsultaVariavelQueixa, ListaConsultVarQueixa, ModelState);
             IEnumerable<QueixaMedicamentoModel> ListaQueixaMedicamento = GerenciadorQueixaMedicamento.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
@@ -618,8 +636,7 @@ namespace PacienteVirtual.Controllers
             GerenciadorCarta.GetInstance().CorrigirRespostas(SessionController.ListaCarta, listaCarta, ModelState);
             IEnumerable<IntervencaoConsultaModel> listaIntervencao = GerenciadorIntervencaoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
             GerenciadorIntervencaoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaIntervencaoConsulta, listaIntervencao, ModelState);
-            //IEnumerable<DiagnosticoConsultaModel> listaDiagnostico = GerenciadorDiagnosticoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
-            //GerenciadorDiagnosticoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaDiagnostico, listaDiagnostico, ModelState);
+
         }
     }
 }
