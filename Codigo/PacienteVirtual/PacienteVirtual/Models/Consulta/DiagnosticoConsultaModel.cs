@@ -35,5 +35,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "risco", ResourceType = typeof(Mensagem))]
         public bool Risco { get; set; }
+
+        public string ErroDiagnostico { get; set; }
     }
 }
