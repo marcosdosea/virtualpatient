@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -146,6 +147,51 @@ namespace PacienteVirtual.Negocio
             _tb_diagnostico_caracteristica.IdDiagnosticoCaracteristica = diagnosticoCaracteristica.IdDiagnosticoCaracteristica;
             _tb_diagnostico_caracteristica.IdDiagnostico = diagnosticoCaracteristica.IdDiagnostico;
             _tb_diagnostico_caracteristica.DescricaoCaracteristica = diagnosticoCaracteristica.DescricaoCaracteristicaDiagnostico;
+        }
+
+        public void CorrigirRespostas(IEnumerable<DiagnosticoCaracteristicaModel> listaCaracteristica, 
+            IEnumerable<DiagnosticoCaracteristicaModel> listaCaracteristicaGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            bool contem;
+            foreach (var caracteristica in listaCaracteristica)
+            {
+                contem = false;
+                foreach (var caracteristicaGabarito in listaCaracteristicaGabarito)
+                {
+                    if (caracteristica.IdDiagnosticoCaracteristica == caracteristicaGabarito.IdDiagnosticoCaracteristica)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + caracteristica.DescricaoCaracteristicaDiagnostico + ";<br>";
+                }
+            }
+            foreach (var caracteristicaGabarito in listaCaracteristicaGabarito)
+            {
+                contem = false;
+                foreach (var caracteristica in listaCaracteristica)
+                {
+                    if (caracteristica.IdDiagnosticoCaracteristica == caracteristicaGabarito.IdDiagnosticoCaracteristica)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + 
+                        caracteristicaGabarito.DescricaoCaracteristicaDiagnostico + ";<br>";
+                }
+            }
+            modelState.AddModelError("ErroCaracteristica", (erroNaoContemNoGabarito.Equals("") ? " " : 
+                "Caracteristicas Diagnósticos que não contém " + "no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? " " : "Caracteristicas Diagnósticos que não foram adicionados: " + 
+                erroContemGabaritoNaoContemResposta));
         }
     }
 }

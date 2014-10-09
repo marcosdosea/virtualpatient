@@ -20,6 +20,7 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "descricao_fator_diagnostico", ResourceType = typeof(Mensagem))]
         [StringLength(200)]
+        
         public string DescricaoFatorDiagnostico { get; set; }
     }
 }

@@ -607,7 +607,8 @@ namespace PacienteVirtual.Controllers
         /// <param name="ordemCronologica"></param>
         public void corrigirSegundaTela(int idPaciente, int ordemCronologica, int idCurso)
         {
-            ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, ordemCronologica, idCurso);
+            ConsultaVariavelModel gabaritoConsultaSelecionada = GerenciadorConsultaVariavel.GetInstance().ObterConsultaGabarito(idPaciente, 
+                ordemCronologica, idCurso);
             if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
             {
                 CorrigirSegundaTelaCursoFarmacia(gabaritoConsultaSelecionada);
@@ -620,8 +621,42 @@ namespace PacienteVirtual.Controllers
 
         private void CorrigirSegundaTelaCursoEnfermagem(ConsultaVariavelModel gabaritoConsultaSelecionada)
         {
-            IEnumerable<DiagnosticoConsultaModel> listaDiagnosticoConsulta = GerenciadorDiagnosticoConsulta.GetInstance().Obter(gabaritoConsultaSelecionada.IdConsultaVariavel);
-            GerenciadorDiagnosticoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaDiagnostico, listaDiagnosticoConsulta, ModelState);
+
+            IEnumerable<DiagnosticoConsultaModel> listaDiagnosticoGabarito = GerenciadorDiagnosticoConsulta.GetInstance().Obter(
+                gabaritoConsultaSelecionada.IdConsultaVariavel);
+            GerenciadorDiagnosticoConsulta.GetInstance().CorrigirRespostas(SessionController.ListaDiagnostico, listaDiagnosticoGabarito, 
+                ModelState);
+            if (SessionController.ListaDiagnostico.Count() > 0)
+            {
+                DiagnosticoConsultaModel cmd = SessionController.DiagnosticoConsulta;
+                /*if (cmd == null)
+                {
+                    cmd = listaDiagnosticoConsulta.ElementAtOrDefault(0);
+                    GerenciadorDiagnosticoConsulta.GetInstance().AtualizaConsultaDiagnosticoSelecionada(cmd.IdConsultaVariavel,
+                        cmd.IdDiagnostico, cmd.IdDominioDiagnostico, cmd.IdClasseDiagnostico);
+                } */
+                DiagnosticoConsultaModel diagnosticoASerCorrigido = GerenciadorDiagnosticoConsulta.GetInstance().DiagnosticoGabarito(
+                    listaDiagnosticoGabarito, cmd);
+                if (diagnosticoASerCorrigido != null)
+                {
+                    IEnumerable<DiagnosticoFatorModel> listaDiagnosticoFatorGabarito = GerenciadorDiagnosticoConsultaFator.GetInstance().
+                        ObterTodosPorDiagnosticoConsulta(diagnosticoASerCorrigido.IdConsultaVariavel, diagnosticoASerCorrigido.IdDiagnostico);
+                    GerenciadorDiagnosticoFator.GetInstance().CorrigirRespostas(SessionController.ListaDiagnosticoConsultaFator, 
+                        listaDiagnosticoFatorGabarito, ModelState);
+                    IEnumerable<DiagnosticoCaracteristicaModel> listaDiagnosticoCaracteristicaGabarito = 
+                        GerenciadorDiagnosticoConsultaCaracteristica.GetInstance().ObterTodosPorDiagnosticoConsulta(
+                        diagnosticoASerCorrigido.IdConsultaVariavel, diagnosticoASerCorrigido.IdDiagnostico);
+                    GerenciadorDiagnosticoCaracteristica.GetInstance().CorrigirRespostas(
+                        SessionController.ListaDiagnosticoConsultaCaracteristica, listaDiagnosticoCaracteristicaGabarito, ModelState);
+                    IEnumerable<PrescricaoEnfermagemModel> listaPrescricaoGabarito = GerenciadorPrescricaoEnfermagem.GetInstance().
+                        ObterPorConsultaDiagnostico(diagnosticoASerCorrigido.IdConsultaVariavel, diagnosticoASerCorrigido.IdDiagnostico);
+                    GerenciadorPrescricaoEnfermagem.GetInstance().CorrigirRespostas(SessionController.ListaPrescricaoEnfermagem, 
+                        listaPrescricaoGabarito, ModelState);
+                    GerenciadorDiagnosticoConsulta.GetInstance().CorrigirResultadosEsperados(SessionController.DiagnosticoConsulta, 
+                        diagnosticoASerCorrigido, ModelState);
+                    TryValidateModel(SessionController.DiagnosticoConsulta);
+                }
+            }
         }
 
         private void CorrigirSegundaTelaCursoFarmacia(ConsultaVariavelModel gabaritoConsultaSelecionada)
