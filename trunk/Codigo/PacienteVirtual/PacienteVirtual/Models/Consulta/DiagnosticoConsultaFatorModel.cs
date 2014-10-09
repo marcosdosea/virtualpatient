@@ -22,5 +22,7 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "descricao_fator_diagnostico", ResourceType = typeof(Mensagem))]
         public string DescricaoFatorDiagnostico { get; set; }
+
+        public string ErroFator { get; set; }
     }
 }

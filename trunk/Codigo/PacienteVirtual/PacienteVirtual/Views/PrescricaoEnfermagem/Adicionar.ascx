@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.PrescricaoEnfermagemModel>" %>
+<%@ Import Namespace = "PacienteVirtual.Helpers" %>
 <% using (Html.BeginForm("Adicionar", "PrescricaoEnfermagem"))
    { %>
 <%: Html.ValidationSummary(true) %>
@@ -32,4 +33,7 @@
         </div>
     </div>
 </fieldset>
+<div class="styleValidation">
+    <%: Html.QuebraLinhaFor(model => model.ErroPrescricao) %>
+</div>
 <% } %>

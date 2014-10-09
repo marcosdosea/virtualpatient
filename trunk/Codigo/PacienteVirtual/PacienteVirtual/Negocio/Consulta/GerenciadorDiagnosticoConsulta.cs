@@ -230,5 +230,26 @@ namespace PacienteVirtual.Negocio
             _tb_diagnostico_consulta_variavel.IdDiagnostico = DiagnosticoConsultaModel.IdDiagnostico;
             _tb_diagnostico_consulta_variavel.ResultadoEsperado = DiagnosticoConsultaModel.ResultadoEsperado;
         }
+
+        public DiagnosticoConsultaModel DiagnosticoGabarito(IEnumerable<DiagnosticoConsultaModel> listaDiagnosticoGabarito, 
+            DiagnosticoConsultaModel diagnostico)
+        {
+            foreach (var d in listaDiagnosticoGabarito)
+            {
+                if (d.IdDiagnostico == diagnostico.IdDiagnostico && d.IdDominioDiagnostico == diagnostico.IdDominioDiagnostico &&
+                    d.IdClasseDiagnostico == diagnostico.IdClasseDiagnostico)
+                    return d;
+            }
+            return null;
+        }
+
+        public void CorrigirResultadosEsperados(DiagnosticoConsultaModel diagnostico, DiagnosticoConsultaModel diagnosticoGabarito, 
+            ModelStateDictionary modelState)
+        {
+            if (!diagnostico.ResultadoEsperado.Equals(diagnosticoGabarito.ResultadoEsperado))
+            {
+                modelState.AddModelError("ResultadoEsperado", "Gabarito: \"" + diagnosticoGabarito.ResultadoEsperado + "\"");
+            }
+        }
     }
 }

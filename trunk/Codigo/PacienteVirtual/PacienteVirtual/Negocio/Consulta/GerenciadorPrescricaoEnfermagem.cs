@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -149,6 +150,57 @@ namespace PacienteVirtual.Negocio
             _tb_precricao_enfermagem.DescricaoPrescricao = prescricaoEnfermagem.DescricaoPrescricao;
             _tb_precricao_enfermagem.Realizada = prescricaoEnfermagem.Realizada;
             _tb_precricao_enfermagem.Horarios = prescricaoEnfermagem.Horario;
+        }
+
+        public void CorrigirRespostas(IEnumerable<PrescricaoEnfermagemModel> listaPrescricao, IEnumerable<PrescricaoEnfermagemModel> 
+            listaPrescricaoGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            string erroRespostas = "";
+            bool contem;
+            foreach (var prescricao in listaPrescricao)
+            {
+                contem = false;
+                foreach (var prescricaoGabarito in listaPrescricaoGabarito)
+                {
+                    if (prescricao.IdPrescricaoEnfermagem == prescricaoGabarito.IdPrescricaoEnfermagem)
+                    {
+                        contem = true;
+                        if (!prescricao.Horario.Equals(prescricaoGabarito.Horario) || prescricao.Realizada != prescricaoGabarito.Realizada)
+                        {
+                            erroRespostas = erroRespostas + "Gabarito da prescrição: " + prescricao.DescricaoPrescricao + ": " + 
+                                (prescricaoGabarito.Realizada == true ? "Sim" : "Não") + ", " + prescricaoGabarito.Horario + "; " + "<br>";
+                        }
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + prescricao.DescricaoPrescricao + ";<br>";
+                }
+            }
+            foreach (var prescricaoGabarito in listaPrescricaoGabarito)
+            {
+                contem = false;
+                foreach (var prescricao in listaPrescricao)
+                {
+                    if (prescricao.IdPrescricaoEnfermagem == prescricaoGabarito.IdPrescricaoEnfermagem)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + prescricaoGabarito.DescricaoPrescricao + 
+                        "; " + "<br>";
+                }
+            }
+            modelState.AddModelError("ErroPrescricao", (erroRespostas.Equals("") ? " " : erroRespostas + "<br>") +
+                (erroNaoContemNoGabarito.Equals("") ? " " : "Prescrições que não contém no Gabarito: " + erroNaoContemNoGabarito + "<br>") +
+                (erroContemGabaritoNaoContemResposta.Equals("") ? " " : "Prescrições que não foram adicionados: " + 
+                erroContemGabaritoNaoContemResposta));
         }
     }
 }

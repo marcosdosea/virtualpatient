@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PacienteVirtual.Models;
 using Persistence;
+using System.Web.Mvc;
 
 namespace PacienteVirtual.Negocio
 {
@@ -144,6 +145,50 @@ namespace PacienteVirtual.Negocio
             _tb_diagnostico_fator.IdDiagnosticoFator = diagnosticoFator.IdDiagnosticoFator;
             _tb_diagnostico_fator.IdDiagnostico = diagnosticoFator.IdDiagnostico;
             _tb_diagnostico_fator.DescricaoFator = diagnosticoFator.DescricaoFatorDiagnostico;
+        }
+
+        public void CorrigirRespostas(IEnumerable<DiagnosticoFatorModel> listaFator, IEnumerable<DiagnosticoFatorModel> 
+            listaFatorGabarito, ModelStateDictionary modelState)
+        {
+            string erroNaoContemNoGabarito = "";
+            string erroContemGabaritoNaoContemResposta = "";
+            bool contem;
+            foreach (var fator in listaFator)
+            {
+                contem = false;
+                foreach (var fatorGabarito in listaFatorGabarito)
+                {
+                    if (fator.IdDiagnosticoFator == fatorGabarito.IdDiagnosticoFator)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroNaoContemNoGabarito = erroNaoContemNoGabarito + fator.DescricaoFatorDiagnostico + ";<br>";
+                }
+            }
+            foreach (var fatorGabarito in listaFatorGabarito)
+            {
+                contem = false;
+                foreach (var fator in listaFator)
+                {
+                    if (fator.IdDiagnosticoFator == fatorGabarito.IdDiagnosticoFator)
+                    {
+                        contem = true;
+                        break;
+                    }
+                }
+                if (!contem)
+                {
+                    erroContemGabaritoNaoContemResposta = erroContemGabaritoNaoContemResposta + fatorGabarito.DescricaoFatorDiagnostico + 
+                        ";<br>";
+                }
+            }
+            modelState.AddModelError("ErroFator", (erroNaoContemNoGabarito.Equals("") ? " " : "Fatores Diagnósticos que não contém " +
+                "no Gabarito: " + erroNaoContemNoGabarito + "<br>") + (erroContemGabaritoNaoContemResposta.Equals("") ? " " :
+                "Fatores Diagnósticos que não foram adicionados: " + erroContemGabaritoNaoContemResposta));
         }
     }
 }

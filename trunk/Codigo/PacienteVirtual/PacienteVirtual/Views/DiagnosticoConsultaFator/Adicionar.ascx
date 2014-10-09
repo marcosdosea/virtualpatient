@@ -32,4 +32,7 @@
         </div>
     </div>
 </fieldset>
+<div class="styleValidation">
+    <%: Html.QuebraLinhaFor(model => model.ErroFator) %>
+</div>
 <% } %>
