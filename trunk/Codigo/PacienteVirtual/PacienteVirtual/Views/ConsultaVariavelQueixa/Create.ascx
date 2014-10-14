@@ -7,7 +7,7 @@
 <fieldset>
     <legend><%: Resources.Mensagem.revisao_sistemas %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
-    <% using (Html.BeginForm("Create", "ConsultaVariavelQueixa", FormMethod.Post, null))
+    <% using (Ajax.BeginForm("Create", "ConsultaVariavelQueixa", FormMethod.Post, null))
        { %>
     <div class="row-fluid">
         <div class="span3">

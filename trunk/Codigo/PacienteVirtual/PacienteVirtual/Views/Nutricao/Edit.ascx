@@ -13,10 +13,10 @@
                 <div class="editor-field">
                     <div class="editor-label">
                         <%: Resources.Mensagem.peso %> &nbsp
-                        <%: Html.TextBoxFor(model => model.Peso, new { style =  "width:70px;"  })%>
+                        <%: Html.TextBoxFor(model => model.Peso, new { style =  "width:70px;", placeholder = "0",onkeypress = "return SomentePonto(event);" })%>
                         <%: Html.ValidationMessageFor(model => model.Peso) %> &nbsp &nbsp
                         <%: Resources.Mensagem.altura %> &nbsp
-                        <%: Html.TextBoxFor(model => model.Altura, new { style = "width:70px;" })%>
+                        <%: Html.TextBoxFor(model => model.Altura, new { style = "width:70px;", placeholder = "0",onkeypress = "return SomentePonto(event);" })%>
                         <%: Html.ValidationMessageFor(model => model.Altura) %>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <%: Html.EditorFor(model => model.IngestaHidrica) %>
                     <%: Resources.Mensagem.ingesta_hidrica %>
                     <%: Html.ValidationMessageFor(model => model.IngestaHidrica, string.Empty, new { @class = "styleValidation" })%>
-                    <%: Html.TextBoxFor(model => model.IngestaHidricaValor, new { style = "width:70px;" })%>ml/24h
+                    <%: Html.TextBoxFor(model => model.IngestaHidricaValor, new { style = "width:70px;", placeholder = "0.00",onkeypress = "return NumeroPonto(event);" })%>ml/24h
                     <%: Html.ValidationMessageFor(model => model.IngestaHidricaValor, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                 <%: Html.EditorFor(model => model.RestricaoHidrica) %>
                 <%: Resources.Mensagem.restricao_hidrica %>
                 <%: Html.ValidationMessageFor(model => model.RestricaoHidrica, string.Empty, new { @class = "styleValidation" })%>
-                <%: Html.TextBoxFor(model => model.RestricaoHidricaValor, new { style = "width:70px;" })%>ml/24h
+                <%: Html.TextBoxFor(model => model.RestricaoHidricaValor, new { style = "width:70px;",placeholder = "0.00",onkeypress = "return NumeroPonto(event);" })%>ml/24h
                 <%: Html.ValidationMessageFor(model => model.RestricaoHidricaValor, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -159,3 +159,22 @@
         </div>
     </fieldset>
 <% } %>
+<script type="text/javascript">
+    function NumeroPonto(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58 || tecla == 46)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+
+    function SomentePonto(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+</script>

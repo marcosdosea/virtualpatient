@@ -11,7 +11,7 @@
             <div class="span12">
                 <div class="editor-field">
                     <%: Html.LabelFor(model => model.FequenciaResporatoria) %>
-                    <%: Html.EditorFor(model => model.FequenciaResporatoria) %>mov/min
+                    <%: Html.TextBoxFor(model => model.FequenciaResporatoria, new { placeholder = "0", onkeypress = "return SomentePonto(event);" })%>mov/min
                     <%: Html.ValidationMessageFor(model => model.FrequenciaTosse, string.Empty, new { @class = "styleValidation" })%>
                 </div>
                 <div class="editor-field">
@@ -224,4 +224,13 @@
         </div>
     </fieldset>
 <% } %>
-
+<script type="text/javascript">
+    function SomentePonto(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+</script>

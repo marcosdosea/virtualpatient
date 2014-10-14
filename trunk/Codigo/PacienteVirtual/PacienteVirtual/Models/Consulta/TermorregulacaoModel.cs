@@ -14,6 +14,7 @@ namespace PacienteVirtual.Models
         public long IdConsultaVariavel { get; set; }
 
         [Display(Name = "temperatura", ResourceType = typeof(Mensagem))]
+        [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
         public double Temperatura { get; set; }
 
         [Display(Name = "temperatura_pele", ResourceType = typeof(Mensagem))]

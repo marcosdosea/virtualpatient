@@ -17,9 +17,11 @@ namespace PacienteVirtual.Models
 
         [Display(Name = "pressao_arterial", ResourceType = typeof(Mensagem))]
         [StringLength(50)]
-        public string PA { get; set; }
+        [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
+        public decimal PA { get; set; }
 
         [Display(Name = "pulso_enf", ResourceType = typeof(Mensagem))]
+        [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
         public decimal P { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
