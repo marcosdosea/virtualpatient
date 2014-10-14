@@ -75,7 +75,7 @@
         <div class="span12">
             <div class="editor-field">
                 <%: Resources.Mensagem.dor_intensidade_valor %>
-                <%: Html.TextBoxFor(model => model.DorIntensidadeValor, new { @class = "textbox", style = "width:225px;" })%>
+                <%: Html.TextBoxFor(model => model.DorIntensidadeValor, new { style = "width:225px;", placeholder = "0.00",onkeypress = "return SomentePonto(event);" })%>
                 <%: Html.ValidationMessageFor(model => model.DorIntensidadeValor, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -262,3 +262,13 @@
     </div>
 </fieldset>
 <% } %>
+<script type="text/javascript">
+    function SomentePonto(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+</script>

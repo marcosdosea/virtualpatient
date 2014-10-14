@@ -1199,7 +1199,7 @@ namespace PacienteVirtual.Controllers
                         circulacao.Infiltracao = false;
                         circulacao.InfiltracaoLocalizar = Global.stringVazia;
                         circulacao.P = Global.ValorInteiroNulo;
-                        circulacao.PA = Global.stringVazia;
+                        circulacao.PA = Global.ValorInteiroNulo;
                         circulacao.RedeVenosaPulsosPalpaveis = false;
                         circulacao.RedeVenosaSemAcesso = false;
                         circulacao.RedeVenosaVisivel = false;

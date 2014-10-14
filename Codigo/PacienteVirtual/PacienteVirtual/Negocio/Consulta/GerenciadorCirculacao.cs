@@ -31,7 +31,10 @@ namespace PacienteVirtual.Negocio
         /// <param name="modelState"></param>
         public void CorrigirRespostas(CirculacaoModel circulacao, CirculacaoModel circulacaoGabarito, ModelStateDictionary modelState)
         {
-            Global.CorrecaoDeStrings("PA", circulacao.PA, circulacaoGabarito.PA, modelState);
+            if (circulacao.PA != circulacaoGabarito.PA)
+            {
+                modelState.AddModelError("PA", "Gabarito: " + circulacaoGabarito.PA);
+            }
             if (circulacao.P != circulacaoGabarito.P)
             {
                 modelState.AddModelError("P", "Gabarito: " + circulacaoGabarito.P);
@@ -197,7 +200,7 @@ namespace PacienteVirtual.Negocio
                             Infiltracao = circulacao.Infiltracao,
                             InfiltracaoLocalizar = circulacao.InfiltracaoLocalizar,
                             P = (decimal)circulacao.P,
-                            PA = circulacao.PA,
+                            PA = Convert.ToDecimal(circulacao.PA),
                             RedeVenosaPulsosPalpaveis = circulacao.RedeVenosaPulsosPalpaveis,
                             RedeVenosaSemAcesso = circulacao.RedeVenosaSemAcesso,
                             RedeVenosaVisivel = circulacao.RedeVenosaVisivel,
@@ -252,7 +255,7 @@ namespace PacienteVirtual.Negocio
             _tb_circulacao.Infiltracao = circulacao.Infiltracao;
             _tb_circulacao.InfiltracaoLocalizar = circulacao.InfiltracaoLocalizar;
             _tb_circulacao.P = circulacao.P;
-            _tb_circulacao.PA = circulacao.PA;
+            _tb_circulacao.PA = circulacao.PA.ToString();
             _tb_circulacao.RedeVenosaPulsosPalpaveis = circulacao.RedeVenosaPulsosPalpaveis;
             _tb_circulacao.RedeVenosaSemAcesso = circulacao.RedeVenosaSemAcesso;
             _tb_circulacao.RedeVenosaVisivel = circulacao.RedeVenosaVisivel;

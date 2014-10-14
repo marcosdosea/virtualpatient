@@ -38,8 +38,8 @@
         </div>
         <div class="row-fluid">
             <div class="span6">
-                <%: Html.LabelFor(model => model.AvaliacaoConscienciaGlasgow) %>
-                <%: Html.EditorFor(model => model.AvaliacaoConscienciaGlasgow) %>
+                <%: Html.LabelFor(model => model.AvaliacaoConscienciaGlasgow)%>
+                <%: Html.TextBoxFor(model => model.AvaliacaoConscienciaGlasgow, new { PlaceHolder = "0",onkeypress = "return SomentePonto(event);" })%>
                 <%: Html.ValidationMessageFor(model => model.AvaliacaoConscienciaGlasgow, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -49,4 +49,13 @@
     </fieldset>
 
 <% } %>
-
+<script type="text/javascript">
+    function SomentePonto(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+</script>

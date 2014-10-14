@@ -14,12 +14,12 @@
                     <%: Html.LabelFor(model => model.NomeProfissional) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.NomeProfissional, new { style = "width:579px;")%>
+                    <%: Html.TextBoxFor(model => model.NomeProfissional, new { style = "width:579px;"})%>
                     <%: Html.ValidationMessageFor(model => model.NomeProfissional, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
         </div>
-        <div id="mostrarReco">A Fármacia PV-CARE está oferecendo aos seus usuários um novo serviço farmacêutico. Este serviço, denominado Atenção Farmacêutica, tem como objetivo trabalhar em conjunto com outros profissionais de saúde com o intuito de garantir que as necessidades farmacoterapêuticas de seus pacientes sejam atendidas. Isto é realizado por meio da prevenção, identificação e resolução de problemas relacionados ao uso de medicamentos. Deste modo, encaminhamos esta carta para que possa avaliar o caso abaixo descrito:</div>
+        <div style="text-align: justify;">A Fármacia PV-CARE está oferecendo aos seus usuários um novo serviço farmacêutico. Este serviço, denominado Atenção Farmacêutica, tem como objetivo trabalhar em conjunto com outros profissionais de saúde com o intuito de garantir que as necessidades farmacoterapêuticas de seus pacientes sejam atendidas. Isto é realizado por meio da prevenção, identificação e resolução de problemas relacionados ao uso de medicamentos. Deste modo, encaminhamos esta carta para que possa avaliar o caso abaixo descrito:</div>
         <br />
             <p id="paciente"><%: Resources.Mensagem.dados_paciente%></p>
             <legend></legend>
@@ -29,7 +29,7 @@
                         <%: Html.LabelFor(model => model.NomePaciente) %>
                     </div>
                     <div class="editor-field">
-                        <%: Html.TextBoxFor(model => model.NomePaciente, new { style = "width:579px;")%>
+                        <%: Html.TextBoxFor(model => model.NomePaciente, new { style = "width:579px;"})%>
                         <%: Html.ValidationMessageFor(model => model.NomePaciente, string.Empty, new { @class = "styleValidation" })%>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                     <%: Html.LabelFor(model => model.Farmaceutico) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.TextBoxFor(model => model.Farmaceutico, new { style = "width:579px;")%>
+                    <%: Html.TextBoxFor(model => model.Farmaceutico, new { style = "width:579px;" })%>
                     <%: Html.ValidationMessageFor(model => model.Farmaceutico, string.Empty, new { @class = "styleValidation" })%>
                 </div>
             </div>
@@ -144,13 +144,6 @@
         <%: Html.QuebraLinhaFor(model => model.ErroCarta) %>
     </div>
 <% } %>
-
-<style type="text/css">
-    #mostrarReco
-    {
-        text-align: justify;
-    }
-</style>
 
 <script type="text/javascript">
     function AlterarCaracteres() {

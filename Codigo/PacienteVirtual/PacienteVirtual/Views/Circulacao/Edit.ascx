@@ -16,7 +16,7 @@
         </div>
         <div class="span2">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.PA, new { @class = "textbox", style = "width:50px;" })%>
+                <%: Html.TextBoxFor(model => model.PA, new { style = "width:50px;", placeholder = "0:00", onkeypress = "return NumeroPonto(event);" })%>
                 <%: Html.ValidationMessageFor(model => model.PA, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -30,7 +30,7 @@
         </div>
         <div class="span2">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.P, new { @class = "textbox", style = "width:50px;" })%>
+                <%: Html.TextBoxFor(model => model.P, new { style = "width:50px;" , placeholder = "0:00", onkeypress = "return NumeroPonto(event);" })%>
                 <%: Html.ValidationMessageFor(model => model.P, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -299,3 +299,13 @@
     </div>
 </fieldset>
 <% } %>
+<script type="text/javascript">
+    function NumeroPonto(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58 || tecla == 46)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+</script>
