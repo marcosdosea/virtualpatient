@@ -118,13 +118,14 @@
             <%: Resources.Mensagem.consulta2 %> - <%: Resources.Mensagem.usuario %>: <%: Model.ConsultaVariavel.NomePessoa %></legend>
         <div class="span5">
             <div class="thumbnails center">
-                <div class="span2">
+                <div class="row-fluid">
+                <div class="span6">
                     <div class="thumbnail">
                         <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente",new { id = Model.Paciente.IdPaciente}) %>"
                             alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
                     </div>
                 </div>
-                <div class="span3">
+                <div class="span6">
                     <div class="thumbnail right">
                         <blockquote>
                             <%: 
@@ -136,7 +137,7 @@
                         </blockquote>
                     </div>
                 </div>
-                <legend></legend>
+                </div>
                 <div class="thumbnail">
                     <div class="tabbable">
                         <ul class="nav nav-tabs">
@@ -168,7 +169,6 @@
                         <% Html.RenderPartial("../CorrigirConsultas/ComentariosTutor", Model.ConsultaVariavel);%>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="span6">
@@ -184,6 +184,8 @@
                             <%: Resources.Mensagem.carta%></a></li>
                         <li id="li4"><a href="#tab1-4" data-toggle="tab">
                             <%: Resources.Mensagem.diario_pessoal_medicamentos%></a></li>
+                        <li id="li5"><a href="#tab1-5" data-toggle="tab">
+                            <%: Resources.Mensagem.links_uteis%></a></li>
                     </ul>
                     <div class="tab-content" id="desabilitar">
                         <div class="tab-pane active" id="tab1-1">
@@ -213,6 +215,11 @@
                             <div class="thumbnail">
                             <% Html.RenderPartial("../DiarioPessoal/Create", Model.DiarioPessoal);%>
                             <% Html.RenderPartial("../DiarioPessoal/Index", Model.ListaDiarioPessoal);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-5">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Consulta/Links");%>
                             </div>
                         </div>
                     </div>
@@ -389,7 +396,7 @@
                 buttonImageOnly: true,
                 nextText: 'Próximo',
                 prevText: 'Anterior'
-            });//.datepicker('setDate', 'today');
+            }); //.datepicker('setDate', 'today');
         });
     </script>
 </asp:Content>

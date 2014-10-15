@@ -2394,4 +2394,7 @@
   <data name="campo_numerico" xml:space="preserve">
     <value>This is a field number. Look the example "10.00".</value>
   </data>
+  <data name="links_uteis" xml:space="preserve">
+    <value>Useful Links</value>
+  </data>
 </root>

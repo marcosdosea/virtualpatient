@@ -200,7 +200,7 @@ namespace PacienteVirtual.Negocio
                             Infiltracao = circulacao.Infiltracao,
                             InfiltracaoLocalizar = circulacao.InfiltracaoLocalizar,
                             P = (decimal)circulacao.P,
-                            PA = Convert.ToDecimal(circulacao.PA),
+                            PA = circulacao.PA,
                             RedeVenosaPulsosPalpaveis = circulacao.RedeVenosaPulsosPalpaveis,
                             RedeVenosaSemAcesso = circulacao.RedeVenosaSemAcesso,
                             RedeVenosaVisivel = circulacao.RedeVenosaVisivel,

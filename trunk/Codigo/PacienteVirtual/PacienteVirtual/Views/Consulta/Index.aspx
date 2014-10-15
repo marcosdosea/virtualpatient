@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PacienteVirtual.Models.ConsultaVariavelModel>>" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: Resources.Mensagem.consulta%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<div class="row-fluid">
     <div class="span9">
         <h2>
             <%: Resources.Mensagem.consulta %></h2>
@@ -14,13 +13,13 @@
         <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
         <% } %>
     </div>
-    <div class="span2">
+    <div class="span3">
         <div class="thumbnail">
             <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = ViewBag.codigo})) %>"
                 alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
         </div>
     </div>
-
+</div>
 <%@ Import Namespace="GridMvc.Html" %>
 <%@ Import Namespace="GridMvc.Sorting" %>
 

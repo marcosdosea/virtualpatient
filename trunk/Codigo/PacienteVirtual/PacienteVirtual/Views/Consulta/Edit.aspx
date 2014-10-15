@@ -21,13 +21,14 @@
             <%: Resources.Mensagem.consulta %> - <%: Resources.Mensagem.usuario %>: <%: Model.ConsultaVariavel.NomePessoa %></legend>
         <div class="span5">
             <div class="thumbnails center">
-                <div class="span2">
+                <div class="row-fluid">
+                <div class="span6">
                     <div class="thumbnail">
                         <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente",new { id = Model.Paciente.IdPaciente}) %>"
                             alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
                     </div>
                 </div>
-                <div class="span3">
+                <div class="span6">
                     <div class="thumbnail right">
                         <blockquote>
                             <%: 
@@ -39,7 +40,7 @@
                         </blockquote>
                     </div>
                 </div>
-                <legend></legend>
+                </div>
                 <div class="thumbnail">
                     <div class="tabbable">
                         <ul class="nav nav-tabs">
@@ -72,8 +73,6 @@
                         <% Html.RenderPartial("../CorrigirConsultas/ComentariosTutor", Model.ConsultaVariavel);%>
                     </div>
                 </div>
-
-
             </div>
         </div>
         <div class="span6">
@@ -102,10 +101,12 @@
                             <%: Resources.Mensagem.historia %></a></li>
                         <li id="li10"><a href="#tab1-10" data-toggle="tab">
                             <%: Resources.Mensagem.exames_fisicos %></a></li>
-                            <li id="li11"><a href="#tab1-11" data-toggle="tab">
+                        <li id="li11"><a href="#tab1-11" data-toggle="tab">
                             <%: Resources.Mensagem.parametro_clinico %></a></li>
-                            <li id="li12"><a href="#tab1-12" data-toggle="tab">
+                        <li id="li12"><a href="#tab1-12" data-toggle="tab">
                             <%: Resources.Mensagem.revisao_sistemas %></a></li>
+                        <li id="li13"><a href="#tab1-13" data-toggle="tab">
+                            <%: Resources.Mensagem.links_uteis %></a></li>
                         <% }
                            else if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
                            { %>
@@ -197,11 +198,15 @@
                                 <% Html.RenderPartial("../ConsultaParametro/Index", Model.ListaConsultaParametro);%>
                             </div>
                         </div>
-                        
                         <div class="tab-pane" id="tab1-12">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../ConsultaVariavelQueixa/Create", Model.ConsultaVariavelQueixa);%>
                                 <% Html.RenderPartial("../ConsultaVariavelQueixa/Index", Model.ListaConsultaVariavelQueixa);%>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-13">
+                            <div class="thumbnail">
+                                <% Html.RenderPartial("../Consulta/Links");%>
                             </div>
                         </div>
                         <% }
@@ -411,7 +416,7 @@
     <script type="text/javascript">
         var abasDentro = document.getElementById('AbasDentro').value;
         if (abasDentro != 0) {
-            if (abasDentro == 51){
+            if (abasDentro == 51) {
                 $(document).ready(function () {
                     $("#li51").addClass("active"); $("#li52").removeClass("active"); $("#li53").removeClass("active"); $("#tab1-51").removeClass("tab-pane"); $("#tab1-51").addClass("tab-pane active"); $("#tab1-52").removeClass("tab-pane active"); $("#tab1-52").addClass("tab-pane"); $("#tab1-53").removeClass("tab-pane active"); $("#tab1-53").addClass("tab-pane");
                 });
@@ -573,7 +578,7 @@
                 buttonImageOnly: true,
                 nextText: 'Próximo',
                 prevText: 'Anterior'
-            });//.datepicker('setDate', 'today');
+            }); //.datepicker('setDate', 'today');
         });
     </script>
 </asp:Content>
