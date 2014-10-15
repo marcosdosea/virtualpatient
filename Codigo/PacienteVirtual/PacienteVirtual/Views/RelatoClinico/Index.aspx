@@ -4,7 +4,7 @@
     <%: Resources.Mensagem.relato_clinico %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+<div class="row-fluid">
     <div class="span9">
         <h2>
             <%: Resources.Mensagem.relato_clinico %></h2>
@@ -16,13 +16,13 @@
         <%: Html.DropDownList("IdPaciente", null, Resources.Mensagem.listar_todos, new { onchange = "this.form.submit();" })%>
         <% } %>
     </div>
-    <div class="span2">
+    <div class="span3">
         <div class="thumbnail">
             <img class="media" id="Img1" src="<%: Url.Action("GetImage", "Paciente", new RouteValueDictionary(new { id = ViewBag.codigo})) %>"
                 alt="Definir Imagem Padrão" style="width: 100px; height: 100px;" />
         </div>
     </div>
-    
+</div>    
     <%@ Import Namespace="GridMvc.Html" %>
     <%@ Import Namespace="GridMvc.Sorting" %>
 

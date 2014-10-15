@@ -18,6 +18,7 @@ namespace PacienteVirtual.Controllers
             {
                 return View(GerenciadorTurmaPessoa.GetInstance().ObterTurmasPorPessoa(SessionController.Pessoa.IdPessoa));
             }
+
             SessionController.DadosTurmaPessoa = GerenciadorTurmaPessoa.GetInstance().ObterPorPessoaAtivaUmaTurmaPessoa(SessionController.Pessoa.IdPessoa);
             SessionController.Roles = SessionController.DadosTurmaPessoa.NomeRole;
             return RedirectToAction("Index", "Home");
