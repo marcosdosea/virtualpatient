@@ -52,7 +52,7 @@ namespace PacienteVirtual.Controllers
             {
                 gDiagnosticoCaracteristica.Inserir(diagnosticoCaracteristica);
                 SessionController.IdDiagnostico = diagnosticoCaracteristica.IdDiagnostico;
-                return RedirectToAction("Create");
+                return RedirectToAction("Index");
             }
             return View(diagnosticoCaracteristica);
         }
