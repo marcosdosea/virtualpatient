@@ -53,7 +53,7 @@ namespace PacienteVirtual.Controllers
             {
                 gDiagnosticoFator.Inserir(diagnosticoFator);
                 SessionController.IdDiagnostico = diagnosticoFator.IdDiagnostico;
-                return RedirectToAction("Create");
+                return RedirectToAction("Index");
             }
             ViewBag.IdDiagnostico = new SelectList(gDiagnostico.ObterTodos(), "IdDiagnostico", "DescricaoDiagnostico",
                 diagnosticoFator.IdDiagnostico);
