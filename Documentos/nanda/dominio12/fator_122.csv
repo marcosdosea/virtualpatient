@@ -1,0 +1,45 @@
+,IdDiagnosticoFator,IdDiagnostico,DescricaoFator
+#,7,210,Estímulos ambientais nocivos 
+#,8,210,"Efeitos secundários relacionados ao tratamento (p. ex., medicamentos, radiação) "
+#,9,210,Falta de controle do ambiente
+#,10,210,Falta de privacidade 
+#,11,210,Falta de controle da situação 
+#,12,210,"Recursos insuficientes (p. ex., financeiros, apoio social) "
+#,13,210,Sintomas relacionados à doença 
+#,14,211,"Agentes lesivos (p. ex., biológicos, químicos, físicos, psicológicos) "
+#,15,212,Incapacidade física crônica 
+#,16,212,Incapacidade psicossocial crônica 
+#,17,213,Cinetose 
+#,18,213,Distensão da cápsula do fígado 
+#,19,213,Distensão da cápsula esplênica 
+#,20,213,Distensão gástrica 
+#,21,213,"Distúrbios bioquímicos (p. ex., uremia, cetoacidose diabética) "
+#,22,213,Doença de Meniere 
+#,23,213,Doença esofágica 
+#,24,213,Doença pancreática 
+#,25,213,Dor 
+#,26,213,Gravidez 
+#,27,213,Irritação gástrica 
+#,28,213,Labirintite 
+#,29,213,Meningite 
+#,30,213,Pressão intracraniana aumentada 
+#,31,213,"Toxinas (p. ex., peptídeos produzidos por tumores, metabólitos anormais devido ao câncer) "
+#,32,213,Tumores intra-abdominais 
+#,33,213,"Tumores localizados (p. ex., neuroma do acústico, tumores cerebrais primários ou secundários, metástases ósseas na base do crânio) "
+#,34,213,Irritação gástrica 
+#,35,213,Medicamentos 
+#,36,213,Ansiedade 
+#,37,213,Estímulo visual desagradável 
+#,38,213,Fatores psicológicos 
+#,39,213,Medo 
+#,40,213,Odores nocivos 
+#,41,213,Sabor nocivo
+#,42,214,Alterações na aparência física 
+#,43,214,Alterações no estado mental 
+#,44,214,Bem-estar alterado 
+#,45,214,Comportamento social inaceitável 
+#,46,214,"Fatores que contribuem para a ausência de relacionamentos pessoais satisfatórios (p. ex., demora em realizar tarefas de desenvolvimento) "
+#,47,214,Incapacidade de engajar-se em relacionamentos pessoais satisfatórios 
+#,48,214,Interesses imaturos 
+#,49,214,Recursos pessoais inadequados 
+#,50,214,Valores sociais inaceitáveis 

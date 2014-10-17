@@ -1,0 +1,45 @@
+	IdDiagnostico	DescricaoFator	
+#	210	Estímulos ambientais nocivos 	$
+#	210	Efeitos secundários relacionados ao tratamento (p. ex., medicamentos, radiação) 	
+#	210	Falta de controle do ambiente	
+#	210	Falta de privacidade 	
+#	210	Falta de controle da situação 	
+#	210	Recursos insuficientes (p. ex., financeiros, apoio social) 	
+#	210	Sintomas relacionados à doença 	
+#	211	Agentes lesivos (p. ex., biológicos, químicos, físicos, psicológicos) 	
+#	212	Incapacidade física crônica 	
+#	212	Incapacidade psicossocial crônica 	
+#	213	Cinetose 	
+#	213	Distensão da cápsula do fígado 	
+#	213	Distensão da cápsula esplênica 	
+#	213	Distensão gástrica 	
+#	213	Distúrbios bioquímicos (p. ex., uremia, cetoacidose diabética) 	
+#	213	Doença de Meniere 
+#	213	Doença esofágica 
+#	213	Doença pancreática 
+#	213	Dor 
+#	213	Gravidez 
+#	213	Irritação gástrica 
+#	213	Labirintite 
+#	213	Meningite 
+#	213	Pressão intracraniana aumentada 
+#	213	Toxinas (p. ex., peptídeos produzidos por tumores, metabólitos anormais devido ao câncer) 
+#	213	Tumores intra-abdominais 
+#	213	Tumores localizados (p. ex., neuroma do acústico, tumores cerebrais primários ou secundários, metástases ósseas na base do crânio) 
+#	213	Irritação gástrica 
+#	213	Medicamentos 
+#	213	Ansiedade 
+#	213	Estímulo visual desagradável 
+#	213	Fatores psicológicos 
+#	213	Medo 
+#	213	Odores nocivos 
+#	213	Sabor nocivo
+#	214	Alterações na aparência física 
+#	214	Alterações no estado mental 
+#	214	Bem-estar alterado 
+#	214	Comportamento social inaceitável 
+#	214	Fatores que contribuem para a ausência de relacionamentos pessoais satisfatórios (p. ex., demora em realizar tarefas de desenvolvimento) 
+#	214	Incapacidade de engajar-se em relacionamentos pessoais satisfatórios 
+#	214	Interesses imaturos 
+#	214	Recursos pessoais inadequados 
+#	214	Valores sociais inaceitáveis 
