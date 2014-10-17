@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tempo de Geração: 17/10/2014 às 18h42min
+-- Tempo de Geração: 17/10/2014 às 18h54min
 -- Versão do Servidor: 5.1.56
 -- Versão do PHP: 5.3.8
 
@@ -1428,7 +1428,7 @@ CREATE TABLE IF NOT EXISTS `tb_consulta_variavel_intervencao` (
   `IdConsultaVariavel` bigint(20) NOT NULL,
   `ComunicaPaciente` tinyint(1) NOT NULL DEFAULT '0',
   `ComunicaOutro` tinyint(1) NOT NULL DEFAULT '0',
-  `Justificativa` varchar(200) DEFAULT NULL,
+  `Justificativa` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`IdIntervencao`,`IdConsultaVariavel`),
   KEY `fk_tb_intervencao_has_tb_consulta_variavel_tb_consulta_vari_idx` (`IdConsultaVariavel`),
   KEY `fk_tb_intervencao_has_tb_consulta_variavel_tb_intervencao1_idx` (`IdIntervencao`)
