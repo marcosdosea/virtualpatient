@@ -3,7 +3,7 @@
 <% using (Html.BeginForm("Adicionar", "DiagnosticoConsultaCaracteristica"))
    { %>
 <%: Html.ValidationSummary(true) %>
-<fieldset>
+<fieldset id="desabilitaConsDiag">
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <%: Html.HiddenFor(model => model.IdDiagnostico) %>
     <div class="row-fluid">
@@ -28,3 +28,17 @@
     <%: Html.QuebraLinhaFor(model => model.ErroCaracteristica) %>
 </div>
 <% } %>
+<input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
+<input type="hidden" value="<%: Session["_IdEstadoConsulta"] %>" id="IdEstadoConsulta" />
+<script type="text/javascript">
+    var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
+    var perfil = document.getElementById('perfil').value;
+    if (perfil == "tutor") {
+        //habilitar para tutor corrigir e comentarios do tutor
+        $("#desabilitaConsDiag *").attr("disabled", "disabled").off('click');
+    } else if (perfil == "usuario") {
+        if (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7) {
+            $("#desabilitaConsDiag *").attr("disabled", "disabled").off('click');
+        }
+    }
+</script>

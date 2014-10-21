@@ -229,7 +229,7 @@
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.diagnostico%></a></li>
                     </ul>
-                    <div class="tab-content" id="desabilitar">
+                    <div class="tab-content">
                         <div class="tab-pane active" id="tab1-1">
                             <div class="thumbnail">
                                 <% Html.RenderPartial("../DiagnosticoConsulta/Create", Model.DiagnosticoConsulta);%>
