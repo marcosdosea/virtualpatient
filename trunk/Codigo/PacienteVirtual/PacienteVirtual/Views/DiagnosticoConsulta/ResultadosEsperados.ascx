@@ -23,8 +23,20 @@
     <div class="row-fluid">
         <div class="span9"></div>
         <div class="span3">
-            <input class="btn btn-primary" type="submit" value=" <%: Resources.Mensagem.salvar %>  " />
+            <input class="btn btn-primary" id="botaoAdd" type="submit" value=" <%: Resources.Mensagem.salvar %>  " />
         </div>
     </div>
 </fieldset>
 <% } %>
+<script type="text/javascript">
+    var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
+    var perfil = document.getElementById('perfil').value;
+    if (perfil == "tutor") {
+        //habilitar para tutor corrigir e comentarios do tutor
+        $("#botaoAdd").attr("disabled", "disabled").off('click');
+    } else if (perfil == "usuario") {
+        if (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7) {
+            $("#botaoAdd").attr("disabled", "disabled").off('click');
+        }
+    }
+</script>

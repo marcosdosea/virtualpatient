@@ -46,7 +46,6 @@ namespace PacienteVirtual.Controllers
             }
         }
 
-
         public static ConsultaVariavelModel ConsultaVariavel
         {
             get

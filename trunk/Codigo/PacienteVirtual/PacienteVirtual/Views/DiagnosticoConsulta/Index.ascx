@@ -33,23 +33,25 @@
                     <%: Html.DisplayFor(modelItem => item.DescricaoDiagnostico)%>
                 </td>
                 <td>
-                    <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4)
-                        || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
-                       { %>
-                    <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new { idConsultaVariavel =
-                        item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, new { onclick = 
-                        ("return confirm('Deseja realmente REMOVER este Medicamento?')") })%>
-                    |
                     <%: Html.ActionLink(Resources.Mensagem.selecione, "SelecionarConsultaDiagnostico", "DiagnosticoConsulta",
                         new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idDominio = 
                         item.IdDominioDiagnostico, idClasse = item.IdClasseDiagnostico }, null)%>
+                    <% if (!(Session["_Roles"].Equals("tutor")))
+                       {
+                           if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4)
+                       || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
+                           { %>
+                    |
+                    <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new
+                    {idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico}, new { onclick =("return confirm('Deseja realmente REMOVER este Medicamento?')")})%>
+                    <% } %>
                     <% } %>
                 </td>
             </tr>
             <% }
                else
                { %>
-               <tr>
+            <tr>
                 <td>
                     <%: Html.DisplayFor(modelItem => item.DescricaoDominioDiagnostico)%>
                 </td>
@@ -60,16 +62,19 @@
                     <%: Html.DisplayFor(modelItem => item.DescricaoDiagnostico)%>
                 </td>
                 <td>
-                    <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4)
-                        || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
-                       { %>
-                    <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new { idConsultaVariavel =
-                        item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, new { onclick = 
-                        ("return confirm('Deseja realmente REMOVER este Medicamento?')") })%>
-                    |
                     <%: Html.ActionLink(Resources.Mensagem.selecione, "SelecionarConsultaDiagnostico", "DiagnosticoConsulta",
                         new { idConsultaVariavel = item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico, idDominio = 
                         item.IdDominioDiagnostico, idClasse = item.IdClasseDiagnostico }, null)%>
+                    <% if (!(Session["_Roles"].Equals("tutor")))
+                       {
+                           if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4)
+                       || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
+                           { %>
+                    |
+                    <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "DiagnosticoConsulta", new { idConsultaVariavel =
+                        item.IdConsultaVariavel, idDiagnostico = item.IdDiagnostico }, new { onclick = 
+                        ("return confirm('Deseja realmente REMOVER este Medicamento?')") })%>
+                        <% } %>
                     <% } %>
                 </td>
             </tr>
@@ -78,11 +83,10 @@
         </table>
     </div>
 </div>
-
 <style type="text/css">
     .linhaSelecionada
     {
         background-color: #FFFF00;
         font-weight: bold;
-    } 
+    }
 </style>

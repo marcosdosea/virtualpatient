@@ -3,7 +3,7 @@
 <% using (Html.BeginForm("Adicionar", "PrescricaoEnfermagem"))
    { %>
 <%: Html.ValidationSummary(true) %>
-<fieldset>
+<fieldset id="desabilitaPresc">
     <%: Html.HiddenFor(model => model.IdPrescricaoEnfermagem) %>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
     <%: Html.HiddenFor(model => model.IdDiagnostico) %>
@@ -37,3 +37,17 @@
     <%: Html.QuebraLinhaFor(model => model.ErroPrescricao) %>
 </div>
 <% } %>
+<input type="hidden" value="<%: Session["_Roles"] %>" id="perfil" />
+<input type="hidden" value="<%: Session["_IdEstadoConsulta"] %>" id="IdEstadoConsulta" />
+<script type="text/javascript">
+    var idEstadoConsulta = document.getElementById('IdEstadoConsulta').value;
+    var perfil = document.getElementById('perfil').value;
+    if (perfil == "tutor") {
+        //habilitar para tutor corrigir e comentarios do tutor
+        $("#desabilitaPresc *").attr("disabled", "disabled").off('click');
+    } else if (perfil == "usuario") {
+        if (idEstadoConsulta == 3 || idEstadoConsulta == 4 || idEstadoConsulta == 5 || idEstadoConsulta == 7) {
+            $("#desabilitaPresc *").attr("disabled", "disabled").off('click');
+        }
+    }
+</script>
