@@ -47,7 +47,7 @@ INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VAL
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (167,"Crise espiritual");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (167,"Sofrimento");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (167,"Doença");
-INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (167,"Dor	&&&
+INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (167,"Dor");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (167,"Ansiedade");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (167,"Apoio ineficaz");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (167,"Crise pessoal");
