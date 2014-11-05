@@ -76,9 +76,7 @@
     <Reference Include="System.Security">
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -152,6 +150,7 @@
     <Compile Include="Controllers\Consulta\DiagnosticoConsultaCaracteristicaController.cs" />
     <Compile Include="Controllers\Consulta\DiagnosticoConsultaFatorController.cs" />
     <Compile Include="Controllers\Consulta\PrescricaoEnfermagemController.cs" />
+    <Compile Include="Controllers\Teste\CascadingDropDownController.cs" />
     <Compile Include="Models\Cadastro\DiagnosticoCaracteristicaModel.cs" />
     <Compile Include="Models\Cadastro\DiagnosticoFatorModel.cs" />
     <Compile Include="Controllers\Cadastro\DominioDiagnosticoController.cs" />
@@ -247,6 +246,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PacienteVirtualModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Teste\Category.cs" />
+    <Compile Include="Models\Teste\Product.cs" />
+    <Compile Include="Models\Teste\ProductCatalog.cs" />
+    <Compile Include="Models\Teste\SubCategory.cs" />
     <Compile Include="Models\Turma\SolicitarMatriculaTurmaModel.cs" />
     <Compile Include="Models\Turma\TurmaPessoaModel.cs" />
     <Compile Include="Negocio\Cadastro\GerenciadorAcaoQueixa.cs" />
@@ -661,6 +664,10 @@
     <Content Include="Views\Carta\Create.ascx" />
     <Content Include="Views\Carta\Edit.aspx" />
     <Content Include="Views\Carta\Index.ascx" />
+    <Content Include="Views\CascadingDropDown\CategoriesUserControl.ascx" />
+    <Content Include="Views\CascadingDropDown\Index.aspx" />
+    <Content Include="Views\CascadingDropDown\ProductsUserControl.ascx" />
+    <Content Include="Views\CascadingDropDown\SubCategoriesUserControl.ascx" />
     <Content Include="Views\Circulacao\Edit.ascx" />
     <Content Include="Views\ClinicoInternacao\AdicionarAntecedentesFamiliares.ascx" />
     <Content Include="Views\ClinicoInternacao\AdicionarClinicoInternacaoAlergias.ascx" />
