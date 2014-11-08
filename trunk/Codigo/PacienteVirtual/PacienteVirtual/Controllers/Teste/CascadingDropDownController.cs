@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using PacienteVirtual.Models;
+using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual.Controllers
 {
@@ -10,42 +11,29 @@ namespace PacienteVirtual.Controllers
         public ActionResult Index()
         {
             ProductCatalog productCatalog = new ProductCatalog();
-            productCatalog.Categories = ProductCatalog.GetCategories();
+            productCatalog.Dominio = GerenciadorDominioDiagnostico.GetInstance().ObterTodos();
+            productCatalog.ClasseDominio = GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio(0);
+            productCatalog.Diagnostico = GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(0);
 
             return View(productCatalog);
         }
 
         [HttpPost]
-        public ActionResult SelectCategory(int? selectedCategoryId)
+        public ActionResult SelectCategory(int? selectedDominioId)
         {
             ProductCatalog productCatalog = new ProductCatalog();
-            productCatalog.SubCategories = new List<SubCategory>();
-
-            if (selectedCategoryId.HasValue)
-            {
-                productCatalog.SubCategories = (from s in ProductCatalog.GetSubCategories()
-                                                where s.CategoryId == selectedCategoryId
-                                                orderby s.Name
-                                                select s).ToList();
-            }
+            productCatalog.ClasseDominio = GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio((int)selectedDominioId);
+            productCatalog.SelectedDominioId = selectedDominioId;
 
             return PartialView("SubCategoriesUserControl", productCatalog);
         }
 
         [HttpPost]
-        public ActionResult SelectSubCategory(int? selectedSubCategoryId)
+        public ActionResult SelectSubCategory(int? SelectedClasseDominioId)
         {
             ProductCatalog productCatalog = new ProductCatalog();
-            productCatalog.Products = new List<Product>();
-
-            if (selectedSubCategoryId.HasValue)
-            {
-                productCatalog.Products = (from s in ProductCatalog.GetProducts()
-                                           where s.SubCategoryId == selectedSubCategoryId
-                                           orderby s.Name
-                                           select s).ToList();
-            }
-
+            productCatalog.Diagnostico = GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico((int)SelectedClasseDominioId);
+            
             return PartialView("ProductsUserControl", productCatalog);
         }
     }

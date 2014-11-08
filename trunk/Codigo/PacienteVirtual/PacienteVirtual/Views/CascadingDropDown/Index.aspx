@@ -10,17 +10,17 @@
 
 <table cellpadding="0" cellspacing="4" border="0">
     <tr>
-        <td>Category&nbsp;</td>
+        <td>Domínio&nbsp;</td>
         <td>&nbsp;:</td>
         <td><%: Html.Partial("CategoriesUserControl", Model) %></td>
     </tr>
     <tr>
-        <td>Sub - Category&nbsp;</td>
+        <td>Classe Domínio&nbsp;</td>
         <td>&nbsp;:</td>
         <td><div id="SubCategories"><%: Html.Partial("SubCategoriesUserControl", Model) %></div></td>
     </tr>
     <tr>
-        <td>Products&nbsp;</td>
+        <td>Diagnóstico&nbsp;</td>
         <td>&nbsp;:</td>
         <td><div id="Products"><%: Html.Partial("ProductsUserControl", Model) %></div></td>
     </tr>
