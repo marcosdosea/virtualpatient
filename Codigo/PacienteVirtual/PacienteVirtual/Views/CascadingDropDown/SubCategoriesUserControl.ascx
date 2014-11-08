@@ -1,15 +1,12 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PacienteVirtual.Models.ProductCatalog>" %>
 
-<% if (Model.SubCategories != null && Model.SubCategories.Count() > 0)
+<% using (Ajax.BeginForm("SelectSubCategory", "CascadingDropDown", new AjaxOptions { UpdateTargetId = "Products" }))
 { %>
-    <% using (Ajax.BeginForm("SelectSubCategory", "CascadingDropDown", new AjaxOptions { UpdateTargetId = "Products" }))
-    { %>
-    <%: Html.HiddenFor(m => m.SelectedCategoryId) %>
-    <%: Html.DropDownListFor(m => m.SelectedSubCategoryId, new SelectList(Model.SubCategories, "Id", "Name"), string.Empty) %>
-    <% } %>
+<%: Html.HiddenFor(m => m.SelectedDominioId) %>
+<%: Html.DropDownListFor(m => m.SelectedClasseDominioId, new SelectList(Model.ClasseDominio, "IdClasseDiagnostico", "DescricaoClasseDiagnostico"), Resources.Mensagem.selecione)%>
 <% } %>
 <script type="text/javascript">
-    $('#SelectedSubCategoryId').change(function () {
+    $('#SelectedClasseDominioId').change(function () {
         $(this).parents('form').submit();
-    });   
+    }); 
 </script>
