@@ -25,6 +25,8 @@ namespace PacienteVirtual.Controllers
                 SessionController.IdClasseDiagnostico = Global.ValorInteiroNulo;
                 SessionController.IdDominioDiagnostico = Global.ValorInteiroNulo;
                 SessionController.IdDiagnostico = Global.ValorInteiroNulo;
+                GerenciadorDiagnosticoConsulta.GetInstance().AtualizaConsultaDiagnosticoSelecionada(diagnostico.IdConsultaVariavel, 
+                    diagnostico.IdDiagnostico, diagnostico.IdDominioDiagnostico, diagnostico.IdClasseDiagnostico);
             }
             else
             {
@@ -62,6 +64,7 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorDiagnosticoConsulta.GetInstance().Remover(idConsultaVariavel, idDiagnostico);
             SessionController.ListaDiagnostico = null;
+            SessionController.DiagnosticoConsulta = null;
             return RedirectToAction("Edit2", "Consulta");
         }
  
