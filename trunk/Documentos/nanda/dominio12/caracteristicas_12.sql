@@ -53,7 +53,8 @@ INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCa
 INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCaracteristica`) VALUES (212,"Mudanças no padrão de sono");
 INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCaracteristica`) VALUES (212,"Relato codificado (p. ex., escala de dor)");
 INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCaracteristica`) VALUES (212,"Relato verbal de dor");
-INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCaracteristica`) VALUES (212,"Respostas mediadas pelo sistema nervoso simpático (p. ex., temperatura, frio, mudanças na posição do corpo, hipersensibilidade)"
+
+INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCaracteristica`) VALUES (212,"Respostas mediadas pelo sistema nervoso simpático (p. ex., temperatura, frio, mudanças na posição do corpo, hipersensibilidade)");
 INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCaracteristica`) VALUES (213,"Aversão à comida");
 INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCaracteristica`) VALUES (213,"Deglutição aumentada");
 INSERT INTO `pv1`.`tb_diagnostico_caracteristica` (`IdDiagnostico`, `DescricaoCaracteristica`) VALUES (213,"Relato de gosto amargo na boca");
