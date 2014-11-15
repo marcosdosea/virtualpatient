@@ -1,41 +1,33 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true"
     Inherits="System.Web.Mvc.ViewPage<System.Web.Mvc.HandleErrorInfo>" %>
 
+   
+
 <asp:Content ID="errorTitle" ContentPlaceHolderID="TitleContent" runat="server">
     Error
 </asp:Content>
 
 <asp:Content ID="errorContent" ContentPlaceHolderID="MainContent" runat="server">
+    <%  if (Model != null && Model.Exception != null)
+        { %>
+    <br />
     <h2>
-        Desculpe, um erro enquando efetuavamos sua requisição.
-    </h2>
-    <%  if (Request.IsLocal)
-        {
-            if (Model != null && Model.Exception != null)
-            { %>
-    <br />
-    <h4>
-        Exception :
-        <%: Model.Exception.Message %></h4>
+        
+        <%: Model.Exception.Message %></h2>
     <br />
     <br />
-    <h4>
-        Stack Trace:
-        <%: Model.Exception.StackTrace %></h4>
-    <br />
-    <br />
-    <%: Model.Exception.Message %>
-    <% }
-        }
+    <%  }
         else
         {%>
     <h3>
-        O erro foi reportado ao Administrador.</h3>
+        Desculpe, um erro enquando efetuavamos sua requisição. Favor informar ao administrador do sistema.
+    </h3>
     <% } %>
 
-    <% using (Html.BeginForm()) { %>
-    <p>
-         <%: Html.ActionLink(Resources.Mensagem.voltar, "Index") %>
-    </p>
-<% } %>
+     <script type="text/javascript">
+         function goBack() {
+             window.history.back()
+         }
+    </script>
+     <button onclick="goBack()">Voltar</button>
 </asp:Content>

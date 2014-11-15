@@ -32,7 +32,8 @@ INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VAL
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (213,"Fatores psicológicos");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (213,"Medo");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (213,"Odores nocivos");
-INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (213,"Sabor nocivo","$"
+
+INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (213,"Sabor nocivo");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (214,"Alterações na aparência física");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (214,"Alterações no estado mental");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (214,"Bem-estar alterado");

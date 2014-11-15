@@ -17,7 +17,7 @@ namespace PacienteVirtual
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new CustomHandleErrorAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
