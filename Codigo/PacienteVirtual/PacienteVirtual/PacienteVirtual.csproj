@@ -148,6 +148,7 @@
     <Compile Include="Controllers\Consulta\DiagnosticoConsultaFatorController.cs" />
     <Compile Include="Controllers\Consulta\PrescricaoEnfermagemController.cs" />
     <Compile Include="Controllers\Teste\CascadingDropDownController.cs" />
+    <Compile Include="CustomHandleErrorAttribute.cs" />
     <Compile Include="Models\Cadastro\DiagnosticoCaracteristicaModel.cs" />
     <Compile Include="Models\Cadastro\DiagnosticoFatorModel.cs" />
     <Compile Include="Controllers\Cadastro\DominioDiagnosticoController.cs" />
@@ -468,6 +469,7 @@
     <Content Include="bin\en\PacienteVirtual.resources.dll" />
     <Content Include="bin\PacienteVirtual.dll" />
     <Content Include="bin\PacienteVirtual.pdb" />
+    <Content Include="bin\System.Web.Mvc.dll" />
     <Content Include="Content\Gridmvc.css" />
     <Content Include="Content\MeuCss.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -678,8 +680,6 @@
     <Content Include="Views\Comunicacao\Edit.ascx" />
     <Content Include="Views\Consciencia\Edit.ascx" />
     <Content Include="Views\ConsultaParametro\Edit.aspx" />
-    <Content Include="Views\Consulta\DDLClasseDominio.ascx" />
-    <Content Include="Views\Consulta\DDLDominio.ascx" />
     <Content Include="Views\Consulta\Links.ascx" />
     <Content Include="Views\CorrigirConsultas\ComentariosTutor.ascx" />
     <Content Include="Views\CorrigirConsultas\Index.aspx" />
