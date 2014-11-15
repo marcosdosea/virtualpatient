@@ -58,9 +58,6 @@ INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VAL
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (73, "Prejuízo musculoesquelético");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (73, "Prejuízo neuromuscular");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (73, "Prejuízo perceptivo");
-INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (, "	$$$
-INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (, "	$$$
-INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (, "	$$$
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (72, "Ansiedade grave");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (72, "Barreiras ambientais");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (72, "Desconforto");

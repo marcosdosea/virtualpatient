@@ -1,6 +1,6 @@
 ﻿INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (210,"Estímulos ambientais nocivos");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (210,"Efeitos secundários relacionados ao tratamento (p. ex., medicamentos, radiação)");
-INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (210,"Falta de controle do ambiente","$"
+INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (210,"Falta de controle do ambiente");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (210,"Falta de privacidade");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (210,"Falta de controle da situação");
 INSERT INTO `pv1`.`tb_diagnostico_fator` (`IdDiagnostico`, `DescricaoFator`) VALUES (210,"Recursos insuficientes (p. ex., financeiros, apoio social)");
