@@ -43,7 +43,8 @@ namespace PacienteVirtual.Negocio
             }
             catch (Exception e)
             {
-                throw new DadosException("Medicamentos", e.Message, e);
+                throw new NegocioException(e.Message);
+                //throw new DadosException("Medicamentos", e.Message, e);
             }
 
         }

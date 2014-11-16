@@ -15,13 +15,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(IntegridadeTecidualModel IntegridadeTecidual)
         {
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaIntegridadeTecidual;
             if (ModelState.IsValid)
             {
                 gIntegridadeTecidual.Atualizar(IntegridadeTecidual);
                 SessionController.IntegridadeTecidual = IntegridadeTecidual;
             }
-            SessionController.Abas1 = Global.abaPsicobiologicas;
-            SessionController.AbasDentro = Global.abaIntegridadeTecidual;
             return RedirectToAction("Edit", "Consulta");
         }
     }

@@ -19,22 +19,22 @@ namespace PacienteVirtual.Controllers
         }
 
         [HttpPost]
-        public ActionResult SelectCategory(int? selectedDominioId)
+        public ActionResult SelecionarDominio(int? selectedDominioId)
         {
             ProductCatalog productCatalog = new ProductCatalog();
             productCatalog.ClasseDominio = GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio((int)selectedDominioId);
             productCatalog.SelectedDominioId = selectedDominioId;
 
-            return PartialView("SubCategoriesUserControl", productCatalog);
+            return PartialView("DDLClasseDominio", productCatalog);
         }
 
         [HttpPost]
-        public ActionResult SelectSubCategory(int? SelectedClasseDominioId)
+        public ActionResult SelecionarClasseDominio(int? SelectedClasseDominioId)
         {
             ProductCatalog productCatalog = new ProductCatalog();
             productCatalog.Diagnostico = GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico((int)SelectedClasseDominioId);
-            
-            return PartialView("ProductsUserControl", productCatalog);
+
+            return PartialView("DDLDiagnostico", productCatalog);
         }
     }
 }

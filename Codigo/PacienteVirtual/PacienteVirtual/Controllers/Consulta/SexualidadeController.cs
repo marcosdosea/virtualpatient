@@ -17,13 +17,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(SexualidadeModel sexualidade)
         {
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaSexualidade;
             if (ModelState.IsValid)
             {
                 gSexualidade.Atualizar(sexualidade);
                 SessionController.Sexualidade = sexualidade;
             }
-            SessionController.Abas1 = Global.abaPsicobiologicas;
-            SessionController.AbasDentro = Global.abaSexualidade;
             return RedirectToAction("Edit", "Consulta");
         }
 

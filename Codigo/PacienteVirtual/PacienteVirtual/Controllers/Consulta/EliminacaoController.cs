@@ -17,13 +17,13 @@ namespace PacienteVirtual.Controllers.Consulta
         [HttpPost]
         public ActionResult Edit(EliminacaoModel eliminacao)
         {
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaEliminacao;
             if (ModelState.IsValid)
             {
                 gEliminacao.Atualizar(eliminacao);
                 SessionController.Eliminacao = eliminacao;
             }
-            SessionController.Abas1 = Global.abaPsicobiologicas;
-            SessionController.AbasDentro = Global.abaEliminacao;
             return RedirectToAction("Edit", "Consulta");
         }
     }

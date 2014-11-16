@@ -17,13 +17,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(PercepcaoExpectativasModel percepcaoExpectativas)
         {
+            SessionController.Abas1 = Global.abaPercepcao;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             if (ModelState.IsValid)
             {
                 gPercepcaoExpectativas.Atualizar(percepcaoExpectativas);
                 SessionController.PercepcaoExpectativas = percepcaoExpectativas;
             }
-            SessionController.Abas1 = Global.abaPercepcao;
-            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 
