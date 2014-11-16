@@ -17,13 +17,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(OutrasNecessidadesModel outrasNecessidades)
         {
+            SessionController.Abas1 = Global.abaOutrasNecessidades;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             if (ModelState.IsValid)
             {
                 gOutrasNecessidades.Atualizar(outrasNecessidades);
                 SessionController.OutrasNecessidades = outrasNecessidades;
             }
-            SessionController.Abas1 = Global.abaOutrasNecessidades;
-            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 

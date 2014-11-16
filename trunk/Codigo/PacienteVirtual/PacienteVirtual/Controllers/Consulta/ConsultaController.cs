@@ -120,6 +120,9 @@ namespace PacienteVirtual.Controllers
             SessionController.ConsultaVariavel = consultaVariavelModel;
 
             ConsultaModel consultaModel = ConsultaSegundaTela(consultaVariavelModel);
+            consultaModel.DiagnosticoConsulta.Dominio = GerenciadorDominioDiagnostico.GetInstance().ObterTodos();
+            consultaModel.DiagnosticoConsulta.ClasseDominio = GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio(0);
+            consultaModel.DiagnosticoConsulta.Diagnostico = GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(0);
             ViewBagsSegundaParteConsulta();
 
             SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
@@ -231,13 +234,6 @@ namespace PacienteVirtual.Controllers
 
         private void ViewBagsSegundaTelaCursoEnfermagem()
         {
-            ViewBag.IdDominioDiagnostico = new SelectList(GerenciadorDominioDiagnostico.GetInstance().ObterTodos(), "IdDominioDiagnostico",
-                "DescricaoDominioDiagnostico", SessionController.IdDominioDiagnostico);
-            ViewBag.IdClasseDiagnostico = new SelectList(GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio(
-                SessionController.IdDominioDiagnostico), "IdClasseDiagnostico", "DescricaoClasseDiagnostico",
-                SessionController.IdClasseDiagnostico);
-            ViewBag.IdDiagnostico = new SelectList(GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(
-                SessionController.IdClasseDiagnostico), "IdDiagnostico", "DescricaoDiagnostico", SessionController.IdDiagnostico);
             if (SessionController.DiagnosticoConsulta != null)
             {
                 ViewBag.IdDiagnosticoFator = new SelectList(GerenciadorDiagnosticoFator.GetInstance().ObterPorDiagnostico(

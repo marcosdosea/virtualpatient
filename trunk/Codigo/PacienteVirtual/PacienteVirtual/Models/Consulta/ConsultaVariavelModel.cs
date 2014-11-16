@@ -52,6 +52,8 @@ namespace PacienteVirtual.Models
 
         public decimal NotaAluno { get; set; }
 
+        public int AbaAuxiliar { get; set; }
+
         //Enfermagem
         [Display(Name = "descricao", ResourceType = typeof(Mensagem))]
         public string DescricaoOutrosAchados { get; set; }

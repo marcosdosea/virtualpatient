@@ -15,13 +15,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(OxigenacaoModel oxigenacao)
         {
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaOxigenacao;
             if (ModelState.IsValid)
             {
                 gOxigenacao.Atualizar(oxigenacao);
                 SessionController.Oxigenacao = oxigenacao;
             }
-            SessionController.Abas1 = Global.abaPsicobiologicas;
-            SessionController.AbasDentro = Global.abaOxigenacao;
             return RedirectToAction("Edit", "Consulta");
         }
     }

@@ -18,13 +18,13 @@ namespace PacienteVirtual.Controllers.Consulta
         [HttpPost]
         public ActionResult Edit(NutricaoModel nutricaoModel)
         {
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaNutricao;
             if (ModelState.IsValid)
             {
                 GerenciadorNutricao.GetInstance().Atualizar(nutricaoModel);
                 SessionController.Nutricao = nutricaoModel;
             }
-            SessionController.Abas1 = Global.abaPsicobiologicas;
-            SessionController.AbasDentro = Global.abaNutricao;
             return RedirectToAction("Edit", "Consulta");
         }
 

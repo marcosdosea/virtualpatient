@@ -16,6 +16,7 @@
         <%: Html.HiddenFor(model => model.NotaAluno) %>
         <%: Html.HiddenFor(model => model.IdRazaoEncontro) %>
         <%: Html.HiddenFor(model => model.DescricaoEstadoConsulta) %>
+        <%: Html.HiddenFor(model => model.AbaAuxiliar, new { Id = "AbaAuxiliar" })%>
 
         <div class="row-fluid">
             <div class="span6">
@@ -30,8 +31,12 @@
         </div>
 
     <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
+        <input class="btn btn-primary" onclick="funcaoSalvar()" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>
     </fieldset>
 <% } %>
-
+<script type="text/javascript">
+    function funcaoSalvar() {
+        $('#AbaAuxiliar').val("10");
+    }
+</script>

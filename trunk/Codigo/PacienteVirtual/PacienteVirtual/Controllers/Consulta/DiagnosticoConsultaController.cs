@@ -34,6 +34,9 @@ namespace PacienteVirtual.Controllers
                 SessionController.IdClasseDiagnostico = diagnostico.IdClasseDiagnostico;
                 SessionController.IdDiagnostico = diagnostico.IdDiagnostico;
             }
+            diagnostico.Dominio = GerenciadorDominioDiagnostico.GetInstance().ObterTodos();
+            diagnostico.ClasseDominio = GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio(0);
+            diagnostico.Diagnostico = GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(0);
             return RedirectToAction("Edit2", "Consulta");
         }
 
@@ -71,6 +74,25 @@ namespace PacienteVirtual.Controllers
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
+        }
+
+        [HttpPost]
+        public ActionResult SelecionarDominio(int? selectedDominioId)
+        {
+            DiagnosticoConsultaModel diagConsulta = new DiagnosticoConsultaModel();
+            diagConsulta.ClasseDominio = GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio((int)selectedDominioId);
+            diagConsulta.SelectedDominioId = selectedDominioId;
+
+            return PartialView("DDLClasseDominio", diagConsulta);
+        }
+
+        [HttpPost]
+        public ActionResult SelecionarClasseDominio(int? SelectedClasseDominioId)
+        {
+            DiagnosticoConsultaModel diagConsulta = new DiagnosticoConsultaModel();
+            diagConsulta.Diagnostico = GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico((int)SelectedClasseDominioId);
+
+            return PartialView("DDLDiagnostico", diagConsulta);
         }
     }
 }

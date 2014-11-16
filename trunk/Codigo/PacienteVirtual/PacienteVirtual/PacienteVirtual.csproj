@@ -663,10 +663,10 @@
     <Content Include="Views\Carta\Create.ascx" />
     <Content Include="Views\Carta\Edit.aspx" />
     <Content Include="Views\Carta\Index.ascx" />
-    <Content Include="Views\CascadingDropDown\CategoriesUserControl.ascx" />
+    <Content Include="Views\CascadingDropDown\DDLDominio.ascx" />
     <Content Include="Views\CascadingDropDown\Index.aspx" />
-    <Content Include="Views\CascadingDropDown\ProductsUserControl.ascx" />
-    <Content Include="Views\CascadingDropDown\SubCategoriesUserControl.ascx" />
+    <Content Include="Views\CascadingDropDown\DDLDiagnostico.ascx" />
+    <Content Include="Views\CascadingDropDown\DDLClasseDominio.ascx" />
     <Content Include="Views\Circulacao\Edit.ascx" />
     <Content Include="Views\ClinicoInternacao\AdicionarAntecedentesFamiliares.ascx" />
     <Content Include="Views\ClinicoInternacao\AdicionarClinicoInternacaoAlergias.ascx" />
@@ -701,6 +701,9 @@
     <Content Include="Views\DiagnosticoConsultaFator\Adicionar.ascx" />
     <Content Include="Views\DiagnosticoConsultaFator\Index.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Create.ascx" />
+    <Content Include="Views\Consulta\DDLClasseDominio.ascx" />
+    <Content Include="Views\Consulta\DDLDiagnostico.ascx" />
+    <Content Include="Views\Consulta\DDLDominio.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Details.ascx" />
     <Content Include="Views\DiagnosticoConsulta\Edit.aspx" />
     <Content Include="Views\DiagnosticoConsulta\Index.ascx" />

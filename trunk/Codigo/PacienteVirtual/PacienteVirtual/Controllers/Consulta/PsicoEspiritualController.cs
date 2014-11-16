@@ -16,13 +16,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(PsicoEspiritualModel psicoEspiritualModel)
         {
+            SessionController.Abas1 = Global.abaPsicoespiritual;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             if (ModelState.IsValid)
             {
                 GerenciadorPsicoEspiritual.GetInstance().Atualizar(psicoEspiritualModel);
                 SessionController.PsicoEspiritual = psicoEspiritualModel;
             }
-            SessionController.Abas1 = Global.abaPsicoespiritual;
-            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 

@@ -17,13 +17,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(ConscienciaModel consciencia)
         {
+            SessionController.Abas1 = Global.abaConciencia;
+            SessionController.AbasDentro = Global.ValorInteiroNulo;
             if (ModelState.IsValid)
             {
                 gConsciencia.Atualizar(consciencia);
                 SessionController.Consciencia = consciencia;
             }
-            SessionController.Abas1 = Global.abaConciencia;
-            SessionController.AbasDentro = Global.ValorInteiroNulo;
             return RedirectToAction("Edit", "Consulta");
         }
 

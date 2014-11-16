@@ -17,13 +17,13 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(SensorialModel sensorial)
         {
+            SessionController.Abas1 = Global.abaPsicobiologicas;
+            SessionController.AbasDentro = Global.abaSensorial;
             if (ModelState.IsValid)
             {
                 gSensorial.Atualizar(sensorial);
                 SessionController.Sensorial = sensorial;
             }
-            SessionController.Abas1 = Global.abaPsicobiologicas;
-            SessionController.AbasDentro = Global.abaSensorial;
             return RedirectToAction("Edit", "Consulta");
         }
 
