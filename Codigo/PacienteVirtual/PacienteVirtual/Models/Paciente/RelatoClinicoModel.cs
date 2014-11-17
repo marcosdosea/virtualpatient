@@ -33,7 +33,6 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nivel_dificuldade", ResourceType = typeof(Mensagem))]
-        //[RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem) ,ErrorMessageResourceName = "campo_numerico")]
         public int NivelDificuldade { get; set; }
         
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

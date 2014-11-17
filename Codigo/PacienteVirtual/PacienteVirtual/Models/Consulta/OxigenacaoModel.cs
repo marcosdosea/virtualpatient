@@ -41,6 +41,7 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "frequencia_respiratoria", ResourceType = typeof(Mensagem))]
+        [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
         public int FequenciaResporatoria { get; set; }
 
         [Display(Name = "ritmo", ResourceType = typeof(Mensagem))]
