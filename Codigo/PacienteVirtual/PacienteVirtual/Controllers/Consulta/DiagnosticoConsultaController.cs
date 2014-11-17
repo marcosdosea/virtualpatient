@@ -3,7 +3,7 @@ using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual.Controllers
-{ 
+{
     public class DiagnosticoConsultaController : Controller
     {
 
@@ -25,7 +25,7 @@ namespace PacienteVirtual.Controllers
                 SessionController.IdClasseDiagnostico = Global.ValorInteiroNulo;
                 SessionController.IdDominioDiagnostico = Global.ValorInteiroNulo;
                 SessionController.IdDiagnostico = Global.ValorInteiroNulo;
-                GerenciadorDiagnosticoConsulta.GetInstance().AtualizaConsultaDiagnosticoSelecionada(diagnostico.IdConsultaVariavel, 
+                GerenciadorDiagnosticoConsulta.GetInstance().AtualizaConsultaDiagnosticoSelecionada(diagnostico.IdConsultaVariavel,
                     diagnostico.IdDiagnostico, diagnostico.IdDominioDiagnostico, diagnostico.IdClasseDiagnostico);
             }
             else
@@ -34,16 +34,13 @@ namespace PacienteVirtual.Controllers
                 SessionController.IdClasseDiagnostico = diagnostico.IdClasseDiagnostico;
                 SessionController.IdDiagnostico = diagnostico.IdDiagnostico;
             }
-            diagnostico.Dominio = GerenciadorDominioDiagnostico.GetInstance().ObterTodos();
-            diagnostico.ClasseDominio = GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio(0);
-            diagnostico.Diagnostico = GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico(0);
             return RedirectToAction("Edit2", "Consulta");
         }
 
 
         public ActionResult SelecionarConsultaDiagnostico(long idConsultaVariavel, int idDiagnostico, int idDominio, int idClasse)
         {
-            GerenciadorDiagnosticoConsulta.GetInstance().AtualizaConsultaDiagnosticoSelecionada(idConsultaVariavel, idDiagnostico, 
+            GerenciadorDiagnosticoConsulta.GetInstance().AtualizaConsultaDiagnosticoSelecionada(idConsultaVariavel, idDiagnostico,
                 idDominio, idClasse);
             return RedirectToAction("Edit2", "Consulta");
         }
@@ -59,7 +56,7 @@ namespace PacienteVirtual.Controllers
             }
             return View(diagnosticoConsulta);
         }
- 
+
         //
         // POST: /DiagnosticoConsulta/Delete/5
         //[HttpPost]
@@ -70,29 +67,10 @@ namespace PacienteVirtual.Controllers
             SessionController.DiagnosticoConsulta = null;
             return RedirectToAction("Edit2", "Consulta");
         }
- 
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-        }
-
-        [HttpPost]
-        public ActionResult SelecionarDominio(int? selectedDominioId)
-        {
-            DiagnosticoConsultaModel diagConsulta = new DiagnosticoConsultaModel();
-            diagConsulta.ClasseDominio = GerenciadorClasseDiagnostico.GetInstance().ObterPorDominio((int)selectedDominioId);
-            diagConsulta.SelectedDominioId = selectedDominioId;
-
-            return PartialView("DDLClasseDominio", diagConsulta);
-        }
-
-        [HttpPost]
-        public ActionResult SelecionarClasseDominio(int? SelectedClasseDominioId)
-        {
-            DiagnosticoConsultaModel diagConsulta = new DiagnosticoConsultaModel();
-            diagConsulta.Diagnostico = GerenciadorDiagnostico.GetInstance().ObterPorClasseDiagnostico((int)SelectedClasseDominioId);
-
-            return PartialView("DDLDiagnostico", diagConsulta);
         }
     }
 }
