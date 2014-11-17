@@ -44,7 +44,7 @@ namespace PacienteVirtual
             else
             {
                 Exception exceptionRecebida = filterContext.Exception;
-                Exception exceptionEnviar = exceptionRecebida;
+                Exception exceptionEnviar = new Exception("Ocorreu um erro inesperado no sistema. Por favor tente repetir a operação. Se o erro persistir por favor comunicar ao administrador do sistema.", exceptionRecebida);
                 
                 if (exceptionRecebida.InnerException != null &&  exceptionRecebida.InnerException is UpdateException)
                 {
@@ -56,7 +56,7 @@ namespace PacienteVirtual
                         } else if (exceptionMysql.Number == 1451) {
                             exceptionEnviar = new Exception("Essa registro não pode ser excluído da base de dados por estar associado a outro registro. ", exceptionEnviar);
                         } else {
-                            exceptionEnviar = new Exception(" Não foi possível atualizar a base de dados. Favor contactar o administrador e informar ocorrência do Erro número = " + exceptionMysql.Number +  ".");
+                            exceptionEnviar = new Exception("Não foi possível atualizar a base de dados. Favor contactar o administrador e informar ocorrência do Erro número = " + exceptionMysql.Number +  ".");
                         }
                     }
                 }
