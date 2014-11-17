@@ -8,13 +8,6 @@ namespace PacienteVirtual.Models
 {
     public class DiagnosticoConsultaModel
     {
-        public int? SelectedDominioId { get; set; }
-        public int? SelectedClasseDominioId { get; set; }
-
-        public IEnumerable<DominioDiagnosticoModel> Dominio { get; set; }
-        public IEnumerable<ClasseDiagnosticoModel> ClasseDominio { get; set; }
-        public IEnumerable<DiagnosticoModel> Diagnostico { get; set; }
-
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]
         public long IdConsultaVariavel { get; set; }
