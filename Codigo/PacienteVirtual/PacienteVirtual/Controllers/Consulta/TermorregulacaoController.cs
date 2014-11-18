@@ -3,7 +3,7 @@ using PacienteVirtual.Models;
 using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual.Controllers
-{ 
+{
     public class TermorregulacaoController : Controller
     {
         GerenciadorTermorregulacao gTermorregulacao = GerenciadorTermorregulacao.GetInstance();
@@ -15,11 +15,8 @@ namespace PacienteVirtual.Controllers
         {
             SessionController.Abas1 = Global.abaPsicobiologicas;
             SessionController.AbasDentro = Global.abaTermorregulacao;
-            if (ModelState.IsValid)
-            {
-                gTermorregulacao.Atualizar(Termorregulacao);
-                SessionController.Termorregulacao = Termorregulacao;
-            }
+            gTermorregulacao.Atualizar(Termorregulacao);
+            SessionController.Termorregulacao = Termorregulacao;
             return RedirectToAction("Edit", "Consulta");
         }
     }

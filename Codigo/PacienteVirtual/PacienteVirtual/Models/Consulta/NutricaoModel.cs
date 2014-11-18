@@ -68,7 +68,7 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ingesta_hidrica", ResourceType = typeof(Mensagem))]
         [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
-        public float IngestaHidricaValor { get; set; }
+        public decimal IngestaHidricaValor { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "restricao_hidrica", ResourceType = typeof(Mensagem))]
@@ -77,7 +77,7 @@ namespace PacienteVirtual.Models
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "restricao_hidrica", ResourceType = typeof(Mensagem))]
         [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
-        public float RestricaoHidricaValor { get; set; }
+        public decimal RestricaoHidricaValor { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "sem_restricao", ResourceType = typeof(Mensagem))]

@@ -20,11 +20,8 @@ namespace PacienteVirtual.Controllers.Consulta
         {
             SessionController.Abas1 = Global.abaPsicobiologicas;
             SessionController.AbasDentro = Global.abaNutricao;
-            if (ModelState.IsValid)
-            {
-                GerenciadorNutricao.GetInstance().Atualizar(nutricaoModel);
-                SessionController.Nutricao = nutricaoModel;
-            }
+            GerenciadorNutricao.GetInstance().Atualizar(nutricaoModel);
+            SessionController.Nutricao = nutricaoModel;
             return RedirectToAction("Edit", "Consulta");
         }
 
