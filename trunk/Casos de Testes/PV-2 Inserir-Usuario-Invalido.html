@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-2 Inserir-Usuario-Invalido</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-2 Inserir-Usuario-Invalido</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Registre - se</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Nome</td>
+	<td>Andrés</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>andres</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Email</td>
+	<td>andres.s.menendez@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=textBoxColar</td>
+	<td>andres.s.menendez@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ConfirmPassword</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cpf</td>
+	<td>054.244.605-77</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Fone</td>
+	<td>99582588</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Matricula</td>
+	<td>201120007148</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=registrar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=span.field-validation-error.styleValidation</td>
+	<td>exact:*Este CPF já foi cadastrado anteriormente.</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
