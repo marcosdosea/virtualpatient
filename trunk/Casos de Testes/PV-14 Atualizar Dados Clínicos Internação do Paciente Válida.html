@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-14 Atualizar Dados Clínicos Internação do Paciente Válida</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-14 Atualizar Dados Clínicos Internação do Paciente Válida</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>testeEnf</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Consultas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Consulta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preencher</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Dados Clínicos/Internação</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Clinica</td>
+	<td>São Lucas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Leito</td>
+	<td>Leito 4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=DiagnosticoMedico</td>
+	<td>Diagnóstico de Teste</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=MotivoInternacao</td>
+	<td>Motivo de Internação é o Teste</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tab1-2 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.row-fluid &gt; div.span6 &gt; div.editor-field &gt; img.ui-datepicker-trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=16</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=UsoNaoSeAplica</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#tab1-2 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=Clinica</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=Leito</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=DiagnosticoMedico</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=MotivoInternacao</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=DataAdmissao</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=UsoNaoSeAplica</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=IdPatologia</td>
+	<td>label=Hipertensão arterial sistêmica</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.span4 &gt; input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>xpath=(//select[@id='IdPatologia'])[2]</td>
+	<td>label=Diabetes</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Adicionar'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>xpath=(//select[@id='IdPatologia'])[3]</td>
+	<td>label=Insuficiência Renal Crônica</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Adicionar'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=IdAlergia</td>
+	<td>label=Não relatou</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Adicionar'])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=td</td>
+	<td>Hipertensão arterial sistêmica</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td)[3]</td>
+	<td>Diabetes</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td)[5]</td>
+	<td>Insuficiência Renal Crônica</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td)[7]</td>
+	<td>Não relatou</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
