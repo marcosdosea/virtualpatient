@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-31 Atualizar Necessidades Psicobiológicas de Integridade Tecidual do Paciente inválida</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-31 Atualizar Necessidades Psicobiológicas de Integridade Tecidual do Paciente inválida</td></tr>
+</thead><tbody>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>testeEnf</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Consultas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Consulta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preencher</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Necessidades psicobiológicas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Integridade Tecidual</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=Turgor</td>
+	<td>label=Presente</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=Hematoma</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=Descorada</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=EstadoHidratacao</td>
+	<td>label=Hidratada</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=UlceraPressao</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=UlceraPressao</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UlceraPressaoEstagio</td>
+	<td>Estágio 1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=QueimaduraGrau</td>
+	<td>Grau 3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tab1-56 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=span.styleValidation.field-validation-error &gt; span</td>
+	<td>O campo Estágio deve ser uma cadeia de caracteres com um comprimento máximo de 5.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.span12 &gt; div.editor-field &gt; div.span9 &gt; span.styleValidation.field-validation-error &gt; span</td>
+	<td>O campo Grau deve ser uma cadeia de caracteres com um comprimento máximo de 5.</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

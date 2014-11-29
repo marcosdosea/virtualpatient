@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
-<title>PV-10 Ativar Tutor com solicitação na Turma</title>
+<title>PV-26 Atualizar Necessidades Psicobiológicas de Higiene do Paciente válido</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">PV-10 Ativar Tutor com solicitação na Turma</td></tr>
+<tr><td rowspan="1" colspan="3">PV-26 Atualizar Necessidades Psicobiológicas de Higiene do Paciente válido</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -24,12 +24,12 @@
 <tr>
 	<td>type</td>
 	<td>id=UserName</td>
-	<td>elielmasa</td>
+	<td>testeEnf</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=Password</td>
-	<td>paciente</td>
+	<td>123456</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -37,75 +37,91 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>xpath=(//a[contains(text(),'Selecione')])[3]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>link=Turma</td>
+	<td>link=Consultas</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Ativar Tutor na Turma</td>
+	<td>link=Consulta</td>
 	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.grid-filter-btn</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>css=select.grid-filter-type.form-control</td>
-	<td>label=Contém</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=input.grid-filter-input.form-control</td>
-	<td>larissa</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//button[@type='button']</td>
+	<td>link=Preencher</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[contains(text(),'Ativar')])[4]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertAlert</td>
-	<td>Tutor Ativado!</td>
+	<td>link=Higiene</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.grid-filter-btn</td>
+	<td>id=Satisfatoria</td>
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>css=select.grid-filter-type.form-control</td>
-	<td>label=Contém</td>
+	<td>click</td>
+	<td>id=NecessitaHigieneIntima</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>css=input.grid-filter-input.form-control</td>
-	<td>larissa</td>
+	<td>click</td>
+	<td>id=CabelosSeborreia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=OralRessecamento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=OralUlceracao</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=OralLinguaSaburrosa</td>
+	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//button[@type='button']</td>
+	<td>css=#tab1-54 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//section[@id='main']/div/div/div/table/tbody/tr[2]/td[5]</td>
-	<td>Ativa</td>
+	<td>id=Satisfatoria</td>
+	<td></td>
 </tr>
+<tr>
+	<td>assertText</td>
+	<td>id=NecessitaHigieneIntima</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=CabelosSeborreia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=OralRessecamento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=OralUlceracao</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=OralLinguaSaburrosa</td>
+	<td></td>
+</tr>
+
 </tbody></table>
 </body>
 </html>
