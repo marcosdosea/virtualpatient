@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
-<title>PV-9 Ativar Matrícula com solicitação na turma</title>
+<title>PV-23 Atualizar Necessidades Psicobiológicas de Circulação do Paciente inválida</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">PV-9 Ativar Matrícula com solicitação na turma</td></tr>
+<tr><td rowspan="1" colspan="3">PV-23 Atualizar Necessidades Psicobiológicas de Circulação do Paciente inválida</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -24,12 +24,12 @@
 <tr>
 	<td>type</td>
 	<td>id=UserName</td>
-	<td>larissa</td>
+	<td>testeEnf</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=Password</td>
-	<td>paciente</td>
+	<td>123456</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -37,35 +37,51 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>xpath=(//a[contains(text(),'Selecione')])[2]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>link=Turma</td>
+	<td>link=Consultas</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Ativar Matrículas em Turma</td>
+	<td>link=Consulta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preencher</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[contains(text(),'Ativar')])[4]</td>
+	<td>link=Necessidades psicobiológicas</td>
 	<td></td>
 </tr>
 <tr>
-	<td>assertAlert</td>
-	<td>Matrícula Ativada!</td>
+	<td>click</td>
+	<td>link=Circulação</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PA</td>
+	<td>10.38</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=P</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tab1-52 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//section[@id='main']/div/div/div/table/tbody/tr[3]/td[5]</td>
-	<td>Ativa</td>
+	<td>css=span.styleValidation.field-validation-error &gt; span</td>
+	<td>Este é um campo númerico. Observe este exemplo de um valor válido&quot;10.00&quot;.</td>
 </tr>
+
 </tbody></table>
 </body>
 </html>

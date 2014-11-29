@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-20 Atualizar Necessidades Psicobiológicas de Oxigenação do Paciente válida</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-20 Atualizar Necessidades Psicobiológicas de Oxigenação do Paciente válida</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>testeEnf</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Consultas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Consulta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preencher</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Necessidades psicobiológicas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=FequenciaResporatoria</td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=Ritmo</td>
+	<td>label=Irregular</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=PadraoRespiratorio</td>
+	<td>label=CheyneStokes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=DesvioDeSepto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=Coriza</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=LabioCianotico</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=SimetriaToracica</td>
+	<td>label=Assimétrico Bilateral</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=TiposTorax</td>
+	<td>label=Peito de Pombo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=Expansibilidade</td>
+	<td>label=Diminuída</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=EnfizemaSubcutaneo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=Tosse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=FrequenciaTosse</td>
+	<td>label=Esporádica</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=TipoTosse</td>
+	<td>label=Produtiva</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=AspectoSecrecao</td>
+	<td>label=Ferruginosa/Arroxeada</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=Percursao</td>
+	<td>label=Massa</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=GangliosPalpaveis</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=GangliosDolorosos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=GangliosLocalizar</td>
+	<td>Localização não encontrada</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=AuscultaPulmonar</td>
+	<td>label=Vesicular Diminuído</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#tab1-51 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=FequenciaResporatoria</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=GangliosLocalizar</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
-<title>PV-9 Ativar Matrícula com solicitação na turma</title>
+<title>PV-8 - Solicitar Matrícula em Turma para um Tutor</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">PV-9 Ativar Matrícula com solicitação na turma</td></tr>
+<tr><td rowspan="1" colspan="3">PV-8 - Solicitar Matrícula em Turma para um Tutor</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -37,35 +37,21 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>xpath=(//a[contains(text(),'Selecione')])[2]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>link=Turma</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Ativar Matrículas em Turma</td>
+	<td>link=Solicitar Matricula em Turma</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>xpath=(//a[contains(text(),'Ativar')])[4]</td>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Solicitar')])[3]</td>
 	<td></td>
 </tr>
-<tr>
-	<td>assertAlert</td>
-	<td>Matrícula Ativada!</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>//section[@id='main']/div/div/div/table/tbody/tr[3]/td[5]</td>
-	<td>Ativa</td>
-</tr>
+
 </tbody></table>
 </body>
 </html>
