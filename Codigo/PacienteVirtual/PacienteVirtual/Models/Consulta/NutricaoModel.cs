@@ -19,11 +19,13 @@ namespace PacienteVirtual.Models
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "peso", ResourceType = typeof(Mensagem))]
-        public float Peso { get; set; }
+        [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
+        public decimal Peso { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "altura", ResourceType = typeof(Mensagem))]
-        public float Altura { get; set; }
+        [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
+        public decimal Altura { get; set; }
 
         [Display(Name = "estado_nutricional", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaEstadoNutricional))]

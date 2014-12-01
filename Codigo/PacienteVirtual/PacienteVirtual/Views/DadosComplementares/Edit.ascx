@@ -44,13 +44,8 @@
         </div>
 
     <div class="form-actions">
-        <input class="btn btn-primary" onclick="funcaoSalvar()" type="submit"  value="<%: Resources.Mensagem.salvar %>"/>
+        <input class="btn btn-primary" onclick="$('#AbaAuxiliar').val('9');" type="submit"  value="<%: Resources.Mensagem.salvar %>"/>
     </div>
 
     </fieldset>
 <% } %>
-<script type="text/javascript">
-    function funcaoSalvar() {
-        $('#AbaAuxiliar').val("9");
-    }
-</script>

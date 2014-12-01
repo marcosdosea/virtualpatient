@@ -13,10 +13,10 @@
                 <div class="editor-field">
                     <div class="editor-label">
                         <%: Resources.Mensagem.peso %> &nbsp
-                        <%: Html.TextBoxFor(model => model.Peso, new { style =  "width:70px;", placeholder = "0",onkeypress = "return SomentePonto(event);" })%>
+                        <%: Html.TextBoxFor(model => model.Peso, new { style = "width:70px;", placeholder = "0.00", onkeypress = "return NumeroPonto(event);" })%>
                         <%: Html.ValidationMessageFor(model => model.Peso) %> &nbsp &nbsp
                         <%: Resources.Mensagem.altura %> &nbsp
-                        <%: Html.TextBoxFor(model => model.Altura, new { style = "width:70px;", placeholder = "0",onkeypress = "return SomentePonto(event);" })%>
+                        <%: Html.TextBoxFor(model => model.Altura, new { style = "width:70px;", placeholder = "0.00", onkeypress = "return NumeroPonto(event);" })%>
                         <%: Html.ValidationMessageFor(model => model.Altura) %>
                     </div>
                 </div>
