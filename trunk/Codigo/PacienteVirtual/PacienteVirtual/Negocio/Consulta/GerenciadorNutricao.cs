@@ -184,8 +184,8 @@ namespace PacienteVirtual.Negocio
                         select new NutricaoModel
                         {
                             IdConsultaVariavel = tb_nutricao.IdConsultaVariavel,
-                            Peso = (float)tb_nutricao.Peso,
-                            Altura = (float)tb_nutricao.Altura,
+                            Peso = (decimal)tb_nutricao.Peso,
+                            Altura = (decimal)tb_nutricao.Altura,
                             EstadoNutricional = (tb_nutricao.EstadoNutricional == "AumentoPeso" ? ListaEstadoNutricional.AumentoPeso : (tb_nutricao.EstadoNutricional == "Caquexia" ? ListaEstadoNutricional.Caquexia : (tb_nutricao.EstadoNutricional == "PerdaPeso" ? ListaEstadoNutricional.PerdaPeso : (tb_nutricao.EstadoNutricional == "PesoNormal" ? ListaEstadoNutricional.PesoNormal : ListaEstadoNutricional.Sobrepeso)))),
                             NutricaoOral = tb_nutricao.NutricaoOral,
                             Disfagia = tb_nutricao.Disfagia,

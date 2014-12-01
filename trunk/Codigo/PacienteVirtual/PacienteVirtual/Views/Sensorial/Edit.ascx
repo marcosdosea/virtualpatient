@@ -75,7 +75,7 @@
         <div class="span12">
             <div class="editor-field">
                 <%: Resources.Mensagem.dor_intensidade_valor %>
-                <%: Html.TextBoxFor(model => model.DorIntensidadeValor, new { style = "width:225px;", placeholder = "0.00",onkeypress = "return SomentePonto(event);" })%>
+                <%: Html.TextBoxFor(model => model.DorIntensidadeValor, new { style = "width:225px;", placeholder = "0",onkeypress = "return SomentePonto(event);" })%>
                 <%: Html.ValidationMessageFor(model => model.DorIntensidadeValor, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
