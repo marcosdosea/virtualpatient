@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MySql.Data.MySqlClient;
 using System.Data;
+using PacienteVirtual.Negocio;
 
 namespace PacienteVirtual
 {
@@ -45,7 +46,11 @@ namespace PacienteVirtual
             {
                 Exception exceptionRecebida = filterContext.Exception;
                 Exception exceptionEnviar = new Exception("Ocorreu um erro inesperado no sistema. Por favor tente repetir a operação. Se o erro persistir por favor comunicar ao administrador do sistema.", exceptionRecebida);
-                
+                if (exceptionRecebida.InnerException == null)
+                {
+                    exceptionEnviar = new Exception(filterContext.Exception.Message);
+                }
+
                 if (exceptionRecebida.InnerException != null &&  exceptionRecebida.InnerException is UpdateException)
                 {
                     exceptionEnviar = exceptionRecebida.InnerException;
