@@ -6,7 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         <%: ViewBag.Message %></h2>
-    <p>
         <br />
         <h5>
             O paciente virtual é um ambiente virtual de aprendizagem que permite que alunos
@@ -21,7 +20,6 @@
             <br />
             Abaixo também segue a lista de publicações realizadas através do software:
         </h5>
-    </p>
     <script type="text/javascript">
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
