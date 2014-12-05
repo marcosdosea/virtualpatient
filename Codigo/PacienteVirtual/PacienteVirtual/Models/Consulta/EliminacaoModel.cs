@@ -21,7 +21,7 @@ namespace PacienteVirtual.Models
 
     public enum ListaColoracaoUrinaria { LimpidaClara = 0, Concentrada = 1, PresencaSendimentos = 2, Hematurica = 3, Piurica = 4, Colurica = 5 }
 
-    public enum ListaDebitoUrinario { NaoSeAplica = 0, Oliguria = 1, Poliuria = 2, Anuria = 3, Polaciuria = 4 }
+    public enum ListaDebitoUrinario { NaoSeAplica = 0, Normal = 1, Oliguria = 2, Poliuria = 3, Anuria = 4, Polaciuria = 5 }
 
     public enum ListaCondicaoContinenciaUrinaria { IncontinenciaUrinaria = 0, RetencaoUrinaria = 1, IrrigacaoVesical = 2, SemAlteracoes = 3 }
 
