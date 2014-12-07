@@ -14,8 +14,13 @@
             quais as intervenções seriam mais adequadas.
             <br />
             <br />
-            Para aprender mais sobre a utilização software leia o <a href="#" title="Manual do Paciente Virtual">
-                Manual do Paciente Virtual</a>.
+            Para aprender mais sobre a utilização software leia:
+            <br />
+            <a href="#" target="_blank" title="Manual do Paciente Virtual">
+                Manual do Paciente Virtual para o Administrador</a>
+                <br />
+            <a href="../../Content/themes/Manuais/Manual Paciente Virtual para Aluno.html" target="_blank" title="Manual do Paciente Virtual">
+                Manual do Paciente Virtual para o Aluno</a>
             <br />
             <br />
             Abaixo também segue a lista de publicações realizadas através do software:
