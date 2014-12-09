@@ -23,17 +23,17 @@
             <li><a href="../../Manuais/Manual Paciente Virtual para Aluno - Cadastro no Sistema.html"
             target="_blank" title="Cadastro no Sistema">Como realizar um cadastro no
             sistema</a></li>
-            <li><a href="../../Manuais/Manual Paciente Virtual para Aluno - Enviar Consulta para Correção.html"
+            <li><a href="../../Content/Manuais/Manual Paciente Virtual para Aluno - Enviar Consulta para Correção.html"
             target="_blank" title="Enviar Consulta para Correção">Como Enviar Consulta para Correção</a></li>
-            <li><a href="../../Manuais/Manual Paciente Virtual para Aluno - Preencher Consulta.html"
+            <li><a href="../../Content/Manuais/Manual Paciente Virtual para Aluno - Preencher Consulta.html"
             target="_blank" title="Preencher Consulta">Como Preencher Consulta</a></li>
-            <li><a href="../../Manuais/Manual Paciente Virtual para Aluno - Processo de Negócio.html"
+            <li><a href="../../Content/Manuais/Manual Paciente Virtual para Aluno - Processo de Negócio.html"
             target="_blank" title="Processo de Negócio">Conhecer o Processo de Negócio</a></li>
-            <li><a href="../../Manuais/Manual Paciente Virtual para Aluno - Solicitação de Matrícula em Turma.html"
+            <li><a href="../../Content/Manuais/Manual Paciente Virtual para Aluno - Solicitação de Matrícula em Turma.html"
             target="_blank" title="Solicitação de Matrícula em Turma">Como fazer uma Solicitação de Matrícula em Turma</a></li>
-            <li><a href="../../Manuais/Manual Paciente Virtual para Aluno - Visualizar Comentários do Tutor.html"
+            <li><a href="../../Content/Manuais/Manual Paciente Virtual para Aluno - Visualizar Comentários do Tutor.html"
             target="_blank" title="Visualizar Comentários do Tutor">Como Visualizar Comentários do Tutor</a></li>
-            <li><a href="../../Manuais/Manual Paciente Virtual para Aluno - Visualizar Estados da Consulta.html"
+            <li><a href="../../Content/Manuais/Manual Paciente Virtual para Aluno - Visualizar Estados da Consulta.html"
             target="_blank" title="Visualizar Estados da Consulta">Como Visualizar Estados da Consulta</a></li>
         </ul>
         <br />
