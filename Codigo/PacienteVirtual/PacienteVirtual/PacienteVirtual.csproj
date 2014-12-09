@@ -499,7 +499,6 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="Content\themes\Manuais\Manual Paciente Virtual para Aluno.html" />
     <Content Include="Content\themes\pv\css\bootstrap-responsive.css" />
     <Content Include="Content\themes\pv\css\bootstrap-responsive.min.css" />
     <Content Include="Content\themes\pv\css\bootstrap.css" />
@@ -609,6 +608,13 @@
     <Content Include="Content\themes\pv\js\jquery.validate.js" />
     <Content Include="Content\themes\pv\js\jquery.validate.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Manuais\Manual Paciente Virtual para Aluno - Cadastro no Sistema.html" />
+    <Content Include="Manuais\Manual Paciente Virtual para Aluno - Enviar Consulta para Correção.html" />
+    <Content Include="Manuais\Manual Paciente Virtual para Aluno - Preencher Consulta.html" />
+    <Content Include="Manuais\Manual Paciente Virtual para Aluno - Processo de Negócio.html" />
+    <Content Include="Manuais\Manual Paciente Virtual para Aluno - Solicitação de Matrícula em Turma.html" />
+    <Content Include="Manuais\Manual Paciente Virtual para Aluno - Visualizar Comentários do Tutor.html" />
+    <Content Include="Manuais\Manual Paciente Virtual para Aluno - Visualizar Estados da Consulta.html" />
     <Content Include="PacienteVirtual.Publish.xml" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
