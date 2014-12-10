@@ -17,6 +17,24 @@
         Para aprender mais sobre a utilização software leia:
         <br />
         Manual do Paciente Virtual para o Administrador
+        <ul style="list-style-type: circle">
+            <li><a href="../../Manuais/Administrador - Realizar Login.html"
+            target="_blank" title="Realizar Login">Realizar Login com o Perfil de Administrador</a></li>
+            <li><a href="../../Manuais/Administrador - Aprovar solicitação de matricula.html"
+            target="_blank" title="Aprovar solicitação de matricula">Aprovar solicitação de matricula</a></li>
+            <li><a href="../../Manuais/Administrador - Atirbuir Relato.html"
+            target="_blank" title="Atirbuir Relato">Atirbuir Relato Clínico</a></li>
+            <li><a href="../../Manuais/Administrador - Ativar tutor na turma.html"
+            target="_blank" title="Ativar tutor na turma">Ativar tutor na turma</a></li>
+            <li><a href="../../Manuais/Administrador - Criar Paciente.html"
+            target="_blank" title="Criar Paciente">Criar Paciente</a></li>
+            <li><a href="../../Manuais/Administrador - Criar turma.html"
+            target="_blank" title="Criar turma">Criar turma</a></li>
+            <li><a href="../../Manuais/Administrador - Criar um Relato.html"
+            target="_blank" title="Criar um Relato">Criar um Relato Clínico</a></li>
+            <li><a href="../../Manuais/Administrador - Preencher Gabarito.html"
+            target="_blank" title="Preencher Gabarito">Preencher Gabarito da Consulta</a></li>
+        </ul>
         <br />
         Manual do Paciente Virtual para o Aluno:
         <ul style="list-style-type: circle">

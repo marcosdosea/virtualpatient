@@ -2,7 +2,7 @@
 <% if (Model != null)
    { %>
 <div class="row-fluid">
-    <div class="span2">
+    <div class="span3">
         <div class="editor-field">
             <p class="cabecalho">
                 <%: Resources.Mensagem.turma %></p>
@@ -42,6 +42,7 @@
         </div>
     </div>
     <% } %>
+</div>
 </div>
 <% } %>
 
