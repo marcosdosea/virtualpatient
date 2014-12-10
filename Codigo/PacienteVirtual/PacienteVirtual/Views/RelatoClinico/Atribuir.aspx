@@ -6,40 +6,48 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         <%: Resources.Mensagem.atribuir %></h2>
+    <div class="row-fluid">
         <div class="span15">
             <div>
-                <div class="editor-label">
-                    <p class="Cabecalho"><%: Resources.Mensagem.nome_paciente%>:</p>
-                    <p class="Conteudo"><%: ViewBag.NomePaciente%></p>
-                </div>
-                <div class="editor-label">
-                    <p class="Cabecalho"><%: Resources.Mensagem.ordem_cronologica%>:</p>
-                    <p class="Conteudo"><%: ViewBag.OrdemCronologica%></p>
-                </div>
+                <p class="Cabecalho">
+                    <%: Resources.Mensagem.nome_paciente%>:</p>
+                <p class="Conteudo">
+                    <%: ViewBag.NomePaciente%></p>
             </div>
         </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span15">
+            <div>
+                <p class="Cabecalho">
+                    <%: Resources.Mensagem.ordem_cronologica%>:</p>
+                <p class="Conteudo">
+                    <%: ViewBag.OrdemCronologica%></p>
+            </div>
+        </div>
+    </div>
 
-        <style>
-            .Cabecalho
-            {
-                font-size: medium;
-                font-family: Tahoma;
-                font-weight: 200;
-                float: left;
-            }
-            .Conteudo
-            {
-                font-weight: 900;
-                text-align: left;
-                font-size: small;
-                font-family: Tahoma;
-                text-transform:capitalize;
-                float: left;
-                position: relative;
-                left: 12px;
-            }
-        </style>
-
+    
+    <style>
+        .Cabecalho
+        {
+            font-size: medium;
+            font-family: Tahoma;
+            font-weight: 200;
+            float: left;
+        }
+        .Conteudo
+        {
+            font-weight: 900;
+            text-align: left;
+            font-size: small;
+            font-family: Tahoma;
+            text-transform: capitalize;
+            float: left;
+            position: relative;
+            left: 12px;
+        }
+    </style>
     <%@ import namespace="GridMvc.Html" %>
     <%@ import namespace="GridMvc.Sorting" %>
     <div class="box-content">
@@ -74,7 +82,4 @@
                 
     }).WithPaging(5).Sortable().ToHtmlString()%>
     </div>
-
-    
-
 </asp:Content>
