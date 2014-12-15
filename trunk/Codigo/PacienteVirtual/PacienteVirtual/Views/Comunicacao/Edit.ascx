@@ -20,7 +20,7 @@
             </div>
             <div class="span4">
                 <%: Html.EditorFor(model => model.Deprimido) %>
-                <%: Resources.Mensagem.deprimido %>
+                <%: Resources.Mensagem.humor_deprimido %>
                 <%: Html.ValidationMessageFor(model => model.Deprimido, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>

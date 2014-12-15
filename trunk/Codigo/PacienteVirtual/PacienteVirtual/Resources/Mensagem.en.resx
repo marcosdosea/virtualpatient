@@ -1872,8 +1872,8 @@
   <data name="tipo_comportamento" xml:space="preserve">
     <value>Type behavior</value>
   </data>
-  <data name="transtornos_expressao_verbal" xml:space="preserve">
-    <value>Nuisance verbal expression</value>
+  <data name="alteracoes_expressao_verbal" xml:space="preserve">
+    <value>Changes in verbal expression</value>
   </data>
   <data name="verbaliza" xml:space="preserve">
     <value>Verbalize</value>

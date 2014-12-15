@@ -27,7 +27,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "deprimido", ResourceType = typeof(Mensagem))]
         public bool Deprimido { get; set; }
 
-        [Display(Name = "transtornos_expressao_verbal", ResourceType = typeof(Mensagem))]
+        [Display(Name = "alteracoes_expressao_verbal", ResourceType = typeof(Mensagem))]
         [EnumDataType(typeof(ListaTranstornosExpressaoVerbal))]
         public ListaTranstornosExpressaoVerbal TranstornosExpressaoVerbal { get; set; }
 
