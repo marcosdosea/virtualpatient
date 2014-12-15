@@ -241,6 +241,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alterações na expressão verbal.
+        /// </summary>
+        public static string alteracoes_expressao_verbal {
+            get {
+                return ResourceManager.GetString("alteracoes_expressao_verbal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alterações Vesicais.
         /// </summary>
         public static string alteracoes_vesicais {
@@ -6708,15 +6717,6 @@ namespace Resources {
         public static string tosse {
             get {
                 return ResourceManager.GetString("tosse", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Transtornos na expressão verbal.
-        /// </summary>
-        public static string transtornos_expressao_verbal {
-            get {
-                return ResourceManager.GetString("transtornos_expressao_verbal", resourceCulture);
             }
         }
         
