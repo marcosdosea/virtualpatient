@@ -84,13 +84,7 @@
                     <%: Resources.Mensagem.pirose %>
                     <%: Html.ValidationMessageFor(model => model.Pirose, string.Empty, new { @class = "styleValidation" })%>
                 </div>
-                <div class="span9">
-                    <%: Html.EditorFor(model => model.IngestaHidrica) %>
-                    <%: Resources.Mensagem.ingesta_hidrica %>
-                    <%: Html.ValidationMessageFor(model => model.IngestaHidrica, string.Empty, new { @class = "styleValidation" })%>
-                    <%: Html.TextBoxFor(model => model.IngestaHidricaValor, new { style = "width:70px;", placeholder = "0.00",onkeypress = "return NumeroPonto(event);" })%>ml/24h
-                    <%: Html.ValidationMessageFor(model => model.IngestaHidricaValor, string.Empty, new { @class = "styleValidation" })%>
-                </div>
+                <%: Html.HiddenFor(model => model.IngestaHidrica) %>
             </div>
         </div>
         <br />

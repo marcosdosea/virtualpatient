@@ -1435,9 +1435,9 @@ namespace PacienteVirtual.Controllers
                         nutricao.Emese = false;
                         nutricao.Pirose = false;
                         nutricao.IngestaHidrica = false;
-                        nutricao.IngestaHidricaValor = 0;
+                        nutricao.IngestaHidricaValor = Convert.ToDecimal(0.0);
                         nutricao.RestricaoHidrica = false;
-                        nutricao.RestricaoHidricaValor = 0;
+                        nutricao.RestricaoHidricaValor = Convert.ToDecimal(0.0);
                         nutricao.SemRestricao = false;
                         nutricao.RestricaoAlimentar = false;
                         nutricao.RestricaoAlimentarTexto = "";
