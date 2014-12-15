@@ -4048,6 +4048,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manual do Paciente Virtual.
+        /// </summary>
+        public static string manual_paciente_virtual {
+            get {
+                return ResourceManager.GetString("manual_paciente_virtual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Masculino.
         /// </summary>
         public static string masculino {

@@ -2397,4 +2397,7 @@
   <data name="links_uteis" xml:space="preserve">
     <value>Useful Links</value>
   </data>
+  <data name="manual_paciente_virtual" xml:space="preserve">
+    <value>Virtual Patient's Guide</value>
+  </data>
 </root>

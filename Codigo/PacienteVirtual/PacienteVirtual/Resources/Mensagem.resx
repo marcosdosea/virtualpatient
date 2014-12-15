@@ -2436,4 +2436,7 @@
   <data name="links_uteis" xml:space="preserve">
     <value>Links Úteis</value>
   </data>
+  <data name="manual_paciente_virtual" xml:space="preserve">
+    <value>Manual do Paciente Virtual</value>
+  </data>
 </root>
