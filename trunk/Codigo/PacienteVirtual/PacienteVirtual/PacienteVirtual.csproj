@@ -615,6 +615,14 @@
     <Content Include="Content\Manuais\Manual Paciente Virtual para Aluno - Solicitação de Matrícula em Turma.html" />
     <Content Include="Content\Manuais\Manual Paciente Virtual para Aluno - Visualizar Comentários do Tutor.html" />
     <Content Include="Content\Manuais\Manual Paciente Virtual para Aluno - Visualizar Estados da Consulta.html" />
+    <Content Include="Content\Manuais\Administrador - Aprovar solicitação de matricula.html" />
+    <Content Include="Content\Manuais\Administrador - Atirbuir Relato.html" />
+    <Content Include="Content\Manuais\Administrador - Ativar tutor na turma.html" />
+    <Content Include="Content\Manuais\Administrador - Criar Paciente.html" />
+    <Content Include="Content\Manuais\Administrador - Criar turma.html" />
+    <Content Include="Content\Manuais\Administrador - Criar um Relato.html" />
+    <Content Include="Content\Manuais\Administrador - Preencher Gabarito.html" />
+    <Content Include="Content\Manuais\Administrador - Realizar Login.html" />
     <Content Include="PacienteVirtual.Publish.xml" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
@@ -744,6 +752,7 @@
     <Content Include="Views\ClasseDiagnostico\Edit.aspx" />
     <Content Include="Views\ClasseDiagnostico\Index.aspx" />
     <Content Include="Views\Higiene\Edit.ascx" />
+    <Content Include="Views\Home\Manual.aspx" />
     <Content Include="Views\IntegridadeTecidual\Edit.ascx" />
     <Content Include="Views\IntervencaoConsulta\Edit.aspx" />
     <Content Include="Views\MedicamentoNaoPrescrito\Edit.aspx" />
