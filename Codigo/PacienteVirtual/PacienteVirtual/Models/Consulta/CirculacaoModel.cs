@@ -21,14 +21,14 @@ namespace PacienteVirtual.Models
         public string PA { get; set; }
 
         [Display(Name = "pulso_enf", ResourceType = typeof(Mensagem))]
-        [RegularExpression(@"[0-9]+(\.[0-9][0-9])", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
+        [RegularExpression(@"[0-9]+", ErrorMessageResourceType = typeof(Resources.Mensagem), ErrorMessageResourceName = "campo_numerico")]
         public decimal P { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "cateter_periferico", ResourceType = typeof(Mensagem))]
         public bool CateterPeriferico { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "cateter_local", ResourceType = typeof(Mensagem))]
         [StringLength(50)]
         public string CateterLocal { get; set; }

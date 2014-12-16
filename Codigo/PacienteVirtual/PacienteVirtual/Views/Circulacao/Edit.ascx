@@ -30,7 +30,7 @@
         </div>
         <div class="span2">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.P, new { style = "width:50px;" , placeholder = "0:00", onkeypress = "return NumeroPonto(event);" })%>
+                <%: Html.TextBoxFor(model => model.P, new { style = "width:50px;"})%>
                 <%: Html.ValidationMessageFor(model => model.P, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>

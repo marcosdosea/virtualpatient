@@ -51,19 +51,29 @@ namespace PacienteVirtual
                     exceptionEnviar = new Exception(filterContext.Exception.Message);
                 }
 
-                if (exceptionRecebida.InnerException != null &&  exceptionRecebida.InnerException is UpdateException)
+                if (exceptionRecebida.InnerException != null && exceptionRecebida.InnerException is UpdateException)
                 {
                     exceptionEnviar = exceptionRecebida.InnerException;
-                    if ((exceptionEnviar.InnerException != null) && (exceptionEnviar.InnerException is MySqlException)) {
-                        var exceptionMysql = (MySqlException) exceptionEnviar.InnerException;
-                        if (exceptionMysql.Number == 1062) {
+                    if ((exceptionEnviar.InnerException != null) && (exceptionEnviar.InnerException is MySqlException))
+                    {
+                        var exceptionMysql = (MySqlException)exceptionEnviar.InnerException;
+                        if (exceptionMysql.Number == 1062)
+                        {
                             exceptionEnviar = new Exception("Esse registro já foi inserido na base de dados.", exceptionEnviar);
-                        } else if (exceptionMysql.Number == 1451) {
+                        }
+                        else if (exceptionMysql.Number == 1451)
+                        {
                             exceptionEnviar = new Exception("Essa registro não pode ser excluído da base de dados por estar associado a outro registro. ", exceptionEnviar);
-                        } else {
-                            exceptionEnviar = new Exception("Não foi possível atualizar a base de dados. Favor contactar o administrador e informar ocorrência do Erro número = " + exceptionMysql.Number +  ".");
+                        }
+                        else
+                        {
+                            exceptionEnviar = new Exception("Não foi possível atualizar a base de dados. Favor contactar o administrador e informar ocorrência do Erro número = " + exceptionMysql.Number + ".");
                         }
                     }
+                }
+                else
+                {
+                    exceptionEnviar = new Exception("Ocorreu um erro inesperado no sistema. Por favor tente repetir a operação. Se o erro persistir por favor comunicar ao administrador do sistema.", exceptionRecebida);
                 }
 
 
