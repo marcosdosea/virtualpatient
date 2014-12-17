@@ -49,9 +49,8 @@ namespace PacienteVirtual
                 if (exceptionRecebida.InnerException == null)
                 {
                     exceptionEnviar = new Exception(filterContext.Exception.Message);
-                }
-
-                if (exceptionRecebida.InnerException != null && exceptionRecebida.InnerException is UpdateException)
+                } 
+                else if (exceptionRecebida.InnerException != null && exceptionRecebida.InnerException is UpdateException)
                 {
                     exceptionEnviar = exceptionRecebida.InnerException;
                     if ((exceptionEnviar.InnerException != null) && (exceptionEnviar.InnerException is MySqlException))
