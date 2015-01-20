@@ -132,6 +132,20 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa && tpr.IdTurma == idTurma && tpr.IdRelato == idRelato).ToList();
         }
+
+        /// <summary>
+        /// Retorna um registro TurmaPessoaRelato com base nos parametros
+        /// </summary>
+        /// <param name="idPessoa"></param>
+        /// <param name="idTurma"></param>
+        /// <param name="idRelato"></param>
+        /// <param name="idConsultaFixo"></param>
+        /// <returns></returns>
+        public TurmaPessoaRelatoModel Obter(int idPessoa, int idTurma, int idRelato, long idConsultaFixo)
+        {
+            return GetQuery().Where(tpr => tpr.IdPessoa == idPessoa && tpr.IdTurma == idTurma && tpr.IdRelato == idRelato).
+                ToList().ElementAtOrDefault(0);
+        }
         
         /// <summary>
         /// Atribui dados da classe de modelo para classe entity de persistência
