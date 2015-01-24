@@ -27,7 +27,6 @@ namespace PacienteVirtual.Tests
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
         [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:29774/")]
         public void InserirTest()
         {
@@ -50,7 +49,6 @@ namespace PacienteVirtual.Tests
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
         [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:29774/")]
         public void ObterAlunosPorTurmaTest()
         {
@@ -79,7 +77,6 @@ namespace PacienteVirtual.Tests
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
         [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:29774/")]
         public void ObterTurmasPorPessoaTest()
         {
@@ -102,7 +99,6 @@ namespace PacienteVirtual.Tests
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
         [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:29774/")]
         public void QuantidadeSolicitacoesNaturmaTest()
         {

@@ -73,8 +73,6 @@ namespace PacienteVirtual.Tests
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
-        [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("D:\\virtualpatient\\trunk\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:22370/")]
         public void InserirTest()
         {
