@@ -75,8 +75,6 @@ namespace PacienteVirtual.Tests
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
-        [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:29774/")]
         [DeploymentItem("PacienteVirtual.dll")]
         public void GerenciadorPessoaConstructorTest()
@@ -93,8 +91,6 @@ namespace PacienteVirtual.Tests
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
-        [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:29774/")]
         public void AtualizarTest()
         {
@@ -117,8 +113,6 @@ namespace PacienteVirtual.Tests
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
-        [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:29774/")]
         [DeploymentItem("PacienteVirtual.dll")]
         public void GetQueryTest()
@@ -140,8 +134,6 @@ namespace PacienteVirtual.Tests
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
-        [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
         [UrlToTest("http://localhost:29774/")]
         public void InserirTest()
         {
@@ -163,9 +155,6 @@ namespace PacienteVirtual.Tests
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
-        [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
-        [UrlToTest("http://localhost:29774/")]
         public void ObterTest()
         {
             PessoaModel pessoaBanco = GerenciadorPessoa.GetInstance().Obter(1);
@@ -185,9 +174,6 @@ namespace PacienteVirtual.Tests
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
-        [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
-        [UrlToTest("http://localhost:29774/")]
         public void ObterPorCPFTest()
         {
             PessoaModel pessoaBanco = GerenciadorPessoa.GetInstance().ObterPorCPF("99687844515");
@@ -206,9 +192,6 @@ namespace PacienteVirtual.Tests
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
         [TestMethod()]
-        [HostType("ASP.NET")]
-        [AspNetDevelopmentServerHost("C:\\Users\\nagem\\Desktop\\PV\\Codigo\\PacienteVirtual\\PacienteVirtual", "/")]
-        [UrlToTest("http://localhost:29774/")]
         public void ObterPorNomeTest()
         {
             PessoaModel pessoaBanco = GerenciadorPessoa.GetInstance().ObterPorNome("Admin");
