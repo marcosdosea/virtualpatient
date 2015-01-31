@@ -12,87 +12,10 @@ namespace PacienteVirtual.Tests
     /// Summary description for CasosDeTeste_19_01_2014
     /// </summary>
     [TestClass]
-    public class CasosDeTeste_19_01_2014
+    public class GerenciadorDemograficosAntropomedicosTest
     {
         
-        [TestMethod]
-        public void PV9_AtivarMatriculaComSolicitacaoNaTurma()
-        {
-            int pessoa = 17;
-            int turma = 1;
-            int perfil = Global.Usuario;
-            
-            GerenciadorTurmaPessoa turmaPessoa = GerenciadorTurmaPessoa.GetInstance();
-            TurmaPessoaModel solicitacao = turmaPessoa.ObterPorTurmaPessoa(turma, pessoa);
-            Assert.IsNotNull(solicitacao);
-            Assert.IsFalse(solicitacao.Ativa);
-            Assert.Equals(solicitacao.IdRole, perfil);
-            Assert.Equals(solicitacao.IdPessoa, pessoa);
-            Assert.Equals(solicitacao.IdTurma, turma);
-
-            solicitacao.Ativa = true;
-            turmaPessoa.Atualizar(solicitacao);
-            
-            TurmaPessoaModel solicitacaoAtualizada = turmaPessoa.ObterPorTurmaPessoa(pessoa, turma);
-            Assert.IsNotNull(solicitacaoAtualizada);
-            Assert.IsTrue(solicitacaoAtualizada.Ativa);
-        }
-
-        public void PV10_AtivarTutorComSolicitacaoNaTurma()
-        {
-            int pessoa = 13;
-            int turma = 1;
-            int perfil = Global.Usuario;
-            int perfilAtualizado = Global.Tutor;
-
-            GerenciadorTurmaPessoa turmaPessoa = GerenciadorTurmaPessoa.GetInstance();
-            TurmaPessoaModel solicitacao = turmaPessoa.ObterPorTurmaPessoa(turma, pessoa);
-            Assert.IsNotNull(solicitacao);
-            Assert.Equals(solicitacao.IdRole, perfil);
-            Assert.Equals(solicitacao.IdPessoa, pessoa);
-            Assert.Equals(solicitacao.IdTurma, turma);
-
-            solicitacao.Ativa = true;
-            solicitacao.IdRole = perfilAtualizado;
-            turmaPessoa.Atualizar(solicitacao);
-
-            TurmaPessoaModel solicitacaoAtualizada = turmaPessoa.ObterPorTurmaPessoa(turma, pessoa);
-            Assert.IsNotNull(solicitacaoAtualizada);
-            Assert.IsTrue(solicitacaoAtualizada.Ativa);
-            Assert.Equals(solicitacaoAtualizada.IdRole, perfilAtualizado);
-        }
-
-        public void PV11_AtribuirRelatoClinicoParaAlunoDaTurma()
-        {
-            int pessoa = 10;
-            int turma = 6;
-            long consultaFixa = 0;
-            int relato = 66;
-            ConsultaFixoModel cfm = new ConsultaFixoModel();
-            consultaFixa = GerenciadorConsultaFixo.GetInstance().Inserir(cfm);
-            Assert.IsTrue(consultaFixa >= 0);
-
-            TurmaPessoaRelatoModel tprm = new TurmaPessoaRelatoModel();
-            tprm.IdConsultaFixo = consultaFixa;
-            tprm.IdPessoa = pessoa;
-            tprm.IdTurma = turma;
-            tprm.IdRelato = relato;
-            GerenciadorTurmaPessoaRelato.GetInstance().Inserir(tprm);
-            TurmaPessoaRelatoModel tprmArmazenada = GerenciadorTurmaPessoaRelato.GetInstance().Obter(pessoa, turma, relato, consultaFixa);
-            Assert.IsNotNull(tprmArmazenada);
-
-            ConsultaVariavelModel cvm = new ConsultaVariavelModel();
-            cvm.IdConsultaFixo = consultaFixa;
-            cvm.IdEstadoConsulta = Global.AguardandoPreenchimento;
-            cvm.IdPessoa = pessoa;
-            cvm.IdTurma = turma;
-            cvm.IdRelato = relato;
-            cvm.IdRazaoEncontro = Global.IdRazaoEncontro;
-            long idConsultaVariavel = GerenciadorConsultaVariavel.GetInstance().Inserir(cvm);
-            Assert.IsTrue(idConsultaVariavel >= 0);
-
-        }
-
+        [TestMethod()]
         public void PV12_AtualizarDadosIdentificacaoValido()
         {
             long idConsultaFixo = 48;
@@ -133,6 +56,7 @@ namespace PacienteVirtual.Tests
             Assert.Equals(dadosIndetificacaoAtualizado.IdNaturalidade, 1);
         }
 
+        [TestMethod()]
         public void PV13_AtualizarDadosIdentificacaoInvalido()
         {
             long idConsultaFixo = 48;

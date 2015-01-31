@@ -19,6 +19,55 @@ namespace PacienteVirtual.Tests
     {
 
 
+        [TestMethod]
+        public void PV9_AtivarMatriculaComSolicitacaoNaTurma()
+        {
+            int pessoa = 17;
+            int turma = 1;
+            int perfil = Global.Usuario;
+
+            GerenciadorTurmaPessoa turmaPessoa = GerenciadorTurmaPessoa.GetInstance();
+            TurmaPessoaModel solicitacao = turmaPessoa.ObterPorTurmaPessoa(turma, pessoa);
+            Assert.IsNotNull(solicitacao);
+            Assert.IsFalse(solicitacao.Ativa);
+            Assert.Equals(solicitacao.IdRole, perfil);
+            Assert.Equals(solicitacao.IdPessoa, pessoa);
+            Assert.Equals(solicitacao.IdTurma, turma);
+
+            solicitacao.Ativa = true;
+            turmaPessoa.Atualizar(solicitacao);
+
+            TurmaPessoaModel solicitacaoAtualizada = turmaPessoa.ObterPorTurmaPessoa(pessoa, turma);
+            Assert.IsNotNull(solicitacaoAtualizada);
+            Assert.IsTrue(solicitacaoAtualizada.Ativa);
+        }
+
+        [TestMethod()]
+        public void PV10_AtivarTutorComSolicitacaoNaTurma()
+        {
+            int pessoa = 13;
+            int turma = 1;
+            int perfil = Global.Usuario;
+            int perfilAtualizado = Global.Tutor;
+
+            GerenciadorTurmaPessoa turmaPessoa = GerenciadorTurmaPessoa.GetInstance();
+            TurmaPessoaModel solicitacao = turmaPessoa.ObterPorTurmaPessoa(turma, pessoa);
+            Assert.IsNotNull(solicitacao);
+            Assert.Equals(solicitacao.IdRole, perfil);
+            Assert.Equals(solicitacao.IdPessoa, pessoa);
+            Assert.Equals(solicitacao.IdTurma, turma);
+
+            solicitacao.Ativa = true;
+            solicitacao.IdRole = perfilAtualizado;
+            turmaPessoa.Atualizar(solicitacao);
+
+            TurmaPessoaModel solicitacaoAtualizada = turmaPessoa.ObterPorTurmaPessoa(turma, pessoa);
+            Assert.IsNotNull(solicitacaoAtualizada);
+            Assert.IsTrue(solicitacaoAtualizada.Ativa);
+            Assert.Equals(solicitacaoAtualizada.IdRole, perfilAtualizado);
+        }
+
+
         /// <summary>
         ///A test for Inserir
         ///</summary>
