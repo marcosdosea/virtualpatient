@@ -108,11 +108,14 @@
     <Compile Include="GerenciadorCirculacaoTest.cs" />
     <Compile Include="GerenciadorConscienciaTest.cs" />
     <Compile Include="GerenciadorConsultaVariavelTest.cs" />
+    <Compile Include="GerenciadorEliminacaoTest.cs" />
     <Compile Include="GerenciadorExperienciaMedicamentosTest.cs" />
+    <Compile Include="GerenciadorIntegridadeTecidualTest.cs" />
     <Compile Include="GerenciadorOxigenacaoTest.cs" />
     <Compile Include="GerenciadorPacienteTest.cs" />
     <Compile Include="GerenciadorPessoaTest.cs" />
     <Compile Include="GerenciadorRelatoClinicoTest.cs" />
+    <Compile Include="GerenciadorSensorialTest.cs" />
     <Compile Include="GerenciadorTurmaPessoaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
