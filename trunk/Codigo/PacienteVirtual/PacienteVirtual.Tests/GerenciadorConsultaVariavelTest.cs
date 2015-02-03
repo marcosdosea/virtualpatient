@@ -46,5 +46,34 @@ namespace PacienteVirtual.Tests
             Assert.Equals(clinicoInternacaoAtualizado.IdRazaoEncontro, 3);
             Assert.Equals(clinicoInternacaoAtualizado.IdEstadoConsulta, 2);
         }
+
+        [TestMethod()]
+        public void PV44AtualizarDadosComplementaresValida()
+        {
+            long idConsultaVariavel = 100;
+            GerenciadorConsultaVariavel gerenciadorConsultaVariavel = GerenciadorConsultaVariavel.GetInstance();
+            ConsultaVariavelModel consultaVariavel = gerenciadorConsultaVariavel.Obter(idConsultaVariavel);
+            Assert.IsNotNull(consultaVariavel);
+            consultaVariavel.DescricaoDadosComplementares = "Nada a acrescentar";
+
+            gerenciadorConsultaVariavel.Atualizar(consultaVariavel);
+
+            ConsultaVariavelModel consultaVariavelAtualizada = gerenciadorConsultaVariavel.Obter(idConsultaVariavel);
+            Assert.Equals(consultaVariavelAtualizada.DescricaoDadosComplementares, "Nada a acrescentar");
+        }
+
+        public void PV46AtualizarOutrosAchadosValida()
+        {
+            long idConsultaVariavel = 100;
+            GerenciadorConsultaVariavel gerenciadorConsultaVariavel = GerenciadorConsultaVariavel.GetInstance();
+            ConsultaVariavelModel consultaVariavel = gerenciadorConsultaVariavel.Obter(idConsultaVariavel);
+            Assert.IsNotNull(consultaVariavel);
+            consultaVariavel.DescricaoOutrosAchados = "O paciente apresentou febre alta";
+
+            gerenciadorConsultaVariavel.Atualizar(consultaVariavel);
+
+            ConsultaVariavelModel consultaVariavelAtualizada = gerenciadorConsultaVariavel.Obter(idConsultaVariavel);
+            Assert.Equals(consultaVariavelAtualizada.DescricaoOutrosAchados, "O paciente apresentou febre alta");
+        }
     }
 }
