@@ -74,5 +74,45 @@ namespace PacienteVirtual.Tests
             Assert.Equals(sensorialAtualizada.Tatil, false);
             Assert.Equals(sensorialAtualizada.Visual, true);
         }
+
+
+        [TestMethod()]
+        public void PV35AtualizarNecessidadesPsicobiologicasSensorialInvalida()
+        {
+            long idConsultaVariavel = 100;
+            GerenciadorSensorial gerenciadorSensorial = GerenciadorSensorial.GetInstance();
+            SensorialModel sensorial = gerenciadorSensorial.Obter(idConsultaVariavel);
+            Assert.IsNotNull(sensorial);
+            sensorial.IdConsultaVariavel = -1;
+            sensorial.Auditiva = true;
+            sensorial.Defensividade = true;
+            sensorial.DescricaoDor = "Dor forte";
+            sensorial.DescricaoTipoDistorcao = "";
+            sensorial.Dor = "Forte";
+            sensorial.DorIntensidadeValor = 5;
+            sensorial.DuracaoDor = "1 hora";
+            sensorial.EstadoMental = ListaEstadoMental.Agitado;
+            sensorial.ExpressaoFacial = false;
+            sensorial.FatoresAgravantesDor = "Mexer a perna";
+            sensorial.FatoresAliviantesDor = "Perna parada";
+            sensorial.Gustativa = false;
+            sensorial.Inquietacao = false;
+            sensorial.LocalizacaoDor = "Dor muito forte na perna";
+            sensorial.Olfativa = false;
+            sensorial.PA = false;
+            sensorial.Palpebral = false;
+            sensorial.Plantar = false;
+            sensorial.Pulso = true;
+            sensorial.Pupilar = false;
+            sensorial.Respiracao = true;
+            sensorial.SinalBabinski = false;
+            sensorial.Tatil = false;
+            sensorial.Visual = true;
+
+            gerenciadorSensorial.Atualizar(sensorial);
+
+            SensorialModel higieneAtualizado = gerenciadorSensorial.Obter(idConsultaVariavel);
+            Assert.IsNotNull(sensorial);
+        }
     }
 }
