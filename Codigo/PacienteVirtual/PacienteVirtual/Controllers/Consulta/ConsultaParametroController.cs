@@ -21,15 +21,11 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(ConsultaParametroModel consultaParametroModel)
         {
-            if (ModelState.IsValid)
+            if (GerenciadorParametroClinico.GetInstance().ValidarRespostasSelecionaveis(consultaParametroModel.IdParametroClinico))
             {
                 consultaParametroModel.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
                 GerenciadorConsultaParametro.GetInstance().Inserir(consultaParametroModel);
                 SessionController.ListaConsultaParametro = null;
-            }
-            else
-            {
-                GerenciadorParametroClinico.GetInstance().ValidarRespostasSelecionaveis(consultaParametroModel.IdParametroClinico);
             }
             SessionController.Abas1 = Global.abaConsultaParametro;
             return RedirectToAction("Edit", "Consulta");
