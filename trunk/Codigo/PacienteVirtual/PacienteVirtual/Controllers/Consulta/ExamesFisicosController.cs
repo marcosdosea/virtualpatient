@@ -13,11 +13,8 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(ExamesFisicosModel examesFisicosModel)
         {
-            if (ModelState.IsValid)
-            {
-                GerenciadorExamesFisicos.GetInstance().Atualizar(examesFisicosModel);
-                SessionController.ExamesFisicos = examesFisicosModel;
-            }
+            GerenciadorExamesFisicos.GetInstance().Atualizar(examesFisicosModel);
+            SessionController.ExamesFisicos = examesFisicosModel;
             SessionController.Abas1 = Global.abaExamesFisicos;
             return RedirectToAction("Edit", "Consulta");
         }
