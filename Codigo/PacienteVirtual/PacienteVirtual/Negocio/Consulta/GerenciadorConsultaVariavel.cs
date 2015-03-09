@@ -268,8 +268,8 @@ namespace PacienteVirtual.Negocio
             }
             else
             {
-                cont = GetQuery().Where(consultaVariavel => consultaVariavel.IdPessoa == idPessoa && consultaVariavel.IdTurma == idTurma &&
-                consultaVariavel.IdPaciente == idPaciente && consultaVariavel.OrdemCronologica == ordemCronologica).ToList().Count();
+                cont = GetQuery().Where(cv => cv.IdPessoa == idPessoa && cv.IdTurma == idTurma &&
+                cv.IdPaciente == idPaciente && cv.OrdemCronologica == ordemCronologica && cv.IdCurso == idCurso).ToList().Count();
             }
 
             if (cont > 0)
