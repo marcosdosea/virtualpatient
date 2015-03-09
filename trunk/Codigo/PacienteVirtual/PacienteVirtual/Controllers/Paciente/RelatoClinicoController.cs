@@ -75,6 +75,8 @@ namespace PacienteVirtual.Controllers
                 GerenciadorConsultaVariavel.GetInstance().ConsultaAnteriorFinalizada(idPessoa, idTurma, relato.IdPaciente, relato.OrdemCronologica,
                     SessionController.DadosTurmaPessoa.IdCurso);
 
+                // erro aqui
+
                 if (GerenciadorPessoa.GetInstance().Obter(idPessoa).IdUser == Global.Usuario)
                 {
                     consultaVariavelAnteriorModel = GerenciadorConsultaVariavel.GetInstance().ObterConsultaAnteriorFinalizada(idPessoa, idTurma,

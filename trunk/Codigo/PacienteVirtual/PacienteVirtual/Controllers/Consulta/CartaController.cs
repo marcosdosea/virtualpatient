@@ -51,6 +51,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(CartaModel carta)
         {
             SessionController.Abas2 = Global.abaCarta;
+            carta.Referências = GerenciadorSeguranca.GetInstance().ReplaceCaracteresMaiorMenor(carta.Referências);
             if (ModelState.IsValid)
             {
                 GerenciadorCarta.GetInstance().Atualizar(carta);
