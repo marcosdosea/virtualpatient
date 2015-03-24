@@ -87,19 +87,6 @@ namespace PacienteVirtual.Negocio
             }
         }
 
-        public bool VerificaSeEhUsuario(int idPessoa, int idTurma)
-        {
-            IEnumerable<TurmaPessoaModel> turmaPessoas = GetQuery().Where(tp => tp.IdPessoa == idPessoa && tp.IdTurma == idTurma);
-            foreach (var pessoa in turmaPessoas)
-            {
-                if (pessoa.IdRole == Global.Usuario)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         /// <summary>
         /// Atualiza dados do turmaPessoa
         /// </summary>
