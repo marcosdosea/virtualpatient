@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-87 Adicionar Diário Pessoal inválido</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-87 Adicionar Diário Pessoal inválido</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Selecione</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Consultas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Consulta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>id=IdPaciente</td>
+	<td>label=J.J.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Preencher')])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Próximo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Diário Pessoal de medicamentos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Classificação de PRM</td>
+	<td>Classificação de PRM</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Intervenções</td>
+	<td>Intervenções</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Carta</td>
+	<td>Carta</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Diário Pessoal de medicamentos</td>
+	<td>Diário Pessoal de medicamentos</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Links Úteis</td>
+	<td>Links Úteis</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=div.thumbnail &gt; form &gt; fieldset &gt; div.row-fluid &gt; div.span6 &gt; div.editor-field &gt; #IdMedicamento</td>
+	<td>label=Metformina</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.span9 &gt; div.editor-field &gt; #Dose</td>
+	<td>850 mg</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=IdBebida</td>
+	<td>label=Água</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tab1-4 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=span.styleValidation.field-validation-error &gt; span</td>
+	<td>exact:*O campo &quot;Quantidade&quot; é obrigatório.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.span9 &gt; div.editor-field &gt; span.styleValidation.field-validation-error &gt; span</td>
+	<td>exact:*O campo &quot;Período&quot; é obrigatório.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='tab1-4']/div/form/fieldset/div[5]/div[2]/div/span/span</td>
+	<td>exact:*O campo &quot;Horário&quot; é obrigatório.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Off</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

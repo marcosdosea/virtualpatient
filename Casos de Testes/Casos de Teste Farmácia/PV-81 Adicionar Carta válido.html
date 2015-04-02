@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-81 Adicionar Carta válido</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-81 Adicionar Carta válido</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Selecione</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Consultas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Consulta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.grid-header-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>id=IdPaciente</td>
+	<td>label=J.J.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Preencher')])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Próximo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Classificação de PRM</td>
+	<td>Classificação de PRM</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Intervenções</td>
+	<td>Intervenções</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Carta</td>
+	<td>Carta</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Diário Pessoal de medicamentos</td>
+	<td>Diário Pessoal de medicamentos</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Links Úteis</td>
+	<td>Links Úteis</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Carta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=NomePaciente</td>
+	<td>Marcelo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=NomeProfissional</td>
+	<td>Marcelo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=NomePaciente</td>
+	<td>J.J.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.ui-datepicker-trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=TelefonePaciente</td>
+	<td>99999999</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=MotivoReferenciaConsulta</td>
+	<td>Necessário o redirecionamento para outro médico.</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=IdEspecialidade</td>
+	<td>label=Clínico Geral</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Links Úteis</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Diretrizes Brasileiras de Hipertensão VI</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Carta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mudarCaracter</td>
+	<td>http://www.sbh.org.br/pdf/diretrizes_final.pdf</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#tab1-3 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td)[27]</td>
+	<td>Clínico Geral</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[2])[4]</td>
+	<td>Marcelo</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[3])[4]</td>
+	<td>J.J.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[4])[4]</td>
+	<td>08/07/1946</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[5])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[6])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[7])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[8])[2]</td>
+	<td>exact:http://www.sbh.org.br/pdf/diretrizes_final.pdf</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//a[contains(text(),'Editar')])[3]</td>
+	<td>Editar</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//a[contains(text(),'Remover')])[4]</td>
+	<td>Remover</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Off</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

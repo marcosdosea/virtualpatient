@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-82 Adicionar Carta inválido</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-82 Adicionar Carta inválido</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Selecione</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Consultas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Consulta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>id=IdPaciente</td>
+	<td>label=J.J.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Preencher')])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Próximo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Carta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.ui-datepicker-trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=MotivoReferenciaConsulta</td>
+	<td>Necessário o redirecionamento para outro médico.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Links Úteis</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=V Diretriz Brasileira de Dislipidemias e Prevenção da Aterosclerose</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Carta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mudarCaracter</td>
+	<td>http://publicacoes.cardiol.br/consenso/2013/V_Diretriz_Brasileira_de_Dislipidemias.pdf</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=IdEspecialidade</td>
+	<td>label=Clínico Geral</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tab1-3 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=span.styleValidation.field-validation-error &gt; span</td>
+	<td>exact:*O campo &quot;Nome do Profissional&quot; é obrigatório.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='tab1-3']/div/form/fieldset/div[3]/div/div[2]/span/span</td>
+	<td>exact:*O campo &quot;Nome do Paciente&quot; é obrigatório.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='tab1-3']/div/form/fieldset/div[5]/div/div[2]/span/span</td>
+	<td>exact:*O campo &quot;Telefone&quot; é obrigatório.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Off</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

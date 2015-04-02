@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-86 Adicionar Diário Pessoal válido</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-86 Adicionar Diário Pessoal válido</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Selecione</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Consultas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Consulta</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>id=IdPaciente</td>
+	<td>label=J.J.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Preencher')])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Próximo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Classificação de PRM</td>
+	<td>Classificação de PRM</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Intervenções</td>
+	<td>Intervenções</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Carta</td>
+	<td>Carta</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Diário Pessoal de medicamentos</td>
+	<td>Diário Pessoal de medicamentos</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Links Úteis</td>
+	<td>Links Úteis</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Diário Pessoal de medicamentos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=div.thumbnail &gt; form &gt; fieldset &gt; div.row-fluid &gt; div.span6 &gt; div.editor-field &gt; #IdMedicamento</td>
+	<td>label=Metformina</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.span9 &gt; div.editor-field &gt; #Dose</td>
+	<td>850 mg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Quantidade</td>
+	<td>1 comprimido</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@id='Periodo'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Horario</td>
+	<td>12:30</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=IdBebida</td>
+	<td>label=Água</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#tab1-4 &gt; div.thumbnail &gt; form &gt; fieldset &gt; div.form-actions &gt; input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td)[36]</td>
+	<td>T</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[2])[5]</td>
+	<td>exact:12:30</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[3])[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[4])[5]</td>
+	<td>Metformina</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[5])[5]</td>
+	<td>850 mg</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[6])[5]</td>
+	<td>1 comprimido</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@id='minhaBarra']/div/table/tbody/tr[2]/td[7])[4]</td>
+	<td>Água</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//a[contains(text(),'Editar')])[4]</td>
+	<td>Editar</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//a[contains(text(),'Remover')])[5]</td>
+	<td>Remover</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Off</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
