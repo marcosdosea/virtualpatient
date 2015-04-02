@@ -148,11 +148,9 @@ C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\b
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\System.Web.Helpers.dll
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\System.Web.Routing.dll
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\System.Web.Services.dll
-C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\System.Web.WebPages.dll
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\System.Xml.dll
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\System.Xml.Linq.dll
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\EntityFramework.xml
-C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\System.Web.WebPages.xml
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\bin\System.Web.Helpers.xml
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.csprojResolveAssemblyReference.cache
 C:\Users\Kekeu\Documents\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.Properties.Resources.resources
