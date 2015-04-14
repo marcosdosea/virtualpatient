@@ -79,7 +79,7 @@ namespace PacienteVirtual.Tests
         [UrlToTest("http://localhost:29774/")]
         public void InserirTest()
         {
-            GerenciadorTurmaPessoa_Accessor target = new GerenciadorTurmaPessoa_Accessor();
+            GerenciadorTurmaPessoa target = GerenciadorTurmaPessoa.GetInstance();
             TurmaPessoaModel tpCriada = new TurmaPessoaModel();
             tpCriada.IdTurma = 1;
             tpCriada.IdPessoa = 5;
@@ -152,7 +152,7 @@ namespace PacienteVirtual.Tests
         public void QuantidadeSolicitacoesNaturmaTest()
         {
             int qtdSolicitacoes = GerenciadorTurmaPessoa.GetInstance().QuantidadeSolicitacoesNaturma(10, 2);
-            GerenciadorTurmaPessoa_Accessor target = new GerenciadorTurmaPessoa_Accessor();
+            GerenciadorTurmaPessoa target = GerenciadorTurmaPessoa.GetInstance();
             int idPessoa = 10; 
             int idTurma = 3; 
             int expected = 0;

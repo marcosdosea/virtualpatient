@@ -32,7 +32,7 @@ namespace PacienteVirtual.Tests
         [UrlToTest("http://localhost:29774/")]
         public void AtualizarTest()
         {
-            GerenciadorAlergia_Accessor target = new GerenciadorAlergia_Accessor();
+            GerenciadorAlergia target = GerenciadorAlergia.GetInstance();
             AlergiaModel alergia = GerenciadorAlergia.GetInstance().Obter(1);
             AlergiaModel alergiaCriada = new AlergiaModel();
             alergiaCriada.IdAlergia = 1;
@@ -55,7 +55,7 @@ namespace PacienteVirtual.Tests
         [UrlToTest("http://localhost:29774/")]
         public void InserirTest()
         {
-            GerenciadorAlergia_Accessor target = new GerenciadorAlergia_Accessor();
+            GerenciadorAlergia target = GerenciadorAlergia.GetInstance();
             AlergiaModel alergiaCriada = new AlergiaModel();
             alergiaCriada.IdAlergia = 1;
             alergiaCriada.Alergia = "Não Relatou nada";
@@ -115,7 +115,7 @@ namespace PacienteVirtual.Tests
         [UrlToTest("http://localhost:29774/")]
         public void RemoverTest()
         {
-            GerenciadorAlergia_Accessor target = new GerenciadorAlergia_Accessor();
+            GerenciadorAlergia target = GerenciadorAlergia.GetInstance();
             AlergiaModel alergia = GerenciadorAlergia.GetInstance().Obter(1);
             target.Remover(1);
             Assert.IsNull(alergia);

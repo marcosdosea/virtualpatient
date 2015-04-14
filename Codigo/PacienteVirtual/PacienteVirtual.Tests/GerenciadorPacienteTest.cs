@@ -76,7 +76,7 @@ namespace PacienteVirtual.Tests
         [UrlToTest("http://localhost:22370/")]
         public void InserirTest()
         {
-            GerenciadorPaciente_Accessor target = new GerenciadorPaciente_Accessor(); // TODO: Initialize to an appropriate value
+            GerenciadorPaciente target = GerenciadorPaciente.GetInstance(); // TODO: Initialize to an appropriate value
             PacienteModel paciente = null; // TODO: Initialize to an appropriate value
             int expected = 0; // TODO: Initialize to an appropriate value
             int actual;
