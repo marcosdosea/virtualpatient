@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="PV-187-Criar Religião Inválida.html">PV-187-Criar Religião Inválida</a></td></tr>
+<tr><td><a href="PV-189-Editar Religião Inválida.html">PV-189-Editar Religião Inválida</a></td></tr>
+<tr><td><a href="PV-190-Buscar Religião Existente.html">PV-190-Buscar Religião Existente</a></td></tr>
+<tr><td><a href="PV-191-Buscar Religião Inexistente.html">PV-191-Buscar Religião Inexistente</a></td></tr>
+<tr><td><a href="PV-193-Remover Religião Inexistente.html">PV-193-Remover Religião Inexistente</a></td></tr>
+<tr><td><a href="PV-188-Editar Religião Válida.html">PV-188-Editar Religião Válida</a></td></tr>
+<tr><td><a href="PV-186-Criar Religião Válida.html">PV-186-Criar Religião Válida</a></td></tr>
+<tr><td><a href="PV-192-Remover Religião Existente.html">PV-192-Remover Religião Existente</a></td></tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:29774/Account/LogOn" />
+<title>PV-170-Criar Queixa Válida</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PV-170-Criar Queixa Válida</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>elielmasa</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>paciente</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Selecione')])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Cadastros</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Queixa</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.grid-header-title &gt; span</td>
+	<td>Editar</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//section[@id='main']/div/div/div/table/thead/tr/th[4]/div/span</td>
+	<td>Detalhes</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//section[@id='main']/div/div/div/table/thead/tr/th[5]/div/span</td>
+	<td>Remover</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Criar</td>
+	<td>Criar</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Criar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2</td>
+	<td>Criar</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=legend</td>
+	<td>Queixa</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=label</td>
+	<td>Problema de Saúde</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=DescricaoQueixa</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//section[@id='main']/form/fieldset/div[3]/label</td>
+	<td>Nome do Sistema</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=IdSistema</td>
+	<td>Selecione Pulmonar Cardiovascular Sistema Geral OONB (Olho, Ouvido, Nariz e Boca) TGI (Trato Gastrointestinal) Endócrino Genito urinário/ Reprodutivo Sistema Hematopoiético Musculoesquelético Pele Doenças Infecciosas Hepático Nutricionais/Fluidos Corporais/ Hidroeletrolítico Renal/Urinário Neuropsiquiátrico</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>css=input.btn.btn-primary</td>
+	<td>Salvar</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Voltar</td>
+	<td>Voltar</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=DescricaoQueixa</td>
+	<td>Respiratório</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=IdSistema</td>
+	<td>label=Pulmonar</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.grid-header-title &gt; span</td>
+	<td>Editar</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//section[@id='main']/div/div/div/table/thead/tr/th[4]/div/span</td>
+	<td>Detalhes</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//section[@id='main']/div/div/div/table/thead/tr/th[5]/div/span</td>
+	<td>Remover</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Criar</td>
+	<td>Criar</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Off</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
