@@ -17,8 +17,6 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend id="nomeConsulta">
-            <%: Resources.Mensagem.consulta %> - <%: Resources.Mensagem.usuario %>: <%: Model.ConsultaVariavel.NomePessoa %></legend>
         <div class="span5">
             <div class="thumbnails center">
                 <div class="row-fluid">
@@ -76,6 +74,11 @@
             </div>
         </div>
         <div class="span6">
+            <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                           { %><div id="nomeConsulta">
+                <%: Resources.Mensagem.etapa_1_investigacao%></div>
+                    <br /> 
+	     <% } %>
             <div class="thumbnails">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
@@ -328,24 +331,8 @@
         </div>
         <br />
         <div class="btn btn-large btn-primary">
-            <%: Html.ActionLink(Resources.Mensagem.voltar, "Index", null, new { @style = "color:White; font-size:small;"}) %>
-        </div>
-        &nbsp;
-        <div class="btn btn-large btn-primary">
             <%: Html.ActionLink(Resources.Mensagem.proximo, "Edit2", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;" })%>
         </div>
-        &nbsp;
-        <!-- Escondendo botões de acordo com o perfil do usuário. A Session[_Roles] contém uma string com o perfil do usuário. -->
-         <% if (!Session["_Roles"].Equals("tutor"))
-           { %>   
-            <!-- Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs -->
-            <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
-           { %>
-            <div class="btn btn-large btn-primary">
-                <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", new { IdConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
-            </div>
-            <% } %>
-        <% } %>
         <% if (Session["_Roles"].Equals("tutor") && Session["_TutorVisualizaConsultas"].Equals(true))
            { %>
            &nbsp;
@@ -405,8 +392,9 @@
         }
         #nomeConsulta
         {
-            font-size: small;
-            font-weight: bolder;
+            position: relative;
+            font-size: x-large;
+            color: Blue;
         }
     </style>
 

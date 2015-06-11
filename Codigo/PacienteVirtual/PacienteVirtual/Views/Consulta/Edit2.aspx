@@ -114,8 +114,6 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend id="nomeConsulta">
-            <%: Resources.Mensagem.consulta2 %> - <%: Resources.Mensagem.usuario %>: <%: Model.ConsultaVariavel.NomePessoa %></legend>
         <div class="span5">
             <div class="thumbnails center">
                 <div class="row-fluid">
@@ -225,6 +223,11 @@
                     </div>
                 </div>
                <% }else { %>
+               <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                           { %><div class="nomeConsulta">
+                        <%: Resources.Mensagem.etapa_2_diagnostico%></div>
+                            <br /> 
+	             <% } %>
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.diagnostico%></a></li>
@@ -250,12 +253,33 @@
                                     <% Html.RenderPartial("../DiagnosticoConsultaFator/Adicionar", Model.DiagnosticoConsultaFator);%>
                                     <% Html.RenderPartial("../DiagnosticoConsultaFator/Index", Model.ListaDiagnosticoConsultaFator);%>
                                 </div>
+                                <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                                           { %><div class="nomeConsulta">
+                                           <br />
+                                        <%: Resources.Mensagem.etapa_3_planejamento%></div>
+                                            <br /> 
+	                             <% } %>
                                 <div class="thumbnail">
                                     <% Html.RenderPartial("../DiagnosticoConsulta/ResultadosEsperados", Model.DiagnosticoConsultaSelecionada);%>
                                 </div>
+                                <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                                           { %><div class="nomeConsulta">
+                                           <br />
+                                        <%: Resources.Mensagem.etapa_4_implementacao%></div>
+                                            <br /> 
+	                             <% } %>
                                 <div class="thumbnail">
                                     <% Html.RenderPartial("../PrescricaoEnfermagem/Adicionar", Model.PrescricaoEnfermagem);%>
                                     <% Html.RenderPartial("../PrescricaoEnfermagem/Index", Model.ListaPrescricaoEnfermagem);%>
+                                </div>
+                                <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+                                           { %><div class="nomeConsulta">
+                                           <br />
+                                        <%: Resources.Mensagem.etapa_5_evolucao_avaliacao%></div>
+                                            <br /> 
+	                             <% } %>
+                                 <div class="thumbnail">
+                                    <% Html.RenderPartial("../DadosComplementares/EditEnfermagem", Model.ConsultaVariavel);%>
                                 </div>
                             <% } %>
                         </div>
@@ -299,6 +323,12 @@
         {
             position: relative;
             margin-left: 35%;
+        }
+        .nomeConsulta
+        {
+            position: relative;
+            font-size: x-large;
+            color: Blue;
         }
     </style>
 

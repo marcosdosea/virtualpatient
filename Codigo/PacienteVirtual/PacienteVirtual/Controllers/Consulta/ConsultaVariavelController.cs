@@ -9,27 +9,29 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Edit(ConsultaVariavelModel consultaVariavelModel)
         {
-            switch (consultaVariavelModel.AbaAuxiliar)
-            {
-                case 2:
-                    SessionController.Abas1 = Global.abaRazaoEncontro;
-                    break;
-                case 9:
-                    SessionController.Abas1 = Global.abaDadosCompImportantes;
-                    break;
-                case 10:
-                    SessionController.Abas1 = Global.abaOutrosAchados;
-                    break;
-                default:
-                    SessionController.Abas1 = Global.abaRazaoEncontro;
-                    break;
-            }
             if (ModelState.IsValid)
             {
                 GerenciadorConsultaVariavel.GetInstance().Atualizar(consultaVariavelModel);
                 SessionController.ConsultaVariavel = consultaVariavelModel;
             }
-            return RedirectToAction("Edit", "Consulta");
+            switch (consultaVariavelModel.AbaAuxiliar)
+            {
+                case 2:
+                    SessionController.Abas1 = Global.abaRazaoEncontro;
+                    return RedirectToAction("Edit", "Consulta");
+                case 9:
+                    SessionController.Abas1 = Global.abaDadosCompImportantes;
+                    return RedirectToAction("Edit2", "Consulta");
+                case 10:
+                    SessionController.Abas1 = Global.abaOutrosAchados;
+                    return RedirectToAction("Edit2", "Consulta");
+                case 13:
+                    SessionController.Abas1 = Global.abaRazaoEncontro;
+                    return RedirectToAction("Edit2", "Consulta");
+                default:
+                    SessionController.Abas1 = Global.abaRazaoEncontro;
+                    return RedirectToAction("Edit", "Consulta");
+            }
         }
 
         protected override void Dispose(bool disposing)

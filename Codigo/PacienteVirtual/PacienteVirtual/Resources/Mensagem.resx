@@ -2439,4 +2439,22 @@
   <data name="manual_paciente_virtual" xml:space="preserve">
     <value>Manual do Paciente Virtual</value>
   </data>
+  <data name="etapa_1_investigacao" xml:space="preserve">
+    <value>Etapa 1) Investigação</value>
+  </data>
+  <data name="etapa_2_diagnostico" xml:space="preserve">
+    <value>Etapa 2) Diagnóstico</value>
+  </data>
+  <data name="etapa_3_planejamento" xml:space="preserve">
+    <value>Etapa 3) Planejamento</value>
+  </data>
+  <data name="etapa_4_implementacao" xml:space="preserve">
+    <value>Etapa 4) Implementação</value>
+  </data>
+  <data name="etapa_5_evolucao_avaliacao" xml:space="preserve">
+    <value>Etapa 5) Evolução/Avaliação</value>
+  </data>
+  <data name="proxima_etapa" xml:space="preserve">
+    <value>Próxima Etapa</value>
+  </data>
 </root>
