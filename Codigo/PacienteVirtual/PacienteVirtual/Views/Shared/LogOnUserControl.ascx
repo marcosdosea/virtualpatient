@@ -4,11 +4,9 @@
     if (Request.IsAuthenticated) {
 %>
         <% if (!Session["_NomePessoa"].ToString().Equals("")) { %>
-        <p class="bem_vindo"><%: Session["_NomePessoa"].ToString() %>!</p><p class="nome"><%: Resources.Mensagem.bem_vindo %></p>
+        <p class="bem_vindo"><b><%: Resources.Mensagem.bem_vindo %></b><%: Session["_NomePessoa"].ToString() %>!</p>
         <%  } %>
-        [ <%: Html.ActionLink(Resources.Mensagem.alterar_senha, "ChangePassword", "Account")%> ]
-        [ <%: Html.ActionLink(Resources.Mensagem.alterar_dados_usuario, "AlterarDadosUsuario", "Account")%> ]
-        [ <%: Html.ActionLink("Log Off", "LogOff", "Account") %> ]
+        [ <%: Html.ActionLink(Resources.Mensagem.log_off, "LogOff", "Account") %> ]
 <%
     }
     else {
@@ -22,7 +20,7 @@
     .bem_vindo
     {
         float: right;
-        font-size: small;
+        font-size: medium;
         font-family: Tahoma;
         text-transform:capitalize;
         color: Black;

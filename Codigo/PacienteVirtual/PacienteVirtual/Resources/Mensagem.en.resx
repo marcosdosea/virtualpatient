@@ -2418,4 +2418,7 @@
   <data name="proxima_etapa" xml:space="preserve">
     <value>Next Step</value>
   </data>
+  <data name="log_off" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
 </root>

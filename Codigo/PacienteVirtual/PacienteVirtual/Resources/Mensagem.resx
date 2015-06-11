@@ -2457,4 +2457,7 @@
   <data name="proxima_etapa" xml:space="preserve">
     <value>Próxima Etapa</value>
   </data>
+  <data name="log_off" xml:space="preserve">
+    <value>Sair do Sistema</value>
+  </data>
 </root>
