@@ -10,6 +10,18 @@ namespace PacienteVirtual.Controllers
     public class SessionController
     {
 
+        public static string Curso
+        {
+            get
+            {
+                return (string)HttpContext.Current.Session["_Curso"];
+            }
+            set
+            {
+                HttpContext.Current.Session["_Curso"] = value;
+            }
+        }
+
         public static bool EmCorrecao
         {
             get

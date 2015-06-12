@@ -2421,4 +2421,10 @@
   <data name="log_off" xml:space="preserve">
     <value>Log Off</value>
   </data>
+  <data name="iniciar_processo_enfermagem" xml:space="preserve">
+    <value>Start Nursing Process</value>
+  </data>
+  <data name="processo_enfermagem" xml:space="preserve">
+    <value>Nursing Process</value>
+  </data>
 </root>

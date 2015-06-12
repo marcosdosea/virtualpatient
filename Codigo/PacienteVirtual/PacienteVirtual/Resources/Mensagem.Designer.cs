@@ -3688,6 +3688,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Iniciar Processo de Enfermagem.
+        /// </summary>
+        public static string iniciar_processo_enfermagem {
+            get {
+                return ResourceManager.GetString("iniciar_processo_enfermagem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inquietação.
         /// </summary>
         public static string inquietacao {
@@ -5421,6 +5430,15 @@ namespace Resources {
         public static string procedencia {
             get {
                 return ResourceManager.GetString("procedencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processo de Enfermagem.
+        /// </summary>
+        public static string processo_enfermagem {
+            get {
+                return ResourceManager.GetString("processo_enfermagem", resourceCulture);
             }
         }
         
