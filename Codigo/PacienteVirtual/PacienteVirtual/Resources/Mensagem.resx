@@ -2466,4 +2466,10 @@
   <data name="processo_enfermagem" xml:space="preserve">
     <value>Processo de Enfermagem</value>
   </data>
+  <data name="escolher_outro_paciente" xml:space="preserve">
+    <value>Escolher Outro Paciente</value>
+  </data>
+  <data name="etapa_anterior" xml:space="preserve">
+    <value>Etapa Anterior</value>
+  </data>
 </root>

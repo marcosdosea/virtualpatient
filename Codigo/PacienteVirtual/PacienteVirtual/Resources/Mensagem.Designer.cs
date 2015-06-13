@@ -2518,6 +2518,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Escolher Outro Paciente.
+        /// </summary>
+        public static string escolher_outro_paciente {
+            get {
+                return ResourceManager.GetString("escolher_outro_paciente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Escoliose.
         /// </summary>
         public static string Escoliose {
@@ -2802,6 +2811,15 @@ namespace Resources {
         public static string etapa_5_evolucao_avaliacao {
             get {
                 return ResourceManager.GetString("etapa_5_evolucao_avaliacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etapa Anterior.
+        /// </summary>
+        public static string etapa_anterior {
+            get {
+                return ResourceManager.GetString("etapa_anterior", resourceCulture);
             }
         }
         

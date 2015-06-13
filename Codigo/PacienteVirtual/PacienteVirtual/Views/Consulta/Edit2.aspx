@@ -101,8 +101,9 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <div>
-           [ <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;" })%> ]
-        
+           [ <%: Html.ActionLink(Resources.Mensagem.escolher_outro_paciente, "Index", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;", onclick = ("return confirm('Você retornará a tela de exibição dos pacientes. Todas as informações desse paciente que não foram salvas serão perdidas. Confirma saída?')") })%> ] 
+           [ <%: Html.ActionLink(Resources.Mensagem.etapa_anterior, "Edit", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;" })%> ]
+           [ <%: Html.ActionLink(Resources.Mensagem.proxima_etapa, "Edit3", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;" })%> ]
         <% if (!Session["_Roles"].Equals("tutor"))
            { %>   
            <!-- Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs -->
