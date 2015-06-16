@@ -2527,6 +2527,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Escolher Outro Paciente.
+        /// </summary>
+        public static string escolher_outro_paciente {
+            get {
+                return ResourceManager.GetString("escolher_outro_paciente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Escoliose.
         /// </summary>
         public static string Escoliose {
@@ -2811,6 +2820,15 @@ namespace Resources {
         public static string etapa_5_evolucao_avaliacao {
             get {
                 return ResourceManager.GetString("etapa_5_evolucao_avaliacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etapa Anterior.
+        /// </summary>
+        public static string etapa_anterior {
+            get {
+                return ResourceManager.GetString("etapa_anterior", resourceCulture);
             }
         }
         
@@ -3693,6 +3711,15 @@ namespace Resources {
         public static string ingesta_hidrica {
             get {
                 return ResourceManager.GetString("ingesta_hidrica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iniciar Processo de Enfermagem.
+        /// </summary>
+        public static string iniciar_processo_enfermagem {
+            get {
+                return ResourceManager.GetString("iniciar_processo_enfermagem", resourceCulture);
             }
         }
         
@@ -5430,6 +5457,15 @@ namespace Resources {
         public static string procedencia {
             get {
                 return ResourceManager.GetString("procedencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processo de Enfermagem.
+        /// </summary>
+        public static string processo_enfermagem {
+            get {
+                return ResourceManager.GetString("processo_enfermagem", resourceCulture);
             }
         }
         

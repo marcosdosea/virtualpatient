@@ -690,6 +690,7 @@
     <Content Include="Views\Comunicacao\Edit.ascx" />
     <Content Include="Views\Consciencia\Edit.ascx" />
     <Content Include="Views\ConsultaParametro\Edit.aspx" />
+    <Content Include="Views\Consulta\Edit3.aspx" />
     <Content Include="Views\Consulta\Links.ascx" />
     <Content Include="Views\CorrigirConsultas\ComentariosTutor.ascx" />
     <Content Include="Views\CorrigirConsultas\Index.aspx" />

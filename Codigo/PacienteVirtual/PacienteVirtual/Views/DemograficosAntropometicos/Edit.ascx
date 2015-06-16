@@ -4,7 +4,7 @@
    { %>
 <%: Html.ValidationSummary(true) %>
 <fieldset>
-    <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+    <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
        { %>
     <legend>
         <%: Resources.Mensagem.dados_identificacao%></legend>
@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-    <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+    <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
            { %>
         <%: Html.HiddenFor(model => model.MedicosAtendem) %>
         <%: Html.HiddenFor(model => model.MoradiaFamilia) %>
@@ -104,7 +104,7 @@
                 <%: Html.ValidationMessageFor(model => model.IdEstadoCivil, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
-        <% if (ViewBag.Curso.Equals("Bacharelado em Enfermagem"))
+        <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
            { %>
         <%: Html.HiddenFor(model => model.RG) %>
         <% }

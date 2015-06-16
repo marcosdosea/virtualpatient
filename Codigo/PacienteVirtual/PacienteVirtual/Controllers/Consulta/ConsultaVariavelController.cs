@@ -27,7 +27,7 @@ namespace PacienteVirtual.Controllers
                     return RedirectToAction("Edit2", "Consulta");
                 case 13:
                     SessionController.Abas1 = Global.abaRazaoEncontro;
-                    return RedirectToAction("Edit2", "Consulta");
+                    return RedirectToAction("Edit3", "Consulta");
                 default:
                     SessionController.Abas1 = Global.abaRazaoEncontro;
                     return RedirectToAction("Edit", "Consulta");
