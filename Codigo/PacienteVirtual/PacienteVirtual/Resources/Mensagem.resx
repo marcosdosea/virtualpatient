@@ -2460,4 +2460,7 @@
   <data name="log_off" xml:space="preserve">
     <value>Sair do Sistema</value>
   </data>
+  <data name="checar_cuidado" xml:space="preserve">
+    <value>Checar Cuidado</value>
+  </data>
 </root>

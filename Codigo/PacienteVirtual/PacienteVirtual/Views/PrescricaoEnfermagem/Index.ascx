@@ -10,6 +10,7 @@
                     <%: Resources.Mensagem.horarios %>
                 </th>
                 <th>
+                    <%: Resources.Mensagem.checar_cuidado %>
                 </th>
                 <th>
                     <%: Resources.Mensagem.opcoes %>
@@ -19,14 +20,14 @@
                { %>
             <% if (item.Realizada.Equals(true))
                { %>
-            <tr class="linhaRealizada">
+            <tr>
                 <td>
                     <%: Html.DisplayFor(modelItem => item.DescricaoPrescricao)%>
                 </td>
                 <td>
                     <%: Html.DisplayFor(modelItem => item.Horario)%>
                 </td>
-                <td>
+                <td  class="linhaRealizada">
                     <% if (!(Session["_Roles"].Equals("tutor"))) {
                         if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) ||
                            Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) ||
@@ -57,14 +58,14 @@
             <% }
                else
                { %>
-               <tr class="linhaNaoRealizada">
+               <tr>
                 <td>
                     <%: Html.DisplayFor(modelItem => item.DescricaoPrescricao)%>
                 </td>
                 <td>
                     <%: Html.DisplayFor(modelItem => item.Horario)%>
                 </td>
-                <td>
+                <td  class="linhaNaoRealizada">
                     <% if (!(Session["_Roles"].Equals("tutor"))) {
                         if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) ||
                            Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) ||
@@ -100,11 +101,11 @@
 <style type="text/css">
     .linhaRealizada
     {
-        background-color: #00FF00;
+        background-color: Green;
     }
     
     .linhaNaoRealizada
     {
-        background-color: #FF00FF;
+        background-color: Red;
     } 
 </style>

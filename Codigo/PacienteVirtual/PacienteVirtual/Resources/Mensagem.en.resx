@@ -2421,4 +2421,7 @@
   <data name="log_off" xml:space="preserve">
     <value>Log Off</value>
   </data>
+  <data name="checar_cuidado" xml:space="preserve">
+    <value>Check Care</value>
+  </data>
 </root>
