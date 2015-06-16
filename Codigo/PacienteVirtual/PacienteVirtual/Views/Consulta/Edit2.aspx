@@ -277,15 +277,6 @@
                                     <% Html.RenderPartial("../PrescricaoEnfermagem/Adicionar", Model.PrescricaoEnfermagem);%>
                                     <% Html.RenderPartial("../PrescricaoEnfermagem/Index", Model.ListaPrescricaoEnfermagem);%>
                                 </div>
-                                <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
-                                           { %><div class="nomeConsulta">
-                                           <br />
-                                        <%: Resources.Mensagem.etapa_5_evolucao_avaliacao%></div>
-                                            <br /> 
-	                             <% } %>
-                                 <div class="thumbnail">
-                                    <% Html.RenderPartial("../DadosComplementares/EditEnfermagem", Model.ConsultaVariavel);%>
-                                </div>
                             <% } %>
                         </div>
                     </div>

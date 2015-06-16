@@ -134,6 +134,24 @@ namespace PacienteVirtual.Controllers
             return View(consultaModel);
         }
 
+        // GET: /Consulta3/
+        public ActionResult Edit3(long? idConsultaVariavel)
+        {
+            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+
+            SessionController.ConsultaVariavel = consultaVariavelModel;
+            ConsultaModel consultaModel = ConsultaComumTelas(consultaVariavelModel, new ConsultaModel());
+
+            SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
+            if (SessionController.EmCorrecao)
+            {
+                //corrigirTerceiraTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica, consultaVariavelModel.IdCurso);
+            }
+
+            return View(consultaModel);
+        }
+
         // Concluir
         public ActionResult Concluir(long IdConsultaVariavel)
         {
