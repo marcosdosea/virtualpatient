@@ -32,6 +32,7 @@ namespace PacienteVirtual.Controllers
             else
             {
                 SessionController.IdGrupoIntervencao = intervencaoConsulta.IdGrupoIntervencao;
+                GerenciadorIntervencaoConsulta.GetInstance().ValidarRespostasSelecionaveis(intervencaoConsulta.IdGrupoIntervencao, intervencaoConsulta.IdIntervencao);
             }
             SessionController.Abas2 = Global.abaIntervencao;
             return RedirectToAction("Edit2", "Consulta");

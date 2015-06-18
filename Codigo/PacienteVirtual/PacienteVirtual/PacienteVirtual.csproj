@@ -512,6 +512,7 @@
     <Content Include="Content\themes\pv\img\icons\Flag_of_Brazil.png" />
     <Content Include="Content\themes\pv\img\icons\United_Kingdom_Flag.png" />
     <Content Include="Content\themes\pv\img\caduceus.png" />
+    <Content Include="Content\themes\pv\img\Iniciar_Processo_Enfermagem.jpg" />
     <Content Include="Content\themes\pv\img\logo.png" />
     <Content Include="Content\themes\pv\img\logo2.png" />
     <Content Include="Content\themes\pv\img\logo3.png" />
@@ -569,6 +570,7 @@
     <Content Include="Content\themes\pv\img\icons\user_add.png" />
     <Content Include="Content\themes\pv\img\icons\user_remove.png" />
     <Content Include="Content\themes\pv\img\icons\warning_sign.png" />
+    <Content Include="Content\themes\pv\img\Matricula_Turma.JPG" />
     <Content Include="Content\themes\pv\img\simbolo_farmacia.png" />
     <Content Include="Content\themes\pv\img\ufs.png" />
     <Content Include="Content\themes\pv\img\saturation.png" />
