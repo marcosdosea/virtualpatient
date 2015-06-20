@@ -103,6 +103,7 @@ namespace PacienteVirtual.Controllers
 
             SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
             SessionController.PrimeiraTelaConsulta = true;
+            SessionController.Curso = SessionController.DadosTurmaPessoa.Curso;
             if (SessionController.EmCorrecao)
             {
                 corrigirPrimeiraTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica, consultaVariavelModel.IdCurso);
@@ -124,10 +125,28 @@ namespace PacienteVirtual.Controllers
 
             SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
             SessionController.PrimeiraTelaConsulta = false;
-
+            SessionController.Curso = SessionController.DadosTurmaPessoa.Curso;
             if (SessionController.EmCorrecao)
             {
                 corrigirSegundaTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica, consultaVariavelModel.IdCurso);
+            }
+
+            return View(consultaModel);
+        }
+
+        // GET: /Consulta3/
+        public ActionResult Edit3(long? idConsultaVariavel)
+        {
+            long idConsultaVariavelTemp = (idConsultaVariavel == null) ? SessionController.ConsultaVariavel.IdConsultaVariavel : (long)idConsultaVariavel;
+            ConsultaVariavelModel consultaVariavelModel = GerenciadorConsultaVariavel.GetInstance().Obter(idConsultaVariavelTemp);
+
+            SessionController.ConsultaVariavel = consultaVariavelModel;
+            ConsultaModel consultaModel = ConsultaComumTelas(consultaVariavelModel, new ConsultaModel());
+
+            SessionController.IdEstadoConsulta = consultaVariavelModel.IdEstadoConsulta;
+            if (SessionController.EmCorrecao)
+            {
+                //corrigirTerceiraTela(consultaVariavelModel.IdPaciente, consultaVariavelModel.OrdemCronologica, consultaVariavelModel.IdCurso);
             }
 
             return View(consultaModel);
@@ -157,7 +176,6 @@ namespace PacienteVirtual.Controllers
             ViewBag.IdReligiao = new SelectList(GerenciadorReligiao.GetInstance().ObterTodos(), "IdReligiao", "Religiao", consultaModel.DemograficoAntropometrico.IdReligiao);
             ViewBag.Abas1 = SessionController.Abas1;
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;
-            ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.EscondeLinks = false;
 
             if (SessionController.DadosTurmaPessoa.Curso.Equals(Global.cursoFarmacia))
@@ -215,7 +233,6 @@ namespace PacienteVirtual.Controllers
         private void ViewBagsSegundaParteConsulta()
         {
             ViewBag.EscondeLinks = true;
-            ViewBag.Curso = SessionController.DadosTurmaPessoa.Curso;
             ViewBag.Abas2 = SessionController.Abas2;
             ViewBag.TotalAbas = Global.totalAbasFARM_Edit2;
             ViewBag.AbasRelato = SessionController.ConsultaVariavel.OrdemCronologica;

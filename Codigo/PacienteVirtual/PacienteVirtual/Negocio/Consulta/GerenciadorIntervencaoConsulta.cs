@@ -253,5 +253,20 @@ namespace PacienteVirtual.Negocio
             _tb_consulta_variavel_intervencao.Justificativa = IntervencaoConsultaModel.Justificativa;
 
         }
+
+        /// <summary>
+        /// Faz a validação para verificar se todos os id estão diferentes de 0
+        /// </summary>
+        public bool ValidarRespostasSelecionaveis(int IdGrupoInter, int IdInter)
+        {
+            if (IdInter == 0)
+            {
+                throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais respostas.");
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

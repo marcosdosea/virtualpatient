@@ -2400,4 +2400,40 @@
   <data name="manual_paciente_virtual" xml:space="preserve">
     <value>Virtual Patient's Guide</value>
   </data>
+  <data name="etapa_1_investigacao" xml:space="preserve">
+    <value>Step 1) Investigation</value>
+  </data>
+  <data name="etapa_2_diagnostico" xml:space="preserve">
+    <value>Step 2) Diagnostic</value>
+  </data>
+  <data name="etapa_3_planejamento" xml:space="preserve">
+    <value>Step 3) Planning</value>
+  </data>
+  <data name="etapa_4_implementacao" xml:space="preserve">
+    <value>Step 4) Implementation</value>
+  </data>
+  <data name="etapa_5_evolucao_avaliacao" xml:space="preserve">
+    <value>Step 5) Evolution/Evalution</value>
+  </data>
+  <data name="proxima_etapa" xml:space="preserve">
+    <value>Next Step</value>
+  </data>
+  <data name="log_off" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="iniciar_processo_enfermagem" xml:space="preserve">
+    <value>Start Nursing Process</value>
+  </data>
+  <data name="processo_enfermagem" xml:space="preserve">
+    <value>Nursing Process</value>
+  </data>
+  <data name="escolher_outro_paciente" xml:space="preserve">
+    <value>Choose Another Patient</value>
+  </data>
+  <data name="etapa_anterior" xml:space="preserve">
+    <value>Previous Step</value>
+  </data>
+  <data name="checar_cuidado" xml:space="preserve">
+    <value>Check Care</value>
+  </data>
 </root>

@@ -67,19 +67,6 @@
         });
     </script>
 
-    <!-- Solução para âncoras no código -->
-    <!--input type="hidden" value="<!--%: ViewBag.AncoraEdit2 %>" id="ancoraEdit2" />
-        <script type="text/javascript">
-            var ancoraEdit2 = document.getElementById('ancoraEdit2').value;
-            if (ancoraEdit2 == 1) {
-                location.href = "#ancora1";
-            } else if (ancoraEdit2 == 2) {
-                location.href = "#ancora2";
-            } else if (ancoraEdit2 == 3) {
-                location.href = "#ancora3";
-            }
-        </script-->
-
     <!-- código javascript com função para mostrar div escondida com a class="mostrarQueixa" -->
     <script type="text/javascript">
         $(document).ready(function () {
@@ -114,8 +101,6 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend id="nomeConsulta">
-            <%: Resources.Mensagem.consulta2 %> - <%: Resources.Mensagem.usuario %>: <%: Model.ConsultaVariavel.NomePessoa %></legend>
         <div class="span5">
             <div class="thumbnails center">
                 <div class="row-fluid">
@@ -172,8 +157,29 @@
             </div>
         </div>
         <div class="span6">
+            <p>
+               [ <%: Html.ActionLink(Resources.Mensagem.escolher_outro_paciente, "Index", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;", onclick = ("return confirm('Você retornará a tela de exibição dos pacientes. Todas as informações desse paciente que não foram salvas serão perdidas. Confirma saída?')") })%> ] 
+               [ <%: Html.ActionLink(Resources.Mensagem.etapa_anterior, "Edit", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;" })%> ]
+            <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
+               { %>   
+               [ <%: Html.ActionLink(Resources.Mensagem.proxima_etapa, "Edit3", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;" })%> ]
+            <% } else if (!Session["_Roles"].Equals("tutor"))
+               { %>   
+               <!-- Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs -->
+                <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
+               { %>
+                    [ <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", new { IdConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%> ]
+                <% } %>
+            <% } %>
+
+            <% if (Session["_Roles"].Equals("tutor") && Session["_TutorVisualizaConsultas"].Equals(true))
+               { %>
+                   [ <%: Html.ActionLink(Resources.Mensagem.enviar_para_correcao_do_aluno, "EnviarParaCorrecao", "CorrigirConsultas", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;", onclick = ("return confirm('Deseja realmente Enviar esta Consulta para CORREÇÃO do Aluno?')") })%> ]
+                   [ <%: Html.ActionLink(Resources.Mensagem.finalizar_correcao, "FinalizarCorrecao", "CorrigirConsultas", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "font-size:small;", onclick = ("return confirm('Deseja realmente Finalizar esta consulta?')") })%> ] 
+            <% } %>
+            </p>
             <div class="thumbnails">
-                <% if (ViewBag.Curso.Equals("Bacharelado em Farmácia"))
+                <% if (Session["_Curso"].Equals("Bacharelado em Farmácia"))
                    { %>
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
@@ -225,6 +231,11 @@
                     </div>
                 </div>
                <% }else { %>
+               <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
+                           { %><div class="nomeConsulta">
+                        <%: Resources.Mensagem.etapa_2_diagnostico%></div>
+                            <br /> 
+	             <% } %>
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1-1" data-toggle="tab"><%: Resources.Mensagem.diagnostico%></a></li>
@@ -250,9 +261,21 @@
                                     <% Html.RenderPartial("../DiagnosticoConsultaFator/Adicionar", Model.DiagnosticoConsultaFator);%>
                                     <% Html.RenderPartial("../DiagnosticoConsultaFator/Index", Model.ListaDiagnosticoConsultaFator);%>
                                 </div>
+                                <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
+                                           { %><div class="nomeConsulta">
+                                           <br />
+                                        <%: Resources.Mensagem.etapa_3_planejamento%></div>
+                                            <br /> 
+	                             <% } %>
                                 <div class="thumbnail">
                                     <% Html.RenderPartial("../DiagnosticoConsulta/ResultadosEsperados", Model.DiagnosticoConsultaSelecionada);%>
                                 </div>
+                                <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
+                                           { %><div class="nomeConsulta">
+                                           <br />
+                                        <%: Resources.Mensagem.etapa_4_implementacao%></div>
+                                            <br /> 
+	                             <% } %>
                                 <div class="thumbnail">
                                     <% Html.RenderPartial("../PrescricaoEnfermagem/Adicionar", Model.PrescricaoEnfermagem);%>
                                     <% Html.RenderPartial("../PrescricaoEnfermagem/Index", Model.ListaPrescricaoEnfermagem);%>
@@ -263,33 +286,6 @@
                 </div>
                <% } %>
             </div>
-            <br />
-        <div class="btn btn-large btn-primary">
-            <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;" })%>
-        </div>
-        &nbsp;
-        <!-- Escondendo botões de acordo com o perfil do usuário. A Session[_Roles] contém uma string com o perfil do usuário. -->
-        <% if (!Session["_Roles"].Equals("tutor"))
-           { %>   
-           <!-- Os números 3, 4, 5 e 7, são os id dos estados da consulta os quais as descrições encontram-se no Models/Global.cs -->
-            <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
-           { %>
-            <div class="btn btn-large btn-primary">
-                <%: Html.ActionLink(Resources.Mensagem.encerrar_consulta, "Concluir", "Consulta", new { IdConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Encerrar esta Consulta?')") })%>
-            </div>
-            <% } %>
-        <% } %>
-        <% if (Session["_Roles"].Equals("tutor") && Session["_TutorVisualizaConsultas"].Equals(true))
-           { %>
-           &nbsp;
-           <div class="btn btn-large btn-primary">
-               <%: Html.ActionLink(Resources.Mensagem.enviar_para_correcao_do_aluno, "EnviarParaCorrecao", "CorrigirConsultas", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Enviar esta Consulta para CORREÇÃO do Aluno?')") })%>
-           </div>
-           &nbsp;
-           <div class="btn btn-large btn-primary">
-               <%: Html.ActionLink(Resources.Mensagem.finalizar_correcao, "FinalizarCorrecao", "CorrigirConsultas", new { idConsultaVariavel = Model.ConsultaVariavel.IdConsultaVariavel }, new { @style = "color:White; font-size:small;", onclick = ("return confirm('Deseja realmente Finalizar esta consulta?')") })%>
-           </div>
-        <% } %>
         </div>
     </fieldset>
 
@@ -299,6 +295,12 @@
         {
             position: relative;
             margin-left: 35%;
+        }
+        .nomeConsulta
+        {
+            position: relative;
+            font-size: x-large;
+            color: Blue;
         }
     </style>
 

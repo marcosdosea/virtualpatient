@@ -512,6 +512,7 @@
     <Content Include="Content\themes\pv\img\icons\Flag_of_Brazil.png" />
     <Content Include="Content\themes\pv\img\icons\United_Kingdom_Flag.png" />
     <Content Include="Content\themes\pv\img\caduceus.png" />
+    <Content Include="Content\themes\pv\img\Iniciar_Processo_Enfermagem.jpg" />
     <Content Include="Content\themes\pv\img\logo.png" />
     <Content Include="Content\themes\pv\img\logo2.png" />
     <Content Include="Content\themes\pv\img\logo3.png" />
@@ -569,6 +570,7 @@
     <Content Include="Content\themes\pv\img\icons\user_add.png" />
     <Content Include="Content\themes\pv\img\icons\user_remove.png" />
     <Content Include="Content\themes\pv\img\icons\warning_sign.png" />
+    <Content Include="Content\themes\pv\img\Matricula_Turma.JPG" />
     <Content Include="Content\themes\pv\img\simbolo_farmacia.png" />
     <Content Include="Content\themes\pv\img\ufs.png" />
     <Content Include="Content\themes\pv\img\saturation.png" />
@@ -690,6 +692,7 @@
     <Content Include="Views\Comunicacao\Edit.ascx" />
     <Content Include="Views\Consciencia\Edit.ascx" />
     <Content Include="Views\ConsultaParametro\Edit.aspx" />
+    <Content Include="Views\Consulta\Edit3.aspx" />
     <Content Include="Views\Consulta\Links.ascx" />
     <Content Include="Views\CorrigirConsultas\ComentariosTutor.ascx" />
     <Content Include="Views\CorrigirConsultas\Index.aspx" />
@@ -701,6 +704,7 @@
     <Content Include="Views\ConsultaVariavelQueixa\Index.ascx" />
     <Content Include="Views\ConsultaVariavel\Edit.ascx" />
     <Content Include="Views\DadosComplementares\Edit.ascx" />
+    <Content Include="Views\DadosComplementares\EditEnfermagem.ascx" />
     <Content Include="Views\DiagnosticoCaracteristica\Create.aspx" />
     <Content Include="Views\DiagnosticoCaracteristica\Delete.aspx" />
     <Content Include="Views\DiagnosticoCaracteristica\Details.aspx" />

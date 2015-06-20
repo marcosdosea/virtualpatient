@@ -14,6 +14,27 @@
         quais as intervenções seriam mais adequadas.
         <br />
         <br />
+        <% if (HttpContext.Current.Request.IsAuthenticated && Session["_DadosTurmaPessoa"] != null)
+           { %>
+           <% if (Session["_Curso"].Equals("Bacharelado em Enfermagem"))
+                                   { %>
+                <div class="iconesRapidos">
+                    &nbsp&nbsp&nbsp&nbsp
+                    <a href="<%: Url.Action("Index", "Consulta")%>">
+                        <img alt="logo" src="../../Content/themes/pv/img/Iniciar_Processo_Enfermagem.jpg" width="70px" height="50px" />
+                        Iniciar Processo de Enfermagem
+                    </a>
+                </div>
+                <br />
+            <% } %>
+        <div class="iconesRapidos">
+            <a href="<%: Url.Action("Index", "AtivarMatriculasTurma")%>">
+                <img alt="logo" src="../../Content/themes/pv/img/Matricula_Turma.JPG" width="70px" height="50px" />
+                Matricular Aluno na Turma
+            </a>
+        </div>
+        <% } %>
+        <br />
         Para aprender mais sobre a utilização software leia:
         <br />
         <br />

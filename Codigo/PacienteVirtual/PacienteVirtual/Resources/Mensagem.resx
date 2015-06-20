@@ -2439,4 +2439,40 @@
   <data name="manual_paciente_virtual" xml:space="preserve">
     <value>Manual do Paciente Virtual</value>
   </data>
+  <data name="etapa_1_investigacao" xml:space="preserve">
+    <value>Etapa 1) Investigação</value>
+  </data>
+  <data name="etapa_2_diagnostico" xml:space="preserve">
+    <value>Etapa 2) Diagnóstico</value>
+  </data>
+  <data name="etapa_3_planejamento" xml:space="preserve">
+    <value>Etapa 3) Planejamento</value>
+  </data>
+  <data name="etapa_4_implementacao" xml:space="preserve">
+    <value>Etapa 4) Implementação</value>
+  </data>
+  <data name="etapa_5_evolucao_avaliacao" xml:space="preserve">
+    <value>Etapa 5) Evolução/Avaliação</value>
+  </data>
+  <data name="proxima_etapa" xml:space="preserve">
+    <value>Próxima Etapa</value>
+  </data>
+  <data name="log_off" xml:space="preserve">
+    <value>Sair do Sistema</value>
+  </data>
+  <data name="iniciar_processo_enfermagem" xml:space="preserve">
+    <value>Iniciar Processo de Enfermagem</value>
+  </data>
+  <data name="processo_enfermagem" xml:space="preserve">
+    <value>Processo de Enfermagem</value>
+  </data>
+  <data name="escolher_outro_paciente" xml:space="preserve">
+    <value>Escolher Outro Paciente</value>
+  </data>
+  <data name="etapa_anterior" xml:space="preserve">
+    <value>Etapa Anterior</value>
+  </data>
+  <data name="checar_cuidado" xml:space="preserve">
+    <value>Checar Cuidado</value>
+  </data>
 </root>
