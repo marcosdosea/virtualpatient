@@ -107,7 +107,8 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repConsultaParametro = new RepositorioGenerico<tb_consulta_parametro>();
-                tb_consulta_parametro _tb_consulta_parametro = repConsultaParametro.ObterEntidade(dP => dP.IdConsultaVariavel == consultaParametroModel.IdConsultaVariavel);
+                tb_consulta_parametro _tb_consulta_parametro = repConsultaParametro.ObterEntidade(dP => dP.IdConsultaVariavel == consultaParametroModel.IdConsultaVariavel 
+                    && dP.IdParametroClinico == consultaParametroModel.IdParametroClinico);
                 Atribuir(consultaParametroModel, _tb_consulta_parametro);
 
                 repConsultaParametro.SaveChanges();
@@ -201,6 +202,18 @@ namespace PacienteVirtual.Negocio
             _tb_consulta_parametro.ValorReferencia = consultaParametroModel.ValorReferencia;
             _tb_consulta_parametro.Unidade = consultaParametroModel.Unidade;
 
+        }
+
+        public bool ValidarRespostas(string campo1, float campo2, string campo3)
+        {
+            if (campo1 == "" || campo3 == "" || campo2 == 0)
+            {
+                throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais campos.");
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

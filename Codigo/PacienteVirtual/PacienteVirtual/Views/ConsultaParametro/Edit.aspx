@@ -14,6 +14,8 @@
         <legend>
         <%: Resources.Mensagem.parametro_clinico %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
+    <%: Html.HiddenFor(model => model.IdParametroClinico) %>
+    <%: Html.HiddenFor(model => model.ParametroClinico) %>
     <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
@@ -34,7 +36,8 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Valor, new { @class = "textbox", style = "width:276px;" })%>
+                <%: Html.TextBoxFor(model => model.Valor, new { style = "width:276px;" })%>
+                Ex: 10.00
                 <%: Html.ValidationMessageFor(model => model.Valor, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -66,7 +69,7 @@
         </div>
     </div>
     <div class="form-actions">
-        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
+        <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.salvar %>" />
     </div>
 </fieldset>
 <% } %>

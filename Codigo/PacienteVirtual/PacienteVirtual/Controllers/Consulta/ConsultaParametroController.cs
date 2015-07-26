@@ -47,7 +47,7 @@ namespace PacienteVirtual.Controllers
         public ActionResult Edit(ConsultaParametroModel cp)
         {
             SessionController.Abas1 = Global.abaConsultaParametro;
-            if (ModelState.IsValid)
+            if(GerenciadorConsultaParametro.GetInstance().ValidarRespostas(cp.Unidade, cp.Valor, cp.ValorReferencia))
             {
                 GerenciadorConsultaParametro.GetInstance().Atualizar(cp);
                 SessionController.ListaConsultaParametro = null;
