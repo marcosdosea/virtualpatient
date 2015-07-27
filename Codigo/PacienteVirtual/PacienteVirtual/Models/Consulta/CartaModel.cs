@@ -24,7 +24,7 @@ namespace PacienteVirtual.Models
         [StringLength(45)]
         public string NomePaciente { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
+        //Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "data_nascimento", ResourceType = typeof(Mensagem))]
         [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }

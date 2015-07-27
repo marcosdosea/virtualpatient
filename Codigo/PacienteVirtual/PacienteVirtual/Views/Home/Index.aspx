@@ -27,12 +27,15 @@
                 </div>
                 <br />
             <% } %>
-        <div class="iconesRapidos">
-            <a href="<%: Url.Action("Index", "AtivarMatriculasTurma")%>">
-                <img alt="logo" src="../../Content/themes/pv/img/Matricula_Turma.JPG" width="70px" height="50px" />
-                Matricular Aluno na Turma
-            </a>
-        </div>
+            <% if (!Session["_Roles"].Equals("usuario"))
+               { %>
+                <div class="iconesRapidos">
+                    <a href="<%: Url.Action("Index", "AtivarMatriculasTurma")%>">
+                        <img alt="logo" src="../../Content/themes/pv/img/Matricula_Turma.JPG" width="70px" height="50px" />
+                        Matricular Aluno na Turma
+                    </a>
+                </div>
+        <% } %>
         <% } %>
         <br />
         Para aprender mais sobre a utilização software leia:

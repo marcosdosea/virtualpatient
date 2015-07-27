@@ -259,7 +259,7 @@ namespace PacienteVirtual.Negocio
         /// </summary>
         public bool ValidarRespostasSelecionaveis(int IdGrupoInter, int IdInter)
         {
-            if (IdInter == 0)
+            if (IdGrupoInter == 0 && IdInter != 0)
             {
                 throw new NegocioException("Atenção! Você esqueceu de selecionar uma ou mais respostas.");
             }
