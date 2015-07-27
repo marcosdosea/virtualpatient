@@ -18,10 +18,11 @@
     <!-- Solução das abas 2 com jquery -->
     <!-- Passando o valor das abas, da viewbag para dentro do código javascript através do id -->
     <input type="hidden" value="<%: ViewBag.Abas2 %>" id="abas2" />
-    <input type="hidden" value="<%: ViewBag.TotalAbas %>" id="totalAbas" />
+    <input type="hidden" value="<%: ViewBag.TotalAbas %>" id="TotalAbas" />
     <script type="text/javascript">
         var abas2 = document.getElementById('abas2').value;
-        var totalAbas = document.getElementById('totalAbas').value;
+        var totalAbas = document.getElementById('TotalAbas').value;
+        totalAbas += 1;
         //método que concatena os nomes das abas para adicionar ou remover classes que ativam e desativam as abas
         $(document).ready(function () {
             if (abas2 != 1) {
@@ -48,11 +49,12 @@
     <script type="text/javascript">
         //função complementar para esconder a aba após os adicionamentos das classes tab-pane
         var abasEdit2 = document.getElementById('abas2').value;
-        var totalAbas = document.getElementById('totalAbas').value;
+        var totalAbas = document.getElementById('TotalAbas').value;
+        totalAbas += 1;
         $(document).ready(function () {
             var aba2 = "#li";
             var cont2 = "#tab1-";
-            for (var i = 0; i <= totalAbas; i++) {
+            for (var i = 1; i <= totalAbas; i++) {
                 var resultAba2 = aba2.concat(i);
                 $(resultAba2).click(function () {
                     var resultCont2 = cont2.concat(abas2);

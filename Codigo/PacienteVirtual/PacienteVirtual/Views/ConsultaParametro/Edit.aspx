@@ -73,6 +73,9 @@
     </div>
 </fieldset>
 <% } %>
+<div class="btn btn-primary">
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
+</div>
 <script type="text/javascript">
     document.getElementById('textbox').disabled = true;
 </script>

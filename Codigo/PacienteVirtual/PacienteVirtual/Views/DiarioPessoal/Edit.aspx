@@ -103,7 +103,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.DropDownList("IdBebida",null, Resources.Mensagem.selecione, new { style = "width:320px;" })%>
+                <%: Html.DropDownList("IdBebida",null, Resources.Mensagem.selecione, new { id = "textbox4", style = "width:320px;" })%>
                 <%: Html.ValidationMessageFor(model => model.IdBebida, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -122,5 +122,6 @@
     document.getElementById('textbox').disabled = true;
     document.getElementById('textbox2').disabled = true;
     document.getElementById('textbox3').disabled = true;
+    document.getElementById('textbox4').disabled = true;
 </script>
 </asp:Content>

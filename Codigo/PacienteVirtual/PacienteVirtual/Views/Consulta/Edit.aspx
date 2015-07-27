@@ -449,6 +449,7 @@
     <script type="text/javascript">
         var abas1 = document.getElementById('abas1').value;
         var totalAbas = document.getElementById('totalAbas').value;
+        totalAbas += 1;
         //método que concatena os nomes das abas para adicionar ou remover classes que ativam e desativam as abas
         $(document).ready(function () {
             if (abas1 != 1) {
@@ -476,10 +477,11 @@
         //função complementar para esconder a aba após os adicionamentos das classes tab-pane
         var abasEdit1 = document.getElementById('abas1').value;
         var totalAbas = document.getElementById('totalAbas').value;
+        totalAbas += 1;
         $(document).ready(function () {
             var aba2 = "#li";
             var cont2 = "#tab1-";
-            for (var i = 0; i <= totalAbas; i++) {
+            for (var i = 1; i <= totalAbas; i++) {
                 var resultAba2 = aba2.concat(i);
                 $(resultAba2).click(function () {
                     var resultCont2 = cont2.concat(abas1);
