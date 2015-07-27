@@ -48,8 +48,8 @@ namespace PacienteVirtual.Controllers
         {
             GerenciadorConsultaVariavelQueixa.GetInstance().Remover(idConsultaVariavel, idQueixa);
             SessionController.ListaConsultaVariavelQueixa = null;
-            SessionController.Abas2 = Global.abaClassificacaoPRM;
-            return RedirectToAction("Edit2", "Consulta");
+            SessionController.Abas1 = Global.abaRevisaoSistema;
+            return RedirectToAction("Edit", "Consulta");
         }
 
         // GET: /ConsultaVariavelQueixa/Edit/5
