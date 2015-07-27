@@ -35,9 +35,12 @@
         <td>
         <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
            { %>
+           <% if (!(Session["_Roles"].Equals("tutor")))
+              { %>
             <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "ConsultaParametro", new { idConsultaVariavel = item.IdConsultaVariavel, idConsultaPar = item.IdParametroClinico }, null)%>
             |
             <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaParametro", new { idConsultaVariavel = item.IdConsultaVariavel, idParametroClinico = item.IdParametroClinico }, new { onclick = ("return confirm('Deseja realmente REMOVER este Parâmetro Clínico?')") })%>
+            <% } %>
         <% } %>
         </td>
     </tr>

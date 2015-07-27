@@ -59,9 +59,12 @@
                 <%: Html.DisplayFor(modelItem => item.Referências) %>
             </td>
             <td>
-                <%: Html.ActionLink(Resources.Mensagem.editar,"Edit", "Carta", new { idConsultaVariavel = item.IdConsultaVariavel, idCarta = item.IdCarta }, null) %>
+            <% if (!(Session["_Roles"].Equals("tutor")))
+               { %>
+                <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "Carta", new { idConsultaVariavel = item.IdConsultaVariavel, idCarta = item.IdCarta }, null)%>
                 |
-                <%: Html.ActionLink(Resources.Mensagem.remover,"Delete", "Carta", new { idConsultaVariavel = item.IdConsultaVariavel, idCarta = item.IdCarta }, new { onclick = ("return confirm('Deseja realmente REMOVER esta Carta?')") }) %>
+                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "Carta", new { idConsultaVariavel = item.IdConsultaVariavel, idCarta = item.IdCarta }, new { onclick = ("return confirm('Deseja realmente REMOVER esta Carta?')") })%>
+                <% } %>
             </td>
         </tr>
         <% } %>

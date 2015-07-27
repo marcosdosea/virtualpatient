@@ -81,9 +81,11 @@
                 |
                 <div class="botaoMostrar">
                     <%: Resources.Mensagem.identificacao_prm%></div>
-                    |
                 <% } %>
-                <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, new { onclick = ("return confirm('Deseja realmente REMOVER esta Revisão?')") })%>
+                    <% if (!(Session["_Roles"].Equals("tutor")))
+                   { %>
+                       | <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "ConsultaVariavelQueixa", new { idConsultaVariavel = item.IdConsultaVariavel, idQueixa = item.IdQueixa }, new { onclick = ("return confirm('Deseja realmente REMOVER esta Revisão?')") })%>
+                    <% } %>
                 <% } %>
             </td>
         </tr>

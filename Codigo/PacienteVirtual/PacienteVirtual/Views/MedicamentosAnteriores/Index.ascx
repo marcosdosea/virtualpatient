@@ -37,9 +37,12 @@
             <td>
             <% if (!(Session["_Roles"].Equals("usuario") && (Session["_IdEstadoConsulta"].Equals(3) || Session["_IdEstadoConsulta"].Equals(4) || Session["_IdEstadoConsulta"].Equals(5) || Session["_IdEstadoConsulta"].Equals(7))))
                { %>
+               <% if (!(Session["_Roles"].Equals("tutor")))
+                  { %>
                 <%: Html.ActionLink(Resources.Mensagem.editar, "Edit", "MedicamentosAnteriores", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento }, null)%>
                 |
                 <%: Html.ActionLink(Resources.Mensagem.remover, "Delete", "MedicamentosAnteriores", new { idConsultaVariavel = item.IdConsultaVariavel, idMedicamento = item.IdMedicamento }, new { onclick = ("return confirm('Deseja realmente REMOVER este Medicamento?')") })%>
+                <% } %>
             <% } %>
             </td>
         </tr>
