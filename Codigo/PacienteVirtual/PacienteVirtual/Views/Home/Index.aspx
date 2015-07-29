@@ -8,10 +8,10 @@
         <%: ViewBag.Message %></h2>
     <br />
     <h5>
-        O paciente virtual é um ambiente virtual de aprendizagem que permite que alunos
-        dos cursos das ciências da saúde exercitem suas habilidades. Através de relatos
-        clínicos disponibilizados pelo tutor da turma o aluno coleta informações e registra
-        quais as intervenções seriam mais adequadas.
+        The virtual patient is a learning environment that allows students 
+        of health sciences courses exercise their skills. Through clinical 
+        reports provided by the class tutor, the student collects information 
+        and records which interventions would be most appropriate.
         <br />
         <br />
         <% if (HttpContext.Current.Request.IsAuthenticated && Session["_DadosTurmaPessoa"] != null)
@@ -22,7 +22,7 @@
                     &nbsp&nbsp&nbsp&nbsp
                     <a href="<%: Url.Action("Index", "Consulta")%>">
                         <img alt="logo" src="../../Content/themes/pv/img/Iniciar_Processo_Enfermagem.jpg" width="70px" height="50px" />
-                        Iniciar Processo de Enfermagem
+                        Start Nursing Process
                     </a>
                 </div>
                 <br />
@@ -30,18 +30,16 @@
         <div class="iconesRapidos">
             <a href="<%: Url.Action("Index", "AtivarMatriculasTurma")%>">
                 <img alt="logo" src="../../Content/themes/pv/img/Matricula_Turma.JPG" width="70px" height="50px" />
-                Matricular Aluno na Turma
+                Enroll Student in Class
             </a>
         </div>
         <% } %>
         <br />
-        Para aprender mais sobre a utilização software leia:
+        Read the tutorials to learn more about the virtual patient:
         <br />
         <br />
         <%: Html.ActionLink(Resources.Mensagem.manual_paciente_virtual, "Manual", "Home") %>
         <br />
-        <br />
-        Abaixo também segue a lista de publicações realizadas através do software:
     </h5>
     <script type="text/javascript">
         (function (i, s, o, g, r, a, m) {
