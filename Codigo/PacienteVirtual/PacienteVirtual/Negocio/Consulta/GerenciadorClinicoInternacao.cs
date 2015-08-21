@@ -462,7 +462,7 @@ namespace PacienteVirtual.Negocio
                             IdPatologia = patologiasAtuais.IdPatologia,
                             Descricao = patologiasAtuais.Descricao
                         };
-            return query;
+            return query.ToList();
         }
 
         /// <summary>
@@ -480,7 +480,7 @@ namespace PacienteVirtual.Negocio
                             IdPatologia = patologiasAtuais.IdPatologia,
                             Descricao = patologiasAtuais.Descricao
                         };
-            return query;
+            return query.ToList();
         }
 
         /// <summary>
@@ -498,7 +498,7 @@ namespace PacienteVirtual.Negocio
                             IdPatologia = patologiasAtuais.IdPatologia,
                             Descricao = patologiasAtuais.Descricao
                         };
-            return query;
+            return query.ToList();
         }
 
         /// <summary>
@@ -516,7 +516,7 @@ namespace PacienteVirtual.Negocio
                             IdAlergia = Alergias.IdAlergia,
                             Alergia = Alergias.Alergia
                         };
-            return query;
+            return query.ToList();
         }
 
         /// <summary>

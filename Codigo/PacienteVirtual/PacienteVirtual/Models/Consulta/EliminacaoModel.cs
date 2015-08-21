@@ -7,24 +7,25 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaTiposFezes { FezesFormadas = 0, FezesPastosas = 1, Melena = 2, Diarreia = 3, Constipacao = 4 }
-
+    [Serializable]
     public enum ListaEstomasCirurgicos { NaoSeAplica = 0, Colostomia = 1, Ileostomia = 2 }
-
+    [Serializable]
     public enum ListaFormasAbdomem { Plano = 0, Retraido = 1, Globoso = 2 }
-
+    [Serializable]
     public enum ListaSonsIntestinais { Presentes = 0, Ausentes = 1, Diminuidos = 2, Hiperativos = 3 }
-
+    [Serializable]
     public enum ListaTipoSonsPercussao { SomMacico = 0, SomTimpanico = 1 }
-
+    [Serializable]
     public enum ListaPalpacaoAbodminal { Normotenso = 0, Tenso = 1, Flacido = 2, SinalMurphy = 3, SinalBlumberg = 4 }
-
+    [Serializable]
     public enum ListaColoracaoUrinaria { LimpidaClara = 0, Concentrada = 1, PresencaSendimentos = 2, Hematurica = 3, Piurica = 4, Colurica = 5 }
-
+    [Serializable]
     public enum ListaDebitoUrinario { NaoSeAplica = 0, Normal = 1, Oliguria = 2, Poliuria = 3, Anuria = 4, Polaciuria = 5 }
-
+    [Serializable]
     public enum ListaCondicaoContinenciaUrinaria { IncontinenciaUrinaria = 0, RetencaoUrinaria = 1, IrrigacaoVesical = 2, SemAlteracoes = 3 }
-
+    [Serializable]
     public class EliminacaoModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

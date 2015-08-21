@@ -4,6 +4,7 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+   [Serializable]
     public class RazaoEncontroModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

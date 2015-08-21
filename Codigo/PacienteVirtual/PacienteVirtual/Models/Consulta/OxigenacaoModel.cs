@@ -1,28 +1,30 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Resources;
+using System;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaRitmo{ Regular = 0, Irregular = 1 }
-
+    [Serializable]
     public enum ListaPadraoRespiratorio { Eupineico = 0, Dispneia = 1, Taquipneia = 2, Bradipneia = 3, CheyneStokes = 4, Kussmaul = 5 }
-
+    [Serializable]
     public enum ListaSimetriaToracica { Simetrico = 0, AssimetricoUnilateral = 1, AssimetricoBilateral = 2 }
-
+    [Serializable]
     public enum ListaTiposTorax { Barril = 0, PeitoDePombo = 1, Funil = 2, Lordose = 3, Cifose = 4, Escoliose = 5, Normal = 6 }
-
+    [Serializable]
     public enum ListaExpansibilidade { Preservada = 0, Diminuida = 1 }
-
+    [Serializable]
     public enum ListaFrequenciaTosse { NaoSeAplica = 0, Frequente = 1, Noturna = 2, Esporadica = 3 }
-
+    [Serializable]
     public enum ListaTipoTosse { NaoSeAplica = 0, Seca = 1, Produtiva = 2 }
-
+    [Serializable]
     public enum ListaPercursao { Ar = 0, Liquido = 1, Massa = 2 }
-
+    [Serializable]
     public enum ListaAuscultaPulmonar { VesicularPresente = 0, VesicularDiminuido = 1, Roncos = 2, Estertores = 3, Sibilos = 4, Estridor = 5, AtritoPleural = 6 }
-
+    [Serializable]
     public enum ListaAspectoSecrecao { NaoSeAplica = 0, Esbranquicada = 1, Purulenta = 2, Esverdeada = 3, Amarelada = 4, FerruginosaArroxeada = 5, Mucopurulenta = 6, Rosea = 7, Hematica = 8, EnegrecidaCinzenta = 9 }
-
+    [Serializable]
     public class OxigenacaoModel
     {
         public string ErroRitmo { get; set; }

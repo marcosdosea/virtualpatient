@@ -7,14 +7,17 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaAberturaOcular { Espontanea = 0, EstimuloVerbal = 1, Dor = 2, NenhumaResposta = 3, NaoSeAplica = 4 }
-
+    [Serializable]
     public enum ListaMelhorRespostaMotora { ObedeceComandoVerbal = 0, LocalizaDor = 1, FlexaoRetirada = 2, FlexaoAnormal = 3,
     ExtensaoAnormal = 4, NenhumaResposta = 5, NaoSeAplica = 6}
+    [Serializable]
     public enum ListaMelhorRespostaVerbal { Orientado = 0, ConversacaoConfusa = 1, FalaInadequada = 2, SonsIncopativeis = 3,
     NenhumaResposta = 4, NaoSeAplica = 5}
+    [Serializable]
     public enum ListaAvaliacaoSedacao { Grau1 = 0, Grau2 = 1, Grau3 = 2, Grau4 = 3, Grau5 = 4, Grau6 = 5, NaoSeAplica = 6 }
-
+    [Serializable]
     public class ConscienciaModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

@@ -7,12 +7,13 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaParceiroFixo { Sim = 0, Nao = 1 , NaoRelatou = 2 }
-
+    [Serializable]
     public enum ListaConflitoPreferenciaSexual { Sim = 0, Nao = 1, NaoRelatou = 2 }
-
+    [Serializable]
     public enum ListaDorRelaxaoSexual { Sim = 0, Nao = 1, NaoRelatou = 2 }
-
+    [Serializable]
     public class SexualidadeModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

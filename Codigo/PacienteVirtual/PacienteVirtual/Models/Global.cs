@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class Global
     {
         public const string cursoEnfermagem = "Bacharelado em Enfermagem";

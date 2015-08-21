@@ -213,7 +213,7 @@ namespace PacienteVirtual.Negocio
         public IEnumerable<RelatoClinicoModel> ObterRelatosComConsultasAnteriores(int idRelato)
         {
             var a = GetQuery().Where(relato => relato.IdRelato == idRelato).ToList().ElementAtOrDefault(0);
-            return GetQuery().Where(relato => relato.IdPaciente == a.IdPaciente && relato.OrdemCronologica <= a.OrdemCronologica);
+            return GetQuery().Where(relato => relato.IdPaciente == a.IdPaciente && relato.OrdemCronologica <= a.OrdemCronologica).ToList();
         }
 
         /// <summary>

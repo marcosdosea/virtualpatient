@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Resources;
+using System;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaTurgor { Presente = 0, Diminuido = 1}
-
+    [Serializable]
     public enum ListaEstadoHidratacao { Hidratada = 0, Desidratada = 1 }
-
+    [Serializable]
     public class IntegridadeTecidualModel
     {
         public string ErroTurgor { get; set; }

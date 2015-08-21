@@ -7,8 +7,9 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaGrauDependencia { Independente = 0, ParcialmenteDependente = 1, DependentePara = 2 }
-
+    [Serializable]
     public class OutrasNecessidadesModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

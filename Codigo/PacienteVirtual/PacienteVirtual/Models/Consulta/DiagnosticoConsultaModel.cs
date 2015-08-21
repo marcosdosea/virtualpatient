@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class DiagnosticoConsultaModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

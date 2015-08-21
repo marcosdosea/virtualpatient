@@ -11,6 +11,12 @@ namespace PacienteVirtual.Controllers
     {
         private pvEntities db = new pvEntities();
 
+
+        public AccountController()
+        {
+            //base();
+        }
+        
         //
         // GET: /Account/LogOn
 

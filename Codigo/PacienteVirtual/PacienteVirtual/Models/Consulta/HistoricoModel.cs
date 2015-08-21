@@ -4,6 +4,7 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class HistoricoModel
     {
         [Display(Name = "codigo", ResourceType = typeof(Mensagem))]

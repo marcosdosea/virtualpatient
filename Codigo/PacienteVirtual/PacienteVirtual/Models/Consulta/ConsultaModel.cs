@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class ConsultaModel
     {
         // Dados do paciente

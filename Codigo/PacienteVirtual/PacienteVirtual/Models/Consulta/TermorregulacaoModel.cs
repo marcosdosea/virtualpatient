@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Resources;
+using System;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaTemperaturaPele { Quente = 0, Fria = 1, Normotermica = 2 }
-
+    [Serializable]
     public class TermorregulacaoModel
     {
         public string ErroTemperaturaPele { get; set; }

@@ -7,6 +7,7 @@ using System;
 
 namespace PacienteVirtual.Controllers
 {
+    [Serializable]
     public class SessionController
     {
 

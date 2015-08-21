@@ -7,10 +7,11 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaEstadoNutricional { PesoNormal = 0, PerdaPeso = 1, AumentoPeso = 2, Caquexia = 3, Sobrepeso = 4 }
-
+    [Serializable]
     public enum ListaDispositivosAlimentacao { NaoSeAplica = 0, SNE = 1, SNG = 2, NPT = 3, Gastronomia = 4, Jejunostomia = 5 }
-
+    [Serializable]
     public class NutricaoModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

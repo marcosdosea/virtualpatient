@@ -5,6 +5,7 @@ using System.Web;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class PacienteRelato
     {
         public PacienteModel paciente { get; set; }

@@ -245,6 +245,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PacienteVirtualModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Paciente\PacienteRelato.cs" />
     <Compile Include="Models\Teste\Category.cs" />
     <Compile Include="Models\Teste\Product.cs" />
     <Compile Include="Models\Teste\ProductCatalog.cs" />

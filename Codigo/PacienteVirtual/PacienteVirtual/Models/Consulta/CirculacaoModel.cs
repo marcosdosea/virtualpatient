@@ -7,8 +7,10 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaEnchimentoCapilar { MenorIgual3 = 0, Maior3 = 1 }
-
+    
+    [Serializable]
     public class CirculacaoModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

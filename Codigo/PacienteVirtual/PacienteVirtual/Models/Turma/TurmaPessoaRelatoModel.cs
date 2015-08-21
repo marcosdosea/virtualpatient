@@ -4,6 +4,7 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class TurmaPessoaRelatoModel
     {
         public const string AGUARDANDO_PREENCHIMENTO = "Aguardando Preenchimento";

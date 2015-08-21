@@ -5,6 +5,7 @@ using System.Web;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class Product
     {
         public int SubCategoryId { get; set; }

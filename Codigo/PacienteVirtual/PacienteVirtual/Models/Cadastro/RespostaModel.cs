@@ -4,6 +4,7 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class RespostaModel
     {
         [Display(Name = "resposta_codigo", ResourceType = typeof(Mensagem))]

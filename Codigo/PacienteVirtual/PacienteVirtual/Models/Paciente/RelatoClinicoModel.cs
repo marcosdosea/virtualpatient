@@ -4,6 +4,7 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class RelatoClinicoModel
     {
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -16,15 +17,18 @@ namespace PacienteVirtual.Models
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "nome_paciente", ResourceType = typeof(Mensagem))]
-        public String NomePaciente { get; set; }
+        public string NomePaciente { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "ordem_cronologica", ResourceType = typeof(Mensagem))]
         public int OrdemCronologica { get; set; }
 
+        
+        private string relatoTextual;
+        
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "relato_texto", ResourceType = typeof(Mensagem))]
-        public String RelatoTextual { get; set; }
+        public string RelatoTextual { get; set; }
 
         //[Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
         [Display(Name = "relato_video", ResourceType = typeof(Mensagem))]

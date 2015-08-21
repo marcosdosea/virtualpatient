@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using Resources;
+using System;
 
 namespace PacienteVirtual.Models
 {
-
+    [Serializable]
     public class ChangePasswordModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -23,7 +24,7 @@ namespace PacienteVirtual.Models
         [Compare("NewPassword", ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "senha_confSenha_nao_coincidem")]
         public string ConfirmPassword { get; set; }
     }
-
+    [Serializable]
     public class LogOnModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -38,7 +39,7 @@ namespace PacienteVirtual.Models
         [Display(Name = "lembrar_me", ResourceType = typeof(Mensagem))]
         public bool RememberMe { get; set; }
     }
-
+    [Serializable]
     public class RegisterModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]
@@ -87,7 +88,7 @@ namespace PacienteVirtual.Models
         public string Matricula { get; set; }
 
     }
-
+    [Serializable]
     public class AlterarDadosUsuarioModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

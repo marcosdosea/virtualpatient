@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Resources;
+using System;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class InstituicaoModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

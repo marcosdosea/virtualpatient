@@ -7,12 +7,15 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+
+    [Serializable]
     public enum ListaEstadoMental
     {
         SemAlteracoes = 0, Agressivo = 1, EpisodioDelirio = 2, Confuso = 3, Agitado = 4, Apatico = 5, Sonolento = 6,
         Torporoso = 7, Comatoso = 8
     }
-    
+
+    [Serializable]
     public class SensorialModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

@@ -7,12 +7,16 @@ using Resources;
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public enum ListaTranstornosExpressaoVerbal 
     {
         NaoSeAplica = 0, Disfasia = 1, Disartria = 2, Dislalia = 3, Afonia = 4, ComunicaPorGesto = 5, ComunicaPorEscrita = 6
     }
+    
+    [Serializable]
     public enum ListaTipoComportamento { Calmo = 0, Ansioso = 1, Retraido = 2, ComMedo = 3, Agressico = 4 }
     
+    [Serializable]
     public class ComunicacaoModel
     {
         [Required(ErrorMessageResourceType = typeof(Mensagem), ErrorMessageResourceName = "campo_requerido")]

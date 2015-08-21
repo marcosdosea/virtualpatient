@@ -2,6 +2,7 @@
 
 namespace PacienteVirtual.Models
 {
+    [Serializable]
     public class EmailErroModel
     {
 
