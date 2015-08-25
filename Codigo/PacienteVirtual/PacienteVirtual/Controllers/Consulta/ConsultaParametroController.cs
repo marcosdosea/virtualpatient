@@ -33,9 +33,9 @@ namespace PacienteVirtual.Controllers
 
         // GET: /ConsultaVariavelQueixa/Edit/5
 
-        public ActionResult Edit(long idConsultaVariavel, int idConsultaPar)
+        public ActionResult Edit(long idConsultaVariavel, int idParametroClinico)
         {
-            ConsultaParametroModel consultaParametro = GerenciadorConsultaParametro.GetInstance().ObterPorConsultaParametro(idConsultaVariavel, idConsultaPar);
+            ConsultaParametroModel consultaParametro = GerenciadorConsultaParametro.GetInstance().ObterPorConsultaParametro(idConsultaVariavel, idParametroClinico);
             SessionController.Abas1 = Global.abaConsultaParametro;
             return View(consultaParametro);
         }

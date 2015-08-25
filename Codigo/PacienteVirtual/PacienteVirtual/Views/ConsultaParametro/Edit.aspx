@@ -8,12 +8,14 @@
 
 <h2><%: Resources.Mensagem.editar %></h2>
 
-<% using (Html.BeginForm()) { %>
+<% using (Html.BeginForm("Edit", "ConsultaParametro"))
+   { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>
         <%: Resources.Mensagem.parametro_clinico %></legend>
     <%: Html.HiddenFor(model => model.IdConsultaVariavel) %>
+    <%: Html.HiddenFor(model => model.IdParametroClinico) %>
     <div class="row-fluid">
         <div class="span3">
             <div class="editor-label">
@@ -34,7 +36,7 @@
         </div>
         <div class="span6">
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Valor, new { @class = "textbox", style = "width:276px;" })%>
+                <%: Html.TextBoxFor(model => model.Valor, new { style = "width:276px;", PlaceHolder = "Ex: 10.00", onkeypress = "return NumeroPonto(event);"  })%>
                 <%: Html.ValidationMessageFor(model => model.Valor, string.Empty, new { @class = "styleValidation" })%>
             </div>
         </div>
@@ -69,8 +71,21 @@
         <input class="btn btn-primary" type="submit" value="<%: Resources.Mensagem.adicionar %>" />
     </div>
 </fieldset>
+<div class="btn btn-primary">
+    <%: Html.ActionLink(Resources.Mensagem.voltar, "Edit", "Consulta", Model.IdConsultaVariavel, new { @style = "color:White; font-size:small;"})%>
+</div>
 <% } %>
 <script type="text/javascript">
     document.getElementById('textbox').disabled = true;
+</script>
+<script type="text/javascript">
+    function NumeroPonto(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58 || tecla == 46)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
 </script>
 </asp:Content>

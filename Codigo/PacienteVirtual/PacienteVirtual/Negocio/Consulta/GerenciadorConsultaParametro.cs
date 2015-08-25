@@ -107,7 +107,8 @@ namespace PacienteVirtual.Negocio
             try
             {
                 var repConsultaParametro = new RepositorioGenerico<tb_consulta_parametro>();
-                tb_consulta_parametro _tb_consulta_parametro = repConsultaParametro.ObterEntidade(dP => dP.IdConsultaVariavel == consultaParametroModel.IdConsultaVariavel);
+                tb_consulta_parametro _tb_consulta_parametro = repConsultaParametro.ObterEntidade(dP => dP.IdConsultaVariavel == 
+                    consultaParametroModel.IdConsultaVariavel && dP.IdParametroClinico == consultaParametroModel.IdParametroClinico);
                 Atribuir(consultaParametroModel, _tb_consulta_parametro);
 
                 repConsultaParametro.SaveChanges();
