@@ -22,7 +22,7 @@ namespace PacienteVirtual.Controllers
         [HttpPost]
         public ActionResult Create(IntervencaoConsultaModel intervencaoConsulta)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && GerenciadorIntervencao.GetInstance().IntervencaoPertenceDescricao(intervencaoConsulta))
             {
                 intervencaoConsulta.IdConsultaVariavel = SessionController.ConsultaVariavel.IdConsultaVariavel;
                 GerenciadorIntervencaoConsulta.GetInstance().Inserir(intervencaoConsulta);
@@ -32,7 +32,7 @@ namespace PacienteVirtual.Controllers
             else
             {
                 SessionController.IdGrupoIntervencao = intervencaoConsulta.IdGrupoIntervencao;
-                GerenciadorIntervencaoConsulta.GetInstance().ValidarRespostasSelecionaveis(intervencaoConsulta.IdGrupoIntervencao, intervencaoConsulta.IdIntervencao);
+                //GerenciadorIntervencaoConsulta.GetInstance().ValidarRespostasSelecionaveis(intervencaoConsulta.IdGrupoIntervencao, intervencaoConsulta.IdIntervencao);
             }
             SessionController.Abas2 = Global.abaIntervencao;
             return RedirectToAction("Edit2", "Consulta");
