@@ -86,7 +86,7 @@ namespace PacienteVirtual.Negocio
                             DescricaoDiagnostico = diagnosticoCV.tb_diagnostico.Diagnostico,
                             DescricaoCaracteristicaDiagnostico = diagnosticoCV.DescricaoCaracteristica
                         };
-            return query;
+            return query.ToList();
         }
     }
 }

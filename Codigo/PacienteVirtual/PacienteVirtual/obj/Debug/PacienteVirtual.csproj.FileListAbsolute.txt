@@ -37,3 +37,4 @@ D:\Projetos\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\Paci
 D:\Projetos\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\en\PacienteVirtual.resources.dll
 D:\Projetos\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.dll
 D:\Projetos\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.pdb
+D:\Projetos\virtualpatient\Codigo\PacienteVirtual\PacienteVirtual\obj\Debug\PacienteVirtual.csprojResolveAssemblyReference.cache

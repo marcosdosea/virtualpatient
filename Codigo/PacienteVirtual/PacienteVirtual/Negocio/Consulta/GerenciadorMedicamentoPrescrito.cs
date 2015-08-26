@@ -194,7 +194,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<MedicamentoPrescritoModel> Obter(long idConsultaVariavel)
         {
-            return GetQuery().Where(MedicamentoPrescritoModel => MedicamentoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList().OrderBy(m => m.MedicamentoNome);
+            return GetQuery().Where(MedicamentoPrescritoModel => MedicamentoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList().OrderBy(m => m.MedicamentoNome).ToList();
         }
 
         /// <summary>
