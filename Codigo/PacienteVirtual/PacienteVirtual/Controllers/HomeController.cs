@@ -9,7 +9,7 @@ namespace PacienteVirtual.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to Virtual Patient!";
+            ViewBag.Message = "Bem-vindo ao Paciente Virtual!";
             if (SessionController.NomePessoa == null)
             {
                 SessionController.NomePessoa = Global.stringVazia;

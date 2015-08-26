@@ -195,7 +195,7 @@ namespace PacienteVirtual.Negocio
                             IdAlergia = alergias.IdAlergia,
                             Alergia = alergias.Alergia
                         };
-            return query;
+            return query.ToList();
         }
 
         /// <summary>

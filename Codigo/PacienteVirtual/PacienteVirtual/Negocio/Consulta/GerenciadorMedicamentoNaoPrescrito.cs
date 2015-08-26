@@ -192,7 +192,7 @@ namespace PacienteVirtual.Negocio
         /// <returns></returns>
         public IEnumerable<MedicamentoNaoPrescritoModel> Obter(long idConsultaVariavel)
         {
-            return GetQuery().Where(MedicamentoNaoPrescritoModel => MedicamentoNaoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList().OrderBy(m => m.MedicamentoNome);
+            return GetQuery().Where(MedicamentoNaoPrescritoModel => MedicamentoNaoPrescritoModel.IdConsultaVariavel == idConsultaVariavel).ToList().OrderBy(m => m.MedicamentoNome).ToList();
         }
 
         /// <summary>

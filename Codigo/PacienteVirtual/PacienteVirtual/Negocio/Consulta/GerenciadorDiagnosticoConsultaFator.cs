@@ -100,7 +100,7 @@ namespace PacienteVirtual.Negocio
                             DescricaoDiagnostico = diagnosticoCF.tb_diagnostico.Diagnostico,
                             DescricaoFatorDiagnostico = diagnosticoCF.DescricaoFator
                         };
-            return query;
+            return query.ToList();
         }
     }
 }
