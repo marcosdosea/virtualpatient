@@ -153,5 +153,19 @@ namespace PacienteVirtual.Negocio
         {
             return GetQuery().Where(intervencao => intervencao.IdGrupoIntervencao == idGrupoIntervencao).ToList();
         }
+
+        public bool IntervencaoPertenceDescricao(IntervencaoConsultaModel intervencaoConsulta)
+        {
+            //SelectList(GerenciadorGrupoIntervencao.GetInstance().ObterTodos().ToList(), "IdGrupoIntervencao", "DescricaoGrupoIntervencao", SessionController.IdGrupoIntervencao);
+            IEnumerable<IntervencaoModel> intervencoes = GerenciadorIntervencao.GetInstance().ObterPorGrupoIntervencao(intervencaoConsulta.IdGrupoIntervencao);
+            foreach (var item in intervencoes)
+            {
+                if (item.IdIntervencao == intervencaoConsulta.IdIntervencao)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

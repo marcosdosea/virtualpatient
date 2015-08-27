@@ -13,7 +13,11 @@
     <file relUrl="Content/MeuCss.css" publishTime="08/17/2015 09:31:43" />
     <file relUrl="Content/themes/pv/img/icons/pie_chart.png" publishTime="08/17/2015 09:33:05" />
     <file relUrl="bin/GridMvc.dll" publishTime="08/17/2015 09:44:25" />
+<<<<<<< HEAD
     <file relUrl="bin/PacienteVirtual.pdb" publishTime="08/21/2015 11:15:37" />
+=======
+    <file relUrl="bin/PacienteVirtual.pdb" publishTime="08/21/2015 11:11:36" />
+>>>>>>> 666f7ff074abef1c606b2afd1922096c5cbf6d58
     <file relUrl="Content/themes/pv/css/bootstrap-responsive.min.css" publishTime="08/17/2015 09:32:15" />
     <file relUrl="Views/ParametroClinico/Edit.aspx" publishTime="08/17/2015 09:42:23" />
     <file relUrl="Content/themes/pv/css/bootstrap.css" publishTime="08/17/2015 09:32:16" />
@@ -125,10 +129,17 @@
     <file relUrl="Views/Curso/Index.aspx" publishTime="08/17/2015 09:40:13" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="08/17/2015 09:38:49" />
     <file relUrl="Views/Account/ChangePasswordSuccess.aspx" publishTime="08/17/2015 09:39:13" />
+<<<<<<< HEAD
     <file relUrl="PacienteVirtual.Publish.xml" publishTime="08/21/2015 11:11:41" />
     <file relUrl="Content/themes/pv/img/simbolo_farmacia.png" publishTime="08/17/2015 09:33:25" />
     <file relUrl="Views/RelatoClinico/Listar.aspx" publishTime="08/17/2015 09:43:11" />
     <file relUrl="bin/PacienteVirtual.dll" publishTime="08/21/2015 11:15:38" />
+=======
+    <file relUrl="PacienteVirtual.Publish.xml" publishTime="08/21/2015 11:01:27" />
+    <file relUrl="Content/themes/pv/img/simbolo_farmacia.png" publishTime="08/17/2015 09:33:25" />
+    <file relUrl="Views/RelatoClinico/Listar.aspx" publishTime="08/17/2015 09:43:11" />
+    <file relUrl="bin/PacienteVirtual.dll" publishTime="08/21/2015 11:11:37" />
+>>>>>>> 666f7ff074abef1c606b2afd1922096c5cbf6d58
     <file relUrl="Views/AcaoQueixa/Edit.aspx" publishTime="08/17/2015 09:39:09" />
     <file relUrl="Views/Instituicao/Details.aspx" publishTime="08/17/2015 09:41:26" />
     <file relUrl="Views/DiagnosticoCaracteristica/Edit.aspx" publishTime="08/17/2015 09:40:26" />
