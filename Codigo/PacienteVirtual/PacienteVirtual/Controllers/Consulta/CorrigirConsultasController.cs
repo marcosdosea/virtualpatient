@@ -66,7 +66,10 @@ namespace PacienteVirtual.Controllers
             SmtpClient client = new SmtpClient();
             //Add as credenciais usando o email e a senha criada para o sistema
 
-            client.Credentials = new System.Net.NetworkCredential(from, "paciente2014");
+            //Pegando a senha do banco de dados
+            string[] senha = Roles.GetAllRoles();
+            string Senha = senha[senha.Length - 1];
+            client.Credentials = new System.Net.NetworkCredential(from, Senha);
 
             client.Port = 587; // Gmail funciona com essa porta 587
             client.Host = "smtp.gmail.com";
